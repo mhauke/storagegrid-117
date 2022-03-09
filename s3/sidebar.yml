@@ -1,0 +1,133 @@
+section: s3
+title: Use S3
+entries:
+  - title: Overview
+    pdf-filename: Use S3 with StorageGRID
+    url: "/s3/index.html"
+    entries:
+    - title: Changes to S3 REST API support
+      url: "/s3/changes-to-s3-rest-api-support.html"
+    - title: Supported versions
+      url: "/s3/supported-versions.html"
+    - title: Support for StorageGRID platform services
+      url: "/s3/support-for-storagegrid-platform-services.html"
+  - title: Configure tenant accounts and connections
+    url: "/s3/configuring-tenant-accounts-and-connections.html"
+  - title: How StorageGRID implements S3 REST API
+    url: "/s3/how-storagegrid-implements-s3-rest-api.html"
+    entries:
+    - title: Conflicting client requests
+      url: "/s3/conflicting-client-requests.html"
+    - title: Consistency controls
+      url: "/s3/consistency-controls.html"
+    - title: How StorageGRID ILM rules manage objects
+      url: "/s3/how-storagegrid-ilm-rules-manage-objects.html"
+    - title: Object versioning
+      url: "/s3/object-versioning.html"
+    - title: Recommendations for implementing S3 REST API
+      url: "/s3/recommendations-for-implementing-s3-rest-api.html"
+  - title: S3 REST API supported operations and limitations
+    url: "/s3/s3-rest-api-supported-operations-and-limitations.html"
+    entries:
+    - title: Authenticate requests
+      url: "/s3/authenticating-requests.html"
+    - title: Operations on the service
+      url: "/s3/operations-on-the-service.html"
+    - title: Operations on buckets
+      url: "/s3/operations-on-buckets.html"
+      entries:
+      - title: Create S3 lifecycle configuration
+        url: "/s3/create-s3-lifecycle-configuration.html" 
+      - title: Use S3 Object Lock default bucket retention
+        url: "/s3/use-s3-object-lock-default-bucket-retention.html" 
+      - title: Custom operations on buckets
+        url: "/s3/custom-operations-on-buckets.html"
+    - title: Operations on objects
+      url: "/s3/operations-on-objects.html"
+      entries:
+      - title: Use S3 Object Lock
+        url: "/s3/using-s3-object-lock.html"
+      - title: Use S3 Select
+        url: "/s3/use-s3-select.html"
+      - title: Use server-side encryptions
+        url: "/s3/using-server-side-encryption.html"
+      - title: GET Object
+        url: "/s3/get-object.html"
+      - title: HEAD Object
+        url: "/s3/head-object.html"
+      - title: POST Object restore
+        url: "/s3/post-object-restore.html"
+      - title: PUT Object
+        url: "/s3/put-object.html"
+      - title: PUT Object - Copy
+        url: "/s3/put-object-copy.html"
+      - title: SelectObjectContent
+        url: "/s3/select-object-content.html"
+    - title: Operations for multipart uploads
+      url: "/s3/operations-for-multipart-uploads.html"
+      entries:
+      - title: List Multipart Uploads
+        url: "/s3/list-multipart-uploads.html"
+      - title: Initiate Multipart Upload
+        url: "/s3/initiate-multipart-upload.html"
+      - title: Upload Part
+        url: "/s3/upload-part.html"
+      - title: Upload Part - Copy
+        url: "/s3/upload-part-copy.html"
+      - title: Complete Multipart Upload
+        url: "/s3/complete-multipart-upload.html"
+    - title: Error responses
+      url: "/s3/error-responses.html"
+  - title: StorageGRID S3 REST API operations
+    url: "/s3/storagegrid-s3-rest-api-operations.html"
+    entries:
+      - title: GET Bucket consistency request
+        url: "/s3/get-bucket-consistency-request.html"
+      - title: PUT Bucket consistency request
+        url: "/s3/put-bucket-consistency-request.html"
+      - title: GET Bucket last access time request
+        url: "/s3/get-bucket-last-access-time-request.html"
+      - title: PUT Bucket last access time request
+        url: "/s3/put-bucket-last-access-time-request.html"
+      - title: DELETE Bucket metadata notification configuration request
+        url: "/s3/delete-bucket-metadata-notification-configuration-request.html"
+      - title: GET Bucket metadata notification configuration request
+        url: "/s3/get-bucket-metadata-notification-configuration-request.html"
+      - title: PUT Bucket metadata notification configuration request
+        url: "/s3/put-bucket-metadata-notification-configuration-request.html"
+      - title: GET Storage Usage request
+        url: "/s3/get-storage-usage-request.html"
+      - title: Deprecated bucket requests for legacy Compliance
+        url: "/s3/deprecated-bucket-requests-for-legacy-compliance.html"
+        entries:
+        - title: Deprecated - PUT Bucket request modifications for compliance
+          url: "/s3/deprecated-put-bucket-request-modifications-for-compliance.html"
+        - title: Deprecated - GET Bucket compliance request
+          url: "/s3/deprecated-get-bucket-compliance-request.html"
+        - title: Deprecated - PUT Bucket compliance request
+          url: "/s3/deprecated-put-bucket-compliance-request.html"
+  - title: Bucket and group access policies
+    url: "/s3/bucket-and-group-access-policies.html"
+  - title: Configure security for REST API
+    url: "/s3/configuring-security-for-rest-api.html"
+  - title: Monitor and audit operations
+    url: "/s3/monitoring-and-auditing-operations.html"
+    entries:
+    - title: Monitor object ingest and retrieval rates
+      url: "/s3/monitoring-object-ingest-and-retrieval-rates.html"
+    - title: Access and review audit logs
+      url: "/s3/accessing-and-reviewing-audit-logs.html"
+      entries:
+      - title: S3 operations tracked in audit logs
+        url: "/s3/s3-operations-tracked-in-audit-logs.html"
+  - title: Benefits of active, idle, and concurrent HTTP connections
+    url: "/s3/benefits-of-active-idle-and-concurrent-http-connections.html"
+    entries:
+    - title: Benefits of keeping idle HTTP connections open
+      url: "/s3/benefits-of-keeping-idle-http-connections-open.html"
+    - title: Benefits of active HTTP connections
+      url: "/s3/benefits-of-active-http-connections.html"
+    - title: Benefits of concurrent HTTP connections
+      url: "/s3/benefits-of-concurrent-http-connections.html"
+    - title: Separation of HTTP connection pools for read and write operations
+      url: "/s3/separation-of-http-connection-pools-for-read-and-write-operations.html"

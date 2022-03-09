@@ -1,0 +1,39 @@
+---
+permalink: audit/object-retrieve-transactions.html
+sidebar: sidebar
+keywords: storagegrid, audit, message, Object retrieve, messages, transaction, transactions, s3, swift, trace, SGET, WGET 
+summary: 'You can identify object retrieve transactions in the audit log by locating API-specific \(S3 and Swift\) audit messages.'
+---
+= Object retrieve transactions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can identify object retrieve transactions in the audit log by locating API-specific (S3 and Swift) audit messages.
+
+Not all audit messages generated during a retrieve transaction are listed in the following tables. Only messages required to trace the retrieve transaction are included.
+
+== S3 retrieval audit messages
+
+[cols="1a,1a,2a,1a,1a" options="header"]
+|===
+| Code| Name| Description| Trace| See
+
+|SGET
+|S3 GET
+|Request made to retrieve an object from a bucket.
+|CBID, S3BK, S3KY
+|xref:sget-s3-get.adoc[SGET: S3 GET]
+|===
+
+== Swift retrieval audit messages
+
+[cols="1a,1a,2a,1a,1a" options="header"]
+|===
+| Code| Name| Description| Trace| See
+|WGET
+|Swift GET
+|Request made to retrieve an object from a container.
+|CBID, WCON, WOBJ
+|xref:wget-swift-get.adoc[WGET: Swift GET]
+|===

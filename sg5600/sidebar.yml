@@ -1,0 +1,151 @@
+section: sg5600
+title: SG5600 storage appliances
+entries:
+  - title: Overview
+    pdf-filename: StorageGRID SG5600 storage appliances
+    url: "/sg5600/index.html"
+    entries:
+    - title: StorageGRID appliance features
+      url: "/sg5600/storagegrid-appliance-features.html"
+    - title: Hardware diagrams
+      url: "/sg5600/hardware-diagrams.html"
+  - title: Installation and deployment overview
+    url: "/sg5600/installation-and-deployment-overview.html"
+  - title: Prepare for installation (SG5600)
+    url: "/sg5600/preparing-for-installation.html"
+    entries:
+    - title: Prepare site (SG5600)
+      url: "/sg5600/preparing-site-sg5600.html"
+    - title: Unpack boxes (SG5600)
+      url: "/sg5600/unpacking-boxes-sg5600.html"
+    - title: Obtain additional equipment and tools (SG5600)
+      url: "/sg5600/obtaining-additional-equipment-and-tools-sg5600.html"
+    - title: Service laptop requirements
+      url: "/sg5600/service-laptop-requirements-sg5600.html"
+    - title: Review appliance network connections (SG5600)
+      url: "/sg5600/reviewing-appliance-network-connections-sg5600.html"
+      entries:
+      - title: Port bond modes for E5600SG controller ports
+        url: "/sg5600/port-bond-modes-for-e5600sg-controller-ports.html"
+        entries:
+        - title: Network bond modes for 10-GbE ports
+          url: "/sg5600/network-bond-modes-for-10-gbe-ports.html"
+        - title: Network bond modes for 1-GbE management ports
+          url: "/sg5600/network-bond-modes-for-1-gbe-managment-ports.html"
+    - title: Gather installation information (SG5600)
+      url: "/sg5600/gathering-installation-information-sg5600.html"
+  - title: Install hardware (SG5600)
+    url: "/sg5600/installing-hardware.html"
+    entries:
+    - title: Register hardware
+      url: "/sg5600/registering-hardware.html"
+    - title: Install appliance in cabinet or rack (SG5600)
+      url: "/sg5600/installing-appliance-in-cabinet-or-rack-sg5600.html"
+    - title: Cable appliance (SG5600)
+      url: "/sg5600/cabling-appliance-sg5600.html"
+    - title: Connect AC power cords (SG5600)
+      url: "/sg5600/connecting-ac-power-cords-sg5600.html"
+    - title: Turn power on (SG5600)
+      url: "/sg5600/turning-power-on-sg5600.html"
+    - title: View boot-up status and review error codes on SG5600 controllers
+      url: "/sg5600/viewing-boot-up-status-and-reviewing-error-codes-on-sg5600-controllers.html"
+      entries:
+      - title: E5600SG controller seven-segment display codes
+        url: "/sg5600/e5600sg-controller-seven-segment-display-codes.html"
+  - title: Configure hardware (SG5600)
+    url: "/sg5600/configuring-hardware.html"
+    entries:
+    - title: Configure StorageGRID connections (SG5600)
+      url: "/sg5600/configuring-storagegrid-connections.html"
+      entries:
+      - title: Access StorageGRID Appliance Installer
+        url: "/sg5600/accessing-storagegrid-appliance-installer-sg5600.html"
+      - title: Verify and upgrade StorageGRID Appliance Installer version
+        url: "/sg5600/verifying-and-upgrading-storagegrid-appliance-installer-version.html"
+      - title: Configure network links (SG5600)
+        url: "/sg5600/configuring-network-links-sg5600.html"
+      - title: Set IP configuration
+        url: "/sg5600/setting-ip-configuration-sg5600.html"
+      - title: Verify network connections
+        url: "/sg5600/verifying-network-connections.html"
+      - title: Verify port-level network connections
+        url: "/sg5600/verifying-port-level-network-connections.html"
+    - title: Configure SANtricity Storage Manager
+      url: "/sg5600/configuring-santricity-storage-manager.html"
+      entries:
+      - title: Set IP address for E2700 controller
+        url: "/sg5600/setting-ip-address-for-e2700-controller.html"
+      - title: Add appliance to SANtricity Storage Manager
+        url: "/sg5600/adding-appliance-to-santricity-storage-manager.html"
+      - title: Set up SANtricity Storage Manager
+        url: "/sg5600/setting-up-santricity-storage-manager.html"
+        entries:
+        - title: Configure AutoSupport
+          url: "/sg5600/configuring-autosupport.html"
+        - title: Verify receipt of AutoSupport
+          url: "/sg5600/verifying-receipt-of-autosupport.html"
+        - title: Configure email and SNMP trap alert notifications
+          url: "/sg5600/configuring-email-and-snmp-trap-alert-notifications.html"
+        - title: Set passwords for SANtricity Storage Manager
+          url: "/sg5600/setting-passwords-for-santricity-storage-manager.html"
+    - title: 'Optional: Enable node encryption'
+      url: "/sg5600/optional-enabling-node-encryption.html"
+    - title: 'Optional: Change to RAID6 mode (SG5660 only)'
+      url: "/sg5600/optional-changing-to-raid6-mode-sg5660-only.html"
+    - title: 'Optional: Remap network ports for appliance'
+      url: "/sg5600/optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html"
+  - title: Deploy appliance Storage Node
+    url: "/sg5600/deploying-appliance-storage-node.html"
+  - title: Monitor storage appliance installation
+    url: "/sg5600/monitoring-storage-appliance-installation.html"
+  - title: Automate appliance installation and configuration (SG5600)
+    url: "/sg5600/automating-appliance-installation-and-configuration.html"
+    entries:
+    - title: Automate appliance configuration using StorageGRID Appliance Installer
+      url: "/sg5600/automating-appliance-configuration-using-storagegrid-appliance-installer.html"
+    - title: Automate installation and configuration of appliance nodes using configure-sga.py script
+      url: "/sg5600/automating-installation-configuration-appliance-nodes-configure-sga-py-script.html"
+    - title: Automate configuration of StorageGRID
+      url: "/sg5600/automating-configuration-of-storagegrid.html"
+  - title: Overview of installation REST APIs
+    url: "/sg5600/overview-of-installation-rest-apis.html"
+  - title: Troubleshoot hardware installation (SG5600)
+    url: "/sg5600/troubleshooting-hardware-installation.html"
+    entries:
+    - title: Hardware setup appears to hang (SG5600)
+      url: "/sg5600/hardware-setup-progress-appears-to-hang.html"
+      entries:
+      - title: 'HE error: Error synchronizing with SANtricity OS Software'
+        url: "/sg5600/he-error-error-synchronizing-with-santricity-os-software.html"
+    - title: Troubleshoot connection issues (SG5600)
+      url: "/sg5600/troubleshooting-connection-issues.html"
+    - title: Reboot controller while StorageGRID Appliance Installer is running
+      url: "/sg5600/rebooting-controller-while-storagegrid-appliance-installer-is-running.html"
+  - title: Maintain SG5600 appliance
+    url: "/sg5600/maintaining-sg5600-appliance.html"
+    entries:
+    - title: Place appliance into maintenance mode
+      url: "/sg5600/placing-appliance-into-maintenance-mode.html"
+    - title: Upgrade SANtricity OS on storage controllers using Grid Manager
+      url: "/sg5600/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5600.html"
+    - title: Upgrade SANtricity OS on E2700 controller using maintenance mode
+      url: "/sg5600/upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.html"
+    - title: Upgrade drive firmware using SANtricity Storage Manager
+      url: "/sg5600/upgrading-drive-firmware-using-santricity-storage-manager.html"
+    - title: Replace E2700 controller
+      url: "/sg5600/replacing-e2700-controller.html"
+    - title: Replace E5600SG controller
+      url: "/sg5600/replacing-e5600sg-controller.html"
+    - title: Replace other hardware components
+      url: "/sg5600/replacing-other-hardware-components-sg5600.html"
+    - title: Change link configuration of E5600SG controller
+      url: "/sg5600/changing-link-configuration-of-e5600sg-controller.html"
+    - title: Change MTU setting
+      url: "/sg5600/changing-mtu-setting.html"
+    - title: Check DNS server configuration
+      url: "/sg5600/checking-dns-server-configuration.html"
+    - title: Monitor node encryption in maintenance mode (SG5600)
+      url: "/sg5600/monitoring-node-encryption-in-maintenance-mode.html"
+      entries:
+      - title: Clear key management server configuration
+        url: "/sg5600/clearing-key-management-server-configuration.html"

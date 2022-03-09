@@ -1,0 +1,68 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html
+sidebar: sidebar
+keywords: grid management api, api, api version, swagger, rest api
+summary: 'StorageGRID 11.6 uses version 3 of the Grid Management API. Version 3 deprecates version 2; however, version 1 and version 2 are still supported.'
+---
+= Changes to the Grid Management API
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+StorageGRID 11.6 uses version 3 of the Grid Management API. Version 3 deprecates version 2; however, version 1 and version 2 are still supported.
+
+IMPORTANT: You can continue to use version 1 and version 2 of the management API with StorageGRID 11.6; however, support for these versions of the API will be removed in a future release of StorageGRID. After upgrading to StorageGRID 11.6, the deprecated v1 and v2 APIs can be deactivated using the `PUT /grid/config/management` API.
+
+To learn more, go to xref:../admin/using-grid-management-api.adoc[Use the Grid Management API].
+
+== Can access Swagger docs for private API operations
+You can now access the Swagger docs for the private API from the Grid Manager. To see the available operations, select the Grid Manager help icon and select *API Documentation*. Then, select *Go to private API documentation* from the StorageGRID Management API page.
+
+StorageGRID private APIs are subject to change without notice. StorageGRID private endpoints also ignore the API version of the request. 
+
+== Alarm-based APIs deprecated
+
+The 11.6 release deprecates all alarm-based APIs. The following APIs are affected by this change:
+
+* `GET /grid/alarms`: Fully deprecated
+
+* `GET /grid/health/topology`: Fully deprecated
+
+* `GET /grid/health`: The `alarm-counts` section of the response is deprecated
+
+== Can import S3 access keys
+You can now use the Grid Management API to import S3 access keys for tenant users. For example, you can migrate access keys from another S3 provider to StorageGRID or use this feature to keep user credentials the same between grids.
+
+IMPORTANT: When this feature is enabled, any Grid Manager user with the Change tenant root password permission has full access to tenant data. Disable this feature immediately after use to protect tenant data.
+
+== New account operations
+
+Three new `grid/account` API operations have been added:
+
+* `POST /grid​/account-enable-s3-key-import`: This request enables the Import S3 Credentials feature. You must have the Root access permission to enable this feature.
+
+* `POST /grid​/accounts​/{id}​/users​/{user_id}​/s3-access-keys`: This request imports S3 credentials for a given user in a tenant account. You must have the Root access or Change tenant root password permission, and you must know the user ID and the tenant account ID.
+
+* `POST /grid​/account-disable-s3-key-import`: This request disables the Import S3 Credentials feature. You must have the Root access permission to disable this feature.
+
+== PATCH method deprecated
+
+The PATCH method has now been deprecated and will be removed in a future release. As required, perform a PUT operation to replace a resource instead of using a PATCH operation to modify the resource. 
+
+== Additions to `grid/logs/collect` endpoint
+
+Four boolean values have been added to the `grid/logs/collect` endpoint:
+
+* `applicationLogs`: Application-specific logs that technical support uses most frequently for troubleshooting. The logs collected are a subset of the available application logs. The default is `true`.
+* `auditLogs`: Logs containing the audit messages generated during normal system operation. The default is `true`.
+* `networkTrace`: Logs used for network debugging. The default is `false`.
+* `prometheusDatabase`: Time series metrics from the services on all nodes. The default is `false`.
+
+== New `​node-details /grid​/service-ids` endpoint
+
+The new `​/grid​/service-ids` endpoint provides a mapping of node UUIDs to the associated node names, service IDs, and service types.
+
+== Can retrieve grid node console passwords
+
+You can now use `POST ​/grid​/node-console-passwords` to retrieve the list of grid nodes and their associated console passwords.
+

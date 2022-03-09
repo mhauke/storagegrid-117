@@ -1,0 +1,36 @@
+---
+permalink: admin/deleting-traffic-classification-policy.html
+sidebar: sidebar
+keywords: delete traffic classification policy
+summary: 'If you no longer need a traffic classification policy, you can delete it.'
+---
+= Delete a traffic classification policy
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you no longer need a traffic classification policy, you can delete it.
+
+.What you'll need
+
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the Root access permission.
+
+.Steps
+
+. Select *CONFIGURATION* > *Network* > *Traffic classification*.
++
+The Traffic Classification Policies page appears, and the existing policies are listed in the table.
++
+image::../media/traffic_classification_policies_main_screen_w_examples.png[Traffic Classification Policy Examples]
+
+. Select the radio button to the left of the policy you want to delete.
+. Select *Remove*.
++
+A Warning dialog box appears.
++
+image::../media/traffic_classification_policy_delete.png[Delete Traffic Classification Policy]
+
+. Select *OK* to confirm that you want to delete the policy.
++
+The policy is deleted.

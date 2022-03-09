@@ -1,0 +1,59 @@
+---
+permalink: primer/configuring-network-settings.html
+sidebar: sidebar
+keywords: network settings, configure, configuring, configuration, domain name, virtual hosted-style requests
+summary: 'You can configure various network settings from the Grid Manager to fine tune the operation of your StorageGRID system.'
+---
+= Configure network settings
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can configure various network settings from the Grid Manager to fine tune the operation of your StorageGRID system.
+
+== Domain names
+
+If you plan to support S3 virtual hosted-style requests, you must configure the list of endpoint domain names that S3 clients connect to. Examples include `s3.example.com`, `s3.example.co.uk`, and `s3-east.example.com`.
+
+The configured server certificates must match the endpoint domain names.
+
+== High availability groups
+
+You can use high availability (HA) groups to provide highly available data connections for S3 and Swift clients or to provide highly available connections to the Grid Manager and the Tenant Manager.
+
+When you create an HA group, you select a network interface for one or more nodes. Each HA group provides access to the shared services on the selected nodes.
+
+* HA groups that include interfaces on Gateway Nodes, Admin Nodes, or both provide highly available data connections for S3 and Swift clients.
+
+* HA groups that include interfaces on Admin Nodes only provide highly available connections to the Grid Manager and the Tenant Manager.
+
+The interfaces can belong to the Grid Network (eth0), the Client Network (eth2), or a VLAN network. 
+
+You can assign up to 10 virtual IP (VIP) addresses to each HA group. You specify one interface to be the Primary interface and rank any other interfaces in priority order. The Primary interface is the active interface unless a failure occurs. If the active interface fails, the VIP addresses move to the first backup interface in the priority order. If that interface fails, the VIP addresses move to the next backup interface, and so on.
+
+== Link costs
+
+You can adjust link costs to reflect the latency between sites. When two or more data center sites exist, link costs prioritize which data center site should provide a requested service.
+
+== Load balancer endpoints
+
+You can use a load balancer to handle ingest and retrieval workloads from S3 and Swift clients. Load balancing maximizes speed and connection capacity by distributing the workloads and connections across multiple Storage Nodes.
+
+If you want to use the StorageGRID load balancer service, which is included on Admin Nodes and Gateway Nodes, you must configure one or more load balancer endpoints. Each endpoint defines a Gateway Node or Admin Node port for S3 and Swift requests to Storage Nodes.
+
+
+== Traffic classification
+
+You can create traffic classification policies to identify and handle different types of network traffic, including traffic related to specific buckets, tenants, client subnets, or load balancer endpoints. These policies can assist with traffic limiting and monitoring.
+
+== VLAN interfaces
+
+You can create virtual LAN (VLAN) interfaces to isolate and partition traffic for security, flexibility, and performance. Each VLAN interface is associated with one or more parent interfaces on Admin Nodes and Gateway Nodes. You can use VLAN interfaces in HA groups and in load balancer endpoints to segregate client or admin traffic by application or tenant. 
+
+For example, your network might use VLAN 100 for FabricPool traffic and VLAN 200 for an archive application.
+
+.Related information
+
+* xref:../admin/index.adoc[Administer StorageGRID]
+
+* xref:managing-tenants-and-client-connections.adoc[Manage tenants and client connections]

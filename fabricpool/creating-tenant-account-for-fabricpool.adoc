@@ -1,0 +1,38 @@
+---
+permalink: fabricpool/creating-tenant-account-for-fabricpool.html
+sidebar: sidebar
+keywords: fabricPool, tenant, SSO
+summary: 'You must create a tenant account in the Grid Manager for FabricPool use.'
+---
+= Create a tenant account for FabricPool
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must create a tenant account in the Grid Manager for FabricPool use.
+
+.What you'll need
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have specific access permissions.
+
+.About this task
+Tenant accounts allow client applications to store and retrieve objects on StorageGRID. Each tenant account has its own account ID, authorized groups and users, buckets, and objects.
+
+You can use the same tenant account for multiple ONTAP clusters. Or, you can create a dedicated tenant account for each ONTAP cluster as required.
+
+NOTE: These instructions assume that you have configured single sign-on (SSO) for the Grid Manager. If SSO is not enabled, use xref:../admin/creating-tenant-account.adoc[these instructions to create a tenant account] instead.
+
+.Steps
+. Select *TENANTS*.
+. Select *Create*.
+. Enter a display name and a description.
+. Select *S3*.
+. Leave the *Storage quota* field blank.
+. Select *Allow platform services* to enable the use of platform services.
++
+If platform services are enabled, a tenant can use features, such as CloudMirror replication, that access external services.
+. Do not select *Use own identity source*.
+. Do not select *Allow S3 Select*.
+
+. Select an existing federated group from the Grid Manager to have the initial Root Access permission for the tenant.
+. Select *Create tenant*.
