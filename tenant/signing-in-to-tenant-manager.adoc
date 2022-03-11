@@ -32,7 +32,7 @@ https://FQDN_or_Admin_Node_IP/?accountId=20-digit-account-id
 https://FQDN_or_Admin_Node_IP:port/?accountId=20-digit-account-id
 ----
 +
-The URL always contains either the fully qualified domain name (FQDN) or the IP address used to access an Admin Node, and could optionally also include a port number, the 20-digit tenant account ID, or both.
+The URL always includes a fully qualified domain name (FQDN), the IP address of an Admin Node, or the virtual IP address of an HA group of Admin Nodes. It might also include a port number, the 20-digit tenant account ID, or both.
 
 * If the URL does not include the tenant's 20-digit account ID, you have this account ID.
 * You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
@@ -45,7 +45,7 @@ The URL always contains either the fully qualified domain name (FQDN) or the IP 
 . If you are prompted with a security alert, install the certificate using the browser's installation wizard.
 . Sign in to the Tenant Manager.
 +
-The sign-in screen that you see depends on the URL you entered and whether your organization is using single sign-on (SSO). 
+The sign-in screen that appears depends on the URL you entered and whether single sign-on (SSO) has been configured for StorageGRID.
 
 // start tabbed area
 
@@ -54,7 +54,7 @@ The sign-in screen that you see depends on the URL you entered and whether your 
 
 .Not using SSO
 --
-You will see one of the following screens:
+If StorageGRID is not using SSO, one of the following screens appears:
 
 * The Grid Manager sign-in page. Select the *Tenant sign-in* link.
 +
@@ -77,7 +77,7 @@ The Tenant Manager Dashboard appears.
 
 .Using SSO
 --
-You will see one of the following screens:
+If StorageGRID is not using SSO, one of the following screens appears:
 
 * Your organization's SSO page. For example:
 +
