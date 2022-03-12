@@ -25,7 +25,7 @@ For all StorageGRID nodes, avoid running StorageGRID on the same physical hardwa
 
 == Disable unused services
 
-For all StorageGRID nodes, you should disable or block access to unused services. For example, if you are not planning to configure client access to the audit shares for CIFS or NFS, block or disable access to these services.
+For all StorageGRID nodes, you should disable or block access to unused services. For example, if you are not planning to configure client access to the audit shares for NFS, block or disable access to these services.
 
 == Protect nodes during installation
 
