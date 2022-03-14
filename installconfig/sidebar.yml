@@ -1,97 +1,97 @@
 section: installconfig
-title: Install and configure
+title: Install and configure hardware
 entries:
   - title: Overview
     pdf-filename: Install and configure StorageGRID
-    url: "/index.html"
+    url: "/installconfig/index.html"
   - title: Installation checklist
-    url: "/installation-checklist.html"
+    url: "/installconfig/installation-checklist.html"
   - title: Preparing for installation
-    url: "/preparing-for-installation.html"
+    url: "/installconfig/preparing-for-installation.html"
     entries:
     - title: Preparing the site
-      url: "/preparing-site.html"
+      url: "/installconfig/preparing-site.html"
     - title: Unpacking the boxes
-      url: "/unpacking-boxes.html"
+      url: "/installconfig/unpacking-boxes.html"
     - title: Obtaining additional equipment and tools
-      url: "/obtaining-additional-equipment-and-tools.html"
+      url: "/installconfig/obtaining-additional-equipment-and-tools.html"
     - title: Web browser requirements
-      url: "/web-browser-requirements.html"
+      url: "/installconfig/web-browser-requirements.html"
     - title: Reviewing appliance network connections
-      url: "/reviewing-appliance-network-connections.html"
+      url: "/installconfig/reviewing-appliance-network-connections.html"
     - title: Gathering installation information
-      url: "/gathering-installation-information.html"
+      url: "/installconfig/gathering-installation-information.html"
   - title: Installing appliance hardware
-    url: "/install-appliance-hardware.html"
+    url: "/installconfig/install-appliance-hardware.html"
     entries:
     - title: Registering the hardware
-      url: "/registering-hardware.html"
+      url: "/installconfig/registering-hardware.html"
     - title: Installing the appliance
-      url: "/installing-appliance-hardware.html"
+      url: "/installconfig/installing-appliance-hardware.html"
       entries:
       - title: Installing the SG100 and SG1000 appliances
-        url: "/installing-sg100-and-sg1000-hardware.html"
+        url: "/installconfig/installing-sg100-and-sg1000-hardware.html"
       - title: Installing the SG5600 appliance
-        url: "/installing-sg5600-hardware.html"
+        url: "/installconfig/installing-sg5600-hardware.html"
       - title: Installing the SG5700 appliance
-        url: "/installing-sg5700-hardware.html"
+        url: "/installconfig/installing-sg5700-hardware.html"
       - title: Installing the SG6000 appliance
-        url: "/installing-sg6000-hardware.html"
+        url: "/installconfig/installing-sg6000-hardware.html"
     - title: Cabling the appliance
-      url: "/cabling-appliance.html"
+      url: "/installconfig/cabling-appliance.html"
     - title: Connecting power cords and applying power
-      url: "/connecting-power-cords-and-applying-power.html"
+      url: "/installconfig/connecting-power-cords-and-applying-power.html"
     - title: Viewing status indicators and codes
-      url: "/viewing-status-indicators-and-codes.html"
+      url: "/installconfig/viewing-status-indicators-and-codes.html"
   - title: Initial NetApp appliance hardware configuration
-    url: "/initial-netapp-appliance-hardware-configuration.html"
+    url: "/installconfig/initial-netapp-appliance-hardware-configuration.html"
     entries:
     - title: Automating appliance installation and configuration
-      url: "/automating-appliance-installation-and-configuration.html"
+      url: "/installconfig/automating-appliance-installation-and-configuration.html"
     - title: Configuring StorageGRID connections
-      url: "/configuring-storagegrid-connections.html"
+      url: "/installconfig/configuring-storagegrid-connections.html"
       entries:
       - title: Accessing the StorageGRID Appliance Installer
-        url: "/accessing-storagegrid-appliance-installer.html"
+        url: "/installconfig/accessing-storagegrid-appliance-installer.html"
       - title: Configuring network links
-        url: "/configuring-network-links.html"
+        url: "/installconfig/configuring-network-links.html"
       - title: Configuring StorageGRID IP addresses
-        url: "/configuring-storagegrid-ip-addresses.html"
+        url: "/installconfig/configuring-storagegrid-ip-addresses.html"
       - title: Verifying network connections
-        url: "/verifying-network-connections.html"
+        url: "/installconfig/verifying-network-connections.html"
       - title: Verifying port-level network connections
-        url: "/verify-port-level-network-connections.html"
+        url: "/installconfig/verify-port-level-network-connections.html"
     - title: Accessing and Configuring SANtricity management tools (Storage Nodes only)
-      url: "/accessing-and-configuring-santricity-manager-tools-storage-nodes-only.html"
+      url: "/installconfig/accessing-and-configuring-santricity-manager-tools-storage-nodes-only.html"
       entries:
       - title: Accessing and Configuring SANtricity Storage Manager (SG5600 only)
-        url: "/accessing-and-configuring-santricity-storage-manager-sg5600-only.html"
+        url: "/installconfig/accessing-and-configuring-santricity-storage-manager-sg5600-only.html"
       - title: Accessing and Configuring SANtricity System Manager (SG5700 and SG6000 only)
-        url: "/accessing-and-configuring-santricity-system-manager-sg5700-and-sg6000-only.html"
+        url: "/installconfig/accessing-and-configuring-santricity-system-manager-sg5700-and-sg6000-only.html"
     - title: Optional - Enabling node encryption
-      url: "/optional-enabling-node-encryption.html"
+      url: "/installconfig/optional-enabling-node-encryption.html"
     - title: Optional - Changing the RAID mode (Storage Nodes only)
-      url: "/optional-changing-raid-mode-storage-nodes-only.html"
+      url: "/installconfig/optional-changing-raid-mode-storage-nodes-only.html"
     - title: Optional - Remapping network ports for the appliance (Storage Nodes only)
-      url: "/optional-remapping-network-ports-for-appliance-storage-nodes-only.html"
+      url: "/installconfig/optional-remapping-network-ports-for-appliance-storage-nodes-only.html"
     - title: Configuring the BMC interface (SG1000 and SG6000 only)
-      url: "/configuring-bmc-interface-sg1000-and-sg6000-only.html"
+      url: "/installconfig/configuring-bmc-interface-sg1000-and-sg6000-only.html"
       entries:
       - title: Configuring the BMC interface (SG1000)
-        url: "/configuring-bmc-interface-sg1000.html"
+        url: "/installconfig/configuring-bmc-interface-sg1000.html"
       - title: Configuring the BMC interface (SG6000)
-        url: "/configuring-bmc-interface-sg6000.html"
+        url: "/installconfig/configuring-bmc-interface-sg6000.html"
     - title: Installing the StorageGRID software (Admin Nodes only)
-      url: "/installing-storagegrid-software-admin-nodes-only.html"
+      url: "/installconfig/installing-storagegrid-software-admin-nodes-only.html"
   - title: Initial software-based node configuraton (ADD NEW TOPICS FROM SOFTWARE DOCS)
-    url: "/initial-software-based-node-configuraton.html"
+    url: "/installconfig/initial-software-based-node-configuraton.html"
   - title: Deploying a node
-    url: "/deploying-node.html"
+    url: "/installconfig/deploying-node.html"
     entries:
     - title: Deploying a services appliance node
-      url: "/deploying-services-appliance-node.html"
+      url: "/installconfig/deploying-services-appliance-node.html"
     - title: Deploying an appliance Storage Node
-      url: "/deploying-appliance-storage-node.html"
+      url: "/installconfig/deploying-appliance-storage-node.html"
     - title: Deploying a software-based node (ADD NEW TOPICS FROM SOFTWARE DOCS)
     - title: Configuring the grid and completing installation
-      url: "/configuring-grid-and-completing-installation.html"
+      url: "/installconfig/configuring-grid-and-completing-installation.html"

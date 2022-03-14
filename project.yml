@@ -15,7 +15,14 @@ sidebar:
       - section: network
     - title: Install and configure (NEW)
       entries:
-      - section: installconfig
+      - Install and configure hardware
+        entries:
+        - section: installconfig
+      - Install software
+        entries:
+        - section: rhel
+        - section: ubuntu
+        - section: vmware
     - title: Perform system administration (NO CHANGE)
       entries:  
       - section: admin
@@ -32,24 +39,36 @@ sidebar:
       - section: monitornew
     - title: Maintain StorageGRID (NEW)
       entries:
-      - section: maintainnew
+      - section: upgrade
+      - section: expand
+      - section: maintain
+      - section: commonhardware
+      - section: sg100-1000n
+      - section: sg6000n
+      - section: sg5700n
+      - section: sg5600n
     - title: Earlier versions
       url: /earlier-versions.html
     - title: Legal notices
       url: /legal-notices.html   
-    - title: MOVE TO NEW STRUCTURE
+    - title: MOVED TO NEW STRUCTURE
       entries:    
       - title: Install and upgrade software
         entries:
         - section: upgrade
         - section: rhel
         - section: ubuntu
-        - section: vmware
+        - section: vmware 
       - title: Monitor and maintain StorageGRID
         entries:  
         - section: monitor
         - section: expand
         - section: maintain
+        - section: audit  
+    - title: RELOCATE TO NEW STRUCTURE
+      - title: Monitor and maintain StorageGRID
+        entries:  
+        - section: monitor
         - section: audit
     - title: OLD SECTIONS
       entries:
