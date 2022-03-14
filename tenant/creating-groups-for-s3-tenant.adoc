@@ -56,12 +56,11 @@ See xref:../tenant/tenant-management-permissions.adoc[Tenant management permissi
 +
 Tenant Manager users who have the Manage all buckets permission can override this group policy. Limit the Manage all buckets permission to trusted users, and use Multi-Factor Authentication (MFA) where available.
 
-** *Custom*: Users in the group are granted the permissions you specify in the text box. For detailed information about group policies, including language syntax and examples, see xref:../s3/index.adoc[Use S3].
+** *Custom*: Users in the group are granted the permissions you specify in the text box.
+
 . If you selected *Custom*, enter the group policy. Each group policy has a size limit of 5,120 bytes. You must enter a valid JSON formatted string.
 +
-In this example, members of the group are only permitted to list and access a folder matching their username (key prefix) in the specified bucket. Note that access permissions from other group policies and the bucket policy should be considered when determining the privacy of these folders.
-+
-image::../media/tenant_add_group_custom.png[Add custom group policy to tenant group]
+For detailed information about group policies, including language syntax and examples, see xref:../s3/example-group-policies.adoc[Example group policies].
 
 . If you are creating a local group, select *Continue*. If you are creating a federated group, select *Create group* and *Finish*. 
 
