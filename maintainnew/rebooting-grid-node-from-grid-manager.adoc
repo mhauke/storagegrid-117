@@ -1,0 +1,20 @@
+---
+permalink: maintainnew/rebooting-grid-node-from-grid-manager.html
+sidebar: sidebar
+keywords: storagegrid, recover, reboot node, grid manager
+summary: 'Rebooting a grid node from the Grid Manager issues the `reboot` command on the target node.'
+---
+= Reboot grid node from Grid Manager
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Rebooting a grid node from the Grid Manager issues the `reboot` command on the target node.
+
+.What you'll need
+
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the Maintenance or Root access permission.
+* You have the provisioning passphrase.
+
+include::../_include/rebooting-grid-node-from-grid-manager-steps.adoc[] 

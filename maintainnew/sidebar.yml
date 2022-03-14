@@ -1,0 +1,99 @@
+section: maintainnew
+title: Maintain StorageGRID
+entries:
+  - title: Overview
+    pdf-filename: Maintain StorageGRID
+    url: "/maintainnew/index.html"
+  - title: Expanding a StorageGRID system (EXISTING DOC)
+  - title: Recovery and maintenance (EXISTING DOC)
+  - title: Common appliance maintenance (all nodes)
+    url: "/common-appliance-maintenance.html"
+    entries:
+    - title: General node maintenance
+      url: "/general-node-maintenance.html"
+      entries:
+      - title: Placing an appliance into maintenance mode
+        url: "/placing-appliance-into-maintenance-mode.html"
+      - title: Rebooting a controller
+        url: "/rebooting-controller.html"
+      - title: Turning the controller identify LED on and off (SG1000 and SG6000 only)
+        url: "/turning-controller-identify-led-on-and-off-sg1000-and-sg6000-only.html"
+      - title: Locating the controller in a data center
+        url: "/locating-controller-in-data-center.html"
+      - title: Changing the MTU setting
+        url: "/changing-mtu-setting.html"
+      - title: Checking the DNS server configuration
+        url: "/checking-dns-server-configuration.html"
+      - title: Monitoring node encryption in maintenance mode
+        url: "/monitoring-node-encryption-in-maintenance-mode.html"
+    - title: Admin Node maintenance
+      url: "/admin-node-maintenance.html"
+    - title: Storage Node maintenance
+      url: "/storage-node-maintenance.html"
+    - title: Software-based node maintenance
+      url: "/software-based-node-maintenance.html"
+  - title: SG100 and SG1000 hardware maintenance
+    entries:
+    - title: SG100 and SG1000 appliances overview
+      url: "/sg100-and-sg1000-appliances-overview.html"
+    - title: Maintaining the SG100 and SG1000 appliance
+      url: "/maintaining-sg100-and-sg1000-appliance.html"
+      entries:
+      - title: Replacing the services appliance
+        url: "/replacing-services-appliance.html"
+      - title: Replacing a power supply in the services appliance
+        url: "/replacing-power-supply-in-services-appliance.html"
+      - title: Replacing a fan in the services appliance
+        url: "/replacing-fan-in-services-appliance.html"
+      - title: Replacing a drive in the services appliance
+        url: "/replacing-drive-in-services-appliance"
+  - title: SG5600 hardware maintenance
+    entries:
+    - title: StorageGRID appliance overview
+      url: "/storagegrid-appliance-overview-sg5600.html"
+    - title: Maintaining the SG5600 appliance
+      url: "/maintaining-sg5600-appliance.html"
+      entries:
+      - title: Replacing the E5600SG controller
+        url: "/replacing-e5600sg-controller.html"
+      - title: Replacing other SG5600 hardware components
+        url: "/replacing-other-sg5600-hardware-components.html"
+  - title: SG5700 hardware maintenance
+    entries:
+    - title: StorageGRID appliance overview
+      url: "/storagegrid-appliance-overview-5700.html"
+    - title: Maintaining the SG5700 appliance
+      url: "/maintaining-sg5700-appliance.html"
+      entries:
+      - title: Replacing the E2800 controller
+        url: "/replacing-e2800-controller.html"
+      - title: Replacing the E5700SG controller
+        url: "/replacing-e5700sg-controller.html"
+      - title: Replacing other SG5700 hardware components
+        url: "/replacing-other-sg5700-hardware-components.html"
+  - title: SG6000 hardware maintenance
+    entries:
+    - title: SG6000 appliances overview
+      url: "/sg6000-appliances-overview.html"
+    - title: Maintaining the SG6000 appliance
+      url: "/maintaining-sg6000-appliance.html"
+      entries:
+      - title: Powering the controller on and off
+        url: "powering-controller-on-and-off.html"
+      - title: Replacing a controller in a rack
+        url: "/replacing-controller-in-rack.html"
+      - title: Replacing a storage controller
+        url: "/replacing-storage-controller.html"
+      - title: Replacing the SG6000-CN controller
+        url: "/replacing-sg6000-cn-controller.html"
+      - title: Replacing a power supply in the SG6000-CN controller
+        url: "/replacing-power-supply-in-sg6000-cn-controller.html"
+      - title: Replacing the controller cover
+        url: "/replacing-controller-cover.html"
+      - title: Replacing the Fibre Channel HBA in the SG6000-CN controller
+        url: "/replacing-fibre-channel-hba-in-sg6000-cn-controller.html"
+      - title: Replacing hardware components in the storage controller shelf
+        url: "/replacing-hardware-components-in-storage-controller-shelf.html"
+      - title: Replacing hardware components in the optional 60-drive expansion shelf
+        url: "/replacing-hardware-components-in-optional-60-drive-expansion-shelf.html"
+
