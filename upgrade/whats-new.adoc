@@ -18,6 +18,8 @@ This release of StorageGRID introduces the following features.
 * The *Check for software updates* check box on the AutoSupport page (*SUPPORT* > *Tools* >
 *AutoSupport*) lets you control this functionality. You can disable the check for available software updates if your system does not have WAN access. See xref:../admin/configure-autosupport-grid-manager.adoc[Configure AutoSupport].
 
+=== New sample group policy for ransomware mitigation
+The sample policy prevents older object versions from being permanently deleted. See xref:../tenant/creating-groups-for-s3-tenant.adoc[Create groups for an S3 tenant].
 
 == Kevin's what's new
 

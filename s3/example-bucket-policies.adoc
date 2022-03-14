@@ -24,7 +24,7 @@ A bucket policy can be configured using the AWS CLI as per the following command
 
 In this example, everyone, including anonymous, is allowed to list objects in the bucket and perform Get Object operations on all objects in the bucket. All other operations will be denied. Note that this policy might not be particularly useful since no one except the account root has permissions to write to the bucket.
 
-[source,json]
+[source]
 ----
 {
   "Statement": [
@@ -45,7 +45,7 @@ In this example, everyone in one specified account is allowed full access to a b
 
 NOTE: In StorageGRID, objects created by a non-owner account (including anonymous accounts) are owned by the bucket owner account. The bucket policy applies to these objects.
 
-[source,json]
+[source]
 ----
 {
   "Statement": [
@@ -89,7 +89,7 @@ NOTE: In StorageGRID, objects created by a non-owner account (including anonymou
 
 In this example, everyone including anonymous, is allowed to List the bucket and perform GET Object operations on all objects in the bucket, while only users belonging the group `Marketing` in the specified account are allowed full access.
 
-[source,json]
+[source]
 ----
 {
   "Statement": [
@@ -121,7 +121,7 @@ In this example, everyone including anonymous, is allowed to List the bucket and
 
 In this example, everyone, including anonymous, is allowed to List the bucket and perform any Object operations on all objects in the bucket, provided that the requests come from a specified IP range (54.240.143.0 to 54.240.143.255, except 54.240.143.188). All other operations will be denied, and all requests outside of the IP range will be denied.
 
-[source,json]
+[source]
 ----
 {
   "Statement": [
@@ -144,7 +144,7 @@ In this example, everyone, including anonymous, is allowed to List the bucket an
 
 In this example, the federated user Alex is allowed full access to the `examplebucket` bucket and its objects. All other users, including '`root`', are explicitly denied all operations. Note however that '`root`' is never denied permissions to Put/Get/DeleteBucketPolicy.
 
-[source,json]
+[source]
 ----
 {
   "Statement": [
@@ -182,7 +182,7 @@ In this example, the federated user Alex is allowed full access to the `exampleb
 
 In this example, the `Deny` Effect for PutOverwriteObject and DeleteObject ensures that no one can overwrite or delete the object's data, user-defined metadata, and S3 object tagging.
 
-[source,json]
+[source]
 ----
 {
   "Statement": [

@@ -96,9 +96,6 @@ In the following example, the statement is using the Effect, Principal, Action, 
 
 The bucket policy has a size limit of 20,480 bytes, and the group policy has a size limit of 5,120 bytes.
 
-.Related information
-
-xref:../tenant/index.adoc[Use tenant account]
 
 == Consistency control settings for policies
 
@@ -163,9 +160,6 @@ In policy statements, you can use the Resource element to specify the bucket or 
 
 * The resource value can specify a bucket that does not yet exist when a group policy is created.
 
-.Related information
-
-<<Specify variables in a policy>>
 
 == Specify principals in a policy
 
@@ -657,10 +651,6 @@ Possible settings for this permission include:
 
 IMPORTANT: If the current S3 policy allows overwrite, and the PutOverwriteObject permission is set to Deny, the client cannot overwrite an object's data, user-defined metadata, or object tagging. In addition, if the *Prevent Client Modification* check box is selected (*CONFIGURATION* > *System* > *Grid options*), that setting overrides the setting of the PutOverwriteObject permission.
 
-.Related information
-
-<<S3 group policy examples>>
-
 == Specify conditions in a policy
 
 Conditions define when a policy will be in effect. Conditions consist of operators and key-value pairs.
@@ -1012,12 +1002,13 @@ PUT#1 -------> PUT#2 ---X (denied)
 
 .Related information
 
-xref:../ilm/index.adoc[Manage objects with ILM]
+* xref:how-storagegrid-ilm-rules-manage-objects.adoc[How StorageGRID ILM rules manage objects]
 
-<<Create policies requiring special handling>>
+* xref:example-bucket-policies.adoc[Example bucket policies]
 
-xref:how-storagegrid-ilm-rules-manage-objects.adoc[How StorageGRID ILM rules manage objects]
+* xref:example-group-policies.adoc[Example group policies]
 
-xref:example-bucket-policies.adoc[Example bucket policies]
+* xref:../ilm/index.adoc[Manage objects with ILM]
 
-xref:example-group-policies.adoc[Example group policies]
+* xref:../tenant/index.adoc[Use a tenant account]
+
