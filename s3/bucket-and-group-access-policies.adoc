@@ -113,8 +113,6 @@ In policy statements, the ARN is used in Principal and Resource elements.
 
 * Use this syntax to specify the S3 resource ARN:
 +
-[source]
-[subs="specialcharacters,quotes"]
 ----
 arn:aws:s3:::bucket-name
 arn:aws:s3:::bucket-name/object_key
@@ -122,8 +120,6 @@ arn:aws:s3:::bucket-name/object_key
 
 * Use this syntax to specify the identity resource ARN (users and groups):
 +
-[source]
-[subs="specialcharacters,quotes"]
 ----
 arn:aws:iam::account_id:root
 arn:aws:iam::account_id:user/user_name

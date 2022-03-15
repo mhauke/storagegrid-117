@@ -31,7 +31,6 @@ Tenant Manager users who have the Manage all buckets permission can override thi
 
 In this example, all members of the group are permitted full access to all buckets owned by the tenant account unless explicitly denied by bucket policy.
 
-[source]
 ----
 {
   "Statement": [
@@ -48,7 +47,6 @@ In this example, all members of the group are permitted full access to all bucke
 
 In this example, all members of the group have read-only access to S3 resources, unless explicitly denied by the bucket policy. For example, users in this group can list objects and read object data, metadata, and tags.
 
-[source]
 ----
 {
   "Statement": [
@@ -74,7 +72,6 @@ In this example, all members of the group have read-only access to S3 resources,
 
 In this example, members of the group are only permitted to list and access their specific folder (key prefix) in the specified bucket. Note that access permissions from other group policies and the bucket policy should be considered when determining the privacy of these folders.
 
-[source]
 ----
 {
   "Statement": [
