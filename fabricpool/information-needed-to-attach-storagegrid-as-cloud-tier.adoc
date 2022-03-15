@@ -11,16 +11,16 @@ summary: 'Before you can attach StorageGRID as a cloud tier for FabricPool, you 
 [.lead]
 Before you can attach StorageGRID as a cloud tier for FabricPool, you must perform some configuration steps in StorageGRID and obtain certain values.
 
-.About this task
+Depending on your requirements, you can do either of the following to obtain the information you need:
 
-The following table lists the information you must provide to ONTAP when you attach StorageGRID as a cloud tier for FabricPool. The topics in this section explain how to use the StorageGRID Grid Manager and Tenant Manager to obtain the information you need.
+* Configure all items using the xref:use-s3-setup-wizard.adoc[StorageGRID S3 setup wizard] and upload the values to ONTAP System Manager as a single file.
+* Configure each item manually in StorageGRID and enter each value one at a time into ONTAP.
 
+Use the S3 setup wizard unless you know you have special requirements that require significant customization.
+
+
+The following table lists the information you must provide to ONTAP when you attach StorageGRID as a cloud tier for FabricPool. 
 NOTE: The exact field names listed and the process you use to enter the required values in ONTAP depend on whether you are using the ONTAP CLI (storage aggregate object-store config create) or ONTAP System Manager (*Storage* > *Aggregates & Disks* > *Cloud Tier*).
-
-For more information, refer to the following:
-
-* https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf[TR-4598: FabricPool Best Practices in ONTAP 9.9.1^]
-* https://docs.netapp.com/us-en/ontap/index.html[ONTAP 9 Documentation^]
 
 [cols="1a,2a" options="header"]
 |===
