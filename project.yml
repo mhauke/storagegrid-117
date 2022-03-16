@@ -13,7 +13,7 @@ sidebar:
       entries:
       - section: primer
       - section: network
-    - title: Install and configure (NEW)
+    - title: Install (NEW)
       entries:
       - section: installconfig
       - title: Install software
@@ -42,11 +42,13 @@ sidebar:
       - section: upgrade
       - section: expand
       - section: maintain
-      - section: commonhardware
-      - section: sg100-1000n
-      - section: sg6000n
-      - section: sg5700n
-      - section: sg5600n
+      - title: Maintain appliance hardware
+        entries:
+        - section: commonhardware
+        - section: sg100-1000n
+        - section: sg6000n
+        - section: sg5700n
+        - section: sg5600n
     - title: Earlier versions
       url: /earlier-versions.html
     - title: Legal notices
