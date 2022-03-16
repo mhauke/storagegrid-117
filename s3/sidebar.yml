@@ -107,7 +107,13 @@ entries:
         - title: Deprecated - PUT Bucket compliance request
           url: "/s3/deprecated-put-bucket-compliance-request.html"
   - title: Bucket and group access policies
-    url: "/s3/bucket-and-group-access-policies.html"
+    entries:
+    - title: Use bucket and group access policies
+      url: "/s3/bucket-and-group-access-policies.html"
+    - title: Example bucket policies
+      url: "/s3/example-bucket-policies.html"
+    - title: Example group policies
+      url: "/s3/example-group-policies.html"      
   - title: Configure security for REST API
     url: "/s3/configuring-security-for-rest-api.html"
   - title: Monitor and audit operations
