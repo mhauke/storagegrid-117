@@ -11,31 +11,34 @@ summary: 'Before you can attach StorageGRID as a cloud tier for FabricPool, you 
 [.lead]
 Before you can attach StorageGRID as a cloud tier for FabricPool, you must perform some configuration steps in StorageGRID and obtain certain values.
 
+
+The following figure illustrates the items you must configure before you can tier ONTAP data from FabricPool to StorageGRID.
+
+image::../media/fabricpool_storagegrid_connection.png[FabricPool StorageGRID connection]
+
 Depending on your requirements, you can do either of the following to obtain the information you need:
 
 * Configure all items using the xref:use-s3-setup-wizard.adoc[StorageGRID S3 setup wizard] and upload the values to ONTAP System Manager as a single file.
-* Configure each item manually in StorageGRID and enter each value one at a time into ONTAP.
+* Configure each item manually in StorageGRID and manually enter the values into ONTAP System Manager. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
 
 Use the S3 setup wizard unless you know you have special requirements that require significant customization.
 
 
-The following table lists the information you must provide to ONTAP when you attach StorageGRID as a cloud tier for FabricPool. 
-NOTE: The exact field names listed and the process you use to enter the required values in ONTAP depend on whether you are using the ONTAP CLI (storage aggregate object-store config create) or ONTAP System Manager (*Storage* > *Aggregates & Disks* > *Cloud Tier*).
+The following table lists the information that ONTAP requires to use StorageGRID as a cloud tier for FabricPool. This table assumes you use ONTAP System Manager to configure the cloud tier (*Storage* > *Aggregates & Disks* > *Cloud Tier*) and not the ONTAP CLI.
 
 [cols="1a,2a" options="header"]
 |===
 | ONTAP field| Description
 
 |Object store name
-|Any unique and descriptive name. For example, `StorageGRID_Cloud_Tier`.
+|Any unique and descriptive name. For example, `StorageGRID Cloud Tier`.
 
 |Provider type
-|StorageGRID (ONTAP System Manager) or `SGWS` (ONTAP CLI).
+|`StorageGRID`
 
 |Port
-|The port that FabricPool will use when it connects to StorageGRID. You determine which port number to use when you define the StorageGRID load balancer endpoint.
+|The port that FabricPool will use when it connects to StorageGRID. The port number here matches the port you specify for the StorageGRID load balancer endpoint. For example, `10433`.
 
-xref:creating-load-balancer-endpoint-for-fabricpool.adoc[Create a load balancer endpoint for FabricPool]
 
 |Server name
 |The fully qualified domain name (FQDN) for the StorageGRID load balancer endpoint. For example, `s3.storagegrid.company.com`.
@@ -43,12 +46,12 @@ xref:creating-load-balancer-endpoint-for-fabricpool.adoc[Create a load balancer 
 Note the following:
 
 * The domain name that you specify here must match the domain name on the CA certificate you upload for the StorageGRID load balancer endpoint.
-* The DNS record for this domain name must map to each IP address you will use to connect to StorageGRID.
-
-xref:configuring-dns-for-storagegrid-ip-addresses.adoc[Configure the DNS server for StorageGRID IP addresses]
+* The DNS record for this domain name in ONTAP must map to each IP address you will use to connect to StorageGRID.
 
 |Container name
-|The name of the StorageGRID bucket you will use with this ONTAP cluster. For example, `fabricpool-bucket`. You can create this bucket in the Tenant Manager or, starting with ONTAP 9.10 System Manager, you can create the bucket with the FabricPool setup wizard.
+|The name of the StorageGRID bucket you will use with this ONTAP cluster. For example, `fabricpool-bucket`. 
+
+You can create this bucket in StorageGRID or, starting with ONTAP 9.10 System Manager, you can create the bucket with the FabricPool setup wizard.
 
 Note the following:
 
@@ -56,14 +59,9 @@ Note the following:
 * The bucket cannot have versioning enabled.
 * You must use a different bucket for each ONTAP cluster that will tier data to StorageGRID.
 
-xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key]
-
 |Access key and secret password
 |The access key and secret access key for the StorageGRID tenant account.
 
-You generate these values in the Tenant Manager.
-
-xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key]
 
 |SSL
 |Must be enabled.
@@ -73,9 +71,6 @@ xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an ac
 
 *Note:* If an intermediate CA issued the StorageGRID certificate, you must provide the intermediate CA certificate. If the StorageGRID certificate was issued directly by the Root CA, you must provide the Root CA certificate.
 
-xref:creating-load-balancer-endpoint-for-fabricpool.adoc[Create a load balancer endpoint for FabricPool]
 
 |===
 
-.After you finish
-After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, add the cloud tier as an aggregate, and set volume tiering policies.

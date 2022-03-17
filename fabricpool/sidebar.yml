@@ -6,20 +6,18 @@ entries:
     url: "/fabricpool/index.html"
   - title: Information needed to attach StorageGRID as a cloud tier
     url: "/fabricpool/information-needed-to-attach-storagegrid-as-cloud-tier.html"    
-  - title: FabricPool best practices  
+  - title: Best practices 
     entries:
+    - title: Best practices for HA groups
+      url: "/fabricpool/best-practices-for-high-availability-groups.html"    
     - title: Best practices for load balancing
       url: "/fabricpool/best-practices-for-load-balancing.html"
-    - title: Best practices for HA groups
-      url: "/fabricpool/best-practices-for-high-availability-groups.html"
     - title: Other best practices
       url: "/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html"
   - title: Use S3 setup wizard
     url: "/fabricpool/use-s3-setup-wizard.html"
   - title: Configure manually
     entries:
-    - title: Configure DNS server
-      url: "/fabricpool/configuring-dns-for-storagegrid-ip-addresses.html"
     - title: Create HA group
       url: "/fabricpool/creating-ha-group-for-fabricpool.html"
     - title: Create load balancer endpoint
@@ -28,8 +26,10 @@ entries:
       url: "/fabricpool/creating-tenant-account-for-fabricpool.html"
     - title: Create S3 bucket and obtain access key
       url: "/fabricpool/creating-s3-bucket-and-access-key.html"
-    - title: Use ILM with FabricPool data
+    - title: Configure ILM for FabricPool data
       url: "/fabricpool/using-storagegrid-ilm-with-fabricpool-data.html"
     - title: Create traffic classification policy
       url: "/fabricpool/creating-traffic-classification-policy-for-fabricpool.html"
+  - title: After you finish
+    url: "/fabricpool/after-you-finish.html"  
   

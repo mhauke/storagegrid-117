@@ -12,15 +12,21 @@ summary: 'Depending on your requirements, you can configure all of the required 
 
 You can use the S3 setup wizard to configure StorageGRID as the object storage system for an ONTAP FabricPool cloud tier. After you complete the setup wizard, you can upload the required details into ONTAP System Manager.
 
-Use the S3 setup wizard unless you know you have special requirements that require significant customization. 
+== When to use the S3 setup wizard
 
-IMPORTANT: If S3 Object Lock is enabled for your grid, you cannot use this setup wizard. Use the manual instructions instead.
+Use the S3 setup wizard unless you know you have special requirements or your implementation will require significant customization. 
+
+For example, you cannot use the S3 Setup Wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
+
+Similarly, if you plan to connect the same StorageGRID system to multiple ONTAP systems, you can use the S3 setup wizard to create the connection for the first cluster, but you cannot use the wizard for any other clusters. While clusters can share HA groups, load balancer endpoints, and tenants, each cluster must have its own bucket. Go to xref:fabricpool/creating-s3-bucket-and-access-key.adoc[create S3 bucket and access key] to configure the additional buckets for any additional clusters manually.
 
 == Before using the wizard
-Before using the S3 setup wizard, be aware of the following requirements:
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Root access permission.
+Confirm each of the following items before using the wizard:
+
+* You have a general understanding of the xref:information-needed-to-attach-storagegrid-as-cloud-tier.adoc[information needed to attach StorageGRID as a cloud tier].
+* You have reviewed the best practices for xref:best-practices-for-high-availability-groups..adoc[high availability groups] and xref:best-practices-for-load-balancing.html.adoc[load balancing].
+
 
 * If you want to use a VLAN to segregate FabricPool traffic, you have already configured the VLAN interface. See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces].
 
@@ -36,21 +42,26 @@ The certificate must include the domain name ONTAP will use for StorageGRID.
 
 * If your StorageGRID system include multiple sites, you know which site will be used to store ONTAP data.
 
-NOTE: If you plan to connect the same StorageGRID system to multiple ONTAP systems, you can use the wizard for the first cluster. However, you cannot use the wizard for any other clusters. While clusters can share HA groups, load balancer endpoints, and tenants, each cluster must have its own bucket.
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the Root access permission.
+
+
 
 == Access the wizard
 . From the Dashboard, select *S3 setup wizard*. Or, from the Grid Manager header, select the help icon and select *S3 setup wizard*.
 . In the FabricPool section, select *Configure now*.
 
 == Create HA group
-A high availability (HA) group is a collection of interfaces from multiple Gateway Nodes, Admin Nodes, or both. An HA group helps to keep client data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact on S3 client operations.
+A high availability (HA) group is a collection of nodes containing the StorageGRID Load Balancer service. For example, an HA group can contain Gateway Nodes, Admin Nodes, or both.
 
-* If you plan to use an external load balancer, skip this step. External load balancers do not use HA groups.
+The HA group helps to keep client data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact on S3 client operations.
+
+* If you plan to use an external load balancer, skip this step and go to <<Create load balancer endpoint>>. External load balancers do not use HA groups.
 
 * If you plan to use the StorageGRID load balancer, follow the steps in the wizard. 
 
-. Select *Create HA group* or select an existing group.
-. If you selected to create a new group, complete the HA group wizard. See xref:creating-ha-group-for-fabricpool.adoc[Create a high availability (HA) group for FabricPool] for details.
+. Select *Create HA group*, or select an existing group.
+. If you selected to create a new group, complete the HA group wizard. See xref:creating-ha-group-for-fabricpool.adoc[Create a high availability (HA) group for FabricPool] for more details on what to enter.
 . Select *Continue*.
 
 
@@ -63,8 +74,8 @@ You can use the StorageGRID Load Balancer service, which exists on all Gateway a
 
 * To use the StorageGRID Load Balancer service, follow the steps in the wizard. 
 
-. Select *Create load balancer endpoint* or select an existing endpoint.
-. If you selected to create a new endpoint, complete the Load balancer endpoint wizard. See xref:creating-load-balancer-endpoint-for-fabricpool.adoc[Create a load balancer endpoint for FabricPool] for details.
+. Select *Create load balancer endpoint*, or select an existing endpoint.
+. If you selected to create a new endpoint, complete the Load balancer endpoint wizard. See xref:creating-load-balancer-endpoint-for-fabricpool.adoc[Create a load balancer endpoint for FabricPool] for more details on what to enter.
 . Select *Continue*.
 
 
@@ -74,9 +85,8 @@ A tenant is an entity that can use S3 applications to store and retrieve objects
 
 A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the tenant you use for FabricPool will use only one bucket.
 
-See xref:creating-tenant-account-for-fabricpool.adoc[Create a tenant account for FabricPool] and xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key] for details.
-
-. Create a new bucket and tenant or select an existing bucket.
+. Create a new bucket and tenant, or select an existing bucket.
+. If you selected to create a new bucket and tenant, see xref:creating-tenant-account-for-fabricpool.adoc[Create a tenant account for FabricPool] and xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key] for more details on what to enter.
 . Select *Create and continue.*
 
 
