@@ -1,5 +1,5 @@
 settings:
-  name: "StorageGRID 11.7 Documentation"
+  name: "Product Name"
   internal:
     pdf_enabled: true
   prod:
@@ -9,44 +9,50 @@ sidebar:
     - title: StorageGRID 11.7 Docs
       url: /index.html
     - section: release-notes
-    - title: Get started
+    - title: Get started (NO CHANGE)
       entries:
       - section: primer
       - section: network
-    - title: Install and maintain appliance hardware
+    - title: Install (NEW)
       entries:
-      - section: sg100-1000
-      - section: sg6000
-      - section: sg5700
-      - section: sg5600
-    - title: Install and upgrade software
-      entries:
-      - section: upgrade
-      - section: rhel
-      - section: ubuntu
-      - section: vmware
-    - title: Perform system administration
+      - section: installconfig
+      - title: Install software
+        entries:
+        - section: rhel
+        - section: ubuntu
+        - section: vmware
+    - title: Perform system administration (NO CHANGE)
       entries:  
       - section: admin
       - section: ilm
       - section: harden
       - section: fabricpool
-    - title: Use StorageGRID
+    - title: Use StorageGRID (NO CHANGE)
       entries: 
       - section: tenant
       - section: s3
       - section: swift
-    - title: Monitor and maintain StorageGRID
+    - title: Monitor and troubleshoot (NEW)
       entries:  
-      - section: monitor
+      - section: monitor  
+      - section: troubleshoot
+      - section: audit
+    - title: Upgrade and maintain (NEW)
+      entries:
+      - section: upgrade
       - section: expand
       - section: maintain
-      - section: audit
+      - title: Maintain appliance hardware
+        entries:
+        - section: commonhardware
+        - section: sg100-1000n
+        - section: sg6000n
+        - section: sg5700n
+        - section: sg5600n
     - title: Earlier versions
       url: /earlier-versions.html
     - title: Legal notices
-      url: /legal-notices.html
-
+      url: /legal-notices.html 
 
 homepage:
   tiles:
@@ -128,9 +134,12 @@ homepage:
         url: https://community.netapp.com/
     - title: Earlier versions
       links:
-      - title: StorageGRID 11.6 documentation
-        url: https://docs.netapp.com/us-en/storagegrid-116/index.html
       - title: StorageGRID 11.5 documentation
         url: https://docs.netapp.com/sgws-115/index.jsp
       - title: StorageGRID 11.4 documentation
         url: https://docs.netapp.com/sgws-114/index.jsp
+      - title: StorageGRID 11.3 documentation
+        url: https://docs.netapp.com/sgws-113/index.jsp
+      - title: StorageGRID 11.2 documentation
+        url: https://docs.netapp.com/sgws-112/index.jsp
+

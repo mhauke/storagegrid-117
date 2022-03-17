@@ -51,8 +51,9 @@ xref:../admin/configuring-sso.adoc[Configure single sign-on].
 
 .. Optionally, copy the existing audit logs from the primary Admin Node to the expansion Admin Node if you want to keep the historical log information consistent on each Admin Node. See xref:copying-audit-logs.adoc[Copy audit logs].
 
-.. Optionally, configure access to the system for auditing purposes through an NFS file share. See xref:../admin/configuring-audit-client-access.adoc[Configure audit client access for NFS].
-
+.. Optionally, configure access to the system for auditing purposes through an NFS or a CIFS file share. See xref:../admin/index.adoc[Administer StorageGRID].
++
+NOTE: Audit export through CIFS/Samba has been deprecated and will be removed in a future StorageGRID release.
 
 .. Optionally, change the preferred sender for notifications. You can make the expansion Admin Node the preferred sender. Otherwise, an existing Admin Node configured as the preferred sender continues to send notifications, including AutoSupport messages, SNMP notifications, alert emails, and alarm emails (legacy system). See xref:../admin/index.adoc[Administer StorageGRID].
 

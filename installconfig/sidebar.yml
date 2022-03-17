@@ -1,0 +1,274 @@
+section: installconfig
+title: Install and configure hardware
+entries:
+  - title: Overview
+    pdf-filename: Install and configure StorageGRID
+    url: "/installconfig/index.html"
+  - title: Installation checklist
+    url: "/installconfig/installation-checklist.html"
+  - title: Prepare for installation
+    entries:
+    - title: Prepare site
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/preparing-site-sg100-and-sg1000.html"
+      - title: SG5600
+        url: "/installconfig/preparing-site-sg5600.html"
+      - title: SG5700
+        url: "/installconfig/preparing-site-sg5700.html"
+      - title: SG6000
+        url: "/installconfig/preparing-site-sg6000.html"
+    - title: Unpack boxes
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/unpacking-boxes-sg100-and-sg1000.html"
+      - title: SG5600
+        url: "/installconfig/unpacking-boxes-sg5600.html"
+      - title: SG5700
+        url: "/installconfig/unpacking-boxes-sg5700.html"
+      - title: SG6000
+        url: "/installconfig/unpacking-boxes-sg6000.html"
+    - title: Obtain additional equipment and tools
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/obtaining-additional-equipment-and-tools-sg100-and-sg1000.html"
+      - title: SG5600
+        url: "/installconfig/obtaining-additional-equipment-and-tools-sg5600.html"
+      - title: SG5700
+        url: "/installconfig/obtaining-additional-equipment-and-tools-sg5700.html"
+      - title: SG6000
+        url: "/installconfig/obtaining-additional-equipment-and-tools-sg6000.html"
+    - title: Web browser requirements
+      url: "/admin/web-browser-requirements.html"
+    - title: Review appliance network connections
+      entries:
+
+
+
+
+AFTER PAUL
+
+- title: SG100 and SG1000
+      url: "/installconfig/reviewing-appliance-network-connections-sg100-and-sg1000.html"
+      entries:
+      - title: Port bond modes for SG100 and SG1000 appliances
+        url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
+        entries:
+        - title: Network bond modes
+          url: "/installconfig/network-bond-modes-sg100-and-sg1000.html"
+        - title: Network bond modes for management ports
+          url: "/installconfig/network-bond-modes-for-management-ports-sg100-and-sg1000.html"
+
+
+- title: SG5600
+        entries:
+        - title: Port bond modes for E5600SG controller ports
+          url: "/installconfig/port-bond-modes-for-e5600sg-controller-ports.html"
+          entries:
+        - title: Network bond modes for 10-GbE ports
+          url: "/installconfig/network-bond-modes-for-10-gbe-ports.html"
+        - title: Network bond modes for 1-GbE management ports
+          url: "/installconfig/network-bond-modes-for-1-gbe-managment-ports.html"
+      - title: Install SG5700 appliances
+      - title: Install SG6000 appliances
+
+
+
+
+
+    - title: SG5700
+      url: "/installconfig/reviewing-appliance-network-connections-sg5700.html"
+      entries:
+      - title: Port bond modes for E5700SG controller ports
+        url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
+        entries:
+        - title: Network bond modes for 10/25-GbE ports
+          url: "/installconfig/network-bond-modes-for-10-25-gbe-ports.html"
+        - title: Network bond modes for 1-GbE management ports
+          url: "/installconfig/network-bond-modes-for-1-gbe-ports.html"
+
+
+
+    - title: SG6000
+      url: "/installconfig/reviewing-appliance-network-connections-sg6000.html"
+      entries:
+      - title: Port bond modes for SG6000-CN controller
+        url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
+        entries:
+        - title: Network bond modes for 10/25-GbE ports
+          url: "/installconfig/network-bond-modes-for-10-25-gbe-ports.html"
+        - title: Network bond modes for 1-GbE management ports
+          url: "/installconfig/network-bond-modes-for-1-gbe-management-ports.html"
+
+
+
+
+
+AFTER PAUL
+
+
+
+
+
+    - title: Gather installation information
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/gathering-installation-information-sg100-and-sg1000.html"
+      - title: SG5600
+        url: "/installconfig/gathering-installation-information-sg5600.html"
+      - title: SG5700
+        url: "/installconfig/gathering-installation-information-sg5700.html"
+      - title: SG6000
+        url: "/installconfig/gathering-installation-information-sg6000.html"
+  - title: Install appliance hardware
+    url: "/installconfig/install-appliance-hardware.html"
+    entries:
+    - title: Register hardware
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/registering-hardware-sg100-and-sg1000.html"
+      - title: SG5600
+        url: "/installconfig/registering-hardware-sg5600.html"
+      - title: SG5700
+        url: "/installconfig/registering-hardware-sg5700.html"
+      - title: SG6000
+        url: "/installconfig/registering-hardware-sg6000.html"
+    - title: Install appliance
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/installing-hardware-sg100-and-sg1000.html"
+        entries:
+        - title: Install appliance into cabinet or rack
+          url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html"
+      - title: SG5600
+        url: "/installconfig/installing-hardware-sg5600.html"
+        entries:
+      - title: Install appliance in cabinet or rack (SG5600)
+        url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg5600.html"
+      - title: SG5700
+        url: "/installconfig/installing-hardware-sg5700.html"
+        entries:
+        - title: Install appliance in cabinet or rack (SG5700)
+          url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg5700.html"
+      - title: SG6000
+        url: "/installconfig/installing-hardware-sg6000.html"
+        entries:
+        - title: 'SG6060: Install 60-drive shelves into cabinet or rack'
+          url: "/installconfig/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html"
+        - title: 'SG6060: Install drives'
+          url: "/installconfig/sg6060-installing-drives.html"
+        - title: 'SGF6024: Install 24-drive shelves into cabinet or rack'
+          url: "/installconfig/sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html"
+        - title: 'SG6000-CN: Install into cabinet or rack'
+          url: "/installconfig/sg6000-cn-installing-into-cabinet-or-rack.html"
+    - title: Cable appliance
+      url: "/installconfig/cabling-appliance.html"
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/cabling-appliance-sg100-and-sg1000.html"
+      - title: SG5600
+        url: "/installconfig/cabling-appliance-sg5600.html"
+      - title: SG5700
+        url: "/installconfig/cabling-appliance-sg5700.html"
+      - title: SG6000
+        entries:
+        - title: Cable appliance (SG6000)
+          url: "/installconfig/cabling-appliance-sg6000.html"
+        - title: 'SG6060: Cable optional expansion shelves'
+          url: "/installconfig/sg6060-cabling-optional-expansion-shelves.html"
+    - title: Connect power cords and apply power
+      url: "/installconfig/connecting-power-cords-and-applying-power.html"
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.html"
+      - title: SG5600
+        entries:
+        - title: Connect AC power cords (SG5600)
+          url: "/installconfig/connecting-ac-power-cords-sg5600.html"
+        - title: Turn power on (SG5600)
+          url: "/installconfig/turning-power-on-sg5600.html"
+      - title: SG5700
+        url: "/installconfig/connecting-power-cords-and-applying-power-sg5700.html"
+      - title: SG6000
+        url: "/installconfig/connecting-power-cords-and-applying-power-sg6000.html"
+    - title: View status indicators and codes
+      url: "/installconfig/viewing-status-indicators-and-codes.html"
+      entries:
+      - title: SG100 and SG1000
+        url: "/installconfig/viewing-status-indicators-on-sg100-and-sg1000-appliances.html"
+      - title: SG5600
+        entries:
+        - title: View boot-up status and review error codes on SG5600 controllers
+          url: "/installconfig/viewing-boot-up-status-and-reviewing-error-codes-on-sg5600-controllers.html"
+        - title: E5600SG controller seven-segment display codes
+          url: "/installconfig/e5600sg-controller-seven-segment-display-codes.html"
+      - title: SG5700
+        entries:
+        - title: View SG5700 boot-up status codes
+          url: "/installconfig/viewing-sg5700-boot-up-status-codes.html"
+        - title: Status indicators on E5700SG controller
+          url: "/installconfig/status-indicators-on-e5700sg-controller.html"
+      - title: SG6000
+        entries:
+        - title: View status indicators and buttons on SG6000-CN controller
+          url: "/installconfig/viewing-status-indicators-and-buttons-on-sg6000-cn-controller.html"
+        - title: View boot-up status codes for SG6000 storage controllers
+          url: "/installconfig/viewing-boot-up-status-codes-for-sg6000-storage-controllers.html"
+
+
+
+
+  - title: Initial NetApp appliance hardware configuration
+    url: "/installconfig/initial-netapp-appliance-hardware-configuration.html"
+    entries:
+    - title: Automate appliance installation and configuration
+      url: "/installconfig/automating-appliance-installation-and-configuration.html"
+    - title: Configure StorageGRID connections
+      url: "/installconfig/configuring-storagegrid-connections.html"
+      entries:
+      - title: Access StorageGRID Appliance Installer
+        url: "/installconfig/accessing-storagegrid-appliance-installer.html"
+      - title: Configure network links
+        url: "/installconfig/configuring-network-links.html"
+      - title: Configure StorageGRID IP addresses
+        url: "/installconfig/configuring-storagegrid-ip-addresses.html"
+      - title: Verify network connections
+        url: "/installconfig/verifying-network-connections.html"
+      - title: Verify port-level network connections
+        url: "/installconfig/verify-port-level-network-connections.html"
+    - title: Set up SANtricity for storage appliances
+      entries:
+      - title: SANtricity Storage Manager (SG5600)
+        url: "/installconfig/accessing-and-configuring-santricity-storage-manager-sg5600-only.html"
+      - title: SANtricity System Manager (SG5700 and SG6000)
+        url: "/installconfig/accessing-and-configuring-santricity-system-manager-sg5700-and-sg6000-only.html"
+    - title: Optional - Enable node encryption
+      url: "/installconfig/optional-enabling-node-encryption.html"
+    - title: Optional - Change RAID mode (Storage Nodes only)
+      url: "/installconfig/optional-changing-raid-mode-storage-nodes-only.html"
+    - title: Optional - Remap network ports for appliance (Storage Nodes only)
+      url: "/installconfig/optional-remapping-network-ports-for-appliance-storage-nodes-only.html"
+    - title: Configure BMC interface (SG1000 and SG6000 only)
+      url: "/installconfig/configuring-bmc-interface-sg1000-and-sg6000-only.html"
+      entries:
+      - title: Configure BMC interface (SG1000)
+        url: "/installconfig/configuring-bmc-interface-sg1000.html"
+      - title: Configure BMC interface (SG6000)
+        url: "/installconfig/configuring-bmc-interface-sg6000.html"
+    - title: Install StorageGRID software (Admin Nodes only)
+      url: "/installconfig/installing-storagegrid-software-admin-nodes-only.html"
+  - title: Deploy appliance nodes
+    url: "/installconfig/deploying-node.html"
+    entries:
+    - title: Deploy services appliance node
+      url: "/installconfig/deploying-services-appliance-node.html"
+    - title: Deploy appliance Storage Node
+      url: "/installconfig/deploying-appliance-storage-node.html"
+    - title: Configure grid and completing installation
+      url: "/installconfig/configuring-grid-and-completing-installation.html"
+  - title: Monitor and troubleshoot StorageGRID installation
+    entries:
+    - title: Monitor appliance installation
+      url: "/installconfig/monitoring-appliance-installation.html"
+    - title: Troubleshoot installation
+      url: "/installconfig/installation-troubleshooting.html"

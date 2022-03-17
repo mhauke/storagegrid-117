@@ -50,4 +50,8 @@ The `/var/lib/ntp/var/log/ntpstats/` directory contains NTP timing statistics.
 `peerstats` records peer statistics information.
 |All nodes
 
+|Samba
+m|/var/local/log/samba/
+|The Samba log directory includes a log file for each Samba process (smb, nmb, and winbind) and every client hostname/IP.
+|Admin Node configured to export the audit share over CIFS
 |===
