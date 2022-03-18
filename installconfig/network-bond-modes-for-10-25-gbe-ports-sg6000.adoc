@@ -1,21 +1,21 @@
 ---
-permalink: sg5700/network-bond-modes-for-10-25-gbe-ports.html
+permalink: sg6000/network-bond-modes-for-10-25-gbe-ports-sg6000.html
 sidebar: sidebar
-keywords: storagegrid, sg5700, storage node, storage appliance, Network bond, Network bonding, Network bond mode, Network-bond mode, fixed, Aggregate, 10/25-gbe, 10/25 gbe, e5700sg 
-summary: 'The 10/25-GbE networking ports on the E5700SG controller support Fixed port bond mode or Aggregate port bond mode for the Grid Network and Client Network connections.'
+keywords: storagegrid, sg6000, storage node, storage appliance, Network bond, Network bonding, Network bond mode, Network-bond mode, fixed, Aggregate, 10/25-gbe, 10/25 gbe, sg6000-cn 
+summary: 'The 10/25-GbE networking ports on the SG6000-CN controller support Fixed port bond mode or Aggregate port bond mode for the Grid Network and Client Network connections.'
 ---
 = Network bond modes for 10/25-GbE ports
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-The 10/25-GbE networking ports on the E5700SG controller support Fixed port bond mode or Aggregate port bond mode for the Grid Network and Client Network connections.
+The 10/25-GbE networking ports on the SG6000-CN controller support Fixed port bond mode or Aggregate port bond mode for the Grid Network and Client Network connections.
 
 == Fixed port bond mode
 
 Fixed mode is the default configuration for the 10/25-GbE networking ports.
 
-image::../media/e5700sg_fixed_port.gif[Ports used for Fixed port bond mode]
+image::../media/sg6000_cn_fixed_port.gif[Fixed Port Bond Mode]
 
 [options="header"]
 |===
@@ -29,18 +29,20 @@ G
 a|
 Ports 2 and 4 are bonded together for the Grid Network.
 |===
-When using Fixed port bond mode, you can use one of two network bond modes: Active-Backup or Link Aggregation Control Protocol (LACP).
+When using Fixed port bond mode, the ports can be bonded using active-backup mode or Link Aggregation Control Protocol mode (LACP 802.3ad).
 
-* In Active-Backup mode (default), only one port is active at a time. If the active port fails, its backup port automatically provides a failover connection. Port 4 provides a backup path for port 2 (Grid Network), and port 3 provides a backup path for port 1 (Client Network).
+* In active-backup mode (default), only one port is active at a time. If the active port fails, its backup port automatically provides a failover connection. Port 4 provides a backup path for port 2 (Grid Network), and port 3 provides a backup path for port 1 (Client Network).
 * In LACP mode, each pair of ports forms a logical channel between the controller and the network, allowing for higher throughput. If one port fails, the other port continues to provide the channel. Throughput is reduced, but connectivity is not impacted.
 
-NOTE: If you do not need redundant connections, you can use only one port for each network. However, be aware that an alarm will be raised in the Grid Manager after StorageGRID is installed, indicating that a cable is unplugged. You can safely acknowledge this alarm to clear it.
+NOTE: If you do not need redundant connections, you can use only one port for each network. However, be aware that an alert will be triggered in the Grid Manager after StorageGRID is installed, indicating that the link is down. Because this port is disconnected on purpose, you can safely disable this alert.
+
+From the Grid Manager, select *Alert* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
 
 == Aggregate port bond mode
 
 Aggregate port bond mode significantly increases the throughout for each StorageGRID network and provides additional failover paths.
 
-image::../media/e5700sg_aggregate_port.gif[Ports used for Aggregate port bond mode]
+image::../media/sg6000_cn_aggregate_port.gif[Aggregate Port Bond Mode]
 
 [options="header"]
 |===
@@ -50,7 +52,7 @@ a|
 a|
 All connected ports are grouped in a single LACP bond, allowing all ports to be used for Grid Network and Client Network traffic.
 |===
-If you plan to use Aggregate port bond mode:
+If you plan to use aggregate port bond mode:
 
 * You must use LACP network bond mode.
 * You must specify a unique VLAN tag for each network. This VLAN tag will be added to each network packet to ensure that network traffic is routed to the correct network.

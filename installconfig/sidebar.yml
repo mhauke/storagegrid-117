@@ -42,74 +42,46 @@ entries:
       url: "/admin/web-browser-requirements.html"
     - title: Review appliance network connections
       entries:
-
-
-
-
-AFTER PAUL
-
-- title: SG100 and SG1000
-      url: "/installconfig/reviewing-appliance-network-connections-sg100-and-sg1000.html"
-      entries:
-      - title: Port bond modes for SG100 and SG1000 appliances
-        url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
+      - title: SG100 and SG1000
+        url: "/installconfig/reviewing-appliance-network-connections-sg100-and-sg1000.html"
         entries:
-        - title: Network bond modes
-          url: "/installconfig/network-bond-modes-sg100-and-sg1000.html"
-        - title: Network bond modes for management ports
-          url: "/installconfig/network-bond-modes-for-management-ports-sg100-and-sg1000.html"
-
-
-- title: SG5600
+        - title: Port bond modes for SG100 and SG1000 appliances
+          url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
+          entries:
+          - title: Network bond modes
+            url: "/installconfig/network-bond-modes-sg100-and-sg1000.html"
+          - title: Network bond modes for management ports
+            url: "/installconfig/network-bond-modes-for-management-ports-sg100-and-sg1000.html"
+      - title: SG5600
+        url: "/installconfig/reviewing-appliance-network-connections-sg5600.html"
         entries:
         - title: Port bond modes for E5600SG controller ports
           url: "/installconfig/port-bond-modes-for-e5600sg-controller-ports.html"
           entries:
-        - title: Network bond modes for 10-GbE ports
-          url: "/installconfig/network-bond-modes-for-10-gbe-ports.html"
-        - title: Network bond modes for 1-GbE management ports
-          url: "/installconfig/network-bond-modes-for-1-gbe-managment-ports.html"
-      - title: Install SG5700 appliances
-      - title: Install SG6000 appliances
-
-
-
-
-
-    - title: SG5700
-      url: "/installconfig/reviewing-appliance-network-connections-sg5700.html"
-      entries:
-      - title: Port bond modes for E5700SG controller ports
-        url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
+          - title: Network bond modes for 10-GbE ports
+            url: "/installconfig/network-bond-modes-for-10-gbe-ports.html"
+          - title: Network bond modes for 1-GbE management ports
+            url: "/installconfig/network-bond-modes-for-1-gbe-management-ports.html"
+      - title: SG5700
+        url: "/installconfig/reviewing-appliance-network-connections-sg5700.html"
         entries:
-        - title: Network bond modes for 10/25-GbE ports
-          url: "/installconfig/network-bond-modes-for-10-25-gbe-ports.html"
-        - title: Network bond modes for 1-GbE management ports
-          url: "/installconfig/network-bond-modes-for-1-gbe-ports.html"
-
-
-
-    - title: SG6000
-      url: "/installconfig/reviewing-appliance-network-connections-sg6000.html"
-      entries:
-      - title: Port bond modes for SG6000-CN controller
-        url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
+        - title: Port bond modes for E5700SG controller ports
+          url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
+          entries:
+          - title: Network bond modes for 10/25-GbE ports
+            url: "/installconfig/network-bond-modes-for-10-25-gbe-ports-sg5700.html"
+          - title: Network bond modes for 1-GbE management ports
+            url: "/installconfig/network-bond-modes-for-1-gbe-ports.html"
+      - title: SG6000
+        url: "/installconfig/reviewing-appliance-network-connections-sg6000.html"
         entries:
-        - title: Network bond modes for 10/25-GbE ports
-          url: "/installconfig/network-bond-modes-for-10-25-gbe-ports.html"
-        - title: Network bond modes for 1-GbE management ports
-          url: "/installconfig/network-bond-modes-for-1-gbe-management-ports.html"
-
-
-
-
-
-AFTER PAUL
-
-
-
-
-
+        - title: Port bond modes for SG6000-CN controller
+          url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
+          entries:
+          - title: Network bond modes for 10/25-GbE ports
+            url: "/installconfig/network-bond-modes-for-10-25-gbe-ports-sg6000.html"
+          - title: Network bond modes for 1-GbE management ports
+            url: "/installconfig/network-bond-modes-for-1-gbe-management-ports.html"
     - title: Gather installation information
       entries:
       - title: SG100 and SG1000
