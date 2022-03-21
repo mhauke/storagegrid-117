@@ -276,17 +276,46 @@ entries:
         url: "/installconfig/optional-changing-raid-mode-sg5760-only.html"
       - title: SG6000
         url: "/installconfig/optional-changing-raid-mode-sg6000-only.html"
-
-
     - title: Optional - Remap network ports for appliance (Storage Nodes only)
-      url: "/installconfig/optional-remapping-network-ports-for-appliance-storage-nodes-only.html"
-    - title: Configure BMC interface (SG1000 and SG6000 only)
-      url: "/installconfig/configuring-bmc-interface-sg1000-and-sg6000-only.html"
       entries:
-      - title: Configure BMC interface (SG1000)
+      - title: SG5600 and SG5700
+        url: "/installconfig/optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html"
+      - title: SG6000
+        url: "/installconfig/optional-remapping-network-ports-for-appliance-sg6000.html"
+    - title: Configure BMC interface (SG1000 and SG6000 only)
+      entries:
+      - title: SG1000
         url: "/installconfig/configuring-bmc-interface-sg1000.html"
-      - title: Configure BMC interface (SG6000)
+        entries:
+        - title: Change root password for BMC interface
+          url: "/installconfig/changing-root-password-for-bmc-interface-sg1000.html"
+        - title: Set IP address for BMC management port
+          url: "/installconfig/setting-ip-address-for-bmc-management-port-sg1000.html"
+        - title: Access BMC interface
+          url: "/installconfig/accessing-bmc-interface-sg1000.html"
+        - title: Configure SNMP settings for services appliance
+          url: "/installconfig/configuring-snmp-settings-for-sg1000.html"
+        - title: Set up email notifications for alerts
+          url: "/installconfig/setting-up-email-notifications-for-alerts-sg1000.html"
+      - title: SG6000
         url: "/installconfig/configuring-bmc-interface-sg6000.html"
+        entries:
+        - title: Change root password for BMC interface
+          url: "/installconfig/changing-root-password-for-bmc-interface-sg6000.html"
+        - title: Set IP address for BMC management port
+          url: "/installconfig/setting-ip-address-for-bmc-management-port-sg6000.html"
+        - title: Access BMC interface
+          url: "/installconfig/accessing-bmc-interface-sg6000.html"
+        - title: Configure SNMP settings for SG6000-CN controller
+          url: "/installconfig/configuring-snmp-settings-for-sg6000-cn-controller.html"
+        - title: Set up email notifications for alerts
+          url: "/installconfig/setting-up-email-notifications-for-alerts-sg6000.html"
+
+
+
+
+
+
     - title: Install StorageGRID software (Admin Nodes only)
       url: "/installconfig/installing-storagegrid-software-admin-nodes-only.html"
   - title: Deploy appliance nodes

@@ -1,10 +1,10 @@
 ---
-permalink: sg5600/optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html
+permalink: installconfig/optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html
 sidebar: sidebar
-keywords: storagegrid, sg5600, storage node, storage appliance, remapping, remap, map, mapping, network, ports
+keywords: storage node, storage appliance, remapping, remap, map, mapping, network, ports 
 summary: 'You might need to remap the internal ports on the appliance Storage Node to different external ports. For example, you might need to remap ports because of a firewall issue.'
 ---
-= Optional: Remap network ports for appliance
+= Optional: Remap network ports for appliance (SG5600 and SG5700)
 :icons: font
 :imagesdir: ../media/
 
@@ -36,7 +36,3 @@ The new port mapping is added to the table, and the remapping takes effect immed
 image::../media/remap_ports.gif[Screenshot showing Remap Ports option in StorageGRID Webscale Appliance Installer]
 
 . To remove a port mapping, select the radio button for the rule you want to remove, and click *Remove Selected Rule*.
-
-.Related information
-
-xref:../maintain/index.adoc[Recover and maintain]
