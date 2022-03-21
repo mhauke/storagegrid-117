@@ -12,7 +12,7 @@ summary: 'Before you can attach StorageGRID as a cloud tier for FabricPool, you 
 Before you can attach StorageGRID as a cloud tier for FabricPool, you must perform some configuration steps in StorageGRID and obtain certain values.
 
 
-The following figure illustrates the items you must configure before you can tier ONTAP data from FabricPool to StorageGRID.
+The following figure illustrates the items you must configure before you can use StorageGRID as a FabricPool cloud tier for your ONTAP data.
 
 image::../media/fabricpool_storagegrid_connection.png[FabricPool StorageGRID connection]
 
@@ -31,17 +31,17 @@ The following table lists the information that ONTAP requires to use StorageGRID
 | ONTAP field| Description
 
 |Object store name
-|Any unique and descriptive name. For example, `StorageGRID Cloud Tier`.
+|Any unique and descriptive name. For example, StorageGRID Cloud Tier.
 
 |Provider type
-|`StorageGRID`
+|StorageGRID
 
 |Port
-|The port that FabricPool will use when it connects to StorageGRID. The port number here matches the port you specify for the StorageGRID load balancer endpoint. For example, `10433`.
+|The port that FabricPool will use when it connects to StorageGRID. The port number here matches the port you specify for the StorageGRID load balancer endpoint. For example, 10433.
 
 
 |Server name
-|The fully qualified domain name (FQDN) for the StorageGRID load balancer endpoint. For example, `s3.storagegrid.company.com`.
+|The fully qualified domain name (FQDN) for the StorageGRID load balancer endpoint. For example, s3.storagegrid.company.com.
 
 Note the following:
 
@@ -49,7 +49,7 @@ Note the following:
 * The DNS record for this domain name in ONTAP must map to each IP address you will use to connect to StorageGRID.
 
 |Container name
-|The name of the StorageGRID bucket you will use with this ONTAP cluster. For example, `fabricpool-bucket`. 
+|The name of the StorageGRID bucket you will use with this ONTAP cluster. For example, fabricpool-bucket. 
 
 You can create this bucket in StorageGRID or, starting with ONTAP 9.10 System Manager, you can create the bucket with the FabricPool setup wizard.
 

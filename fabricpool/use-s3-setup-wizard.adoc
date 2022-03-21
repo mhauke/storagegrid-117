@@ -100,22 +100,20 @@ You must provide at least one IPv4 address. Optionally, you can specify addition
 == Create load balancer endpoint
 StorageGRID uses a load balancer to manage the client workload. Load balancing maximizes speed and connection capacity across multiple Storage Nodes.
 
-You can use the StorageGRID Load Balancer service, which exists on all Gateway and Admin Nodes, or you can connect to an external (third-party) load balancer. Using the StorageGRID service is recommended.
+You can use the StorageGRID Load Balancer service, which exists on all Gateway and Admin Nodes, or you can connect to an external (third-party) load balancer. Using the StorageGRID load balancer is recommended.
 
 For details about this task, see xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints].
 
 
-. To use an external load balancer, select *External load balancer*. To use the StorageGRID Load Balancer service, select *Create endpoint*, or select an existing endpoint.
-
-// start tabbed area
-
+. To use the StorageGRID Load Balancer service, select *Create endpoint*, or select an existing endpoint. To use an external load balancer, select *External load balancer*. 
++
 [role="tabbed-block"]
 ====
 
 .StorageGRID load balancer
 --
 
-.. To create a load balancer endpoint, enter the endpoint details.
+.. To create a StorageGRID load balancer endpoint, enter the endpoint details.
 +
 [cols="1a,2a" options="header"]
 |===
@@ -185,6 +183,8 @@ A tenant is an entity that can use S3 applications to store and retrieve objects
 
 A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the tenant you use for FabricPool will use only one bucket.
 
+You can create a new tenant and bucket or select an existing tenant and bucket.
+
 
 // start tabbed area
 
@@ -194,13 +194,13 @@ A bucket is a container used to store a tenant's objects and object metadata. Al
 .New tenant and bucket
 --
 
-.. Enter the name of the tenant account you want to use for FabricPool. For example, FabricPool tenant.
+.. Enter the name of the new tenant account you want to use for FabricPool. For example, FabricPool tenant.
 
 .. Enter a password and password confirmation.
 +
-This is the password that FabricPool will use to sign in as this tenant's local root user.
+FabricPool will use this password to sign in as this tenant's local root user.
 
-.. Enter the name of the StorageGRID bucket you will use with FabricPool. For example, `fabricpool-bucket`.
+.. Enter the name of the bucket FabricPool will use to store ONTAP data. For example, fabricpool-bucket.
 +
 IMPORTANT: You cannot change the bucket name after creating the bucket.
 +
@@ -215,7 +215,7 @@ Bucket names must comply with these rules:
 
  .. Select the region for this bucket.
 +
-Use the default value (us-east-1) unless you expect to have future requirements to filter objects based on the bucket's region.
+Use the default region (us-east-1) unless you expect to use ILM in the future to filter objects based on the bucket's region.
 
 .. Select *Continue* to download the ONTAP settings. 
 --
