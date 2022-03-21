@@ -41,7 +41,7 @@ For more information on the options, see "`Configuring network links.`"
 NOTE: You might lose your connection if you made changes to the network or link you are connected through. If you are not reconnected within 1 minute, re-enter the URL for the StorageGRID Appliance Installer using one of the other IP addresses assigned to the appliance: +
 `*https://_E5600SG_Controller_IP_:8443*`
 +
-If you made changes to the VLAN settings, the subnet for the appliance might have changed. If you need to change the IP addresses for the appliance, follow the xref:setting-ip-configuration-sg5600.adoc[set IP configuration] instructions.
+If you made changes to the VLAN settings, the subnet for the appliance might have changed. If you need to change the IP addresses for the appliance, follow the xref:../installconfig/setting-ip-configuration-sg5600.adoc[set IP configuration] instructions.
 
 . From the StorageGRID Appliance Installer, select *Configure Networking* > *Ping Test*.
 . Use the Ping Test tool to check connectivity to IP addresses on any networks that may have been affected by the link configuration changes you made in the <<change_link_configuration_sg5600,Change link configuration>> step.
@@ -60,4 +60,4 @@ image::../media/nodes_menu.png[Appliance node rejoined grid]
 
 .Related information
 
-xref:configuring-network-links-sg5600.adoc[Configure network links (SG5600)]
+xref:../installconfig/configuring-network-links-sg5600.adoc[Configure network links (SG5600)]

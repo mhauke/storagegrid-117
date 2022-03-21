@@ -1,32 +1,27 @@
 ---
-sidebar: sidebar
 permalink: installconfig/automating-appliance-installation-and-configuration.html
-keywords: stub, layered
-summary: Automating appliance installation and configuration.
+sidebar: sidebar
+keywords: automate, automating, automation, automatic, install, installation, configuration, configure
+summary: 'You can automate the installation and configuration of your appliances and configuration of the whole StorageGRID system.'
 ---
-
-= Automating appliance installation and configuration
-
-
-
-
+= Automate appliance installation and configuration (SG100 and SG1000)
 :icons: font
-
 :imagesdir: ../media/
 
 [.lead]
 You can automate the installation and configuration of your appliances and configuration of the whole StorageGRID system.
 
-(Pick up from existing topic in appliance guides - already common)
+.About this task
 
-== Automating appliance configuration using the StorageGRID Appliance Installer
+Automating installation and configuration can be useful for deploying multiple StorageGRID instances or one large, complex StorageGRID instance.
 
-(Pick up from existing topic in appliance guides - already common)
+To automate installation and configuration, use one or more of the following options:
 
-== Automating installation and configuration of appliance nodes using the configure-sga.py script
+* Create a JSON file that specifies the configuration settings for your appliances. Upload the JSON file using the StorageGRID Appliance Installer.
++
+NOTE: You can use the same file to configure more than one appliance.
 
-(Pick up from existing topic in appliance guides - already common)
+* Use the StorageGRID``configure-sga.py`` Python script to automate the configuration of your appliances.
+* Use additional Python scripts to configure other components of the whole StorageGRID system (the "grid").
 
-== Automating the configuration of StorageGRID
-
-(Pick up from existing topic in appliance guides - already common)
+NOTE: You can use StorageGRID automation Python scripts directly, or you can use them as examples of how to use the StorageGRID Installation REST API in grid deployment and configuration tools you develop yourself. See the instructions for xref:../maintain/downloading-and-extracting-storagegrid-installation-files.adoc[downloading and extracting the StorageGRID installation files].

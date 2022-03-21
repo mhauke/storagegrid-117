@@ -27,7 +27,7 @@ The Node Encryption page includes three sections:
  ** Encryption Status shows whether node encryption is enabled or disabled for the appliance.
  ** Key Management Server Details shows information about the KMS being used to encrypt the appliance. You can expand the server and client certificate sections to view certificate details and status.
   *** To address issues with the certificates themselves, such as renewing expired certificates, see the xref:../admin/kms-configuring.adoc[instructions for configuring KMS].
-  *** If there are unexpected problems connecting to KMS hosts, verify that the xref:checking-dns-server-configuration.adoc[domain name system (DNS) servers are correct] and that xref:configuring-network-links-sg100-and-sg1000.adoc[appliance networking is correctly configured].
+  *** If there are unexpected problems connecting to KMS hosts, verify that the xref:checking-dns-server-configuration.adoc[domain name system (DNS) servers are correct] and that xref:../installconfig/configuring-network-links-sg100-and-sg1000.adoc[appliance networking is correctly configured].
   *** If you are unable to resolve your certificate issues, contact technical support.
  ** Clear KMS Key disables node encryption for the appliance, removes the association between the appliance and the key management server that was configured for the StorageGRID site, and deletes all data from the appliance. You must xref:clearing-key-management-server-configuration.adoc[clear the KMS key] before you can install the appliance into another StorageGRID system.
 +
