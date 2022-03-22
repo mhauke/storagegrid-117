@@ -4,7 +4,6 @@ entries:
   - title: Install and deploy - Overview
     pdf-filename: Install and configure StorageGRID
     url: "/installconfig/index.html"
-////    
     entries:
     - title: SG100 and SG1000
       url: "/installconfig/installation-and-deployment-overview-sg100-1000.html"
@@ -46,7 +45,6 @@ entries:
           url: "/installconfig/sgf6024-overview.html"
         - title: Controllers in SG6000 appliances
           url: "/installconfig/controllers-in-sg6000-appliances.html"
-////
   - title: Installation checklist
     url: "/installconfig/installation-checklist.html"
   - title: Prepare for installation
@@ -158,12 +156,12 @@ entries:
       - title: SG5600
         url: "/installconfig/installing-hardware-sg5600.html"
         entries:
-        - title: Install appliance in cabinet or rack (SG5600)
+        - title: 'Install appliance in cabinet or rack (SG5600)'
           url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg5600.html"
       - title: SG5700
         url: "/installconfig/installing-hardware-sg5700.html"
         entries:
-        - title: Install appliance in cabinet or rack (SG5700)
+        - title: 'Install appliance in cabinet or rack (SG5700)'
           url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg5700.html"
       - title: SG6000
         url: "/installconfig/installing-hardware-sg6000.html"
@@ -187,7 +185,7 @@ entries:
         url: "/installconfig/cabling-appliance-sg5700.html"
       - title: SG6000
         entries:
-        - title: Cable appliance (SG6000)
+        - title: 'Cable appliance (SG6000)'
           url: "/installconfig/cabling-appliance-sg6000.html"
         - title: 'SG6060: Cable optional expansion shelves'
           url: "/installconfig/sg6060-cabling-optional-expansion-shelves.html"
@@ -198,9 +196,9 @@ entries:
         url: "/installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.html"
       - title: SG5600
         entries:
-        - title: Connect AC power cords (SG5600)
+        - title: 'Connect AC power cords (SG5600)'
           url: "/installconfig/connecting-ac-power-cords-sg5600.html"
-        - title: Turn power on (SG5600)
+        - title: 'Turn power on (SG5600)'
           url: "/installconfig/turning-power-on-sg5600.html"
       - title: SG5700
         url: "/installconfig/connecting-power-cords-and-applying-power-sg5700.html"
@@ -232,7 +230,7 @@ entries:
   - title: Initial NetApp appliance hardware configuration
     url: "/installconfig/configuring-hardware.html"
     entries:
-    - title: Automate appliance installation and configuration (SG100 and SG1000)
+    - title: 'Automate appliance installation and configuration (SG100 and SG1000)'
       url: "/installconfig/automating-appliance-installation-and-configuration.html"
       entries:
       - title: Automate appliance configuration using StorageGRID Appliance Installer
@@ -282,7 +280,7 @@ entries:
         url: "/installconfig/verifying-port-level-network-connections.html"
     - title: Set up SANtricity for storage appliances
       entries:
-      - title: SANtricity Storage Manager (SG5600)
+      - title: 'SANtricity Storage Manager (SG5600)'
         url: "/installconfig/configuring-santricity-storage-manager.html"
         entries:
         - title: Set IP address for E2700 controller
@@ -300,7 +298,7 @@ entries:
             url: "/installconfig/configuring-email-and-snmp-trap-alert-notifications.html"
           - title: Set passwords for SANtricity Storage Manager
             url: "/installconfig/setting-passwords-for-santricity-storage-manager.html"
-      - title: SANtricity System Manager (SG5700 and SG6000)
+      - title: 'SANtricity System Manager (SG5700 and SG6000)'
         url: "/installconfig/accessing-and-configuring-santricity-system-manager.html"
         entries:
         - title: Set up and Access SANtricity System Manager
@@ -311,7 +309,7 @@ entries:
           url: "/installconfig/setting-ip-addresses-for-storage-controllers-using-storagegrid-appliance-installer.html"
     - title: Optional - Enable node encryption
       url: "/installconfig/optional-enabling-node-encryption.html"
-    - title: Optional - Change RAID mode (Storage Nodes only)
+    - title: 'Optional - Change RAID mode (Storage Nodes only)'
       entries:
       - title: SG5660
         url: "/installconfig/optional-changing-to-raid6-mode-sg5660-only.html"
@@ -319,13 +317,13 @@ entries:
         url: "/installconfig/optional-changing-raid-mode-sg5760-only.html"
       - title: SG6000
         url: "/installconfig/optional-changing-raid-mode-sg6000-only.html"
-    - title: Optional - Remap network ports for appliance (Storage Nodes only)
+    - title: 'Optional - Remap network ports for appliance (Storage Nodes only)'
       entries:
       - title: SG5600 and SG5700
         url: "/installconfig/optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html"
       - title: SG6000
         url: "/installconfig/optional-remapping-network-ports-for-appliance-sg6000.html"
-    - title: Configure BMC interface (SG1000 and SG6000 only)
+    - title: 'Configure BMC interface (SG1000 and SG6000 only)'
       entries:
       - title: SG1000
         url: "/installconfig/configuring-bmc-interface-sg1000.html"
@@ -353,7 +351,7 @@ entries:
           url: "/installconfig/configuring-snmp-settings-for-sg6000-cn-controller.html"
         - title: Set up email notifications for alerts
           url: "/installconfig/setting-up-email-notifications-for-alerts-sg6000.html"
-    - title: Install StorageGRID software (Admin Nodes only) (NEED INFO)
+    - title: 'Install StorageGRID software (Admin Nodes only) (NEED INFO)'
       url: "/installconfig/installing-storagegrid-software-admin-nodes-only.html"
   - title: Deploy appliance node to grid
     entries:
@@ -366,7 +364,7 @@ entries:
         url: "/installconfig/deploying-services-appliance-as-gateway-or-non-primary-admin-node.html"
     - title: Deploy appliance Storage Node
       url: "/installconfig/deploying-appliance-storage-node.html"
-    - title: Configure grid and completing installation (NEED INFO)
+    - title: 'Configure grid and completing installation (NEED INFO)'
       url: "/installconfig/configuring-grid-and-completing-installation.html"
   - title: Monitor and troubleshoot StorageGRID installation
     entries:
@@ -376,23 +374,22 @@ entries:
         url: "/installconfig/monitoring-services-appliance-installation.html" 
       - title: Monitor storage appliance installation
         url: "/installconfig/monitoring-storage-appliance-installation.html"
-////
     - title: Troubleshoot installation
       entries:
-      - title: Services appliances (SG100 and SG1000)
+      - title: 'Services appliances (SG100 and SG1000)'
         url: "/installconfig/troubleshooting-hardware-installation-sg100-and-sg1000.html"
         entries:
         - title: View boot-up codes for appliance
           url: "/installconfig/viewing-boot-up-codes-for-appliance-sg100-and-sg1000.html"
         - title: View error codes for appliance
           url: "/installconfig/viewing-error-codes-for-sg1000-controller-sg100-and-sg1000.html"
-        - title: Hardware setup appears to hang (SG100 and SG1000)
+        - title: 'Hardware setup appears to hang (SG100 and SG1000)'
           url: "/installconfig/hardware-setup-appears-to-hang-sg100-and-sg1000.html"
-        - title: Troubleshoot connection issues (SG100 and SG1000)
+        - title: 'Troubleshoot connection issues (SG100 and SG1000)'
           url: "/installconfig/troubleshooting-connection-issues-sg100-and-sg1000.html"
         - title: Reboot services appliance while StorageGRID Appliance Installer is running
           url: "/installconfig/rebooting-services-appliance-while-sg-appliance-installer-is-running-sg100-and-sg1000.html"
-      - title: Storage appliances (SG5600, SG5700, and SG6000)
+      - title: 'Storage appliances (SG5600, SG5700, and SG6000)'
         url: "/installconfig/troubleshooting-hardware-installation.html"
         entries:
         - title: Hardware setup appears to hang
@@ -427,4 +424,3 @@ entries:
             url: "/installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.html"
           - title: View error codes for SG6000-CN controller
             url: "/installconfig/viewing-error-codes-for-sg6000-cn-controller.html"
-////
