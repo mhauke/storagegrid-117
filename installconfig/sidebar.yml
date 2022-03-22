@@ -1,9 +1,10 @@
 section: installconfig
 title: Appliance nodes
 entries:
-  - title: Install and deploy - overview
+  - title: Install and deploy - Overview
     pdf-filename: Install and configure StorageGRID
     url: "/installconfig/index.html"
+////    
     entries:
     - title: SG100 and SG1000
       url: "/installconfig/installation-and-deployment-overview-sg100-1000.html"
@@ -45,6 +46,7 @@ entries:
           url: "/installconfig/sgf6024-overview.html"
         - title: Controllers in SG6000 appliances
           url: "/installconfig/controllers-in-sg6000-appliances.html"
+////
   - title: Installation checklist
     url: "/installconfig/installation-checklist.html"
   - title: Prepare for installation
@@ -374,6 +376,7 @@ entries:
         url: "/installconfig/monitoring-services-appliance-installation.html" 
       - title: Monitor storage appliance installation
         url: "/installconfig/monitoring-storage-appliance-installation.html"
+////
     - title: Troubleshoot installation
       entries:
       - title: Services appliances (SG100 and SG1000)
@@ -424,3 +427,4 @@ entries:
             url: "/installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.html"
           - title: View error codes for SG6000-CN controller
             url: "/installconfig/viewing-error-codes-for-sg6000-cn-controller.html"
+////
