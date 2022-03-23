@@ -366,3 +366,61 @@ entries:
       url: "/installconfig/deploying-appliance-storage-node.html"
     - title: 'Configure grid and completing installation (NEED INFO)'
       url: "/installconfig/configuring-grid-and-completing-installation.html"
+  - title: Monitor and troubleshoot StorageGRID installation
+    entries:
+    - title: Monitor appliance installation
+      entries:
+      - title: Monitor services appliance installation
+        url: "/installconfig/monitoring-services-appliance-installation.html" 
+      - title: Monitor storage appliance installation
+        url: "/installconfig/monitoring-storage-appliance-installation.html"
+    - title: Troubleshoot installation
+      entries:
+      - title: 'Services appliances (SG100 and SG1000)'
+        url: "/installconfig/troubleshooting-hardware-installation-sg100-and-sg1000.html"
+        entries:
+        - title: View boot-up codes for appliance
+          url: "/installconfig/viewing-boot-up-codes-for-appliance-sg100-and-sg1000.html"
+        - title: View error codes for appliance
+          url: "/installconfig/viewing-error-codes-for-sg1000-controller-sg100-and-sg1000.html"
+        - title: 'Hardware setup appears to hang (SG100 and SG1000)'
+          url: "/installconfig/hardware-setup-appears-to-hang-sg100-and-sg1000.html"
+        - title: 'Troubleshoot connection issues (SG100 and SG1000)'
+          url: "/installconfig/troubleshooting-connection-issues-sg100-and-sg1000.html"
+        - title: Reboot services appliance while StorageGRID Appliance Installer is running
+          url: "/installconfig/rebooting-services-appliance-while-sg-appliance-installer-is-running-sg100-and-sg1000.html"
+      - title: 'Storage appliances (SG5600, SG5700, and SG6000)'
+        url: "/installconfig/troubleshooting-hardware-installation.html"
+        entries:
+        - title: Hardware setup appears to hang
+          entries:
+          - title: SG5600
+            url: "/installconfig/hardware-setup-progress-appears-to-hang-sg5600.html"
+          - title: SG5700
+            url: "/installconfig/hardware-setup-appears-to-hang-sg5700.html"
+          - title: SG6000
+            url: "/installconfig/hardware-setup-appears-to-hang-sg6000.html"
+        - title: Connection issues
+          entries:
+          - title: SG5600
+            url: "/installconfig/troubleshooting-connection-issues-sg5600.html"
+          - title: SG5700
+            url: "/installconfig/troubleshooting-connection-issues-sg5700.html"
+          - title: SG6000
+            entries:
+            - title: General connection issues
+              url: "/installconfig/troubleshooting-connection-issues-sg6000.html"
+            - title: Unable to connect to appliance
+              url: "/installconfig/unable-to-connect-to-appliance.html"
+            - title: Expansion shelves do not appear in Appliance Installer
+              url: "/installconfig/expansion-shelves-do-not-appear-in-appliance-installer.html"
+        - title: 'HE error: Error synchronizing with SANtricity OS Software (SG5600 and SG5700)'
+          url: "/installconfig/he-error-error-synchronizing-with-santricity-os-software.html"
+        - title: Reboot controller while StorageGRID Appliance Installer is running
+          url: "/installconfig/rebooting-controller-while-storagegrid-appliance-installer-is-running.html"
+        - title: SG6000 boot-up and error codes
+          entries:
+          - title: View boot-up codes for SG6000-CN controller
+            url: "/installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.html"
+          - title: View error codes for SG6000-CN controller
+            url: "/installconfig/viewing-error-codes-for-sg6000-cn-controller.html"
