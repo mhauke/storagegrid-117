@@ -20,7 +20,7 @@ image::../media/fabricpool_storagegrid_values.png[FabricPool StorageGRID connect
 == How do I get these values?
 Depending on your requirements, you can do either of the following to obtain the information you need:
 
-* Configure all items using the xref:use-s3-setup-wizard.adoc[StorageGRID S3 setup wizard] and upload the values to ONTAP System Manager as a single file.
+* Use the xref:use-s3-setup-wizard.adoc[StorageGRID S3 setup wizard] to quickly configure all required values and to create a file that you can use in ONTAP System Manager. The S3 setup wizard guides you through the required steps and make sure your configuration conforms to StorageGRID and FabricPool best practices.
 * Configure each item manually in StorageGRID and manually enter the values into ONTAP System Manager. 
 
 Use the S3 setup wizard unless you know you have special requirements that require significant customization.
