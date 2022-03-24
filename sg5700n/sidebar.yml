@@ -9,12 +9,35 @@ entries:
       url: "/sg5700n/controllers-in-storagegrid-appliance.html"
 
 
+  - title: Maintenance configuration procedures
+    entries:
+    - title: Upgrade SANtricity OS on storage controller
+      url: "/sg5700n/upgrading-santricity-os-on-storage-controller.html"
+      entries:
+      - title: Upgrade SANtricity OS on storage controllers using Grid Manager
+        url: "/sg5700n/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5700.html"
+      - title: Upgrade SANtricity OS on E2800 controller using maintenance mode
+        url: "/sg5700n/upgrading-santricity-os-on-e2800-controller-using-maintenance-mode.html"
+    - title: Upgrade drive firmware using SANtricity System Manager
+      url: "/sg5700n/upgrading-drive-firmware-using-santricity-system-manager.html"
+    - title: Change link configuration of E5700SG controller
+      url: "/sg5700n/changing-link-configuration-of-e5700sg-controller.html"
+    - title: Change MTU setting
+      url: "/sg5700n/changing-mtu-setting.html"
+    - title: Check DNS server configuration
+      url: "/sg5700n/checking-dns-server-configuration.html"
+    - title: Monitor node encryption in maintenance mode (SG5700)
+      url: "/sg5700n/monitoring-node-encryption-in-maintenance-mode.html"
+      entries:
+      - title: Clear key management server configuration
+        url: "/sg5700n/clearing-key-management-server-configuration.html"
 
-  - title: SG5700 maintenance procedures
+
+  - title: Hardware procedures
     entries:
     - title: Replace E2800 controller
       url: "/sg5700n/replacing-e2800-controller.html"
     - title: Replace E5700SG controller
       url: "/sg5700n/replacing-e5700sg-controller.html"
-    - title: Replace other SG5700 hardware components
-      url: "/sg5700n/replacing-other-sg5700-hardware-components.html"
+    - title: Replace other hardware components
+      url: "/sg5700n/replacing-other-hardware-components-sg5700.html"

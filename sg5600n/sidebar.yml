@@ -10,13 +10,32 @@ entries:
     - title: Hardware diagrams
       url: "/sg5600n/hardware-diagrams-sg5600.html"
 
-
-
-
-  - title: SG5600 maintenance procedures
+  - title: Maintenance configuration procedures
     entries:
+    - title: Upgrade SANtricity OS on storage controllers using Grid Manager
+      url: "/sg5600n/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5600.html"
+    - title: Upgrade SANtricity OS on E2700 controller using maintenance mode
+      url: "/sg5600n/upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.html"
+    - title: Upgrade drive firmware using SANtricity Storage Manager
+      url: "/sg5600n/upgrading-drive-firmware-using-santricity-storage-manager.html"
+    - title: Change link configuration of E5600SG controller
+      url: "/sg5600n/changing-link-configuration-of-e5600sg-controller.html"
+    - title: Change MTU setting
+      url: "/sg5600n/changing-mtu-setting.html"
+    - title: Check DNS server configuration
+      url: "/sg5600n/checking-dns-server-configuration.html"
+    - title: Monitor node encryption in maintenance mode (SG5600)
+      url: "/sg5600n/monitoring-node-encryption-in-maintenance-mode.html"
+      entries:
+      - title: Clear key management server configuration
+        url: "/sg5600n/clearing-key-management-server-configuration.html"
+
+  - title: Hardware procedures
+    entries:   
+    - title: Replace E2700 controller
+      url: "/sg5600n/replacing-e2700-controller.html"
     - title: Replace E5600SG controller
       url: "/sg5600n/replacing-e5600sg-controller.html"
-    - title: Replace other SG5600 hardware components
-      url: "/sg5600n/replacing-other-sg5600-hardware-components.html"
+    - title: Replace other hardware components
+      url: "/sg5600n/replacing-other-hardware-components-sg5600.html"
  
