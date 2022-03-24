@@ -1,11 +1,22 @@
 section: sg5600n
 title: SG5600
 entries:
-  - title: SG5600 maintenance procedures - Overview 
-    pdf-filename: SG5600 maintenance procedures
+  - title: SG5600 appliances - Overview
+    pdf-filename: SG5600 appliance maintenance
     url: "/sg5600n/index.html"
-  - title: Replace E5600SG controller
-    url: "/sg5600n/replacing-e5600sg-controller.html"
-  - title: Replace other SG5600 hardware components
-    url: "/sg5600n/replacing-other-sg5600-hardware-components.html"
+    entries:
+    - title: StorageGRID appliance features
+      url: "/sg5600n/storagegrid-appliance-features-sg5600.html"
+    - title: Hardware diagrams
+      url: "/sg5600n/hardware-diagrams-sg5600.html"
+
+
+
+
+  - title: SG5600 maintenance procedures
+    entries:
+    - title: Replace E5600SG controller
+      url: "/sg5600n/replacing-e5600sg-controller.html"
+    - title: Replace other SG5600 hardware components
+      url: "/sg5600n/replacing-other-sg5600-hardware-components.html"
  
