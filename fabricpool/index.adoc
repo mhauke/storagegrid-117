@@ -51,4 +51,4 @@ In addition, a FabricPool license is not required when you use StorageGRID as th
 
 These instructions describe how to connect StorageGRID to a single ONTAP cluster. However, you might want to connect the same StorageGRID system to multiple ONTAP clusters.
 
-The only requirement for tiering data from multiple ONTAP clusters to a single StorageGRID system is that you must use a different S3 bucket for each cluster. Based on your requirements, you can use the same high availability (HA) group, load balancer endpoint, and tenant account for all clusters, or you can configure each of these items for each cluster.
+The only requirement for tiering data from multiple ONTAP clusters to a single StorageGRID system is that you must use a different tenant and you should use a different bucket for each cluster. Based on your requirements, you can use the same high availability (HA) group, load balancer endpoint, and ILM rule for all clusters, or you can configure each of these items for each cluster.
