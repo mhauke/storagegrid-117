@@ -13,113 +13,118 @@ summary: 'Perform the following operations to install and perform initial config
 [.lead]
 Perform the following operations to install and perform initial configuration for your StorageGRID system.
 
-NOTE: Items in the checklists will open in a new browser window. When you complete a task, close that browser window to return to the checklist.
+//NOTE: Items in the checklists will open in a new browser window. When you complete a task, close that browser window to return to the checklist.
 
 //NOTE: This checklist is interactive. Check marks you enter in the checklist remain persistent only if you return to the checklist by selecting BACK (one or more times) in your web browser. All check marks are cleared at the end of a browser session.
 
 == Prepare for installation
+
 //[%interactive]
 * [ ] Prepare site
-** xref:preparing-site-sg100-and-sg1000.adoc[SG100 and SG1000^]
-** xref:preparing-site-sg5600.adoc[SG5600^]
-** xref:preparing-site-sg5700.adoc[SG5700^]
-** xref:preparing-site-sg6000.adoc[SG6000^]
+** xref:preparing-site-sg100-and-sg1000.adoc[SG100 and SG1000]
+** xref:preparing-site-sg5600.adoc[SG5600]
+** xref:preparing-site-sg5700.adoc[SG5700]
+** xref:preparing-site-sg6000.adoc[SG6000]
 * [ ] Unpack boxes
-** xref:unpacking-boxes-sg100-and-sg1000.adoc[SG100 and SG1000^]
-** xref:unpacking-boxes-sg5600.adoc[SG5600^]
-** xref:unpacking-boxes-sg5700.adoc[SG5700^]
-** xref:unpacking-boxes-sg6000.adoc[SG6000^]
+** xref:unpacking-boxes-sg100-and-sg1000.adoc[SG100 and SG1000]
+** xref:unpacking-boxes-sg5600.adoc[SG5600]
+** xref:unpacking-boxes-sg5700.adoc[SG5700]
+** xref:unpacking-boxes-sg6000.adoc[SG6000]
 * [ ] Obtain additional equipment and tools
-** xref:obtaining-additional-equipment-and-tools-sg100-and-sg1000.adoc[SG100 and SG1000^]
-** xref:obtaining-additional-equipment-and-tools-sg5600.adoc[SG5600^]
-** xref:obtaining-additional-equipment-and-tools-sg5700.adoc[SG5700^]
-** xref:obtaining-additional-equipment-and-tools-sg6000.adoc[SG6000^]
-* [ ] xref:web-browser-requirements.adoc[Review web browser requirements^]
+** xref:obtaining-additional-equipment-and-tools-sg100-and-sg1000.adoc[SG100 and SG1000]
+** xref:obtaining-additional-equipment-and-tools-sg5600.adoc[SG5600]
+** xref:obtaining-additional-equipment-and-tools-sg5700.adoc[SG5700]
+** xref:obtaining-additional-equipment-and-tools-sg6000.adoc[SG6000]
+* [ ] xref:../admin/web-browser-requirements.adoc[Review web browser requirements]
 * [ ] Review appliance network connections
-** xref:reviewing-appliance-network-connections-sg100-and-sg1000.adoc[SG100 and SG1000^]
-** xref:reviewing-appliance-network-connections-sg5600.adoc[SG5600^]
-** xref:reviewing-appliance-network-connections-sg5700.adoc[SG5700^]
-** xref:reviewing-appliance-network-connections-sg6000.adoc[SG6000^]
-* [ ] xref:gathering_installation_information.adoc[Gather installation information^]
-** xref:gathering-installation-information-sg100-and-sg1000.adoc[SG100 and SG1000^]
-** xref:gathering-installation-information-sg5600.adoc[SG5600^]
-** xref:gathering-installation-information-sg5700.adoc[SG5700^]
-** xref:gathering-installation-information-sg6000.adoc[SG6000^]
+** xref:reviewing-appliance-network-connections-sg100-and-sg1000.adoc[SG100 and SG1000]
+** xref:reviewing-appliance-network-connections-sg5600.adoc[SG5600]
+** xref:reviewing-appliance-network-connections-sg5700.adoc[SG5700]
+** xref:reviewing-appliance-network-connections-sg6000.adoc[SG6000]
+* [ ] xref:gathering_installation_information.adoc[Gather installation information]
+** xref:gathering-installation-information-sg100-and-sg1000.adoc[SG100 and SG1000]
+** xref:gathering-installation-information-sg5600.adoc[SG5600]
+** xref:gathering-installation-information-sg5700.adoc[SG5700]
+** xref:gathering-installation-information-sg6000.adoc[SG6000]
 
 == Install hardware
-See the xref:install-appliance-hardware.adoc[installing appliance hardware overview^] for general installation information.
+
+See the xref:install-appliance-hardware.adoc[installing appliance hardware overview] for general installation information.
+
 //[%interactive]
 * [ ] Register hardware
-** xref:registering-hardware-sg100-and-sg1000.adoc[SG100 and SG1000^]
-** xref:registering-hardware-sg5600.adoc[SG5600^]
-** xref:registering-hardware-sg5700.adoc[SG5700^]
-** xref:registering-hardware-sg6000.adoc[SG6000^]
+** xref:registering-hardware-sg100-and-sg1000.adoc[SG100 and SG1000]
+** xref:registering-hardware-sg5600.adoc[SG5600]
+** xref:registering-hardware-sg5700.adoc[SG5700]
+** xref:registering-hardware-sg6000.adoc[SG6000]
 * [ ] Install appliance
-** xref:installing-hardware-sg100-and-sg1000.adoc[SG100 and SG1000^]
-** xref:installing-hardware-sg5600.adoc[SG5600^]
-** xref:installing-hardware-sg5700.adoc[SG5700^]
-** xref:installing-hardware-sg6000.adoc[SG6000^]
+** xref:installing-hardware-sg100-and-sg1000.adoc[SG100 and SG1000]
+** xref:installing-hardware-sg5600.adoc[SG5600]
+** xref:installing-hardware-sg5700.adoc[SG5700]
+** xref:installing-hardware-sg6000.adoc[SG6000]
 * [ ] Cable appliance
-** xref:cabling-appliance-sg100-and-sg1000.adoc[SG100 and SG1000^]
-** xref:cabling-appliance-sg5600.adoc[SG5600^]
-** xref:cabling-appliance-sg5700.adoc[SG5700^]
-** xref:cabling-appliance-sg6000.adoc[SG6000^]
+** xref:cabling-appliance-sg100-and-sg1000.adoc[SG100 and SG1000]
+** xref:cabling-appliance-sg5600.adoc[SG5600]
+** xref:cabling-appliance-sg5700.adoc[SG5700]
+** xref:cabling-appliance-sg6000.adoc[SG6000]
 * [ ] Connect power cords and apply power
-** xref:connecting-power-cords-and-applying-power-sg100-and-sg1000.adoc[SG100 and SG1000^]
+** xref:connecting-power-cords-and-applying-power-sg100-and-sg1000.adoc[SG100 and SG1000]
 ** SG5600
-*** xref:connecting-ac-power-cords-sg5600.adoc[Connect AC power cords^]
-*** xref:turning-power-on-sg5600.adoc[Turn power on^]
-** xref:connecting-power-cords-and-applying-power-sg5700.adoc[SG5700^]
-** xref:connecting-power-cords-and-applying-power-sg6000.adoc[SG6000^]
+*** xref:connecting-ac-power-cords-sg5600.adoc[Connect AC power cords]
+*** xref:turning-power-on-sg5600.adoc[Turn power on]
+** xref:connecting-power-cords-and-applying-power-sg5700.adoc[SG5700]
+** xref:connecting-power-cords-and-applying-power-sg6000.adoc[SG6000]
 * [ ] View status indicators and codes
-** xref:viewing-status-indicators-on-sg100-and-sg1000-appliances.adoc[SG100 and SG1000^]
+** xref:viewing-status-indicators-on-sg100-and-sg1000-appliances.adoc[SG100 and SG1000]
 ** SG5600
-*** xref:viewing-boot-up-status-and-reviewing-error-codes-on-sg5600-controllers.adoc[View boot-up status and reviewing error codes on SG5600 controllers^]
-*** xref:e5600sg-controller-seven-segment-display-codes.adoc[E5600SG controller seven-segment display codes^]
+*** xref:viewing-boot-up-status-and-reviewing-error-codes-on-sg5600-controllers.adoc[View boot-up status and reviewing error codes on SG5600 controllers]
+*** xref:e5600sg-controller-seven-segment-display-codes.adoc[E5600SG controller seven-segment display codes]
 ** SG5700
-*** xref:viewing-sg5700-boot-up-status-codes.adoc[View SG5700 boot-up status codes^]
-*** xref:status-indicators-on-e5700sg-controller.adoc[Status indicators on E5700SG controller^]
+*** xref:viewing-sg5700-boot-up-status-codes.adoc[View SG5700 boot-up status codes]
+*** xref:status-indicators-on-e5700sg-controller.adoc[Status indicators on E5700SG controller]
 ** SG6000
-*** xref:viewing-status-indicators-and-buttons-on-sg6000-cn-controller.adoc[View status indicators and buttons on SG6000-CN controller^]
-*** xref:viewing-boot-up-status-codes-for-sg6000-storage-controllers.adoc[View boot-up status codes for SG6000 storage controllers^]
+*** xref:viewing-status-indicators-and-buttons-on-sg6000-cn-controller.adoc[View status indicators and buttons on SG6000-CN controller]
+*** xref:viewing-boot-up-status-codes-for-sg6000-storage-controllers.adoc[View boot-up status codes for SG6000 storage controllers]
 
 == Initial appliance configuration
-See the xref:configuring-hardware.adoc[configuring hardware overview^] for general installation information.
 
-If you choose to xref:automating-appliance-installation-and-configuration.adoc[automate appliance installation and configuration^] some of the following tasks will be performed automatically.
+See the xref:configuring-hardware.adoc[configuring hardware overview] for general installation information.
+
+If you choose to xref:automating-appliance-installation-and-configuration.adoc[automate appliance installation and configuration] some of the following tasks will be performed automatically.
+
 //[%interactive]
 * [ ] Configure StorageGRID connections
 //[%interactive]
 ** [ ] Access StorageGRID Appliance Installer and verify you are running most recent version
-*** xref:accessing-storagegrid-appliance-installer-sg100-and-sg1000.adoc[SG100 and SG1000^]
-*** xref:accessing-storagegrid-appliance-installer-sg5600.adoc[SG5600^]
-*** xref:accessing-storagegrid-appliance-installer-sg5700.adoc[SG5700^]
-*** xref:accessing-storagegrid-appliance-installer-sg6000.adoc[SG6000^]
-*** xref:verifying-and-upgrading-storagegrid-appliance-installer-version.adoc[Verify and upgrade StorageGRID Appliance Installer version^]
+*** xref:accessing-storagegrid-appliance-installer-sg100-and-sg1000.adoc[SG100 and SG1000]
+*** xref:accessing-storagegrid-appliance-installer-sg5600.adoc[SG5600]
+*** xref:accessing-storagegrid-appliance-installer-sg5700.adoc[SG5700]
+*** xref:accessing-storagegrid-appliance-installer-sg6000.adoc[SG6000]
+*** xref:verifying-and-upgrading-storagegrid-appliance-installer-version.adoc[Verify and upgrade StorageGRID Appliance Installer version]
 ** [ ] Configure network links
-*** xref:configuring-network-links-sg100-and-sg1000.adoc[SG100 and SG1000^]
-*** xref:configuring-network-links-sg5600.adoc[SG5600^]
-*** xref:configuring-network-links-sg5700.adoc[SG5700^]
-*** xref:configuring-network-links-sg6000.adoc[SG6000^]
+*** xref:configuring-network-links-sg100-and-sg1000.adoc[SG100 and SG1000]
+*** xref:configuring-network-links-sg5600.adoc[SG5600]
+*** xref:configuring-network-links-sg5700.adoc[SG5700]
+*** xref:configuring-network-links-sg6000.adoc[SG6000]
 ** [ ] Configure StorageGRID IP addresses
-*** xref:configuring-storagegrid-ip-addresses-sg100-and-sg1000.adoc[SG100 and SG1000^]
-*** xref:setting-ip-configuration-sg5600.adoc[SG5600^]
-*** xref:setting-ip-configuration-sg5700.adoc[SG5700^]
-*** xref:configuring-storagegrid-ip-addresses-sg6000.adoc[SG6000^]
-** [ ] xref:verifying-network-connections.adoc[Verify network connections^]
-** [ ] xref:verifying-port-level-network-connections.adoc[Verify port-level network connections^]
+*** xref:configuring-storagegrid-ip-addresses-sg100-and-sg1000.adoc[SG100 and SG1000]
+*** xref:setting-ip-configuration-sg5600.adoc[SG5600]
+*** xref:setting-ip-configuration-sg5700.adoc[SG5700]
+*** xref:configuring-storagegrid-ip-addresses-sg6000.adoc[SG6000]
+** [ ] xref:verifying-network-connections.adoc[Verify network connections]
+** [ ] xref:verifying-port-level-network-connections.adoc[Verify port-level network connections]
 * [ ] Access and configure SANtricity management tools (Storage Nodes only)
-** xref:configuring-santricity-storage-manager.adoc[SANtricity Storage Manager (SG5600)^]
-** xref:accessing-and-configuring-santricity-system-manager.adoc[SANtricity System Manager (SG5700 and SG6000)^]
-* [ ] xref:optional-enabling-node-encryption.adoc[Optional - Enable node encryption^]
+** xref:configuring-santricity-storage-manager.adoc[SANtricity Storage Manager (SG5600)]
+** xref:accessing-and-configuring-santricity-system-manager.adoc[SANtricity System Manager (SG5700 and SG6000)]
+* [ ] xref:optional-enabling-node-encryption.adoc[Optional - Enable node encryption]
 * [ ] Optional - Change RAID mode (Storage Nodes only)
-** xref:optional-changing-to-raid6-mode-sg5660-only.adoc[SG5600^]
-** xref:optional-changing-raid-mode-sg5760-only.adoc[SG5700^]
-** xref:optional-changing-raid-mode-sg6000-only.adoc[SG6000^]
+** xref:optional-changing-to-raid6-mode-sg5660-only.adoc[SG5600]
+** xref:optional-changing-raid-mode-sg5760-only.adoc[SG5700]
+** xref:optional-changing-raid-mode-sg6000-only.adoc[SG6000]
 * [ ] Optional - Remap network ports for appliance (Storage Nodes only)
-** xref:optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.adoc[SG5600 and SG5700^]
-** xref:optional-remapping-network-ports-for-appliance-sg6000.adoc[SG6000^]
+** xref:optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.adoc[SG5600 and SG5700]
+** xref:optional-remapping-network-ports-for-appliance-sg6000.adoc[SG6000]
 * [ ] Configure BMC interface (SG1000 and SG6000 only)
-** xref:configuring-bmc-interface-sg1000.adoc[SG1000^]
-** xref:configuring-bmc-interface-sg6000.adoc[SG6000^]
-* [ ] xref:installing-storagegrid-software-admin-nodes-only.adoc[Install the StorageGRID software (Admin Nodes only)^]
+** xref:configuring-bmc-interface-sg1000.adoc[SG1000]
+** xref:configuring-bmc-interface-sg6000.adoc[SG6000]
+* [ ] xref:installing-storagegrid-software-admin-nodes-only.adoc[Install the StorageGRID software (Admin Nodes only)]
