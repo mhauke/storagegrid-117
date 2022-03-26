@@ -12,6 +12,7 @@ summary: 'When configuring StorageGRID for use with FabricPool, you must configu
 When configuring StorageGRID for use with FabricPool, you must configure a load balancer endpoint and upload the load balancer endpoint certificate, which is used to secure the connection between ONTAP and StorageGRID.
 
 .What you'll need
+* You have reviewed the xref:best-practices-for-load-balancing.adoc[best practices for load balancing].
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Root access permission.
 * You have the following files:

@@ -21,7 +21,7 @@ When configuring StorageGRID, do not enable the global *Compress Stored Objects*
 
 == Consistency level
 
-For FabricPool buckets, the recommended bucket consistency level is "`read-after-new-write.`" The "`available`" consistency level is not recommended. See xref:../tenant/changing-consistency-level.adoc[Change the consistency level].
+For FabricPool buckets, the recommended bucket consistency level is "`read-after-new-write.`" The "`available`" consistency level is not recommended. See xref:../tenant/changing-consistency-level.adoc[Change a bucket's consistency level].
 
 == FabricPool tiering
 
