@@ -1,5 +1,5 @@
 ---
-permalink: monitor/troubleshooting-delivery-platform-services-messages.html
+permalink: troubleshoot/troubleshooting-delivery-platform-services-messages.html
 sidebar: sidebar
 keywords: how to troubleshoot delivery of platform services message, how to troubleshoot smtt alarm
 summary: 'The Total Events (SMTT) alarm is triggered in the Grid Manager if a platform service message is delivered to an destination that cannot accept the data.'
@@ -18,7 +18,7 @@ For example, an S3 multipart upload can succeed even though the associated repli
 
 The SMTT alarm contains a Last Event message that says, `Failed to publish notifications for _bucket-name object key_` for the last object whose notification failed.
 
-Event messages are also listed in the `/var/local/log/bycast-err.log` log file. See the xref:logs-files-reference.adoc[Log files reference].
+Event messages are also listed in the `/var/local/log/bycast-err.log` log file. See the xref:../monitor/logs-files-reference.adoc[Log files reference].
 
 For additional information about troubleshooting platform services, see the xref:../admin/index.html[instructions for administering StorageGRID]. You might need to xref:../tenant/index.adoc[access the tenant from the Tenant Manager] to debug a platform service error.
 
