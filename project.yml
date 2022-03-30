@@ -21,6 +21,9 @@ sidebar:
         - section: rhel
         - section: ubuntu
         - section: vmware
+      - title: Upgrade software
+        entries:
+        - section: upgrade
     - title: System administration (NO CHANGE)
       entries:  
       - section: admin
@@ -37,18 +40,15 @@ sidebar:
       - section: monitor  
       - section: troubleshoot
       - section: audit
-    - title: Upgrade and maintain (NEW)
+    - title: Maintain (NEW)
       entries:
-      - section: upgrade
       - section: expand
       - section: maintain
-      - title: Maintain appliance hardware
-        entries:
-        - section: commonhardware
-        - section: sg100-1000
-        - section: sg6000
-        - section: sg5700
-        - section: sg5600
+      - section: commonhardware
+      - section: sg100-1000
+      - section: sg6000
+      - section: sg5700
+      - section: sg5600
     - title: Earlier versions
       url: /earlier-versions.html
     - title: Legal notices
