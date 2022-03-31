@@ -90,10 +90,6 @@ To avoid these risks, do one or more of the following:
 *** Select *erasure coded* for Type, instead of *replicated*.
 You can safely ignore this warning if this rule already creates multiple copies for all time periods.
 
-.. If you specified only one storage pool, ignore the *Temporary location* field.
-+
-NOTE: Temporary locations are deprecated and will be removed in a future release. See xref:using-storage-pool-as-temporary-location-deprecated.adoc[Use a storage pool as a temporary location (deprecated)].
-
 . If you want to create an erasure-coded copy:
  .. From the *Type* drop-down list, select *erasure coded*.
 +
