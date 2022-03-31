@@ -15,3 +15,13 @@ IMPORTANT: You can continue to use version 1 and version 2 of the management API
 
 To learn more, go to xref:../admin/using-grid-management-api.adoc[Use the Grid Management API].
 
+== New private cipher API
+
+You can now configure ciphers using the Grid Management API.
+
+Using the private cipher API, you can:
+
+* Remove ciphers from client-facing interfaces.
+* Remove SSH algorithms from ECDSA and RSA.
+* Re-enable ciphers and algorithms if you have enabled CHACHA or the NIST “transitional” list.
+* Re-enable any cipher/algorithm that is available by default.
