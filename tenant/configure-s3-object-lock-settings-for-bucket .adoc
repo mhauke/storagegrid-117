@@ -1,0 +1,39 @@
+---
+permalink: tenant/configure-s3-object-lock-settings-for-bucket.html
+sidebar: sidebar
+keywords: how to configure S3 Object Lock for bucket, default retention period, Compliance, Governance
+summary: 'If you are using an S3 tenant and S3 Object Lock is enabled for the grid and for the bucket, you can use the Tenant Manager or the Tenant Management API to configure the S3 Object Lock settings for that bucket.'
+---
+= Configure S3 Object Lock settings for a bucket
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using an S3 tenant and S3 Object Lock is enabled for the grid and for the bucket, you can use the Tenant Manager or the Tenant Management API to configure the S3 Object Lock settings for that bucket.
+
+.What you'll need
+* You must be signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must belong to a user group that has the Manage All Buckets or the Root Access permission. These permissions override the permissions settings in group or bucket policies. See xref:tenant-management-permissions.adoc[Tenant management permissions].
+* S3 Object Lock is enabled globally for your StorageGRID system. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
+* S3 Object Lock was enabled for the bucket when you created it. See xref:creating-s3-bucket.adoc[Create S3 bucket].
+
+.About this task
+
+
+.Steps
+. Select *STORAGE (S3)* > *Buckets*.
+. Select the bucket name from the list.
++
+The bucket details page appears.
+
+. Select *Bucket options* > *S3 Object Lock*.
+
+. Enable or disable *Default retention* for this bucket.
++
+Enable *Default retention* if you want new objects added to the bucket to be automatically protected from being deleted or overwritten. The *Default retention* setting only applies to new objects. It does not apply to objects already in the bucket or to any objects that might have their own retention periods.
+
+. If *Default retention* is enabled, specify the *Default retention period* for the bucket.
++
+The *Default retention* indicates how long new objects added to this bucket should be retained, starting from the day they are added. Specify a value between 1 and 36,500 days or between 1 and 100 years, inclusive.
+
+. Select *Save changes*.
