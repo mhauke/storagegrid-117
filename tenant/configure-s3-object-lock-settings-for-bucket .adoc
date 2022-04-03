@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure default retention for s3 object lock bucket, retention mode, retention period, compliance, governance
 summary: 'After S3 Object Lock is enabled for a bucket, you can optionally set a default retention mode and retention period for that bucket.'
 ---
-= Configure default retention for a bucket
+= Configure S3 Object Lock settings for a bucket
 :icons: font
 :imagesdir: ../media/
 
@@ -15,7 +15,7 @@ After S3 Object Lock is enabled for a bucket, you can optionally set a default r
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Manage All Buckets or the Root Access permission. These permissions override the permissions settings in group or bucket policies. See xref:tenant-management-permissions.adoc[Tenant management permissions].
 * S3 Object Lock is enabled globally for your StorageGRID system. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
-* S3 Object Lock is enabled for the bucket. See xref:creating-s3-bucket.adoc[Create S3 bucket].
+* You enabled S3 Object Lock when you created the bucket. See xref:creating-s3-bucket.adoc[Create S3 bucket].
 
 .About this task
 
@@ -33,6 +33,12 @@ The bucket details page appears.
 . Optionally, enable *Default retention* for this bucket.
 +
 When *Default retention* is enabled, new objects added to the bucket will be automatically protected from being deleted or overwritten. The *Default retention* setting only applies to new objects. It does not apply to objects already in the bucket or to any objects that might have their own retention periods.
+
+. If *Default retention* is enabled, specify a *Default retention mode* for the bucket.
++
+** *Goverance*. Users with special permissions can change an object's retention settings or they can override these settings to delete the object.
+
+** *Compliance*. No users can overwrite or delete protected object versions during the retention period.
 
 . If *Default retention* is enabled, specify the *Default retention period* for the bucket.
 +

@@ -1,0 +1,51 @@
+//shared required for S3 Object Lock buckets for Grid Manager and Tenant Manager
+
+
+=== Requirements for buckets with S3 Object Lock enabled
+
+* If the global S3 Object Lock setting is enabled for the StorageGRID system, you can use the Tenant Manager, the Tenant Management API, or the S3 REST API to create buckets with S3 Object Lock enabled.
++
+This example from the Tenant Manager shows a bucket with S3 Object Lock enabled.
++
+image::../media/compliant_bucket.png[Example Compliant Bucket]
+
+* If you plan to use S3 Object Lock, you must enable S3 Object Lock when you create the bucket. You cannot enable S3 Object Lock for an existing bucket.
+* When S3 Object Lock is enabled for a bucket, StorageGRID automatically enables versioning for that bucket.
+* After you create a bucket with S3 Object Lock enabled, you cannot disable S3 Object Lock or suspend versioning for that bucket.
+* Optionally, you can specify a default retention mode and retention period for each bucket. A bucket's default retention settings apply only to new objects added to the bucket and they apply only to objects that do not have their own retention settings.
+* Bucket lifecycle configuration is supported for buckets with S3 Object Lock enabled.
+* CloudMirror replication is not supported for buckets with S3 Object Lock enabled.
+
+=== Requirements for objects in buckets with S3 Object Lock enabled
+
+* To protect an object version, you can specify default retention settings for the bucket, or you can specify retention settings for each object version.
+
+* S3 Object Lock requires the use of versioned buckets. Retention settings apply to individual object versions. An object version can have both a retain-until-date and a legal hold setting, one but not the other, or neither. Specifying a retain-until-date or a legal hold setting for an object protects only the version specified in the request. You can create new versions of the object, while the previous version of the object remains locked.
+
+=== Lifecycle of objects in buckets with S3 Object Lock enabled
+
+Each object that is saved in a bucket with S3 Object Lock enabled goes through these stages:
+
+. *Object ingest*
++
+When an object version is added to bucket that has S3 Object Lock enabled, retention settings are applied as follows:
+
+* If retention settings are specified for the object, the object-level settings are applied. Any default bucket settings are ignored.
+* If no retention settings are specified for the object, the default bucket settings are applied, if they exist.
+* If no retention settings are specified for the object or the bucket, the object is not protected by S3 Object Lock. 
+
++
+If retention settings are applied, both the object and any S3 user-defined metadata are protected.
+
+. *Object retention and deletion*
++
+Multiple copies of each protected object are stored by StorageGRID for the specified retention period. The exact number and type of object copies and the storage locations are determined by the compliant rules in the active ILM policy.
+
+* If a bucket or object version uses the compliance retention mode:
+** An object version cannot be deleted until its retain-until-date is reached.
+** The retain-until-date can be increased, but not decreased.
+** A legal hold can be placed on an object version. When an object version is under a legal hold, it cannot be deleted from StorageGRID, even if it has reached its retain-until-date. When the legal hold is lifted, the object version can be deleted if the retain-until-date has been reached.
+
+* If a bucket or object version uses the governance retention mode:
+** Users with special permissions can change retention settings.
+** Users with special permissions can delete an object version, even if it is under a legal hold.

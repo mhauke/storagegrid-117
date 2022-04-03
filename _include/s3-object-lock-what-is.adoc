@@ -1,0 +1,36 @@
+//shared section for the tenant manager and the grid manager//
+
+== What is S3 Object Lock?
+
+The StorageGRID S3 Object Lock feature is an object-protection solution that is equivalent to S3 Object Lock in Amazon Simple Storage Service (Amazon S3).
+
+As shown in the figure, when the global S3 Object Lock setting is enabled for a StorageGRID system, an S3 tenant account can create buckets with or without S3 Object Lock enabled. If a bucket has S3 Object Lock enabled, S3 client applications can optionally specify retention settings for any object version in that bucket. An object version must have retention settings specified to be protected by S3 Object Lock. 
+
+In addition, each bucket that has S3 Object Lock enabled can optionally have a default retention mode and retention period. The default bucket retention settings apply only to new objects that do not have their own retention settings.
+
+image::../media/s3_object_lock_architecture.png[S3 Object Lock Architecture]
+
+=== Retention modes
+The StorageGRID S3 Object Lock feature supports two retention modes to apply different levels of protection to objects. These modes are equivalent to the Amazon S3 retention modes:
+
+* In _compliance mode_, no users can overwrite or delete protected object versions.
+* In _governance mode_, users who have special permissions can change retention settings or delete protected object versions.
+
+=== Retention settings for object versions
+
+If a bucket has S3 Object Lock enabled, users can optionally specify the following object-level retention settings when creating or updating an object:
+
+* *Retention mode*: Either compliance or governance.
+
+* *Retain-until-date*: If an object version's retain-until-date is in the future, the object can be retrieved, but it cannot be modified or deleted. As required, an object's retain-until-date can be increased, but this date cannot be decreased.
+
+* *Legal hold*: Applying a legal hold to an object version immediately locks that object. For example, you might need to put a legal hold on an object that is related to an investigation or legal dispute. A legal hold has no expiration date, but remains in place until it is explicitly removed. Legal holds are independent of the retain-until-date.
++
+For details on the object settings, see xref:../s3/using-s3-object-lock.adoc[Use S3 Object Lock].
+
+=== Default retention setting for buckets
+
+Users can optionally specify a default retention mode and default retention period for any bucket that has S3 Object Lock enabled. The default bucket settings apply only to new objects that do not have their own retention settings. 
+
+See xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket] and xref:../tenant/configure-s3-object-lock-settings-for-bucket.adoc[Configure S3 Object Lock settings for a bucket].
+

@@ -18,9 +18,10 @@ You can view a list of the buckets and bucket settings in your tenant account.
 .Steps
 . Select *STORAGE (S3)* > *Buckets*.
 +
-The Buckets page appears and lists all buckets for the tenant account.
+The Buckets page appears and lists all buckets for the tenant account. 
 +
 image::../media/buckets_table.png[Buckets Table]
+
 
 . Review the information for each bucket.
 +
@@ -29,7 +30,7 @@ As required, you can sort the information by any column, or you can page forward
  ** Name: The bucket's unique name, which cannot be changed.
  ** S3 Object Lock: Whether S3 Object Lock is enabled for this bucket.
 +
-This column is not displayed if the global S3 Object lock setting is disabled. This column also shows information for any legacy Compliant buckets.
+This column appears only if S3 Object Lock is enabled for the grid. This column also shows information for any legacy Compliant buckets.
 
  ** Region: The bucket's region, which cannot be changed.
  ** Object Count: The number of objects in this bucket.
