@@ -18,10 +18,6 @@ You must review the requirements for enabling the global S3 Object Lock setting,
 * After you enable the global S3 Object Lock setting, you cannot disable the setting.
 * You cannot enable the global S3 Object Lock unless the default rule in the active ILM policy is _compliant_ (that is, the default rule must comply with the requirements of buckets with S3 Object Lock enabled).
 * When the global S3 Object Lock setting is enabled, you cannot create a new proposed ILM policy or activate an existing proposed ILM policy unless the default rule in the policy is compliant. After the global S3 Object Lock setting has been enabled, the ILM Rules and ILM Policies pages indicate which ILM rules are compliant.
-+
-In the following example, the ILM Rules page lists three rules that are compliant with buckets with S3 Object Lock enabled.
-+
-image::../media/compliance_fields_on_ilm_rules_page.png[Compliance Fields On ILM Rules Page]
 
 == Requirements for compliant ILM rules
 
@@ -33,10 +29,6 @@ If you want to enable the global S3 Object Lock setting, you must ensure that th
 * Object copies cannot be saved on Archive Nodes.
 * At least one line of the placement instructions must start at day 0, using *Ingest Time* as the reference time.
 * At least one line of the placement instructions must be "`forever.`"
-
-For example, this rule satisfies the requirements of buckets with S3 Object Lock enabled. It stores two replicated object copies from Ingest Time (day 0) to "`forever.`" The objects will be stored on Storage Nodes at two data centers.
-
-image::../media/compliant_rule_two_copies_forever.png[Example Compliant Rule Two Copies Forever]
 
 == Requirements for active and proposed ILM policies
 

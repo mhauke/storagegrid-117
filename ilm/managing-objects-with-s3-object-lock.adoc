@@ -39,13 +39,13 @@ How is the feature enabled for a bucket?
 a|
 Users must enable S3 Object Lock when creating a new bucket using the Tenant Manager, the Tenant Management API, or the S3 REST API.
 a|
-Users can no longer create new buckets with Compliance enabled; however, they can continue to add new objects to existing Compliant buckets.
+No longer supported.
 a|
 Is bucket versioning supported?
 a|
 Yes. Bucket versioning is required and is enabled automatically when S3 Object Lock is enabled for the bucket.
 a|
-No. The legacy Compliance feature does not allow bucket versioning.
+No. 
 a|
 How is object retention set?
 a|
