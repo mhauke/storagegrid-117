@@ -55,49 +55,20 @@ entries:
       url: "/installconfig/web-browser-requirements.html"
     - title: Review appliance network connections
       entries:
-      - title: SG100 and SG1000
-        url: "/installconfig/reviewing-appliance-network-connections-sg100-and-sg1000.html"
-        entries:
-        - title: Port bond modes for SG100 and SG1000 appliances
-          url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
-          entries:
-          - title: Network bond modes
-            url: "/installconfig/network-bond-modes-sg100-and-sg1000.html"
-          - title: Network bond modes for management ports
-            url: "/installconfig/network-bond-modes-for-management-ports-sg100-and-sg1000.html"
-      - title: SG5600
-        url: "/installconfig/reviewing-appliance-network-connections-sg5600.html"
-        entries:
-        - title: Port bond modes for E5600SG controller ports
-          url: "/installconfig/port-bond-modes-for-e5600sg-controller-ports.html"
-          entries:
-          - title: Network bond modes for 10-GbE ports
-            url: "/installconfig/network-bond-modes-for-10-gbe-ports.html"
-          - title: Network bond modes for 1-GbE management ports
-            url: "/installconfig/network-bond-modes-for-1-gbe-management-ports.html"
-      - title: SG5700
-        url: "/installconfig/reviewing-appliance-network-connections-sg5700.html"
-        entries:
-        - title: Port bond modes for E5700SG controller ports
-          url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
-          entries:
-          - title: Network bond modes for 10/25-GbE ports
-            url: "/installconfig/network-bond-modes-for-10-25-gbe-ports-sg5700.html"
-          - title: Network bond modes for 1-GbE management ports
-            url: "/installconfig/network-bond-modes-for-1-gbe-ports.html"
-      - title: SG6000
-        url: "/installconfig/reviewing-appliance-network-connections-sg6000.html"
-        entries:
-        - title: Port bond modes for SG6000-CN controller
-          url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
-          entries:
-          - title: Network bond modes for 10/25-GbE ports
-            url: "/installconfig/network-bond-modes-for-10-25-gbe-ports-sg6000.html"
-          - title: Network bond modes for 1-GbE management ports
-            url: "/installconfig/network-bond-modes-for-1-gbe-management-ports.html"
+      - title: Overview
+        url: "/installconfig/reviewing-appliance-network-connections.html"
+      - title: Port bond modes for SG100 and SG1000 appliances
+        url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
+      - title: Port bond modes for E5600SG controller
+        url: "/installconfig/port-bond-modes-for-e5600sg-controller-ports.html"
+      - title: Port bond modes for E5700SG controller
+        url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
+      - title: Port bond modes for SG6000-CN controller
+        url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
     - title: 'Automate appliance installation and configuration'
-      url: "/installconfig/automating-appliance-installation-and-configuration.html"
       entries:
+      - title: Overview
+        url: "/installconfig/automating-appliance-installation-and-configuration.html"
       - title: Automate appliance configuration using StorageGRID Appliance Installer
         url: "/installconfig/automating-appliance-configuration-using-storagegrid-appliance-installer.html"
       - title: Automate installation and configuration of appliance nodes using configure-sga.py script
@@ -108,6 +79,8 @@ entries:
         url: "/installconfig/overview-of-installation-rest-apis.html"
     - title: Gather installation information
       entries:
+      - title: Overview
+        url: "/installconfig/gathering-installation-information-overview.html"
       - title: SG100 and SG1000
         url: "/installconfig/gathering-installation-information-sg100-and-sg1000.html"
       - title: SG5600
