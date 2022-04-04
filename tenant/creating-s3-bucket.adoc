@@ -54,13 +54,13 @@ IMPORTANT: You cannot change the region after creating the bucket.
 +
 Enable object versioning if you want to store every version of each object in this bucket. You can then retrieve previous versions of an object as needed.
 
-. If the S3 Object Lock section appears, optionally enable S3 Object Lock for the bucket to store objects using a write-once-read-many (WORM) model. (The S3 Object Lock section appears only if the global S3 Object Lock setting is enabled.)
+. If the global S3 Object Lock setting is enabled, optionally enable S3 Object Lock for the bucket to store objects using a write-once-read-many (WORM) model. 
 +
-Enable S3 Object Lock for a bucket only if you need to keep objects for fixed amount of time, for example, to meet certain regulatory requirements. S3 Object Lock helps you prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely. 
+Enable S3 Object Lock for a bucket only if you need to keep objects for fixed amount of time, for example, to meet certain regulatory requirements. S3 Object Lock is a permanent setting that helps you prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely. 
 +
 IMPORTANT: After the S3 Object Lock setting is enabled for a bucket, it cannot be disabled. Anyone with the correct permissions can add objects to this bucket that cannot be changed. You might not be able to delete these objects or the bucket itself.
 +
-After  S3 Object Lock is enabled, you can optionally specify a default retention mode and default retention period for the bucket. These default settings apply to any object added to the bucket that does not have its own retention settings. For instructions, see xref:configure-s3-object-lock-settings-for-bucket.adoc[Configure S3 Object Lock settings for a bucket].
+After S3 Object Lock is enabled, you can optionally specify a default retention mode and default retention period for the bucket. For instructions, see xref:configure-s3-object-lock-settings-for-bucket.adoc[Configure S3 Object Lock settings for a bucket].
 +
 If you enable S3 Object Lock for a bucket, bucket versioning is enabled automatically. 
 

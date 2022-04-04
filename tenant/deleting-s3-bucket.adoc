@@ -28,17 +28,13 @@ You cannot delete an S3 bucket if it contains objects or noncurrent object versi
 . Select *STORAGE (S3)* > *Buckets*.
 +
 The Buckets page appears and shows all existing S3 buckets.
-+
-image::../media/buckets_table.png[Buckets Table]
 
 . Select the check box for the empty bucket you want to delete. You can select more than one bucket at a time.
 +
 The Actions menu is enabled.
 
 . From the Actions menu, select *Delete bucket* (or *Delete buckets* if you have chosen more than one).
-+
-image::../media/delete_bucket_button.png[Delete Buckets Button]
-+
+
 . When the confirmation dialog box appears, select *Yes* to delete all of the buckets you have chosen.
 +
 StorageGRID confirms that each bucket is empty and then deletes each bucket. This operation might take a few minutes.
