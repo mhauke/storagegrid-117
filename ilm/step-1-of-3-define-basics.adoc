@@ -13,7 +13,7 @@ Step 1 (Define Basics) of the Create ILM Rule wizard allows you to define the ru
 
 .About this task
 
-When evaluating an object against an ILM rule, StorageGRID compares the object metadata to the rule's filters. If the object metadata matches all filters, StorageGRID uses the rule to place the object. You can design a rule to apply to all objects, or you can specify filters, such as one or more tenant accounts or bucket names, or advanced filters, such as the object's size or user metadata.
+When evaluating an object against an xref:what-ilm-rule-is.adoc[ILM rule], StorageGRID compares the object metadata to the rule's filters. If the object metadata matches all filters, StorageGRID uses the rule to place the object. You can design a rule to apply to all objects, or you can specify basic filters, such as one or more tenant accounts or bucket names, or advanced filters, such as the object's size or user metadata.
 
 //image::../media/ilm_create_ilm_rule_wizard_1.png[Create ILM Rule step 1 of 3]
 
@@ -27,7 +27,7 @@ You must enter between 1 and 64 characters.
 +
 You should describe the rule's purpose or function so you can recognize the rule later.
 +
-image::../media/ilm_rule_wizard_name_description.gif[Rule name and description]
+//image::../media/ilm_rule_wizard_name_description.gif[Rule name and description]
 
 . Optionally, select one or more S3 or Swift tenant accounts to which this rule applies. If this rule applies to all tenants, leave this field blank.
 +
@@ -39,7 +39,7 @@ If *matches all* is selected (default), the rule applies to all S3 buckets or Sw
 
 . Optionally, select *Advanced filtering* to specify additional filters.
 +
-If you do not configure advanced filtering, the rule applies to all objects that match the basic filters.
+If you do not configure advanced filtering, the rule applies to all objects that match the basic filters. For more information about advanced filtering, see xref:using-advanced-filters-in-ilm-rules.adoc[Use advanced filters in ILM rules].
 +
 If this rule will create erasure-coded copies, add the *Object Size (MB)* advanced filter and set it to *greater than 1*. The size filter ensures that objects that are 1 MB or smaller will not be erasure coded.
 +
@@ -47,12 +47,4 @@ IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not u
 
 . Select *Next*.
 +
-Step 2 (Define Placements) appears.
-
-.Related information
-
-* xref:what-ilm-rule-is.adoc[What an ILM rule is]
-
-* xref:using-advanced-filters-in-ilm-rules.adoc[Use advanced filters in ILM rules]
-
-* xref:step-2-of-3-define-placements.adoc[Step 2 of 3: Define placements]
+Step 2 (Define Placements) appears. See xref:step-2-of-3-define-placements.adoc[Step 2 of 3: Define placements].

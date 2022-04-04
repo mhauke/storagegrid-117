@@ -50,16 +50,16 @@ When clients save objects to StorageGRID, the objects are evaluated against the 
 
 As an example, an ILM policy could contain three ILM rules that specify the following:
 
-* *Rule 1*: Replicated copies for Tenant A
+* *Rule 1: Replicated copies for Tenant A*
 ** Match all objects belonging to Tenant A.
 ** Store these objects as three replicated copies at three sites.
 ** Objects belonging to other tenants are not matched by Rule 1, so they are evaluated against Rule 2.
 
-* *Rule 2*: Erasure coding for objects greater than 1 MB
+* *Rule 2: Erasure coding for objects greater than 1 MB*
 ** Match all objects from other tenants, but only if they are greater than 1 MB. These larger objects are stored using 6+3 erasure coding at three sites.
 ** Does not match objects 1 MB or smaller, so these objects are evaluated against Rule 3.
 
-* *Rule 3*: 2 copies 2 data centers (default)
+* *Rule 3: 2 copies 2 data centers* (default)
 ** Is the last and default rule in the policy. Does not use filters.
 ** Make two replicated copies of all objects not matched by Rule 1 or Rule 2 (objects not belonging to Tenant A that are 1 MB or smaller).
 
