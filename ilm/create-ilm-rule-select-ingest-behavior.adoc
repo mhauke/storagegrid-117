@@ -1,15 +1,15 @@
 ---
-permalink: ilm/step-3-of-3-define-ingest-behavior.html
+permalink: ilm/create-ilm-rule-define-ingest-behavior.html
 sidebar: sidebar
 keywords: ilm rule step 3, define ingest behavior
-summary: 'Step 3 \(Define ingest behavior\) of the Create ILM Rule wizard allows you to choose how the objects filtered by this rule are protected as they are ingested.'
+summary: 'Step 3 \(Select ingest behavior\) of the Create ILM Rule wizard allows you to choose how the objects filtered by this rule are protected as they are ingested.'
 ---
-= Step 3 of 3: Define ingest behavior
+= Select ingest behavior
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Step 3 (Define ingest behavior) of the Create ILM Rule wizard allows you to choose how the objects filtered by this rule are protected as they are ingested.
+Step 3 (Select ingest behavior) of the Create ILM Rule wizard allows you to choose how the objects filtered by this rule are protected as they are ingested.
 
 .About this task
 
@@ -24,19 +24,18 @@ image::../media/define_ingest_behavior_for_ilm_rule.png[Create ILM rule step 3 o
 [cols="1a,2a" options="header"]
 |===
 | Option| Description
-a|
-Strict
-a|
-Always uses this rule's placements on ingest. Ingest fails when this rule's placements are not possible.
-a|
-Balanced
-a|
-Optimum ILM efficiency. Attempts this rule's placements on ingest. Creates interim copies when that is not possible.
-a|
-Dual commit
-a|
-Creates interim copies on ingest and applies this rule's placements later.
+
+|Strict
+|Always uses this rule's placements on ingest. Ingest fails when this rule's placements are not possible.
+
+|Balanced
+|Optimum ILM efficiency. Attempts this rule's placements on ingest. Creates interim copies when that is not possible.
+
+|Dual commit
+|Creates interim copies on ingest and applies this rule's placements later.
+
 |===
+
 Balanced offers a combination of data security and efficiency that is suitable in most cases. Strict or Dual commit are generally used to meet specific requirements.
 +
 See xref:data-protection-options-for-ingest.adoc[Data-protection options for ingest] and xref:advantages-disadvantages-of-ingest-options.adoc[Advantages, disadvantages, and limitations of the data-protection options] for more information.
@@ -50,9 +49,9 @@ An error message appears if you select the Strict or Balanced option and the rul
  ** A Cloud Storage Pool or an Archive Node when the rule uses a User Defined Creation Time as a Reference Time
 ====
 
-. Select *Save*.
+. Select *Create*.
 +
-The ILM rule is saved. The rule does not become active until it is added to an ILM policy and that policy is activated.
+The ILM rule is created. The rule does not become active until it is added to an ILM policy and that policy is activated.
 
 .Related information
 

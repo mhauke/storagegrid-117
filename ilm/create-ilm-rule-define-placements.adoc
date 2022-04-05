@@ -1,15 +1,15 @@
 ---
-permalink: ilm/step-2-of-3-define-placements.html
+permalink: ilm/create-ilm-rule-define-placements.html
 sidebar: sidebar
 keywords: ilm rule step 2, define placements
-summary: 'Step 2 \(Define Placements\) of the Create ILM Rule wizard allows you to define the placement instructions that determine how long objects are stored, the type of copies \(replicated or erasure coded\), the storage location, and the number of copies.'
+summary: 'Step 3 \(Define placements\) of the Create ILM Rule wizard allows you to define the placement instructions that determine how long objects are stored, the type of copies \(replicated or erasure coded\), the storage location, and the number of copies.'
 ---
-= Step 2 of 3: Define placements
+= Define placements
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Step 2 (Define Placements) of the Create ILM Rule wizard allows you to define the placement instructions that determine how long objects are stored, the type of copies (replicated or erasure coded), the storage location, and the number of copies.
+Step 3 (Define placements) of the Create ILM Rule wizard allows you to define the placement instructions that determine how long objects are stored, the type of copies (replicated or erasure coded), the storage location, and the number of copies.
 
 .About this task
 
@@ -19,7 +19,7 @@ Each placement instruction can have multiple lines if you want to create differe
 
 This example ILM rule creates two replicated copies for the first year. Each copy is saved in a storage pool at a different site. After one year, a 2+1 erasure-coded copy is made and saved at only one site.
 
-image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
+//image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
 
 .Steps
 
@@ -28,32 +28,26 @@ image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
 [cols="1a,2a" options="header"]
 |===
 | Option| Description
-a|
-Ingest Time
-a|
-The time when the object was ingested.
-a|
-Last Access Time
-a|
-The time when the object was last retrieved (read or viewed).
+
+|Ingest Time
+|The time when the object was ingested.
+
+|Last Access Time
+|The time when the object was last retrieved (read or viewed).
 
 *Note:* To use this option, updates to Last Access Time must be enabled for the S3 bucket or Swift container. See xref:using-last-access-time-in-ilm-rules.adoc[Use Last Access Time in ILM rules].
-a|
-Noncurrent Time
-a|
-The time an object version became noncurrent because a new version was ingested and replaced it as the current version.
+
+|Noncurrent Time
+|The time an object version became noncurrent because a new version was ingested and replaced it as the current version.
 
 *Note:* Noncurrent Time applies only to S3 objects in versioning-enabled buckets.
 
 You can use this option to reduce the storage impact of versioned objects by filtering for noncurrent object versions. See xref:example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[Example 4: ILM rules and policy for S3 versioned objects].
 
-
-
-a|
-User Defined Creation Time
-a|
-A time specified in user-defined metadata.
+|User Defined Creation Time
+|A time specified in user-defined metadata.
 |===
+
 NOTE: If you want to create a compliant rule, you must select *Ingest Time*.
 
 . In the *Placements* section, select a starting time and a duration for the first time period.
@@ -160,17 +154,12 @@ In this example, two replicated copies will be saved to two storage pools (DC1 a
 +
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
 
-. Select *Next*.
+. Select *Continue*.
 +
-Step 3 (Define Ingest Behavior) appears.
+Step 4 (Select ingest Behavior) appears.
 
 .Related information
 
 * xref:what-ilm-rule-is.adoc[What an ILM rule is]
 
-
 * xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock]
-
-
-
-* xref:step-3-of-3-define-ingest-behavior.adoc[Step 3 of 3: Define ingest behavior]
