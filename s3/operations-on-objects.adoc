@@ -42,10 +42,14 @@ To remove a specific version, the requestor must be the bucket owner and use the
 
 *Note*: In certain cases, multiple delete markers might exist for an object.
 
+See xref:using-s3-object-lock.adoc[Use S3 Object Lock] to learn how to delete object versions in GOVERNANCE mode.
+
 |DELETE Multiple Objects
 |Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` are not supported.
 
 Multiple objects can be deleted in the same request message.
+
+See xref:using-s3-object-lock.adoc[Use S3 Object Lock] to learn how to delete object versions in GOVERNANCE mode.
 
 |DELETE Object tagging
 |Uses the `tagging` subresource to remove all tags from an object. Implemented with all Amazon S3 REST API behavior.

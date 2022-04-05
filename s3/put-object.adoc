@@ -90,9 +90,7 @@ NOTE: An ILM rule cannot use both a *User Defined Creation Time* for the Referen
  ** `x-amz-object-lock-retain-until-date`
  ** `x-amz-object-lock-legal-hold`
 +
-If a request is made without these headers, the bucket default retention settings are used to calculate the object version retain-until-date.
-+
-xref:using-s3-object-lock.adoc[Use S3 Object Lock]
+If a request is made without these headers, the bucket default retention settings are used to calculate the object version mode and retain-until-date. See xref:using-s3-object-lock.adoc[Use S3 Object Lock].
 
 * SSE request headers:
  ** `x-amz-server-side-encryption`

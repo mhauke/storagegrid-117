@@ -55,9 +55,7 @@ You can specify `REPLACE` to overwrite the existing tags when copying the object
  ** `x-amz-object-lock-retain-until-date`
  ** `x-amz-object-lock-legal-hold`
 +
-If a request is made without these headers, the bucket default retention settings are used to calculate the object version retain-until-date.
-+
-xref:using-s3-object-lock.adoc[Use S3 Object Lock]
+If a request is made without these headers, the bucket default retention settings are used to calculate the object version mode and retain-until-date. See xref:using-s3-object-lock.adoc[Use S3 Object Lock].
 
 * SSE request headers:
  ** `x-amz-copy-source​-server-side​-encryption​-customer-algorithm`
