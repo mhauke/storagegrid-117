@@ -1,21 +1,25 @@
 ---
-permalink: installconfig/configuring-storagegrid-ip-addresses-sg100-and-sg1000.html
+permalink: installconfig/setting-ip-configuration.html
 sidebar: sidebar
-keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, configure, setup, set up, IP, IP address  
-summary: 'You use the StorageGRID Appliance Installer to configure the IP addresses and routing information used for the services appliance on the StorageGRID Grid, Admin, and Client Networks.'
+keywords: configure, setup, set up, IP, IP address
+summary: 'You use the StorageGRID Appliance Installer to configure the IP addresses and routing information used for the the services appliance or appliance Storage Node on the StorageGRID Grid, Admin, and Client Networks.'
 ---
 = Configure StorageGRID IP addresses
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You use the StorageGRID Appliance Installer to configure the IP addresses and routing information used for the services appliance on the StorageGRID Grid, Admin, and Client Networks.
+You use the StorageGRID Appliance Installer to configure the IP addresses and routing information used for the services appliance or appliance Storage Node on the StorageGRID Grid, Admin, and Client Networks.
 
 .About this task
 
 You must either assign a static IP for the appliance on each connected network or assign a permanent lease for the address on the DHCP server.
 
-If you want to change the link configuration, see the instructions for changing the link configuration of the services appliance.
+If you want to change the link configuration, see the instructions for changing the link configuration of the services appliance or storage appliance controller:
+* xref:changing-link-configuration-of-services-appliance.adoc[Change link configuration of the SG100 or SG1000 services appliance]
+* xref:changing-link-configuration-of-sg6000-cn-controller.adoc[Change link configuration of the SG6000-CN controller]
+* xref:changing-link-configuration-of-e5700sg-controller.adoc[Change link configuration of the E5700SG controller]
+* xref:changing-link-configuration-of-e5600sg-controller.adoc[Change link configuration of the E5600SG controller]
 
 .Steps
 
@@ -44,7 +48,7 @@ IMPORTANT: For the best network performance, all nodes should be configured with
 When you change the IP address, the gateway and list of subnets might also change.
 +
 If you lose your connection to the StorageGRID Appliance Installer, re-enter the URL using the new static IP address you just assigned. For example, +
-`*https://_services_appliance_IP_:8443*`
+`*https://_appliance_IP_:8443*`
 
  .. Confirm that the list of Grid Network subnets is correct.
 +
@@ -79,7 +83,7 @@ IMPORTANT: The MTU value of the network must match the value configured on the s
 IMPORTANT: For the best network performance, all nodes should be configured with similar MTU values on their Grid Network interfaces. The *Grid Network MTU mismatch* alert is triggered if there is a significant difference in MTU settings for the Grid Network on individual nodes. The MTU values do not have to be the same for all network types.
 
  .. Click *Save*.
-. To configure the Admin Network, select either *Static* or *DHCP* in the Admin Network section of the page.
+. To configure the Admin Network, select either *Static* or *DHCP* in the *Admin Network* section of the page.
 +
 NOTE: To configure the Admin Network, you must enable the Admin Network on the Link Configuration page.
 +
@@ -103,7 +107,7 @@ IMPORTANT: The MTU value of the network must match the value configured on the s
 When you change the IP address, the gateway and list of subnets might also change.
 +
 If you lose your connection to the StorageGRID Appliance Installer, re-enter the URL using the new static IP address you just assigned. For example, +
-`*https://_services_appliance_:8443*`
+`*https://_appliance_:8443*`
 
  .. Confirm that the list of Admin Network subnets is correct.
 +
@@ -169,6 +173,3 @@ NOTE: If the Client Network is enabled, the default route is displayed. The defa
 +
 IMPORTANT: The MTU value of the network must match the value configured on the switch port the node is connected to. Otherwise, network performance issues or packet loss might occur.
 
-.Related information
-
-xref:changing-link-configuration-of-services-appliance.adoc[Change link configuration of the services appliance]
