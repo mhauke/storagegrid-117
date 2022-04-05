@@ -50,17 +50,7 @@ See the xref:install-appliance-hardware.adoc[installing appliance hardware overv
 *** xref:turning-power-on-sg5600.adoc[Turn power on]
 ** xref:connecting-power-cords-and-applying-power-sg5700.adoc[SG5700]
 ** xref:connecting-power-cords-and-applying-power-sg6000.adoc[SG6000]
-* [ ] View status indicators and codes
-** xref:viewing-status-indicators-on-sg100-and-sg1000-appliances.adoc[SG100 and SG1000]
-** SG5600
-*** xref:viewing-boot-up-status-and-reviewing-error-codes-on-sg5600-controllers.adoc[View boot-up status and reviewing error codes on SG5600 controllers]
-*** xref:e5600sg-controller-seven-segment-display-codes.adoc[E5600SG controller seven-segment display codes]
-** SG5700
-*** xref:viewing-sg5700-boot-up-status-codes.adoc[View SG5700 boot-up status codes]
-*** xref:status-indicators-on-e5700sg-controller.adoc[Status indicators on E5700SG controller]
-** SG6000
-*** xref:viewing-status-indicators-and-buttons-on-sg6000-cn-controller.adoc[View status indicators and buttons on SG6000-CN controller]
-*** xref:viewing-boot-up-status-codes-for-sg6000-storage-controllers.adoc[View boot-up status codes for SG6000 storage controllers]
+* [ ] xref:viewing-status-indicators.adoc[View status indicators and codes]
 
 == Initial appliance configuration
 
@@ -72,11 +62,7 @@ If you choose to xref:automating-appliance-installation-and-configuration.adoc[a
 * [ ] Configure StorageGRID connections
 //[%interactive]
 ** [ ] xref:accessing-storagegrid-appliance-installer.adoc[Access StorageGRID Appliance Installer and verify you are running most recent version]
-** [ ] Configure network links
-*** xref:configuring-network-links-sg100-and-sg1000.adoc[SG100 and SG1000]
-*** xref:configuring-network-links-sg5600.adoc[SG5600]
-*** xref:configuring-network-links-sg5700.adoc[SG5700]
-*** xref:configuring-network-links-sg6000.adoc[SG6000]
+** [ ] xref:configuring-network-links.adoc[Configure network links]
 ** [ ] xref:setting-ip-configuration.adoc[Configure StorageGRID IP addresses]
 ** [ ] xref:verifying-network-connections.adoc[Verify network connections]
 ** [ ] xref:verifying-port-level-network-connections.adoc[Verify port-level network connections]
