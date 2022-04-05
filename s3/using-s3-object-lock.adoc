@@ -122,7 +122,7 @@ Changing the mode from COMPLIANCE to GOVERNANCE is never allowed.
 
 * Perform PUT Object operations to extend, reduce, or remove an object version's retention period.
 
-When using GOVERNANCE mode, any DELETE or PUT Object operations must include the `x-amz-bypass-governance-retention:true` request header, and the user must have the `s3:BypassGovernanceRetention` permission.
+To bypass the active retention settings of an object that uses GOVERNANCE mode, any DELETE or PUT Object retention operations must include the `x-amz-bypass-governance-retention:true` request header, and the user must have the `s3:BypassGovernanceRetention` permission.
 
 
 .Related information

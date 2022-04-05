@@ -24,6 +24,10 @@ entries:
       url: "/s3/how-storagegrid-ilm-rules-manage-objects.html"
     - title: Object versioning
       url: "/s3/object-versioning.html"
+    - title: Use S3 Object Lock
+      url: "/s3/using-s3-object-lock.html"     
+    - title: Use S3 Object Lock default bucket retention
+      url: "/s3/use-s3-object-lock-default-bucket-retention.html" 
     - title: Recommendations for implementing S3 REST API
       url: "/s3/recommendations-for-implementing-s3-rest-api.html"
   - title: S3 REST API supported operations and limitations
@@ -38,15 +42,11 @@ entries:
       entries:
       - title: Create S3 lifecycle configuration
         url: "/s3/create-s3-lifecycle-configuration.html" 
-      - title: Use S3 Object Lock default bucket retention
-        url: "/s3/use-s3-object-lock-default-bucket-retention.html" 
       - title: Custom operations on buckets
         url: "/s3/custom-operations-on-buckets.html"
     - title: Operations on objects
       url: "/s3/operations-on-objects.html"
       entries:
-      - title: Use S3 Object Lock
-        url: "/s3/using-s3-object-lock.html"
       - title: Use S3 Select
         url: "/s3/use-s3-select.html"
       - title: Use server-side encryption
