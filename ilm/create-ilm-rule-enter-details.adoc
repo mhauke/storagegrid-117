@@ -47,7 +47,7 @@ If you do not configure advanced filtering, the rule applies to all objects that
 
 . Select *Continue*.
 +
-Step 2 (Define placements) appears. See xref:create-ilm-rule-define-placements.adoc[Define placements]
+xref:create-ilm-rule-define-placements.adoc[Step 2 (Define placements)] appears.
 
 == Use advanced filters in ILM rules
 
@@ -99,9 +99,7 @@ For example, you might want to match objects that end with `.txt` or start with 
 * does not exist
 |Time and date the object was last retrieved (read or viewed).
 
-*Note:* If you plan to use last access time as an advanced filter, Last Access Time updates must be enabled for the S3 bucket or Swift container.
-
-xref:using-last-access-time-in-ilm-rules.adoc[Use Last Access Time in ILM rules]
+*Note:* If you plan to xref:using-last-access-time-in-ilm-rules.adoc[use last access time] as an advanced filter, Last Access Time updates must be enabled for the S3 bucket or Swift container.
 
 |Location Constraint (S3 only)
 |
@@ -109,9 +107,7 @@ xref:using-last-access-time-in-ilm-rules.adoc[Use Last Access Time in ILM rules]
 * does not equal
 |The region where an S3 bucket was created. Use *ILM* > *Regions* to define the regions that are shown.
 
-*Note:* A value of us-east-1 will match objects in buckets created in the us-east-1 region as well as objects in buckets that have no region specified.
-
-xref:configuring-regions-optional-and-s3-only.adoc[Configure regions (optional and S3 only)]
+*Note:* A value of us-east-1 will match objects in buckets created in the us-east-1 region as well as objects in buckets that have no region specified. See xref:configuring-regions-optional-and-s3-only.adoc[Configure regions (optional and S3 only)].
 
 |Object Size (MB)
 |
