@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: ILM rule step 1, define basics
 summary: 'Step 1 \(Enter details\) of the Create an ILM rule wizard allows you to enter a name and description for the rule and to define filters for the rule.'
 ---
-= Enter details
+= Step 1 of 3: Enter details
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
 Step 1 (Enter details) of the Create an ILM rule wizard allows you to enter a name and description for the rule and to define filters for the rule.
 
-Entering a description and selecting a base template for the rule are optional.
+Entering a description and defining filters for the rule are optional.
 
 .About this task
 
@@ -23,7 +23,7 @@ When evaluating an object against an xref:what-ilm-rule-is.adoc[ILM rule], Stora
 
 . Enter a unique name for the rule in the *Name* field.
 +
-You must enter between 1 and 64 characters.
+You must enter at least 1 and no more than 64 characters.
 
 . Optionally, enter a short description for the rule in the *Description* field.
 +
