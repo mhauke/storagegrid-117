@@ -123,6 +123,60 @@ Grid Network
 +
 Do not use management port 2 (P2) on the storage controllers (the RJ-45 port on the right). This port is reserved for technical support.
 
+== SG6060: Cabling optional expansion shelves
+
+If you are using expansion shelves, you must connect them to the E2860 controller shelf. You can have a maximum of two expansion shelves for each SG6060 appliance.
+
+.What you'll need
+
+* You have the two SAS cables shipped with each expansion shelf.
+* You have installed the expansion shelves in the cabinet or rack that contains the E2860 controller shelf.
++
+xref:sg6060-installing-60-drive-shelves-into-cabinet-or-rack.adoc[SG6060: Install 60-drive shelves into cabinet or rack]
+
+.Step
+
+Connect each expansion shelf to the E2860 controller shelf as shown in the diagram.
+
+This drawing shows two expansion shelves. If you have only one, connect IOM A to controller A and connect IOM B to controller B.
+
+image::../media/expansion_shelves_connections_sg6060.png[SG6060 Expansion Shelf Connections]
+
+[cols="1a,2a" options="header"]
+|===
+| Callout| Description
+|1
+|SG6000-CN
+
+|2
+|E2860 controller shelf
+
+|3
+|Controller A
+
+|4
+|Controller B
+
+|5
+|Expansion shelf 1
+
+|6
+|IOM A for expansion shelf 1
+
+|7
+|IOM B for expansion shelf 1
+
+|8
+|Expansion shelf 2
+
+|9
+|IOM A for expansion shelf 2
+
+|10
+|IOM B for expansion shelf 2
+|===
+
+
 .Related information
 
 xref:port-bond-modes-for-sg6000-cn-controller.adoc[Port bond modes for SG6000-CN controller]
