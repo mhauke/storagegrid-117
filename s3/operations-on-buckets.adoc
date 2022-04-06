@@ -121,7 +121,7 @@ GET Object Lock Configuration
 a|
 This operation returns the bucket default retention mode and default retention period, if configured.
 
-See xref:../s3/use-s3-object-lock-default-bucket-retention.adoc#get-object-lock-configuration[GET Object Lock Configuration] for detailed information.
+See xref:../s3/use-s3-object-lock.adoc#get-object-lock-configuration[GET Object Lock Configuration] for detailed information.
 
 a|
 HEAD Bucket
@@ -263,7 +263,7 @@ This operation configures or removes the bucket default retention mode and defau
 
 If the default retention period is modified, the retain-until-date of existing object versions remains the same and is not recalculated using the new default retention period.
 
-See xref:../s3/use-s3-object-lock-default-bucket-retention.adoc#put-object-lock-configuration[PUT Object Lock Configuration] for detailed information.
+See xref:../s3/use-s3-object-lock.adoc#put-object-lock-configuration[PUT Object Lock Configuration] for detailed information.
 |===
 
 .Related information
