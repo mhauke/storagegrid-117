@@ -1,0 +1,92 @@
+---
+permalink: installconfig/optional-changing-raid-mode.html
+sidebar: sidebar
+keywords: storage node, storage appliance, raid, raid mode, change, changing, modify, DDP, ddp16, raid6
+summary: 'You can change to a different RAID mode on the appliance to accommodate your storage and recovery requirements. You can only change the mode before deploying the appliance Storage Node.'
+---
+= Optional: Change RAID mode
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can change to a different RAID mode on the appliance to accommodate your storage and recovery requirements. You can only change the mode before deploying the appliance Storage Node.
+
+.About this task
+
+If supported by your appliance, you can choose one of the following volume configuration options:
+
+* *Dynamic Disk Pools (DDP)*: This mode uses two parity drives for every eight data drives. This is the default and recommended mode for all appliances. When compared to RAID6, DDP delivers better system performance, reduced rebuild times after drive failures, and ease of management. DDP also provides drawer loss protection in 60-drive SG5760 appliances.
+* *DDP16*: This mode uses two parity drives for every 16 data drives, which results in higher storage efficiency compared to DDP. When compared to RAID6, DDP16 delivers better system performance, reduced rebuild times after drive failures, ease of management, and comparable storage efficiency. To use DDP16 mode, your configuration must contain at least 20 drives. DDP16 does not provide drawer loss protection.
+* *RAID6*: This mode uses two parity drives for every 16 or more data drives. It is a hardware protection scheme that uses parity stripes on each disk, and allows for two disk failures within the RAID set before any data is lost. To use RAID6 mode, your configuration must contain at least 20 drives. Although RAID6 can increase storage efficiency of the appliance when compared to DDP, it is not recommended for most StorageGRID environments.
+
+IMPORTANT: If any volumes have already been configured or if StorageGRID was previously installed, changing the RAID mode causes the volumes to be removed and replaced. Any data on those volumes will be lost.
+
+[role="tabbed-block"]
+====
+.SG6000
+--
+.What you'll need
+
+* You are using any client that can connect to StorageGRID.
+* The client has a  xref:../admin/web-browser-requirements.adoc[supported web browser].
+
+.Steps
+
+. Open a browser, and enter one of the IP addresses for the appliance's compute controller.
++
+`*https://_Controller_IP_:8443*`
++
+`_Controller_IP_` is the IP address of the compute controller (not the storage controller) on any of the three StorageGRID networks.
++
+The StorageGRID Appliance Installer Home page appears.
+
+. Select *Advanced* > *RAID Mode*.
+. On the *Configure RAID Mode* page, select the desired RAID mode from the Mode drop-down list.
+. Click *Save*.
+--
+
+.SG5700
+--
+.What you'll need
+
+* You have an SG5760 with 60 drives. If you have an SG5712, you must use the default DDP mode.
+* You are using any client that can connect to StorageGRID.
+* The client has a xref:../admin/web-browser-requirements.adoc[supported web browser].
+
+.Steps
+
+. Using the service laptop, open a web browser and access the StorageGRID Appliance Installer: +
+`*https://_E5700SG_Controller_IP_:8443*`
++
+Where `_E5700SG_Controller_IP_` is any of the IP addresses for the E5700SG controller.
+
+. Select *Advanced* > *RAID Mode*.
+. On the *Configure RAID Mode* page, select the desired RAID mode from the Mode drop-down list.
+. Click *Save*.
+--
+
+.SG5600
+--
+.What you'll need
+
+* You have an SG5660 with 60 drives. The SG5660 with 60 drives supports two volume configuration options: DDP and RAID6.
++
+IMPORTANT: Using RAID6 is not recommended for most StorageGRID environments. Although RAID6 can increase storage efficiency to 88% (compared to 80% for DDP), DDP mode provides more efficient recovery from drive failures.
+* The SG5612 does not support RAID6. If you have an SG5612, you must use Dynamic Disk Pools (DDP) mode.
+
+.Steps
+
+. Using the service laptop, open a web browser and access the StorageGRID Appliance Installer: +
+`*https://_E5600SG_Controller_IP_:8443*`
++
+Where `_E5600SG_Controller_IP_` is any of the IP addresses for the E5600SG controller.
+
+. From the menu bar, select *Advanced* > *RAID Mode*.
+. On the *Configure RAID Mode* page, select *RAID6* from the Mode drop-down list.
+. Click *Save*.
+--
+====
+
+.Related information
+
+http://mysupport.netapp.com/info/web/ECMP1658252.html[NetApp E-Series Systems Documentation Site^]
