@@ -89,7 +89,7 @@ You can safely ignore this warning if this rule already creates multiple copies 
 +
 The number of copies changes to 1. A warning appears if the rule does not have an advanced filter to ignore objects that are 200 KB or smaller.
 +
-image::../media/ilm_rule_warning_for_ec_size.png[ILM Rule Warning for EC Size]
+//image::../media/ilm_rule_warning_for_ec_size.png[ILM Rule Warning for EC Size]
 +
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 
