@@ -26,7 +26,7 @@ If a bucket is created with S3 Object Lock enabled, users can use the S3 client 
 
 * *Legal hold*: Applying a legal hold to an object version immediately locks that object. For example, you might need to put a legal hold on an object that is related to an investigation or legal dispute. A legal hold has no expiration date, but remains in place until it is explicitly removed. Legal holds are independent of the retain-until-date.
 +
-For details on the object settings, see xref:../s3/using-s3-object-lock.adoc[Use S3 Object Lock].
+For details on the object settings, see xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
 
 === Default retention setting for buckets
 

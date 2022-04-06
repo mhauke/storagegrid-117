@@ -1,10 +1,10 @@
 ---
-permalink: s3/using-s3-object-lock.html
+permalink: s3/use-s3-api-for-s3-object-lock.html
 sidebar: sidebar
-keywords: using S3 object lock, object lock, default bucket retention, governance, compliance
+keywords: how to configure S3 object lock, object lock, default bucket retention, governance, compliance, retain-until-date, legal hold
 summary: 'If the global S3 Object Lock setting is enabled for your StorageGRID system, you can create buckets with S3 Object Lock enabled. You can then specify default retention settings for each bucket or each object version you add to that bucket. If an object version uses governance mode, users with special permissions can bypass its retention settings.'
 ---
-= Use S3 Object Lock
+= Use S3 REST API to configure S3 Object Lock
 :icons: font
 :imagesdir: ../media/
 
@@ -30,9 +30,9 @@ After you enable S3 Object Lock for a bucket, you can optionally enable default 
 
 * *Default retention mode*: 
 
-** In COMPLIANCE mode, an object version cannot be deleted until its retention period has elapsed. An object's retention period can be extended, but it cannot be reduced or removed.  
+** In COMPLIANCE mode, an object version cannot be deleted until its retention period has elapsed. An object's retain-until-date can be extended, but it cannot be reduced. An object's retain-until-date cannot be removed when the date has passed.  
 
-** In GOVERNANCE mode, users with special permission can bypass certain retention settings. They can delete an object version before its retention period has elapsed, or they can increase, decrease, or remove an object's retention period.
+** In GOVERNANCE mode, users with special permission can bypass certain retention settings. They can delete an object version before its retention period has elapsed, or they can increase, decrease, or remove an object's retain-until-date.
 
 * *Default retention period*: Each bucket can have a default retention period in years or days. 
 
@@ -46,7 +46,7 @@ To set the default retention for a bucket, use either of these methods:
 
 The PUT Object Lock Configuration request allows you to set and  modify the default retention mode and default retention period for a bucket that has S3 Object Lock enabled. You can also remove previously configured default retention settings.
 
-When new object versions are ingested to the bucket, the default retention mode is applied if `x-amz-object-lock-mode` is not specified. The default retention period is used to calculate the retain-until-date if `x-amz-object-lock-retain-until-date` is not specified.
+When new object versions are ingested to the bucket, the default retention mode is applied if `x-amz-object-lock-mode` and `x-amz-object-lock-retain-until-date` are not specified. The default retention period is used to calculate the retain-until-date if `x-amz-object-lock-retain-until-date` is not specified.
 
 If the default retention period is modified after ingest of an object version, the retain-until-date of the object version remains the same and is not recalculated using the new default retention period.
 
@@ -132,7 +132,7 @@ Server: AmazonS3
 </ObjectLockConfiguration>
 ----
 
-== How to specify retention settings for objects
+== How to specify retention settings for an object
 
 A bucket with S3 Object Lock enabled can contain a combination of objects with and without S3 Object Lock retention settings. 
 
@@ -218,7 +218,7 @@ To bypass the active retention settings of an object that uses GOVERNANCE mode, 
 
 * xref:../ilm/managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock]
 
-* xref:../tenant/using-s3-object-lock.adoc[Use S3 Object Lock to retain objects]
+* xref:../tenant/use-s3-api-for-s3-object-lock.adoc[Use S3 Object Lock to retain objects]
 
 
 * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html[Amazon Simple Storage Service User Guide: Using S3 Object Lock^]

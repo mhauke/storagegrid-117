@@ -13,7 +13,7 @@ The GET Bucket compliance request is deprecated. However, you can continue to us
 
 IMPORTANT: The StorageGRID Compliance feature that was available in previous StorageGRID versions is deprecated and has been replaced by S3 Object Lock.
 
-xref:using-s3-object-lock.adoc[Use S3 Object Lock]
+xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
 
 xref:../ilm/index.adoc[Manage objects with ILM]
 
@@ -82,9 +82,3 @@ a|
 == Error responses
 
 If the bucket was not created to be compliant, the HTTP status code for the response is `404 Not Found`, with an S3 error code of `XNoSuchBucketCompliance`.
-
-.Related information
-
-xref:../ilm/index.adoc[Manage objects with ILM]
-
-xref:../tenant/index.adoc[Use tenant account]

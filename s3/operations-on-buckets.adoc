@@ -148,7 +148,7 @@ This operation creates a new bucket. By creating the bucket, you become the buck
 +
 *Note*: An error will occur if your PUT Bucket request uses a region that has not been defined in StorageGRID.
 
-* You can include the `x-amz-bucket-object-lock-enabled` request header to create a bucket with S3 Object Lock enabled. See xref:../s3/using-s3-object-lock.adoc[Use S3 Object Lock].
+* You can include the `x-amz-bucket-object-lock-enabled` request header to create a bucket with S3 Object Lock enabled. See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
 +
 You must enable S3 Object Lock when you create the bucket. You cannot add or disable S3 Object Lock after a bucket is created. S3 Object Lock requires bucket versioning, which is enabled automatically when you create the bucket.
 
