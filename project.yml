@@ -9,38 +9,34 @@ sidebar:
     - title: StorageGRID 11.7 Docs
       url: /index.html
     - section: release-notes
-    - title: Get started (NO CHANGE)
+    - title: Get started
       entries:
       - section: primer
       - section: network
-    - title: Install (NEW)
+    - title: Install and upgrade
       entries:
       - section: installconfig
-      - title: Software nodes
-        entries:
-        - section: rhel
-        - section: ubuntu
-        - section: vmware
-      - title: Upgrade software
-        entries:
-        - section: upgrade
-    - title: System administration (NO CHANGE)
+      - section: rhel
+      - section: ubuntu
+      - section: vmware
+      - section: upgrade
+    - title: System administration
       entries:  
       - section: admin
       - section: ilm
       - section: harden
       - section: fabricpool
-    - title: Use StorageGRID (NO CHANGE)
+    - title: Use StorageGRID
       entries: 
       - section: tenant
       - section: s3
       - section: swift
-    - title: Monitor and troubleshoot (NEW)
+    - title: Monitor and troubleshoot
       entries:  
       - section: monitor  
       - section: troubleshoot
       - section: audit
-    - title: Maintain (NEW)
+    - title: Maintain
       entries:
       - section: expand
       - section: maintain

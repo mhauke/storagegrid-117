@@ -1,12 +1,18 @@
 section: commonhardware
-title: Common procedures
+title: Maintain appliance configuration
 entries:
-  - title: Common maintenance procedures - Overview
-    pdf-filename: Common maintenance procedures (all nodes)
+  - title: Overview
+    pdf-filename: Maintain appliance configuration (all nodes)
     url: "/commonhardware/index.html"
     entries:
     - title: Place appliance into maintenance mode
       url: "/commonhardware/placing-appliance-into-maintenance-mode.html"
+    - title: Change MTU setting
+      url: "/commonhardware/changing-mtu-setting.html"
+    - title: Check DNS server configuration
+      url: "/commonhardware/checking-dns-server-configuration.html"
+    - title: Monitor node encryption in maintenance mode
+      url: "/commonhardware/monitoring-node-encryption-in-maintenance-mode.html"
     - title: Appliance node cloning
       url: "/commonhardware/appliance-node-cloning.html"
       entries:
@@ -18,29 +24,7 @@ entries:
         url: "/commonhardware/appliance-node-cloning-procedure.html"
 
 
-
-
-  - title: Possible procedures to move to this section
-    entries:      
     - title: Reboot controller
       url: "/commonhardware/rebooting-controller.html"
-    - title: Turn controller identify LED on and off (SG1000 and SG6000 only)
-      url: "/commonhardware/turning-controller-identify-led-on-and-off-sg1000-and-sg6000-only.html"
-    - title: Locate controller in a data center
-      url: "/commonhardware/locating-controller-in-data-center.html"
-    - title: Change MTU setting
-      url: "/commonhardware/changing-mtu-setting.html"
-    - title: Check DNS server configuration
-      url: "/commonhardware/checking-dns-server-configuration.html"
-    - title: Monitor node encryption in maintenance mode
-      url: "/commonhardware/monitoring-node-encryption-in-maintenance-mode.html"
-
-
-  - title: Admin Node maintenance (MAYBE)
-    url: "/commonhardware/admin-node-maintenance.html"
-  - title: Storage Node maintenance (MAYBE)
-    url: "/commonhardware/storage-node-maintenance.html"
-  - title: Software-based node maintenance (MAYBE)
-    url: "/commonhardware/software-based-node-maintenance.html"
 
 
