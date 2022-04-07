@@ -263,7 +263,7 @@ This operation configures or removes the bucket default retention mode and defau
 
 If the default retention period is modified, the retain-until-date of existing object versions remains the same and is not recalculated using the new default retention period.
 
-See xref:../s3/use-s3-object-lock.adoc#put-object-lock-configuration[PUT Object Lock Configuration] for detailed information.
+See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock] for detailed information.
 |===
 
 .Related information

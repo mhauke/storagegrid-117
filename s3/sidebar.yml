@@ -14,7 +14,6 @@ entries:
   - title: Configure tenant accounts and connections
     url: "/s3/configuring-tenant-accounts-and-connections.html"
   - title: How StorageGRID implements S3 REST API
-    url: "/s3/how-storagegrid-implements-s3-rest-api.html"
     entries:
     - title: Conflicting client requests
       url: "/s3/conflicting-client-requests.html"
@@ -25,12 +24,15 @@ entries:
     - title: Object versioning
       url: "/s3/object-versioning.html"
     - title: Use S3 REST API to configure S3 Object Lock
-      url: "/s3/use-s3-api-for-s3-object-lock.html"     
+      url: "/s3/use-s3-api-for-s3-object-lock.html"  
+    - title: Create S3 lifecycle configuration
+      url: "/s3/create-s3-lifecycle-configuration.html"          
     - title: Recommendations for implementing S3 REST API
       url: "/s3/recommendations-for-implementing-s3-rest-api.html"
   - title: S3 REST API supported operations and limitations
-    url: "/s3/s3-rest-api-supported-operations-and-limitations.html"
     entries:
+    - title: S3 REST API operations
+      url: "/s3/s3-rest-api-supported-operations-and-limitations.html"
     - title: Authenticate requests
       url: "/s3/authenticating-requests.html"
     - title: Operations on the service
@@ -38,8 +40,6 @@ entries:
     - title: Operations on buckets
       url: "/s3/operations-on-buckets.html"
       entries:
-      - title: Create S3 lifecycle configuration
-        url: "/s3/create-s3-lifecycle-configuration.html" 
       - title: Custom operations on buckets
         url: "/s3/custom-operations-on-buckets.html"
     - title: Operations on objects
@@ -77,7 +77,6 @@ entries:
     - title: Error responses
       url: "/s3/error-responses.html"
   - title: StorageGRID S3 REST API operations
-    url: "/s3/storagegrid-s3-rest-api-operations.html"
     entries:
       - title: GET Bucket consistency request
         url: "/s3/get-bucket-consistency-request.html"
@@ -115,7 +114,6 @@ entries:
   - title: Configure security for REST API
     url: "/s3/configuring-security-for-rest-api.html"
   - title: Monitor and audit operations
-    url: "/s3/monitoring-and-auditing-operations.html"
     entries:
     - title: Monitor object ingest and retrieval rates
       url: "/s3/monitoring-object-ingest-and-retrieval-rates.html"
@@ -126,12 +124,3 @@ entries:
         url: "/s3/s3-operations-tracked-in-audit-logs.html"
   - title: Benefits of active, idle, and concurrent HTTP connections
     url: "/s3/benefits-of-active-idle-and-concurrent-http-connections.html"
-    entries:
-    - title: Benefits of keeping idle HTTP connections open
-      url: "/s3/benefits-of-keeping-idle-http-connections-open.html"
-    - title: Benefits of active HTTP connections
-      url: "/s3/benefits-of-active-http-connections.html"
-    - title: Benefits of concurrent HTTP connections
-      url: "/s3/benefits-of-concurrent-http-connections.html"
-    - title: Separation of HTTP connection pools for read and write operations
-      url: "/s3/separation-of-http-connection-pools-for-read-and-write-operations.html"
