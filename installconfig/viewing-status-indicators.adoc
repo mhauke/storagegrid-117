@@ -11,13 +11,21 @@ summary: 'The appliances and controllers include indicators that help you determ
 [.lead]
 The appliances and controllers include indicators that help you determine the status of the appliance components.
 
+[role="tabbed-block"]
+====
+.SG100 and SG1000
+--
 
+The appliance includes indicators that help you determine the status of the appliance controller and the two SSDs:
 
-== SG100 and SG1000
+* <<appliance_indicators_SG100_1000,Appliance indicators and buttons>>
+* <<general_boot_codes_SG100_1000,General boot-up codes>>
+* <<ssd_indicators_SG100_1000,SSD indicators>>
 
-The appliance includes indicators that help you determine the status of the appliance controller and the two SSDs. Use this information to help xref:troubleshooting-hardware-installation-sg100-and-sg1000.adoc[troubleshoot the SG100 and SG1000 hardware installation].
+Use this information to help xref:troubleshooting-hardware-installation-sg100-and-sg1000.adoc[troubleshoot the SG100 and SG1000 hardware installation].
 
-=== Appliance indicators and buttons
+[[appliance_indicators_SG100_1000]]
+*Appliance indicators and buttons*
 
 image::../media/sg6000_cn_front_indicators.gif[Front Indicators - SG1000]
 
@@ -64,7 +72,8 @@ a|
 
 |===
 
-=== General boot-up codes
+[[general_boot_codes_SG100_1000]]
+*General boot-up codes*
 
 During boot-up or after a hard reset of the appliance, the following occurs:
 
@@ -74,7 +83,8 @@ During boot-up or after a hard reset of the appliance, the following occurs:
 +
 To view the boot-up and error codes, you must xref:accessing-bmc-interface.adoc[access the BMC interface].
 
-=== SSD indicators
+[[ssd_indicators_SG100_1000]]
+*SSD indicators*
 
 image::../media/ssd_indicators.png[SSD Indicators]
 
@@ -98,12 +108,21 @@ Drive active
 a|
 Blue (blinking): drive is being accessed
 |===
+--
 
+.SG6000
+--
 
-== SG6000
-The SG6000 appliance controllers include indicators that help you determine the status of the appliance controller. Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
+The SG6000 appliance controllers include indicators that help you determine the status of the appliance controller:
 
-=== View status indicators and buttons on SG6000-CN controller
+* <<status_indicators_sg6000cn,Status indicators and buttons on SG6000-CN controller>>
+* <<general_boot_codes_sg6000,General boot-up codes>>
+* <<boot_codes_sg6000_storage_controller,Boot-up status codes for SG6000 storage controllers>>
+
+Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
+
+[[status_indicators_sg6000cn]]
+*Status indicators and buttons on SG6000-CN controller*
 
 The SG6000-CN controller includes indicators that help you determine the status of the controller, including the following indicators and buttons.
 
@@ -140,7 +159,8 @@ This button can be set to Blink, On (Solid), or Off.
 * Off: No errors are present.
 |===
 
-==== General boot-up codes
+[[general_boot_codes_sg6000]]
+*General boot-up codes*
 
 During boot-up or after a hard reset of the SG6000-CN controller, the following occurs:
 
@@ -150,7 +170,8 @@ During boot-up or after a hard reset of the SG6000-CN controller, the following 
 +
 To view the boot-up and error codes, you must xref:accessing-bmc-interface.adoc[access the BMC interface].
 
-=== View boot-up status codes for SG6000 storage controllers
+[[boot_codes_sg6000_storage_controller]]
+*Boot-up status codes for SG6000 storage controllers*
 
 Each storage controller has a seven-segment display that provides status codes as the controller powers up. The status codes are the same for both the E2800 controller and the EF570 controller.
 
@@ -171,21 +192,23 @@ Make sure this value is displayed on both storage controllers, as shown in this 
 image::../media/seven_segment_display_codes_for_e2800.gif[Seven-Segment Display Codes for E2800]
 
 . If one or both controllers show other values, see xref:troubleshooting-hardware-installation.adoc[Troubleshoot hardware installation (SG6000)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
+--
 
-.Related information
+.SG5700
+--
 
-https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html[E5700 and E2800 System Monitoring Guide^]
+The appliance controllers include indicators that help you determine the status of the appliance controller:
 
-https://mysupport.netapp.com/site/global/dashboard[NetApp Support^]
+* <<boot_codes_sg5700,SG5700 boot-up status codes>>
+* <<status_indicators_e5700sg_controller,Status indicators on E5700SG controller>>
+* <<general_boot_codes_sg5700,General boot-up codes>>
+* <<boot_codes_e5700sg_controller,E5700SG controller boot-up codes>>
+* <<error_codes_e5700sg_controller,E5700SG controller error codes>>
 
-xref:powering-on-sg6000-cn-controller-and-verifying-operation.adoc[Power on SG6000-CN controller and verify operation]
+Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
 
-
-
-== SG5700
-The appliance controllers include indicators that help you determine the status of the appliance controller. Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
-
-=== View SG5700 boot-up status codes
+[[boot_codes_sg5700]]
+*SG5700 boot-up status codes*
 
 The seven-segment displays on each controller show status and error codes as the appliance powers up.
 
@@ -245,7 +268,8 @@ In the sequence, the first set of numbers is the DHCP-assigned IP address for th
 
 . If the seven-segment displays show other values, see xref:troubleshooting-hardware-installation.adoc[Troubleshoot hardware installation (SG5700)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
 
-=== Status indicators on E5700SG controller
+[[status_indicators_e5700sg_controller]]
+*Status indicators on E5700SG controller*
 
 The seven-segment display and the LEDs on the E5700SG controller show status and error codes while the appliance powers up and while the hardware is initializing. You can use these displays to determine status and troubleshoot errors.
 
@@ -306,14 +330,16 @@ Off: There is no link between the controller and the connected device.
 Blinking Green: There is Ethernet activity.
 |===
 
-==== General boot-up codes
+[[general_boot_codes_sg5700]]
+*General boot-up codes*
 
 During boot-up or after a hard reset of the appliance, the following occurs:
 
 . The seven-segment display on the E5700SG controller shows a general sequence of codes that is not specific to the controller. The general sequence ends with the codes AA and FF.
 . Boot-up codes that are specific to the E5700SG controller appear.
 
-==== E5700SG controller boot-up codes
+[[boot_codes_e5700sg_controller]]
+*E5700SG controller boot-up codes*
 
 During a normal boot-up of the appliance, the seven-segment display on the E5700SG controller shows the following codes in the order listed:
 
@@ -361,7 +387,8 @@ a|
 StorageGRID is running.
 |===
 
-==== E5700SG controller error codes
+[[error_codes_e5700sg_controller]]
+*E5700SG controller error codes*
 
 These codes represent error conditions that might be shown on the E5700SG controller as the appliance boots up. Additional two-digit hexadecimal codes are displayed if specific low-level hardware errors occur. If any of these codes persists for more than a second or two, or if you are unable to resolve the error by following one of the prescribed troubleshooting procedures, contact technical support.
 
@@ -429,19 +456,23 @@ EP
 a|
 Installation or communication with the E2800 controller has failed.
 |===
+--
 
-.Related information
+.SG5600
+--
 
-https://mysupport.netapp.com/site/global/dashboard[NetApp Support^]
+The appliance controllers include indicators that help you determine the status of the appliance controller:
 
-https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html[E5700 and E2800 System Monitoring Guide^]
+* <<boot_error_codes_sg5600_controller,Boot-up status and error codes on SG5600 controllers>>
+* <<seven_segment_codes_e5600sg,E5600SG controller seven-segment display codes>>
+* <<general_boot_codes_sg5600,General boot-up codes>>
+* <<normal_boot_codes_sg5600,Normal boot-up codes>>
+* <<error_codes_e5600sg_controller,E5600SG controller error codes>>
 
+Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
 
-
-== SG5600
-The appliance controllers include indicators that help you determine the status of the appliance controller. Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
-
-=== View boot-up status and reviewing error codes on SG5600 controllers
+[[boot_error_codes_sg5600_controller]]
+*Boot-up status and error codes on SG5600 controllers*
 
 The seven-segment display on each controller shows status and error codes when the appliance powers up, while the hardware is initializing, and when the hardware fails and must back out of the initialization. If you are monitoring the progress or troubleshooting, you should watch the sequence of the codes as they appear.
 
@@ -455,7 +486,8 @@ The status and error codes for the E5600SG controller are not the same as those 
 . To review error codes for the E5600SG controller, see the seven-segment display status and error code information.
 . To review error codes for the E2700 controller, see the E2700 controller documentation on the Support Site.
 
-=== E5600SG controller seven-segment display codes
+[[seven_segment_codes_e5600sg]]
+*E5600SG controller seven-segment display codes*
 
 The seven-segment display on the E5600SG controller shows status and error codes while the appliance powers up and while the hardware is initializing. You can use these codes to determine status and troubleshoot errors.
 
@@ -499,7 +531,8 @@ This includes looking for hardware issues such as power, temperature, and disk d
 +
 For details, see the E-Series E5600 documentation.
 
-==== General boot-up codes
+[[general_boot_codes_sg5600]]
+*General boot-up codes*
 
 During boot-up or after a hard reset of the hardware, the Service Action Allowed and the Service Action Required LEDs come on while the hardware is initializing. The seven-segment display shows a sequence of codes that are the same for E-Series hardware and not specific to the E5600SG controller.
 
@@ -533,7 +566,8 @@ Bios boot-up complete.This is an intermediate state before E5600SG controller in
 |===
 After the AA and FF codes appear, either the normal boot-up codes appear or error codes appear. Additionally, the Service Action Allowed and the Service Action Required LEDs are turned off.
 
-==== Normal boot-up codes
+[[normal_boot_codes_sg5600]]
+*Normal boot-up codes*
 
 These codes represent the normal boot-up events that occur in the appliance, in chronological order.
 
@@ -578,7 +612,8 @@ a|
 The Linux operating system and StorageGRID are running.
 |===
 
-==== E5600SG controller error codes
+[[error_codes_e5600sg_controller]]
+*E5600SG controller error codes*
 
 These codes represent error conditions that might be shown on the E5600SG controller as the appliance boots up. Additional two-digit hexadecimal codes are displayed if specific low-level hardware errors occur. If any of these codes persists for more than a second or two, or if you are unable to resolve the error by following one of the prescribed troubleshooting procedures, contact technical support.
 
@@ -646,10 +681,27 @@ EP
 a|
 "ManageSGA" code indicates that pregrid communication with the E2700 controller failed.
 |===
+--
+====
 
 .Related information
 
-https://mysupport.netapp.com/site/global/dashboard[NetApp Support^].Related information
+https://mysupport.netapp.com/site/global/dashboard[NetApp Support^]
+
+xref:powering-on-sg6000-cn-controller-and-verifying-operation.adoc[Power on SG6000-CN controller and verify operation]
+
+https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html[E5700 and E2800 System Monitoring Guide^]
 
 http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61765[NetApp Documentation: E2700 Series^]
+
+
+
+
+
+
+
+
+
+
+
 
