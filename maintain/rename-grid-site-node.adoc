@@ -2,20 +2,24 @@
 permalink: maintain/rename-grid-site-node.html
 sidebar: sidebar
 keywords: rename grid, rename site, rename node, change display name, bulk rename tool
-summary: 'As required, you can change the display names that are shown throughout the Grid Manager for your entire grid, each site, and each node. You can update display names safely and whenever you need--changing a display name does not affect the item's underlying name or unique ID.'
+summary: 'As required, you can change the display names that are shown throughout the Grid Manager for your entire grid, each site, and each node. You can update display names safely and whenever you need.'
 ---
 = Rename a grid, site, or node
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-As required, you can change the display names that are shown throughout the Grid Manager for the entire grid, each site, and each node. You can update display names safely and whenever you need&#8212;changing an item's display name does not affect StorageGRID operations in any way. You can use this procedure to rename a single item, multiple items, or even all items at once.
+As required, you can change the display names that are shown throughout the Grid Manager for the entire grid, each site, and each node. You can update display names safely and whenever you need. 
 
-When you install StorageGRID initially, you specify a grid name, site names, and node names. These names are shown throughout the Grid Manager: on the Nodes pages, on the ILM pages, in alerts, and in various maintenance procedures.
+You can use this procedure to rename a single item, multiple items, or even all items at once. Changing a display name does not affect StorageGRID operations in any way. 
 
-After your system is installed, you can use this procedure to update these names. For example, you can fix any typos, implement different node-naming conventions, or indicate that a site and all of its nodes have been moved to a different location. You can use this procedure whenever you want and as many times as you want. 
+== What the rename procedure does
 
-When you rename items with this procedure, you are changing an item's _display name_ only. The item's underlying _system name_ and unique ID remain unchanged. Unlike display names, these internal identifiers are required for StorageGRID operations and cannot be updated.
+When you install StorageGRID initially, you specify a grid name, site names, and node names. These initial names serve as both internal _system names_ and as _display names_. 
+
+System names are required for StorageGRID operations and cannot be changed. In contrast, display names (the names shown throughout the Grid Manager) can be updated whenever required. 
+
+For example, you might want to change display names to fix typos, to implement different node-naming conventions, or to indicate that a site and all of its nodes have been relocated. You can use this procedure whenever you want and as many times as you want. 
 
 == Display name requirements and best practices
 
