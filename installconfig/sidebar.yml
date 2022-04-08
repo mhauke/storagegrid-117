@@ -8,30 +8,12 @@ entries:
     entries:
     - title: SG100 and SG1000 hardware
       url: "/installconfig/hardware-description-sg100-and-1000.html"
-      entries:
-      - title: SG100 and SG1000 applications
-        url: "/installconfig/sg100-and-sg1000-applications.html"
     - title: SG5600 hardware
       url: "/installconfig/hardware-description-sg5600.html"
-      entries:
-      - title: Appliance features
-        url: "/installconfig/storagegrid-appliance-features-sg5600.html"
-      - title: Hardware diagrams
-        url: "/installconfig/hardware-diagrams-sg5600.html"
     - title: SG5700 hardware
       url: "/installconfig/hardware-description-sg5700.html"
-      entries:
-      - title: Controllers in StorageGRID appliance
-        url: "/installconfig/controllers-in-storagegrid-appliance-sg5700.html"
     - title: SG6000 hardware
       url: "/installconfig/hardware-description-sg6000.html"
-      entries:
-      - title: SG6060 overview
-        url: "/installconfig/sg6060-overview.html"
-      - title: SGF6024 overview
-        url: "/installconfig/sgf6024-overview.html"
-      - title: Controllers in SG6000 appliances
-        url: "/installconfig/controllers-in-sg6000-appliances.html"
   - title: Installation checklist
     url: "/installconfig/installation-checklist.html"
   - title: Prepare for installation
@@ -80,12 +62,12 @@ entries:
         url: "/installconfig/gathering-installation-information-sg5700.html"
       - title: SG6000
         url: "/installconfig/gathering-installation-information-sg6000.html"
-  - title: Install appliance hardware
+  - title: Install appliance
     url: "/installconfig/install-appliance-hardware.html"
     entries:
     - title: Register hardware
       url: "/installconfig/registering-hardware.html"
-    - title: Install appliance
+    - title: Install hardware
       entries:
       - title: SG100 and SG1000
         url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html"
@@ -126,12 +108,14 @@ entries:
         url: "/installconfig/connecting-ac-power-cords-sg5600.html"
     - title: View status indicators and codes
       url: "/installconfig/viewing-status-indicators.html"
-  - title: Initial NetApp appliance hardware configuration
-    url: "/installconfig/configuring-hardware.html"
+  - title: Initial hardware configuration
     entries:
+    - title: Overview
+      url: "/installconfig/configuring-hardware.html"
     - title: Configure StorageGRID connections
-      url: "/installconfig/configuring-storagegrid-connections.html"
       entries:
+      - title: Overview
+        url: "/installconfig/configuring-storagegrid-connections.html"
       - title: Access StorageGRID Appliance Installer
         url: "/installconfig/accessing-storagegrid-appliance-installer.html"
       - title: Verify and upgrade StorageGRID Appliance Installer version
@@ -199,23 +183,14 @@ entries:
     entries:
     - title: Deploy services appliance node
       url: "/installconfig/deploying-services-appliance-node.html"
-      entries:
-      - title: Deploy services appliance as primary Admin Node
-        url: "/installconfig/deploying-services-appliance-as-primary-admin-node.html"
-      - title: Deploy services appliance as Gateway or non-primary Admin Node
-        url: "/installconfig/deploying-services-appliance-as-gateway-or-non-primary-admin-node.html"
     - title: Deploy appliance Storage Node
       url: "/installconfig/deploying-appliance-storage-node.html"
     - title: 'Configure grid and completing installation (NEED INFO)'
       url: "/installconfig/configuring-grid-and-completing-installation.html"
-    - title: Monitor and troubleshoot StorageGRID installation
+    - title: Monitor and troubleshoot appliance installation
       entries:
       - title: Monitor appliance installation
-        entries:
-        - title: Monitor services appliance installation
-          url: "/installconfig/monitoring-services-appliance-installation.html" 
-        - title: Monitor storage appliance installation
-          url: "/installconfig/monitoring-storage-appliance-installation.html"
+        url: "/installconfig/monitoring-appliance-installation.html"
       - title: Troubleshoot installation
         entries:
         - title: 'Services appliances (SG100 and SG1000)'
