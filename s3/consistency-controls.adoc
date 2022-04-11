@@ -93,9 +93,9 @@ For example, the consistency control used when an object is stored affects the i
 
 The following ingest behaviors are available for ILM rules:
 
+* *Dual commit*: StorageGRID immediately makes interim copies of the object and returns success to the client. Copies specified in the ILM rule are made when possible.
 * *Strict*: All copies specified in the ILM rule must be made before success is returned to the client.
 * *Balanced*: StorageGRID attempts to make all copies specified in the ILM rule at ingest; if this is not possible, interim copies are made and success is returned to the client. The copies specified in the ILM rule are made when possible.
-* *Dual Commit*: StorageGRID immediately makes interim copies of the object and returns success to the client. Copies specified in the ILM rule are made when possible.
 
 NOTE: Before selecting the ingest behavior for an ILM rule, read the full description of these settings in the instructions for managing objects with information lifecycle management.
 

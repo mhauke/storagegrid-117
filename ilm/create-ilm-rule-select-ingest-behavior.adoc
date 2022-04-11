@@ -19,26 +19,9 @@ image::../media/define_ingest_behavior_for_ilm_rule.png[Create ILM rule step 3 o
 
 .Steps
 
-. Select the data protection option to use when objects are ingested:
+. Select the ingest behavior to use.
 +
-[cols="1a,2a" options="header"]
-|===
-| Option| Description
-
-|Strict
-|Always uses this rule's placements on ingest. Ingest fails when this rule's placements are not possible.
-
-|Balanced
-|Optimum ILM efficiency. Attempts this rule's placements on ingest. Creates interim copies when that is not possible.
-
-|Dual commit
-|Creates interim copies on ingest and applies this rule's placements later.
-
-|===
-+
-Balanced offers a combination of data security and efficiency that is suitable in most cases. Strict or Dual commit are generally used to meet specific requirements.
-+
-See xref:data-protection-options-for-ingest.adoc[Data-protection options for ingest] and xref:advantages-disadvantages-of-ingest-options.adoc[Advantages, disadvantages, and limitations of the data-protection options] for more information.
+For more information, see xref:data-protection-options-for-ingest.adoc[Ingest options] and xref:advantages-disadvantages-of-ingest-options.adoc[Advantages, disadvantages, and limitations of the ingest options].
 +
 [NOTE]
 ====

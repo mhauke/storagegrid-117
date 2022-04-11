@@ -29,7 +29,7 @@ An ILM rule has three elements:
 
 * *Filtering criteria*: A rule's basic and advanced filters define which objects the rule applies to. If an object matches all filters, StorageGRID applies the rule and creates the object copies specified in the rule's placement instructions.
 * *Placement instructions*: A rule's placement instructions define the number, type, and location of object copies. Each rule can include a sequence of placement instructions to change the number, type, and location of object copies over time. When the time period for one placement expires, the instructions in the next placement are automatically applied by the next ILM evaluation.
-* *Ingest behavior*: A rule's ingest behavior defines what happens when an S3 or Swift client saves an object to the grid. Ingest behavior controls whether object copies are immediately placed according to the instructions in the rule, or if interim copies are made and the placement instructions are applied later.
+* *Ingest behavior*: A rule's ingest behavior allows you to choose how the objects filtered by the rule are protected as they are ingested (when an S3 or Swift client saves an object to the grid).
 
 == What ILM rule filtering is
 
@@ -72,7 +72,7 @@ Each rule can define multiple placements for a single time period and different 
 * To place  objects in multiple locations during a single time period, select *Add other type or location* to add more than one line for that time period.
 * To place objects in different locations in different time periods, select *Add another time period* to add the next time period. Then, specify one or more lines within the time period.
 
-The example shows the Define Placements page of the Create ILM Rule wizard.
+The example shows the Define placements page of the Create ILM rule wizard.
 
 image::../media/ilm_rule_multiple_placements_in_single_time_period.png[ILM placements screen from Grid Manager]
 
@@ -95,6 +95,20 @@ When you define the set of placement instructions for a rule, you must ensure th
 
 As each time period in the rule expires, the content placement instructions for the next time period are applied. New object copies are created and any unneeded copies are deleted.
 
+== What ILM rule ingest behavior is
+
+ Ingest behavior controls whether object copies are immediately placed according to the instructions in the rule, or if interim copies are made and the placement instructions are applied later. The following ingest behaviors are available for ILM rules:
+
+* *Dual commit*: StorageGRID immediately makes interim copies of the object and returns success to the client. Copies specified in the ILM rule are made when possible.
+* *Strict*: All copies specified in the ILM rule must be made before success is returned to the client.
+* *Balanced*: StorageGRID attempts to make all copies specified in the ILM rule at ingest; if this is not possible, interim copies are made and success is returned to the client. The copies specified in the ILM rule are made when possible.
+    
+See also:
+
+* xref:data-protection-options-for-ingest.adoc[Ingest options]
+* xref:advantages-disadvantages-of-ingest-options.adoc[Advantages, disadvantages, and limitations of the ingest options]
+* xref:../s3/consistency-controls.adoc#how-consistency-controls-and-ILM-rules-interact-to-affect-data-protection[How consistency controls and ILM rules interact to affect data protection]
+
 == Example ILM rule
 
 As an example, an ILM rule could specify the following:
@@ -108,10 +122,6 @@ For example, if Site 2 is unreachable when Tenant A saves an object, StorageGRID
 
 .Related information
 
-* xref:data-protection-options-for-ingest.adoc[Data-protection options for ingest]
-
 * xref:what-storage-pool-is.adoc[What a storage pool is]
 
 * xref:what-cloud-storage-pool-is.adoc[What a Cloud Storage Pool is]
-
-
