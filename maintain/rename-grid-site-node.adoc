@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename grid, rename site, rename node, change display name, bulk rename tool
 summary: 'As required, you can change the display names that are shown throughout the Grid Manager for your entire grid, each site, and each node. You can update display names safely and whenever you need.'
 ---
-= Rename a grid, site, or node
+= Rename the grid, sites, and nodes
 :icons: font
 :imagesdir: ../media/
 
@@ -36,7 +36,7 @@ Display names must be unique across your StorageGRID system.
 
 === Select items to rename
 
-. Select *MAINTENANCE* > *Task* > *Rename*.
+. Select *MAINTENANCE* > *Task* > *Rename grid, sites, and nodes*.
 . Select the items you want to rename.
 +
 * To change the names of everything (or almost everything) in your system, select *Select all*. Then, optionally unselect any items you do not want to rename. 
@@ -118,6 +118,8 @@ A success message is shown. The new display names are now used throughout Grid M
 
 
 === Download the recovery package
+
+When you are done renaming items, download and save a new Recovery Package. The new display names for the items you renamed are included in the `password.txt` file. 
 
 
 . Enter the provisioning passphrase and select *Download recovery package*.
