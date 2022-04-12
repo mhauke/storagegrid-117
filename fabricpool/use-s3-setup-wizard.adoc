@@ -285,7 +285,7 @@ A storage pool is a group of Storage Nodes. When you select a storage pool, you 
 . Select *Continue* to create or review the ILM rule.
 
 == Review ILM rule
-Information lifecycle management (ILM) rules control the placement, duration, and data protection for all objects in your StorageGRID system. 
+Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system. 
 
 The FabricPool and S3 setup wizard automatically creates the recommended ILM rule for FabricPool use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding to store the data that is tiered from ONTAP. 
 

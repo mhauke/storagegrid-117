@@ -103,7 +103,7 @@ As each time period in the rule expires, the content placement instructions for 
 * *Strict*: All copies specified in the ILM rule must be made before success is returned to the client.
 * *Balanced*: StorageGRID attempts to make all copies specified in the ILM rule at ingest; if this is not possible, interim copies are made and success is returned to the client. The copies specified in the ILM rule are made when possible.
     
-See also:
+.Related information
 
 * xref:data-protection-options-for-ingest.adoc[Ingest options]
 * xref:advantages-disadvantages-of-ingest-options.adoc[Advantages, disadvantages, and limitations of the ingest options]

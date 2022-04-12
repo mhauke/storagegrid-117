@@ -34,7 +34,7 @@ When creating ILM rules:
 * Consider what types of object copies you want to make (replicated or erasure coded) and the number of copies of each object that are required.
 * Determine what types of object metadata are used in the applications that connect to the StorageGRID system. ILM rules filter objects based on their metadata.
 * Consider where you want object copies to be placed over time.
-* Decide which option to use for data protection option at ingest (Balanced, Strict, or Dual commit).
+* Decide which ingest option to use (Balanced, Strict, or Dual commit).
 
 .Steps
 

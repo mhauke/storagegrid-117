@@ -2,14 +2,14 @@
 permalink: ilm/data-protection-options-for-ingest.html
 sidebar: sidebar
 keywords: ingest options, balanced ingest, strict ingest, dual-commit ingest
-summary: 'When you create an ILM rule, you specify one of three options for protecting objects at ingest: Dual commit, Balanced, or Strict.'
+summary: 'When you create an ILM rule, you specify one of three options for protecting objects at ingest: Dual commit, Strict, or Balanced.'
 ---
 = Ingest options
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-When you create an ILM rule, you specify one of three options for protecting objects at ingest: Dual commit, Balanced, or Strict.
+When you create an ILM rule, you specify one of three options for protecting objects at ingest: Dual commit, Strict, or Balanced.
 
 Depending on your choice, StorageGRID makes interim copies and queues the objects for ILM evaluation later, or it uses synchronous placement and immediately makes copies to meet ILM requirements.
 
@@ -17,7 +17,7 @@ Depending on your choice, StorageGRID makes interim copies and queues the object
 
 The flowchart shows what happens when objects are matched by an ILM rule that uses each of the three ingest options.
 
-image::../media/ingest_object_lifecycle.png[Diagram showing how object ingest occurs for each data protection option]
+image::../media/ingest_object_lifecycle.png[Diagram showing how object ingest occurs for each ingest option]
 
 == Dual commit (default)
 

@@ -31,7 +31,7 @@ When compared to Dual commit, the Strict and Balanced options have some disadvan
  ** *When ILM rules filter on size*: When evaluating ILM for a part, StorageGRID filters on the size of the part, not the size of the object. This means that parts of an object can be stored in locations that do not meet ILM requirements for the object as a whole. For example, if a rule specifies that all objects 10 GB or larger are stored at DC1 while all smaller objects are stored at DC2, at ingest each 1 GB part of a 10-part multipart upload is stored at DC2. When ILM is evaluated for the object, all parts of the object are moved to DC1.
 * *(Strict) Ingest does not fail when object tags or metadata are updated and newly required placements cannot be made*: With Strict, you expect objects either to be placed as described by the ILM rule or for ingest to fail. However, when you update metadata or tags for an object that is already stored in the grid, the object is not re-ingested. This means that any changes to object placement that are triggered by the update are not made immediately. Placement changes are made when ILM is re-evaluated by normal background ILM processes. If required placement changes cannot be made (for example, because a newly required location is unavailable), the updated object retains its current placement until the placement changes are possible.
 
-== Limitations on object placements with the Balanced or Strict options
+== Limitations on object placements with the Strict and Balanced options
 
 The Strict or Balanced options cannot be used for ILM rules that have any of these placement instructions:
 

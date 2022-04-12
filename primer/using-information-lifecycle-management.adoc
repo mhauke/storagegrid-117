@@ -2,14 +2,14 @@
 permalink: primer/using-information-lifecycle-management.html
 sidebar: sidebar
 keywords: what is information lifecycle management, how to use ilm
-summary: 'You use information lifecycle management \(ILM\) to control the placement, duration, and data protection for all objects in your StorageGRID system. ILM rules determine how StorageGRID stores objects over time. You configure one or more ILM rules and then add them to an ILM policy.'
+summary: 'You use information lifecycle management \(ILM\) to control the placement, duration, and ingest behavior for all objects in your StorageGRID system. ILM rules determine how StorageGRID stores objects over time. You configure one or more ILM rules and then add them to an ILM policy.'
 ---
 = Use information lifecycle management
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You use information lifecycle management (ILM) to control the placement, duration, and data protection for all objects in your StorageGRID system. ILM rules determine how StorageGRID stores objects over time. You configure one or more ILM rules and then add them to an ILM policy.
+You use information lifecycle management (ILM) to control the placement, duration, and ingest behavior for all objects in your StorageGRID system. ILM rules determine how StorageGRID stores objects over time. You configure one or more ILM rules and then add them to an ILM policy.
 
 A grid has only one active policy at a time. A policy can contain multiple rules.
 
@@ -38,7 +38,7 @@ For example, if Site 2 is unreachable when Tenant A saves an object, StorageGRID
 
 == How an ILM policy evaluates objects
 
-The active ILM policy for your StorageGRID system controls the placement, duration, and data protection of all objects.
+The active ILM policy for your StorageGRID system controls the placement, duration, and ingest behavior of all objects.
 
 When clients save objects to StorageGRID, the objects are evaluated against the ordered set of ILM rules in the active policy, as follows:
 
