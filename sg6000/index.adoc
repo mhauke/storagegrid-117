@@ -1,24 +1,22 @@
 ---
 permalink: sg6000/index.html
 sidebar: sidebar
-keywords: storagegrid, sg6000, storage node, storage appliance, overview, models, features 
-summary: 'The StorageGRID SG6000 appliances are integrated storage and computing platforms that operate as Storage Nodes in a StorageGRID system. These appliances can be used in a hybrid grid environment that combines appliance Storage Nodes and virtual \(software-based\) Storage Nodes.'
+keywords: storagegrid, sg6000, storage node, storage appliance, maintain, maintaining, hardware, procedures, tasks
+summary: 'You might need to perform maintenance procedures on the SG6000 appliance. The procedures in this section assume that the appliance has already been deployed as a Storage Node in a StorageGRID system.'
 ---
-= SG6000 appliances: Overview
+= Maintain SG6000 appliance
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-The StorageGRID SG6000 appliances are integrated storage and computing platforms that operate as Storage Nodes in a StorageGRID system. These appliances can be used in a hybrid grid environment that combines appliance Storage Nodes and virtual (software-based) Storage Nodes.
+You might need to perform maintenance procedures on the SG6000 appliance.
 
-The SG6000 appliances provide the following features:
+Procedures specific to maintaining your SG5600 appliance are in this section and assume that the appliance has already been deployed as a Storage Node in a StorageGRID system. 
 
-* Available in two models:
- ** SG6060, which includes 60 drives and supports expansion shelves.
- ** SGF6024, which offers 24 solid state drives (SSDs).
-* Integrate the storage and computing elements for a StorageGRID Storage Node.
-* Include the StorageGRID Appliance Installer to simplify Storage Node deployment and configuration.
-* Include SANtricity System Manager for managing and monitoring the storage controllers and drives.
-* Include a baseboard management controller (BMC) for monitoring and diagnosing the hardware in the compute controller.
-* Support up to four 10-GbE or 25-GbE connections to the StorageGRID Grid Network and Client Network.
-* Support Federal Information Processing Standard (FIPS) drives. When these drives are used with the Drive Security feature in SANtricity System Manager, unauthorized access to data is prevented.
+See xref:../commonhardware/index.adoc[Common procedures] for maintenance procedures that are used by all appliances. 
+
+See xref:../installconfig/configuring-hardware.adoc[Configure hardware] for maintenance procedures that are also performed during initial appliance installation and configuration.
+
+To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before shutting down the appliance or shut down the appliance during a scheduled maintenance window when periods of service disruption are acceptable. See the information about xref:../monitor/monitoring-node-connection-states.adoc[monitoring node connection states].
+
+IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must shut down the appliance during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during any maintenance procedure that takes a storage node out of service. See the information about xref:../ilm/index.adoc[managing objects with information lifecycle management].

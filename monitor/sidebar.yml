@@ -1,8 +1,8 @@
 section: monitor
-title: Monitor and troubleshoot
+title: Monitor StorageGRID system
 entries:
   - title: Overview
-    pdf-filename: Monitor and troubleshoot StorageGRID
+    pdf-filename: Monitor StorageGRID system
     url: "/monitor/index.html" 
   - title: View the Dashboard
     url: "/monitor/viewing-dashboard.html"
@@ -61,7 +61,7 @@ entries:
       url: "/monitor/monitoring-load-balancing-operations.html"
     - title: Apply hotfixes or upgrade software if necessary
       url: "/monitor/applying-hotfixes-or-upgrading-software-if-necessary.html"
-  - title: Manage alerts and alarms
+  - title: Alerts and alarms
     entries:
     - title: Overview
       url: "/monitor/managing-alerts-and-alarms.html"   
@@ -91,6 +91,26 @@ entries:
           url: "/monitor/silencing-alert-notifications.html"
     - title: Manage alarms (legacy system)
       url: "/monitor/managing-alarms.html" 
+    - title: Alerts reference
+      url: "/monitor/alerts-reference.html"
+    - title: Commonly used Prometheus metrics
+      url: "/monitor/commonly-used-prometheus-metrics.html"
+    - title: Alarms reference (legacy system)
+      url: "/monitor/alarms-reference.html"
+      entries:
+      - title: Alarms that generate SNMP notifications (legacy system)
+        url: "/monitor/alarms-that-generate-snmp-notifications.html"
+  - title: Log files reference
+    url: "/monitor/logs-files-reference.html"
+    entries:
+    - title: StorageGRID software logs
+      url: "/monitor/storagegrid-software-logs.html"
+    - title: Deployment and maintenance logs
+      url: "/monitor/deployment-and-maintenance-logs.html"
+    - title: Logs for third-party software
+      url: "/monitor/logs-for-third-party-software.html"
+    - title: About the bycast.log
+      url: "/monitor/about-bycast-log.html"
   - title: Configure audit messages and log destinations
     url: "/monitor/configure-audit-messages.html"  
   - title: Use an external syslog server
@@ -132,63 +152,3 @@ entries:
       url: "/monitor/running-diagnostics.html"
     - title: Create custom monitoring applications
       url: "/monitor/creating-custom-monitoring-applications.html"
-  - title: Troubleshoot a StorageGRID system
-    entries:
-    - title: Troubleshooting overview 
-      url: "/monitor/troubleshooting-storagegrid-system.html"
-    - title: Troubleshoot object and storage issues
-      entries:
-      - title: Confirm object data locations
-        url: "/monitor/confirming-object-data-locations.html"
-      - title: Object store failures 
-        url: "/monitor/object-store-storage-volume-failures.html"
-      - title: Verify object integrity
-        url: "/monitor/verifying-object-integrity.html"
-      - title: Troubleshoot lost and missing object data
-        url: "/monitor/troubleshooting-lost-and-missing-object-data.html"
-        entries:
-        - title: Investigate lost objects
-          url: "/monitor/investigating-lost-objects.html"
-        - title: Search for and restore potentially lost objects
-          url: "/monitor/searching-for-and-restoring-potentially-lost-objects.html"
-        - title: Reset lost and missing object counts
-          url: "/monitor/resetting-lost-and-missing-object-counts.html"
-      - title: Troubleshoot the Low object data storage alert
-        url: "/monitor/troubleshooting-low-object-data-storage-alert.html"
-      - title: Troubleshoot Low read-only watermark override alerts
-        url: "/monitor/troubleshoot-low-watermark-alert.html" 
-      - title: Troubleshoot the Storage Status (SSTS) alarm
-        url: "/monitor/troubleshooting-storage-status-alarm.html"
-      - title: Troubleshoot delivery of platform services messages (SMTT alarm)
-        url: "/monitor/troubleshooting-delivery-platform-services-messages.html"
-    - title: Troubleshoot metadata issues
-      url: "/monitor/troubleshooting-metadata-issues.html"
-    - title: Troubleshoot certificate errors
-      url: "/monitor/troubleshooting-certificate-errors.html"
-    - title: Troubleshoot Admin Node and user interface issues
-      url: "/monitor/troubleshooting-admin-node-and-user-interface-issues.html"
-    - title: Troubleshoot network, hardware, and platform issues
-      url: "/monitor/troubleshooting-network-hardware-and-platform-issues.html"
-    - title: Troubleshoot external syslog server
-      url: "/monitor/troubleshooting-syslog-server.html"      
-  - title: Alerts reference
-    url: "/monitor/alerts-reference.html"
-  - title: Commonly used Prometheus metrics
-    url: "/monitor/commonly-used-prometheus-metrics.html"
-  - title: Alarms reference (legacy system)
-    url: "/monitor/alarms-reference.html"
-    entries:
-    - title: Alarms that generate SNMP notifications (legacy system)
-      url: "/monitor/alarms-that-generate-snmp-notifications.html"
-  - title: Log files reference
-    url: "/monitor/logs-files-reference.html"
-    entries:
-    - title: StorageGRID software logs
-      url: "/monitor/storagegrid-software-logs.html"
-    - title: Deployment and maintenance logs
-      url: "/monitor/deployment-and-maintenance-logs.html"
-    - title: Logs for third-party software
-      url: "/monitor/logs-for-third-party-software.html"
-    - title: About the bycast.log
-      url: "/monitor/about-bycast-log.html"
-      
