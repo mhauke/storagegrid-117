@@ -12,4 +12,8 @@ summary: 'Some features were removed or deprecated in this release. Review these
 Some features were removed or deprecated in this release. Review these items to understand whether you need to update client applications or modify your configuration before you upgrade.
 
 == Audit export through CIFS/Samba is removed
-Audit export through CIFS/Samba was deprecated in StorageGRID Webscale 11.1 and has now been removed. As required, you can xref:../monitor/considerations-for-external-syslog-server.adoc[use an external syslog server] or xref:../admin/configuring-audit-client-access.adoc[configure audit client access for NFS]. 
+Audit export through CIFS/Samba was deprecated in StorageGRID Webscale 11.1 and has now been removed. As required, you can xref:../monitor/considerations-for-external-syslog-server.adoc[use an external syslog server] or xref:../admin/configuring-audit-client-access.adoc[configure audit client access for NFS].
+
+== Option to specify a storage pool as a temporary location is removed
+
+Previously, when you created an ILM rule with an object placement that includes a single storage pool, you were prompted to specify a second storage pool to use as a temporary location. Starting with StorageGRID 11.7, this option has been removed.

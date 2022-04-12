@@ -16,7 +16,7 @@ IMPORTANT: FabricPool has no knowledge of StorageGRID ILM rules or policies. Dat
 == What is an ILM policy?
 An information lifecycle management policy is an ordered set of ILM rules that determines how the StorageGRID system manages object data over time.
 
-The active ILM policy for your StorageGRID system controls the placement, duration, and data protection of all objects.
+The active ILM policy for your StorageGRID system controls the placement, duration, and ingest behavior of all objects.
 
 When clients save objects to StorageGRID, the objects are evaluated against the ordered set of ILM rules in the active policy, as follows:
 

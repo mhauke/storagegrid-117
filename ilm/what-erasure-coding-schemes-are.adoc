@@ -13,11 +13,11 @@ When you configure the Erasure Coding profile for an ILM rule, you select an ava
 
 The StorageGRID system uses the Reed-Solomon erasure-coding algorithm. The algorithm slices an object into k data fragments and computes m parity fragments. The k + m = n fragments are spread across n Storage Nodes to provide data protection. An object can sustain up to m lost or corrupt fragments. k fragments are needed to retrieve or repair an object.
 
-When configuring an Erasure Coding profile, use the following guidelines for storage pools:
+When selecting the storage pool to use for a rule that will create an erasure-coded copy, use the following guidelines for storage pools:
 
 * The storage pool must include three or more sites, or exactly one site.
 +
-NOTE: You cannot configure an Erasure Coding profile if the storage pool includes two sites.
+NOTE: You cannot use erasure coding if the storage pool includes two sites.
 
  ** <<Erasure-coding schemes for storage pools containing three or more sites,Erasure-coding schemes for storage pools containing three or more sites>>
  ** <<Erasure-coding schemes for one-site storage pools,Erasure-coding schemes for one-site storage pools>>
@@ -33,7 +33,7 @@ The storage overhead of an erasure-coding scheme is calculated by dividing the n
 
 For example, if you store a 10 MB object using the 4+2 scheme (which has 50% storage overhead), the object consumes 15 MB of grid storage. If you store the same 10 MB object using the 6+2 scheme (which has 33% storage overhead), the object consumes approximately 13.3 MB.
 
-Select the erasure-coding scheme with the lowest total value of _k+m_ that meets your needs. erasure-coding schemes with a lower number of fragments are overall more computationally efficient, as fewer fragments are created and distributed (or retrieved) per object, can show better performance due to the larger fragment size, and can require fewer nodes be added in an expansion when more storage is required. (See the instructions for expanding StorageGRID for information on planning a storage expansion.)
+Select the erasure-coding scheme with the lowest total value of _k+m_ that meets your needs. Erasure-coding schemes with a lower number of fragments are overall more computationally efficient, as fewer fragments are created and distributed (or retrieved) per object, can show better performance due to the larger fragment size, and can require fewer nodes be added in an expansion when more storage is required. (For information on planning a storage expansion, see the xref:../expand/index.adoc[instructions for expanding StorageGRID].)
 
 == Erasure-coding schemes for storage pools containing three or more sites
 

@@ -1,15 +1,15 @@
 ---
-permalink: ilm/step-2-of-3-define-placements.html
+permalink: ilm/create-ilm-rule-define-placements.html
 sidebar: sidebar
 keywords: ilm rule step 2, define placements
-summary: 'Step 2 \(Define Placements\) of the Create ILM Rule wizard allows you to define the placement instructions that determine how long objects are stored, the type of copies \(replicated or erasure coded\), the storage location, and the number of copies.'
+summary: 'Step 3 \(Define placements\) of the Create ILM Rule wizard allows you to define the placement instructions that determine how long objects are stored, the type of copies \(replicated or erasure coded\), the storage location, and the number of copies.'
 ---
 = Step 2 of 3: Define placements
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Step 2 (Define Placements) of the Create ILM Rule wizard allows you to define the placement instructions that determine how long objects are stored, the type of copies (replicated or erasure coded), the storage location, and the number of copies.
+The *Define placements* step of the Create ILM Rule wizard allows you to define the placement instructions that determine how long objects are stored, the type of copies (replicated or erasure coded), the storage location, and the number of copies.
 
 .About this task
 
@@ -19,7 +19,7 @@ Each placement instruction can have multiple lines if you want to create differe
 
 This example ILM rule creates two replicated copies for the first year. Each copy is saved in a storage pool at a different site. After one year, a 2+1 erasure-coded copy is made and saved at only one site.
 
-image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
+//image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
 
 .Steps
 
@@ -28,34 +28,28 @@ image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
 [cols="1a,2a" options="header"]
 |===
 | Option| Description
-a|
-Ingest Time
-a|
-The time when the object was ingested.
-a|
-Last Access Time
-a|
-The time when the object was last retrieved (read or viewed).
+
+|Ingest Time
+|The time when the object was ingested.
+
+|Last Access Time
+|The time when the object was last retrieved (read or viewed).
 
 *Note:* To use this option, updates to Last Access Time must be enabled for the S3 bucket or Swift container. See xref:using-last-access-time-in-ilm-rules.adoc[Use Last Access Time in ILM rules].
-a|
-Noncurrent Time
-a|
-The time an object version became noncurrent because a new version was ingested and replaced it as the current version.
+
+|Noncurrent Time
+|The time an object version became noncurrent because a new version was ingested and replaced it as the current version.
 
 *Note:* Noncurrent Time applies only to S3 objects in versioning-enabled buckets.
 
 You can use this option to reduce the storage impact of versioned objects by filtering for noncurrent object versions. See xref:example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[Example 4: ILM rules and policy for S3 versioned objects].
 
-
-
-a|
-User Defined Creation Time
-a|
-A time specified in user-defined metadata.
+|User Defined Creation Time
+|A time specified in user-defined metadata.
 |===
++
 NOTE: If you want to create a compliant rule, you must select *Ingest Time*.
-
++
 . In the *Placements* section, select a starting time and a duration for the first time period.
 +
 For example, you might want to specify where to store objects for the first year ("`day 0 for 365 days`"). At least one instruction must start at day 0.
@@ -75,13 +69,13 @@ NOTE: The *ILM placement unachievable* alert is triggered to indicate that the I
   *** If the number of copies is less than the number of storage pools, the system distributes the copies to keep disk usage among the pools balanced, while ensuring that no site gets more than one copy of an object.
   *** If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. For this reason, do not specify the default All Storage Nodes storage pool and another storage pool.
 +
-image::../media/ilm_rule_with_multiple_storage_pools.png[Placement instructions for multiple storage pools]
+//image::../media/ilm_rule_with_multiple_storage_pools.png[Placement instructions for multiple storage pools]
 
 .. Select the number of copies you want to make.
 +
 A warning appears if you change the number of copies to 1. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. See xref:why-you-should-not-use-single-copy-replication.adoc[Why you should not use single-copy replication].
 +
-image::../media/ilm_create_ilm_rule_warning_for_1_copy.png[Create ILM Rule Page 2 Warning for 1 Copy]
+//image::../media/ilm_create_ilm_rule_warning_for_1_copy.png[Create ILM Rule Page 2 Warning for 1 Copy]
 +
 To avoid these risks, do one or more of the following:
 
@@ -90,16 +84,12 @@ To avoid these risks, do one or more of the following:
 *** Select *erasure coded* for Type, instead of *replicated*.
 You can safely ignore this warning if this rule already creates multiple copies for all time periods.
 
-.. If you specified only one storage pool, ignore the *Temporary location* field.
-+
-NOTE: Temporary locations are deprecated and will be removed in a future release. See xref:using-storage-pool-as-temporary-location-deprecated.adoc[Use a storage pool as a temporary location (deprecated)].
-
 . If you want to create an erasure-coded copy:
  .. From the *Type* drop-down list, select *erasure coded*.
 +
 The number of copies changes to 1. A warning appears if the rule does not have an advanced filter to ignore objects that are 200 KB or smaller.
 +
-image::../media/ilm_rule_warning_for_ec_size.png[ILM Rule Warning for EC Size]
+//image::../media/ilm_rule_warning_for_ec_size.png[ILM Rule Warning for EC Size]
 +
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 
@@ -108,14 +98,12 @@ IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not u
 +
 The storage location for an erasure-coded copy includes the name of the storage pool, followed by the name of the Erasure Coding profile.
 +
-image::../media/storage_pool_and_erasure_coding_profile.png[Storage pool and EC profile name]
+//image::../media/storage_pool_and_erasure_coding_profile.png[Storage pool and EC profile name]
 . Optionally, add different time periods or create additional copies at different locations:
  ** Select the plus icon to create additional copies at a different location during the same time period.
  ** Select *Add* to add a different time period to the placement instructions.
 +
 NOTE: Objects are automatically deleted at the end of the final time period unless the final time period ends with *forever*.
-
-
 
 . If you want to store objects in a Cloud Storage Pool:
  .. From the *Type* drop-down list, select *replicated*.
@@ -127,15 +115,15 @@ When using Cloud Storage Pools, keep these rules in mind:
 
   *** You cannot select more than one Cloud Storage Pool in a single placement instruction. Similarly, you cannot select a Cloud Storage Pool and a storage pool in the same placement instruction.
 +
-image::../media/ilm_cloud_storage_pool_error.gif[ILM rule > Cloud Storage Pool error]
+//image::../media/ilm_cloud_storage_pool_error.gif[ILM rule > Cloud Storage Pool error]
 
   *** You can store only one copy of an object in any given Cloud Storage Pool. An error message appears if you set *Copies* to 2 or more.
 +
-image::../media/ilm_cloud_storage_pool_error_one_copy.gif[ILM rule: Cloud Storage Pool error if more than one copy]
+//image::../media/ilm_cloud_storage_pool_error_one_copy.gif[ILM rule: Cloud Storage Pool error if more than one copy]
 
   *** You cannot store more than one object copy in any Cloud Storage Pool at the same time. An error message appears if multiple placements that use a Cloud Storage Pool have overlapping dates or if multiple lines in the same placement use a Cloud Storage Pool.
 +
-image::../media/ilm_rule_cloud_storage_pool_error_overlapping_dates.png[ILM Rule Cloud Storage Pool Error Overlapping Dates]
+//image::../media/ilm_rule_cloud_storage_pool_error_overlapping_dates.png[ILM Rule Cloud Storage Pool Error Overlapping Dates]
 
   *** You can store an object in a Cloud Storage Pool at the same time that object is being stored as replicated or erasure coded copies in StorageGRID. However, as this example shows, you must include more than one line in the placement instruction for the time period, so you can specify the number and types of copies for each location.
 +
@@ -164,17 +152,12 @@ In this example, two replicated copies will be saved to two storage pools (DC1 a
 +
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
 
-. Select *Next*.
+. Select *Continue*.
 +
-Step 3 (Define Ingest Behavior) appears.
+xref:create-ilm-rule-select-ingest-behavior.adoc[The *Select ingest behavior* step)] appears.
 
 .Related information
 
 * xref:what-ilm-rule-is.adoc[What an ILM rule is]
 
-
 * xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock]
-
-
-
-* xref:step-3-of-3-define-ingest-behavior.adoc[Step 3 of 3: Define ingest behavior]

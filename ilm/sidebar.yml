@@ -10,9 +10,9 @@ entries:
       url: "/ilm/how-ilm-operates-throughout-objects-life.html"
     - title: How objects are ingested
       entries:
-      - title: Data-protection options for ingest
+      - title: Ingest options
         url: "/ilm/data-protection-options-for-ingest.html"
-      - title: Advantages, disadvantages, and limitations of data-protection options
+      - title: Advantages, disadvantages, and limitations of ingest options
         url: "/ilm/advantages-disadvantages-of-ingest-options.html"
     - title: How objects are stored (replication or erasure coding)
       entries:
@@ -46,8 +46,6 @@ entries:
         url: "/ilm/guidelines-for-creating-storage-pools.html"
       - title: Use multiple storage pools for cross-site replication
         url: "/ilm/using-multiple-storage-pools-for-cross-site-replication.html"
-      - title: Use storage pool as temporary location (deprecated)
-        url: "/ilm/using-storage-pool-as-temporary-location-deprecated.html"
       - title: Create storage pool
         url: "/ilm/creating-storage-pool.html"
       - title: View storage pool details
@@ -97,18 +95,15 @@ entries:
     entries:
     - title: Access Create ILM rule wizard
       url: "/ilm/access-create-ilm-rule-wizard.html"
-    - title: 'Step 1 of 3: Define basics'
-      url: "/ilm/step-1-of-3-define-basics.html"
-      entries:
-      - title: Use advanced filters in ILM rules
-        url: "/ilm/using-advanced-filters-in-ilm-rules.html"
+    - title: 'Step 1 of 3: Enter details'
+      url: "/ilm/create-ilm-rule-enter-details.html"
     - title: 'Step 2 of 3: Define placements'
-      url: "/ilm/step-2-of-3-define-placements.html"
+      url: "/ilm/create-ilm-rule-define-placements.html"
       entries:
       - title: Use Last Access Time in ILM rules
         url: "/ilm/using-last-access-time-in-ilm-rules.html"
-    - title: 'Step 3 of 3: Define ingest behavior'
-      url: "/ilm/step-3-of-3-define-ingest-behavior.html"
+    - title: 'Step 3 of 3: Select ingest behavior'
+      url: "/ilm/create-ilm-rule-select-ingest-behavior.html"
     - title: Create default ILM rule
       url: "/ilm/creating-default-ilm-rule.html"
   - title: Create ILM policy
