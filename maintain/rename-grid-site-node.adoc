@@ -15,11 +15,9 @@ You can use this procedure to rename a single item, multiple items, or even all 
 
 == What the rename procedure does
 
-When you install StorageGRID initially, you specify a grid name, site names, and node names. These initial names serve as both internal _system names_ and as _display names_. 
+When you install StorageGRID initially, you specify the grid name, site names, and node names. These initial names serve as both internal _system names_ and as _display names_. 
 
-System names are required for StorageGRID operations and cannot be changed. In contrast, display names (the names shown throughout the Grid Manager) can be updated whenever required. 
-
-For example, you might want to change display names to fix typos, to implement different node-naming conventions, or to indicate that a site and all of its nodes have been relocated. You can use this procedure whenever you want and as many times as you want. 
+System names are required for StorageGRID operations and cannot be changed. In contrast, display names (the names shown throughout the Grid Manager) can be updated whenever required. For example, you might want to change display names to fix typos, to implement a different naming convention, or to indicate that a site and all of its nodes have been relocated. You can use this procedure whenever you want and as many times as you want. 
 
 == Display name requirements
 
@@ -31,8 +29,7 @@ The display names for nodes must follow these rules:
 * Can contain uppercase and lowercase letters.
 * Can contain numbers.
 * Can contain one or more hyphens (-).
-* Can start with a letter or number, but cannot start with a hyphen.
-* Can end with a letter or number, but cannot end with a hyphen.
+* Can start or end with a letter or number, but cannot start or end with a hyphen.
 * Cannot be all numbers.
 
 The display names for the grid and sites follow the same rules, but these names can include spaces and any of these special characters: `= - _ : , . @ !`
@@ -46,7 +43,7 @@ You can use any naming convention that fits your organizational requirements. He
 * *Site indicator*: If you have multiple sites, consider adding a site code to each node name. 
 * *Host type*: Consider whether you want to distinguish appliance-based nodes from software-based nodes. For example, you might want to use a 4-letter code for the appliance model (for example, `1000`, `6060`, or `5712`) or the type of host (for example, `rhel` for Red Hat Enterprise Linux).
 * *IP address*: In some cases, it can be helpful to include the last few digits of the node's IP address in the name.
-* *Node type*: Node names typically indicate the node's type. You can use abbreviations like `sn`, `adm`, `gw`, and `arc` (Storage Node, Admin Node, Gateway Node, and Archive Node).
+* *Node type*: Node names typically indicate the node's type. You can use abbreviations like `s`, `adm`, `gw`, and `arc` (Storage Node, Admin Node, Gateway Node, and Archive Node).
 * *Node number*: If a site contains more than one of a particular type of node, add a unique number to each node's name.
 
 
@@ -56,22 +53,22 @@ For example, you might use names like this for a StorageGRID system that has thr
 
 * *Site*: `Data Center 1`
 
-** `dc1-1000-102-85-adm01`
-** `dc1-6060-102-86-sn01`
-** `dc1-6060-102-87-sn02`
-** `dc1-6060-102-88-sn03`
-** `dc1-1000-102-89-gw01`
+** `dc1-1000-102-85-adm1`
+** `dc1-6060-102-86-s1`
+** `dc1-6060-102-87-s2`
+** `dc1-6060-102-88-s3`
+** `dc1-1000-102-89-gw1`
 
 * *Site*: `Data Center 2`
-** `dc2-rhel-104-10-adm02`
-** `dc2-5760-104-11-sn01`
-** `dc2-5760-104-12-sn02`
-** `dc2-5760-104-13-sn03`
+** `dc2-rhel-104-10-adm2`
+** `dc2-5760-104-11-s1`
+** `dc2-5760-104-12-s2`
+** `dc2-5760-104-13-s3`
 
 * *Site*: `Data Center 3`
-** `dc3-rhel-108-22-sn01`
-** `dc3-rhel-108-23-sn02`
-** `dc3-rhel-108-24-sn03`
+** `dc3-rhel-108-22-s1`
+** `dc3-rhel-108-23-s2`
+** `dc3-rhel-108-24-s3`
 
 
 == How to rename your grid, sites, and nodes
@@ -85,7 +82,7 @@ For example, you might use names like this for a StorageGRID system that has thr
 
 === Select items to rename
 
-. Select *MAINTENANCE* > *Task* > *Rename grid, sites, and nodes*.
+. Select *MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*.
 . Select the items you want to rename.
 +
 * To change the names of everything (or almost everything) in your system, select *Select all*. Then, optionally unselect any items you do not want to rename. 
@@ -130,7 +127,7 @@ A success message is shown. The new display names are now used throughout Grid M
 +
 The list includes all items that were shown in the Proposed names step.
 
-. In the *Match* field, enter the shared string you want to replace. For example, if the string you want to replace is "`Data Center 1,`" enter *Data Center 1*.
+. In the *Match* field, enter the shared string you want to replace. For example, if the string you want to replace is `Data-Center-1`, enter *Data-Center-1*.
 +
 As you type, your text is highlighted wherever it is found in the names on the left.
 
