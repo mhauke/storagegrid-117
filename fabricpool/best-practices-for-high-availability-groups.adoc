@@ -2,18 +2,19 @@
 permalink: fabricpool/best-practices-for-high-availability-groups.html
 sidebar: sidebar
 keywords: fabricPool, high availability group, HA group, active-active, active-backup, cloud tier, best practices
-summary: 'Before attaching StorageGRID as a FabricPool cloud tier, you should use the StorageGRID Grid Manager to configure a high availability \(HA\) group.'
+summary: 'Before attaching StorageGRID as a FabricPool cloud tier, learn about StorageGRID high availability (HA) groups and review the best practices for using HA groups with FabricPool.'
 ---
 = Best practices for high availability groups
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Before attaching StorageGRID as a FabricPool cloud tier, you should use the StorageGRID Grid Manager to configure a high availability (HA) group.
+
+Before attaching StorageGRID as a FabricPool cloud tier, learn about StorageGRID high availability (HA) groups and review the best practices for using HA groups with FabricPool.
 
 == What is a high availability (HA) group?
 
-To ensure that the Load Balancer service is always available to manage FabricPool data, you can group the network interfaces of multiple Admin and Gateway Nodes into a single entity, known as a high availability (HA) group. If the active node in the HA group fails, another node in the group can continue to manage the workload.
+A high availability (HA) group is a collection of interfaces from multiple StorageGRID Gateway Nodes, Admin Nodes, or both. An HA group helps to keep client data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact on FabricPool operations.
 
 Each HA group provides highly available access to the shared services on the associated nodes. For example, an HA group that consists of interfaces only on Gateway Nodes or on both Admin Nodes and Gateway Nodes provides highly available access to the shared Load Balancer service.
 
@@ -23,7 +24,7 @@ To create an HA group, you perform these general steps:
 +
 IMPORTANT: If you plan to use a VLAN interface to segregate FabricPool traffic, a network administrator must first configure a trunk interface and the corresponding VLAN. Each VLAN is identified by a numeric ID or tag. For example, your network might use VLAN 100 for FabricPool traffic.
 
-. Assign one or more virtual IP (VIP) addresses to the group. Clients applications, such as FabricPool, can use any of these VIP addresses to connect to StorageGRID.
+. Assign one or more virtual IP (VIP) addresses to the group. ONTAP can can use any of these VIP addresses when it tiers FabricPool data to StorageGRID.
 
 . Specify one interface to be the Primary interface and determine the priority order for any Backup interfaces. The Primary interface is the active interface unless a failure occurs.
 

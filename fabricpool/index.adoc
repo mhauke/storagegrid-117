@@ -15,9 +15,9 @@ If you use NetApp ONTAP software, you can use NetApp FabricPool to tier inactive
 
 Use these instructions to:
 
-* Get an overview of configuring a StorageGRID object storage system for use with FabricPool.
-* Learn how to obtain the information you provide to ONTAP when you attach StorageGRID as a FabricPool cloud tier.
-* Learn the best practices for configuring the StorageGRID information lifecycle management (ILM) policy, a StorageGRID traffic classification policy, and other StorageGRID options for a FabricPool workload.
+* Learn the considerations and best practices for configuring StorageGRID for a FabricPool workload.
+* Learn how to configure a StorageGRID object storage system for use with FabricPool.
+* Learn how to provide the required values to ONTAP when attaching StorageGRID as a FabricPool cloud tier. 
 
 == Configuration workflow
 
@@ -51,4 +51,4 @@ In addition, a FabricPool license is not required when you use StorageGRID as th
 
 These instructions describe how to connect StorageGRID to a single ONTAP cluster. However, you might want to connect the same StorageGRID system to multiple ONTAP clusters.
 
-The only requirement for tiering data from multiple ONTAP clusters to a single StorageGRID system is that you must use a different S3 bucket for each cluster. Based on your requirements, you can use the same high availability (HA) group, load balancer endpoint, and tenant account for all clusters, or you can configure each of these items for each cluster.
+The only requirement for tiering data from multiple ONTAP clusters to a single StorageGRID system is that you must use a different tenant and you should use a different bucket for each cluster. Based on your requirements, you can use the same high availability (HA) group, load balancer endpoint, and ILM rule for all clusters, or you can configure each of these items for each cluster.
