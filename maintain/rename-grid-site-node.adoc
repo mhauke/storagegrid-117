@@ -16,7 +16,7 @@ You can use this procedure to rename a single item, multiple items, or even all 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Maintenance or Root access permission.
 * You have the provisioning passphrase.
-* You have reviewed the xref:../maintain/rename-grid-site-name-overview.adoc[requirements and best practices for display names].
+* You have reviewed the xref:../maintain/rename-grid-site-node-overview.adoc[requirements and best practices for display names].
 
 
 == Select items to rename
@@ -26,7 +26,8 @@ You can use this procedure to rename a single item, multiple items, or even all 
 +
 * To change the names of everything (or almost everything) in your system, select *Select all*. Then, optionally unselect any items you do not want to rename. 
 * To change the name of your grid, select the check box for the grid. 
-* To change the name of a site, select the check box for that site. 
+* To change the name of a site and its nodes, select the check box in the table header. Then, optionally unselect any nodes you do not want to rename.
+* To change the name of a site, select the check box for that site.  
 * To change the name of a node, select the check box for that node.
 
 . Select *Continue*.
@@ -49,12 +50,12 @@ You can enter a new display name for each item individually, or you can rename i
 
 .Rename items individually
 --
-. For the *Propose new names* step, enter a new display name for each item in the table.
+. For the *Propose new names* step, enter a display name for each item you want to rename.
 +
-See xref:../maintain/rename-grid-site-name-overview.adoc[Requirements and best practices for display names].
+See xref:../maintain/rename-grid-site-node-overview.adoc[Requirements and best practices for display names].
 
 . Optionally, select image:../media/icon-x-to-remove.png[X icon] in the *Remove* column to remove any items you do not want to rename.
-. When you are ready to rename all of the items in the table, select *Rename*.
+. When you are ready to rename all items, select *Rename*.
 +
 A success message is shown. The new display names are now used throughout Grid Manager.
 
@@ -64,9 +65,9 @@ A success message is shown. The new display names are now used throughout Grid M
 --
 . For the *Propose new names* step, select *Use bulk rename tool*.
 +
-The list includes all items that were shown in the Proposed names step.
+The *Rename preview* includes all items that were shown for the *Propose new names* step.
 
-. In the *Match* field, enter the shared string you want to replace. For example, if the string you want to replace is `Data-Center-1`, enter *Data-Center-1*.
+. In the *Existing string* field, enter the shared string you want to replace. For example, if the string you want to replace is `Data-Center-1`, enter *Data-Center-1*.
 +
 As you type, your text is highlighted wherever it is found in the names on the left.
 
@@ -79,16 +80,15 @@ image::../media/rename-bulk-rename-tool.png[Bulk rename tool before]
 
 
 
-. In the *Rename to* field, enter the replacement string you want to use instead. For example, enter *DC1*.
+. In the *New string* field, enter the replacement string you want to use instead. For example, enter *DC1*.
 +
-See xref:../maintain/rename-grid-site-name-overview.adoc[Requirements and best practices for display names].
+See xref:../maintain/rename-grid-site-node-overview.adoc[Requirements and best practices for display names].
 +
 As you enter the replacement string, the names on the left are updated, so you can verify that the new names will be correct.
 + 
-
 image::../media/rename-bulk-rename-tool-after.png[Bulk rename tool after]
 
-. When you are satisfied with the new proposed names, select *Add names* to add the names to the Propose new names table. 
+. When you are satisfied with the names shown in the preview, select *Add names* to add the names to the table for the *Propose new names* step. 
 
 . Make any additional changes required.
 
