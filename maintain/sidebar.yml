@@ -233,7 +233,11 @@ entries:
       - title: 'Step 6: Monitor Decommission'
         url: "/maintain/step-6-monitor-decommission.html"
   - title: Rename grid, sites, and nodes
-    url: "/maintain/rename-grid-site-node.html"
+    entries:
+    - title: 'Requirements and best practices for display names'
+      url: "/maintain/rename-grid-site-name-overview.html"
+    - title: 'Add or update display names'  
+      url: "/maintain/rename-grid-site-node.html"
   - title: Network maintenance procedures
     entries:
     - title: Update subnets for Grid Network
