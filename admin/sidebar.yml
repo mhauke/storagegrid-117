@@ -51,6 +51,8 @@ entries:
       url: "/admin/using-identity-federation.html"
     - title: Manage admin groups
       url: "/admin/managing-admin-groups.html"
+    - title: Admin group permissions
+      url: "/admin/admin-group-permissions.html"
     - title: Deactivate features with the API
       url: "/admin/deactivate-features-from-api.html"  
     - title: Manage users
@@ -273,35 +275,18 @@ entries:
       url: "/admin/viewing-notification-status-and-queues.html"
     - title: How Admin Nodes show acknowledged alarms (legacy system)
       url: "/admin/how-admin-nodes-show-acknowledged-alarms.html"
-    - title: Configure audit client access
-      url: "/admin/configuring-audit-client-access.html"
+    - title: Configure audit client access      
       entries:
-      - title: Configure audit clients for CIFS
-        url: "/admin/configuring-audit-clients-for-cifs.html"
-        entries:
-        - title: Configure audit clients for Workgroup
-          url: "/admin/configuring-audit-clients-for-workgroup.html"
-        - title: Configure audit clients for Active Directory
-          url: "/admin/configuring-audit-clients-for-active-directory.html"
-        - title: Add a user or group to a CIFS audit share
-          url: "/admin/adding-user-or-group-to-cifs-audit-share.html"
-        - title: Remove a user or group from a CIFS audit share
-          url: "/admin/removing-user-or-group-from-cifs-audit-share.html"
-        - title: Change CIFS audit share user or group name
-          url: "/admin/changing-cifs-audit-share-user-or-group-name.html"
-        - title: Verify CIFS audit integration
-          url: "/admin/verifying-cifs-audit-integration.html"
-      - title: Configure the audit client for NFS
-        url: "/admin/configuring-audit-client-for-nfs.html"
-        entries:
-        - title: Add NFS audit client to audit share
-          url: "/admin/adding-nfs-audit-client-to-audit-share.html"
-        - title: Verify NFS audit integration
-          url: "/admin/verifying-nfs-audit-integration.html"
-        - title: Remove NFS audit client from audit share
-          url: "/admin/removing-nfs-audit-client-from-audit-share.html"
-        - title: Change IP address of NFS audit client
-          url: "/admin/changing-ip-address-of-nfs-audit-client.html"
+      - title: Configure audit client access for NFS
+        url: "/admin/configuring-audit-client-access.html"
+      - title: Add NFS audit client to audit share
+        url: "/admin/adding-nfs-audit-client-to-audit-share.html"
+      - title: Verify NFS audit integration
+        url: "/admin/verifying-nfs-audit-integration.html"
+      - title: Remove NFS audit client from audit share
+        url: "/admin/removing-nfs-audit-client-from-audit-share.html"
+      - title: Change IP address of NFS audit client
+        url: "/admin/changing-ip-address-of-nfs-audit-client.html"
   - title: Manage Archive Nodes
     entries:
     - title: What an Archive Node is
