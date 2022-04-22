@@ -1,0 +1,138 @@
+---
+permalink: installconfig/index.html
+sidebar: sidebar
+keywords: Installation, deployment, Install, deploy, Installing, deploying
+summary: 'You can install one or more StorageGRID services appliances and one or more storage appliances when you first deploy StorageGRID, or you can add additional appliance nodes later as part of an expansion. You might also need to install an appliance Storage Node as part of a recovery operation.'
+---
+= Install and deploy - Overview
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can install one or more StorageGRID services appliances and one or more storage appliances when you first deploy StorageGRID, or you can add additional appliance nodes later as part of an expansion. You might also need to install an appliance Storage Node as part of a recovery operation.
+
+.What you'll need
+
+Some StorageGRID appliances require that your StorageGRID system is using a minimum version of StorageGRID software.
+
+[role="tabbed-block"]
+====
+.SG100 and SG1000
+--
+[options="header"]
+|===
+| Appliance| Required StorageGRID version
+a|
+SG100
+a|
+11.4 or later (latest hotfix recommended)
+a|
+SG1000
+a|
+11.3 or later (latest hotfix recommended)
+|===
+--
+
+.SG6000
+--
+[options="header"]
+|===
+| Appliance| Required StorageGRID version
+a|
+SG6060 with no expansion shelves
+a|
+11.1.1 or later
+a|
+SG6060 with expansion shelves (one or two)
+a|
+11.3 or later
+
+*Note:* If you add expansion shelves after the initial deployment, you must use version 11.4 or later.
+
+a|
+SGF6024
+a|
+11.3 or later
+|===
+--
+====
+
+
+== Installation and deployment tasks
+
+Preparing and adding a StorageGRID appliance to the grid includes four primary steps:
+
+. Preparing for installation:
+ ** Preparing the installation site
+ ** Unpacking the boxes and checking the contents
+ ** Obtaining additional equipment and tools
+ ** Verifying network configuration (Services appliances)
+ ** Gathering IP addresses and network information (Storage appliances)
+ ** Optional: Configuring an external key management server (KMS) if you plan to encrypt all appliance data. See details about external key management in the instructions for administering StorageGRID.
+. Installing the hardware:
+ ** Registering the hardware
+ ** Installing the appliance into a cabinet or rack
+ ** Installing the drives (SG6000, SG5760, and SG5660 only)
+ ** Installing optional expansion shelves (model SG6060 only; maximum of two expansion shelves)
+ ** Cabling the appliance
+ ** Connecting the power cords and applying power
+ ** Viewing boot-up status codes
+. Configuring the hardware:
+ ** Accessing SANtricity System Manager (SG6000 and SG5700) or SANtricity Storage Manager (SG5600) to configure SANtricity management settings and 
+ ** Setting a static IP address for management port 1 on the storage controller (Storage appliances).
+ ** Accessing StorageGRID Appliance Installer and configuring the link and network IP settings required to connect to StorageGRID networks
+ ** Accessing the baseboard management controller (BMC) interface on the SG1000 appliance or the SG6000-CN controller
+ ** Optional: Enabling node encryption if you plan to use an external KMS to encrypt appliance data.
+ ** Optional: Changing the RAID mode (storage appliances only).
+. Deploying the appliance:
++
+[role="tabbed-block"]
+====
+
+.Services appliance
+--
+You can deploy the services appliance as a Gateway Node or an Admin Node in a StorageGRID system. Both the SG100 and the SG1000 appliances can operate as Gateway Nodes and Admin Nodes (primary and non-primary) at the same time.
+ 
+[options="header"]
+|===
+| Task| Instructions
+a|
+Deploying an appliance Gateway or Admin Node in a new StorageGRID system
+a|
+xref:../installconfig/deploying-services-appliance-node.adoc[Deploy services appliance node]
+a|
+Adding an appliance Gateway or Admin Node to an existing StorageGRID system
+a|
+Instructions for expanding a StorageGRID system
+a|
+Deploying an appliance Gateway or Admin Node as part of a node recovery operation
+a|
+Instructions for recovery and maintenance
+|===
+--
+
+.Storage appliance
+--
+[options="header"]
+|===
+| Task| Instructions
+a|
+Deploying an appliance Storage Node in a new StorageGRID system
+a|
+xref:../installconfig/deploying-appliance-storage-node.adoc[Deploy appliance Storage Node]
+a|
+Adding an appliance Storage Node to an existing StorageGRID system
+a|
+Instructions for expanding a StorageGRID system
+a|
+Deploying an appliance Storage Node as part of a Storage Node recovery operation
+a|
+Instructions for recovery and maintenance
+|===
+--
+
+====
+
+.Related information
+
+xref:installation-checklist.adoc[Installation checklist]

@@ -1,0 +1,128 @@
+---
+permalink: maintain/rename-grid-site-node.html
+sidebar: sidebar
+keywords: rename grid, rename site, rename node, change display name, bulk rename tool
+summary: 'You can use this procedure to add or update the display name for a single item, multiple items, or even all items at once. Changing a display name does not affect StorageGRID operations in any way.'
+---
+= Add or update display names
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use this procedure to rename a single item, multiple items, or even all items at once. Changing a display name does not affect StorageGRID operations in any way. 
+
+.What you'll need
+
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the Maintenance or Root access permission.
+* You have the provisioning passphrase.
+* You have reviewed the xref:../maintain/rename-grid-site-node-overview.adoc[requirements and best practices for display names].
+
+
+== Select items to rename
+
+. Select *MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*.
+. For the *Select names* step, select the items you want to rename.
++
+* To change the names of everything (or almost everything) in your system, select *Select all*. Then, optionally unselect any items you do not want to rename. 
+* To change the name of your grid, select the check box for the grid. 
+* To change the name of a site and its nodes, select the check box in the table header. Then, optionally unselect any nodes you do not want to rename.
+* To change the name of a site, select the check box for that site.  
+* To change the name of a node, select the check box for that node.
+
+. Select *Continue*.
+
+. Review the table, which includes the items you selected.
++
+* The *Display name* column shows the current display name for each item. You will provide new display names in this column.
+* The *System name* column shows the name you entered for each item during installation. System names are used for internal StorageGRID operations and cannot be changed. For example, the system name for a node might be its hostname.
+* The *Type* column indicates the item's type: Grid, Site, or the specific type of node.
+
+
+== Propose new display names
+
+You can enter a new display name for each item individually, or you can rename items in bulk. Use the bulk rename tool if item names share a common string that you want to replace with a different string. 
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.Rename items individually
+--
+. For the *Propose new names* step, enter a display name for each item you want to rename.
++
+See xref:../maintain/rename-grid-site-node-overview.adoc[Requirements and best practices for display names].
+
+. Optionally, select image:../media/icon-x-to-remove.png[X icon] in the *Remove* column to remove any items you do not want to rename.
+. When you are ready to rename all items, select *Rename*.
++
+A success message is shown. The new display names are now used throughout Grid Manager.
+
+
+--
+.Rename items in bulk
+--
+. For the *Propose new names* step, select *Use bulk rename tool*.
++
+The *Rename preview* includes all items that were shown for the *Propose new names* step.
+
+. In the *Existing string* field, enter the shared string you want to replace. For example, if the string you want to replace is `Data-Center-1`, enter *Data-Center-1*.
++
+As you type, your text is highlighted wherever it is found in the names on the left.
+
+
+. Optionally, select image:../media/icon-x-to-remove.png[X icon] to remove any items that you do not want to rename with this tool. 
++
+For example, suppose you want to rename all nodes that contain the string `Data-Center-1`, but you do not want to rename the `Data-Center-1` site itself.  Select image:../media/icon-x-to-remove.png[X icon] to remove the site from the list.
++
+image::../media/rename-bulk-rename-tool.png[Bulk rename tool before]
+
+
+
+. In the *New string* field, enter the replacement string you want to use instead. For example, enter *DC1*.
++
+See xref:../maintain/rename-grid-site-node-overview.adoc[Requirements and best practices for display names].
++
+As you enter the replacement string, the names on the left are updated, so you can verify that the new names will be correct.
++ 
+image::../media/rename-bulk-rename-tool-after.png[Bulk rename tool after]
+
+. When you are satisfied with the names shown in the preview, select *Add names* to add the names to the table for the *Propose new names* step. 
+
+. Make any additional changes required.
+
+. When you are ready to rename all items in the table, select *Rename*.
++
+A success message is shown. The new display names are now used throughout Grid Manager.
+
+--
+====
+
+// end tabbed area
+
+
+== Download the recovery package
+
+When you are done renaming items, download and save a new Recovery Package. The new display names for the items you renamed are included in the `passwords.txt` file. 
+
+
+. Enter the provisioning passphrase and select *Download recovery package*.
++
+The download starts immediately.
+
+. When the download completes:
+
+.. Open the `.zip` file.
+
+.. Confirm it includes a gpt-backup directory and an inner `.zip` file.
+
+.. Extract the inner `.zip` file.
+
+.. Confirm you can open the `Passwords.txt` file.
+
+. Copy the downloaded Recovery Package file (`.zip`) to two safe, secure, and separate locations.
++
+IMPORTANT:	The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
+
+

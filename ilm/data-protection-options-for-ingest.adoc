@@ -2,22 +2,24 @@
 permalink: ilm/data-protection-options-for-ingest.html
 sidebar: sidebar
 keywords: ingest options, balanced ingest, strict ingest, dual-commit ingest
-summary: 'When you create an ILM rule, you specify one of three options for protecting objects at ingest: Dual commit, Balanced, or Strict. Depending on your choice, StorageGRID makes interim copies and queues the objects for ILM evaluation later, or it uses synchronous placement and immediately makes copies to meet ILM requirements.'
+summary: 'When you create an ILM rule, you specify one of three options for protecting objects at ingest: Dual commit, Strict, or Balanced.'
 ---
-= Data-protection options for ingest
+= Ingest options
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-When you create an ILM rule, you specify one of three options for protecting objects at ingest: Dual commit, Balanced, or Strict. Depending on your choice, StorageGRID makes interim copies and queues the objects for ILM evaluation later, or it uses synchronous placement and immediately makes copies to meet ILM requirements.
+When you create an ILM rule, you specify one of three options for protecting objects at ingest: Dual commit, Strict, or Balanced.
 
-== Flowchart of three ingest options
+Depending on your choice, StorageGRID makes interim copies and queues the objects for ILM evaluation later, or it uses synchronous placement and immediately makes copies to meet ILM requirements.
+
+== Flowchart of ingest options
 
 The flowchart shows what happens when objects are matched by an ILM rule that uses each of the three ingest options.
 
-image::../media/ingest_object_lifecycle.png[Diagram showing how object ingest occurs for each data protection option]
+image::../media/ingest_object_lifecycle.png[Diagram showing how object ingest occurs for each ingest option]
 
-== Dual commit
+== Dual commit (default)
 
 When you select the Dual commit option, StorageGRID immediately makes interim object copies on two different Storage Nodes and returns an "`ingest successful`" message to the client. The object is queued for ILM evaluation, and copies that meet the rule's placement instructions are made later.
 
@@ -36,7 +38,7 @@ When you select the Strict option, StorageGRID uses synchronous placement on ing
 
 === When to use the Strict option
 
-Use the Strict option if you have an operational or regulatory requirement to immediately store objects only in the locations outlined in the ILM rule. For example, to satisfy a regulatory requirement, you might need to use the Strict option and a Location Constraint advanced filter to guarantee that objects are never stored at certain data center.
+Use the Strict option if you have an operational or regulatory requirement to immediately store objects only in the locations outlined in the ILM rule. For example, to satisfy a regulatory requirement, you might need to use the Strict option and a Location Constraint advanced filter to guarantee that objects are never stored at certain data centers.
 
 xref:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.adoc[Example 5: ILM rules and policy for Strict ingest behavior]
 
@@ -46,4 +48,4 @@ When you select the Balanced option, StorageGRID also uses synchronous placement
 
 === When to use the Balanced option
 
-Use the Balanced option to achieve the best combination of data protection, grid performance, and ingest success. Balanced is the default option in the ILM rule wizard.
+Use the Balanced option to achieve the best combination of data protection, grid performance, and ingest success. Balanced is the default option in the Create ILM rule wizard.

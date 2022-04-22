@@ -647,7 +647,7 @@ The maximum transmission unit (MTU) setting for the Grid Network interface (eth0
 
 The differences in MTU settings could indicate that some, but not all, eth0 networks are configured for jumbo frames. An MTU size mismatch of greater than 1000 might cause network performance problems.
 
-See the instructions for the Grid Network MTU mismatch alert in xref:troubleshooting-network-hardware-and-platform-issues.adoc[Troubleshoot network, hardware, and platform issues].
+See the instructions for the Grid Network MTU mismatch alert in xref:../troubleshoot/troubleshooting-network-hardware-and-platform-issues.adoc[Troubleshoot network, hardware, and platform issues].
 
 a|
 High Java heap use
@@ -919,7 +919,7 @@ Immediately add Storage Nodes in an expansion procedure.
 
 Once new Storage Nodes are added, the system automatically rebalances object metadata across all Storage Nodes, and the alarm clears.
 
-See the instructions for the Low metadata storage alert in xref:troubleshooting-metadata-issues.adoc[Troubleshoot metadata issues].
+See the instructions for the Low metadata storage alert in xref:../troubleshoot/troubleshooting-metadata-issues.adoc[Troubleshoot metadata issues].
 
 a|
 Low metrics disk capacity
@@ -936,7 +936,7 @@ The space available for storing object data is low.
 
 Perform an expansion procedure. You can add storage volumes (LUNs) to existing Storage Nodes, or you can add new Storage Nodes.
 
-xref:troubleshooting-low-object-data-storage-alert.adoc[Troubleshoot the Low object data storage alert]
+xref:../troubleshoot/troubleshooting-low-object-data-storage-alert.adoc[Troubleshoot the Low object data storage alert]
 
 xref:../expand/index.adoc[Expand your grid]
 
@@ -945,7 +945,7 @@ Low read-only watermark override
 a|
 The Storage Volume Soft Read-Only Watermark Override is less than the minimum optimized watermark for a Storage Node.
 
-To learn how to resolve this alert, go to xref:../monitor/troubleshoot-low-watermark-alert.html[Troubleshoot Low read-only watermark override alerts].
+To learn how to resolve this alert, go to xref:../troubleshoot/troubleshoot-low-watermark-alert.html[Troubleshoot Low read-only watermark override alerts].
 
 a|
 Low root disk capacity
@@ -977,7 +977,7 @@ Errors have occurred while transferring data between nodes.
 Network connectivity errors might clear without manual intervention. Contact technical support if the errors do not clear.
 
 
-See the instructions for the Network Receive Error (NRER) alarm in xref:troubleshooting-network-hardware-and-platform-issues.adoc[Troubleshoot network, hardware, and platform issues].
+See the instructions for the Network Receive Error (NRER) alarm in xref:../troubleshoot/troubleshooting-network-hardware-and-platform-issues.adoc[Troubleshoot network, hardware, and platform issues].
 
 
 a|
@@ -1058,7 +1058,7 @@ This alert might indicate that data has been permanently lost and is not retriev
 
 . Investigate this alert immediately. You might need to take action to prevent further data loss. You also might be able to restore a lost object if you take prompt action.
 +
-xref:troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and missing object data]
+xref:../troubleshoot/troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and missing object data]
 
 . When the underlying problem is resolved, reset the counter:
  .. Select *SUPPORT* > *Tools* > *Grid topology*.

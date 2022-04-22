@@ -31,7 +31,7 @@ image::../media/sg6060_front_panel_power_led_off.jpg[SG6060 front panel power LE
  ** Use the controller BMC interface:
   ... Access the controller BMC interface.
 +
-xref:accessing-bmc-interface-sg6000.adoc[Access BMC interface]
+xref:../installconfig/accessing-bmc-interface.adoc[Access BMC interface]
 
   ... Select *Power Control*.
   ... Select *Power On Server* and then select *Perform Action*.
@@ -86,6 +86,4 @@ CAUTION: Do not take another appliance node offline unless this appliance has a 
 
 .Related information
 
-xref:viewing-status-indicators-and-buttons-on-sg6000-cn-controller.adoc[View status indicators and buttons on SG6000-CN controller]
-
-xref:viewing-boot-up-status-codes-for-sg6000-storage-controllers.adoc[View boot-up status codes for SG6000 storage controllers]
+xref:../installconfig/viewing-status-indicators.adoc[View status indicators]

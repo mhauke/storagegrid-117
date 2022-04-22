@@ -1,8 +1,8 @@
 section: maintain
-title: Recover and maintain
+title: Recover nodes and maintain your grid
 entries:
   - title: Overview
-    pdf-filename: Recover and maintain StorageGRID
+    pdf-filename: Recover nodes and maintain your StorageGRID
     url: "/maintain/index.html"
     entries:
     - title: Download Recovery Package
@@ -232,6 +232,12 @@ entries:
         url: "/maintain/step-5-resolve-node-conflicts.html"
       - title: 'Step 6: Monitor Decommission'
         url: "/maintain/step-6-monitor-decommission.html"
+  - title: Rename grid, sites, and nodes
+    entries:
+    - title: 'Requirements and best practices for display names'
+      url: "/maintain/rename-grid-site-node-overview.html"
+    - title: 'Add or update display names'  
+      url: "/maintain/rename-grid-site-node.html"
   - title: Network maintenance procedures
     entries:
     - title: Update subnets for Grid Network
@@ -338,12 +344,4 @@ entries:
         url: "/maintain/accessing-server-manager-log-file.html"
       - title: Service with an error state
         url: "/maintain/service-with-error-state.html"
-  - title: Appliance node cloning
-    url: "/maintain/appliance-node-cloning.html"
-    entries:
-    - title: How appliance node cloning works
-      url: "/maintain/how-appliance-node-cloning-works.html"
-    - title: Considerations and requirements for appliance node cloning
-      url: "/maintain/considerations-and-requirements-for-appliance-node-cloning.html"
-    - title: Clone appliance node
-      url: "/maintain/appliance-node-cloning-procedure.html"
+  
