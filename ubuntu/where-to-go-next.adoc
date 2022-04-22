@@ -36,9 +36,7 @@ NOTE: If any Archive Nodes will use Tivoli Storage Manager as the external archi
 * Update grid node IP addresses if they have changed since you planned your deployment and generated the Recovery Package. See information about changing IP addresses in the recovery and maintenance instructions.
 * Configure storage encryption, if required.
 * Configure storage compression to reduce the size of stored objects, if required.
-* Configure audit client access. You can configure access to the system for auditing purposes through an NFS or a CIFS file share. See the instructions for administering StorageGRID.
-
-NOTE: Audit export through CIFS/Samba has been deprecated and will be removed in a future StorageGRID release.
+* Configure access to the system for auditing purposes through an NFS file share. See xref:../admin/configuring-audit-client-access.adoc[Configure audit client access for NFS].
 
 .Related information
 

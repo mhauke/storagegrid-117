@@ -21,7 +21,7 @@ image::../media/upgrade_workflow.png[Flowchart of the software upgrade steps]
 
 . Start the upgrade, which runs prechecks and upgrades the primary Admin Node automatically. You cannot access the Grid Manager while the primary Admin Node is being upgraded. Audit logs will also be unavailable. This upgrade can take up to 30 minutes.
 
-. After the primary Admin Node has been upgraded, clear your web browser’s cache, sign back in, and return to the StorageGRID Upgrade page.
+. After the primary Admin Node has been upgraded, clear your web browser's cache, sign back in, and return to the StorageGRID Upgrade page.
 
 . Download a new Recovery Package.
 

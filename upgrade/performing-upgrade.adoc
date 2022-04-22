@@ -25,7 +25,7 @@ The Software Update page appears.
 
 . On the StorageGRID Upgrade page, select the `.upgrade` archive.
  .. Select *Browse*.
- .. Locate and select the file: `NetApp_StorageGRID_11.6.0_Software_uniqueID.upgrade`
+ .. Locate and select the file: `NetApp_StorageGRID_11.7.0_Software_uniqueID.upgrade`
  .. Select *Open*.
 +
 The file is uploaded and validated. When the validation process is done, a green checkmark appears next to the upgrade file name.
@@ -143,7 +143,7 @@ When all grid nodes have completed the upgrade stages, the *Upgrade Grid Nodes* 
 
 . During the *Upgrade Database* task, the upgrade process checks each node to verify that the Cassandra database does not need to be updated.
 +
-NOTE: The upgrade from StorageGRID 11.5 to 11.6 does not require a Cassandra database upgrade; however, the Cassandra service will be stopped and restarted on each Storage Node. For future StorageGRID feature releases, the Cassandra database update step might take several days to complete.
+NOTE: The upgrade from StorageGRID 11.6 to 11.7 does not require a Cassandra database upgrade; however, the Cassandra service will be stopped and restarted on each Storage Node. For future StorageGRID feature releases, the Cassandra database update step might take several days to complete.
 
 . When the *Upgrade Database* task has completed, wait a few minutes for the *Final Upgrade Steps* task to complete.
 +
