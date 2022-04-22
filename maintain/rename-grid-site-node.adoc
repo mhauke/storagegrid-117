@@ -2,14 +2,14 @@
 permalink: maintain/rename-grid-site-node.html
 sidebar: sidebar
 keywords: rename grid, rename site, rename node, change display name, bulk rename tool
-summary: 'You can use this procedure to add or update the display name for a single item, multiple items, or even all items at once. Changing a display name does not affect StorageGRID operations in any way.'
+summary: 'You can use this procedure to add or update the display names used for your grid, sites, and nodes. You can rename a single item, multiple names, or even all items at once. Defining or updating a display name does not affect StorageGRID operations in any way.'
 ---
 = Add or update display names
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use this procedure to rename a single item, multiple items, or even all items at once. Changing a display name does not affect StorageGRID operations in any way. 
+You can use this procedure to add or update the display names used for your grid, sites, and nodes. You can rename a single item, multiple items, or even all items at once. Defining or updating a display name does not affect StorageGRID operations in any way. 
 
 .What you'll need
 
@@ -34,14 +34,14 @@ You can use this procedure to rename a single item, multiple items, or even all 
 
 . Review the table, which includes the items you selected.
 +
-* The *Display name* column shows the current display name for each item. You will provide new display names in this column.
+* The *Display name* column shows the current name for each item. If a display name has never been added, the *Display name* column shows the item's underlying system name.
 * The *System name* column shows the name you entered for each item during installation. System names are used for internal StorageGRID operations and cannot be changed. For example, the system name for a node might be its hostname.
 * The *Type* column indicates the item's type: Grid, Site, or the specific type of node.
 
 
-== Propose new display names
+== Propose new names
 
-You can enter a new display name for each item individually, or you can rename items in bulk. Use the bulk rename tool if item names share a common string that you want to replace with a different string. 
+You can enter a display name for each item individually, or you can rename items in bulk. Use the bulk rename tool if item names share a common string that you want to replace with a different string. 
 
 // start tabbed area
 
