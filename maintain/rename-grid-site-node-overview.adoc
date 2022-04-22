@@ -1,0 +1,122 @@
+---
+permalink: maintain/rename-grid-site-node-overview.html
+sidebar: sidebar
+keywords: rename grid, rename site, rename node, change display name, bulk rename tool
+summary: 'As required, you can change the display names that are shown throughout the Grid Manager for your entire grid, each site, and each node. You can update display names safely and whenever you need.'
+---
+= Requirements and best practices for display names
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+As required, you can change the display names that are shown throughout the Grid Manager for the entire grid, each site, and each node. You can update display names safely and whenever you need. 
+
+== What is the rename procedure?
+
+When you install StorageGRID initially, you specify the grid name, site names, and node names. These initial names serve as both internal _system names_ and as _display names_. 
+
+System names are required for StorageGRID operations and cannot be changed. In contrast, display names (the names shown throughout the Grid Manager) can be updated whenever required. For example, you might want to change display names to fix typos, to implement a different naming convention, or to indicate that a site and all of its nodes have been relocated. You can use this procedure whenever you want and as many times as you want. 
+
+== Where do these name appear?
+The following table summarizes where system names and display names are shown in the StorageGRID user interface and in StorageGRID files.
+
+[cols="2a,1a,1a" options="header"]
+|===
+// header row
+|Location
+|System name
+|Display name
+
+|Grid Manager pages
+|Available only on the NODES overview page
+|Shown everywhere else
+
+
+|Prompt when using SSH to access a node
+
+`admin@DISPLAY-NAME(SYSTEM-NAME):~$`
+|Shown in parentheses 
+
+|Shown as the primary name
+
+
+
+|`Passwords.txt` file in the Recovery Package
+|Shown as "Name"
+|Shown as "Display name"
+
+|/etc/hosts file on all nodes
+|
+|
+
+|topology_display_names.json file used for AutoSupport
+|
+|
+
+|Lumberjack collects the topology_display_names.json file and /etc/hosts files
+|
+|
+
+// table end
+|===
+
+== Display name requirements
+
+Display names for nodes must follow these rules:
+
+* Must be unique across your StorageGRID system.
+* Cannot be the same as the system name for any other item in your StorageGRID system.
+* Must contain at least 1 and no more than 32 characters.
+* Can contain numbers, hyphens (-), and uppercase and lowercase letters.
+* Can start or end with a letter or number, but cannot start or end with a hyphen.
+* Cannot be all numbers.
+
+Display names for the grid and sites must follow these rules:
+
+* Must be unique across your StorageGRID system.
+* Cannot be the same as the system name for any other item in your StorageGRID system.
+* Must contain at least 1 and no more than 32 characters.
+* Can contain numbers, hyphens (-), and uppercase and lowercase letters.
+* Can include spaces.
+* Can include these special characters: `= - _ : , . @ !`
+* Can start and end with the special characters, including hyphens.
+* Can be all numbers or special characters.
+
+
+== Display name best practices
+
+When renaming multiple items, document your general naming scheme before using this tool. Come up with a system that ensures that names are unique, consistent, and easy to understand at a glance.
+
+You can use any naming convention that fits your organizational requirements. Here are some basic suggestions of what to include:
+
+* *Site indicator*: If you have multiple sites, add a site code to each node name. 
+* *Node type*: Node names typically indicate the node's type. You can use abbreviations like `s`, `adm`, `gw`, and `arc` (Storage Node, Admin Node, Gateway Node, and Archive Node).
+* *Node number*: If a site contains more than one of a particular type of node, add a unique number to each node's name.
+
+Think twice before adding specific details to the names that are likely to change over time. For example, do not include IP addresses in node names because these addresses can be changed. Similarly, including a rack location or the model number of an appliance-based node might seem helpful in the short-term, but those values can change if you move equipment or upgrade the hardware using the node clone procedure.
+
+
+=== Example display names 
+Suppose your StorageGRID system has three data centers and has nodes of different types at each data center. Your display names might be as simple as these:
+
+* *Grid*: `StorageGRID Deployment`
+
+* *Site*: `Data Center 1`
+
+** `dc1-adm1`
+** `dc1-s1`
+** `dc1-s2`
+** `dc1-s3`
+** `dc1-gw1`
+
+* *Site*: `Data Center 2`
+** `dc2-adm2`
+** `dc2-s1`
+** `dc2-s2`
+** `dc2-s3`
+
+* *Site*: `Data Center 3`
+** `dc3-s1`
+** `dc3-s2`
+** `dc3-s3`
+
