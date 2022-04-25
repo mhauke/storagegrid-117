@@ -42,10 +42,14 @@ To remove a specific version, the requestor must be the bucket owner and use the
 
 *Note*: In certain cases, multiple delete markers might exist for an object.
 
+See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock] to learn how to delete object versions in GOVERNANCE mode.
+
 |DELETE Multiple Objects
 |Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` are not supported.
 
 Multiple objects can be deleted in the same request message.
+
+See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock] to learn how to delete object versions in GOVERNANCE mode.
 
 |DELETE Object tagging
 |Uses the `tagging` subresource to remove all tags from an object. Implemented with all Amazon S3 REST API behavior.
@@ -61,10 +65,10 @@ If the `versionId` query parameter is not specified in the request, the operatio
 |If the necessary access credentials are provided for the account, the operation returns a positive response and the ID, DisplayName, and Permission of the object owner, indicating that the owner has full access to the object.
 
 |GET Object legal hold
-|xref:using-s3-object-lock.adoc[Use S3 Object Lock]
+|xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
 
 |GET Object retention
-|xref:using-s3-object-lock.adoc[Use S3 Object Lock]
+|xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
 
 |GET Object tagging
 |Uses the `tagging` subresource to return all tags for an object. Implemented with all Amazon S3 REST API behavior
@@ -86,10 +90,10 @@ If the `versionId` query parameter is not specified in the request, the operatio
 |xref:put-object-copy.adoc[PUT Object - Copy]
 
 |PUT Object legal hold
-|xref:using-s3-object-lock.adoc[Use S3 Object Lock]
+|xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
 
 |PUT Object retention
-|xref:using-s3-object-lock.adoc[Use S3 Object Lock]
+|xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
 
 |PUT Object tagging
 |Uses the `tagging` subresource to add a set of tags to an existing object. Implemented with all Amazon S3 REST API behavior

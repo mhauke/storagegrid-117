@@ -2,45 +2,49 @@
 permalink: tenant/viewing-s3-bucket-details.html
 sidebar: sidebar
 keywords: how to view s3 bucket details
-summary: 'You can view a list of the buckets and bucket settings in your tenant account.'
+summary: 'You can view the buckets in your tenant account and manage bucket settings.'
 ---
-= View S3 bucket details
+= View and manage S3 buckets
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can view a list of the buckets and bucket settings in your tenant account.
+You can view the buckets in your tenant account and manage bucket settings.
 
 .What you'll need
 
 * You must be signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* If you need to change bucket settings, you belong to a user group that has the Manage All Buckets or the Root Access permission. These permissions override the permissions settings in group or bucket policies. See xref:tenant-management-permissions.adoc[Tenant management permissions].
 
 .Steps
 . Select *STORAGE (S3)* > *Buckets*.
 +
-The Buckets page appears and lists all buckets for the tenant account.
-+
-image::../media/buckets_table.png[Buckets Table]
+The Buckets page appears and lists all buckets for the tenant account. 
 
 . Review the information for each bucket.
 +
 As required, you can sort the information by any column, or you can page forward and back through the list.
 
- ** Name: The bucket's unique name, which cannot be changed.
- ** S3 Object Lock: Whether S3 Object Lock is enabled for this bucket.
+* *Name*: The bucket's unique name, which cannot be changed.
+* *S3 Object Lock*: Whether S3 Object Lock is enabled for this bucket.
 +
-This column is not displayed if the global S3 Object lock setting is disabled. This column also shows information for any legacy Compliant buckets.
-
- ** Region: The bucket's region, which cannot be changed.
- ** Object Count: The number of objects in this bucket.
- ** Space Used: The logical size of all objects in this bucket. The logical size does not include the actual space required for replicated or erasure-coded copies or for object metadata.
- ** Date Created: The date and time the bucket was created.
+This column appears only if S3 Object Lock is enabled for the grid. This column also shows information for any legacy Compliant buckets.
+* *Region*: The bucket's region, which cannot be changed.
+* *Object Count*: The number of objects in this bucket.
+* *Space Used*: The logical size of all objects in this bucket. The logical size does not include the actual space required for replicated or erasure-coded copies or for object metadata.
+* *Date Created*: The date and time the bucket was created.
 
 +
 IMPORTANT: The Object Count and Space Used values displayed are estimates. These estimates are affected by the timing of ingests, network connectivity, and node status. If buckets have versioning enabled, deleted object versions are included in the object count.
 
-. To view and manage the settings for a bucket, select the bucket name.
+. To manage the settings for a bucket, select the bucket name.
 +
-The bucket details page allows you to view and edit the settings for bucket options, bucket access, and xref:what-platform-services-are.adoc[platform services].
-+
-image::../media/bucket_details_page.png[Bucket Details Page]
+The bucket details page allows you to view and edit bucket settings including bucket options, bucket access, and platform services. See the following for instructions:
+
+* xref:changing-consistency-level.adoc[Change bucket consistency level]
+* xref:enabling-or-disabling-last-access-time-updates.adoc[Enable or disable last time updates]
+* xref:changing-bucket-versioning.adoc[Change object versioning for a bucket]
+* xref:configure-s3-object-lock-settings-for-bucket.adoc[Configure S3 Object Lock settings for a bucket]
+* xref:configuring-cross-origin-resource-sharing-cors.adoc[Configure Cross-Origin Resource Sharing (CORS)]
+* xref:what-platform-services-are.adoc[Manage platform services]
+

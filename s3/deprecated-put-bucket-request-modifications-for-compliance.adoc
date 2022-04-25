@@ -13,7 +13,7 @@ The SGCompliance XML element is deprecated. Previously, you could include this S
 
 IMPORTANT: The StorageGRID Compliance feature that was available in previous StorageGRID versions is deprecated and has been replaced by S3 Object Lock.
 
-xref:using-s3-object-lock.adoc[Use S3 Object Lock]
+xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
 
 xref:../ilm/index.adoc[Manage objects with ILM]
 
@@ -25,9 +25,3 @@ You can no longer create new buckets with Compliance enabled. The following erro
 The Compliance feature is deprecated.
 Contact your StorageGRID administrator if you need to create new Compliant buckets.
 ----
-
-.Related information
-
-xref:../ilm/index.adoc[Manage objects with ILM]
-
-xref:../tenant/index.adoc[Use tenant account]
