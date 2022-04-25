@@ -32,17 +32,11 @@ IMPORTANT: Do not include the default All Sites site in a storage pool that will
 
 . Select *ILM* > *Storage pools*.
 +
-The Storage Pools page appears and lists all defined storage pools.
+The Storage Pools page appears. This page lists all defined storage pools; the system-default storage pool, All Storage Nodes, which uses the system-default site, All Sites; and the default storage grade, All Storage Nodes.
 +
-image::../media/storage_pools_page.png[Storage Pools Page]
-+
-The list includes the system-default storage pool, All Storage Nodes, which uses the system-default site, All Sites, and the default storage grade, All Storage Nodes.
-+
-IMPORTANT: Because the All Storage Nodes storage pool is automatically updated whenever you add new data center sites, using this storage pool in ILM rules is not recommended.
+IMPORTANT: The All Storage Nodes storage pool is automatically updated whenever you add new data center sites. Using this storage pool in ILM rules is not recommended.
 
 . To create a new storage pool, select *Create*.
-+
-The Create Storage Pool dialog box appears.
 +
 image::../media/create_storage_pool.png[Create Storage Pool]
 
