@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename grid, rename site, rename node, change display name, bulk rename tool
 summary: 'As required, you can change the display names that are shown throughout the Grid Manager for your entire grid, each site, and each node. You can update display names safely and whenever you need.'
 ---
-= Requirements and best practices for display names
+= Rename grid, sites, and nodes: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -15,7 +15,7 @@ As required, you can change the display names that are shown throughout the Grid
 
 When you install StorageGRID initially, you specify a name for the grid, each site, and each node. These initial names are known as _system names_, and they are the names initially shown throughout StorageGRID.
 
-System names are required for internal StorageGRID operations and cannot be changed. However, you can use the rename procedure to define new _display names_ for the grid, each site, and each node. When defined, display names appear in various StorageGRID locations instead of (or in some cases, in addition to) the item's underlying _system name_. 
+System names are required for internal StorageGRID operations and cannot be changed. However, you can use the rename procedure to define new _display names_ for the grid, each site, and each node. These display names appear in various StorageGRID locations instead of (or in some cases, in addition to) the underlying _system names_. 
 
 Use the rename procedure to correct typos, to implement a different naming convention, or to indicate that a site and all of its nodes have been relocated. Unlike system names, display names can be updated whenever required and without impacting StorageGRID operations. 
 
@@ -30,9 +30,9 @@ The following table summarizes where system names and display names are shown in
 |Display name
 
 |Grid Manager pages
-|Shown when a display name is not defined. 
+|Shown unless the item has been renamed. 
 
-|When defined, shown instead of the system name in these locations:
+|When an item is renamed, shown instead of the system name in these locations:
 
 * Nodes page
 * Alerts
@@ -45,7 +45,7 @@ The following table summarizes where system names and display names are shown in
 |Always shown 
 |Always shown
 
-When a display name is not defined, the values for *Display name* and  *System name* on this tab are the same.
+If the values for *Display name* and  *System name* on this tab are the same, the item has not been renamed.
 
 |Legacy pages in the Grid Manager (for example, *SUPPORT* > *Grid Topology*)
 |Shown 
@@ -56,16 +56,16 @@ When a display name is not defined, the values for *Display name* and  *System n
 |Prompt when using SSH to access a node
 
 |
-Shown as the primary name when a display name is not defined:
+Shown as the primary name unless the item has been renamed:
 
 `admin@SYSTEM-NAME: ~ $`
 
-Included in parentheses when a display name is defined:
+Included in parentheses when the item is renamed:
 
 `admin@DISPLAY-NAME(SYSTEM-NAME):~ $`
 
 
-|When defined, shown as the primary name:
+|Shown as the primary name when the item is renamed:
 
 `admin@DISPLAY-NAME(SYSTEM-NAME):~ $`
 
@@ -75,20 +75,19 @@ Included in parentheses when a display name is defined:
 |Shown as `Name`
 |Shown as `Display name`
 
-|/etc/hosts file on all nodes
+|`/etc/hosts` file on all nodes
+
+For example:
 
 `10.96.99.128 SYSTEM-NAME 28989c59-a2c3-4d30-bb09-6879adf2437f DISPLAY-NAME localhost-grid # storagegrid-gen-host`
 
 |Always shown in the second column
-|When defined, shown in the fourth column
+|When the item is renamed, shown in the fourth column
 
-|topology_display_names.json file 
-|_Not applicable_
-|When display names have been defined, this file is included with ASUP data. It maps grid, site, and node IDs to their display names. 
+|`topology_display_names.json`, included with AutoSupport data
+|Not included
+|Empty unless items have been renamed; otherwise, maps grid, site, and node IDs to their display names. 
 
-|Prometheus metrics
-|
-|
 
 // table end
 |===
@@ -105,7 +104,7 @@ Display names for nodes must follow these rules:
 * Can contain numbers, hyphens (-), and uppercase and lowercase letters.
 * Can start or end with a letter or number, but cannot start or end with a hyphen.
 * Cannot be all numbers.
-* Are case-insensitive. For example, `DC1-ADM` and `dc1-adm` will be flagged as duplicates.
+* Are case-insensitive. For example, `DC1-ADM` and `dc1-adm` are considered to be duplicates.
 
 Display names for the grid and sites follow the same rules with these exceptions:
 
@@ -133,7 +132,7 @@ Suppose your StorageGRID system has three data centers and has nodes of differen
 
 * *Grid*: `StorageGRID Deployment`
 
-* *Site*: `Data Center 1`
+* *First site*: `Data Center 1`
 
 ** `dc1-adm1`
 ** `dc1-s1`
@@ -141,13 +140,13 @@ Suppose your StorageGRID system has three data centers and has nodes of differen
 ** `dc1-s3`
 ** `dc1-gw1`
 
-* *Site*: `Data Center 2`
+* *Second site*: `Data Center 2`
 ** `dc2-adm2`
 ** `dc2-s1`
 ** `dc2-s2`
 ** `dc2-s3`
 
-* *Site*: `Data Center 3`
+* *Third site*: `Data Center 3`
 ** `dc3-s1`
 ** `dc3-s2`
 ** `dc3-s3`
