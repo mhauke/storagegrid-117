@@ -24,8 +24,6 @@ To use the Commercial Cloud Services (C2S) S3 service as a Cloud Storage Pool, y
 . In the *Authentication* section, select *CAP (C2S Access Portal)* from the *Authentication Type* drop-down.
 +
 The CAP C2S authentication fields appear.
-+
-image::../media/cloud_storage_pool_create_c2s.png[Create Cloud Storage Pool C2S]
 
 . Provide the following information:
  .. For *Temporary Credentials URL*, enter the complete URL that StorageGRID will use to obtain temporary credentials from the CAP server, including all the required and optional API parameters assigned to your C2S account.
@@ -40,16 +38,13 @@ If the private key is encrypted, the traditional format must be used. (PKCS #8 e
  .. For *Certificate Validation*, select *Use custom CA certificate*.
  .. Select *Select New*, and upload the PEM-encoded CA certificate.
 . Select *Save*.
-
++
 When you save a Cloud Storage Pool, StorageGRID does the following:
++
+* Validates that the bucket and the service endpoint exist and that they can be reached using the credentials that you specified.
+* Writes a marker file to the bucket to identify the bucket as a Cloud Storage Pool. Never remove this file, which is named `x-ntap-sgws-cloud-pool-uuid`.
 
- ** Validates that the bucket and the service endpoint exist and that they can be reached using the credentials that you specified.
- ** Writes a marker file to the bucket to identify the bucket as a Cloud Storage Pool. Never remove this file, which is named `x-ntap-sgws-cloud-pool-uuid`.
-
++
 If Cloud Storage Pool validation fails, you receive an error message that explains why validation failed. For example, an error might be reported if there is a certificate error or if the bucket you specified does not already exist.
 
-image::../media/cloud_storage_pool_create_error.gif[Cloud Storage Pool Create Error]
-
-See the instructions for xref:troubleshooting-cloud-storage-pools.adoc[troubleshooting Cloud Storage Pools], resolve the issue, and then try saving the Cloud Storage Pool again.
-
-
+. If an error occurs, see the xref:troubleshooting-cloud-storage-pools.adoc[instructions for troubleshooting Cloud Storage Pools], resolve any issues, and then try saving the Cloud Storage Pool again.

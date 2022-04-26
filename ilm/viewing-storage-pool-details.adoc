@@ -20,8 +20,6 @@ You can view the details of a storage pool to determine where the storage pool i
 +
 The Storage Pools page appears. This page lists all defined storage pools.
 +
-image::../media/storage_pools_page_with_pools.png[Storage Pools Page With Pools.png]
-+
 The table includes the following information for each storage pool that includes Storage Nodes:
 
  ** *Name*: The unique display name of the storage pool.
@@ -34,7 +32,7 @@ NOTE: You cannot remove a storage pool if it is being used.
 
 . To view details about a specific storage pool, select its radio button and select *View Details*.
 +
-The Storage Pool Details modal appears.
+The Storage Pool Details page appears.
 
 . View the *Nodes Included* tab to learn about the Storage Nodes or Archive Nodes included in the storage pool.
 +
@@ -64,10 +62,6 @@ NOTE: You cannot remove a storage pool if it is used in an Erasure Coding profil
 
 . Optionally, go to the *ILM Rules page* to learn about and manage any rules that use the storage pool.
 +
-See the instructions for working with ILM rules.
+See the xref:working-with-ilm-rules-and-ilm-policies.adoc[instructions for working with ILM rules].
 
 . When you are done viewing storage pool details, select *Close*.
-
-.Related information
-
-xref:working-with-ilm-rules-and-ilm-policies.adoc[Work with ILM rules and ILM policies]
