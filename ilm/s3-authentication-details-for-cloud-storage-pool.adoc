@@ -101,6 +101,7 @@ When you save a Cloud Storage Pool, StorageGRID does the following:
 +
 * Validates that the bucket and the service endpoint exist and that they can be reached using the credentials that you specified.
 * Writes a marker file to the bucket to identify the bucket as a Cloud Storage Pool. Never remove this file, which is named `x-ntap-sgws-cloud-pool-uuid`.
+
 +
 If Cloud Storage Pool validation fails, you receive an error message that explains why validation failed. For example, an error might be reported if there is a certificate error or if the bucket you specified does not already exist.
 
