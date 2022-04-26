@@ -1,7 +1,7 @@
 ---
 permalink: maintain/rename-grid-site-node-overview.html
 sidebar: sidebar
-keywords: rename grid, rename site, rename node, change display name, bulk rename tool
+keywords: rename grid, rename site, rename node, display name, system name
 summary: 'As required, you can change the display names that are shown throughout the Grid Manager for your entire grid, each site, and each node. You can update display names safely and whenever you need.'
 ---
 = Rename grid, sites, and nodes: Overview
@@ -15,7 +15,7 @@ As required, you can change the display names that are shown throughout the Grid
 
 When you install StorageGRID initially, you specify a name for the grid, each site, and each node. These initial names are known as _system names_, and they are the names initially shown throughout StorageGRID.
 
-System names are required for internal StorageGRID operations and cannot be changed. However, you can use the rename procedure to define new _display names_ for the grid, each site, and each node. These display names appear in various StorageGRID locations instead of (or in some cases, in addition to) the underlying _system names_. 
+System names are required for internal StorageGRID operations and cannot be changed. However, you can use the rename procedure to define new _display names_ for the grid, each site, and each node. These display names appear in various StorageGRID locations instead of (or in some cases, in addition to) the underlying system names. 
 
 Use the rename procedure to correct typos, to implement a different naming convention, or to indicate that a site and all of its nodes have been relocated. Unlike system names, display names can be updated whenever required and without impacting StorageGRID operations. 
 
@@ -96,6 +96,7 @@ For example:
 
 Before using this procedure, review the requirements for display names. 
 
+=== Display names for nodes
 Display names for nodes must follow these rules:
 
 * Must be unique across your StorageGRID system.
@@ -105,6 +106,8 @@ Display names for nodes must follow these rules:
 * Can start or end with a letter or number, but cannot start or end with a hyphen.
 * Cannot be all numbers.
 * Are case-insensitive. For example, `DC1-ADM` and `dc1-adm` are considered to be duplicates.
+
+=== Display names for grid and sites
 
 Display names for the grid and sites follow the same rules with these exceptions:
 
@@ -124,7 +127,7 @@ You can use any naming convention that fits your organizational requirements. Co
 * *Node type*: Node names typically indicate the node's type. You can use abbreviations like `s`, `adm`, `gw`, and `arc` (Storage Node, Admin Node, Gateway Node, and Archive Node).
 * *Node number*: If a site contains more than one of a particular type of node, add a unique number to each node's name.
 
-Think twice before adding specific details to the names that are likely to change over time. For example, do not include IP addresses in node names because these addresses can be changed. Similarly, rack location or appliance model numbers can change if you move equipment or upgrade the hardware.
+Think twice before adding specific details to the names that are likely to change over time. For example, do not include IP addresses in node names because these addresses can be changed. Similarly, rack locations or appliance model numbers can change if you move equipment or upgrade the hardware.
 
 
 === Example display names 
