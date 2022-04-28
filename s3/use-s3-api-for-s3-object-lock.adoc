@@ -26,15 +26,28 @@ To enable S3 Object Lock for a bucket, use either of these methods:
 S3 Object Lock requires bucket versioning, which is enabled automatically when the bucket is created. You cannot suspend versioning for the bucket. See xref:object-versioning.adoc[Object versioning].
 
 == How to set default retention for a bucket
+
 After you enable S3 Object Lock for a bucket, you can optionally enable default retention for the bucket and specify the default retention mode and default retention period. These default bucket settings apply only to new objects that are added to the bucket without their own retention settings. These settings do not apply to objects already in the bucket.
 
-* *Default retention mode*: 
+=== Default retention mode
 
-** In COMPLIANCE mode, an object version cannot be deleted until its retention period has elapsed. An object's retain-until-date can be extended, but it cannot be reduced. An object's retain-until-date cannot be removed when the date has passed.  
+If you specify default retention for a bucket, you must specify the default retention mode:
 
-** In GOVERNANCE mode, users with special permission can bypass certain retention settings. They can delete an object version before its retention period has elapsed, or they can increase, decrease, or remove an object's retain-until-date.
+In COMPLIANCE mode:
 
-* *Default retention period*: Each bucket can have a default retention period in years or days. 
+* An object cannot be deleted until its retain-until-date is reached. 
+* An object's retain-until-date can be increased, but it cannot be decreased.
+* An object's retain-until-date cannot be removed until that date is reached.  
+
+In GOVERNANCE mode:
+
+* Users with special permission can bypass certain retention settings. 
+* They can delete an object version before its retain-until-date is reached.
+* They can increase, decrease, or remove an object's retain-until-date.
+
+=== Default retention period
+
+Each bucket can have a default retention period in years or days. 
 
 To set the default retention for a bucket, use either of these methods:
 
