@@ -14,7 +14,7 @@ After S3 Object Lock is enabled for a bucket, you can optionally set a default r
 .What you'll need
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Manage All Buckets or the Root Access permission. These permissions override the permissions settings in group or bucket policies. See xref:tenant-management-permissions.adoc[Tenant management permissions].
-* S3 Object Lock is enabled globally for your StorageGRID system, and you enabled S3 Object Lock when you created the bucket. See xref:use-s3-api-for-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
+* S3 Object Lock is enabled globally for your StorageGRID system, and you enabled S3 Object Lock when you created the bucket. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
 
 .About this task
 
@@ -35,9 +35,27 @@ When *Default retention* is enabled, new objects added to the bucket will be aut
 
 . If *Default retention* is enabled, specify a *Default retention mode* for the bucket.
 +
-** *Goverance*. Users with special permissions can change an object's retention settings or they can override these settings to delete the object.
+[cols="1a,2a" options="header"]
+|===
+| Default retention mode| Description
 
-** *Compliance*. No users can overwrite or delete protected object versions during the retention period.
+| Compliance
+| * The object cannot be deleted until its retain-until-date is reached.
+
+* The object's retain-until-date can be increased, but it cannot be decreased.
+
+* The object's retain-until-date cannot be removed until that date is reached.
+
+| Governance
+
+|* Users with special permission can bypass certain retention settings.
+
+* These users can delete an object version before its retain-until-date is reached.
+
+* These users can increase, decrease, or remove an object's retain-until-date.
+
+|===
+
 
 . If *Default retention* is enabled, specify the *Default retention period* for the bucket.
 +
