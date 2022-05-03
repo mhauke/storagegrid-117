@@ -97,7 +97,7 @@ As each time period in the rule expires, the content placement instructions for 
 
 == What ILM rule ingest behavior is
 
- Ingest behavior controls whether object copies are immediately placed according to the instructions in the rule, or if interim copies are made and the placement instructions are applied later. The following ingest behaviors are available for ILM rules:
+Ingest behavior controls whether object copies are immediately placed according to the instructions in the rule, or if interim copies are made and the placement instructions are applied later. The following ingest behaviors are available for ILM rules:
 
 * *Dual commit*: StorageGRID immediately makes interim copies of the object and returns success to the client. Copies specified in the ILM rule are made when possible.
 * *Strict*: All copies specified in the ILM rule must be made before success is returned to the client.
@@ -123,5 +123,4 @@ For example, if Site 2 is unreachable when Tenant A saves an object, StorageGRID
 .Related information
 
 * xref:what-storage-pool-is.adoc[What a storage pool is]
-
 * xref:what-cloud-storage-pool-is.adoc[What a Cloud Storage Pool is]
