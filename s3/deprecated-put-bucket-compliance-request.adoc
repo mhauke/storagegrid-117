@@ -27,7 +27,6 @@ You must specify a value for every field of the compliance settings when issuing
 
 This example request modifies the compliance settings for the bucket named `mybucket`. In this example, objects in `mybucket` will now be retained for two years (1,051,200 minutes) instead of one year, starting from when the object is ingested into the grid. There is no legal hold on this bucket. Each object will be automatically deleted after two years.
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 PUT /mybucket/?x-ntap-sg-compliance HTTP/1.1

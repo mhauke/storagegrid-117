@@ -26,7 +26,6 @@ If last access time updates are disabled for a bucket, the following behavior is
 
 This example enables last access time for a bucket.
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 PUT /bucket?x-ntap-sg-lastaccesstime=enabled HTTP/1.1
@@ -37,7 +36,6 @@ Host: _host_
 
 This example disables last access time for a bucket.
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 PUT /bucket?x-ntap-sg-lastaccesstime=disabled HTTP/1.1

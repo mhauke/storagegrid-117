@@ -128,7 +128,6 @@ aws s3api --endpoint-url <StorageGRID endpoint> put-object
 
 The success response indicates that the object will expire in 100 days (01 Oct 2020) and that it matched Rule 2 of the lifecycle configuration.
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 {
@@ -146,7 +145,6 @@ aws s3api --endpoint-url <StorageGRID endpoint> head-object
 
 The success response includes the object's metadata and indicates that the object will expire in 100 days and that it matched Rule 2.
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 {
