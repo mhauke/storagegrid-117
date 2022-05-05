@@ -129,7 +129,6 @@ Yes
 
 This example shows enabling search integration for a bucket. In this example, object metadata for all objects is sent to the same destination.
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 PUT /test1?x-ntap-sg-metadata-notification HTTP/1.1
@@ -151,7 +150,6 @@ Host: _host_
 
 In this example, object metadata for objects that match the prefix `/images` is sent to one destination, while object metadata for objects that match the prefix `/videos` is sent to a second destination.
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 PUT /graphics?x-ntap-sg-metadata-notification HTTP/1.1
