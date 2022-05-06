@@ -17,8 +17,12 @@ entries:
     - title: Other best practices
       url: "/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html"
   - title: Use FabricPool and S3 setup wizard
-    url: "/fabricpool/use-s3-setup-wizard.html"
-  - title: Configure manually
+    entries:
+    - title: Before you start
+      url: "/fabricpool/use-fabricpool-setup-wizard.html"
+    - title: Complete the wizard
+      url: "/fabricpool/use-fabricpool-setup-wizard-steps.html"
+  - title: Configure StorageGRID manually
     entries:
     - title: Create HA group
       url: "/fabricpool/creating-ha-group-for-fabricpool.html"
