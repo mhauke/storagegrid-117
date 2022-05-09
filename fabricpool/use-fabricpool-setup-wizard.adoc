@@ -2,7 +2,7 @@
 permalink: fabricpool/use-fabricpool-setup-wizard.html
 sidebar: sidebar
 keywords: fabricPool, FabricPool and S3 setup wizard, ontap system manager
-summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for an ONTAP FabricPool cloud tier. After you complete the setup wizard, you can enter the required details into ONTAP System Manager.'
+summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can upload or enter the required details into ONTAP System Manager.'
 ---
 = Use FabricPool and S3 setup wizard: Before you start
 :icons: font
@@ -10,13 +10,15 @@ summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRI
 
 [.lead]
 
-You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can enter the required details into ONTAP System Manager.
+You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can upload or enter the required details into ONTAP System Manager.
 
 == When to use the FabricPool and S3 setup wizard
 
-The FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with FabricPool. As part of completing the wizard, you download a file that you can use to enter values into ONTAP System Manager. The wizard helps you to configure your system more quickly and helps to make sure your settings conform to StorageGRID and FabricPool best practices.  
+The FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with FabricPool. As part of completing the wizard, you download a file that you can use to enter values into ONTAP System Manager. The wizard helps you to configure your system more quickly and helps to make sure your settings conform to StorageGRID and FabricPool best practices. 
 
-You can complete the FabricPool and S3 setup wizard the very first time you sign in to the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
+NOTE: If you have ONTAP System Manager version 9.12.1 or later, you can upload the settings directly. If you have an earlier version, you can enter the same values manually. 
+
+You can complete the FabricPool and S3 setup wizard when you first sign in to the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
 
 Use the wizard unless you know you have special requirements or your implementation will require significant customization. For example, you cannot use the FabricPool and S3 setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
 
@@ -24,7 +26,7 @@ Use the wizard unless you know you have special requirements or your implementat
 
 If you plan to connect the same StorageGRID system to multiple ONTAP systems, use the FabricPool and S3 setup wizard to create an HA group, load balancer endpoint, tenant, and bucket for the first cluster.
 
-Then, as required, complete the wizard for each additional cluster. You can select same HA group, and load balancer endpoint, but you must select a different tenant and bucket.
+Then, as required, complete the wizard for each additional cluster. You can select same HA group, and load balancer endpoint, but you must create or select a different tenant and bucket.
 
 == Before using the wizard
 
@@ -43,13 +45,13 @@ Confirm each of the following items before using the wizard:
 
 * If you plan to use S3 virtual hosted-style requests or provide a fully qualified (FQDN) domain name for the ONTAP connection, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. 
 
-* If you plan to upload the security certificate for the StorageGRID load balancer, you have the following files: 
+* If you plan to upload a security certificate for the StorageGRID load balancer, you have the following files: 
 
 ** The custom server certificate file.
 ** The custom server certificate private key file.
 ** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
 +
-The certificate must include the domain name ONTAP will use for StorageGRID. 
+The certificate must include the domain name that ONTAP will use for StorageGRID. 
 
 * If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
 
