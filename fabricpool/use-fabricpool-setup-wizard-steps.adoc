@@ -24,7 +24,7 @@ You can use an HA group to help keep FabricPool data connections available. If t
 
 For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups].
 
-. If you will use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Create or select load balancer endpoint>>.
+. If you will use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, you can create a new HA group or use an existing HA group.
 
@@ -155,7 +155,7 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 .. To use an external load balancer, enter its fully qualified domain name (FQDN).
 .. Enter the port number that FabricPool will use to connect to the external load balancer.
 .. Copy the server certificate for the external load balancer and paste it here.
-.. Select *Continue* to go to the tenant and bucket. 
+.. Select *Continue* to go to the tenant and bucket step. 
 
 --
 ====
@@ -316,9 +316,15 @@ To review and activate the policy:
 +
 The new FabricPool rule is the first rule in the proposed policy. The other rules are selected as follows:
 
-* If your grid didn't have a proposed ILM policy, the wizard creates a new proposed policy by cloning the active policy.
+* If your grid doesn't have a proposed ILM policy, the wizard creates a new proposed policy by cloning the active policy.
 
-* If your grid already had a proposed ILM policy, the wizard compares that policy to your active policy. If there are no conflicts between the two policies, it adds the new rule to the existing proposed policy.
+* If your grid already has a proposed ILM policy, the wizard compares that policy to your active policy. 
+
+** If there are no conflicts between the two policies, it adds the new rule to the top of the existing proposed policy.
+
+** If your proposed policy contains different rules than the active policy, a message appears. To add the new rule for the FabricPool bucket, you must create the proposed policy manually. You can either add it to your existing proposed policy or delete that policy and clone your active policy.
++
+See  xref:../ilm/creating-proposed-ilm-policy.adoc[Create a proposed ILM policy].
 
 . Confirm that the order of the rules is correct, as follows:
 +
