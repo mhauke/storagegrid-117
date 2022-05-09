@@ -57,7 +57,7 @@ a|
 Can the retention period be changed?
 a|
 * In compliance mode, the retain-until-date for an object version can be increased but never decreased.
-* In governance mode, users with special permissions can change an object's retention settings. 
+* In governance mode, users with special permissions can decrease or even remove an object's retention settings. 
 a|
 A bucket's retention period can be increased but never decreased.
 a|
@@ -70,7 +70,7 @@ a|
 When can objects be deleted?
 a|
 * In compliance mode, an object version can be deleted after the retain-until-date is reached, assuming the object is not under legal hold.
-* In governance mode, users with special permissions can delete an object before its retain-until-date is reached.
+* In governance mode, users with special permissions can delete an object before its retain-until-date is reached, assuming the object is not under legal hold.
 a|
 An object can be deleted after the retention period expires, assuming the bucket is not under legal hold. Objects can be deleted automatically or manually.
 a|
