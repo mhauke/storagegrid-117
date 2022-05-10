@@ -14,11 +14,11 @@ You can use the FabricPool and S3 setup wizard to configure StorageGRID as the o
 
 == When to use the FabricPool and S3 setup wizard
 
-The FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with FabricPool. As part of completing the wizard, you download a file that you can use to enter values into ONTAP System Manager. The wizard helps you to configure your system more quickly and helps to make sure your settings conform to StorageGRID and FabricPool best practices. 
+The FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with FabricPool and automatically configures certain entities for you, such as the ILM and traffic classification policies. As part of completing the wizard, you download a file that you can use to enter values into ONTAP System Manager. Use the wizard to configure your system more quickly and to make sure your settings conform to StorageGRID and FabricPool best practices. 
 
-NOTE: If you have ONTAP System Manager version 9.12.1 or later, you can upload the settings directly. If you have an earlier version, you can enter the same values manually. 
+NOTE: If you are using ONTAP System Manager version 9.12.1 or later, you can upload the StorageGRID settings directly to the Add Cloud Tier page. If you have an earlier version of ONTAP System Manager or if you are using the ONTAP CLI, you can enter the same values manually. 
 
-You can complete the FabricPool and S3 setup wizard when you first sign in to the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
+You can complete the FabricPool and S3 setup wizard when you start using the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
 
 Use the wizard unless you know you have special requirements or your implementation will require significant customization. For example, you cannot use the FabricPool and S3 setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
 
@@ -43,7 +43,9 @@ Confirm each of the following items before using the wizard:
 
 * If you plan to use identity federation or single sign-on (SSO) for your StorageGRID system, you have enabled these features and you know which federated group ONTAP should use. See xref:../admin/using-identity-federation.adoc[Use identity federation] and xref:../admin/configuring-sso.adoc[Configure single sign-on].
 
-* If you plan to use S3 virtual hosted-style requests or provide a fully qualified (FQDN) domain name for the ONTAP connection, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. 
+* You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain name server (DNS) entries will map this FQDN to the virtual IP (VIP) addresses of the high availability (HA) group that you create using the wizard. See xref:../fabricpool/configure-dns-server.adoc[Configure DNS server].
+
+* Optionally, if you plan to use S3 virtual hosted-style requests, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. ONTAP uses path-style URLs by default, but you can optionally configure it to use virtual hosted-style requests.
 
 * If you plan to upload a security certificate for the StorageGRID load balancer, you have the following files: 
 
@@ -51,7 +53,7 @@ Confirm each of the following items before using the wizard:
 ** The custom server certificate private key file.
 ** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
 +
-The certificate must include the domain name that ONTAP will use for StorageGRID. 
+The certificate must include the FQDN that ONTAP will use for StorageGRID. 
 
 * If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
 

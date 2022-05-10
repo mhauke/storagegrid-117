@@ -24,7 +24,7 @@ To create an HA group, you perform these general steps:
 +
 IMPORTANT: If you plan to use a VLAN interface to segregate FabricPool traffic, a network administrator must first configure a trunk interface and the corresponding VLAN. Each VLAN is identified by a numeric ID or tag. For example, your network might use VLAN 100 for FabricPool traffic.
 
-. Assign one or more virtual IP (VIP) addresses to the group. ONTAP can can use any of these VIP addresses when it tiers FabricPool data to StorageGRID.
+. Assign at least one but no more than 16 virtual IP (VIP) addresses to the group. ONTAP establishes connections with all IP addresses. The IP addresses are picked up in a round-robin method when connections are established.
 
 . Specify one interface to be the Primary interface and determine the priority order for any Backup interfaces. The Primary interface is the active interface unless a failure occurs.
 
