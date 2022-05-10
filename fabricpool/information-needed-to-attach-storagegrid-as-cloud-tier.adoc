@@ -13,16 +13,16 @@ Before you can attach StorageGRID as a cloud tier for FabricPool, you must perfo
 
 == What values do I need?
 
-The following figure shows how the values you configure in StorageGRID are used by ONTAP System Manager and the DNS server. 
+The following figure shows the values you must configure in StorageGRID and how those values are used by ONTAP and the DNS server. 
 
 image::../media/fabricpool_storagegrid_values.png[FabricPool StorageGRID connection]
 
 == How do I get these values?
 Depending on your requirements, you can do either of the following to obtain the information you need:
 
-* Use the xref:use-fabricpool-setup-wizard.adoc[FabricPool and S3 setup wizard] to quickly configure all required values and to create a file that you can use in ONTAP System Manager. The wizard guides you through the required steps and helps to make sure your settings conform to StorageGRID and FabricPool best practices.
+* Recommended. Use the xref:use-fabricpool-setup-wizard.adoc[FabricPool and S3 setup wizard] to quickly configure all required values and to create a file that you can use in ONTAP System Manager. The wizard guides you through the required steps and helps to make sure your settings conform to StorageGRID and FabricPool best practices.
 
-* Configure each item manually in StorageGRID and manually enter the values into ONTAP System Manager. 
+* Configure each item manually in StorageGRID and manually enter the values into ONTAP System Manager or the ONTAP CLI. 
 
 Use the wizard unless you know you have special requirements or your implementation will require significant customization. 
 

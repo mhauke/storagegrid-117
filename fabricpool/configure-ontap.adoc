@@ -1,7 +1,7 @@
 ---
 permalink: fabricpool/configure-ontap.html
 sidebar: sidebar
-keywords: fabricPool, dns, volume tiering policies, 
+keywords: fabricPool, system manager, ONTAP CLI, add cloud tier 
 summary: 'After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, add the cloud tier as an aggregate, and set volume tiering policies.'
 ---
 = Configure ONTAP System Manager
@@ -9,22 +9,11 @@ summary: 'After you have obtained the required StorageGRID information, you can 
 :imagesdir: ../media/
 
 [.lead]
-After you have obtained the required StorageGRID information, you can go to ONTAP to configure the DNS server, add StorageGRID as a cloud tier, add the cloud tier as an aggregate, and set volume tiering policies.
+After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, add the cloud tier as an aggregate, and set volume tiering policies.
 
-== Configure the DNS server for StorageGRID IP addresses
-After configuring high availability groups and load balancer endpoints, you must ensure that the domain name system (DNS) for the ONTAP system includes a record to associate the StorageGRID server name (fully qualified domain name) to the IP address that FabricPool will use to make connections.
+NOTE: These instructions describe how to use ONTAP System Manager to add StorageGRID as a cloud tier. You can complete the same configuration using the ONTAP CLI. For instructions, go to https://docs.netapp.com/us-en/ontap/fabricpool/index.html[ONTAP 9: FabricPool tier management with the CLI^].
 
-The IP address you enter in the DNS record depends on whether you are using an HA group of load-balancing nodes:
-
-* If you have configured a HA group, FabricPool will connect to the virtual IP addresses of that HA group.
-* If you are not using a HA group, FabricPool can connect to the StorageGRID Load Balancer service using the IP address of any Gateway Node or Admin Node.
-
-You must also ensure that the DNS record references all required endpoint domain names, including any wildcard names.
-
- 
-== Enter StorageGRID values in ONTAP System Manager
-
-To enter the StorageGRID values into ONTAP System Manager, go to the Add Cloud Tier page for the cluster.
+== Access ONTAP System Manager
 
 . Access System Manager for the ONTAP cluster you want to tier to StorageGRID.
 . Sign in as an administrator for the cluster.
@@ -34,13 +23,37 @@ To enter the StorageGRID values into ONTAP System Manager, go to the Add Cloud T
 +
 image::../media/ontap_systemmanager_addcloudtier.png[Add StorageGRID as cloud tier in ONTAP System Manager]
 
+== Upload or enter values
 
-. Complete the Add Cloud Tier form, using the data you downloaded from StorageGRID.
+If you used the FabricPool and S3 Setup wizard and you have ONTAP System Manager version 9.12.1 or later, you can upload the StorageGRID settings directly to the Add Cloud Tier page. 
+
+If you configured StorageGRID manually or you have an earlier version of ONTAP System Manager, you can enter the same values manually. 
+
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.Upload values
+--
+
+.. On the Add Cloud Tier page, accept the default value in the *NAME* field, or enter a unique name for this cloud tier. 
+.. Select *Upload Settings*.
+.. Browser to and then upload the `ONTAP_FabricPool_settings___bucketname__` file you downloaded from StorageGRID.
+.. Confirm that the expected values were uploaded to all fields.
+
+.. Select *Save*.
+--
+
+.Enter values manually
+--
+.. Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__` file you downloaded from StorageGRID or the values you obtained manually.
 +
 image::../media/ontap_systemmanager_cloudtier_details.png[Add Cloud Tier details]
 +
 The following table describes these fields in more detail. 
-
++
 [cols="1a,2a" options="header"]
 |===
 | Field| Description
@@ -52,13 +65,12 @@ The following table describes these fields in more detail.
 |Select the default (*Path-Style URL*).
 
 |Server name (FQDN)
-|The fully qualified domain name (FQDN) of the StorageGRID load balancer endpoint. For example, `s3.storagegrid.company.com`.
-
+|The fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
 
 Note the following:
 
-* The domain name that you specify here must match the domain name on the CA certificate you upload for the StorageGRID load balancer endpoint.
-* The DNS record for this domain name in ONTAP must map to each IP address you will use to connect to StorageGRID.
+* The domain name that you specify here must match the domain name on the certificate you uploaded or generated for the StorageGRID load balancer endpoint.
+* The DNS record for this domain name must map to each IP address you will use to connect to StorageGRID.
 
 
 |SSL
@@ -73,15 +85,13 @@ Note the following:
 |The port that FabricPool will use when it connects to StorageGRID. The port number here matches the port you specify for the StorageGRID load balancer endpoint. For example, 10433.
 
 |Access key 
-|The access key for the StorageGRID tenant account.
+|The access key ID for the StorageGRID tenant account.
 
 |Secret key
 |The secret access key for the StorageGRID tenant account.
 
 |Container name
-|The name of the StorageGRID bucket you will use with this ONTAP cluster. For example, fabricpool-bucket. 
-
-You can create this bucket in StorageGRID or, starting with ONTAP 9.10 System Manager, you can create the bucket with the FabricPool setup wizard.
+|The name of the StorageGRID bucket you will use with this ONTAP cluster. For example, `fabricpool-bucket`. 
 
 Note the following:
 
@@ -91,6 +101,34 @@ Note the following:
 
 
 |===
+
+
+
+--
+====
+
+// end tabbed area
+
+== After you finish
+
+After you have added StorageGRID as a cloud tier, you can complete the final FabricPool configuration in ONTAP, as follows:
+
+. Attach the cloud tier to an aggregate.
+. Optionally, create a volume tiering policy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

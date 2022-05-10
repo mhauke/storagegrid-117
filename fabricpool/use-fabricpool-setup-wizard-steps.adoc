@@ -2,14 +2,14 @@
 permalink: fabricpool/use-fabricpool-setup-wizard-steps.html
 sidebar: sidebar
 keywords: fabricPool, FabricPool and S3 setup wizard, ontap system manager
-summary: 'Refer to these instructions while you use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier..'
+summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.'
 ---
-= Use FabricPool and S3 setup wizard: Steps
+= Complete the FabricPool and S3 setup wizard
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Refer to these instructions while you are using the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
+You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
 
 == Access the wizard
 . From the Grid Manager Dashboard, select *FabricPool and S3 setup wizard*. Or, from the header bar in the Grid Manager, select the help icon and select *FabricPool and S3 Setup Wizard*.
@@ -20,11 +20,11 @@ image::../media/help_menu.png[help menu]
 == Step 1 of 9: Configure HA group
 A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
 
-You can use an HA group to help keep FabricPool data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact on the operations of the FabricPool client.
+You can use an HA group to help keep FabricPool data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to FabricPool operations.
 
 For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups].
 
-. If you will use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Create or select load balancer endpoint>>.
+. If you will use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, you can create a new HA group or use an existing HA group.
 
@@ -62,13 +62,13 @@ The network address must not have any host bits set. For example, `192.16.0.0/22
 You must provide at least one IPv4 address. Optionally, you can specify additional IPv4 and IPv6 addresses.
 
 .. Select *Create HA group* and then select *Finish* to return to the FabricPool and S3 setup wizard.
-.. Select *Continue* to go to the load balancer step..
+.. Select *Continue* to go to the load balancer step.
 --
 
 .Existing HA group
 --
 .. To use an existing HA group, select the HA group name from the *Select an HA group* drop-down list. 
-.. Select *Continue* to go to the load balancer endstep. 
+.. Select *Continue* to go to the load balancer step. 
 --
 ====
 
@@ -155,7 +155,7 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 .. To use an external load balancer, enter its fully qualified domain name (FQDN).
 .. Enter the port number that FabricPool will use to connect to the external load balancer.
 .. Copy the server certificate for the external load balancer and paste it here.
-.. Select *Continue* to go to the tenant and bucket. 
+.. Select *Continue* to go to the tenant and bucket step. 
 
 --
 ====
@@ -171,8 +171,6 @@ A bucket is a container used to store a tenant's objects and object metadata. Al
 
 You can create a new FabricPool tenant and bucket, or you can select an existing tenant and bucket. The system automatically creates the access key and secret access key for the tenant's root user.
 
-NOTE: If you use an existing tenant account, confirm that the tenant already has at least one bucket. You cannot select an existing tenant account if no bucket exists for that tenant. 
-
 
 // start tabbed area
 
@@ -184,7 +182,7 @@ NOTE: If you use an existing tenant account, confirm that the tenant already has
 
 .. To create a new tenant and bucket, enter the name of the new tenant. For example, `FabricPool tenant`.
 
-.. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation] or xref:../admin/configuring-sso.adoc[single sign-on (SSO)]. 
+.. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
 [cols="1a,2a" options="header"]
 |===
@@ -192,14 +190,14 @@ NOTE: If you use an existing tenant account, confirm that the tenant already has
 | Do this
 
 |If identity federation is not enabled 
-|Specify the password FabricPool should use to sign into the tenant as the root user.
+|Specify the password FabricPool should use to sign into the tenant as the local root user.
 
 |If identity federation is enabled
-|Do either or both of the following:
+|Select an existing federated group to have Root access permission for the tenant.
 
-* Specify the password FabricPool should use to sign into the tenant as the root user.
+Optionally specify a password that can be used to sign in to the tenant as the local root user.
 
-* Select an existing federated group to have Root access permission for the tenant.
+
 
 
 |If both identity federation and single sign-on (SSO) are enabled
@@ -229,6 +227,9 @@ Use the default region (us-east-1) unless you expect to use ILM in the future to
 
 .Existing tenant and bucket
 --
+
+NOTE: If you want use an existing tenant account, confirm that the tenant already has at least one bucket that does not have versioning enabled. You cannot select an existing tenant account if no bucket exists for that tenant. 
+
 .. To use an existing tenant and bucket, select the tenant account's name from the drop-down list. 
 .. Select the bucket FabricPool will use to store ONTAP data.
 
@@ -264,11 +265,13 @@ A storage pool is a group of Storage Nodes. When you select a storage pool, you 
 == Step 6 of 9: Review ILM rule for FabricPool
 Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system. 
 
-The FabricPool and S3 setup wizard automatically creates the recommended ILM rule for FabricPool use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding to store the data that is tiered from ONTAP. 
+The FabricPool and S3 setup wizard automatically creates the recommended ILM rule for FabricPool use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
+
+See xref:best-practices-ilm.adoc[Best practices for using ILM with FabricPool data] for details.
 
 . Review the rule details.
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 |Field
 |Description
@@ -292,11 +295,11 @@ The placement instruction starts when objects are initially saved to the bucket.
 |Placement instruction
 |2+1 erasure coding 
 
-Each object will be saved as two data fragments and one parity fragment. The three fragments for each object will be saved to different Storage Nodes within the storage pool you selected.
+Each object will be saved as two data fragments and one parity fragment. The three fragments for each object will be saved to different Storage Nodes at a single site.
 
 |===
 
-. Use the retention diagram to confirm the placement instructions.
+. Use the retention diagram to confirm the placement instruction.
 +
 Notice that the FabricPool rule saves data "`forever.`" This rule will never delete data that has been tiered from ONTAP. Instead, any data deletion must be done from ONTAP.
 . Select *Create and Continue* to create this rule and to go to the ILM policy step.
@@ -316,9 +319,13 @@ To review and activate the policy:
 +
 The new FabricPool rule is the first rule in the proposed policy. The other rules are selected as follows:
 
-* If your grid didn't have a proposed ILM policy, the wizard creates a new proposed policy by cloning the active policy.
+* If your grid doesn't have a proposed ILM policy, the wizard creates a new proposed policy by cloning the active policy.
 
-* If your grid already had a proposed ILM policy, the wizard compares that policy to your active policy. If there are no conflicts between the two policies, it adds the new rule to the existing proposed policy.
+* If your grid already has a proposed ILM policy, the wizard compares that policy to your active policy. 
+
+** If both policies include the same rules in the same order, the wizard adds the new rule to the top of the existing proposed policy.
+
+** If your proposed policy contains different rules than the active policy, a message appears. To add the new rule for the FabricPool bucket, you must create the proposed policy manually. You can either add it to your existing proposed policy, or you can delete that policy and clone your active policy. See  xref:../ilm/creating-proposed-ilm-policy.adoc[Create a proposed ILM policy].
 
 . Confirm that the order of the rules is correct, as follows:
 +
@@ -327,7 +334,7 @@ The new FabricPool rule is the first rule in the proposed policy. The other rule
 **	If no rules match an object, the default (last) rule is applied. The default rule does not use filters so it can apply to all objects.
 
 +
-Because the new rule is the first rule, any objects in the FabricPool bucket are placed before the other rules in the policy are evaluated. Objects in any other buckets are placed by subsequent rules in the policy.
+Because the FabricPool rule is the first rule, any objects in the FabricPool bucket are placed before the other rules in the policy are evaluated. Objects in any other buckets are placed by subsequent rules in the policy.
 
 . When you have reviewed the proposed policy, select *Activate and continue* to activate the policy and go to the traffic classification step.
 
