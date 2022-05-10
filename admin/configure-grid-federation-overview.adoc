@@ -1,0 +1,45 @@
+---
+permalink: admin/configure-grid-federation-overview.html
+sidebar: sidebar
+keywords: manage high availability group, ha groups, admin node, gateway node, active interface, backup interface, priority order
+summary: 'You can create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery.'
+---
+= Configure grid federation: Overview
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery.
+
+== What is grid federation?
+Grid federation is a trusted and secure connection between two StorageGRID systems that is used for disaster recovery. 
+
+=== What is cross-grid replication?
+
+Objects in specific buckets in grid A can be replicated to the corresponding buckets in grid B.
+
+=== What is account sync?
+
+details here. Tenants, keys, groups, and users. 
+
+== How do you configure grid federation?
+
+. From grid A, go to Grid Manager and configure grid federation. Enter port, FQDN, and provisioning passphrase. Download file.
+. From grid B, go to Grid manager and upload the file. Enter provisioning passphrase.
+
+. Create tenants and enable the *Allow account sync* and *Allow cross-grid replication* check boxes.
+
+. For the tenant account, create buckets that can be replicated.
+
+workflow here
+
+== What are the requirements?
+
+List of considerations and requirements here
+
+
+
+== What happens if a grid fails?
+
+
+
