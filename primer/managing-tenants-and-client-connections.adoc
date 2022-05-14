@@ -37,9 +37,6 @@ Before tenant users can use S3 or Swift clients to store and retrieve data in St
 Client applications can store or retrieve objects by connecting to any of the following:
 
 * The Load Balancer service on Admin Nodes or Gateway Nodes. This is the recommended connection.
-* The CLB service on Gateway Nodes.
-+
-NOTE: The CLB service is deprecated.
 
 * Storage Nodes, with or without an external load balancer.
 

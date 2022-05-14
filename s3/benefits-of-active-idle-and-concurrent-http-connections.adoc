@@ -34,19 +34,17 @@ Determining how long to keep an idle connection open is a trade‐off between th
 
 == Benefits of active HTTP connections
 
-For connections directly to Storage Nodes or to the CLB service (deprecated) on Gateway Nodes, you should limit the duration of an active HTTP connection to a maximum of 10 minutes, even if the HTTP connection continuously performs transactions.
+For connections directly to Storage Nodes, you should limit the duration of an active HTTP connection to a maximum of 10 minutes, even if the HTTP connection continuously performs transactions.
 
 Determining the maximum duration that a connection should be held open is a trade‐off between the benefits of connection persistence and the ideal allocation of the connection to internal system resources.
 
-For client connections to Storage Nodes or to the CLB service, limiting active HTTP connections provides the following benefits:
+For client connections to Storage Nodes, limiting active HTTP connections provides the following benefits:
 
 * Enables optimal load balancing across the StorageGRID system.
 +
-When using the CLB service, you should prevent long‐lived TCP/IP connections to optimize load balancing across the StorageGRID system. You should configure client applications to track the duration of each HTTP connection and close the HTTP connection after a set time so that the HTTP connection can be reestablished and rebalanced.
+
+Over time, an HTTP connection might no longer be optimal as load balancing requirements change. The system performs its best load balancing when client applications establish a separate HTTP connection for each transaction, but this negates the much more valuable gains associated with persistent connections.
 +
-The CLB service balances load across the StorageGRID system at the time that a client application establishes an HTTP connection. Over time, an HTTP connection might no longer be optimal as load balancing requirements change. The system performs its best load balancing when client applications establish a separate HTTP connection for each transaction, but this negates the much more valuable gains associated with persistent connections.
-+
-NOTE: The CLB service is deprecated.
 
 * Allows client applications to direct HTTP transactions to LDR services that have available space.
 * Allows maintenance procedures to start.

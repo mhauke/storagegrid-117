@@ -226,12 +226,6 @@ The following table shows the primary services for Gateway Nodes; however, this 
 [cols="1a,2a" options="header"]
 |===
 | Service| Key function
-a|
-Connection Load Balancer (CLB)
-a|
-Provides Layers 3 and 4 load balancing of S3 and Swift traffic from clients to Storage Nodes. Legacy load balancing mechanism.
-
-*Note:* The CLB service is deprecated.
 
 a|
 High Availability
@@ -297,10 +291,6 @@ Performs automatic repairs of object metadata. The Cassandra Reaper service is p
 * *Chunk service*
 +
 Manages erasure-coded data and parity fragments. The Chunk service is present on Storage Nodes.
-
-* *CLB service (Connection Load Balancer)*
-+
-Deprecated service that provides a gateway into StorageGRID for client applications connecting through HTTP. The CLB service is present on Gateway Nodes. The CLB service is deprecated and will be removed in a future StorageGRID release.
 
 * *CMN service (Configuration Management Node)*
 +

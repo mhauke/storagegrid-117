@@ -22,8 +22,6 @@ When you create a load balancer endpoint, you can generate a self-signed server 
 
 The following steps provide general guidelines for S3 clients that use FabricPool. For more detailed information and procedures, see xref:../fabricpool/index.adoc[Configure StorageGRID for FabricPool].
 
-NOTE: The separate Connection Load Balancer (CLB) service on Gateway Nodes is deprecated and not recommended for use with FabricPool.
-
 .Steps
 
 . Optionally, configure a high availability (HA) group for FabricPool to use.

@@ -20,11 +20,9 @@ When you deploy a services appliance as a primary Admin Node, you use the Storag
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
 * Network links, IP addresses, and port remapping (if necessary) have been configured for the appliance using the StorageGRID Appliance Installer.
 +
-IMPORTANT: If you have remapped any ports, you cannot use the same ports to configure load balancer endpoints. You can create endpoints using remapped ports, but those endpoints will be remapped to the original CLB ports and service, not the Load Balancer service. Follow the steps in xref:../maintain/removing-port-remaps.adoc[Remove port remaps].
-+
+
 See xref:../admin/how-load-balancing-works-clb-service.adoc[How load balancing works - CLB service (deprecated)] for more information on the CLB service.
 +
-NOTE: The CLB service is deprecated.
 
 * You have a service laptop with a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You know one of the IP addresses assigned to the appliance. You can use the IP address for any attached StorageGRID network.
@@ -84,9 +82,6 @@ When you deploy a services appliance as a Gateway Node or non-primary Admin Node
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
 * Network links, IP addresses, and port remapping (if necessary) have been configured for the appliance using the StorageGRID Appliance Installer.
 +
-IMPORTANT: If you have remapped any ports, you cannot use the same ports to configure load balancer endpoints. You can create endpoints using remapped ports, but those endpoints will be remapped to the original CLB ports and service, not the Load Balancer service. Follow the steps in xref:../maintain/removing-port-remaps.adoc[Remove port remaps].
-+
-NOTE: The CLB service is deprecated.
 
 * The primary Admin Node for the StorageGRID system has been deployed.
 * All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer have been defined in the Grid Network Subnet List on the primary Admin Node.

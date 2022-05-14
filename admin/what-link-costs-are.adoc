@@ -13,15 +13,10 @@ Link costs let you prioritize which data center site provides a requested servic
 
 * Link costs are used to prioritize which object copy is used to fulfill object retrievals.
 * Link costs are used by the Grid Management API and the Tenant Management API to determine which internal StorageGRID services to use.
-* Link costs are used by the deprecated Connection Load Balancer (CLB) service on Gateway Nodes to direct client connections. See xref:how-load-balancing-works-clb-service.adoc[How load balancing works - CLB service].
 
 The diagram shows a three site grid that has link costs configured between sites:
 
 image::../media/link_costs.gif[Conceptual diagram for link costs between data centers]
-
-* The CLB service on Gateway Nodes equally distribute client connections to all Storage Nodes at the same data center site and to any data center sites with a link cost of 0.
-+
-In the example, a Gateway Node at data center site 1 (DC1) equally distributes client connections to Storage Nodes at DC1 and to Storage Nodes at DC2. A Gateway Node at DC3 sends client connections only to Storage Nodes at DC3.
 
 * When retrieving an object that exists as multiple replicated copies, StorageGRID retrieves the copy at the data center that has the lowest link cost.
 +

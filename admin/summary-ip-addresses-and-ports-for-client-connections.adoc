@@ -28,26 +28,6 @@ a|
 * Load balancer endpoint port
 
 a|
-HA group
-a|
-CLB
-
-*Note:* The CLB service is deprecated.
-
-a|
-Virtual IP address of an HA group
-a|
-Default S3 ports:
-
-* HTTPS: 8082
-* HTTP: 8084
-
-Default Swift ports:
-
-* HTTPS:8083
-* HTTP:8085
-
-a|
 Admin Node
 a|
 Load Balancer
@@ -66,29 +46,6 @@ IP address of the Gateway Node
 a|
 
 * Load balancer endpoint port
-
-a|
-Gateway Node
-a|
-CLB
-
-*Note:* The CLB service is deprecated.
-
-a|
-IP address of the Gateway Node
-
-*Note:* By default, HTTP ports for CLB and LDR are not enabled.
-
-a|
-Default S3 ports:
-
-* HTTPS: 8082
-* HTTP: 8084
-
-Default Swift ports:
-
-* HTTPS:8083
-* HTTP:8085
 
 a|
 Storage Node
