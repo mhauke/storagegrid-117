@@ -1,10 +1,10 @@
 ---
-permalink: admin/configure-grid-federation-overview.html
+permalink: admin/grid-federation-overview.html
 sidebar: sidebar
 keywords: manage high availability group, ha groups, admin node, gateway node, active interface, backup interface, priority order
 summary: 'You can create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery.'
 ---
-= Configure grid federation: Overview
+= Grid federation: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -24,8 +24,8 @@ details here. Tenants, keys, groups, and users.
 
 == How do you configure grid federation?
 
-. From grid A, go to Grid Manager and configure grid federation. Enter port, FQDN, and provisioning passphrase. Download file.
-. From grid B, go to Grid manager and upload the file. Enter provisioning passphrase.
+. From the local grid, start the connection. Enter hostname, port, and provisioning passphrase. Download the verification package.
+. From the remote grid, complete the connection. Upload the verification paclage and re-enter the local grid's provisioning passphrase.
 
 . Create tenants and enable the *Allow account sync* and *Allow cross-grid replication* check boxes.
 
