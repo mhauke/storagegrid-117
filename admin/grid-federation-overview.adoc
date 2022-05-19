@@ -20,22 +20,22 @@ Objects in specific buckets in grid A can be replicated to the corresponding buc
 
 === What is account sync?
 
-details here. Tenants, keys, groups, and users. 
+// details here. Tenants, keys, groups, and users. 
 
 == How do you configure grid federation?
 
-. From the local grid, start the connection. Enter hostname, port, and provisioning passphrase. Download the verification package.
-. From the remote grid, complete the connection. Upload the verification paclage and re-enter the local grid's provisioning passphrase.
+. From the local grid, start the connection. Enter the hostname for both grids, specify which port will be used, and enter the provisioning passphrase for the local grid. Download the verification file.
+. From the remote grid, complete the connection. Upload the verification file and enter the remote grid's provisioning passphrase. Then, test the connection.
 
 . Create tenants and enable the *Allow account sync* and *Allow cross-grid replication* check boxes.
 
 . For the tenant account, create buckets that can be replicated.
 
-workflow here
+// workflow here
 
 == What are the requirements?
 
-List of considerations and requirements here
+// List of considerations and requirements here
 
 
 
