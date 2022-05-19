@@ -63,8 +63,9 @@ entries:
       - title: SG6000
         url: "/installconfig/gathering-installation-information-sg6000.html"
   - title: Install appliance
-    url: "/installconfig/install-appliance-hardware.html"
     entries:
+    - title: Overview
+      url: "/installconfig/install-appliance-hardware.html"
     - title: Register hardware
       url: "/installconfig/registering-hardware.html"
     - title: Install hardware
@@ -142,7 +143,7 @@ entries:
       url: "/installconfig/optional-remapping-network-ports-for-appliance.html"
     - title: 'Configure BMC interface (SG1000 and SG6000 only)'
       entries:
-      - title: BMC interface - Overview
+      - title: Overview
         url: "/installconfig/configuring-bmc-interface.html"
       - title: Change root password for BMC interface
         url: "/installconfig/changing-root-password-for-bmc-interface.html"
