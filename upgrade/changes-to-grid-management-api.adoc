@@ -25,3 +25,6 @@ Using the private cipher API, you can:
 * Remove SSH algorithms from ECDSA and RSA.
 * Re-enable ciphers and algorithms if you have enabled CHACHA or the NIST “transitional” list.
 * Re-enable any cipher/algorithm that is available by default.
+
+== Display names now included in responses to node-health requests
+Related to the new xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes procedure], after you rename a site or node, the item's name (its system name) and its display name are both returned by the node-health API. 

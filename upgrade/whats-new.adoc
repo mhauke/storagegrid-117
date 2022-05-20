@@ -14,7 +14,7 @@ This release of StorageGRID introduces the following features.
 == Kathy's what's new
 
 === New upgrade and hotfix process
-* You can now can use the Grid Manager to upgrade to a future release and apply a hotfix for that release at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
+* You can now use the Grid Manager to upgrade to a future release and apply a hotfix for that release at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
 * The *Check for software updates* check box on the AutoSupport page (*SUPPORT* > *Tools* >
 *AutoSupport*) lets you control this functionality. You can disable the check for available software updates if your system does not have WAN access. See xref:../admin/configure-autosupport-grid-manager.adoc[Configure AutoSupport].
 
@@ -27,7 +27,7 @@ When specifying the S3 Object Lock settings for an object or the default retenti
 See xref:../tenant/configure-s3-object-lock-settings-for-bucket.adoc[Configure S3 Object Lock settings for a bucket] and xref:../s3/using-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
 
 === Can rename grid, sites, and nodes
-A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node.adoc[Rename the grid, sites, and nodes].
+A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview] for details.
 
 
 == Kevin's what's new
@@ -37,3 +37,6 @@ A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and 
 
 
 == Paul's what's new
+
+
+== Santhosh's what's new
