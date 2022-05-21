@@ -165,11 +165,11 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 
 == Step 3 of 9: Create tenant and bucket
 
-A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that FabricPool wil use. 
+A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that FabricPool will use. 
 
 A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the tenant you use for FabricPool will use only one bucket.
 
-You can create a new FabricPool tenant and bucket, or you can select an existing tenant and bucket. The system automatically creates the access key and secret access key for the tenant's root user.
+You can create a new tenant and bucket for FabricPool use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key and secret access key for the tenant's root user.
 
 
 // start tabbed area
@@ -190,7 +190,7 @@ You can create a new FabricPool tenant and bucket, or you can select an existing
 | Do this
 
 |If identity federation is not enabled 
-|Specify the password FabricPool should use to sign into the tenant as the local root user.
+|Specify the password to use when signing into the tenant as the local root user.
 
 |If identity federation is enabled
 |Select an existing federated group to have Root access permission for the tenant.
@@ -256,9 +256,9 @@ The file includes the information you need to configure StorageGRID as the objec
 
 
 == Step 5 of 9: Select a storage pool
-A storage pool is a group of Storage Nodes. When you select a storage pool, you determine which nodes StorageGRID will use to store the data tiered from ONTAP.
+A storage pool consists of the Storage Nodes at a StorageGRID site.
 
-. Select the StorageGRID site that the ONTAP cluster will connect to. 
+. Select the StorageGRID site to use for the data tiered from ONTAP. 
 . Select the storage pool for that site. 
 . Select *Continue* to go to the ILM rule step.
 
@@ -325,14 +325,15 @@ The new FabricPool rule is the first rule in the proposed policy. The other rule
 
 ** If both policies include the same rules in the same order, the wizard adds the new rule to the top of the existing proposed policy.
 
-** If your proposed policy contains different rules than the active policy, a message appears. To add the new rule for the FabricPool bucket, you must create the proposed policy manually. You can either add it to your existing proposed policy, or you can delete that policy and clone your active policy. See  xref:../ilm/creating-proposed-ilm-policy.adoc[Create a proposed ILM policy].
+** If your proposed policy contains different rules than the active policy, a message appears. To add the new rule for the FabricPool bucket, you must do one of the following:
 
-. Confirm that the order of the rules is correct, as follows:
+*** Edit your existing proposed policy and add the new rule.
+*** Delete your existing proposed policy policy. Then, clone your active policy and add the new rule.
+*** Delete your existing proposed policy. Then, use the FabricPool and S3 setup wizard to create a new proposed policy with the new rule.
 +
-**	If the filters for the first rule match an object, the object is stored according to that rule's placement instructions.
-** If the filters for the first rule do not match the object, the object is evaluated against each subsequent rule until a match is made.
-**	If no rules match an object, the default (last) rule is applied. The default rule does not use filters so it can apply to all objects.
+See xref:../ilm/creating-proposed-ilm-policy.adoc[Create a proposed ILM policy] to learn how to manage proposed policies.
 
+. Confirm that the order of the rules is correct.
 +
 Because the FabricPool rule is the first rule, any objects in the FabricPool bucket are placed before the other rules in the policy are evaluated. Objects in any other buckets are placed by subsequent rules in the policy.
 

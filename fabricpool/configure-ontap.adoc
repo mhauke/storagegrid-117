@@ -40,7 +40,7 @@ If you configured StorageGRID manually or you have an earlier version of ONTAP S
 
 .. On the Add Cloud Tier page, accept the default value in the *NAME* field, or enter a unique name for this cloud tier. 
 .. Select *Upload Settings*.
-.. Browser to and then upload the `ONTAP_FabricPool_settings___bucketname__` file you downloaded from StorageGRID.
+.. Browse to and then upload the `ONTAP_FabricPool_settings___bucketname__.txt` file you downloaded from StorageGRID.
 .. Confirm that the expected values were uploaded to all fields.
 
 .. Select *Save*.
@@ -48,7 +48,7 @@ If you configured StorageGRID manually or you have an earlier version of ONTAP S
 
 .Enter values manually
 --
-.. Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__` file you downloaded from StorageGRID or the values you obtained manually.
+.. Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file you downloaded from StorageGRID or the values you obtained manually.
 +
 image::../media/ontap_systemmanager_cloudtier_details.png[Add Cloud Tier details]
 +
@@ -91,13 +91,13 @@ Note the following:
 |The secret access key for the StorageGRID tenant account.
 
 |Container name
-|The name of the StorageGRID bucket you will use with this ONTAP cluster. For example, `fabricpool-bucket`. 
+|The name of the StorageGRID bucket you will use with this ONTAP aggregate. For example, `fabricpool-bucket`. 
 
 Note the following:
 
 * The bucket name cannot be changed once the configuration is created.
 * The bucket cannot have versioning enabled.
-* You must use a different bucket for each ONTAP cluster that will tier data to StorageGRID.
+* You must use a different bucket for each ONTAP aggregate that is tiered to StorageGRID.
 
 
 |===
