@@ -16,8 +16,6 @@ You can load balance client workloads in the following ways:
 * Use the Load Balancer service, which is installed on Admin Nodes and Gateway Nodes. The Load Balancer service provides Layer 7 load balancing and performs TLS termination of client requests, inspects the requests, and establishes new secure connections to the Storage Nodes. This is the recommended load balancing mechanism.
 +
 See xref:how-load-balancing-works-load-balancer-service.adoc[How load balancing works - Load Balancer service].
-
 +
-See xref:how-load-balancing-works-clb-service.adoc[How load balancing works - CLB service (deprecated)].
 
 * Integrate a third-party load balancer. Contact your NetApp account representative for details.
