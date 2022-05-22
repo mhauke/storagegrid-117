@@ -16,7 +16,7 @@ If you are using a load balancer to manage client connections to StorageGRID, yo
 * You must have specific access permissions.
 
 .About this task
-You can use the Load Balancer service on Admin Nodes or Gateway Nodes, an external third-party load balancer to distribute client requests across multiple Storage Nodes.
+You can use the Load Balancer service on Admin Nodes or Gateway Nodes or an external third-party load balancer to distribute client requests across multiple Storage Nodes.
 
 After configuring load balancing, you should confirm that object ingest and retrieval operations are being evenly distributed across Storage Nodes. Evenly distributed requests ensure that StorageGRID remains responsive to client requests under load and can help maintain client performance.
 
