@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fabricPool, high availability group, HA group, active-active, active-backup, cloud tier, best practices
 summary: 'Before attaching StorageGRID as a FabricPool cloud tier, learn about StorageGRID high availability (HA) groups and review the best practices for using HA groups with FabricPool.'
 ---
-= Best practices for high availability groups
+= Best practices for high availability (HA) groups
 :icons: font
 :imagesdir: ../media/
 
@@ -12,7 +12,7 @@ summary: 'Before attaching StorageGRID as a FabricPool cloud tier, learn about S
 
 Before attaching StorageGRID as a FabricPool cloud tier, learn about StorageGRID high availability (HA) groups and review the best practices for using HA groups with FabricPool.
 
-== What is a high availability (HA) group?
+== What is an HA group?
 
 A high availability (HA) group is a collection of interfaces from multiple StorageGRID Gateway Nodes, Admin Nodes, or both. An HA group helps to keep client data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact on FabricPool operations.
 
@@ -32,7 +32,7 @@ If the HA group includes more than one interface and the Primary interface fails
 
 When the failure is resolved and a higher priority interface becomes available again, the VIP addresses are automatically moved to the highest priority interface that is available.
 
-== Best practices for high availability (HA) groups
+== Best practices for using HA groups
 
 The best practices for creating a StorageGRID HA group for FabricPool depend on the workload, as follows:
 

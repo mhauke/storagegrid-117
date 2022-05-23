@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fabricPool, FabricPool and S3 setup wizard, ontap system manager
 summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.'
 ---
-= Complete the FabricPool and S3 setup wizard
+= FabricPool setup wizard: Instructions
 :icons: font
 :imagesdir: ../media/
 
@@ -17,6 +17,8 @@ You can use the FabricPool and S3 setup wizard to configure StorageGRID as the o
 image::../media/help_menu.png[help menu]
 . In the FabricPool section of the FabricPool and S3 setup wizard page, select *Configure now*.
 
+Step 1 of 9, Configure HA group, appears.
+
 == Step 1 of 9: Configure HA group
 A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
 
@@ -24,7 +26,7 @@ You can use an HA group to help keep FabricPool data connections available. If t
 
 For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups].
 
-. If you will use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
+. If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, you can create a new HA group or use an existing HA group.
 
@@ -38,10 +40,27 @@ For details about this task, see xref:../admin/managing-high-availability-groups
 --
 
 .. To create a new HA group, select *Create HA group*.
-.. For the *Enter details* step, enter a unique display name and optionally a description.
-.. For the *Add interfaces* step, select one or more node interfaces to add to this HA group.
+
+.. For the *Enter details* step, complete the following fields.
++
+[cols="1a,2a" options="header"]
+|===
+| Field| Description
+
+|HA group name
+|A unique display name for this HA group.
+
+|Description (optional)
+|The description of this HA group.
+
+|===
+
+.. Select *Continue*.
+.. For the *Add interfaces* step, select the node interfaces you want to use in this HA group.
 +
 Use the column headers to sort the rows, or enter a search term to locate interfaces more quickly.
++ 
+You can select one or more nodes, but you can select only one interface for each node.
 
 .. For the *Prioritize interfaces* step, determine the Primary interface and any backup interfaces for this HA group.
 +
@@ -65,7 +84,7 @@ You must provide at least one IPv4 address. Optionally, you can specify addition
 .. Select *Continue* to go to the load balancer step.
 --
 
-.Existing HA group
+.Use existing HA group
 --
 .. To use an existing HA group, select the HA group name from the *Select an HA group* drop-down list. 
 .. Select *Continue* to go to the load balancer step. 
@@ -83,7 +102,7 @@ You can use the StorageGRID Load Balancer service, which exists on all Gateway a
 
 For details about this task, see xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints].
 
-. To use the StorageGRID Load Balancer service, you can create a new load balance endpoint or use an existing endpoint. To use an external load balancer, select the *External load balancer* tab. 
+. To use the StorageGRID Load Balancer service, select the *StorageGRID load balancer* tab. To use an external load balancer, select the *External load balancer* tab. 
 +
 [role="tabbed-block"]
 ====
@@ -96,39 +115,38 @@ For details about this task, see xref:../admin/configuring-load-balancer-endpoin
 +
 [cols="1a,2a" options="header"]
 |===
-| Field| Description
-a|
-Name
-a|
-A descriptive name for the endpoint
-a|
-Port
-a|
-The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
+|Field| Description
+
+|Name
+|A descriptive name for the endpoint
+
+|Port
+|The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
 
 *Note:* Ports used by other grid services are not permitted. See the 
 xref:../network/network-port-reference.adoc[Network port reference].
 
-a|
-Client type
-a|
-Must be *S3*.
-a|
-Network protocol
-a|
-Select *HTTPS*.
+|Client type
+|Must be *S3*.
+
+|Network protocol
+|Select *HTTPS*.
 
 *Note*: Communicating with StorageGRID without TLS encryption is supported but not recommended.
 
 |===
 
+.. Select *Continue*.
 
-.. For the *Select binding mode* step, specify the binding mode.
+.. For the *Select binding mode* step, specify the binding mode. The binding mode controls how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
-Use the *Global* setting (recommended) or restrict the accessibility of this endpoint to one of the following:
+** *Global*: Clients can access the endpoint using the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) of any HA group. This is the default and recommended setting.
 
-** Specific network interfaces of specific nodes.
-** The virtual IP (VIP) addresses of specific HA groups. Use this selection only if you require much higher levels of isolation of workloads.
+** *Node interfaces*: Clients can only access the endpoint using the IP address of a selected node and network interface.
+
+** *HA groups VIPs*. Clients can only access the endpoint using a virtual IP (VIP) address of an HA group.Use this selection only if you require much higher levels of isolation of workloads.
+
+.. Select *Continue*.
 
 .. For the *Attach certificate* step, do either of the following:
 
@@ -142,19 +160,35 @@ Use the *Global* setting (recommended) or restrict the accessibility of this end
 NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied to all nodes.
 --
 
-.Existing load balancer endpoint
+.Use existing load balancer endpoint
 --
 .. To use an existing endpoint, select its name from the *Select a load balancer endpoint* drop-down list. 
 .. Select *Continue* to go to the tenant and bucket step. 
 --
 
 
-.External load balancer
+.Use external load balancer
 --
 
-.. To use an external load balancer, enter its fully qualified domain name (FQDN).
-.. Enter the port number that FabricPool will use to connect to the external load balancer.
-.. Copy the server certificate for the external load balancer and paste it here.
+.. To use an external load balancer, select the *External load balancer* tab. 
+
+.. Complete the following fields.
++
+[cols="1a,2a" options="header"]
+|===
+| Field| Description
+
+|FQDN
+|The fully qualified domain name (FQDN) of the external load balancer.
+
+|Port
+|the port number that FabricPool will use to connect to the external load balancer.
+
+|Certificate
+|Copy the server certificate for the external load balancer and paste it into this field.
+
+|===
+
 .. Select *Continue* to go to the tenant and bucket step. 
 
 --

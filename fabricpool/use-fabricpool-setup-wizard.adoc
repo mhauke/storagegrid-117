@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fabricPool, FabricPool and S3 setup wizard, ontap system manager
 summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can upload or enter the required details into ONTAP System Manager.'
 ---
-= Use FabricPool and S3 setup wizard: Before you start
+= FabricPool setup wizard: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -18,7 +18,7 @@ The FabricPool and S3 setup wizard guides you through each step of configuring S
 
 NOTE: If you are using ONTAP System Manager version 9.12.1 or later, you can upload the StorageGRID settings directly to the Add Cloud Tier page. If you have an earlier version of ONTAP System Manager or if you are using the ONTAP CLI, you can enter the same values manually. 
 
-You can complete the FabricPool and S3 setup wizard when you start using the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
+Assuming you have Root access permission, you can complete the FabricPool and S3 setup wizard when you start using the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
 
 Use the wizard unless you know you have special requirements or your implementation will require significant customization. For example, you cannot use the FabricPool and S3 setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
 
@@ -45,7 +45,7 @@ Confirm each of the following items before using the wizard:
 
 * You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain name server (DNS) entries will map this FQDN to the virtual IP (VIP) addresses of the high availability (HA) group that you create using the wizard. See xref:../fabricpool/configure-dns-server.adoc[Configure DNS server].
 
-* Optionally, if you plan to use S3 virtual hosted-style requests, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. ONTAP uses path-style URLs by default, but you can optionally configure it to use virtual hosted-style requests.
+* If you plan to use S3 virtual hosted-style requests (recommended), you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. ONTAP uses path-style URLs by default, but you can configure it to use virtual hosted-style requests.
 
 * If you plan to upload a security certificate for the StorageGRID load balancer, you have the following files: 
 
