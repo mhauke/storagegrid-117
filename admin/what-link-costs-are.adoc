@@ -13,7 +13,7 @@ Link costs let you prioritize which data center site provides a requested servic
 
 * Link costs are used to prioritize which object copy is used to fulfill object retrievals.
 * Link costs are used by the Grid Management API and the Tenant Management API to determine which internal StorageGRID services to use.
-* Link costs are used by the Load Balancer service on Admin Nodes and Gateway Nodes to direct client connections. See xref:how-load-balancing-works[How load balancing works - CLB service].
+* Link costs are used by the Load Balancer service on Admin Nodes and Gateway Nodes to direct client connections. See xref:../admin/how-load-balancing-works.adoc[How load balancing works].
 
 The diagram shows a three site grid that has link costs configured between sites:
 
