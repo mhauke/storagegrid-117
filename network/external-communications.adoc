@@ -325,54 +325,6 @@ All nodes
 |
 SSH on port 8022 grants access to the base operating system on appliance and virtual node platforms for support and troubleshooting. This port is not used for Linux-based (bare metal) nodes and is not required to be accessible between grid nodes or during normal operations.
 |
-8082
-|
-TCP
-|
-HTTPS
-|
-S3 clients
-|
-Gateway Nodes
-|
-S3 client traffic to the deprecated CLB service on Gateway Nodes (HTTPS).
-|
-8083
-|
-TCP
-|
-HTTPS
-|
-Swift clients
-|
-Gateway Nodes
-|
-Swift client traffic to the deprecated CLB service on Gateway Nodes (HTTPS).
-|
-8084
-|
-TCP
-|
-HTTP
-|
-S3 clients
-|
-Gateway Nodes
-|
-S3 client traffic to the deprecated CLB service on Gateway Nodes (HTTP).
-|
-8085
-|
-TCP
-|
-HTTP
-|
-Swift clients
-|
-Gateway Nodes
-|
-Swift client traffic to the deprecated CLB service on Gateway Nodes (HTTP).
-|
 8443
 |
 TCP

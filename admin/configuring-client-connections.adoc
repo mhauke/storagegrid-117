@@ -14,10 +14,6 @@ As a grid administrator, you manage the configuration options that control how S
 Client applications can store or retrieve objects by connecting to any of the following:
 
 * The Load Balancer service on Admin Nodes or Gateway Nodes, or optionally, the virtual IP address of a high availability (HA) group of Admin Nodes or Gateway Nodes
-* The CLB service on Gateway Nodes, or optionally, the virtual IP address of a high availability group of Gateway Nodes
-+
-NOTE: The CLB service is deprecated. Clients configured before the StorageGRID 11.3 release can continue to use the CLB service on Gateway Nodes. All other client applications that depend on StorageGRID to provide load balancing should connect using the Load Balancer service.
-
 * Storage Nodes, with or without an external load balancer
 
 You can optionally configure the following features on your StorageGRID system:
@@ -31,4 +27,4 @@ You can optionally configure the following features on your StorageGRID system:
 * *Untrusted Client Network*: You can make the Client Network more secure by configuring it as untrusted. When the Client Network is untrusted, clients can only connect using load balancer endpoints.
 
 
-You can also enable the use of HTTP for clients that connect to StorageGRID either directly to Storage Nodes or using the CLB service (deprecated), and you can configure S3 API endpoint domain names for S3 clients.
+You can also enable the use of HTTP for clients that connect to StorageGRID directly to Storage Nodes and you can configure S3 API endpoint domain names for S3 clients.

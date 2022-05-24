@@ -75,12 +75,12 @@ You can:
 
 * Replace the default certificates with custom certificates signed by an external certificate authority for improved grid security:
 ** xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc[Replace the default StorageGRID-generated management interface certificate] used for Grid Manager and Tenant Manager connections.
-** xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Replace the S3 and Swift API certificate] used for Storage Node, CLB service (deprecated), and load balancer endpoint (optional) connections.
+** xref:configuring-custom-server-certificate-for-storage-node.adoc[Replace the S3 and Swift API certificate] used for Storage Node and load balancer endpoint (optional) connections.
 
 * xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#restore-the-default-management-interface-certificate[Restore the default management interface certificate.]
-* xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc#restore-the-default-s3-and-swift-api-certificate[Restore the default S3 and Swift API certificate.]
+* xref:configuring-custom-server-certificate-for-storage-node.adoc#restore-the-default-s3-and-swift-api-certificate[Restore the default S3 and Swift API certificate.]
 * xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#use-a-script-to-generate-a-new-self-signed-management-interface-certificate[Use a script to generate a new self-signed management interface certificate.]
-* Copy or download the xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#download-or-copy-the-management-interface-certificate[management interface certificate] or xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc#download-or-copy-the-s3-and-swift-api-certificate[S3 and Swift API certificate].
+* Copy or download the xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#download-or-copy-the-management-interface-certificate[management interface certificate] or xref:configuring-custom-server-certificate-for-storage-node.adoc#download-or-copy-the-s3-and-swift-api-certificate[S3 and Swift API certificate].
 
 --
 
@@ -204,11 +204,11 @@ xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc[
 a|
 Server
 a|
-Authenticates secure S3 or Swift client connections to a Storage Node, to the deprecated Connection Load Balancer (CLB) service on a Gateway Node, and load balancer endpoints (optional).
+Authenticates secure S3 or Swift client connections to a Storage Node and to load balancer endpoints (optional).
 a|
 *CONFIGURATION* > *Security* > *Certificates*, select the *Global* tab, and then select *S3 and Swift API certificate*
 a|
-xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates]
+xref:configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates]
 |===
 
 === Grid CA certificate

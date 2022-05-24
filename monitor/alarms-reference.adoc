@@ -381,26 +381,6 @@ An alarm is triggered if Java is unable to perform garbage collection at a rate 
 If the problem persists, contact technical support.
 
 a|
-CAIH
-a|
-Number Available Ingest Destinations
-a|
-CLB
-a|
-This alarm is deprecated.
-
-a|
-CAQH
-a|
-Number Available Destinations
-a|
-CLB
-a|
-This alarm clears when underlying issues of available LDR services are corrected. Ensure that the HTTP component of LDR services are online and running normally.
-
-If the problem persists, contact technical support.
-
-a|
 CASA
 a|
 Data Store Status
@@ -430,14 +410,6 @@ DDS
 a|
 This alarm is triggered during installation or expansion to indicate a new data store is joining the grid.
 a|
-CCES
-a|
-Incoming Sessions - Established
-a|
-CLB
-a|
-This alarm is triggered if there are 20,000 or more HTTP sessions currently active (open) on the Gateway Node. If a client has too many connections, you might see connection failures. You should reduce the workload.
-a|
 CCNA
 a|
 Compute Hardware
@@ -464,27 +436,7 @@ After new Storage Nodes are added, the system automatically rebalances object me
 
 Also see information about troubleshooting the Low metadata storage alert in xref:troubleshooting-metadata-issues.adoc[Troubleshoot metadata issues].
 
-a|
-CLBA
-a|
-CLB Status
-a|
-CLB
-a|
-If an alarm is triggered, select *SUPPORT* > *Tools* > *Grid topology*, then select *_site_* > *_grid node_* > *CLB* > *Overview* > *Main* and *CLB* > *Alarms* > *Main* to determine the cause of the alarm and to troubleshoot the problem.
-
 If the problem persists, contact technical support.
-
-a|
-CLBE
-a|
-CLB State
-a|
-CLB
-a|
-If the value of CLB State is Standby, continue monitoring the situation and if the problem persists, contact technical support.
-
-If the state is Offline and there are no known server hardware issues (for example, the server is unplugged) or scheduled downtime, restart the service. If the problem persists, contact technical support.
 
 a|
 CMNA
@@ -1067,7 +1019,7 @@ Triggered when the certificate used for accessing storage API endpoints is about
 
 . Select *CONFIGURATION* > *Security* > *Certificates*. 
 . On the *Global* tab, select *S3 and Swift API certificate*.
-. xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc#add-a-custom-s3-and-swift-api-certificate[Upload a new S3 and Swift API certificate.]
+. xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc#add-a-custom-s3-and-swift-api-certificate[Upload a new S3 and Swift API certificate.]
 
 a|
 SCHR

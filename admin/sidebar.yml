@@ -90,7 +90,7 @@ entries:
         - title: Configure management interface certificates
           url: "/admin/configuring-custom-server-certificate-for-grid-manager-tenant-manager.html"
         - title: Configure S3 and Swift API certificates
-          url: "/admin/configuring-custom-server-certificate-for-storage-node-or-clb.html"
+          url: "/admin/configuring-custom-server-certificate-for-storage-node.html"
         - title: Copy or download the Grid CA certificate
           url: "/admin/copying-storagegrid-system-ca-certificate.html"
         - title: Configure StorageGRID certificates for FabricPool
@@ -182,12 +182,10 @@ entries:
       - title: Overview
         pdf-filename: Overview of managing load balancing
         url: "/admin/managing-load-balancing.html"
-      - title: How load balancing works - Load Balancer service
-        url: "/admin/how-load-balancing-works-load-balancer-service.html"
+      - title: How load balancing works
+        url: "/admin/how-load-balancing-works.html"
       - title: Configure load balancer endpoints
-        url: "/admin/configuring-load-balancer-endpoints.html"
-      - title: How load balancing works - CLB service
-        url: "/admin/how-load-balancing-works-clb-service.html"
+        url: "/admin/configuring-load-balancer-endpoints.html"    
     - title: Configure S3 API endpoint domain names
       url: "/admin/configuring-s3-api-endpoint-domain-names.html"
     - title: Enable HTTP for client communications
@@ -254,9 +252,7 @@ entries:
       - title: Configure stored object compression
         url: "/admin/configuring-stored-object-compression.html"
       - title: Configure stored object encryption
-        url: "/admin/configuring-stored-object-encryption.html"
-      - title: Configure stored object hashing
-        url: "/admin/configuring-stored-object-hashing.html"
+        url: "/admin/configuring-stored-object-encryption.html"      
     - title: Storage Node configuration settings
       url: "/admin/storage-node-configuration-settings.html"
     - title: Manage full Storage Nodes

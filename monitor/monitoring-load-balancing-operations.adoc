@@ -16,9 +16,7 @@ If you are using a load balancer to manage client connections to StorageGRID, yo
 * You must have specific access permissions.
 
 .About this task
-You can use the Load Balancer service on Admin Nodes or Gateway Nodes, an external third-party load balancer, or the CLB service on Gateway Nodes to distribute client requests across multiple Storage Nodes.
-
-NOTE: The CLB service is deprecated.
+You can use the Load Balancer service on Admin Nodes or Gateway Nodes or an external third-party load balancer to distribute client requests across multiple Storage Nodes.
 
 After configuring load balancing, you should confirm that object ingest and retrieval operations are being evenly distributed across Storage Nodes. Evenly distributed requests ensure that StorageGRID remains responsive to client requests under load and can help maintain client performance.
 
@@ -42,16 +40,7 @@ Nodes in an active-backup HA group might take the Backup role from time to time.
  .. Review the chart of Load Balancer Incoming Request Rate for the last week to review the object throughput of the node.
  .. Repeat these steps for each Admin Node or Gateway Node in the StorageGRID system.
  .. Optionally, use traffic classification policies to view a more detailed breakdown of traffic being served by the Load Balancer service.
-. If S3 or Swift clients connect using the CLB service (deprecated), perform the following checks:
- .. Select *NODES*.
- .. Select a Gateway Node.
- .. On the *Overview* tab, check if a node interface is in an HA group, and if the node interface has the role of Master.
-+
-Nodes with the role of Master and nodes that are not in an HA group should be actively distributing requests to clients.
 
- .. For each Gateway Node that should be actively distributing client requests, select *SUPPORT* > *Tools* > *Grid topology*.
- .. Select *_Gateway Node_* > *CLB* > *HTTP* > *Overview* > *Main*.
- .. Review the number of *Incoming Sessions - Established* to verify that the Gateway Node has been actively handling requests.
 . Verify that these requests are being evenly distributed to Storage Nodes.
  .. Select *_Storage Node_* > *LDR* > *HTTP*.
  .. Review the number of *Currently Established incoming Sessions*.

@@ -43,12 +43,9 @@ xref:supported-swift-api-endpoints.adoc[Supported Swift API endpoints]
 
 A grid administrator makes configuration choices that affect how Swift clients connect to StorageGRID to store and retrieve data. The specific information you need to make a connection depends upon the configuration that was chosen.
 
-Client applications can store or retrieve objects by connecting to any of the following:
+Client applications can store or retrieve objects by connecting to the Load Balancer service on Admin Nodes or Gateway Nodes, or optionally, the virtual IP address of a high availability (HA) group of Admin Nodes or Gateway Nodes.
 
-* The Load Balancer service on Admin Nodes or Gateway Nodes, or optionally, the virtual IP address of a high availability (HA) group of Admin Nodes or Gateway Nodes
-* The CLB service on Gateway Nodes, or optionally, the virtual IP address of a high availability group of Gateway Nodes
-+
-NOTE: The CLB service is deprecated. Clients configured before the StorageGRID 11.3 release can continue to use the CLB service on Gateway Nodes. All other client applications that depend on StorageGRID to provide load balancing should connect using the Load Balancer service.
+NOTE: All applications that depend on StorageGRID to provide load balancing should connect using the Load Balancer service.
 
 * Storage Nodes, with or without an external load balancer
 
@@ -90,21 +87,6 @@ a|
 * Load balancer endpoint port
 
 a|
-HA group
-a|
-CLB
-
-*Note:* The CLB service is deprecated.
-
-a|
-Virtual IP address of an HA group
-a|
-Default Swift ports:
-
-* HTTPS: 8083
-* HTTP: 8085
-
-a|
 Admin Node
 a|
 Load Balancer
@@ -123,24 +105,6 @@ IP address of the Gateway Node
 a|
 
 * Load balancer endpoint port
-
-a|
-Gateway Node
-a|
-CLB
-
-*Note:* The CLB service is deprecated.
-
-a|
-IP address of the Gateway Node
-
-*Note:* By default, HTTP ports for CLB and LDR are not enabled.
-
-a|
-Default Swift ports:
-
-* HTTPS: 8083
-* HTTP: 8085
 
 a|
 Storage Node
@@ -170,13 +134,11 @@ It is possible to configure a DNS name for the IP address that clients use to co
 
 === Decide to use HTTPS or HTTP connections
 
-When client connections are made using a Load Balancer endpoint, connections must be made using the protocol (HTTP or HTTPS) that was specified for that endpoint. To use HTTP for client connections to Storage Nodes or to the CLB service on Gateway Nodes, you must enable its use.
+When client connections are made using a Load Balancer endpoint, connections must be made using the protocol (HTTP or HTTPS) that was specified for that endpoint. To use HTTP for client connections to Storage Nodes, you must enable its use.
 
-By default, when client applications connect to Storage Nodes or the CLB service on Gateway Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting the *Enable HTTP Connection* grid option in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
+By default, when client applications connect to Storage Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting the *Enable HTTP Connection* grid option in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
 
 IMPORTANT: Be careful when enabling HTTP for a production grid since requests will be sent unencrypted.
-
-NOTE: The CLB service is deprecated.
 
 If the *Enable HTTP Connection* option is selected, clients must use different ports for HTTP than they use for HTTPS. See the instructions for administering StorageGRID.
 

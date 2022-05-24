@@ -604,7 +604,7 @@ The server certificate used for accessing storage API endpoints is about to expi
 
 . Select *CONFIGURATION* > *Security* > *Certificates*.
 . On the *Global* tab, select *S3 and Swift API certificate*.
-. xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc#add-a-custom-s3-and-swift-api-certificate[Upload a new S3 and Swift API certificate.]
+. xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc#add-a-custom-s3-and-swift-api-certificate[Upload a new S3 and Swift API certificate.]
 
 a|External syslog CA certificate expiration
 a|The certificate authority (CA) certificate used to sign the external syslog server certificate is about to expire.
@@ -837,16 +837,6 @@ The disk queue for audit messages is full.
 . Reduce the client operation rate or decrease the number of audit messages logged by changing the audit level for Client Writes and Client Reads to Error or Off (*CONFIGURATION* > *Monitoring* > *Audit and syslog server*).
 
 xref:../audit/index.adoc[Review audit logs]
-
-a|Legacy CLB load balancer activity detected
-a|Some clients might be connecting to the deprecated CLB load balancer service using the default S3 and Swift API certificate.
-
-. To simplify future upgrades, install a custom S3 and Swift API certificate on the *Global* tab of the *Certificates* page. Then, ensure that all S3 or Swift clients who connect to the legacy CLB have the new certificate.
-. Create one or more load balancer endpoints. Then, direct all existing S3 and Swift clients to these endpoints. Contact technical support if you need to remap the client port.
-
-Other activity might trigger this alert, including port scans. To determine if the deprecated CLB service is currently in use, view  the `storagegrid_private_clb_http_connection_established_successful` Prometheus metric.
-
-As required, silence or disable this alert rule if the CLB service is no longer in use.
 
 a|Logs are being added to the on-disk queue
 a|Node cannot forward logs to the external syslog server and the on-disk queue is filling up.

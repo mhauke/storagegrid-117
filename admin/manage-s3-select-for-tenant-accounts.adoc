@@ -29,7 +29,6 @@ Note the following limitations:
 
 * Bare-metal load balancer nodes are not supported.
 * Queries cannot be sent directly to Storage Nodes.
-* Queries sent through the deprecated CLB service are not supported.
 
 IMPORTANT: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
 
