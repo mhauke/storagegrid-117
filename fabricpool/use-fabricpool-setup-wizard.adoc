@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fabricPool, FabricPool and S3 setup wizard, ontap system manager
 summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can upload or enter the required details into ONTAP System Manager.'
 ---
-= FabricPool setup wizard: Overview
+= FabricPool setup wizard: Before you begin
 :icons: font
 :imagesdir: ../media/
 
@@ -28,38 +28,56 @@ If you plan to connect the same StorageGRID system to multiple ONTAP systems, us
 
 Then, as required, complete the wizard for each additional cluster. You can select same HA group, and load balancer endpoint, but you must create or select a different tenant and bucket.
 
+
 == Before using the wizard
 
-Confirm each of the following items before using the wizard:
+Before using the wizard, confirm you have completed these prerequisites steps.
+
+=== Review best practices
 
 * You have a general understanding of the xref:information-needed-to-attach-storagegrid-as-cloud-tier.adoc[information needed to attach StorageGRID as a cloud tier].
+
 * You have reviewed the best practices for:
 
 ** xref:best-practices-for-high-availability-groups.adoc[High availability groups]
-** xref:best-practices-for-load-balancing.adoc[Load balancing]
+** xref:best-practices-for-load-balancing.adoc[Load balancing and load balancing certificates]
 ** xref:best-practices-ilm.adoc[ILM rules and policy]
 
-* If you plan to use a virtual LAN to segregate FabricPool traffic, you have configured the VLAN interface. See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces].
+=== Obtain IP addresses and set up VLAN interfaces
 
-* If you plan to use identity federation or single sign-on (SSO) for your StorageGRID system, you have enabled these features and you know which federated group ONTAP should use. See xref:../admin/using-identity-federation.adoc[Use identity federation] and xref:../admin/configuring-sso.adoc[Configure single sign-on].
+If you will configure an HA group, you know which nodes ONTAP will connect to and which StorageGRID network will be used. You also know which values to enter for the subnet CIDR, gateway IP address, and virtual IP (VIP) addresses. 
 
-* You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain name server (DNS) entries will map this FQDN to the virtual IP (VIP) addresses of the high availability (HA) group that you create using the wizard. See xref:../fabricpool/configure-dns-server.adoc[Configure DNS server].
+If you plan to use a virtual LAN to segregate FabricPool traffic, you have already configured the VLAN interface. See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces].
 
-* If you plan to use S3 virtual hosted-style requests (recommended), you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. ONTAP uses path-style URLs by default, but you can configure it to use virtual hosted-style requests.
+=== Configure identity federation and SSO
 
-* If you plan to upload a security certificate for the StorageGRID load balancer, you have the following files: 
+If you plan to use identity federation or single sign-on (SSO) for your StorageGRID system, you have enabled these features and you know which federated group ONTAP should use. See xref:../admin/using-identity-federation.adoc[Use identity federation] and xref:../admin/configuring-sso.adoc[Configure single sign-on].
 
-** The custom server certificate file.
-** The custom server certificate private key file.
-** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
+=== Obtain and configure domain names
+
+* You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain name server (DNS) entries will map this FQDN to the VIP addresses of the HA group that you create using the wizard. See xref:../fabricpool/configure-dns-server.adoc[Configure DNS server].
+
+* If you plan to use S3 virtual hosted-style requests, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. ONTAP uses path-style URLs by default, but using virtual hosted-style requests is recommended.
+
+=== Obtain custom certificates 
+* If you plan to use the StorageGRID load balancer, you have reviewed the best practices for the xref:best-practices-for-load-balancing.adoc[load balancer endpoint certificate] and you know whether you will upload or generate this certificate.
+
+** If you plan to upload a CA-signed security certificate for exclusive use with this ONTAP-StorageGRID connection, you have the following files: 
+
+*** The custom server certificate file.
+*** The custom server certificate private key file.
+*** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
 +
 The certificate must include the FQDN that ONTAP will use for StorageGRID. 
 
+** If you plan to generate a self-signed certificate for exclusive use with this ONTAP-StorageGRID connection, you know which domain name, IP, and subject to use.
+
+** If you plan to use the global StorageGRID S3 and Swift API certificate instead, you have already updated or generated a custom version. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates]. 
+
 * If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
 
-* If your StorageGRID system include multiple sites, you know which site will be used to store ONTAP data.
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 
-* You have the Root access permission.
+
+
 
