@@ -240,7 +240,7 @@ You can create a new tenant and bucket for FabricPool use, or you can select an 
 .New tenant and bucket
 --
 
-.. To create a new tenant and bucket, enter the name of the new tenant. For example, `FabricPool tenant`.
+.. To create a new tenant and bucket, enter a *Tenant name*. For example, `FabricPool tenant`.
 
 .. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
@@ -255,17 +255,14 @@ You can create a new tenant and bucket for FabricPool use, or you can select an 
 |If identity federation is enabled
 |Select an existing federated group to have Root access permission for the tenant.
 
-Optionally specify a password that can be used to sign in to the tenant as the local root user.
-
-
-
+Optionally specify the password to use when signing in to the tenant as the local root user.
 
 |If both identity federation and single sign-on (SSO) are enabled
 |Select an existing federated group to have the Root access permission for the tenant. No local users can sign in.
 
 |===
 
-.. Enter the name of the bucket FabricPool will use to store ONTAP data. For example, `fabricpool-bucket`.
+.. For *Bucket name*, enter the name of the bucket FabricPool will use to store ONTAP data. For example, `fabricpool-bucket`.
 +
 IMPORTANT: You cannot change the bucket name after creating the bucket.
 +
@@ -278,20 +275,20 @@ Bucket names must comply with these rules:
 ** Must not look like a text-formatted IP address.
 ** Should not use periods in virtual hosted style requests. Periods will cause problems with server wildcard certificate verification.
 
-.. Select the region for this bucket.
+.. Select the *Region* for this bucket.
 +
 Use the default region (us-east-1) unless you expect to use ILM in the future to filter objects based on the bucket's region.
 
 .. Select *Create and Continue* to create the tenant and bucket and to go to the download data step 
 --
 
-.Existing tenant and bucket
+.Select tenant and bucket
 --
 
-NOTE: If you want use an existing tenant account, confirm that the tenant already has at least one bucket that does not have versioning enabled. You cannot select an existing tenant account if no bucket exists for that tenant. 
+The existing tenant account must have at least one bucket that does not have versioning enabled. You cannot select an existing tenant account if no bucket exists for that tenant. 
 
-.. To use an existing tenant and bucket, select the tenant account's name from the drop-down list. 
-.. Select the bucket FabricPool will use to store ONTAP data.
+.. Select the existing tenant from the *Tenant name* drop-down list. 
+.. Select the existing bucket from the *Bucket name* drop-down list.
 
 .. Select *Continue* to go to the download data step. 
 --
@@ -316,10 +313,13 @@ The file includes the information you need to configure StorageGRID as the objec
 
 
 == Step 5 of 9: Select a storage pool
-A storage pool consists of the Storage Nodes at a StorageGRID site.
+A storage pool is a group of Storage Nodes. When you select a storage pool, you determine which nodes StorageGRID will use to store the data tiered from ONTAP.
 
-. Select the StorageGRID site to use for the data tiered from ONTAP. 
-. Select the storage pool for that site. 
+. From the *Site* drop-down list, select the StorageGRID site you want to use for the data tiered from ONTAP. 
+. From the *Storage pool* drop-down list, select the storage pool for that site.
++
+The storage pool for a site includes all Storage Nodes at that site.
+
 . Select *Continue* to go to the ILM rule step.
 
 == Step 6 of 9: Review ILM rule for FabricPool
@@ -359,9 +359,12 @@ Each object will be saved as two data fragments and one parity fragment. The thr
 
 |===
 
-. Use the retention diagram to confirm the placement instruction.
-+
-Notice that the FabricPool rule saves data "`forever.`" This rule will never delete data that has been tiered from ONTAP. Instead, any data deletion must be done from ONTAP.
+. Sort the retention diagram by *Time period* and *Storage pool* to confirm the placement instruction.
+
+** The *Time period* for the rule is "`Day 0 - forever.`" This rule is applied when data is tiered from ONTAP. It will never delete data that has been tiered from ONTAP. Instead, any data deletion must be done from ONTAP.
+
+** The *Storage pool* for the rule is the storage pool you selected and the data will stored using 2+1 erasure coding (EC 2+1).
+
 . Select *Create and Continue* to create this rule and to go to the ILM policy step.
 
 == Step 7 of 9: Review and activate ILM policy
@@ -375,27 +378,36 @@ CAUTION: When you activate a new ILM policy, StorageGRID uses that policy to man
 
 To review and activate the policy:
 
+. Optionally update the system-generated *Policy name*. By default, the system appends "`+ FabricPool`" to the name of your active or proposed policy, but you can provide your own name.
+
 . Review the list of rules in the proposed policy.
+
 +
 The new FabricPool rule is the first rule in the proposed policy. The other rules are selected as follows:
 
-* If your grid doesn't have a proposed ILM policy, the wizard creates a new proposed policy by cloning the active policy.
+* If your grid doesn't have a proposed ILM policy, the wizard creates a proposed policy by cloning your active policy.
 
 * If your grid already has a proposed ILM policy, the wizard compares that policy to your active policy. 
 
-** If both policies include the same rules in the same order, the wizard adds the new rule to the top of the existing proposed policy.
+** If both policies include the same rules in the same order, the wizard adds the new rule to the existing proposed policy.
 
-** If your proposed policy contains different rules than the active policy, a message appears. To add the new rule for the FabricPool bucket, you must do one of the following:
+** If your proposed policy contains different rules than the active policy, a message appears. To add the new rule for the FabricPool bucket, do one of the following:
 
-*** Edit your existing proposed policy and add the new rule.
-*** Delete your existing proposed policy policy. Then, clone your active policy and add the new rule.
-*** Delete your existing proposed policy. Then, use the FabricPool and S3 setup wizard to create a new proposed policy with the new rule.
+*** To use the rules in your proposed policy, edit that policy and add the new FabricPool rule to the top. Then, activate the updated policy.
+
+*** To use the rules in your active policy, delete the proposed policy. Then, use the FabricPool and S3 setup wizard to create a new proposed policy. The new policy will be a clone of your active policy with the new FabricPool rule on top.
+
 +
 See xref:../ilm/creating-proposed-ilm-policy.adoc[Create a proposed ILM policy] to learn how to manage proposed policies.
 
-. Confirm that the order of the rules is correct.
+. Review the order of the rules in the new policy. 
 +
 Because the FabricPool rule is the first rule, any objects in the FabricPool bucket are placed before the other rules in the policy are evaluated. Objects in any other buckets are placed by subsequent rules in the policy.
+
+. Review the retention diagram to learn how different objects will be retained.
+
+.. Select *Expand all* to see a retention diagram for each rule in the proposed policy.
+.. Select *Time period* or *Storage pool* to sort the retention diagrams. 
 
 . When you have reviewed the proposed policy, select *Activate and continue* to activate the policy and go to the traffic classification step.
 

@@ -31,7 +31,7 @@ You must configure a StorageGRID load balancer endpoint to define the port that 
 
 == Best practices for the load balancer endpoint certificate
 
-When creating a load balancer endpoint for use with FabricPool, you should use HTTPS as the protocol. Communicating with StorageGRID without TLS encryption is supported but not recommended
+When creating a load balancer endpoint for use with FabricPool, you should use HTTPS as the protocol. Communicating with StorageGRID without TLS encryption is supported but not recommended.
 
 You can then either upload a certificate that is signed by either a publicly trusted or a private certificate authority (CA), or you can generate a self-signed certificate. The certificate allows ONTAP to authenticate with StorageGRID.
 

@@ -62,10 +62,13 @@ The following table describes these fields in more detail.
 |A unique name for this cloud tier. You can accept the default value.
 
 |URL style
-|Select the default (*Path-Style URL*).
+|If you  xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names], select *Virtual-Style URL*.
+ 
+*Path-Style URL* is the default for ONTAP, but using virtual hosted-style requests is recommended for StorageGRID and Amazon S3. You must use *Path-Style URL* if you provided an IP address instead of a domain name for the *Server name (FQDN)* field.
+
 
 |Server name (FQDN)
-|The fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
+|The IP address or fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
 
 Note the following:
 
