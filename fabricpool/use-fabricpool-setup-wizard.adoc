@@ -16,11 +16,9 @@ You can use the FabricPool and S3 setup wizard to configure StorageGRID as the o
 
 The FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with FabricPool and automatically configures certain entities for you, such as the ILM and traffic classification policies. As part of completing the wizard, you download a file that you can use to enter values into ONTAP System Manager. Use the wizard to configure your system more quickly and to make sure your settings conform to StorageGRID and FabricPool best practices. 
 
-NOTE: If you are using ONTAP System Manager version 9.12.1 or later, you can upload the StorageGRID settings directly to the Add Cloud Tier page. If you have an earlier version of ONTAP System Manager or if you are using the ONTAP CLI, you can enter the same values manually. 
-
 Assuming you have Root access permission, you can complete the FabricPool and S3 setup wizard when you start using the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
 
-Use the wizard unless you know you have special requirements or your implementation will require significant customization. For example, you cannot use the FabricPool and S3 setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
+Use the wizard unless you have special requirements or your implementation needs significant customization. For example, you cannot use the FabricPool and S3 setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
 
 == How to create connections for more than one cluster
 
@@ -31,7 +29,7 @@ Then, as required, complete the wizard for each additional cluster. You can sele
 
 == Before using the wizard
 
-Before using the wizard, confirm you have completed these prerequisites steps.
+Before using the wizard, confirm you have completed these prerequisite steps.
 
 === Review best practices
 
@@ -40,7 +38,7 @@ Before using the wizard, confirm you have completed these prerequisites steps.
 * You have reviewed the best practices for:
 
 ** xref:best-practices-for-high-availability-groups.adoc[High availability groups]
-** xref:best-practices-for-load-balancing.adoc[Load balancing and load balancing certificates]
+** xref:best-practices-for-load-balancing.adoc[Load balancing and the load balancer certificate]
 ** xref:best-practices-ilm.adoc[ILM rules and policy]
 
 === Obtain IP addresses and set up VLAN interfaces
@@ -67,6 +65,7 @@ If you plan to use identity federation or single sign-on (SSO) for your StorageG
 *** The custom server certificate file.
 *** The custom server certificate private key file.
 *** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
+
 +
 The certificate must include the FQDN that ONTAP will use for StorageGRID. 
 

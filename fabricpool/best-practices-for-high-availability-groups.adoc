@@ -32,7 +32,7 @@ If the HA group includes more than one interface and the Primary interface fails
 
 When the failure is resolved and a higher priority interface becomes available again, the VIP addresses are automatically moved to the highest priority interface that is available.
 
-== Best practices for using HA groups
+== Using HA groups
 
 The best practices for creating a StorageGRID HA group for FabricPool depend on the workload, as follows:
 

@@ -25,9 +25,9 @@ image::../media/ontap_systemmanager_addcloudtier.png[Add StorageGRID as cloud ti
 
 == Upload or enter values
 
-If you used the FabricPool and S3 Setup wizard and you have ONTAP System Manager version 9.12.1 or later, you can upload the StorageGRID settings directly to the Add Cloud Tier page. 
+If you used the FabricPool and S3 Setup wizard, you might see an option to upload the StorageGRID settings directly to the Add Cloud Tier page. 
 
-If you configured StorageGRID manually or you have an earlier version of ONTAP System Manager, you can enter the same values manually. 
+If you configured StorageGRID manually or if an upload option does not appear in ONTAP System Manager, you can enter the same values manually. 
 
 
 // start tabbed area
@@ -62,18 +62,18 @@ The following table describes these fields in more detail.
 |A unique name for this cloud tier. You can accept the default value.
 
 |URL style
-|If you  xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names], select *Virtual-Style URL*.
+|If you  xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names], select *Virtual Hosted-Style URL*.
  
-*Path-Style URL* is the default for ONTAP, but using virtual hosted-style requests is recommended for StorageGRID and Amazon S3. You must use *Path-Style URL* if you provided an IP address instead of a domain name for the *Server name (FQDN)* field.
+*Path-Style URL* is the default for ONTAP, but using virtual hosted-style requests is recommended for StorageGRID and Amazon S3. You must use *Path-Style URL* if you provide an IP address instead of a domain name for the *Server name (FQDN)* field.
 
 
 |Server name (FQDN)
-|The IP address or fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
+|The virtual IP (VIP) address for the StorageGRID HA group or the fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
 
 Note the following:
 
-* The domain name that you specify here must match the domain name on the certificate you uploaded or generated for the StorageGRID load balancer endpoint.
-* The DNS record for this domain name must map to each IP address you will use to connect to StorageGRID.
+* The IP address or domain name that you specify here must match the certificate you uploaded or generated for the StorageGRID load balancer endpoint.
+* If you provide a domain name, the DNS record must map to each IP address you will use to connect to StorageGRID. See xref:configure-dns-server.adoc[Configure the DNS server].
 
 
 |SSL
