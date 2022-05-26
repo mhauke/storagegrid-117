@@ -236,7 +236,7 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 
 A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that FabricPool will use. 
 
-A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the tenant you use for FabricPool will use only one bucket.
+A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the wizard lets you create or select only one tenant and one bucket at a time. You can use the Tenant Manager later to add any additional buckets you need.
 
 You can create a new tenant and bucket for FabricPool use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key ID and secret access key for the tenant's root user.
 
@@ -306,7 +306,7 @@ FabricPool does not support object versioning, so buckets that have versioning e
 
 . To save the values you've entered so far to a text file, select *Download ONTAP settings*.
 +
-Later, you can upload or enter these values into ONTAP System Manager. 
+Later, you can enter these values into ONTAP System Manager. 
 +
 The file includes the information you need to configure StorageGRID as the object storage system for a FabricPool cloud tier, including: 
 +
@@ -458,4 +458,4 @@ As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic 
 +
 StorageGRID is now ready to accept data from FabricPool. 
 
-. Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to upload or enter the saved values and to complete the configuration.
+. Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to enter the saved values and to complete the configuration.

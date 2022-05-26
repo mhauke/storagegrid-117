@@ -23,37 +23,14 @@ NOTE: These instructions describe how to use ONTAP System Manager to add Storage
 +
 image::../media/ontap_systemmanager_addcloudtier.png[Add StorageGRID as cloud tier in ONTAP System Manager]
 
-== Upload or enter values
+== Enter StorageGRID values
 
-If you used the FabricPool and S3 Setup wizard, you might see an option to upload the StorageGRID settings directly to the Add Cloud Tier page. 
+Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file you downloaded from StorageGRID or the values you obtained manually.
 
-If you configured StorageGRID manually or if an upload option does not appear in ONTAP System Manager, you can enter the same values manually. 
-
-
-// start tabbed area
-
-[role="tabbed-block"]
-====
-
-.Upload values
---
-
-.. On the Add Cloud Tier page, accept the default value in the *NAME* field, or enter a unique name for this cloud tier. 
-.. Select *Upload Settings*.
-.. Browse to and then upload the `ONTAP_FabricPool_settings___bucketname__.txt` file you downloaded from StorageGRID.
-.. Confirm that the expected values were uploaded to all fields.
-
-.. Select *Save*.
---
-
-.Enter values manually
---
-.. Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file you downloaded from StorageGRID or the values you obtained manually.
-+
 image::../media/ontap_systemmanager_cloudtier_details.png[Add Cloud Tier details]
-+
+
 The following table describes these fields in more detail. 
-+
+
 [cols="1a,2a" options="header"]
 |===
 | Field| Description
@@ -64,8 +41,7 @@ The following table describes these fields in more detail.
 |URL style
 |If you  xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names], select *Virtual Hosted-Style URL*.
  
-*Path-Style URL* is the default for ONTAP, but using virtual hosted-style requests is recommended for StorageGRID and Amazon S3. You must use *Path-Style URL* if you provide an IP address instead of a domain name for the *Server name (FQDN)* field.
-
+*Path-Style URL* is the default for ONTAP, but using virtual hosted-style requests is recommended for StorageGRID. You must use *Path-Style URL* if you provide an IP address instead of a domain name for the *Server name (FQDN)* field.
 
 |Server name (FQDN)
 |The virtual IP (VIP) address for the StorageGRID HA group or the fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
@@ -74,7 +50,6 @@ Note the following:
 
 * The IP address or domain name that you specify here must match the certificate you uploaded or generated for the StorageGRID load balancer endpoint.
 * If you provide a domain name, the DNS record must map to each IP address you will use to connect to StorageGRID. See xref:configure-dns-server.adoc[Configure the DNS server].
-
 
 |SSL
 |Enabled (default).
@@ -106,11 +81,6 @@ Note the following:
 |===
 
 
-
---
-====
-
-// end tabbed area
 
 == After you finish
 
