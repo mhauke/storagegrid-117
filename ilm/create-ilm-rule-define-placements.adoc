@@ -19,7 +19,7 @@ Each placement instruction can have multiple lines if you want to create differe
 
 This example ILM rule creates two replicated copies for the first year. Each copy is saved in a storage pool at a different site. After one year, a 2+1 erasure-coded copy is made and saved at only one site.
 
-//image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
+image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
 
 .Steps
 
@@ -68,14 +68,10 @@ NOTE: The *ILM placement unachievable* alert is triggered to indicate that the I
   *** If the number of copies equals the number of storage pools, one copy of the object is stored in each storage pool.
   *** If the number of copies is less than the number of storage pools, the system distributes the copies to keep disk usage among the pools balanced, while ensuring that no site gets more than one copy of an object.
   *** If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. For this reason, do not specify the default All Storage Nodes storage pool and another storage pool.
-+
-//image::../media/ilm_rule_with_multiple_storage_pools.png[Placement instructions for multiple storage pools]
 
 .. Select the number of copies you want to make.
 +
 A warning appears if you change the number of copies to 1. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. See xref:why-you-should-not-use-single-copy-replication.adoc[Why you should not use single-copy replication].
-+
-//image::../media/ilm_create_ilm_rule_warning_for_1_copy.png[Create ILM Rule Page 2 Warning for 1 Copy]
 +
 To avoid these risks, do one or more of the following:
 
@@ -89,16 +85,13 @@ You can safely ignore this warning if this rule already creates multiple copies 
 +
 The number of copies changes to 1. A warning appears if the rule does not have an advanced filter to ignore objects that are 200 KB or smaller.
 +
-//image::../media/ilm_rule_warning_for_ec_size.png[ILM Rule Warning for EC Size]
-+
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 
  .. If the object size warning appeared, select *Back* to return to Step 1. Then, select *Advanced filtering* and set the Object Size (MB) filter to any value greater than 0.2.
  .. Select the storage location.
 +
 The storage location for an erasure-coded copy includes the name of the storage pool, followed by the name of the Erasure Coding profile.
-+
-//image::../media/storage_pool_and_erasure_coding_profile.png[Storage pool and EC profile name]
+
 . Optionally, add different time periods or create additional copies at different locations:
  ** Select the plus icon to create additional copies at a different location during the same time period.
  ** Select *Add* to add a different time period to the placement instructions.
@@ -114,20 +107,12 @@ image::../media/ilm_cloud_storage_pool.gif[Adding a Cloud Storage Pool to a plac
 When using Cloud Storage Pools, keep these rules in mind:
 
   *** You cannot select more than one Cloud Storage Pool in a single placement instruction. Similarly, you cannot select a Cloud Storage Pool and a storage pool in the same placement instruction.
-+
-//image::../media/ilm_cloud_storage_pool_error.gif[ILM rule > Cloud Storage Pool error]
 
   *** You can store only one copy of an object in any given Cloud Storage Pool. An error message appears if you set *Copies* to 2 or more.
-+
-//image::../media/ilm_cloud_storage_pool_error_one_copy.gif[ILM rule: Cloud Storage Pool error if more than one copy]
 
   *** You cannot store more than one object copy in any Cloud Storage Pool at the same time. An error message appears if multiple placements that use a Cloud Storage Pool have overlapping dates or if multiple lines in the same placement use a Cloud Storage Pool.
-+
-//image::../media/ilm_rule_cloud_storage_pool_error_overlapping_dates.png[ILM Rule Cloud Storage Pool Error Overlapping Dates]
 
   *** You can store an object in a Cloud Storage Pool at the same time that object is being stored as replicated or erasure coded copies in StorageGRID. However, as this example shows, you must include more than one line in the placement instruction for the time period, so you can specify the number and types of copies for each location.
-+
-image::../media/ilm_cloud_storage_pool_multiple_locations.png[ILM rule > Cloud Storage Pool and other location]
 
 . Select *Refresh* to update the Retention Diagram and to confirm your placement instructions.
 +
@@ -152,9 +137,7 @@ In this example, two replicated copies will be saved to two storage pools (DC1 a
 +
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
 
-. Select *Continue*.
-+
-xref:create-ilm-rule-select-ingest-behavior.adoc[The *Select ingest behavior* step)] appears.
+. Select *Continue*. xref:create-ilm-rule-select-ingest-behavior.adoc[Step 3 (Select ingest behavior)] of the Create an ILM rule wizard appears.
 
 .Related information
 
