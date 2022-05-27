@@ -75,6 +75,11 @@ The certificate must include the FQDN that ONTAP will use for StorageGRID.
 
 * If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
 
+=== Confirm ILM storage pool configuration
+If you upgraded to StorageGRID 11.7 from a previous StorageGRID version, confirm that you have configured the storage pool you will use. In general, you should create a storage pool for each StorageGRID site you will use to store ONTAP data. 
+
+NOTE: This prerequisite does not apply to new StorageGRID 11.7 installations. When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site.
+
 
 
 
