@@ -1,0 +1,364 @@
+---
+permalink: fabricpool/use-fabricpool-setup-wizard-steps.html
+sidebar: sidebar
+keywords: fabricPool, FabricPool and S3 setup wizard, ontap system manager
+summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.'
+---
+= Complete the FabricPool and S3 setup wizard
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
+
+== Access the wizard
+. From the Grid Manager Dashboard, select *FabricPool and S3 setup wizard*. Or, from the header bar in the Grid Manager, select the help icon and select *FabricPool and S3 Setup Wizard*.
++
+image::../media/help_menu.png[help menu]
+. In the FabricPool section of the FabricPool and S3 setup wizard page, select *Configure now*.
+
+== Step 1 of 9: Configure HA group
+A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
+
+You can use an HA group to help keep FabricPool data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to FabricPool operations.
+
+For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups].
+
+. If you will use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
+
+. To use the StorageGRID load balancer, you can create a new HA group or use an existing HA group.
+
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.Create HA group
+--
+
+.. To create a new HA group, select *Create HA group*.
+.. For the *Enter details* step, enter a unique display name and optionally a description.
+.. For the *Add interfaces* step, select one or more node interfaces to add to this HA group.
++
+Use the column headers to sort the rows, or enter a search term to locate interfaces more quickly.
+
+.. For the *Prioritize interfaces* step, determine the Primary interface and any backup interfaces for this HA group.
++
+Drag and drop rows to change the values in the *Priority order* column.
++
+The first interface in the list is the Primary interface. The Primary interface is the active interface unless a failure occurs.
++
+If the HA group includes more than one interface and the active interface fails, the VIP addresses move to the first backup interface in the priority order. If that interface fails, the virtual IP (VIP) addresses move to the next backup interface, and so on. When failures are resolved, the VIP addresses move back to highest priority interface available.
+
+.. For the *Enter IP addresses* step, specify the VIP subnet in CIDR notation&#8212;an IPv4 address followed by a slash and the subnet length (0-32). 
++
+The network address must not have any host bits set. For example, `192.16.0.0/22`.
+
+.. Optionally, if the ONTAP IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
+
+.. Enter one or more virtual IP addresses for the HA group. You can add up to ten IP addresses. All VIPs must be within the VIP subnet.
++
+You must provide at least one IPv4 address. Optionally, you can specify additional IPv4 and IPv6 addresses.
+
+.. Select *Create HA group* and then select *Finish* to return to the FabricPool and S3 setup wizard.
+.. Select *Continue* to go to the load balancer step.
+--
+
+.Existing HA group
+--
+.. To use an existing HA group, select the HA group name from the *Select an HA group* drop-down list. 
+.. Select *Continue* to go to the load balancer step. 
+--
+====
+
+// end tabbed area
+
+
+== Step 2 of 9: Configure load balancer endpoint
+
+StorageGRID uses a load balancer to manage the workload from client applications, such as FabricPool. Load balancing maximizes speed and connection capacity across multiple Storage Nodes.
+
+You can use the StorageGRID Load Balancer service, which exists on all Gateway and Admin Nodes, or you can connect to an external (third-party) load balancer. Using the StorageGRID load balancer is recommended.
+
+For details about this task, see xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints].
+
+. To use the StorageGRID Load Balancer service, you can create a new load balance endpoint or use an existing endpoint. To use an external load balancer, select the *External load balancer* tab. 
++
+[role="tabbed-block"]
+====
+
+.Create endpoint
+--
+
+.. To create a load balancer endpoint, select *Create endpoint*.
+.. For the *Enter endpoint details* step, complete the following fields.
++
+[cols="1a,2a" options="header"]
+|===
+| Field| Description
+a|
+Name
+a|
+A descriptive name for the endpoint
+a|
+Port
+a|
+The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
+
+*Note:* Ports used by other grid services are not permitted. See the 
+xref:../network/network-port-reference.adoc[Network port reference].
+
+a|
+Client type
+a|
+Must be *S3*.
+a|
+Network protocol
+a|
+Select *HTTPS*.
+
+*Note*: Communicating with StorageGRID without TLS encryption is supported but not recommended.
+
+|===
+
+
+.. For the *Select binding mode* step, specify the binding mode.
++
+Use the *Global* setting (recommended) or restrict the accessibility of this endpoint to one of the following:
+
+** Specific network interfaces of specific nodes.
+** The virtual IP (VIP) addresses of specific HA groups. Use this selection only if you require much higher levels of isolation of workloads.
+
+.. For the *Attach certificate* step, do either of the following:
+
+* Select *Upload certificate* (recommended) and then browse to your server certificate, certificate private key, and optional CA bundle.
+* Select *Generate certificate* and enter the required values. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details.
+
+.. Select *Finish* to return to the FabricPool and S3 setup wizard.
+
+.. Select *Continue* to go to the tenant and bucket step. 
+
+NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied to all nodes.
+--
+
+.Existing load balancer endpoint
+--
+.. To use an existing endpoint, select its name from the *Select a load balancer endpoint* drop-down list. 
+.. Select *Continue* to go to the tenant and bucket step. 
+--
+
+
+.External load balancer
+--
+
+.. To use an external load balancer, enter its fully qualified domain name (FQDN).
+.. Enter the port number that FabricPool will use to connect to the external load balancer.
+.. Copy the server certificate for the external load balancer and paste it here.
+.. Select *Continue* to go to the tenant and bucket step. 
+
+--
+====
+
+// end tabbed area
+
+
+== Step 3 of 9: Create tenant and bucket
+
+A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that FabricPool wil use. 
+
+A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the tenant you use for FabricPool will use only one bucket.
+
+You can create a new FabricPool tenant and bucket, or you can select an existing tenant and bucket. The system automatically creates the access key and secret access key for the tenant's root user.
+
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.New tenant and bucket
+--
+
+.. To create a new tenant and bucket, enter the name of the new tenant. For example, `FabricPool tenant`.
+
+.. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
++
+[cols="1a,2a" options="header"]
+|===
+| Option 
+| Do this
+
+|If identity federation is not enabled 
+|Specify the password FabricPool should use to sign into the tenant as the local root user.
+
+|If identity federation is enabled
+|Select an existing federated group to have Root access permission for the tenant.
+
+Optionally specify a password that can be used to sign in to the tenant as the local root user.
+
+
+
+
+|If both identity federation and single sign-on (SSO) are enabled
+|Select an existing federated group to have the Root access permission for the tenant. No local users can sign in.
+
+|===
+
+.. Enter the name of the bucket FabricPool will use to store ONTAP data. For example, `fabricpool-bucket`.
++
+IMPORTANT: You cannot change the bucket name after creating the bucket.
++
+Bucket names must comply with these rules:
+
+** Must be unique across each StorageGRID system (not just unique within the tenant account).
+** Must be DNS compliant.
+** Must contain at least 3 and no more than 63 characters.
+** Can be a series of one or more labels, with adjacent labels separated by a period. Each label must start and end with a lowercase letter or a number and can only use lowercase letters, numbers, and hyphens.
+** Must not look like a text-formatted IP address.
+** Should not use periods in virtual hosted style requests. Periods will cause problems with server wildcard certificate verification.
+
+.. Select the region for this bucket.
++
+Use the default region (us-east-1) unless you expect to use ILM in the future to filter objects based on the bucket's region.
+
+.. Select *Create and Continue* to create the tenant and bucket and to go to the download data step 
+--
+
+.Existing tenant and bucket
+--
+
+NOTE: If you want use an existing tenant account, confirm that the tenant already has at least one bucket that does not have versioning enabled. You cannot select an existing tenant account if no bucket exists for that tenant. 
+
+.. To use an existing tenant and bucket, select the tenant account's name from the drop-down list. 
+.. Select the bucket FabricPool will use to store ONTAP data.
+
+.. Select *Continue* to go to the download data step. 
+--
+====
+
+// end tabbed area
+
+
+== Step 4 of 9: Download ONTAP settings 
+
+. To save the values you've entered so far to a text file, select *Download ONTAP settings*.
++
+Later, you can upload or enter these values into ONTAP System Manager. 
++
+The file includes the information you need to configure StorageGRID as the object storage system for a FabricPool cloud tier, including: 
++
+* Load balancer connection details, including the server name (FQDN), port, and certificate
+*	Bucket name 
+* Access key ID and secret access key
+
+. Select *Continue* to go to the ILM storage pool step.
+
+
+== Step 5 of 9: Select a storage pool
+A storage pool is a group of Storage Nodes. When you select a storage pool, you determine which nodes StorageGRID will use to store the data tiered from ONTAP.
+
+. Select the StorageGRID site that the ONTAP cluster will connect to. 
+. Select the storage pool for that site. 
+. Select *Continue* to go to the ILM rule step.
+
+== Step 6 of 9: Review ILM rule for FabricPool
+Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system. 
+
+The FabricPool and S3 setup wizard automatically creates the recommended ILM rule for FabricPool use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
+
+See xref:best-practices-ilm.adoc[Best practices for using ILM with FabricPool data] for details.
+
+. Review the rule details.
++
+[cols="1a,3a" options="header"]
+|===
+|Field
+|Description
+
+|Rule name 
+|Automatically generated and cannot be changed
+
+|Description
+|Automatically generated and cannot be changed
+
+|Filter
+|The bucket name
+
+This rule only applies to objects that are saved in the bucket you specified.
+
+|Reference time
+|Ingest time
+
+The placement instruction starts when objects are initially saved to the bucket.
+
+|Placement instruction
+|2+1 erasure coding 
+
+Each object will be saved as two data fragments and one parity fragment. The three fragments for each object will be saved to different Storage Nodes at a single site.
+
+|===
+
+. Use the retention diagram to confirm the placement instruction.
++
+Notice that the FabricPool rule saves data "`forever.`" This rule will never delete data that has been tiered from ONTAP. Instead, any data deletion must be done from ONTAP.
+. Select *Create and Continue* to create this rule and to go to the ILM policy step.
+
+== Step 7 of 9: Review and activate ILM policy
+
+After the FabricPool and S3 setup wizard creates the ILM rule for FabricPool use, it creates a proposed ILM policy. You must carefully review this policy before activating it. 
+
+See xref:best-practices-ilm.adoc[Best practices for using ILM with FabricPool data] for details.
+
+CAUTION: When you activate a new ILM policy, StorageGRID uses that policy to manage the placement, duration, and data protection of all objects in the grid, including existing objects and newly ingested objects. In some cases, activating a new policy can cause existing objects to be moved to new locations.
+
+
+To review and activate the policy:
+
+. Review the list of rules in the proposed policy.
++
+The new FabricPool rule is the first rule in the proposed policy. The other rules are selected as follows:
+
+* If your grid doesn't have a proposed ILM policy, the wizard creates a new proposed policy by cloning the active policy.
+
+* If your grid already has a proposed ILM policy, the wizard compares that policy to your active policy. 
+
+** If both policies include the same rules in the same order, the wizard adds the new rule to the top of the existing proposed policy.
+
+** If your proposed policy contains different rules than the active policy, a message appears. To add the new rule for the FabricPool bucket, you must create the proposed policy manually. You can either add it to your existing proposed policy, or you can delete that policy and clone your active policy. See  xref:../ilm/creating-proposed-ilm-policy.adoc[Create a proposed ILM policy].
+
+. Confirm that the order of the rules is correct, as follows:
++
+**	If the filters for the first rule match an object, the object is stored according to that rule's placement instructions.
+** If the filters for the first rule do not match the object, the object is evaluated against each subsequent rule until a match is made.
+**	If no rules match an object, the default (last) rule is applied. The default rule does not use filters so it can apply to all objects.
+
++
+Because the FabricPool rule is the first rule, any objects in the FabricPool bucket are placed before the other rules in the policy are evaluated. Objects in any other buckets are placed by subsequent rules in the policy.
+
+. When you have reviewed the proposed policy, select *Activate and continue* to activate the policy and go to the traffic classification step.
+
+IMPORTANT: Errors in an ILM policy can cause irreparable data loss. Review the policy carefully before activating.
+
+== Step 8 of 9: Create traffic classification policy
+
+As an option, the FabricPool and S3 setup wizard can create a traffic classification policy that you can use to monitor the FabricPool workload. The system-created policy uses a matching rule to identify all network traffic related to the bucket you created. This policy monitors traffic only; it does not limit traffic for FabricPool or any other clients. 
+
+. Review the policy.
+
+. If you want to create this traffic classification policy, select *Create and continue*. 
++
+As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic Classification Policies page to view network traffic metrics for this policy. Later, you can also add rules to limit other workloads and ensure that the FabricPool workload has the majority of bandwidth. 
++
+See xref:creating-traffic-classification-policy-for-fabricpool.adoc[Create a traffic classification policy for FabricPool] for details.
+
+. Otherwise, select *Skip this step*.
+
+== Step 9 of 9: Review summary 
+
+. Review the summary.
+. Select *Finish*.
++
+StorageGRID is now ready to accept data from FabricPool. 
+
+. Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to upload or enter the saved values and to complete the configuration.
