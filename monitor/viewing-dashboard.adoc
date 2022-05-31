@@ -9,7 +9,7 @@ summary: 'When you first sign in to the Grid Manager, you can use the Dashboard 
 :imagesdir: ../media/
 
 [.lead]
-When you first sign in to the Grid Manager, you can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.
+When you first sign in to the Grid Manager, you can use the Dashboard to monitor system activities at a glance. The Dashboard includes an Overview tab and a Performance tab. The tabs contain information about system health, usage metrics, and operational trends and charts.
 
 image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
 
@@ -17,7 +17,13 @@ image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
 
 The *Search* field in the header bar allows you to quickly navigate to a specific page or sidebar entry within the Grid Manager. For example, you can enter *key* to access the Key Management Server page.
 
-== Health panel
+== Configure the Dashboard
+
+The Dashboard consists of "`cards`" that contain specific information about the StorageGRID system. You can configure the Dashboard to move or hide the cards. To configure the Overview tab or Performance tab of the Dashboard, select the tab and then select *Configure dashboard*.
+
+== Overview tab
+
+=== Health card
 
 [options="header"]
 |===
@@ -44,7 +50,7 @@ a|
 
 |===
 
-== Available Storage panel
+=== Available Storage card
 
 [options="header"]
 |===
@@ -69,7 +75,9 @@ a|
 
 |===
 
-== Information Lifecycle Management (ILM) panel
+== Performance tab
+
+=== Information Lifecycle Management (ILM) card (Performance tab)
 
 [options="header"]
 |===
