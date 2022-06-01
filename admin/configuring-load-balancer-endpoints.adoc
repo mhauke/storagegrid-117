@@ -122,7 +122,7 @@ image::../media/load_balancer_endpoint_ha_group_vips_binding_mode.png[Endpoint H
 
 +
 
-. If you are creating an *HTTP* endpoint, you do not need to attach a certificate. Select *Create* to add the new load balancer endpoint. Then, go to <<After-you-finish,After you finish>>. Otherwise, select *Continue* to attach the certificate.
+. If you are creating an *HTTP* endpoint, you do not need to attach a certificate. Select *Create* to add the new load balancer endpoint. Then, go to <<after-you-finish,After you finish>>. Otherwise, select *Continue* to attach the certificate.
 
 
 === Attach certificate
@@ -203,7 +203,7 @@ The load balancer endpoint is created. The custom certificate is used for all su
 ====
 //end tabbed blocks
 
-=== [[After-you-finish]]After you finish
+=== After you finish
 
 . If you use a domain name system (DNS), ensure that the DNS includes a record to associate the StorageGRID fully qualified domain name to each IP address that clients will use to make connections.
 +
