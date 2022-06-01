@@ -1,8 +1,8 @@
 ---
 permalink: fabricpool/use-fabricpool-setup-wizard.html
 sidebar: sidebar
-keywords: fabricPool, FabricPool and S3 setup wizard, ontap system manager
-summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can enter the required details into ONTAP System Manager.'
+keywords: fabricPool, FabricPool setup wizard, ontap system manager
+summary: 'You can use the FabricPool setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can enter the required details into ONTAP System Manager.'
 ---
 = FabricPool setup wizard: Considerations and requirements
 :icons: font
@@ -10,19 +10,21 @@ summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRI
 
 [.lead]
 
-You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can enter the required details into ONTAP System Manager.
+You can use the FabricPool wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier. After you complete the setup wizard, you can enter the required details into ONTAP System Manager.
 
-== When to use the FabricPool and S3 setup wizard
+== When to use the FabricPool setup wizard
 
-The FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with FabricPool and automatically configures certain entities for you, such as the ILM and traffic classification policies. As part of completing the wizard, you download a file that you can use to enter values into ONTAP System Manager. Use the wizard to configure your system more quickly and to make sure your settings conform to StorageGRID and FabricPool best practices. 
+The FabricPool setup wizard guides you through each step of configuring StorageGRID for use with FabricPool and automatically configures certain entities for you, such as the ILM and traffic classification policies. As part of completing the wizard, you download a file that you can use to enter values into ONTAP System Manager. Use the wizard to configure your system more quickly and to make sure your settings conform to StorageGRID and FabricPool best practices. 
 
-Assuming you have Root access permission, you can complete the FabricPool and S3 setup wizard when you start using the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
+Assuming you have Root access permission, you can complete the FabricPool setup wizard when you start using the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that ONTAP needs into a single file.
 
-Use the wizard unless you have special requirements or your implementation needs significant customization. For example, you cannot use the FabricPool and S3 setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
+Use the wizard unless you have special requirements or your implementation needs significant customization. For example, you cannot use the FabricPool setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
+
+NOTE: These instructions describe how to use the FabricPool setup wizard to configure StorageGRID for use with FabricPool. If you want to configure StorageGRID for use with any other S3 client application, go to xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard].
 
 == How to create connections for more than one cluster
 
-If you plan to connect the same StorageGRID system to multiple ONTAP systems, use the FabricPool and S3 setup wizard to create an HA group, load balancer endpoint, tenant, and bucket for the first cluster.
+If you plan to connect the same StorageGRID system to multiple ONTAP systems, use the FabricPool setup wizard to create an HA group, load balancer endpoint, tenant, and bucket for the first cluster.
 
 Then, as required, complete the wizard for each additional cluster. You can select same HA group, and load balancer endpoint, but you must create or select a different tenant and bucket.
 
