@@ -20,7 +20,7 @@ Assuming you have Root access permission, you can complete the FabricPool setup 
 
 Use the wizard unless you have special requirements or your implementation needs significant customization. For example, you cannot use the FabricPool setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
 
-NOTE: These instructions describe how to use the FabricPool setup wizard to configure StorageGRID for use with FabricPool. If you want to configure StorageGRID for use with any other S3 client application, go to xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard].
+NOTE: If you want to configure StorageGRID for use with any other S3 client application, go to xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard].
 
 == How to create connections for more than one cluster
 

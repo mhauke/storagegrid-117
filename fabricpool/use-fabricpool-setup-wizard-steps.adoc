@@ -11,7 +11,9 @@ summary: 'You can use the FabricPool setup wizard to configure StorageGRID as th
 [.lead]
 You can use the FabricPool setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
 
-NOTE: You must have the Root access permission to access the wizard.
+You must have the Root access permission to access the wizard.
+
+NOTE: If you want to configure StorageGRID for use with any other S3 client application, go to xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard].
 
 == Access the wizard
 
@@ -23,6 +25,7 @@ image::../media/help_menu.png[help menu]
 . In the FabricPool section of the FabricPool and S3 setup wizard page, select *Configure now*.
 +
 *Step 1 of 9: Configure HA group* appears.
+
 
 == Step 1 of 9: Configure HA group
 A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
