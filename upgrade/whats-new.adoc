@@ -36,6 +36,9 @@ See xref:../tenant/configure-s3-object-lock-settings-for-bucket.adoc[Configure S
 === Can rename grid, sites, and nodes
 A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview] for details.
 
+=== Storage pools created for each site during installation
+When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
+
 
 == Kevin's what's new
 

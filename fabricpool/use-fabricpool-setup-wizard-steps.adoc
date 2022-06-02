@@ -19,7 +19,7 @@ NOTE: If you want to configure StorageGRID for use with any other S3 client appl
 
 . Sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 
-. If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon from the header bar in the Grid Manager and select *FabricPool and S3 Setup Wizard*.
+. If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon image:../media/icon-help-menu-bar.png[help icon on the menu bar] from the header bar in the Grid Manager and select *FabricPool and S3 Setup Wizard*.
 +
 image::../media/help_menu.png[help menu]
 . In the FabricPool section of the FabricPool and S3 setup wizard page, select *Configure now*.
@@ -321,7 +321,7 @@ The file includes the information you need to configure StorageGRID as the objec
 == Step 5 of 9: Select a storage pool
 A storage pool is a group of Storage Nodes. When you select a storage pool, you determine which nodes StorageGRID will use to store the data tiered from ONTAP.
 
-For details about this step, see xref:../ilm/ilm/creating-storage-pool.adoc[Create a storage pool].
+For details about this step, see xref:../ilm/creating-storage-pool.adoc[Create a storage pool].
 
 . From the *Site* drop-down list, select the StorageGRID site you want to use for the data tiered from ONTAP. 
 . From the *Storage pool* drop-down list, select the storage pool for that site.
@@ -454,7 +454,7 @@ As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic 
 
 == Step 9 of 9: Review summary 
 
-. Review the summary.
+. Review the summary, which provides details about the items you configured, including the name of the load balancer, tenant, and bucket, the traffic classification policy, and the active ILM policy.
 . Select *Finish*.
 +
 StorageGRID is now ready to accept data from FabricPool. 
