@@ -33,6 +33,19 @@ For an explanation of the information on each panel, click the help icon image:.
 
 The *Search* field in the header bar allows you to quickly navigate to a specific page within Grid Manager. For example, you can enter *km* to access the Key Management Server (KMS) page. You can use *Search* to find entries in the sidebar of the Grid Manager and on the Configuration, Maintenance, and Support menus. 
 
+== Help menu
+
+The Help menu image:../media/icon-help-menu-bar.png[help icon on the menu bar] provides access to the FabricPool and S3 setup wizard, the StorageGRID Documentation Center for the current release, and the API documentation. You can also determine which version of StorageGRID is currently installed.
+
+image::../media/help_menu.png[Help Menu]
+
+.Learn more
+
+* xref:../fabricpool/use-fabricpool-setup-wizard.adoc[Use FabricPool setup wizard]
+* xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard]
+* xref:../admin/using-grid-management-api.adoc[Use the Grid Management API]
+
+
 == Alerts menu
 
 The Alerts menu provides an easy-to-use interface for detecting, evaluating, and resolving issues that might occur during StorageGRID operation.
@@ -201,13 +214,3 @@ NOTE: While the legacy alarm system continues to be supported, the alert system 
 
 * xref:../monitor/index.adoc[Monitor and troubleshoot]
 
-== Help menu
-
-
-The Help option provides access to the StorageGRID Documentation Center for the current release and to the API documentation. You can also determine which version of StorageGRID is currently installed.
-
-image::../media/help_menu.png[Help Menu]
-
-.Learn more
-
-* xref:../admin/index.adoc[Administer StorageGRID]

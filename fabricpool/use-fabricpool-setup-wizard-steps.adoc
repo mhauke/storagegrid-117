@@ -1,28 +1,31 @@
 ---
 permalink: fabricpool/use-fabricpool-setup-wizard-steps.html
 sidebar: sidebar
-keywords: fabricPool, FabricPool and S3 setup wizard, ontap system manager
-summary: 'You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.'
+keywords: fabricPool, FabricPool setup wizard, ontap system manager
+summary: 'You can use the FabricPool setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.'
 ---
 = Access and complete the FabricPool setup wizard
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the FabricPool and S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
+You can use the FabricPool setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
 
-NOTE: You must have the Root access permission to access the wizard.
+You must have the Root access permission to access the wizard.
+
+NOTE: If you want to configure StorageGRID for use with any other S3 client application, go to xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard].
 
 == Access the wizard
 
 . Sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 
-. If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon from the header bar in the Grid Manager and select *FabricPool and S3 Setup Wizard*.
+. If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon image:../media/icon-help-menu-bar.png[help icon on the menu bar] from the header bar in the Grid Manager and select *FabricPool and S3 Setup Wizard*.
 +
 image::../media/help_menu.png[help menu]
 . In the FabricPool section of the FabricPool and S3 setup wizard page, select *Configure now*.
 +
 *Step 1 of 9: Configure HA group* appears.
+
 
 == Step 1 of 9: Configure HA group
 A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
@@ -96,7 +99,7 @@ At least one address must be IPv4. Optionally, you can specify additional IPv4 a
 
 |===
 
-.. Select *Create HA group* and then select *Finish* to return to the FabricPool and S3 setup wizard.
+.. Select *Create HA group* and then select *Finish* to return to the FabricPool setup wizard.
 .. Select *Continue* to go to the load balancer step.
 --
 
@@ -190,7 +193,7 @@ xref:../network/network-port-reference.adoc[Network port reference].
 
 |===
 
-. Select *Finish* to return to the FabricPool and S3 setup wizard.
+. Select *Finish* to return to the FabricPool setup wizard.
 
 . Select *Continue* to go to the tenant and bucket step. 
 
@@ -241,8 +244,6 @@ A bucket is a container used to store a tenant's objects and object metadata. Al
 You can create a new tenant and bucket for FabricPool use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key ID and secret access key for the tenant's root user.
 
 For details about this task, see xref:creating-tenant-account-for-fabricpool.adoc[Create a tenant account for FabricPool] and xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key].
-
-
 
 // start tabbed area
 
@@ -320,7 +321,7 @@ The file includes the information you need to configure StorageGRID as the objec
 == Step 5 of 9: Select a storage pool
 A storage pool is a group of Storage Nodes. When you select a storage pool, you determine which nodes StorageGRID will use to store the data tiered from ONTAP.
 
-For details about this step, see xref:../ilm/ilm/creating-storage-pool.adoc[Create a storage pool].
+For details about this step, see xref:../ilm/creating-storage-pool.adoc[Create a storage pool].
 
 . From the *Site* drop-down list, select the StorageGRID site you want to use for the data tiered from ONTAP. 
 . From the *Storage pool* drop-down list, select the storage pool for that site.
@@ -332,7 +333,7 @@ The storage pool for a site includes all Storage Nodes at that site.
 == Step 6 of 9: Review ILM rule for FabricPool
 Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system. 
 
-The FabricPool and S3 setup wizard automatically creates the recommended ILM rule for FabricPool use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
+The FabricPool setup wizard automatically creates the recommended ILM rule for FabricPool use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
 
 For details about this step, see xref:../ilm/access-create-ilm-rule-wizard.adoc[Create ILM rule] and xref:best-practices-ilm.adoc[Best practices for using ILM with FabricPool data].
 
@@ -374,7 +375,7 @@ The placement instruction starts when objects are initially saved to the bucket.
 
 == Step 7 of 9: Review and activate ILM policy
 
-After the FabricPool and S3 setup wizard creates the ILM rule for FabricPool use, it creates a proposed ILM policy. You must carefully review this policy before activating it. 
+After the FabricPool setup wizard creates the ILM rule for FabricPool use, it creates a proposed ILM policy. You must carefully review this policy before activating it. 
 
 For details about this step, see xref:../ilm/creating-ilm-policy.adoc[Create ILM policy] and xref:best-practices-ilm.adoc[Best practices for using ILM with FabricPool data].
 
@@ -407,7 +408,7 @@ The new FabricPool rule is the first rule in the proposed policy. The other rule
 |. Select *ILM* > *Policies* from the left menu in Grid Manager.
 . Select the Proposed policy tab.
 . Select *Actions* > *Delete* to remove the existing proposed policy.
-. Return to the FabricPool and S3 setup wizard.
+. Return to the FabricPool setup wizard.
 
 The wizard can now clone your active policy to create a new proposed policy. The new FabricPool rule will be added to the top.
 
@@ -438,7 +439,7 @@ IMPORTANT: Errors in an ILM policy can cause irreparable data loss. Review the p
 
 == Step 8 of 9: Create traffic classification policy
 
-As an option, the FabricPool and S3 setup wizard can create a traffic classification policy that you can use to monitor the FabricPool workload. The system-created policy uses a matching rule to identify all network traffic related to the bucket you created. This policy monitors traffic only; it does not limit traffic for FabricPool or any other clients. 
+As an option, the FabricPool setup wizard can create a traffic classification policy that you can use to monitor the FabricPool workload. The system-created policy uses a matching rule to identify all network traffic related to the bucket you created. This policy monitors traffic only; it does not limit traffic for FabricPool or any other clients. 
 
 For details about this step, see xref:creating-traffic-classification-policy-for-fabricpool.adoc[Create a traffic classification policy for FabricPool].
 
@@ -453,7 +454,7 @@ As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic 
 
 == Step 9 of 9: Review summary 
 
-. Review the summary.
+. Review the summary, which provides details about the items you configured, including the name of the load balancer, tenant, and bucket, the traffic classification policy, and the active ILM policy.
 . Select *Finish*.
 +
 StorageGRID is now ready to accept data from FabricPool. 

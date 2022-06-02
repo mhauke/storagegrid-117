@@ -80,13 +80,11 @@ Note the following:
 
 |===
 
-
-
 == After you finish
 
 After you have added StorageGRID as a cloud tier, you can complete the final FabricPool configuration in ONTAP, as follows:
 
-. Attach the cloud tier to an aggregate.
+. Attach one or more aggregates to the cloud tier.
 . Optionally, create a volume tiering policy.
 
 
