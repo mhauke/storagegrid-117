@@ -17,7 +17,7 @@ As part of the system hardening process, you must review external firewall confi
 
 StorageGRID uses an internal firewall that is managed automatically. While this internal firewall provides an additional layer of protection against some common threats, it does not remove the need for an external firewall.
 
-For a list of all internal and external ports used by StorageGRID, see the installation guide for your platform.
+For a list of all internal and external ports used by StorageGRID, see xref:../installconfig/reviewing-appliance-network-connections.adoc[Review appliance network connections].
 
 == Virtualization, containers, and shared hardware
 
@@ -45,7 +45,7 @@ Follow these guidelines to secure the Admin Nodes in your StorageGRID system:
 * Optionally, use the restricted 8443 and 9443 ports to separate Grid Manager and Tenant Manager communications. Block the shared port 443 and limit tenant requests to port 9443 for additional protection.
 * Optionally, use separate Admin Nodes for grid administrators and tenant users.
 
-For more information, see the instructions for administering StorageGRID.
+For more information, see the instructions for xref:../admin/index.adoc[administering StorageGRID].
 
 == Guidelines for Storage Nodes
 

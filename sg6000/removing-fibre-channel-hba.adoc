@@ -28,10 +28,10 @@ xref:removing-sg6000-cn-controller-cover.adoc[Remove SG6000-CN controller cover]
 
 .About this task
 
-To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Fibre Channel HBA replacement or replace the adapter during a scheduled maintenance window when periods of service disruption are normally expected. See the information about determining node connection states in the instructions for managing objects with information lifecycle management.
+To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Fibre Channel HBA replacement or replace the adapter during a scheduled maintenance window when periods of service disruption are normally expected. See the information about xref:../monitor/monitoring-node-connection-states.adoc[determining node connection states].
 
 IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the Fibre Channel HBA during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. +
-See information about managing objects with information lifecycle management.
+See information about xref:../ilm/index.adoc[managing objects with information lifecycle management].
 
 .Steps
 
@@ -52,16 +52,5 @@ There are two adapters in the riser assembly: a Fibre Channel HBA and an Etherne
 
 .After you finish
 
-Install the replacement Fibre Channel HBA.
+xref:reinstalling-fibre-channel-hba.adoc[Install the replacement Fibre Channel HBA].
 
-xref:reinstalling-fibre-channel-hba.adoc[Reinstall Fibre Channel HBA]
-
-.Related information
-
-xref:reinstalling-fibre-channel-hba.adoc[Reinstall Fibre Channel HBA]
-
-xref:../admin/index.adoc[Administer StorageGRID]
-
-xref:../monitor/index.adoc[Monitor and troubleshoot]
-
-xref:../ilm/index.adoc[Manage objects with ILM]

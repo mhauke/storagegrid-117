@@ -31,7 +31,7 @@ NOTE: When you install StorageGRID, the default ILM policy, Baseline 2 Copies Po
 
 NOTE: If any Archive Nodes will use Tivoli Storage Manager as the external archival storage system, you must also configure Tivoli Storage Manager.
 
-* Review and follow the StorageGRID system hardening guidelines to eliminate security risks.
+* Review and follow the StorageGRID xref:../harden/index.adoc[system hardening guidelines] to eliminate security risks.
 * Configure email notifications for system alerts.
 
 == Optional tasks
@@ -65,8 +65,6 @@ xref:../sg5700/index.adoc[SG5700 storage appliances]
 xref:../sg6000/index.adoc[SG6000 storage appliances]
 
 xref:../release-notes/index.adoc[Release notes]
-
-xref:../harden/index.adoc[System hardening]
 
 xref:../audit/index.adoc[Review audit logs]
 
