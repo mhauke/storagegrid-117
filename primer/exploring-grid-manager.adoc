@@ -19,11 +19,11 @@ You can access the Grid Manager using a xref:../admin/web-browser-requirements.a
 
 When you first sign in to the Grid Manager, you can use the Dashboard to monitor system activities at a glance.
 
-The Dashboard includes "`cards`" containing summary information about system health, storage use, ILM processes, and S3 and Swift operations.
+The Dashboard consists of tabs, and corresponding cards for each tab, that contain summary information about system health, storage use, ILM processes, and S3 and Swift operations.
 
 image::../media/grid_manager_dashboard.png[Dashboard in the Grid Manager]
 
-For an explanation of the information on each card, select the help icon image:../media/icon_nms_question.png[question mark icon] for that panel.
+For an explanation of the information on each card, select the help icon image:../media/icon_nms_question.png[question mark icon] for that card.
 
 .Learn more
 
@@ -135,7 +135,7 @@ Maintenance tasks include:
 System maintenance tasks you can perform include:
 
 * Reviewing details for the current StorageGRID license or uploading a new license.
-* Generating a Recovery package.
+* Generating a Recovery Package.
 * Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances.
 
 === Network
