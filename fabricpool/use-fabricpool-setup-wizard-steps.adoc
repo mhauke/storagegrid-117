@@ -11,9 +11,12 @@ summary: 'You can use the FabricPool setup wizard to configure StorageGRID as th
 [.lead]
 You can use the FabricPool setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
 
-You must have the Root access permission to access the wizard.
-
+.What you'll need
+* You have reviewed the xref:../fabricpool/use-fabricpool-setup-wizard.adoc[considerations and requirements] for using the FabricPool setup wizard.
++
 NOTE: If you want to configure StorageGRID for use with any other S3 client application, go to xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard].
+
+* You have the Root access permission.
 
 == Access the wizard
 
@@ -460,3 +463,4 @@ As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic 
 StorageGRID is now ready to accept data from FabricPool. 
 
 . Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to enter the saved values and to complete the configuration.
+. Go to xref:other-best-practices-for-storagegrid.adoc[Other best practices for StorageGRID] to learn about audit log settings and other best practices.
