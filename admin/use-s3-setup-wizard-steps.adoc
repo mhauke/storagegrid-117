@@ -329,7 +329,9 @@ The storage pool for a site includes all Storage Nodes at that site.
 
 . Select *Continue* to go to the ILM rule step.
 
+////
 == Step 6 of 9: Review ILM rule for FabricPool
+
 Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system. 
 
 The FabricPool and S3 setup wizard automatically creates the recommended ILM rule for FabricPool use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
@@ -371,7 +373,9 @@ The placement instruction starts when objects are initially saved to the bucket.
 ** The *Storage pool* for the rule is the storage pool you selected. *EC 2+1* means the data will stored using 2+1 erasure coding. Each object will be saved as two data fragments and one parity fragment. The three fragments for each object will be saved to different Storage Nodes at a single site.
 
 . Select *Create and Continue* to create this rule and to go to the ILM policy step.
+////
 
+////
 == Step 7 of 9: Review and activate ILM policy
 
 After the FabricPool and S3 setup wizard creates the ILM rule for FabricPool use, it creates a proposed ILM policy. You must carefully review this policy before activating it. 
@@ -435,6 +439,7 @@ Because the FabricPool rule is the first rule, any objects in the FabricPool buc
 . When you have reviewed the proposed policy, select *Activate and continue* to activate the policy and go to the traffic classification step.
 
 IMPORTANT: Errors in an ILM policy can cause irreparable data loss. Review the policy carefully before activating.
+////
 
 == Step 8 of 9: Create traffic classification policy
 
