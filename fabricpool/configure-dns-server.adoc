@@ -9,7 +9,7 @@ summary: 'After configuring high availability groups and load balancer endpoints
 :imagesdir: ../media/
 
 [.lead]
-After configuring high availability groups and load balancer endpoints, you must ensure that the domain name system (DNS) includes a record to associate the StorageGRID server name (fully qualified domain name) to each IP address that FabricPool will use to make connections.
+After configuring high availability groups and load balancer endpoints, you must ensure that the domain name system (DNS) includes a record to associate the StorageGRID server name (fully qualified domain name) to each StorageGRID IP address you will use.
 
 The IP addresses you enter in the DNS depend on whether you are using an HA group of load-balancing nodes:
 

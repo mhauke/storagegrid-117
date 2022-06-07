@@ -455,12 +455,15 @@ As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic 
 
 . Otherwise, select *Skip this step*.
 
-== Step 9 of 9: Review summary 
+== Step 9 of 9: Review summary
 
 . Review the summary, which provides details about the items you configured, including the name of the load balancer, tenant, and bucket, the traffic classification policy, and the active ILM policy.
-. Select *Finish*.
-+
-StorageGRID is now ready to accept data from FabricPool. 
+. Select *Finish*. Then, review the <<Next steps>>.
 
-. Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to enter the saved values and to complete the configuration.
-. Go to xref:other-best-practices-for-storagegrid.adoc[Other best practices for StorageGRID] to learn about audit log settings and other best practices.
+
+== Next steps
+After completing the FabricPool wizard, perform these additional steps:
+
+. Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to enter the saved values and to complete the ONTAP side of the connection. You must add StorageGRID as a cloud tier, attach the cloud tier to a local tier to create a FabricPool, and set volume tiering policies.
+. Go to xref:fabricpool/configure-dns-server.adoc[Configure the DNS server] and ensure that the domain name system (DNS) includes a record to associate the StorageGRID server name (fully qualified domain name) to each StorageGRID IP address you will use. 
+. Go to xref:other-best-practices-for-storagegrid-and-fabricpool.adoc[Other best practices for StorageGRID and FabricPool] to learn the best practices for audit logs and other global configuration options.

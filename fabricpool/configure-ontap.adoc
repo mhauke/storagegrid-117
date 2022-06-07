@@ -2,14 +2,14 @@
 permalink: fabricpool/configure-ontap.html
 sidebar: sidebar
 keywords: fabricPool, system manager, ONTAP CLI, add cloud tier 
-summary: 'After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, add the cloud tier as an aggregate, and set volume tiering policies.'
+summary: 'After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, attach the cloud tier to a local tier to create a FabricPool, and set volume tiering policies.'
 ---
 = Configure ONTAP System Manager
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, add the cloud tier as an aggregate, and set volume tiering policies.
+After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, attach the cloud tier to a local tier to create a FabricPool, and set volume tiering policies.
 
 NOTE: These instructions describe how to use ONTAP System Manager to add StorageGRID as a cloud tier. You can complete the same configuration using the ONTAP CLI. For instructions, go to https://docs.netapp.com/us-en/ontap/fabricpool/index.html[ONTAP 9: FabricPool tier management with the CLI^].
 
@@ -36,7 +36,7 @@ The following table describes these fields in more detail.
 | Field| Description
 
 |Name
-|A unique name for this cloud tier. You can accept the default value.
+|Enter a unique name for this cloud tier. You can accept the default value.
 
 |URL style
 |If you  xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names], select *Virtual Hosted-Style URL*.
@@ -44,7 +44,7 @@ The following table describes these fields in more detail.
 *Path-Style URL* is the default for ONTAP, but using virtual hosted-style requests is recommended for StorageGRID. You must use *Path-Style URL* if you provide an IP address instead of a domain name for the *Server name (FQDN)* field.
 
 |Server name (FQDN)
-|The virtual IP (VIP) address for the StorageGRID HA group or the fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
+|Enter the virtual IP (VIP) address for the StorageGRID HA group or the fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
 
 Note the following:
 
@@ -55,21 +55,23 @@ Note the following:
 |Enabled (default).
 
 |Object store certificate
-|The CA certificate you use for the StorageGRID load balancer endpoint.
+|Paste the certificate PEM you are using for the StorageGRID load balancer endpoint, including:
+`-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----`.
+
 
 *Note:* If an intermediate CA issued the StorageGRID certificate, you must provide the intermediate CA certificate. If the StorageGRID certificate was issued directly by the Root CA, you must provide the Root CA certificate.
 
 |Port
-|The port that FabricPool will use when it connects to StorageGRID. The port number here matches the port you specify for the StorageGRID load balancer endpoint. For example, 10433.
+|Enter the port used by the StorageGRID load balancer endpoint. ONTAP will use this port when it connects to StorageGRID. For example, 10433.
 
 |Access key 
-|The access key ID for the StorageGRID tenant account.
+|Enter the access key ID for the StorageGRID tenant account.
 
 |Secret key
-|The secret access key for the StorageGRID tenant account.
+|Enter the secret access key for the StorageGRID tenant account.
 
 |Container name
-|The name of the StorageGRID bucket you will use with this ONTAP aggregate. For example, `fabricpool-bucket`. 
+|Enter the name of the StorageGRID bucket you will use with this ONTAP tier. For example, `fabricpool-bucket`. 
 
 Note the following:
 

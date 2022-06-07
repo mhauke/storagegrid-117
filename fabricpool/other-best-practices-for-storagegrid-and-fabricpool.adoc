@@ -14,9 +14,9 @@ When configuring a StorageGRID system for use with FabricPool, you should avoid 
 == Audit message and log destinations
 FabricPool workloads often have a high rate of read operations, which can generate a high volume of audit messages. 
 
-* If you do not require a record of client read operation for FabricPool or for any other S3 client application, optionally go to xref:../monitor/configure-audit-messages.adoc[Configure audit messages and log destinations]. Change the *Client Reads* setting to *Error*.
+* If you do not require a record of client read operations for FabricPool or any other S3 client application, optionally go to *CONFIGURATION* > *Monitoring* > *Audit and syslog server*. Change the *Client Reads* setting to *Error*. See xref:../monitor/configure-audit-messages.adoc[Configure audit messages and log destinations] for details.
 
-* If you have a large grid, use many different S3 clients, or you don't want to lose audit data, configure an external syslog server and save audit information remotely. Using an external server minimizes the performance impact and allows you to maintain a full history of audit data.  See xref:../monitor/considerations-for-external-syslog-server.adoc[Considerations for external syslog server] for details.
+* If you have a large grid, use multiple types of S3 clients, or want to retain all audit data, configure an external syslog server and save audit information remotely. Using an external server minimizes the performance impact of audit message logging and allows you to maintain a more complete history of audit data.  See xref:../monitor/considerations-for-external-syslog-server.adoc[Considerations for external syslog server] for details.
  
 
 == Object encryption
