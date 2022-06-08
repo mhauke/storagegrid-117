@@ -19,111 +19,87 @@ The *Search* field in the header bar allows you to quickly navigate to a specifi
 
 == Configure the Dashboard
 
-The Dashboard consists of tabs, and corresponding cards for each tab, that contain specific information about the StorageGRID system. As needed, you can configure the Dashboard to show or hide tabs or to display, hide, or rearrange cards on each tab. To configure the tabs and cards, select *Configure dashboard*.
+The Dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards. As needed, you can configure the Dashboard to show or hide tabs or to display, hide, or rearrange cards on each tab. To configure the tabs and cards, select *Configure dashboard*.
 
-The default information displayed on each tab is described in the following sections.
+The default information displayed on each tab is described in the following tables.
 
-== Overview tab
+=== Overview tab
 
-The Overview tab contains information about the health of the StorageGRID system, the total objects ingested, grid information, data and metadata usage, and storage used over time.
-
-=== Health status
-
-[cols="1a,2a,1a" options="header"]
+[cols="1a,2a,3a" options="header"]
 |===
-| Description| View additional details| Learn more
-|Summarizes the system's health. A green checkmark means that there are no current alerts and all grid nodes are connected. Any other icon means that there is at least one current alert or disconnected node.
 
+| Default card| Description| Additional details
+|Health status
+|Summarizes the system's health. A green checkmark means that there are no current alerts and all grid nodes are connected. Any other icon means that there is at least one current alert or disconnected node.
 |You might see one or more of the following links:
 
-* *Grid details*: Appears if any nodes are disconnected (connection state Unknown or Administratively Down). Click the link, or click the blue or gray icon to determine which node or nodes are affected.
-* *Current alerts*: Appears if any alerts are currently active. Click the link, or click *Critical*, *Major*, or *Minor* to see the details on the *ALERTS* > *Current* page.
-* *Recently resolved alerts*: Appears if any alerts triggered in the past week are now resolved. Click the link to see the details on the *ALERTS* > *Resolved* page.
-* *Legacy alarms*: Appears if any alarms (legacy system) are currently active. Click the link to see the details on the *SUPPORT* > *Alarms (Legacy)* > *Current alarms* page.
-* *License*: Appears if there is an issue with the software license for this StorageGRID system. Click the link to see the details on the *MAINTENANCE* > *System* > *License* page.
+* *Grid details*: Appears if any nodes are disconnected (xref:monitoring-node-connection-states.adoc[connection state Unknown or Administratively Down]). Select the link or the blue or gray icon to determine which node or nodes are affected.
+* *Current alerts*: Appears if any xref:viewing-current-alerts.adoc[alerts are currently active]. Select the link or *Critical*, *Major*, or *Minor* to see the details on the *ALERTS* > *Current* page.
+* *Recently resolved alerts*: Appears if any xref:viewing-resolved-alerts.adoc[alerts triggered in the past week are now resolved]. Select the link to see the details on the *ALERTS* > *Resolved* page.
+* *Legacy alarms*: Appears if any xref:viewing-legacy-alarms.adoc[alarms (legacy system)] are currently active. Select the link to see the details on the *SUPPORT* > *Alarms (Legacy)* > *Current alarms* page.
+* *License*: Appears if there is an issue with the xref:../admin/updating-storagegrid-license-information.adoc[software license for this StorageGRID system]. Select the link to see the details on the *MAINTENANCE* > *System* > *License* page.
 
+|Data usage breakdown
+|Available and used storage capacity in the entire grid, not including archival media.
+|For each site in the grid, the percentage and amount of space used are shown, in additional to the total space available for the site.
+
+You can use this information to xref:monitoring-storage-capacity.adoc[compare the used storage with the available storage]. If you have a multi-site grid, you can determine which site is consuming more storage.
+
+|Total objects
+|Total number of objects in the grid. If S3 Object Lock is enabled globally or for specific S3 buckets, each object version is included in the total.
 |
-* xref:monitoring-node-connection-states.adoc[Monitor node connection states]
-* xref:viewing-current-alerts.adoc[View current alerts]
-* xref:viewing-resolved-alerts.adoc[View resolved alerts]
-* xref:viewing-legacy-alarms.adoc[View legacy alarms]
-* xref:../admin/index.adoc[Administer StorageGRID]
+
+|Metadata usage breakdown
+|Available and used storage capacity for metadata in the entire grid, not including archival media.
+|For each site in the grid, the percentage and amount of space used for metadata are shown, in additional to the total metadata space available for the site. The metadata for all objects in the grid is stored at every site.
+
+Use this information to xref:monitoring-storage-capacity.adoc[compare the used and allowed storage for metadata]. The site with the highest metadata usage regulates how much data can be stored in the grid.
+
+|Grid information
+|General information for the grid, such as the StorageGRID software serial number and version, site count, node count, licensed storage capacity, and the support term.
+|
+
+|Storage over time
+|Chart of historical usage for data or metadata over time. If you select Metadata, the chart shown is for the site with the highest metadata usage.
+|
+|===
+
+=== Performance tab
+
+
+=== Storage tab
+
+[cols="1a,2a,2a" options="header"]
+|===
+
+| Default card| Description| Additional details
 
 |===
 
-=== Data usage breakdown
+=== ILM tab
 
-Displays the available and used storage capacity in the entire grid, not including archival media.
-
-For each site in the grid, the percentage and amount of space used are shown, in additional to the total space available for the site.
-
-You can use this information to compare the used storage with the available storage. If you have a multi-site grid, you can determine which site is consuming more storage.
-
-.Learn more
-
-* xref:viewing-storage-tab.adoc[View the Storage tab]
-* xref:monitoring-storage-capacity.adoc[Monitor storage capacity]
-
-=== Total objects
-
-Displays the total number of objects in the grid. If S3 Object Lock is enabled globally or for specific S3 buckets, each object version is included in the total.
-
-=== Metadata usage breakdown
-
-Displays the available and used storage capacity for metadata in the entire grid, not including archival media.
-
-For each site in the grid, the percentage and amount of space used for metadata are shown, in additional to the total metadata space available for the site.
-
-You can use this information to compare the used storage with the available storage for metadata. The site with the highest metadata usage regulates how much data can be stored in the grid. The metadata for all objects in the grid is stored at every site.
-
-.Learn more
-
-* xref:viewing-storage-tab.adoc[View the Storage tab]
-* xref:monitoring-storage-capacity.adoc[Monitor storage capacity]
-
-=== Grid information
-
-Displays general information for the grid, such as the StorageGRID software serial number and version, site count, node count, licensed storage capacity, and the support term.
-
-=== Storage over time
-
-Displays a chart of historical usage for data or metadata over time. If you select Metadata, the chart shown is for the site with the highest metadata usage.
-
-== Performance tab
-
-
-== Storage tab
-
-
-== Information Lifecycle Management (ILM) tab
-
-[options="header"]
+[cols="1a,2a,3a" options="header"]
 |===
 | Description| View additional details| Learn more
-a|
-Displays current ILM operations and ILM queues for your system. You can use this information to monitor your system's workload.
+|Current ILM operations and ILM queues for your system. 
+|Use this information to monitor your system's workload.
 
 * *Awaiting - Client*: The total number of objects awaiting ILM evaluation from client operations (for example, ingest).
 * *Awaiting - Evaluation Rate*: The current rate at which objects are evaluated against the ILM policy in the grid.
 * *Scan Period - Estimated*: The estimated time to complete a full ILM scan of all objects.
 *Note:* A full scan does not guarantee that ILM has been applied to all objects.
 
-a|
+|
 
-* To see details, select *NODES*. Then, view the ILM tab for the entire grid, an entire site, or a single Storage Node.
+* To see details, select *NODES*. Then, xref:viewing-ilm-tab.adoc[view the ILM tab] for the entire grid, an entire site, or a single Storage Node.
 * To see the existing ILM rules, select *ILM* > *Rules*.
 * To see the existing ILM policies, select *ILM* > *Policies*.
 
-a|
-
-* xref:viewing-ilm-tab.adoc[View the ILM tab]
-* xref:../admin/index.adoc[Administer StorageGRID].
-
 |===
 
-== Nodes tab
+=== Nodes tab
 
-== Protocol Operations panel
+==== Protocol Operations card
 
 [options="header"]
 |===
@@ -136,7 +112,7 @@ You can use this information to monitor your system's workloads and efficiencies
 a|
 
 * To see details, select *NODES*. Then, view the Objects tab for the entire grid, an entire site, or a single Storage Node.
-* To view trends over a date range, click the chart icon image:../media/icon_chart_new_for_11_5.png[Chart Icon] to the right of the S3 or Swift protocol rate.
+* To view trends over a date range, select the chart icon image:../media/icon_chart_new_for_11_5.png[Chart Icon] to the right of the S3 or Swift protocol rate.
 
 a|
 
