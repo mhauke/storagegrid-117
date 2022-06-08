@@ -17,30 +17,15 @@ For details about this task, see xref:../admin/configuring-load-balancer-endpoin
 
 
 .What you'll need
-* You have reviewed the xref:best-practices-for-load-balancing.adoc[best practices for load balancing].
+
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Root access permission.
-
-* You have reviewed the best practices for the xref:best-practices-for-load-balancing.adoc[load balancer endpoint certificate] and you know whether you will upload or generate this certificate.
-
-** If you plan to upload a CA-signed security certificate (recommended), you have the following files: 
-
-*** The custom server certificate file.
-*** The custom server certificate private key file.
-*** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
-+
-The certificate must include the FQDN that ONTAP will use for StorageGRID. 
-
-** If you plan to generate a self-signed certificate, you know which values to use.
-
-** If you plan to use the global StorageGRID S3 and Swift API certificate, you have already updated or generated a custom version. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates]. 
+* You have reviewed the xref:best-practices-for-load-balancing.adoc[best practices for load balancing] and the xref:best-practices-for-security-certificate.adoc[best practices for the security certificate].
 
 .Steps
 . Select *CONFIGURATION* > *Network* > *Load balancer endpoints*.
 
 . Select *Create*.
-+
-image::../media/load_balancer_endpoint_create_http.png[Create LB Endpoint]
 
 . For the *Enter endpoint details* step, complete the following fields.
 +
@@ -100,7 +85,7 @@ You will provide this number to ONTAP when you attach StorageGRID as a FabricPoo
 |Use this option to generate a self-signed certificate. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
 
 |Use StorageGRID S3 and Swift certificate
-|Use this option only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates] for details. 
+|This option is available only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates] for details.
 
 |===
 

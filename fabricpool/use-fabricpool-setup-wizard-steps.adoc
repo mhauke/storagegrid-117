@@ -123,7 +123,7 @@ StorageGRID uses a load balancer to manage the workload from client applications
 
 You can use the StorageGRID Load Balancer service, which exists on all Gateway and Admin Nodes, or you can connect to an external (third-party) load balancer. Using the StorageGRID load balancer is recommended.
 
-For details about this task, see xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] and xref:best-practices-for-load-balancing.adoc[Best practices for load balancing].
+For details about this task, see xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints], xref:best-practices-for-load-balancing.adoc[Best practices for load balancing], and xref:best-practices-for-security-certificate.adoc[Best practices for security certificate].
 
 To use the StorageGRID Load Balancer service, select the *StorageGRID load balancer* tab and then create or select the load balancer endpoint you want to use. To use an external load balancer, select the *External load balancer* tab and provide details about the system you have already configured. 
 
@@ -193,7 +193,7 @@ xref:../network/network-port-reference.adoc[Network port reference].
 |Use this option to generate a self-signed certificate. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
 
 |Use StorageGRID S3 and Swift certificate
-|Use this option only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates] for details. 
+|This option is available only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates] for details. 
 
 |===
 
