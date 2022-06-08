@@ -2,26 +2,38 @@
 permalink: fabricpool/creating-load-balancer-endpoint-for-fabricpool.html
 sidebar: sidebar
 keywords: fabricPool, load balancer, endpoint, load balancing, create, creating, certificate
-summary: 'When configuring StorageGRID for use with FabricPool, you must configure a load balancer endpoint and upload the load balancer endpoint certificate, which is used to secure the connection between ONTAP and StorageGRID.'
+summary: 'StorageGRID uses a load balancer to manage the workload from client applications, such as FabricPool. Load balancing maximizes speed and connection capacity across multiple Storage Nodes.'
 ---
 = Create a load balancer endpoint for FabricPool
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-When configuring StorageGRID for use with FabricPool, you must configure a load balancer endpoint and upload the load balancer endpoint certificate, which is used to secure the connection between ONTAP and StorageGRID.
+StorageGRID uses a load balancer to manage the workload from client applications, such as FabricPool. Load balancing maximizes speed and connection capacity across multiple Storage Nodes. 
+
+When configuring StorageGRID for use with FabricPool, you must configure a load balancer endpoint and upload or generate a load balancer endpoint certificate, which is used to secure the connection between ONTAP and StorageGRID. 
+
+For details about this task, see xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints]. To use the FabricPool setup wizard to complete this task, go to xref:use-fabricpool-setup-wizard-steps.adoc[Access and complete the FabricPool setup wizard].
+
 
 .What you'll need
 * You have reviewed the xref:best-practices-for-load-balancing.adoc[best practices for load balancing].
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Root access permission.
-* You have the following files:
- ** Server Certificate: The custom server certificate file.
- ** Server Certificate Private Key: The custom server certificate private key file.
- ** CA Bundle: A single optional file containing the certificates from each intermediate issuing certificate authority (CA). The file should contain each of the PEM-encoded CA certificate files, concatenated in certificate chain order.
 
-.About this task
-For details about this task, see xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints].
+* You have reviewed the best practices for the xref:best-practices-for-load-balancing.adoc[load balancer endpoint certificate] and you know whether you will upload or generate this certificate.
+
+** If you plan to upload a CA-signed security certificate (recommended), you have the following files: 
+
+*** The custom server certificate file.
+*** The custom server certificate private key file.
+*** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
++
+The certificate must include the FQDN that ONTAP will use for StorageGRID. 
+
+** If you plan to generate a self-signed certificate, you know which values to use.
+
+** If you plan to use the global StorageGRID S3 and Swift API certificate, you have already updated or generated a custom version. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates]. 
 
 .Steps
 . Select *CONFIGURATION* > *Network* > *Load balancer endpoints*.
@@ -30,49 +42,67 @@ For details about this task, see xref:../admin/configuring-load-balancer-endpoin
 +
 image::../media/load_balancer_endpoint_create_http.png[Create LB Endpoint]
 
-. Enter endpoint details.
+. For the *Enter endpoint details* step, complete the following fields.
 +
 [cols="1a,2a" options="header"]
 |===
-| Field| Description
-a|
-Name
-a|
-A descriptive name for the endpoint
-a|
-Port
-a|
-The StorageGRID port you want to use for load balancing. This field defaults to 10433, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
+|Field| Description
+
+|Name
+|A descriptive name for the endpoint.
+
+|Port
+|The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
 
 *Note:* Ports used by other grid services are not permitted. See the 
 xref:../network/network-port-reference.adoc[Network port reference].
 
-You must provide this same port number to ONTAP when you attach StorageGRID as a FabricPool cloud tier.
-a|
-Client type
-a|
-Select *S3*.
-a|
-Network protocol
-a|
-Select *HTTPS*.
+You will provide this number to ONTAP when you attach StorageGRID as a FabricPool cloud tier.
 
-*Note*: Using *HTTP* is supported but not recommended.
+|Client type
+|Select *S3*.
+
+|Network protocol
+|Select *HTTPS*.
+
+*Note*: Communicating with StorageGRID without TLS encryption is supported but not recommended.
 
 |===
 
-. Select *Continue*.
-
-. Specify the binding mode.
+. For the *Select binding mode* step, specify the binding mode. The binding mode controls how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
-Use the *Global* setting (recommended) or restrict the accessibility of this endpoint to one of the following:
+[cols="1a,2a" options="header"]
+|===
+|Option| Description
 
-** Specific network interfaces of specific nodes.
-** Specific high availability (HA) virtual IP addresses (VIPs). Use this selection only if you require much higher levels of isolation of workloads.
+|Global (recommended)
+|Clients can access the endpoint using the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) address of any HA group. 
 
-. Select *Continue*.
+|Node interfaces
+|Clients can only access the endpoint using the IP address of a selected node and network interface.
 
-. Select *Upload Certificate* (recommended) and then browse to your server certificate, certificate private key, and optional CA bundle.
+|HA groups VIPs
+|Clients can only access the endpoint using a VIP address of an HA group. Use this selection only if you require much higher levels of isolation of workloads.
+
+|===
+ 
+
+. For the *Attach certificate* step, select one of the following:
++
+[cols="1a,2a" options="header"]
+|===
+|Field| Description
+
+|Upload certificate (recommended)
+|Use this option to upload a CA-signed server certificate, certificate private key, and optional CA bundle.
+
+|Generate certificate
+|Use this option to generate a self-signed certificate. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
+
+|Use StorageGRID S3 and Swift certificate
+|Use this option only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates] for details. 
+
+|===
 
 . Select *Create*.
 

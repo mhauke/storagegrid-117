@@ -67,6 +67,8 @@ Note the following:
 |Access key 
 |Enter the access key ID for the StorageGRID tenant account.
 
+*Important*: If you create a new access key ID and secret access key for the StorageGRID tenant in the future, you must update these entries in ONTAP immediately to ensure that ONTAP can store and retrieve data in StorageGRID without interruption.
+
 |Secret key
 |Enter the secret access key for the StorageGRID tenant account.
 
@@ -89,6 +91,7 @@ After you have added StorageGRID as a cloud tier, you can complete the final Fab
 . Attach one or more aggregates to the cloud tier.
 . Optionally, create a volume tiering policy.
 
+See https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html[ONTAP 9: FabricPool tier management overview with System Manager^] for more information.
 
 
 

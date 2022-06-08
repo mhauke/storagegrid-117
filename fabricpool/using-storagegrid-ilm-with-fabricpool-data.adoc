@@ -17,10 +17,14 @@ CAUTION: The following ILM rules and policy are only examples. There are many wa
 * You have reviewed the xref:best-practices-ilm.adoc[best practices for using ILM with FabricPool data].
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the ILM or Root access permission.
+* If you upgraded to StorageGRID 11.7 from a previous StorageGRID version, you have configured the storage pool you will use. In general, you should create a storage pool for each StorageGRID site you will use to store ONTAP data. 
++
+NOTE: This prerequisite does not apply to new StorageGRID 11.7 installations. When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site.
+
 
 .Steps
 . Create a storage pool named *DEN*. Select the Denver site.
-. Create an Erasure Coding profile named *2 plus 1*. Select the 2+1 erasure-coding scheme and the *DEN* storage pool.
+
 . Create an ILM rule that applies only to the data in `fabricpool-bucket`. This example rule creates erasure-coded copies.
 +
 
@@ -28,32 +32,28 @@ CAUTION: The following ILM rules and policy are only examples. There are many wa
 |===
 | Rule definition| Example value
 
-|Rule Name
-|2 plus 1 erasure coding for FabricPool data
+|Rule name
+|2 + 1 erasure coding for FabricPool data
 
-|Bucket Name
+|Bucket name
 |`fabricpool-bucket`
 
 You could also filter on the FabricPool tenant account.
 
-|Advanced Filtering
-|Object Size (MB) greater than 0.2 MB.
+|Advanced filters
+|Object size greater than 0.2 MB.
 
-*Note:* FabricPool only writes 4 MB objects, but you must add an Object Size filter because this rule uses erasure coding.
+*Note:* FabricPool only writes 4 MB objects, but you must add an Object size filter because this rule uses erasure coding.
 
-|Reference Time
-|Ingest Time
+|Reference time
+|Ingest time
 
-|Placement
-|From day 0 store forever
+|Time period and placements
+|From Day 0 store forever
 
-|Type
-|Erasure coded
+Store objects by erasure coding using 2+1 EC scheme at DEN.
 
-|Location
-|DEN (2 plus 1)
-
-|Ingest Behavior
+|Ingest behavior
 |Balanced
 |===
 
@@ -63,42 +63,27 @@ You could also filter on the FabricPool tenant account.
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
-|
-Rule Name
-|
-Two replicated copies
-|
-Bucket Name
-|
-_none_
-|
-Advanced Filtering
-|
-_none_
-|
-Reference Time
-|
-Ingest Time
-|
-Placement
-|
-From day 0 store forever
-|
-Type
-|
-Replicated
-|
-Location
-|
-DEN
-|
-Copies
-|
-2
-|
-Ingest Behavior
-|
-Balanced
+
+|Rule name
+|Two replicated copies
+
+|Bucket name
+|_none_
+
+|Advanced filters
+|_none_
+
+|Reference time
+|Ingest time
+
+|Time period and placements
+|From Day 0 store forever
+
+Store objects by replicating 2 copies at DEN.
+
+|Ingest behavior
+|Balanced
+
 |===
 
 . Create a proposed ILM policy and select the two rules. Because the replication rule does not use any filters, it can be the default (last) rule for the policy.
@@ -110,4 +95,4 @@ When this policy is activated, StorageGRID places object data as follows:
 
 * The data tiered from FabricPool in `fabricpool-bucket` will be erasure coded using the 2+1 erasure-coding scheme. Two data fragments and one parity fragment will be placed on three different Storage Nodes.
 * All objects in all other buckets will be replicated. Two copies will be created and placed on two different Storage Nodes.
-* The erasure-coded and replicated copies will be maintained in StorageGRID until they are deleted by the S3 client. StorageGRID ILM will never delete these items.
+* The erasure-coded and replicated copies will be maintained in StorageGRID until they are deleted in ONTAP. StorageGRID ILM will never delete these items.

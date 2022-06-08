@@ -4,23 +4,18 @@ sidebar: sidebar
 keywords: fabricPool, S3 bucket, bucket, access key, secret access key
 summary: 'Before using StorageGRID with a FabricPool workload, you must create an S3 bucket for your FabricPool data. You also need to obtain an access key and secret access key for the tenant account you will use for FabricPool.'
 ---
-= Create an S3 bucket and obtain an access key
+= Create an S3 bucket and obtain access keys
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
 Before using StorageGRID with a FabricPool workload, you must create an S3 bucket for your FabricPool data. You also need to obtain an access key and secret access key for the tenant account you will use for FabricPool.
 
+For details about this task, see xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket] and xref:../tenant/creating-your-own-s3-access-keys.adoc[Create your own S3 access keys]. To use the FabricPool setup wizard to complete this task, go to xref:use-fabricpool-setup-wizard-steps.adoc[Access and complete the FabricPool setup wizard].
+
 .What you'll need
 * You have created a tenant account for FabricPool use.
-
-.About this task
-These instructions describe how to use the StorageGRID Tenant Manager to create a bucket and obtain access keys. You can also perform these tasks using the Tenant Management API or the StorageGRID S3 REST API. Or, if you are using ONTAP 9.10, you can create the bucket using the FabricPool setup wizard instead.
-
-To learn more:
-
-* xref:../tenant/index.adoc[Use a tenant account]
-* xref:../s3/index.adoc[Use S3]
+* You have Root access to the tenant account.
 
 .Steps
 . Sign in to the Tenant Manager.
@@ -49,14 +44,11 @@ Bucket names must comply with these rules:
   *** Must not look like a text-formatted IP address.
   *** Should not use periods in virtual hosted style requests. Periods will cause problems with server wildcard certificate verification.
 
- .. Select the region for this bucket.
+.. Select the region for this bucket.
 +
 By default, all buckets are created in the `us-east-1` region.
-+
-image::../media/create_bucket_for_fabricpool.png[Create Bucket for FabricPool]
-+
 
- .. Select *Create bucket*.
+.. Select *Create bucket*.
 
 +
 NOTE: For FabricPool buckets, the recommended bucket consistency level is "`read-after-new-write.`" The "`available`" consistency level is not recommended. See xref:../tenant/changing-consistency-level.adoc[Change a bucket's consistency level].
@@ -69,4 +61,4 @@ NOTE: For FabricPool buckets, the recommended bucket consistency level is "`read
 +
 You will enter these values in ONTAP when you configure StorageGRID as a FabricPool cloud tier.
 +
-IMPORTANT: If you create a new access key and secret access key in the future, remember to update the corresponding values in ONTAP immediately to ensure that ONTAP can store and retrieve data in StorageGRID without interruption.
+IMPORTANT: If you create a new access key and secret access key in the future, you must update the corresponding values in ONTAP immediately to ensure that ONTAP can store and retrieve data in StorageGRID without interruption.
