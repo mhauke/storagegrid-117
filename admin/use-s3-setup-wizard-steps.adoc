@@ -1,15 +1,15 @@
 ---
 permalink: fabricpool/use-fabricpool-setup-wizard-steps.html
 sidebar: sidebar
-keywords: FabricPool and S3 setup wizard, ontap system manager
+keywords: FabricPool and S3 setup wizard, S3 client
 summary: 'You can use the S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.'
 ---
-= Access and complete the FabricPool setup wizard
+= Access and complete the S3 application setup wizard
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
+You can use the S3 application setup wizard to configure StorageGRID for use with an S3 application. The setup wizard provides the values the application needs to access a StorageGRID bucket and to save objects.
 
 NOTE: You must have the Root access permission to access the wizard.
 
@@ -20,14 +20,14 @@ NOTE: You must have the Root access permission to access the wizard.
 . If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon from the header bar in the Grid Manager and select *FabricPool and S3 Setup Wizard*.
 +
 image::../media/help_menu.png[help menu]
-. In the FabricPool section of the FabricPool and S3 setup wizard page, select *Configure now*.
+. In the S3 application section of the FabricPool and S3 setup wizard page, select *Configure now*.
 +
-*Step 1 of 9: Configure HA group* appears.
+*Step 1 of 6: Configure HA group* appears.
 
-== Step 1 of 9: Configure HA group
+== Step 1 of 6: Configure HA group
 A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
 
-You can use an HA group to help keep FabricPool data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to FabricPool operations.
+You can use an HA group to help keep the S3 application data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to FabricPool operations.
 
 For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups] and xref:best-practices-for-high-availability-groups.adoc[Best practices for high availability groups].
 
@@ -110,7 +110,7 @@ At least one address must be IPv4. Optionally, you can specify additional IPv4 a
 // end tabbed area
 
 
-== Step 2 of 9: Configure load balancer endpoint
+== Step 2 of 6: Configure load balancer endpoint
 
 StorageGRID uses a load balancer to manage the workload from client applications, such as FabricPool. Load balancing maximizes speed and connection capacity across multiple Storage Nodes.
 
@@ -232,15 +232,15 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 // end tabbed area
 
 
-== Step 3 of 9: Create tenant and bucket
+== Step 3 of 6: Create tenant and bucket
 
-A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that FabricPool will use. 
+A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that S3 application will use. 
 
 A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the wizard lets you create or select only one tenant and one bucket at a time. You can use the Tenant Manager later to add any additional buckets you need.
 
-You can create a new tenant and bucket for FabricPool use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key ID and secret access key for the tenant's root user.
+You can create a new tenant and bucket for S3 application use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key ID and secret access key for the tenant's root user.
 
-For details about this task, see xref:creating-tenant-account-for-fabricpool.adoc[Create a tenant account for FabricPool] and xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key].
+For details about this task, see xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key].
 
 
 
@@ -302,7 +302,7 @@ FabricPool does not support object versioning, so buckets that have versioning e
 // end tabbed area
 
 
-== Step 4 of 9: Download ONTAP settings 
+== Step 4 of 6: Download ONTAP settings 
 
 . To save the values you've entered so far to a text file, select *Download ONTAP settings*.
 +
@@ -317,7 +317,7 @@ The file includes the information you need to configure StorageGRID as the objec
 . Select *Continue* to go to the ILM storage pool step.
 
 
-== Step 5 of 9: Select a storage pool
+== Step 5 of 6: Select a storage pool
 A storage pool is a group of Storage Nodes. When you select a storage pool, you determine which nodes StorageGRID will use to store the data tiered from ONTAP.
 
 For details about this step, see xref:../ilm/ilm/creating-storage-pool.adoc[Create a storage pool].
@@ -441,7 +441,7 @@ Because the FabricPool rule is the first rule, any objects in the FabricPool buc
 IMPORTANT: Errors in an ILM policy can cause irreparable data loss. Review the policy carefully before activating.
 ////
 
-== Step 8 of 9: Create traffic classification policy
+== Step 5 of 6: Create traffic classification policy
 
 As an option, the FabricPool and S3 setup wizard can create a traffic classification policy that you can use to monitor the FabricPool workload. The system-created policy uses a matching rule to identify all network traffic related to the bucket you created. This policy monitors traffic only; it does not limit traffic for FabricPool or any other clients. 
 
@@ -456,7 +456,7 @@ As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic 
 
 . Otherwise, select *Skip this step*.
 
-== Step 9 of 9: Review summary 
+== Step 6 of 6: Review summary 
 
 . Review the summary.
 . Select *Finish*.
