@@ -17,13 +17,12 @@ CAUTION: The following ILM rules and policy are only examples. There are many wa
 * You have reviewed the xref:best-practices-ilm.adoc[best practices for using ILM with FabricPool data].
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the ILM or Root access permission.
-* If you upgraded to StorageGRID 11.7 from a previous StorageGRID version, you have configured the storage pool you will use. In general, you should create a storage pool for each StorageGRID site you will use to store ONTAP data. 
+* If you upgraded to StorageGRID 11.7 from a previous StorageGRID version, you have configured the storage pool you will use. In general, you should create a storage pool for each StorageGRID site. 
 +
 NOTE: This prerequisite does not apply to new StorageGRID 11.7 installations. When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site.
 
 
 .Steps
-. Create a storage pool named *DEN*. Select the Denver site.
 
 . Create an ILM rule that applies only to the data in `fabricpool-bucket`. This example rule creates erasure-coded copies.
 +
@@ -51,7 +50,7 @@ You could also filter on the FabricPool tenant account.
 |Time period and placements
 |From Day 0 store forever
 
-Store objects by erasure coding using 2+1 EC scheme at DEN.
+Store objects by erasure coding using 2+1 EC scheme at Denver.
 
 |Ingest behavior
 |Balanced
@@ -79,7 +78,7 @@ Store objects by erasure coding using 2+1 EC scheme at DEN.
 |Time period and placements
 |From Day 0 store forever
 
-Store objects by replicating 2 copies at DEN.
+Store objects by replicating 2 copies at Denver.
 
 |Ingest behavior
 |Balanced

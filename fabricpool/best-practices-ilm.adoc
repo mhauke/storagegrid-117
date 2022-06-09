@@ -37,10 +37,10 @@ ILM rules define:
 
 Note that object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss. The copies are evenly distributed across all Storage Nodes.
 
+== Guidelines for using ILM with FabricPool
+When you use the FabricPool setup wizard, the wizard automatically creates a new ILM rule for each S3 bucket you create, adds that rule to a proposed policy, and prompts you to activate the new policy as part of completing the wizard. The automatically created rule follows the recommended best practices: it uses 2+1 erasure coding at a single site.
 
-
-== Best practices for using ILM with FabricPool
-Review these guidelines to ensure that your ILM rules and ILM policy are suitable for FabricPool data and your business requirements. If you are already using StorageGRID ILM, you might need to update your active ILM policy to meet these guidelines.
+If you are configuring StorageGRID manually instead of using the FabricPool setup wizard, review these guidelines to ensure that your ILM rules and ILM policy are suitable for FabricPool data and your business requirements. You might need to create new rules and update your active ILM policy to meet these guidelines.
 
 * You can use any combination of replication and erasure-coding rules to protect cloud tier data.
 +

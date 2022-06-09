@@ -44,7 +44,7 @@ To use more than one bucket for the local tiers in an ONTAP cluster, add more th
 
 === Optional: Use a different tenant and bucket for each local tier
 
-To use more than one tenant and different sets of access keys for the local tiers in an ONTAP cluster, add more than one StorageGRID cloud tier in ONTAP. Each cloud tier shares the same HA group, load balancer endpoint, but uses different access keys and container (StorageGRID bucket). Follow these general steps:
+To use more than one tenant and different sets of access keys for the local tiers in an ONTAP cluster, add more than one StorageGRID cloud tier in ONTAP. Each cloud tier shares the same HA group, load balancer endpoint, but uses a different tenant, access keys, and container (StorageGRID bucket). Follow these general steps:
 
 . From StorageGRID Grid Manager, complete the FabricPool setup wizard for the first cloud tier.
 . From ONTAP System Manager, add a cloud tier and use the file you downloaded from StorageGRID to provide the required values. 

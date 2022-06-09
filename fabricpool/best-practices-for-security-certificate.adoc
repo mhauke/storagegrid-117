@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fabricPool, load balancer, certificate, CA, certificate authority, tls, ssl
 summary: 'When you create a StorageGRID load balancer endpoint for FabricPool use, you provide the security certificate that will allow ONTAP to authenticate with StorageGRID.'
 ---
-= Best practices for security certificate
+= Best practices for the security certificate
 :icons: font
 :imagesdir: ../media/
 
@@ -13,58 +13,60 @@ When you create a StorageGRID load balancer endpoint for FabricPool use, you pro
 
 In most cases, the connection between ONTAP and StorageGRID should use Transport Layer Security (TLS) encryption. Using FabricPool without TLS encryption is supported but not recommended. When you select the network protocol for the StorageGRID load balancer endpoint, select *HTTPS*. Then provide the security certificate that will allow ONTAP to authenticate with StorageGRID. 
 
+To learn more about the server certificate for a load balancing endpoint:
+
+*xref:../admin/using-storagegrid-security-certificates.adoc[About security certificates]
+* xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints]
+* xref:../harden/hardening-guideline-for-server-certificates.adoc[Hardening guidelines for server certificates]
+
 == Certificate options
 
 You can use any of these options to provide the certificate used by the load balancer endpoint:
 
-* Recommended. Upload a certificate that is signed by either a publicly trusted or a private certificate authority (CA). Using a publicly trusted CA server certificate to secure the connection is the best practice. In contrast to generated certificates, certificates signed by a CA can be rotated nondisruptively, which can help avoid expiration issues.
+* *Upload a signed certificate (recommended)*. This certificate can be signed by either a publicly trusted or a private certificate authority (CA). Using a publicly trusted CA server certificate to secure the connection is the best practice. In contrast to generated certificates, certificates signed by a CA can be rotated nondisruptively, which can help avoid expiration issues.
 +
-Obtain the following files before creating the load balancer endpoint:
+You must obtain the following files before you create the load balancer endpoint:
 
 ** The custom server certificate file.
 ** The custom server certificate private key file.
 ** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
 
-* Generate a self-signed certificate.
-* Use the global StorageGRID S3 and Swift certificate. You must upload or generated a custom version of this certificate before you can select it for the load balancer endpoint. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates]. 
+* *Generate a self-signed certificate*.
+* *Use the global StorageGRID S3 and Swift certificate*. You must upload or generate a custom version of this certificate before you can select it for the load balancer endpoint. See xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates]. 
 
 == Certificate values
 
 The subject name of the certificate must include the fully qualified domain name (Server name) that ONTAP will use for StorageGRID. For example:
 
 ----
-s3.storagegrid.company.com
+Subject DN: /C=Country/ST=State/O=Company,Inc./CN=s3.storagegrid.company.com
 ----
 
-If you plan to use S3 virtual hosted-style requests, the certificate must also include the xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 API endpoint domain names] you have configured, including any wildcard names.
-
-For example:
+If you plan to use S3 virtual hosted-style requests, the certificate must also include an Alternative Name entry for each xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 API endpoint domain name] you have configured, including any wildcard names. For example:
 
 ----
-*.s3.storagegrid.company.com
+Alternative Name: DNS:*.s3.storagegrid.company.com
 ----
+
+You must also define a DNS entry for each name in the security certificate. See xref:configure-dns.adoc[Configure DNS].
 
 == Add certificate to ONTAP
 
-When you add StorageGRID as a FabricPool cloud tier, you must install the same certificate to the ONTAP cluster, as well as the root and any subordinate certificate authority (CA) certificates.
+When you add StorageGRID as a FabricPool cloud tier, you must install the same certificate on the ONTAP cluster, including the root and any subordinate certificate authority (CA) certificates.
 
-To learn more about the server certificate for a load balancing endpoint:
 
-* xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints]
-* xref:../harden/hardening-guideline-for-server-certificates.adoc[Hardening guidelines for server certificates]
-
-=== What happens if a certificate expires?
+== Manage certificate expiration
 
 IMPORTANT: If the certificate used to secure the connection between ONTAP and StorageGRID expires, FabricPool will temporarily stop working and ONTAP will temporarily lose access to data tiered to StorageGRID. 
 
 To avoid certificate expiration issues, follow these best practices:
 
-* Carefully monitor any alerts that warn of approaching certificate expiration dates, including the *Expiration of load balancer endpoint certificate* and *Expiration of global server certificate for S3 and Swift API* alerts.
+* Carefully monitor any alerts that warn of approaching certificate expiration dates, such as the *Expiration of load balancer endpoint certificate* and *Expiration of global server certificate for S3 and Swift API* alerts.
 
 * Always keep the StorageGRID and ONTAP versions of the certificate in sync. If you replace or renew the certificate used for a load balancer endpoint, you must replace or renew the equivalent certificate used by ONTAP for the cloud tier.
 
-* Use a CA-signed certificate. If you use a certificate signed by a CA, you can use the Grid Management API to automate certificate rotation. This allows you to replace soon-to-expire certificates nondisruptively. 
+* Use a publicly signed CA certificate. If you use a certificate signed by a CA, you can use the Grid Management API to automate certificate rotation. This allows you to replace soon-to-expire certificates nondisruptively. 
 
-* If you have generated a self-signed StorageGRID certificate and that certificate is about to expire, manually replace the certificate in both StorageGRID and in ONTAP before the existing certificate expires. If a self-signed certificate has already expired, turn off certificate validation in ONTAP to prevent access loss.
+* If you have generated a self-signed StorageGRID certificate and that certificate is about to expire, you must manually replace the certificate in both StorageGRID and in ONTAP before the existing certificate expires. If a self-signed certificate has already expired, turn off certificate validation in ONTAP to prevent access loss.
 +
 See https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_a_new_StorageGRID_self-signed_server_certificate_on_an_existing_ONTAP_FabricPool_deployment[NetApp Knowledge Base: How to configure a new StorageGRID self-signed server certificate on an existing ONTAP FabricPool deployment^] for instructions.
