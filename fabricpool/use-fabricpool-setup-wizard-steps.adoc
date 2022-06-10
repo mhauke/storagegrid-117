@@ -180,6 +180,27 @@ xref:../network/network-port-reference.adoc[Network port reference].
  
 . Select *Continue*.
 
+. For the *Tenant access* step, select one of the following:
++
+[cols="1a,2a" options="header"]
+|===
+|Field| Description
+
+|Allow all tenants (default)
+|All tenant accounts can use this endpoint to access their buckets. 
+
+Select this option if you are using the FabricPool setup wizard for a new StorageGRID system and you have not yet created any tenant accounts.
+
+|Allow selected tenants
+|Only the selected tenant accounts can use this endpoint to access their buckets.
+
+|Block selected tenants
+|The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+
+|===
+
+. Select *Continue*.
+
 . For the *Attach certificate* step, select one of the following:
 +
 [cols="1a,2a" options="header"]
