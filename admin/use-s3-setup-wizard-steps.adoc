@@ -252,7 +252,23 @@ For details about this task, see xref:creating-s3-bucket-and-access-key.adoc[Cre
 .New tenant and bucket
 --
 
-.. To create a new tenant and bucket, enter a *Tenant name*. For example, `FabricPool tenant`.
+To create a new tenant and bucket:
+
+. Select *Create tenant* and enter the following information for the tenant in the *Enter tenant details*:
++
+
+.. *Name*: Enter a name for the tenant account. For example, `S3 tenant`
+.. *Description* (optional): Enter a description that helps you identify the tenant.
+.. The *Client type* by default is *S3* and is disabled. 
+.. *Storage quota* (optional): If you want this tenant to have a storage quota, enter a numerical value for the quota and select the correct units (GB, TB, or PB).
++
+. Select the appropriate permissions for the tenant. Some of these permissions have additional requirements. For details, see the online help for each permission.
++
+* Allow platform services
+* Use own identity source (selectable only if SSO is not being used)
+* Allow S3 select (see xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts])
+ 
+. Select *Continue* and define root access for the tenant account.
 
 .. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
