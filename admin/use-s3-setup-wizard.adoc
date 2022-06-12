@@ -20,13 +20,6 @@ Assuming you have Root access permission, you can complete the FabricPool and S3
 
 Use the wizard unless you have special requirements or your implementation needs significant customization. For example, you cannot use the FabricPool and S3 setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
 
-== How to create connections for more than one cluster
-
-If you plan to connect the same StorageGRID system to multiple ONTAP systems, use the FabricPool and S3 setup wizard to create an HA group, load balancer endpoint, tenant, and bucket for the first cluster.
-
-Then, as required, complete the wizard for each additional cluster. You can select same HA group, and load balancer endpoint, but you must create or select a different tenant and bucket.
-
-
 == Before using the wizard
 
 Before using the wizard, confirm you have completed these prerequisite steps.

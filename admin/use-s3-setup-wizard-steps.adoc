@@ -269,6 +269,7 @@ To create a new tenant and bucket:
 * Allow S3 select (see xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts])
  
 . Select *Continue* and define root access for the tenant account.
++
 
 .. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
@@ -289,194 +290,68 @@ Optionally specify the password to use when signing in to the tenant as the loca
 |Select an existing federated group to have Root access permission for the tenant. No local users can sign in.
 
 |===
++
 
-.. For *Bucket name*, enter the name of the bucket FabricPool will use to store ONTAP data. For example, `fabricpool-bucket`.
+IMPORTANT: If Create root user S3 access key automatically is checked, an access key ID and secret access key for the root user are created automatically. Select this option only if the root user is the only user and who can have full S3 access. If other users access this tenant, use Tenant Manager to to configure keys and permissions.
+
+.. Select *Continue*.
+
+. Create a bucket for the tenant's object.
+
+.. For *Bucket name*, enter the name of the bucket S3 will use. For example, `S3-bucket`.
 +
 IMPORTANT: You cannot change the bucket name after creating the bucket.
 
-.. Select the *Region* for this bucket.
+.. Select the *Region* for this bucket..
 +
 Use the default region (us-east-1) unless you expect to use ILM in the future to filter objects based on the bucket's region.
-
-.. Select *Create and Continue* to create the tenant and bucket and to go to the download data step 
---
-
-.Select tenant and bucket
---
-
-The existing tenant account must have at least one bucket that does not have versioning enabled. You cannot select an existing tenant account if no bucket exists for that tenant. 
-
-.. Select the existing tenant from the *Tenant name* drop-down list. 
-.. Select the existing bucket from the *Bucket name* drop-down list.
 +
-FabricPool does not support object versioning, so buckets that have versioning enabled are not shown. 
 
-.. Select *Continue* to go to the download data step. 
+IMPORTANT: Use *Enable object versioning* if you want to store each version of each object in this bucket. 
+
+.. If you want o create tenant only, select *Create tenant only*, else select *Create tenant and bucket* to create the tenant and bucket and to go to the download data step.
+
 --
 ====
 
-// end tabbed area
+== Step 4 of 6: Download S3 settings
 
+You can download the file from the StorageGRID and save it in a safe location. The downloaded files includes StorageGRID configuration details,
 
-== Step 4 of 6: Download ONTAP settings 
+* Load balancer connection details
+* Bucket name
 
-. To save the values you've entered so far to a text file, select *Download ONTAP settings*.
-+
-Later, you can enter these values into ONTAP System Manager. 
-+
-The file includes the information you need to configure StorageGRID as the object storage system for a FabricPool cloud tier, including: 
-+
-* Load balancer connection details, including the server name (FQDN), port, and certificate
-*	Bucket name 
-* Access key ID and secret access key for the root user of the tenant account
+. Select *Download access credential information* to download the credentials details: Tenant account name, Access key ID, and Secret access key.
+
+. Select *Download file* to download and view settings of the Load balancer endpoint, Tenant, Bucket, and the root user credentials.
 
 . Select *Continue* to go to the ILM storage pool step.
 
+== Step 5 of 6: Review ILM rule and ILM policy for S3
 
-== Step 5 of 6: Select a storage pool
-A storage pool is a group of Storage Nodes. When you select a storage pool, you determine which nodes StorageGRID will use to store the data tiered from ONTAP.
+Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system.
 
-For details about this step, see xref:../ilm/ilm/creating-storage-pool.adoc[Create a storage pool].
+The S3 setup wizard automatically creates the recommended ILM rule for S3 use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
 
-. From the *Site* drop-down list, select the StorageGRID site you want to use for the data tiered from ONTAP. 
-. From the *Storage pool* drop-down list, select the storage pool for that site.
-+
-The storage pool for a site includes all Storage Nodes at that site.
+For details about this step, see xref:../ilm/access-create-ilm-rule-wizard.adoc[Create ILM rule] and xref:best-practices-ilm.adoc[Best practices for using ILM with S3].
 
-. Select *Continue* to go to the ILM rule step.
+=== Things you should do
 
-////
-== Step 6 of 9: Review ILM rule for FabricPool
+The ILM policy included with StorageGRID makes two replicated copies of all objects. This policy is in effect until you create a new proposed policy and activate it.
 
-Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system. 
+. To add specific instructions for objects belonging to a new S3 tenant or bucket, create a new rule on the ILM rules page. Use basic filters to select the new tenant, bucket, or both.
 
-The FabricPool and S3 setup wizard automatically creates the recommended ILM rule for FabricPool use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
+. Create a new proposed policy on the ILM policies page. Typically, you can clone the existing active policy and add your new rule in the correct location.
 
-For details about this step, see xref:../ilm/access-create-ilm-rule-wizard.adoc[Create ILM rule] and xref:best-practices-ilm.adoc[Best practices for using ILM with FabricPool data].
+. Simulate and then activate the proposed ILM policy. When you activate a policy, StorageGRID uses it to manage all objects in the grid, including existing objects and newly ingested objects.
 
-. Review the rule details.
-+
-[cols="1a,3a" options="header"]
-|===
-|Field
-|Description
-
-|Rule name 
-|Automatically generated and cannot be changed
-
-|Description
-|Automatically generated and cannot be changed
-
-|Filter
-|The bucket name
-
-This rule only applies to objects that are saved in the bucket you specified.
-
-|Reference time
-|Ingest time
-
-The placement instruction starts when objects are initially saved to the bucket.
-
-|Placement instruction
-|2+1 erasure coding 
-
-|===
-
-. Sort the retention diagram by *Time period* and *Storage pool* to confirm the placement instruction.
-
-** The *Time period* for the rule is *Day 0 - forever*. *Day 0* means that the rule is applied when data is tiered from ONTAP. *Forever* means that StorageGRID will not delete data that has been tiered from ONTAP unless it receives a delete request from ONTAP.
-
-** The *Storage pool* for the rule is the storage pool you selected. *EC 2+1* means the data will stored using 2+1 erasure coding. Each object will be saved as two data fragments and one parity fragment. The three fragments for each object will be saved to different Storage Nodes at a single site.
-
-. Select *Create and Continue* to create this rule and to go to the ILM policy step.
-////
-
-////
-== Step 7 of 9: Review and activate ILM policy
-
-After the FabricPool and S3 setup wizard creates the ILM rule for FabricPool use, it creates a proposed ILM policy. You must carefully review this policy before activating it. 
-
-For details about this step, see xref:../ilm/creating-ilm-policy.adoc[Create ILM policy] and xref:best-practices-ilm.adoc[Best practices for using ILM with FabricPool data].
-
-CAUTION: When you activate a new ILM policy, StorageGRID uses that policy to manage the placement, duration, and data protection of all objects in the grid, including existing objects and newly ingested objects. In some cases, activating a new policy can cause existing objects to be moved to new locations.
-
-
-To review and activate the policy:
-
-. Optionally, update the system-generated *Policy name*. By default, the system appends "`+ FabricPool`" to the name of your active or proposed policy, but you can provide your own name.
-
-. Review the list of rules in the proposed policy.
-
-+
-The new FabricPool rule is the first rule in the proposed policy. The other rules are selected as follows:
-
-* If your grid doesn't have a proposed ILM policy, the wizard creates a proposed policy by cloning your active policy.
-
-* If your grid already has a proposed ILM policy, the wizard compares that policy to your active policy. 
-
-** If both policies include the same rules in the same order, the wizard adds the FabricPool rule to the existing proposed policy.
-
-** If your proposed policy contains different rules than the active policy, a message appears. To add the new FabricPool rule to one of these policies, you must either  xref:../ilm/creating-proposed-ilm-policy.adoc[delete or edit your proposed policy from the ILM policies page].
-+
-[cols="1a,3a" options="header"]
-|===
-|If you want to use 
-|Perform these steps
-
-|Active policy 
-|. Select *ILM* > *Policies* from the left menu in Grid Manager.
-. Select the Proposed policy tab.
-. Select *Actions* > *Delete* to remove the existing proposed policy.
-. Return to the FabricPool and S3 setup wizard.
-
-The wizard can now clone your active policy to create a new proposed policy. The new FabricPool rule will be added to the top.
-
-|Proposed policy
-|. Select *ILM* > *Policies* from the left menu in Grid Manager.
-. Select the Proposed policy tab.
-. Select *Actions* > *Edit* to edit the existing proposed policy.
-. Add the new FabricPool rule to the top.
-. Activate the updated policy.
-. Go to the traffic classification step.
-
-|===
-
-
-
-. Review the order of the rules in the new policy. 
-+
-Because the FabricPool rule is the first rule, any objects in the FabricPool bucket are placed before the other rules in the policy are evaluated. Objects in any other buckets are placed by subsequent rules in the policy.
-
-. Review the retention diagram to learn how different objects will be retained.
-
-.. Select *Expand all* to see a retention diagram for each rule in the proposed policy.
-.. Select *Time period* and *Storage pool* to review the retention diagrams. 
-
-. When you have reviewed the proposed policy, select *Activate and continue* to activate the policy and go to the traffic classification step.
-
-IMPORTANT: Errors in an ILM policy can cause irreparable data loss. Review the policy carefully before activating.
-////
-
-== Step 5 of 6: Create traffic classification policy
-
-As an option, the FabricPool and S3 setup wizard can create a traffic classification policy that you can use to monitor the FabricPool workload. The system-created policy uses a matching rule to identify all network traffic related to the bucket you created. This policy monitors traffic only; it does not limit traffic for FabricPool or any other clients. 
-
-For details about this step, see xref:creating-traffic-classification-policy-for-fabricpool.adoc[Create a traffic classification policy for FabricPool].
-
-. Review the policy.
-
-. If you want to create this traffic classification policy, select *Create and continue*. 
-+
-As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic Classification Policies page to view network traffic metrics for this policy. Later, you can also add rules to limit other workloads and ensure that the FabricPool workload has the majority of bandwidth. 
-
-
-. Otherwise, select *Skip this step*.
+Check the option *I have reviewed these steps and understand what I need to do* and select *Continue* to go to *Summary*.
 
 == Step 6 of 6: Review summary 
 
-. Review the summary.
+. Review the summary and check for the next steps and configuration settings you can do.
 . Select *Finish*.
 +
-StorageGRID is now ready to accept data from FabricPool. 
+StorageGRID is now ready to ingest data from S3. 
 
 . Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to enter the saved values and to complete the configuration.
