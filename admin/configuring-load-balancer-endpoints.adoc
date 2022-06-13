@@ -62,13 +62,12 @@ image::../media/load_balancer_endpoint_create_http.png[Create LB Endpoint]
 |A descriptive name for the endpoint, which will appear in the table on the Load balancer endpoints page.
 
 |Port
-|The port clients will use to connect to the Load Balancer service on Admin Nodes and Gateway Nodes.
-
-Accept the suggested port number or enter any external port that is not used by another grid service. Enter a value between 1 and 65535.
+|The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port between 1 and 65535. 
 
 If you enter *80* or *443*, the endpoint is configured only on Gateway Nodes. These ports are reserved on Admin Nodes.
 
-See the xref:../network/index.adoc[Networking guidelines] for information about external ports.
+NOTE: Ports used by other grid services are not permitted. See the 
+xref:../network/network-port-reference.adoc[Network port reference].
 
 |Client type
 |The type of client application that will use this endpoint, either *S3* or *Swift*.
@@ -85,14 +84,14 @@ See the xref:../network/index.adoc[Networking guidelines] for information about 
 
 === Select the binding mode
 
-. Select a binding mode for the endpoint to control how the endpoint is accessed.
+. Select a binding mode for the endpoint to control how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
 [cols="1a,3a" options="header"]
 |===
 | Option | Description
 
 |Global (default)
-|Clients can access the endpoint using a fully qualified domain name (FQDN), the IP address of any Gateway Node or Admin Node, or the virtual IP address of any HA group on any network.
+|Clients can access the endpoint using a fully qualified domain name (FQDN), the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) address of any HA group on any network.
 
 Use the *Global* setting (default) unless you need to restrict the accessibility of this endpoint.
 
@@ -104,8 +103,6 @@ Use the *Global* setting (default) unless you need to restrict the accessibility
 
 Endpoints with this binding mode can all use the same port number, as long as the HA groups you select for the endpoints do not overlap.
 
-
-Endpoints with this mode can all use the same port number as long as the interfaces you select for the endpoints do not overlap.
 
 |===
 +
@@ -119,6 +116,27 @@ image::../media/load_balancer_endpoint_node_interfaces_binding_mode.png[Endpoint
 . If you selected *Virtual IPs of HA groups*, select one or more HA groups.
 +
 image::../media/load_balancer_endpoint_ha_group_vips_binding_mode.png[Endpoint HA Group VIPs Binding Mode]
+
+=== Control tenant access
+
+. For the *Tenant access* step, select one of the following:
++
+[cols="1a,2a" options="header"]
+|===
+|Field| Description
+
+|Allow all tenants (default)
+|All tenant accounts can use this endpoint to access their buckets. 
+
+You must select this option if you have not yet created any tenant accounts. After you add tenant accounts, you can edit the load balancer endpoint to allow or block specific accounts. 
+
+|Allow selected tenants
+|Only the selected tenant accounts can use this endpoint to access their buckets.
+
+|Block selected tenants
+|The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+
+|===
 
 +
 
@@ -282,6 +300,20 @@ IMPORTANT: After editing an endpoint, you might need to wait up to 15 minutes fo
 .. Select *Edit certificate*.
 .. Upload or generate a new custom certificate or begin using the global S3 and Swift certificate, as required.
 .. Select *Save changes*.
+
+|Edit tenant access
+
+|.. Select the check box for the endpoint. 
+.. Select *Actions* > *Edit tenant access*.
+.. Choose a different access option, select or remove tenants from the list, or do both.
+.. Select *Save changes*.
+
+|.. Select the endpoint name to display the details.
+.. Select the *Tenant access* tab.
+.. Select *Edit tenant access*.
+.. Choose a different access option, select or remove tenants from the list, or do both.
+.. Select *Save changes*.
+
 
 |===
 

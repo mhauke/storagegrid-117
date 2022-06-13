@@ -28,3 +28,6 @@ As a general best practice, each site in your StorageGRID system should include 
 
 You must configure a StorageGRID load balancer endpoint to define the port that Gateway Nodes and Admin Nodes will use for incoming and outgoing FabricPool requests.
 
+== Best practices for tenant access to the load balancer endpoint used for FabricPool
+
+You can control which tenants can use a specific load balancer endpoint to access their buckets. You can allow all tenants, allow some tenants, or block some tenants. When creating a load balance endpoint for FabricPool use, select *Allow all tenants*. ONTAP encrypts the data that is placed in StorageGRID buckets, so little additional security would be provided by this extra security layer.

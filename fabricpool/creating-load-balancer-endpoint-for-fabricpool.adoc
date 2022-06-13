@@ -37,7 +37,7 @@ For details about this task, see xref:../admin/configuring-load-balancer-endpoin
 |A descriptive name for the endpoint.
 
 |Port
-|The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
+|The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes. These ports are reserved on Admin Nodes.
 
 *Note:* Ports used by other grid services are not permitted. See the 
 xref:../network/network-port-reference.adoc[Network port reference].
@@ -61,16 +61,39 @@ You will provide this number to ONTAP when you attach StorageGRID as a FabricPoo
 |Option| Description
 
 |Global (recommended)
-|Clients can access the endpoint using the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) address of any HA group. 
+|Clients can access the endpoint using the fully qualified domain name (FQDN), the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) address of any HA group. 
 
 |Node interfaces
-|Clients can only access the endpoint using the IP address of a selected node and network interface.
+|Clients must access the endpoint using the IP address of a selected node and network interface.
 
 |HA groups VIPs
 |Clients can only access the endpoint using a VIP address of an HA group. Use this selection only if you require much higher levels of isolation of workloads.
 
 |===
  
+
+. For the *Tenant access* step, select one of the following:
++
+[cols="1a,2a" options="header"]
+|===
+|Field| Description
+
+|Allow all tenants (default)
+|All tenant accounts can use this endpoint to access their buckets. 
+
+
+*Allow all tenants* is almost always the appropriate option for the load balancer endpoint used for FabricPool. 
+
+You must select this option if you have not yet created any tenant accounts. 
+
+|Allow selected tenants
+|Only the selected tenant accounts can use this endpoint to access their buckets.
+
+|Block selected tenants
+|The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+
+|===
+
 
 . For the *Attach certificate* step, select one of the following:
 +

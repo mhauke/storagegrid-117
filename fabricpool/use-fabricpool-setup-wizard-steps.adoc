@@ -67,7 +67,6 @@ For details about this task, see xref:../admin/managing-high-availability-groups
 
 |===
 
-.. Select *Continue*.
 .. For the *Add interfaces* step, select the node interfaces you want to use in this HA group.
 +
 Use the column headers to sort the rows, or enter a search term to locate interfaces more quickly.
@@ -159,8 +158,6 @@ xref:../network/network-port-reference.adoc[Network port reference].
 
 |===
 
-. Select *Continue*.
-
 . For the *Select binding mode* step, specify the binding mode. The binding mode controls how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
 [cols="1a,2a" options="header"]
@@ -178,7 +175,6 @@ xref:../network/network-port-reference.adoc[Network port reference].
 
 |===
  
-. Select *Continue*.
 
 . For the *Tenant access* step, select one of the following:
 +
@@ -189,7 +185,9 @@ xref:../network/network-port-reference.adoc[Network port reference].
 |Allow all tenants (default)
 |All tenant accounts can use this endpoint to access their buckets. 
 
-Select this option if you are using the FabricPool setup wizard for a new StorageGRID system and you have not yet created any tenant accounts.
+*Allow all tenants* is almost always the appropriate option for the load balancer endpoint used for FabricPool. 
+
+You must select this option if you are using the FabricPool setup wizard for a new StorageGRID system and you have not yet created any tenant accounts.
 
 |Allow selected tenants
 |Only the selected tenant accounts can use this endpoint to access their buckets.
@@ -199,7 +197,6 @@ Select this option if you are using the FabricPool setup wizard for a new Storag
 
 |===
 
-. Select *Continue*.
 
 . For the *Attach certificate* step, select one of the following:
 +
