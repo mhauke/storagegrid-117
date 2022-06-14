@@ -32,10 +32,10 @@ Before using the wizard, confirm you have completed these prerequisite steps.
 ** xref:best-practices-for-load-balancing.adoc[Load balancing and the load balancer certificate]
 //** xref:best-practices-ilm.adoc[ILM rules and policy]
 
-
+////
 === Obtain IP addresses and set up VLAN interfaces
 
-If you will configure an HA group, you know which nodes ONTAP will connect to and which StorageGRID network will be used. You also know which values to enter for the subnet CIDR, gateway IP address, and virtual IP (VIP) addresses. 
+If you will configure an HA group, you know which nodes S3 will connect to and which StorageGRID network will be used. You also know which values to enter for the subnet CIDR, gateway IP address, and virtual IP (VIP) addresses. 
 
 If you plan to use a virtual LAN to segregate FabricPool traffic, you have already configured the VLAN interface. See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces].
 
@@ -66,7 +66,7 @@ The certificate must include the FQDN that ONTAP will use for StorageGRID.
 ** If you plan to use the global StorageGRID S3 and Swift API certificate instead, you have already updated or generated a custom version. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates]. 
 
 * If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
-
+ ////
 
 
 

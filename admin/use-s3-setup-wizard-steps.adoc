@@ -1,8 +1,8 @@
 ---
-permalink: fabricpool/use-fabricpool-setup-wizard-steps.html
+permalink: admin/use-s3-setup-wizard-steps.html
 sidebar: sidebar
-keywords: FabricPool and S3 setup wizard, S3 client
-summary: 'You can use the S3 setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.'
+keywords: FabricPool and S3 setup wizard, S3
+summary: 'You can use the S3 setup wizard to configure StorageGRID as the object storage system for an S3 application.'
 ---
 = Access and complete the S3 application setup wizard
 :icons: font
@@ -27,7 +27,7 @@ image::../media/help_menu.png[help menu]
 == Step 1 of 6: Configure HA group
 A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
 
-You can use an HA group to help keep the S3 application data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to FabricPool operations.
+You can use an HA group to help keep the S3 application data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to S3 operations.
 
 For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups] and xref:best-practices-for-high-availability-groups.adoc[Best practices for high availability groups].
 
@@ -87,7 +87,7 @@ If the HA group includes more than one interface and the active interface fails,
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
 
 |Gateway IP address (optional)
-|Optional. If the ONTAP IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
+|Optional. If the S3 IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
 
 |Virtual IP address
 |Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet.
@@ -112,7 +112,7 @@ At least one address must be IPv4. Optionally, you can specify additional IPv4 a
 
 == Step 2 of 6: Configure load balancer endpoint
 
-StorageGRID uses a load balancer to manage the workload from client applications, such as FabricPool. Load balancing maximizes speed and connection capacity across multiple Storage Nodes.
+StorageGRID uses a load balancer to manage the workload from client applications. Load balancing maximizes speed and connection capacity across multiple Storage Nodes.
 
 You can use the StorageGRID Load Balancer service, which exists on all Gateway and Admin Nodes, or you can connect to an external (third-party) load balancer. Using the StorageGRID load balancer is recommended.
 
@@ -217,7 +217,7 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 |The fully qualified domain name (FQDN) of the external load balancer.
 
 |Port
-|The port number that FabricPool will use to connect to the external load balancer.
+|The port number that S3 will use to connect to the external load balancer.
 
 |Certificate
 |Copy the server certificate for the external load balancer and paste it into this field.
@@ -331,7 +331,7 @@ You can download the file from the StorageGRID and save it in a safe location. T
 
 Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system.
 
-The S3 setup wizard automatically creates the recommended ILM rule for S3 use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
+// The S3 setup wizard automatically creates the recommended ILM rule for S3 use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
 
 For details about this step, see xref:../ilm/access-create-ilm-rule-wizard.adoc[Create ILM rule] and xref:best-practices-ilm.adoc[Best practices for using ILM with S3].
 
