@@ -31,7 +31,7 @@ This number indicates the total number of objects this grid node detects as miss
 +
 image::../media/nodes_storage_nodes_objects_page_lost_object.png[Nodes Storage Nodes Object Page lost object]
 
-. From an Admin Node, access the xref:../audit/index.adoc[audit log] to determine the unique identifier (UUID) of the object that triggered the *Objects lost* alert:
+. From an Admin Node, xref:../audit/accessing-audit-log-file.adoc[access the audit log] to determine the unique identifier (UUID) of the object that triggered the *Objects lost* alert:
  .. Log in to the grid node:
   ... Enter the following command: `ssh admin@grid_node_IP`
   ... Enter the password listed in the `Passwords.txt` file.
