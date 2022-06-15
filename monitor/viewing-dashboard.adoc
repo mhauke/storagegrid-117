@@ -2,14 +2,14 @@
 permalink: monitor/viewing-dashboard.html
 sidebar: sidebar
 keywords: how to view the dashboard
-summary: 'When you first sign in to the Grid Manager, you can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.'
+summary: 'You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.'
 ---
 = View the Dashboard
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-When you first sign in to the Grid Manager, you can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.
+You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.
 
 image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
 
@@ -19,105 +19,64 @@ The *Search* field in the header bar allows you to quickly navigate to a specifi
 
 == Configure the Dashboard
 
-The Dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards. As needed, you can configure the Dashboard to show or hide tabs or to display, hide, or rearrange cards on each tab. To configure the tabs and cards, select *Configure dashboard*.
+The Dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards. As needed, you can configure the Dashboard to show, hide, rearrange, or add tabs and cards. To configure the tabs and cards, select *Configure dashboard*. To resize or remove a card, select the three vertical dots in the upper right corner of the card.
 
-The default information displayed on each tab is described in the following tables.
+//The default information displayed on each tab is described in the following tables.
 
-=== Overview tab
+=== Available cards by category
 
-[cols="1a,2a,3a" options="header"]
-|===
+NOTE: You can add a card to any tab you choose, even if it is listed in a different category.
 
-| Default card| Description| Additional details
-|Health status
-|Summarizes the system's health. A green checkmark means that there are no current alerts and all grid nodes are connected. Any other icon means that there is at least one current alert or disconnected node.
-|You might see one or more of the following links:
+*Overview*
+* Health status
+* Data utilization breakdown
+* Metadata utilization breakdown
+* Storage over time
+* Total objects
+//less important (from Confluence page: https://confluence.ngage.netapp.com/display/SGWS/Dashboard)
+* Grid information
 
-* *Grid details*: Appears if any nodes are disconnected (xref:monitoring-node-connection-states.adoc[connection state Unknown or Administratively Down]). Select the link or the blue or gray icon to determine which node or nodes are affected.
-* *Current alerts*: Appears if any xref:viewing-current-alerts.adoc[alerts are currently active]. Select the link or *Critical*, *Major*, or *Minor* to see the details on the *ALERTS* > *Current* page.
-* *Recently resolved alerts*: Appears if any xref:viewing-resolved-alerts.adoc[alerts triggered in the past week are now resolved]. Select the link to see the details on the *ALERTS* > *Resolved* page.
-* *Legacy alarms*: Appears if any xref:viewing-legacy-alarms.adoc[alarms (legacy system)] are currently active. Select the link to see the details on the *SUPPORT* > *Alarms (Legacy)* > *Current alarms* page.
-* *License*: Appears if there is an issue with the xref:../admin/updating-storagegrid-license-information.adoc[software license for this StorageGRID system]. Select the link to see the details on the *MAINTENANCE* > *System* > *License* page.
+*Performance*
 
-|Data usage breakdown
-|Available and used storage capacity in the entire grid, not including archival media.
-|For each site in the grid, the percentage and amount of space used are shown, in additional to the total space available for the site.
+* S3 operations
+* Network traffic
+* S3 API calls
+* Error rate
+* Average request duration
+//less important
+* Platform services - Pending requests
+* Platform services - Failed requests
+* Platform services - Request rate
 
-You can use this information to xref:monitoring-storage-capacity.adoc[compare the used storage with the available storage]. If you have a multi-site grid, you can determine which site is consuming more storage.
+*Storage*
 
-|Total objects
-|Total number of objects in the grid. If S3 Object Lock is enabled globally or for specific S3 buckets, each object version is included in the total.
-|
+* Storage pool level data utilization forecast
+* Site level metadata utilization forecast
+* Storage used by placement type
+* Object count over time
+* Storage information
+* Top 5 tenants by logical space used
+//less important
+* Top 5 buckets by logical space used
+* Top 5 tenants by quota utilization
+* Object size distribution
 
-|Metadata usage breakdown
-|Available and used storage capacity for metadata in the entire grid, not including archival media.
-|For each site in the grid, the percentage and amount of space used for metadata are shown, in additional to the total metadata space available for the site. The metadata for all objects in the grid is stored at every site.
+*ILM*
 
-Use this information to xref:monitoring-storage-capacity.adoc[compare the used and allowed storage for metadata]. The site with the highest metadata usage regulates how much data can be stored in the grid.
+* ILM queue
+* ILM evaluation rate
+//less important
+* ILM information
 
-|Grid information
-|General information for the grid, such as the StorageGRID software serial number and version, site count, node count, licensed storage capacity, and the support term.
-|
+*Nodes*
 
-|Storage over time
-|Chart of historical usage for data or metadata over time. If you select Metadata, the chart shown is for the site with the highest metadata usage.
-|
-|===
-
-=== Performance tab
-
-
-=== Storage tab
-
-[cols="1a,2a,2a" options="header"]
-|===
-
-| Default card| Description| Additional details
-
-|===
-
-=== ILM tab
-
-[cols="1a,2a,3a" options="header"]
-|===
-| Description| View additional details| Learn more
-|Current ILM operations and ILM queues for your system. 
-|Use this information to monitor your system's workload.
-
-* *Awaiting - Client*: The total number of objects awaiting ILM evaluation from client operations (for example, ingest).
-* *Awaiting - Evaluation Rate*: The current rate at which objects are evaluated against the ILM policy in the grid.
-* *Scan Period - Estimated*: The estimated time to complete a full ILM scan of all objects.
-*Note:* A full scan does not guarantee that ILM has been applied to all objects.
-
-|
-
-* To see details, select *NODES*. Then, xref:viewing-ilm-tab.adoc[view the ILM tab] for the entire grid, an entire site, or a single Storage Node.
-* To see the existing ILM rules, select *ILM* > *Rules*.
-* To see the existing ILM policies, select *ILM* > *Policies*.
-
-|===
-
-=== Nodes tab
-
-==== Protocol Operations card
-
-[options="header"]
-|===
-| Description| View additional details| Learn more
-a|
-Displays the number of protocol-specific operations (S3 and Swift) performed by your system.
-
-You can use this information to monitor your system's workloads and efficiencies. Protocol rates are averaged over the last two minutes.
-
-a|
-
-* To see details, select *NODES*. Then, view the Objects tab for the entire grid, an entire site, or a single Storage Node.
-* To view trends over a date range, select the chart icon image:../media/icon_chart_new_for_11_5.png[Chart Icon] to the right of the S3 or Swift protocol rate.
-
-a|
-
-* xref:viewing-objects-tab.adoc[View the Objects tab]
-* xref:../s3/index.adoc[Use S3]
-* xref:../swift/index.adoc[Use Swift]
-
-|===
+* Overall node health
+* Total nodes
+* Top 5 nodes by CPU usage
+* Top 5 nodes by memory usage
+* Top 5 nodes by S3 operations
+//less important
+* Top 5 nodes by alerts
+* Top 5 nodes by data utilization
+* Nodes by deployment type
+* Node to site distribution
