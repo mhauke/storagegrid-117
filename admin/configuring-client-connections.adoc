@@ -22,7 +22,7 @@ You can optionally configure the following features on your StorageGRID system:
 
 * *High availability groups*: You can create an HA group of the interfaces for Gateway Nodes or Admin Nodes to create an active-backup configuration, or you can use round-robin DNS or a third-party load balancer and multiple HA groups to achieve an active-active configuration. Client connections are made using the virtual IP addresses of HA groups.
 
-* *Load Balancer service*: You can enable clients to use the Load Balancer service by creating load balancer endpoints for client connections. When creating a load balancer endpoint, you specify a port number, whether the endpoint accepts HTTP or HTTPS connections, the type of client (S3 or Swift) that will use the endpoint, and the certificate to be used for HTTPS connections (if applicable).
+* *Load balancer endpoints*: You can enable clients to use the Load Balancer service by creating load balancer endpoints for client connections. When creating a load balancer endpoint, you specify a port number, whether the endpoint accepts HTTP or HTTPS connections, the type of client (S3 or Swift) that will use the endpoint, an optional list of allowed or blocked tenant accounts, and the certificate to be used for HTTPS connections (if applicable).
 
 * *Untrusted Client Network*: You can make the Client Network more secure by configuring it as untrusted. When the Client Network is untrusted, clients can only connect using load balancer endpoints.
 

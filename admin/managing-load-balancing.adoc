@@ -29,29 +29,20 @@ As a general best practice, each site in your StorageGRID system should include 
 == What is a load balancer endpoint?
 To use the Load Balancer service, you must xref:configuring-load-balancer-endpoints.adoc[configure one or more load balancer endpoints] using the Grid Manager.
 
-Each load balancer endpoint defines the port and the network protocol (HTTPS or HTTP) that incoming and outgoing client application requests will use to access those nodes that contain the Load Balancer service. The endpoint also defines the client type (S3 or Swift), the binding mode, and optionally a list of allowed or blocked tenants. HTTPS endpoints require a security certificate. 
+Each load balancer endpoint defines the port and the network protocol (HTTPS or HTTP) that incoming and outgoing client application requests will use to access those nodes that contain the Load Balancer service. The endpoint also defines the client type (S3 or Swift), the binding mode, and optionally a list of allowed or blocked tenants. 
 
 === Considerations for the port
-The port for a load balancer endpoint defaults to 10433 for the first endpoint you create, but you can specify any unused external port between 1 and 65535.
+The port for a load balancer endpoint defaults to 10433 for the first endpoint you create, but you can specify any unused external port between 1 and 65535. If you use port 80 or 443, the endpoint will use the Load Balancer service on Gateway Nodes only. These ports are reserved on Admin Nodes. If you use the same port for more than one endpoint, you must specify a different binding mode for each endpoint.
 
-Ports used by other grid services are not permitted. See the 
-xref:../network/network-port-reference.adoc[Network port reference].
-
-If you use port 80 or 443, the endpoint will use the Load Balancer service on Gateway Nodes only. These ports are reserved on Admin Nodes.
-
-If you use the same port for more than one endpoint, you must specify a different binding mode for each endpoint.
+Ports used by other grid services are not permitted. See the xref:../network/network-port-reference.adoc[Network port reference].
 
 === Considerations for the network protocol
 
-In most cases, the connections between client applications and StorageGRID should use Transport Layer Security (TLS) encryption. Connecting to StorageGRID without TLS encryption is supported but not recommended, especially in production environments. When you select the network protocol for the StorageGRID load balancer endpoint, select *HTTPS*. 
+In most cases, the connections between client applications and StorageGRID should use Transport Layer Security (TLS) encryption. Connecting to StorageGRID without TLS encryption is supported but not recommended, especially in production environments. When you select the network protocol for the StorageGRID load balancer endpoint, you should select *HTTPS*. 
 
 === Considerations for load balancer endpoint certificates
 
-If you select *HTTPS* as the network protocol used by the load balancer endpoint, you must upload or generate a security certificate.
-
-==== How do I provide the certificate?
-
-When you create the load balancer endpoint, you can use any of these options to provide the required certificate:
+If you select *HTTPS* as the network protocol for the load balancer endpoint, you must provide a security certificate. You can use any of these options when you create the load balancer endpoint:
 
 * *Upload a signed certificate (recommended)*. This certificate can be signed by either a publicly trusted or a private certificate authority (CA). Using a publicly trusted CA server certificate to secure the connection is the best practice. In contrast to generated certificates, certificates signed by a CA can be rotated nondisruptively, which can help avoid expiration issues.
 +
