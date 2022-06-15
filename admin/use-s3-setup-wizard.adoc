@@ -30,11 +30,9 @@ Before using the wizard, confirm you have completed these prerequisite steps.
 
 ** xref:best-practices-for-high-availability-groups.adoc[High availability groups]
 ** xref:best-practices-for-load-balancing.adoc[Load balancing and the load balancer certificate]
+//** xref:best-practices-ilm.adoc[ILM rules and policy]
 
 ////
-** xref:best-practices-ilm.adoc[ILM rules and policy]
-
-
 === Obtain IP addresses and set up VLAN interfaces
 
 If you will configure an HA group, you know which nodes S3 will connect to and which StorageGRID network will be used. You also know which values to enter for the subnet CIDR, gateway IP address, and virtual IP (VIP) addresses. 
