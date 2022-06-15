@@ -122,7 +122,7 @@ StorageGRID uses a load balancer to manage the workload from client applications
 
 You can use the StorageGRID Load Balancer service, which exists on all Gateway and Admin Nodes, or you can connect to an external (third-party) load balancer. Using the StorageGRID load balancer is recommended.
 
-For details about this task, see xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints], xref:best-practices-for-load-balancing.adoc[Best practices for load balancing], and xref:best-practices-for-security-certificate.adoc[Best practices for security certificate].
+For details about this task, see the general xref:../admin/managing-load-balancer-endpoints.adoc[considerations for load balancing] and the xref:best-practices-for-load-balancing.adoc[best practices for load balancing for FabricPool].
 
 To use the StorageGRID Load Balancer service, select the *StorageGRID load balancer* tab and then create or select the load balancer endpoint you want to use. To use an external load balancer, select the *External load balancer* tab and provide details about the system you have already configured. 
 

@@ -52,8 +52,6 @@ Each load balancer endpoint specifies a port, a client type (S3 or Swift), and a
 
 . Enter details for the endpoint.
 +
-image::../media/load_balancer_endpoint_create_http.png[Create LB Endpoint]
-+
 [cols="1a,3a" options="header"]
 |===
 | Field| Description
@@ -66,8 +64,7 @@ image::../media/load_balancer_endpoint_create_http.png[Create LB Endpoint]
 
 If you enter *80* or *443*, the endpoint is configured only on Gateway Nodes. These ports are reserved on Admin Nodes.
 
-NOTE: Ports used by other grid services are not permitted. See the 
-xref:../network/network-port-reference.adoc[Network port reference].
+
 
 |Client type
 |The type of client application that will use this endpoint, either *S3* or *Swift*.

@@ -11,7 +11,7 @@ summary: 'After configuring high availability groups, load balancer endpoints, a
 [.lead]
 After configuring high availability groups, load balancer endpoints, and S3 domain names, you must ensure that the domain name system (DNS) includes the necessary entries for StorageGRID. You must include a DNS entry for each name in the security certificate and for each IP address you might use.
 
-See xref:best-practices-for-security-certificate.adoc[Best practices for the security certificate].
+See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
 
 == DNS entries for StorageGRID server name
 
