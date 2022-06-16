@@ -61,7 +61,7 @@ Storage Nodes manage and store object data and metadata. Follow these guidelines
 
 Gateway Nodes provide an optional load-balancing interface that client applications can use to connect to StorageGRID. Follow these guidelines to secure any Gateway Nodes in your StorageGRID system:
 
-* Configure and use load balancer endpoints. See the steps for managing load balancing in the instructions for administering StorageGRID.
+* Configure and use load balancer endpoints. See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
 +
 
 * Use a third-party load balancer between the client and the Gateway Node or Storage Nodes for untrusted client traffic. Third-party load balancing offers more control and additional layers of protection against attack. If you do use a third-party load balancer, network traffic can still optionally be configured to go through an internal load balancer endpoint or be sent directly to Storage Nodes.

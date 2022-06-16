@@ -22,34 +22,7 @@ Use the wizard unless you have special requirements or your implementation needs
 
 NOTE: If you want to configure StorageGRID for use with any other S3 client application, go to xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard].
 
-== How many StorageGRID buckets and tenants do I need?
 
-The FabricPool wizard guides you through the process of creating a single StorageGRID cloud tier that includes one StorageGRID tenant, one set of access keys, and one StorageGRID bucket. You can attach this StorageGRID cloud tier to one or more ONTAP local tiers. Attaching a single cloud tier to multiple local tiers in a cluster is the general best practice. 
-
-Optionally, depending on your requirements, you might want to use more than one bucket or even more than one StorageGRID tenant for the local tiers in a single cluster. Using different buckets and tenants allows you to isolate data and data access between ONTAP local tiers, but is somewhat more complex to configure and manage.
-
-NetApp does not recommend attaching a single cloud tier to local tiers in multiple clusters.
-
-NOTE: For the best practices for using StorageGRID with NetApp MetroCluster™ and FabricPool Mirror, see https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf[TR-4598: FabricPool Best Practices in ONTAP^].
-
-=== Optional: Use a different bucket for each local tier
-
-To use more than one bucket for the local tiers in an ONTAP cluster, add more than one StorageGRID cloud tier in ONTAP. Each cloud tier shares the same HA group, load balancer endpoint, tenant, and access keys, but uses a different container (StorageGRID bucket). Follow these general steps:
-
-. From StorageGRID Grid Manager, complete the FabricPool setup wizard for the first cloud tier.
-. From ONTAP System Manager, add a cloud tier and use the file you downloaded from StorageGRID to provide the required values.  
-. From StorageGRID Tenant Manager, sign in to the tenant that was created by the wizard, and create a second bucket.
-. Complete the FabricPool wizard again. Select the existing HA group, load balancer endpoint, and tenant. Then, select the new bucket you created manually. Create a new ILM rule for the new bucket and activate an ILM policy to include that rule.
-. From ONTAP, add a second cloud tier but provide the new bucket name.
-
-=== Optional: Use a different tenant and bucket for each local tier
-
-To use more than one tenant and different sets of access keys for the local tiers in an ONTAP cluster, add more than one StorageGRID cloud tier in ONTAP. Each cloud tier shares the same HA group, load balancer endpoint, but uses a different tenant, access keys, and container (StorageGRID bucket). Follow these general steps:
-
-. From StorageGRID Grid Manager, complete the FabricPool setup wizard for the first cloud tier.
-. From ONTAP System Manager, add a cloud tier and use the file you downloaded from StorageGRID to provide the required values. 
-. Complete the FabricPool wizard again. Select the existing HA group and load balancer endpoint. Create a new tenant and bucket. Create a new ILM rule for the new bucket and activate an ILM policy to include that rule. 
-. From ONTAP, add a second cloud tier but provide the new access key, secret key, and bucket name.
 
 == Before using the wizard
 
@@ -81,8 +54,8 @@ If you plan to use identity federation or single sign-on (SSO) for your StorageG
 
 * If you plan to use S3 virtual hosted-style requests, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. ONTAP uses path-style URLs by default, but using virtual hosted-style requests is recommended.
 
-=== Review security certificate requirements
-If you plan to use the StorageGRID load balancer, you have reviewed the general xref:../admin/managing-load-balancer-endpoints.adoc[considerations for load balancing]. You have the certificates you will upload or the values you need to generate a certificate.
+=== Review load balancer and security certificate requirements
+If you plan to use the StorageGRID load balancer, you have reviewed the general xref:../admin/managing-load-balancing.adoc[considerations for load balancing]. You have the certificates you will upload or the values you need to generate a certificate.
 
 If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
 
@@ -91,7 +64,34 @@ If you upgraded to StorageGRID 11.7 from a previous StorageGRID version, you hav
 
 NOTE: This prerequisite does not apply to new StorageGRID 11.7 installations. When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site.
 
+== Relationship between ONTAP and the StorageGRID cloud tier
 
+The FabricPool wizard guides you through the process of creating a single StorageGRID cloud tier that includes one StorageGRID tenant, one set of access keys, and one StorageGRID bucket. You can attach this StorageGRID cloud tier to one or more ONTAP local tiers.
+
+Attaching a single cloud tier to multiple local tiers in a cluster is the general best practice. However, depending on your requirements, you might want to use more than one bucket or even more than one StorageGRID tenant for the local tiers in a single cluster. Using different buckets and tenants allows you to isolate data and data access between ONTAP local tiers, but is somewhat more complex to configure and manage.
+
+NetApp does not recommend attaching a single cloud tier to local tiers in multiple clusters.
+
+NOTE: For the best practices for using StorageGRID with NetApp MetroCluster™ and FabricPool Mirror, see https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf[TR-4598: FabricPool Best Practices in ONTAP^].
+
+=== Optional: Use a different bucket for each local tier
+
+To use more than one bucket for the local tiers in an ONTAP cluster, add more than one StorageGRID cloud tier in ONTAP. Each cloud tier shares the same HA group, load balancer endpoint, tenant, and access keys, but uses a different container (StorageGRID bucket). Follow these general steps:
+
+. From StorageGRID Grid Manager, complete the FabricPool setup wizard for the first cloud tier.
+. From ONTAP System Manager, add a cloud tier and use the file you downloaded from StorageGRID to provide the required values.  
+. From StorageGRID Tenant Manager, sign in to the tenant that was created by the wizard, and create a second bucket.
+. Complete the FabricPool wizard again. Select the existing HA group, load balancer endpoint, and tenant. Then, select the new bucket you created manually. Create a new ILM rule for the new bucket and activate an ILM policy to include that rule.
+. From ONTAP, add a second cloud tier but provide the new bucket name.
+
+=== Optional: Use a different tenant and bucket for each local tier
+
+To use more than one tenant and different sets of access keys for the local tiers in an ONTAP cluster, add more than one StorageGRID cloud tier in ONTAP. Each cloud tier shares the same HA group, load balancer endpoint, but uses a different tenant, access keys, and container (StorageGRID bucket). Follow these general steps:
+
+. From StorageGRID Grid Manager, complete the FabricPool setup wizard for the first cloud tier.
+. From ONTAP System Manager, add a cloud tier and use the file you downloaded from StorageGRID to provide the required values. 
+. Complete the FabricPool wizard again. Select the existing HA group and load balancer endpoint. Create a new tenant and bucket. Create a new ILM rule for the new bucket and activate an ILM policy to include that rule. 
+. From ONTAP, add a second cloud tier but provide the new access key, secret key, and bucket name.
 
 
 
