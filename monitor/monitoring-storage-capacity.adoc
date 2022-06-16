@@ -105,7 +105,7 @@ NOTE: If your ILM policy uses erasure coding, you might prefer to expand when ex
 +
 For more information on planning a storage expansion, see the xref:../expand/index.adoc[instructions for expanding StorageGRID].
 +
-The xref:troubleshooting-storagegrid-system.adoc[*Low object data storage*] alert is triggered when insufficient space remains for storing object data on a Storage Node.
+The *Low object data storage* alert is triggered when insufficient space remains for storing object data on a Storage Node.
 
 == Monitor object metadata capacity for each Storage Node
 
@@ -149,6 +149,7 @@ image::../media/storage_used_object_metadata.png[Storage Used - Object Metadata]
 //`storagegrid_storage_utilization_metadata_reserved_bytes`
 
 |===
+
 NOTE: The total values for a site or the grid do not include nodes that have not reported metrics for at least five minutes, such as offline nodes.
 
 . If the *Used (%)* value is 70% or higher, expand your StorageGRID system by adding Storage Nodes to each site.
