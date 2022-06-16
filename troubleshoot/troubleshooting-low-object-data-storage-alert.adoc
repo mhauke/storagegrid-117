@@ -66,14 +66,13 @@ image::../media/nodes_page_storage_used_object_data.png[Nodes Page Storage Used 
 +
 Looking at storage use over time can help you understand how much storage was used before and after the alert was triggered and can help you estimate how long it might take for the node's remaining space to become full.
 
-. As soon as possible, perform a xref:../expand/index.adoc[grid expansion] procedure to add storage capacity.
+. As soon as possible, xref:../expand/guidelines-for-adding-object-capacity.adoc[add storage capacity] to your grid.
 +
 You can add storage volumes (LUNs) to existing Storage Nodes, or you can add new Storage Nodes.
 +
-NOTE: To manage a full Storage Node, see the instructions for administering StorageGRID.
+NOTE: For more information, see xref:../admin/managing-full-storage-nodes.adoc[Manage full Storage Nodes].
 
 .Related information
 
-xref:troubleshooting-storage-status-alarm.adoc[Troubleshoot the Storage Status (SSTS) alarm]
+xref:troubleshooting-storage-status-alarm.adoc[Troubleshoot the Storage Status (SSTS) alarm (legacy)]
 
-xref:../admin/index.adoc[Administer StorageGRID]
