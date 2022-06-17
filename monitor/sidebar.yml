@@ -34,17 +34,6 @@ entries:
     entries:
     - title: Monitor system health
       url: "/monitor/monitoring-system-health.html"
-      entries:
-      - title: Monitor node connection states
-        url: "/monitor/monitoring-node-connection-states.html"
-      - title: View current alerts
-        url: "/monitor/viewing-current-alerts.html"
-      - title: View resolved alerts
-        url: "/monitor/viewing-resolved-alerts.html"
-      - title: View a specific alert
-        url: "/monitor/viewing-specific-alert.html"
-      - title: View legacy alarms
-        url: "/monitor/viewing-legacy-alarms.html"
     - title: Monitor storage capacity
       url: "/monitor/monitoring-storage-capacity.html"
     - title: Monitor information lifecycle management
@@ -90,7 +79,11 @@ entries:
         - title: Silence alert notifications
           url: "/monitor/silencing-alert-notifications.html"
     - title: Manage alarms (legacy system)
-      url: "/monitor/managing-alarms.html" 
+      entries:
+      - title: Manage legacy alarms
+        url: "/monitor/managing-alarms.html"
+      - title: View legacy alarms
+        url: "/monitor/viewing-legacy-alarms.html"
     - title: Alerts reference
       url: "/monitor/alerts-reference.html"
     - title: Commonly used Prometheus metrics

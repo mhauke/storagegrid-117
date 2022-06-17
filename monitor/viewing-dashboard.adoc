@@ -13,71 +13,60 @@ You can use the Dashboard to monitor system activities at a glance. The Dashboar
 
 image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
 
-== Search field
-
-The *Search* field in the header bar allows you to quickly navigate to a specific page or sidebar entry within the Grid Manager. For example, you can enter *key* to access the Key Management Server page.
-
 == Configure the Dashboard
 
-The Dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards. As needed, you can configure the Dashboard to show, hide, rearrange, or add tabs and cards. To configure the tabs and cards, select *Configure dashboard*. To resize or remove a card, select the three vertical dots in the upper right corner of the card.
-
-//The default information displayed on each tab is described in the following tables.
+The Dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards. As needed, you can select *Configure dashboard* to add or remove tabs or cards. Select the three vertical dots in the upper right corner of a card to perform operations such as resizing or removing the card.
 
 == Available cards by category
 
-NOTE: You can add a card to any tab you choose, even if it is listed in a different category.
+NOTE: You can add a card to any tab you choose.
 
 *Overview*
 
+* Data usage breakdown
 * Health status
-* Data utilization breakdown
-* Metadata utilization breakdown
+* Metadata usage breakdown
 * Storage over time
 * Total objects
-//less important (from Confluence page: https://confluence.ngage.netapp.com/display/SGWS/Dashboard)
 * Grid information
 
 *Performance*
 
-* S3 operations
-* Network traffic
-* S3 API calls
-* Error rate
 * Average request duration
-//less important
+* Error rate
+* Network traffic
 * Platform services - Pending requests
 * Platform services - Failed requests
 * Platform services - Request rate
+* S3 API calls
+* S3 operations
 
 *Storage*
 
-* Storage pool level data utilization forecast
-* Site level metadata utilization forecast
-* Storage used by placement type
 * Object count over time
-* Storage information
-* Top 5 tenants by logical space used
-//less important
-* Top 5 buckets by logical space used
-* Top 5 tenants by quota utilization
 * Object size distribution
+* Site level metadata usage forecast
+* Storage information
+* Storage pool level data usage forecast
+* Storage used by placement type
+* Top 5 buckets by logical space used
+* Top 5 tenants by logical space used
+* Top 5 tenants by quota usage
 
 *ILM*
 
 * ILM queue
 * ILM evaluation rate
-//less important
 * ILM information
 
 *Nodes*
 
-* Overall node health
-* Total nodes
-* Top 5 nodes by CPU usage
-* Top 5 nodes by memory usage
-* Top 5 nodes by S3 operations
-//less important
-* Top 5 nodes by alerts
-* Top 5 nodes by data utilization
 * Nodes by deployment type
 * Node to site distribution
+* Overall node health
+* Top 5 nodes by alerts
+* Top 5 nodes by CPU usage
+* Top 5 nodes by data usage
+* Top 5 nodes by memory usage
+* Top 5 nodes by S3 operations
+* Total nodes
