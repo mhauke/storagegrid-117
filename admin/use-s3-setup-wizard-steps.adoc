@@ -238,11 +238,9 @@ A tenant is an entity that can use S3 applications to store and retrieve objects
 
 A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the wizard lets you create or select only one tenant and one bucket at a time. You can use the Tenant Manager later to add any additional buckets you need.
 
-You can create a new tenant and bucket for S3 application use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key ID and secret access key for the tenant's root user.
+You can create a new tenant and bucket for S3 application use. When creating a new tenant, if you select *Create root user S3 access key automatically*, the access key ID and secret access key for the tenant's root user are created automatically.
 
 For details about this task, see xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key].
-
-
 
 // start tabbed area
 
