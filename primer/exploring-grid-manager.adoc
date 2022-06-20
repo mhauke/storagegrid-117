@@ -19,11 +19,11 @@ You can access the Grid Manager using a xref:../admin/web-browser-requirements.a
 
 When you first sign in to the Grid Manager, you can use the Dashboard to monitor system activities at a glance.
 
-The Dashboard includes summary information about system health, storage use, ILM processes, and S3 and Swift operations.
+The Dashboard contains information about system health and performance, storage use, ILM processes, S3 and Swift operations, and the nodes in the grid. You can configure the Dashboard by selecting from a collection of cards that contain the information you need to effectively monitor your system.
 
 image::../media/grid_manager_dashboard.png[Dashboard in the Grid Manager]
 
-For an explanation of the information on each panel, click the help icon image:../media/icon_nms_question.png[question mark icon] for that panel.
+For an explanation of the information on each card, select the help icon image:../media/icon_nms_question.png[question mark icon] for that card.
 
 .Learn more
 
@@ -32,6 +32,19 @@ For an explanation of the information on each panel, click the help icon image:.
 == Search field
 
 The *Search* field in the header bar allows you to quickly navigate to a specific page within Grid Manager. For example, you can enter *km* to access the Key Management Server (KMS) page. You can use *Search* to find entries in the sidebar of the Grid Manager and on the Configuration, Maintenance, and Support menus. 
+
+== Help menu
+
+The Help menu image:../media/icon-help-menu-bar.png[help icon on the menu bar] provides access to the FabricPool and S3 setup wizard, the StorageGRID Documentation Center for the current release, and the API documentation. You can also determine which version of StorageGRID is currently installed.
+
+image::../media/help_menu.png[Help Menu]
+
+.Learn more
+
+* xref:../fabricpool/use-fabricpool-setup-wizard.adoc[Use FabricPool setup wizard]
+* xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard]
+* xref:../admin/using-grid-management-api.adoc[Use the Grid Management API]
+
 
 == Alerts menu
 
@@ -128,6 +141,7 @@ Maintenance tasks include:
 * Recovery operations to replace a failed node and restore data.
 * Rename operations to change the display names of your grid, sites, and nodes.
 * Object existence check to verify the existence (although not the correctness) of object data.
+* Volume restoration.
 
 === System
 
@@ -166,7 +180,6 @@ Network maintenance tasks you can perform include:
 
 == Support menu
 
-
 The Support menu provides options that help technical support analyze and troubleshoot your system. There are two parts to the Support menu: Tools and Alarms (legacy).
 
 image::../media/support_menu.png[Support menu]
@@ -201,13 +214,3 @@ NOTE: While the legacy alarm system continues to be supported, the alert system 
 
 * xref:../monitor/index.adoc[Monitor and troubleshoot]
 
-== Help menu
-
-
-The Help option provides access to the StorageGRID Documentation Center for the current release and to the API documentation. You can also determine which version of StorageGRID is currently installed.
-
-image::../media/help_menu.png[Help Menu]
-
-.Learn more
-
-* xref:../admin/index.adoc[Administer StorageGRID]

@@ -13,6 +13,13 @@ This release of StorageGRID introduces the following features.
 
 == Kathy's what's new
 
+=== FabricPool and S3 setup wizard
+A new setup wizard in the Grid Manager guides you through each step of configuring StorageGRID for use with ONTAP FabricPool or another S3 client application and produces a file you can use when entering required values in the other application. Use the wizard to create an HA group, load balancer endpoint, tenant, bucket, and access keys more quickly and to make sure your settings conform to StorageGRID best practices.
+
+See xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard]  and xref:../fabricpool/use-fabricpool-setup-wizard.adoc[Use FabricPool setup wizard].
+
+
+
 === New upgrade and hotfix process
 * You can now use the Grid Manager to upgrade to a future release and apply a hotfix for that release at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
 * The *Check for software updates* check box on the AutoSupport page (*SUPPORT* > *Tools* >
@@ -28,6 +35,9 @@ See xref:../tenant/configure-s3-object-lock-settings-for-bucket.adoc[Configure S
 
 === Can rename grid, sites, and nodes
 A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview] for details.
+
+=== Storage pools created for each site during installation
+When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
 
 
 == Kevin's what's new
