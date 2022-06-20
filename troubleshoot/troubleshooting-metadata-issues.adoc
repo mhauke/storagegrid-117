@@ -56,7 +56,7 @@ IMPORTANT: If the size of volume 0 is smaller than the Metadata Reserved Space s
 . Review the details in the alert dialog box.
 . If a major or critical *Low metadata storage* alert has been triggered, perform an expansion to add Storage Nodes immediately.
 +
-NOTE: Because StorageGRID keeps complete copies of all object metadata at each site, the metadata capacity of the entire grid is limited by the metadata capacity of the smallest site. If you need to add metadata capacity to one site, you should also xref:../expand/index.adoc[expand any other sites] by the same number of Storage Nodes.
+NOTE: Because StorageGRID keeps complete copies of all object metadata at each site, the metadata capacity of the entire grid is limited by the metadata capacity of the smallest site. If you need to add metadata capacity to one site, you should also xref:../expand/adding-grid-nodes-to-existing-site-or-adding-new-site.adoc[expand any other sites] by the same number of Storage Nodes.
 +
 After you perform the expansion, StorageGRID redistributes the existing object metadata to the new nodes, which increases the overall metadata capacity of the grid. No user action is required. The *Low metadata storage* alert is cleared.
 

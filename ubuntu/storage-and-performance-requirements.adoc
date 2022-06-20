@@ -17,7 +17,7 @@ StorageGRID nodes require three logical categories of storage:
 * *System data* -- Performance-tier (10K SAS or SSD) storage for per-node persistent storage of system data and transaction logs, which the StorageGRID host services will consume and map into individual nodes.
 * *Object data* -- Performance-tier (10K SAS or SSD) storage and capacity-tier (NL-SAS/SATA) bulk storage for the persistent storage of object data and object metadata.
 
-You must use RAID-backed block devices for all storage categories. Non-redundant disks, SSDs, or JBODs are not supported. You can use shared or local RAID storage for any of the storage categories; however, if you want to use StorageGRID's node migration capability, you must store both system data and object data on shared storage.
+You must use RAID-backed block devices for all storage categories. Non-redundant disks, SSDs, or JBODs are not supported. You can use shared or local RAID storage for any of the storage categories; however, if you want to use StorageGRID's node migration capability, you must store both system data and object data on shared storage. For more information, see xref:node-container-migration-requirements.adoc[Node container migration requirements].
 
 == Performance requirements
 
@@ -85,7 +85,7 @@ IMPORTANT: Depending on the audit level configured, the size of user inputs such
 
 The following table shows the minimum storage space required for each type of node. You can use this table to determine the minimum amount of storage you must provide to the host in each storage category, based on which nodes will be deployed on that host.
 
-NOTE: Disk snapshots cannot be used to restore grid nodes. Instead, refer to the recovery and maintenance procedures for each type of node.
+NOTE: Disk snapshots cannot be used to restore grid nodes. Instead, refer to the xref:../maintain/grid-node-recovery-procedures.adoc[grid node recovery] procedures for each type of node.
 
 [options="header"]
 |===
@@ -187,9 +187,3 @@ NOTE: If you use only one storage volume for a Storage Node and you assign 4 TB 
 * When configuring different Storage Nodes for a site, use the same setting for volume 0 if possible. If a site contains Storage Nodes of different sizes, the Storage Node with the smallest volume 0 will determine the metadata capacity of that site.
 
 For details, go to xref:../admin/managing-object-metadata-storage.adoc[Manage object metadata storage].
-
-.Related information
-
-xref:node-container-migration-requirements.adoc[Node container migration requirements]
-
-xref:../maintain/index.adoc[Recover and maintain]

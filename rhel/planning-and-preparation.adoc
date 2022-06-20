@@ -20,26 +20,14 @@ Before starting a StorageGRID installation, you must:
 * Understand StorageGRID's compute requirements, including the minimum CPU and RAM requirements for each node.
 * Understand how StorageGRID supports multiple networks for traffic separation, security, and administrative convenience, and have a plan for which networks you intend to attach to each StorageGRID node.
 +
-See the StorageGRID networking guidelines.
+See the StorageGRID xref:../network/index.adoc[Networking guidelines].
 
 * Understand the storage and performance requirements of each type of grid node.
 * Identify a set of servers (physical, virtual, or both) that, in aggregate, provide sufficient resources to support the number and type of StorageGRID nodes you plan to deploy.
-* Understand the requirements for node migration, if you want to perform scheduled maintenance on physical hosts without any service interruption.
+* Understand the xref:node-container-migration-requirements.adoc[requirements for node migration], if you want to perform scheduled maintenance on physical hosts without any service interruption.
 * Gather all networking information in advance. Unless you are using DHCP, gather the IP addresses to assign to each grid node, and the IP addresses of the domain name system (DNS) and network time protocol (NTP) servers that will be used.
 * Install, connect, and configure all required hardware, including any StorageGRID appliances, to specifications.
 +
-NOTE: Hardware-specific installation and integration instructions are not included in the StorageGRID installation procedure. To learn how to install StorageGRID appliances, see the installation and maintenance instructions for your appliance.
+NOTE: Hardware-specific installation and integration instructions are not included in the StorageGRID installation procedure. To learn how to install StorageGRID appliances, see xref:../installconfig/index.adoc[Install appliance hardware].
 
 * Decide which of the available deployment and configuration tools you want to use.
-
-.Related information
-
-xref:../network/index.adoc[Networking guidelines]
-
-xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-
-xref:../sg6000/index.adoc[SG6000 storage appliances]
-
-xref:../sg5700/index.adoc[SG5700 storage appliances]
-
-xref:../sg5600/index.adoc[SG5600 storage appliances]

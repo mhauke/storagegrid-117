@@ -15,7 +15,7 @@ To ensure that access between the StorageGRID Appliance Installer and other node
 
 Using the list of ports provided in the StorageGRID Appliance Installer, you can test the connectivity between the appliance and the other nodes in your Grid Network.
 
-Additionally, you can test connectivity on the Admin and Client Networks and on UDP ports, such as those used for external NFS or DNS servers. For a list of these ports, see the port reference in the StorageGRID networking guidelines.
+Additionally, you can test connectivity on the Admin and Client Networks and on UDP ports, such as those used for external NFS or DNS servers. For a list of these ports, see the xref:../network/network-port-reference.adoc[network port reference].
 
 NOTE: The Grid Network ports listed in the port connectivity table are valid only for StorageGRID version 11.6.0. To verify which ports are correct for each node type, you should always consult the networking guidelines for your version of StorageGRID.
 
@@ -58,7 +58,3 @@ The red banner indicates that a TCP connection attempt to a port on the remote h
 NOTE: Ports with "`closed`" are also listed.
 +
 image::../media/nmap_test_red_banner.png[NMAP test red banner]
-
-.Related information
-
-xref:../network/index.adoc[Networking guidelines]

@@ -11,6 +11,8 @@ summary: 'The StorageGRID system supports up to three network interfaces per gri
 [.lead]
 The StorageGRID system supports up to three network interfaces per grid node, allowing you to configure the networking for each individual grid node to match your security and access requirements.
 
+For detailed information about StorageGRID networks, see the xref:../network/storagegrid-network-types.adoc[StorageGRID network types].
+
 == Guidelines for Grid Network
 
 You must configure a Grid Network for all internal StorageGRID traffic. All grid nodes are on the Grid Network, and they must be able to talk to all other nodes.
@@ -28,7 +30,7 @@ The Admin Network is typically used for administrative tasks (trusted employees 
 
 If you are using the Admin Network, follow these guidelines:
 
-* Block all internal traffic ports on the Admin Network. See the list of internal ports in the installation guide for your platform.
+* Block all internal traffic ports on the Admin Network. See the xref:../network/internal-grid-node-communications.adoc[list of internal ports].
 * If untrusted clients can access the Admin Network, block access to StorageGRID on the Admin Network with an external firewall.
 
 == Guidelines for Client Network
@@ -37,19 +39,5 @@ The Client Network is typically used for tenants and for communicating with exte
 
 If you are using the Client Network, follow these guidelines:
 
-* Block all internal traffic ports on the Client Network. See the list of internal ports in the installation guide for your platform.
-* Accept inbound client traffic only on explicitly configured endpoints. See the information about managing untrusted Client Networks in the instructions for administering StorageGRID.
-
-.Related information
-
-xref:../network/index.adoc[Networking guidelines]
-
-xref:../primer/index.adoc[Grid primer]
-
-xref:../admin/index.adoc[Administer StorageGRID]
-
-xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-
-xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
-
-xref:../vmware/index.adoc[Install VMware]
+* Block all internal traffic ports on the Client Network. See the xref:../network/internal-grid-node-communications.adoc[list of internal ports].
+* Accept inbound client traffic only on explicitly configured endpoints. See the information about xref:../admin/managing-untrusted-client-networks.adoc[managing untrusted Client Networks].

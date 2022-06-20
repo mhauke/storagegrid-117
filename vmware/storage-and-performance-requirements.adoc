@@ -35,7 +35,7 @@ Other types of nodes, such as Admin Nodes or Gateway Nodes, can be deployed on t
 
 In a production environment, the virtual machines for StorageGRID grid nodes must meet different requirements, depending on the types of nodes.
 
-NOTE: Disk snapshots cannot be used to restore grid nodes. Instead, refer to the recovery and maintenance procedures for each type of node.
+NOTE: Disk snapshots cannot be used to restore grid nodes. Instead, refer to the xref:../maintain/grid-node-recovery-procedures.adoc[grid node recovery] procedures for each type of node.
 
 [cols="1a,2a" options="header"]
 |===
@@ -90,6 +90,3 @@ NOTE: If you use only one storage volume for a Storage Node and you assign 4 TB 
 
 For details, go to xref:../admin/managing-object-metadata-storage.adoc[Manage object metadata storage].
 
-.Related information
-
-xref:../maintain/index.adoc[Recover and maintain]
