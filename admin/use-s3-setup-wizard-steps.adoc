@@ -1,7 +1,7 @@
 ---
 permalink: admin/use-s3-setup-wizard-steps.html
 sidebar: sidebar
-keywords: StorageGRID, S3 setup wizard, S3 application
+keywords: FabricPool and S3 setup wizard, object storage system, S3 application
 summary: 'You can use the S3 setup wizard to configure StorageGRID as the object storage system for an S3 application.'
 ---
 = Access and complete the S3 application setup wizard
@@ -9,9 +9,9 @@ summary: 'You can use the S3 setup wizard to configure StorageGRID as the object
 :imagesdir: ../media/
 
 [.lead]
-You can use the S3 application setup wizard to configure StorageGRID for use with an S3 application. The setup wizard provides the objects the application needs to access a StorageGRID bucket.
+You can use the S3 application setup wizard to configure StorageGRID for use with an S3 application. The setup wizard provides the values the application needs to access a StorageGRID bucket and to save objects.
 
-NOTE: You must have the Root access permission to access the wizard.
+NOTE: You must have Root access permission to access the wizard.
 
 == Access the wizard
 
@@ -31,7 +31,7 @@ You can use an HA group to help keep the S3 application data connections availab
 
 For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups] and xref:best-practices-for-high-availability-groups.adoc[Best practices for high availability groups].
 
-. If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 6: Configure load balancer endpoint>>.
+. If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, you can create a new HA group or use an existing HA group.
 
@@ -73,7 +73,7 @@ Drag and drop rows to change the values in the *Priority order* column.
 +
 The first interface in the list is the Primary interface. The Primary interface is the active interface unless a failure occurs.
 +
-If the HA group includes more than one interface and the active interface fails, the virtual IP (VIP) addresses move to the first backup interface in the priority order. If that interface fails, the VIP addresses move to the next backup interface, and so on. When failures are resolved, the VIP addresses move back to highest priority interface available.
+If the HA group includes more than one interface and the active interface fails, the virtual IP (VIP) addresses move to the first backup interface in the priority order. If that interface fails, the VIP addresses move to the next backup interface, and so on. When failures are resolved, the VIP addresses move back to the highest priority interface available.
 
 .. For the *Enter IP addresses* step, complete the following fields.
 +
@@ -82,7 +82,7 @@ If the HA group includes more than one interface and the active interface fails,
 | Field| Description
 
 |Subnet CIDR
-|The address of the VIP subnet in CIDR notation&#8212;an IPv4 address followed by a slash and the subnet length (0-32). 
+|The address of the VIP subnet in CIDR notation&#8212; an IPv4 address followed by a slash and the subnet length (0-32). 
 
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
 
@@ -197,14 +197,14 @@ xref:../network/network-port-reference.adoc[Network port reference].
 NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied to all nodes.
 --
 
-.Use existing load balancer endpoint
+.Use the existing load balancer endpoint
 --
 . To use an existing endpoint, select its name from the *Select a load balancer endpoint* drop-down list. 
 . Select *Continue* to go to the tenant and bucket step. 
 --
 
 
-.Use external load balancer
+.Use an external load balancer
 --
 
 . To use an external load balancer, complete the following fields.
@@ -234,13 +234,15 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 
 == Step 3 of 6: Create tenant and bucket
 
-A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that S3 application will use. 
+A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that the S3 application will use. 
 
 A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the wizard lets you create or select only one tenant and one bucket at a time. You can use the Tenant Manager later to add any additional buckets you need.
 
-You can create a new tenant and bucket for S3 application use. When creating a new tenant, if you select *Create root user S3 access key automatically*, the access key ID and secret access key for the tenant's root user are created automatically.
+You can create a new tenant and bucket for S3 application use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key ID and secret access key for the tenant's root user.
 
 For details about this task, see xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain an access key].
+
+
 
 // start tabbed area
 
@@ -255,7 +257,7 @@ To create a new tenant and bucket:
 . Select *Create tenant* and enter the following information for the tenant in the *Enter tenant details*:
 +
 
-.. *Name*: Enter a name for the tenant account. For example, `S3 tenant`
+.. *Name*: Enter a name for the tenant account. For example, `S3 tenant`.
 .. *Description* (optional): Enter a description that helps you identify the tenant.
 .. The *Client type* by default is *S3* and is disabled. 
 .. *Storage quota* (optional): If you want this tenant to have a storage quota, enter a numerical value for the quota and select the correct units (GB, TB, or PB).
@@ -290,7 +292,7 @@ Optionally specify the password to use when signing in to the tenant as the loca
 |===
 +
 
-IMPORTANT: If Create root user S3 access key automatically is checked, an access key ID and secret access key for the root user are created automatically. Select this option only if the root user is the only user and who can have full S3 access. If other users access this tenant, use Tenant Manager to to configure keys and permissions.
+IMPORTANT: Selecting *Create root user S3 access key automatically*, creates an access key ID and secret access key for the root user automatically. Select this option if the user is a root user. If other users access this tenant, use Tenant Manager to configure keys and permissions.
 
 .. Select *Continue*.
 
@@ -300,34 +302,31 @@ IMPORTANT: If Create root user S3 access key automatically is checked, an access
 +
 IMPORTANT: You cannot change the bucket name after creating the bucket.
 
-.. Select the *Region* for this bucket..
+.. Select the *Region* for this bucket.
 +
 Use the default region (us-east-1) unless you expect to use ILM in the future to filter objects based on the bucket's region.
 +
 
 IMPORTANT: Use *Enable object versioning* if you want to store each version of each object in this bucket. 
 
-.. If you want o create tenant only, select *Create tenant only*, else select *Create tenant and bucket* to create the tenant and bucket and to go to the download data step.
+.. You can use *Create tenant only* to just create a tenant, else select *Create tenant and bucket* and go to the download data step.
 
 --
 ====
 
 == Step 4 of 6: Download S3 settings
 
-You can download the file from the StorageGRID and save it in a safe location. The downloaded files includes StorageGRID configuration details,
+In the download data step, you can download the access key and configuration values file and save it in a safe location. 
 
-* Load balancer connection details
-* Bucket name
+. Select *Download access keys* to download the credentials details: Tenant account name, Access key ID, and Secret access key.
 
-. Select *Download access credential information* to download the credentials details: Tenant account name, Access key ID, and Secret access key.
-
-. Select *Download file* to download and view settings of the Load balancer endpoint, Tenant, Bucket, and the root user credentials.
+. Select *Download configuration values* to download and view settings of the Load balancer endpoint, Tenant, Bucket, and the root user credentials.
 
 . Select *Continue* to go to the ILM storage pool step.
 
 == Step 5 of 6: Review ILM rule and ILM policy for S3
 
-Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior for all objects in your StorageGRID system.
+Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior of all objects in your StorageGRID system.
 
 // The S3 setup wizard automatically creates the recommended ILM rule for S3 use. This rule applies only to the bucket you specified. It uses 2+1 erasure coding at a single site to store the data that is tiered from ONTAP. 
 
@@ -350,6 +349,6 @@ Check the option *I have reviewed these steps and understand what I need to do* 
 . Review the summary and check for the next steps and configuration settings you can do.
 . Select *Finish*.
 +
-StorageGRID is now ready to ingest data from S3. 
+StorageGRID is now ready to ingest data from the S3 client.
 
-. Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to enter the saved values and to complete the configuration.
+. Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to enter the saved values and complete the configuration.
