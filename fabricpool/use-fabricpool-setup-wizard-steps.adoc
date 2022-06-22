@@ -331,7 +331,7 @@ FabricPool does not support object versioning, so buckets that have versioning e
 +
 Later, you can enter these values into ONTAP System Manager. 
 +
-The file includes the information you need to configure StorageGRID as the object storage system for a FabricPool cloud tier, including: 
+The `ONTAP_FabricPool_settings___bucketname__.txt` file includes the information you need to configure StorageGRID as the object storage system for a FabricPool cloud tier, including: 
 +
 * Load balancer connection details, including the server name (FQDN), port, and certificate
 *	Bucket name 

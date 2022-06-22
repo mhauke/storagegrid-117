@@ -2,16 +2,19 @@
 permalink: admin/summary-ip-addresses-and-ports-for-client-connections.html
 sidebar: sidebar
 keywords: ip addresses for client, how to connect to storagegrid, ports, vip
-summary: 'Client applications can connect to StorageGRID using the IP address of a grid node and the port number of a service on that node. If high availability \(HA\) groups are configured, client applications can connect using the virtual IP address of the HA group.'
+summary: 'To store or retrieve objects, S3 and Swift client applications connect to the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or to the Local Distribution Router (LDR) service, which is included on all Storage Nodes.'
 ---
 = Summary: IP addresses and ports for client connections
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Client applications can connect to StorageGRID using the IP address of a grid node and the port number of a service on that node. If high availability (HA) groups are configured, client applications can connect using the virtual IP address of the HA group.
 
-This table summarizes the different ways that clients can connect to StorageGRID and the IP addresses and ports that are used for each type of connection. The instructions describe how to find this information in the Grid Manager if load balancer endpoints and high availability (HA) groups are already configured.
+To store or retrieve objects, S3 and Swift client applications connect to the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or to the Local Distribution Router (LDR) service, which is included on all Storage Nodes.
+
+Client applications can connect to StorageGRID using the IP address of a grid node and the port number of the service on that node. Optionally, you can create high availability (HA) groups of load-balancing nodes to allow client applications to connect to a group of nodes, using a virtual IP (VIP) address. As required, you can configure DNS entries if you want to connect to StorageGRID using a fully qualified domain name (FQDN) instead of an IP or VIP address.
+
+This table summarizes the different ways that clients can connect to StorageGRID and the IP addresses and ports that are used for each type of connection. If you have already created load balancer endpoints and high availability (HA) groups, see <<Where to find IP addresses>> to locate these values in the Grid Manager.
 
 [cols="1a,1a,1a,1a" options="header"]
 |===
@@ -57,7 +60,7 @@ For example, if the virtual IP address of the HA group is 192.0.2.5 and the port
 
 `\https://192.0.2.5:10443`
 
-Optionally, you can configure DNS entries to associate StorageGRID IP addresses to a fully qualified domain name (FQDN).
+
 
 
 == Where to find IP addresses

@@ -97,6 +97,14 @@ entries:
           url: "/admin/configuring-storagegrid-certificates-for-fabricpool.html"
       - title: Configure client certificates
         url: "/admin/configuring-administrator-client-certificates.html"
+    - title: Configure global security
+      entries:
+      - title: Control which client operations are permitted
+        url: "/admin/controlling-which-client-operations-are-permitted.html"
+      - title: Enable HTTP for client communications
+        url: "/admin/enabling-http-for-client-communications.html"
+      - title: Change network transfer encryption
+        url: "/admin/changing-network-transfer-encryption.html"     
     - title: Configure key management servers
       entries:
       - title: Overview
@@ -160,12 +168,11 @@ entries:
       url: "/admin/manage-s3-select-for-tenant-accounts.html"
   - title: Configure S3 and Swift client connections
     entries:
-    - title: About S3 and Swift client connections
+    - title: Overview
+      pdf-filename: Configure S3 and Swift client connections - Overview
       url: "/admin/configuring-client-connections.html"
     - title: 'Summary: IP addresses and ports for client connections'
       url: "/admin/summary-ip-addresses-and-ports-for-client-connections.html"
-    - title: Configure VLAN interfaces
-      url: "/admin/configure-vlan-interfaces.html"
     - title: Manage high availability groups  
       entries:
       - title: Overview
@@ -183,7 +190,7 @@ entries:
         url: "/admin/managing-load-balancing.html"
       - title: Configure load balancer endpoints
         url: "/admin/configuring-load-balancer-endpoints.html"    
-    - title: S3 setup wizard
+    - title: Use S3 setup wizard
       entries:
       - title: S3 setup wizard considerations and requirements
         url: "/admin/use-s3-setup-wizard.html"
@@ -191,10 +198,6 @@ entries:
         url: "/admin/use-s3-setup-wizard-steps.html"
     - title: Configure S3 API endpoint domain names
       url: "/admin/configuring-s3-api-endpoint-domain-names.html"
-    - title: Enable HTTP for client communications
-      url: "/admin/enabling-http-for-client-communications.html"
-    - title: Control which client operations are permitted
-      url: "/admin/controlling-which-client-operations-are-permitted.html"
   - title: Manage networks and connections
     entries:
     - title: Guidelines for StorageGRID networks
@@ -203,8 +206,8 @@ entries:
       url: "/admin/viewing-ip-addresses.html"
     - title: Supported ciphers for outgoing TLS connections
       url: "/admin/supported-ciphers-for-outgoing-tls-connections.html"
-    - title: Change network transfer encryption
-      url: "/admin/changing-network-transfer-encryption.html"
+    - title: Configure VLAN interfaces
+      url: "/admin/configure-vlan-interfaces.html"  
     - title: Manage traffic classification policies
       entries:
       - title: Manage traffic classification policies

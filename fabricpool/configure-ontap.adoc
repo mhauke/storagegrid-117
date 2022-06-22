@@ -13,6 +13,10 @@ After you have obtained the required StorageGRID information, you can go to ONTA
 
 NOTE: These instructions describe how to use ONTAP System Manager to add StorageGRID as a cloud tier. You can complete the same configuration using the ONTAP CLI. For instructions, go to https://docs.netapp.com/us-en/ontap/fabricpool/index.html[ONTAP 9: FabricPool tier management with the CLI^].
 
+.Before you start
+* If you completed the FabricPool setup wizard, you have the `ONTAP_FabricPool_settings___bucketname__.txt` file you downloaded.
+* If you configured StorageGRID manually, you have the fully qualified domain name (FQDN) you are using for StorageGRID or the virtual IP (VIP) address for the StorageGRID HA group, the port number for the load balancer endpoint, the load balancer certificate, the access key ID and secret key for the root user of the tenant account, and the name of the bucket ONTAP will use in that tenant.
+
 == Access ONTAP System Manager
 
 . Access System Manager for the ONTAP cluster you want to tier to StorageGRID.
@@ -25,7 +29,7 @@ image::../media/ontap_systemmanager_addcloudtier.png[Add StorageGRID as cloud ti
 
 == Enter StorageGRID values
 
-Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file you downloaded from StorageGRID or the values you obtained manually.
+Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file or the values you obtained manually.
 
 image::../media/ontap_systemmanager_cloudtier_details.png[Add Cloud Tier details]
 
@@ -44,7 +48,7 @@ The following table describes these fields in more detail.
 *Path-Style URL* is the default for ONTAP, but using virtual hosted-style requests is recommended for StorageGRID. You must use *Path-Style URL* if you provide an IP address instead of a domain name for the *Server name (FQDN)* field.
 
 |Server name (FQDN)
-|Enter the virtual IP (VIP) address for the StorageGRID HA group or the fully qualified domain name (FQDN) you are using for StorageGRID. For example, `s3.storagegrid.company.com`.
+|Enter the fully qualified domain name (FQDN) you are using for StorageGRID or the virtual IP (VIP) address for the StorageGRID HA group. For example, `s3.storagegrid.__company__.com`.
 
 Note the following:
 
@@ -65,12 +69,12 @@ Note the following:
 |Enter the port used by the StorageGRID load balancer endpoint. ONTAP will use this port when it connects to StorageGRID. For example, 10433.
 
 |Access key 
-|Enter the access key ID for the StorageGRID tenant account.
+|Enter the access key ID for the root user of the StorageGRID tenant account.
 
 *Important*: If you create a new access key ID and secret access key for the StorageGRID tenant in the future, you must update these entries in ONTAP immediately to ensure that ONTAP can store and retrieve data in StorageGRID without interruption.
 
 |Secret key
-|Enter the secret access key for the StorageGRID tenant account.
+|Enter the secret access key for the  root user of the StorageGRID tenant account.
 
 |Container name
 |Enter the name of the StorageGRID bucket you will use with this ONTAP tier. For example, `fabricpool-bucket`. 
