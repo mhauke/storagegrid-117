@@ -19,11 +19,11 @@ StorageGRID uses the following security measures.
 
 * Client communications with the Load Balancer service use HTTPS if HTTPS is configured for the load balancer endpoint.
 +
-When you configure a load balancer endpoint, HTTP can optionally be enabled. For example, you might want to use HTTP for testing or other non-production purposes. See the instructions for administering StorageGRID for more information.
+When you xref:../admin/configuring-load-balancer-endpoints.adoc[configure a load balancer endpoint], HTTP can optionally be enabled. For example, you might want to use HTTP for testing or other non-production purposes.
 
 * By default, StorageGRID uses HTTPS for client communications with Storage Nodes.
 +
-HTTP can optionally be enabled for these connections. For example, you might want to use HTTP for testing or other non-production purposes. See the instructions for administering StorageGRID for more information.
+Optionally, xref:../admin/enabling-http-for-client-communications.adoc[enable HTTP for these connections]. For example, you might want to use HTTP for testing or other non-production purposes.
 +
 
 * Communications between StorageGRID and the client are encrypted using TLS.
@@ -41,7 +41,7 @@ In all cases, client applications can make TLS connections using either a custom
 
 Clients should be configured to trust the certificate authority that signed whichever certificate they use to establish TLS connections.
 
-See the instructions for administering StorageGRID for information on configuring load balancer endpoints, and for instructions on adding a single custom server certificate for TLS connections directly to Storage Nodes.
+See xref:../admin/configuring-load-balancer-endpoints.adoc[configuring load balancer endpoints] and xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[adding a single custom server certificate] for TLS connections directly to Storage Nodes.
 
 === Summary
 
@@ -73,9 +73,6 @@ a|
 * Swift: Administrator role access
 
 |===
-.Related information
-
-xref:../admin/index.adoc[Administer StorageGRID]
 
 == Supported hashing and encryption algorithms for TLS libraries
 

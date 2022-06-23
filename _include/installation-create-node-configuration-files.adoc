@@ -444,7 +444,7 @@ If you add a trunk interface, you must configure a VLAN interface in StorageGRID
 |O
 |The maximum amount of RAM that this node is allowed to consume. If this key is omitted, the node has no memory restrictions. When setting this field for a production-level node, specify a value that is at least 24 GB and 16 to 32 GB less than the total system RAM.
 
-*Note*: The RAM value affects a node's actual metadata reserved space. See the xref:../admin/index.adoc[instructions for administering StorageGRID] for a description of what Metadata Reserved Space is.
+*Note*: The RAM value affects a node's actual metadata reserved space. See the xref:../admin/managing-object-metadata-storage.adoc[description of what Metadata Reserved Space is] and xref:../upgrade/increasing-metadata-reserved-space-setting.adoc[how to increase Metadata Reserved Space].
 
 The format for this field is `<number><unit>`, where `<unit>` can be `b`, `k`, `m`, or `g`.
 
@@ -467,7 +467,7 @@ VM_API_Gateway
 
 |PORT_REMAP
 |O
-|Remaps any port used by a node for internal grid node communications or external communications. Remapping ports is necessary if enterprise networking policies restrict one or more ports used by StorageGRID, as described in "`Internal grid node communications`" or "`External communications.`"
+|Remaps any port used by a node for internal grid node communications or external communications. Remapping ports is necessary if enterprise networking policies restrict one or more ports used by StorageGRID, as described in xref:../network/internal-grid-node-communications.adoc[Internal grid node communications] or xref:../network/external-communications.adoc[External communications].
 
 *IMPORTANT*: Do not remap the ports you are planning to use to configure load balancer endpoints.
 
@@ -491,7 +491,3 @@ For example:
 
 `PORT_REMAP_INBOUND = grid/tcp/3022/22`
 |===
-
-.Related information
-
-xref:../network/index.adoc[Networking guidelines]
