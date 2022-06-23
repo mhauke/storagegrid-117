@@ -21,7 +21,6 @@ The Load Balancer service on each node operates independently when forwarding cl
 
 NOTE: Although the StorageGRID Load Balancer service is the recommended load balancing mechanism, you might want to integrate a third-party load balancer instead. For information, contact your NetApp account representative or refer to https://www.netapp.com/pdf.html?item=/media/17068-tr4626pdf.pdf[TR-4626: StorageGRID third-party and global load balancers^].
 
-
 == How many load balancing nodes do I need?
 
 As a general best practice, each site in your StorageGRID system should include two or more nodes with the Load Balancer service. For example, a site might include two Gateway Nodes or both an Admin Node and a Gateway Node. Make sure that there is adequate networking, hardware, or virtualization infrastructure for each load-balancing node, whether you are using SG100 or SG1000 services appliances, bare metal nodes, or virtual machine (VM) based nodes.
@@ -35,8 +34,6 @@ To create a load balancer endpoint, either select *CONFIGURATION* > *Network* > 
 * xref:configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints]
 * xref:use-s3-setup-wizard-steps.adoc[Use the S3 setup wizard]
 * xref:../fabricpool/use-fabricpool-setup-wizard-steps.adoc[Use the FabricPool setup wizard]
-
-
 
 === Considerations for the port
 The port for a load balancer endpoint defaults to 10433 for the first endpoint you create, but you can specify any unused external port between 1 and 65535. If you use port 80 or 443, the endpoint will use the Load Balancer service on Gateway Nodes only. These ports are reserved on Admin Nodes. If you use the same port for more than one endpoint, you must specify a different binding mode for each endpoint.
@@ -112,9 +109,21 @@ You can specify any of the following binding modes:
 
 === Considerations for tenant access
 
-Tenant access lets you control which StorageGRID tenant accounts can use a load balancer endpoint to access their buckets.
+Tenant access is an optional security feature that lets you control which StorageGRID tenant accounts can use a load balancer endpoint to access their buckets. You can allow all tenants (default) to access an endpoint, or you can specify a list of the allowed or blocked tenants for each endpoint.
 
-You can allow all tenants (default) to use an endpoint, or you can specify a list of the allowed or blocked tenants for each endpoint.
+You can use this feature to provide better security isolation between tenants and their endpoints. For example, you might use this feature to ensure that the top-secret or highly classified materials owned by one tenant remain completely inaccessible to other tenants. 
+
+==== Tenant access example
+To understand how this security feature works, consider the following example:
+
+. You have created two load balancer endpoints, as follows:
++
+* *Public* endpoint: Uses port 10443 and allows access to all tenants.
+* *Top secret* endpoint: Uses port 10444 and allows access to the *Top secret* tenant only. All other tenants are blocked from accessing this endpoint.
+
+. The `top-secret.pdf` is in a bucket owned by the *Top secret* tenant. 
+
+To access the `top-secret.pdf`, a user in the *Top secret* tenant can issue a GET request to `\https://x.y.z.q:10444/top-secret.pdf`. Because this tenant is allowed to use the 10444 endpoint, the user can access the object. However, if a user belonging to any other tenant issues the same request to the same URL, they receive an immediate Access Denied message. Access is denied even if the credentials and signature are valid. 
 
 == CPU availability
 

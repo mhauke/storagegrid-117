@@ -40,7 +40,7 @@ Depending on your requirements, you can do either of the following to obtain the
 +
 NOTE: If you are configuring an S3 application, using the S3 setup wizard is recommended unless you know you have special requirements or your implementation will require significant customization. 
 
-* *Configure items manually*. If you are connecting to a Swift application or for an S3 application as required, you can obtain the required values by performing the configuration manually. Follow these steps:
+* *Configure items manually*. If you are connecting to a Swift application (or you are connecting to an S3 application and prefer not to use the S3 setup wizard), you can obtain the required values by performing the configuration manually. Follow these steps:
 +
 . Configure the high availability (HA) group you want to use for the S3 or Swift application. See xref:configure-high-availability-group.adoc[Configure high availability groups].
 . Create the load balancer endpoint that the S3 or Swift application will use. See xref:configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints].
