@@ -21,6 +21,14 @@ Use these instructions to:
 
 == Configuration workflow
 
+
+As shown in the workflow diagram, there are four primary steps for connecting StorageGRID as a FabricPool cloud tier:
+
+. Perform prerequisite tasks in StorageGRID, based on how ONTAP will connect to StorageGRID.
+. Use StorageGRID to obtain the values ONTAP needs to connect to the grid. You can either use the FabricPool setup wizard or configure each StorageGRID entity manually.
+. Use ONTAP to add a cloud tier that uses the StorageGRID values. Create DNS entries to associate IP addresses to any domain names you plan to use.
+. Perform ongoing tasks in ONTAP and StorageGRID to manage and monitor FabricPool data tiering over time. 
+
 image::../media/fabricpool_storagegrid_workflow.png[FabricPool StorageGRID Workflow]
 
 == Before you start

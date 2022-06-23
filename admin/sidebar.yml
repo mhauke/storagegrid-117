@@ -38,7 +38,9 @@ entries:
         - title: Azure
           url: "/admin/use-api-if-sso-is-enabled-azure.html"
         - title: PingFederate
-          url: "/admin/use-api-if-sso-is-enabled-ping.html"   
+          url: "/admin/use-api-if-sso-is-enabled-ping.html"  
+      - title: Deactivate features with the API
+        url: "/admin/deactivate-features-from-api.html"            
   - title: Control access to StorageGRID
     entries:
     - title: Change the provisioning passphrase
@@ -52,9 +54,7 @@ entries:
     - title: Manage admin groups
       url: "/admin/managing-admin-groups.html"
     - title: Admin group permissions
-      url: "/admin/admin-group-permissions.html"
-    - title: Deactivate features with the API
-      url: "/admin/deactivate-features-from-api.html"  
+      url: "/admin/admin-group-permissions.html" 
     - title: Manage users
       url: "/admin/managing-users.html"
     - title: Use single sign-on (SSO)
@@ -136,9 +136,9 @@ entries:
         url: "/admin/configuring-storage-proxy-settings.html"
       - title: Configure Admin proxy settings
         url: "/admin/configuring-admin-proxy-settings.html"
-    - title: Manage untrusted Client Networks     
+    - title: Control firewall     
       entries:
-      - title: Overview
+      - title: Managed untrusted Client Networks
         url: "/admin/managing-untrusted-client-networks.html"
       - title: Specify node&#8217;s Client Network is untrusted
         url: "/admin/specifying-node-client-network-is-untrusted.html"
