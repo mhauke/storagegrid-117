@@ -13,7 +13,7 @@ After you have obtained the required StorageGRID information, you can go to ONTA
 
 NOTE: These instructions describe how to use ONTAP System Manager to add StorageGRID as a cloud tier. You can complete the same configuration using the ONTAP CLI. For instructions, go to https://docs.netapp.com/us-en/ontap/fabricpool/index.html[ONTAP 9: FabricPool tier management with the CLI^].
 
-.Before you start
+.What you'll need
 * If you completed the FabricPool setup wizard, you have the `ONTAP_FabricPool_settings___bucketname__.txt` file you downloaded.
 * If you configured StorageGRID manually, you have the fully qualified domain name (FQDN) you are using for StorageGRID or the virtual IP (VIP) address for the StorageGRID HA group, the port number for the load balancer endpoint, the load balancer certificate, the access key ID and secret key for the root user of the tenant account, and the name of the bucket ONTAP will use in that tenant.
 

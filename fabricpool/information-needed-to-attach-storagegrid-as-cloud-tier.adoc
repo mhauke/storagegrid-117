@@ -26,3 +26,22 @@ Depending on your requirements, you can do either of the following to obtain the
 
 Use the wizard unless you know you have special requirements or your implementation will require significant customization. 
 
+=== How do I get these values?
+Depending on your requirements, you can do either of the following to obtain the information you need:
+
+* *Use the xref:use-fabricpool-wizard.adoc[FabricPool setup wizard]*. The FabricPool setup wizard helps you to quickly configure the required values in StorageGRID and outputs a file that you can use to configure ONTAP System Manager. The wizard guides you through the required steps and helps to make sure your settings conform to StorageGRID and FabricPool best practices.
++
+NOTE: Use the FabricPool setup wizard unless you know you have special requirements or your implementation will require significant customization. 
+
+* *Configure each item manually*. Then, enter the values into into ONTAP System Manager or the ONTAP CLI. Follow these steps:
++
+. Configure the high availability group you want to use for FabricPool. See xref:creating-ha-group-for-fabricpool.adoc[Create a high availability (HA) group for FabricPool].
+. Create the load balancer endpoint that FabricPool will use. See xref:creating-load-balancer-endpoint-for-fabricpool.adoc[Create a load balancer endpoint for FabricPool].
+. Create the tenant account that the FabricPool will use. See xref:creating-tenant-account-for-fabricpool.adoc[Create a tenant account for FabricPool].
+. Sign in to the tenant account, and create the bucket and access keys for the root user. See xref:creating-s3-bucket-and-access-key.adoc[Create an S3 bucket and obtain access keys].
+. Create a new ILM rule for the FabricPool bucket, and add it to your active ILM policy. See xref:using-storagegrid-ilm-with-fabricpool-data.adoc[Create ILM policy for FabricPool data].
+. Optionally, create a traffic classification policy to monitor traffic related to the FabricPool bucket. See xref:creating-traffic-classification-policy-for-fabricpool.adoc[Create a traffic classification policy for FabricPool].
+
+
+
+
