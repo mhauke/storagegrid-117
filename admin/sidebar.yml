@@ -171,8 +171,12 @@ entries:
     - title: Overview
       pdf-filename: Configure S3 and Swift client connections - Overview
       url: "/admin/configuring-client-connections.html"
-    - title: 'Summary: IP addresses and ports for client connections'
-      url: "/admin/summary-ip-addresses-and-ports-for-client-connections.html"
+    - title: Use S3 setup wizard
+      entries:
+      - title: S3 setup wizard considerations and requirements
+        url: "/admin/use-s3-setup-wizard.html"
+      - title: Access and complete the S3 application setup wizard
+        url: "/admin/use-s3-setup-wizard-steps.html"
     - title: Manage high availability groups  
       entries:
       - title: Overview
@@ -189,15 +193,11 @@ entries:
       - title: Considerations for load balancing
         url: "/admin/managing-load-balancing.html"
       - title: Configure load balancer endpoints
-        url: "/admin/configuring-load-balancer-endpoints.html"    
-    - title: Use S3 setup wizard
-      entries:
-      - title: S3 setup wizard considerations and requirements
-        url: "/admin/use-s3-setup-wizard.html"
-      - title: Access and complete the S3 application setup wizard
-        url: "/admin/use-s3-setup-wizard-steps.html"
+        url: "/admin/configuring-load-balancer-endpoints.html"  
     - title: Configure S3 API endpoint domain names
-      url: "/admin/configuring-s3-api-endpoint-domain-names.html"
+      url: "/admin/configuring-s3-api-endpoint-domain-names.html" 
+    - title: 'Summary: IP addresses and ports for client connections'
+      url: "/admin/summary-ip-addresses-and-ports-for-client-connections.html"
   - title: Manage networks and connections
     entries:
     - title: Guidelines for StorageGRID networks
