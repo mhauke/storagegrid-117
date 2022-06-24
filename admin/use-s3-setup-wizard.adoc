@@ -36,11 +36,6 @@ You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain
 
 If you plan to use S3 virtual hosted-style requests, you have configured S3 API endpoint domain names. Using virtual hosted-style requests is recommended.
 
-===
-You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain name server (DNS) entries will map this FQDN to the VIP addresses of the HA group that you create using the wizard. See xref:../fabricpool/configure-dns-server.adoc[Configure DNS server].
-
-* If you plan to use S3 virtual hosted-style requests, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. ONTAP uses path-style URLs by default, but using virtual hosted-style requests is recommended.
-
 === Review load balancer and security certificate requirements
 If you plan to use the StorageGRID load balancer, you have reviewed the general considerations for load balancing. You have the certificates you will upload or the values you need to generate a certificate.
 
