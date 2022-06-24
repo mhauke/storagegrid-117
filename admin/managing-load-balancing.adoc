@@ -64,7 +64,7 @@ You must obtain the following files before you create the load balancer endpoint
 
 To create the certificate, you must know all of the domain names and IP addresses that S3 or Swift client applications will use to access the endpoint.
 
-The certificate can use wildcards to represent the fully qualified domain names of all Admin Nodes and Gateway Nodes running the Load Balancer service. For example, `*.storagegrid._example_.com` uses the * wildcard to represent `adm1.storagegrid._example_.com` and `gn1.storagegrid._example_.com`. See xref:configuring-s3-api-endpoint-domain-names.adoc[Configure S3 API endpoint domain names].
+The certificate can use wildcards to represent the fully qualified domain names of all Admin Nodes and Gateway Nodes running the Load Balancer service. For example, `*.storagegrid._example_.com` uses the * wildcard to represent `adm1.storagegrid._example_.com` and `gn1.storagegrid._example_.com`. 
 
 The subject (Distinguished Name) of the certificate must include the fully qualified domain name that the client application will use for StorageGRID. For example:
 
