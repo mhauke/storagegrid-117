@@ -253,39 +253,33 @@ A tenant is an entity that can use S3 applications to store and retrieve objects
 
 A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the wizard lets you create only one tenant and one bucket. You can use the Tenant Manager later to add any additional buckets you need.
 
-You can create a new tenant and bucket for this S3 application to use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key ID and secret access key for the tenant's root user.
+You can create a new tenant for this S3 application to use. Optionally, you can also create a bucket for the new tenant. Finally, you can allow the wizard to create the S3 access keys for the tenant's root user.
 
-For details about this task, see admin/creating-tenant-account.adoc[Create tenant account] and 
-tenant/creating-s3-bucket.adoc[Create S3 bucket].
+For details about this task, see xref:../admin/creating-tenant-account.adoc[Create tenant account] and 
+xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket].
 
 // start tabbed area
 
-[role="tabbed-block"]
-====
-
-.New tenant and bucket
---
-
-To create a new tenant and bucket:
+To create a new tenant and bucket (optional):
 
 . Select *Create tenant*.
 
-. For the tenant details step, enter the following information:
+. Enter the following tenant details:
 +
 
 [cols="1a,2a" options="header"]
 
 |===
-| Field| Details
+| Field| Description
 
 |*Name*
-|Enter a name for the tenant account. For example, `S3 tenant`. 
+|The name for the tenant account. For example, `S3 tenant`. 
 
 |*Description* (optional)
-|Enter a description that helps you identify the tenant.
+|A description that helps you identify the tenant.
 
 |*Client type*
-|By default client type is *S3* and is disabled.
+|This field is disabled. Client must be *S3*.
 
 |*Storage quota* (optional)
 |If you want this tenant to have a storage quota, enter a numerical value for the quota and select the correct units (GB, TB, or PB).
@@ -293,21 +287,18 @@ To create a new tenant and bucket:
 |===
 
 +
-. Select the appropriate permissions for the tenant. Some of these permissions have additional requirements. For details, see the online help for each permission.
+. For the *Select permission* step, select the appropriate permissions for the tenant. Some of these permissions have additional requirements. For details, see the online help for each permission.
 +
 * Allow platform services
 * Use own identity source (selectable only if SSO is not being used)
 * Allow S3 select (see xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts])
  
-. Select *Continue* and define root access for the tenant account.
-+
-
-.. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
+. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
 [cols="1a,2a" options="header"]
 |===
 | Option 
-| To do
+| Do this
 
 |If identity federation is not enabled 
 |Specify the password to use when signing into the tenant as the local root user.
@@ -323,15 +314,14 @@ Optionally specify the password to use when signing in to the tenant as the loca
 |===
 +
 
-.. If you want the wizard to create the access key ID and secret access key for the root user, select *Create root user S3 access key automatically*. 
+. If you want the wizard to create the access key ID and secret access key for the root user, select *Create root user S3 access key automatically*. 
 +
 
 IMPORTANT: Select this option if the only user for the tenant will be the root user. If other users will use this tenant, use Tenant Manager to configure keys and permissions.
 +
 
-.. Select *Continue*.
 
-. Create a bucket for the tenant's object.
+. Create a bucket for the tenant's objects.
 
 .. For *Bucket name*, enter the name of the bucket that the S3 application will use. For example, `S3-bucket`.
 +
@@ -342,20 +332,17 @@ IMPORTANT: You cannot change the bucket name after creating the bucket.
 Use the default region (us-east-1) unless you expect to use ILM in the future to filter objects based on the bucket's region.
 +
 
-.. Use *Enable object versioning* if you want to store each version of each object in this bucket. 
+.. Select *Enable object versioning* if you want to store each version of each object in this bucket. 
 
-.. You can use *Create tenant only* to just create a tenant, else select *Create tenant and bucket* and go to the download data step.
-
---
-====
+.. Use *Create tenant only* to just create a tenant, else select *Create tenant and bucket* and go to the download data step.
 
 == Step 4 of 6: Download S3 settings
 
-In the download data step, you can download the access key,  configuration values file and save it in a safe location. 
+In the download data step, you can download the access key file (if generated by the wizard) and the configuration values file and save them in a safe location. 
 
-. Select *Download access keys* to download the credentials details: tenant account name, access key ID, and secret access key.
+. If you had selected *Create root user S3 access key automatically* during tenant creation, select *Download access keys* to download the credentials details: tenant account name, access key ID, and secret access key.
 
-. Select *Download configuration values* to download and view settings of the load balancer endpoint, tenant, bucket, and the root user credentials.
+. Select *Download configuration values* to download settings for the load balancer endpoint, tenant, bucket, and the root user.
 
 . Select *Continue* to go to the ILM rule step.
 
@@ -369,15 +356,9 @@ The ILM policy included with StorageGRID makes two replicated copies of all obje
 
 . Review the information in the Set ILM rule and ILM policy step to learn about creating a rule, creating a new policy, and simulating and activating that policy. 
 
-. Select I have reviewed these steps....
+. Select the checkbox to indicate that you understand what to do next.
 
-. Select Continue.
-
-+
-
-Check the option *I have reviewed these steps and understand what I need to do*.
-
-.  Select *Continue* to go to *Summary*.
+. Select *Continue* to go to *Summary*.
 
 == Step 6 of 6: Review summary 
 
