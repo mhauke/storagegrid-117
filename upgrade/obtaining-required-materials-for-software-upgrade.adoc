@@ -41,7 +41,7 @@ a|
 a|
 `Passwords.txt` file
 a|
-This file is included in the SAID package, which is part of the Recovery Package `.zip` file. You must obtain the latest version of the Recovery Package.
+This file is part of the Recovery Package `.zip` file. You must obtain the latest version of the Recovery Package.
 a|
 Provisioning passphrase
 a|
@@ -125,11 +125,7 @@ The Recovery Package file allows you to restore the StorageGRID system if a fail
 +
 The download starts immediately.
 
-. When the download completes:
- .. Open the `.zip` file.
- .. Confirm it includes a `gpt-backup` directory and an inner `.zip` file.
- .. Extract the inner `.zip` file.
- .. Confirm you can open the `Passwords.txt` file.
+. When the download completes, confirm that you can access the contents, including the `Passwords.txt` file.
 . Copy the downloaded Recovery Package file (`.zip`) to two safe, secure, and separate locations.
 +
 IMPORTANT: The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
