@@ -21,9 +21,11 @@ Optionally, you can create additional tenant accounts if you want to segregate t
 
 * *Enterprise use case:* If you are administering a StorageGRID system in an enterprise application, you might want to segregate the grid's object storage by the different departments in your organization. In this case, you could create tenant accounts for the Marketing department, the Customer Support department, the Human Resources department, and so on.
 +
-NOTE: If you use the S3 client protocol, you can simply use S3 buckets and bucket policies to segregate objects between the departments in an enterprise. You do not need to use tenant accounts. See the instructions for implementing S3 client applications for more information.
+NOTE: If you use the S3 client protocol, you can simply use S3 buckets and bucket policies to segregate objects between the departments in an enterprise. You do not need to use tenant accounts. See instructions for implementing xref:../s3/bucket-and-group-access-policies.adoc[S3 buckets and bucket policies] for more information.
 
 * *Service provider use case:* If you are administering a StorageGRID system as a service provider, you can segregate the grid's object storage by the different entities that will lease the storage on your grid. In this case, you would create tenant accounts for Company A, Company B, Company C, and so on.
+
+For more information, see xref:../tenant/index.adoc[Use a tenant account].
 
 == Create and configure tenant accounts
 
@@ -31,7 +33,7 @@ When you create a tenant account, you specify the following information:
 
 * Display name for the tenant account.
 * Which client protocol will be used by the tenant account (S3 or Swift).
-* For S3 tenant accounts: Whether the tenant account has permission to use platform services with S3 buckets. If you permit tenant accounts to use platform services, you must ensure that the grid is configured to support their use. See "`Managing platform services.`"
+* For S3 tenant accounts: Whether the tenant account has permission to use platform services with S3 buckets. If you permit tenant accounts to use platform services, you must ensure that the grid is configured to support their use. See xref:../admin/manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts].
 * Optionally, a storage quota for the tenant account--the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. If the quota is exceeded, the tenant cannot create new objects.
 +
 NOTE: A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).
@@ -46,7 +48,7 @@ After a tenant account is created, you can perform the following tasks:
 +
 NOTE: A tenant's storage usage values might become out of date if nodes are isolated from other nodes in the grid. The totals will be updated when network connectivity is restored.
 +
-If you have set quotas for tenants, you can enable the *Tenant quota usage high* alert to determine if tenants are consuming their quotas. If enabled, this alert is triggered when a tenant has used 90% of its quota. For more information, see the alerts reference in the instructions for monitoring and troubleshooting StorageGRID.
+If you have set quotas for tenants, you can enable the *Tenant quota usage high* alert to determine if tenants are consuming their quotas. If enabled, this alert is triggered when a tenant has used 90% of its quota. For more information, see the xref:../monitor/alerts-reference.adoc[Alerts reference].
 
 * *Configure client operations*: You can configure if some types of client operations are forbidden.
 
@@ -70,7 +72,3 @@ After a Swift tenant account is created, the tenant's root user can access the T
 * Monitoring storage usage
 
 IMPORTANT: Swift users must have the Root access permission to access the Tenant Manager. However, the Root access permission does not allow users to authenticate into the Swift REST API to create containers and ingest objects. Users must have the Swift Administrator permission to authenticate into the Swift REST API.
-
-.Related information
-
-xref:../tenant/index.adoc[Use a tenant account]

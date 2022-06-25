@@ -36,7 +36,7 @@ Because of factors such as timing differences between grid nodes, object size, a
 
 == Information lifecycle management policy configuration
 
-With the default ILM policy (Baseline 2 Copy), object data is copied once for a total of two copies. If the ILM policy requires more than two copies, there will be an additional set of CBRE, CBSE, and SCMT messages for each extra copy. For more information about ILM policies, see information about managing objects with information lifecycle management.
+With the default ILM policy (Baseline 2 Copy), object data is copied once for a total of two copies. If the ILM policy requires more than two copies, there will be an additional set of CBRE, CBSE, and SCMT messages for each extra copy. For more information about ILM policies, see xref:../ilm/what-ilm-policy-is.adoc[What an ILM policy is].
 
 == Archive Nodes
 
@@ -45,7 +45,3 @@ The series of audit messages generated when an Archive Node sends object data to
 The series of audit messages generated when an Archive Node retrieves object data from an external archival storage system is similar to that for Storage Nodes except that the ARCB (Archive Object Retrieve Begin) and ARCE (Archive Object Retrieve End) messages are generated for each retrieved copy of object data.
 
 The series of audit messages generated when an Archive Node deletes object data from an external archival storage system is similar to that for Storage Nodes except that there is no SREM (Object Store Remove) message, and there is an AREM (Archive Object Remove) message for each delete request.
-
-.Related information
-
-xref:../ilm/index.adoc[Manage objects with ILM]

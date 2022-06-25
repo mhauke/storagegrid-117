@@ -15,7 +15,7 @@ You can expand the object storage capacity of your StorageGRID system by adding 
 
 Before adding storage volumes to existing Storage Nodes, review the following guidelines and limitations:
 
-* You must examine your current ILM rules to determine where and when to add storage volumes to increase the storage available for replicated or erasure-coded objects. See the instructions for xref:../ilm/index.adoc[managing objects with information lifecycle management].
+* You must examine your current ILM rules to determine where and when to xref:../expand/adding-storage-volumes-to-storage-nodes.adoc[add storage volumes] to increase the storage available for xref:../ilm/what-replication-is.adoc[replicated objects] or xref:../ilm/what-erasure-coding-schemes-are.adoc[erasure-coded objects].
 
 * You cannot increase the metadata capacity of your system by adding storage volumes because object metadata is stored only on volume 0.
 * Each software-based Storage Node can support a maximum of 16 storage volumes. If you need to add capacity beyond that, you must add new Storage Nodes.
@@ -35,7 +35,7 @@ xref:adding-storage-volumes-to-storage-nodes.adoc[adding storage volumes to Stor
 
 Before adding Storage Nodes to existing sites, review the following guidelines and limitations:
 
-* You must examine your current ILM rules to determine where and when to add Storage Nodes to increase the storage available for replicated or erasure-coded objects. See the instructions for xref:../ilm/index.adoc[managing objects with information lifecycle management].
+* You must examine your current ILM rules to determine where and when to add Storage Nodes to increase the storage available for xref:../ilm/what-replication-is.adoc[replicated objects] or xref:../ilm/what-erasure-coding-schemes-are.adoc[erasure-coded objects].
 
 * You should not add more than 10 Storage Nodes in a single expansion procedure.
 * You can add Storage Nodes to more than one site in a single expansion procedure.
