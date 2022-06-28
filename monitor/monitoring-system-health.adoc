@@ -78,10 +78,6 @@ The node is connected to the grid.
 |No action required.
 |===
 
-In the following example, the Storage Node named DC1-S3 has a blue icon. The *Connection State* on the Node information card is *Unknown*, and the *Unable to communicate with node* alert is active. The alert indicates that one or more services are unresponsive, or the node cannot be reached.
-
-image::../media/node_connection_state_blue.png[Node Connection State Blue]
-
 == View current and resolved alerts
 
 *Current alerts*: When an alert is triggered, an alert icon is displayed on the Dashboard. An alert icon is also displayed for the node on the Nodes page. An email notification might also be sent, unless the alert has been silenced.
@@ -94,7 +90,6 @@ image::../media/video-screenshot-alert-overview.png[link="https://netapp.hosted.
 
 The following table describes the information shown in the Grid Manager for current and resolved alerts.
 
-
 [cols="1a,3a" options="header"]
 |===
 | Column header| Description
@@ -104,11 +99,11 @@ The following table describes the information shown in the Grid Manager for curr
 |Severity
 |The severity of the alert. For current alerts, if multiple alerts are grouped the title row shows how many instances of that alert are occurring at each severity.
 
-* *Critical* image:../media/icon_alert_red_critical.png[Icon Alert Red Critical]: An abnormal condition exists that has stopped the normal operations of a StorageGRID node or service. You must address the underlying issue immediately. Service disruption and loss of data might result if the issue is not resolved.
+image:../media/icon_alert_red_critical.png[Icon Alert Red Critical] *Critical*: An abnormal condition exists that has stopped the normal operations of a StorageGRID node or service. You must address the underlying issue immediately. Service disruption and loss of data might result if the issue is not resolved.
 
-* *Major* image:../media/icon_alert_orange_major.png[Icon Alert Orange Major]: An abnormal condition exists that is either affecting current operations or approaching the threshold for a critical alert. You should investigate major alerts and address any underlying issues to ensure that the abnormal condition does not stop the normal operation of a StorageGRID node or service.
+image:../media/icon_alert_orange_major.png[Icon Alert Orange Major] *Major*: An abnormal condition exists that is either affecting current operations or approaching the threshold for a critical alert. You should investigate major alerts and address any underlying issues to ensure that the abnormal condition does not stop the normal operation of a StorageGRID node or service.
 
-* *Minor* image:../media/icon_alert_yellow_minor.png[Icon Alert Yellow Minor]: The system is operating normally, but an abnormal condition exists that could affect the system's ability to operate if it continues. You should monitor and resolve minor alerts that do not clear on their own to ensure they do not result in a more serious problem.
+image:../media/icon_alert_yellow_minor.png[Icon Alert Yellow Minor] *Minor*: The system is operating normally, but an abnormal condition exists that could affect the system's ability to operate if it continues. You should monitor and resolve minor alerts that do not clear on their own to ensure they do not result in a more serious problem.
 
 |Time triggered
 |How long ago the alert was triggered. If multiple alerts are grouped, the title row shows times for the most recent instance of the alert (_newest_) and the oldest instance of the alert (_oldest_).
