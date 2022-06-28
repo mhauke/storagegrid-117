@@ -32,10 +32,10 @@ image::../media/5_gmi_installer_grid_nodes_pending.gif[This image is explained b
 +
 image::../media/6_gmi_installer_node_config_popup.gif[This image is explained by the surrounding text.]
 
- ** *Site*: The name of the site with which this grid node will be associated.
- ** *Name*: The name that will be assigned to the node, and the name that will be displayed in the Grid Manager. The name defaults to the name you specified when you configured the node. During this step of the installation process, you can change the name as required.
+ ** *Site*: The system name of the site for this grid node. 
+ ** *Name*: The system name for the node. The name defaults to the name you specified when you configured the node. 
 +
-IMPORTANT: After you complete the installation, you cannot change the name of the node.
+System names are required for internal StorageGRID operations and cannot be changed after you complete the installation. However, during this step of the installation process, you can change system names as required.
 +
 NOTE: For a VMware node, you can change the name here, but this action will not change the name of the virtual machine in vSphere.
 
