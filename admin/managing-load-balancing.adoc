@@ -109,7 +109,7 @@ You can specify any of the following binding modes:
 
 === Considerations for tenant access
 
-Tenant access is an optional security feature that lets you control which StorageGRID tenant accounts can use a load balancer endpoint to access their buckets. You can allow all tenants (default) to access an endpoint, or you can specify a list of the allowed or blocked tenants for each endpoint.
+Tenant access is an optional security feature that lets you control which StorageGRID tenant accounts can use a load balancer endpoint to access their buckets. You can allow all tenants to access an endpoint (default), or you can specify a list of the allowed or blocked tenants for each endpoint.
 
 You can use this feature to provide better security isolation between tenants and their endpoints. For example, you might use this feature to ensure that the top-secret or highly classified materials owned by one tenant remain completely inaccessible to other tenants. 
 
@@ -123,7 +123,7 @@ To understand how this security feature works, consider the following example:
 
 . The `top-secret.pdf` is in a bucket owned by the *Top secret* tenant. 
 
-To access the `top-secret.pdf`, a user in the *Top secret* tenant can issue a GET request to `\https://x.y.z.q:10444/top-secret.pdf`. Because this tenant is allowed to use the 10444 endpoint, the user can access the object. However, if a user belonging to any other tenant issues the same request to the same URL, they receive an immediate Access Denied message. Access is denied even if the credentials and signature are valid. 
+To access the `top-secret.pdf`, a user in the *Top secret* tenant can issue a GET request to `\https://w.x.y.z:10444/top-secret.pdf`. Because this tenant is allowed to use the 10444 endpoint, the user can access the object. However, if a user belonging to any other tenant issues the same request to the same URL, they receive an immediate Access Denied message. Access is denied even if the credentials and signature are valid. 
 
 == CPU availability
 
