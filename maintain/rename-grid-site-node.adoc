@@ -135,7 +135,7 @@ The download starts immediately.
 
 . When the download completes open the `Passwords.txt` file to see the server name for all nodes and the display names for any renamed nodes. 
 
-. Copy the `sgws-recovery-package-_nnn_.zip` file to two safe, secure, and separate locations.
+. Copy the `sgws-recovery-package-_id-revision_.zip` file to two safe, secure, and separate locations.
 +
 IMPORTANT:	The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
 
@@ -145,23 +145,21 @@ IMPORTANT:	The Recovery Package file must be secured because it contains encrypt
 You can revert a renamed grid, site, or node back to its original system name. When you revert an item back to its system name, Grid Manager pages and other StorageGRID locations no longer show a *Display name* for that item. Only the item's system name is shown.
 
 . Select *MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*.
-. For the *Select names* step, select any items you want to revert back to their system names.
+. For the *Select names* step, select any items you want to revert back to system names.
 
 . Select *Continue*.
 
-. For the *Propose new names* step, revert back to system names individually, or revert items in bulk.
-
-// start tabbed area
-
+. For the *Propose new names* step, revert display names back to system names individually or in bulk.
++
 [role="tabbed-block"]
 ====
 
-.Revert back to system names individually
+.Revert to system names individually
 --
 
-.. Copy each item's original system name and paste it into the *Display name* field, or select image:../media/icon-x-to-remove.png[X icon] to remove any items you don't want to rename.
+.. Copy each item's original system name and paste it into the *Display name* field, or select image:../media/icon-x-to-remove.png[X icon] to remove any items you don't want to revert.
 +
-To revert a display name, you must provide the exact name that appears in the *System name* field.
+To revert a display name, the system name must appear in the *Display name* field, but the name is case insensitive.
 
 .. Select *Rename*.
 +
@@ -169,7 +167,7 @@ A success message appears. The display names for these items are no longer used.
 
 
 --
-.Rename items in bulk
+.Revert to system names in bulk
 --
 .. For the *Propose new names* step, select *Use bulk rename tool*.
 
@@ -179,7 +177,9 @@ A success message appears. The display names for these items are no longer used.
 
 .. Select *Add names* to add the names to the table for the *Propose new names* step. 
 
-.. Confirm that each entry in the *Display name* field exactly matches the name in the *System name* field. Make any changes or select image:../media/icon-x-to-remove.png[X icon] to remove any items that you do not want to revert.
+.. Confirm that each entry in the *Display name* field matches the name in the *System name* field. Make any changes or select image:../media/icon-x-to-remove.png[X icon] to remove any items that you don't want to revert.
++
+To revert a display name, the system name must appear in the *Display name* field, but the name is case insensitive.
 
 .. Select *Rename*.
 +
