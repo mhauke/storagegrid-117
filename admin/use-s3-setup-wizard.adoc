@@ -29,12 +29,12 @@ If you will configure an HA group, you know which nodes the S3 application will 
 If you plan to use a virtual LAN to segregate the traffic from the S3 application, you have already configured the VLAN interface. See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces].
 
 === Configure identity federation and SSO
-If you plan to use identity federation or single sign-on (SSO) for your StorageGRID system, you have enabled these features. You also know which federated group should have root access for the tenant account that the S3 application will use. See xref:../admin/using-identity-federation.adoc[ Use identity federation] and xref:../admin/configuring-sso.adoc[Configure single sign-on].
+If you plan to use identity federation or single sign-on (SSO) for your StorageGRID system, you have enabled these features. You also know which federated group should have root access for the tenant account that the S3 application will use. See xref:../admin/using-identity-federation.adoc[Use identity federation] and xref:../admin/configuring-sso.adoc[Configure single sign-on].
 
 === Obtain and configure domain names
 You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain name server (DNS) entries will map this FQDN to the virtual IP (VIP) addresses of the HA group that you create using the wizard.
 
-If you plan to use S3 virtual hosted-style requests, you have configured S3 API endpoint domain names. Using virtual hosted-style requests is recommended.
+If you plan to use S3 virtual hosted-style requests, you should have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. Using virtual hosted-style requests is recommended.
 
 === Review load balancer and security certificate requirements
 If you plan to use the StorageGRID load balancer, you have reviewed the general considerations for load balancing. You have the certificates you will upload or the values you need to generate a certificate.
