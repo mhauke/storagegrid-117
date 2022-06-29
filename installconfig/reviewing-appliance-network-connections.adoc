@@ -9,7 +9,7 @@ summary: 'Before installing the StorageGRID appliance, you should understand whi
 :imagesdir: ../media/
 
 [.lead]
-Before installing the StorageGRID appliance, you should understand which networks can be connected to the appliance and how the ports on each controller are used.
+Before installing the StorageGRID appliance, you should understand which networks can be connected to the appliance and how the ports on each controller are used. StorageGRID network requirements are fully explained in the xref:../network/index.adoc[Networking guidelines].
 
 When you deploy a StorageGRID appliance as a node in a StorageGRID system, you can connect it to the following networks:
 
@@ -24,7 +24,7 @@ When you deploy a StorageGRID appliance as a node in a StorageGRID system, you c
 +
 If the optional BMC management network is not connected, some support and maintenance procedures will be more difficult to perform. You can leave the BMC management network unconnected except when needed for support purposes.
 
-NOTE: For detailed information about StorageGRID networks, see the xref:../primer/index.adoc[_Grid Primer_].
+NOTE: For detailed information about StorageGRID networks, see the xref:../network/storagegrid-network-types.adoc[StorageGRID network types].
 
 == SG5700 appliance connections
 
@@ -160,35 +160,3 @@ a|
 a|
 Connect to the Grid Network and the Client Network for StorageGRID. See "`10-GbE port connections for the E5600SG controller.`"
 |===
-
-
-.Related information
-
-xref:gathering-installation-information-overview.adoc[Gather installation information]
-
-xref:../network/index.adoc[Networking guidelines]
-
-xref:cabling-appliance-sg6000.adoc[Cable appliance (SG6000)]
-
-xref:cabling-appliance-sg5700.adoc[Cable appliance (SG5700)]
-
-xref:cabling-appliance-sg5600.adoc[Cable appliance (SG5600)]
-
-xref:cabling-appliance-sg100-and-sg1000.adoc[Cable appliance SG100 and SG1000]
-
-xref:port-bond-modes-for-sg6000-cn-controller.adoc[Port bond modes for SG6000-CN controller]
-
-xref:port-bond-modes-for-e5700sg-controller-ports.adoc[Port bond modes for E5700SG controller ports]
-
-xref:port-bond-modes-for-e5600sg-controller-ports.adoc[Port bond modes for the E5600SG controller ports]
-
-xref:port-bond-modes-for-sg100-and-sg1000.adoc[Port bond modes for the SG100 and SG1000 appliances]
-
-xref:../vmware/index.adoc[Install VMware]
-
-xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-
-xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
-
-
-

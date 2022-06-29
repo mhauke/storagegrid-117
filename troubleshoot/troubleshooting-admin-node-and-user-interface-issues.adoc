@@ -14,7 +14,7 @@ There are several tasks you can perform to help determine the source of issues r
 
 == Troubleshoot sign-on errors
 
-If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the identity federation configuration, a networking or hardware problem, an issue with Admin Node services, or an issue with the Cassandra database on connected Storage Nodes.
+If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the xref:../admin/using-identity-federation.adoc[identity federation configuration], a xref:../troubleshooting-network-hardware-and-platform-issues.adoc[networking] or xref:../installconfig/troubleshooting-hardware-installation.adoc[hardware] problem, an issue with xref:../admin/what-admin-node-is.adoc[Admin Node services], or an xref:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.adoc[issue with the Cassandra database] on connected Storage Nodes.
 
 .What you'll need
 * You must have the `Passwords.txt` file.
@@ -176,7 +176,3 @@ image::../media/unavailable_admin_node_troubleshooting.gif[screenshot described 
 
 . Determine if alarms have been triggered.
 . Take the appropriate actions to resolve the issue.
-
-.Related information
-
-xref:../admin/index.adoc[Administer StorageGRID]

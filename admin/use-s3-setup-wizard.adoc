@@ -4,71 +4,39 @@ sidebar: sidebar
 keywords: S3, S3 setup wizard
 summary: 'You can use the S3 setup wizard to configure StorageGRID as the object storage system for a S3 application.'
 ---
-= S3 setup wizard: Considerations and requirements
+= Use S3 setup wizard: Considerations and requirements
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
 
-You can use the S3 setup wizard to configure StorageGRID as the object storage system for a S3 application.
+You can use the S3 setup wizard to configure StorageGRID as the object storage system for an S3 application.
 
-== When to use the  S3 setup wizard
+== When to use the S3 setup wizard
 
-The FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with FabricPool and automatically configures certain entities for you, such as the ILM and traffic classification policies. As part of completing the wizard, you download a file that you can use to enter values into ONTAP System Manager. Use the wizard to configure your system more quickly and to make sure your settings conform to StorageGRID and FabricPool best practices. 
+The S3 setup wizard guides you through each step of configuring StorageGRID for use with an S3 application. As part of completing the wizard, you download a file that you can use to enter values into the S3 application. Use the wizard to configure your system more quickly and to make sure your settings conform to StorageGRID best practices. 
 
-Assuming you have Root access permission, you can complete the FabricPool and S3 setup wizard when you start using the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that S3 needs into a single file.
-
-Use the wizard unless you have special requirements or your implementation needs significant customization. For example, you cannot use the FabricPool and S3 setup wizard if S3 Object Lock is enabled for your grid. Instead, you must configure each item manually in StorageGRID. Start by xref:creating-ha-group-for-fabricpool.adoc[creating an HA group].
+If you have the Root access permission, you can complete the S3 setup wizard when you start using the StorageGRID Grid Manager, or you can access and complete the wizard at any later time. Depending on your requirements, you can also configure some or all of the required items manually and then use the wizard to assemble the values that an S3 application needs into a single file.
 
 == Before using the wizard
 
 Before using the wizard, confirm you have completed these prerequisite steps.
 
-=== Review best practices
-
-* You have reviewed the best practices for:
-
-** xref:best-practices-for-high-availability-groups.adoc[High availability groups]
-** xref:best-practices-for-load-balancing.adoc[Load balancing and the load balancer certificate]
-//** xref:best-practices-ilm.adoc[ILM rules and policy]
-
-////
 === Obtain IP addresses and set up VLAN interfaces
 
-If you will configure an HA group, you know which nodes S3 will connect to and which StorageGRID network will be used. You also know which values to enter for the subnet CIDR, gateway IP address, and virtual IP (VIP) addresses. 
+If you will configure an HA group, you know which nodes the S3 application will connect to and which StorageGRID network will be used. You also know which values to enter for the subnet CIDR, gateway IP address, and virtual IP (VIP) addresses.
 
-If you plan to use a virtual LAN to segregate FabricPool traffic, you have already configured the VLAN interface. See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces].
+If you plan to use a virtual LAN to segregate the traffic from the S3 application, you have already configured the VLAN interface. See Configure VLAN interfaces.
 
 === Configure identity federation and SSO
-
-If you plan to use identity federation or single sign-on (SSO) for your StorageGRID system, you have enabled these features and you know which federated group ONTAP should use. See xref:../admin/using-identity-federation.adoc[Use identity federation] and xref:../admin/configuring-sso.adoc[Configure single sign-on].
+If you plan to use identity federation or single sign-on (SSO) for your StorageGRID system, you have enabled these features. You also know which federated group should have root access for the tenant account that the S3 application will use. See Use identity federation and Configure single sign-on.
 
 === Obtain and configure domain names
+You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain name server (DNS) entries will map this FQDN to the virtual IP (VIP) addresses of the HA group that you create using the wizard.
 
-* You know which fully qualified domain name (FQDN) to use for StorageGRID. Domain name server (DNS) entries will map this FQDN to the VIP addresses of the HA group that you create using the wizard. See xref:../fabricpool/configure-dns-server.adoc[Configure DNS server].
+If you plan to use S3 virtual hosted-style requests, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. Using virtual hosted-style requests is recommended.
 
-* If you plan to use S3 virtual hosted-style requests, you have xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[configured S3 API endpoint domain names]. ONTAP uses path-style URLs by default, but using virtual hosted-style requests is recommended.
+=== Review load balancer and security certificate requirements
+If you plan to use the StorageGRID load balancer, you have reviewed the general considerations for load balancing. You have the certificates you will upload or the values you need to generate a certificate.
 
-=== Obtain custom certificates 
-* If you plan to use the StorageGRID load balancer, you have reviewed the best practices for the xref:best-practices-for-load-balancing.adoc[load balancer endpoint certificate] and you know whether you will upload or generate this certificate.
-
-** If you plan to upload a CA-signed security certificate for exclusive use with this ONTAP-StorageGRID connection, you have the following files: 
-
-*** The custom server certificate file.
-*** The custom server certificate private key file.
-*** Optionally, a CA bundle of the certificates from each intermediate issuing certificate authority. 
-
-+
-The certificate must include the FQDN that ONTAP will use for StorageGRID. 
-
-** If you plan to generate a self-signed certificate for exclusive use with this ONTAP-StorageGRID connection, you know which domain name, IP, and subject to use.
-
-** If you plan to use the global StorageGRID S3 and Swift API certificate instead, you have already updated or generated a custom version. See xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates]. 
-
-* If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
-////
-
-
-
-
-
+If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
