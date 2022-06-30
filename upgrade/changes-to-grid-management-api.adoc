@@ -27,4 +27,8 @@ Using the private cipher API, you can:
 * Re-enable any cipher/algorithm that is available by default.
 
 == Display names now included in responses to node-health requests
-Related to the new xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes procedure], after you rename a site or node, the item's name (its system name) and its display name are both returned by the node-health API. 
+Related to the new xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes procedure], after you rename a site or node, the item's name (its system name) and its display name are both returned by the *node-health* API. 
+
+== Can create bucket and access keys for new S3 tenant
+
+New `s3Bucket` and `s3AccessKey` options were added to the *accounts* API. When you create an S3 tenant account using the Grid Management API, you can optionally create a bucket for that tenant as well as the access key ID and secret key for the tenant's root user.
