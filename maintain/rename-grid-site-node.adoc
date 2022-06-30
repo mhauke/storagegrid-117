@@ -18,20 +18,40 @@ You can use this procedure to add or update the display names used for your grid
 * You have the provisioning passphrase.
 * You understand the requirements and best practices for display names. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview].
 
+== How to rename grid, sites, or nodes
+Follow these steps to rename your grid, one or more sites, or one or more nodes.
 
-== Select items to rename
+=== Select items to rename
 
 . Select *MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*.
 . For the *Select names* step, select the items you want to rename.
 +
-* To change the names of everything (or almost everything) in your system, select *Select all*. Then, optionally unselect any items you do not want to rename. 
-* To change the name of your grid, select the check box for the grid. 
-* To change the name of a site and its nodes, select the check box in the table header for the site. Then, optionally unselect any nodes you do not want to rename.
-* To change the name of a site, select the check box for that site.  
-* To change the name of a node, select the check box for that node.
+[cols="1a,2a" options="header"]
+|===
+
+|Item to change
+|Instruction
+
+|Names of everything (or almost everything) in your system
+|. Select *Select all*. 
+. Optionally unselect any items you do not want to rename.
+
+|Name of the grid
+|Select the check box for the grid. 
+
+|Name of a site and some or all of its nodes
+|. Select the check box in the table header for the site. 
+. Optionally, unselect any nodes you do not want to rename.
+
+|Name of a site
+|Select the check box for the site.
+
+|Name of a node
+|Select the check box for the node.
+
+|===
 
 . Select *Continue*.
-
 . Review the table, which includes the items you selected.
 +
 * The *Display name* column shows the current name for each item. If the item has never been renamed, its display name is the same as its system name.
@@ -39,7 +59,7 @@ You can use this procedure to add or update the display names used for your grid
 * The *Type* column indicates the item's type: Grid, Site, or the specific type of node.
 
 
-== Propose new names
+=== Propose new names
 
 For the *Propose new names* step, you can enter a display name for each item individually, or you can rename items in bulk. Use the bulk rename tool if item names share a common string that you want to replace with a different string. 
 
@@ -104,7 +124,7 @@ A success message is shown. The new display names are now used throughout Grid M
 // end tabbed area
 
 
-== Download the recovery package
+=== Download the recovery package
 
 When you are done renaming items, download and save a new Recovery Package. The new display names for the items you renamed are included in the `Passwords.txt` file. 
 
@@ -113,20 +133,63 @@ When you are done renaming items, download and save a new Recovery Package. The 
 +
 The download starts immediately.
 
-. When the download completes:
+. When the download completes open the `Passwords.txt` file to see the server name for all nodes and the display names for any renamed nodes. 
 
-.. Open the `.zip` file.
-
-.. Confirm it includes a `gpt-backup` directory and an inner `.zip` file.
-
-.. Extract the inner `.zip` file.
-
-.. Confirm you can open the `Passwords.txt` file.
-
-. Copy the downloaded Recovery Package file (`.zip`) to two safe, secure, and separate locations.
+. Copy the `sgws-recovery-package-_id-revision_.zip` file to two safe, secure, and separate locations.
 +
 IMPORTANT:	The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
 
 . Select *Finish* to return to the first step.
 
+== Revert display names back to system names
+You can revert a renamed grid, site, or node back to its original system name. When you revert an item back to its system name, Grid Manager pages and other StorageGRID locations no longer show a *Display name* for that item. Only the item's system name is shown.
+
+. Select *MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*.
+. For the *Select names* step, select any items you want to revert back to system names.
+
+. Select *Continue*.
+
+. For the *Propose new names* step, revert display names back to system names individually or in bulk.
++
+[role="tabbed-block"]
+====
+
+.Revert to system names individually
+--
+
+.. Copy each item's original system name and paste it into the *Display name* field, or select image:../media/icon-x-to-remove.png[X icon] to remove any items you don't want to revert.
++
+To revert a display name, the system name must appear in the *Display name* field, but the name is case insensitive.
+
+.. Select *Rename*.
++
+A success message appears. The display names for these items are no longer used.
+
+
+--
+.Revert to system names in bulk
+--
+.. For the *Propose new names* step, select *Use bulk rename tool*.
+
+.. In the *Existing string* field, enter the display name string you want to replace.
+
+.. In the *New string* field, enter the system name string you want to use instead.
+
+.. Select *Add names* to add the names to the table for the *Propose new names* step. 
+
+.. Confirm that each entry in the *Display name* field matches the name in the *System name* field. Make any changes or select image:../media/icon-x-to-remove.png[X icon] to remove any items that you don't want to revert.
++
+To revert a display name, the system name must appear in the *Display name* field, but the name is case insensitive.
+
+.. Select *Rename*.
++
+A success message is shown. The display names for these items are no longer used.
+
+--
+====
+
+// end tabbed area
+
+[start=5]
+.  Download and save a new Recovery Package. Display names for the items you reverted are no longer included in the `Passwords.txt` file. 
 
