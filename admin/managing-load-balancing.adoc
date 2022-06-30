@@ -64,19 +64,24 @@ You must obtain the following files before you create the load balancer endpoint
 
 To create the certificate, you must know all of the domain names and IP addresses that S3 or Swift client applications will use to access the endpoint.
 
-The certificate can use wildcards to represent the fully qualified domain names of all Admin Nodes and Gateway Nodes running the Load Balancer service. For example, `*.storagegrid._example_.com` uses the * wildcard to represent `adm1.storagegrid._example_.com` and `gn1.storagegrid._example_.com`. 
-
-The subject (Distinguished Name) of the certificate must include the fully qualified domain name that the client application will use for StorageGRID. For example:
+The *Subject DN* (Distinguished Name) entry for the certificate must include the fully qualified domain name that the client application will use for StorageGRID. For example:
 
 ----
 Subject DN: /C=Country/ST=State/O=Company,Inc./CN=s3.storagegrid.example.com
 ----
 
-If you plan to use S3 virtual hosted-style requests, the certificate must also include an Alternative Name entry for each xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 API endpoint domain name] you have configured, including any wildcard names. For example:
+
+As required, the certificate can use wildcards to represent the fully qualified domain names of all Admin Nodes and Gateway Nodes running the Load Balancer service. For example, `*.storagegrid._example_.com` uses the * wildcard to represent `adm1.storagegrid._example_.com` and `gn1.storagegrid._example_.com`. 
+
+
+If you plan to use S3 virtual hosted-style requests, the certificate must also include an *Alternative Name* entry for each xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 API endpoint domain name] you have configured, including any wildcard names. For example:
 
 ----
 Alternative Name: DNS:*.s3.storagegrid.example.com
 ----
+
+
+NOTE: If you use wildcards for domain names, review the xref:../harden/hardening-guideline-for-server-certificates.adoc[Hardening guidelines for server certificates].
 
 You must also define a DNS entry for each name in the security certificate.
 
@@ -91,7 +96,7 @@ To avoid certificate expiration issues, follow these best practices:
 
 * Always keep the StorageGRID and S3 application's versions of the certificate in sync. If you replace or renew the certificate used for a load balancer endpoint, you must replace or renew the equivalent certificate used by the S3 application.
 
-* Use a publicly signed CA certificate. If you use a certificate signed by a CA, you can use the Grid Management API to automate certificate rotation. This allows you to replace soon-to-expire certificates nondisruptively. 
+* Use a publicly signed CA certificate. If you use a certificate signed by a CA, you can replace soon-to-expire certificates nondisruptively. 
 
 * If you have generated a self-signed StorageGRID certificate and that certificate is about to expire, you must manually replace the certificate in both StorageGRID and in the S3 application before the existing certificate expires. 
 
