@@ -43,14 +43,8 @@ NOTE: A node might appear as Unknown during managed shutdown operations. You can
 
 == Alerts
 
-The Alerts section of the Overview tab lists any alerts currently affecting this node that have not been silenced. Click the alert name to view additional details and recommended actions.
+The Alerts section of the Overview tab lists any xref:monitoring-system-health.adoc#view-current-and-resolved-alerts[alerts currently affecting this node that have not been silenced]. Select the alert name to view additional details and recommended actions.
 
 image::../media/nodes_page_alerts_table.png[Nodes Page Alerts Table]
 
-.Related information
-
-xref:monitoring-node-connection-states.adoc[Monitor node connection states]
-
-xref:viewing-current-alerts.adoc[View current alerts]
-
-xref:viewing-specific-alert.adoc[View a specific alert]
+Alerts are also included for xref:monitoring-system-health.adoc#monitor-node-connection-states[node connection states].

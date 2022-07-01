@@ -2,51 +2,165 @@
 permalink: monitor/monitoring-system-health.html
 sidebar: sidebar
 keywords: how to monitor system health, how to view system health
-summary: 'You should monitor the overall health of your StorageGRID system on a daily basis.'
+summary: 'Monitor the overall health of your StorageGRID system on a daily basis.'
 ---
 = Monitor system health
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You should monitor the overall health of your StorageGRID system on a daily basis.
+Monitor the overall health of your StorageGRID system on a daily basis.
 
 .About this task
-The StorageGRID system is fault tolerant and can continue to operate even when parts of the grid are unavailable. The first sign of a potential issue with your StorageGRID system is likely to be an alert or an alarm (legacy system) and not necessarily an issue with system operations. Paying attention to system health can help you detect minor issues before they affect operations or grid efficiency.
 
-The Health panel on the Grid Manager Dashboard provides a summary of issues that might be affecting your system. You should investigate any issues that are shown on the Dashboard.
+The StorageGRID system can continue to operate when parts of the grid are unavailable. Potential issues indicated by alerts or alarms (legacy system) are not necessarily issues with system operations. Investigate issues summarized on the Health status card of the Grid Manager Dashboard.
 
-NOTE: To be notified of alerts as soon as they are triggered, you can set up email notifications for alerts or configure SNMP traps.
+To be notified of alerts as soon as they are triggered, you can xref:/installconfig/set-up-email-alert-notifications.adoc[set up email notifications for alerts] or xref:using-snmp-monitoring.adoc[configure SNMP traps].
+
+//image::../media/dashboard_health_panel.png[Dashboard Health status card]
+
+When issues exist, links appear that allow you to view additional details:
+
+[cols="1a,2a" options="header"]
+|===
+| Link| Appears when...
+|Grid details
+|Any nodes are disconnected (connection state Unknown or Administratively Down).
+
+|Current alerts (Critical, Major, Minor)
+|Alerts are <<View current and resolved alerts,currently active>>.
+
+|Recently resolved alerts
+|Alerts triggered in the past week <<View current and resolved alerts,are now resolved>>.
+
+|License
+|There is an issue with the software license for this StorageGRID system. You can xref:../admin/updating-storagegrid-license-information.adoc[update license information as needed].
+|===
+
+== Monitor node connection states
+
+If one or more nodes are disconnected from the grid, critical StorageGRID operations might be affected. Monitor node connection states and address any issues promptly.
+
+[cols="1a,3a,3a" options="header"]
+|===
+| Icon| Description| Action required
+
+|image:../media/icon_alarm_blue_unknown.png[blue question mark icon]
+|*Not connected - Unknown*
+
+For an unknown reason, node is not connected to grid.
+
+For example, the network connection between nodes has been lost or the power is down. The *Unable to communicate with node* alert might also be triggered. Other alerts might also be active.
+|
+Requires immediate attention. Select each alert and follow the recommended actions.
+
+For example, you might need to restart a service that has stopped or restart the host for the node.
+
+*Note*: A node might appear as Unknown during managed shutdown operations. You can ignore the Unknown state in these cases.
+
+|image:../media/icon_alarm_gray_administratively_down.png[gray questionmark icon]
+|*Not connected - Administratively down*
+
+For an expected reason, node is not connected to grid.
+
+For example, the node, or services on the node, has been gracefully shut down, the node is rebooting, or the software is being upgraded. One or more alerts might also be active.
+
+Based on the underlying issue, these nodes often go back online with no intervention.
+|
+Determine if any alerts are affecting this node.
+
+If one or more alerts are active, select each alert and follow the recommended actions.
+
+|image:../media/icon_alert_green_checkmark.png[icon alert green checkmark]
+|*Connected*
+
+The node is connected to the grid.
+|No action required.
+|===
+
+== View current and resolved alerts
+
+*Current alerts*: When an alert is triggered, an alert icon is displayed on the Dashboard. An alert icon is also displayed for the node on the Nodes page. An email notification might also be sent, unless the alert has been silenced.
+
+*Resolved alerts*: You can search and view a history of alerts that have been resolved.
+
+Watch this https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2680a74f-070c-41c2-bcd3-acc5013c9cdd[video for an overview of alerts^].
+
+image::../media/video-screenshot-alert-overview.png[link="https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2680a74f-070c-41c2-bcd3-acc5013c9cdd" alt="Video: Overview of Alerts", window=_blank]
+
+The following table describes the information shown in the Grid Manager for current and resolved alerts.
+
+[cols="1a,3a" options="header"]
+|===
+| Column header| Description
+|Name
+|The name of the alert and its description.
+
+|Severity
+|The severity of the alert. For current alerts, if multiple alerts are grouped the title row shows how many instances of that alert are occurring at each severity.
+
+image:../media/icon_alert_red_critical.png[Icon Alert Red Critical] *Critical*: An abnormal condition exists that has stopped the normal operations of a StorageGRID node or service. You must address the underlying issue immediately. Service disruption and loss of data might result if the issue is not resolved.
+
+image:../media/icon_alert_orange_major.png[Icon Alert Orange Major] *Major*: An abnormal condition exists that is either affecting current operations or approaching the threshold for a critical alert. You should investigate major alerts and address any underlying issues to ensure that the abnormal condition does not stop the normal operation of a StorageGRID node or service.
+
+image:../media/icon_alert_yellow_minor.png[Icon Alert Yellow Minor] *Minor*: The system is operating normally, but an abnormal condition exists that could affect the system's ability to operate if it continues. You should monitor and resolve minor alerts that do not clear on their own to ensure they do not result in a more serious problem.
+
+|Time triggered
+|How long ago the alert was triggered. If multiple alerts are grouped, the title row shows times for the most recent instance of the alert (_newest_) and the oldest instance of the alert (_oldest_).
+
+|Site/Node
+|The name of the site and node where the alert occurred.
+
+|Status (current alerts only)
+|Whether the alert is active or has been silenced. If multiple alerts are grouped and *All alerts* is selected in the drop-down, the title row shows how many instances of that alert are active and how many instances have been silenced.
+
+|Time resolved (resolved alerts only)
+|How long ago the alert was resolved.
+
+|Current values (current alerts only)
+|The current value of the metric that caused the alert to be triggered. For some alerts, additional values are shown to help you understand and investigate the alert. For example, the values shown for a *Low object data storage* alert include the percentage of disk space used, the total amount of disk space, and the amount of disk space used.
+
+*Note:* If multiple alerts are grouped, current values are not shown in the title row.
+
+|Triggered values (resolved alerts only)
+|The value of the metric that caused the alert to be triggered. For some alerts, additional values are shown to help you understand and investigate the alert. For example, the values shown for a *Low object data storage* alert include the percentage of disk space used, the total amount of disk space, and the amount of disk space used.
+|===
 
 .Steps
 
-. Sign in to the Grid Manager to view the Dashboard.
-. Review the information in the Health panel.
+. Select the *Current alerts* or *Resolved alerts* link to view a list of alerts in those categories.
 +
-image::../media/dashboard_health_panel.png[Dashboard Health Panel]
+By default, current alerts are shown as follows:
+
+* The most recently triggered alerts are shown first.
+* Multiple alerts of the same type are shown as a group.
+* Alerts that have been silenced are not shown.
+* For a specific alert on a specific node, if the thresholds are reached for more than one severity, only the most severe alert is shown. That is, if alert thresholds are reached for the minor, major, and critical severities, only the critical alert is shown.
 +
-When issues exist, links appear that allow you to view additional details:
+The Current alerts page is refreshed every two minutes.
+
+. To expand groups of alerts, select the down caret image:../media/icon_alert_caret_down.png[down caret icon]. To collapse individual alerts in a group, select the up caret image:../media/icon_alert_caret_up.png[Up caret icon], or select the group's name.
+
+. To display individual alerts instead of groups of alerts, unselect the *Group alerts* check box.
 +
-[cols="1a,2a" options="header"]
-|===
-| Link| Indicates
-|Grid details
-|Appears if any nodes are disconnected (connection state Unknown or Administratively Down). Click the link, or click the blue or gray icon to determine which node or nodes are affected.
+image::../media/alerts_page_group_alerts_button.png[Group alerts button]
 
-|Current alerts
-|Appears if any alerts are currently active. Click the link, or click *Critical*, *Major*, or *Minor* to see the details on the *ALERTS* > *Current* page.
+. To sort current alerts or alert groups, select the up/down arrows image:../media/icon_alert_sort_column.png[Sort arrows icon] in each column header.
+ ** When *Group alerts* is selected, both the alert groups and the individual alerts within each group are sorted. For example, you might want to sort the alerts in a group by *Time triggered* to find the most recent instance of a specific alert.
+ ** When *Group alerts* is unselected, the entire list of alerts is sorted. For example, you might want to sort all alerts by *Node/Site* to see all alerts affecting a specific node.
 
-|Recently resolved alerts
-|Appears if any alerts triggered in the past week are now resolved. Click the link to see the details on the *ALERTS* > *Resolved* page.
+. To filter current alerts by status, use the drop-down menu at the top of the table.
++
+image::../media/alerts_page_active_drop_down.png[Alert status dropdown]
 
-|License
-|Appears if there is an issue with the software license for this StorageGRID system. Click the link to see the details on the *MAINTENANCE* > *System* > *License* page.
-|===
+ ** Select *All alerts* to view all current alerts (both active and silenced alerts).
+ ** Select *Active* to view only the current alerts that are active.
+ ** Select *Silenced* to view only the current alerts that have been silenced. See xref:silencing-alert-notifications.adoc[Silence alert notifications].
 
-.Related information
+. To sort resolved alerts:
+ ** Select a time period from the *When triggered* drop-down menu.
+ ** Select one or more severities from the *Severity* drop-down menu.
+ ** Select one or more default or custom alert rules from the *Alert rule* drop-down menu to filter on resolved alerts related to a specific alert rule.
+ ** Select one or more nodes from the *Node* drop-down menu to filter on resolved alerts related to a specific node.
 
-* xref:../admin/index.adoc[Administer StorageGRID]
-
-* xref:set-up-email-alert-notifications.adoc[Set up email notifications for alerts]
-
-* xref:using-snmp-monitoring.adoc[Use SNMP monitoring]
+. To view details for a specific alert, select the alert. A dialog box provides details and recommended actions for the alert you selected.
