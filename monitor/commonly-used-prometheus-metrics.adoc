@@ -2,20 +2,22 @@
 permalink: monitor/commonly-used-prometheus-metrics.html
 sidebar: sidebar
 keywords: prometheus, Prometheus metrics, metrics
-summary: 'Refer to this list of common Prometheus metrics to better understand the conditions in the default alert rules or to construct the conditions for custom alert rules.'
+summary: 'Refer to this list of commonly used Prometheus metrics to better understand conditions in the default alert rules or to construct the conditions for custom alert rules.'
 ---
 = Commonly used Prometheus metrics
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Refer to this list of common Prometheus metrics to better understand the conditions in the default alert rules or to construct the conditions for custom alert rules.
+Refer to this list of commonly used Prometheus metrics to better understand conditions in the default alert rules or to construct the conditions for custom alert rules.
+
+You can also <<obtain-all-metrics,obtain a complete list of all metrics>>.
 
 The Prometheus service on Admin Nodes collects time series metrics from the services on all nodes. Metrics are stored on each Admin Node until the space reserved for Prometheus data is full. When the `/var/local/mysql_ibdata/` volume reaches capacity, the oldest metrics are deleted first.
 
-== Common Prometheus metrics
+The following table lists the most commonly used Prometheus metrics.
 
-NOTE: Metrics that include _private_ in their names are intended for internal use only and are subject to change without notice between StorageGRID releases.
+NOTE: Metrics that include _private_ in their names are for internal use only and are subject to change without notice between StorageGRID releases. 
 
 [cols="3a,1a" options="header"]
 |===
@@ -217,9 +219,7 @@ xref:troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and mis
 |The maximum amount of logical space available for the tenant's objects. If a quota metric is not provided, an unlimited amount of space is available.
 |===
 
-== Obtain all metrics
-
-To obtain the complete list of metrics, use the Grid Management API.
+[[obtain-all-metrics]]To obtain the complete list of metrics, use the Grid Management API.
 
 . From the top of the Grid Manager, select the help icon and select *API Documentation*.
 . Locate the *metrics* operations.
