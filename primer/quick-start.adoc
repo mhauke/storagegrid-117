@@ -46,21 +46,21 @@ Learn how:
 [role="quick-margin-list"]
 * xref:../installconfig/index.adoc[Install appliance hardware]
 * xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-* xref:../sg100-1000/index.adoc[Install Ubuntu or Debian]
-* xref:../sg100-1000/index.adoc[Install VMware]
+* xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
+* xref:../vmware/index.adoc[Install VMware]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Sign in and configure
 
 [role="quick-margin-para"]
-The Grid Manager is the main user interface and where you will configure StorageGRID. The configuration tasks depend on how you will use StorageGRID. At a minimum, you set up users and groups, connect to S3 and Swift client applications, manage various storage and security settings, and create tenant accounts.
+You use the Grid Manager to configure StorageGRID. The configuration tasks you need to perform depend on how you will use StorageGRID. At a minimum, you set up users and groups, connect to S3 and Swift client applications, manage storage and security settings, and create tenant accounts.
 
 [role="quick-margin-para"]
 Learn how:
 
 [role="quick-margin-list"]
 * xref:../admin/index.adoc[Administer StorageGRID]
-* xref:../fabricpool/index.adoc[Connect to ONTAP as a FabricPool cloud tier]
+* xref:../fabricpool/index.adoc[Configure StorageGRID for FabricPool]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up ILM
 
@@ -80,8 +80,8 @@ Learn how:
 
 [role="quick-margin-list"]
 * xref:../tenant/index.adoc[Use a tenant account]
-* xref:../S3/index.adoc[Use the S3 REST API]
-* xref:../tenant/index.adoc[Use the Swift REST API]
+* xref:../s3/index.adoc[Use the S3 REST API]
+* xref:../swift/index.adoc[Use the Swift REST API]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Monitor and troubleshoot
