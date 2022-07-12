@@ -1,5 +1,5 @@
 ---
-permalink: primer/quick-start.html
+permalink: quick-start.html
 sidebar: sidebar
 keywords: storagegrid quick start, tasks
 summary: 'Here are the basic steps for creating and using any StorageGRID system. Follow the links to go to the details.'
@@ -20,6 +20,7 @@ Here are the basic steps for creating and using any StorageGRID system. Follow t
 [role="quick-margin-para"]
 Work with your NetApp account representative to design and plan your new StorageGRID system. Consider these types of questions:
 
+[role="quick-margin-list"]
 * How much object data do you expect to store initially and over time? 
 * Where will that data come from? 
 * How many sites do you need?
@@ -27,6 +28,7 @@ Work with your NetApp account representative to design and plan your new Storage
 * Which StorageGRID networks will you use?
 * Do you have any special storage requirements or do you need to comply with any legal or regulatory requirements?
 
+[role="quick-margin-para"]
 Review xref:../primer/index.adoc[StorageGRID basics] and xref:../network/index.adoc[networking guidelines].
 
 
@@ -35,10 +37,13 @@ Review xref:../primer/index.adoc[StorageGRID basics] and xref:../network/index.a
 [role="quick-margin-para"]
 A StorageGRID system consists of individual hardware-based and software-based nodes. You first install the hardware for each appliance node and configure each Linux or VMware host.
 
+[role="quick-margin-para"]
 To complete the installation, you install StorageGRID software on each appliance or software host and connect the nodes into a grid. During this step, you provide site and node names, subnet details, and the IP addresses for your NTP and DNS servers.
 
+[role="quick-margin-para"]
 Learn how:
 
+[role="quick-margin-list"]
 * xref:../installconfig/index.adoc[Install appliance hardware]
 * xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
 * xref:../sg100-1000/index.adoc[Install Ubuntu or Debian]
@@ -50,8 +55,10 @@ Learn how:
 [role="quick-margin-para"]
 The Grid Manager is the main user interface and where you will configure StorageGRID. The configuration tasks depend on how you will use StorageGRID. At a minimum, you set up users and groups, connect to S3 and Swift client applications, manage various storage and security settings, and create tenant accounts.
 
+[role="quick-margin-para"]
 Learn how:
 
+[role="quick-margin-list"]
 * xref:../admin/index.adoc[Administer StorageGRID]
 * xref:../fabricpool/index.adoc[Connect to ONTAP as a FabricPool cloud tier]
 
@@ -60,16 +67,18 @@ Learn how:
 [role="quick-margin-para"]
 You manage every object in your StorageGRID system by configuring an information lifecycle management (ILM) policy that consists of one or more ILM rules. The ILM rules instruct StorageGRID how to create and distribute copies of object data and how to manage those copies over time.
 
+[role="quick-margin-para"]
 Learn how: xref:../ilm/index.adoc[Manage objects with ILM]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Use StorageGRID
 
 [role="quick-margin-para"]
-
 After the initial configuration is complete, StorageGRID tenant accounts can use S3 and Swift client applications to ingest, retrieve, and delete objects. 
 
+[role="quick-margin-para"]
 Learn how:
 
+[role="quick-margin-list"]
 * xref:../tenant/index.adoc[Use a tenant account]
 * xref:../S3/index.adoc[Use the S3 REST API]
 * xref:../tenant/index.adoc[Use the Swift REST API]
@@ -80,8 +89,10 @@ Learn how:
 [role="quick-margin-para"]
 You can use the Grid Manager Dashboard to see the high-level status of your StorageGRID system or use the Nodes page to see details for the entire grid, each site, and each node. You can also review audit logs to analyze all system activity.
 
+[role="quick-margin-para"]
 Learn how:
 
+[role="quick-margin-list"]
 * xref:../monitor/index.adoc[Monitor StorageGRID]
 * xref:../troubleshoot/index.adoc[Troubleshoot StorageGRID]
 * xref:../audit/index.adoc[Review audit logs]
@@ -92,8 +103,10 @@ Learn how:
 [role="quick-margin-para"]
 You can add nodes or sites to expand the capacity or functionality of your system. You can also perform various maintenance procedures to recover from failures or to keep your StorageGRID system up-to-date and performing efficiently.
 
+[role="quick-margin-para"]
 Learn how:
 
+[role="quick-margin-list"]
 * xref:../expand/index.adoc[Expand your grid]
 * xref:../maintain/index.adoc[Recover nodes and maintain your grid]
 
