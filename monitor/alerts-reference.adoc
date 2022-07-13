@@ -307,6 +307,123 @@ Contact technical support.
 
 |Appliance temperature sensor removed
 |A temperature sensor has been removed. Contact technical support.
+
+|Disk I/O is very slow
+|Very slow disk I/O might be impacting StorageGRID performance.
+
+. If the issue is related to a storage appliance node, use SANtricity System Manager to check for faulty drives, drives with predicted faults, or in-progress drive repairs. Also check the status of the Fibre Channel or SAS links between the appliance compute and storage controllers to see if any links are down or showing excessive error rates.
+. Examine the storage system that hosts this node's volumes to determine, and correct, the root cause of the slow I/O.
+. If this alert persists, contact technical support.
+
+*Note:* Affected nodes might disable services and reboot themselves to avoid impacting overall grid performance. When the underlying condition is cleared and these nodes detect normal I/O performance, they will return to full service automatically.
+
+|Services appliance link down on Admin Network port 1
+|The Admin Network port 1 on the appliance is down or disconnected.
+
+. Check the cable and physical connection to Admin Network port 1.
+. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
+. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
+
+* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
+* xref:disabling-alert-rules.adoc[Disable alert rules]
+
+|Services appliance link down on Admin Network (or Client Network)
+|The appliance interface to the Admin Network (eth1) or the Client Network (eth2) is down or disconnected.
+
+. Check the cables, SFPs, and physical connections to the StorageGRID network.
+. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
+. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
+
+* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
+* xref:disabling-alert-rules.adoc[Disable alert rules]
+
+|Services appliance link down on network port 1, 2, 3, or 4
+|Network port 1, 2, 3, or 4 on the appliance is down or disconnected.
+
+. Check the cables, SFPs, and physical connections to the StorageGRID network.
+. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
+. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
+
+* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
+* xref:disabling-alert-rules.adoc[Disable alert rules]
+
+|Services appliance storage connectivity degraded
+|One of the two SSDs in a services appliance has failed or is out of synchronization with the other.
+
+Appliance functionality is not impacted, but you should address the issue immediately. If both drives fail, the appliance will no longer function.
+
+. From the Grid Manager, select *NODES* > ***_services appliance_, and then select the **Hardware* tab.
+. Review the message in the *Storage RAID Mode* field.
+. If the message shows the progress of a resynchronization operation, wait for the operation to complete and then confirm that the alert is resolved. A resynchronization message means that SSD was replaced recently or that it is being resynchronized for another reason.
+. If the message indicates that one of the SSDs has failed, replace the failed drive as soon as possible.
++
+For instructions on how to replace a drive in a services appliance, see the SG100 and SG1000 appliances installation and maintenance guide.
++
+xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
+
+|Storage appliance link down on Admin Network port 1
+|The Admin Network port 1 on the appliance is down or disconnected.
+
+. Check the cable and physical connection to Admin Network port 1.
+. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
+. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
+
+* xref:../sg6000/index.adoc[SG6000 storage appliances]
+* xref:../sg5700/index.adoc[SG5700 storage appliances]
+* xref:../sg5600/index.adoc[SG5600 storage appliances]
+* xref:disabling-alert-rules.adoc[Disable alert rules]
+
+|Storage appliance link down on Admin Network (or Client Network)
+|The appliance interface to the Admin Network (eth1) or the Client Network (eth2) is down or disconnected.
+
+. Check the cables, SFPs, and physical connections to the StorageGRID network.
+. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
+. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
+
+* xref:../sg6000/index.adoc[SG6000 storage appliances]
+* xref:../sg5700/index.adoc[SG5700 storage appliances]
+* xref:../sg5600/index.adoc[SG5600 storage appliances]
+* xref:disabling-alert-rules.adoc[Disable alert rules]
+
+|Storage appliance link down on network port 1, 2, 3, or 4
+|Network port 1, 2, 3, or 4 on the appliance is down or disconnected.
+
+. Check the cables, SFPs, and physical connections to the StorageGRID network.
+. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
+. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
+
+* xref:../sg6000/index.adoc[SG6000 storage appliances]
+* xref:../sg5700/index.adoc[SG5700 storage appliances]
+* xref:../sg5600/index.adoc[SG5600 storage appliances]
+* xref:disabling-alert-rules.adoc[Disable alert rules]
+
+|Storage appliance storage connectivity degraded
+|There is a problem with one or more connections between the compute controller and storage controller.
+
+. Go to the appliance to check the port indicator lights.
+. If a port's lights are off, confirm the cable is properly connected. As needed, replace the cable.
+. Wait up to five minutes.
++
+*Note:* If a second cable needs to be replaced, do not unplug it for at least 5 minutes. Otherwise, the root volume might become read-only, which requires a hardware restart.
+
+. From the Grid Manager, select *NODES*. Then, select the Hardware tab of the node that had the problem. Verify that the alert condition has resolved.
+
+|Storage device inaccessible
+|A storage device cannot be accessed.
+
+This alert indicates that a volume cannot be mounted or accessed because of a problem with an underlying storage device.
+
+. Check the status of all storage devices used for the node:
+ ** If the node is installed on a virtual machine or Linux host, follow the instructions for your operating system to run hardware diagnostics or perform a filesystem check.
+  *** xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
+  *** xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
+  *** xref:../vmware/index.adoc[Install VMware]
+ ** If the node is installed on an SG100, SG1000 or SG6000 appliance, use the BMC.
+ ** If the node is installed on a SG5600 or SG5700 appliance, use SANtricity System Manager.
+. If necessary, replace the component. See the instructions for your appliance:
+ ** xref:../sg6000/index.adoc[SG6000 storage appliances]
+ ** xref:../sg5700/index.adoc[SG5700 storage appliances]
+ ** xref:../sg5600/index.adoc[SG5600 storage appliances]
 |===
 
 == Audit log alerts
@@ -701,21 +818,6 @@ This alert indicates that someone has changed the ILM scan rate for your system 
 *IMPORTANT*: Never change the ILM scan rate without contacting technical support.
 |===
 
-== Input/output alerts
-
-[cols="1a,2a" options="header"]
-|===
-| Alert name| Description and recommended actions
-|Disk I/O is very slow
-|Very slow disk I/O might be impacting StorageGRID performance.
-
-. If the issue is related to a storage appliance node, use SANtricity System Manager to check for faulty drives, drives with predicted faults, or in-progress drive repairs. Also check the status of the Fibre Channel or SAS links between the appliance compute and storage controllers to see if any links are down or showing excessive error rates.
-. Examine the storage system that hosts this node's volumes to determine, and correct, the root cause of the slow I/O.
-. If this alert persists, contact technical support.
-
-*Note:* Affected nodes might disable services and reboot themselves to avoid impacting overall grid performance. When the underlying condition is cleared and these nodes detect normal I/O performance, they will return to full service automatically.
-|===
-
 == KMS alerts
 
 [cols="1a,2a" options="header"]
@@ -991,11 +1093,25 @@ Monitor this alert to see if the issue resolves on its own. If the issue persist
 . If you cannot resolve the alert, there might be a hardware failure. Contact technical support.
 |===
 
-== Object existence check alerts
+== Object alerts
 
 [cols="1a,2a" options="header"]
 |===
 | Alert name| Description and recommended actions
+
+|Objects lost
+|One or more objects have been lost from the grid.
+
+This alert might indicate that data has been permanently lost and is not retrievable.
+
+. Investigate this alert immediately. You might need to take action to prevent further data loss. You also might be able to restore a lost object if you take prompt action.
++
+xref:../troubleshoot/troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and missing object data]
+
+. When the underlying problem is resolved, reset the counter:
+ .. Select *SUPPORT* > *Tools* > *Grid topology*.
+ .. For the Storage Node that raised the alert, select *_site_* > *_grid node_* > *LDR* > *Data Store* > *Configuration* > *Main*.
+ .. Select *Reset Lost Objects Count* and click *Apply Changes*.
 
 |Object existence check failed
 |The object existence check job has failed.
@@ -1009,7 +1125,6 @@ Monitor this alert to see if the issue resolves on its own. If the issue persist
 .. Ensure there are no service or volume failures on the Storage Nodes. If a service is not running, start or restart the service. See the xref:../maintain/index.adoc[recovery and maintenance instructions].
 .. Ensure the selected consistency control can be satisfied.
 .. After resolving any issues, select *Retry*. The job will resume from the last valid state.
-
 +
 *Critical storage error in volume*
 .. Recover the failed volume. See the xref:../maintain/index.adoc[recovery and maintenance instructions].
@@ -1030,27 +1145,6 @@ When you resolve steps 1 and 2, the job will automatically start where it left o
 
 . If the selected consistency control cannot be satisfied, cancel the job and start another job using a lower consistency control.
 . If you are unable to resolve the issues, contact technical support.
-|===
-
-== Object alerts
-
-[cols="1a,2a" options="header"]
-|===
-| Alert name| Description and recommended actions
-
-|Objects lost
-|One or more objects have been lost from the grid.
-
-This alert might indicate that data has been permanently lost and is not retrievable.
-
-. Investigate this alert immediately. You might need to take action to prevent further data loss. You also might be able to restore a lost object if you take prompt action.
-+
-xref:../troubleshoot/troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and missing object data]
-
-. When the underlying problem is resolved, reset the counter:
- .. Select *SUPPORT* > *Tools* > *Grid topology*.
- .. For the Storage Node that raised the alert, select *_site_* > *_grid node_* > *LDR* > *Data Store* > *Configuration* > *Main*.
- .. Select *Reset Lost Objects Count* and click *Apply Changes*.
 
 |S3 PUT Object size too large
 |An S3 client is attempting to perform a PUT Object operation that exceeds the S3 size limits.
@@ -1083,128 +1177,6 @@ xref:../troubleshoot/troubleshooting-lost-and-missing-object-data.adoc[Troublesh
 Make sure that the majority of the Storage Nodes that have the RSM service at the affected site are running and in a non-error state.
 
 See "`Troubleshooting platform services`" in the xref:../admin/index.adoc[instructions for administering StorageGRID].
-|===
-
-== Services appliance alerts
-
-[cols="1a,2a" options="header"]
-|===
-| Alert name| Description and recommended actions
-
-|Services appliance link down on Admin Network port 1
-|The Admin Network port 1 on the appliance is down or disconnected.
-
-. Check the cable and physical connection to Admin Network port 1.
-. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
-. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
-
-* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-* xref:disabling-alert-rules.adoc[Disable alert rules]
-
-|Services appliance link down on Admin Network (or Client Network)
-|The appliance interface to the Admin Network (eth1) or the Client Network (eth2) is down or disconnected.
-
-. Check the cables, SFPs, and physical connections to the StorageGRID network.
-. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
-. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
-
-* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-* xref:disabling-alert-rules.adoc[Disable alert rules]
-
-|Services appliance link down on network port 1, 2, 3, or 4
-|Network port 1, 2, 3, or 4 on the appliance is down or disconnected.
-
-. Check the cables, SFPs, and physical connections to the StorageGRID network.
-. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
-. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
-
-* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-* xref:disabling-alert-rules.adoc[Disable alert rules]
-
-|Services appliance storage connectivity degraded
-|One of the two SSDs in a services appliance has failed or is out of synchronization with the other.
-
-Appliance functionality is not impacted, but you should address the issue immediately. If both drives fail, the appliance will no longer function.
-
-. From the Grid Manager, select *NODES* > ***_services appliance_, and then select the **Hardware* tab.
-. Review the message in the *Storage RAID Mode* field.
-. If the message shows the progress of a resynchronization operation, wait for the operation to complete and then confirm that the alert is resolved. A resynchronization message means that SSD was replaced recently or that it is being resynchronized for another reason.
-. If the message indicates that one of the SSDs has failed, replace the failed drive as soon as possible.
-+
-For instructions on how to replace a drive in a services appliance, see the SG100 and SG1000 appliances installation and maintenance guide.
-+
-xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-|===
-
-== Storage appliance alerts
-
-[cols="1a,2a" options="header"]
-|===
-| Alert name| Description and recommended actions
-
-|Storage appliance link down on Admin Network port 1
-|The Admin Network port 1 on the appliance is down or disconnected.
-
-. Check the cable and physical connection to Admin Network port 1.
-. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
-. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
-
-* xref:../sg6000/index.adoc[SG6000 storage appliances]
-* xref:../sg5700/index.adoc[SG5700 storage appliances]
-* xref:../sg5600/index.adoc[SG5600 storage appliances]
-* xref:disabling-alert-rules.adoc[Disable alert rules]
-
-|Storage appliance link down on Admin Network (or Client Network)
-|The appliance interface to the Admin Network (eth1) or the Client Network (eth2) is down or disconnected.
-
-. Check the cables, SFPs, and physical connections to the StorageGRID network.
-. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
-. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
-
-* xref:../sg6000/index.adoc[SG6000 storage appliances]
-* xref:../sg5700/index.adoc[SG5700 storage appliances]
-* xref:../sg5600/index.adoc[SG5600 storage appliances]
-* xref:disabling-alert-rules.adoc[Disable alert rules]
-
-|Storage appliance link down on network port 1, 2, 3, or 4
-|Network port 1, 2, 3, or 4 on the appliance is down or disconnected.
-
-. Check the cables, SFPs, and physical connections to the StorageGRID network.
-. Address any connection issues. See the installation and maintenance instructions for your appliance hardware.
-. If this port is disconnected on purpose, disable this rule. From the Grid Manager, select *ALERTS* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
-
-* xref:../sg6000/index.adoc[SG6000 storage appliances]
-* xref:../sg5700/index.adoc[SG5700 storage appliances]
-* xref:../sg5600/index.adoc[SG5600 storage appliances]
-* xref:disabling-alert-rules.adoc[Disable alert rules]
-
-|Storage appliance storage connectivity degraded
-|There is a problem with one or more connections between the compute controller and storage controller.
-
-. Go to the appliance to check the port indicator lights.
-. If a port's lights are off, confirm the cable is properly connected. As needed, replace the cable.
-. Wait up to five minutes.
-+
-*Note:* If a second cable needs to be replaced, do not unplug it for at least 5 minutes. Otherwise, the root volume might become read-only, which requires a hardware restart.
-
-. From the Grid Manager, select *NODES*. Then, select the Hardware tab of the node that had the problem. Verify that the alert condition has resolved.
-
-|Storage device inaccessible
-|A storage device cannot be accessed.
-
-This alert indicates that a volume cannot be mounted or accessed because of a problem with an underlying storage device.
-
-. Check the status of all storage devices used for the node:
- ** If the node is installed on a virtual machine or Linux host, follow the instructions for your operating system to run hardware diagnostics or perform a filesystem check.
-  *** xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-  *** xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
-  *** xref:../vmware/index.adoc[Install VMware]
- ** If the node is installed on an SG100, SG1000 or SG6000 appliance, use the BMC.
- ** If the node is installed on a SG5600 or SG5700 appliance, use SANtricity System Manager.
-. If necessary, replace the component. See the instructions for your appliance:
- ** xref:../sg6000/index.adoc[SG6000 storage appliances]
- ** xref:../sg5700/index.adoc[SG5700 storage appliances]
- ** xref:../sg5600/index.adoc[SG5600 storage appliances]
 |===
 
 == Tenant alerts
