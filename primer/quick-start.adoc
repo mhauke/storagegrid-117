@@ -22,14 +22,15 @@ Work with your NetApp account representative to design and plan your new Storage
 
 [role="quick-margin-list"]
 * How much object data do you expect to store initially and over time? 
-* Where will that data come from? 
 * How many sites do you need?
 * How many and what types of nodes do you need at each site? 
 * Which StorageGRID networks will you use?
-* Do you have any special storage requirements or do you need to comply with any legal or regulatory requirements?
+* Which entities will store objects on your grid?
+* Do you have any special security or storage requirements?
+* Do you need to comply with any legal or regulatory requirements?
 
 [role="quick-margin-para"]
-Review xref:../primer/index.adoc[What is StorageGRID?] and xref:../network/index.adoc[networking guidelines].
+Review xref:../primer/index.adoc[Learn about StorageGRID] and the xref:../network/index.adoc[Networking guidelines].
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Install nodes
@@ -50,7 +51,7 @@ Learn how:
 * xref:../vmware/index.adoc[Install VMware]
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Sign in and configure
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Configure and manage
 
 [role="quick-margin-para"]
 You use the Grid Manager to configure StorageGRID. The configuration tasks you need to perform depend on how you will use StorageGRID. At a minimum, you set up users and groups, connect to S3 and Swift client applications, manage storage and security settings, and create tenant accounts.
@@ -60,6 +61,7 @@ Learn how:
 
 [role="quick-margin-list"]
 * xref:../admin/index.adoc[Administer StorageGRID]
+* xref:../harden/index.adoc[System hardening]
 * xref:../fabricpool/index.adoc[Configure StorageGRID for FabricPool]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up ILM
