@@ -13,8 +13,10 @@ This release of StorageGRID introduces the following features.
 
 == Kathy's what's new
 
-=== FabricPool and S3 setup wizard
-A new setup wizard in the Grid Manager guides you through each step of configuring StorageGRID for use with ONTAP FabricPool or another S3 client application and produces a file you can use when entering required values in the other application. Use the wizard to create an HA group, load balancer endpoint, tenant, bucket, and access keys more quickly and to make sure your settings conform to StorageGRID best practices.
+=== FabricPool and S3 setup wizard and Dashboard reminder
+The new FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with ONTAP FabricPool or other S3 client application and produces a file you can use when entering required values in the other application. Use the wizard to create an HA group, load balancer endpoint, tenant, bucket, and access keys more quickly and to make sure your settings conform to StorageGRID best practices.
+
+As part of this change, a new banner is displayed on the Dashboard to remind new users to configure endpoint domain names for S3 virtual hosted-style requests and to set up email notifications for alerts.
 
 See xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard]  and xref:../fabricpool/use-fabricpool-setup-wizard.adoc[Use FabricPool setup wizard].
 
