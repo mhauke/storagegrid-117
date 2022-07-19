@@ -9,34 +9,36 @@ summary: 'You can configure network access for specific internal StorageGRID por
 :imagesdir: ../media/
 
 [.lead]
-You can configure the StoraGRID firewall to control network access for specific internal StorageGRID ports. 
+You can configure the StoraGRID firewall to control network access for specific ports of your StorageGRID nodes. 
 
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have Maintenance or Root access permissions.
-* If you want an Admin Node or Gateway Node to accept inbound traffic only on explicitly configured endpoints, you have defined the load balancer endpoints or defined additional open ports on the <<Untrusted client network, untrusted-client-network>> tab.
+* You have reviewed the information in xref:../admin/manage-firewall-controls.adoc[Manage firewall controls] and xref:../network/index.adoc[Networking guidelines]
+
+* If you want an Admin Node or Gateway Node to accept inbound traffic only on explicitly configured endpoints, you have defined the load balancer endpoints.
 +
 NOTE: When changing the configuration of the client network, existing client connections might fail if load balancer endpoints have not been configured.
 
 .About this task
 
-StorageGRID includes a firewall that enables you to open or close ports on the Grid Network, Admin Network, and Client Network. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. If you are using a Client Network, you can specify whether a node trusts inbound traffic from the Client Network.
+StorageGRID includes a firewall on each node that enables you to open or close ports on the Grid Network, Admin Network, and Client Network. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. If you are using a Client Network, you can specify whether a node trusts inbound traffic from the Client Network, and you can configure the access of specific ports. 
 
+There are three tabs on the *Firewall control* page: 
+* Manage external access
+* Add privileged IP list
+* Untrusted client networks
 
+You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
 
-Configuring your firewall enables you to:
-
-* Collect andxxxxxxxxxxxxxxx
-* Rxxxxxxxxxxxxxxxxxxxx
 Limiting the number of ports open to IP addresses outside of your grid to only those that are absolutely necessary enhances the security of your grid. 
-
-
-
-
+For more information on using firewall controls, including example use-cases, see xxxxxx. 
 
 +
 NOTE: If the configuration options available in this procedure are not flexible enough to meet your requirements, additional configuration options can be applied using the private API `xxxxxx endpoints. For example, it is possible to use xxxxxxxxxxx.
+
+
 
 [#Access-firewall-controls]
 == Access firewall controls
@@ -52,7 +54,7 @@ There are three tabs on this page:
 * Privileged address list
 * Untrusted client network
 
-You should check the settings on each tab. 
+You should check the settings on each tab to ensure only those ports that are necessary for your grid configuration are open. 
 
 === Manage External Access
 Use this tab to open or close ports on the Grid Network, Admin Network, and Client Network. When a port is closed in the Manage external access list, it can't be accessed by any non-grid IP address, including VLAN interfaces, unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
@@ -127,7 +129,7 @@ image::../media/manage-syslog-content.png[Manage syslog content]
 [#untrusted-client-network]
 === Untrusted client Network
 
-image::../media/send-test-messages.png[Send test messages]
+
 
 
 
