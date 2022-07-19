@@ -21,8 +21,6 @@ You might want to rename an Erasure Coding profile to make it more obvious what 
 . Select *ILM* > *Erasure coding*.
 +
 The Erasure Coding Profiles page appears. The *Rename* and *Deactivate* buttons are both disabled.
-+
-image::../media/ec_profiles_rename_deactivate_disabled.png[Erasure Coding Profiles Rename Deactivate Disabled]
 
 . Select the profile you want to rename.
 +
@@ -31,14 +29,10 @@ The *Rename* and *Deactivate* buttons become enabled.
 . Select *Rename*.
 +
 The Rename EC Profile dialog box appears.
-+
-image::../media/ec_profile_rename.png[Erasure Coding Profile Rename]
 
 . Enter a unique name for the Erasure Coding profile.
 +
 The Erasure Coding profile name is appended to the storage pool name in the placement instruction for an ILM rule.
-+
-image::../media/storage_pool_and_erasure_coding_profile.png[Storage pool and EC profile name]
 +
 NOTE: Erasure Coding profile names must be unique. A validation error occurs if you use the name of an existing profile, even if that profile has been deactivated.
 

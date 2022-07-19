@@ -17,7 +17,6 @@ You have the s3:DeleteBucketMetadataNotification permission for a bucket, or be 
 
 This example shows disabling the search integration service for a bucket.
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 DELETE /test1?x-ntap-sg-metadata-notification HTTP/1.1

@@ -66,8 +66,6 @@ NOTE: After creating a VLAN interface, wait up to 5 minutes for the new interfac
 
 * If the HA group is for HA protection of S3 or Swift client traffic, select interfaces on Admin Nodes, Gateway Nodes, or both.
 
-* If the HA group is for HA protection of the deprecated CLB service, select interfaces on Gateway Nodes only.
-
 * If you select interfaces on different types of nodes, an informational note appears. You are reminded that if a failover occurs, services provided by the previously active node might not be available on the newly active node. For example, a backup Gateway Node cannot provide HA protection of Admin Node services. Similarly, a backup Admin Node cannot perform all of the maintenance procedures that the primary Admin Node can provide.
 
 * If you cannot select an interface, its check box is disabled. The tool tip provides more information. 

@@ -13,9 +13,7 @@ After installing and configuring the storage appliance, you can deploy it as a S
 
 .What you'll need
 
-* If you are cloning an appliance node, continue following the process in recovery and maintenance.
-+
-xref:../maintain/index.adoc[Recover and maintain]
+* If you are cloning an appliance node, continue following the xref:../commonhardware/appliance-node-cloning-procedure.adoc[appliance node cloning] process.
 
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
 * Network links, IP addresses, and port remapping (if necessary) have been configured for the appliance using the StorageGRID Appliance Installer.
@@ -38,8 +36,8 @@ NOTE: If you need to deploy multiple appliance nodes at one time, you can automa
 
 * If you are performing an expansion or recovery operation, follow the appropriate instructions:
 
-** To add an appliance Storage Node to an existing StorageGRID system, see the instructions for expanding a StorageGRID system.
-** To deploy an appliance Storage Node as part of a recovery operation, see instructions for recovery and maintenance.
+** To add an appliance Storage Node to an existing StorageGRID system, see the instructions for xref:../expand/adding-grid-nodes-to-existing-site-or-adding-new-site.adoc[adding grid nodes].
+** To deploy an appliance Storage Node as part of a recovery operation, see instructions xref:../maintain/recovering-storagegrid-appliance-storage-node.adoc[recovering an appliance Storage Node].
 
 .Steps
 
@@ -79,16 +77,16 @@ a|
  .. Wait for the connection state for the new IP address to become ready.
 |===
 
-. In the *Node name* field, enter the name you want to use for this appliance node, and click *Save*.
+. In the *Node name* field, provide the system name you want to use for this appliance node, and click *Save*.
 +
-The node name is assigned to this appliance node in the StorageGRID system. It is shown on the Nodes page (Overview tab) in the Grid Manager. If required, you can change the name when you approve the node.
+The name that appears here will be the appliance node's system name. System names are required for internal StorageGRID operations and cannot be changed.
 
 . In the *Installation* section, confirm that the current state is "Ready to start installation of `_node name_` into grid with primary Admin Node `_admin_ip_` " and that the *Start Installation* button is enabled.
 +
 If the *Start Installation* button is not enabled, you might need to change the network configuration or port settings. For instructions, see the installation and maintenance instructions for your appliance.
 +
-NOTE: If you are deploying the Storage Node appliance as a node cloning target, stop the deployment process here and continue the node cloning procedure in recovery and maintenance. +
-xref:../maintain/index.adoc[Recover and maintain]
+NOTE: If you are deploying the Storage Node appliance as a node cloning target, stop the deployment process here and continue the 
+xref:../commonhardware/appliance-node-cloning-procedure.adoc[node cloning procedure].
 
 . From the StorageGRID Appliance Installer home page, click *Start Installation*.
 +
@@ -99,9 +97,3 @@ NOTE: If you need to access the Monitor Installation page manually, click *Monit
 . If your grid includes multiple appliance Storage Nodes, repeat these steps for each appliance.
 +
 NOTE: If you need to deploy multiple appliance Storage Nodes at one time, you can automate the installation process by using the `configure-sga.py` Appliance Installation script.
-
-.Related information
-
-xref:../expand/index.adoc[Expand your grid]
-
-xref:../maintain/index.adoc[Recover and maintain]

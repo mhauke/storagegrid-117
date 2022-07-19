@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Installation, deployment, Install, deploy, Installing, deploying
 summary: 'You can install one or more StorageGRID services appliances and one or more storage appliances when you first deploy StorageGRID, or you can add additional appliance nodes later as part of an expansion. You might also need to install an appliance Storage Node as part of a recovery operation.'
 ---
-= Install and deploy - Overview
+= Install and deploy: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -17,22 +17,6 @@ Some StorageGRID appliances require that your StorageGRID system is using a mini
 
 [role="tabbed-block"]
 ====
-.SG100 and SG1000
---
-[options="header"]
-|===
-| Appliance| Required StorageGRID version
-a|
-SG100
-a|
-11.4 or later (latest hotfix recommended)
-a|
-SG1000
-a|
-11.3 or later (latest hotfix recommended)
-|===
---
-
 .SG6000
 --
 [options="header"]
@@ -53,6 +37,22 @@ a|
 SGF6024
 a|
 11.3 or later
+|===
+--
+
+.SG100 and SG1000
+--
+[options="header"]
+|===
+| Appliance| Required StorageGRID version
+a|
+SG1000
+a|
+11.3 or later (latest hotfix recommended)
+a|
+SG100
+a|
+11.4 or later (latest hotfix recommended)
 |===
 --
 ====
@@ -89,6 +89,26 @@ Preparing and adding a StorageGRID appliance to the grid includes four primary s
 [role="tabbed-block"]
 ====
 
+.Storage appliance
+--
+[options="header"]
+|===
+| Task| Instructions
+a|
+Deploying an appliance Storage Node in a new StorageGRID system
+a|
+xref:../installconfig/deploying-appliance-storage-node.adoc[Deploy appliance Storage Node]
+a|
+Adding an appliance Storage Node to an existing StorageGRID system
+a|
+Instructions for expanding a StorageGRID system
+a|
+Deploying an appliance Storage Node as part of a Storage Node recovery operation
+a|
+Instructions for recovery and maintenance
+|===
+--
+
 .Services appliance
 --
 You can deploy the services appliance as a Gateway Node or an Admin Node in a StorageGRID system. Both the SG100 and the SG1000 appliances can operate as Gateway Nodes and Admin Nodes (primary and non-primary) at the same time.
@@ -110,27 +130,6 @@ a|
 Instructions for recovery and maintenance
 |===
 --
-
-.Storage appliance
---
-[options="header"]
-|===
-| Task| Instructions
-a|
-Deploying an appliance Storage Node in a new StorageGRID system
-a|
-xref:../installconfig/deploying-appliance-storage-node.adoc[Deploy appliance Storage Node]
-a|
-Adding an appliance Storage Node to an existing StorageGRID system
-a|
-Instructions for expanding a StorageGRID system
-a|
-Deploying an appliance Storage Node as part of a Storage Node recovery operation
-a|
-Instructions for recovery and maintenance
-|===
---
-
 ====
 
 .Related information

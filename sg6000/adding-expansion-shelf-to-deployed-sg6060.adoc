@@ -34,13 +34,9 @@ Completing the procedure for one or two expansion shelves should take one hour o
 
 .Steps
 
-. Follow the instructions for installing 60-drive shelves into a cabinet or rack.
-+
-xref:../installconfig/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.adoc[SG6060: Install 60-drive shelves into cabinet or rack]
+. Follow the instructions for xref:../installconfig/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.adoc[installing 60-drive shelves into a cabinet or rack].
 
-. Follow the instructions for installing the drives.
-+
-xref:../installconfig/sg6060-installing-drives.adoc[SG6060: Install drives]
+. Follow the instructions for xref:../installconfig/sg6060-installing-drives.adoc[installing the drives].
 
 . From the Grid Manager, xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[place the SG6000-CN controller into maintenance mode].
 
@@ -145,19 +141,10 @@ image::../media/appliance_installer_reboot_complete.png[Reboot Complete]
 . Verify the status of the appliance Storage Node and the new expansion shelves.
  .. In the Grid Manager, select *NODES* and verify that the appliance Storage Node has a green checkmark icon.
 +
-The green checkmark icon means that no alerts are active and the node is connected to the grid. For a description of node icons, see the instructions for monitoring and troubleshooting StorageGRID.
+The green checkmark icon means that no alerts are active and the node is connected to the grid. For a description of node icons, see xref:../monitor/monitoring-node-connection-states.html.adoc[Monitor node connection states].
 
  .. Select the *Storage* tab and confirm that 16 new object stores are shown in the Object Storage table for each expansion shelf you added.
  .. Verify that each new expansion shelf has a shelf status of Nominal and a configuration status of Configured.
 +
 // COMMENTED OUT FOR 11.6: image::../media/storage_shelves_after_expansion.png[Storage Shelves After Expansion]
 
-.Related information
-
-xref:../installconfig/unpacking-boxes.adoc[Unpack boxes]
-
-xref:../installconfig/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.adoc[SG6060: Install 60-drive shelves into cabinet or rack]
-
-xref:../installconfig/sg6060-installing-drives.adoc[SG6060: Install drives]
-
-xref:../monitor/index.adoc[Monitor and troubleshoot]

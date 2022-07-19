@@ -51,7 +51,6 @@ Behaves the same as the "`read-after-new-write`" consistency level, but only pro
 
 == Request example
 
-[source]
 [subs="specialcharacters,quotes"]
 ----
 PUT /bucket?x-ntap-sg-consistency=strong-global HTTP/1.1

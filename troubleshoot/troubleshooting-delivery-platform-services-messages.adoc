@@ -20,7 +20,7 @@ The SMTT alarm contains a Last Event message that says, `Failed to publish notif
 
 Event messages are also listed in the `/var/local/log/bycast-err.log` log file. See the xref:../monitor/logs-files-reference.adoc[Log files reference].
 
-For additional information about troubleshooting platform services, see the xref:../admin/index.adoc[instructions for administering StorageGRID]. You might need to xref:../tenant/index.adoc[access the tenant from the Tenant Manager] to debug a platform service error.
+For additional information, see the xref:../admin/troubleshooting-platform-services.adoc[Troubleshoot platform services]. You might need to xref:../tenant/signing-in-to-tenant-manager.adoc[access the tenant from the Tenant Manager] to debug a platform service error.
 
 .Steps
 . To view the alarm, select *NODES* > *_site_* > *_grid node_* > *Events*.

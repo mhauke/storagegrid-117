@@ -17,7 +17,7 @@ As part of the system hardening process, you must review external firewall confi
 
 StorageGRID uses an internal firewall that is managed automatically. While this internal firewall provides an additional layer of protection against some common threats, it does not remove the need for an external firewall.
 
-For a list of all internal and external ports used by StorageGRID, see the installation guide for your platform.
+For a list of all internal and external ports used by StorageGRID, see xref:../installconfig/reviewing-appliance-network-connections.adoc[Review appliance network connections].
 
 == Virtualization, containers, and shared hardware
 
@@ -41,30 +41,27 @@ Follow these guidelines to secure the Admin Nodes in your StorageGRID system:
 * StorageGRID Groups control access to Grid Manager and Tenant Manager features. Grant each Group of users the minimum required permissions for their role, and use the read-only access mode to prevent users from changing configuration.
 * When using StorageGRID load balancer endpoints, use Gateway Nodes instead of Admin Nodes for untrusted client traffic.
 * If you have untrusted tenants, do not allow them to have direct access to the Tenant Manager or the Tenant Management API. Instead, have any untrusted tenants use a tenant portal or an external tenant management system, which interacts with the Tenant Management API.
-* Optionally, use an Admin proxy for more control over AutoSupport communication from Admin Nodes to NetApp support. See the steps for creating an Admin proxy in the instructions for administering StorageGRID.
+* Optionally, use an Admin proxy for more control over AutoSupport communication from Admin Nodes to NetApp support. See the steps for xref:../admin/configuring-admin-proxy-settings.adoc[creating an Admin proxy].
 * Optionally, use the restricted 8443 and 9443 ports to separate Grid Manager and Tenant Manager communications. Block the shared port 443 and limit tenant requests to port 9443 for additional protection.
 * Optionally, use separate Admin Nodes for grid administrators and tenant users.
 
-For more information, see the instructions for administering StorageGRID.
+For more information, see the instructions for xref:../admin/index.adoc[administering StorageGRID].
 
 == Guidelines for Storage Nodes
 
 Storage Nodes manage and store object data and metadata. Follow these guidelines to secure the Storage Nodes in your StorageGRID system.
 
 * Do not allow untrusted clients to connect directly to Storage Nodes. Use a Load Balancer Endpoint served by a Gateway Node or a third party load balancer.
-* Do not enable outbound services for untrusted tenants. For example, when creating the account for an untrusted tenant, do not allow the tenant to use its own identity source and do not allow the use of platform services. See the steps for creating a tenant account in the instructions for administering StorageGRID.
+* Do not enable outbound services for untrusted tenants. For example, when creating the account for an untrusted tenant, do not allow the tenant to use its own identity source and do not allow the use of platform services. See the steps for xref:../admin/creating-tenant-account.adoc[creating a tenant account].
 * Use a third-party load balancer for untrusted client traffic. Third-party load balancing offers more control and additional layers of protection against attack.
-* Optionally, use a Storage proxy for more control over Cloud Storage Pools and platform services communication from Storage Nodes to external services. See the steps for creating a Storage proxy in the instructions for administering StorageGRID.
+* Optionally, use a Storage proxy for more control over Cloud Storage Pools and platform services communication from Storage Nodes to external services. See the steps for xref:../admin/configuring-storage-proxy-settings.adoc[creating a Storage proxy].
 * Optionally, connect to external services using the Client Network. Then, select *CONFIGURATION* > *Network* > *Untrusted Client Networks* and indicate that the Client Network on the Storage Node is untrusted. The Storage Node no longer accepts any incoming traffic on the Client Network, but it continues to allow outbound requests for Platform Services.
 
 == Guidelines for Gateway Nodes
 
 Gateway Nodes provide an optional load-balancing interface that client applications can use to connect to StorageGRID. Follow these guidelines to secure any Gateway Nodes in your StorageGRID system:
 
-* Configure and use load balancer endpoints instead of using the CLB service on Gateway Nodes. See the steps for managing load balancing in the instructions for administering StorageGRID.
-+
-NOTE: The CLB service is deprecated.
-
+* Configure and use load balancer endpoints. See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
 * Use a third-party load balancer between the client and the Gateway Node or Storage Nodes for untrusted client traffic. Third-party load balancing offers more control and additional layers of protection against attack. If you do use a third-party load balancer, network traffic can still optionally be configured to go through an internal load balancer endpoint or be sent directly to Storage Nodes.
 * If you are using load balancer endpoints, optionally have clients connect over the Client Network. Then, select *CONFIGURATION* > *Network* > *Untrusted Client Networks* and indicate that the Client Network on the Gateway Node is untrusted. The Gateway Node only accepts inbound traffic on the ports explicitly configured as load balancer endpoints.
 
@@ -80,24 +77,12 @@ Follow these guidelines to secure any hardware appliance nodes in your StorageGR
 * If the storage controller in the appliance includes FDE or FIPS drives and the Drive Security feature is enabled, use SANtricity to configure Drive Security keys.
 * For appliances without FDE or FIPS drives, enable node encryption using a Key Management Server (KMS).
 
-See the installation and maintenance instructions for your StorageGRID hardware appliance.
+See the installation and maintenance instructions for your StorageGRID hardware appliance:
 
-.Related information
-
-* xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-
-* xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
-
-* xref:../vmware/index.adoc[Install VMware]
-
-* xref:../admin/index.adoc[Administer StorageGRID]
-
-* xref:../tenant/index.adoc[Use a tenant account]
-
-* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-
-* xref:../sg5600/index.adoc[SG5600 storage appliances]
+* xref:../sg6000/index.adoc[SG6000 storage appliances]
 
 * xref:../sg5700/index.adoc[SG5700 storage appliances]
 
-* xref:../sg6000/index.adoc[SG6000 storage appliances]
+* xref:../sg5600/index.adoc[SG5600 storage appliances]
+
+* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]

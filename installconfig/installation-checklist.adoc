@@ -34,20 +34,20 @@ See the xref:install-appliance-hardware.adoc[installing appliance hardware overv
 //[%interactive]
 * xref:registering-hardware.adoc[Register hardware]
 * Install appliance
-** xref:installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.adoc[SG100 and SG1000]
 ** xref:installing-hardware-sg6000.adoc[SG6000]
 ** xref:installing-appliance-in-cabinet-or-rack-sg5700.adoc[SG5700]
 ** xref:installing-appliance-in-cabinet-or-rack-sg5600.adoc[SG5600]
+** xref:installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.adoc[SG100 and SG1000]
 * Cable appliance
-** xref:cabling-appliance-sg100-and-sg1000.adoc[SG100 and SG1000]
 ** xref:cabling-appliance-sg6000.adoc[SG6000]
 ** xref:cabling-appliance-sg5700.adoc[SG5700]
 ** xref:cabling-appliance-sg5600.adoc[SG5600]
+** xref:cabling-appliance-sg100-and-sg1000.adoc[SG100 and SG1000]
 * Connect power cords and apply power
-** xref:connecting-power-cords-and-applying-power-sg100-and-sg1000.adoc[SG100 and SG1000]
 ** xref:connecting-power-cords-and-applying-power-sg6000.adoc[SG6000]
 ** xref:connecting-power-cords-and-applying-power-sg5700.adoc[SG5700]
 ** xref:connecting-ac-power-cords-sg5600.adoc[SG5600]
+** xref:connecting-power-cords-and-applying-power-sg100-and-sg1000.adoc[SG100 and SG1000]
 * xref:viewing-status-indicators.adoc[View status indicators and codes]
 
 == Initial appliance configuration
@@ -65,10 +65,9 @@ If you choose to xref:automating-appliance-installation-and-configuration.adoc[a
 ** xref:verifying-network-connections.adoc[Verify network connections]
 ** xref:verifying-port-level-network-connections.adoc[Verify port-level network connections]
 * Access and configure SANtricity management tools (Storage Nodes only)
+** xref:accessing-and-configuring-santricity-system-manager.adoc[SANtricity System Manager (SG6000 and SG5700)]
 ** xref:configuring-santricity-storage-manager.adoc[SANtricity Storage Manager (SG5600)]
-** xref:accessing-and-configuring-santricity-system-manager.adoc[SANtricity System Manager (SG5700 and SG6000)]
 * xref:optional-enabling-node-encryption.adoc[Optional - Enable node encryption]
 * xref:optional-changing-raid-mode.adoc[Optional - Change RAID mode (Storage Nodes only)]
 * xref:optional-remapping-network-ports-for-appliance.adoc[Optional - Remap network ports for appliance (Storage Nodes only)]
-* xref:configuring-bmc-interface.adoc[Configure BMC interface (SG1000 and SG6000 only)]
-* xref:installing-storagegrid-software-admin-nodes-only.adoc[Install the StorageGRID software (Admin Nodes only)]
+* xref:configuring-bmc-interface.adoc[Configure BMC interface (SG6000 and SG1000 only)]

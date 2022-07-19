@@ -26,18 +26,8 @@ If you plan to reboot a Storage Node, note the following:
  ** If an ILM rule specifies an ingest behavior of Dual commit or the rule specifies Balanced and it is not possible to immediately create all required copies, StorageGRID immediately commits any newly ingested objects to two Storage Nodes on the same site and evaluates ILM later. If you want to reboot two or more Storage Nodes on a given site, you might not be able to access these objects for the duration of the reboot.
  ** To ensure you can access all objects while a Storage Node is rebooting, stop ingesting objects at a site for approximately one hour before rebooting the node.
 
-* You might need to put a StorageGRID appliance into maintenance mode to perform certain procedures, such as changing the link configuration or replacing a storage controller. For instructions, see the hardware installation and maintenance instructions for the appliance.
+* You might need to put a StorageGRID appliance into maintenance mode to perform certain procedures, such as changing the link configuration or replacing a storage controller. For instructions, see xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[Place appliance into maintenance mode].
 +
 NOTE: In rare instances, placing a StorageGRID appliance into maintenance mode might make the appliance unavailable for remote access.
 
 include::../_include/rebooting-grid-node-from-grid-manager-steps.adoc[] 
-
-.Related information
-
-xref:../sg6000/index.adoc[SG6000 storage appliances]
-
-xref:../sg5700/index.adoc[SG5700 storage appliances]
-
-xref:../sg5600/index.adoc[SG5600 storage appliances]
-
-xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]

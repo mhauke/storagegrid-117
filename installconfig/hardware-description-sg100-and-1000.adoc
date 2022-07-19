@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, overview, models, features, applications, how to use, services 
 summary: 'The StorageGRID SG100 services appliance and the SG1000 services appliance can operate as a Gateway Node and as an Admin Node to provide high availability load balancing services in a StorageGRID system. Both appliances can operate as Gateway Nodes and Admin Nodes \(primary or non-primary\) at the same time.'
 ---
-= SG100 and SG1000 appliance hardware
+= SG100 and SG1000 appliances: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -176,12 +176,6 @@ IMPORTANT: Do not deploy the SG100 and SG1000 service appliances in the same sit
 * Use two SG100 or two SG1000 appliances to provide redundancy of some grid administration services. Do this by configuring each appliance as Admin Nodes.
 * Use two SG100 or two SG1000 appliances to provide highly available load balancing and traffic shaping services accessed through one or more virtual IP addresses. Do this by configuring the appliances as any combination of Admin Nodes or Gateway Nodes and adding both nodes to the same HA group.
 +
-IMPORTANT: If you use Admin Nodes and Gateway Nodes in the same HA group, CLB (Connection Load Balancer) ports and Admin Node-only ports will not fail over. For instructions for configuring HA groups, see the instructions for administering StorageGRID.
-+
-NOTE: The CLB service is deprecated.
+IMPORTANT: If you use Admin Nodes and Gateway Nodes in the same HA group, Admin Node-only port will not fail over. See the instructions for xref:../admin/configure-high-availability-group.html#create-a-high-availability-group.adoc[configuring HA groups].
 
 When used with StorageGRID storage appliances, both the SG100 and the SG1000 services appliances enable deployment of appliance-only grids with no dependencies on external hypervisors or compute hardware.
-
-.Related information
-
-xref:../admin/index.adoc[Administer StorageGRID]

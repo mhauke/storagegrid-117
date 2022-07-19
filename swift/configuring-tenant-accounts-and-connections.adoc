@@ -17,11 +17,11 @@ A Swift tenant account is required before Swift API clients can store and retrie
 
 Swift tenant accounts are created by a StorageGRID grid administrator using the Grid Manager or the Grid Management API.
 
-When creating a Swift tenant account, the grid administrator specifies the following information:
+When xref:../swift/configuring-tenant-accounts-and-connections.adoc[creating a Swift tenant account], the grid administrator specifies the following information:
 
-* Display name for the tenant (the tenant's account ID is assigned automatically and cannot be changed)
-* Optionally, a storage quota for the tenant account--the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).
-* If single sign-on (SSO) is not in use for the StorageGRID system, whether the tenant account will use its own identity source or share the grid's identity source, and the initial password for the tenant's local root user.
+* xref:../admin/editing-tenant-account.adoc[Display name for the tenant] (the tenant's account ID is assigned automatically and cannot be changed)
+* Optionally, a xref:../admin/editing-tenant-account.adoc[storage quota for the tenant account] -- the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).
+* If xref:../admin/configuring-sso.adoc[single sign-on (SSO)] is not in use for the StorageGRID system, whether the tenant account will use its own identity source or share the grid's identity source, and the initial password for the tenant's local root user.
 * If SSO is enabled, which federated group has Root Access permission to configure the tenant account.
 
 After a Swift tenant account is created, users with the Root Access permission can access the Tenant Manager to perform tasks such as the following:
@@ -29,26 +29,15 @@ After a Swift tenant account is created, users with the Root Access permission c
 * Setting up identity federation (unless the identity source is shared with the grid), and creating local groups and users
 * Monitoring storage usage
 
-IMPORTANT: Swift users must have the Root Access permission to access the Tenant Manager. However, the Root Access permission does not allow users to authenticate into the Swift REST API to create containers and ingest objects. Users must have the Swift Administrator permission to authenticate into the Swift REST API.
-
-.Related information
-
-xref:../admin/index.adoc[Administer StorageGRID]
-
-xref:../tenant/index.adoc[Use tenant account]
-
-xref:supported-swift-api-endpoints.adoc[Supported Swift API endpoints]
+IMPORTANT: Swift users must have the Root Access permission to xref:../tenant/signing-in-to-tenant-manager.adoc[access the Tenant Manager]. However, the Root Access permission does not allow users to authenticate into the Swift REST API to create containers and ingest objects. Users must have the Swift Administrator permission to authenticate into the Swift REST API.
 
 == How client connections can be configured
 
 A grid administrator makes configuration choices that affect how Swift clients connect to StorageGRID to store and retrieve data. The specific information you need to make a connection depends upon the configuration that was chosen.
 
-Client applications can store or retrieve objects by connecting to any of the following:
+Client applications can store or retrieve objects by connecting to the Load Balancer service on Admin Nodes or Gateway Nodes, or optionally, the virtual IP address of a high availability (HA) group of Admin Nodes or Gateway Nodes.
 
-* The Load Balancer service on Admin Nodes or Gateway Nodes, or optionally, the virtual IP address of a high availability (HA) group of Admin Nodes or Gateway Nodes
-* The CLB service on Gateway Nodes, or optionally, the virtual IP address of a high availability group of Gateway Nodes
-+
-NOTE: The CLB service is deprecated. Clients configured before the StorageGRID 11.3 release can continue to use the CLB service on Gateway Nodes. All other client applications that depend on StorageGRID to provide load balancing should connect using the Load Balancer service.
+NOTE: All applications that depend on StorageGRID to provide load balancing should connect using the Load Balancer service.
 
 * Storage Nodes, with or without an external load balancer
 
@@ -56,7 +45,7 @@ When configuring StorageGRID, a grid administrator can use the Grid Manager or t
 
 . Configure endpoints for the Load Balancer service.
 +
-You must configure endpoints to use the Load Balancer service. The Load Balancer service on Admin Nodes or Gateway Nodes distributes incoming network connections from client applications to Storage Nodes. When creating a load balancer endpoint, the StorageGRID administrator specifies a port number, whether the endpoint accepts HTTP or HTTPS connections, the type of client (S3 or Swift) that will use the endpoint, and the certificate to be used for HTTPS connections (if applicable).
+You must configure endpoints to use the Load Balancer service. The Load Balancer service on Admin Nodes or Gateway Nodes distributes incoming network connections from client applications to Storage Nodes. When creating a load balancer endpoint, the StorageGRID administrator specifies a port number, whether the endpoint accepts HTTP or HTTPS connections, the type of client (S3 or Swift) that will use the endpoint, and the certificate to be used for HTTPS connections (if applicable). Swift supports these xref:supported-swift-api-endpoints.adoc[endpoint types].
 
 . Configure Untrusted Client Networks.
 +
@@ -66,7 +55,7 @@ If a StorageGRID administrator configures a node's Client Network to be untruste
 +
 If an administrator creates an HA group, the network interfaces of multiple Admin Nodes or Gateway Nodes are placed into an active-backup configuration. Client connections are made using the virtual IP address of the HA group.
 
-For more information about each option, see the instructions for administering StorageGRID.
+See xref:../admin/configuration-options-for-ha-groups.adoc[Configuration options for HA groups] for more information.
 
 === Summary: IP addresses and ports for client connections
 
@@ -74,7 +63,7 @@ Client applications connect to StorageGRID using the IP address of a grid node a
 
 ==== Information required to make client connections
 
-The table summarizes the different ways that clients can connect to StorageGRID and the IP addresses and ports that are used for each type of connection. Contact your StorageGRID administrator for more information, or see the instructions for administering StorageGRID for a description of how to find this information in the Grid Manager.
+The table summarizes the different ways that clients can connect to StorageGRID and the IP addresses and ports that are used for each type of connection. See xref:../admin/summary-ip-addresses-and-ports-for-client-connections.adoc[IP addresses and ports for client connections] or contact your StorageGRID administrator for more information.
 
 [options="header"]
 |===
@@ -88,21 +77,6 @@ Virtual IP address of an HA group
 a|
 
 * Load balancer endpoint port
-
-a|
-HA group
-a|
-CLB
-
-*Note:* The CLB service is deprecated.
-
-a|
-Virtual IP address of an HA group
-a|
-Default Swift ports:
-
-* HTTPS: 8083
-* HTTP: 8085
 
 a|
 Admin Node
@@ -123,24 +97,6 @@ IP address of the Gateway Node
 a|
 
 * Load balancer endpoint port
-
-a|
-Gateway Node
-a|
-CLB
-
-*Note:* The CLB service is deprecated.
-
-a|
-IP address of the Gateway Node
-
-*Note:* By default, HTTP ports for CLB and LDR are not enabled.
-
-a|
-Default Swift ports:
-
-* HTTPS: 8083
-* HTTP: 8085
 
 a|
 Storage Node
@@ -170,19 +126,13 @@ It is possible to configure a DNS name for the IP address that clients use to co
 
 === Decide to use HTTPS or HTTP connections
 
-When client connections are made using a Load Balancer endpoint, connections must be made using the protocol (HTTP or HTTPS) that was specified for that endpoint. To use HTTP for client connections to Storage Nodes or to the CLB service on Gateway Nodes, you must enable its use.
+When client connections are made using a Load Balancer endpoint, connections must be made using the protocol (HTTP or HTTPS) that was specified for that endpoint. To use HTTP for client connections to Storage Nodes, you must enable its use.
 
-By default, when client applications connect to Storage Nodes or the CLB service on Gateway Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting the *Enable HTTP Connection* grid option in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
+By default, when client applications connect to Storage Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting the *Enable HTTP Connection* grid option in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
 
 IMPORTANT: Be careful when enabling HTTP for a production grid since requests will be sent unencrypted.
 
-NOTE: The CLB service is deprecated.
-
-If the *Enable HTTP Connection* option is selected, clients must use different ports for HTTP than they use for HTTPS. See the instructions for administering StorageGRID.
-
-.Related information
-
-xref:../admin/index.adoc[Administer StorageGRID]
+If the xref:../admin/enabling-http-for-client-communications.adoc[*Enable HTTP Connection* option] is selected, clients must use different ports for HTTP than they use for HTTPS.
 
 == Test your connection in Swift API configuration
 

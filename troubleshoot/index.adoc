@@ -17,7 +17,7 @@ If you encounter a problem when xref:../admin/index.adoc[administering a Storage
 
 image::../media/problem_determination_methodology.gif[Flowchart showing major steps in problem determination procedure]
 
-=== Define the problem
+=== [[define_problem]]Define the problem
 
 The first step to solving a problem is to define the problem clearly.
 
@@ -97,11 +97,8 @@ Review the list of current alerts and alarms to see if StorageGRID has identifie
 Review alerts and alarms triggered in the past for additional insights.
 
 |
-
-* xref:viewing-current-alerts.adoc[View current alerts]
-* xref:viewing-legacy-alarms.adoc[View legacy alarms]
-* xref:viewing-resolved-alerts.adoc[View resolved alerts]
-* xref:managing-alarms.adoc[Review historical alarms and alarm frequency (legacy system)]
+* xref:../monitor/monitoring-system-health.adoc#view-current-and-resolved-alerts[View current and resolved alerts]
+* xref:../monitor/managing-alarms.adoc[Manage alarms (legacy system)]
 
 |
 Monitor events
@@ -126,7 +123,7 @@ Establish baselines
 Collect information about the normal levels of various operational values. These baseline values, and deviations from these baselines, can provide valuable clues.
 |
 
-* <<establish_baselines,Establish baselines>>
+* <<establish-baselines,Establish baselines>>
 
 |
 Perform ingest and retrieval tests
@@ -221,7 +218,7 @@ Here are some examples of potentially significant changes:
 * Have any configuration changes been made to the Archive Node?
 * Have any other changes been made to the StorageGRID system or its environment?
 
-==== [[establish_baselines]]Establish baselines
+==== Establish baselines
 
 You can establish baselines for your system by recording the normal levels of various operational values. In the future, you can compare current values to these baselines to help detect and resolve abnormal values.
 
@@ -310,7 +307,7 @@ If you cannot resolve the problem on your own, contact technical support. Before
 |Problem statement
 |What are the problem symptoms? When did the problem start? Does it happen consistently or intermittently? If intermittently, what times has it occurred?
 
-xref:troubleshooting-storagegrid-system.adoc[Define the problem]
+<<define_problem,Define the problem>>
 
 |
 |Impact assessment
@@ -348,7 +345,7 @@ xref:collecting-log-files-and-system-data.adoc[Collect log files and system data
 |Baseline information
 |Collect baseline information regarding ingest operations, retrieval operations, and storage consumption.
 
-<<establish_baselines,Establish baselines>>
+<<establish-baselines,Establish baselines>>
 
 |
 |Timeline of recent changes

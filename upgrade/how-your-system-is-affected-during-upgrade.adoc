@@ -77,8 +77,5 @@ This error will resolve after the upgrade to 11.7 is complete.
 
 While the 11.7 upgrade is in progress, use the following tools to view bucket details or manage buckets, instead of using the Tenant Manager:
 
-*	To perform standard S3 operations on a bucket, use either the S3 REST API or the Tenant Management API.
+*	To perform standard S3 operations on a bucket, use either the xref:../s3/operations-on-bucket.adoc[S3 REST API] or the xref:../tenant/understanding-tenant-management-api.adoc[Tenant Management API].
 * To perform StorageGRID custom operations on a bucket (for example, viewing and modifying the bucket consistency level, enabling or disabling last access time updates, or configuring search integration), use the Tenant Management API.
-
-See xref:../tenant/understanding-tenant-management-api.adoc[Understand Tenant Management API] and xref:../s3/index.adoc[Use S3] for instructions.
-

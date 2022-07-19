@@ -19,12 +19,6 @@ When you deploy a services appliance as a primary Admin Node, you use the Storag
 
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
 * Network links, IP addresses, and port remapping (if necessary) have been configured for the appliance using the StorageGRID Appliance Installer.
-+
-IMPORTANT: If you have remapped any ports, you cannot use the same ports to configure load balancer endpoints. You can create endpoints using remapped ports, but those endpoints will be remapped to the original CLB ports and service, not the Load Balancer service. Follow the steps in xref:../maintain/removing-port-remaps.adoc[Remove port remaps].
-+
-See xref:../admin/how-load-balancing-works-clb-service.adoc[How load balancing works - CLB service (deprecated)] for more information on the CLB service.
-+
-NOTE: The CLB service is deprecated.
 
 * You have a service laptop with a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You know one of the IP addresses assigned to the appliance. You can use the IP address for any attached StorageGRID network.
@@ -65,7 +59,7 @@ image::../media/appliance_installer_upload_sg_software.png[Appliance Installer -
  .. Select *Home* to return to the Home page.
 . Confirm that the current state is "`Ready to start installation of primary Admin Node name with software version x.y`" and that the *Start Installation* button is enabled.
 +
-NOTE: If you are deploying the Admin Node appliance as a node cloning target, stop the deployment process here and continue the node cloning procedure by following the xref:../maintain/index.adoc[Recover and maintain] instructions.
+NOTE: If you are deploying the Admin Node appliance as a node cloning target, stop the deployment process here and continue the xref:../commonhardware/appliance-node-cloning-procedure.adoc[node cloning procedure].
 
 . From the StorageGRID Appliance Installer home page, click *Start Installation*.
 +
@@ -84,9 +78,6 @@ When you deploy a services appliance as a Gateway Node or non-primary Admin Node
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
 * Network links, IP addresses, and port remapping (if necessary) have been configured for the appliance using the StorageGRID Appliance Installer.
 +
-IMPORTANT: If you have remapped any ports, you cannot use the same ports to configure load balancer endpoints. You can create endpoints using remapped ports, but those endpoints will be remapped to the original CLB ports and service, not the Load Balancer service. Follow the steps in xref:../maintain/removing-port-remaps.adoc[Remove port remaps].
-+
-NOTE: The CLB service is deprecated.
 
 * The primary Admin Node for the StorageGRID system has been deployed.
 * All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer have been defined in the Grid Network Subnet List on the primary Admin Node.
@@ -144,10 +135,9 @@ a|
 
 |===
 
-. In the *Node name* field, enter the name you want to use for this appliance node, and click *Save*.
+. In the *Node name* field, provide the system name you want to use for this appliance node, and click *Save*.
 +
-The node name is assigned to this appliance node in the StorageGRID system. It is shown on the Nodes page (Overview tab) in the Grid Manager. If required, you can change the name when you approve the node.
-
+The name that appears here will be the appliance node's system name. System names are required for internal StorageGRID operations and cannot be changed.
 . Optionally, to install a different version of the StorageGRID software, follow these steps:
  .. Download the installation archive:
 +

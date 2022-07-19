@@ -26,7 +26,7 @@ StorageGRID functions as the server for some connections (such as the load balan
 StorageGRID includes a built-in certificate authority (CA) that generates an internal Grid CA certificate during system installation. The Grid CA certificate is used, by default, to secure internal StorageGRID traffic. An external certificate authority (CA) can issue custom certificates that are fully compliant with your organization's information security policies. Although you can use the Grid CA certificate for a non-production environment, the best practice for a production environment is to use custom certificates signed by an external certificate authority. Unsecured connections with no certificate are also supported but are not recommended.
 
 * Custom CA certificates do not remove the internal certificates; however, the custom certificates should be the ones specified for verifying server connections.
-* All custom certificates must meet the xref:../harden/index.adoc[system hardening guidelines] for server certificates.
+* All custom certificates must meet the xref:../harden/hardening-guideline-for-server-certificates.adoc[system hardening guidelines for server certificates].
 * StorageGRID supports bundling of certificates from a CA into a single file (known as a CA certificate bundle).
 
 NOTE: StorageGRID also includes operating system CA certificates that are the same on all grids. In production environments, make sure that you specify a custom certificate signed by an external certificate authority in place of the operating system CA certificate.
@@ -75,12 +75,12 @@ You can:
 
 * Replace the default certificates with custom certificates signed by an external certificate authority for improved grid security:
 ** xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc[Replace the default StorageGRID-generated management interface certificate] used for Grid Manager and Tenant Manager connections.
-** xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Replace the S3 and Swift API certificate] used for Storage Node, CLB service (deprecated), and load balancer endpoint (optional) connections.
+** xref:configuring-custom-server-certificate-for-storage-node.adoc[Replace the S3 and Swift API certificate] used for Storage Node and load balancer endpoint (optional) connections.
 
 * xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#restore-the-default-management-interface-certificate[Restore the default management interface certificate.]
-* xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc#restore-the-default-s3-and-swift-api-certificate[Restore the default S3 and Swift API certificate.]
+* xref:configuring-custom-server-certificate-for-storage-node.adoc#restore-the-default-s3-and-swift-api-certificate[Restore the default S3 and Swift API certificate.]
 * xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#use-a-script-to-generate-a-new-self-signed-management-interface-certificate[Use a script to generate a new self-signed management interface certificate.]
-* Copy or download the xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#download-or-copy-the-management-interface-certificate[management interface certificate] or xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc#download-or-copy-the-s3-and-swift-api-certificate[S3 and Swift API certificate].
+* Copy or download the xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#download-or-copy-the-management-interface-certificate[management interface certificate] or xref:configuring-custom-server-certificate-for-storage-node.adoc#download-or-copy-the-s3-and-swift-api-certificate[S3 and Swift API certificate].
 
 --
 
@@ -204,11 +204,11 @@ xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc[
 a|
 Server
 a|
-Authenticates secure S3 or Swift client connections to a Storage Node, to the deprecated Connection Load Balancer (CLB) service on a Gateway Node, and load balancer endpoints (optional).
+Authenticates secure S3 or Swift client connections to a Storage Node and to load balancer endpoints (optional).
 a|
 *CONFIGURATION* > *Security* > *Certificates*, select the *Global* tab, and then select *S3 and Swift API certificate*
 a|
-xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configure S3 and Swift API certificates]
+xref:configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates]
 |===
 
 === Grid CA certificate

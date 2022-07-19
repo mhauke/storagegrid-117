@@ -239,7 +239,7 @@ NOTE: The values shown in the table assume all four links are used.
 |10
 |10
 |===
-See the installation and maintenance instructions for your appliance for more information about configuring the 10/25-GbE ports.
+See xref:../installconfig/configuring-network-links.adoc[Configure network links] for more information about configuring the 10/25-GbE ports.
 
  .. Review the Network Communication section.
 +
@@ -261,14 +261,6 @@ The Worldwide Name for each disk matches the volume world-wide identifier (WWID)
 To help you interpret disk read and write statistics related to volume mount points, the first portion of the name shown in the *Name* column of the Disk Devices table (that is, _sdc_, _sdd_, _sde_, and so on) matches the value shown in the *Device* column of the Volumes table.
 +
 image::../media/nodes_page_storage_tables.png[Nodes Page Storage Tables]
-
-.Related information
-
-xref:../sg6000/index.adoc[SG6000 storage appliances]
-
-xref:../sg5700/index.adoc[SG5700 storage appliances]
-
-xref:../sg5600/index.adoc[SG5600 storage appliances]
 
 == View information about appliance Admin Nodes and Gateway Nodes
 
