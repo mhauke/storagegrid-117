@@ -30,29 +30,17 @@ entries:
     - title: View the SANtricity System Manager tab
       url: "/monitor/viewing-santricity-system-manager-tab.html"
   - title: Information you should monitor regularly
-    url: "/monitor/information-you-should-monitor-regularly.html"
     entries:
+    - title: What and when to monitor
+      url: "/monitor/information-you-should-monitor-regularly.html"
     - title: Monitor system health
       url: "/monitor/monitoring-system-health.html"
-      entries:
-      - title: Monitor node connection states
-        url: "/monitor/monitoring-node-connection-states.html"
-      - title: View current alerts
-        url: "/monitor/viewing-current-alerts.html"
-      - title: View resolved alerts
-        url: "/monitor/viewing-resolved-alerts.html"
-      - title: View a specific alert
-        url: "/monitor/viewing-specific-alert.html"
-      - title: View legacy alarms
-        url: "/monitor/viewing-legacy-alarms.html"
     - title: Monitor storage capacity
       url: "/monitor/monitoring-storage-capacity.html"
     - title: Monitor information lifecycle management
       url: "/monitor/monitoring-information-lifecycle-management.html"
-    - title: Monitor network connections and performance
+    - title: Monitor networking and system resources
       url: "/monitor/monitoring-network-connections-and-performance.html"
-    - title: Monitor node-level resources
-      url: "/monitor/monitoring-node-level-resources.html"
     - title: Monitor tenant activity
       url: "/monitor/monitoring-tenant-activity.html"
     - title: Monitor archival capacity
@@ -89,12 +77,16 @@ entries:
           url: "/monitor/email-alert-notifications.html"   
         - title: Silence alert notifications
           url: "/monitor/silencing-alert-notifications.html"
-    - title: Manage alarms (legacy system)
-      url: "/monitor/managing-alarms.html" 
     - title: Alerts reference
       url: "/monitor/alerts-reference.html"
     - title: Commonly used Prometheus metrics
       url: "/monitor/commonly-used-prometheus-metrics.html"
+    - title: Manage alarms (legacy system)
+      entries:
+      - title: Manage legacy alarms
+        url: "/monitor/managing-alarms.html"
+      - title: View legacy alarms
+        url: "/monitor/viewing-legacy-alarms.html"
     - title: Alarms reference (legacy system)
       url: "/monitor/alarms-reference.html"
       entries:

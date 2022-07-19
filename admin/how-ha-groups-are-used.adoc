@@ -18,7 +18,7 @@ You can use high availability (HA) groups to provide highly available connection
 An HA group can provide high availability only if all nodes included in the group provide the same services. When you create an HA group, add interfaces from the types of nodes that provide the services you require.
 
 * *Admin Nodes*: Include the Load Balancer service and enable access to the Grid Manager or the Tenant Manager.
-* *Gateway Nodes*: Include the Load Balancer service and the CLB service (deprecated).
+* *Gateway Nodes*: Include the Load Balancer service.
 
 [cols="1a,2a" options="header"]
 |===
@@ -53,11 +53,6 @@ a|* SG100 or SG1000 appliances
 
 
 a|
-S3 or Swift client access -- CLB service
-
-*Note:* The CLB service is deprecated.
-
-a|
 
 * Gateway Nodes
 
@@ -70,9 +65,3 @@ If a Grid Manager or Tenant Manager service fails, HA group failover is not trig
 If you are signed in to the Grid Manager or the Tenant Manager when failover occurs, you are signed out and must sign in again to resume your task.
 
 Some maintenance procedures cannot be performed when the primary Admin Node is unavailable. During failover, you can use the Grid Manager to monitor your StorageGRID system.
-
-== Limitations of using HA groups with the CLB service
-
-The failure of the CLB service does not trigger failover within the HA group.
-
-NOTE: The CLB service is deprecated.

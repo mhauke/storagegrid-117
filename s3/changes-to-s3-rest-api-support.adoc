@@ -42,7 +42,6 @@ IMPORTANT: In StorageGRID 11.6, the maximum _supported_ size for a single PUT Ob
 * Added support for bucket notifications on the `s3:ObjectRestore:Post` event type.
 * AWS size limits for multipart parts are now enforced. Each part in a multipart upload must be between 5 MiB and 5 GiB. The last part can be smaller than 5 MiB.
 * Added support for TLS 1.3, and updated list of supported TLS cipher suites.
-* The CLB service is deprecated.
 
 |11.3
 |

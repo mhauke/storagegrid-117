@@ -14,8 +14,8 @@ summary: 'It might be possible to find and restore objects that have triggered a
 It might be possible to find and restore objects that have triggered a Lost Objects (LOST) alarm and a *Object lost* alert and that you have identified as potentially lost.
 
 .What you'll need
-* You must have the UUID of any lost object, as identified in "`Investigating lost objects.`"
-* You must have the `Passwords.txt` file.
+* You have the UUID of any lost object, as identified in xref:investigating-lost-objects.adoc[Investigate lost objects].
+* You have the `Passwords.txt` file.
 
 .About this task
 You can follow this procedure to look for replicated copies of the lost object elsewhere in the grid. In most cases, the lost object will not be found. However, in some cases, you might be able to find and restore a lost replicated object if you take prompt action.
@@ -31,7 +31,7 @@ IMPORTANT: Contact technical support for assistance with this procedure.
   ... Enter the password listed in the `Passwords.txt` file.
 When you are logged in as root, the prompt changes from `$` to `#`.
  .. Change to the directory where the audit logs are located: `cd /var/local/audit/export/`
- .. Use grep to extract the audit messages associated with the potentially lost object and send them to an output file. Enter: `grep uuid-valueaudit_file_name > output_file_name`
+ .. Use grep to extract the xref:../audit/object-ingest-transactions.html.adoc[audit messages associated with the potentially lost object] and send them to an output file. Enter: `grep uuid-valueaudit_file_name > output_file_name`
 +
 For example:
 +
@@ -64,43 +64,39 @@ If present, the value of PCLD is the complete path on disk to the missing replic
 +
 If you find an object location, you might be able to restore the object.
 
- .. Find the Storage Node for this LDR node ID.
+.. Find the Storage Node associated with this LDR node ID. In the Grid Manager, select *SUPPORT* > *Tools* > *Grid topology*. Then select *_Data Center_* > *_Storage Node_* > *LDR*.
 +
-There are two ways to use the node ID to find the Storage Node:
-
-  *** In the Grid Manager, select *SUPPORT* > *Tools* > *Grid topology*. Then select *_Data Center_* > *_Storage Node_* > *LDR*. The LDR node ID is in the Node Information table. Review the information for each Storage Node until you find the one that hosts this LDR.
-  *** Download and unzip the Recovery Package for the grid. There is a _\docs_ directory in the SAID package. If you open the index.html file, the Servers Summary shows all node IDs for all grid nodes.
+The Node ID for the LDR service is in the Node Information table. Review the information for each Storage Node until you find the one that hosts this LDR.
 
 . Determine if the object exists on the Storage Node indicated in the audit message:
- .. Log in to the grid node:
-  ... Enter the following command: `ssh admin@grid_node_IP`
-  ... Enter the password listed in the `Passwords.txt` file.
-  ... Enter the following command to switch to root: `su -`
-  ... Enter the password listed in the `Passwords.txt` file.
-
+.. Log in to the grid node:
+... Enter the following command: `ssh admin@grid_node_IP`
+... Enter the password listed in the `Passwords.txt` file.
+... Enter the following command to switch to root: `su -`
+... Enter the password listed in the `Passwords.txt` file.
++
 When you are logged in as root, the prompt changes from `$` to `#`.
 
-[start=2]
- .. Determine if the file path for the object exists.
-
+.. Determine if the file path for the object exists.
++
 For the file path of the object, use the value of PCLD from the LLST audit message.
-
++
 For example, enter:
-
++
 ----
 ls '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6'
 ----
++
+NOTE: Always enclose the object file path in single quotes in commands to escape any special characters.
 
-*Note*: Always enclose the object file path in single quotes in commands to escape any special characters.
+*** If the object path is not found, the object is lost and cannot be restored using this procedure. Contact technical support.
+*** If the object path is found, continue with the next step. You can attempt to restore the found object back to StorageGRID.
 
-  *** If the object path is not found, the object is lost and cannot be restored using this procedure. Contact technical support.
-  *** If the object path is found, continue with step <<restore_the_object_to_StorageGRID,Restore the object to StorageGRID>>. You can attempt to restore the found object back to StorageGRID.
-
-. [[restore_the_object_to_StorageGRID, start=3]]If the object path was found, attempt to restore the object to StorageGRID:
- .. From the same Storage Node, change the ownership of the object file so that it can be managed by StorageGRID. Enter: `chown ldr-user:bycast 'file_path_of_object'`
- .. Telnet to localhost 1402 to access the LDR console. Enter: `telnet 0 1402`
- .. Enter: `cd /proc/STOR`
- .. Enter: `Object_Found 'file_path_of_object'`
+. If the object path was found, attempt to restore the object to StorageGRID:
+.. From the same Storage Node, change the ownership of the object file so that it can be managed by StorageGRID. Enter: `chown ldr-user:bycast 'file_path_of_object'`
+.. Telnet to localhost 1402 to access the LDR console. Enter: `telnet 0 1402`
+.. Enter: `cd /proc/STOR`
+.. Enter: `Object_Found 'file_path_of_object'`
 +
 For example, enter:
 +
@@ -109,11 +105,11 @@ Object_Found '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6'
 ----
 +
 Issuing the `Object\_Found` command notifies the grid of the object's location. It also triggers the active ILM policy, which makes additional copies as specified in the policy.
-
 +
-*Note*: If the Storage Node where you found the object is offline, you can copy the object to any Storage Node that is online. Place the object in any /var/local/rangedb directory of the online Storage Node. Then, issue the `Object\_Found` command using that file path to the object.
- ** If the object cannot be restored, the `Object\_Found` command fails. Contact technical support.
- ** If the object was successfully restored to StorageGRID, a success message appears. For example:
+NOTE: If the Storage Node where you found the object is offline, you can copy the object to any Storage Node that is online. Place the object in any /var/local/rangedb directory of the online Storage Node. Then, issue the `Object\_Found` command using that file path to the object.
+
+** If the object cannot be restored, the `Object\_Found` command fails. Contact technical support.
+** If the object was successfully restored to StorageGRID, a success message appears. For example:
 +
 ----
 ade 12448208: /proc/STOR > Object_Found '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6'
@@ -123,14 +119,14 @@ First packet of file was valid. Extracted key: 38186FE53E3C49A5
 Renamed '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6' to '/var/local/rangedb/1/p/17/11/00rH0%DkRt78Ila#3udu'
 ----
 +
-Continue with step <<verify_that_new_locations_were_created,Verify that new locations were created>>
+Continue with the next step.
 
-. [[verify_that_new_locations_were_created, start=4]]If the object was successfully restored to StorageGRID, verify that new locations were created.
- .. Enter: `cd /proc/OBRP`
- .. Enter: `ObjectByUUID UUID_value`
-
+. If the object was successfully restored to StorageGRID, verify that new locations were created.
+.. Enter: `cd /proc/OBRP`
+.. Enter: `ObjectByUUID UUID_value`
++
 The following example shows that there are two locations for the object with UUID 926026C4-00A4-449B-AC72-BCCA72DD1311.
-
++
 ----
 ade 12448208: /proc/OBRP > ObjectByUUID 926026C4-00A4-449B-AC72-BCCA72DD1311
 
@@ -220,12 +216,4 @@ An ORLM audit message looks like this sample message.
  .. Find the LOCS field in the audit message.
 +
 If present, the value of CLDI in LOCS is the node ID and the volume ID where an object copy has been created. This message shows that the ILM has been applied and that two object copies have been created in two locations in the grid.
-. Reset the count of lost objects in the Grid Manager.
-
-.Related information
-
-xref:investigating-lost-objects.adoc[Investigate lost objects]
-
-xref:resetting-lost-and-missing-object-counts.adoc[Reset lost and missing object counts]
-
-xref:../audit/index.adoc[Review audit logs]
+. xref:resetting-lost-and-missing-object-counts.adoc[Reset the lost and missing object counts] in the Grid Manager.

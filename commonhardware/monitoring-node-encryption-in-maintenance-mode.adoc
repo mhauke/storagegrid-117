@@ -11,6 +11,8 @@ summary: 'If you enabled node encryption for the appliance during installation, 
 [.lead]
 If you enabled node encryption for the appliance during installation, you can monitor the node-encryption status of each appliance node, including the node-encryption state and key management server (KMS) details.
 
+See xref:../admin/kms-configuring.adoc[Configure key management servers] for information about implementing KMS for StorageGRID appliances.
+
 .What you'll need
 
 * You enabled node encryption for the appliance during installation. You cannot enable node encryption after the appliance is installed.
@@ -111,7 +113,3 @@ Node encryption cannot be reenabled on the appliance until it is reinstalled in 
 .After you finish
 
 After the appliance reboots and you have verified that KMS has been cleared and that the appliance is in a pre-install state, you can physically remove the appliance from your StorageGRID system. See the xref:../maintain/preparing-appliance-for-reinstallation-platform-replacement-only.adoc[instructions for preparing the appliance for reinstallation].
-
-.Related information
-
-xref:../admin/index.adoc[Administer StorageGRID]

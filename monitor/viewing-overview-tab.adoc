@@ -15,13 +15,14 @@ The Overview tab is shown for all nodes.
 
 == Node Information
 
-The Node Information section of the Overview tab lists basic information about the grid node.
+The Node Information section of the Overview tab lists basic information about the node.
 
 image::../media/nodes_page_overview_tab.png[Nodes Page Overview Tab]
 
 The overview information for a node includes the following:
 
-* *Name*: The hostname assigned to the node and displayed in the Grid Manager.
+* *Display name* (shown only if the node has been renamed): The current display name for the node. Use the xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, site, and nodes] procedure to update this value.
+* *System name*: The name you entered for the node during installation. System names are used for internal StorageGRID operations and cannot be changed.
 * *Type*: The type of node -- Admin Node, primary Admin Node, Storage Node, Gateway Node, or Archive Node.
 * *ID*: The unique identifier for the node, which is also referred to as the UUID.
 * *Connection state*: One of three states. The icon for the most severe state is shown.
@@ -42,14 +43,8 @@ NOTE: A node might appear as Unknown during managed shutdown operations. You can
 
 == Alerts
 
-The Alerts section of the Overview tab lists any alerts currently affecting this node that have not been silenced. Click the alert name to view additional details and recommended actions.
+The Alerts section of the Overview tab lists any xref:monitoring-system-health.adoc#view-current-and-resolved-alerts[alerts currently affecting this node that have not been silenced]. Select the alert name to view additional details and recommended actions.
 
 image::../media/nodes_page_alerts_table.png[Nodes Page Alerts Table]
 
-.Related information
-
-xref:monitoring-node-connection-states.adoc[Monitor node connection states]
-
-xref:viewing-current-alerts.adoc[View current alerts]
-
-xref:viewing-specific-alert.adoc[View a specific alert]
+Alerts are also included for xref:monitoring-system-health.adoc#monitor-node-connection-states[node connection states].

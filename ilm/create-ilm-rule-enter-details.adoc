@@ -28,8 +28,6 @@ You must enter at least 1 and no more than 64 characters.
 . Optionally, enter a short description for the rule in the *Description* field.
 +
 You should describe the rule's purpose or function so you can recognize the rule later.
-+
-//image::../media/ilm_rule_wizard_name_description.gif[Rule name and description]
 
 . Optionally, select one or more S3 or Swift tenant accounts to which this rule applies. If this rule applies to all tenants, leave this field blank.
 +
@@ -45,9 +43,7 @@ If *matches all* is selected (default), the rule applies to all S3 buckets or Sw
 +
 If you do not configure advanced filtering, the rule applies to all objects that match the basic filters. For more information about advanced filtering, see <<Use advanced filters in ILM rules>> and <<Specify multiple metadata types and values>>.
 
-. Select *Continue*.
-+
-xref:create-ilm-rule-define-placements.adoc[The *Define placements* step] appears.
+. Select *Continue*. xref:create-ilm-rule-define-placements.adoc[Step 2 (Define placements)] of the Create an ILM rule wizard appears.
 
 == Use advanced filters in ILM rules
 
@@ -168,8 +164,8 @@ When you define advanced filtering, you can specify multiple types of metadata a
 * The first metadata value specifies objects greater than or equal to 10 MB.
 * The second metadata value specifies objects less than or equal to 100 MB.
 
-image::../media/advanced_filtering_size_between.gif[Advanced Filtering example for object size]
+image::../media/advanced_filtering_size_between.png[Advanced Filtering example for object size]
 
 Using multiple entries allows you to have precise control over which objects are matched. In the following example, the rule applies to objects that have a Brand A or Brand B as the value of the camera_type user metadata. However, the rule only applies to those Brand B objects that are smaller than 10 MB.
 
-image::../media/advanced_filtering_multiple_rows.gif[Advanced Filtering example for user metadata]
+image::../media/advanced_filtering_multiple_rows.png[Advanced Filtering example for user metadata]

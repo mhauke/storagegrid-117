@@ -4,7 +4,7 @@ entries:
   - title: Overview
     pdf-filename: Administer a StorageGRID System
     url: "/admin/index.html"
-  - title: Get started with StorageGRID
+  - title: Get started with Grid Manager
     entries:
     - title: Web browser requirements
       url: "/admin/web-browser-requirements.html"
@@ -14,8 +14,6 @@ entries:
       url: "/admin/signing-out-of-grid-manager.html"
     - title: Change your password
       url: "/admin/changing-your-password.html"
-    - title: Change the browser session timeout
-      url: "/admin/changing-browser-session-timeout.html"
     - title: View StorageGRID license information
       url: "/admin/viewing-storagegrid-license-information.html"
     - title: Update StorageGRID license information
@@ -38,7 +36,9 @@ entries:
         - title: Azure
           url: "/admin/use-api-if-sso-is-enabled-azure.html"
         - title: PingFederate
-          url: "/admin/use-api-if-sso-is-enabled-ping.html"   
+          url: "/admin/use-api-if-sso-is-enabled-ping.html"  
+      - title: Deactivate features with the API
+        url: "/admin/deactivate-features-from-api.html"            
   - title: Control access to StorageGRID
     entries:
     - title: Change the provisioning passphrase
@@ -52,9 +52,7 @@ entries:
     - title: Manage admin groups
       url: "/admin/managing-admin-groups.html"
     - title: Admin group permissions
-      url: "/admin/admin-group-permissions.html"
-    - title: Deactivate features with the API
-      url: "/admin/deactivate-features-from-api.html"  
+      url: "/admin/admin-group-permissions.html" 
     - title: Manage users
       url: "/admin/managing-users.html"
     - title: Use single sign-on (SSO)
@@ -77,7 +75,7 @@ entries:
         url: "/admin/disabling-single-sign-on.html"
       - title: Temporarily disable and reenable single sign-on for one Admin Node
         url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
-  - title: Manage security settings
+  - title: Manage security
     entries:      
     - title: Manage certificates
       entries:
@@ -90,13 +88,23 @@ entries:
         - title: Configure management interface certificates
           url: "/admin/configuring-custom-server-certificate-for-grid-manager-tenant-manager.html"
         - title: Configure S3 and Swift API certificates
-          url: "/admin/configuring-custom-server-certificate-for-storage-node-or-clb.html"
+          url: "/admin/configuring-custom-server-certificate-for-storage-node.html"
         - title: Copy or download the Grid CA certificate
           url: "/admin/copying-storagegrid-system-ca-certificate.html"
         - title: Configure StorageGRID certificates for FabricPool
           url: "/admin/configuring-storagegrid-certificates-for-fabricpool.html"
       - title: Configure client certificates
         url: "/admin/configuring-administrator-client-certificates.html"
+    - title: Configure security settings
+      entries:
+      - title: Control which client operations are permitted
+        url: "/admin/controlling-which-client-operations-are-permitted.html"
+      - title: Enable HTTP for client communications
+        url: "/admin/enabling-http-for-client-communications.html"
+      - title: Change network transfer encryption
+        url: "/admin/changing-network-transfer-encryption.html"     
+      - title: Change the browser session timeout
+        url: "/admin/changing-browser-session-timeout.html"
     - title: Configure key management servers
       entries:
       - title: Overview
@@ -128,9 +136,9 @@ entries:
         url: "/admin/configuring-storage-proxy-settings.html"
       - title: Configure Admin proxy settings
         url: "/admin/configuring-admin-proxy-settings.html"
-    - title: Manage untrusted Client Networks     
+    - title: Control firewall     
       entries:
-      - title: Overview
+      - title: Managed untrusted Client Networks
         url: "/admin/managing-untrusted-client-networks.html"
       - title: Specify node&#8217;s Client Network is untrusted
         url: "/admin/specifying-node-client-network-is-untrusted.html"
@@ -143,8 +151,9 @@ entries:
       url: "/admin/grid-federation-start-connection.html"
   - title: Manage tenants
     entries:
-    - title: Manage tenants
+    - title: Overview
       url: "/admin/managing-tenants.html"
+      pdf-filename: Manage tenants - Overview
     - title: Create tenant account
       url: "/admin/creating-tenant-account.html"
     - title: Change password for tenant&#8217;s local root user
@@ -167,12 +176,15 @@ entries:
       url: "/admin/manage-s3-select-for-tenant-accounts.html"
   - title: Configure S3 and Swift client connections
     entries:
-    - title: About S3 and Swift client connections
+    - title: Overview
+      pdf-filename: Configure S3 and Swift client connections - Overview
       url: "/admin/configuring-client-connections.html"
-    - title: 'Summary: IP addresses and ports for client connections'
-      url: "/admin/summary-ip-addresses-and-ports-for-client-connections.html"
-    - title: Configure VLAN interfaces
-      url: "/admin/configure-vlan-interfaces.html"
+    - title: Use S3 setup wizard
+      entries:
+      - title: S3 setup wizard considerations and requirements
+        url: "/admin/use-s3-setup-wizard.html"
+      - title: Access and complete the S3 application setup wizard
+        url: "/admin/use-s3-setup-wizard-steps.html"
     - title: Manage high availability groups  
       entries:
       - title: Overview
@@ -186,21 +198,14 @@ entries:
         url: "/admin/configure-high-availability-group.html"
     - title: Manage load balancing
       entries:
-      - title: Overview
-        pdf-filename: Overview of managing load balancing
+      - title: Considerations for load balancing
         url: "/admin/managing-load-balancing.html"
-      - title: How load balancing works - Load Balancer service
-        url: "/admin/how-load-balancing-works-load-balancer-service.html"
       - title: Configure load balancer endpoints
-        url: "/admin/configuring-load-balancer-endpoints.html"
-      - title: How load balancing works - CLB service
-        url: "/admin/how-load-balancing-works-clb-service.html"
+        url: "/admin/configuring-load-balancer-endpoints.html"  
     - title: Configure S3 API endpoint domain names
-      url: "/admin/configuring-s3-api-endpoint-domain-names.html"
-    - title: Enable HTTP for client communications
-      url: "/admin/enabling-http-for-client-communications.html"
-    - title: Control which client operations are permitted
-      url: "/admin/controlling-which-client-operations-are-permitted.html"
+      url: "/admin/configuring-s3-api-endpoint-domain-names.html" 
+    - title: 'Summary: IP addresses and ports for client connections'
+      url: "/admin/summary-ip-addresses-and-ports-for-client-connections.html"
   - title: Manage networks and connections
     entries:
     - title: Guidelines for StorageGRID networks
@@ -209,8 +214,8 @@ entries:
       url: "/admin/viewing-ip-addresses.html"
     - title: Supported ciphers for outgoing TLS connections
       url: "/admin/supported-ciphers-for-outgoing-tls-connections.html"
-    - title: Change network transfer encryption
-      url: "/admin/changing-network-transfer-encryption.html"
+    - title: Configure VLAN interfaces
+      url: "/admin/configure-vlan-interfaces.html"  
     - title: Manage traffic classification policies
       entries:
       - title: Manage traffic classification policies
@@ -261,9 +266,7 @@ entries:
       - title: Configure stored object compression
         url: "/admin/configuring-stored-object-compression.html"
       - title: Configure stored object encryption
-        url: "/admin/configuring-stored-object-encryption.html"
-      - title: Configure stored object hashing
-        url: "/admin/configuring-stored-object-hashing.html"
+        url: "/admin/configuring-stored-object-encryption.html"      
     - title: Storage Node configuration settings
       url: "/admin/storage-node-configuration-settings.html"
     - title: Manage full Storage Nodes

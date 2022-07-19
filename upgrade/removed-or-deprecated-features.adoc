@@ -17,3 +17,9 @@ Audit export through CIFS/Samba was deprecated in StorageGRID Webscale 11.1 and 
 == Option to specify a storage pool as a temporary location is removed
 
 Previously, when you created an ILM rule with an object placement that includes a single storage pool, you were prompted to specify a second storage pool to use as a temporary location. Starting with StorageGRID 11.7, this option has been removed.
+
+== SHA-1 and SHA-256 options are removed
+Stored Object Hashing options: SHA-1 and SHA-256, have been removed. They are no longer used for internal background verification, because they require additional CPU resources over MD5 and packet CRC32 check.
+
+== Connection Load Balancer (CLB) service is removed
+The Connection Load Balancer (CLB) service on Gateway Nodes was deprecated in StorageGRID 11.4 and has now been completely removed from the software. To distribute incoming network connections from client applications to Storage Nodes, you can configure load balancer endpoints for the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or you can integrate a third-party load balancer. See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].

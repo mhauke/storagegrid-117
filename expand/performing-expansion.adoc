@@ -18,7 +18,7 @@ When you perform the expansion, the new grid nodes are added to your existing St
 * You have the provisioning passphrase.
 * You have deployed all of the grid nodes that are being added in this expansion.
 * If you are adding Storage Nodes, you have confirmed that all data-repair operations performed as part of a recovery are complete. See xref:../maintain/checking-data-repair-jobs.adoc[Check data repair jobs].
-* If you are adding a new site, you must review and update ILM rules before starting the expansion procedure to ensure that object copies are not stored to the new site until after the expansion is complete. For example, if a rule uses the default storage pool (All Storage Nodes), you must create a new storage pool that contains only the existing Storage Nodes and update the ILM rule to use the new storage pool. Otherwise, objects will be copied to the new site as soon as the first node at that site becomes active. See the instructions for xref:../ilm/index.adoc[managing objects with ILM].
+* If you are adding a new site, you must review and update ILM rules before starting the expansion procedure to ensure that object copies are not stored to the new site until after the expansion is complete. For example, if a rule uses the default storage pool (All Storage Nodes), you must xref:../ilm/creating-storage-pool.adoc[create a new storage pool] that contains only the existing Storage Nodes and xref:../ilm/working-with-ilm-rules-and-ilm-policies.adoc[update the ILM rule] to use the new storage pool. Otherwise, objects will be copied to the new site as soon as the first node at that site becomes active.
 
 .About this task
 Performing the expansion includes these phases:
@@ -106,8 +106,8 @@ You must download an updated copy of the Recovery Package file as soon as possib
 
  .. Select the download link.
  .. Enter the provisioning passphrase, and select *Start Download*.
- .. When the download completes, open the `.zip` file and confirm it includes a `gpt-backup` directory and a `_SAID.zip` file. Then, extract the `_SAID.zip` file, go to the `/GID*_REV*` directory, and confirm you can open the `passwords.txt` file.
- .. Copy the downloaded Recovery Package file (.zip) to two safe, secure, and separate locations.
+ .. When the download completes, open the `.zip` file and confirm that you can access the contents, including the `Passwords.txt` file.
+ .. Copy the downloaded Recovery Package file (`.zip`) to two safe, secure, and separate locations.
 +
 IMPORTANT: The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
 

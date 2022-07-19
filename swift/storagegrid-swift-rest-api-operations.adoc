@@ -13,7 +13,7 @@ There are operations added on to the Swift REST API that are specific to Storage
 
 == GET container consistency request
 
-Consistency level makes a trade-off between the availability of the objects and the consistency of those objects across different Storage Nodes and sites. The GET container consistency request allows you to determine the consistency level being applied to a particular container.
+xref:../s3/consistency-controls.adoc[Consistency level] makes a trade-off between the availability of the objects and the consistency of those objects across different Storage Nodes and sites. The GET container consistency request allows you to determine the consistency level being applied to a particular container.
 
 === Request
 
@@ -91,10 +91,6 @@ Content-Length: 0
 x-ntap-sg-consistency: strong-site
 ----
 
-.Related information
-
-xref:../tenant/index.adoc[Use tenant account]
-
 == PUT container consistency request
 
 The PUT container consistency request allows you to specify the consistency level to apply to operations performed on a container. By default, new containers are created using the "`read-after-new-write`" consistency level.
@@ -130,7 +126,7 @@ The hostname to which the request is directed.
 
 === How consistency controls and ILM rules interact to affect data protection
 
-Both your choice of consistency control and your ILM rule affect how objects are protected. These settings can interact.
+Both your choice of xref:../s3/consistency-controls.adoc[consistency control] and your ILM rule affect how objects are protected. These settings can interact.
 
 For example, the consistency control used when an object is stored affects the initial placement of object metadata, while the ingest behavior selected for the ILM rule affects the initial placement of object copies. Because StorageGRID requires access to both an object's metadata and its data to fulfill client requests, selecting matching levels of protection for the consistency level and ingest behavior can provide better initial data protection and more predictable system responses.
 
@@ -198,7 +194,3 @@ Connection: CLOSE
 X-Trans-Id: 1936575373
 Content-Length: 0
 ----
-
-.Related information
-
-xref:../tenant/index.adoc[Use tenant account]
