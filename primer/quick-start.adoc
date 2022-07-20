@@ -2,7 +2,7 @@
 permalink: primer/quick-start.html
 sidebar: sidebar
 keywords: storagegrid quick start, tasks
-summary: 'Here are the basic steps for creating and using any StorageGRID system. Follow the links to go to the details.'
+summary: 'Here are the high-level steps for creating and using any StorageGRID system. Follow the links to go to the details.'
 ---
 = StorageGRID quick start
 :icons: font
@@ -10,7 +10,7 @@ summary: 'Here are the basic steps for creating and using any StorageGRID system
 
 [.lead]
 
-Here are the basic steps for creating and using any StorageGRID system. Follow the links to go to the details.
+Here are the high-level steps for creating and using any StorageGRID system. Follow the links to go to the details.
 
 // Start snippet: Quick start headings as block titles
 // 1 placeholder per entry: Heading text here
@@ -50,29 +50,43 @@ Learn how:
 * xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
 * xref:../vmware/index.adoc[Install VMware]
 
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Configure and manage
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Sign in and check system health
 
 [role="quick-margin-para"]
-You use the Grid Manager to configure StorageGRID. The configuration tasks you need to perform depend on how you will use StorageGRID. At a minimum, you set up users and groups, connect to S3 and Swift client applications, manage storage and security settings, and create tenant accounts.
+As soon as you install the primary Admin Node, you can sign in to the Grid Manager. From there, you can review the general health of your new system, and enable AutoSupport and alert emails.
+
+[role="quick-margin-para"]
+Learn how:
+
+[role="quick-margin-list"]
+* xref:../admin/signing-in-to-grid-manager.adoc[Sign in to the Grid Manager]
+* xref:../monitor/monitoring-system-health.adoc[Monitor system health]
+* xref:../admin/configure-autosupport-grid-manager.adoc[Configure AutoSupport]
+* xref:../monitor/email-alert-notifications.adoc[Set up email notifications for alerts]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Configure and manage
+
+[role="quick-margin-para"]
+The configuration tasks you need to perform for a new StorageGRID system depend on how you will use your grid. At a minimum, you set up system access (system passwords, users, and groups); connect to S3 and Swift client applications, such as ONTAP FabricPool; manage various storage and security settings; and create tenant accounts.
 
 [role="quick-margin-para"]
 Learn how:
 
 [role="quick-margin-list"]
 * xref:../admin/index.adoc[Administer StorageGRID]
-* xref:../harden/index.adoc[System hardening]
 * xref:../fabricpool/index.adoc[Configure StorageGRID for FabricPool]
+* xref:../harden/index.adoc[System hardening]
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up ILM
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Set up ILM
 
 [role="quick-margin-para"]
-You manage every object in your StorageGRID system by configuring an information lifecycle management (ILM) policy that consists of one or more ILM rules. The ILM rules instruct StorageGRID how to create and distribute copies of object data and how to manage those copies over time.
+You control the placement and duration of every object in your StorageGRID system by configuring an information lifecycle management (ILM) policy that consists of one or more ILM rules. The ILM rules instruct StorageGRID how to create and distribute copies of object data and how to manage those copies over time.
 
 [role="quick-margin-para"]
 Learn how: xref:../ilm/index.adoc[Manage objects with ILM]
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Use StorageGRID
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Use StorageGRID
 
 [role="quick-margin-para"]
 After the initial configuration is complete, StorageGRID tenant accounts can use S3 and Swift client applications to ingest, retrieve, and delete objects. 
@@ -86,10 +100,10 @@ Learn how:
 * xref:../swift/index.adoc[Use the Swift REST API]
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Monitor and troubleshoot
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Monitor and troubleshoot
 
 [role="quick-margin-para"]
-You can use the Grid Manager Dashboard to see the high-level status of your StorageGRID system or use the Nodes page to see details for the entire grid, each site, and each node. You can also review audit logs to analyze all system activity.
+When your system is up and running, you should monitor its activities on a regular basis and troubleshoot and resolve any alerts. You might also want to configure an external syslog server, use SNMP monitoring, or collect additional data.
 
 [role="quick-margin-para"]
 Learn how:
@@ -97,10 +111,8 @@ Learn how:
 [role="quick-margin-list"]
 * xref:../monitor/index.adoc[Monitor StorageGRID]
 * xref:../troubleshoot/index.adoc[Troubleshoot StorageGRID]
-* xref:../audit/index.adoc[Review audit logs]
 
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Expand and maintain
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] Expand and maintain
 
 [role="quick-margin-para"]
 You can add nodes or sites to expand the capacity or functionality of your system. You can also perform various maintenance procedures to recover from failures or to keep your StorageGRID system up-to-date and performing efficiently.
