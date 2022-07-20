@@ -2,14 +2,14 @@
 permalink: monitor/viewing-dashboard.html
 sidebar: sidebar
 keywords: how to view the dashboard
-summary: 'You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.'
+summary: 'You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends.'
 ---
-= View the Dashboard
+= View and configure the Dashboard
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.
+You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends.
 
 image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
 
@@ -19,7 +19,7 @@ The default Dashboard tabs contain cards with the following types of information
 
 [cols="1a,3a" options="header"]
 |===
-| Default tab| Types of information
+| Default tab| Contains
 
 |Overview
 |General information about the grid, such as active alerts, network traffic, and total objects in the grid
@@ -37,10 +37,8 @@ The default Dashboard tabs contain cards with the following types of information
 |CPU, data, and memory usage by node. S3 operations by node, node to site distribution.
 |===
 
-== Configure the Dashboard
-
-As needed, you can select *Configure dashboard* to add or remove tabs or cards.
+As needed, you can select *Configure dashboard* to add or remove tabs or cards. After you add more tabs or cards, you can restore them back to the defaults.
 
 NOTE: You can add a card to any tab you choose.
 
-== Restore default tabs and cards
+image::../media/configure_dashboard.png[Configure Dashboard]
