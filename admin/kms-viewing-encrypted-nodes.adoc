@@ -16,16 +16,15 @@ You can view information about the appliance nodes in your StorageGRID system th
 . Select *CONFIGURATION* > *Security* > *Key management server*.
 +
 The Key Management Server page appears. The Configuration Details tab shows any key management servers that have been configured.
-+
-image::../media/kms_configuration_details_table.png[KMS Configuration Details KMS Table]
+
 
 . From the top of the page, select the *Encrypted Nodes* tab.
 +
-image::../media/kms_encrypted_nodes_tab.png[KMS Encrypted Nodes Tab]
-+
+
 The Encrypted Nodes tab lists the appliance nodes in your StorageGRID system that have the *Node Encryption* setting enabled.
 +
-image::../media/kms_encrypted_nodes_table.png[KMS Encrypted Nodes Table]
+
+image::../media/kms_overhaul_configuration_details_table.png[KMS configuration details KMS table]
 
 . Review the information in the table for each appliance node.
 +
@@ -33,11 +32,11 @@ image::../media/kms_encrypted_nodes_table.png[KMS Encrypted Nodes Table]
 |===
 | Column| Description
 a|
-Node Name
+Node name
 a|
 The name of the appliance node.
 a|
-Node Type
+Node type
 a|
 The type of node: Storage, Admin, or Gateway.
 a|
@@ -45,11 +44,11 @@ Site
 a|
 The name of the StorageGRID site where the node is installed.
 a|
-KMS Display Name
+KMS name
 a|
 The descriptive name of the KMS used for the node.
 
-If no KMS is listed, select the Configuration Details tab to add a KMS.
+If no KMS is listed, select the Configuration details tab to add a KMS.
 
 xref:kms-adding.adoc[Add a key management server (KMS)]
 a|

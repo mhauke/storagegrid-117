@@ -17,7 +17,7 @@ You can view information about each key management server (KMS) in your StorageG
 +
 The Key Management Server page appears. The Configuration Details tab shows any key management servers that are configured.
 +
-image::../media/kms_configuration_details_table.png[KMS Configuration Details KMS Table]
+image::../media/kms_configuration_details_no_kms_overhaul.png[KMS Configuration details KMS table]
 
 . Review the information in the table for each KMS.
 +
@@ -25,11 +25,11 @@ image::../media/kms_configuration_details_table.png[KMS Configuration Details KM
 |===
 | Field| Description
 a|
-KMS Display Name
+KMS name
 a|
 The descriptive name of the KMS.
 a|
-Key Name
+Key name
 a|
 The key alias for the StorageGRID client in the KMS.
 a|
@@ -49,7 +49,7 @@ For example: `10.10.10.10 and 10.10.10.11` or `10.10.10.10 and 2 others`.
 
 To view all hostnames in a cluster, select a KMS and then select *Edit*.
 a|
-Certificate Status
+Certificate status
 a|
 Current state of the server certificate, optional CA certificate, and the client certificate: valid, expired, nearing expiration, or unknown.
 
@@ -57,7 +57,7 @@ Current state of the server certificate, optional CA certificate, and the client
 
 |===
 
-. If the Certificate Status is Unknown, wait up to 30 minutes and then refresh your web browser.
+. If the Certificate status is Unknown, wait up to 30 minutes and then refresh your web browser.
 +
 NOTE: Immediately after you add a KMS, the certificate status on the Key Management Server page appears as Unknown. It might take StorageGRID as long as 30 minutes to get the actual status of each certificate. You must refresh your web browser to see the actual status.
 

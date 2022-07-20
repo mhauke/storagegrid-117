@@ -24,23 +24,23 @@ You might need to edit the configuration of a key management server, for example
 
 . Select *CONFIGURATION* > *Security* > *Key management server*.
 +
-The Key Management Server page appears and shows all key management servers that have been configured.
+The Key management server page appears and shows all key management servers that have been configured.
 +
-image::../media/kms_configuration_details_table.png[KMS Configuration Details KMS Table]
+image::../media/kms_configuration_details_no_kms_overhaul.png[KMS configuration details KMS table]
 
-. Select the KMS you want to edit, and select *Edit*.
-. Optionally, update the details in *Step 1 (Enter KMS Details)* of the Edit a Key Management Server wizard.
+. Select the KMS you want to edit, and select *Edit* from the *Actions*.
+. Optionally, update the details in *Step 1 (KMS details)* of the Edit a Key Management Server wizard.
 +
 
 [cols="1a,3a" options="header"]
 |===
 | Field| Description
 a|
-KMS Display Name
+KMS display name
 a|
 A descriptive name to help you identify this KMS. Must be between 1 and 64 characters.
 a|
-Key Name
+Key name
 a|
 The exact key alias for the StorageGRID client in the KMS. Must be between 1 and 255 characters.
 
@@ -72,15 +72,16 @@ The fully qualified domain name or IP address for the KMS.
 
 |===
 
-. If you are configuring a KMS cluster, select the plus sign image:../media/icon_plus_sign_black_on_white_old.png[Icon Plus Sign] to add a hostname for each server in the cluster.
+. If you are configuring a KMS cluster, select *Add another hostname* to add a hostname for each server in the cluster.
+
 . Select *Next*.
 +
-Step 2 (Upload Server Certificate) of the Edit a Key Management Server wizard appears.
+Step 2 (Upload server certificate) of the Edit a Key Management Server wizard appears.
 
 . If you need to replace the server certificate, select *Browse* and upload the new file.
 . Select *Next*.
 +
-Step 3 (Upload Client Certificates) of the Edit a Key Management Server wizard appears.
+Step 3 (Upload client certificates) of the Edit a Key Management Server wizard appears.
 
 . If you need to replace the client certificate and the client certificate private key, select *Browse* and upload the new files.
 . Select *Save*.
@@ -99,6 +100,6 @@ The KMS configuration is saved.
 
 . Review the confirmation warning, and select *OK* if you are sure you want to force save the configuration.
 +
-image::../media/kms_force_save_warning.png[KMS Force Save Warning]
+// image::../media/kms_force_save_warning.png[KMS Force Save Warning]
 +
 The KMS configuration is saved but the connection to the KMS is not tested.
