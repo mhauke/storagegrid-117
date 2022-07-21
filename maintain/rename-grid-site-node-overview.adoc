@@ -36,10 +36,14 @@ The following table summarizes where system names and display names are shown in
 
 * Dashboard
 * Nodes page
+* Configuration pages for high availability groups, load balancer endpoints, VLAN interfaces, key management servers, grid passwords, and firewall control
 * Alerts
 * Storage pool definitions
-* Maintenance procedures
-* Support pages
+* Object metadata lookup page
+* Pages related to maintenance procedures, including upgrade, hotfix, SANtricity OS upgrade, decommission, expansion, recovery, and object existence check
+* Support pages (logs and diagnostics)
+* Single sign-on page, next to the Admin Node hostname in the table for Admin Node details
+
 
 
 |*NODES* > *Overview* tab for a node
@@ -85,7 +89,7 @@ For example:
 |Always shown in the second column
 |When the item is renamed, shown in the fourth column
 
-|`topology_display_names.json`, included with AutoSupport data
+|`topology-display-names.json`, included with AutoSupport data
 |Not included
 |Empty unless items have been renamed; otherwise, maps grid, site, and node IDs to their display names. 
 
