@@ -15,7 +15,7 @@ You can view information about each key management server (KMS) in your StorageG
 
 . Select *CONFIGURATION* > *Security* > *Key management server*.
 +
-The Key Management Server page appears. The Configuration Details tab shows any key management servers that are configured.
+The Key Management Server page appears. The Configuration details tab shows any key management servers that are configured.
 +
 image::../media/kms_configuration_details_no_kms_overhaul.png[KMS Configuration details KMS table]
 
@@ -61,7 +61,7 @@ Current state of the server certificate, optional CA certificate, and the client
 +
 NOTE: Immediately after you add a KMS, the certificate status on the Key Management Server page appears as Unknown. It might take StorageGRID as long as 30 minutes to get the actual status of each certificate. You must refresh your web browser to see the actual status.
 
-. If the Certificate Status column indicates that a certificate has expired or is nearing expiration, address the issue as soon as possible.
+. If the Certificate status column indicates that a certificate has expired or is nearing expiration, address the issue as soon as possible.
 +
 See the recommended actions for the *KMS CA certificate expiration*, *KMS client certificate expiration*, and *KMS server certificate expiration* alerts in the instructions for xref:../monitor/index.adoc[monitoring and troubleshooting StorageGRID].
 +

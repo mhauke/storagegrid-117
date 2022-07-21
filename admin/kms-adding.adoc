@@ -24,7 +24,7 @@ You use the StorageGRID Key Management Server wizard to add each KMS or KMS clus
 
 If possible, configure any site-specific key management servers before configuring a default KMS that applies to all sites not managed by another KMS. If you create the default KMS first, all node-encrypted appliances in the grid will be encrypted by the default KMS. If you want to create a site-specific KMS later, you must first copy the current version of the encryption key from the default KMS to the new KMS. See xref:kms-considerations-for-changing-for-site.adoc[Considerations for changing the KMS for a site] for details.
 
-== Step 1: KMS Details
+== Step 1: KMS details
 
 In Step 1 (KMS details) of the Add a Key Management Server wizard, you provide details about the KMS or KMS cluster.
 
@@ -121,7 +121,7 @@ The client certificate metadata appears.
 +
 image::../media/kms_overhaul_step_3_client_certificate_metadata.png[KMS step 3 client certificate metadata]
 
-. Select *Test and Save*.
+. Select *Test and save*.
 +
 The connections between the key management server and the appliance nodes are tested. If all connections are valid and the correct key is found on the KMS, the new key management server is added to the table on the Key Management Server page.
 +
