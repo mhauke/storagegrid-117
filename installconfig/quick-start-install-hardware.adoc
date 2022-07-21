@@ -1,15 +1,15 @@
 ---
-permalink: installconfig/installation-checklist.html
+permalink: installconfig/quick-start-install-hardware.html
 sidebar: sidebar
 keywords: checklist, quick start, hardware, set up, installation, install, installing, 
-summary: 'Follow these high-level steps to install and set up a StorageGRID appliance.'
+summary: 'Follow these high-level steps to install and set up a StorageGRID appliance and deploy it as a node in your StorageGRID system.'
 ---
-= Quick start for hardware installation
+= Quick start: Install hardware
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Follow these high-level steps to install and set up a StorageGRID appliance.
+Follow these high-level steps to install and set up a StorageGRID appliance and deploy it as a node in your StorageGRID system.
 
 
 // Start snippet: Quick start headings as block titles
@@ -51,11 +51,7 @@ See the xref:install-appliance-hardware.adoc[installing appliance hardware overv
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up hardware
 
-[role="quick-margin-para"]
-See the xref:configuring-hardware.adoc[configuring hardware overview] for general installation information.
 
-[role="quick-margin-para"]
-If you choose to xref:automating-appliance-installation-and-configuration.adoc[automate appliance installation and configuration] some of the following tasks will be performed automatically.
 
 [role="quick-margin-list"]
 * Configure StorageGRID connections
@@ -69,18 +65,21 @@ If you choose to xref:automating-appliance-installation-and-configuration.adoc[a
 ** xref:accessing-and-configuring-santricity-system-manager.adoc[SANtricity System Manager (SG6000 and SG5700)]
 ** xref:configuring-santricity-storage-manager.adoc[SANtricity Storage Manager (SG5600)]
 
-* xref:configuring-bmc-interface.adoc[Configure the BMC interface (SG6000 and SG1000 only)] 
+* xref:configuring-bmc-interface.adoc[Configure the BMC interface (SG6000, SG100, and SG1000)] 
 
 * Perform optional setup steps
 ** xref:optional-enabling-node-encryption.adoc[Optional - Enable node encryption]
 ** xref:optional-changing-raid-mode.adoc[Optional - Change RAID mode (Storage Nodes only)]
 ** xref:optional-remapping-network-ports-for-appliance.adoc[Optional - Remap network ports for appliance (Storage Nodes only)]
 
+[role="quick-margin-para"]
+NOTE: If you xref:automating-appliance-installation-and-configuration.adoc[automate appliance installation and configuration], some of the previous tasks are performed automatically.
+
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Deploy appliance node
 
 [role="quick-margin-para"]
-As a final step, use the StorageGRID Appliance installer to deploy the appliance as a new node in your StorageGRID system. 
+Deploy the appliance as a new node in your StorageGRID system. 
 
 [role="quick-margin-list"]
 * xref:deploying-appliance-storage-node.adoc[Deploy appliance Storage Node]

@@ -2,7 +2,7 @@ section: installconfig
 title: Install appliance hardware
 entries:
   - title: Overview
-    pdf-filename: Install and configure StorageGRID
+    pdf-filename: Install StorageGRID appliance hardware
     url: "/installconfig/index.html"
   - title: Appliance hardware descriptions
     entries:
@@ -14,8 +14,8 @@ entries:
       url: "/installconfig/hardware-description-sg5600.html"
     - title: SG100 and SG1000 hardware
       url: "/installconfig/hardware-description-sg100-and-1000.html"
-  - title: Installation checklist
-    url: "/installconfig/installation-checklist.html"
+  - title: 'Quick start: Install hardware'
+    url: "/installconfig/quick-start-install-hardware.html"
   - title: Prepare for installation
     entries:
     - title: Prepare site
@@ -141,7 +141,7 @@ entries:
       url: "/installconfig/optional-changing-raid-mode.html"
     - title: 'Optional - Remap network ports for appliance (Storage Nodes only)'
       url: "/installconfig/optional-remapping-network-ports-for-appliance.html"
-    - title: 'Configure BMC interface (SG6000 and SG1000 only)'
+    - title: 'Configure BMC interface (SG6000, SG100, and SG1000)'
       entries:
       - title: Overview
         url: "/installconfig/configuring-bmc-interface.html"
