@@ -92,9 +92,9 @@ The connections between the key management server and all node-encrypted applian
 +
 For example, you might receive a 422: Unprocessable Entity error if the site you selected for this KMS is already managed by another KMS, or if a connection test failed.
 
-. If you need to save the current configuration before resolving the connection errors, select *Force Save*.
+. If you need to save the current configuration before resolving the connection errors, select *Force save*.
 +
-IMPORTANT: Selecting *Force Save* saves the KMS configuration, but it does not test the external connection from each appliance to that KMS. If there is an issue with the configuration, you might not be able to reboot appliance nodes that have node encryption enabled at the affected site. You might lose access to your data until the issues are resolved.
+IMPORTANT: Selecting *Force save* saves the KMS configuration, but it does not test the external connection from each appliance to that KMS. If there is an issue with the configuration, you might not be able to reboot appliance nodes that have node encryption enabled at the affected site. You might lose access to your data until the issues are resolved.
 +
 The KMS configuration is saved.
 
