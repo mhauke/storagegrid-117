@@ -2,7 +2,7 @@ section: admin
 title: Administer StorageGRID
 entries:
   - title: Overview
-    pdf-filename: Administer a StorageGRID System
+    pdf-filename: Administer a StorageGRID system
     url: "/admin/index.html"
   - title: Get started with Grid Manager
     entries:
@@ -41,6 +41,9 @@ entries:
         url: "/admin/deactivate-features-from-api.html"            
   - title: Control access to StorageGRID
     entries:
+    - title: Overview
+      pdf-filename: Control access to StorageGRID
+      url: "/admin/controlling-storagegrid-access.html"
     - title: Change the provisioning passphrase
       url: "/admin/changing-provisioning-passphrase.html"
     - title: Change node console passwords
@@ -76,7 +79,10 @@ entries:
       - title: Temporarily disable and reenable single sign-on for one Admin Node
         url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
   - title: Manage security
-    entries:      
+    entries:  
+    - title: Overview
+      pdf-filename: Manage security
+      url: "/admin/manage-security.html"    
     - title: Manage certificates
       entries:
       - title: About security certificates
