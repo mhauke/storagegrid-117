@@ -49,19 +49,19 @@ For example: `10.10.10.10 and 10.10.10.11` or `10.10.10.10 and 2 others`.
 
 To view all hostnames in a cluster, select a KMS and then select *Edit*.
 a|
-Certificate status
+Certificate expiration
 a|
 Current state of the server certificate, optional CA certificate, and the client certificate: valid, expired, nearing expiration, or unknown.
 
-*Note:* It might take StorageGRID as long as 30 minutes to get updates to the certificate status. You must refresh your web browser to see the current values.
+*Note:* It might take StorageGRID as long as 30 minutes to get updates to the certificate expiration. You must refresh your web browser to see the current values.
 
 |===
 
-. If the Certificate status is Unknown, wait up to 30 minutes and then refresh your web browser.
+. If the Certificate expiration is Unknown, wait up to 30 minutes and then refresh your web browser.
 +
-NOTE: Immediately after you add a KMS, the certificate status on the Key Management Server page appears as Unknown. It might take StorageGRID as long as 30 minutes to get the actual status of each certificate. You must refresh your web browser to see the actual status.
+NOTE: Immediately after you add a KMS, the certificate expiration on the Key Management Server page appears as Unknown. It might take StorageGRID as long as 30 minutes to get the actual status of each certificate. You must refresh your web browser to see the actual status.
 
-. If the Certificate status column indicates that a certificate has expired or is nearing expiration, address the issue as soon as possible.
+. If the Certificate expiration column indicates that a certificate has expired or is nearing expiration, address the issue as soon as possible.
 +
 See the recommended actions for the *KMS CA certificate expiration*, *KMS client certificate expiration*, and *KMS server certificate expiration* alerts in the instructions for xref:../monitor/index.adoc[monitoring and troubleshooting StorageGRID].
 +
