@@ -1,0 +1,25 @@
+---
+permalink: admin/configuring-network-settings.html
+sidebar: sidebar
+keywords: network settings, vlan interface, traffic classification, link costs
+summary: 'You can configure various network settings from the Grid Manager to fine tune the operation of your StorageGRID system.'
+---
+= Configure network settings: Overview
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can configure various network settings from the Grid Manager to fine tune the operation of your StorageGRID system.
+
+== Configure VLAN interfaces
+
+You can xref:configure-vlan-interfaces.adoc[create virtual LAN (VLAN) interfaces] to isolate and partition traffic for security, flexibility, and performance. Each VLAN interface is associated with one or more parent interfaces on Admin Nodes and Gateway Nodes. You can use VLAN interfaces in HA groups and in load balancer endpoints to segregate client or admin traffic by application or tenant. 
+
+== Traffic classification policies
+
+You can use xref:managing-traffic-classification-policies.adoc[traffic classification policies] to identify and handle different types of network traffic, including traffic related to specific buckets, tenants, client subnets, or load balancer endpoints. These policies can assist with traffic limiting and monitoring.
+
+== Manage link costs
+
+You can adjust xref:what-link-costs-are.adoc[link costs] to reflect the latency between sites. When two or more data center sites exist, link costs prioritize which data center site should provide a requested service.
+
