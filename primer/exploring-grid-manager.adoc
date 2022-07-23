@@ -27,11 +27,11 @@ For an explanation of the information on each card, select the help icon image:.
 
 .Learn more
 
-* xref:../monitor/index.adoc[Monitor and troubleshoot]
+* xref:../monitor/viewing-dashboard.adoc[View and configure the Dashboard]
 
 == Search field
 
-The *Search* field in the header bar allows you to quickly navigate to a specific page within Grid Manager. For example, you can enter *km* to access the Key Management Server (KMS) page. You can use *Search* to find entries in the sidebar of the Grid Manager and on the Configuration, Maintenance, and Support menus. 
+The *Search* field in the header bar allows you to quickly navigate to a specific page within Grid Manager. For example, you can enter *km* to access the Key management server (KMS) page. You can use *Search* to find entries in the sidebar of the Grid Manager and on the Configuration, Maintenance, and Support menus. 
 
 == Help menu
 
@@ -74,9 +74,9 @@ image::../media/nodes_menu.png[nodes page main]
 
 .Learn more
 
-* xref:viewing-nodes-page.adoc[View the Nodes page]
+* xref:../monitor/viewing-nodes-page.adoc[View the Nodes page]
 
-* xref:../monitor/index.adoc[Monitor StorageGRID]
+
 
 == Tenants page
 
@@ -115,10 +115,12 @@ image::../media/configuration_menu.png[Configuration Menu]
 .Learn more
 
 * xref:../admin/configuring-network-settings.adoc[Configure network settings]
+* xref:../admin/configuring-client-connections.adoc[Configure S3 and Swift client connections]
+* xref:../admin/manage-security.adoc[Manage security]
+* xref:../ilm/managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock]
+* xref:../monitor/configure-audit-messages.adoc[Configure audit messages and log destinations]
+* xref:../monitor/using-snmp-monitoring.adoc[Use SNMP monitoring]
 * xref:../admin/controlling-storagegrid-access.adoc[Control StorageGRID access]
-* xref:../admin/index.adoc[Administer StorageGRID]
-* xref:../monitor/index.adoc[Monitor StorageGRID]
-* xref:../audit/index.adoc[Review audit logs]
 
 == Maintenance menu
 
@@ -157,19 +159,21 @@ Network maintenance tasks you can perform include:
 .Learn more
 
 
-* xref:../downloading-recovery-package.adoc[Download the Recovery Package]
+* xref:../maintain/downloading-recovery-package.adoc[Download the Recovery Package]
 
 * xref:../expand/index.adoc[Expand your grid]
 
 * xref:../upgrade/index.adoc[Upgrade software]
 
-* xref:../maintain/index.adoc[Recover and maintain]
+* xref:../maintain/index.adoc[Recover nodes and maintain your grid]
 
-* xref:../sg6000/index.adoc[Maintain SG6000 storage appliances]
+* xref:../sg6000/index.adoc[Maintain SG6000 hardware]
 
-* xref:../sg5700/index.adoc[Maintain SG5700 storage appliances]
+* xref:../sg5700/index.adoc[Maintain SG5700 hardware]
 
-* xref:../sg5600/index.adoc[Maintain SG5600 storage appliances]
+* xref:../sg5600/index.adoc[Maintain SG5600 hardware]
+
+* xref:../sg100-1000/index.adoc[Maintain SG100 and SG1000 hardware]
 
 == Support menu
 
@@ -197,11 +201,15 @@ NOTE: While the legacy alarm system continues to be supported, the alert system 
 
 .Learn more
 
-* xref:storagegrid-architecture-and-network-topology.adoc[StorageGRID architecture and network topology]
+* xref:../admin/configure-autosupport-grid-manager.adoc[Configure AutoSupport]
 
-* xref:viewing-nodes-page.adoc[StorageGRID attributes]
+* xref:../monitor/running-diagnostics.adoc[Run diagnostics]
 
-* xref:../admin/index.adoc[Administer StorageGRID]
+* xref:../monitor/viewing-grid-topology-tree.adoc[View the Grid Topology tree]
 
-* xref:../monitor/index.adoc[Monitor StorageGRID]
+* xref:../monitor/collecting-log-files-and-system-data.adoc[Collect log files and system data]
+
+* xref:../monitor/reviewing-support-metrics.adoc[Review support metrics]
+
+* xref:../monitor/managing-alarms.adoc[Manage alarms (legacy system)]
 
