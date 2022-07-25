@@ -2,14 +2,14 @@
 permalink: ilm/working-with-ilm-rules-and-ilm-policies.html
 sidebar: sidebar
 keywords: remove ilm rule, edit ilm rule, clone ilm rule, ilm queue
-summary: 'After you create ILM rules and an ILM policy, you can continue to work with them, modifying their configuration as your storage requirements change.'
+summary: 'You can modify the ILM policy and ILM rules as your storage requirements change.'
 ---
 = Work with ILM rules and ILM policies
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Once you have created ILM rules and an ILM policy, you can continue to work with them, modifying their configuration as your storage requirements change.
+You can modify the ILM policy and ILM rules as your storage requirements change.
 
 .What you'll need
 
@@ -29,9 +29,6 @@ You cannot remove an ILM rule if it is currently used in the active policy or in
 .Steps
 . Select *ILM* > *Rules*.
 . Confirm that the rule you want to remove is not used in the active ILM policy or the proposed ILM policy.
-+
-image::../media/ilm_rules_page_with_edit_and_clone_enabled.png[ILM Rules page]
-+
 . If the rule you want to remove is not in use, select the check box for the rule and select *Actions* > *Remove*.
 . Select *OK* to confirm that you want to remove the ILM rule.
 +
@@ -52,9 +49,6 @@ NOTE: Before adding an edited rule to the active ILM policy, be aware that a cha
 . Confirm that the rule you want to edit is not used in the active ILM policy or the proposed ILM policy.
 . If the rule you want to edit is not in use, select the name of the rule.
 . In the details view for the rule, select *Edit*.
-+
-image::../media/edit_ilm_rule_step_1.png[Edit ILM Rule page]
-
 . Complete the pages of the Edit ILM rule wizard. As necessary, follow the steps for xref:creating-ilm-rule.adoc[creating an ILM rule] and xref:using-advanced-filters-in-ilm-rules.adoc[using advanced filters].
 +
 When editing an ILM rule, you cannot change its name.
