@@ -1,0 +1,60 @@
+---
+permalink: maintain/restoring-volume.html
+sidebar: sidebar
+keywords: storagegrid, restore, volume
+summary: 'To install a Gateway Node or Admin Node on an SG100 or SG1000 services appliance, you use the StorageGRID Appliance Installer, which is included on the appliance.'
+---
+= Restore volume
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can restore lost object data if a starage volume fails.
+
+.What you'll need
+
+
+
+.About this task
+
+* For a primary Admin Node, you specify the name of the node and then upload the appropriate software packages (if required).
+* For a non-primary Admin Node or a Gateway Node, you specify or confirm the IP address of the primary Admin Node and the name of the node.
+* You start the installation and wait as volumes are configured and the software is installed.
+* Partway through the process, the installation pauses. To resume the installation, you must sign into the Grid Manager and configure the pending node as a replacement for the failed node.
+* After you have configured the node, the appliance installation process completes, and the appliance is rebooted.
+
+.Steps
+
+To restore a lost volume:
+
+. In Grid Manager go to *Maintenance* > *Volume restoration*.
+
+. Select the *Pending data* tab.
++
+The number on the tab indicates the number of nodes requiring restoration.
+
+. Expand each node to see the volumes in it that need restoration and their status.
+ 
+. Correct any issues preventing restoration, as indicated.
+
+. Select the node to restore.
++
+You can only restore one node at a time.
++
+Each volume in the node should indicate that it is ready to restore.
+
+. Select *Start restore*.
+
+. Address any warnings that might display or select *Start anyway*.
+
+Nodes are moved from the Pending data tab to the Restoration progress tab when the restoration starts.
+
+== Monitor volume restoration
+
+
+
+== View restoration history
+
+.Related information
+
+
