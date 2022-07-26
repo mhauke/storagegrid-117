@@ -132,48 +132,36 @@ image::../media/maintenance_menu.png[Maintenance Menu and Page]
 
 Maintenance tasks include:
 
-* Decommission operations to remove unused grid nodes and sites.
-* Expansion operations to add new grid nodes and sites.
-* Recovery operations to replace a failed node and restore data.
-* Rename operations to change the display names of your grid, sites, and nodes.
-* Object existence check to verify the existence (although not the correctness) of object data.
+* xref:../maintain/decommission-procedure.adoc[Decommission operations] to remove unused grid nodes and sites.
+* xref:../expand/index.adoc[Expansion operations] to add new grid nodes and sites.
+* xref:../maintain/grid-node-recovery-procedures.adoc[Recovery operations] to replace a failed node and restore data.
+* xref:../maintain/rename-grid-site-node-overview.adoc[Rename operations] to change the display names of your grid, sites, and nodes.
+* xref:../troubleshoot/verifying-object-integrity.adoc[Object existence check operations] to verify the existence (although not the correctness) of object data.
 * Volume restoration.
+
 
 === System
 
 System maintenance tasks you can perform include:
 
-* Reviewing details for the current StorageGRID license or uploading a new license.
-* Generating a Recovery Package.
-* Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances.
+* xref:../admin/viewing-storagegrid-license-information.adoc[Viewing StorageGRID license information] or xref:../admin/updating-storagegrid-license-information.adoc[uploading license information]
+* Generating and downloading a xref:../maintain/downloading-recovery-package.adoc[Recovery Package]
+* Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances:
+
+** xref:../upgrade/index.adoc[Upgrade procedure]
+** xref:../maintain/storagegrid-hotfix-procedure.adoc[Hotfix procedure]
+** xref:../sg6000/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg6000.adoc[Upgrade SANtricity OS on SG6000 storage controllers using Grid Manager]
+** xref:../sg5700/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg6000.adoc[Upgrade SANtricity OS on SG5700 storage controllers using Grid Manager]
 
 === Network
 
 Network maintenance tasks you can perform include:
 
-* Editing information about DNS servers.
-* Configuring the subnets that are used on the Grid Network.
-* Editing information about NTP servers.
+* Configuring xref:../maintain/configuring-dns-servers.adoc[DNS servers]
+* Updating 
+xref:../maintain/updating-subnets-for-grid-network.adoc[Grid Network subnets]
+* Configuring xref:../maintain/maintain/configuring-ntp-servers.adoc[NTP servers]
 
-
-.Learn more
-
-
-* xref:../maintain/downloading-recovery-package.adoc[Download the Recovery Package]
-
-* xref:../expand/index.adoc[Expand your grid]
-
-* xref:../upgrade/index.adoc[Upgrade software]
-
-* xref:../maintain/index.adoc[Recover nodes and maintain your grid]
-
-* xref:../sg6000/index.adoc[Maintain SG6000 hardware]
-
-* xref:../sg5700/index.adoc[Maintain SG5700 hardware]
-
-* xref:../sg5600/index.adoc[Maintain SG5600 hardware]
-
-* xref:../sg100-1000/index.adoc[Maintain SG100 and SG1000 hardware]
 
 == Support menu
 
@@ -185,31 +173,16 @@ image::../media/support_menu.png[Support menu]
 
 From the Tools section of the Support menu, you can:
 
-* Enable AutoSupport.
-* Perform a set of diagnostic checks on the current state of the grid.
-* Access the grid topology tree to view detailed information about grid nodes, services, and attributes.
-* Retrieve log files and system data.
-* Review detailed metrics and charts.
+* xref:../admin/configure-autosupport-grid-manager.adoc[Configure AutoSupport]
+* xref:../monitor/running-diagnostics.adoc[Run diagnostics] on the current state of the grid
+* xref:../monitor/viewing-grid-topology-tree.adoc[Access the Grid Topology tree] to view detailed information about grid nodes, services, and attributes
+* xref:../monitor/collecting-log-files-and-system-data.adoc[Collect log files and system data]
+* xref:../monitor/reviewing-support-metrics.adoc[Review support metrics]
 +
 IMPORTANT: The tools available from the *Metrics* option are intended for use by technical support. Some features and menu items within these tools are intentionally non-functional.
 
 === Alarms (legacy)
 
-From the Alarms (legacy) section of the Support menu, you can review current, historical, and global alarms, set up custom events, and set up email notifications for legacy alarms and AutoSupport.
+From the Alarms (legacy) section of the Support menu, you can review current, historical, and global alarms, set up custom events, and set up email notifications for legacy alarms and AutoSupport. See xref:../monitor/managing-alarms.adoc[Manage alarms (legacy system)].
 
 NOTE: While the legacy alarm system continues to be supported, the alert system offers significant benefits and is easier to use. 
-
-.Learn more
-
-* xref:../admin/configure-autosupport-grid-manager.adoc[Configure AutoSupport]
-
-* xref:../monitor/running-diagnostics.adoc[Run diagnostics]
-
-* xref:../monitor/viewing-grid-topology-tree.adoc[View the Grid Topology tree]
-
-* xref:../monitor/collecting-log-files-and-system-data.adoc[Collect log files and system data]
-
-* xref:../monitor/reviewing-support-metrics.adoc[Review support metrics]
-
-* xref:../monitor/managing-alarms.adoc[Manage alarms (legacy system)]
-
