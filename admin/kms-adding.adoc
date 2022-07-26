@@ -32,7 +32,7 @@ In Step 1 (KMS details) of the Add a Key Management Server wizard, you provide d
 
 . Select *CONFIGURATION* > *Security* > *Key management server*.
 +
-The key management server page appears with the Configuration details tab selected.
+The Key management server page appears with the Configuration details tab selected.
 +
 image::../media/kms_configuration_details_no_kms_overhaul.png[KMS Configuration Details No KMS]
 
@@ -44,7 +44,7 @@ image::../media/kms_overhaul_step_1_enter_kms_details.png[KMS Step 1 Enter KMS d
 
 . Enter the following information for the KMS and the StorageGRID client you configured in that KMS.
 +
-[cols="1a,1a" options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Field| Description
 a|
@@ -127,7 +127,7 @@ The connections between the key management server and the appliance nodes are te
 +
 NOTE: Immediately after you add a KMS, the certificate status on the Key Management Server page appears as Unknown. It might take StorageGRID as long as 30 minutes to get the actual status of each certificate. You must refresh your web browser to see the current status.
 
-. If an error message appears when you select *Test and Save*, review the message details and then select *OK*.
+. If an error message appears when you select *Test and save*, review the message details and then select *OK*.
 +
 For example, you might receive a 422: Unprocessable Entity error if a connection test failed.
 
