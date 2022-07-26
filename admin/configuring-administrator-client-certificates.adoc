@@ -165,7 +165,7 @@ Use this procedure to add an administrator client certificate if a management in
 . Specify the certificate information:
  ** *Domain name*: One or more fully qualified domain names of the admin node to include in the certificate. Use an * as a wildcard to represent multiple domain names.
  ** *IP*: One or more admin node IP addresses to include in the certificate.
- ** *Subject*: X.509 subject or distinguished name (DN) of the certificate owner.
+ ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
 . Select *Generate*. 
 
 . [[client_cert_details]] Select *Client certificate details* to display the certificate metadata and certificate PEM.
@@ -295,7 +295,7 @@ Generate the certificate text to paste elsewhere.
 . Specify the certificate information:
  ** *Domain name*: One or more fully qualified domain names to include in the certificate. Use an * as a wildcard to represent multiple domain names.
  ** *IP*: One or more IP addresses to include in the certificate.
- ** *Subject*: X.509 subject or distinguished name (DN) of the certificate owner.
+ ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
  ** *Days valid*: Number of days after creation that the certificate expires.
 . Select *Generate*. 
 
