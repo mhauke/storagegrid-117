@@ -77,9 +77,7 @@ image::../media/nodes_menu.png[nodes page main]
 * xref:../monitor/viewing-nodes-page.adoc[View the Nodes page]
 
 
-
 == Tenants page
-
 
 The Tenants page allows you to create and monitor the storage tenant accounts for your StorageGRID system. You must create at least one tenant account to specify who can store and retrieve objects and which functionality is available to them.
 
@@ -94,7 +92,6 @@ image::../media/tenants_menu_and_page.png[Tenants Menu and Page]
 * xref:../tenant/index.adoc[Use a tenant account]
 
 == ILM menu
-
 
 The ILM menu allows you to configure the information lifecycle management (ILM) rules and policies that govern data durability and availability. You can also enter an object identifier to view the metadata for that object.
 
@@ -112,15 +109,51 @@ The Configuration menu allows you to specify network settings, security settings
 
 image::../media/configuration_menu.png[Configuration Menu]
 
-.Learn more
 
-* xref:../admin/configuring-network-settings.adoc[Configure network settings]
-* xref:../admin/configuring-client-connections.adoc[Configure S3 and Swift client connections]
-* xref:../admin/manage-security.adoc[Manage security]
-* xref:../ilm/managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock]
-* xref:../monitor/configure-audit-messages.adoc[Configure audit messages and log destinations]
-* xref:../monitor/using-snmp-monitoring.adoc[Use SNMP monitoring]
-* xref:../admin/controlling-storagegrid-access.adoc[Control StorageGRID access]
+=== Network tasks
+
+Network tasks include:
+
+* xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[Configuring S3 endpoint domain names]
+* xref:../admin/managing-high-availability-groups.adoc[Managing high availability groups]
+* xref:../admin/manage-link-costs.adoc[Managing link costs]
+* xref:../admin/managing-load-balancing.adoc[Managing load balancing]
+* xref:../admin/managing-traffic-classification-policies.adoc[Managing traffic classification policies]
+* xref:../admin/configure-vlan-interfaces.adoc[Configuring VLAN interfaces]
+
+
+=== Security tasks
+Security tasks include:
+
+* xref:../admin/using-storagegrid-security-certificates.adoc[Using security certificates]
+* xref:../admin/kms-configuring.adoc[Configuring key management servers]
+* Configuring the settings for a xref:../admin/configuring-storage-proxy-settings.adoc[Storage proxy] or an xref:/../admin/configuring-admin-proxy-setting.adoc[Admin proxy] proxy.
+* Controlling firewall settings
+* Grid passwords
+* Security settings
+
+=== System tasks
+System tasks include:
+
+* Managing display options
+* Managing grid options
+* xref:../ilm/managing-objects-with-s3-object-lock.adoc[Managing S3 Object Lock]
+* xref:../admin/managing-storage-options.adoc[Managing Storage options]
+
+=== Monitoring tasks
+
+Monitoring tasks include:
+
+* xref:../monitor/configure-audit-messages.adoc[Configuring audit messages and log destinations]
+* xref:../monitor/using-snmp-monitoring.adoc[Using SNMP monitoring]
+
+=== Access control tasks
+
+Access control tasks include:
+* xref:../admin/using-identity-federation.adoc[Using identity federation]
+* xref:../admin/managing-admin-groups.adoc[Managing admin groups]
+* xref:../admin/managing-users.adoc[Managing admin users]
+* xref:../admin/configuring-sso.adoc[Configuring SSO]
 
 == Maintenance menu
 
@@ -132,13 +165,12 @@ image::../media/maintenance_menu.png[Maintenance Menu and Page]
 
 Maintenance tasks include:
 
-* xref:../maintain/decommission-procedure.adoc[Decommission operations] to remove unused grid nodes and sites.
+* xref:../maintain/decommission-procedure.adoc[Decommission operations] to remove unused grid nodes and sites
 * xref:../expand/index.adoc[Expansion operations] to add new grid nodes and sites.
-* xref:../maintain/grid-node-recovery-procedures.adoc[Recovery operations] to replace a failed node and restore data.
-* xref:../maintain/rename-grid-site-node-overview.adoc[Rename operations] to change the display names of your grid, sites, and nodes.
+* xref:../maintain/grid-node-recovery-procedures.adoc[Grid node recovery operations] to replace a failed node and restore data
+* xref:../maintain/rename-grid-site-node-overview.adoc[Rename operations] to change the display names of your grid, sites, and nodes
 * xref:../troubleshoot/verifying-object-integrity.adoc[Object existence check operations] to verify the existence (although not the correctness) of object data.
-* Volume restoration.
-
+* Volume restoration
 
 === System
 
@@ -146,12 +178,12 @@ System maintenance tasks you can perform include:
 
 * xref:../admin/viewing-storagegrid-license-information.adoc[Viewing StorageGRID license information] or xref:../admin/updating-storagegrid-license-information.adoc[uploading license information]
 * Generating and downloading a xref:../maintain/downloading-recovery-package.adoc[Recovery Package]
-* Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances:
+* Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances
 
 ** xref:../upgrade/index.adoc[Upgrade procedure]
 ** xref:../maintain/storagegrid-hotfix-procedure.adoc[Hotfix procedure]
 ** xref:../sg6000/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg6000.adoc[Upgrade SANtricity OS on SG6000 storage controllers using Grid Manager]
-** xref:../sg5700/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg6000.adoc[Upgrade SANtricity OS on SG5700 storage controllers using Grid Manager]
+** xref:../sg5700/upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5700.adoc[Upgrade SANtricity OS on SG5700 storage controllers using Grid Manager]
 
 === Network
 
@@ -160,7 +192,7 @@ Network maintenance tasks you can perform include:
 * Configuring xref:../maintain/configuring-dns-servers.adoc[DNS servers]
 * Updating 
 xref:../maintain/updating-subnets-for-grid-network.adoc[Grid Network subnets]
-* Configuring xref:../maintain/maintain/configuring-ntp-servers.adoc[NTP servers]
+* Configuring xref:../maintain/configuring-ntp-servers.adoc[NTP servers]
 
 
 == Support menu
@@ -183,6 +215,6 @@ IMPORTANT: The tools available from the *Metrics* option are intended for use by
 
 === Alarms (legacy)
 
-From the Alarms (legacy) section of the Support menu, you can review current, historical, and global alarms, set up custom events, and set up email notifications for legacy alarms and AutoSupport. See xref:../monitor/managing-alarms.adoc[Manage alarms (legacy system)].
+From the Alarms (legacy) section of the Support menu, you can review current, historical, and global alarms, set up custom events, and set up email notifications for legacy alarms. See xref:../monitor/managing-alarms.adoc[Manage alarms (legacy system)].
 
 NOTE: While the legacy alarm system continues to be supported, the alert system offers significant benefits and is easier to use. 
