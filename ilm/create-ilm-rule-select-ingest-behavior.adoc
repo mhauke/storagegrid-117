@@ -15,13 +15,11 @@ The *Select ingest behavior* step of the Create ILM Rule wizard allows you to ch
 
 StorageGRID can make interim copies and queue the objects for ILM evaluation later, or it can make copies to meet the rule's placement instructions immediately.
 
-image::../media/define_ingest_behavior_for_ilm_rule.png[Create ILM rule step 3 of 3]
-
 .Steps
 
-. Select the ingest behavior to use.
+. Select the xref:data-protection-options-for-ingest.adoc[ingest behavior] to use.
 +
-For more information, see xref:data-protection-options-for-ingest.adoc[Ingest options] and xref:advantages-disadvantages-of-ingest-options.adoc[Advantages, disadvantages, and limitations of the ingest options].
+For more information, see xref:advantages-disadvantages-of-ingest-options.adoc[Advantages, disadvantages, and limitations of the ingest options].
 +
 [NOTE]
 ====
@@ -30,16 +28,12 @@ An error message appears if you select the Strict or Balanced option and the rul
  ** A Cloud Storage Pool at day 0
  ** An Archive Node at day 0
  ** A Cloud Storage Pool or an Archive Node when the rule uses a User Defined Creation Time as a Reference Time
+
+See xref:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.adoc[Example 5: ILM rules and policy for Strict ingest behavior].
 ====
 
 . Select *Create*.
 +
-The ILM rule is created. The rule does not become active until it is added to an ILM policy and that policy is activated.
+The ILM rule is created. The rule does not become active until it is added to an xref:creating-ilm-policy.adoc[ILM policy] and that xref:activating-ilm-policy.adoc[policy is activated].
 +
 To view the details of the rule, select the rule's name on the ILM Rules page.
-
-.Related information
-
-* xref:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.adoc[Example 5: ILM rules and policy for Strict ingest behavior]
-
-* xref:creating-ilm-policy.adoc[Create an ILM policy]

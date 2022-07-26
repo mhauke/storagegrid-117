@@ -34,15 +34,13 @@ When creating ILM rules:
 * Consider what types of object copies you want to make (replicated or erasure coded) and the number of copies of each object that are required.
 * Determine what types of object metadata are used in the applications that connect to the StorageGRID system. ILM rules filter objects based on their metadata.
 * Consider where you want object copies to be placed over time.
-* Decide which ingest option to use (Balanced, Strict, or Dual commit).
+* Decide which ingest option to use (Dual commit, Strict, or Balanced).
 
 .Steps
 
 . Select *ILM* > *Rules*.
 +
 The ILM Rules page appears. The stock rule, Make 2 Copies, is shown in the list of rules.
-+
-image::../media/ilm_create_ilm_rule.png[ILM Rules page]
 +
 NOTE: The ILM Rules page looks slightly different if the global S3 Object Lock setting has been enabled for the StorageGRID system. The summary table includes a *Compliant* column, and the details for the selected rule include a *Compliant* field.
 

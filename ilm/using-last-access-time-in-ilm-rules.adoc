@@ -19,7 +19,7 @@ Before using Last Access Time in an ILM rule, review the following consideration
 +
 Take this latency into account when creating ILM rules based on Last Access Time and avoid placements that use short time periods (less than one month).
 
-* When using Last Access Time as an advanced filter or as a reference time, you must enable last access time updates for S3 buckets. You can use the Tenant Manager or the Tenant Management API.
+* When using Last Access Time as an advanced filter or as a reference time, you must enable last access time updates for S3 buckets. You can use the xref:../tenant/enabling-or-disabling-last-access-time-updates.adoc[Tenant Manager] or the xref:../s3/put-bucket-last-access-time-request[Tenant Management API].
 +
 NOTE: Last access time updates are always enabled for Swift containers, but are disabled by default for S3 buckets.
 +
@@ -29,39 +29,24 @@ The following table summarizes whether the Last Access Time is updated for all o
 [cols="1a,1a,1a" options="header"]
 |===
 | Type of request| Whether Last Access Time is updated when last access time updates are disabled| Whether Last Access Time is updated when last access time updates are enabled
-a|
-Request to retrieve an object, its access control list, or its metadata
-a|
-No
-a|
-Yes
-a|
-Request to update an object's metadata
-a|
-Yes
-a|
-Yes
-a|
-Request to copy an object from one bucket to another
-a|
 
+|Request to retrieve an object, its access control list, or its metadata
+|No
+|Yes
+
+|Request to update an object's metadata
+|Yes
+|Yes
+
+|Request to copy an object from one bucket to another
+|
 * No, for the source copy
 * Yes, for the destination copy
-
-a|
-
+|
 * Yes, for the source copy
 * Yes, for the destination copy
 
-a|
-Request to complete a multipart upload
-a|
-Yes, for the assembled object
-a|
-Yes, for the assembled object
+|Request to complete a multipart upload
+|Yes, for the assembled object
+|Yes, for the assembled object
 |===
-.Related information
-
-* xref:../s3/index.adoc[Use S3]
-
-* xref:../tenant/index.adoc[Use a tenant account]

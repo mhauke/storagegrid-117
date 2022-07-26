@@ -20,16 +20,19 @@ You can modify the ILM policy and ILM rules as your storage requirements change.
 
 To keep the list of current ILM rules manageable, remove any ILM rules that you are not likely to use.
 
-You cannot remove an ILM rule if it is currently used in the active policy or in the proposed policy. If you need to remove an ILM rule that is used a policy, you must perform these steps first:
+.Steps
+
+To remove an ILM rule that is currently used in the active policy or in the proposed policy:
 
 . Clone the active policy or edit the proposed policy.
 . Remove the ILM rule from the policy.
 . Save, simulate, and activate the new policy to make sure objects are protected as expected.
 
-.Steps
+To remove an ILM rule that is not currently used:
+
 . Select *ILM* > *Rules*.
-. Confirm that the rule you want to remove is not used in the active ILM policy or the proposed ILM policy.
-. If the rule you want to remove is not in use, select the check box for the rule and select *Actions* > *Remove*.
+. Confirm that the rule you want to remove is not used in the active policy or the proposed policy.
+. If the rule you want to remove is not in use, select the rule and select *Remove*.
 . Select *OK* to confirm that you want to remove the ILM rule.
 +
 The ILM rule is removed.
@@ -47,9 +50,8 @@ NOTE: Before adding an edited rule to the active ILM policy, be aware that a cha
 .Steps
 . Select *ILM* > *Rules*.
 . Confirm that the rule you want to edit is not used in the active ILM policy or the proposed ILM policy.
-. If the rule you want to edit is not in use, select the name of the rule.
-. In the details view for the rule, select *Edit*.
-. Complete the pages of the Edit ILM rule wizard. As necessary, follow the steps for xref:creating-ilm-rule.adoc[creating an ILM rule] and xref:using-advanced-filters-in-ilm-rules.adoc[using advanced filters].
+. If the rule you want to edit is not in use, select the rule and select *Edit*.
+. Complete the pages of the Edit ILM rule wizard. As necessary, follow the steps for xref:create-ilm-rule-enter-details.adoc[creating an ILM rule] and xref:create-ilm-rule-enter-details.adoc#use-advanced-filters-in-ILM-rules[using advanced filters in ILM rules].
 +
 When editing an ILM rule, you cannot change its name.
 
@@ -66,23 +68,22 @@ Before adding a cloned rule to the active ILM policy, be aware that a change to 
 .Steps
 
 . Select *ILM* > *Rules*.
-. Select the name of a rule that is not being used.
-. In the details view for the rule, select *Clone*.
-. Update the cloned rule by following the steps for editing an ILM rule and using advanced filters.
+. Select the rule you want to clone and select *Clone*.
+. Update the cloned rule by following the steps for <<Edit an ILM rule,editing an ILM rule>> and xref:create-ilm-rule-enter-details.adoc#use-advanced-filters-in-ILM-rules[using advanced filters in ILM rules].
 +
 When cloning an ILM rule, you must enter a new name.
 . Select *Save*.
 +
 The new ILM rule is created.
 
-== View the ILM policy activity queue
+== View ILM metrics
 
-You can view the number of objects that are in the queue to be evaluated against the ILM policy at any time. You might want to monitor the ILM processing queue to determine system performance. A large queue might indicate that the system is not able to keep up with the ingest rate, the load from the client applications is too great, or that some abnormal condition exists.
+You can view metrics for ILM, such as the number of objects in the queue and the evaluation rate. You can monitor these metrics to determine system performance. A large queue or evaluation rate might indicate that the system is not able to keep up with the ingest rate, the load from the client applications is too great, or that some abnormal condition exists.
 
 .Steps
 
-. Select *Dashboard*.
+. Select *Dashboard* > *ILM*.
 
-. Monitor the Information Lifecycle Management (ILM) tab on the Dashboard.
+. Monitor the metrics on the ILM tab.
 +
-You can select the question mark image:../media/icon_nms_question.png[question mark icon] to see a description of the items in this section.
+You can select the question mark image:../media/icon_nms_question.png[question mark icon] to see a description of the items on the ILM tab.

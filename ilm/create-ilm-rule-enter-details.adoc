@@ -17,8 +17,6 @@ Entering a description and defining filters for the rule are optional.
 
 When evaluating an object against an xref:what-ilm-rule-is.adoc[ILM rule], StorageGRID compares the object metadata to the rule's filters. If the object metadata matches all filters, StorageGRID uses the rule to place the object. You can design a rule to apply to all objects, or you can specify basic filters, such as one or more tenant accounts or bucket names, or advanced filters, such as the object's size or user metadata.
 
-//image::../media/ilm_create_ilm_rule_wizard_1.png[Create ILM Rule step 1 of 3]
-
 .Steps
 
 . Enter a unique name for the rule in the *Name* field.
