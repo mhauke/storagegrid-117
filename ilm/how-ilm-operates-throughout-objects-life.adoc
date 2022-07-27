@@ -17,7 +17,7 @@ Understanding how StorageGRID uses ILM to manage objects during every stage of t
  ** Background verification: StorageGRID continuously performs background verification to check the integrity of object data. If a problem is found, StorageGRID automatically creates a new object copy or a replacement erasure-coded object fragment in a location that meets current ILM requirements. See the instructions for xref:../monitor/index.adoc[monitoring and troubleshooting StorageGRID].
 * *Object deletion*: Management of an object ends when all copies are removed from the StorageGRID system. Objects can be removed as a result of a delete request by a client, or as a result of deletion by ILM or deletion caused by the expiration of an S3 bucket lifecycle.
 +
-NOTE: Objects in a bucket that has S3 Object Lock enabled cannot be deleted if they are under a legal hold or if a retain-until-date has been specified but not yet met.
+NOTE: When versioning is enabled for an S3 bucket, StorageGRID follows Amazon S3 behavior when responding to delete requests. Objects in a bucket that has S3 Object Lock enabled cannot be deleted if they are under a legal hold or if a retain-until-date has been specified but not yet met.
 
 The diagram summarizes how ILM operates throughout an object's lifecycle.
 
