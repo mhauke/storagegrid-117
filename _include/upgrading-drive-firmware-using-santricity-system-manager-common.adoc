@@ -1,13 +1,13 @@
 //This include file is used for the SG600 and the SG5700
 [.lead]
-You upgrade your drive firmware to make sure you have all the latest features and bug fixes.
+Upgrade the firmware on the drives in your appliance to make sure you have all the latest features and bug fixes. In some cases, you can upgrade the drives without putting the appliance into maintenance mode. 
 
 .What you'll need
 
 * The storage appliance has an Optimal status.
 * All drives have an Optimal status.
 * You have the latest version of SANtricity System Manager installed that is compatible with your StorageGRID version.
-* You have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
+* If you xxxxxxxx, you have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
 +
 NOTE: Maintenance mode interrupts the connection to the storage controller, stopping all I/O activity and placing all drives offline.
 +
@@ -15,10 +15,11 @@ IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID applia
 
 .Steps
 
-. Confirm that the appliance is in xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[maintenance mode].
+. If xxxxx, confirm that the appliance is in xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[maintenance mode].
 
 . Access SANtricity System Manager using one of these methods:
  ** Use the StorageGRID Appliance Installer and select *Advanced* > *SANtricity System Manager*
+ ** Use the Grid Manager and select *NODES* > *Storage Node* > *SANtricity System Manager* 
  ** Use SANtricity System Manager by browsing to the storage controller IP: +
 `*https://_Storage_Controller_IP_*`
 . Enter the SANtricity System Manager administrator username and password, if required.
@@ -26,7 +27,7 @@ IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID applia
  .. From SANtricity System Manager, select *SUPPORT* > *Upgrade Center*.
  .. Under Drive Firmware upgrade, select *Begin Upgrade*.
 +
-The Upgrade Drive Firmware displays the drive firmware files currently installed.
+The Upgrade Drive Firmware page displays the drive firmware files currently installed.
 
  .. Note the current drive firmware revisions and drive identifiers in the Current Drive Firmware column.
 +
