@@ -127,7 +127,7 @@ Security tasks include:
 
 * xref:../admin/using-storagegrid-security-certificates.adoc[Using security certificates]
 * xref:../admin/kms-configuring.adoc[Configuring key management servers]
-* Configuring the settings for a xref:../admin/configuring-storage-proxy-settings.adoc[Storage proxy] or an xref:/../admin/configuring-admin-proxy-setting.adoc[Admin proxy] proxy.
+* Configuring the settings for a xref:../admin/configuring-storage-proxy-settings.adoc[Storage proxy] or an xref:../admin/configuring-admin-proxy-setting.adoc[Admin proxy] 
 * Controlling firewall settings
 * Grid passwords
 * Security settings
@@ -150,6 +150,7 @@ Monitoring tasks include:
 === Access control tasks
 
 Access control tasks include:
+
 * xref:../admin/using-identity-federation.adoc[Using identity federation]
 * xref:../admin/managing-admin-groups.adoc[Managing admin groups]
 * xref:../admin/managing-users.adoc[Managing admin users]
@@ -167,8 +168,8 @@ Maintenance tasks include:
 
 * xref:../maintain/decommission-procedure.adoc[Decommission operations] to remove unused grid nodes and sites
 * xref:../expand/index.adoc[Expansion operations] to add new grid nodes and sites.
-* xref:../maintain/grid-node-recovery-procedures.adoc[Grid node recovery operations] to replace a failed node and restore data
-* xref:../maintain/rename-grid-site-node-overview.adoc[Rename operations] to change the display names of your grid, sites, and nodes
+* xref:../maintain/grid-node-recovery-procedures.adoc[Grid node recovery procedures] to replace a failed node and restore data
+* xref:../maintain/rename-grid-site-node-overview.adoc[Rename procedures] to change the display names of your grid, sites, and nodes
 * xref:../troubleshoot/verifying-object-integrity.adoc[Object existence check operations] to verify the existence (although not the correctness) of object data.
 * Volume restoration
 
@@ -176,7 +177,7 @@ Maintenance tasks include:
 
 System maintenance tasks you can perform include:
 
-* xref:../admin/viewing-storagegrid-license-information.adoc[Viewing StorageGRID license information] or xref:../admin/updating-storagegrid-license-information.adoc[uploading license information]
+* xref:../admin/viewing-storagegrid-license-information.adoc[Viewing StorageGRID license information] or xref:../admin/updating-storagegrid-license-information.adoc[updating license information]
 * Generating and downloading a xref:../maintain/downloading-recovery-package.adoc[Recovery Package]
 * Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances
 
