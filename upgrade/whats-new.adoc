@@ -45,6 +45,9 @@ When you install StorageGRID 11.7 on a new grid, storage pools are automatically
 
 == Kevin's what's new
 
+=== NewerNoncurrentVersions threshold for S3 buckets 
+
+The `NewerNoncurrentVersions` action in the bucket lifecycle configuration specifies the number of noncurrent versions retained in a versioned S3 bucket. This threshold overrides lifecycle rules provided by ILM. See xref:../ilm/how-objects-are-deleted.adoc[How objects are deleted].
 
 == Lisa's what's new
 
