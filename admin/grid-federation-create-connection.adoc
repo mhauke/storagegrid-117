@@ -1,0 +1,128 @@
+---
+permalink: admin/grid-federation-create-connection.html
+sidebar: sidebar
+keywords: grid federation, create connection
+summary: 'You can create a grid federation connection between two StorageGRID systems to synchronize certain tenant account details (account sync) or to replicate object data (cross grid replication) between two grids.'
+---
+= Create a grid federation connection
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can create a _grid federation connection_ between two StorageGRID systems to synchronize certain tenant account details (_account sync_) or to replicate object data (_cross grid replication_) between two grids. 
+
+.What you'll need
+
+* You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the Root access permission for both grids.
+* You have the provisioning passphrase for both grids.
+* You have configured high availability (HA) groups on both grids.
+
+== Start the connection on the first grid
+
+To start a grid federation connection, enter connection details on the first grid and download the verification package.
+
+Perform these steps on the StorageGRID system you want to start the connection from.
+
+. Sign in to the Grid Manager.
+
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+. Select *Add connection* > *Start a connection*.
+
+. Enter details for the connection.
++
+[cols="1a,3a" options="header"]
+|===
+| Field| Description
+
+|Connection name
+|A unique name to help you recognize this connection, for example, Grid A-Grid B connection.
+
+|FQDN or IP for local grid
+|The fully qualified domain name (FQDN) of the grid you are currently signed into or a virtual IP (VIP) address of an HA group on this grid.
+
+If you provide an FQDN, confirm that your DNS server includes one or more entries to map this name to the VIP addresses of an HA group on the local grid.
+
+|Port
+|The port you want to use for this connection. You can enter any value between  1 and 65535.
+
+Both grids in this grid federation connection will use the same port. You must ensure that no node in the HA groups for either grid uses this port for other connections.
+
+|Certificate valid days
+|The number of days you want the security certificate for this grid federation connection to be valid. This value defaults to 730 days (2 years), but you can enter any value between 1 and 762 days.
+
+The grid federation certificate is automatically generated when you save the connection.
+
+|Local grid provisioning passphrase 
+|The provisioning passphrase for the grid you are signed in to.
+
+|FQDN or IP for remote grid
+|The fully qualified domain name (FQDN) of the grid you want to connect to or a virtual IP (VIP) address of an HA group on the other grid.
+
+If you provide an FQDN, confirm that your DNS server includes one or more entries to map this name to the VIP addresses of an HA group on the remote grid.
+
+|===
+
+
+. Select *Save and continue*.
+
+. For the Download verification package step, select *Download verification file*.
+
+. When the green check mark appears, locate the downloaded file (`_connection-name_.grid-federation`), and select *Close*.
+
+== Upload connection details on the second grid
+
+Perform these steps on the StorageGRID system you are connecting to.
+
+. Sign in to the Grid Manager.
+
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+. Select *Add connection* > *Upload verification file*. 
+
+. Select *Upload verification file*.
+
+. Browse to the file you downloaded from the other grid (`_connection-name_.grid-federation`) 
++
+The details you entered are shown. The 
++
+image:../media/grid_federation_upload.png[Grid federation-Upload verification package]
+
+. Enter the provisioning passphrase for the grid you are currently signed in to.
+
+. Select *Save and test*.
++
+If the connection can be established, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
+
+
+== Edit a grid federation connection
+
+== Delete a grid federation connection
+
+You can delete a grid federation connection at any time, and you can delete a connection from either grid.
+
+After you delete a connection, you can no longer synchronize tenant account details or replicate object data between grids. However, any account information that was previously sync'ed or any object data that was previously replicated between grids is not deleted. If you want to delete this information from either grid, you must delete it manually.
+
+Perform these steps from either grid in the grid federation connection.
+
+. Sign in to the Grid Manager.
+
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+. On the Grid federation page, select the check box for each connection you want to delete. To delete all connections, select the check box in the table header.
+
+. Select *Delete*.
+
+. Review the confirmation message, and select *Yes*.
+
+
+
+
+
+
+
+
+
+
+
