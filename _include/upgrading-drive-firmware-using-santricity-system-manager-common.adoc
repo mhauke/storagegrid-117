@@ -1,25 +1,33 @@
 //This include file is used for the SG600 and the SG5700
 [.lead]
-Upgrade the firmware on the drives in your appliance to make sure you have all the latest features and bug fixes. In some cases, you can upgrade the drives without putting the appliance into maintenance mode. 
+Upgrade the firmware on the drives in your appliance to make sure you have all the latest features and bug fixes. 
 
 .What you'll need
 
 * The storage appliance has an Optimal status.
 * All drives have an Optimal status.
 * You have the latest version of SANtricity System Manager installed that is compatible with your StorageGRID version.
-* If you xxxxxxxx, you have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
+* If you performing an offline upgrade, you have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
 +
 NOTE: Maintenance mode interrupts the connection to the storage controller, stopping all I/O activity and placing all drives offline.
 +
 IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID appliance at a time. Doing so might cause data unavailability, depending on your deployment model and ILM policies.
 
+.About this task
+
+There are two ways you can upgrade your appliance drive firmware: 
+
+*Online*: The drives are upgraded one at a time while the appliance is performing I/O (input/output operations). This method does not require you to place the appliance in maintenance mode. However, the online method might take several hours longer than the offline method. 
+
+*Offline*: The drives are upgraded in parallel while the appliance is in maintenance mode. This method is the fastest and is recommended. You must stop all I/O activity on any volumes that use the drives you are upgrading when you select this upgrade method. Drives that do not have redundancy must be processed as an offline operation. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. The offline (parallel) upgrade is typically faster than the online (default) method, but requires that the appliance be placed into maintenance mode. 
+
 .Steps
 
-. If xxxxx, confirm that the appliance is in xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[maintenance mode].
+. If you are performing an offline upgrade, confirm that the appliance is in xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[maintenance mode].
 
 . Access SANtricity System Manager using one of these methods:
  ** Use the StorageGRID Appliance Installer and select *Advanced* > *SANtricity System Manager*
- ** Use the Grid Manager and select *NODES* > *Storage Node* > *SANtricity System Manager* 
+ ** Use the Grid Manager and select *NODES* > *_Storage Node_* > *SANtricity System Manager* 
  ** Use SANtricity System Manager by browsing to the storage controller IP: +
 `*https://_Storage_Controller_IP_*`
 . Enter the SANtricity System Manager administrator username and password, if required.
@@ -74,11 +82,17 @@ Only drives that are compatible appear.
 +
 The selected firmware for the drive appears in *Proposed Firmware*. If you must change this firmware, select *Back*.
 
- .. Select *Offline (parallel)* upgrade.
+ .. Select the type of upgrade you want to perform: 
+ * *Online (default)* — Shows the drives that can support a firmware download while the storage array is processing I/O. You do not have to stop I/O to the associated volumes using these drives when you select this upgrade method.  
+ +
+NOTE: An online upgrade can take several hours longer than an offline upgrade.
+
+* *Offline (parallel)* — Shows the drives that can support a firmware download only while all I/O activity is stopped on any volumes that use the drives. 
+
+*If possible, you should use the *Offline* method to upgrade the drive firmware. 
+
 +
-You can use the offline upgrade method because the appliance is in maintenance mode, where I/O activity is stopped for all drives and all volumes.
-+
-CAUTION: Do not proceed unless you are certain that the appliance is in maintenance mode. Failure to place the appliance into maintenance mode prior to initiating an offline drive firmware update might cause data loss. 
+CAUTION: If you want to use the Offline (parallel) upgrade, Do not proceed unless you are certain that the appliance is in maintenance mode. Failure to place the appliance into maintenance mode prior to initiating an offline drive firmware update might cause data loss. 
 
  .. In the first column of the table, select the drive or drives you want to upgrade.
 +
@@ -159,7 +173,8 @@ Contact technical support to resolve this issue.
  ** *More than 4 critical MEL entries in the last 7 days*
 +
 Contact technical support to resolve this issue.
-. If this procedure completed successfully and you have additional procedures to perform while the node is in maintenance mode, perform them now. When you are done, or if you experienced any failures and want to start over, select *Advanced* > *Reboot Controller*, and then select one of these options:
+
+.. IF you were using the *Offline* upgrade and this procedure completed successfully, perform any additional maintenance procedures you might have while the node is in maintenance mode. When you are done, or if you experienced any failures and want to start over, select *Advanced* > *Reboot Controller*, and then select one of these options:
 
 +
 * Select *Reboot into StorageGRID*
