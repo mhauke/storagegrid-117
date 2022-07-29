@@ -45,7 +45,7 @@ image::../media/ec_profile_used_in_ilm_rule.png[EC Profile Used in ILM Rule]
  .. Select *ILM* > *Rules*.
  .. For each rule listed, select the radio button and review the retention diagram to determine if the rule uses the Erasure Coding profile you want to deactivate.
 +
-In the example, the *Three site EC for larger objects* rule uses a storage pool called *All 3 Sites* and the *All sites 6-3* Erasure Coding profile. Erasure Coding profiles are represented by this icon: image:../media/icon_nms_erasure_coded.gif[EC profiles icon]
+In the example, the *Three site EC for larger objects* rule uses a storage pool called *All 3 Sites* and the *All sites 6-3* Erasure Coding profile. Erasure Coding profiles are represented by this color: image:../media/retention_diag_ec_copy_color.png[EC profiles color]
 +
 image::../media/ilm_rule_ec_profile_used.png[ILM Rule EC Profile Used]
 

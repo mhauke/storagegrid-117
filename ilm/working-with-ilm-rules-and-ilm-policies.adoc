@@ -32,8 +32,8 @@ To remove an ILM rule that is not currently used:
 
 . Select *ILM* > *Rules*.
 . Confirm that the rule you want to remove is not used in the active policy or the proposed policy.
-. If the rule you want to remove is not in use, select the rule and select *Remove*.
-. Select *OK* to confirm that you want to remove the ILM rule.
+. If the rule you want to remove is not in use, select the rule and select *Delete*. You can select multiple rules and remove all of them at the same time.
+. Select *Yes* to confirm that you want to remove the ILM rule.
 +
 The ILM rule is removed.
 +
@@ -78,7 +78,7 @@ The new ILM rule is created.
 
 == View ILM metrics
 
-You can view metrics for ILM, such as the number of objects in the queue and the evaluation rate. You can monitor these metrics to determine system performance. A large queue or evaluation rate might indicate that the system is not able to keep up with the ingest rate, the load from the client applications is too great, or that some abnormal condition exists.
+You can view metrics for ILM, such as the number of objects in the queue and the evaluation rate. You can monitor these metrics to determine system performance. A large queue or evaluation rate might indicate that the system is not able to keep up with the ingest rate, the load from the client applications is excessive, or that some abnormal condition exists.
 
 .Steps
 

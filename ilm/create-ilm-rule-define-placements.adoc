@@ -114,19 +114,20 @@ When using Cloud Storage Pools, keep these rules in mind:
 
 . Select *Refresh* to update the Retention Diagram and to confirm your placement instructions.
 +
-Each line in the diagram shows where and when object copies will be placed. The type of copy is represented by one of the following icons:
+Each line in the diagram shows where and when object copies will be placed. The color of a line represents the type of copy:
 +
 [cols="1a,4a"]
 |===
-|image:../media/icon_nms_replicated.gif[Icon for replicated copies]
+|image:../media/retention_diag_replicated_copy_color.png[Color for replicated copy]
 |Replicated copy
 
-|image:../media/icon_nms_erasure_coded.gif[Icon for erasure coded copy]
+|image:../media/retention_diag_ec_copy_color.png[Color for erasure coded copy]
 |Erasure-coded copy
 
-|image:../media/icon_cloud_storage_pool.gif[Cloud Storage Pool icon]
+|image:../media/retention_diag_csp_copy_color.png[Color for Cloud Storage Pool copy]
 |Cloud Storage Pool copy
 |===
+
 In this example, two replicated copies will be saved to two storage pools (DC1 and DC2) for one year. Then, an erasure-coded copy will be saved for an additional 10 years, using a 6+3 erasure-coding scheme at three sites. After 11 years, the objects will be deleted from StorageGRID.
 +
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
