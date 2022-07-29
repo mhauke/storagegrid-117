@@ -40,6 +40,10 @@ Depending on your requirements, you can do either of the following to obtain the
 +
 NOTE: If you are configuring an S3 application, using the S3 setup wizard is recommended unless you know you have special requirements or your implementation will require significant customization. 
 
+* *Use the xref:../fabricpool/use-fabricpool-setup-wizard.adoc[FabricPool setup wizard]*. Similar to the S3 setup wizard, the FabricPool setup wizard helps you to quickly configure required values and outputs a file that you can use when you configure a FabricPool cloud tier in ONTAP. 
++
+NOTE: If you plan to use StorageGRID as the object storage system for a FabricPool cloud tier, using the FabricPool setup wizard is recommended unless you know you have special requirements or your implementation will require significant customization. 
+
 * *Configure items manually*. If you are connecting to a Swift application (or you are connecting to an S3 application and prefer not to use the S3 setup wizard), you can obtain the required values by performing the configuration manually. Follow these steps:
 +
 . Configure the high availability (HA) group you want to use for the S3 or Swift application. See xref:configure-high-availability-group.adoc[Configure high availability groups].
