@@ -2,14 +2,14 @@
 permalink: admin/grid-federation-create-connection.html
 sidebar: sidebar
 keywords: grid federation, create connection
-summary: 'You can create a grid federation connection between two StorageGRID systems to synchronize certain tenant account details (account sync) or to replicate object data (cross grid replication) between two grids.'
+summary: 'You can create a grid federation connection between two StorageGRID systems to synchronize certain tenant account details (account sync) or to replicate object data (cross-grid replication) between two grids.'
 ---
 = Create a grid federation connection
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can create a _grid federation connection_ between two StorageGRID systems to synchronize certain tenant account details (_account sync_) or to replicate object data (_cross grid replication_) between two grids. 
+You can create a grid federation connection between two StorageGRID systems to synchronize certain tenant account details (_account sync_) or to replicate object data (_cross-grid replication_) between two grids. 
 
 .What you'll need
 
@@ -17,6 +17,7 @@ You can create a _grid federation connection_ between two StorageGRID systems to
 * You have the Root access permission for both grids.
 * You have the provisioning passphrase for both grids.
 * You have configured high availability (HA) groups on both grids.
+* If you plan to use fully qualified domain names (FQDN) for each grid (recommended), you have added the appropriate entries to your DNS server. The entries should map the FQDN for each grid to the virtual IP (VIP) addresses for the HA group.
 
 == Start the connection on the first grid
 
@@ -40,36 +41,32 @@ Perform these steps on the StorageGRID system you want to start the connection f
 |A unique name to help you recognize this connection, for example, Grid A-Grid B connection.
 
 |FQDN or IP for local grid
-|The fully qualified domain name (FQDN) of the grid you are currently signed into or a virtual IP (VIP) address of an HA group on this grid.
-
-If you provide an FQDN, confirm that your DNS server includes one or more entries to map this name to the VIP addresses of an HA group on the local grid.
+|The FQDN of the grid you are currently signed into or a VIP address of an HA group on this grid.
 
 |Port
-|The port you want to use for this connection. You can enter any value between  1 and 65535.
+|The port you want to use for this connection. You can enter any value between 1 and 65,535.
 
 Both grids in this grid federation connection will use the same port. You must ensure that no node in the HA groups for either grid uses this port for other connections.
 
 |Certificate valid days
 |The number of days you want the security certificate for this grid federation connection to be valid. This value defaults to 730 days (2 years), but you can enter any value between 1 and 762 days.
 
-The grid federation certificate is automatically generated when you save the connection.
+StorageGRID automatically generates this security certificate when you save the connection.
 
 |Local grid provisioning passphrase 
 |The provisioning passphrase for the grid you are signed in to.
 
 |FQDN or IP for remote grid
-|The fully qualified domain name (FQDN) of the grid you want to connect to or a virtual IP (VIP) address of an HA group on the other grid.
+|The FQDN of the grid you want to connect to or a VIP address of an HA group on the other grid.
 
-If you provide an FQDN, confirm that your DNS server includes one or more entries to map this name to the VIP addresses of an HA group on the remote grid.
 
 |===
-
 
 . Select *Save and continue*.
 
 . For the Download verification package step, select *Download verification file*.
 
-. When the green check mark appears, locate the downloaded file (`_connection-name_.grid-federation`), and select *Close*.
+. When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`), and select *Close*.
 
 == Upload connection details on the second grid
 
@@ -85,7 +82,7 @@ Perform these steps on the StorageGRID system you are connecting to.
 
 . Browse to the file you downloaded from the other grid (`_connection-name_.grid-federation`) 
 +
-The details you entered are shown. The 
+The details you entered are shown.
 +
 image:../media/grid_federation_upload.png[Grid federation-Upload verification package]
 
