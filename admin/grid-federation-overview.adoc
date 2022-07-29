@@ -2,36 +2,35 @@
 permalink: admin/grid-federation-overview.html
 sidebar: sidebar
 keywords: grid federation, cross-grid replication, account sync, cgr, disaster recovery
-summary: 'You can create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery.'
+summary: 'You can use grid federation to replicate tenants and their objects between two StorageGRID systems for disaster recovery.'
 ---
 = Use grid federation: Overview
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery.
+You can use grid federation to replicate tenants and their objects between two StorageGRID systems for disaster recovery.
 
-== What is grid federation?
-Grid federation is a trusted and secure connection between two StorageGRID systems that is used for disaster recovery. 
+== What is a grid federation connection?
+
+A grid federation connection is a trusted and secure connection between high availability (HA) groups in two discrete StorageGRID systems. A grid federation connection is a prerequisite for both account sync and cross-grid replication.
+
+
+== What is account sync?
+
+Account sync is the automatic replication of tenant accounts and tenant details between two StorageGRID systems. 
+
+* *Account sync for tenants*: To enable account sync for a tenant, a grid admin creates an S3 tenant account on either grid in a grid federation connection. When creating the tenant, the admin assigns a permission that allows the tenant to use the grid federation connection. Saving a tenant that is allowed to use both grids automatically creates the same tenant and the same root user on both grids.
+
+* *Account sync for tenant details*:, the tenant creates a new S3 access key, group, or user. If account sync is enabled for the item, the new key, group, or user is automatically copied to the tenant on the other grid. Any subsequent changes to the item are also sync'd.
+
+Account sync is required for cross-grid replication.
+
 
 === What is cross-grid replication?
 
-Objects in specific buckets in grid A can be replicated to the corresponding buckets in grid B.
+After the grid administrator establishes a grid federation connection between two grids and creates a new S3 tenant with permission to use that connection, the tenant can create new S3 buckets on each grid and optionally enable cross-grid replication for those buckets. If cross-grid replication is enabled, all operations to add or remove objects to the bucket are automatically replicated on the other grid.
 
-=== What is account sync?
-
-// details here. Tenants, keys, groups, and users. 
-
-== How do you configure grid federation?
-
-. From the local grid, start the connection. Enter the hostname for both grids, specify which port will be used, and enter the provisioning passphrase for the local grid. Download the verification file.
-. From the remote grid, complete the connection. Upload the verification file and enter the remote grid's provisioning passphrase. Then, test the connection.
-
-. Create tenants and enable the *Allow account sync* and *Allow cross-grid replication* check boxes.
-
-. For the tenant account, create buckets that can be replicated.
-
-// workflow here
 
 == What are the requirements?
 
