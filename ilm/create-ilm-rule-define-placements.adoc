@@ -127,9 +127,9 @@ Each line in the diagram shows where and when object copies will be placed. The 
 |image:../media/retention_diag_csp_copy_color.png[Color for Cloud Storage Pool copy]
 |Cloud Storage Pool copy
 |===
-
++
 In this example, two replicated copies will be saved to two storage pools (DC1 and DC2) for one year. Then, an erasure-coded copy will be saved for an additional 10 years, using a 6+3 erasure-coding scheme at three sites. After 11 years, the objects will be deleted from StorageGRID.
-
++
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
 
 . Select *Continue*. xref:create-ilm-rule-select-ingest-behavior.adoc[Step 3 (Select ingest behavior)] of the Create an ILM rule wizard appears.
