@@ -629,7 +629,7 @@ This alert is triggered when an alert email notification fails or a test email (
 . If you are unable to resolve the problem, contact technical support.
 |===
 
-== Expiration alerts
+== Expiration of certificate alerts
 
 [cols="1a,2a" options="header"]
 |===
@@ -708,6 +708,24 @@ For more information about managing load balancer endpoints, see the xref:../adm
 . Select *Send test messages* to determine why logs cannot be forwarded to the external syslog server.
 . Resolve any reported issues.
 |===
+
+== Grid federation alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description and recommended actions
+
+|Grid federation connection failure
+|The grid federation connection between the local and remote grids is not working.
+
+. Review the settings on the Grid Federation page for both the local and the remote grids. Confirm that all values are correct. See xref:../admin/grid-federation-create-connection.adoc[Create a grid federation connection].
+
+. Review the certificates used for the connection. Make sure that certificates have not expired and that the details are valid.
+. Confirm that all Admin and Gateway Nodes in the local and remote grids are online and available. Resolve any alerts that might be affecting these nodes and try again.
+. If you provided a fully qualified domain name (FQDN) for the local or remote grid, confirm the DNS server is online and available.
+
+|===
+
 
 == Grid Network alerts
 
