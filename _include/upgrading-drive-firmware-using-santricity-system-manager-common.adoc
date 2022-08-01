@@ -18,13 +18,13 @@ IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID applia
 There are two ways you can upgrade your appliance drive firmware: 
 
 *Online*: The drives are upgraded one at a time while the appliance is performing I/O (input/output operations). This method does not require you to place the appliance in maintenance mode. However, system performance might be impacted and it might take several hours longer than the offline method. 
-+
-NOTE:  Drives that do not have redundancy must be processed as an offline operation. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. 
+
+NOTE: Drives that do not have redundancy must be processed as an offline operation. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. 
 
 *Offline*: 
 The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy (RAID 0), or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped to the associated volumes using the drives to be upgraded. You must stop all I/O to any associated volumes using these drives.
 
- The offline method is faster than the online method and is recommended, but requires that the appliance be placed into maintenance mode. 
+The offline method is faster than the online method and is recommended.
 
 .Steps
 
@@ -89,14 +89,14 @@ The selected firmware for the drive appears in the *Proposed Firmware* column. I
 
  .. Select the type of upgrade you want to perform: 
  * *Upgrade all drives online* — Upgrades the drives that can support a firmware download while the storage array is processing I/O. You do not have to stop I/O to the associated volumes using these drives when you select this upgrade method.  
- +
-NOTE: An online upgrade can take several hours longer than an offline upgrade.
-
-* *Upgrade all drives offline (parallel)* — Upgrades the drives that can support a firmware download only while all I/O activity is stopped on any volumes that use the drives. 
-
-*If possible, you should use the *Offline* method to upgrade the drive firmware. 
 
 +
+NOTE: An online upgrade can take several hours longer than an offline upgrade.
+
+* *Upgrade all drives offline (parallel)* — Upgrades the drives that can support a firmware download only while all I/O activity is stopped on any volumes that use the drives. You must place the appliance into maintenance mode before using this method. 
+
+If possible, you should use the *Offline* method to upgrade the drive firmware. 
+
 CAUTION: If you want to use the Offline (parallel) upgrade, Do not proceed unless you are certain that the appliance is in maintenance mode. Failure to place the appliance into maintenance mode prior to initiating an offline drive firmware update might cause data loss. 
 
  .. In the first column of the table, select the drive or drives you want to upgrade.
@@ -179,7 +179,7 @@ Contact technical support to resolve this issue.
 +
 Contact technical support to resolve this issue.
 
-.. IF you were using the *Offline* upgrade and this procedure completed successfully, perform any additional maintenance procedures you might have while the node is in maintenance mode. When you are done, or if you experienced any failures and want to start over, select *Advanced* > *Reboot Controller*, and then select one of these options:
+.. If you were using the *Offline* upgrade and this procedure completed successfully, perform any additional maintenance procedures you might have while the node is in maintenance mode. When you are done, or if you experienced any failures and want to start over, select *Advanced* > *Reboot Controller*, and then select one of these options:
 
 +
 * Select *Reboot into StorageGRID*
