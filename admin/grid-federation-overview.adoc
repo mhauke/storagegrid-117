@@ -18,23 +18,38 @@ A grid federation connection is a trusted and secure connection between high ava
 
 == What is account sync?
 
-Account sync is the automatic replication of tenant accounts and tenant details between two StorageGRID systems. 
+Account sync is the automatic replication of S3 tenant accounts and account details between two StorageGRID systems. The grid admin must enable account sync for a tenant before that tenant can enable account sync of account details.
 
-* *Account sync for tenants*: To enable account sync for a tenant, a grid admin creates an S3 tenant account on either grid in a grid federation connection. When creating the tenant, the admin assigns a permission that allows the tenant to use the grid federation connection. Saving a tenant that is allowed to use both grids automatically creates the same tenant and the same root user on both grids.
+. *Enable account sync for a tenant*: The grid admin creates an S3 tenant account on the primary grid in a grid federation connection. When creating the tenant, the admin assigns a permission that allows the tenant to use the grid federation connection. When a tenant with this permission is saved, the tenant and the tenant's root user are automatically created on both grids.
 
-* *Account sync for tenant details*:, the tenant creates a new S3 access key, group, or user. If account sync is enabled for the item, the new key, group, or user is automatically copied to the tenant on the other grid. Any subsequent changes to the item are also sync'd.
+. *Sync tenant details*: If a new tenant has permission to use the grid federation connection, any user of that tenant can optionally enable account sync for each new S3 access key, group, or user. When a new key, group, or user with account sync enabled is saved, the item is automatically copied to the tenant on the other grid. Subsequent changes to the item are also synchronized.
 
 Account sync is required for cross-grid replication.
 
-
 === What is cross-grid replication?
 
-After the grid administrator establishes a grid federation connection between two grids and creates a new S3 tenant with permission to use that connection, the tenant can create new S3 buckets on each grid and optionally enable cross-grid replication for those buckets. If cross-grid replication is enabled, all operations to add or remove objects to the bucket are automatically replicated on the other grid.
+After the grid administrator establishes a grid federation connection between two grids and creates a new S3 tenant with permission to use that connection, the tenant can create new S3 buckets on each grid and optionally enable cross-grid replication for those buckets. When cross-grid replication is enabled for a bucket, all operations to add or remove objects to the bucket are automatically replicated on the other grid.
 
 
 == What are the requirements?
 
-// List of considerations and requirements here
+* A grid federation connection is a connection between two StorageGRID systems. 
+
+* A grid can have grid federation connection with one or more grids. However, these grid federation connections are independent. That is, if grid A has one connection with grid B and a second connection with grid C, there is no connection between grid B and grid C.
+
+* Grid federation connections are bidirectional. The connection can be started on either grid.
+
+* Each grid must include one or more Admin or Gateway Nodes.
+* Grid federation connections are made between high availability (HA) groups of Gateway and Admin Nodes on each grid. You must configure a high availability (HA) group on each grid.
++
+Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface.
++ 
+See xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
+
+* If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must add the appropriate entries to your DNS server. The entries should map the FQDN for each grid to the virtual IP (VIP) addresses for its HA group.
+
+* Account sync and cross-grid replication only apply to S3 tenant accounts. These features are not available for Swift tenant accounts.
+
 
 
 

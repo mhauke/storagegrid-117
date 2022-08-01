@@ -17,7 +17,7 @@ You can create a grid federation connection between two StorageGRID systems to s
 * You have the Root access permission for both grids.
 * You have the provisioning passphrase for both grids.
 * You have configured high availability (HA) groups on both grids.
-* If you plan to use fully qualified domain names (FQDN) for each grid (recommended), you have added the appropriate entries to your DNS server. The entries should map the FQDN for each grid to the virtual IP (VIP) addresses for the HA group.
+* If you plan to use fully qualified domain names (FQDN) for each grid (recommended), you have added the appropriate entries to your DNS server.
 
 == Start the connection on the first grid
 
@@ -95,7 +95,61 @@ image:../media/grid_federation_upload.png[Grid federation-Upload verification pa
 If the connection can be established, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
 
 
-== Edit a grid federation connection
+== View and edit grid federation connections
+
+You can view details for existing grid federation connections. You can also change the connection's name and rotate the associated certificate on both grids before it expires.
+
+
+* To view basic information for all grid federation connections, review the table on the Grid federation page. 
+
+* To view all details about a specific connection, select the connections's name in the table.
+
+* To edit a grid federation connection, use the *Actions* menu on the Grid federation page or the details page for a specific connection.
++
+IMPORTANT: After editing an connection, you might need to wait up to 15 minutes for your changes to be applied.
++
+[cols="1a, 2a,2a" options="header"]
+|===
+|Task | Actions menu | Details page
+
+|Edit connection details
+
+|.. Select the check box for the connection. 
+.. Select *Actions* > *Edit*.
+.. Enter the new details.
+.. Select *Save*.
+
+|.. Select the connection name to display the details.
+.. Select the edit icon image:../media/icon_edit_tm.png[Edit icon].
+.. Enter the new details.
+.. Select *Save*.
+
+|Rotate connection certificate
+
+|.. Select the check box for the connection. 
+.. Select *Actions* > *Rotate certificate*.
+.. Upload or generate a new custom certificate.
+.. Select *Save changes*.
+
+|.. Select the connection name to display the details.
+.. Select the *Certificate* tab.
+.. Select *Rotate certificate*.
+.. Upload or generate a new custom certificate.
+.. Select *Save changes*.
+
+|Remove permission for tenant to use grid connection
+
+|.. Select the Federation features tab.
+.. For Account synchronization, select *View more*.
+.. Select a tenant who is using a grid federation connection on this grid. 
+.. Select *Remove relationship*.
+.. Select *Yes*.
+
+
+| 
+|===
+
+
 
 == Delete a grid federation connection
 
