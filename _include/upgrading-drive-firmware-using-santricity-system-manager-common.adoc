@@ -1,4 +1,4 @@
-//This include file is used for the SG600 and the SG5700
+//This include file is used for the SG600 and the SG5700 and all storage appliances after 11.6.
 [.lead]
 Upgrade the firmware on the drives in your appliance to make sure you have all the latest features and bug fixes. 
 
@@ -17,9 +17,14 @@ IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID applia
 
 There are two ways you can upgrade your appliance drive firmware: 
 
-*Online*: The drives are upgraded one at a time while the appliance is performing I/O (input/output operations). This method does not require you to place the appliance in maintenance mode. However, the online method might take several hours longer than the offline method. 
+*Online*: The drives are upgraded one at a time while the appliance is performing I/O (input/output operations). This method does not require you to place the appliance in maintenance mode. However, system performance might be impacted and it might take several hours longer than the offline method. 
++
+NOTE:  Drives that do not have redundancy must be processed as an offline operation. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. 
 
-*Offline*: The drives are upgraded in parallel while the appliance is in maintenance mode. This method is the fastest and is recommended. You must stop all I/O activity on any volumes that use the drives you are upgrading when you select this upgrade method. Drives that do not have redundancy must be processed as an offline operation. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. The offline (parallel) upgrade is typically faster than the online (default) method, but requires that the appliance be placed into maintenance mode. 
+*Offline*: 
+The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy (RAID 0), or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped to the associated volumes using the drives to be upgraded. You must stop all I/O to any associated volumes using these drives.
+
+ The offline method is faster than the online method and is recommended, but requires that the appliance be placed into maintenance mode. 
 
 .Steps
 
@@ -80,14 +85,14 @@ You can select up to four drive firmware files, one at a time. If more than one 
 +
 Only drives that are compatible appear.
 +
-The selected firmware for the drive appears in *Proposed Firmware*. If you must change this firmware, select *Back*.
+The selected firmware for the drive appears in the *Proposed Firmware* column. If you must change this firmware, select *Back*.
 
  .. Select the type of upgrade you want to perform: 
- * *Online (default)* — Shows the drives that can support a firmware download while the storage array is processing I/O. You do not have to stop I/O to the associated volumes using these drives when you select this upgrade method.  
+ * *Upgrade all drives online* — Upgrades the drives that can support a firmware download while the storage array is processing I/O. You do not have to stop I/O to the associated volumes using these drives when you select this upgrade method.  
  +
 NOTE: An online upgrade can take several hours longer than an offline upgrade.
 
-* *Offline (parallel)* — Shows the drives that can support a firmware download only while all I/O activity is stopped on any volumes that use the drives. 
+* *Upgrade all drives offline (parallel)* — Upgrades the drives that can support a firmware download only while all I/O activity is stopped on any volumes that use the drives. 
 
 *If possible, you should use the *Offline* method to upgrade the drive firmware. 
 
@@ -179,7 +184,7 @@ Contact technical support to resolve this issue.
 +
 * Select *Reboot into StorageGRID*
 +
-* Select *Reboot into Maintenance Mode* to reboot the controller with the node remaining in maintenance mode.  Select this option if you experienced any failures during the procedure and want to start over.  After the node finishes rebooting into maintenance mode, restart from the appropriate step in the procedure that failed.
+* Select *Reboot into Maintenance Mode* to reboot the controller with the node remaining in maintenance mode. Select this option if you experienced any failures during the procedure and want to start over. After the node finishes rebooting into maintenance mode, restart from the appropriate step in the procedure that failed.
 
 +
 image::../media/reboot_controller_from_maintenance_mode.png[Reboot controller in maintenance mode]
