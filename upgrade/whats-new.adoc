@@ -47,7 +47,7 @@ When you install StorageGRID 11.7 on a new grid, storage pools are automatically
 
 === Certificate subject optional
 
- The certificate subject field is now optional. If this field is left blank, the subject for a generated certificate will be the first domain name or IP address.
+ The certificate subject field is now optional. If this field is left blank, the generated certificate uses the first domain name or IP address as the subject common name (CN).
 
 == Lisa's what's new
 
