@@ -196,7 +196,8 @@ The load balancer endpoint is created. The custom certificate is used for all su
 .. Specify the certificate information:
  ** *Domain name*: One or more fully qualified domain names to include in the certificate. Use an * as a wildcard to represent multiple domain names.
  ** *IP*: One or more IP addresses to include in the certificate.
- ** *Subject*: X.509 subject or distinguished name (DN) of the certificate owner.
+ ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner. + 
+ If no value is entered in this field, the generated certificate uses the first domain name or IP address as the subject common name (CN).
  ** *Days valid*: Number of days after creation that the certificate expires.
 
 .. Select *Generate*.
