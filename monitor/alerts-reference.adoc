@@ -2,14 +2,16 @@
 permalink: monitor/alerts-reference.html
 sidebar: sidebar
 keywords: alerts reference
-summary: 'This reference lists the default alerts that appear in the Grid Manager. As required, you can create custom alert rules to fit your system management approach.'
+summary: 'This reference lists the default alerts that appear in the Grid Manager. Corrective actions are in the alert message you receive.'
 ---
 = Alerts reference
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-This reference lists the default alerts that appear in the Grid Manager. As required, you can create custom alert rules to fit your system management approach.
+This reference lists the default alerts that appear in the Grid Manager. Corrective actions are in the alert message you receive.
+
+As required, you can create custom alert rules to fit your system management approach.
 
 Some of the default alerts use xref:commonly-used-prometheus-metrics.adoc[Prometheus metrics].
 
@@ -17,143 +19,55 @@ Some of the default alerts use xref:commonly-used-prometheus-metrics.adoc[Promet
 
 [cols="1a,2a" options="header"]
 |===
-| Alert name| Description and recommended actions
+| Alert name| Description
 
 |Appliance battery expired
 |The battery in the appliance's storage controller has expired.
 
-. Replace the battery. The steps to remove and replace a battery are included in the procedure for replacing a storage controller. See the instructions for your storage appliance:
- ** xref:../sg5600/index.adoc[SG5600 storage appliances]
- ** xref:../sg5700/index.adoc[SG5700 storage appliances]
-** xref:../sg6000/index.adoc[SG6000 storage appliances]
-. If this alert persists, contact technical support.
-
 |Appliance battery failed
 |The battery in the appliance's storage controller has failed.
-
-. Replace the battery. The steps to remove and replace a battery are included in the procedure for replacing a storage controller. See the instructions for your storage appliance:
- ** xref:../sg5600/index.adoc[SG5600 storage appliances]
- ** xref:../sg5700/index.adoc[SG5700 storage appliances]
-** xref:../sg6000/index.adoc[SG6000 storage appliances]
-. If this alert persists, contact technical support.
 
 |Appliance battery has insufficient learned capacity
 |The battery in the appliance's storage controller has insufficient learned capacity.
 
-. Replace the battery. The steps to remove and replace a battery are included in the procedure for replacing a storage controller. See the instructions for your storage appliance:
- ** xref:../sg5600/index.adoc[SG5600 storage appliances]
- ** xref:../sg5700/index.adoc[SG5700 storage appliances]
-** xref:../sg6000/index.adoc[SG6000 storage appliances]
-. If this alert persists, contact technical support.
-
 |Appliance battery near expiration
 |The battery in the appliance's storage controller is nearing expiration.
-
-. Replace the battery soon. The steps to remove and replace a battery are included in the procedure for replacing a storage controller. See the instructions for your storage appliance:
- ** xref:../sg5600/index.adoc[SG5600 storage appliances]
- ** xref:../sg5700/index.adoc[SG5700 storage appliances]
-** xref:../sg6000/index.adoc[SG6000 storage appliances]
-. If this alert persists, contact technical support.
 
 |Appliance battery removed
 |The battery in the appliance's storage controller is missing.
 
-. Install a battery. The steps to remove and replace a battery are included in the procedure for replacing a storage controller. See the instructions for your storage appliance:
- ** xref:../sg5600/index.adoc[SG5600 storage appliances]
- ** xref:../sg5700/index.adoc[SG5700 storage appliances]
- ** xref:../sg6000/index.adoc[SG6000 storage appliances]
-. If this alert persists, contact technical support.
-
 |Appliance battery too hot
 |The battery in the appliance's storage controller is overheated.
-
-. Determine if there is another alert affecting this node. This alert might be resolved when you resolve the other alert.
-. Investigate possible reasons for the temperature increase, such as a fan or HVAC failure.
-. If this alert persists, contact technical support.
 
 |Appliance BMC communication error
 |Communication with the baseboard management controller (BMC) has been lost.
 
-. Confirm that the BMC is operating normally. Select *NODES*, and then select the *Hardware* tab for the appliance node. Locate the Compute Controller BMC IP field, and browse to that IP.
-. Attempt to restore BMC communications by placing the node into maintenance mode and then powering the appliance off and back on. See the instructions for your appliance:
- ** xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
- ** xref:../sg6000/index.adoc[SG6000 storage appliances]
-
-. If this alert persists, contact technical support.
-
 |Appliance cache backup device failed
 |A persistent cache backup device has failed.
-
-. Determine if there is another alert affecting this node. This alert might be resolved when you resolve the other alert.
-. Contact technical support.
 
 |Appliance cache backup device insufficient capacity
 |There is insufficient cache backup device capacity.
 
-Contact technical support.
-
 |Appliance cache backup device write-protected
 |A cache backup device is write-protected.
-
-Contact technical support.
 
 |Appliance cache memory size mismatch
 |The two controllers in the appliance have different cache sizes.
 
-Contact technical support.
-
 |Appliance compute controller chassis temperature too high
 |The temperature of the compute controller in a StorageGRID appliance has exceeded a nominal threshold.
-
-. Check the hardware components for overheating conditions, and follow the recommended actions:
- ** If you have an SG100, SG1000, or SG6000, use the BMC.
- ** If you have an SG5600 or SG5700, use SANtricity System Manager.
-. If necessary, replace the component. See the instructions for your appliance:
- ** xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
- ** xref:../sg6000/index.adoc[SG6000 storage appliances]
- ** xref:../sg5700/index.adoc[SG5700 storage appliances]
- ** xref:../sg5600/index.adoc[SG5600 storage appliances]
 
 |Appliance compute controller CPU temperature too high
 |The temperature of the CPU in the compute controller in a StorageGRID appliance has exceeded a nominal threshold.
 
-. Check the hardware components for overheating conditions, and follow the recommended actions:
- ** If you have an SG100, SG1000, or SG6000, use the BMC.
- ** If you have an SG5600 or SG5700, use SANtricity System Manager.
-. If necessary, replace the component. See the instructions for your appliance:
-** xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-** xref:../sg5600/index.adoc[SG5600 storage appliances]
-** xref:../sg5700/index.adoc[SG5700 storage appliances]
-** xref:../sg6000/index.adoc[SG6000 storage appliances]
-
 |Appliance compute controller needs attention
 |A hardware fault has been detected in the compute controller of a StorageGRID appliance.
 
-. Check the hardware components for errors, and follow the recommended actions:
- ** If you have an SG100, SG1000, or SG6000, use the BMC.
- ** If you have an SG5600 or SG5700, use SANtricity System Manager.
-. If necessary, replace the component. See the instructions for your appliance:
-** xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-** xref:../sg5600/index.adoc[SG5600 storage appliances]
-** xref:../sg5700/index.adoc[SG5700 storage appliances]
-** xref:../sg6000/index.adoc[SG6000 storage appliances]
-
 |Appliance compute controller power supply A has a problem
-|Power supply A in the compute controller has a problem.This alert might indicate that the power supply has failed or that it has a problem providing power.
-
-. Check the hardware components for errors, and follow the recommended actions:
- ** If you have an SG100, SG1000, or SG6000, use the BMC.
- ** If you have an SG5600 or SG5700, use SANtricity System Manager.
-. If necessary, replace the component. See the instructions for your appliance:
-** xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-** xref:../sg5600/index.adoc[SG5600 storage appliances]
-** xref:../sg5700/index.adoc[SG5700 storage appliances]
-** xref:../sg6000/index.adoc[SG6000 storage appliances]
+|Power supply A in the compute controller has a problem. This alert might indicate that the power supply has failed or that it has a problem providing power.
 
 |Appliance compute controller power supply B has a problem
-|Power supply B in the compute controller has a problem.
-
-This alert might indicate that the power supply has failed or that it has a problem providing power.
+|Power supply B in the compute controller has a problem. This alert might indicate that the power supply has failed or that it has a problem providing power.
 
 . Check the hardware components for errors, and follow the recommended actions:
  ** If you have an SG100, SG1000, or SG6000, use the BMC.
