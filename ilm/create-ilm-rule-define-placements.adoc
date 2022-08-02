@@ -29,36 +29,29 @@ image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
 |===
 | Option| Description
 
-|Ingest Time
+|Ingest time
 |The time when the object was ingested.
 
-|Last Access Time
+|Last access time
 |The time when the object was last retrieved (read or viewed).
 
 *Note:* To use this option, updates to Last Access Time must be enabled for the S3 bucket or Swift container. See xref:using-last-access-time-in-ilm-rules.adoc[Use Last Access Time in ILM rules].
 
-|Noncurrent Time
-|The time an object version became noncurrent because a new version was ingested and replaced it as the current version.
-
-*Note:* Noncurrent Time applies only to S3 objects in versioning-enabled buckets. See xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock].
-
-You can use this option to reduce the storage impact of versioned objects by filtering for noncurrent object versions. See xref:example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[Example 4: ILM rules and policy for S3 versioned objects].
-
-|User Defined Creation Time
+|User defined creation time
 |A time specified in user-defined metadata.
 |===
 +
-NOTE: If you want to create a compliant rule, you must select *Ingest Time*.
+NOTE: If you want to create a compliant rule, you must select *Ingest time*.
 +
-. In the *Placements* section, select a starting time and a duration for the first time period.
+. In the *Time period and placements* section, select a starting time and a duration for the first time period.
 +
 For example, you might want to specify where to store objects for the first year ("`day 0 for 365 days`"). At least one instruction must start at day 0.
 
 . If you want to create replicated copies:
- .. From the *Type* drop-down list, select *replicated*.
- .. In the *Location* field, select *Add Pool* for each storage pool you want to add.
+ .. From the *Store objects by* drop-down list, select *replicating*.
+ .. In the *copies at* field, select the storage pools you want to add.
 +
-*If you specify only one storage pool*, be aware that StorageGRID can store only one replicated copy of an object on any given Storage Node. If your grid includes three Storage Nodes and you select 4 as the number of copies, only three copies will be made--one copy for each Storage Node.
+*If you specify only one storage pool*, be aware that StorageGRID can store only one replicated copy of an object on any given Storage Node. If your grid includes three Storage Nodes and you select 4 as the number of copies, only three copies will be made&#8212;one copy for each Storage Node.
 +
 NOTE: The *ILM placement unachievable* alert is triggered to indicate that the ILM rule could not be completely applied.
 +
@@ -87,7 +80,7 @@ The number of copies changes to 1. A warning appears if the rule does not have a
 +
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 
- .. If the object size warning appeared, select *Back* to return to Step 1. Then, select *Advanced filtering* and set the Object Size (MB) filter to any value greater than 0.2.
+ .. If the object size warning appeared, select *Previous* to return to Step 1. Then, select *Advanced filtering* and set the Object Size (MB) filter to any value greater than 0.2.
  .. Select the storage location.
 +
 The storage location for an erasure-coded copy includes the name of the storage pool, followed by the name of the Erasure Coding profile.

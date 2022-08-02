@@ -17,7 +17,7 @@ You must review the requirements for enabling the global S3 Object Lock setting,
 * Enabling the global S3 Object Lock setting allows all S3 tenant accounts to create buckets with S3 Object Lock enabled.
 * After you enable the global S3 Object Lock setting, you cannot disable the setting.
 * You cannot enable the global S3 Object Lock unless the default rule in the active ILM policy is _compliant_ (that is, the default rule must comply with the requirements of buckets with S3 Object Lock enabled).
-* When the global S3 Object Lock setting is enabled, you cannot create a new proposed ILM policy or activate an existing proposed ILM policy unless the default rule in the policy is compliant. After the global S3 Object Lock setting has been enabled, the ILM Rules and ILM Policies pages indicate which ILM rules are compliant.
+* When the global S3 Object Lock setting is enabled, you cannot create a new proposed ILM policy or activate an existing proposed ILM policy unless the default rule in the policy is compliant. After the global S3 Object Lock setting has been enabled, the ILM rules and ILM policies pages indicate which ILM rules are compliant.
 
 == Requirements for compliant ILM rules
 

@@ -23,11 +23,11 @@ For more information, see xref:advantages-disadvantages-of-ingest-options.adoc[A
 +
 [NOTE]
 ====
-An error message appears if you select the Strict or Balanced option and the rule uses one of these placements:
+You cannot use the Balanced or Strict option if the rule uses one of these placements:
 
- ** A Cloud Storage Pool at day 0
- ** An Archive Node at day 0
- ** A Cloud Storage Pool or an Archive Node when the rule uses a User Defined Creation Time as a Reference Time
+** A Cloud Storage Pool at day 0
+** An Archive Node at day 0
+** A Cloud Storage Pool or an Archive Node when the rule uses a User Defined Creation Time as a Reference Time
 
 See xref:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.adoc[Example 5: ILM rules and policy for Strict ingest behavior].
 ====
@@ -36,4 +36,4 @@ See xref:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.adoc[Example 
 +
 The ILM rule is created. The rule does not become active until it is added to an xref:creating-ilm-policy.adoc[ILM policy] and that xref:activating-ilm-policy.adoc[policy is activated].
 +
-To view the details of the rule, select the rule's name on the ILM Rules page.
+To view the details of the rule, select the rule's name on the ILM rules page.

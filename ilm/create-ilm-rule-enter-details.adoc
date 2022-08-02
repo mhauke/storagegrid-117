@@ -37,6 +37,10 @@ If *matches all* is selected (default), the rule applies to all S3 buckets or Sw
 
 . For S3 tenants, optionally select *Yes* to apply the rule only to older object versions in S3 buckets that have versioning enabled.
 
+NOTE: Noncurrent Time applies only to S3 objects in versioning-enabled buckets. See xref:../s3/operations-on-buckets.adoc[Operations on buckets, PUT Bucket versioning] and xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock].
+
+You can use this option to reduce the storage impact of versioned objects by filtering for noncurrent object versions. See xref:example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[Example 4: ILM rules and policy for S3 versioned objects].
+
 . Optionally, select *Add an advanced filter* to specify additional filters.
 +
 If you do not configure advanced filtering, the rule applies to all objects that match the basic filters. For more information about advanced filtering, see <<Use advanced filters in ILM rules>> and <<Specify multiple metadata types and values>>.

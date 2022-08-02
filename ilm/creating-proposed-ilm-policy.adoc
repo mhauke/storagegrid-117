@@ -38,7 +38,7 @@ IMPORTANT: Use the system's built-in policy, Baseline 2 Copies Policy, in test s
 .Steps
 . Select *ILM* > *Policies*.
 +
-The ILM Policies page appears. From this page, you can review the list of proposed, active, and historical policies; create, edit, or remove a proposed policy; clone the active policy; or view the details for any policy.
+The ILM policies page appears. From this page, you can review the list of active, historical, and proposed policies; create, edit, or remove a proposed policy; clone the active policy; or view the details for any policy.
 
 . Determine how you want to create the proposed ILM policy.
 
@@ -116,10 +116,6 @@ a|
 
 The Configure ILM Policy dialog box appears.
 
-If you are creating a new proposed policy, all fields are blank and no rules are selected.
-
-If you are cloning the active policy, the *Name* field shows the name of the active policy, appended by a version number (for example, "`v2`"). The rules used in the active policy are selected and shown in their current order.
-
 [start=3]
 . Enter a unique name for the proposed policy in the *Name* field.
 +
@@ -171,7 +167,7 @@ IMPORTANT: You must confirm that the ILM rules are in the correct order. When th
 . As required, select the delete icon image:../media/icon_nms_delete_new.gif[delete icon] to delete any rules that you do not want in the policy, or select *Select Rules* to add more rules.
 . When you are done, select *Save*.
 +
-The ILM Policies page is updated:
+The ILM policies page is updated:
 
  ** The policy you saved is shown as Proposed. Proposed policies do not have start and end dates.
  ** The *Simulate* and *Activate* buttons are enabled.
