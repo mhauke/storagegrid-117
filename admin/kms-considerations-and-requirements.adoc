@@ -34,30 +34,6 @@ IMPORTANT: You cannot enable node encryption after an appliance is added to the 
 
 You can use the configured KMS for StorageGRID appliances and appliance nodes.
 
-[cols="1a,1a" options="header"]
-|===
-| Appliance| Node type
-a|
-SG1000 services appliance
-a|
-Admin Node or Gateway Node
-a|
-SG100 services appliance
-a|
-Admin Node or Gateway Node
-a|
-SG6000 storage appliance
-a|
-Storage Node
-a|
-SG5700 storage appliance
-a|
-Storage Node
-a|
-SG5600 storage appliance
-a|
-Storage Node
-|===
 You cannot use the configured KMS for software-based (non-appliance) nodes, including the following:
 
 * Nodes deployed as virtual machines (VMs)
