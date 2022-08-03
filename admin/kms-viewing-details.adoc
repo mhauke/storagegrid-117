@@ -17,7 +17,6 @@ You can view information about each key management server (KMS) in your StorageG
 +
 The Key management server page appears. The Configuration details tab shows any key management servers that are configured.
 +
-image::../media/kms_configuration_details_no_kms_overhaul.png[KMS Configuration details KMS table]
 
 . Review the information in the table for each KMS.
 +
@@ -47,7 +46,7 @@ If there is a cluster of two key management servers, the fully qualified domain 
 
 For example: `10.10.10.10 and 10.10.10.11` or `10.10.10.10 and 2 others`.
 
-To view all hostnames in a cluster, open a KMS and then select *Edit*.
+To view all hostnames in a cluster, open a KMS and select *Edit* or *Actions* > *Edit*.
 a|
 Certificate expiration
 a|
