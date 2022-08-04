@@ -24,9 +24,13 @@ IMPORTANT: Only perform this procedure if the *Low Object Storage* alert has bee
 
 .About this task
 
-When the EC rebalance procedure is running, the performance of ILM operations and S3 and Swift client operations are likely to be impacted. For this reason, you should only perform this procedure in limited cases.
+The EC rebalance procedure will not start if one or more volumes are offline (unmounted) or if they are online (mounted) and in an error state. 
 
-NOTE: The EC rebalance procedure temporarily reserves a large amount of storage. Storage alerts might be triggered, but will resolve when the rebalance is complete. If there is not enough storage for the reservation, the EC rebalance procedure will fail. Storage reservations are released when the EC rebalance procedure completes, whether the procedure failed or succeeded.
+The EC rebalance procedure temporarily reserves a large amount of storage. Storage alerts might be triggered, but will resolve when the rebalance is complete. If there is not enough storage for the reservation, the EC rebalance procedure will fail. Storage reservations are released when the EC rebalance procedure completes, whether the procedure failed or succeeded.
+
+If a volume goes offline or experiences an error while an EC rebalance is in process, the rebalance process terminates partially completed with no loss of data. The EC rebalance procedure can be resumed at the point where it terminated when all volumes are online without error.
+
+When the EC rebalance procedure is running, the performance of ILM operations and S3 and Swift client operations are likely to be impacted. For this reason, you should only perform this procedure in limited cases.
 
 [NOTE]
 ====
