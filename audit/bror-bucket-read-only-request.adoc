@@ -2,16 +2,16 @@
 permalink: audit/bror-bucket-read-only-request.html
 sidebar: sidebar
 keywords: bror, bucket read only request, empty bucket, audit message,
-summary: 'The LDR service generates this audit message when a request is received to add, modify, or delete objects in a bucket that is read-only. For example, a bucket goes into read-only mode while it is being emptied.'
+summary: 'The LDR service generates this audit message when a bucket enters or exits read-only mode. For example, a bucket enters read-only mode while it is being emptied.'
 ---
 = BROR: Bucket Read Only Request
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-The LDR service generates this audit message when a request is received to add, modify, or delete objects in a bucket that is read-only. For example, a bucket goes into read-only mode while it is being emptied.
+The LDR service generates this audit message when a bucket enters or exits read-only mode. For example, a bucket enters read-only mode while it is being emptied.
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Code| Field| Description
 
@@ -20,12 +20,12 @@ The LDR service generates this audit message when a request is received to add, 
 |The bucket ID.
 
 |BROV
-|The value of the bucket read-only request. ??
-|??
+|Bucket read-only request value
+|Whether the bucket is being made read-only or is leaving the read-only state (1 = read-only, 0 = not-read-only).
 
 |BROS
-|BROR service
-|??
+|Bucket read-only reason
+|The reason the bucket is being made read-only or leaving the read-only state. For example, emptyBucket. 
 
 |S3AI
 |S3 tenant account ID
