@@ -28,6 +28,9 @@ The Key management server page appears and shows all key management servers that
 +
 
 . Select the KMS you want to edit, and select *Actions* > *Edit*.
++
+You can also edit a KMS by selecting the KMS name in the table and selecting Edit on the KMS details page.
+
 . Optionally, update the details in *Step 1 (KMS details)* of the Edit a Key Management Server wizard.
 +
 
@@ -35,7 +38,7 @@ The Key management server page appears and shows all key management servers that
 |===
 | Field| Description
 a|
-KMS display name
+KMS name
 a|
 A descriptive name to help you identify this KMS. Must be between 1 and 64 characters.
 a|
@@ -73,17 +76,17 @@ The fully qualified domain name or IP address for the KMS.
 
 . If you are configuring a KMS cluster, select *Add another hostname* to add a hostname for each server in the cluster.
 
-. Select *Next*.
+. Select *Continue*.
 +
 Step 2 (Upload server certificate) of the Edit a Key Management Server wizard appears.
 
 . If you need to replace the server certificate, select *Browse* and upload the new file.
-. Select *Next*.
+. Select *Continue*.
 +
 Step 3 (Upload client certificates) of the Edit a Key Management Server wizard appears.
 
 . If you need to replace the client certificate and the client certificate private key, select *Browse* and upload the new files.
-. Select *Save*.
+. Select *Test and save*.
 +
 The connections between the key management server and all node-encrypted appliance nodes at the affected sites are tested. If all node connections are valid and the correct key is found on the KMS, the key management server is added to the table on the Key Management Server page.
 
