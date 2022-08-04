@@ -140,7 +140,7 @@ For more information about synchronous placement and ILM rules, see xref:../ilm/
 * `ETag`
 * `X-Object-Meta-<name\>` (object-related metadata)
 +
-If you want to use the *User Defined Creation Time* option as the Reference Time for an ILM rule, you must store the value in a user-defined header named `X-Object-Meta-Creation-Time`. For example:
+If you want to use the *User defined creation time* option as the Reference time for an ILM rule, you must store the value in a user-defined header named `X-Object-Meta-Creation-Time`. For example:
 +
 ----
 X-Object-Meta-Creation-Time: 1443399726
