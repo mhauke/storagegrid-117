@@ -16,7 +16,7 @@ Before creating an ILM policy, you must create a default rule to place any objec
 * You have specific access permissions.
 
 .About this task
-The default rule is the last rule to be evaluated in an ILM policy, so it cannot use any filters or the Noncurrent reference time. The placement instructions for the default rule are applied to any objects that are not matched by another rule in the policy.
+The default rule is the last rule to be evaluated in an ILM policy, so it cannot use any filters. The placement instructions for the default rule are applied to any objects that are not matched by another rule in the policy.
 
 In this example policy, the first rule applies only to objects belonging to test-tenant1. The default rule, which is last, applies to objects belonging to all other tenant accounts.
 
@@ -26,7 +26,7 @@ When you create the default rule, keep these requirements in mind:
 
 * The default rule is automatically placed as the last rule in the policy.
 * The default rule cannot use any basic or advanced filters.
-* The default rule must apply to all object versions, so it cannot use the Noncurrent Time reference time.
+* The default rule must apply to all object versions.
 * The default rule should create replicated copies.
 +
 IMPORTANT: Do not use a rule that creates erasure-coded copies as the default rule for a policy. Erasure-coding rules should use an advanced filter to prevent smaller objects from being erasure coded.
@@ -62,7 +62,7 @@ The default rule cannot specify any filters.
 +
 Step 2 (Define Placements) appears.
 
-. For Reference Time, select any option except *Noncurrent Time*.
+. For Reference time, select any option except *Noncurrent Time*.
 +
 The default rule must apply all object versions.
 
@@ -77,7 +77,7 @@ IMPORTANT: Do not use a rule that creates erasure-coded copies as the default ru
   ** These copies must exist on Storage Nodes for the entire duration of each line in the placement instructions.
   ** Object copies cannot be saved in a Cloud Storage Pool.
   ** Object copies cannot be saved on Archive Nodes.
-  ** At least one line of the placement instructions must start at day 0, using Ingest Time as the reference time.
+  ** At least one line of the placement instructions must start at day 0, using Ingest time as the reference time.
   ** At least one line of the placement instructions must be "`forever.`"
 . Select *Refresh* to update the Retention Diagram and to confirm your placement instructions.
 . Select *Next*.

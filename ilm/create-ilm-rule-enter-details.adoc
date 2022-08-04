@@ -57,7 +57,7 @@ The table shows the types of metadata you can specify in advanced filters, the o
 |===
 | Metadata type| Supported operators| Metadata value
 
-|Ingest Time (microseconds)
+|Ingest time (microseconds)
 |
 * equals
 * does not equal
@@ -68,7 +68,7 @@ The table shows the types of metadata you can specify in advanced filters, the o
 
 |Time and date the object was ingested.
 
-*Note:* To avoid resource issues when activating an new ILM policy, you can use the Ingest Time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest Time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
+*Note:* To avoid resource issues when activating an new ILM policy, you can use the Ingest time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
 
 |Key
 
@@ -85,7 +85,7 @@ The table shows the types of metadata you can specify in advanced filters, the o
 
 For example, you might want to match objects that end with `.txt` or start with `test-object/`.
 
-|Last Access Time (microseconds)
+|Last access time (microseconds)
 |
 * equals
 * does not equal
@@ -97,7 +97,7 @@ For example, you might want to match objects that end with `.txt` or start with 
 * does not exist
 |Time and date the object was last retrieved (read or viewed).
 
-*Note:* If you plan to xref:using-last-access-time-in-ilm-rules.adoc[use last access time] as an advanced filter, Last Access Time updates must be enabled for the S3 bucket or Swift container.
+*Note:* If you plan to xref:using-last-access-time-in-ilm-rules.adoc[use last access time] as an advanced filter, Last access time updates must be enabled for the S3 bucket or Swift container.
 
 |Location Constraint (S3 only)
 |
