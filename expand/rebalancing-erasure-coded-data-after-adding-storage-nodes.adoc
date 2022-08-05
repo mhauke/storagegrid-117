@@ -24,7 +24,7 @@ IMPORTANT: Only perform this procedure if the *Low Object Storage* alert has bee
 
 .About this task
 
-The EC rebalance procedure will not start if one or more volumes are offline (unmounted) or if they are online (mounted) and in an error state. 
+The EC rebalance procedure will not start if one or more volumes are offline (unmounted) or if they are online (mounted) but in an error state. 
 
 The EC rebalance procedure temporarily reserves a large amount of storage. Storage alerts might be triggered, but will resolve when the rebalance is complete. If there is not enough storage for the reservation, the EC rebalance procedure will fail. Storage reservations are released when the EC rebalance procedure completes, whether the procedure failed or succeeded.
 
