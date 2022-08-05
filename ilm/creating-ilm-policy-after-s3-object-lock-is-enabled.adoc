@@ -33,9 +33,9 @@ image::../media/video-screenshot-ilm-policies.png[link="https://netapp.hosted.pa
 
 . Select *ILM* > *Policies*.
 +
-The ILM Policies page appears. If the global S3 Object Lock setting is enabled, the ILM Policies page indicates which ILM rules are compliant.
+The ILM Policies page appears. If the global S3 Object Lock setting is enabled, the ILM policies page indicates which ILM rules are compliant.
 +
-image::../media/ilm_policies_page_compliant.png[ILM Policies Page Compliant]
+image::../media/ilm_policies_page_compliant.png[ILM policies Page Compliant]
 
 . Enter a unique name for the proposed policy in the *Name* field.
 +
@@ -91,7 +91,7 @@ IMPORTANT: You must confirm that the ILM rules are in the correct order. When th
 . As required, select the delete icon image:../media/icon_nms_delete_new.gif[delete icon] to delete any rules that you do not want in the policy, or *Select Rules* to add more rules.
 . When you are done, select *Save*.
 +
-The ILM Policies page is updated:
+The ILM policies page is updated:
 
  ** The policy you saved is shown as Proposed. Proposed policies do not have start and end dates.
  ** The *Simulate* and *Activate* buttons are enabled.

@@ -38,12 +38,48 @@ IMPORTANT: Use the system's built-in policy, Baseline 2 Copies Policy, in test s
 .Steps
 . Select *ILM* > *Policies*.
 +
-The ILM Policies page appears. From this page, you can review the list of proposed, active, and historical policies; create, edit, or remove a proposed policy; clone the active policy; or view the details for any policy.
-+
-image::../media/ilm_policies_page.gif[ILM Policies page]
+The ILM policies page appears. From this page, you can review the list of active, historical, and proposed policies; create, edit, or remove a proposed policy; clone the active policy; or view the details for any policy.
 
 . Determine how you want to create the proposed ILM policy.
+
+//tabbed blocks start here
+
+[role="tabbed-block"]
+====
+
+.No rules already selected
+--
+
+.. If a proposed ILM policy currently exists, select that policy, and select *Delete*.
 +
+You cannot create a new proposed policy if a proposed policy already exists.
+
+.. Select *Create proposed policy*.
+
+--
+//end no rules selected, begin Based on active policy
+
+.Based on active policy
+--
+
+.. If a proposed ILM policy currently exists, select that policy, and select *Delete*.
++
+You cannot clone the active policy if a proposed policy already exists.
+
+.. Select the active policy from the table.
+.. Select *Clone*.
+
+--
+//end Based on active, begin Edit existing
+
+.Edit existing policy
+
+ .. Select the proposed policy from the table.
+ .. Select *Edit*.
+
+====
+//end tabbed blocks
+
 [cols="1a,2a" options="header"]
 |===
 | Option| Steps
@@ -77,16 +113,10 @@ a|
 
 +
 |===
-The Configure ILM Policy dialog box appears.
-+
-If you are creating a new proposed policy, all fields are blank and no rules are selected.
-+
-image::../media/ilm_policies_configure_ilm_policy.png[ILM Policies Configure ILM Policy]
-+
-If you are cloning the active policy, the *Name* field shows the name of the active policy, appended by a version number ("`v2`" in the example). The rules used in the active policy are selected and shown in their current order.
-+
-image::../media/ilm_policies_version.gif[ILM Policies Version]
 
+The Configure ILM Policy dialog box appears.
+
+[start=3]
 . Enter a unique name for the proposed policy in the *Name* field.
 +
 You must enter at least 1 and no more than 64 characters. If you are cloning the active policy, you can use the current name with the appended version number or you can enter a new name.
@@ -99,12 +129,10 @@ You must enter at least 1 and no more than 128 characters.
 +
 The Select Rules for Policy dialog box appears, with all defined rules listed. If you are cloning a policy:
 
- * The rules used by the policy you are cloning are selected.
- * If the policy you are cloning used any rules with no filters that were not the default rule, you are prompted to remove all but one of those rules.
- * If the default rule used a filter or the Noncurrent reference time, you are prompted to select a new default rule.
- * If the default rule was not the last rule, a button allows you to move the rule to the end of the new policy.
-+
-image::../media/ilm_policies_select_rules_for_policy.png[ILM Policies Select Rules for Policy]
+* The rules used by the policy you are cloning are selected.
+* If the policy you are cloning used any rules with no filters that were not the default rule, you are prompted to remove all but one of those rules.
+* If the default rule used a filter or the Noncurrent reference time, you are prompted to select a new default rule.
+* If the default rule was not the last rule, you can move the rule to the end of the new policy.
 
 . Select a rule name or the more details icon image:../media/icon_nms_more_details.gif[more details icon] to view the settings for that rule.
 +
@@ -128,14 +156,7 @@ The other rules are evaluated before the default rule and must use at least one 
 +
 The rules you selected are listed. The default rule is at the end, with the other rules above it.
 +
-image::../media/ilm_policies_selected_rules.png[ILM Policies Selected Rules]
-+
-[NOTE]
-====
-A warning appears if the default rule does not retain objects forever. When you activate this policy, you must confirm that you want StorageGRID to delete objects when the placement instructions for the default rule elapse (unless a bucket lifecycle keeps the objects for longer).
-
-image::../media/ilm_policy_default_rule_not_forever.png[ILM Policy Default Rule Not Forever]
-====
+NOTE: A warning appears if the default rule does not retain objects forever. When you activate this policy, you must confirm that you want StorageGRID to delete objects when the placement instructions for the default rule elapse (unless a bucket lifecycle keeps the objects for longer).
 
 . Drag and drop the rows for the non-default rules to determine the order in which these rules will be evaluated.
 +
@@ -146,12 +167,10 @@ IMPORTANT: You must confirm that the ILM rules are in the correct order. When th
 . As required, select the delete icon image:../media/icon_nms_delete_new.gif[delete icon] to delete any rules that you do not want in the policy, or select *Select Rules* to add more rules.
 . When you are done, select *Save*.
 +
-The ILM Policies page is updated:
+The ILM policies page is updated:
 
  ** The policy you saved is shown as Proposed. Proposed policies do not have start and end dates.
  ** The *Simulate* and *Activate* buttons are enabled.
-+
-image::../media/ilm_policy_proposed_policy_saved.png[ILM Policy Proposed Policy Saved]
 
 . Go to xref:simulating-ilm-policy.adoc[Simulate an ILM policy].
 

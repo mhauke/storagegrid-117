@@ -29,7 +29,7 @@ image::../media/decommission_site_step_4_proposed_policy.png[Decommission Site S
 
 . Determine whether any unused ILM rules refer to the site.
 +
-image::../media/decommission_site_step_4_ilm_rules.png[Decommission Site Step 4 ILM Rules]
+image::../media/decommission_site_step_4_ilm_rules.png[Decommission Site Step 4 ILM rules]
 +
 Any ILM rules that are listed still refer to the site but are not used in any policy. In the example:
 
@@ -46,7 +46,7 @@ NOTE: When StorageGRID decommissions the site, it will automatically deactivate 
  ** If one or more ILM rules are listed, go to the next step.
 
 . Edit or delete each unused rule:
- ** To edit a rule, go the ILM Rules page and update all placements that use an Erasure Coding profile or storage pool that refers to the site. Then, return to *Step 4 (Remove ILM References)*.
+ ** To edit a rule, go the ILM rules page and update all placements that use an Erasure Coding profile or storage pool that refers to the site. Then, return to *Step 4 (Remove ILM References)*.
 +
 NOTE: For details, see the instructions for managing objects with information lifecycle management.
 
