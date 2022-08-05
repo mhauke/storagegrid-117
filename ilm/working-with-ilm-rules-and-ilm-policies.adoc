@@ -43,7 +43,7 @@ NOTE: If you remove a rule that is used in a historical policy, an image:../medi
 
 You might need to edit an ILM rule to change a filter or placement instruction.
 
-You cannot edit a rule if it is being used in the active ILM policy or the proposed ILM policy. Instead, you can clone these rules and make any required changes to the cloned copy. You also cannot edit the stock ILM rule (Make 2 Copies) or ILM rules created before StorageGRID version 10.3.
+You cannot edit a rule if it is being used in the active ILM policy or the proposed ILM policy. Instead, you can clone these rules and make any required changes to the cloned copy. You also cannot edit the stock ILM rule (Make 2 copies) or ILM rules created before StorageGRID version 10.3.
 
 NOTE: Before adding an edited rule to the active ILM policy, be aware that a change to an object's placement instructions might cause an increased load on the system.
 
