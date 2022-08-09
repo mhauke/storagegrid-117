@@ -30,7 +30,7 @@ NOTE: The EC rebalance procedure temporarily reserves a large amount of storage.
 
 [NOTE]
 ====
-S3 and Swift API operations to upload objects (or object parts) might fail during the EC rebalancing procedure if they require more than 24 hours to complete. Long-duration PUT operations will fail if the applicable ILM rule uses Strict or Balanced placement on ingest. The following error will be reported:
+S3 and Swift API operations to upload objects (or object parts) might fail during the EC rebalancing procedure if they require more than 24 hours to complete. Long-duration PUT operations will fail if the applicable ILM rule uses Balanced or Strict placement on ingest. The following error will be reported:
 
 `500 Internal Server Error`
 ====

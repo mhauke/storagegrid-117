@@ -11,127 +11,84 @@ summary: 'You can install one or more StorageGRID services appliances and one or
 [.lead]
 You can install one or more StorageGRID services appliances and one or more storage appliances when you first deploy StorageGRID, or you can add additional appliance nodes later as part of an expansion. You might also need to install an appliance Storage Node as part of a recovery operation.
 
-.What you'll need
-
-Some StorageGRID appliances require that your StorageGRID system is using a minimum version of StorageGRID software.
-
-[role="tabbed-block"]
-====
-.SG6000
---
-[options="header"]
-|===
-| Appliance| Required StorageGRID version
-a|
-SG6060 with no expansion shelves
-a|
-11.1.1 or later
-a|
-SG6060 with expansion shelves (one or two)
-a|
-11.3 or later
-
-*Note:* If you add expansion shelves after the initial deployment, you must use version 11.4 or later.
-
-a|
-SGF6024
-a|
-11.3 or later
-|===
---
-
-.SG100 and SG1000
---
-[options="header"]
-|===
-| Appliance| Required StorageGRID version
-a|
-SG1000
-a|
-11.3 or later (latest hotfix recommended)
-a|
-SG100
-a|
-11.4 or later (latest hotfix recommended)
-|===
---
-====
+Follow these high-level steps to install and set up a StorageGRID appliance and deploy it as a node in your StorageGRID system.
 
 
-== Installation and deployment tasks
+// Start snippet: Quick start headings as block titles
+// 1 placeholder per entry: Heading text here
 
-Preparing and adding a StorageGRID appliance to the grid includes four primary steps:
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Prepare for installation
 
-. Preparing for installation:
- ** Preparing the installation site
- ** Unpacking the boxes and checking the contents
- ** Obtaining additional equipment and tools
- ** Verifying network configuration (Services appliances)
- ** Gathering IP addresses and network information (Storage appliances)
- ** Optional: Configuring an external key management server (KMS) if you plan to encrypt all appliance data. See details about external key management in the instructions for administering StorageGRID.
-. Installing the hardware:
- ** Registering the hardware
- ** Installing the appliance into a cabinet or rack
- ** Installing the drives (SG6000, SG5760, and SG5660 only)
- ** Installing optional expansion shelves (model SG6060 only; maximum of two expansion shelves)
- ** Cabling the appliance
- ** Connecting the power cords and applying power
- ** Viewing boot-up status codes
-. Configuring the hardware:
- ** Accessing SANtricity System Manager (SG6000 and SG5700) or SANtricity Storage Manager (SG5600) to configure SANtricity management settings and 
- ** Setting a static IP address for management port 1 on the storage controller (Storage appliances).
- ** Accessing StorageGRID Appliance Installer and configuring the link and network IP settings required to connect to StorageGRID networks
- ** Accessing the baseboard management controller (BMC) interface on the SG1000 appliance or the SG6000-CN controller
- ** Optional: Enabling node encryption if you plan to use an external KMS to encrypt appliance data.
- ** Optional: Changing the RAID mode (storage appliances only).
-. Deploying the appliance:
-+
-[role="tabbed-block"]
-====
+[role="quick-margin-list"]
+. xref:preparing-site.adoc[Prepare site]
+. xref:unpacking-boxes.adoc[Unpack boxes]
+. xref:obtaining-additional-equipment-and-tools.adoc[Obtain additional equipment and tools]
+. xref:../admin/web-browser-requirements.adoc[Review web browser requirements]
+. xref:reviewing-appliance-network-connections.adoc[Review appliance network connections]
+. xref:gathering-installation-information-overview.adoc[Gather installation information]
 
-.Storage appliance
---
-[options="header"]
-|===
-| Task| Instructions
-a|
-Deploying an appliance Storage Node in a new StorageGRID system
-a|
-xref:../installconfig/deploying-appliance-storage-node.adoc[Deploy appliance Storage Node]
-a|
-Adding an appliance Storage Node to an existing StorageGRID system
-a|
-Instructions for expanding a StorageGRID system
-a|
-Deploying an appliance Storage Node as part of a Storage Node recovery operation
-a|
-Instructions for recovery and maintenance
-|===
---
 
-.Services appliance
---
-You can deploy the services appliance as a Gateway Node or an Admin Node in a StorageGRID system. Both the SG100 and the SG1000 appliances can operate as Gateway Nodes and Admin Nodes (primary and non-primary) at the same time.
- 
-[options="header"]
-|===
-| Task| Instructions
-a|
-Deploying an appliance Gateway or Admin Node in a new StorageGRID system
-a|
-xref:../installconfig/deploying-services-appliance-node.adoc[Deploy services appliance node]
-a|
-Adding an appliance Gateway or Admin Node to an existing StorageGRID system
-a|
-Instructions for expanding a StorageGRID system
-a|
-Deploying an appliance Gateway or Admin Node as part of a node recovery operation
-a|
-Instructions for recovery and maintenance
-|===
---
-====
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Install hardware
 
-.Related information
+[role="quick-margin-para"]
+See the xref:install-appliance-hardware.adoc[installing appliance hardware overview] for general installation information.
 
-xref:installation-checklist.adoc[Installation checklist]
+[role="quick-margin-list"]
+. xref:registering-hardware.adoc[Register hardware]
+
+. Install appliance
+** xref:installing-hardware-sg6000.adoc[SG6000]
+** xref:installing-appliance-in-cabinet-or-rack-sg5700.adoc[SG5700]
+** xref:installing-appliance-in-cabinet-or-rack-sg5600.adoc[SG5600]
+** xref:installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.adoc[SG100 and SG1000]
+
+. Cable appliance
+** xref:cabling-appliance-sg6000.adoc[SG6000]
+** xref:cabling-appliance-sg5700.adoc[SG5700]
+** xref:cabling-appliance-sg5600.adoc[SG5600]
+** xref:cabling-appliance-sg100-and-sg1000.adoc[SG100 and SG1000]
+
+. Connect power cords and apply power
+** xref:connecting-power-cords-and-applying-power-sg6000.adoc[SG6000]
+** xref:connecting-power-cords-and-applying-power-sg5700.adoc[SG5700]
+** xref:connecting-ac-power-cords-sg5600.adoc[SG5600]
+** xref:connecting-power-cords-and-applying-power-sg100-and-sg1000.adoc[SG100 and SG1000]
+
+. xref:viewing-status-indicators.adoc[View status indicators and codes]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up hardware
+
+[role="quick-margin-para"]
+If you are configuring and deploying more than one appliance, use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to generate a JSON file that can be uploaded into the StorageGRID Appliance Installer. Using the tool allows you to automate most of the following configuration and deployment steps. For details, see xref:automating-appliance-configuration-using-storagegrid-appliance-installer.adoc[Automate appliance configuration using StorageGRID Appliance Installer]. 
+
+[role="quick-margin-list"]
+
+. Configure StorageGRID connections
+** xref:accessing-storagegrid-appliance-installer.adoc[Access StorageGRID Appliance Installer and verify you are running most recent version]
+** xref:configuring-network-links.adoc[Configure network links]
+** xref:setting-ip-configuration.adoc[Configure StorageGRID IP addresses]
+** xref:verifying-network-connections.adoc[Verify network connections]
+** xref:verifying-port-level-network-connections.adoc[Verify port-level network connections]
+
+. Access and configure SANtricity management tools (Storage Nodes only)
+** xref:accessing-and-configuring-santricity-system-manager.adoc[SANtricity System Manager (SG6000 and SG5700)]
+** xref:configuring-santricity-storage-manager.adoc[SANtricity Storage Manager (SG5600)]
+
+. xref:configuring-bmc-interface.adoc[Configure the BMC interface (SG6000, SG100, and SG1000)] 
+
+. Perform optional setup steps
+** xref:optional-enabling-node-encryption.adoc[Optional - Enable node encryption]
+** xref:optional-changing-raid-mode.adoc[Optional - Change RAID mode (Storage Nodes only)]
+** xref:optional-remapping-network-ports-for-appliance.adoc[Optional - Remap network ports for appliance (Storage Nodes only)]
+
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Deploy appliance node
+
+[role="quick-margin-para"]
+Deploy the appliance as a new node in your StorageGRID system. 
+
+[role="quick-margin-list"]
+* xref:deploying-appliance-storage-node.adoc[Deploy appliance Storage Node]
+* xref:deploying-services-appliance-node.adoc[Deploy services appliance node]
