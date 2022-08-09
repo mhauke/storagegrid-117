@@ -16,6 +16,8 @@ You must ensure that all nodes in your StorageGRID system are in the correct sta
 * All nodes in your StorageGRID system must be connected (image:../media/icon_alert_green_checkmark.png[Icon Alert Green Checkmark]).
 +
 NOTE: If you are performing a disconnected site decommission, all nodes at the site you are removing must be disconnected, and all nodes at all other sites must be connected.
++
+NOTE: If a volume goes offline (is unmounted) before a site decommission starts, the decommission will not start and an error displays.
 
 * No node at the site you are removing can have an interface that belongs to a high availability (HA) group.
 
