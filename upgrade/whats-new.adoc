@@ -42,11 +42,20 @@ A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and 
 === Storage pools created for each site during installation
 When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
 
+=== New audit messages
+The following new audit messages were added:
+
+* *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
+
 
 == Kevin's what's new
 
 === Improved storage service behavior
 Storage management scripts now leave storage services running for improved performance.
+
+=== Certificate subject optional
+The certificate subject field is now optional. If this field is left blank, the generated certificate uses the first domain name or IP address as the subject common name (CN).
+
 
 == Lisa's what's new
 

@@ -1,72 +1,44 @@
 ---
 permalink: monitor/viewing-dashboard.html
 sidebar: sidebar
-keywords: how to view the dashboard
-summary: 'You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.'
+keywords: how to view Dashboard, how to configure Dashboard
+summary: 'You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends.'
 ---
-= View the Dashboard
+= View and configure the Dashboard
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.
+You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends.
 
 image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
 
-== Configure the Dashboard
+The Dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards. 
 
-The Dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards. As needed, you can select *Configure dashboard* to add or remove tabs or cards. Select the three vertical dots in the upper right corner of a card to perform operations such as resizing or removing the card.
+The default Dashboard tabs contain cards with the following types of information:
 
-== Available cards by category
+[cols="1a,3a" options="header"]
+|===
+| Default tab| Contains
+
+|Overview
+|General information about the grid, such as active alerts, network traffic, and total objects in the grid
+
+|Performance
+|Space usage, storage used over time, S3 operations, request duration, error rate.
+
+|Storage
+|Tenant quota usage and logical space usage.
+
+|ILM
+|Information lifecycle management queue and evaluation rate.
+
+|Nodes
+|CPU, data, and memory usage by node. S3 operations by node, node to site distribution.
+|===
+
+If you have the xref:../admin/admin-group-permissions.html[appropriate permission and access mode], you can select *Configure dashboard* to add or remove tabs or cards. At any time, you can restore to the default tabs and cards.
 
 NOTE: You can add a card to any tab you choose.
 
-*Overview*
-
-* Data usage breakdown
-* Health status
-* Metadata usage breakdown
-* Storage over time
-* Total objects
-* Grid information
-
-*Performance*
-
-* Average request duration
-* Error rate
-* Network traffic
-* Platform services - Pending requests
-* Platform services - Failed requests
-* Platform services - Request rate
-* S3 API calls
-* S3 operations
-
-*Storage*
-
-* Object count over time
-* Object size distribution
-* Site level metadata usage forecast
-* Storage information
-* Storage pool level data usage forecast
-* Storage used by placement type
-* Top 5 buckets by logical space used
-* Top 5 tenants by logical space used
-* Top 5 tenants by quota usage
-
-*ILM*
-
-* ILM queue
-* ILM evaluation rate
-* ILM information
-
-*Nodes*
-
-* Node to site distribution
-* Nodes by deployment type
-* Overall node health
-* Top 5 nodes by alerts
-* Top 5 nodes by CPU usage
-* Top 5 nodes by data usage
-* Top 5 nodes by memory usage
-* Top 5 nodes by S3 operations
-* Total nodes
+image::../media/configure_dashboard.png[Configure Dashboard]

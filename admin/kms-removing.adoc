@@ -29,15 +29,18 @@ You can remove a KMS in these cases:
 
 . Select *CONFIGURATION* > *Security* > *Key management server*.
 +
-The Key Management Server page appears and shows all key management servers that have been configured.
+The Key management server page appears and shows all key management servers that have been configured.
 +
-image::../media/kms_configuration_details_table.png[KMS Configuration Details KMS Table]
 
-. Select the radio button for the KMS you want to remove, and select *Remove*.
-. Review the considerations in the warning dialog.
+. Select the KMS you want to remove, and select *Actions* > *Remove*.
 +
-image::../media/kms_remove_warning.png[KMS Remove Warning]
+You can also remove a KMS by selecting the KMS name in the table and selecting *Remove* from the KMS details page.
 
-. Select *OK*.
+. Confirm the following is true:
+* You are removing a site-specific KMS for a site that has no appliance node with node encryption enabled.
+* You are removing the default KMS, but a site-specific KMS already exists for each site with node encryption. 
++
+
+. Select *Yes*.
 +
 The KMS configuration is removed.

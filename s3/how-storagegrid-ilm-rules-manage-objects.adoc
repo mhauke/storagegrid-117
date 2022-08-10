@@ -35,18 +35,18 @@ The method used to protect object data during ingest: synchronous placement (usi
 
 ILM rules can filter and select objects. For objects ingested using S3, ILM rules can filter objects based on the following metadata:
 
-* Tenant Account
-* Bucket Name
-* Ingest Time
+* Tenant account
+* Bucket name
+* Ingest time
 * Key
-* Last Access Time
+* Last access time
 +
-NOTE: By default, updates to last access time are disabled for all S3 buckets. If your StorageGRID system includes an ILM rule that uses the Last Access Time option, you must enable updates to last access time for the S3 buckets specified in that rule. You can enable last access time updates using the PUT Bucket last access time request, the *S3* > *Buckets* > *Configure Last Access Time* check box in the Tenant Manager, or using the Tenant Management API. When enabling last access time updates, be aware that StorageGRID performance might be reduced, especially in systems with small objects.
+NOTE: By default, updates to last access time are disabled for all S3 buckets. If your StorageGRID system includes an ILM rule that uses the Last access time option, you must enable updates to last access time for the S3 buckets specified in that rule. You can enable last access time updates using the PUT Bucket last access time request, the *S3* > *Buckets* > *Configure Last access time* check box in the Tenant Manager, or using the Tenant Management API. When enabling last access time updates, be aware that StorageGRID performance might be reduced, especially in systems with small objects.
 
-* Location Constraint
-* Object Size
-* User Metadata
-* Object Tag
+* Location constraint
+* Object size
+* User metadata
+* Object tag
 
 For more information about ILM, see the instructions for managing objects with information lifecycle management.
 

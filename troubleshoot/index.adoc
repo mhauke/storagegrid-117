@@ -139,7 +139,7 @@ Review audit messages
 Review audit messages to follow StorageGRID operations in detail. The details in audit messages can be useful for troubleshooting many types of issues, including performance issues.
 |
 
-* xref:reviewing-audit-messages.adoc[Review audit messages]
+* xref:../monitor/reviewing-audit-messages.adoc[Review audit messages]
 
 |
 Check object locations and storage integrity
@@ -329,7 +329,7 @@ If you cannot resolve the problem on your own, contact technical support. Before
 |Summarize how your StorageGRID system is configured. For example, list the following:
 
 * Does the grid use storage compression, storage encryption, or compliance?
-* Does ILM make replicated or erasure coded objects? Does ILM ensure site redundancy? Do ILM rules use the Strict, Balanced, or Dual Commit ingest behaviors?
+* Does ILM make replicated or erasure coded objects? Does ILM ensure site redundancy? Do ILM rules use the Balanced, Strict, or Dual Commit ingest behaviors?
 
 |
 |Log files and system data

@@ -30,24 +30,26 @@ The following table summarizes where system names and display names are shown in
 |Display name
 
 |Grid Manager pages
-|Shown unless the item has been renamed. 
+|Shown unless the item is renamed 
 
-|When an item is renamed, shown instead of the system name in these locations:
+|If an item is renamed, shown instead of the system name in these locations:
 
 * Dashboard
 * Nodes page
+* Configuration pages for high availability groups, load balancer endpoints, VLAN interfaces, key management servers, grid passwords, and firewall control
 * Alerts
 * Storage pool definitions
-* Maintenance procedures, including decommission, expansion, recovery, and object existence check
+* Object metadata lookup page
+* Pages related to maintenance procedures, including upgrade, hotfix, SANtricity OS upgrade, decommission, expansion, recovery, and object existence check
 * Support pages (logs and diagnostics)
 * Single sign-on page, next to the Admin Node hostname in the table for Admin Node details
 
 
+
 |*NODES* > *Overview* tab for a node
 |Always shown 
-|Always shown
+|Shown only if the item is renamed
 
-If the values for *Display name* and  *System name* on this tab are the same, the item has not been renamed.
 
 |Legacy pages in the Grid Manager (for example, *SUPPORT* > *Grid Topology*)
 |Shown 
