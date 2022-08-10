@@ -25,7 +25,7 @@ Work with your NetApp account representative to understand the options and to pl
 * How many sites do you need?
 * How many and what types of nodes do you need at each site? 
 * Which StorageGRID networks will you use?
-* Which entities will use your grid to store objects?
+* Who will use your grid to store objects? Which applications will they use?
 * Do you have any special security or storage requirements?
 * Do you need to comply with any legal or regulatory requirements?
 
@@ -34,11 +34,6 @@ Optionally, access the link:https://configbuilder.netapp.com/index.aspx[NetApp C
 
 [role="quick-margin-para"]
 Review xref:../primer/index.adoc[Learn about StorageGRID] and the xref:../network/index.adoc[Networking guidelines].
-
-
-
-
-
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Install nodes
 
@@ -108,7 +103,6 @@ Learn how:
 * xref:../tenant/index.adoc[Use a tenant account]
 * xref:../s3/index.adoc[Use the S3 REST API]
 * xref:../swift/index.adoc[Use the Swift REST API]
-
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Monitor and troubleshoot
 
