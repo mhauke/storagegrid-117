@@ -50,6 +50,9 @@ The following new audit messages were added:
 
 == Kevin's what's new
 
+=== NewerNoncurrentVersions threshold for S3 buckets 
+The `NewerNoncurrentVersions` action in the bucket lifecycle configuration specifies the number of noncurrent versions retained in a versioned S3 bucket. This threshold overrides lifecycle rules provided by ILM. See xref:../ilm/how-objects-are-deleted.adoc[How objects are deleted].
+
 === Certificate subject optional
 The certificate subject field is now optional. If this field is left blank, the generated certificate uses the first domain name or IP address as the subject common name (CN).
 
