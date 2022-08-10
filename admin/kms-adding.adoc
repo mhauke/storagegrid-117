@@ -24,35 +24,35 @@ You use the StorageGRID Key Management Server wizard to add each KMS or KMS clus
 
 If possible, configure any site-specific key management servers before configuring a default KMS that applies to all sites not managed by another KMS. If you create the default KMS first, all node-encrypted appliances in the grid will be encrypted by the default KMS. If you want to create a site-specific KMS later, you must first copy the current version of the encryption key from the default KMS to the new KMS. See xref:kms-considerations-for-changing-for-site.adoc[Considerations for changing the KMS for a site] for details.
 
-== Step 1: Enter KMS Details
+== Step 1: KMS details
 
-In Step 1 (Enter KMS Details) of the Add a Key Management Server wizard, you provide details about the KMS or KMS cluster.
+In Step 1 (KMS details) of the Add a Key Management Server wizard, you provide details about the KMS or KMS cluster.
 
 .Steps
 
 . Select *CONFIGURATION* > *Security* > *Key management server*.
 +
-The Key Management Server page appears with the Configuration Details tab selected.
+The Key management server page appears with the Configuration details tab selected.
 +
-image::../media/kms_configuration_details_no_kms.png[KMS Configuration Details No KMS]
+image::../media/kms_configuration_details_no_kms_overhaul.png[KMS Configuration Details No KMS]
 
 . Select *Create*.
 +
-Step 1 (Enter KMS Details) of the Add a Key Management Server wizard appears.
+Step 1 (KMS details) of the Add a Key Management Server wizard appears.
 +
-image::../media/kms_step_1_enter_kms_details.png[KMS Step 1 Enter KMS Details]
+image::../media/kms_overhaul_step_1_enter_kms_details.png[KMS Step 1 Enter KMS details]
 
 . Enter the following information for the KMS and the StorageGRID client you configured in that KMS.
 +
-[cols="1a,1a" options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Field| Description
 a|
-KMS Display Name
+KMS name
 a|
 A descriptive name to help you identify this KMS. Must be between 1 and 64 characters.
 a|
-Key Name
+Key name
 a|
 The exact key alias for the StorageGRID client in the KMS. Must be between 1 and 255 characters.
 a|
@@ -74,42 +74,42 @@ Hostname
 a|
 The fully qualified domain name or IP address for the KMS.
 
-*Note:* The SAN field of the server certificate must include the FQDN or IP address you enter here. Otherwise, StorageGRID will not be able to connect to the KMS or to all servers in a KMS cluster.
+*Note:* The Subject Alternative Name (SAN) field of the server certificate must include the FQDN or IP address you enter here. Otherwise, StorageGRID will not be able to connect to the KMS or to all servers in a KMS cluster.
 
 |===
 
-. If you are using a KMS cluster, select the plus sign image:../media/icon_plus_sign_black_on_white_old.png[Icon Plus Sign] to add a hostname for each server in the cluster.
-. Select *Next*.
+. If you are configuring a KMS cluster, select *Add another hostname* to add a hostname for each server in the cluster.
+. Select *Continue*.
 
-== Step 2: Upload Server Certificate
+== Step 2: Upload server certificate
 
-In Step 2 (Upload Server Certificate) of the Add a Key Management Server wizard, you upload the server certificate (or certificate bundle) for the KMS. The server certificate allows the external KMS to authenticate itself to StorageGRID.
+In Step 2 (Upload server certificate) of the Add a Key Management Server wizard, you upload the server certificate (or certificate bundle) for the KMS. The server certificate allows the external KMS to authenticate itself to StorageGRID.
 
 .Steps
 
-. From *Step 2 (Upload Server Certificate)*, browse to the location of the saved server certificate or certificate bundle.
+. From *Step 2 (Upload server certificate)*, browse to the location of the saved server certificate or certificate bundle.
 +
-image::../media/kms_step_2_upload_server_certificate.png[KMS Step 2 Upload Server Certificate]
+image::../media/kms_overhaul_step_2_upload_server_certificate.png[KMS Step 2 Upload server certificate]
 
 . Upload the certificate file.
 +
 The server certificate metadata appears.
 +
-image::../media/kms_step_2_server_certificate_metadata.png[]
+image::../media/kms_overhaul_step_2_server_certificate_metadata.png[]
 +
 NOTE: If you uploaded a certificate bundle, the metadata for each certificate appears on its own tab.
 
-. Select *Next*.
+. Select *Continue*.
 
-== Step 3: Upload Client Certificates
+== Step 3: Upload client certificates
 
-In Step 3 (Upload Client Certificates) of the Add a Key Management Server wizard, you upload the client certificate and the client certificate private key. The client certificate allows StorageGRID to authenticate itself to the KMS.
+In Step 3 (Upload client certificates) of the Add a Key Management Server wizard, you upload the client certificate and the client certificate private key. The client certificate allows StorageGRID to authenticate itself to the KMS.
 
 .Steps
 
-. From *Step 3 (Upload Client Certificates)*, browse to the location of the client certificate.
+. From *Step 3 (Upload client certificates)*, browse to the location of the client certificate.
 +
-image::../media/kms_step_3_upload_client_certificate.png[KMS Step 3 Upload Client Certificate]
+image::../media/kms_overhaul_step_3_upload_client_certificate.png[KMS Step 3 Upload client certificate]
 
 . Upload the client certificate file.
 +
@@ -117,29 +117,28 @@ The client certificate metadata appears.
 
 . Browse to the location of the private key for the client certificate.
 . Upload the private key file.
-+
-The metadata for the client certificate and the client certificate private key appear.
-+
-image::../media/kms_step_3_client_certificate_metadata.png[KMS Step 3 Client Certificate Metadata]
 
-. Select *Save*.
++
+image::../media/kms_overhaul_step_3_client_certificate_metadata.png[KMS step 3 client certificate metadata]
+
+. Select *Test and save*.
 +
 The connections between the key management server and the appliance nodes are tested. If all connections are valid and the correct key is found on the KMS, the new key management server is added to the table on the Key Management Server page.
 +
 NOTE: Immediately after you add a KMS, the certificate status on the Key Management Server page appears as Unknown. It might take StorageGRID as long as 30 minutes to get the actual status of each certificate. You must refresh your web browser to see the current status.
 
-. If an error message appears when you select *Save*, review the message details and then select *OK*.
+. If an error message appears when you select *Test and save*, review the message details and then select *OK*.
 +
 For example, you might receive a 422: Unprocessable Entity error if a connection test failed.
 
-. If you need to save the current configuration without testing the external connection, select *Force Save*.
+. If you need to save the current configuration without testing the external connection, select *Force save*.
 +
-image::../media/kms_force_save.png[KMS Force Save]
+// image::../media/kms_force_save.png[KMS Force Save]
 +
-IMPORTANT: Selecting *Force Save* saves the KMS configuration, but it does not test the external connection from each appliance to that KMS. If there is an issue with the configuration, you might not be able to reboot appliance nodes that have node encryption enabled at the affected site. You might lose access to your data until the issues are resolved.
+IMPORTANT: Selecting *Force save* saves the KMS configuration, but it does not test the external connection from each appliance to that KMS. If there is an issue with the configuration, you might not be able to reboot appliance nodes that have node encryption enabled at the affected site. You might lose access to your data until the issues are resolved.
 
 . Review the confirmation warning, and select *OK* if you are sure you want to force save the configuration.
 +
-image::../media/kms_force_save_warning.png[KMS Force Save Warning]
+// image::../media/kms_force_save_warning.png[KMS Force Save Warning]
 +
 The KMS configuration is saved but the connection to the KMS is not tested.

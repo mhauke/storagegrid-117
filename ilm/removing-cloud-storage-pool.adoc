@@ -25,11 +25,9 @@ NOTE: When you create a Cloud Storage Pool, StorageGRID writes a marker file to 
 +
 The Storage Pools page appears.
 
-. Select the radio button for a Cloud Storage Pool that is not currently used in an ILM rule.
+. Select a Cloud Storage Pool that is not currently used in an ILM rule.
 +
 You cannot remove a Cloud Storage Pool if it is used in an ILM rule. The *Remove* button is disabled.
-+
-image::../media/cloud_storage_pool_used_in_ilm_rule.png[Cloud Storage Pool Used In ILM Rule]
 
 . Select *Remove*.
 +

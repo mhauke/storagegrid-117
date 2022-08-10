@@ -52,7 +52,7 @@ NOTE: The first rule in this example uses an advanced filter to ensure that eras
 |===
 | Rule definition| Example value
 a|
-Rule Name
+Rule name
 a|
 One-Site Erasure Coding for Tenant A
 a|
@@ -75,7 +75,7 @@ a|
 |===
 | Rule definition| Example value
 a|
-Rule Name
+Rule name
 a|
 Two-Site Replication for Other Tenants
 a|
@@ -108,7 +108,7 @@ When this new ILM policy is activated, objects belonging to Tenant A will be pro
 |===
 | Rule definition| Example value
 a|
-Rule Name
+Rule name
 a|
 Three-Site Erasure Coding for Tenant A
 a|
@@ -131,7 +131,7 @@ a|
 |===
 | Rule definition| Example value
 a|
-Rule Name
+Rule name
 a|
 Three-Site Replication for Other Tenants
 a|
@@ -182,6 +182,6 @@ When the proposed ILM policy in this example is activated, the overall performan
 
 As a result of the ILM policy change, client read and write requests might temporarily experience higher than normal latencies. Latencies will return to normal levels after the placement instructions are fully implemented across the grid.
 
-To avoid resource issues when activating an new ILM policy, you can use the Ingest Time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest Time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
+To avoid resource issues when activating an new ILM policy, you can use the Ingest time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
 
 NOTE: Contact technical support if you need to slow or increase the rate at which objects are processed after an ILM policy change.
