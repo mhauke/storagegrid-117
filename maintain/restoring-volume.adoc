@@ -2,14 +2,14 @@
 permalink: maintain/restoring-volume.html
 sidebar: sidebar
 keywords: storagegrid, restore, volume
-summary: 'To install a Gateway Node or Admin Node on an SG100 or SG1000 services appliance, you use the StorageGRID Appliance Installer, which is included on the appliance.'
+summary: 'In some situations, storage volumes restoration can be started in Grid Manager. Grid Manager can also monitor volume restoration processes in progress and display a volume restoration history.'
 ---
-= Restore volume
+= Restore volume using Grid Manager
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can restore lost object data if a starage volume fails.
+In some situations, storage volumes restoration can be started in Grid Manager. Grid Manager can also monitor volume restoration processes in progress and display a volume restoration history.
 
 .What you'll need
 
@@ -17,11 +17,11 @@ You can restore lost object data if a starage volume fails.
 
 .About this task
 
-* For a primary Admin Node, you specify the name of the node and then upload the appropriate software packages (if required).
-* For a non-primary Admin Node or a Gateway Node, you specify or confirm the IP address of the primary Admin Node and the name of the node.
-* You start the installation and wait as volumes are configured and the software is installed.
-* Partway through the process, the installation pauses. To resume the installation, you must sign into the Grid Manager and configure the pending node as a replacement for the failed node.
-* After you have configured the node, the appliance installation process completes, and the appliance is rebooted.
+List situations/restrictions for GUI vs CLI
+
+Explain that monitoring and history are available for both GUI and CLI
+
+Notes in CLI topics about monitoring and history in GUI and that an XXXX volume restore can be performed in the GUI or CLI (GUI preferred unless scripting?).
 
 .Steps
 
@@ -49,7 +49,11 @@ Each volume in the node should indicate that it is ready to restore.
 
 Nodes are moved from the Pending data tab to the Restoration progress tab when the restoration starts.
 
-== Monitor volume restoration
+== View restoration progress
+
+The Restoration progress tab shows the status of the restoration process and information about the volumes in a node being restored.
+
+Can monitor restorations initiated in GUI or triggered by CLI commands (old method).
 
 
 
