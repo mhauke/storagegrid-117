@@ -20,6 +20,8 @@ You can decommission and permanently remove nodes that are connected to the grid
 * Grid nodes are connected.
 * The *Decommission Possible* column for the node or nodes you want to decommission must include a green checkmark.
 +
+NOTE: The decommission will not start if one or more volumes are offline (unmounted) or if they are online (mounted) but in an error state.
++
 NOTE: If one or more volumes go offline while a decommission is in progress, the decommission process completes after these volumes have come back online.
 * All grid nodes must have Normal (green) health image:../media/icon_alert_green_checkmark.png[green checkmark icon]. If you see one of these icons in the *Health* column, you must try to resolve the issue:
 +
