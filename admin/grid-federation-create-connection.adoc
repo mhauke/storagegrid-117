@@ -1,15 +1,19 @@
 ---
-permalink: admin/grid-federation-create-connection.html
+permalink: admin/grid-federation-manage-connection.html
 sidebar: sidebar
-keywords: grid federation, create connection
-summary: 'You can create a grid federation connection between two StorageGRID systems to synchronize certain tenant account details (account sync) or to replicate object data (cross-grid replication) between two grids.'
+keywords: grid federation, create connection, remove connection, view connection
+summary: 'You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to create and manage these connections.'
 ---
-= Create a grid federation connection
+= Manage grid federation connections
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can create a grid federation connection between two StorageGRID systems to synchronize certain tenant account details (_account sync_) or to replicate object data (_cross-grid replication_) between two grids. 
+You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to create and manage these connections.
+
+== Create a grid federation connection
+
+To create a grid federation connection, you sign in to the first grid to enter connection details and download a verification package. To complete the grid federation connection, you sign in to the second grid, upload the verification package, and save and test the connection.
 
 .What you'll need
 
@@ -20,7 +24,7 @@ You can create a grid federation connection between two StorageGRID systems to s
 * If you plan to use fully qualified domain names (FQDN) for each grid (recommended), you have added the appropriate entries to your DNS server.
 
 
-== Start the connection on the first grid
+=== Start the connection on the first grid
 
 To start a grid federation connection, enter connection details on the first grid and download the verification package.
 
@@ -41,11 +45,11 @@ Perform these steps on the StorageGRID system you want to start the connection f
 |Connection name
 |A unique name to help you recognize this connection, for example, Grid A-Grid B connection.
 
-|FQDN or IP for local grid
+|FQDN or IP for _local grid_ (Local)
 |The FQDN of the grid you are currently signed into or a VIP address of an HA group on this grid.
 
 |Port
-|The port you want to use for this connection. You can enter any value between 1 and 65,535.
+|The port you want to use for this connection. You can enter any unused port number between 1 and 65,535.
 
 Both grids in this grid federation connection will use the same port. You must ensure that no node in the HA groups for either grid uses this port for other connections.
 
@@ -65,13 +69,17 @@ StorageGRID automatically generates this security certificate when you save the 
 
 . Select *Save and continue*.
 
-. For the Download verification package step, select *Download verification file*.
+. For the Download verification package step, select *Download verification package*.
 +
-After you save and test the connection on the second grid, you can no longer download the verification package from the first grid.
+After you save and test the connection on the remote grid, you can no longer download the verification package.
 
 . When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`), and select *Close*.
 
-== Upload connection details on the second grid
+. Close the wizard to return to the Grid federation page. 
+
+. Confirm that the new connection is shown and that the *Connection health* is set to *Waiting to connect*.
+
+=== Complete the connection on the second grid
 
 Perform these steps on the StorageGRID system you are connecting to.
 
@@ -95,11 +103,14 @@ image:../media/grid_federation_upload.png[Grid federation-Upload verification pa
 +
 If the connection can be established, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
 
+. Close the wizard to return to the Grid federation page.
+
+. Confirm that the new connection is shown and that the *Connection health* is set to *Healthy*.
+
 
 == View and edit grid federation connections
 
 You can view details for existing grid federation connections. You can also change the connection's name and rotate the associated certificate on both grids before it expires.
-
 
 * To view basic information for all grid federation connections, review the table on the Grid federation page. 
 
@@ -152,11 +163,11 @@ IMPORTANT: After editing an connection, you might need to wait up to 15 minutes 
 
 
 
-== Delete a grid federation connection
+== Remove a grid federation connection
 
-You can delete a grid federation connection at any time, and you can delete a connection from either grid.
+You can remove a grid federation connection at any time, and you can remove a connection from either grid.
 
-After you delete a connection, you can no longer synchronize tenant account details or replicate object data between grids. However, any account information that was previously sync'ed or any object data that was previously replicated between grids is not deleted. If you want to delete this information from either grid, you must delete it manually.
+After you remove a connection, you can no longer replicate object data between grids. However, any object data that was previously replicated between grids is not deleted. If you want to delete this information from either grid, you must delete it manually.
 
 Perform these steps from either grid in the grid federation connection.
 
@@ -164,7 +175,7 @@ Perform these steps from either grid in the grid federation connection.
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
-. On the Grid federation page, select the check box for each connection you want to delete. To delete all connections, select the check box in the table header.
+. On the Grid federation page, select the check box for each connection you want to remove. To remove all connections, select the check box in the table header.
 
 . Select *Delete*.
 

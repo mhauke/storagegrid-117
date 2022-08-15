@@ -718,7 +718,7 @@ For more information about managing load balancer endpoints, see the xref:../adm
 |Grid federation connection failure
 |The grid federation connection between the local and remote grids is not working.
 
-. Review the settings on the Grid Federation page for both the local and the remote grids. Confirm that all values are correct. See xref:../admin/grid-federation-create-connection.adoc[Create a grid federation connection].
+. Review the settings on the Grid Federation page for both the local and the remote grids. Confirm that all values are correct. See xref:../admin/grid-federation-manage-connection.adoc[Manage grid federation connections].
 
 . Review the certificates used for the connection. Make sure that certificates have not expired and that the details are valid.
 . Confirm that all Admin and Gateway Nodes in the local and remote grids are online and available. Resolve any alerts that might be affecting these nodes and try again.
