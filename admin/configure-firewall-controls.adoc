@@ -9,7 +9,7 @@ summary: 'You can configure network access for specific internal StorageGRID por
 :imagesdir: ../media/
 
 [.lead]
-You can configure the StoraGRID firewall to control network access for specific ports of your StorageGRID nodes. 
+You can configure the StorageGRID firewall to control network access for specific ports of your StorageGRID nodes. 
 
 .What you'll need
 
@@ -33,7 +33,7 @@ There are three tabs on the *Firewall control* page:
 You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
 
 Limiting the number of ports open to IP addresses outside of your grid to only those that are absolutely necessary enhances the security of your grid. 
-For more information on using firewall controls, including example use-cases, see xxxxxx. 
+For more information on using firewall controls, including examples, see xxxxxx. 
 
 +
 NOTE: If the configuration options available in this procedure are not flexible enough to meet your requirements, additional configuration options can be applied using the private API `xxxxxx endpoints. For example, it is possible to use xxxxxxxxxxx.
@@ -59,13 +59,16 @@ You should check the settings on each tab to ensure only those ports that are ne
 === Manage External Access
 Use this tab to open or close ports on the Grid Network, Admin Network, and Client Network. When a port is closed in the Manage external access list, it can't be accessed by any non-grid IP address, including VLAN interfaces, unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
 
+NOTE: The configuration changes you make on *Manage external access* tab might be overridden by the settings on the *Privileged address list* tab and the *Untrusted client network tab*. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
+
+
 . Select *Manage External Access*
 The tab displays a table with all of the configurable ports. You can sort the list by:
 * Port - largest/smallest
 * Status - open/closed
 * Protocol - TCP/UDP
 
-. Configure the ports you want open and closed: 
+. Configure the ports you want open and closed using the following options: 
 .. Select xxxxx to open all ports
 .. Select xxxx to close all ports
 .. use the toggle beside each port to open or close the selected port. 
@@ -73,7 +76,7 @@ The tab displays a table with all of the configurable ports. You can sort the li
 .. use the search field to find the settings for any configurable port by entering a port number. You can enter a partial port number. For example, if you enter a '2," all ports that start with a "2" are displayed. 
 . Select Save
 
-NOTE: the status of ports set in the  *Manage external access* tab can be affected by changes you make on the *Privileged address list* tab and the *Untrusted client network tab* 
+
 
 Use this tab to xxxxxxxxxxxx
 
@@ -86,11 +89,9 @@ Use this tab to xxxxxxxxxxxx
 [#privileged-address-list]
 === Privileged address list
 
-image::../media/manage-syslog-content.png[Manage syslog content]
+image::../media/xxxxxxx.png[Manage sxxxxxyslog content]
 
-. Select each type of audit information you want to send to the external syslog server.
 
-+ities will be lost when you choose to override severity with a fixed value.
 
 +
 [cols="1a,3a" options="header"]

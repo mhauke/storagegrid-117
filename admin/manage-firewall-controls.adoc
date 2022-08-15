@@ -1,7 +1,7 @@
 ---
 permalink: admin/manage-firewall-controls.html
 sidebar: sidebar
-keywords: untrusted client network
+keywords: firewall controls, untrusted client network
 summary: 'StorageGRID includes a firewall on each node that enhances the security of your grid by enabling you to customize access to the Grid Network, Admin Network, and Client Network.'
 ---
 
@@ -25,13 +25,16 @@ You can enhance the security of your grid by limiting the external network acces
 
 Example: 
 
+
+
+
 == Manage untrusted Client Networks: overview
 
 If you are using a Client Network, you can help secure StorageGRID from hostile attacks by accepting inbound client traffic only on explicitly configured endpoints.
 
 By default, the Client Network on each grid node is _trusted_. That is, by default, StorageGRID trusts inbound connections to each grid node on all available external ports (see the information about external communications in the xref:../network/index.adoc[Networking guidelines]).
 
-You can reduce the threat of hostile attacks on your StorageGRID system by specifying that the Client Network on each node be _untrusted_. If a node's Client Network is untrusted, the node only accepts inbound connections on ports explicitly configured as load balancer endpoints and any additional ports you designate using the Untrusted Client Network tab on the Firewall Controls page. See xref:configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] and xref:configure-firewall-controls.adoc[Configure firewall controls].
+You can reduce the threat of hostile attacks on your StorageGRID system by specifying that the Client Network on each node be _untrusted_. If a node's Client Network is untrusted, the node only accepts inbound connections on ports explicitly configured as load balancer endpoints and any additional ports you designate using the Untrusted Client Network tab on the Firewall Controls page. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] and xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
 === Example 1: Gateway Node only accepts HTTPS S3 requests
 
