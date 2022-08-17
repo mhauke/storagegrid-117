@@ -23,7 +23,7 @@ See xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard]  and xref:../fab
 === Changes to load balancer endpoints
 When you create a load balancer endpoint, you can now do the following:
 
-* Allow all tenants to access the endpoint (default) or specify a list of allowed or blocked tenants to provide better security isolation between tenants and their endpoints. 
+* Allow all tenants to access the endpoint (default), or specify a list of allowed or blocked tenants to provide better security isolation between tenants and their endpoints. 
 * Use the *Node Type* binding mode to require clients to use the IP address (or corresponding FQDN) of any Admin Node or the IP address of any Gateway Node, based on the type of node you select.
 
 === New upgrade and hotfix process
