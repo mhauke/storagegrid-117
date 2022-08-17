@@ -20,8 +20,11 @@ As part of this change, a new banner is displayed on the Dashboard to remind new
 
 See xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard]  and xref:../fabricpool/use-fabricpool-setup-wizard.adoc[Use FabricPool setup wizard].
 
-=== Control tenant access to load balancer endpoints
-When you create a load balancer endpoint, you can now allow all tenants to access the endpoint (default), or you can specify a list of the allowed or blocked tenants.Tenant access lets you provide better security isolation between tenants and their endpoints. 
+=== Changes to load balancer endpoints
+When you create a load balancer endpoint, you can now do the following:
+
+* Allow all tenants to access the endpoint (default), or specify a list of allowed or blocked tenants to provide better security isolation between tenants and their endpoints. 
+* Use the *Node Type* binding mode to require clients to use the IP address (or corresponding FQDN) of any Admin Node or the IP address of any Gateway Node, based on the type of node you select.
 
 === New upgrade and hotfix process
 * You can now use the Grid Manager to upgrade to a future release and apply a hotfix for that release at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
