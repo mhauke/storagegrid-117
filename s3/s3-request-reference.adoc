@@ -12,12 +12,8 @@ summary: 'Get a quick summary of StorageGRID support for Amazon Simple Storage S
 Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.
 
 
-== A-E
+== AbortMultipartUpload
 
-.AbortMultipartUpload
-[%collapsible]
-
-====
 .Request syntax
 
 Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[Amazon Simple Storage Service (S3) > API Reference > AbortMultipartUpload^].
@@ -31,12 +27,8 @@ StorageGRID does not support these parameters:
 .Learn more
 xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
-====
 
-.CompleteMultipartUpload
-[%collapsible]
-
-====
+== CompleteMultipartUpload
 
 .Request syntax
 
@@ -51,12 +43,8 @@ StorageGRID does not support these parameters:
 .Learn more
 xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 
-====
+== CopyObject (PUT Object-Copy)
 
-.CopyObject (PUT Object-Copy)
-[%collapsible]
-
-====
 .Request syntax
 
 
@@ -82,12 +70,7 @@ x-amz-request-payer
 .Learn more
 xref:put-object-copy.html.adoc[PUT Object-Copy]
 
-====
-
-.CreateBucket (PUT Bucket)
-[%collapsible]
-
-====
+== CreateBucket (PUT Bucket)
 
 .Request syntax
 
@@ -109,12 +92,7 @@ x-amz-grant-write-acp
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
 
-====
-
-== F-J
-
-
-=== GetBucketAcl
+== GetBucketAcl
 
 .Request syntax
 
@@ -126,18 +104,6 @@ Implemented with all Amazon S3 REST API behavior.
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
 
-=== GetBucketAnalyticsConfiguration
-Not supported.
-
-
-== ListBucketAnalyticsConfigurations
-Not supported.
-
-== ListBucketInventoryConfigurations
-Not supported.
-
-== ListBucketMetricsConfigurations
-Not supported.
 
 == ListBuckets
 .Request syntax
@@ -149,6 +115,17 @@ Implemented with all Amazon S3 REST API behavior.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+== Unsupported requests
+
+* GetBucketAnalyticsConfiguration
+
+* ListBucketAnalyticsConfigurations
+
+* ListBucketInventoryConfigurations
+
+* ListBucketMetricsConfigurations
 
 
 
