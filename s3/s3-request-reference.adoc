@@ -1,0 +1,121 @@
+---
+permalink: s3/s3-request-reference.html
+sidebar: sidebar
+keywords: s3 request headers, s3 command support, request syntax, not supported requests, aws s3
+summary: 'Get a quick summary of StorageGRID's support for AWS S3 REST API requests.'
+---
+= S3 request reference
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Get a quick summary of StorageGRID's support for AWS S3 REST API requests.
+
+== A-E
+
+=== AbortMultipartUpload
+
+.Request syntax
+
+[source,xml]
+DELETE /Key+?uploadId=UploadId HTTP/1.1
+Host: Bucket.s3.amazonaws.com
+x-amz-expected-bucket-owner: ExpectedBucketOwner
+
+.Not supported
+`x-amz-request-payer`
+
+.More information
+xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
+
+=== CompleteMultipartUpload
+
+.Request syntax
+
+[source,xml]
+POST /Key+?uploadId=UploadId HTTP/1.1
+Host: Bucket.s3.amazonaws.com
+x-amz-checksum-crc32: ChecksumCRC32
+x-amz-checksum-crc32c: ChecksumCRC32C
+x-amz-checksum-sha1: ChecksumSHA1
+x-amz-checksum-sha256: ChecksumSHA256
+x-amz-expected-bucket-owner: ExpectedBucketOwner
+x-amz-server-side-encryption-customer-algorithm: SSECustomerAlgorithm
+x-amz-server-side-encryption-customer-key: SSECustomerKey
+x-amz-server-side-encryption-customer-key-MD5: SSECustomerKeyMD5
+<?xml version="1.0" encoding="UTF-8"?>
+<CompleteMultipartUpload xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Part>
+      <ChecksumCRC32>string</ChecksumCRC32>
+      <ChecksumCRC32C>string</ChecksumCRC32C>
+      <ChecksumSHA1>string</ChecksumSHA1>
+      <ChecksumSHA256>string</ChecksumSHA256>
+      <ETag>string</ETag>
+      <PartNumber>integer</PartNumber>
+   </Part>
+   ...
+</CompleteMultipartUpload>
+
+.Not supported
+`x-amz-request-payer`
+
+.More information
+xref:complete-multipart-upload.adoc[Complete Multipart Upload]
+
+=== CopyObject
+.Request syntax
+
+[source,xml]
+PUT /Key+ HTTP/1.1
+Host: Bucket.s3.amazonaws.com
+x-amz-acl: ACL
+x-amz-checksum-algorithm: ChecksumAlgorithm
+Content-Disposition: ContentDisposition
+Content-Encoding: ContentEncoding
+Content-Language: ContentLanguage
+Content-Type: ContentType
+x-amz-copy-source: CopySource
+x-amz-copy-source-if-match: CopySourceIfMatch
+x-amz-copy-source-if-modified-since: CopySourceIfModifiedSince
+x-amz-copy-source-if-none-match: CopySourceIfNoneMatch
+x-amz-copy-source-if-unmodified-since: CopySourceIfUnmodifiedSince
+x-amz-metadata-directive: MetadataDirective
+x-amz-tagging-directive: TaggingDirective
+x-amz-server-side-encryption: ServerSideEncryption
+x-amz-storage-class: StorageClass
+x-amz-server-side-encryption-customer-algorithm: SSECustomerAlgorithm
+x-amz-server-side-encryption-customer-key: SSECustomerKey
+x-amz-server-side-encryption-customer-key-MD5: SSECustomerKeyMD5
+x-amz-server-side-encryption-bucket-key-enabled: BucketKeyEnabled
+x-amz-copy-source-server-side-encryption-customer-algorithm: CopySourceSSECustomerAlgorithm
+x-amz-copy-source-server-side-encryption-customer-key: CopySourceSSECustomerKey
+x-amz-copy-source-server-side-encryption-customer-key-MD5: CopySourceSSECustomerKeyMD5
+x-amz-tagging: Tagging
+x-amz-object-lock-mode: ObjectLockMode
+x-amz-object-lock-retain-until-date: ObjectLockRetainUntilDate
+x-amz-object-lock-legal-hold: ObjectLockLegalHoldStatus
+x-amz-expected-bucket-owner: ExpectedBucketOwner
+x-amz-source-expected-bucket-owner: ExpectedSourceBucketOwner
+
+.Not supported
+* `Cache-Control`
+* `Expires`
+* `x-amz-grant-full-control`	
+* `x-amz-grant-read`
+* `x-amz-grant-read-acp`
+* `x-amz-grant-write-acp`
+* `x-amz-website-redirect-location`
+* `x-amz-server-side-encryption-aws-kms-key-id`
+* `x-amz-server-side-encryption-context`
+* `x-amz-request-payer`
+
+== F-J
+
+== K-O
+
+== P-T
+
+== U-Z
+
+
+
