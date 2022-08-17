@@ -21,8 +21,9 @@ To create a grid federation connection, you sign in to the first grid to enter c
 * You have the Root access permission for both grids.
 * You have the provisioning passphrase for both grids.
 * You have configured high availability (HA) groups on both grids.
-* If you plan to use fully qualified domain names (FQDN) for each grid (recommended), you have added the appropriate entries to your DNS server.
-
+* If you plan to use a fully qualified domain name (FQDN) instead of a virtual IP (VIP) address for each grid (recommended):
+** The DNS server for the local grid maps the remote grid's FQDN to VIP addresses for an HA group on the remote grid.
+** The DNS server for the remote grid maps the local grid's FQDN to VIP addresses for an HA group on the local grid.  
 
 === Start the connection on the first grid
 
@@ -77,7 +78,7 @@ After you save and test the connection on the remote grid, you can no longer dow
 
 . Close the wizard to return to the Grid federation page. 
 
-. Confirm that the new connection is shown and that the *Connection health* is set to *Waiting to connect*.
+. Confirm that the new connection is shown and that its *Connection status* is *Waiting to connect*.
 
 === Complete the connection on the second grid
 
@@ -105,62 +106,105 @@ If the connection can be established, a success message appears. Otherwise, an e
 
 . Close the wizard to return to the Grid federation page.
 
-. Confirm that the new connection is shown and that the *Connection health* is set to *Healthy*.
+. Confirm that the new connection is shown and that the *Connection status* is *Connected*.
 
 
-== View and edit grid federation connections
+== View grid federation connections
 
-You can view details for existing grid federation connections. You can also change the connection's name and rotate the associated certificate on both grids before it expires.
+You can view details for existing grid federation connections. 
 
 * To view basic information for all grid federation connections, review the table on the Grid federation page. 
 
-* To view all details about a specific connection, select the connections's name in the table.
+* To view all details about a specific connection, select the connections's name in the table to show the details page.
 
-* To edit a grid federation connection, use the *Actions* menu on the Grid federation page or the details page for a specific connection.
-+
+== Edit grid federation connection
+
+You can change the connection's name and rotate the associated certificate on both grids before it expires. When you edit a grid federation connection, you must download a new verification package on the first grid and then upload the new verification package on the second grid.
+
+To edit a grid federation connection, use the *Actions* menu on the Grid federation page or the details page for a specific connection.
+
 IMPORTANT: After editing an connection, you might need to wait up to 15 minutes for your changes to be applied.
-+
-[cols="1a, 2a,2a" options="header"]
-|===
-|Task | Actions menu | Details page
 
-|Edit connection details
+=== Edit connection details
 
-|.. Select the check box for the connection. 
-.. Select *Actions* > *Edit*.
-.. Enter the new details.
-.. Select *Save*.
+//tabbed blocks start here
 
-|.. Select the connection name to display the details.
-.. Select the edit icon image:../media/icon_edit_tm.png[Edit icon].
-.. Enter the new details.
-.. Select *Save*.
+[role="tabbed-block"]
+====
 
-|Rotate connection certificate
+.Actions menu
+--
+. Select the check box for the connection. 
+. Select *Actions* > *Edit*.
+. Enter the new details.
+. Select *Save*.
+--
 
-|.. Select the check box for the connection. 
-.. Select *Actions* > *Rotate certificate*.
-.. Upload or generate a new custom certificate.
-.. Select *Save changes*.
+.Details page
+--
+. Select the connection name to display the details.
+. Select *Edit*.
+. Enter the new details.
+. Select *Save*.
+--
 
-|.. Select the connection name to display the details.
-.. Select the *Certificate* tab.
-.. Select *Rotate certificate*.
-.. Upload or generate a new custom certificate.
-.. Select *Save changes*.
+====
+//end tabbed blocks
 
-|Remove permission for tenant to use grid connection
+=== Rotate connection certificate
 
-|.. Select the Federation features tab.
-.. For Account synchronization, select *View more*.
-.. Select a tenant who is using a grid federation connection on this grid. 
-.. Select *Remove relationship*.
-.. Select *Yes*.
+//tabbed blocks start here
 
+[role="tabbed-block"]
+====
 
-| 
-|===
+.Actions menu
+--
+. Select the check box for the connection. 
+. Select *Actions* > *Rotate certificate*.
+. Upload or generate a new custom certificate.
+. Select *Save changes*.
+--
 
+.Details page
+--
+. Select the connection name to display the details.
+. Select the *Certificate* tab.
+. Select *Rotate certificate*.
+. Upload or generate a new custom certificate.
+. Select *Save changes*.
+--
+
+====
+//end tabbed blocks
+
+=== Remove permission for tenant to use grid connection
+
+//tabbed blocks start here
+
+[role="tabbed-block"]
+====
+
+.Actions menu
+--
+. Select the check box for the connection. 
+. Select *Actions* > *Rotate certificate*.
+. Upload or generate a new custom certificate.
+. Select *Save changes*.
+--
+
+.Details page
+--
+. Select the connection name to display the details.
+. Select the Federation features tab.
+. For Account synchronization, select *View more*.
+. Select a tenant who is using a grid federation connection on this grid. 
+. Select *Remove relationship*.
+. Select *Yes*.
+--
+
+====
+//end tabbed blocks
 
 
 == Remove a grid federation connection
@@ -171,15 +215,33 @@ After you remove a connection, you can no longer replicate object data between g
 
 Perform these steps from either grid in the grid federation connection.
 
+//tabbed blocks start here
+
+[role="tabbed-block"]
+====
+
+.Grid federation page
+--
 . Sign in to the Grid Manager.
-
 . Select *CONFIGURATION* > *System* > *Grid federation*.
-
-. On the Grid federation page, select the check box for each connection you want to remove. To remove all connections, select the check box in the table header.
-
-. Select *Delete*.
-
+. Select the check box for each connection you want to remove. To remove all connections, select the check box in the table header.
+. Select *Remove*.
 . Review the confirmation message, and select *Yes*.
+--
+
+.Details page
+--
+. Sign in to the Grid Manager.
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+. Select the connection name to display the details.
+. Select *Remove*.
+. Review the confirmation message, and select *Yes*.
+--
+
+====
+//end tabbed blocks
+
+
 
 
 
