@@ -11,47 +11,56 @@ summary: 'Get a quick summary of StorageGRID support for Amazon Simple Storage S
 [.lead]
 Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.
 
+
 == A-E
 
-=== AbortMultipartUpload
+.AbortMultipartUpload
+[%collapsible]
 
+====
 .Request syntax
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html^[Amazon Simple Storage Service (S3) > API Reference > AbortMultipartUpload].
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[Amazon Simple Storage Service (S3) > API Reference > AbortMultipartUpload^].
 
 .StorageGRID support
 
 StorageGRID does not support these parameters:
 
-----
-x-amz-request-payer
-----
+`x-amz-request-payer`
 
 .Learn more
 xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
-=== CompleteMultipartUpload
+====
+
+.CompleteMultipartUpload
+[%collapsible]
+
+====
 
 .Request syntax
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html^[Amazon Simple Storage Service (S3) > API Reference > CompleteMultipartUpload].
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[Amazon Simple Storage Service (S3) > API Reference > CompleteMultipartUpload^].
 
 .StorageGRID support
 
 StorageGRID does not support these parameters:
 
-----
-x-amz-request-payer
-----
+`x-amz-request-payer`
 
 .Learn more
 xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 
-=== CopyObject (PUT Object-Copy)
+====
+
+.CopyObject (PUT Object-Copy)
+[%collapsible]
+
+====
 .Request syntax
 
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html^[Amazon Simple Storage Service (S3) > API Reference > CopyObject].
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[Amazon Simple Storage Service (S3) > API Reference > CopyObject^].
 
 .StorageGRID support
 
@@ -73,11 +82,16 @@ x-amz-request-payer
 .Learn more
 xref:put-object-copy.html.adoc[PUT Object-Copy]
 
-=== CreateBucket (PUT Bucket)
+====
+
+.CreateBucket (PUT Bucket)
+[%collapsible]
+
+====
 
 .Request syntax
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html^[Amazon Simple Storage Service (S3) > API Reference > CreateBucket].
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[Amazon Simple Storage Service (S3) > API Reference > CreateBucket^].
 
 .StorageGRID support
 
@@ -95,13 +109,16 @@ x-amz-grant-write-acp
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
 
+====
+
 == F-J
+
 
 === GetBucketAcl
 
 .Request syntax
 
-Go to https://https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html^[Amazon Simple Storage Service (S3) > API Reference > GetBucketAcl].
+Go to https://https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[Amazon Simple Storage Service (S3) > API Reference > GetBucketAcl^].
 
 .StorageGRID support
 Implemented with all Amazon S3 REST API behavior.
@@ -110,28 +127,22 @@ Implemented with all Amazon S3 REST API behavior.
 xref:operations-on-buckets.adoc[Operations on buckets]
 
 === GetBucketAnalyticsConfiguration
-
 Not supported.
 
 
-
-
-
-== K-O
-
-=== ListBucketAnalyticsConfigurations
+== ListBucketAnalyticsConfigurations
 Not supported.
 
-=== ListBucketInventoryConfigurations
+== ListBucketInventoryConfigurations
 Not supported.
 
-=== ListBucketMetricsConfigurations
+== ListBucketMetricsConfigurations
 Not supported.
 
-=== ListBuckets
+== ListBuckets
 .Request syntax
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html^[Amazon Simple Storage Service (S3) > API Reference > ListBuckets].
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[Amazon Simple Storage Service (S3) > API Reference > ListBuckets^].
 
 .StorageGRID support
 Implemented with all Amazon S3 REST API behavior.
@@ -140,9 +151,6 @@ Implemented with all Amazon S3 REST API behavior.
 xref:operations-on-buckets.adoc[Operations on buckets]
 
 
-== P-T
-
-== U-Z
 
 
 
