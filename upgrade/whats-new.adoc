@@ -50,9 +50,6 @@ The following new audit messages were added:
 
 == Kevin's what's new
 
-=== Improved storage service behavior
-Storage management scripts now leave storage services running for improved performance.
-
 === NewerNoncurrentVersions threshold for S3 buckets 
 The `NewerNoncurrentVersions` action in the bucket lifecycle configuration specifies the number of noncurrent versions retained in a versioned S3 bucket. This threshold overrides lifecycle rules provided by ILM. See xref:../ilm/how-objects-are-deleted.adoc[How objects are deleted].
 
