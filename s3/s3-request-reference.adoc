@@ -2,14 +2,14 @@
 permalink: s3/s3-request-reference.html
 sidebar: sidebar
 keywords: s3 request headers, s3 command support, request syntax, not supported requests, aws s3
-summary: 'Get a quick summary of StorageGRID support for AWS S3 REST API requests.'
+summary: 'Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
 ---
 = S3 request reference
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Get a quick summary of StorageGRID support for AWS S3 REST API requests.
+Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.
 
 == A-E
 
@@ -17,101 +17,128 @@ Get a quick summary of StorageGRID support for AWS S3 REST API requests.
 
 .Request syntax
 
-[source,xml]
-DELETE /Key+?uploadId=UploadId HTTP/1.1
-Host: Bucket.s3.amazonaws.com
-x-amz-expected-bucket-owner: ExpectedBucketOwner
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html^[Amazon Simple Storage Service (S3) > API Reference > AbortMultipartUpload].
 
-.Not supported
-`x-amz-request-payer`
+.StorageGRID support
 
-.More information
+StorageGRID does not support these parameters:
+
+----
+x-amz-request-payer
+----
+
+.Learn more
 xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
 === CompleteMultipartUpload
 
 .Request syntax
 
-[source,xml]
-POST /Key+?uploadId=UploadId HTTP/1.1
-Host: Bucket.s3.amazonaws.com
-x-amz-checksum-crc32: ChecksumCRC32
-x-amz-checksum-crc32c: ChecksumCRC32C
-x-amz-checksum-sha1: ChecksumSHA1
-x-amz-checksum-sha256: ChecksumSHA256
-x-amz-expected-bucket-owner: ExpectedBucketOwner
-x-amz-server-side-encryption-customer-algorithm: SSECustomerAlgorithm
-x-amz-server-side-encryption-customer-key: SSECustomerKey
-x-amz-server-side-encryption-customer-key-MD5: SSECustomerKeyMD5
-<?xml version="1.0" encoding="UTF-8"?>
-<CompleteMultipartUpload xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-   <Part>
-      <ChecksumCRC32>string</ChecksumCRC32>
-      <ChecksumCRC32C>string</ChecksumCRC32C>
-      <ChecksumSHA1>string</ChecksumSHA1>
-      <ChecksumSHA256>string</ChecksumSHA256>
-      <ETag>string</ETag>
-      <PartNumber>integer</PartNumber>
-   </Part>
-   ...
-</CompleteMultipartUpload>
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html^[Amazon Simple Storage Service (S3) > API Reference > CompleteMultipartUpload].
 
-.Not supported
-`x-amz-request-payer`
+.StorageGRID support
 
-.More information
+StorageGRID does not support these parameters:
+
+----
+x-amz-request-payer
+----
+
+.Learn more
 xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 
-=== CopyObject
+=== CopyObject (PUT Object-Copy)
 .Request syntax
 
-[source,xml]
-PUT /Key+ HTTP/1.1
-Host: Bucket.s3.amazonaws.com
-x-amz-acl: ACL
-x-amz-checksum-algorithm: ChecksumAlgorithm
-Content-Disposition: ContentDisposition
-Content-Encoding: ContentEncoding
-Content-Language: ContentLanguage
-Content-Type: ContentType
-x-amz-copy-source: CopySource
-x-amz-copy-source-if-match: CopySourceIfMatch
-x-amz-copy-source-if-modified-since: CopySourceIfModifiedSince
-x-amz-copy-source-if-none-match: CopySourceIfNoneMatch
-x-amz-copy-source-if-unmodified-since: CopySourceIfUnmodifiedSince
-x-amz-metadata-directive: MetadataDirective
-x-amz-tagging-directive: TaggingDirective
-x-amz-server-side-encryption: ServerSideEncryption
-x-amz-storage-class: StorageClass
-x-amz-server-side-encryption-customer-algorithm: SSECustomerAlgorithm
-x-amz-server-side-encryption-customer-key: SSECustomerKey
-x-amz-server-side-encryption-customer-key-MD5: SSECustomerKeyMD5
-x-amz-server-side-encryption-bucket-key-enabled: BucketKeyEnabled
-x-amz-copy-source-server-side-encryption-customer-algorithm: CopySourceSSECustomerAlgorithm
-x-amz-copy-source-server-side-encryption-customer-key: CopySourceSSECustomerKey
-x-amz-copy-source-server-side-encryption-customer-key-MD5: CopySourceSSECustomerKeyMD5
-x-amz-tagging: Tagging
-x-amz-object-lock-mode: ObjectLockMode
-x-amz-object-lock-retain-until-date: ObjectLockRetainUntilDate
-x-amz-object-lock-legal-hold: ObjectLockLegalHoldStatus
-x-amz-expected-bucket-owner: ExpectedBucketOwner
-x-amz-source-expected-bucket-owner: ExpectedSourceBucketOwner
 
-.Not supported
-* `Cache-Control`
-* `Expires`
-* `x-amz-grant-full-control`	
-* `x-amz-grant-read`
-* `x-amz-grant-read-acp`
-* `x-amz-grant-write-acp`
-* `x-amz-website-redirect-location`
-* `x-amz-server-side-encryption-aws-kms-key-id`
-* `x-amz-server-side-encryption-context`
-* `x-amz-request-payer`
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html^[Amazon Simple Storage Service (S3) > API Reference > CopyObject].
+
+.StorageGRID support
+
+StorageGRID does not support these parameters:
+
+----
+Cache-Control
+Expires
+x-amz-grant-full-control
+x-amz-grant-read
+x-amz-grant-read-acp
+x-amz-grant-write-acp
+x-amz-website-redirect-location
+x-amz-server-side-encryption-aws-kms-key-id
+x-amz-server-side-encryption-context
+x-amz-request-payer
+----
+
+.Learn more
+xref:put-object-copy.html.adoc[PUT Object-Copy]
+
+=== CreateBucket (PUT Bucket)
+
+.Request syntax
+
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html^[Amazon Simple Storage Service (S3) > API Reference > CreateBucket].
+
+.StorageGRID support
+
+StorageGRID does not support these parameters:
+
+----
+x-amz-acl
+x-amz-grant-full-control
+x-amz-grant-read
+x-amz-grant-read-acp
+x-amz-grant-write
+x-amz-grant-write-acp
+----
+
+.Learn more
+xref:operations-on-buckets.adoc[Operations on buckets]
 
 == F-J
 
+=== GetBucketAcl
+
+.Request syntax
+
+Go to https://https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html^[Amazon Simple Storage Service (S3) > API Reference > GetBucketAcl].
+
+.StorageGRID support
+Implemented with all Amazon S3 REST API behavior.
+
+.Learn more
+xref:operations-on-buckets.adoc[Operations on buckets]
+
+=== GetBucketAnalyticsConfiguration
+
+Not supported.
+
+
+
+
+
 == K-O
+
+=== ListBucketAnalyticsConfigurations
+Not supported.
+
+=== ListBucketInventoryConfigurations
+Not supported.
+
+=== ListBucketMetricsConfigurations
+Not supported.
+
+=== ListBuckets
+.Request syntax
+
+Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html^[Amazon Simple Storage Service (S3) > API Reference > ListBuckets].
+
+.StorageGRID support
+Implemented with all Amazon S3 REST API behavior.
+
+.Learn more
+xref:operations-on-buckets.adoc[Operations on buckets]
+
 
 == P-T
 
