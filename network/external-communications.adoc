@@ -13,7 +13,7 @@ Clients need to communicate with grid nodes to ingest and retrieve content. The 
 
 == Restricted access to ports
 
-If enterprise networking policies restrict access to any of the ports, you can use xref:../admin/configuring-load-balancer-endpoints.adoc[load balancer endpoints] to allow access on user-defined ports. You can then use xref:../admin/managing-untrusted-client-networks.adoc[untrusted Client Networks] to allow access only on load balancer endpoint ports.
+If enterprise networking policies restrict access to any of the ports, you can use xref:../admin/configuring-load-balancer-endpoints.adoc[load balancer endpoints] to allow access on user-defined ports. You can then use xref:../admin/manage-firewall-controls.adoc[untrusted Client Networks] to allow access only on load balancer endpoint ports.
 
 == Port remapping
 
