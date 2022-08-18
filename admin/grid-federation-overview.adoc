@@ -61,10 +61,9 @@ See xref:managing-high-availability-groups.adoc[Manage high availability (HA) gr
 * If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must add the appropriate entries to your DNS server. The entries should map the FQDN for each grid to the virtual IP (VIP) addresses for its HA group.
 
 
+== How are objects are replicated between grids?
 
-
-
-
+* The source grid's maximum segment size applies to objects replicated to the other grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the target grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the target grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
 
 == What happens if a grid fails?
 
