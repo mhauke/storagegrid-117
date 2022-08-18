@@ -62,7 +62,7 @@ The table in this section only lists the rules that are compliant and do not use
 NOTE: If no rule is listed in the Select Default Rule section, you must exit the ILM policy page and xref:creating-default-ilm-rule.adoc[create a default ILM rule] that is compliant.
 
 +
-IMPORTANT: Do not use the Make 2 copies stock rule as the default rule for a policy. The Make 2 copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If you use this rule, multiple copies of an object might be placed on the same site.
+IMPORTANT: Do not use the Make 2 Copies stock rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If you use this rule, multiple copies of an object might be placed on the same site.
 
 . In the *Select Other Rules* section, select any other rules you want to include in the policy.
  .. If you need a different "`default`" rule for objects in non-compliant S3 buckets, optionally select one non-compliant rule that does not use a filter.

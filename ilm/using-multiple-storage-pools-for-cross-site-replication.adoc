@@ -15,11 +15,11 @@ For example, if you configure an ILM rule to make two replicated copies and spec
 
 The following example illustrates what can happen if an ILM rule places replicated object copies to a single storage pool containing Storage Nodes from two sites. Because the system uses any available nodes in the storage pool when it places the replicated copies, it might place all copies of some objects within only one of the sites. In this example, the system stored two copies of object AAA on Storage Nodes at Site 1, and two copies of object CCC on Storage Nodes at Site 2. Only object BBB is protected if one of the sites fails or becomes inaccessible.
 
-image::../media/ilm_replication_make_2_copies_1_pool_2_sites.png[Make 2 copies rule at two sites but only one storage pool]
+image::../media/ilm_replication_make_2_copies_1_pool_2_sites.png[Make 2 Copies rule at two sites but only one storage pool]
 
 In contrast, this example illustrates how objects are stored when you use multiple storage pools. In the example, the ILM rule specifies that two replicated copies of each object be created, and that the copies be distributed to two storage pools. Each storage pool contains all Storage Nodes at one site. Because a copy of each object is stored at each site, object data is protected from site failure or inaccessibility.
 
-image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Make 2 copies rule at two sites and two storage pools]
+image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Make 2 Copies rule at two sites and two storage pools]
 
 When using multiple storage pools, keep the following rules in mind:
 
