@@ -10,7 +10,7 @@ summary: 'You can encrypt stored objects if you want to ensure that data cannot 
 
 [.lead]
 
-You can encrypt stored objects if you want to ensure that data cannot be retrieved in a readable form if an object store is compromised. By default, objects are not encrypted.
+You can encrypt stored objects if you want to ensure that data cannot be retrieved in a readable form if an object store is compromised. By default, objects are not encrypted. You can use the Prevent Client Modification grid option to deny specific HTTP client operations.
 
 .What you'll need
 
@@ -30,31 +30,27 @@ Stored objects can be encrypted using the AES‐128 or AES‐256 encryption algo
 
 The Stored Object Encryption setting applies only to S3 objects that have not been encrypted by bucket-level or object-level encryption.
 
-.Steps
-
-. Select *CONFIGURATION* > *Security settings* > *Network and objects*.
-. In the Stored object encryption, select *None* (default), *AES-128*, or *AES-256*.
-. In the Network Options, select *Enable HTTP Connection*.
-When the Prevent Client Modification option is selected, the following requests are denied:
+Prevent Client Modification is a system wide setting. When the Prevent Client Modification option is selected, the following requests are denied:
 
 * *S3 REST API*
  ** Delete Bucket requests
  ** Any requests to modify an existing object's data, user-defined metadata, or S3 object tagging
 +
 NOTE: This setting does not apply to buckets with versioning enabled. Versioning already prevents modifications to object data, user-defined metadata, and object tagging.
-
-+
 * *Swift REST API*
  ** Delete Container requests
  ** Requests to modify any existing object. For example, the following operations are denied: Put Overwrite, Delete, Metadata Update, and so on.
+
+.Steps
+
+. Select *CONFIGURATION* > *Security settings* > *Network and objects*.
+. In the Stored object encryption, select *None* (default), *AES-128*, or *AES-256* to apply the type of encryption to stored objects.
+. From the Network Options, select *Prevent client modification* or *Enable HTTP for Storage Node connections* or both.
 +
 
-. In the Network options, select *Enable HTTP for Storage Node connections*.
-+
-Use this option only if S3 and Swift clients need to make HTTP connections directly to Storage Nodes. You do not need to complete this task for clients that only use HTTPS connections or for clients that connect to the Load Balancer service (because you can configure each Load Balancer endpoint to use either HTTP or HTTPS). 
+Use *Enable HTTP for Storage node connections* only if S3 and Swift clients need to make HTTP connections directly to Storage Nodes. You do not need to complete this task for clients that only use HTTPS connections or for clients that connect to the Load Balancer service (because you can configure each Load Balancer endpoint to use either HTTP or HTTPS). 
 +
 
-NOTE: Be careful when enabling HTTP for a production grid because requests will be sent unencrypted.
-
+NOTE: Be cautious when enabling HTTP for a production grid because requests will be sent unencrypted.
 
 . Select *Save*.
