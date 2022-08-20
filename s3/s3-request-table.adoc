@@ -1,0 +1,144 @@
+---
+permalink: s3/s3-request-table.html
+sidebar: sidebar
+keywords: s3 request headers, s3 command support, request syntax, not supported requests, aws s3
+summary: 'Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
+---
+= S3 request tables
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Refer to the table to see a summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.
+
+Jump to: <<A,A>>, <<C,C>>, <<G,G>>, <<L,L>>, <<P,P>>
+
+
+
+[cols="1a,3a,1a" options="header"]
+|===
+| Amazon Simple Storage Service (S3) API| Unsupported parameters |Learn more
+
+//AbortMultipartUpload
+
+|[[A]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
+
+|----
+x-amz-request-payer
+----
+
+|xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
+
+
+//CompleteMultipartUpload
+
+|[[C]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
+
+
+|----
+x-amz-request-payer
+----
+
+|xref:complete-multipart-upload.adoc[Complete Multipart Upload]
+
+//CopyObject (PUT Object-Copy)
+
+|https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[CopyObject^]
+
+|----
+Cache-Control
+Expires
+x-amz-grant-full-control
+x-amz-grant-read
+x-amz-grant-read-acp
+x-amz-grant-write-acp
+x-amz-website-redirect-location
+x-amz-server-side-encryption-aws-kms-key-id
+x-amz-server-side-encryption-context
+x-amz-request-payer
+----
+
+|xref:put-object-copy.html.adoc[PUT Object-Copy]
+
+//CreateBucket (PUT Bucket)
+
+|https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[CreateBucket^]
+
+|
+----
+x-amz-acl
+x-amz-grant-full-control
+x-amz-grant-read
+x-amz-grant-read-acp
+x-amz-grant-write
+x-amz-grant-write-acp
+----
+
+
+|xref:operations-on-buckets.adoc[Operations on buckets]
+
+//GetBucketAcl
+
+|[[G]]https://https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketAcl^]
+
+|Implemented with all Amazon S3 REST API behavior.
+
+|xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+// ListBuckets
+
+|[[L]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^]
+
+
+|Implemented with all Amazon S3 REST API behavior.
+
+|xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+>> PutBucketEncryption
+
+|[[P]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCor.html[PutBucketCors^]
+
+|----
+Content-MD5
+----
+| tbd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|===
+
+
+== Unsupported requests
+
+* GetBucketAnalyticsConfiguration
+
+* ListBucketAnalyticsConfigurations
+
+* ListBucketInventoryConfigurations
+
+* ListBucketMetricsConfigurations
+
+
+
+
+
