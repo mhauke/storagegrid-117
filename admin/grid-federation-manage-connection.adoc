@@ -15,27 +15,10 @@ You can use a grid federation connection between two StorageGRID systems to repl
 
 Creating a grid federation connection is a two-step process.
 
-// Start snippet: Quick start headings as block titles
-// 1 placeholder per entry: Heading text here
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Start a connection
-
-[role="quick-margin-para"]
-A grid admin signs in to the primary Admin Node on one grid to enter connection details and download a verification package. In these instructions, the grid where a new connection is started is referred to as the _local grid_, but you can use either grid to start creating the connection.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Complete a connection
-
-[role="quick-margin-para"]
-A grid admin signs in to the primary Admin Node on the other grid to upload the verification package and save and test the connection. In these instructions, the grid where a new connection is completed is referred to as the _remote grid_.
-
-//// 
-
 image:../media/grid-federation-create.png[illustration of steps to create a grid federation connection]
 
 . To start a new connection, a grid admin signs in to the primary Admin Node on either grid to enter connection details and download a verification package. In these instructions, the grid where a new connection is started is referred to as the _local grid_, but you can use either grid.
 . To complete a new connection, a grid admin signs in to the primary Admin Node on the other grid to upload the verification package and save and test the connection. In these instructions, the grid where a new connection is completed is referred to as the _remote grid_.
-
-////
 
 
 .What you'll need
