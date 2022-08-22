@@ -11,65 +11,71 @@ summary: 'You can use a grid federation connection between two StorageGRID syste
 [.lead]
 You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to create and manage these connections.
 
-== Create a grid federation connection
+== Configure a grid federation connection
 
-Creating a grid federation connection is a two-step process.
+Configuring a grid federation connection is a two-step process. You start the configuration on one grid and complete it on the other grid. You can start the configuration on either grid.
 
-image:../media/grid-federation-create.png[illustration of steps to create a grid federation connection]
-
-. To start a new connection, a grid admin signs in to the primary Admin Node on either grid to enter connection details and download a verification package. In these instructions, the grid where a new connection is started is referred to as the _local grid_, but you can use either grid.
-. To complete a new connection, a grid admin signs in to the primary Admin Node on the other grid to upload the verification package and save and test the connection. In these instructions, the grid where a new connection is completed is referred to as the _remote grid_.
-
+. To start the configuration, a grid admin signs in to the primary Admin Node on the first grid to enter connection details and download a verification package. 
+In these instructions, the grid where the configuration is started is referred to as _Grid 1_.
+. To complete the configuration, a grid admin signs in to the primary Admin Node on the second grid to upload the verification package and save and test the connection. In these instructions, the grid where the configuration is completed is referred to as _Grid 2_.
 
 .What you'll need
 
+* You have reviewed the xref:grid-federation-overview.adoc[considerations and requirements] for configuring grid federation connections. 
+* If you plan to use fully qualified domain names (FQDNs) for each grid instead of IP or VIP addresses, you know which names to use. The DNS servers for each grid have the appropriate entries.
+
 * You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* To start a connection, you have Root access permission and the provisioning passphrase for the local grid.
-* To complete a connection, you have Root access permission and the provisioning passphrase for the remote grid. 
-* High availability (HA) groups exist on both grids.
-* If you plan to use fully qualified domain names (FQDNs) instead of IP addresses, the DNS server for each grid has the following entries:
-** *Local grid DNS*: Remote grid FQDN mapped to remote grid IP addresses.
-** *Remote grid DNS*: Local grid FQDN mapped to local grid IP addresses.  
+* Whoever starts the configuration has Root access permission and the provisioning passphrase for Grid 1.
+* Whoever completes the configuration has Root access permission and the provisioning passphrase for Grid 2. 
 
-=== Start the connection on the local grid
 
-To start a grid federation connection, enter connection details on the local grid and download the verification package.
 
-Perform these steps on either StorageGRID system.
+=== Start the configuration
 
-. Sign in to the Grid Manager from the primary Admin Node.
+To start the configuration, enter connection details and download the verification package.
+
+. Sign in to the Grid Manager from the primary Admin Node on either grid.
+
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
-. Select *Add connection* > *Start a connection*.
+. Select *Add connection* > *Start configuration*.
 
 . Enter details for the connection.
 +
-[cols="1a,3a" options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Field| Description
 
 |Connection name
-|A unique name to help you recognize this connection, for example, "`Grid East-Grid West`".
+|A unique name to help you recognize this connection, for example, "`Grid 1-Grid 2.`"
 
-|FQDN or IP for _local grid_ (Local)
-|The FQDN of the grid you are currently signed into or a VIP address of an HA group on this grid.
+|FQDN or IP for Grid 1
+|One of the following:
+
+* The FQDN of the grid you are currently signed into
+* A VIP address of an HA group on this grid
+* An IP address of an Admin Node or Gateway Node on this grid
 
 |Port
-|The port you want to use for this connection. You can enter any unused port number between 1 and 65,535.
+|The port you want to use for this connection. You can enter any unused port number from 1 to 65,535.
 
-Both grids in this grid federation connection will use the same port. You must ensure that no node in either grid uses this port for other connections.
+Both grids in this connection will use the same port. You must ensure that no node in either grid uses this port for other connections.
 
 |Certificate valid days
-|The number of days you want the security certificate for this grid federation connection to be valid. This value defaults to 730 days (2 years), but you can enter any value between 1 and 762 days.
+|The number of days you want the security certificate for this connection to be valid. This value defaults to 730 days (2 years), but you can enter any value from 1 to 762 days.
 
-StorageGRID automatically generates this security certificate when you save the connection.
+StorageGRID automatically generates this certificate when you save the connection.
 
-|Local grid provisioning passphrase 
+|Grid 1 provisioning passphrase 
 |The provisioning passphrase for the grid you are signed in to.
 
-|FQDN or IP for remote grid
-|The FQDN of the grid you want to connect to or a VIP address of an HA group on the other grid.
+|FQDN or IP for Grid 2
+|One of the following:
+
+* The FQDN of the grid you want to connect to
+* A VIP address of an HA group on the other grid
+* An IP address of an Admin Node or Gateway Node on the other grid
 
 
 |===
@@ -78,36 +84,36 @@ StorageGRID automatically generates this security certificate when you save the 
 
 . For the Download verification package step, select *Download verification package*.
 +
-After the connection is successfully completed on the remote grid, you can no longer download the verification package.
+After the connection is successfully completed on Grid 2, you can no longer download the verification package from Grid 1.
 
 . When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`) and save it to a safe location.
 +
 [IMPORTANT]
 The verification package contains secrets and must be securely stored and transmitted.
 
-. Select *Close* return to the Grid federation page. 
+. Select *Close* to return to the Grid federation page. 
 
 . Confirm that the new connection is shown and that its *Connection status* is *Waiting to connect*.
 
-. Ensure that the grid admin for the remote grid has access to the `_connection-name_.grid-federation` file.
+. Ensure that the grid admin for Grid 2 has access to the `_connection-name_.grid-federation` file.
 
-=== Complete the connection on the other grid
+=== Complete the connection
 
-Perform these steps on the StorageGRID system you are connecting to.
+Perform these steps on the StorageGRID system you are connecting to (Grid 2).
 
 . Sign in to the Grid Manager from the primary Admin Node.
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
-. Select *Add connection* > *Upload verification package*. 
+. Select *Add connection* > *Complete configuration*. 
 
 . Select *Upload verification package*.
 
-. Browse to and select the file that was downloaded on the other grid (`_connection-name_.grid-federation`) 
+. Browse to and select the file that was downloaded from Grid 1 (`_connection-name_.grid-federation`) 
 +
 The details for the connection are shown.
 
-. Enter the provisioning passphrase for the grid you are currently signed in to.
+. Enter the provisioning passphrase for Grid 2 (the grid you are currently signed in to).
 
 . Select *Save and test*.
 +
@@ -125,7 +131,7 @@ This file contains secrets and must be deleted after the connection is establish
 
 == View grid federation connections
 
-You can view details for existing grid federation connections. 
+You can view details for existing grid federation connections from either grid in the connection. 
 
 * To view basic information for all grid federation connections, review the table on the Grid federation page. 
 

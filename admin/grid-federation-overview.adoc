@@ -13,10 +13,10 @@ You can use grid federation to replicate tenants and their objects between two S
 
 == What is a grid federation connection?
 
-A grid federation connection is a trusted and secure connection between high availability (HA) groups in two discrete StorageGRID systems. A grid federation connection must exist before you can use account sync or cross-grid replication.
+A grid federation connection is a bi-directional, trusted, and secure connection between two discrete StorageGRID systems. A grid federation connection must exist before you can use account sync or cross-grid replication.
 
 
-== What is account sync?
+=== What is account sync?
 
 Account sync is the replication of S3 tenant accounts and account details between two StorageGRID systems. Account sync is required for cross-grid replication.
 
@@ -36,9 +36,11 @@ Note that any S3 access keys, groups, or users that are created or modified on t
 After the grid administrator establishes a grid federation connection between two grids and creates a new S3 tenant with permission to use that connection, the tenant can create new S3 buckets and optionally enable cross-grid replication for those buckets. When cross-grid replication is enabled for a bucket, all operations to add or remove objects to the bucket are automatically replicated from the tenant's source grid to the tenant's destination grid.
 
 
-== What are the requirements?
+== Considerations and requirements
 
 * Each grid can have one or more grid federation connections to other grids. Each grid federation connection is independent of any other connections. That is, if grid A has one connection with grid B and a second connection with grid C, there is no implied connection between grid B and grid C.
+
+* Grid federation connections are bidirectional. After the connection is established, you can monitor and manage the connection from either grid. 
 
 * At least one grid federation connection is a required for account sync and cross-grid replication.
 
@@ -46,20 +48,24 @@ After the grid administrator establishes a grid federation connection between tw
 
 * After you create a grid federation connection, you can select the new connection when you create a new S3 tenant. However, you cannot select a grid federation connection for an existing tenant.  
 
-* Grid federation connections are bidirectional. You can start the connection on either grid.
-
 * Tenant creation is bidirectional. You can create a tenant on either grid, and the tenant will automatically be copied to the other grid.
 
-* Account sync and cross-grid replication are unidirectional. The grid where you initially create the tenant is known as the tenant's source grid. If you change account details or buckets on the tenant's source grid, the changes are automatically replicated to the other grid (known as the tenant's destination grid). However, if you change account details or buckets on the tenant's destination grid, the changes are not replicated back to the source grid. 
+* Account sync and cross-grid replication are unidirectional. Either grid in the connection can be the tenant's source grid (the grid where you initially create the tenant). If you change account details or buckets on the tenant's source grid, the changes are automatically replicated to the other grid (known as the tenant's destination grid). However, if you change account details or buckets on the tenant's destination grid, the changes are not replicated back to the source grid. 
 
-* Grid federation connections are made between high availability (HA) groups of Gateway and Admin Nodes on each grid. For this reason, each grid must include one or more Admin or Gateway Nodes, and you must configure a high availability (HA) group on each grid.
+=== IP address and DNS requirements
+
+* A grid federation connection can connect any two nodes that run the nginx-gw service. All Admin Nodes and all Gateway Nodes include this service, so you can configure a connection between the primary Admin Nodes on each grid or between a Gateway Node on one grid and an Admin Node on the other. However, the best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid.
 +
 Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface.
 + 
 See xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
 
-* If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must add the appropriate entries to your DNS server. The entries should map the FQDN for each grid to the virtual IP (VIP) addresses for its HA group.
+* If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must create the appropriate DNS entries, as follows:
 
+** *Grid 1 DNS*: The FQDN for Grid 2 mapped to one or more IP address or virtual IP (VIP) addresses for Grid 1. 
+** *Grid 2 DNS*: The FQDN for Grid 1 mapped to one or more IP addresses or VIP addresses for Grid 2. 
+
+* If the DNS entries for a FQDN map to the IP address of more than one Admin Node or Gateway Node or to the VIP addresses of more than one HA group, the requests to use the connection will be load balanced between the nodes or between the active nodes in the HA groups.
 
 == How are objects are replicated between grids?
 
