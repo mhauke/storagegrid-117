@@ -1,20 +1,20 @@
 ---
 permalink: admin/using-tls-ssh-policy.html
 sidebar: sidebar
-keywords: browser session timeout, inactive users
-summary: 'You can control whether Grid Manager and Tenant Manager users are signed out if they are inactive for more than a certain amount of time.'
+keywords: TLS and SSH policy, secure connection
+summary: 'You can use TLS and SSH policies to configure TLS and SSH policies and establish secure connections while still maintaining compatibility with the client applications.'
 ---
-= Use TLS and SSH policies
+= Manage the TLS and SSH policy
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use TLS and SSH policies to configure TLS and SSH policies and establish secure connections while still maintaining compatibility with the client applications. It is recommended to use the Modern policy, unless the system needs to be FIPS compliant or need to support other policies.
+You can select which TLS and SSH policy is used to establish secure connections while still maintaining compatibility with the client applications. You can use the Modern policy, unless the system needs to be FIPS compliant or need to support other policies.
 
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have specific access permissions.
+* You have the Root access permissions.
 
 .About this task
 
@@ -25,13 +25,14 @@ Select a security policy to control how TLS and SSH encrypt data in motion.
 +
 
 image::../media/securitysettings_tls_ssh_policies.png[TLS and SSH policies]
-
 +
 
 NOTE: Some StorageGRID services have not been updated to use the ciphers in these policies.
 +
+. Review the available policies.
++
 
-[cols="2,2a" options="header"]
+[cols="1,2a" options="header"]
 |===
 |Policy
 |Description
@@ -41,7 +42,7 @@ NOTE: Some StorageGRID services have not been updated to use the ciphers in thes
 You can use this as a default policy unless you have special requirements.
 
 |Legacy compatibility
-|Use this policy if you have need additional compatibility options to support older clients. The additional options in Legacy policy can be less secure than the Modern compatibility policy.
+|Use this policy if you have additional compatibility options to support older clients. The additional options in Legacy policy can be less secure than the Modern compatibility policy.
 
 |Common Criteria
 |Matches the test configuration used for Common Criteria certification.
