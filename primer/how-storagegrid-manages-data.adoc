@@ -2,28 +2,26 @@
 permalink: primer/how-storagegrid-manages-data.html
 sidebar: sidebar
 keywords: how storagegrid manages data, what an object is, how object data is protected
-summary: 'As you begin working with the StorageGRID system, it is helpful to understand how the StorageGRID system manages data.'
+summary: 'With object storage, the unit of storage is an object, rather than a file or a block. Unlike the tree-like hierarchy of a file system or block storage, object storage organizes data in a flat, unstructured layout.'
 ---
-= How StorageGRID manages data
+= What is an object
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-As you begin working with the StorageGRID system, it is helpful to understand how the StorageGRID system manages data.
+With object storage, the unit of storage is an object, rather than a file or a block. Unlike the tree-like hierarchy of a file system or block storage, object storage organizes data in a flat, unstructured layout. 
 
-== What an object is
-
-With object storage, the unit of storage is an object, rather than a file or a block. Unlike the tree-like hierarchy of a file system or block storage, object storage organizes data in a flat, unstructured layout. Object storage decouples the physical location of the data from the method used to store and retrieve that data.
+Object storage decouples the physical location of the data from the method used to store and retrieve that data.
 
 Each object in an object-based storage system has two parts: object data and object metadata.
 
 image::../media/object_conceptual_drawing.png[Object]
 
-=== Object data
+== What is object data?
 
 Object data might be anything; for example, a photograph, a movie, or a medical record.
 
-=== Object metadata
+== What is object metadata?
 
 Object metadata is any information that describes an object. StorageGRID uses object metadata to track the locations of all objects across the grid and to manage each object's lifecycle over time.
 
@@ -37,7 +35,7 @@ Object metadata is customizable and expandable, making it flexible for applicati
 
 For detailed information about how and where StorageGRID stores object metadata, go to xref:../admin/managing-object-metadata-storage.adoc[Manage object metadata storage].
 
-== How object data is protected
+== How is object data protected?
 
 The StorageGRID system provides you with two mechanisms to protect object data from loss: replication and erasure coding.
 

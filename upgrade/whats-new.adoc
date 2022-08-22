@@ -20,8 +20,11 @@ As part of this change, a new banner is displayed on the Dashboard to remind new
 
 See xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard]  and xref:../fabricpool/use-fabricpool-setup-wizard.adoc[Use FabricPool setup wizard].
 
-=== Control tenant access to load balancer endpoints
-When you create a load balancer endpoint, you can now allow all tenants to access the endpoint (default), or you can specify a list of the allowed or blocked tenants.Tenant access lets you provide better security isolation between tenants and their endpoints. 
+=== Changes to load balancer endpoints
+When you create a load balancer endpoint, you can now do the following:
+
+* Allow all tenants to access the endpoint (default), or specify a list of allowed or blocked tenants to provide better security isolation between tenants and their endpoints. 
+* Use the *Node Type* binding mode to require clients to use the IP address (or corresponding FQDN) of any Admin Node or the IP address of any Gateway Node, based on the type of node you select.
 
 === New upgrade and hotfix process
 * You can now use the Grid Manager to upgrade to a future release and apply a hotfix for that release at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
@@ -42,12 +45,23 @@ A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and 
 === Storage pools created for each site during installation
 When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
 
+=== New audit messages
+The following new audit messages were added:
+
+* *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
+
 
 == Kevin's what's new
 
 === Volume restoration
-
 TBD
+
+=== NewerNoncurrentVersions threshold for S3 buckets 
+The `NewerNoncurrentVersions` action in the bucket lifecycle configuration specifies the number of noncurrent versions retained in a versioned S3 bucket. This threshold overrides lifecycle rules provided by ILM. See xref:../ilm/how-objects-are-deleted.adoc[How objects are deleted].
+
+=== Certificate subject optional
+The certificate subject field is now optional. If this field is left blank, the generated certificate uses the first domain name or IP address as the subject common name (CN).
+
 
 == Lisa's what's new
 

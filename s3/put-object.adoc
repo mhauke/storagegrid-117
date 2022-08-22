@@ -74,7 +74,7 @@ When specifying the name-value pair for user-defined metadata, use this general 
 x-amz-meta-_name_: _value_
 ----
 +
-If you want to use the *User Defined Creation Time* option as the Reference Time for an ILM rule, you must use `creation-time` as the name of the metadata that records when the object was created. For example:
+If you want to use the *User defined creation time* option as the Reference time for an ILM rule, you must use `creation-time` as the name of the metadata that records when the object was created. For example:
 +
 ----
 x-amz-meta-creation-time: 1443399726
@@ -82,7 +82,7 @@ x-amz-meta-creation-time: 1443399726
 +
 The value for `creation-time` is evaluated as seconds since January 1, 1970.
 +
-NOTE: An ILM rule cannot use both a *User Defined Creation Time* for the Reference Time and the Balanced or Strict options for Ingest Behavior. An error is returned when the ILM rule is created.
+NOTE: An ILM rule cannot use both a *User defined creation time* for the Reference time and the Balanced or Strict options for Ingest Behavior. An error is returned when the ILM rule is created.
 
 * `x-amz-tagging`
 * S3 Object Lock request headers

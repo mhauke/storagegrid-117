@@ -31,7 +31,7 @@ StorageGRID does not validate custom alerts. If you decide to create custom aler
 * If you define more than one condition for an alert rule, use the same expression for all conditions. Then, change the threshold value for each condition.
 * Carefully check each condition for typos and logic errors.
 * Use only the metrics listed in the Grid Management API.
-* When testing an expression using the Grid Management API, be aware that a "`successful`" response might simply be an empty response body (no alert triggered). To see if the alert is actually triggered, you can temporarily set a threshold to a value you expect to be true currently.
+* When testing an expression using the Grid Management API, be aware that a "`successful`" response might be an empty response body (no alert triggered). To see if the alert is actually triggered, you can temporarily set a threshold to a value you expect to be true currently.
 +
 For example, to test the expression `node_memory_MemTotal_bytes < 24000000000`, first execute `node_memory_MemTotal_bytes >= 0` and ensure you get the expected results (all nodes return a value). Then, change the operator and the threshold back to the intended values and execute again. No results indicate there are no current alerts for this expression.
 
