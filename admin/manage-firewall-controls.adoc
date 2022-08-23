@@ -13,8 +13,6 @@ summary: 'StorageGRID includes a firewall on each node that enhances the securit
 [.lead]
 StorageGRID includes a firewall on each node that enhances the security of your grid by enabling you to control access to the Grid Network, Admin Network, and Client Network. You should use the firewall to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the *Firewall control* page are deployed to each node. 
 
-
-
 Use the *Firewall control* page to: 
 * Manage external network access to your nodes.
 * Create a list of privileged IP addresses that can access ports that would otherwise be blocked.
@@ -24,10 +22,26 @@ Use the *Firewall control* page to:
 You can enhance the security of your grid by limiting the external network access of the ports on your grid nodes. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. 
 
 
+=== Example: 
+you can lock down everything then be prcise how you target access
 
-Example: 
+close all external ports, then set the untrusted client networks, and then switch one of the ports that are allowed using the xxxx in addition to endpoints
+
+additional ports become accessible using feature xxxx
+Now also can allow untrusted client networks to access the admin consoles using these three additional ports we allow.
+
+Lets say its the tentant manager on the client network can access 9443 to get to the teneant manager. This way, only certain customers could have access to the Tenant manager, with all other customers blocked from access to the Tenent manager. 
 
 
+Example 2
+
+Priviledged IP do not have internal grid access by default. 
+Say you blocked all the ports. But you have one note for administration, like SSH access (a jump host). You can use this for secure maintenance using privilidged IPs. 
+this administrative node can have extremely limited access, but once you are in you can get into all the grid nodes, and so a way of doing secure mainteenance. 
+
+
+
+ 
 
 
 == Manage untrusted Client Networks: overview
