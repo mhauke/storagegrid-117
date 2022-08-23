@@ -10,7 +10,7 @@ Upgrade the firmware on the drives in your appliance to make sure you have all t
 * If you performing an offline upgrade, you have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
 +
 NOTE: Maintenance mode interrupts the connection to the storage controller, stopping all I/O activity and placing all drives offline.
-+
+
 IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID appliance at a time. Doing so might cause data unavailability, depending on your deployment model and ILM policies.
 
 .About this task
@@ -93,9 +93,9 @@ The selected firmware for the drive appears in the *Proposed Firmware* column. I
 +
 NOTE: An online upgrade can take several hours longer than an offline upgrade.
 
-* *Upgrade all drives offline (parallel)* — Upgrades the drives that can support a firmware download only while all I/O activity is stopped on any volumes that use the drives. You must place the appliance into maintenance mode before using this method. 
+* *Upgrade all drives offline (parallel)* — Upgrades the drives that can support a firmware download only while all I/O activity is stopped on any volumes that use the drives. 
 
-If possible, you should use the *Offline* method to upgrade the drive firmware. 
+IMPORTANT: You must place the appliance into maintenance mode before using this method. If possible, you should use the *Offline* method to upgrade the drive firmware. 
 
 CAUTION: If you want to use the Offline (parallel) upgrade, Do not proceed unless you are certain that the appliance is in maintenance mode. Failure to place the appliance into maintenance mode prior to initiating an offline drive firmware update might cause data loss. 
 
