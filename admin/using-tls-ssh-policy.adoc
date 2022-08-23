@@ -9,12 +9,12 @@ summary: 'You can use TLS and SSH policies to configure TLS and SSH policies and
 :imagesdir: ../media/
 
 [.lead]
-You can select which TLS and SSH policy is used to establish secure connections while still maintaining compatibility with the client applications. You can use the Modern policy, unless the system needs to be FIPS compliant or need to support other policies.
+You can use TLS and SSH policy to configure ciphers to establish secure connections while still maintaining compatibility with the client applications. You can use the Modern policy, unless the system needs to be FIPS compliant or need to support other ciphers.
 
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Root access permissions.
+* You have the Root access permission.
 
 .About this task
 
@@ -59,7 +59,14 @@ To create a new Custom policy, select *Configure and use* from the Custom policy
 |===
 +
 
-. Select *Use policy* to apply a security policy.
+. Select *Use policy* to apply one of the provided policies, or create a custom policy, as follows:
+
+.. Select *View details* for one of the provided policies.
+.. Select *Copy to clipboard* and *Cancel*.
+.. For the Custom policy, select *Configure and use*. 
+.. Paste the JSON you copied and make any required changes to create a custom policy that meets your requirements.
+.. Select Use policy.
+
 
  
 
