@@ -534,6 +534,22 @@ The object existence check job cannot continue. Either one or more Storage Nodes
 |Too few Storage Nodes with the RSM service are running or available at a site.
 |===
 
+== StorageGRID services alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description
+
+|nginx service using backup configuration
+|The configuration of the nginx service is invalid. The previous configuration is now being used.
+
+|nginx-gw service using backup configuration
+|The configuration of the nginx-gw service is invalid. The previous configuration is now being used.
+
+|SSH service using backup configuration
+|The configuration of the SSH service is invalid. The previous configuration is now being used.
+|===
+
 == Tenant alerts
 
 [cols="1a,2a" options="header"]
