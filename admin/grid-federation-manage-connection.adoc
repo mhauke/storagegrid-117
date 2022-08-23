@@ -172,31 +172,59 @@ IMPORTANT: After editing an connection, you might need to wait up to 15 minutes 
 
 ====
 
+//// 
 
-=== Rotate connection certificate
 
+== Rotate connection certificates
+When you configure a grid federation connection, StorageGRID generates four security certificates to secure the connection in both directions. It creates a server certificate and the corresponding client certificate for the connection between grid 1 and grid 2 and a server certificate and the corresponding client certificate for the connection between grid 2 and grid 1.
 
+image:../media/grid-federation-certificates.png[Grid federation certificates]
+
+By default, all four certificates are valid for 730 days (two years). If these certificates expire, the connection will stop working and data will not longer be replicated between grids. 
+
+To rotate the certificates, follow these steps.
+
+. Sign in to the Grid Manager from the primary Admin Node on either grid.
+
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+. Use the Actions menu or the Details page, as follows:
++
 [role="tabbed-block"]
 ====
 
 .Actions menu
 --
-. Select the check box for the connection. 
-. Select *Actions* > *Rotate certificate*.
-. Upload or generate a new custom certificate.
-. Select *Save changes*.
+.. Select the check box for the connection. 
+.. Select *Actions* > *Rotate certificate*.
+.. Specify how long the new certificates should be valid for, in days.
+.. Select *Save changes*.
 --
 
 .Details page
 --
-. Select the connection name to display the details.
-. Select the *Certificate* tab.
-. Select *Rotate certificate*.
-. Upload or generate a new custom certificate.
-. Select *Save changes*.
+.. Select the connection name to display the details.
+.. Select the *Certificate* tab.
+.. Select *Rotate certificate*.
+.. Specify how long the new certificates should be valid for, in days.
+.. Select *Save changes*.
 --
 
 ====
+
+. Download the updated verification package from the grid you are signed in to and provide it to the other grid.
+
+. Sign in to the other grid, and select *Manage connection* > *Upload verification package*.
+
+. Confirm that the *Connection status* is *Connected*.
+
+. Securely delete all copies of the verification package from both grids.
++
+[IMPORTANT]
+This file contains secrets and must be deleted after you update the certificates.
+
+////
+
 
 === Remove permission for tenant to use grid connection
 
