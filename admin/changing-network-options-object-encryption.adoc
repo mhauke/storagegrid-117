@@ -60,9 +60,10 @@ See xref:summary-ip-addresses-and-ports-for-client-connections.adoc[Summary: IP 
 NOTE: Be cautious when enabling HTTP for a production grid because requests will be sent unencrypted.
 +
 
-See the information on configuring load balancer endpoints for more information.
+See the information on xref:../admin/configuring-load-balancer-endpoints.adoc[configuring load balancer endpoints] for more information.
++
 
-See Summary: IP addresses and ports for client connections to learn which ports S3 and Swift clients use when connecting to Storage Nodes using HTTP or HTTPS.
+See xref:../admin/summary-ip-addresses-and-ports-for-client-connections.adoc[IP addresses and ports for client connections] to learn which ports S3 and Swift clients use when connecting to Storage Nodes using HTTP or HTTPS.
 
 (when you select HTTP here, the client has to use a completely different port number in the URL. If they don't know that, their requests will fail.)
 
