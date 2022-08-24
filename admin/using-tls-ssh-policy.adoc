@@ -39,7 +39,7 @@ NOTE: Some StorageGRID services have not been updated to use the ciphers in thes
 
 |Modern compatibility
 |Use this policy if you need a strong encryption. This policy is compatible with most TLS and SSH clients.
-You can use this as a default policy unless you have special requirements.
+You can use this default policy unless you have special requirements.
 
 |Legacy compatibility
 |Use this policy if you have additional compatibility options to support older clients. The additional options in Legacy policy can be less secure than the Modern compatibility policy.
@@ -51,7 +51,7 @@ You can use this as a default policy unless you have special requirements.
 |The same as the Common Criteria policy, but removes the transitional ciphers and enabled FIPS mode in OpenSSL. Using this policy might reduce performance.
 
 |Custom
-|Use this policy if you want to create your own custom policy. Custom policy you to customize and apply your own security policy. You must use caution and validate the policy you provide.
+|Use this policy if you want to create your own custom policy. Custom policy helps you to customize and apply your own security policy. You must use caution and validate the policy you provide.
 
 You can also edit an existing policy and create your own custom policy. Use *Copy to clipboard* option, edit, and create a custom policy.
 
@@ -65,7 +65,7 @@ To create a new Custom policy, select *Configure and use* from the Custom policy
 .. Select *Copy to clipboard* and *Cancel*.
 .. For the Custom policy, select *Configure and use*. 
 .. Paste the JSON you copied and make any required changes to create a custom policy that meets your requirements.
-.. Select Use policy.
+.. Select *Use policy*.
 
 
  

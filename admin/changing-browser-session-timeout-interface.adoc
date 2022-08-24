@@ -18,7 +18,7 @@ You can control whether Grid Manager and Tenant Manager users are signed out if 
 
 .About this task
 
-The browser session timeout defaults between 1 minute and 7 days. If a user's browser session is not active for this amount of time, the session times out.
+The browser session timeout defaults to 15 minutes. If a user's browser session is not active for this amount of time, the session times out.
 
 As required, you can increase or decrease the timeout period by setting the *Sign out inactive users after* option.
 
@@ -28,7 +28,7 @@ Browser session timeout can also be controlled by the following:
 
 * A separate, non-configurable StorageGRID timer, which is included for system security. By default, each user's authentication token expires 16 hours after the user signs in. When a user's authentication expires, that user is automatically signed out, even if the value for the browser session timeout has not been reached. To renew the token, the user must sign back in.
 * Timeout settings for the identity provider, assuming SSO is enabled for StorageGRID.
-* If single sign-on (SSO) is enabled and a user's browser session times out, the system behaves as if the user selected *Sign out inactive users after* manually. The user must reenter their SSO credentials to access StorageGRID again. See xref:configuring-sso.adoc[Configure single sign-on]. 
+* If single sign-on (SSO) is enabled and a user's browser times out, the Grid Manager signs out the user's browser session. The user must reenter their SSO credentials to access StorageGRID again. See xref:configuring-sso.adoc[Configure single sign-on]. 
 
 ====
 

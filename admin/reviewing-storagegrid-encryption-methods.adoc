@@ -37,9 +37,9 @@ Storage appliances that have Full Disk Encryption (FDE) drives or Federal Inform
 * xref:../sg5600/index.adoc[SG5600 storage appliances]
 
 a|
-Stored Object Encryption grid option
+Stored object encryption
 a|
-The *Stored Object Encryption* option can be enabled in the Grid Manager (*CONFIGURATION* > *System* > *Grid options*). When enabled, any new objects that are not encrypted at the bucket level or at the object level are encrypted during ingest.
+The *Stored object encryption* option can be enabled in the Grid Manager (*CONFIGURATION* > *Security* > *Security settings*). When enabled, any new objects that are not encrypted at the bucket level or at the object level are encrypted during ingest.
 a|
 Newly ingested S3 and Swift object data.
 
