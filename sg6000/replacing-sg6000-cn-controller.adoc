@@ -60,7 +60,7 @@ IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step o
 If the node controller IP address is not valid or is not in the expected range, reconfigure the IP address as described in the recovery and maintenance instructions.
 
 +
-NOTE: If you applied xref:../installconfig/configuring-hardware.adoc[additional customization during the original installation], such as setting SNMP trap destinations or email notifications, you should record and validate the configuration and reapply it if necessary.
+NOTE: If you xref:../installconfig/configuring-bmc-interfacee.adoc[configured the BMC interface] when you set up hardware, you should record and validate the configuration and reapply it if necessary. For example, you should confirm the settings for SNMP trap destinations and email notifications.
 
 .Related information
 

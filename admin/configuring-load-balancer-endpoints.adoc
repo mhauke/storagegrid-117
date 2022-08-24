@@ -80,40 +80,23 @@ If you enter *80* or *443*, the endpoint is configured only on Gateway Nodes. Th
 
 . Select *Continue*.
 
-=== Select the binding mode
+=== Select a binding mode
 
 . Select a binding mode for the endpoint to control how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
-[cols="1a,3a" options="header"]
-|===
-| Option | Description
-
-|Global (default)
-|Clients can access the endpoint using a fully qualified domain name (FQDN), the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) address of any HA group on any network.
-
-Use the *Global* setting (default) unless you need to restrict the accessibility of this endpoint.
-
-|Node interfaces
-|Clients must use the IP address of a selected node and network interface to access this endpoint.
-
-|Virtual IPs of HA groups
-|Clients must use a virtual IP address of an HA group to access this endpoint.
-
-Endpoints with this binding mode can all use the same port number, as long as the HA groups you select for the endpoints do not overlap.
+include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 
 
-|===
 +
 [NOTE]
-If you use the same port for more than one endpoint, an endpoint using *Virtual IPs of HA groups* mode overrides an endpoint using *Node interfaces* mode, which overrides an endpoint using *Global* mode.
-
-. If you selected *Node interfaces*, select one or more node interfaces for each Admin Node or Gateway Node that you want to associate with this endpoint.
-+
-image::../media/load_balancer_endpoint_node_interfaces_binding_mode.png[Endpoint Node Interfaces Binding Mode]
+If more than one endpoint uses the same port, StorageGRID uses this priority order to decide which endpoint to use: *Virtual IPs of HA groups* > *Node interfaces* > *Node type* > *Global*. 
 
 . If you selected *Virtual IPs of HA groups*, select one or more HA groups.
-+
-image::../media/load_balancer_endpoint_ha_group_vips_binding_mode.png[Endpoint HA Group VIPs Binding Mode]
+
+. If you selected *Node interfaces*, select one or more node interfaces for each Admin Node or Gateway Node that you want to associate with this endpoint.
+
+. If you selected *Node type*, select either Admin Nodes, which includes both the primary Admin Node and any non-primary Admin Nodes, or Gateway Nodes.
+
 
 === Control tenant access
 
@@ -196,7 +179,8 @@ The load balancer endpoint is created. The custom certificate is used for all su
 .. Specify the certificate information:
  ** *Domain name*: One or more fully qualified domain names to include in the certificate. Use an * as a wildcard to represent multiple domain names.
  ** *IP*: One or more IP addresses to include in the certificate.
- ** *Subject*: X.509 subject or distinguished name (DN) of the certificate owner.
+ ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner. + 
+ If no value is entered in this field, the generated certificate uses the first domain name or IP address as the subject common name (CN).
  ** *Days valid*: Number of days after creation that the certificate expires.
 
 .. Select *Generate*.
@@ -221,13 +205,13 @@ The load balancer endpoint is created. The custom certificate is used for all su
 
 === After you finish
 
-. If you use a domain name system (DNS), ensure that the DNS includes a record to associate the StorageGRID fully qualified domain name to each IP address that clients will use to make connections.
+. If you use a domain name system (DNS), ensure that the DNS includes a record to associate the StorageGRID fully qualified domain name (FQDN) to each IP address that clients will use to make connections.
 +
 The IP address you enter in the DNS record depends on whether you are using an HA group of load-balancing nodes:
 
 ** If you have configured a HA group, clients will connect to the virtual IP addresses of that HA group.
 
-** If you are not using a HA group, clients will connect to the StorageGRID Load Balancer service using the IP address of any Gateway Node or Admin Node.
+** If you are not using a HA group, clients will connect to the StorageGRID Load Balancer service using the IP address of a Gateway Node or Admin Node.
 +
 You must also ensure that the DNS record references all required endpoint domain names, including any wildcard names.
 
