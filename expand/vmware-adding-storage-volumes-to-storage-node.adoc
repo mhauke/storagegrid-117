@@ -56,9 +56,8 @@ This script finds any new storage volumes and prompts you to format them.
   *** Enter *y* to reformat.
   *** Enter *n* to skip reformatting.
 
- .. When asked, enter *y* to stop storage services.
 +
-The storage services are stopped, and the `setup_rangedbs.sh` script runs automatically. After the volumes are ready for use as rangedbs, the services start again.
+The `setup_rangedbs.sh` script runs automatically.
 . Check that the services start correctly:
  .. View a listing of the status of all services on the server:
 +
