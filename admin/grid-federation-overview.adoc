@@ -13,8 +13,18 @@ You can use grid federation to replicate tenants and their objects between two S
 
 == What is a grid federation connection?
 
-A grid federation connection is a bi-directional, trusted, and secure connection between two discrete StorageGRID systems. A grid federation connection must exist before you can use account sync or cross-grid replication.
+A grid federation connection is a bidirectional, trusted, and secure connection between two StorageGRID systems. A grid federation connection must exist before you can use account sync or cross-grid replication.
 
+=== How is the connection secured?
+
+When you configure a grid federation connection, StorageGRID automatically generates four SSL certificates:
+
+* Server and client certificates to authenticate and encrypt the connection between grid 1 and grid 2
+* Server and client certificates to authenticate and encrypt the connection between grid 2 and grid 1
+
+image:../media/grid-federation-certificates.png[Grid federation certificates]
+
+When these certificates near their expiration date, an alert reminds you to rotate all certificates, which you can do using the Grid Manager on either grid in the connection. 
 
 === What is account sync?
 
