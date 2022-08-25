@@ -23,7 +23,9 @@ NOTE: When changing the configuration of the client network, existing client con
 
 .About this task
 
-StorageGRID includes a firewall on each node that enables you to open or close ports on the Grid Network, Admin Network, and Client Network. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. If you are using a Client Network, you can specify whether a node trusts inbound traffic from the Client Network, and you can configure the access of specific ports. 
+StorageGRID includes a firewall on each node that enables you to open or close ports on the Grid Network, Admin Network, and Client Network. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. If you are using a Client Network, you can specify whether a node trusts inbound traffic from the Client Network, and you can configure the access of specific ports on the Client Network.
+
+Limiting the number of ports open to IP addresses outside of your grid to only those that are absolutely necessary enhances the security of your grid. 
 
 There are three tabs on the *Firewall control* page: 
 * Manage external access
@@ -32,7 +34,6 @@ There are three tabs on the *Firewall control* page:
 
 You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
 
-Limiting the number of ports open to IP addresses outside of your grid to only those that are absolutely necessary enhances the security of your grid. 
 For more information on using firewall controls, including examples, see xref:../admin/manage-firewall-controls.adoc[Manage firewall controls]. 
 
 [#Access-firewall-controls]
@@ -47,7 +48,7 @@ The Firewall control page opens with the Manage External access tab displayed.
 There are three tabs on this page:
 * Manage external access <<manage-external access,Manage external access>>
 * Privileged address list <<privileged-address-list,Privileged address list>>
-* Untrusted client network <<untrusted-client-network,Untrusted Client network>>
+* Untrusted client Network <<untrusted-client-network,Untrusted Client Network>>
 
 You should check the settings on each tab to ensure only those ports that are necessary for your grid configuration are open. 
 
@@ -124,12 +125,10 @@ NOTE: The configuration changes you make on the *Privileged address list* tab mi
 [#untrusted-client-network]
 === Untrusted Client Network
 
+If you are using a Client Network, use the Untrusted Client Network tab to specify whether a node trusts inbound traffic from the Client Network. If the Client Network is untrusted, the node only accepts inbound traffic on ports configured as load balancer endpoints and, optionally, additional ports you select on this tab. You can also specify the default setting for new nodes added in an expansion. 
 
-NOTE: The configuration changes you make on the *Untrusted Client Network* tab might override the settings on the *Manage external access* tab and the *Privileged address list*. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
+NOTE: The configuration changes you make on the *Untrusted Client Network* tab might override or conflict with the settings on the *Manage external access* tab and the *Privileged address list*. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
-If you are using a Client Network, you can specify whether each node's Client Network is trusted or untrusted. You can also specify the default setting for new nodes added in an expansion.
-
-+
 NOTE: Existing client connections might fail if load balancer endpoints have not been configured.
 
 .Steps
@@ -145,6 +144,9 @@ The Unavailable Reason column includes an entry if the Client Network on the nod
 
 image::../media/untrusted_client_networks_page.png[Untrusted Client Networks]
 
+
+
+
 . In the *Set New Node Default* section, specify what the default setting should be when new nodes are added to the grid in an expansion procedure.
  ** *Trusted* (default): When a node is added in an expansion, its Client Network is trusted.
  ** *Untrusted*: When a node is added in an expansion, its Client Network is untrusted.
@@ -156,14 +158,19 @@ NOTE: This setting does not affect the existing nodes in your StorageGRID system
 +
 You can select or unselect the check box in the title to select or unselect all nodes.
 
+. Optionally, select any additional ports you want open on the untrusted Client Network. These ports can provide access to the Grid Manager, the Tenant Manager, or both. 
+
+For example, xxxxxx. 
 
 
-xxxx additional section xxxxxx
+//Do this why? 
+//xxxx additional section xxxxxx
 
 
 . Select *Save*.
 +
 The new firewall rules are immediately added and enforced. Existing client connections might fail if load balancer endpoints have not been configured.
+
 
 .Related information
 
