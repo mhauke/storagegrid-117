@@ -105,7 +105,11 @@ This permission provides access to options for managing alerts. Users must have 
 
 == Metrics query
 
-This permission provides access to the *SUPPORT* > *Tools* > *Metrics* page. This permission also provides access to custom Prometheus metrics queries using the *Metrics* section of the Grid Management API.
+This permission provides access to:
+
+* *SUPPORT* > *Tools* > *Metrics* page
+* Custom Prometheus metrics queries using the *Metrics* section of the Grid Management API
+* Grid Manager Dashboard cards that contain metrics
 
 == Object metadata lookup
 
@@ -137,6 +141,8 @@ This permission provides access to the E-Series SANtricity System Manager on sto
 
 == Tenant accounts
 
-This permission provides access to the Tenants page, where you can create, edit, and remove tenant accounts. This permission also allows users to view existing traffic classification policies. 
+This permission provides the ability to:
 
-
+* Access the Tenants page, where you can create, edit, and remove tenant accounts
+* View existing traffic classification policies
+* View Grid Manager Dashboard cards that contain tenant details
