@@ -1,10 +1,10 @@
 ---
-permalink: s3/s3-request-table.html
+permalink: s3/s3-support-quick-reference.html
 sidebar: sidebar
 keywords: Amazon s3, API, request headers, s3 support, request syntax, not supported, aws s3
 summary: 'Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
 ---
-= StorageGRID support for Amazon S3 APIs
+= Quick reference: StorageGRID support for Amazon S3 APIs
 :icons: font
 :imagesdir: ../media/
 
@@ -23,7 +23,7 @@ Jump to: <<A,A>>, <<C,C>>, <<G,G>>, <<L,L>>, <<P,P>>
 
 |[[A]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
 
-|The following parameters are not supported:
+|These parameters are not supported:
 
 * `x-amz-request-payer`
 
@@ -36,7 +36,7 @@ Jump to: <<A,A>>, <<C,C>>, <<G,G>>, <<L,L>>, <<P,P>>
 |[[C]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
 
 
-|The following parameters are not supported:
+|These parameters are not supported:
 
 * `x-amz-request-payer`
 
@@ -47,18 +47,18 @@ Jump to: <<A,A>>, <<C,C>>, <<G,G>>, <<L,L>>, <<P,P>>
 
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[CopyObject^]
 
-|The following parameters are not supported:
+|These parameters are not supported:
 
-* Cache-Control
-* Expires
-* x-amz-grant-full-control
-* x-amz-grant-read
-* x-amz-grant-read-acp
-* x-amz-grant-write-acp
-* x-amz-website-redirect-location
-* x-amz-server-side-encryption-aws-kms-key-id
-* x-amz-server-side-encryption-context
-* x-amz-request-payer
+* `Cache-Control`
+* `Expires`
+* `x-amz-grant-full-control`
+* `x-amz-grant-read`
+* `x-amz-grant-read-acp`
+* `x-amz-grant-write-acp`
+* `x-amz-website-redirect-location`
+* `x-amz-server-side-encryption-aws-kms-key-id`
+* `x-amz-server-side-encryption-context`
+* `x-amz-request-payer`
 
 
 |xref:put-object-copy.html.adoc[PUT Object-Copy]
@@ -67,7 +67,7 @@ Jump to: <<A,A>>, <<C,C>>, <<G,G>>, <<L,L>>, <<P,P>>
 
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[CreateBucket^]
 
-|The following parameters are not supported:
+|These parameters are not supported:
 
 * `x-amz-acl`
 * `x-amz-grant-full-control`
@@ -88,19 +88,19 @@ Jump to: <<A,A>>, <<C,C>>, <<G,G>>, <<L,L>>, <<P,P>>
 
 //GetBucketAnalyticsConfiguration
 |GetBucketAnalyticsConfiguration
-|Not supported.
+|This request is not supported.
 |
 
 |[[L]]ListBucketAnalyticsConfigurations
-|Not supported.
+|This request is not supported.
 |
 
 |ListBucketInventoryConfigurations
-|Not supported.
+|This request is not supported.
 |
 
 |ListBucketMetricsConfigurations
-|Not supported.
+|This request is not supported.
 |
 
 // ListBuckets
@@ -117,11 +117,11 @@ Jump to: <<A,A>>, <<C,C>>, <<G,G>>, <<L,L>>, <<P,P>>
 
 |[[P]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCor.html[PutBucketCors^]
 
-|The following parameters are not supported:
+|These parameters are not supported:
 
 * `Content-MD5`
 
-| tbd
+|xref:operations-on-buckets.adoc[Operations on buckets]
 
 
 
