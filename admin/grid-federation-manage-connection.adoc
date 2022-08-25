@@ -177,12 +177,12 @@ IMPORTANT: After editing an connection, you might need to wait up to 15 minutes 
 
 == Rotate connection certificates
 
-Each grid federation connection uses four automatically-generated SSL certificates to secure the connection. When the certificates near their expiration date, an alert reminds you to rotate the certificates.
+Each grid federation connection uses four automatically-generated SSL certificates to secure the connection. When the two certificates for a grid near their expiration date, the *Expiration of grid federation certificate* alert reminds you to rotate the certificates.
 
 [IMPORTANT]
-If you allow these certificates to expire, the connection will stop working and data will no longer be replicated between grids. 
+If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
 
-To rotate all certificates on both grids, follow these steps from either grid in the connection.
+To rotate the certificates, follow these steps.
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 . Select *CONFIGURATION* > *System* > *Grid federation*.
@@ -192,6 +192,9 @@ To rotate all certificates on both grids, follow these steps from either grid in
 . Specify how long the new certificates should be valid for, in days.
 . Enter the provisioning passphrase for the grid you are signed in to.
 . Select *Rotate certificates*.
+. Repeat these steps on the other grid in the connection.
++
+In general, use the same number of days for the certificates on either side of the connection.
 
 ////
 
