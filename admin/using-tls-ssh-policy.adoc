@@ -29,7 +29,7 @@ image::../media/securitysettings_tls_ssh_policies_homepg.png[TLS and SSH policie
 
 NOTE: Some StorageGRID services have not been updated to use the ciphers in these policies.
 +
-. Review the available policies.
+. Select *View details* and review the available policies.
 +
 
 [cols="1,2a" options="header"]
@@ -48,7 +48,7 @@ You can use this default policy unless you have special requirements.
 |Matches the test configuration used for Common Criteria certification.
 
 |FIPS strict
-|The same as the Common Criteria policy, but removes the transitional ciphers and enabled FIPS mode in OpenSSL. Using this policy might reduce performance.
+|The same as the Common Criteria policy, but removes the transitional ciphers and enables FIPS mode in OpenSSL. Using this policy might reduce performance.
 
 |Custom
 |Use this policy if you want to create your own custom policy. Custom policy helps you to customize and apply your own security policy. You must use caution and validate the policy you provide.
@@ -66,7 +66,3 @@ To create a new Custom policy, select *Configure and use* from the Custom policy
 .. For the Custom policy, select *Configure and use*. 
 .. Paste the JSON you copied and make any required changes to create a custom policy that meets your requirements.
 .. Select *Use policy*.
-
-
- 
-
