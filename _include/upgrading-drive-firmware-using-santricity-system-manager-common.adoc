@@ -7,22 +7,22 @@ Upgrade the firmware on the drives in your appliance to make sure you have all t
 * The storage appliance has an Optimal status.
 * All drives have an Optimal status.
 * You have the latest version of SANtricity System Manager installed that is compatible with your StorageGRID version.
-* If you performing an offline upgrade, you have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
+* If you are performing an offline upgrade, you have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
 +
 NOTE: Maintenance mode interrupts the connection to the storage controller, stopping all I/O activity and placing all drives offline.
 
-IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID appliance at a time. Doing so might cause data unavailability, depending on your deployment model and ILM policies.
+IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID appliance at a time. Doing so might cause data unavailability, depending on your deployment model and ILM policy.
 
 .About this task
 
-There are two ways you can upgrade your appliance drive firmware: 
+You can upgrade your appliance drive firmware using two methods: 
 
 *Online*: The drives are upgraded one at a time while the appliance is performing I/O (input/output operations). This method does not require you to place the appliance in maintenance mode. However, system performance might be impacted and it might take several hours longer than the offline method. 
 
-NOTE: Drives that do not have redundancy must be processed as an offline operation. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. 
+NOTE: Drives that do not have redundancy must be processed using the offline method. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. 
 
 *Offline*: 
-The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy (RAID 0), or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped to the associated volumes using the drives to be upgraded. You must stop all I/O to any associated volumes using these drives.
+The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy (RAID 0), or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped to the drives to be upgraded. You must stop all I/O to any drives you intend to upgrade.
 
 The offline method is faster than the online method and is recommended.
 
@@ -181,15 +181,12 @@ Contact technical support to resolve this issue.
 +
 Contact technical support to resolve this issue.
 
-.. If you were using the *Offline* upgrade and this procedure completed successfully, perform any additional maintenance procedures you might have while the node is in maintenance mode. When you are done, or if you experienced any failures and want to start over, select *Advanced* > *Reboot Controller*, and then select one of these options:
+.. If you were using the *Offline* upgrade and this procedure completed successfully, perform any additional maintenance procedures while the node is in maintenance mode. When you are done, or if you experienced any failures and want to start over. Go to the StorageGRID Appliance Installer and select *Advanced* > *Reboot Controller*. Then select one of these options:
 
 +
-* Select *Reboot into StorageGRID*
+* Select *Reboot into StorageGRID*.
 +
-* Select *Reboot into Maintenance Mode* to reboot the controller with the node remaining in maintenance mode. Select this option if you experienced any failures during the procedure and want to start over. After the node finishes rebooting into maintenance mode, restart from the appropriate step in the procedure that failed.
-
-+
-image::../media/reboot_controller_from_maintenance_mode.png[Reboot controller in maintenance mode]
+* Select *Reboot into Maintenance Mode* to reboot the controller and keep the node in maintenance mode. Select this option if there were any failures during the procedure and you want to start over. After the node finishes rebooting into maintenance mode, restart from the appropriate step in the procedure that failed.
 
 +
 It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The Nodes page should display a normal status (no icons to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
