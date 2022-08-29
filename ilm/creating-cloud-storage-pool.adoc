@@ -19,37 +19,42 @@ A Cloud Storage Pool specifies a single external Amazon S3 bucket or Azure Blob 
 * You have reviewed the guidelines for configuring Cloud Storage Pools.
 * The external bucket or container referenced by the Cloud Storage Pool already exists.
 * To access the bucket or container, you have the authentication information for the authentication type you will choose:
-//tabbed blocks start here
+//what you'll need - tabbed blocks start here
 +
 [role="tabbed-block"]
 ====
 .Access key
 --
-Use *Access key* or *Anonymous* for the Amazon S3/GCP provider type. If you use *Access key*, you know the following information for the external S3 bucket:
+You know the following information for the external S3 bucket:
 
 * The Access Key ID for the account that owns the external bucket.
 * The associated Secret access key.
+
+Alternatively, you can specify Anonymous for the authentication type. 
 --
 //end Access key, begin CAP
 
 .C2S access portal
 --
-To use the Commercial Cloud Services (C2S) S3 service as a Cloud Storage Pool, you must configure C2S Access Portal (CAP) as the authentication type, so that StorageGRID can request temporary credentials to access the S3 bucket in your C2S account.
+Commercial Cloud Services (C2S) S3 service: 
 
-* You know the complete URL that StorageGRID will use to obtain temporary credentials from the CAP server, including all the required and optional API parameters assigned to your C2S account.
+* You know the complete URL that StorageGRID will use to obtain temporary credentials from the C2S access portal (CAP) server, including all the required and optional API parameters assigned to your C2S account.
 * You have a server CA certificate issued by an appropriate Government Certificate Authority (CA). StorageGRID uses this certificate to verify the identity of the CAP server. The server CA certificate must use PEM encoding.
 * You have a client certificate issued by an appropriate Government Certificate Authority (CA). StorageGRID uses this certificate to identity itself to the CAP server. The client certificate must use PEM encoding and must have been granted access to your C2S account.
 * You have a PEM-encoded private key for the client certificate.
 * If the private key for the client certificate is encrypted, you have the passphrase for decrypting it.
+
+NOTE: If the client certificate will be encrypted, use the traditional format for the encryption. PKCS #8 encrypted format is not supported.
 --
 //end C2S, begin Azure
-.Azure Block Storage
---
-* You know the Uniform Resource Identifier (URI) used to access the Blob storage container used for the Cloud Storage Pool.
 
+.Azure Blob Storage
+--
+* You know the Uniform Resource Identifier (URI) used to access the Blob Storage container used for the Cloud Storage Pool.
 * You know the name of the storage account and the account key. You can use the Azure portal to find these values.
 ====
-//end tabbed blocks
+
+//what you'll need - end tabbed blocks
 
 .Steps
 . Select *ILM* > *Storage pools* > *Cloud Storage Pools*.
@@ -75,7 +80,7 @@ To use the Commercial Cloud Services (C2S) S3 service as a Cloud Storage Pool, y
 
 . Based on your Provider type selection, enter the Service endpoint information.
 
-//tabbed blocks start here
+//Service endpoint - tabbed blocks start here
 
 [role="tabbed-block"]
 ====
@@ -87,7 +92,10 @@ To use the Commercial Cloud Services (C2S) S3 service as a Cloud Storage Pool, y
 +
 NOTE: Do not use HTTP connections for sensitive data.
 +
-.. Enter the hostname.
+.. Enter the hostname. Example:
++
+`s3-_aws-region_.amazonaws.com`
++
 .. Select the URL style:
 +
 [cols="1a,3a" options="header"]
@@ -106,53 +114,80 @@ NOTE: Do not use HTTP connections for sensitive data.
 *Note:* The path-style URL is being deprecated.
 |===
 +
-.. Optionally, enter the port number.
+.. Optionally, enter the port number, or use the default port: 443 for HTTPS or 80 for HTTP.
 --
-//end Amazon S3, begin Azure
+//Service endpoint - end Amazon S3, begin Azure
 
 .Azure Blob Storage
 --
 .. Using one of the following formats, enter the URI for the service endpoint.
 
 * `+https://host:port+`
- `+http://host:port+`
+* `+http://host:port+`
+
+Example: `https://_myaccount_.blob.core.windows.net`
+
+If you do not specify a port, by default port 443 is used for HTTPS and port 80 is used for HTTP.
 ====
-//end tabbed blocks
+//Service endpoint - end tabbed blocks
 
 [start=4]
-. Select *Continue*. Then select the authentication type and  enter the required information for the Cloud Storage Pool endpoint:
+. Select *Continue*. Then select the authentication type and enter the required information for the Cloud Storage Pool endpoint:
 +
-[cols="1a,1a,1a,3a" options="header"]
+//Authentication type - tabbed blocks start here
++
+[role="tabbed-block"]
+====
+.Access key
+--
+_For Amazon S3/GCP provide type only_
+
+.. For *Access key ID*, enter the Access key ID for the account that owns the external bucket.
+.. For *Secret access key*, enter the secret access key.
+
+--
+//Authentication type - end Access key, begin CAP
+
+.C2S access portal
+--
+.. For *Temporary Credentials URL*, enter the complete URL that StorageGRID will use to obtain temporary credentials from the CAP server, including all the required and optional API parameters assigned to your C2S account.
+.. For *Server CA Certificate*, select *Browse*, and upload the PEM-encoded CA certificate that StorageGRID will use to verify the CAP server.
+.. For *Client Certificate*, select *Browse*, and upload the PEM-encoded certificate that StorageGRID will use to identify itself to the CAP server.
+.. For *Client Private Key*, select *Browse*, and upload the PEM-encoded private key for the client certificate.
+.. If the client private key is encrypted, enter the passphrase for decrypting the client private key. Otherwise, leave the *Client Private Key Passphrase* field blank.
+
+--
+//Authentication type - end C2S, begin Azure
+.Azure Blob Storage
+--
+.. For *Account name*, enter the name of the Blob storage account that owns the external service container.
+.. For *Account key*, enter the secret key for the Blob storage account.
+====
+//Authentication type - end tabbed blocks
+
+. Select *Continue*. Then choose the type of server verification you want to use:
++
+[cols="1a,3a" options="header"]
 |===
-| Provider type| Authentication type| Option|Information to enter
+|Option |Description
 
-|Amazon S3/GCP
-|Access key
-|
-|
-* Access key ID
-* Secret access key
-|
-.1+|Anonymous
-|
-|No information required
+|Use root CA certificates in Storage Node OS
+|Use the Grid CA certificates installed on the operating system to secure connections.
 
-|
-|CAP (C2S access portal)
-|Must use for C2S S3 only
-|
-* Temporary credential URL
-* Server CA certificate
-* Client certificate
-* Client private key
-* Client private key passphrase (if the private key for the client certificate is encrypted)
+|Use custom CA certificate
+|Use a custom CA certificate. Select *Browse*, and upload the PEM-encoded certificate.
 
-|Anonymous
-|Everyone has access to the Cloud Storage Pool bucket. No additional information is required.
+|Do not verify certificate
+|The certificate used for the TLS connection is not verified.
 |===
 +
-. Complete the Service endpoint, Authentication and Server Verification sections of the page, based on the selected provider type.
+. Select *Save*.
 +
-* xref:s3-authentication-details-for-cloud-storage-pool.adoc[S3: Specify authentication details for a Cloud Storage Pool]
-* xref:c2s-s3-authentication-details-for-cloud-storage-pool.adoc[C2S S3: Specify authentication details for a Cloud Storage Pool]
-* xref:azure-authentication-details-for-cloud-storage-pool.adoc[Azure: Specify authentication details for a Cloud Storage Pool]
+When you save a Cloud Storage Pool, StorageGRID does the following:
+
+* Validates that the bucket or container and the service endpoint exist and that they can be reached using the credentials that you specified.
+* Writes a marker file to the bucket or container to identify it as a Cloud Storage Pool. Never remove this file, which is named `x-ntap-sgws-cloud-pool-uuid`.
++
+If Cloud Storage Pool validation fails, you receive an error message that explains why validation failed. For example, an error might be reported if there is a certificate error or if the bucket or container you specified does not already exist.
+
+. If an error occurs, see the xref:troubleshooting-cloud-storage-pools.adoc[instructions for troubleshooting Cloud Storage Pools], resolve any issues, and then try saving the Cloud Storage Pool again.
