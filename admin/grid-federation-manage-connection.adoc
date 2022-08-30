@@ -1,41 +1,39 @@
 ---
 permalink: admin/grid-federation-manage-connection.html
 sidebar: sidebar
-keywords: grid federation, create connection, remove connection, view connection
-summary: 'You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to create and manage these connections.'
+keywords: grid federation, configure connection, remove connection, view connection
+summary: 'You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to configure and manage these connections.'
 ---
 = Manage grid federation connections
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to create and manage these connections.
+You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to configure and manage these connections.
 
 == Configure a grid federation connection
 
 Configuring a grid federation connection is a two-step process. You start the configuration on one grid and complete it on the other grid. You can start the configuration on either grid.
 
-. To start the configuration, a grid admin signs in to the primary Admin Node on the first grid to enter connection details and download a verification package. 
-In these instructions, the grid where the configuration is started is referred to as _Grid 1_.
-. To complete the configuration, a grid admin signs in to the primary Admin Node on the second grid to upload the verification package and save and test the connection. In these instructions, the grid where the configuration is completed is referred to as _Grid 2_.
+. To start the configuration, a grid admin signs in to the primary Admin Node on the first grid to enter connection details and download a verification file. 
+
+. To complete the configuration, a grid admin signs in to the primary Admin Node on the second grid to upload the verification file and save and test the connection. 
 
 .What you'll need
 
 * You have reviewed the xref:grid-federation-overview.adoc[considerations and requirements] for configuring grid federation connections. 
 * If you plan to use fully qualified domain names (FQDNs) for each grid instead of IP or VIP addresses, you know which names to use. The DNS servers for each grid have the appropriate entries.
-
 * You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* Whoever starts the configuration has Root access permission and the provisioning passphrase for Grid 1.
-* Whoever completes the configuration has Root access permission and the provisioning passphrase for Grid 2. 
+* Whoever starts the configuration has Root access permission and the provisioning passphrase for the first grid.
+* Whoever completes the configuration has Root access permission and the provisioning passphrase for the second grid. 
 
 
 
 === Start the configuration
 
-To start the configuration, enter connection details and download the verification package.
+To start the configuration, enter connection details and download the verification file.
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
-
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
@@ -50,7 +48,7 @@ To start the configuration, enter connection details and download the verificati
 |Connection name
 |A unique name to help you recognize this connection, for example, "`Grid 1-Grid 2.`"
 
-|FQDN or IP for Grid 1
+|FQDN or IP for this grid
 |One of the following:
 
 * The FQDN of the grid you are currently signed into
@@ -62,58 +60,59 @@ To start the configuration, enter connection details and download the verificati
 
 Both grids in this connection will use the same port. You must ensure that no node in either grid uses this port for other connections.
 
-|Certificate valid days
-|The number of days you want the security certificate for this connection to be valid. This value defaults to 730 days (2 years), but you can enter any value from 1 to 762 days.
+|Certificate valid days (this grid)
+|The number of days you want the security certificates for this grid in the connection to be valid. The default value is 730 days (2 years), but you can enter any value from 1 to 762 days.
 
-StorageGRID automatically generates this certificate when you save the connection.
+StorageGRID automatically generates client and server certificates for each grid when you save the connection.
 
-|Grid 1 provisioning passphrase 
+|Provisioning passphrase for this grid
 |The provisioning passphrase for the grid you are signed in to.
 
-|FQDN or IP for Grid 2
+|FQDN or IP for the other grid
 |One of the following:
 
 * The FQDN of the grid you want to connect to
 * A VIP address of an HA group on the other grid
 * An IP address of an Admin Node or Gateway Node on the other grid
 
-
 |===
 
 . Select *Save and continue*.
 
-. For the Download verification package step, select *Download verification package*.
+. For the Download verification file step, select *Download verification file*.
 +
-After the connection is successfully completed on Grid 2, you can no longer download the verification package from Grid 1.
+After the connection is successfully completed on the other grid, you can no longer download the verification file from this grid.
 
-. When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`) and save it to a safe location.
+. When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
 +
 [IMPORTANT]
-The verification package contains secrets and must be securely stored and transmitted.
+The verification file contains secrets and must be securely stored and transmitted.
 
 . Select *Close* to return to the Grid federation page. 
 
 . Confirm that the new connection is shown and that its *Connection status* is *Waiting to connect*.
 
-. Ensure that the grid admin for Grid 2 has access to the `_connection-name_.grid-federation` file.
+. Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
 
 === Complete the connection
 
-Perform these steps on the StorageGRID system you are connecting to (Grid 2).
+Perform these steps on the StorageGRID system you are connecting to (the other grid).
 
 . Sign in to the Grid Manager from the primary Admin Node.
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
-. Select *Add connection* > *Complete configuration*. 
+. Select *Add connection* > *Upload verification file*. 
 
-. Select *Upload verification package*.
-
-. Browse to and select the file that was downloaded from Grid 1 (`_connection-name_.grid-federation`) 
+. Select *Upload verification file*. Then, browse to and select the file that was downloaded from the first grid (`_connection-name_.grid-federation`).
 +
 The details for the connection are shown.
 
-. Enter the provisioning passphrase for Grid 2 (the grid you are currently signed in to).
+. Optionally, enter a different number of valid days for the security certificates for this grid. *Certificate valid days* defaults to the value you entered on the first grid, but each grid can use different expiration dates.
++
+In general, use the same number of days for the certificates on both sides of the connection. If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
+
+. Enter the provisioning passphrase for the grid you are currently signed in to.
 
 . Select *Save and test*.
 +
@@ -123,10 +122,10 @@ If the connection can be established, a success message appears. Otherwise, an e
 
 . Confirm that the new connection is shown and that its *Connection status* is *Connected*.
 
-. After the connection has been established, securely delete all copies of the verification package from both grids.
+. After the connection has been established, securely delete all copies of the verification file.
 +
 [IMPORTANT]
-This file contains secrets and must be deleted after the connection is established. If you edit this connection, a new verification package will be created. The original file cannot be reused.
+This file contains secrets and must be deleted after the connection is established. If you edit this connection, a new verification file will be created. The original file cannot be reused.
 
 
 == View grid federation connections
@@ -137,18 +136,16 @@ You can view details for existing grid federation connections from either grid i
 
 * To view all details about a specific connection, select the connection's name in the table to show the details page.
 
-//// 
 
 == Edit grid federation connection
 
-You can change the connection's name and rotate the associated certificate on both grids before it expires. When you edit a grid federation connection, you must download a new verification package on the first grid and then upload the new verification package on the second grid.
+You can edit a connection using either grid in the connection. When you edit a grid federation connection, you must download a new verification file on one grid and then upload the new verification file on the other grid.
 
-To edit a grid federation connection, use the *Actions* menu on the Grid federation page or the details page for a specific connection.
+. Sign in to the Grid Manager from the primary Admin Node on either grid.
 
-IMPORTANT: After editing an connection, you might need to wait up to 15 minutes for your changes to be applied.
+. Select *CONFIGURATION* > *System* > *Grid federation*.
 
-
-=== Edit connection details
+. Use the *Actions* menu on the Grid federation page or the details page for a specific connection.
 
 
 [role="tabbed-block"]
@@ -156,28 +153,26 @@ IMPORTANT: After editing an connection, you might need to wait up to 15 minutes 
 
 .Actions menu
 --
-. Select the check box for the connection. 
-. Select *Actions* > *Edit*.
-. Enter the new details.
-. Select *Save*.
+.. Select the check box for the connection. 
+.. Select *Actions* > *Edit*.
+.. Enter the new details.
+.. Select *Save*.
 --
 
 .Details page
 --
-. Select the connection name to display the details.
-. Select *Edit*.
-. Enter the new details.
-. Select *Save*.
+.. Select a connection name to display its details.
+.. Select *Edit*.
+.. Enter the new details.
+.. Select *Save*.
 --
 
 ====
 
-//// 
-
 
 == Rotate connection certificates
 
-Each grid federation connection uses four automatically-generated SSL certificates to secure the connection. When the two certificates for a grid near their expiration date, the *Expiration of grid federation certificate* alert reminds you to rotate the certificates.
+Each grid federation connection uses four automatically-generated SSL certificates to secure the connection. When the two certificates for each grid near their expiration date, the *Expiration of grid federation certificate* alert reminds you to rotate the certificates.
 
 [IMPORTANT]
 If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
@@ -186,15 +181,15 @@ To rotate the certificates, follow these steps.
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 . Select *CONFIGURATION* > *System* > *Grid federation*.
-. Select the connection name to display the details.
+. Select the connection name to display its details.
 . Select the *Certificates* tab.
 . Select *Rotate certificates*.
 . Specify how long the new certificates should be valid for, in days.
 . Enter the provisioning passphrase for the grid you are signed in to.
 . Select *Rotate certificates*.
-. Repeat these steps on the other grid in the connection.
+. As required, repeat these steps on the other grid in the connection.
 +
-In general, use the same number of days for the certificates on either side of the connection.
+In general, use the same number of days for the certificates on both sides of the connection.
 
 ////
 
@@ -208,8 +203,7 @@ In general, use the same number of days for the certificates on either side of t
 .Actions menu
 --
 . Select the check box for the connection. 
-. Select *Actions* > *Rotate certificate*.
-. Upload or generate a new custom certificate.
+. Select *Actions* > *??*.
 . Select *Save changes*.
 --
 
