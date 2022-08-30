@@ -32,12 +32,12 @@ To remove an ILM rule that is not currently used:
 
 . Select *ILM* > *Rules*.
 . Confirm that the rule you want to remove is not used in the active policy or the proposed policy.
-. If the rule you want to remove is not in use, select the rule and select *Delete*. You can select multiple rules and remove all of them at the same time.
+. If the rule you want to remove is not in use, select the rule and select *Remove*. You can select multiple rules and remove all of them at the same time.
 . Select *Yes* to confirm that you want to remove the ILM rule.
 +
 The ILM rule is removed.
 +
-NOTE: If you remove a rule that is used in a historical policy, an image:../media/icon_ilm_rule_historical.png[Icon ILM Rule Historical] icon appears for the rule when you view the policy, which indicates that the rule has become a historical rule.
+NOTE: If you remove a rule that is used in a historical policy, the image:../media/icon_ilm_rule_historical.png[Icon ILM Rule Historical] icon appears for the rule when you view the policy, which indicates that the rule has become a historical rule.
 
 == Edit an ILM rule
 
