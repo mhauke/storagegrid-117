@@ -35,7 +35,7 @@ NOTE: If your application uses HEAD or GET requests on objects that do not exist
 When a HEAD or GET operation uses the "`read-after-new-write`" consistency control, StorageGRID performs the lookup in multiple steps, as follows:
 
 * It first looks up the object using a low consistency.
-* If that lookup fails, it repeats the lookup at the next consistency level until it reaches reaches a consistency level equivalent to the behavior for strong-global.
+* If that lookup fails, it repeats the lookup at the next consistency level until it reaches a consistency level equivalent to the behavior for strong-global.
 
 If a HEAD or GET operation uses the "`read-after-new-write`" consistency control but the object does not exist, the object lookup will always reach a consistency level equivalent to the behavior for strong-global. Because this consistency level requires all copies of the object metadata to be available, you can receive a high number of 500 Internal Server errors if two or more Storage Nodes are unavailable.
 
