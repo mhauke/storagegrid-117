@@ -19,7 +19,7 @@ You can upgrade your appliance drive firmware using two methods:
 
 *Online*: The drives are upgraded one at a time while the appliance is performing I/O (input/output operations). This method does not require you to place the appliance in maintenance mode. However, system performance might be impacted and it might take several hours longer than the offline method. 
 
-NOTE: Drives that do not have redundancy must be processed using the offline method. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. 
+NOTE: Drives that do not have redundancy must be updated using the offline method. This requirement includes any drive associated with SSD cache, a RAID 0 volume group, or any pool or volume group that is degraded. 
 
 *Offline*: 
 The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy (RAID 0), or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped to the drives to be upgraded. You must stop all I/O to any drives you intend to upgrade.
