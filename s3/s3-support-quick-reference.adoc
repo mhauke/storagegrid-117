@@ -15,21 +15,23 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 
 
 
-[cols="1a,2a,2a,1a" options="header"]
+[cols="1a,1a,1a,1a" options="header"]
 |===
 | Amazon Simple Storage Service (S3) API| StorageGRID support for request header |StorageGRID support for request body |Learn more
 
 //AbortMultipartUpload
-|[[A]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
+|[[A]]
+https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
 |These parameters are not supported:
 
 * `x-amz-request-payer`
-|The request does not have a request body.
+|This request does not have a request body.
 |xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
 
 //CompleteMultipartUpload
-|[[C]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
+|[[C]]
+https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
 |These parameters are not supported:
 
 * `x-amz-request-payer`
@@ -51,7 +53,7 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 * `x-amz-server-side-encryption-aws-kms-key-id`
 * `x-amz-server-side-encryption-context`
 * `x-amz-request-payer`
-|The request does not have a request body.
+|This request does not have a request body.
 |xref:put-object-copy.html.adoc[PUT Object-Copy]
 
 
@@ -84,14 +86,15 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 * `x-amz-server-side-encryption-aws-kms-key-id`
 * `x-amz-server-side-encryption-context`
 * `x-amz-request-payer`
-|The request does not have a request body.
+|This request does not have a request body.
 |
 
 
 //DeleteBucket
-|[[D]]https://https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBucket^]
+|[[D]]
+https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBucket^]
 |Implemented with all Amazon S3 REST API behavior.
-|The request does not have a request body.
+|This request does not have a request body.
 |xref:operations-on-buckets.adoc[Operations on buckets]
 
 
@@ -105,7 +108,7 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 //DeleteBucketCors
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html[DeleteBucketCors^]
 |Implemented with all Amazon S3 REST API behavior.
-|The request does not have a request body.
+|This request does not have a request body.
 |
 
 
@@ -132,7 +135,7 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 //DeleteBucketLifecycle
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html[DeleteBucketLifecycle^]
 |Implemented with all Amazon S3 REST API behavior.
-|The request does not have a request body.
+|This request does not have a request body.
 |
 
 //DeleteBucketMetricsConfiguration
@@ -152,12 +155,13 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 //DeleteBucketPolicy
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html[DeleteBucketLifecycle^]
 |Implemented with all Amazon S3 REST API behavior.
-|The request does not have a request body.
+|This request does not have a request body.
 |
 
 
 //GetBucketAcl
-|[[G]]https://https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketAcl^]
+|[[G]]
+https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketAcl^]
 |Implemented with all Amazon S3 REST API behavior.
 |Implemented with all Amazon S3 REST API behavior.
 |xref:operations-on-buckets.adoc[Operations on buckets]
@@ -196,7 +200,8 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 
 
 // PutBucketCors
-|[[P]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCor.html[PutBucketCors^]
+|[[P]]
+https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucketCors^]
 |These parameters are not supported:
 
 * `Content-MD5`
@@ -221,7 +226,8 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 
 
 // SelectObjectContent
-|[[S]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCor.html[SelectObjectContent^]
+|[[S]]
+https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[SelectObjectContent^]
 |These parameters are not supported:
 
 * `Host`
