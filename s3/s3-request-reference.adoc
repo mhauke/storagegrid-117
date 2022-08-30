@@ -9,63 +9,145 @@ summary: 'Get a quick summary of StorageGRID support for Amazon Simple Storage S
 :imagesdir: ../media/
 
 [.lead]
-Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.
+Refer to the tables to see a summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.
+
+Jump to: <<A,A>>, <<C,C>>
+
+//AbortMultipartUpload
+== [[A]] https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
+
+.Request headers
 
 
-== AbortMultipartUpload
+[cols="1a,1a" options="header"]
+|===
+|Supported |Not supported
 
-.Request syntax
+|* `Key`
+* `UploadId`
+* `Host`
+* `Date`
+* `Authorization`
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[Amazon Simple Storage Service (S3) > API Reference > AbortMultipartUpload^].
+|* `x-amz-request-payer`
 
-.StorageGRID support
+|===
 
-StorageGRID does not support these parameters:
 
-`x-amz-request-payer`
+.Request body
+This request does not have a request body.
+
 
 .Learn more
 xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
 
-== CompleteMultipartUpload
+== [[C]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
 
-.Request syntax
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[Amazon Simple Storage Service (S3) > API Reference > CompleteMultipartUpload^].
+.Request header
 
-.StorageGRID support
 
-StorageGRID does not support these parameters:
+[cols="1a,1a" options="header"]
+|===
+|Supported |Not supported
 
-`x-amz-request-payer`
+|* `Key`
+* `UploadId`
+* `Host`
+* `Date`
+* `Content-Length`
+* `Authorization`
+
+
+|* `x-amz-request-payer`
+
+|===
+
+
+.Request body
+
+[cols="1a,1a" options="header"]
+|===
+|Supported |Not supported
+
+|* `CompleteMultipartUpload`					
+* `Part`				
+* `ETag`			
+* `PartNumber`			
+
+
+|
+
+|===
+
+
 
 .Learn more
 xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 
-== CopyObject (PUT Object-Copy)
-
-.Request syntax
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[CopyObject^] (PUT Object-Copy)
 
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[Amazon Simple Storage Service (S3) > API Reference > CopyObject^].
+.Request header
 
-.StorageGRID support
 
-StorageGRID does not support these parameters:
+[cols="1a,1a" options="header"]
+|===
+|Supported |Not supported
 
-----
-Cache-Control
-Expires
-x-amz-grant-full-control
-x-amz-grant-read
-x-amz-grant-read-acp
-x-amz-grant-write-acp
-x-amz-website-redirect-location
-x-amz-server-side-encryption-aws-kms-key-id
-x-amz-server-side-encryption-context
-x-amz-request-payer
-----
+|* `Key	
+* `Host`
+
+* `Cache-Control`
+* `Content-Disposition`
+* `Content-Encoding`
+* `Content-Language`
+* `Content-Type`
+* `x-amz-copy-source`
+* `x-amz-copy-source-if-match`
+* `x-amz-copy-source-if-modified-since`
+* `x-amz-copy-source-if-none-match`
+* `x-amz-copy-source-if-unmodified-since`
+
+* `x-amz-metadata-directive`
+* `x-amz-tagging-directive`
+* `x-amz-server-side-encryption`
+* `x-amz-storage-class`
+
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`
+
+* `x-amz-copy-source-server-side-encryption-customer-algorithm`
+* `x-amz-copy-source-server-side-encryption-customer-key`
+* `x-amz-copy-source-server-side-encryption-customer-key-MD5`
+* `x-amz-tagging`
+* `x-amz-object-lock-mode`
+* `x-amz-object-lock-retain-until-date`
+* `x-amz-object-lock-legal-hold`
+* `Date`
+* `Authorization`
+
+
+
+|* `* x-amz-acl`
+* `Expires`
+* `x-amz-grant-full-control`
+* `x-amz-grant-read`
+* `x-amz-grant-read-acp`
+* `x-amz-grant-write-acp`
+* `x-amz-website-redirect-location`
+* `x-amz-server-side-encryption-aws-kms-key-id`
+* `x-amz-server-side-encryption-context`
+* `x-amz-request-payer`
+
+
+|===
+
+
+.Request body
+This request does not have a request body.
 
 .Learn more
 xref:put-object-copy.html.adoc[PUT Object-Copy]
