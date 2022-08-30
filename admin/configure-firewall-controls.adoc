@@ -27,28 +27,21 @@ StorageGRID includes a firewall on each node that enables you to open or close p
 
 Limiting the number of ports open to IP addresses outside of your grid to only those that are absolutely necessary enhances the security of your grid. 
 
-There are three tabs on the *Firewall control* page: 
-* Manage external access
-* Add privileged IP list
-* Untrusted client networks
-
-You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
-
 For more information on using firewall controls, including examples, see xref:../admin/manage-firewall-controls.adoc[Manage firewall controls]. 
 
 [#Access-firewall-controls]
 == Access firewall controls
 
-.Steps
-. Select *CONFIGURATION* > *Security* > *Firewall control*.
-+
-image::../media/firewall-control-main.png[Firewall control main page]
-The Firewall control page opens with the Manage External access tab displayed. 
+
+Select *CONFIGURATION* > *Security* > *Firewall control*.
 
 There are three tabs on this page:
+
 * Manage external access <<manage-external access,Manage external access>>
 * Privileged address list <<privileged-address-list,Privileged address list>>
 * Untrusted client Network <<untrusted-client-network,Untrusted Client Network>>
+
+You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
 
 You should check the settings on each tab to ensure only those ports that are necessary for your grid configuration are open. 
 
@@ -57,7 +50,6 @@ You should check the settings on each tab to ensure only those ports that are ne
 Use this tab to open or close ports on the Grid Network, Admin Network, and Client Network. When a port is closed in the Manage external access list, it can't be accessed by any non-grid IP address, including VLAN interfaces, unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
 
 NOTE: The configuration changes you make on *Manage external access* tab might conflict with the settings on the *Privileged address list* tab and the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
-
 
 . Select *Manage external access*
 The tab displays a table with all of the configurable ports. You can sort the list by:
@@ -71,7 +63,7 @@ The tab displays a table with all of the configurable ports. You can sort the li
 .. use the toggle beside each port to open or close the selected port. 
 + For example, you could use the xxxx to close all ports, and then use the toggle besides an individual port to open only the selected port. 
 .. use the search field to find the settings for any configurable port by entering a port number. You can enter a partial port number. For example, if you enter a '2," all ports that start with a "2" are displayed. 
-. Select Save
+. Select *Save*
 
 
 
@@ -88,38 +80,11 @@ image::../media/xxxxxxx.png[Manage sxxxxxyslog content]
 
 NOTE: The configuration changes you make on the *Privileged address list* tab might conflict with the settings on the *Manage external access* tab or the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
-+
-[cols="1a,3a" options="header"]
-|===
-| Severity| Description
-|0
-|Emergency: System is unusable
-
-|1
-|Alert: Action must be taken immediately
-
-|2
-|Critical: Critical conditions
-
-|3
-|Error: Error conditions
-
-|4
-|Warning: Warning conditions
-
-|5
-|Notice: Normal but significant condition
-
-|6
-|Informational: Informational messages
-
-|7
-|Debug: Debug-level messages
-|===
 
 
 
-[start=3]
+
+
 . Select *Continue*.
 
 [#untrusted-client-network]
@@ -133,10 +98,7 @@ NOTE: Existing client connections might fail if load balancer endpoints have not
 
 .Steps
 
-. Select *CONFIGURATION* > *Security* > *Firewall control*.
-+
-. Select the Untrusted Client Network tab.
-+ 
+. Select *Untrusted Client Network*.
 
 The Untrusted Client Network tab lists all nodes in your StorageGRID system. You can use this listing to select whether Client Network enforcement is used. You can also use this tab to configure whether new nodes added during an expansion will be part of the trusted or untrusted Client network. 
 
