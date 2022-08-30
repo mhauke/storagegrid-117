@@ -23,7 +23,7 @@ A Cloud Storage Pool specifies a single external Amazon S3 bucket or Azure Blob 
 +
 [role="tabbed-block"]
 ====
-.Access key
+.S3 access key
 --
 You know the following information for the external S3 bucket:
 
@@ -36,7 +36,7 @@ Alternatively, you can specify Anonymous for the authentication type.
 
 .C2S access portal
 --
-Commercial Cloud Services (C2S) S3 service: 
+_For Commercial Cloud Services (C2S) S3 service_
 
 * You know the complete URL that StorageGRID will use to obtain temporary credentials from the C2S access portal (CAP) server, including all the required and optional API parameters assigned to your C2S account.
 * You have a server CA certificate issued by an appropriate Government Certificate Authority (CA). StorageGRID uses this certificate to verify the identity of the CAP server. The server CA certificate must use PEM encoding.
@@ -105,8 +105,8 @@ NOTE: Do not use HTTP connections for sensitive data.
 |Auto-detect
 |Attempt to automatically detect which URL style to use, based on the information provided. For example, if you specify an IP address, StorageGRID will use a path-style URL. Select this option only if you don't know which specific style to use.
 
-|Virtual hosted-style
-|Use a virtual hosted-style URL to access the bucket. Virtual hosted-style URLs include the bucket name as part of the domain name. Example: `+https://bucket-name.s3.company.com/key-name+`
+|Virtual-hosted-style
+|Use a virtual-hosted-style URL to access the bucket. Virtual-hosted-style URLs include the bucket name as part of the domain name. Example: `+https://bucket-name.s3.company.com/key-name+`
 
 |Path-style
 |Use a path-style URL to access the bucket. Path-style URLs include the bucket name at the end. Example: `+https://s3.company.com/bucket-name/key-name+`
@@ -140,7 +140,7 @@ If you do not specify a port, by default port 443 is used for HTTPS and port 80 
 ====
 .Access key
 --
-_For Amazon S3/GCP provide type only_
+_For Amazon S3/GCP provider type only_
 
 .. For *Access key ID*, enter the Access key ID for the account that owns the external bucket.
 .. For *Secret access key*, enter the secret access key.
@@ -148,8 +148,10 @@ _For Amazon S3/GCP provide type only_
 --
 //Authentication type - end Access key, begin CAP
 
-.C2S access portal
+.CAP (C2S access portal)
 --
+_For Commercial Cloud Services (C2S) S3 service_
+
 .. For *Temporary Credentials URL*, enter the complete URL that StorageGRID will use to obtain temporary credentials from the CAP server, including all the required and optional API parameters assigned to your C2S account.
 .. For *Server CA Certificate*, select *Browse*, and upload the PEM-encoded CA certificate that StorageGRID will use to verify the CAP server.
 .. For *Client Certificate*, select *Browse*, and upload the PEM-encoded certificate that StorageGRID will use to identify itself to the CAP server.
@@ -167,7 +169,7 @@ _For Amazon S3/GCP provide type only_
 
 . Select *Continue*. Then choose the type of server verification you want to use:
 +
-[cols="1a,3a" options="header"]
+[cols="1a,2a" options="header"]
 |===
 |Option |Description
 
