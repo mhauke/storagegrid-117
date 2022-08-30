@@ -35,11 +35,11 @@ NOTE: If your application uses HEAD or GET requests on objects that do not exist
 When a HEAD or GET operation uses the "`read-after-new-write`" consistency control, StorageGRID performs the lookup in multiple steps, as follows:
 
 * It first looks up the object using a low consistency.
-* If that lookup fails, it repeats the lookup at the next consistency level until it reaches the highest consistency level, "`all,`" which requires all copies of the object metadata to be available.
+* If that lookup fails, it repeats the lookup at the next consistency level until it reaches reaches a consistency level equivalent to the behavior for strong-global.
 
-If a HEAD or GET operation uses the "`read-after-new-write`" consistency control but the object does not exist, the object lookup will always reach the "`all`" consistency level. Because this consistency level requires all copies of the object metadata to be available, you can receive a high number of 500 Internal Server errors if one or more Storage Nodes are unavailable.
+If a HEAD or GET operation uses the "`read-after-new-write`" consistency control but the object does not exist, the object lookup will always reach a consistency level equivalent to the behavior for strong-global. Because this consistency level requires all copies of the object metadata to be available, you can receive a high number of 500 Internal Server errors if one or more Storage Nodes are unavailable.
 
-Unless you require consistency guarantees similar to Amazon S3, you can prevent these errors for HEAD and GET operations by setting the consistency control to "`available.`" When a HEAD or GET operation uses the "`available`" consistency control, StorageGRID provides eventual consistency only. It does not retry a failed operation until it reaches the "`all`" consistency level, so it does not require that all copies of the object metadata be available.
+Unless you require consistency guarantees similar to Amazon S3, you can prevent these errors for HEAD and GET operations by setting the consistency control to "`available.`" When a HEAD or GET operation uses the "`available`" consistency control, StorageGRID provides eventual consistency only. It does not retry a failed operation at increasing consistency levels, so it does not require that all copies of the object metadata be available.
 
 == Specify consistency control for API operation
 
