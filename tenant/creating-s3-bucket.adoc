@@ -2,14 +2,14 @@
 permalink: tenant/creating-s3-bucket.html
 sidebar: sidebar
 keywords: how to create S3 bucket
-summary: 'You can use the Tenant Manager to create S3 buckets for object data. When you create a bucket, you must specify the bucket’s name and region. If the global S3 Object Lock setting is enabled for the StorageGRID system, you can optionally enable S3 Object Lock for the bucket.'
+summary: 'You can use the Tenant Manager to create S3 buckets for object data.'
 ---
 = Create S3 bucket
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the Tenant Manager to create S3 buckets for object data. When you create a bucket, you must specify the bucket's name and region. If the global S3 Object Lock setting is enabled for the StorageGRID system, you can optionally enable S3 Object Lock for the bucket.
+You can use the Tenant Manager to create S3 buckets for object data.
 
 .What you'll need
 
@@ -20,35 +20,46 @@ NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objec
 
 * If you plan to create a bucket with S3 Object Lock, you have enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
 
-.Steps
+== Access wizard
 . Select *STORAGE (S3)* > *Buckets*.
 
 . Select *Create bucket*.
-+
-image::../media/bucket_create_compliance_disabled.png[Bucket Create Compliance Disabled]
-+
-. Enter a unique name for the bucket.
-+
-IMPORTANT: You cannot change the bucket name after creating the bucket.
-+
-Bucket names must comply with these rules:
 
- ** Must be unique across each StorageGRID system (not just unique within the tenant account).
- ** Must be DNS compliant.
- ** Must contain at least 3 and no more than 63 characters.
- ** Each label must start and end with a lowercase letter or a number and can only use lowercase letters, numbers, and hyphens.
- ** Should not use periods in virtual hosted style requests. Periods will cause problems with server wildcard certificate verification.
+== Enter details
 
+. Enter details for the bucket.
 +
-NOTE: For more information, see the https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html[Amazon Web Services (AWS) documentation on bucket naming rules^].
+[cols="1a,3a" options="header"]
+|===
 
-. Select the region for this bucket.
-+
+|Field |Description
+
+|Bucket name
+
+|A name for the bucket that complies with these rules:
+
+* Must be unique across each StorageGRID system (not just unique within the tenant account).
+* Must be DNS compliant.
+* Must contain at least 3 and no more than 63 characters.
+* Each label must start and end with a lowercase letter or a number and can only use lowercase letters, numbers, and hyphens.
+* Should not use periods in virtual hosted style requests. Periods will cause problems with server wildcard certificate verification.
+
+For more information, see the https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html[Amazon Web Services (AWS) documentation on bucket naming rules^].
+
+*Note*: You cannot change the bucket name after creating the bucket.
+
+|Region 
+
+|The bucket's region.
+
 Your StorageGRID administrator manages the available regions. A bucket's region can affect the data-protection policy applied to objects. By default, all buckets are created in the `us-east-1` region.
-+
-IMPORTANT: You cannot change the region after creating the bucket.
 
+*Note*: You cannot change the region after creating the bucket.
+
+|===
 . Select *Continue*.
+
+== Manage object settings
 
 . Optionally, enable object versioning for the bucket.
 +
@@ -60,9 +71,39 @@ Enable S3 Object Lock for a bucket only if you need to keep objects for fixed am
 +
 IMPORTANT: After the S3 Object Lock setting is enabled for a bucket, it cannot be disabled. Anyone with the correct permissions can add objects to this bucket that cannot be changed. You might not be able to delete these objects or the bucket itself.
 +
-After S3 Object Lock is enabled, you can optionally specify a default retention mode and default retention period for the bucket. For instructions, see xref:configure-s3-object-lock-settings-for-bucket.adoc[Configure S3 Object Lock settings for a bucket].
-+
 If you enable S3 Object Lock for a bucket, bucket versioning is enabled automatically. 
+
+. If you selected *Enable S3 Object Lock*, optionally enable *Default retention* for this bucket.
++
+When *Default retention* is enabled, new objects added to the bucket will be automatically protected from being deleted or overwritten. The *Default retention* setting only applies to new objects. It does not apply to objects already in the bucket or to any objects that might have their own retention periods.
+
+.. If *Default retention* is enabled, specify a *Default retention mode* for the bucket.
++
+[cols="1a,2a" options="header"]
+|===
+| Default retention mode| Description
+
+| Compliance
+| * The object cannot be deleted until its retain-until-date is reached.
+
+* The object's retain-until-date can be increased, but it cannot be decreased.
+
+* The object's retain-until-date cannot be removed until that date is reached.
+
+| Governance
+
+|* Users with special permission can bypass certain retention settings.
+
+* These users can delete an object version before its retain-until-date is reached.
+
+* These users can increase, decrease, or remove an object's retain-until-date.
+
+|===
+
+
+.. If *Default retention* is enabled, specify the *Default retention period* for the bucket.
++
+The *Default retention* indicates how long new objects added to this bucket should be retained, starting from the day they are added. Specify a value between 1 and 36,500 days or between 1 and 100 years, inclusive.
 
 . Select *Create bucket*.
 +
