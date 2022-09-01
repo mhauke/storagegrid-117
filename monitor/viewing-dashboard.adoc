@@ -45,11 +45,12 @@ Some of the cards can be maximized for easier viewing. Select the maximize icon 
 
 If you have the xref:../admin/admin-group-permissions.html[required permission and access mode], you can perform the following configuration tasks for the Dashboard:
 
-* Configure the default Dashboard to add or remove tabs and cards.
 * Clone the existing Dashboard to create custom dashboards. Custom dashboards can make monitoring a StorageGRID system easier. You can control which StorageGRID information is displayed and how that information is organized.
+* Set a dashboard to be the active dashboard for a Grid Manager session.
+* Set a dashboard to be the default dashboard for all users.
+* Edit the default Dashboard to add or remove tabs and cards.
+* Remove a dashboard.
 
 To configure dashboards, select *Actions* > *Clone active dashboard* or *Actions* > *Manage dashboards*.
 
-NOTE: You can add a card to any tab you choose.
-
-image::../media/configure_dashboard.png[Configure Dashboard]
+image::../media/dashboard_manage.png[Configure Dashboard]
