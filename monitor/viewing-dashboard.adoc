@@ -46,12 +46,12 @@ Some of the cards can be maximized for easier viewing. Select the maximize icon 
 If you have the xref:../admin/admin-group-permissions.html[required permission and access mode], you can perform the following configuration tasks for the dashboard:
 
 * Clone the stock dashboard or another dashboard to create  custom dashboards. Custom dashboards can make monitoring a StorageGRID system easier. You can control which StorageGRID information is displayed and how that information is organized.
-+
-The stock dashboard cannot be edited.
-* Set a dashboard to be the active dashboard for a Grid Manager session.
+* Set a dashboard to be the active dashboard for a user.
 * Set a dashboard to be the default dashboard for all users, except for users who have set an active dashboard in their browsers.
 * Edit the default dashboard to add or remove tabs and cards.
 * Remove a dashboard.
+
+NOTE: The stock dashboard cannot be edited or removed.
 
 To configure dashboards, select *Actions* > *Clone active dashboard* or *Actions* > *Manage dashboards*.
 
