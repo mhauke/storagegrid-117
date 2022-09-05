@@ -53,7 +53,7 @@ See xref:summary-ip-addresses-and-ports-for-client-connections.adoc[Summary: IP 
 
 . Select *CONFIGURATION* > *Security settings* > *Network and objects*.
 . For Stored object encryption, select *AES-128*, or *AES-256* to encrypt stored objects, or select *None* (default) if you do not want stored objects to be encrypted.
-. For Network options, select *Prevent client modification* or *Enable HTTP for Storage Node connections* or both.
+. For Network options, select *Prevent client modification*.
 . To enable HTTP connections, select *Enable HTTP for Storage node connections*. 
 +
 
@@ -64,7 +64,5 @@ See the information on xref:../admin/configuring-load-balancer-endpoints.adoc[co
 +
 
 See xref:../admin/summary-ip-addresses-and-ports-for-client-connections.adoc[IP addresses and ports for client connections] to learn which ports S3 and Swift clients use when connecting to Storage Nodes using HTTP or HTTPS.
-
-(when you select HTTP here, the client has to use a completely different port number in the URL. If they don't know that, their requests will fail.)
 
 . Select *Save*.
