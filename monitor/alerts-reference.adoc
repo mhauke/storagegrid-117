@@ -362,7 +362,7 @@ This alert indicates that a node required by a placement instruction is unavaila
 |ILM scan period too long
 |The time required to scan, evaluate objects, and apply ILM is too long.
 
-If the estimated time to complete a full ILM scan of all objects is too long (see *Scan Period - Estimated* on the Dashboard), the active ILM policy might not be applied to newly ingested objects. Changes to the ILM policy might not be applied to existing objects.
+If the estimated time to complete a full ILM scan of all objects is too long (see *Scan Period - Estimated* on the dashboard), the active ILM policy might not be applied to newly ingested objects. Changes to the ILM policy might not be applied to existing objects.
 
 |ILM scan rate low
 |The ILM scan rate is set to less than 100 objects/second.

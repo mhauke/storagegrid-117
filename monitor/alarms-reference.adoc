@@ -376,7 +376,7 @@ Java Heap Usage Percent
 a|
 DDS
 a|
-An alarm is triggered if Java is unable to perform garbage collection at a rate that allows enough heap space for the system to properly function. An alarm might indicate a user workload that exceeds the resources available across the system for the DDS metadata store. Check the ILM Activity in the Dashboard, or select *SUPPORT* > *Tools* > *Grid topology*, then select *_site_* > *_grid node_* > *DDS* > *Resources* > *Overview* > *Main*.
+An alarm is triggered if Java is unable to perform garbage collection at a rate that allows enough heap space for the system to properly function. An alarm might indicate a user workload that exceeds the resources available across the system for the DDS metadata store. Check the ILM Activity in the dashboard, or select *SUPPORT* > *Tools* > *Grid topology*, then select *_site_* > *_grid node_* > *DDS* > *Resources* > *Overview* > *Main*.
 
 If the problem persists, contact technical support.
 
@@ -426,7 +426,7 @@ DDS
 a|
 This alarm is triggered when the Metadata Effective Space (CEMS) reaches 70% full (minor alarm), 90% full (major alarm), and 100% full (critical alarm).
 
-If this alarm reaches the 90% threshold, a warning appears on the Dashboard in the Grid Manager. You must perform an expansion procedure to add new Storage Nodes as soon as possible. See xref:../expand/index.adoc[Expand your grid].
+If this alarm reaches the 90% threshold, a warning appears on the dashboard in the Grid Manager. You must perform an expansion procedure to add new Storage Nodes as soon as possible. See xref:../expand/index.adoc[Expand your grid].
 
 If this alarm reaches the 100% threshold, you must stop ingesting objects and add Storage Nodes immediately. Cassandra requires a certain amount of space to perform essential operations such as compaction and repair. These operations will be impacted if object metadata uses more than 100% of the allowed space. Undesirable results can occur.
 

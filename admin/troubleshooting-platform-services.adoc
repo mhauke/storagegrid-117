@@ -23,9 +23,9 @@ NOTE: Endpoint creation will fail if platform services are not enabled for the t
 
 == Issues with existing endpoints
 
-If an error occurs when StorageGRID tries to reach an existing endpoint, a message is displayed on the Dashboard in the Tenant Manager.
+If an error occurs when StorageGRID tries to reach an existing endpoint, a message is displayed on the dashboard in the Tenant Manager.
 
-image::../media/tenant_dashboard_endpoint_error.png[endpoint error message on the Dashboard]
+image::../media/tenant_dashboard_endpoint_error.png[endpoint error message on the dashboard]
 
 Tenant users can go to the Endpoints page to review the most recent error message for each endpoint and to determine how long ago the error occurred. The *Last error* column displays the most recent error message for each endpoint and indicates how long ago the error occurred. Errors that include the image:../media/icon_alert_red_critical.png[Red X Icon] icon occurred within the past 7 days.
 
