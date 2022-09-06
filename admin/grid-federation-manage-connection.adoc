@@ -1,0 +1,273 @@
+---
+permalink: admin/grid-federation-manage-connection.html
+sidebar: sidebar
+keywords: grid federation, configure connection, remove connection, view connection
+summary: 'You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to configure and manage these connections.'
+---
+= Manage grid federation connections
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_). Follow these instructions to configure and manage these connections.
+
+== Configure a grid federation connection
+
+Configuring a grid federation connection is a two-step process. You start the configuration on one grid and complete it on the other grid. You can start the configuration on either grid.
+
+. To start the configuration, a grid admin signs in to the primary Admin Node on the first grid to enter connection details and download a verification file. 
+
+. To complete the configuration, a grid admin signs in to the primary Admin Node on the second grid to upload the verification file and save and test the connection. 
+
+.What you'll need
+
+* You have reviewed the xref:grid-federation-overview.adoc[considerations and requirements] for configuring grid federation connections. 
+* If you plan to use fully qualified domain names (FQDNs) for each grid instead of IP or VIP addresses, you know which names to use. The DNS servers for each grid have the appropriate entries.
+* You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* Whoever starts the configuration has Root access permission and the provisioning passphrase for the first grid.
+* Whoever completes the configuration has Root access permission and the provisioning passphrase for the second grid. 
+
+
+
+=== Start the configuration
+
+To start the configuration, enter connection details and download the verification file.
+
+. Sign in to the Grid Manager from the primary Admin Node on either grid.
+
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+. Select *Add connection* > *Start configuration*.
+
+. Enter details for the connection.
++
+[cols="1a,2a" options="header"]
+|===
+| Field| Description
+
+|Connection name
+|A unique name to help you recognize this connection, for example, "`Grid 1-Grid 2.`"
+
+|FQDN or IP for this grid
+|One of the following:
+
+* The FQDN of the grid you are currently signed into
+* A VIP address of an HA group on this grid
+* An IP address of an Admin Node or Gateway Node on this grid
+
+|Port
+|The port you want to use for this connection. You can enter any unused port number from 1 to 65,535.
+
+Both grids in this connection will use the same port. You must ensure that no node in either grid uses this port for other connections.
+
+|Certificate valid days (this grid)
+|The number of days you want the security certificates for this grid in the connection to be valid. The default value is 730 days (2 years), but you can enter any value from 1 to 762 days.
+
+StorageGRID automatically generates client and server certificates for each grid when you save the connection.
+
+|Provisioning passphrase for this grid
+|The provisioning passphrase for the grid you are signed in to.
+
+|FQDN or IP for the other grid
+|One of the following:
+
+* The FQDN of the grid you want to connect to
+* A VIP address of an HA group on the other grid
+* An IP address of an Admin Node or Gateway Node on the other grid
+
+|===
+
+. Select *Save and continue*.
+
+. For the Download verification file step, select *Download verification file*.
++
+After the connection is successfully completed on the other grid, you can no longer download the verification file from this grid.
+
+. When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
++
+[IMPORTANT]
+The verification file contains secrets and must be securely stored and transmitted.
+
+. Select *Close* to return to the Grid federation page. 
+
+. Confirm that the new connection is shown and that its *Connection status* is *Waiting to connect*.
+
+. Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
+
+=== Complete the connection
+
+Perform these steps on the StorageGRID system you are connecting to (the other grid).
+
+. Sign in to the Grid Manager from the primary Admin Node.
+
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+. Select *Add connection* > *Upload verification file*. 
+
+. Select *Upload verification file*. Then, browse to and select the file that was downloaded from the first grid (`_connection-name_.grid-federation`).
++
+The details for the connection are shown.
+
+. Optionally, enter a different number of valid days for the security certificates for this grid. *Certificate valid days* defaults to the value you entered on the first grid, but each grid can use different expiration dates.
++
+In general, use the same number of days for the certificates on both sides of the connection. If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
+
+. Enter the provisioning passphrase for the grid you are currently signed in to.
+
+. Select *Save and test*.
++
+If the connection can be established, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
+
+. Close the wizard to return to the Grid federation page.
+
+. Confirm that the new connection is shown and that its *Connection status* is *Connected*.
+
+. After the connection has been established, securely delete all copies of the verification file.
++
+[IMPORTANT]
+This file contains secrets and must be deleted after the connection is established. If you edit this connection, a new verification file will be created. The original file cannot be reused.
+
+
+== View grid federation connections
+
+You can view details for existing grid federation connections from either grid in the connection. 
+
+* To view basic information for all grid federation connections, review the table on the Grid federation page. 
+
+* To view all details about a specific connection, select the connection's name in the table to show the details page.
+
+
+== Edit grid federation connection
+
+You can edit a connection using either grid in the connection. When you edit a grid federation connection, you must download a new verification file on one grid and then upload the new verification file on the other grid.
+
+. Sign in to the Grid Manager from the primary Admin Node on either grid.
+
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+. Use the *Actions* menu on the Grid federation page or the details page for a specific connection.
+
+
+[role="tabbed-block"]
+====
+
+.Actions menu
+--
+.. Select the check box for the connection. 
+.. Select *Actions* > *Edit*.
+.. Enter the new details.
+.. Select *Save*.
+--
+
+.Details page
+--
+.. Select a connection name to display its details.
+.. Select *Edit*.
+.. Enter the new details.
+.. Select *Save*.
+--
+
+====
+
+
+== Rotate connection certificates
+
+Each grid federation connection uses four automatically-generated SSL certificates to secure the connection. When the two certificates for each grid near their expiration date, the *Expiration of grid federation certificate* alert reminds you to rotate the certificates.
+
+[IMPORTANT]
+If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
+
+To rotate the certificates, follow these steps.
+
+. Sign in to the Grid Manager from the primary Admin Node on either grid.
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+. Select the connection name to display its details.
+. Select the *Certificates* tab.
+. Select *Rotate certificates*.
+. Specify how long the new certificates should be valid for, in days.
+. Enter the provisioning passphrase for the grid you are signed in to.
+. Select *Rotate certificates*.
+. As required, repeat these steps on the other grid in the connection.
++
+In general, use the same number of days for the certificates on both sides of the connection.
+
+////
+
+
+=== Remove permission for tenant to use grid connection
+
+
+[role="tabbed-block"]
+====
+
+.Actions menu
+--
+. Select the check box for the connection. 
+. Select *Actions* > *??*.
+. Select *Save changes*.
+--
+
+.Details page
+--
+. Select the connection name to display the details.
+. Select the Federation features tab.
+. For Account synchronization, select *View more*.
+. Select a tenant who is using a grid federation connection on this grid. 
+. Select *Remove relationship*.
+. Select *Yes*.
+--
+
+====
+
+////
+
+
+
+
+== Remove a grid federation connection
+
+You can remove a grid federation connection if is not being used by any tenant, and you can remove a connection from either grid.
+
+After you remove a connection, you can no longer replicate data between grids. However, any data that was previously replicated between grids is not deleted. If you want to delete this information from either grid, you must delete it manually.
+
+Perform these steps from either grid in the grid federation connection.
+
+
+[role="tabbed-block"]
+====
+
+.Grid federation page
+--
+. Sign in to the Grid Manager from the primary Admin Node.
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+. Confirm that the connection you want to remove is not being used by any tenant.
+. Select the radio button for the connection. 
+. Select *Remove*.
+. Review the confirmation message, and select *Yes*.
+--
+
+.Details page
+--
+. Sign in to the Grid Manager.
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+. Select the connection name to display the details.
+. Confirm that the connection you want to remove is not being used by any tenant.
+. Select *Remove*.
+. Review the confirmation message, and select *Yes*.
+--
+
+====
+//end tabbed blocks
+
+
+
+
+
+
+
+
+
+
+
+
+
