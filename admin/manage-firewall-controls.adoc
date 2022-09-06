@@ -13,10 +13,13 @@ summary: 'StorageGRID includes a firewall on each node that enhances the securit
 [.lead]
 StorageGRID includes a firewall on each node that enhances the security of your grid by enabling you to control access to the Grid Network, Admin Network, and Client Network. You should use the firewall to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the *Firewall control* page are deployed to each node. 
 
-Use the *Firewall control* page to: 
+Use the three tabs on the *Firewall control* page to: 
 * Manage external network access to your nodes.
 * Create a list of privileged IP addresses that can access ports that would otherwise be blocked.
 * Manage an untrusted Client Network.
+
+NOTE: the settings you make one one tab can affect the settings you make on another tab. In general, 
+The Untrusted Client Network settings override Privileged address list settings which in turn override the settings on the Manage external access tab. Be sure to check the settings on all tabs to ensure you network behaves in the way you expect. 
 
 == Manage external access and privileged IP addresses: overview
 You can enhance the security of your grid by limiting the external network access of the ports on your grid nodes. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. 
