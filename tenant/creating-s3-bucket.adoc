@@ -75,7 +75,7 @@ If you enable S3 Object Lock for a bucket, bucket versioning is enabled automati
 
 . If you selected *Enable S3 Object Lock*, optionally enable *Default retention* for this bucket.
 +
-When *Default retention* is enabled, new objects added to the bucket will be automatically protected from being deleted or overwritten. The *Default retention* setting only applies to new objects. It does not apply to objects already in the bucket or to any objects that might have their own retention periods.
+When *Default retention* is enabled, new objects added to the bucket will be automatically protected from being deleted or overwritten. The *Default retention* setting does not apply to objects that have their own retention periods.
 
 .. If *Default retention* is enabled, specify a *Default retention mode* for the bucket.
 +
