@@ -1,28 +1,33 @@
 ---
-permalink: s3/s3-request-reference.html
+permalink: s3/s3-support-option-3.html
 sidebar: sidebar
 keywords: s3 request headers, s3 command support, request syntax, not supported requests, aws s3
 summary: 'Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
 ---
-= S3 request reference
+= Option 3
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Refer to the tables to see a summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.
+Option 3
 
-Jump to: <<A,A>>, <<C,C>>
+* Lists the supported commands only
+* Lists all parameters for each supported command and indicates whether they are supported or not supported.
+
+
+Jump to: <<A,A>>, <<C,C>>, <<G,G>>, <<L,L>>
 
 //AbortMultipartUpload
 == [[A]] https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
 
-.Request headers
 
 
-[cols="1a,1a" options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
-|Supported |Not supported
 
+|Type |Supported |Not supported
+
+|Request header
 |* `Key`
 * `UploadId`
 * `Host`
@@ -31,13 +36,11 @@ Jump to: <<A,A>>, <<C,C>>
 
 |* `x-amz-request-payer`
 
+|Request body
+2+|This request does not have a request body.
+
+
 |===
-
-
-.Request body
-This request does not have a request body.
-
-
 .Learn more
 xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
@@ -45,12 +48,12 @@ xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 == [[C]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
 
 
-.Request header
 
-
-[cols="1a,1a" options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
-|Supported |Not supported
+|Type |Supported |Not supported
+
+|Request header
 
 |* `Key`
 * `UploadId`
@@ -62,14 +65,7 @@ xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
 |* `x-amz-request-payer`
 
-|===
-
-
-.Request body
-
-[cols="1a,1a" options="header"]
-|===
-|Supported |Not supported
+|Request body
 
 |* `CompleteMultipartUpload`					
 * `Part`				
@@ -88,15 +84,13 @@ xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[CopyObject^] (PUT Object-Copy)
 
-
-.Request header
-
-
-[cols="1a,1a" options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
-|Supported |Not supported
+|Type |Supported |Not supported
 
-|* `Key	
+|Request header
+
+|* `Key`	
 * `Host`
 
 * `Cache-Control`
@@ -130,7 +124,6 @@ xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 * `Authorization`
 
 
-
 |* `* x-amz-acl`
 * `Expires`
 * `x-amz-grant-full-control`
@@ -143,71 +136,64 @@ xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 * `x-amz-request-payer`
 
 
+|Request body
+2+|This request does not have a request body.
+
 |===
-
-
-.Request body
-This request does not have a request body.
 
 .Learn more
 xref:put-object-copy.html.adoc[PUT Object-Copy]
 
-== CreateBucket (PUT Bucket)
 
-.Request syntax
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[CreateBucket (PUT Bucket)^].
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[Amazon Simple Storage Service (S3) > API Reference > CreateBucket^].
 
-.StorageGRID support
+[cols="1a,2a,2a" options="header"]
+|===
+|Type |Supported |Not supported
 
-StorageGRID does not support these parameters:
+|Request header
 
-----
-x-amz-acl
-x-amz-grant-full-control
-x-amz-grant-read
-x-amz-grant-read-acp
-x-amz-grant-write
-x-amz-grant-write-acp
-----
+|* `Host`
+* `x-amz-bucket-object-lock-enabled`
+
+
+|* `x-amz-acl`
+* `x-amz-grant-full-control`
+* `x-amz-grant-read`
+* `x-amz-grant-read-acp`
+* `x-amz-grant-write`
+* `x-amz-grant-write-acp`
+
+|Request body
+
+|* `CreateBucketConfiguration`					
+* `LocationConstraint`				
+	
+|
+
+|===
+
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
 
-== GetBucketAcl
+== [[G]]https://https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketAcl^]
 
-.Request syntax
-
-Go to https://https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[Amazon Simple Storage Service (S3) > API Reference > GetBucketAcl^].
-
-.StorageGRID support
 Implemented with all Amazon S3 REST API behavior.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
 
 
-== ListBuckets
-.Request syntax
+== [[L]]https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^]
 
-Go to https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[Amazon Simple Storage Service (S3) > API Reference > ListBuckets^].
-
-.StorageGRID support
 Implemented with all Amazon S3 REST API behavior.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
 
 
-== Unsupported requests
-
-* GetBucketAnalyticsConfiguration
-
-* ListBucketAnalyticsConfigurations
-
-* ListBucketInventoryConfigurations
-
-* ListBucketMetricsConfigurations
 
 
 

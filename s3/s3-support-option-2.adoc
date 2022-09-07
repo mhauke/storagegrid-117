@@ -1,30 +1,38 @@
 ---
-permalink: s3/s3-quick-reference.html
+permalink: s3/s3-support-option-2.html
 sidebar: sidebar
 keywords: Amazon s3, API, request headers, s3 support, request syntax, not supported, aws s3
 summary: 'Get a quick summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
 ---
-= Quick reference: StorageGRID support for Amazon S3 APIs
+= Option 2
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Refer to the table to see a summary of StorageGRID support for Amazon Simple Storage Service (S3) APIs.
+Option 2
+
+* Lists only the supported commands.
+* Lists only the supported parameters for each supported command.
 
 Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 
 
 
-[cols="1a,1a,1a,1a" options="header"]
+[cols="1a,3a,1a,1a" options="header"]
 |===
 | Amazon Simple Storage Service (S3) API| StorageGRID support for request header |StorageGRID support for request body |Learn more
 
 //AbortMultipartUpload
 |[[A]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
-|These parameters are not supported:
+|These parameters are supported:
 
-* `x-amz-request-payer`
+* `Key`	
+* `uploadedId`	
+*	`Host`
+*	`Date`
+*	`Authorization`
+
 |This request does not have a request body.
 |xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
@@ -32,60 +40,100 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[Ab
 //CompleteMultipartUpload
 |[[C]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
-|These parameters are not supported:
+|These parameters are supported:
 
-* `x-amz-request-payer`
+* `Key`	
+* `uploadedId`	
+*	`Host`
+*	`Date`
+*	`Content-Length`
+*	`Authorization`
+
 |Implemented with all Amazon S3 REST API behavior.
 |xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 
 
 //CopyObject
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[CopyObject^]
-|These parameters are not supported:
+|These parameters are supported:
 
-* `x-amz-acl`
-* `Expires`
-* `x-amz-grant-full-control`
-* `x-amz-grant-read`
-* `x-amz-grant-read-acp`
-* `x-amz-grant-write-acp`
-* `x-amz-website-redirect-location`
-* `x-amz-server-side-encryption-aws-kms-key-id`
-* `x-amz-server-side-encryption-context`
-* `x-amz-request-payer`
+* `Key`	
+* `Host`
+
+* `Cache-Control`
+* `Content-Disposition`
+* `Content-Encoding`
+* `Content-Language`
+* `Content-Type`
+* `x-amz-copy-source`
+* `x-amz-copy-source-if-match`
+* `x-amz-copy-source-if-modified-since`
+* `x-amz-copy-source-if-none-match`
+* `x-amz-copy-source-if-unmodified-since`
+
+* `x-amz-metadata-directive`
+* `x-amz-tagging-directive`
+* `x-amz-server-side-encryption`
+* `x-amz-storage-class`
+
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`
+
+* `x-amz-copy-source-server-side-encryption-customer-algorithm`
+* `x-amz-copy-source-server-side-encryption-customer-key`
+* `x-amz-copy-source-server-side-encryption-customer-key-MD5`
+* `x-amz-tagging`
+* `x-amz-object-lock-mode`
+* `x-amz-object-lock-retain-until-date`
+* `x-amz-object-lock-legal-hold`
+* `Date`
+* `Authorization`
+
 |This request does not have a request body.
 |xref:put-object-copy.html.adoc[PUT Object-Copy]
 
 
 //CreateBucket
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[CreateBucket^]
-|These parameters are not supported:
+|These parameters are supported:
 
-* `x-amz-acl`
-* `x-amz-grant-full-control`
-* `x-amz-grant-read`
-* `x-amz-grant-read-acp`
-* `x-amz-grant-write`
-* `x-amz-grant-write-acp`
+* `Host`
+* `x-amz-bucket-object-lock-enabled`
+* `Date`
+* `Authorization`
+
 |Implemented with all Amazon S3 REST API behavior.
 |xref:operations-on-buckets.adoc[Operations on buckets]
 
 
 //CreateMultipartUpload
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html[CreateMultipartUpload^]
-|The following parameters are not supported:
+|These parameters are supported:
 
-* `x-amz-acl`
-* `Content-Language`
-* `Expires`
-* `x-amz-grant-full-control`
-* `x-amz-grant-read`
-* `x-amz-grant-read-acp`
-* `x-amz-grant-write-acp`
-* `x-amz-website-redirect-location`
-* `x-amz-server-side-encryption-aws-kms-key-id`
-* `x-amz-server-side-encryption-context`
-* `x-amz-request-payer`
+* `Key`	
+* `Host`
+
+* `Cache-Control`
+*	`Content-Disposition`
+*	`Content-Encoding`
+
+*	`Content-Type`
+
+*	`x-amz-server-side-encryption`
+*	`x-amz-storage-class`
+
+*	`x-amz-server-side-encryption-customer-algorithm`
+*	`x-amz-server-side-encryption-customer-key`
+*	`x-amz-server-side-encryption-customer-key-MD5`
+
+*	`x-amz-tagging`
+*	`x-amz-object-lock-mode`
+*	`x-amz-object-lock-retain-until-date`
+*	`x-amz-object-lock-legal-hold`
+*	`Date`
+*	`Authorization`
+
 |This request does not have a request body.
 |
 
@@ -98,13 +146,6 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBuck
 |xref:operations-on-buckets.adoc[Operations on buckets]
 
 
-//DeleteBucketAnalyticsConfiguration
-|DeleteBucketAnalyticsConfiguration
-|This request is not supported.
-|
-|
-
-
 //DeleteBucketCors
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html[DeleteBucketCors^]
 |Implemented with all Amazon S3 REST API behavior.
@@ -112,25 +153,6 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBuck
 |
 
 
-//DeleteBucketEncryption
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html[DeleteBucketEncryption^]
-|This request is not supported.
-|
-|
-
-
-//DeleteBucketIntelligentTieringConfiguration
-|DeleteBucketIntelligentTieringConfiguration
-|This request is not supported.
-|
-|
-
-
-//DeleteBucketInventoryConfiguration
-|DeleteBucketInventoryConfiguration
-|This request is not supported.
-|
-|
 
 //DeleteBucketLifecycle
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html[DeleteBucketLifecycle^]
@@ -138,18 +160,6 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBuck
 |This request does not have a request body.
 |
 
-//DeleteBucketMetricsConfiguration
-|DeleteBucketMetricsConfiguration
-|This request is not supported.
-|
-|
-
-
-//DeleteBucketOwnershipControls
-|DeleteBucketOwnershipControls
-|This request is not supported.
-|
-|
 
 
 //DeleteBucketPolicy
@@ -167,30 +177,6 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketA
 |xref:operations-on-buckets.adoc[Operations on buckets]
 
 
-//GetBucketAnalyticsConfiguration
-|GetBucketAnalyticsConfiguration
-|This request is not supported.
-|
-|
-
-
-|[[L]]ListBucketAnalyticsConfigurations
-|This request is not supported.
-|
-|
-
-
-|ListBucketInventoryConfigurations
-|This request is not supported.
-|
-|
-
-
-|ListBucketMetricsConfigurations
-|This request is not supported.
-|
-|
-
 
 // ListBuckets
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^]
@@ -202,47 +188,65 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketA
 // PutBucketCors
 |[[P]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucketCors^]
-|These parameters are not supported:
+|These parameters are supported:
 
-* `Content-MD5`
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-Length`
+
 |
 |xref:operations-on-buckets.adoc[Operations on buckets]
 
 //PutBucketNotificationConfiguration
 |https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
 |Implemented with all Amazon S3 REST API behavior.
-|These parameters are not supported:
+|These parameters are supported:
 
-* `CloudFunctionConfiguration`
-* `QueueConfiguration`
+* `NotificationConfiguration`
+
 |
 
 
-//PutObjectLockConfiguration
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html[PutObjectLockConfiguration^]
-|
-|
-|
 
 
 // SelectObjectContent
 |[[S]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[SelectObjectContent^]
-|These parameters are not supported:
+|These parameters are supported:
 
-* `Host`
-* `x-amz-server-side-encryption-customer-algorithm`
-* `x-amz-server-side-encryption-customer-key`
-* `x-amz-server-side-encryption-customer-key-MD5`
+* `Key`
+* `Date`
+* `Authorization`
+* `Content-Length`
 
 
-|These parameters are not supported:
+|These parameters are supported:
 
-* `InputSerialization > JSON`
-* `InputSerialization > Parquet`
-* `OutputSerialization > JSON`
-* `ScanRange`
-
+----
+SelectObjectContentRequest							
+	Expression						
+	ExpressionType						
+	RequestProgress						
+		Enabled					
+	InputSerialization						
+		CompressionType					
+		CSV					
+			AllowQuotedRecordDelimiter				
+			Comments				
+			FieldDelimiter				
+			FileHeaderInfo				
+			QuoteCharacter				
+			QuoteEscapeCharacter				
+			RecordDelimiter													
+	OutputSerialization						
+		CSV					
+			FieldDelimiter				
+			QuoteCharacter				
+			QuoteEscapeCharacter				
+			QuoteFields				
+			RecordDelimiter									
+----
 |
 
 
