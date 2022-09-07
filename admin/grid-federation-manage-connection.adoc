@@ -29,7 +29,7 @@ Configuring a grid federation connection is a two-step process. You start the co
 
 
 
-=== Start the configuration
+=== [[start_configuration]]Start the configuration
 
 To start the configuration, enter connection details and download the verification file.
 
@@ -139,15 +139,14 @@ You can view details for existing grid federation connections from either grid i
 
 == Edit grid federation connection
 
-You can edit a connection using either grid in the connection. When you edit a grid federation connection, you must download a new verification file on one grid and then upload the new verification file on the other grid.
+You can edit a connection by signing in to the primary Admin Node on either grid in the connection. After you make changes on the first grid, you must download a new verification file and upload it to the other grid.
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
 . Use the *Actions* menu on the Grid federation page or the details page for a specific connection.
-
-
++
 [role="tabbed-block"]
 ====
 
@@ -155,19 +154,50 @@ You can edit a connection using either grid in the connection. When you edit a g
 --
 .. Select the check box for the connection. 
 .. Select *Actions* > *Edit*.
-.. Enter the new details.
-.. Select *Save*.
+.. Enter the new information. See <<start_configuration,Start the configuration>>.
+
 --
 
 .Details page
 --
 .. Select a connection name to display its details.
 .. Select *Edit*.
-.. Enter the new details.
-.. Select *Save*.
+.. Enter the new information. See <<start_configuration,Start the configuration>>.
+
 --
 
 ====
+
+. Enter the provisioning passphrase for the grid you are signed in to.
+. Select *Save and continue*.
+. Select *Download verification file*.
+. When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
++
+[IMPORTANT]
+The verification file contains secrets and must be securely stored and transmitted.
+
+. Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
+. From the other grid in the connection:
+
+.. Sign in to the Grid Manager from the primary Admin Node.
+
+.. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+.. Select *Add connection* > *Upload verification file*. 
+
+.. Select *Upload verification file*. Then, browse to and select the file that was downloaded from the first grid.
+
+.. Enter the provisioning passphrase for the grid you are currently signed in to.
+
+.. Select *Save and test*.
++
+If the connection can be established, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
+
+.. Close the wizard to return to the Grid federation page.
+
+.. Confirm that the *Connection status* is *Connected*.
+
+.. Securely delete all copies of the verification file.
 
 
 == Rotate connection certificates
