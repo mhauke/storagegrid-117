@@ -37,7 +37,7 @@ A grid administrator must enable account sync for a tenant before that tenant ca
 +
 When creating the tenant, the admin selects an existing grid federation connection and assigns a permission that allows the tenant to perform account sync and cross-grid replication. When a tenant with this permission is saved, the tenant and the tenant's root user are created on the source grid and copied to the second grid (referred to as the tenant's _destination grid_).
 
-. *Sync tenant details*: If a new tenant has permission to use a grid federation connection for account sync, that tenant can optionally enable account sync when it creates new S3 access keys, groups, or users on its source grid. When account sync is enabled for a new key, group, or user, the item is automatically copied to the tenant on the destination grid. Subsequent changes made to this items on the tenant's source grid are also synchronized.
+. *Sync tenant details*: If a new tenant has permission to use a grid federation connection for account sync, that tenant can optionally enable account sync when it creates new S3 access keys, groups, or users on its source grid. When account sync is enabled for a new key, group, or user, the item is automatically copied to the tenant on the destination grid. Subsequent changes made to these items on the tenant's source grid are also synchronized.
 +
 Note that any S3 access keys, groups, or users that are created or modified on the tenant's destination grid are not replicated back to the tenant's source grid.
 
@@ -53,7 +53,7 @@ After the grid administrator establishes a grid federation connection between tw
 
 * Grid federation connections are bidirectional. After the connection is established, you can monitor and manage the connection from either grid. 
 
-* At least one grid federation connection is a required for account sync and cross-grid replication.
+* At least one grid federation connection is required for account sync and cross-grid replication.
 
 * Account sync and cross-grid replication apply only to S3 tenant accounts. These features are not available for Swift tenant accounts.
 
@@ -80,7 +80,7 @@ See xref:managing-high-availability-groups.adoc[Manage high availability (HA) gr
 
 == How are objects are replicated between grids?
 
-* The source grid's maximum segment size applies to objects replicated to the other grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the target grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the target grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
+* The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
 
 == What happens if a grid fails?
 
