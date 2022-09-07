@@ -13,6 +13,8 @@ You create storage pools to determine where the StorageGRID system stores object
 
 NOTE: When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
 
+If you want to create Cloud Storage Pools to store object data outside of your StorageGRID system, see the xref:what-cloud-storage-pool-is.adoc[information about using Cloud Storage Pools].
+
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
@@ -34,15 +36,9 @@ IMPORTANT: Do not include the default All Sites site in a storage pool that will
 
 . Select *ILM* > *Storage pools*.
 +
-The Storage Pools page contains two tabs: one for Storage pools and one for Cloud Storage Pools.
+The Storage pools tab lists all defined storage pools and the system-default storage pool, All Storage Nodes, which uses the system-default site, All Sites.
 +
-The Storage pools tab lists:
-+
-* All defined storage pools
-* The system-default storage pool, All Storage Nodes, which uses the system-default site, All Sites
-* The default storage grade, All Storage Nodes
-+
-IMPORTANT: The All Storage Nodes storage pool is automatically updated whenever you add new data center sites. Using this storage pool in ILM rules is not recommended.
+IMPORTANT: The All Storage Nodes storage pool is automatically updated whenever you add new data center sites. Do not use this storage pool in ILM rules.
 
 . To create a new storage pool, select *Create*.
 
