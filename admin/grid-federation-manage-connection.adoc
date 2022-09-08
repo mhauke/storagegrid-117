@@ -139,13 +139,13 @@ You can view details for existing grid federation connections from either grid i
 
 == Edit grid federation connection
 
-You can edit a connection by signing in to the primary Admin Node on either grid in the connection. After you make changes on the first grid, you must download a new verification file and upload it to the other grid.
+You can edit a connection by signing in to the primary Admin Node on either grid in the connection. After you make changes to the first grid, you must download a new verification file and upload it to the other grid.
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
-. Use the *Actions* menu on the Grid federation page or the details page for a specific connection.
+. Edit the connection details using the *Actions* menu on the Grid federation page or the details page for a specific connection.
 +
 [role="tabbed-block"]
 ====
@@ -170,6 +170,9 @@ You can edit a connection by signing in to the primary Admin Node on either grid
 
 . Enter the provisioning passphrase for the grid you are signed in to.
 . Select *Save and continue*.
++
+The new values are saved, but they will not be used for the connection until you upload the new verification file to the other grid. 
+
 . Select *Download verification file*.
 . When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
 +
@@ -177,7 +180,8 @@ You can edit a connection by signing in to the primary Admin Node on either grid
 The verification file contains secrets and must be securely stored and transmitted.
 
 . Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
-. From the other grid in the connection:
+
+. Complete these steps on the other grid:
 
 .. Sign in to the Grid Manager from the primary Admin Node.
 
@@ -191,13 +195,13 @@ The verification file contains secrets and must be securely stored and transmitt
 
 .. Select *Save and test*.
 +
-If the connection can be established, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
+If the connection can be established using the edited values, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
 
 .. Close the wizard to return to the Grid federation page.
 
 .. Confirm that the *Connection status* is *Connected*.
 
-.. Securely delete all copies of the verification file.
+. Securely delete all copies of the verification file.
 
 
 == Rotate connection certificates
