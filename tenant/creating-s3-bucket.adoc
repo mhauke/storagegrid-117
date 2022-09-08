@@ -92,7 +92,7 @@ When *Default retention* is enabled, new objects added to the bucket will be aut
 
 | Governance
 
-|* Users with special permission can bypass certain retention settings.
+|* Users with the `s3:BypassGovernanceRetention` permission can use the `x-amz-bypass-governance-retention: true` request header to bypass retention settings.
 
 * These users can delete an object version before its retain-until-date is reached.
 
@@ -103,7 +103,7 @@ When *Default retention* is enabled, new objects added to the bucket will be aut
 
 .. If *Default retention* is enabled, specify the *Default retention period* for the bucket.
 +
-The *Default retention* indicates how long new objects added to this bucket should be retained, starting from the day they are added. Specify a value between 1 and 36,500 days or between 1 and 100 years, inclusive.
+The *Default retention period* indicates how long new objects added to this bucket should be retained, starting from the time they are ingested. Specify a value between 1 and 36,500 days or between 1 and 100 years, inclusive.
 
 . Select *Create bucket*.
 +

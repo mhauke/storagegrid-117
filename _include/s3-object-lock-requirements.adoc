@@ -47,7 +47,7 @@ Multiple copies of each protected object are stored by StorageGRID for the speci
 
 * If a bucket or object version uses governance mode:
 
-** Users with special permission can use a bypass header in requests to modify certain retention settings. 
+** Users with the `s3:BypassGovernanceRetention` permission can use the `x-amz-bypass-governance-retention: true` request header to bypass retention settings.
 ** These users can delete an object version before its retain-until-date is reached.
 ** These users can increase, decrease, or remove an object's retain-until-date.
 
