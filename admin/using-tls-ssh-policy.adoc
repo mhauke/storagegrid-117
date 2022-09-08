@@ -9,7 +9,7 @@ summary: 'You can use TLS and SSH policies to configure TLS and SSH policies and
 :imagesdir: ../media/
 
 [.lead]
-You can select TLS and SSH policy to configure ciphers and establish secure connections while still maintaining compatibility with the client applications. In general, you can use the default Modern policy, unless the system needs to be FIPS compliant or need to support other ciphers.
+The TLS and SSH policy determines which protocols and ciphers are used to establish secure TLS connections with client applications and secure SSH connections to internal StorageGRID services. In general, use the default Modern policy, unless your system needs to be Common Criteria-compliant or you need to use other ciphers.
 
 .What you'll need
 
@@ -24,11 +24,9 @@ Select a security policy to control how TLS and SSH encrypt data in motion.
 . Select *CONFIGURATION* > *Security settings* > *TLS and SSH policies*.
 +
 
-
 image::../media/securitysettings_tls_ssh_policies_homepg.png[TLS and SSH policies]
-+
 
-. Select *View details* and review the available policies.
+. Select *View details* to review each policy.
 +
 
 NOTE: Some StorageGRID services have not been updated to use the ciphers in these policies.
