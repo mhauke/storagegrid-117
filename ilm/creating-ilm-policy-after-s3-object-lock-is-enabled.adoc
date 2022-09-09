@@ -33,9 +33,9 @@ image::../media/video-screenshot-ilm-policies.png[link="https://netapp.hosted.pa
 
 . Select *ILM* > *Policies*.
 +
-The ILM Policies page appears. If the global S3 Object Lock setting is enabled, the ILM policies page indicates which ILM rules are compliant.
-+
-image::../media/ilm_policies_page_compliant.png[ILM policies Page Compliant]
+If the global S3 Object Lock setting is enabled, the ILM policies page indicates which ILM rules are compliant.
+
+. Select *Create proposed policy*, then select either *Clone active policy* or *Create new policy*.
 
 . Enter a unique name for the proposed policy in the *Name* field.
 +
@@ -45,7 +45,7 @@ You must enter at least 1 and no more than 64 characters.
 +
 You must enter at least 1 and no more than 128 characters.
 
-. To add rules to the policy, select *Select Rules*.
+. To add rules to the policy, select *Select rules*.
 +
 The Select Rules for Policy dialog box appears, with all defined rules listed.
 
@@ -55,7 +55,7 @@ The Select Rules for Policy dialog box appears, with all defined rules listed.
 image::../media/ilm_policy_select_rules_for_compliant_policy.png[ILM Policy Select Rules for Compliant Policy]
 
 . Select a rule name or the more details icon image:../media/icon_nms_more_details.gif[more details icon] to view the settings for that rule.
-. In the *Select Default Rule* section, select one default rule for the proposed policy.
+. In the *Select default rule* section, select one default rule for the proposed policy.
 +
 The table in this section only lists the rules that are compliant and do not use any filters.
 +
