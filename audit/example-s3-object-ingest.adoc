@@ -11,7 +11,7 @@ summary: 'The series of audit messages below is an example of the audit messages
 [.lead]
 The series of audit messages below is an example of the audit messages generated and saved to the audit log when an S3 client ingests an object to a Storage Node (LDR service). 
 
-In this example, the active ILM policy includes the stock ILM rule, Make 2 Copies.
+In this example, the active ILM policy includes the system-provided ILM rule, Make 2 Copies.
 
 NOTE: Not all audit messages generated during a transaction are listed in the example below. Only those related to the S3 ingest transaction (SPUT) are listed.
 
