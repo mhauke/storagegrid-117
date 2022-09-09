@@ -1,7 +1,7 @@
 ---
 permalink: admin/changing-browser-session-timeout-interface.html
 sidebar: sidebar
-keywords: browser session timeout, inactive users
+keywords: browser inactivity timeout, inactive users
 summary: 'You can control whether Grid Manager and Tenant Manager users are signed out if they are inactive for more than a certain amount of time.'
 ---
 = Change the browser inactivity timeout
@@ -36,7 +36,7 @@ If SSO is enabled and a user's browser times out, the user must reenter their SS
 .Steps
 . Select *CONFIGURATION* > *Security settings* > *Interface*.
 . In the *Sign out inactive users after* field, select a browser timeout period between 60 seconds and 7 days.
-You can select the browser timeout period in either seconds, minutes, hours, or days. 
+You can select the browser timeout period in seconds, minutes, hours, or days. 
 +
 //Set this field to 0 if you do not want to use this functionality. Users are signed out 16 hours after they sign in, when their authentication tokens expire.
 +
