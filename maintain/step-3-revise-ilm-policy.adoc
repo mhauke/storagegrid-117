@@ -26,7 +26,7 @@ If your current ILM policy refers to the site you want to remove, you must activ
 * Cannot use a storage pool that refers to the site.
 * Cannot use an Erasure Coding profile that refers to the site.
 * Cannot use the default *All Storage Nodes* storage pool or the default *All Sites* site.
-* Cannot use the system-provided *Make 2 Copies* rule.
+* Cannot use the *Make 2 Copies* rule.
 * Must be designed to fully protect all object data.
 +
 IMPORTANT: Never create a single-copy ILM rule to accommodate the removal of a site. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. If only one replicated copy of an object exists, that object is lost if a Storage Node fails or has a significant error. You also temporarily lose access to the object during maintenance procedures such as upgrades.
