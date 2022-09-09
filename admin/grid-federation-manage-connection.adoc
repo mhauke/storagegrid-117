@@ -141,6 +141,8 @@ You can view details for existing grid federation connections from either grid i
 
 You can edit a connection by signing in to the primary Admin Node on either grid in the connection. After you make changes to the first grid, you must download a new verification file and upload it to the other grid.
 
+=== Start editing the connection
+
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
@@ -171,35 +173,44 @@ You can edit a connection by signing in to the primary Admin Node on either grid
 . Enter the provisioning passphrase for the grid you are signed in to.
 . Select *Save and continue*.
 +
-The new values are saved, but they will not be used for the connection until you upload the new verification file to the other grid. 
+The new values are saved, but they will not be applied to the connection until you have uploaded the new verification file on the other grid. 
 
 . Select *Download verification file*.
++
+To download this file at a later time, go to the details page for the connection.
+
 . When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
 +
 [IMPORTANT]
 The verification file contains secrets and must be securely stored and transmitted.
 
+. Select *Close* to return to the Grid federation page. 
+
+. Confirm that the new connection is shown and that its *Connection status* is *Pending edit*.
+
 . Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
 
-. Complete these steps on the other grid:
+=== Finish editing the connection
 
-.. Sign in to the Grid Manager from the primary Admin Node.
+Perform these steps on the other grid.
 
-.. Select *CONFIGURATION* > *System* > *Grid federation*.
+. Sign in to the Grid Manager from the primary Admin Node.
 
-.. Select *Add connection* > *Upload verification file*. 
+. Select *CONFIGURATION* > *System* > *Grid federation*.
 
-.. Select *Upload verification file*. Then, browse to and select the file that was downloaded from the first grid.
+. Select *Add connection* > *Upload verification file*. 
 
-.. Enter the provisioning passphrase for the grid you are currently signed in to.
+. Select *Upload verification file*. Then, browse to and select the file that was downloaded from the first grid.
 
-.. Select *Save and test*.
+. Enter the provisioning passphrase for the grid you are currently signed in to.
+
+. Select *Save and test*.
 +
 If the connection can be established using the edited values, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
 
-.. Close the wizard to return to the Grid federation page.
+. Close the wizard to return to the Grid federation page.
 
-.. Confirm that the *Connection status* is *Connected*.
+. Confirm that the *Connection status* is *Connected*.
 
 . Securely delete all copies of the verification file.
 
