@@ -72,25 +72,17 @@ Each rule can define multiple placements for a single time period and different 
 * To place  objects in multiple locations during a single time period, select *Add other type or location* to add more than one line for that time period.
 * To place objects in different locations in different time periods, select *Add another time period* to add the next time period. Then, specify one or more lines within the time period.
 
-The example shows the Define placements page of the Create ILM rule wizard.
+The example shows two placement instructions on the Define placements page of the Create ILM rule wizard.
 
 image::../media/ilm_rule_multiple_placements_in_single_time_period.png[ILM placements screen from Grid Manager]
 
-[cols="1a,3a"]
-|===
-a|
-image:../media/icon_number_1.png[icon number 1]
-a|
 The first placement instruction has two lines for the first year:
 
 . The first line creates two replicated object copies at two data center sites.
 . The second line creates a 6+3 erasure-coded copy using three data center sites.
 
-a|
-image:../media/icon_number_2.png[icon number 2]
-a|
 The second placement instruction creates two archived copies after one year and keeps those copies forever.
-|===
+
 When you define the set of placement instructions for a rule, you must ensure that at least one placement instruction begins at day 0, that there are no gaps between the time periods you have defined, and that the final placement instruction continues either forever or until you no longer require any object copies.
 
 As each time period in the rule expires, the content placement instructions for the next time period are applied. New object copies are created and any unneeded copies are deleted.
