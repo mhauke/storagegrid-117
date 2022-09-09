@@ -18,7 +18,7 @@ You can use the Tenant Manager to create S3 buckets for object data.
 +
 NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objects can be granted by xref:../s3/bucket-and-group-access-policies.adoc[bucket policy or group policy].
 
-* If you plan to create a bucket with S3 Object Lock, you have enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
+* If you plan to create a bucket with S3 Object Lock, a grid admin has enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
 
 == Access wizard
 . Select *STORAGE (S3)* > *Buckets*.

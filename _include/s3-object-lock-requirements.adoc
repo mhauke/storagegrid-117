@@ -37,18 +37,6 @@ If retention settings are applied, both the object and any S3 user-defined metad
 
 . *Object retention and deletion*
 +
-Multiple copies of each protected object are stored by StorageGRID for the specified retention period. The exact number and type of object copies and the storage locations are determined by the compliant rules in the active ILM policy.
-
-* If a bucket or object version uses compliance mode:
-
-** The object cannot be deleted until its retain-until-date is reached. 
-** The object's retain-until-date can be increased, but it cannot be decreased.
-** The object's retain-until-date cannot be removed until that date is reached.  
-
-* If a bucket or object version uses governance mode:
-
-** Users with the `s3:BypassGovernanceRetention` permission can use the `x-amz-bypass-governance-retention: true` request header to bypass retention settings.
-** These users can delete an object version before its retain-until-date is reached.
-** These users can increase, decrease, or remove an object's retain-until-date.
+Multiple copies of each protected object are stored by StorageGRID for the specified retention period. The exact number and type of object copies and the storage locations are determined by the compliant rules in the active ILM policy. Whether a protected object can be deleted before its retain-until-date is reached depends on its retention mode.
 
 * If an object is under a legal hold, no one can delete the object, regardless of its retention mode. 
