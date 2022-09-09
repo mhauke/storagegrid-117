@@ -1,25 +1,20 @@
 ---
 permalink: tenant/configure-s3-object-lock-settings-for-bucket.html
 sidebar: sidebar
-keywords: how to configure default retention for s3 object lock bucket, retention mode, retention period, compliance, governance
-summary: 'After S3 Object Lock is enabled for a bucket, you can optionally set a default retention mode and retention period for that bucket.'
+keywords: update default retention for s3 object lock bucket, default retention mode, default retention period, compliance, governance
+summary: 'If you enabled S3 Object Lock when you created the bucket, you can edit the bucket to change the default retention settings. You can enable (or disable) default retention and set a default retention mode and retention period.'
 ---
-= Configure S3 Object Lock settings for a bucket
+= Update S3 Object Lock settings for a bucket
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-After S3 Object Lock is enabled for a bucket, you can optionally set a default retention mode and retention period for that bucket.
+If you enabled S3 Object Lock when you created the bucket, you can edit the bucket to change the default retention settings. You can enable (or disable) default retention and set a default retention mode and retention period.
 
 .What you'll need
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Manage All Buckets or the Root Access permission. These permissions override the permissions settings in group or bucket policies. See xref:tenant-management-permissions.adoc[Tenant management permissions].
 * S3 Object Lock is enabled globally for your StorageGRID system, and you enabled S3 Object Lock when you created the bucket. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
-
-.About this task
-
-You can enable default retention for a bucket to automatically protect new objects from being deleted or overwritten. Enabling default retention allows you to
-select a default retention mode and specify a default retention period in days or years.
 
 .Steps
 . Select *STORAGE (S3)* > *Buckets*.
@@ -29,9 +24,9 @@ The bucket details page appears.
 
 . On the *Bucket options* tab, expand the *S3 Object Lock* section.
 
-. Optionally, enable *Default retention* for this bucket.
+. Optionally, enable or disable *Default retention* for this bucket.
 +
-When *Default retention* is enabled, new objects added to the bucket will be automatically protected from being deleted or overwritten. The *Default retention* setting only applies to new objects. It does not apply to objects already in the bucket or to any objects that might have their own retention periods.
+Changes to this setting do not apply to objects already in the bucket or to any objects that might have their own retention periods.
 
 . If *Default retention* is enabled, specify a *Default retention mode* for the bucket.
 +

@@ -37,7 +37,7 @@ When added as the group policy for an S3 tenant account, the sample policy helps
 === S3 Object Lock supports governance mode
 When specifying the S3 Object Lock settings for an object or the default retention settings for a bucket, you can now use governance mode. This retention mode allows users with special permission to bypass certain retention settings. These users can delete an object version before its retention period has elapsed, or they can increase, decrease, or remove an object's retention period.
 
-See xref:../tenant/configure-s3-object-lock-settings-for-bucket.adoc[Configure S3 Object Lock settings for a bucket] and xref:../s3/using-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
+See xref:../tenant/using-s3-object-lock.html.adoc[Use S3 Object Lock to retain objects] and xref:../s3/using-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
 
 === Can rename grid, sites, and nodes
 A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview] for details.
