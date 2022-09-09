@@ -44,11 +44,10 @@ entries:
         url: "/tenant/deleting-group.html"
     - title: Manage local users
       url: "/tenant/managing-local-users.html"
-  - title: Manage S3 tenant accounts
-    entries:
     - title: Manage S3 access keys
-      url: "/tenant/managing-s3-access-keys.html"
       entries:
+      - title: Manage S3 access keys - Overview
+        url: "/tenant/managing-s3-access-keys.html"
       - title: Create your own S3 access keys
         url: "/tenant/creating-your-own-s3-access-keys.html"
       - title: View your S3 access keys

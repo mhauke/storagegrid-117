@@ -11,7 +11,7 @@ summary: 'When an S3 client issues a PUT transaction, a request is made to creat
 [.lead]
 When an S3 client issues a PUT transaction, a request is made to create a new object or bucket. This message is issued by the server if the transaction is successful.
 
-[options="header"]
+[cols="1a,1a,4a" options="header"]
 |===
 | Code| Field| Description
 a|
