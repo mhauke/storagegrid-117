@@ -27,7 +27,7 @@ The Cloud Storage Pools table lists the existing Cloud Storage Pools.
 +
 IMPORTANT: You cannot change the provider type or the S3 bucket or Azure container for a Cloud Storage Pool.
 +
-If you previously uploaded a server or client certificate, you can select *View Current* to review the certificate that is currently in use.
+If you previously uploaded a server or client certificate, you can select *Certificate details* to review the certificate that is currently in use.
 
 . Select *Save*.
 +
@@ -36,4 +36,3 @@ When you save a Cloud Storage Pool, StorageGRID validates that the bucket or con
 If Cloud Storage Pool validation fails, an error message is displayed. For example, an error might be reported if there is a certificate error.
 +
 See the instructions for xref:troubleshooting-cloud-storage-pools.adoc[troubleshooting Cloud Storage Pools], resolve the issue, and then try saving the Cloud Storage Pool again.
-
