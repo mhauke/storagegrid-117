@@ -1,0 +1,21 @@
+---
+permalink: admin/grid-federation-workflow.html
+sidebar: sidebar
+keywords: grid federation workflow, cross-grid replication, account sync, cgr, disaster recovery
+summary: 'As a grid administrator, you must coordinate closely with tenant users to establish and use a grid federation connection between two StorageGRID systems for account sync and cross-grid replication.'
+---
+= Grid federation workflow
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+As a grid administrator, you must coordinate closely with tenant users to establish and use a grid federation connection between two StorageGRID systems for account sync and cross-grid replication.
+
+The workflow diagram shows the high-level steps that grid administrators and tenant users will perform to establish a grid federation connection between two grids and to set up account sync and cross-grid replication. 
+
+After creating a grid federation connection between two grids, the grid administrator creates new tenant accounts to determine who has permission to use the connection. These new tenants can then optionally enable account sync or cross-grid replication when they create new keys, groups, users, and buckets.
+
+If account sync and cross-grid replication are enabled for tenant account details and buckets on either grid, StorageGRID automatically replicates the tenant details and bucket objects (but not the bucket itself) to the other grid, using the grid federation connection.
+
+image:../media/grid-federation-workflow.png[Grid federation workflow]
+

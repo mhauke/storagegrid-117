@@ -18,7 +18,7 @@ After completing an installation, you must perform a series of integration and c
 * Integrate and test the S3 or Swift API client applications you will use to upload objects to your StorageGRID system.
 * When you are ready, configure the information lifecycle management (ILM) rules and ILM policy you want to use to protect object data.
 +
-NOTE: When you install StorageGRID, the default ILM policy, Baseline 2 Copies Policy, is active. This policy includes the stock ILM rule (Make 2 Copies), and it applies if no other policy has been activated.
+NOTE: When you install StorageGRID, the default ILM policy, Baseline 2 copies policy, is active. This policy includes the Make 2 Copies ILM rule, and it applies if no other policy has been activated.
 
 * If your installation includes appliance Storage Nodes, use SANtricity software to complete the following tasks:
  ** Connect to each StorageGRID appliance.
