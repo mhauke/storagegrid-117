@@ -9,7 +9,7 @@ Upgrade the firmware on the drives in your appliance to make sure you have all t
 * You have the latest version of SANtricity System Manager installed that is compatible with your StorageGRID version.
 * If you are performing an offline upgrade, you have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
 +
-NOTE: While in maintenance mode I/O activity to the storage controller is stopped to makes disruptive storage operations safe.
+NOTE: While in maintenance mode I/O activity to the storage controller is stopped to make disruptive storage operations safe.
 
 +
 IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID appliance at a time. Doing so might cause data unavailability, depending on your deployment model and ILM policy.
@@ -23,7 +23,7 @@ You can upgrade your appliance drive firmware using two methods:
 NOTE: Drives that do not have redundancy must be updated using the offline method. This requirement includes any drive associated with SSD cache (including, for example, drives in the SG6060), or any pool or volume group that is degraded. 
 
 *Offline*: 
-The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy, or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped on the drives to be upgraded. You must stop all I/O to any drives you intend to upgrade by placing the node into maintenance mode.
+The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy, or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped on the drives to be upgraded. You must stop all I/O on any drives you intend to upgrade by placing the node into maintenance mode.
 
 The offline method is faster than the online method and is recommended.
 
