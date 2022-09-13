@@ -43,7 +43,7 @@ There are three tabs on this page:
 
 You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
 
-You should check the settings on each tab to ensure only those ports that are necessary for your grid configuration are open. 
+You should check the settings on each of the firewall control tabs to ensure only those ports that are necessary for your grid configuration are open. 
 
 [#manage-external access]
 === Manage external access
@@ -51,13 +51,17 @@ Use this tab to open or close ports on the Grid Network, Admin Network, and Clie
 
 NOTE: The configuration changes you make on *Manage external access* tab might conflict with the settings on the *Privileged address list* tab and the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
-NOTE: Settings on the Manage external access tab can not override settings on the Untrusted Client Network tab. For example, if a node is untrusted, SSH/22 is blocked on the client network no matter what the network access settings are on the Manage external access tab. Settings on the Untrusted Client Network tab override blocked ports (such as 443, 8443, 9443) on the client network.
+NOTE: Settings on the Manage external access tab can not override settings on the Untrusted Client Network tab. For example, if a node is untrusted, SSH/22 is blocked on the client network even if it was opened on the Manage external access tab. Settings on the Untrusted Client Network tab override blocked ports (such as 443, 8443, 9443) on the client network.
 
 . Select *Manage external access*
-The tab displays a table with all of the configurable ports. 
-image::../media/xxxxxxx.png[Manage sxxxxxyslog content]
+The tab displays a table with all of the configurable ports for the nodes in your grid. 
 
++
+image::../media/manage-external-access.png[Manage external access]
+
++
 You can sort the list by:
+
 * Port - largest/smallest
 * Status - open/closed
 * Protocol - TCP/UDP
@@ -72,6 +76,7 @@ IMPORTANT: If you close ports 443, 8443, and 9443, you will not be able to acces
 +
 For example, you could select *Close all displayed ports* to close all ports, and then use the toggle besides an individual port to open only the selected port.
 
++
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available ports. You can also use the search field to find the settings for any configurable port by entering a port number. You can enter a partial port number. For example, if you enter a '2," all ports that start with a "2" are displayed. 
 
 [start=3]
@@ -84,15 +89,17 @@ Add IP addresses or subnets in CIDR notation that can access ports closed for ex
 NOTE: Settings on the Privileged address list tab can not override settings on the Untrusted Client Network tab. 
 
 . Select *Privileged address list*
-The tab displays a field where you can enter addresses you want to have privieged network access. 
+The tab displays a field where you can enter addresses you want to have privileged network access. 
 
-image::../media/xxxxxxx.png[Manage sxxxxxyslog content]
++
+image::../media/privileged-address-list.png[Privileged address list]
 
 NOTE: The configuration changes you make on the *Privileged address list* tab might conflict with the settings on the *Manage external access* tab or the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
 . In the Address 1 field, enter the address of a client or subnet you want to provide privileged network access. 
 . Optionally, select *Add another IP address or subnet in CIDR notation* to add additional privileged clients. 
-. Optionally, select the check box if you want to allow priviledged addresses to access StorageGRID internal ports.
+. Optionally, select the check box if you want to allow privileged addresses to access StorageGRID internal ports. Select *StorageGRID internal ports* to see documentation on the internal ports. 
++
 IMPORTANT: This option removes some protections for internal services. Leave it disabled if possible, and use as small of a privileged IP list/range as possible.
 
 . Select *Save*.
