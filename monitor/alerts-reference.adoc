@@ -268,7 +268,7 @@ The StorageGRID node is unable to contact your DHCP server. The DHCP lease for t
 This alert is triggered when an alert email notification fails or a test email (sent from the *ALERTS* > *Email setup* page) cannot be delivered.
 |===
 
-== Expiration alerts
+== Expiration of certificate alerts
 
 [cols="1a,2a" options="header"]
 |===
@@ -305,6 +305,24 @@ This alert is triggered when an alert email notification fails or a test email (
 |External syslog server forwarding error
 |Node cannot forward logs to the external syslog server.
 |===
+
+== Grid federation alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description and recommended actions
+
+|Grid federation connection failure
+|The grid federation connection between the local and remote grids is not working.
+
+. Review the settings on the Grid Federation page for both the local and the remote grids. Confirm that all values are correct. See xref:../admin/grid-federation-manage-connection.adoc[Manage grid federation connections].
+
+. Review the certificates used for the connection. Make sure that certificates have not expired and that the details are valid.
+. Confirm that all Admin and Gateway Nodes in the local and remote grids are online and available. Resolve any alerts that might be affecting these nodes and try again.
+. If you provided a fully qualified domain name (FQDN) for the local or remote grid, confirm the DNS server is online and available.
+
+|===
+
 
 == Grid Network alerts
 
@@ -362,7 +380,7 @@ This alert indicates that a node required by a placement instruction is unavaila
 |ILM scan period too long
 |The time required to scan, evaluate objects, and apply ILM is too long.
 
-If the estimated time to complete a full ILM scan of all objects is too long (see *Scan Period - Estimated* on the Dashboard), the active ILM policy might not be applied to newly ingested objects. Changes to the ILM policy might not be applied to existing objects.
+If the estimated time to complete a full ILM scan of all objects is too long (see *Scan Period - Estimated* on the dashboard), the active ILM policy might not be applied to newly ingested objects. Changes to the ILM policy might not be applied to existing objects.
 
 |ILM scan rate low
 |The ILM scan rate is set to less than 100 objects/second.
@@ -532,6 +550,22 @@ The object existence check job cannot continue. Either one or more Storage Nodes
 
 |Platform services unavailable
 |Too few Storage Nodes with the RSM service are running or available at a site.
+|===
+
+== StorageGRID services alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description
+
+|nginx service using backup configuration
+|The configuration of the nginx service is invalid. The previous configuration is now being used.
+
+|nginx-gw service using backup configuration
+|The configuration of the nginx-gw service is invalid. The previous configuration is now being used.
+
+|SSH service using backup configuration
+|The configuration of the SSH service is invalid. The previous configuration is now being used.
 |===
 
 == Tenant alerts

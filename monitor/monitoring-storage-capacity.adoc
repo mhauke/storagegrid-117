@@ -17,29 +17,24 @@ You can xref:viewing-storage-tab.adoc[view storage capacity information] for the
 
 == Monitor storage capacity for the entire grid
 
-You must monitor the overall storage capacity for your grid to ensure that adequate free space remains for object data and object metadata. Understanding how storage capacity changes over time can help you plan to add Storage Nodes or storage volumes before the grid's usable storage capacity is consumed.
+Monitor the overall storage capacity for your grid to ensure that adequate free space remains for object data and object metadata. Understanding how storage capacity changes over time can help you plan to add Storage Nodes or storage volumes before the grid's usable storage capacity is consumed.
 
-.About this task
-The Grid Manager Dashboard lets you quickly assess how much storage is available for the entire grid and for each data center. The Nodes page provides more detailed values for object data and object metadata.
+The Grid Manager dashboard lets you quickly assess how much storage is available for the entire grid and for each data center. The Nodes page provides more detailed values for object data and object metadata.
 
 .Steps
 . Assess how much storage is available for the entire grid and for each data center.
- .. Select *Dashboard*.
- .. In the Available Storage panel, note the overall summary of free and used storage capacity.
+ .. Select *Dashboard > Overview*.
+ .. Note the values on the Data space usage breakdown and the Metadata allowed space usage breakdown cards. Each card lists a percentage of storage usage, the capacity of used space, and the total space available or allowed by site.
 +
 NOTE: The summary does not include archival media.
 +
-image::../media/dashboard_available_storage_panel.png[Available Storage panel]
+image::../media/dashboard_data_and_metadata_space_usage_breakdown.png[Data and metadata space usage breakdown]
 
- .. Place your cursor over the chart's Free or Used capacity sections to see exactly how much space is free or used.
+ .. Note the chart on the Storage over time card. Use the time period drop-down to help you determine how quickly storage is consumed.
 +
-image::../media/storage_capacity_used.gif[Dashboard Free or Used capacity chart]
+image::../media/dashboard_storage_over_time.png[Storage over time chart]
 
- .. For multi-site grids, review the chart for each data center.
- .. Click the chart icon image:../media/icon_chart_new_for_11_5.png[Chart Icon] for the overall chart or for an individual data center to view a graph showing capacity usage over time.
-+
-A graph showing Percentage Storage Capacity Used (%) vs. Time appears.
-. Determine how much storage has been used and how much storage remains available for object data and object metadata.
+. Use the Nodes page for additional details on how much storage has been used and how much storage remains available on the grid for object data and object metadata.
  .. Select *NODES*.
  .. Select *_grid_* > *Storage*.
 +
@@ -47,7 +42,7 @@ image::../media/nodes_deployment_storage_tab.png[Nodes Deployment Storage tab]
 
  .. Hover your cursor over the *Storage used - object data* and the *Storage used - object metadata* charts to see how much object storage and object metadata storage is available for the entire grid, and how much has been used over time.
 +
-NOTE: The total values for a site or the grid do not include nodes that not have reported metrics for at least five minutes, such as offline nodes.
+NOTE: The total values for a site or the grid do not include nodes that have not reported metrics for at least five minutes, such as offline nodes.
 . Plan to perform an expansion to add Storage Nodes or storage volumes before the grid's usable storage capacity is consumed.
 +
 When planning the timing of an expansion, consider how long it will take to procure and install additional storage.
@@ -80,7 +75,6 @@ The following values are shown:
  ** *Erasure-coded data*: An estimate of the amount of erasure-coded object data on this node, site, or grid.
  ** *Total*: The total amount of usable space on this node, site, or grid.
 The Used value is the `storagegrid_storage_utilization_data_bytes` metric.
-
 +
 image::../media/nodes_page_storage_used_object_data.png[Nodes Page Storage Used Object Data]
 

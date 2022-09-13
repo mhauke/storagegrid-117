@@ -1,0 +1,88 @@
+---
+permalink: admin/grid-federation-overview.html
+sidebar: sidebar
+keywords: grid federation, cross-grid replication, account sync, cgr, disaster recovery
+summary: 'You can use grid federation to replicate tenants and their objects between two StorageGRID systems for disaster recovery.'
+---
+= Use grid federation: Overview
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use grid federation to replicate tenants and their objects between two StorageGRID systems for disaster recovery.
+
+== What is a grid federation connection?
+
+A grid federation connection is a bidirectional, trusted, and secure connection between two StorageGRID systems. A grid federation connection must exist before you can use account sync or cross-grid replication.
+
+=== How is the connection secured?
+
+When you configure a grid federation connection, StorageGRID automatically generates four SSL certificates:
+
+* Server and client certificates to authenticate and encrypt the connection between grid 1 and grid 2
+* Server and client certificates to authenticate and encrypt the connection between grid 2 and grid 1
+
+image:../media/grid-federation-certificates.png[Grid federation certificates]
+
+When these certificates near their expiration date, 
+the *Expiration of grid federation certificate* alert reminds you to rotate the certificates, which you can do using the Grid Manager. 
+
+=== What is account sync?
+
+Account sync is the replication of S3 tenant accounts and account details between two StorageGRID systems. Account sync is required for cross-grid replication.
+
+A grid administrator must enable account sync for a tenant before that tenant can enable account sync for account details.
+
+. *Enable account sync for a tenant*: The grid admin creates an S3 tenant account on either grid in a grid federation connection. The grid where the tenant is created is referred to as the tenant's _source grid_.
++
+When creating the tenant, the admin selects an existing grid federation connection and assigns a permission that allows the tenant to perform account sync and cross-grid replication. When a tenant with this permission is saved, the tenant and the tenant's root user are created on the source grid and copied to the second grid (referred to as the tenant's _destination grid_).
+
+. *Sync tenant details*: If a new tenant has permission to use a grid federation connection for account sync, that tenant can optionally enable account sync when it creates new S3 access keys, groups, or users on its source grid. When account sync is enabled for a new key, group, or user, the item is automatically copied to the tenant on the destination grid. Subsequent changes made to these items on the tenant's source grid are also synchronized.
++
+Note that any S3 access keys, groups, or users that are created or modified on the tenant's destination grid are not replicated back to the tenant's source grid.
+
+
+=== What is cross-grid replication?
+
+After the grid administrator establishes a grid federation connection between two grids and creates a new S3 tenant with permission to use that connection, the tenant can create new S3 buckets and optionally enable cross-grid replication for those buckets. When cross-grid replication is enabled for a bucket, all operations to add or remove objects to the bucket are automatically replicated from the tenant's source grid to the tenant's destination grid.
+
+
+== Considerations and requirements
+
+* Each grid can have one or more grid federation connections to other grids. Each grid federation connection is independent of any other connections. That is, if grid A has one connection with grid B and a second connection with grid C, there is no implied connection between grid B and grid C.
+
+* Grid federation connections are bidirectional. After the connection is established, you can monitor and manage the connection from either grid. 
+
+* At least one grid federation connection is required for account sync and cross-grid replication.
+
+* Account sync and cross-grid replication apply only to S3 tenant accounts. These features are not available for Swift tenant accounts.
+
+* After you configure a grid federation connection, you can select the new connection when you create a new S3 tenant. However, you cannot select a grid federation connection for an existing tenant.  
+
+* Tenant creation is bidirectional. You can create a tenant on either grid, and the tenant will automatically be copied to the other grid.
+
+* Account sync and cross-grid replication are unidirectional. Either grid in the connection can be the tenant's source grid (the grid where you initially create the tenant). If you change account details or buckets on the tenant's source grid, the changes are automatically replicated to the other grid (known as the tenant's destination grid). However, if you change account details or buckets on the tenant's destination grid, the changes are not replicated back to the source grid. 
+
+=== IP address and DNS requirements
+
+* A grid federation connection can connect any two nodes that run the nginx-gw service. All Admin Nodes and all Gateway Nodes include this service, so you can configure a connection between the primary Admin Nodes on each grid or between a Gateway Node on one grid and an Admin Node on the other. However, the best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid.
++
+Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface.
++ 
+See xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
+
+* If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must create the appropriate DNS entries, as follows:
+
+** *Grid 1 DNS*: The FQDN for Grid 2 mapped to one or more IP address or virtual IP (VIP) addresses for Grid 1. 
+** *Grid 2 DNS*: The FQDN for Grid 1 mapped to one or more IP addresses or VIP addresses for Grid 2. 
+
+* If the DNS entries for a FQDN map to the IP address of more than one Admin Node or Gateway Node or to the VIP addresses of more than one HA group, the requests to use the connection will be load balanced between the nodes or between the active nodes in the HA groups.
+
+== How are objects are replicated between grids?
+
+* The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
+
+== What happens if a grid fails?
+
+
+
