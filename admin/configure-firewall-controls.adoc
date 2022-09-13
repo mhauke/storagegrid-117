@@ -19,7 +19,7 @@ You can configure the StorageGRID firewall to control network access for specifi
 
 * If you want an Admin Node or Gateway Node to accept inbound traffic only on explicitly configured endpoints, you have defined the load balancer endpoints.
 +
-NOTE: When changing the configuration of the client network, existing client connections might fail if load balancer endpoints have not been configured.
+NOTE: When changing the configuration of the Client Network, existing client connections might fail if load balancer endpoints have not been configured.
 
 .About this task
 
@@ -37,9 +37,9 @@ Select *CONFIGURATION* > *Security* > *Firewall control*.
 
 There are three tabs on this page:
 
-* Manage external access <<manage-external access,Manage external access>>
-* Privileged address list <<privileged-address-list,Privileged address list>>
-* Untrusted client Network <<untrusted-client-network,Untrusted Client Network>>
+* <<manage-external access,Manage external access>>
+* <<privileged-address-list,Privileged address list>>
+* <<untrusted-client-network,Untrusted Client Network>>
 
 You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
 
@@ -67,16 +67,13 @@ You can sort the list by:
 * Protocol - TCP/UDP
 
 . Configure the ports you want open and closed using the following options: 
+* Use the toggle beside each port to open or close the selected port. For example, you could select *Close all displayed ports* to close all ports, and then use the toggle besides an individual port to open only the selected port.
+
 * Select *Open all displayed ports* to open all ports listed in the table. 
 * Select *Close all displayed ports* to close all ports listed in the table.
 +
-IMPORTANT: If you close ports 443, 8443, and 9443, you will not be able to access the Grid Manager and Tenant Manager. 
+CAUTION: If you close ports 443, 8443, and 9443, you will not be able to access the Grid Manager and Tenant Manager. 
 
-* Use the toggle beside each port to open or close the selected port. 
-+
-For example, you could select *Close all displayed ports* to close all ports, and then use the toggle besides an individual port to open only the selected port.
-
-+
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available ports. You can also use the search field to find the settings for any configurable port by entering a port number. You can enter a partial port number. For example, if you enter a '2," all ports that start with a "2" are displayed. 
 
 [start=3]
@@ -86,15 +83,15 @@ NOTE: Use the scroll bar on the right side of the table to be sure you have view
 === Privileged address list
 Add IP addresses or subnets in CIDR notation that can access ports closed for external communication on the Manage External Access tab. Privileged IP addresses and subnets do not have access to ports blocked by Untrusted Client Network settings.
 
+NOTE: The configuration changes you make on the *Privileged address list* tab might conflict with the settings on the *Manage external access* tab or the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
+
 NOTE: Settings on the Privileged address list tab can not override settings on the Untrusted Client Network tab. 
 
-. Select *Privileged address list*
-The tab displays a field where you can enter addresses you want to have privileged network access. 
+. Select *Privileged address list*.
+The tab displays a field where you can enter addresses you want to have privileged network access. Any previously configured addresses are also displayed. 
 
 +
 image::../media/privileged-address-list.png[Privileged address list]
-
-NOTE: The configuration changes you make on the *Privileged address list* tab might conflict with the settings on the *Manage external access* tab or the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
 . In the Address 1 field, enter the address of a client or subnet you want to provide privileged network access. 
 . Optionally, select *Add another IP address or subnet in CIDR notation* to add additional privileged clients. 
@@ -120,7 +117,7 @@ NOTE: Existing client connections might fail if load balancer endpoints have not
 
 image::../media/untrusted_client_networks_page.png[Untrusted Client Networks]
 
-
+[start=2]
 . In the *Set New Node Default* section, specify what the default setting should be when new nodes are added to the grid in an expansion procedure.
  ** *Trusted* (default): When a node is added in an expansion, its Client Network is trusted.
  ** *Untrusted*: When a node is added in an expansion, its Client Network is untrusted.
@@ -132,9 +129,7 @@ NOTE: This setting does not affect the existing nodes in your StorageGRID system
 . In the *Select Untrusted Client Network Nodes* section, use the following options to select the nodes that should allow client connections only on explicitly configured load balancer endpoints: 
 * Select *Untrust Client Network on displayed nodes* to add all nodes listed in the table to the Untrusted Client Network.  
 * Select *Trust Client Network on displayed nodes* to remove all nodes listed in the table from the Untrusted Client Network.
- 
-* Use the toggle beside each port to set the Client Network as Trusted or Untrusted for the selected node. 
-+
+* Use the toggle beside each port to set the Client Network as Trusted or Untrusted for the selected node.  
 For example, you could select *Untrust Client Network on displayed nodes* to make all nodes part of the Untrusted Client Network and then use the toggle besides an individual node to make that single node part of the Trusted Client Network.
 
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available nodes. You can also use the search field to find the settings for any configurable node by entering the node name. You can enter a partial name. For example, if you enter a 'GW," all nodes that have the string "GW" as part of their name are displayed. 
@@ -147,7 +142,7 @@ For example, you might want to use this option to ensure that the Grid Manager c
 
 . Select *Save*.
 +
-The new firewall rules are immediately added and enforced. Existing client connections might fail if load balancer endpoints have not been configured.
+The new firewall settings are immediately applied and enforced. Existing client connections might fail if load balancer endpoints have not been configured.
 
 
 .Related information
