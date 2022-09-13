@@ -14,7 +14,7 @@ You can edit a storage pool to change its name or to update sites and storage gr
 .What you'll need
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have specific access permissions.
-* You  have reviewed the guidelines for creating storage pools.
+* You  have reviewed the xref:guidelines-for-creating-storage-pools.adoc[guidelines for creating storage pools].
 * If you plan to edit a storage pool that is used by a rule in the active ILM policy, you have considered how your changes will affect object data placement.
 
 .About this task
@@ -22,10 +22,8 @@ If you are adding a new storage grade to a storage pool that is used in the acti
 
 .Steps
 . Select *ILM* > *Storage pools*.
-+
-The Storage Pools page appears.
 
-. Select the radio button for the storage pool you want to edit.
+. Select the check box for the storage pool you want to edit.
 +
 You cannot edit the All Storage Nodes storage pool.
 
