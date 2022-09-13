@@ -37,7 +37,7 @@ A grid administrator must enable account sync for a tenant before that tenant ca
 +
 When creating the tenant, the admin selects an existing grid federation connection and assigns a permission that allows the tenant to perform account sync and cross-grid replication. When a tenant with this permission is saved, the tenant and the tenant's root user are created on the source grid and copied to the second grid (referred to as the tenant's _destination grid_).
 
-. *Sync tenant details*: If a new tenant has permission to use a grid federation connection for account sync, that tenant can optionally enable account sync when it creates new S3 access keys, groups, or users on its source grid. When account sync is enabled for a new key, group, or user, the item is automatically copied to the tenant on the destination grid. Subsequent changes made to these items on the tenant's source grid are also synchronized.
+. *Sync tenant details*: If a new tenant has permission to use a grid federation connection for account sync, new S3 access keys, groups, or users created on the source grid are automatically copied to the tenant on the destination grid. Subsequent changes made to these items on the tenant's source grid are also synchronized.
 +
 Note that any S3 access keys, groups, or users that are created or modified on the tenant's destination grid are not replicated back to the tenant's source grid.
 
