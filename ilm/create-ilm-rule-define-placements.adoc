@@ -105,7 +105,7 @@ When using Cloud Storage Pools, keep these rules in mind:
 
   *** You can store an object in a Cloud Storage Pool at the same time that object is being stored as replicated or erasure coded copies in StorageGRID. However, as this example shows, you must include more than one line in the placement instruction for the time period, so you can specify the number and types of copies for each location.
 
-. Select *Refresh* to update the Retention Diagram and to confirm your placement instructions.
+. Select *Refresh* to update the Retention diagram and to confirm your placement instructions.
 +
 Each line in the diagram shows where and when object copies will be placed. The color of a line represents the type of copy:
 +

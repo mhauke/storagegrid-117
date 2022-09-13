@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove ilm rule, edit ilm rule, clone ilm rule, ilm queue
 summary: 'You can modify the ILM policy and ILM rules as your storage requirements change. You can view ILM metrics to determine system performance.'
 ---
-= Work with ILM rules and ILM policies
+= Work with the ILM policy and ILM rules
 :icons: font
 :imagesdir: ../media/
 
@@ -15,6 +15,16 @@ You can modify the ILM policy and ILM rules as your storage requirements change.
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have specific access permissions.
+
+== View ILM policies
+
+To view active, proposed, and historical ILM policies:
+
+. Select *ILM* > *Policies*.
+
+. As needed, select *Active policy*, *Proposed policy*, and *Policy history* to view the details for each. In each tab, you can select *Policy rules* and *Retention diagram*.
+
+image::../media/ilm-policy-active-proposed-history-tabs.png[ILM Policy Tabs]
 
 == View ILM rule details
 
