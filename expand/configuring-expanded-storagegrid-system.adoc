@@ -23,7 +23,7 @@ You must complete the configuration tasks listed below for the grid nodes you ar
 
 * If you added a site, xref:../ilm/creating-storage-pool.adoc[create a storage pool] for the site and update ILM rules to use the new storage pool.
 
-* If you added a Storage Node to an existing site, confirm that the storage grade you selected is associated with a storage pool and that storage pool is used in an ILM rule. See xref:../ilm/creating-and-assigning-storage-grades.adoc[Create and assign storage grades].
+* If you added a Storage Node to an existing site, confirm that the storage grade you selected is associated with a storage pool that is used in an ILM rule. See xref:../ilm/creating-and-assigning-storage-grades.adoc[Create and assign storage grades].
 
 
 .. xref:verifying-storage-node-is-active.adoc[Verify that the Storage Node is active] and able to ingest objects.

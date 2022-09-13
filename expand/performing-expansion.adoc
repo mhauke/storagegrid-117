@@ -49,7 +49,7 @@ The Site Selection dialog box appears.
 +
 As required, you can hover your cursor over a node's *Grid Network MAC Address* to see details about that node.
 +
-image::../media/grid_node_details.gif[screenshot of Grid Node details]
+image::../media/grid_node_details.png[screenshot of Grid Node details]
 +
 NOTE: If a grid node is missing, confirm that it was deployed successfully.
 
@@ -128,12 +128,12 @@ You must download an updated copy of the Recovery Package file as soon as possib
 +
 IMPORTANT: The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
 
-. Monitor the progress of Cassandra streaming, based on whether you are adding one or more Storage Nodes to an existing site or adding a new site.
+. If you are adding Storage Nodes to an existing site or adding a site, monitor the progress of Cassandra streaming. 
 +
 [role="tabbed-block"]
 ====
 
-.Adding nodes
+.Adding Storage Nodes
 --
 
 If you are adding one or more Storage Nodes to an existing site, monitor the progress of the "Starting Cassandra and streaming data" stage by reviewing the percentage shown in the status message.
@@ -146,7 +146,7 @@ IMPORTANT: Do not reboot any Storage Nodes during either the "Expanding the Cass
 
 --
 
-.Adding new site
+.Adding site
 --
 
 If you are adding a new site, use `nodetool status` to monitor the progress of Cassandra streaming and to see how much metadata has been copied to the new site during the "Expanding the Cassandra cluster" stage. The total Data Load on the new site should be within about 20% of the total of a current site.
