@@ -18,7 +18,7 @@ When you perform the expansion, the new grid nodes are added to your existing St
 * You have the provisioning passphrase.
 * You have deployed all of the grid nodes that are being added in this expansion.
 * If you are adding Storage Nodes, you have confirmed that all data-repair operations performed as part of a recovery are complete. See xref:../maintain/checking-data-repair-jobs.adoc[Check data repair jobs].
-* If you are adding a new site, you must review and update ILM rules before starting the expansion procedure to ensure that object copies are not stored to the new site until after the expansion is complete. For example, if a rule uses the default storage pool (All Storage Nodes), you must xref:../ilm/creating-storage-pool.adoc[create a new storage pool] that contains only the existing Storage Nodes and xref:../ilm/working-with-ilm-rules-and-ilm-policies.adoc[update the ILM rule] to use the new storage pool. Otherwise, objects will be copied to the new site as soon as the first node at that site becomes active.
+* If you are adding a new site, you have reviewed and updated ILM rules before starting the expansion procedure to ensure that object copies are not stored to the new site until after the expansion is complete. For example, if a rule uses the default storage pool (All Storage Nodes), you must xref:../ilm/creating-storage-pool.adoc[create a new storage pool] that contains only the existing Storage Nodes and xref:../ilm/working-with-ilm-rules-and-ilm-policies.adoc[update the ILM rule] to use the new storage pool. Otherwise, objects will be copied to the new site as soon as the first node at that site becomes active.
 
 .About this task
 Performing the expansion includes these phases:
@@ -40,8 +40,6 @@ image::../media/grid_expansion_page.png[screenshot showing Grid Expansion page]
 . Select *Configure Expansion*.
 +
 The Site Selection dialog box appears.
-+
-image::../media/configure_expansion_dialog.gif[Site Selection Dialog]
 
 . Select the type of expansion you are starting:
  ** If you are adding a new site, select *New*, and enter the name of the new site.
@@ -60,19 +58,40 @@ NOTE: If a grid node is missing, confirm that it was deployed successfully.
  .. Select *Approve*.
 +
 The grid node configuration form appears.
-+
-image::../media/grid_node_configuration.gif[Grid Node Configuration form]
 
- .. As required, modify the general settings:
-  *** *Site*: The name of the site the grid node will be associated with. If you are adding multiple nodes, be sure to select the correct site for each node. If you are adding a new site, all nodes are added to the new site.
-  *** *Name*: The hostname that will be assigned to the node, and the name that will be displayed in the Grid Manager.
-  *** *NTP Role*: The Network Time Protocol (NTP) role of the grid node. The options are *Automatic*, *Primary*, and *Client*. Selecting *Automatic* assigns the Primary role to Admin Nodes, Storage Nodes with ADC services, Gateway Nodes, and any grid nodes that have non-static IP addresses. All other grid nodes are assigned the Client role.
+.. As required, modify the general settings:
 +
-NOTE: Assign the Primary NTP role to at least two nodes at each site. This provides redundant system access to external timing sources.
+[cols="1a,2a" options="header"]
+|===
+| Field| Description
 
-  *** *ADC Service* (Storage Nodes only): Whether this Storage Node will run the Administrative Domain Controller (ADC) service. The ADC service keeps track of the location and availability of grid services. At least three Storage Nodes at each site must include the ADC service. You cannot add the ADC service to a node after it is deployed.
-   **** If you are adding this node to replace a Storage Node, select *Yes* if the node you are replacing includes the ADC service. Because you cannot decommission a Storage Node if too few ADC services would remain, this ensures that a new ADC service is available before the old service is removed.
-   **** Otherwise, select *Automatic* to let the system determine whether this node requires the ADC service. Learn about the ADC quorum xref:../maintain/understanding-adc-service-quorum.adoc[here].
+|Site
+|The name of the site the grid node will be associated with. If you are adding multiple nodes, be sure to select the correct site for each node. If you are adding a new site, all nodes are added to the new site.
+
+|Name
+|The hostname that will be assigned to the node, and the name that will be displayed in the Grid Manager.
+
+|NTP Role
+|The Network Time Protocol (NTP) role of the grid node:
+
+* Select *Automatic* to automatically assign the NTP role to the node. The Primary role will be assigned to Admin Nodes, Storage Nodes with ADC services, Gateway Nodes, and any grid nodes that have non-static IP addresses. The Client role will be assigned to all other grid nodes.
+* Select *Primary* to manually assign the Primary NTP role to the node. At least two nodes at each site should have the Primary role to provide redundant system access to external timing sources.
+* Select *Client* to manually assign the Client NTP role to the node.
+
+|ADC Service (Storage Nodes only)
+|Whether this Storage Node will run the Administrative Domain Controller (ADC) service. The ADC service keeps track of the location and availability of grid services. At least three Storage Nodes at each site must include the ADC service. You cannot add the ADC service to a node after it is deployed.
+
+* Select *Yes* if the Storage Node you are replacing includes the ADC service. Because you cannot decommission a Storage Node if too few ADC services would remain, this ensures that a new ADC service is available before the old service is removed.
+* Select *Automatic* to let the system determine whether this node requires the ADC service.
+
+Learn about the xref:../maintain/understanding-adc-service-quorum.adoc[ADC quorum].
+
+|Storage Grade (Storage Nodes only)
+|Select the storage grade you want to assign to the new node. Storage grades are used by ILM storage pools, so your selection can affect which objects will be placed on the Storage Node. See xref:../ilm/creating-and-assigning-storage-grades.adoc[Create and assign storage grades].
+
+|===
+
+
  .. As required, modify the settings for the Grid Network, Admin Network, and Client Network.
   *** *IPv4 Address (CIDR)*: The CIDR network address for the network interface. For example: 172.16.10.100/24
   *** *Gateway*: The default gateway of the grid node. For example: 172.16.10.1
@@ -80,8 +99,6 @@ NOTE: Assign the Primary NTP role to at least two nodes at each site. This provi
  .. Select *Save*.
 +
 The approved grid node moves to the Approved Nodes list.
-+
-image::../media/grid_expansion_approved_nodes.png[screenshot showing Approved Nodes]
 
   *** To modify the properties of an approved grid node, select its radio button, and select *Edit*.
   *** To move an approved grid node back to the Pending Nodes list, select its radio button, and select *Reset*.
@@ -111,12 +128,12 @@ You must download an updated copy of the Recovery Package file as soon as possib
 +
 IMPORTANT: The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
 
-. Follow the instructions for adding a Storage Node to an existing site or adding a new site.
-
+. Monitor the progress of Cassandra streaming, based on whether you are adding one or more Storage Nodes to an existing site or adding a new site.
++
 [role="tabbed-block"]
 ====
 
-.Add Storage Node to existing site
+.Adding nodes
 --
 
 If you are adding one or more Storage Nodes to an existing site, monitor the progress of the "Starting Cassandra and streaming data" stage by reviewing the percentage shown in the status message.
@@ -129,7 +146,7 @@ IMPORTANT: Do not reboot any Storage Nodes during either the "Expanding the Cass
 
 --
 
-.Add new site
+.Adding new site
 --
 
 If you are adding a new site, use `nodetool status` to monitor the progress of Cassandra streaming and to see how much metadata has been copied to the new site during the "Expanding the Cassandra cluster" stage. The total Data Load on the new site should be within about 20% of the total of a current site.
@@ -139,7 +156,6 @@ IMPORTANT: Do not reboot any Storage Nodes during either the "Expanding the Cass
 --
 ====
 
-[start=10]
 . Continue monitoring the expansion until all tasks are complete and the *Configure Expansion* button reappears.
 
 .After you finish

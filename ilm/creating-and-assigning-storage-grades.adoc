@@ -20,10 +20,7 @@ If you use more than one type of storage, you can optionally create a storage gr
 
 If storage grade is not a concern (for example, all Storage Nodes are identical), you can skip this procedure and use the All Storage Nodes default storage grade when configuring storage pools.
 
-When you add a new Storage Node in an expansion, that node is added to the All Storage Nodes default storage grade. As a result:
-
-* If an ILM rule uses a storage pool with the All Storage Nodes grade, the new node can be used immediately after the expansion completes.
-* If an ILM rule uses a storage pool with a custom storage grade, the new node will not be used until you manually assign the custom storage grade to the node, as described below.
+When you add a Storage Node in an expansion, you can select which storage grade will be used for the new node. If an ILM rule already uses the storage grade you selected, the new node can be used immediately after the expansion completes. Otherwise, you must assign the storage grade to a storage pool and add the storage pool to an ILM rule.
 
 NOTE: When creating storage grades, do not create more storage grades than necessary. For example, do not create one storage grade for each Storage Node. Instead, assign each storage grade to two or more nodes. Storage grades assigned to only one node can cause ILM backlogs if that node becomes unavailable.
 
