@@ -13,7 +13,9 @@ When you want to control access through firewalls, you open or close specific po
 
 == Control access at the external firewall
 
-You can control access to the user interfaces and APIs on StorageGRID Admin Nodes by opening or closing specific ports at the external firewall. For example, you might want to prevent tenants from being able to connect to the Grid Manager at the firewall, in addition to using other methods to control system access.
+You can control access to the user interfaces and APIs on StorageGRID Admin Nodes by opening or closing specific ports at the external firewall. For example, you might want to prevent tenants from being able to connect to the Grid Manager at the firewall, in addition to using other methods to control system access. 
+
+If you want to configure the StorageGRID internal firewall, see xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
 [cols="1a,1a,2a" options="header"]
 |===
