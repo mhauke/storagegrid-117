@@ -23,11 +23,13 @@ NOTE: When changing the configuration of the Client Network, existing client con
 
 .About this task
 
-StorageGRID includes a firewall on each node that enables you to open or close ports on the Grid Network, Admin Network, and Client Network. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. If you are using a Client Network, you can specify whether a node trusts inbound traffic from the Client Network, and you can configure the access of specific ports on the Client Network.
+StorageGRID includes an internal firewall on each node that enables you to open or close ports on the Grid Network, Admin Network, and Client Network. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. If you are using a Client Network, you can specify whether a node trusts inbound traffic from the Client Network, and you can configure the access of specific ports on the Client Network.
 
 Limiting the number of ports open to IP addresses outside of your grid to only those that are absolutely necessary enhances the security of your grid. 
 
-For more information on using firewall controls, including examples, see xref:../admin/manage-firewall-controls.adoc[Manage firewall controls]. 
+For more information on using firewall controls, including examples, see xref:../admin/manage-firewall-controls.adoc[Manage firewall controls].
+
+For more information on external firewalls and network security, see xref:../admin/controlling-access-through-firewalls.adoc[Control access through firewalls].
 
 [#Access-firewall-controls]
 == Access firewall controls
@@ -45,8 +47,15 @@ You can use these tabs in any order. The configurations you set on one tab do no
 
 You should check the settings on each of the firewall control tabs to ensure only those ports that are necessary for your grid configuration are open. 
 
+// start tabbed area
+
+[role="tabbed-block"]
+====
 [#manage-external access]
-=== Manage external access
+.Manage external access
+--
+
+
 Use this tab to open or close ports on the Grid Network, Admin Network, and Client Network. When a port is closed in the Manage external access list, it can't be accessed by any non-grid IP address, including VLAN interfaces, unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
 
 NOTE: The configuration changes you make on *Manage external access* tab might conflict with the settings on the *Privileged address list* tab and the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
@@ -79,9 +88,13 @@ NOTE: Use the scroll bar on the right side of the table to be sure you have view
 [start=3]
 . Select *Save*
 
+
+--
 [#privileged-address-list]
-=== Privileged address list
-Add IP addresses or subnets in CIDR notation that can access ports closed for external communication on the Manage External Access tab. Privileged IP addresses and subnets do not have access to ports blocked by Untrusted Client Network settings.
+.Privileged address list
+--
+
+Use this tab to add IP addresses or subnets in CIDR notation that can access ports closed for external communication on the Manage External Access tab. Privileged IP addresses and subnets do not have access to ports blocked by Untrusted Client Network settings.
 
 NOTE: The configuration changes you make on the *Privileged address list* tab might conflict with the settings on the *Manage external access* tab or the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
@@ -101,9 +114,10 @@ IMPORTANT: This option removes some protections for internal services. Leave it 
 
 . Select *Save*.
 
-
+--
 [#untrusted-client-network]
-=== Untrusted Client Network
+.Untrusted Client Network
+--
 
 If you are using a Client Network, use the Untrusted Client Network tab to specify whether a node trusts inbound traffic from the Client Network. If the Client Network for a node is untrusted, the node only accepts inbound traffic on ports configured as load balancer endpoints and, optionally, additional ports you select on this tab. You can also use this tab to specify the default setting for new nodes added in an expansion. 
 
@@ -134,7 +148,7 @@ For example, you could select *Untrust Client Network on displayed nodes* to mak
 
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available nodes. You can also use the search field to find the settings for any configurable node by entering the node name. You can enter a partial name. For example, if you enter a 'GW," all nodes that have the string "GW" as part of their name are displayed. 
 
-[start=3]
+[start=4]
 . Optionally, select any additional ports you want open on the untrusted Client Network. These ports can provide access to the Grid Manager, the Tenant Manager, or both. 
 
 + 
@@ -143,6 +157,11 @@ For example, you might want to use this option to ensure that the Grid Manager c
 . Select *Save*.
 +
 The new firewall settings are immediately applied and enforced. Existing client connections might fail if load balancer endpoints have not been configured.
+
+--
+====
+
+// end tabbed area
 
 
 .Related information
