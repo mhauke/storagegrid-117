@@ -53,8 +53,8 @@ The following new audit messages were added:
 === Grid federation
 You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].
 
-=== Can select storage grade when adding Storage Nodes
-When you add a new Storage Node in an expansion, you can now specify which storage grade will be assigned to the node. See xref:../expand/performing-expansion.adoc[Perform expansion].
+=== Can assign custom storage grades to new Storage Nodes
+When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See xref:../expand/performing-expansion.adoc[Perform expansion].
 
 == Kevin's what's new
 

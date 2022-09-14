@@ -2,49 +2,58 @@
 permalink: ilm/creating-and-assigning-storage-grades.html
 sidebar: sidebar
 keywords: what is a storage grade, create storage grade
-summary: 'Storage grades identify the type of storage used by a Storage Node. You can create storage grades if you want ILM rules to place certain objects on certain Storage Nodes, instead of on all nodes at the site. For example, you might want certain objects to be stored on your fastest Storage Nodes, such as StorageGRID all-flash storage appliances.'
+summary: 'Storage grades identify the type of storage used by a Storage Node. You can create storage grades if you want ILM rules to place certain objects on certain Storage Nodes.'
 ---
 = Create and assign storage grades
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Storage grades identify the type of storage used by a Storage Node. You can create storage grades if you want ILM rules to place certain objects on certain Storage Nodes, instead of on all nodes at the site. For example, you might want certain objects to be stored on your fastest Storage Nodes, such as StorageGRID all-flash storage appliances.
+Storage grades identify the type of storage used by a Storage Node. You can create storage grades if you want ILM rules to place certain objects on certain Storage Nodes. 
 
 .What you'll need
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have specific access permissions.
 
 .About this task
-If you use more than one type of storage, you can optionally create a storage grade to identify each type. Creating storage grades allows you to select a specific type of Storage Node when configuring storage pools.
+When you first install StorageGRID, the *Default* storage grade is automatically assigned to every Storage Node in your system. As required, you can optionally define custom storage grades and assign them to different Storage Nodes. 
 
-If storage grade is not a concern (for example, all Storage Nodes are identical), you can skip this procedure and use the All Storage Nodes default storage grade when configuring storage pools.
+Using custom storage grades allows you to create ILM storage pools that contain only a specific type of Storage Node. For example, you might want certain objects to be stored on your fastest Storage Nodes, such as StorageGRID all-flash storage appliances.
 
-When you add a Storage Node in an expansion, you can select which storage grade will be used for the new node. If an ILM rule already uses that storage grade, the new node can be used immediately after the expansion completes. Otherwise, you must assign the storage grade to a storage pool and add the storage pool to an ILM rule.
+If storage grade is not a concern (for example, all Storage Nodes are identical), you can skip this procedure and use the *All Storage Nodes* selection for the storage grade when you xref:creating-storage-pools.adoc[create storage pools]. Using this selection ensures that the storage pool will include every Storage Node at the site, regardless of its storage grade.
 
-NOTE: When creating storage grades, do not create more storage grades than necessary. For example, do not create one storage grade for each Storage Node. Instead, assign each storage grade to two or more nodes. Storage grades assigned to only one node can cause ILM backlogs if that node becomes unavailable.
+NOTE: Do not create more storage grades than necessary. For example, do not create a storage grade for each Storage Node. Instead, assign each storage grade to two or more nodes. Storage grades assigned to only one node can cause ILM backlogs if that node becomes unavailable.
 
 .Steps
 . Select *ILM* > *Storage grades*.
-. Create a storage grade:
- .. For each storage grade you need to define, select *Insert* image:../media/icon_nms_insert.gif[insert icon] to add a row and enter a label for the storage grade.
-+
-The Default storage grade cannot be modified. It is reserved for new Storage Nodes added during a StorageGRID system expansion.
+. Define custom storage grades:
+.. For each custom storage grade you want to add, select *Insert* image:../media/icon_nms_insert.gif[insert icon] to add a row.
+ 
+.. Enter a descriptive label.
 +
 image::../media/editing_storage_grades.gif[Storage Grades page]
 
- .. To edit an existing storage grade, select *Edit* image:../media/icon_nms_edit.gif[edit icon] and modify the label as required.
+.. Select *Apply Changes*.
++
+
+.. Optionally, select *Edit* image:../media/icon_nms_edit.gif[edit icon] to modify the label text.
 +
 NOTE: You cannot delete storage grades.
 
- .. Select *Apply Changes*.
-+
-These storage grades are now available for assignment to Storage Nodes.
-. Assign a storage grade to a Storage Node:
- .. For each Storage Node's LDR service, select *Edit* image:../media/icon_nms_edit.gif[edit icon] and select a storage grade from the list.
+
+
+
+. Assign new storage grades to Storage Nodes:
+
+.. Locate the Storage Node in the LDR list, and select its *Edit* icon image:../media/icon_nms_edit.gif[edit icon].
+.. Select the appropriate storage grade from the list.
 +
 image::../media/assigning_storage_grades_to_storage_nodes.gif[Storage Grades page]
 +
 IMPORTANT: Assign a storage grade to a given Storage Node only once. A Storage Node recovered from failure maintains the previously assigned storage grade. Do not change this assignment after the ILM policy is activated. If the assignment is changed, data is stored based on the new storage grade.
 
  .. Select *Apply Changes*.
+
+
+ 
+
