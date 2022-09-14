@@ -142,3 +142,17 @@ NOTE: The total values for a site or the grid do not include nodes that have not
 IMPORTANT: The *Low metadata storage* alert is triggered when the *Used (%)* value reaches certain thresholds. Undesirable results can occur if object metadata uses more than 100% of the allowed space.
 +
 When you add the new nodes, the system automatically rebalances object metadata across all Storage Nodes within the site. See the xref:../expand/index.adoc[instructions for expanding a StorageGRID system].
+
+== Monitor space usage forecasts
+
+Monitor space usage forecasts for user data and metadata to estimate how quickly space will be consumed. These values can help you determine when you need to add storage for user data and metadata.
+
+.About this task
+
+
+.Steps
+. On the dashboard, select *Storage*.
+. View the dashboard cards, Forecast of data usage by storage pool and Forecast of metadata usage by site.
+. Use these values to estimate when you need to add new Storage Nodes for data and metadata storage. 
+
+
