@@ -17,13 +17,13 @@ image::../media/grid_manager_dashboard.png[Grid Manager dashboard]
 
 The dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards.
 
-You can use the stock dashboard as is. Additionally, you can create custom dashboards that contain only the tabs and cards that are relevant to monitoring your specific implementation of StorageGRID.
+You can use the system-provided dashboard as is. Additionally, you can create custom dashboards that contain only the tabs and cards that are relevant to monitoring your specific implementation of StorageGRID.
 
-The stock dashboard tabs contain cards with the following types of information:
+The system-provided dashboard tabs contain cards with the following types of information:
 
 [cols="1a,3a" options="header"]
 |===
-| Stock dashboard tab| Contains
+| Tab on system-provided dashboard| Contains
 
 |Overview
 |General information about the grid, such as active alerts, network traffic, and total objects in the grid
@@ -48,12 +48,12 @@ Some of the cards can be maximized for easier viewing. Select the maximize icon 
 If you have the xref:../admin/admin-group-permissions.html[required permission and access mode], you can perform the following management tasks for dashboards:
 
 * Clone a dashboard to create custom dashboards. You can use custom dashboards to control which StorageGRID information is displayed and how that information is organized.
-* Set an active dashboard for a user. The active dashboard can be the stock dashboard or a custom dashboard.
+* Set an active dashboard for a user. The active dashboard can be the system-provided dashboard or a custom dashboard.
 * Set a default dashboard, which is what users see unless they activate their own dashboard.
 * Edit a dashboard to add or remove tabs and cards.
 * Remove a dashboard.
 
-NOTE: The stock dashboard cannot be edited or removed.
+NOTE: The system-provided dashboard cannot be edited or removed.
 
 To configure dashboards, select *Actions* > *Clone active dashboard* or *Actions* > *Manage dashboards*.
 

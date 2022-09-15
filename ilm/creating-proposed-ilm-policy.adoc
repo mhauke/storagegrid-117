@@ -108,7 +108,9 @@ If you are cloning a policy:
 +
 The default rule applies to any objects that do not match another rule in the policy. The default rule cannot use any filters and is always evaluated last.
 +
-IMPORTANT: Do not use the Make 2 Copies stock rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
+NOTE: If no rule is listed for the Select a default rule step of the wizard, you must exit the Create a proposed policy page and xref:creating-default-ilm-rule.adoc[create a default ILM rule].
++
+IMPORTANT: Do not use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
 +
 The other rules are evaluated before the default rule and must use at least one filter (tenant account, bucket name, advanced filter, or the Noncurrent reference time).
 
