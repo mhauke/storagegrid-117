@@ -215,7 +215,7 @@ Used for connecting to an Active Directory or LDAP server for Identity Federatio
 |Admin Nodes
 |Used by web browsers and management API clients for accessing the Grid Manager and Tenant Manager.
 
-Note: If you intend to block traffic to both ports 443 and 8443, ensure the IP addresses of systems that you use to connect to the Grid Manager are included in the privileged IP address list before blocking the ports. See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.
+Note: If you intend to block traffic to both ports 443 and 8443, ensure the IP addresses of systems that you use to connect to the Grid Manager are included in the privileged IP address list before blocking the ports. Otherwise, you will lose access to the Grid Manager in a few minutes. See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.
 
 |443
 |TCP
@@ -339,7 +339,7 @@ Admin Nodes
 |
 Optional. Used by web browsers and management API clients for accessing the Grid Manager. Can be used to separate Grid Manager and Tenant Manager communications.
 
-Note: If you intend to block traffic to both ports 443 and 8443, ensure the IP addresses of systems that you use to connect to the Grid Manager are included in the privileged IP address list before blocking the ports. See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.
+Note: If you intend to block traffic to both ports 443 and 8443, ensure the IP addresses of systems that you use to connect to the Grid Manager are included in the privileged IP address list before blocking the ports. Otherwise, you will lose access to the Grid Manager in a few minutes. See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.
 |
 9022
 |

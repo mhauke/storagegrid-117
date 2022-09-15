@@ -51,7 +51,7 @@ If you are using a Client Network, use the Untrusted Client Network tab to speci
 
 You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
 
-You should check the settings on each of the three firewall control tabs to ensure only those ports that are necessary for your grid configuration are open. 
+You should check the settings on each of the three *Firewall control* tabs to ensure only those ports that are necessary for your grid configuration are open. 
 
 // start tabbed area
 
@@ -66,9 +66,9 @@ When a port is closed in the Manage external access list, it can't be accessed b
 
 NOTE: The configuration changes you make on *Manage external access* tab might conflict with the settings on the *Privileged address list* tab and the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
-NOTE: Settings on the Manage external access tab can not override settings on the Untrusted Client Network tab. For example, if a node is untrusted, SSH/22 is blocked on the client network even if it was opened on the Manage external access tab. Settings on the Untrusted Client Network tab override blocked ports (such as 443, 8443, 9443) on the client network.
+NOTE: Settings on the Manage external access tab can not override settings on the Untrusted Client Network tab. For example, if a node is untrusted, port SSH/22 is blocked on the client network even if it was opened on the Manage external access tab. Settings on the Untrusted Client Network tab override blocked ports (such as 443, 8443, 9443) on the client network.
 
-. Select *Manage external access*
+. Select *Manage external access*.
 The tab displays a table with all of the configurable ports for the nodes in your grid. 
 
 +
@@ -87,7 +87,7 @@ You can sort the list by:
 * Select *Open all displayed ports* to open all ports listed in the table. 
 * Select *Close all displayed ports* to close all ports listed in the table.
 +
-CAUTION: If you close ports 443 and 8443, you will not be able to access the Grid Manager. 
+CAUTION: If you intend to block traffic to both ports 443 and 8443, ensure the IP addresses of systems that you use to connect to the Grid Manager are included in the privileged IP address list before blocking the ports. Otherwise, you will lose access to the Grid Manager in a few minutes.
 
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available ports. You can also use the search field to find the settings for any configurable port by entering a port number. You can enter a partial port number. For example, if you enter a '2," all ports that start with a "2" are displayed. 
 
