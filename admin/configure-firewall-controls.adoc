@@ -96,7 +96,6 @@ NOTE: Use the scroll bar on the right side of the table to be sure you have view
 
 
 --
-[#privileged-address-list]
 .Privileged address list
 --
 
@@ -121,11 +120,10 @@ IMPORTANT: This option removes some protections for internal services. Leave it 
 . Select *Save*.
 
 --
-[#untrusted-client-network]
 .Untrusted Client Network
 --
 
- If the Client Network for a node is untrusted, the node only accepts inbound traffic on ports configured as load balancer endpoints and, optionally, additional ports you select on this tab. You can also use this tab to specify the default setting for new nodes added in an expansion. 
+If the Client Network for a node is untrusted, the node only accepts inbound traffic on ports configured as load balancer endpoints and, optionally, additional ports you select on this tab. You can also use this tab to specify the default setting for new nodes added in an expansion. 
 
 NOTE: The configuration changes you make on the *Untrusted Client Network* tab might override or conflict with the settings on the *Manage external access* tab and the *Privileged address list* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
@@ -159,7 +157,7 @@ For example, you could select *Untrust Client Network on displayed nodes* to mak
 
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available nodes. You can also use the search field to find the settings for any configurable node by entering the node name. You can enter a partial name. For example, if you enter a 'GW," all nodes that have the string "GW" as part of their name are displayed. 
 
-[start=4]
+[start=5]
 . Optionally, select any additional ports you want open on the untrusted Client Network. These ports can provide access to the Grid Manager, the Tenant Manager, or both. 
 
 + 

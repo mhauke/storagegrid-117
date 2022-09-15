@@ -11,43 +11,41 @@ summary: 'StorageGRID includes a firewall on each node that enhances the securit
 :imagesdir: ../media/
 
 [.lead]
-StorageGRID includes a firewall on each node that enhances the security of your grid by enabling you to control access to the Grid Network, Admin Network, and Client Network. You should use the firewall to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the *Firewall control* page are deployed to each node. 
+StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to control access to the Grid Network, Admin Network, and Client Network. You should use the firewall to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the *Firewall control* page are deployed to each node. 
 
 Use the three tabs on the *Firewall control* page to: 
+
 * Manage external network access to your nodes.
 * Create a list of privileged IP addresses that can access ports that would otherwise be blocked.
 * Manage an untrusted Client Network.
 
-NOTE: the settings you make one one tab can affect the settings you make on another tab. In general, 
-The Untrusted Client Network settings override Privileged address list settings which in turn override the settings on the Manage external access tab. Be sure to check the settings on all tabs to ensure you network behaves in the way you expect. 
+The settings you make one one tab might affect the settings you make on another tab. In general, the Untrusted Client Network settings override Privileged address list settings, which in turn override the settings on the Manage external access tab. Be sure to check the settings on all tabs to ensure your network behaves in the way you expect. 
 
-== Manage external access and privileged IP addresses: overview
-You can enhance the security of your grid by limiting the external network access of the ports on your grid nodes. You can also create a list of privileged IP addresses that can access grid ports that would otherwise be blocked. 
+To configure firewall controls, see xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
+For more information on external firewalls and network security, see xref:../admin/controlling-access-through-firewalls.adoc[Control access through firewalls].
 
-=== Example: 
-you can lock down everything then be prcise how you target access
+== Manage external access and privileged IP addresses tabs: overview
+You can enhance the security of your grid by limiting the external network access of the ports on your grid nodes. The Manage external access tab enables you to block access to selected ports or all configurable ports. The Privileged IP address tab enables you to register one or more IP addresses that are granted access to grid ports that would otherwise be blocked. 
 
-close all external ports, then set the untrusted client networks, and then switch one of the ports that are allowed using the xxxx in addition to endpoints
+NOTE: Privileged IPs do not have internal grid access by default. 
 
-additional ports become accessible using feature xxxx
-Now also can allow untrusted client networks to access the admin consoles using these three additional ports we allow.
+=== Example 1: Limit access to the Grid Manager
+Suppose you want to limit access to the Grid Manager and Tenant manager for security reasons. You could use the Manage external access tab to block port 443, but allow access to the Grid Manager only via port 8443 and the Tenant Manager only via port 9443.
 
-Lets say its the tentant manager on the client network can access 9443 to get to the teneant manager. This way, only certain customers could have access to the Tenant manager, with all other customers blocked from access to the Tenent manager. 
+You could further limit access to the Grid Manager by blocking both 443 and 8443, but you would then have to use the privileged IP address list to add the address of the system that you use to connect to the Grid Manager. 
 
+=== Example 2: Use a jump host for maintenance tasks
 
-Example 2
+You might want to use a jump host (a security hardened host). For example, you could use the Manage external access tab to block all ports and then use the Privileged IP address tab to grant the jump host access to an Admin node so you can perform maintenance tasks securely. 
 
-Priviledged IP do not have internal grid access by default. 
-Say you blocked all the ports. But you have one note for administration, like SSH access (a jump host). You can use this for secure maintenance using privilidged IPs. 
-this administrative node can have extremely limited access, but once you are in you can get into all the grid nodes, and so a way of doing secure mainteenance. 
+=== Example 3: Lock down sensitive ports
+Suppose you want to lock down sensitive ports and the service on that port(for example, SSH on port 22). You can use the Manage external access tab in conjunction with the Privileged address list tab so that only hosts on the privileged address list can access the service. All other hosts will be denied access to the service no matter what interface the connection comes in on.
 
+=== Example 4: Disable access to unused services
+The Manage external access tab may also be used to disable at a network level some services that the you do not intend to use. For example you might choose to block ports 18083 and 18085 because you have no intention of providing Swift access.
 
-
- 
-
-
-== Manage untrusted Client Networks: overview
+== Untrusted Client Networks tab: overview
 
 If you are using a Client Network, you can help secure StorageGRID from hostile attacks by accepting inbound client traffic only on explicitly configured endpoints.
 
