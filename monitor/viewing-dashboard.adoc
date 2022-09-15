@@ -45,13 +45,17 @@ Some of the cards can be maximized for easier viewing. Select the maximize icon 
 
 == Manage dashboards
 
-If you have the xref:../admin/admin-group-permissions.html[required permission and access mode], you can perform the following management tasks for dashboards:
+If you have Root Access (see xref:../admin/admin-group-permissions.html[Admin group permissions]), you can perform the following management tasks for dashboards:
 
-* Clone a dashboard to create custom dashboards. You can use custom dashboards to control which StorageGRID information is displayed and how that information is organized.
+* Create a custom dashboard from scratch. You can use custom dashboards to control which StorageGRID information is displayed and how that information is organized.
+* Clone a dashboard to create custom dashboards.
 * Set an active dashboard for a user. The active dashboard can be the system-provided dashboard or a custom dashboard.
 * Set a default dashboard, which is what users see unless they activate their own dashboard.
-* Edit a dashboard to add or remove tabs and cards.
+* Edit a dashboard name.
+* Edit a dashboard to add or remove tabs and cards. You can have a minimum of 1 and a maximum of 20 tabs.
 * Remove a dashboard.
+
+If you have any other permission besides Root Access, you can only set an active dashboard.
 
 To manage dashboards, select *Actions* > *Manage dashboards*.
 
