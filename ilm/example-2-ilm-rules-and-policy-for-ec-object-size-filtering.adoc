@@ -31,11 +31,11 @@ Reference time
 a|
 Ingest time
 a|
-Advanced Filtering for Object Size
+Advanced filter for object size
 a|
-Object Size (MB) greater than 1
+Object size (MB) greater than 1
 a|
-Content Placement
+Content placement
 a|
 Create a 2+1 erasure-coded copy using three sites
 |===
@@ -52,17 +52,17 @@ This example ILM rule creates two replicated copies and does not filter by objec
 a|
 Rule name
 a|
-Two Replicated Copies
+Two replicated copies
 a|
 Reference time
 a|
 Ingest time
 a|
-Advanced Filtering for Object Size
+Advanced filter for object size
 a|
 None
 a|
-Content Placement
+Content placement
 a|
 Create two replicated copies and save them at two data centers, DC1 and DC2
 |===
