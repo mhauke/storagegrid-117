@@ -80,12 +80,14 @@ You cannot clone the active policy if a proposed policy already exists.
 . In the *Reason for change* field, enter the reason you are creating a new proposed policy. Enter at least 1 and no more than 128 characters.
 
 . To add rules to the policy, select *Select rules*.
-
++
+NOTE: Periodically, the list of rules is automatically updated to reflect additions or removals. If a rule is removed after you select it, an error message appears.
++
 . Select a rule name or the more details icon image:../media/icon_nms_more_details.gif[more details icon] to view the settings for that rule.
 
 . Select one default rule for the proposed policy. To create a new default rule, select *ILM rules page* image:../media/icon_nms_more_details.gif[more details icon].
 +
-The list of rules contains only the rules that are compliant and do not use any filters. Periodically, the list is automatically updated to reflect additions or removals. If a rule is removed after you select it, an error message appears.
+The list of rules contains only the rules that are compliant and do not use any filters.
 +
 IMPORTANT: Do not use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If you use this rule, multiple copies of an object might be placed on the same site.
 
