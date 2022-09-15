@@ -118,6 +118,8 @@ The other rules are evaluated before the default rule and must use at least one 
 
 . For the Other rules step of the wizard, select any other rules you want to add to the policy, then select *Select*.
 +
+Periodically, the list of rules is automatically updated to reflect additions or removals. If you select a rule that is then deleted, an error message will appear.
++
 The Create a proposed policy page now lists the rules you selected. The default rule is at the end, with the other rules above it.
 +
 NOTE: A warning appears if the default rule does not retain objects forever. When you activate this policy, you must confirm that you want StorageGRID to delete objects when the placement instructions for the default rule elapse (unless a bucket lifecycle keeps the objects for a longer time period).
