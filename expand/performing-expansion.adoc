@@ -22,7 +22,7 @@ When you perform the expansion, the new grid nodes are added to your existing St
 * You have the Maintenance or Root access permission.
 * If you are adding Storage Nodes, you have confirmed that all data-repair operations performed as part of a recovery are complete. See xref:../maintain/checking-data-repair-jobs.adoc[Check data repair jobs].
 
-* If you are adding Storage Nodes and you want to assign a custom storage grade to those nodes, you have already created the custom storage grade. You also have either the Root access permission or both the Maintenance and ILM permissions.
+* If you are adding Storage Nodes and you want to assign a custom storage grade to those nodes, you have already xref:../ilm/creating-and-assigning-storage-grades.adoc[created the custom storage grade]. You also have either the Root access permission or both the Maintenance and ILM permissions.
 
 * If you are adding a new site, you have reviewed and updated ILM rules. You must ensure that object copies are not stored to the new site until after the expansion is complete. For example, if a rule uses the default storage pool (*All Storage Nodes*), you must xref:../ilm/creating-storage-pool.adoc[create a new storage pool] that contains only the existing Storage Nodes and xref:../ilm/working-with-ilm-rules-and-ilm-policies.adoc[update ILM rules] and the ILM policy to use that new storage pool. Otherwise, objects will be copied to the new site as soon as the first node at that site becomes active.
 
@@ -95,7 +95,7 @@ Learn about the xref:../maintain/understanding-adc-service-quorum.adoc[ADC quoru
 |Storage Grade (Storage Nodes only)
 |Use the *Default* storage grade, or select the custom storage grade you want to assign to this new node.
 
-Storage grades are used by ILM storage pools, so your selection can affect which objects will be placed on the Storage Node. See xref:../ilm/creating-and-assigning-storage-grades.adoc[Create and assign storage grades].
+Storage grades are used by ILM storage pools, so your selection can affect which objects will be placed on the Storage Node. 
 
 |===
 
