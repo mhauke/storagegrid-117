@@ -44,7 +44,7 @@ There are three tabs on this page:
 Use this tab to open or close ports on the Grid Network, Admin Network, and Client Network. 
 * Privileged address list
 +
-Use this tab to add IP addresses or subnets in CIDR notation that can access ports closed for external communication on the Manage External Access tab. 
+Use this tab to add IP addresses or subnets in CIDR notation that can access ports closed for external communication on the Manage external access tab. 
 * Untrusted Client Network
 +
 If you are using a Client Network, use the Untrusted Client Network tab to specify whether a node trusts inbound traffic from the Client Network.
@@ -62,9 +62,9 @@ You should check the settings on each of the three *Firewall control* tabs to en
 --
 
 
-When a port is closed in the Manage external access list, it can't be accessed by any non-grid IP address, including VLAN interfaces, unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
+When a port is closed in the Manage external access tab, the port can't be accessed by any non-grid IP address, including VLAN interfaces, unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
 
-NOTE: The configuration changes you make on *Manage external access* tab might conflict with the settings on the *Privileged address list* tab and the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
+NOTE: The configuration changes you make on the *Manage external access* tab might conflict with the settings on the *Privileged address list* tab and the *Untrusted client network* tab. Be sure to check the settings on all of the firewall control tabs to ensure your grid functions as expected. 
 
 NOTE: Settings on the Manage external access tab can not override settings on the Untrusted Client Network tab. For example, if a node is untrusted, port SSH/22 is blocked on the client network even if it was opened on the Manage external access tab. Settings on the Untrusted Client Network tab override blocked ports (such as 443, 8443, 9443) on the client network.
 

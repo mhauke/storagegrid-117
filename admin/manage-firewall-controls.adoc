@@ -32,6 +32,7 @@ NOTE: Privileged IPs do not have internal grid access by default.
 
 === Example 1: Limit access to the Grid Manager and Tenant Manager
 Suppose you want to limit access to the Grid Manager and Tenant manager for security reasons. You could use these general steps: 
+
 . Use the toggle on the Manage external access tab to block port 443.
 . Use the toggle on the Manage external access tab to allow access to port 8443.
 . Use the toggle on the Manage external access tab to allow access to port 9443. 
@@ -52,13 +53,15 @@ After you save your configuration, the Grid Manager cannot be accessed by any ho
 === Example 2: Use a jump host for maintenance tasks
 
 You might want to use a jump host (a security hardened host) for network administration. For example, you could use these general steps:
+
 . Use the Manage external access tab to block all ports
 . Use the Privileged IP address tab to add the IP address of the jump host. 
 
-After you save your configuration, all ports on the Admin Node in your grid will be blocked for all hosts except the jump host. You can then use the jump host to perform maintenance tasks on your grid more securely. 
+After you save your configuration, all external ports on the Admin Node in your grid will be blocked for all hosts except the jump host. You can then use the jump host to perform maintenance tasks on your grid more securely. 
 
 === Example 3: Lock down sensitive ports
 Suppose you want to lock down sensitive ports and the service on that port (for example, SSH on port 22). You could use the following general steps: 
+
 . Use the Manage external access tab to block all ports. 
 . Use the Privileged IP address tab to grant access only to the hosts that need access to the service.
 
@@ -66,6 +69,7 @@ After you save your configuration, port 22 and SSH service will be available to 
 
 === Example 4: Disable access to unused services
 You could disable at a network level some services that you do not intend to use. For example if you have not intention of providing Swift access, you could perform the following general steps: 
+
 . Use the toggle on the Manage external access tab to block port 18083. 
 . Use the toggle on the Manage external access tab to block port 18085.
 
