@@ -2,14 +2,14 @@
 permalink: ilm/what-erasure-coding-is.html
 sidebar: sidebar
 keywords: what is erasure coding, what is ec
-summary: 'Erasure coding is the second method used by StorageGRID to store object data. When StorageGRID matches objects to an ILM rule that is configured to create an erasure-coded copy, it slices object data into data fragments, computes additional parity fragments, and stores each fragment on a different Storage Node. When an object is accessed, it is reassembled using the stored fragments. If a data or a parity fragment becomes corrupt or lost, the erasure-coding algorithm can recreate that fragment using a subset of the remaining data and parity fragments.'
+summary: 'Erasure coding is the other method used by StorageGRID to store object data. When StorageGRID matches objects to an ILM rule that is configured to create an erasure-coded copy, it slices object data into data fragments, computes additional parity fragments, and stores each fragment on a different Storage Node. When an object is accessed, it is reassembled using the stored fragments. If a data or a parity fragment becomes corrupt or lost, the erasure-coding algorithm can recreate that fragment using a subset of the remaining data and parity fragments.'
 ---
 = What erasure coding is
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Erasure coding is the second method used by StorageGRID to store object data. When StorageGRID matches objects to an ILM rule that is configured to create an erasure-coded copy, it slices object data into data fragments, computes additional parity fragments, and stores each fragment on a different Storage Node. When an object is accessed, it is reassembled using the stored fragments. If a data or a parity fragment becomes corrupt or lost, the erasure-coding algorithm can recreate that fragment using a subset of the remaining data and parity fragments.
+Erasure coding is the other method used by StorageGRID to store object data. When StorageGRID matches objects to an ILM rule that is configured to create an erasure-coded copy, it slices object data into data fragments, computes additional parity fragments, and stores each fragment on a different Storage Node. When an object is accessed, it is reassembled using the stored fragments. If a data or a parity fragment becomes corrupt or lost, the erasure-coding algorithm can recreate that fragment using a subset of the remaining data and parity fragments.
 
 As you create ILM rules, StorageGRID creates erasure coding profiles that support those rules. You can view the details for an erasure coding profile, xref:renaming-erasure-coding-profile.adoc[rename an erasure coding profile], or xref:deactivating-erasure-coding-profile.adoc[deactivate an erasure coding profile if it is not currently used in any ILM rules].
 
