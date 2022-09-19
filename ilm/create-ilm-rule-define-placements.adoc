@@ -53,11 +53,12 @@ For example, you might want to specify where to store objects for the first year
 +
 A warning appears if you change the number of copies to 1. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. See xref:why-you-should-not-use-single-copy-replication.adoc[Why you should not use single-copy replication].
 +
-To avoid these risks, do one or more of the following:
+To avoid the risk, do one or more of the following:
 
-*** Increase the number of copies for the time period.
-*** Select the plus sign icon image:../media/icon_plus_sign_black_on_white.gif[plus sign black on white] to create additional copies during the time period. Then, select a different storage pool or a Cloud Storage Pool.
-*** Select *erasure coded* for Type, instead of *replicated*.
+* Increase the number of copies for the time period.
+* Select more than one storage pool or Cloud Storage Pool.
+* Select *erasure coded* instead of *replicated*.
++
 You can safely ignore this warning if this rule already creates multiple copies for all time periods.
 
 .. In the *copies at* field, select the storage pools you want to add.
