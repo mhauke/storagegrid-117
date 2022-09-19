@@ -11,7 +11,7 @@ summary: 'When a Swift client issues a HEAD transaction, a request is made to ch
 [.lead]
 When a Swift client issues a HEAD transaction, a request is made to check for the existence of an account, container, or object, and retrieve any relevant metadata. This message is issued by the server if the transaction is successful.
 
-[options="header"]
+[cols="1a,1a,4a" options="header"]
 |===
 | Code| Field| Description
 a|
