@@ -19,14 +19,17 @@ Use the three tabs on the *Firewall control* page to:
 * Create a list of privileged IP addresses that can access ports that would otherwise be blocked.
 * Manage an untrusted Client Network.
 
-These three tabs can be used together to customize the amount of access you need for your grid. The settings you make one one tab might affect the settings you make on another tab. In general, the Untrusted Client Network settings override Privileged address list settings, which in turn override the settings on the Manage external access tab. Be sure to check the settings on all tabs to ensure your network behaves in the way you expect. 
+These three tabs can be used together to customize the amount of access you need for your grid. The settings you make one one tab might affect the settings you make on another tab. 
+In general, the Untrusted Client Network settings override the settings in the Manage external access tab. A port in the Untrusted Client Network is open on the client network, regardless of whether that port is blocked on other networks. The privileged IP address list is another way of allowing selected access to blocked ports. 
+
+Be sure to check the settings on all tabs to ensure your network behaves in the way you expect. 
 
 To configure firewall controls, see xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
 For more information on external firewalls and network security, see xref:../admin/controlling-access-through-firewalls.adoc[Control access through firewalls].
 
 == Manage external access and Privileged IP addresses tabs: overview
-You can enhance the security of your grid by limiting the external network access of the ports on your grid nodes. The Manage external access tab on the *Firewall control* page enables you to block access to selected ports or all configurable ports. The Privileged IP address tab enables you to register one or more IP addresses that are granted access to grid ports that would otherwise be blocked. These two tabs often can be used together to customize the exact network access you need to allow for your grid.
+You can enhance the security of your grid by limiting external access to the ports on your grid nodes. The Manage external access tab on the *Firewall control* page enables you to block external access to selected ports or all open ports. The Privileged IP address tab enables you to register one or more IP addresses that are granted access to grid ports that would otherwise be blocked. These two tabs often can be used together to customize the exact network access you need to allow for your grid.
 
 NOTE: Privileged IPs do not have internal grid access by default. 
 
@@ -39,31 +42,26 @@ Suppose you want to limit access to the Grid Manager and Tenant manager for secu
 
 After you save your configuration, hosts will not be able to access port 443, but they can still access the Grid Manager via port 8443 and the Tenant manger via port 9443.
 
-You could further limit access to the Grid Manager by performing the following general steps: 
-
-[start=1]
-. Use the Privileged IP address tab to add the address of the system that you use to connect to the Grid Manager.
-. Use the toggle on the Manage external access tab to block port 443.
-. Use the toggle on the Manage external access tab to block port 8443.
-
-IMPORTANT: You must be sure to add the privileged IP address before you block both ports 443 and 8443. Otherwise, you will lose access to the Grid Manager. 
-
 After you save your configuration, the Grid Manager cannot be accessed by any host except the system you use for administrative tasks. 
 
 === Example 2: Use a jump host for maintenance tasks
 
 You might want to use a jump host (a security hardened host) for network administration. For example, you could use these general steps:
 
-. Use the Manage external access tab to block all ports
 . Use the Privileged IP address tab to add the IP address of the jump host. 
+. Use the Manage external access tab to block all ports.
+
+IMPORTANT: You must be sure to add the privileged IP address before you block both ports 443 and 8443. Otherwise, you will lose access to the Grid Manager. 
 
 After you save your configuration, all external ports on the Admin Node in your grid will be blocked for all hosts except the jump host. You can then use the jump host to perform maintenance tasks on your grid more securely. 
 
 === Example 3: Lock down sensitive ports
 Suppose you want to lock down sensitive ports and the service on that port (for example, SSH on port 22). You could use the following general steps: 
 
-. Use the Manage external access tab to block all ports. 
 . Use the Privileged IP address tab to grant access only to the hosts that need access to the service.
+. Use the Manage external access tab to block all ports. 
+
+IMPORTANT: You must be sure to add the privileged IP address before you block both ports 443 and 8443. Otherwise, you will lose access to the Grid Manager. 
 
 After you save your configuration, port 22 and SSH service will be available to hosts on the privileged IP address list. All other hosts will be denied access to the service no matter what interface the request comes from.
 
