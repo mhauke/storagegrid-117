@@ -80,10 +80,10 @@ NOTE: The *ILM placement unachievable* alert is triggered to indicate that the I
 A warning appears if the rule does not have an advanced filter to ignore objects that are 200 KB or smaller.
 +
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
++
+.. If the object size warning appeared, select *Previous* to return to Step 1. Then, select *Add an advanced filter* and set an *Object size* filter to any value greater than 0.2 MB.
 
- .. If the object size warning appeared, select *Previous* to return to Step 1. Then, select *Add an advanced filter* and set an *Object size* filter to any value greater than 0.2 MB.
-
- .. Select the storage pool you want to add and the erasure-coding scheme you want to use.
+.. Select the storage pool you want to add and the erasure-coding scheme you want to use.
 +
 The storage location for an erasure-coded copy includes the name of the storage pool, followed by the name of the erasure coding profile.
 

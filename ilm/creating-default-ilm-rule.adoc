@@ -54,7 +54,7 @@ The default rule must apply to all tenant accounts.
 +
 The default rule must apply to all S3 buckets and Swift containers.
 
-. Do not select *Advanced filtering*
+. Do not add advanced filters.
 +
 The default rule cannot specify any filters.
 
@@ -79,7 +79,7 @@ IMPORTANT: Do not use a rule that creates erasure-coded copies as the default ru
   ** Object copies cannot be saved on Archive Nodes.
   ** At least one line of the placement instructions must start at day 0, using Ingest time as the reference time.
   ** At least one line of the placement instructions must be "`forever.`"
-. Select *Refresh* to update the Retention Diagram and to confirm your placement instructions.
+. Select *Refresh* to update the Retention diagram and to confirm your placement instructions.
 . Select *Next*.
 +
 Step 3 (Select ingest behavior) appears.

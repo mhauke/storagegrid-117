@@ -84,7 +84,7 @@ Bucket Name
 a|
 `bank-records`
 a|
-Advanced filtering
+Advanced filter
 a|
 Object Size (MB) greater than 1
 
@@ -127,17 +127,17 @@ This example ILM rule initially stores two replicated object copies on Storage N
 a|
 Rule name
 a|
-Non-Compliant Rule: Use Cloud Storage Pool
+Non-compliant rule: Use Cloud Storage Pool
 a|
-Tenant Accounts
+Tenant accounts
 a|
 Not specified
 a|
-Bucket Name
+Bucket name
 a|
 Not specified, but will only apply to buckets that do not have S3 Object Lock (or the legacy Compliance feature) enabled.
 a|
-Advanced filtering
+Advanced filter
 a|
 Not specified
 |===
@@ -170,17 +170,17 @@ This example ILM rule copies object data to storage pools in two data centers. T
 a|
 Rule name
 a|
-Default Compliant Rule: Two Copies Two Data Centers
+Default compliant rule: Two copies two data centers
 a|
-Tenant Account
-a|
-Not specified
-a|
-Bucket Name
+Tenant account
 a|
 Not specified
 a|
-Advanced filtering
+Bucket name
+a|
+Not specified
+a|
+Advanced filter
 a|
 Not specified
 |===

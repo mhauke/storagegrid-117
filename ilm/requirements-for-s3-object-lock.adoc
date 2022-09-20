@@ -1,7 +1,7 @@
 ---
 permalink: ilm/requirements-for-s3-object-lock.html
 sidebar: sidebar
-keywords: requirements, s3 object lock
+keywords: requirements, s3 object lock, compliant ilm rule, compliant ilm policy
 summary: 'You must review the requirements for enabling the global S3 Object Lock setting, the requirements for creating compliant ILM rules and ILM policies, and the restrictions StorageGRID places on buckets and objects that use S3 Object Lock.'
 ---
 = Requirements for S3 Object Lock
@@ -48,14 +48,7 @@ include::../_include/s3-object-lock-requirements.adoc[]
 
 .Related information
 
-* xref:../tenant/index.adoc[Use a tenant account]
-
-* xref:../s3/index.adoc[Use S3]
-
-* xref:managing-objects-with-s3-object-lock.adoc#comparing-s3-object-lock-to-legacy-compliance[Comparing S3 Object Lock to legacy Compliance]
-
+* xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket]
+* xref:../tenant/update-default-retention-settings.adoc[Update default retention settings]
+* xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
 * xref:example-7-compliant-ilm-policy-for-s3-object-lock.adoc[Example 7: Compliant ILM policy for S3 Object Lock]
-
-* xref:../audit/index.adoc[Review audit logs]
-
-* xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
