@@ -35,7 +35,7 @@ A grid administrator must enable account clone for a tenant before that tenant c
 
 . *Enable account clone for a tenant*: The grid admin creates an S3 tenant account on either grid in a grid federation connection.
 +
-When creating the tenant, the admin selects an existing grid federation connection and assigns a permission that allows the tenant to perform account clone and cross-grid replication. When a tenant with this permission is saved, the tenant and the tenant's root user are created on both grids in the connection.
+When creating the tenant, the admin selects one existing grid federation connection and assigns a permission that allows the tenant to perform account clone and cross-grid replication. When a tenant with this permission is saved, the tenant and the tenant's root user are created on both grids in the connection.
 
 . *Sync tenant details*: If a new tenant has permission to use a grid federation connection for account clone, new S3 access keys, groups, or users created on the source grid are automatically copied to the tenant on the destination grid. Subsequent changes made to these items on the tenant's source grid are also synchronized.
 +
