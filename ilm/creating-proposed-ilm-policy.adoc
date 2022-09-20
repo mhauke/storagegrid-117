@@ -45,7 +45,7 @@ From the ILM policies page, you can:
 * Review the list of active, proposed, and historical policies
 * Create, edit, or remove a proposed policy
 * Clone the active policy
-* View the details for any policy.
+* View the details for any policy
 
 . Determine how you want to create the proposed ILM policy.
 
@@ -89,13 +89,15 @@ You cannot clone the active policy if a proposed policy already exists.
 The Create a proposed policy page appears.
 
 [start=3]
-. In the *Proposed policy name* field, enter a unique name for the proposed policy. You must enter at least 1 and no more than 64 characters.
+. In the *Proposed policy name* field, enter a unique name for the proposed policy. Enter at least 1 and no more than 64 characters.
 
-. In the *Reason for change* field, enter the reason you are creating a new proposed policy. You must enter at least 1 and no more than 128 characters.
+. In the *Reason for change* field, enter the reason you are creating a new proposed policy. Enter at least 1 and no more than 128 characters.
 
 . To add rules to the policy, select *Select rules*.
 +
-The Select ILM rules wizard appears. If you are cloning a policy:
+NOTE: Periodically, the list of rules is automatically updated to reflect additions or removals. If a rule is removed after you select it, an error message appears.
++
+If you are cloning a policy:
 
 * The rules used by the policy you are cloning are selected.
 * If the policy you are cloning used any rules with no filters that were not the default rule, you are prompted to remove all but one of those rules.
@@ -104,7 +106,7 @@ The Select ILM rules wizard appears. If you are cloning a policy:
 
 . Select a rule name or the more details icon image:../media/icon_nms_more_details.gif[more details icon] to view the settings for that rule.
 
-. Select one default rule for the proposed policy.
+. Select one default rule for the proposed policy. To create a new default rule, select *ILM rules page* image:../media/icon_nms_more_details.gif[more details icon].
 +
 The default rule applies to any objects that do not match another rule in the policy. The default rule cannot use any filters and is always evaluated last.
 +

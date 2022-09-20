@@ -80,7 +80,7 @@ The number of copies changes to 1. A warning appears if the rule does not have a
 +
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 
- .. If the object size warning appeared, select *Previous* to return to Step 1. Then, select *Advanced filtering* and set the Object Size (MB) filter to any value greater than 0.2.
+ .. If the object size warning appeared, select *Previous* to return to Step 1. Then, select *Add an advanced filter* and set the Object Size (MB) filter to any value greater than 0.2.
  .. Select the storage location.
 +
 The storage location for an erasure-coded copy includes the name of the storage pool, followed by the name of the Erasure Coding profile.
@@ -105,7 +105,7 @@ When using Cloud Storage Pools, keep these rules in mind:
 
   *** You can store an object in a Cloud Storage Pool at the same time that object is being stored as replicated or erasure coded copies in StorageGRID. However, as this example shows, you must include more than one line in the placement instruction for the time period, so you can specify the number and types of copies for each location.
 
-. Select *Refresh* to update the Retention Diagram and to confirm your placement instructions.
+. Select *Refresh* to update the Retention diagram and to confirm your placement instructions.
 +
 Each line in the diagram shows where and when object copies will be placed. The color of a line represents the type of copy:
 +
