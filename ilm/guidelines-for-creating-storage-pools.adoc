@@ -32,9 +32,9 @@ NOTE: Using the All Storage Nodes storage pool or the All Sites site is not reco
 * You cannot use Archive Nodes for erasure-coded data.
 * The number of Storage Nodes and sites contained in the storage pool determine which erasure-coding schemes are available.
 * If a storage pool includes only two sites, you cannot use that storage pool for erasure coding. No erasure-coding schemes are available for a storage pool that has two sites.
-* In general, do not use the default storage pool, All Storage Nodes, or any storage pool that includes the default site, All Sites in any Erasure Coding profile.
+* In general, do not use the default storage pool, All Storage Nodes, or any storage pool that includes the default site, All Sites in any erasure coding profile.
 +
-NOTE: If your grid includes only one site, you are prevented from using the All Storage Nodes storage pool or the All Sites default site in an Erasure Coding profile. This behavior prevents the Erasure Coding profile from becoming invalid if a second site is added.
+NOTE: If your grid includes only one site, you are prevented from using the All Storage Nodes storage pool or the All Sites default site in an erasure coding profile. This behavior prevents the erasure coding profile from becoming invalid if a second site is added.
 
 * If you have high throughput requirements, using a storage pool that includes multiple sites is not recommended if the network latency between sites is greater than 100 ms. As latency increases, the rate at which StorageGRID can create, place, and retrieve object fragments decreases sharply due to the decrease in TCP network throughput. The decrease in throughput affects the maximum achievable rates of object ingest and retrieval (when Balanced or Strict are selected as the Ingest Behavior) or could lead to ILM queue backlogs (when Dual Commit is selected as the Ingest Behavior).
 * If possible, a storage pool should include more than the minimum number of Storage Nodes required for the erasure-coding scheme you select. For example, if you use a 6+3 erasure-coding scheme, you must have at least nine Storage Nodes. However, having at least one additional Storage Node per site is recommended.

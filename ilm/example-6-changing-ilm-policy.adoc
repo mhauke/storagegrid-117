@@ -25,9 +25,9 @@ CAUTION: When you activate a new ILM policy, StorageGRID uses it to manage all o
 
 The types of ILM policy changes that can temporarily affect StorageGRID performance include the following:
 
-* Applying a different Erasure Coding profile to existing erasure-coded objects.
+* Applying a different erasure coding profile to existing erasure-coded objects.
 +
-NOTE: StorageGRID considers each Erasure Coding profile to be unique and does not reuse erasure-coding fragments when a new profile is used.
+NOTE: StorageGRID considers each erasure coding profile to be unique and does not reuse erasure-coding fragments when a new profile is used.
 
 * Changing the type of copies required for existing objects; for example, converting a large percentage of replicated objects to erasure-coded objects.
 * Moving copies of existing objects to a completely different location; for example, moving a large number of objects to or from a Cloud Storage Pool or to or from a remote site.
@@ -163,9 +163,9 @@ In the currently active ILM policy for this example, objects belonging to Tenant
 When the new ILM policy is activated, the following ILM operations occur:
 
 * New objects ingested by Tenant A are split into two data fragments and one parity fragment is added. Then, each of the three fragments is stored at a different data center.
-* The existing objects belonging to Tenant A are re-evaluated during the ongoing ILM scanning process. Because the ILM placement instructions use a new Erasure Coding profile, entirely new erasure-coded fragments are created and distributed to the three data centers.
+* The existing objects belonging to Tenant A are re-evaluated during the ongoing ILM scanning process. Because the ILM placement instructions use a new erasure coding profile, entirely new erasure-coded fragments are created and distributed to the three data centers.
 +
-NOTE: The existing 2+1 fragments at Data Center 1 are not reused. StorageGRID considers each Erasure Coding profile to be unique and does not reuse erasure-coding fragments when a new profile is used.
+NOTE: The existing 2+1 fragments at Data Center 1 are not reused. StorageGRID considers each erasure coding profile to be unique and does not reuse erasure-coding fragments when a new profile is used.
 
 === What happens when replication instructions change
 

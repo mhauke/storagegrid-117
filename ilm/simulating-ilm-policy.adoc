@@ -28,8 +28,8 @@ When simulating a policy, the following considerations apply:
 * After you make changes to a policy, save the proposed policy. Then, simulate the behavior of the saved proposed policy.
 * When you simulate a policy, the ILM rules in the policy filter the test objects, so you can see which rule was applied to each object. However, no object copies are made and no objects are placed. Running a simulation does not modify your data, rules, or the policy in any way.
 * The Simulation page retains the objects you tested until you close, navigate away from, or refresh the ILM policies page.
-* Simulation returns the name of the matched rule. To determine which storage pool or Erasure Coding profile is in effect, you can view the Retention diagram by selecting the rule name or the more details icon image:../media/icon_nms_more_details.gif[more details icon].
-* If S3 versioning is enabled, the policy is only simulated against the current version of the object.
+* Simulation returns the name of the matched rule. To determine which storage pool or erasure coding profile is in effect, you can view the retention diagram by selecting the rule name or the more details icon image:../media/icon_nms_more_details.gif[more details icon].
+* If S3 Versioning is enabled, the policy is only simulated against the current version of the object.
 
 .Steps
 
