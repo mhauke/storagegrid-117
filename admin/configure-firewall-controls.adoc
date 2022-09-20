@@ -39,12 +39,13 @@ Select *CONFIGURATION* > *Security* > *Firewall control*.
 
 There are three tabs on this page:
 
-* Manage external access
-+
-Use this tab to open or close ports on the Grid Network, Admin Network, and Client Network. 
 * Privileged address list
 +
 Use this tab to add IP addresses or subnets in CIDR notation that can access ports closed for external communication on the Manage external access tab. 
+* Manage external access
++
+Use this tab to open or close ports on the Grid Network, Admin Network, and Client Network. 
+
 * Untrusted Client Network
 +
 If you are using a Client Network, use the Untrusted Client Network tab to specify whether a node trusts inbound traffic from the Client Network.
@@ -56,10 +57,34 @@ You can use these tabs in any order. The configurations you set on one tab do no
 
 [role="tabbed-block"]
 ====
-[#manage-external access]
+.Privileged address list
+--
+You use the Privileged address list tab to grant hosts access to ports that are blocked by default or by settings on the Manage external access tab.
+
+Privileged IP addresses and subnets do not have internal grid access by default. Also, privileged IP addresses and subnets do not have access to ports blocked by Untrusted Client Network settings. 
+
+NOTE: The configuration changes you make on the *Privileged address list* tab might conflict with the settings on the *Manage external access* tab or the *Untrusted client network* tab.
+
+NOTE: Settings on the Privileged address list tab can not override settings on the Untrusted Client Network tab. 
+
+. Select *Privileged address list*.
+The tab displays a field where you can enter addresses you want to have privileged network access. Any previously configured addresses are also displayed. 
+
++
+image::../media/privileged-address-list.png[Privileged address list]
+
+. In the Address 1 field, enter the address of a client or subnet you want to provide privileged network access. 
+. Optionally, select *Add another IP address or subnet in CIDR notation* to add additional privileged clients. 
+. Optionally, select the check box if you want to allow privileged addresses to access StorageGRID internal ports. Select *StorageGRID internal ports* to see documentation on the internal ports. 
++
+IMPORTANT: This option removes some protections for internal services. Leave it disabled if possible, and use as small of a privileged IP list/range as possible.
+
+. Select *Save*.
+
+
+--
 .Manage external access
 --
-
 
 When a port is closed in the Manage external access tab, the port can't be accessed by any non-grid IP address, including VLAN interfaces, unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
 
@@ -86,37 +111,13 @@ You can sort the list by:
 * Select *Open all displayed ports* to open all ports listed in the table. 
 * Select *Close all displayed ports* to close all ports listed in the table.
 +
-CAUTION: If you intend to block traffic to both ports 443 and 8443, ensure the IP addresses of systems that you use to connect to the Grid Manager are included in the privileged IP address list before blocking the ports. Otherwise, you will lose access to the Grid Manager in a few minutes.
+CAUTION: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. 
 
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available ports. You can also use the search field to find the settings for any external port by entering a port number. You can enter a partial port number. For example, if you enter a '2," all ports that start with a "2" are displayed. 
 
 [start=3]
 . Select *Save*
 
-
---
-.Privileged address list
---
-
-Privileged IP addresses and subnets do not have access to ports blocked by Untrusted Client Network settings.
-
-NOTE: The configuration changes you make on the *Privileged address list* tab might conflict with the settings on the *Manage external access* tab or the *Untrusted client network* tab.
-
-NOTE: Settings on the Privileged address list tab can not override settings on the Untrusted Client Network tab. 
-
-. Select *Privileged address list*.
-The tab displays a field where you can enter addresses you want to have privileged network access. Any previously configured addresses are also displayed. 
-
-+
-image::../media/privileged-address-list.png[Privileged address list]
-
-. In the Address 1 field, enter the address of a client or subnet you want to provide privileged network access. 
-. Optionally, select *Add another IP address or subnet in CIDR notation* to add additional privileged clients. 
-. Optionally, select the check box if you want to allow privileged addresses to access StorageGRID internal ports. Select *StorageGRID internal ports* to see documentation on the internal ports. 
-+
-IMPORTANT: This option removes some protections for internal services. Leave it disabled if possible, and use as small of a privileged IP list/range as possible.
-
-. Select *Save*.
 
 --
 .Untrusted Client Network
@@ -167,6 +168,7 @@ For example, you might want to use this option to ensure that the Grid Manager c
 The new firewall settings are immediately applied and enforced. Existing client connections might fail if load balancer endpoints have not been configured.
 
 --
+
 ====
 
 // end tabbed area
