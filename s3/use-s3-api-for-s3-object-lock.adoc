@@ -208,7 +208,7 @@ If the new legal-hold value is ON, the object is placed under a legal hold. If t
 
 == How to use GOVERNANCE mode
 
-User who have the `s3:BypassGovernanceRetention` permission can bypass the active retention settings of an object that uses GOVERNANCE mode. Any DELETE or PUT Object retention operations must include the `x-amz-bypass-governance-retention:true` request header. These users can perform these additional operations:
+Users who have the `s3:BypassGovernanceRetention` permission can bypass the active retention settings of an object that uses GOVERNANCE mode. Any DELETE or PUT Object retention operations must include the `x-amz-bypass-governance-retention:true` request header. These users can perform these additional operations:
 
 * Perform DELETE Object or DELETE Multiple Objects operations to delete an object version before its retention period has elapsed.
 +
@@ -218,7 +218,7 @@ Objects that are under a legal hold cannot be deleted. Legal hold must be OFF.
 +
 Changing the mode from COMPLIANCE to GOVERNANCE is never allowed.
 
-* Perform PUT Object operations to increase, decrease, or remove an object version's retention period.
+* Perform PUT Object retention operations to increase, decrease, or remove an object version's retention period.
 
 
 .Related information
