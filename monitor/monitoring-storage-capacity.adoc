@@ -149,7 +149,7 @@ When you add the new nodes, the system automatically rebalances object metadata 
 
 Monitor space usage forecasts for user data and metadata to estimate when you will need to xref:../expand/index.adoc[expand your grid].
 
-If you notice that the rate of consumption changes over time, select a shorter range to reflect only the most recent ingest patterns. If you notice seasonal patterns, select a longer range.
+If you notice that the rate of consumption changes over time, select a shorter range from the *Averaged over* pull-down to reflect only the most recent ingest patterns. If you notice seasonal patterns, select a longer range.
 
 If you have a new StorageGRID installation, allow data and metadata to accumulate before evaluating the space usage forecasts.
 
@@ -157,3 +157,5 @@ If you have a new StorageGRID installation, allow data and metadata to accumulat
 . On the dashboard, select *Storage*.
 . View the dashboard cards, Forecast of data usage by storage pool and Forecast of metadata usage by site.
 . Use these values to estimate when you will need to add new Storage Nodes for data and metadata storage.
+
+image::../media/forecast-metadata-usage.png[Forcast of metadata usage by site]
