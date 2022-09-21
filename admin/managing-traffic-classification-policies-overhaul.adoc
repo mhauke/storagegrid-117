@@ -1,5 +1,5 @@
 ---
-permalink: admin/managing-traffic-classification-policies-overhaul.html
+permalink: admin/managing-traffic-classification-policies.html
 sidebar: sidebar
 keywords: qos, quality of service, traffic classification, best practices, limit traffic, monitor traffic
 summary: 'To enhance your quality-of-service \(QoS\) offerings, you can create traffic classification policies to identify and monitor different types of network traffic. These policies can assist with traffic limiting and monitoring.'
@@ -18,28 +18,25 @@ Traffic classification policies are applied to endpoints on the StorageGRID Load
 Each traffic classification policy contains one or more matching rules to identify the network traffic related to one or more of the following entities:
 
 * Buckets
-* Tenants
-* Subnets (IPv4 subnets containing the client)
-* Endpoints (load balancer endpoints)
+* Bucket regex
+* CIDR
+* Tenant
+* Load balancer endpoints
 
 StorageGRID monitors traffic that matches any rule within the policy according to the objectives of the rule. Any traffic that matches any rule for a policy is handled by that policy. Conversely, you can set rules to match all traffic except a specified entity.
 
 Optionally, you can set limits for a policy based on the following parameters:
 
-* Aggregate Bandwidth In
-* Aggregate Bandwidth Out
-* Concurrent Read Requests
-* Concurrent Write Requests
-* Per-Request Bandwidth In
-* Per-Request Bandwidth Out
-* Read Request Rate
-* Write Requests Rate
+* Aggregate bandwidth
+* Per-Request bandwidth
+* Concurrent requests
+* Request rate
 
 NOTE: You can create policies to limit aggregate bandwidth or to limit per-request bandwidth. However, StorageGRID cannot limit both types of bandwidth at the same time. Aggregate bandwidth limits might impose an additional minor performance impact on non-limited traffic.
 
 == Traffic limiting
 
-When you have created traffic classification policies, traffic can be limited according to the type of rules and limits you set. For aggregate or per-request bandwidth limits, the requests stream in or out at the rate you set. StorageGRID can only enforce one speed, so the most specific policy match, by matcher type, is the one enforced. For all other limit types, client requests are delayed by 250 milliseconds and receive a 503 Slow Down response for requests that exceed any matching policy limit.
+When you have created traffic classification policies, traffic can be limited according to the type of rules and limits you set. For aggregate or per-request bandwidth limits, the requests stream in or out at the rate you set. StorageGRID can only enforce one speed, so the most specific policy match, by matcher type, is the one enforced.
 
 In the Grid Manager, you can view traffic charts and verify that the polices are enforcing the traffic limits you expect.
 

@@ -18,20 +18,20 @@ Traffic classification policies are applied to endpoints on the StorageGRID Load
 Each traffic classification policy contains one or more matching rules to identify the network traffic related to one or more of the following entities:
 
 * Buckets
-* Tenants
-* Subnets (IPv4 subnets containing the client)
-* Endpoints (load balancer endpoints)
+* Bucket regex
+* CIDR
+* Tenant
+* Load balancer endpoints
 
 StorageGRID monitors traffic that matches any rule within the policy according to the objectives of the rule. Any traffic that matches any rule for a policy is handled by that policy. Conversely, you can set rules to match all traffic except a specified entity.
 
 Optionally, you can set limits for a policy based on the following parameters:
 
-* Aggregate Bandwidth In
-* Aggregate Bandwidth Out
-* Concurrent Read Requests
-* Concurrent Write Requests
-* Per-Request Bandwidth In
-* Per-Request Bandwidth Out
+* Aggregate bandwidth
+* Per-Request Bandwidth
+* Concurrent requests
+* Request rate
+
 * Read Request Rate
 * Write Requests Rate
 
