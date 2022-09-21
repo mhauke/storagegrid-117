@@ -66,12 +66,12 @@ Privileged IP addresses and subnets do not have internal grid access by default.
 NOTE: Settings on the Privileged address list tab can not override settings on the Untrusted Client Network tab. 
 
 . Select *Privileged address list*.
-The tab displays a field where you can enter addresses you want to allow to access closed port. Any previously configured addresses are also displayed. 
+The tab displays a field where you can enter IP addresses or subnets in CIDR notation you want to allow to access closed ports. Any previously configured addresses are also displayed. 
 
 +
 image::../media/privileged-address-list.png[Privileged address list]
 
-. In the Address 1 field, enter the IP address of a client or IP subnet in CIDR notation you want to allow access to closed ports. 
+. In the Address 1 field, enter the IP address of a client or subnet you want to allow access to closed ports. 
 . Optionally, select *Add another IP address or subnet in CIDR notation* to add additional privileged clients. 
 . Optionally, select the check box if you want to allow privileged IP addresses or subnets to access StorageGRID internal ports. Select *StorageGRID internal ports* to see documentation on the internal ports. 
 +
