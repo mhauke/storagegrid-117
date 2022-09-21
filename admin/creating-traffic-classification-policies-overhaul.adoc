@@ -9,7 +9,7 @@ summary: 'You create traffic classification policies if you want to monitor, and
 :imagesdir: ../media/
 
 [.lead]
-You create traffic classification policies if you want to monitor, and optionally limit, network traffic by bucket, tenant, IP subnet, or load balancer endpoint. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
+You create traffic classification policies if you want to monitor, and optionally limit network traffic by bucket, bucket Regex, CIDR, load balancer endpoint, or tenant. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
 
 .What you'll need
 
@@ -24,28 +24,68 @@ You create traffic classification policies if you want to monitor, and optionall
 +
 The Traffic Classification Policies page appears.
 +
-image::../media/traffic_classification_policies_main_screen.png[Traffic Classification Policies - Main Screen]
 
 . Select *Create*.
 +
-The Create Traffic Classification Policy dialog box appears.
+The Create Traffic Classification Policy wizard appears.
 +
-image::../media/traffic_classification_policy_create.png[Traffic Classification Policy - Create]
 
-. In the *Name* field, enter a name for the policy.
-+
-Enter a descriptive name so you can recognize the policy.
-
-. Optionally, add a description for the policy in the *Description* field.
+. Enter a descriptive name that can be recognized and a description(optional) for the policy and select *Continue*.
 +
 For example, describe what this traffic classification policy applies to and what it will limit.
-
-. Create one or more matching rules for the policy.
 +
-Matching rules control which entities will be affected by this traffic classification policy. For example, select Tenant if you want this policy to apply to the network traffic for a specific tenant. Or select Endpoint if you want this policy to apply to the network traffic on a specific load balancer endpoint.
 
- .. Select *Create* in the *Matching Rules* section.
+. Select *Add rule* or select *Add* from the table and select the following details to create a matching rule to the policy. Any policy that you create should have at least one matching rule.
 +
+
+[cols="1a,2a" options="header"]
+|===
+// header row
+|Entities |Description
+
+|Type
+|Select the type of traffic that the matching rule applies to. Traffic types are Bucket, bucket Regex, CIDR, load balancer endpoint, tenant.
+
+|Match value
+|Enter the value that matches for the selected Type.
+
+|Inverse match
+|Select an Inverse match rule if you want to exclude traffic for a selected entity for a policy.
+
+// table end
+|===
++
+
+. Select *Add a limit* to add one or more limits to control the network traffic matched by a rule. This is an optional step. 
+After you select *Add a limit*, select the values for the following fields:
++
+
+[cols="1a,2a" options="header"]
+|===
+// header row
+|Entities |Description
+
+|Type
+|The type of limit you want to apply to the network traffic matched by the rule. For example, you can limit bandwidth or request rate.
+Hint: Aggregate rate limits are in use. Per-request rate limits are not available.
+
+|Applies to
+|Whether this limit applies to client read requests (GET or HEAD) or write requests (PUT, POST, or DELETE).
+
+|Value
+|The value that network traffic will be limited to, based on the Unit you select. For example, enter 10 and select MiBs to prevent the network traffic matched by this rule from exceeding 10 MiBs.
+
+|Unit
+|The unit that describes the value you entered.
+
+// table end
+|===
++
+
+. Select *Save and continue*. You must make sure that you read and review the Traffic classification policy before saving. Use *Previous* button to go back and make changes as required.
+
+The policy is saved and is listed in the Traffic Classification Policies table.
+
 The Create Matching Rule dialog box appears.
 +
 image::../media/traffic_classification_policy_create_matching_rule.png[Create Matching Rule]
@@ -72,7 +112,8 @@ The rule is created and is listed in the Matching Rules table.
 +
 image::../media/traffic_classification_policy_rules.png[Traffic Policy Matching Rules]
 
- .. Repeat these steps for each rule you want to create for the policy.
+
+.. Repeat these steps for each rule you want to create for the policy.
 +
 NOTE: Traffic that matches any rule is handled by the policy.
 
