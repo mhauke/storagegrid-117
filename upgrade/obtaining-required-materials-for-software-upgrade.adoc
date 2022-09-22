@@ -14,11 +14,6 @@ Before you begin the software upgrade, you must obtain all required materials so
 [cols="1a,3a" options="header"]
 |===
 | Item| Notes
-a|
-StorageGRID upgrade files
-a|
-<<Download the StorageGRID upgrade files>> to your service laptop.
-
 
 a|
 Service laptop
@@ -34,11 +29,6 @@ a|
 Browser support typically changes for each StorageGRID release. Make sure your browser is compatible with the new StorageGRID version.
 
 a|
-Recovery Package (`.zip`) file
-a|
-<<Download the Recovery Package>> before upgrading, and save the file in a safe location. The Recovery Package file allows you to restore the system if a failure occurs.
-
-a|
 `Passwords.txt` file
 a|
 This file is part of the Recovery Package `.zip` file. You must obtain the latest version of the Recovery Package.
@@ -51,7 +41,6 @@ Related documentation
 a|
 
 * xref:../release-notes/index.adoc[Release notes] for StorageGRID 11.7. Be sure to read these carefully before starting the upgrade.
-* Instructions for xref:../admin/index.adoc[administering StorageGRID].
 * If you are upgrading a Linux deployment, the StorageGRID installation instructions for your Linux platform:
 ** xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
 ** xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
@@ -108,27 +97,6 @@ Every platform requires the `.upgrade` archive.
 +
 NOTE: No additional files are required for the SG100 or SG1000.
  
-
-
-== Download the Recovery Package
-
-The Recovery Package file allows you to restore the StorageGRID system if a failure occurs. Download the current Recovery Package file before making grid topology changes to the StorageGRID system or before upgrading software. Then, download a new copy of the Recovery Package after making grid topology changes or after upgrading software.
-
-.What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You must have the provisioning passphrase.
-* You must have specific access permissions.
-
-.Steps
-. Select *Maintenance* > *System* > *Recovery Package*.
-. Enter the provisioning passphrase, and select *Start Download*.
-+
-The download starts immediately.
-
-. When the download completes, confirm that you can access the contents, including the `Passwords.txt` file.
-. Copy the downloaded Recovery Package file (`.zip`) to two safe, secure, and separate locations.
-+
-IMPORTANT: The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
 
 
 

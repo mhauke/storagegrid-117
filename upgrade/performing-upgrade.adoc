@@ -2,21 +2,19 @@
 permalink: upgrade/performing-upgrade.html
 sidebar: sidebar
 keywords: upgrade, how to perform a software upgrade
-summary: 'When you are ready to perform the upgrade, you select the .upgrade archive and enter the provisioning passphrase. As an option, you can run the upgrade prechecks before performing the actual upgrade.'
+summary: 'You can upgrade to StorageGRID 11.7 and apply the latest hotfix for that release at the same time. The StorageGRID upgrade page provides the recommended upgrade path and links directly to the correct download pages.'
 ---
 = Perform the upgrade
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-When you are ready to perform the upgrade, you select the `.upgrade` archive and enter the provisioning passphrase. As an option, you can run the upgrade prechecks before performing the actual upgrade.
+You can upgrade to StorageGRID 11.7 and apply the latest hotfix for that release at the same time. The StorageGRID upgrade page provides the recommended upgrade path and links directly to the correct download pages.
+
 
 .What you'll need
 You have reviewed all of the considerations and completed all of the planning and preparation steps.
 
-
-
-You can upgrade to StorageGRID 11.7 and apply the latest hotfix for that release at the same time. The StorageGRID upgrade page provides the recommended upgrade path and links directly to the correct download pages.
 
 == Access StorageGRID Upgrade page
 
@@ -35,7 +33,7 @@ The StorageGRID Upgrade page appears.
 ====
 If no update path is shown, your browser might not be able to access the NetApp Support Site, or the *Check for software updates* check box on the AutoSupport page (*SUPPORT* > *Tools* > *AutoSupport*) might be disabled.  
 
-Go to the https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID] to download the files you need.
+Go to the https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^] to download the files you need.
 
 ==== 
 
@@ -46,7 +44,7 @@ Go to the https://mysupport.netapp.com/site/products/all/details/storagegrid/dow
 .. Select the upgrade file you downloaded: `NetApp_StorageGRID_11.7.0_Software_uniqueID.upgrade`
 .. Select *Open*.
 +
-The file is uploaded and validated. When the validation process is done, a green checkmark appears next to the upgrade file name.
+The file is uploaded and validated. When the validation process is done, a green checkmark appears next to the file name.
 
 . If you downloaded a hotfix file, upload that file as well. The hotfix will be automatically applied as part of the upgrade process.
 
@@ -57,9 +55,15 @@ Running prechecks allows you to detect and resolve any upgrade issues before you
 
 . For the *Run prechecks* step, start by entering the provisioning passphrase for your grid.
 
-. xref:obtaining-required-materials-for-software-upgrade.adoc#download-the-recovery-package[Download the current copy of the Recovery Package].
+. Select *Download recovery package*.
 +
-IMPORTANT: You should download the current copy of the Recovery Package file before you upgrade the primary Admin Node. The Recovery Package file allows you to restore the system if a failure occurs. 
+You should download the current copy of the Recovery Package file before you upgrade the primary Admin Node. The Recovery Package file allows you to restore the system if a failure occurs. 
+
+. When the file is downloaded, confirm that you can access the contents, including the `Passwords.txt` file.
+
+. Copy the downloaded file (`.zip`) to two safe, secure, and separate locations.
++
+IMPORTANT: The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system.
 
 . Select *Run prechecks*, and wait for the prechecks to complete. 
 
