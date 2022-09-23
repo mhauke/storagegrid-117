@@ -11,10 +11,8 @@ summary: 'You can upgrade to StorageGRID 11.7 and apply the latest hotfix for th
 [.lead]
 You can upgrade to StorageGRID 11.7 and apply the latest hotfix for that release at the same time. The StorageGRID upgrade page provides the recommended upgrade path and links directly to the correct download pages.
 
-
 .What you'll need
 You have reviewed all of the considerations and completed all of the planning and preparation steps.
-
 
 == Access StorageGRID Upgrade page
 
@@ -27,26 +25,23 @@ The StorageGRID Upgrade page appears.
 
 == Select files
 
-. For the *Select files* step on the StorageGRID Upgrade page, start by selecting the links in the upgrade path to download each required file from the NetApp Support Site. You should install the recommended upgrades and hotfixes in the order shown.
+. For the *Select files* step, review the update path to see which major versions (for example, 11.7.0) and hotfixes (for example, 11.7.0.1) you must install to get to the latest StorageGRID release. You should install the recommended versions and hotfixes in the order shown.
 +
 [NOTE]
 ====
 If no update path is shown, your browser might not be able to access the NetApp Support Site, or the *Check for software updates* check box on the AutoSupport page (*SUPPORT* > *Tools* > *AutoSupport*) might be disabled.  
 
-Go to the https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^] to download the files you need.
+Go to the https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^] to determine if a new version or hotfix is available and to download the files you need.
 
 ==== 
 
+. From the Download files section, select each *Download* link to download the required files from the NetApp Support Site. 
 
-. Upload the upgrade file to StorageGRID:
-
-.. Select *Browse*.
-.. Select the upgrade file you downloaded: `NetApp_StorageGRID_11.7.0_Software_uniqueID.upgrade`
-.. Select *Open*.
+. Select *Browse* to upload the version upgrade file to StorageGRID: `NetApp_StorageGRID_11.7.0_Software_uniqueID.upgrade`
 +
-The file is uploaded and validated. When the validation process is done, a green checkmark appears next to the file name.
+When the upload and validation process is done, a green checkmark appears next to the file name.
 
-. If you downloaded a hotfix file, upload that file as well. The hotfix will be automatically applied as part of the upgrade process.
+. If you downloaded a hotfix file, select *Browse* to upload that file. The hotfix will be automatically applied as part of the version upgrade.
 
 . Select *Continue*.
 
@@ -67,19 +62,21 @@ IMPORTANT: The Recovery Package file must be secured because it contains encrypt
 
 . Select *Run prechecks*, and wait for the prechecks to complete. 
 
-. Review the details for each reported precheck error or warning, and follow the instructions to resolve any reported errors.
+. Review the details for each reported precheck, and follow the instructions to resolve any reported errors.
++
+You must resolve all precheck errors before you can upgrade your system. However, you do not need to address precheck warnings before upgrading.
 +
 IMPORTANT: If you have opened any custom firewall ports, you are notified during the precheck validation. You must contact technical support before proceeding with the upgrade.
 
 . If you made any configuration changes to resolve the reported issues, select *Run prechecks* again to get updated results.
 +
-When all errors have been resolved and the prechecks are complete, you are prompted to start the upgrade.
+If all errors have been resolved, you are prompted to start the upgrade.
 
 
 == Start upgrade and upgrade primary Admin Node
 When you start the upgrade, the upgrade prechecks are run again, and the primary Admin Node is automatically upgraded. This part of the upgrade can take up to 30 minutes.
 
-Note that you will not be able to access the Grid Manager during the first part of the primary Admin Node upgrade. Audit logs will also be unavailable.
+IMPORTANT: You will not be able to access any other Grid Manager pages while the primary Admin Node is being upgraded. Audit logs will also be unavailable.
 
 . Select *Start upgrade*.
 +
@@ -90,14 +87,17 @@ A warning appears to remind you will temporarily lose access to the Grid Manager
 . Wait for the upgrade prechecks to be performed and for the primary Admin Node to be upgraded. 
 +
 NOTE: If any precheck errors are reported, resolve them and select *Start upgrade* again.
-+
-While the primary Admin Node is being upgraded, multiple *503: Service Unavailable* and *Problem connecting to the server* messages appear, which you can ignore.
-+
-image::../media/software_upgrade_503_error.png[Software Upgrade 503 Error]
-+
-image::../media/software_upgrade_problem_connecting_error.png[Software Upgrade Problem Connecting Error]
 
-. As soon as the primary Admin Node has been upgraded, select *Continue* to upgrade the other nodes. 
+. As soon as the primary Admin Node has been upgraded, select *Continue* to upgrade the other nodes.
++
+[NOTE]
+====
+
+If you refresh your browser or navigate to another Grid Manager page while the primary Admin Node is being upgraded, you might see multiple *503: Service Unavailable* and *Problem connecting to the server* messages. You can safely ignore these messages&#8212;they will stop appearing soon as the node is upgraded.
+
+====
+
+
 
 == Upgrade other nodes
 
@@ -115,7 +115,7 @@ IMPORTANT: When the upgrade starts on a grid node, the services on that node are
 
 .  When prompted, enter your provisioning passphrase and xref:obtaining-required-materials-for-software-upgrade.adoc#download-the-recovery-package[download a new copy of the Recovery Package].
 +
-IMPORTANT: You must download a new copy of the Recovery Package file after  the primary Admin Node is upgraded. The Recovery Package file allows you to restore the system if a failure occurs.
+IMPORTANT: You should download a new copy of the Recovery Package file after  the primary Admin Node is upgraded. The Recovery Package file allows you to restore the system if a failure occurs.
 
 . Review the status tables for each type of node. There are tables for  non-primary Admin Nodes, Gateway Nodes, Storage Nodes, and Archive Nodes.
 +
@@ -127,32 +127,35 @@ A grid node can be in one of these stages when the tables first appear:
 
 * Waiting to be approved, or approved and waiting in the upgrade queue
 
-. [[approval-step]]When you are ready to add grid nodes to the upgrade queue (or if you need to remove approved nodes from the queue), follow these steps:
+. [[approval-step]]When you are ready to add grid nodes to the upgrade queue (or if you need to remove approved nodes from the queue), use these instructions:
 +
 
 [cols="1a,1a" options="header"]
 |===
-| To do this | Select this
+| Task | Instruction
+
+|Search for specific nodes, such as all nodes at a particular site
+|Enter the search string in the *Search* field
 
 |Add all nodes to the queue
-|*Approve all nodes*
+|Select *Approve all nodes*
 
 |Add all nodes of the same type to the queue (for example, all Storage Nodes) 
-|The *Approve all* button for the node type
+|Select the *Approve all* button for the node type
 
 If you approve more than one node of the same type, the nodes will be upgraded one at a time.
 
 |Add individual nodes to the queue
-|The *Approve* button for the node
+|Select the *Approve* button for the node
 
 |Remove all nodes from the queue
-|*Remove all nodes* 
+|Select *Remove all nodes* 
 
 |Remove all nodes of the same type from the queue
-|The *Remove all* button for the node type
+|Select the *Remove all* button for the node type
 
 |Remove individual nodes from the queue
-|The *Remove from queue* button for the node
+|Select the *Remove from queue* button for the node
 
 |===
 
