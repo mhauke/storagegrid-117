@@ -4,8 +4,7 @@ sidebar: sidebar
 keywords: edit traffic classification policy
 summary: 'You can edit a traffic classification policy to change its name or description, or to create, edit, or delete any rules or limits for the policy.'
 ---
-= Edit a traffic classification policy (DOC WORK IN PROGRESS, DO NOT REVIEW)
-:icons: font
+= Edit traffic classification policy :icons: font
 :imagesdir: ../media/
 
 [.lead]
@@ -21,15 +20,20 @@ You can edit a traffic classification policy to change its name or description, 
 . Select *CONFIGURATION* > *Network* > *Traffic classification*.
 +
 The Traffic Classification Policies page appears, and the existing policies are listed in the table.
-+
-image::../media/traffic_classification_policies_main_screen_w_examples.png[Traffic Classification Policy Examples]
 
-. Select the radio button to the left of the policy you want to edit.
+. Select the policy you want to edit.
+. From the *Actions*, select *Edit*.
+You can also edit a policy by opening the policy details sidebar and selecting *Edit*.
 . Select *Edit*.
 +
-The Edit Traffic Classification Policy dialog box appears.
+The Edit Traffic Classification Policy wizard appears.
+
 +
-image::../media/traffic_classification_policy_edit.png[Edit Traffic Classification Policy]
+.. Edit the traffic classification policy name or description in the Enter policy name step and select continue.
+.. In the Add matching rules step, edit the Type and Match value.
+.. In the Set limits step, you can edit the Type, Value, or Unit.
+ 
+
 
 . Create, edit, or remove matching rules and limits as needed.
  .. To create a matching rule or limit, select *Create*, and follow the instructions for creating a rule or creating a limit.
