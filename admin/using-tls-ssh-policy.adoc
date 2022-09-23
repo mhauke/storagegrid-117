@@ -25,11 +25,16 @@ Select a security policy to control how TLS and SSH encrypt data in motion.
 +
 
 image::../media/securitysettings_tls_ssh_policies_homepg.png[TLS and SSH policies]
++
 
 . Select *View details* to review each policy.
 +
 
-NOTE: Some StorageGRID services have not been updated to use the ciphers in these policies.
+. Select *Use policy* to apply one of the provided policies.
+A red checkmark with *Current policy* is seen on the policy that is applied.
++
+
+NOTE: Modern compatibility is the selected default policy. Some StorageGRID services have not been updated to use the ciphers in these policies.
 +
 
 [cols="1a,2a" options="header"]
@@ -55,10 +60,10 @@ NOTE: Some StorageGRID services have not been updated to use the ciphers in thes
 |===
 +
 
-. Select *Use policy* to apply one of the provided policies, or create a custom policy, as follows:
+. You can also create a custom policy to apply your ciphers as follows:
 
 .. Select *View details* for one of the provided policies.
 .. Select *Copy to clipboard* and *Cancel*.
-.. For the Custom policy, select *Configure and use*. 
-.. Paste the JSON you copied and make any required changes to create a custom policy that meets your requirements.
+.. Select *Configure and use* from the *Custom policy*. 
+.. Paste the JSON you copied and make required changes to create a custom policy that meets your requirements.
 .. Select *Use policy*.
