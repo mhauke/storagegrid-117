@@ -15,88 +15,33 @@ Before you begin the software upgrade, you must obtain all required materials so
 |===
 | Item| Notes
 
-a|
-Service laptop
-a|
-The service laptop must have:
+|Service laptop
+|The service laptop must have:
 
 * Network port
 * SSH client (for example, PuTTY)
 
-a|
-xref:../admin/web-browser-requirements.adoc[Supported web browser]
-a|
-Browser support typically changes for each StorageGRID release. Make sure your browser is compatible with the new StorageGRID version.
+|xref:../admin/web-browser-requirements.adoc[Supported web browser]
+|Browser support typically changes for each StorageGRID release. Make sure your browser is compatible with the new StorageGRID version.
 
-a|
-`Passwords.txt` file
-a|
-This file is part of the Recovery Package `.zip` file. You must obtain the latest version of the Recovery Package.
-a|
-Provisioning passphrase
-a|
-The passphrase is created and documented when the StorageGRID system is first installed. The provisioning passphrase is not listed in the `Passwords.txt` file.
-a|
-Related documentation
-a|
+|`Passwords.txt` file
+|This file is part of the Recovery Package `.zip` file. You must obtain the latest version of the Recovery Package.
 
-* xref:../release-notes/index.adoc[Release notes] for StorageGRID 11.7. Be sure to read these carefully before starting the upgrade.
-* If you are upgrading a Linux deployment, the StorageGRID installation instructions for your Linux platform:
-** xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-** xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
+|Provisioning passphrase
+|The passphrase is created and documented when the StorageGRID system is first installed. The provisioning passphrase is not listed in the `Passwords.txt` file.
 
-* Other StorageGRID documentation, as required.
+|Linux RPM or DEB archive
+|If any nodes are deployed on Linux hosts, you must xref:linux-installing-rpm-or-deb-package-on-all-hosts.adoc[download and install the RPM or DEB package on all hosts] before you start the upgrade. 
+    
+|StorageGRID documentation
+|* xref:../release-notes/index.adoc[Release notes] for StorageGRID 11.7 (sign in required). Be sure to read these carefully before starting the upgrade. 
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/StorageGRID_software_upgrade_resolution_guide[StorageGRID software upgrade resolution guide^] for the major version you are upgrading to (sign in required)
+
+* Other https://docs.netapp.com/us-en/storagegrid-116/index.html[StorageGRID documentation^], as required.
 
 |===
 
-== Download the StorageGRID upgrade files
 
-You must download one or more files, depending on where your nodes are installed.
-
-* *All platforms*: `.upgrade` file
-
-If any nodes are deployed on Linux hosts, you must also download an RPM or DEB archive, which you will install before you start the upgrade:
-
-* *Red Hat Enterprise Linux or CentOS*: An additional RPM file (`.zip` or `.tgz`)
-* *Ubuntu or Debian*: An additional DEB file (`.zip` or `.tgz`)
-
-
-.Steps
-. Go to https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^].
-
-. Select the button for downloading the latest release, or select another version from the drop-down menu and select *Go*.
-+
-StorageGRID software versions have this format: 11._x.y_. StorageGRID hotfixes have this format: 11._x.y.z_.
-
-. Sign in with the username and password for your NetApp account.
-. If a Caution/MustRead statement appears, read it and select the check box.
-+
-This statement appears if there is a required hotfix for the release.
-
-. Read the End User License Agreement, select the check box, and then select *Accept & Continue*.
-+
-The downloads page for the version you selected appears. The page contains three columns:
-
- ** Install StorageGRID
- ** Upgrade StorageGRID
- ** Support files for StorageGRID Appliances
-
-. In the *Upgrade StorageGRID* column, select and download the `.upgrade` archive.
-+
-Every platform requires the `.upgrade` archive.
-
-. If any nodes are deployed on Linux hosts, also download the RPM or DEB archive in either `.tgz` or `.zip` format. Select the `.zip` file if you are running Windows on the service laptop.
-
-* Red Hat Enterprise Linux or CentOS +
-`StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` +
-`StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz`
-
-* Ubuntu or Debian +
-`StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip` +
-`StorageGRID-Webscale-_version_-DEB-_uniqueID_.tgz`
-+
-NOTE: No additional files are required for the SG100 or SG1000.
- 
 
 
 

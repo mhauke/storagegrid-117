@@ -11,6 +11,12 @@ summary: 'You might see issues with the Grid Manager or the Tenant Manager after
 [.lead]
 You might see issues with the Grid Manager or the Tenant Manager after upgrading to a new version of StorageGRID software.
 
+== Grid Manager displays multiple error messages during upgrade
+
+If you refresh your browser or navigate to another Grid Manager page while the primary Admin Node is being upgraded, you might see multiple "`503: Service Unavailable`" and "`Problem connecting to the server`" messages. You can safely ignore these messages—they will stop appearing soon as the node is upgraded.
+
+If these messages appear more than an hour after you started the upgrade, something might have occurred that prevented the primary Admin Node from being upgraded. If you are unable to resolve the issue on your own, contact technical support.
+
 == Web interface does not respond as expected
 
 The Grid Manager or the Tenant Manager might not respond as expected after StorageGRID software is upgraded.

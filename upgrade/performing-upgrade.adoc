@@ -69,7 +69,6 @@ IMPORTANT: If you have opened any custom firewall ports, you are notified during
 +
 If all errors have been resolved, you are prompted to start the upgrade.
 
-
 == Start upgrade and upgrade primary Admin Node
 When you start the upgrade, the upgrade prechecks are run again, and the primary Admin Node is automatically upgraded. This part of the upgrade can take up to 30 minutes.
 
@@ -86,15 +85,6 @@ A warning appears to remind you will temporarily lose access to the Grid Manager
 NOTE: If any precheck errors are reported, resolve them and select *Start upgrade* again.
 
 . As soon as the primary Admin Node has been upgraded, select *Continue* to upgrade the other nodes.
-+
-[NOTE]
-====
-
-If you refresh your browser or navigate to another Grid Manager page while the primary Admin Node is being upgraded, you might see multiple *503: Service Unavailable* and *Problem connecting to the server* messages. You can safely ignore these messages&#8212;they will stop appearing soon as the node is upgraded.
-
-====
-
-
 
 == Upgrade other nodes
 
