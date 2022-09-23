@@ -44,7 +44,7 @@ The policy in this example has three rules:
 |X-men
 |
  ** Tenant A
- ** User metadata (series=x-men)
+ ** Object size (greater than 5 MB)
 |2 copies at two data centers
 |2 years
 
@@ -71,7 +71,7 @@ image::../media/ilm_policies_viewing_proposed.png[ILM Policies Viewing Proposed]
 +
 In the example, the `Havok.png` and `Warpath.jpg` objects were correctly matched by the X-men rule. The `Fullsteam.png` object, which does not include `series=x-men` user metadata, was not matched by the X-men rule but was correctly matched by the PNGs rule. The default rule was not used because all three objects were matched by other rules.
 +
-image::../media/ilm_policy_simulation_results.gif[Simulation results]
+image::../media/ilm_policy_simulation_results.png[Simulation results]
 
 == Example 1: Verify rules when simulating a proposed ILM policy
 
