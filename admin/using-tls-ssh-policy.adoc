@@ -31,7 +31,7 @@ image::../media/securitysettings_tls_ssh_policies_homepg.png[TLS and SSH policie
 +
 
 . Select *Use policy* to apply one of the provided policies.
-A red checkmark with *Current policy* can be seen on the policy that is applied.
+A green checkmark next to *Current policy* can be seen on the policy that is applied.
 +
 
 NOTE: Modern compatibility is the selected default policy. Some StorageGRID services have not been updated to use the ciphers in these policies.
@@ -67,3 +67,7 @@ NOTE: Modern compatibility is the selected default policy. Some StorageGRID serv
 .. Select *Configure and use* from the *Custom policy*. 
 .. Paste the JSON you copied and make required changes to create a custom policy that meets your requirements.
 .. Select *Use policy*.
++
+
+A green checkmark next to *Current policy* can be viewed in the Custom policy tile. Select *Edit configuration* to make more changes to the new custom policy.
+
