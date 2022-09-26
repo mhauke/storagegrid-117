@@ -2,14 +2,16 @@
 permalink: monitor/viewing-dashboard.html
 sidebar: sidebar
 keywords: how to view dashboard, how to configure dashboard
-summary: 'You can use the dashboard to monitor system activities at a glance. The dashboard includes information about system health, usage metrics, and operational trends.'
+summary: 'You can use the dashboard to monitor system activities at a glance. You can create custom dashboards to monitor your implementation of StorageGRID.'
 ---
 = View and manage the dashboard
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the dashboard to monitor system activities at a glance. The dashboard includes information about system health, usage metrics, and operational trends.
+You can use the dashboard to monitor system activities at a glance. You can create custom dashboards to monitor your implementation of StorageGRID.
+
+NOTE: To change units for the storage values displayed in the Grid Manager, select the user drop-down in the upper right of the Grid Manager, then select *User Preferences*.
 
 image::../media/grid_manager_dashboard.png[Grid Manager dashboard]
 
@@ -17,7 +19,7 @@ image::../media/grid_manager_dashboard.png[Grid Manager dashboard]
 
 The dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards.
 
-You can use the system-provided dashboard as is. Additionally, you can create custom dashboards that contain only the tabs and cards that are relevant to monitoring your specific implementation of StorageGRID.
+You can use the system-provided dashboard as is. Additionally, you can create custom dashboards that contain only the tabs and cards that are relevant to monitoring your implementation of StorageGRID.
 
 The system-provided dashboard tabs contain cards with the following types of information:
 

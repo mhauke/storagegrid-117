@@ -34,7 +34,7 @@ When you create a tenant account, you specify the following information:
 * Display name for the tenant account.
 * Which client protocol will be used by the tenant account (S3 or Swift).
 * For S3 tenant accounts: Whether the tenant account has permission to use platform services with S3 buckets. If you permit tenant accounts to use platform services, you must ensure that the grid is configured to support their use. See xref:../admin/manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts].
-* Optionally, a storage quota for the tenant account--the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. If the quota is exceeded, the tenant cannot create new objects.
+* Optionally, a storage quota for the tenant account, which is the maximum amount of storage available for the tenant's objects. If the quota is exceeded, the tenant cannot create new objects.
 +
 NOTE: A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).
 
