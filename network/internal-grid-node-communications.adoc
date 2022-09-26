@@ -9,7 +9,8 @@ summary: 'The StorageGRID internal firewall only allows incoming connections to 
 :imagesdir: ../media/
 
 [.lead]
-The StorageGRID internal firewall only allows incoming connections to specific ports on the Grid Network, with the exception of ports 22, 80, 123, and 443 (see the information about external communications). Connections are also accepted on ports defined by load balancer endpoints.
+The StorageGRID internal firewall only allows incoming connections to specific ports on the Grid Network, with the exception of ports 22, 80, 123, and 443 (see the information about external communications). Connections are also accepted on ports defined by load balancer endpoints and ports allowed to be accessed by hosts or subnets defined on the Privileged IP address list tab of the xref:../admin/configure-firewall-controls.adoc[Firewall control] page. 
+
 
 NOTE: NetApp recommends that you enable Internet Control Message Protocol (ICMP) traffic between grid nodes. Allowing ICMP traffic can improve failover performance when a grid node cannot be reached.
 
