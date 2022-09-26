@@ -2,33 +2,32 @@
 permalink: admin/manage-firewall-controls.html
 sidebar: sidebar
 keywords: firewall controls, untrusted client network, privileged IP address, manage external access
-summary: 'StorageGRID includes a firewall on each node that enhances the security of your grid by enabling you to customize access to the Grid Network, Admin Network, and Client Network.'
+summary: 'StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to customize access to the Grid Network, Admin Network, and Client Network.'
 ---
 = Manage firewall controls
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to control access to the nodes from the Grid Network, Admin Network, and Client Network. You should use the firewall to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the *Firewall control* page are deployed to each node. 
+StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to control access to the nodes from the Grid Network, Admin Network, and Client Network. Use the firewall to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the Firewall control page are deployed to each node.
 
-Use the three tabs on the *Firewall control* page to: 
+Use the three tabs on the Firewall control page to customize the amount of access you need for your grid. 
 
-* Create a list of privileged IP addresses that can access ports that would otherwise be blocked.
-* Manage external network access to your nodes.
-* Manage an untrusted Client Network.
+*Privileged IP address list*: Use this tab to allow selected access to closed ports. 
+*Manage external network access*: Use this tab to open or close individual ports that are open by default.
+*Untrusted Client Network*: Use this tab to specify whether a node trusts inbound traffic from the Client Network. 
+The settings on this tab override the settings in the Manage external access tab. A port in the Untrusted Client Network is open on the client network, regardless of whether that port is closed on other networks.
 
-These three tabs can be used together to customize the amount of access you need for your grid. The settings you make on one tab can affect the access changes you might make on another tab. 
-
-You can use the privileged IP address list to allow selected access to closed ports. The Manage external access tab can be used to open or close individual ports that are open by default. The Untrusted Client Network tab settings override the settings in the Manage external access tab. A port in the Untrusted Client Network is open on the client network, regardless of whether that port is closed on other networks. 
-
+ NOTE: The settings you make on one tab can affect the access changes you make on another tab.
+  
 Be sure to check the settings on all tabs to ensure your network behaves in the way you expect. 
 
 To configure internal firewall controls, see xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
 For more information on external firewalls and network security, see xref:../admin/controlling-access-through-firewalls.adoc[Control access through firewalls].
 
-== the Privileged IP address list and Manage external access tabs: overview
-You can enhance the security of your grid by limiting external access to the ports on your grid nodes. The Privileged IP address list tab enables you to register one or more IP addresses that are granted access to grid ports that are closed. The Manage external access tab enables you to close external access to selected external ports or all open external ports (external ports are ports that are accessible by non-grid nodes by default). These two tabs often can be used together to customize the exact network access you need to allow for your grid.
+== Privileged IP address list and Manage external access tabs
+The Privileged IP address list tab enables you to register one or more IP addresses that are granted access to grid ports that are closed. The Manage external access tab enables you to close external access to selected external ports or all open external ports (external ports are ports that are accessible by non-grid nodes by default). These two tabs often can be used together to customize the exact network access you need to allow for your grid.
 
 NOTE: Privileged IPs do not have internal grid access by default. 
 
@@ -43,7 +42,7 @@ After you save your configuration, hosts will not be able to access port 443, bu
 
 === Example 2: Use a jump host for maintenance tasks
 
-You might want to use a jump host (a security hardened host) for network administration. For example, you could use these general steps:
+Suppose you want to use a jump host (a security hardened host) for network administration. You could use these general steps:
 
 . Use the Privileged IP address list tab to add the IP address of the jump host. 
 . Use the Manage external access tab to block all ports.
@@ -63,18 +62,18 @@ IMPORTANT: You must be sure to add the privileged IP address before you block po
 After you save your configuration, port 22 and SSH service will be available to hosts on the privileged IP address list. All other hosts will be denied access to the service no matter what interface the request comes from.
 
 === Example 4: Disable access to unused services
-You could disable at a network level some services that you do not intend to use. For example if you have not intention of providing Swift access, you could perform the following general steps: 
+At a network level, you could disable some services that you do not intend to use. For example if you will not provide Swift access, you would perform the following general steps: 
 
 . Use the toggle on the Manage external access tab to block port 18083. 
 . Use the toggle on the Manage external access tab to block port 18085.
 
 After you save your configuration, the Storage Node no longer allows Swift connectivity to Amazon Web Services, but continues to allow access to other services on unblocked ports.
 
-== Untrusted Client Networks tab: overview
+== Untrusted Client Networks tab
 
 If you are using a Client Network, you can help secure StorageGRID from hostile attacks by accepting inbound client traffic only on explicitly configured endpoints or additional ports you select on this tab. 
 
-By default, the Client Network on each grid node is _trusted_. That is, by default, StorageGRID trusts inbound connections to each grid node on all available external ports (see the information about external communications in the xref:../network/index.adoc[Networking guidelines]).
+By default, the Client Network on each grid node is _trusted_. That is, by default, StorageGRID trusts inbound connections to each grid node on all xref:../network/index.adoc[available external ports].
 
 You can reduce the threat of hostile attacks on your StorageGRID system by specifying that the Client Network on each node be _untrusted_. If a node's Client Network is untrusted, the node only accepts inbound connections on ports explicitly configured as load balancer endpoints and any additional ports you designate using the Untrusted Client Network tab on the Firewall Controls page. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] and xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
@@ -83,15 +82,15 @@ You can reduce the threat of hostile attacks on your StorageGRID system by speci
 Suppose you want a Gateway Node to refuse all inbound traffic on the Client Network except for HTTPS S3 requests. You would perform these general steps:
 
 . From the Load Balancer Endpoints page, configure a load balancer endpoint for S3 over HTTPS on port 443.
-. From the *Firewall controls* page, select Untrusted to specify that the Client Network on the Gateway Node is untrusted.
+. From the Firewall controls page, select Untrusted to specify that the Client Network on the Gateway Node is untrusted.
 
 After you save your configuration, all inbound traffic on the Gateway Node's Client Network is dropped except for HTTPS S3 requests on port 443 and ICMP echo (ping) requests.
 
 === Example 2: Storage Node sends S3 platform services requests
 
-Suppose you want to enable outbound S3 platform service traffic from a Storage Node, but you want to prevent any inbound connections to that Storage Node on the Client Network. You would perform this general step:
+Suppose you want to enable outbound S3 platform services traffic from a Storage Node, but you want to prevent any inbound connections to that Storage Node on the Client Network. You would perform this general step:
 
-* From the Untrusted Client Networks tab of the *Firewall controls* page, indicate that the Client Network on the Storage Node is untrusted.
+* From the Untrusted Client Networks tab of the Firewall controls page, indicate that the Client Network on the Storage Node is untrusted.
 
 After you save your configuration, the Storage Node no longer accepts any incoming traffic on the Client Network, but it continues to allow outbound requests to Amazon Web Services.
 
@@ -99,7 +98,7 @@ After you save your configuration, the Storage Node no longer accepts any incomi
 
 Suppose you want to allow Grid Manager access only on a specific subnet. You would perform the following steps: 
 
-. Attach the client network of your Admin Node(s) to the subnet.
+. Attach the client network of your Admin Nodes to the subnet.
 . Use the Untrusted Client Network tab to configure the client network as untrusted.
 . In the *Additional ports open on untrusted Client Network* section of the tab, add ports 443 or 8443.
 . Use the Manage external access tab to block all external ports (with or without privileged IPs set for hosts outside that subnet).
