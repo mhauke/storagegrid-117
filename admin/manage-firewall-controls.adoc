@@ -13,8 +13,8 @@ StorageGRID includes an internal firewall on each node that enhances the securit
 
 Use the three tabs on the Firewall control page to customize the amount of access you need for your grid. 
 
-*Privileged IP address list*: Use this tab to allow selected access to closed ports. 
-*Manage external network access*: Use this tab to open or close individual ports that are open by default.
+*Privileged IP address list*: Use this tab to allow selected access to closed ports. You can add IP addresses or subnets in CIDR notation that can access ports closed using the Manage external access tab.
+*Manage external network access*: Use this tab to close ports that are open by default, or reopen ports previously closed.
 *Untrusted Client Network*: Use this tab to specify whether a node trusts inbound traffic from the Client Network. 
 The settings on this tab override the settings in the Manage external access tab. A port in the Untrusted Client Network is open on the client network, regardless of whether that port is closed on other networks.
 
