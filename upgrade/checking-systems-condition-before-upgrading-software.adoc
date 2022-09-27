@@ -27,10 +27,8 @@ NOTE: Contact technical support if a task does not finish or release its lock.
 
 . Refer to xref:../network/internal-grid-node-communications.adoc[Internal grid node communications] and xref:../network/external-communications.adoc[External communications] to ensure that all required ports for StorageGRID 11.7 are opened before you upgrade.
 +
-The following new internal ports are used for node-to-node communications in StorageGRID 11.7:
- 
-* *1055, 8011, and 10342*.  Internal TCP ports used when you add nodes in an expansion or recovery operation. Confirm these ports are open between all existing nodes and any new nodes and subnets.
+The following new internal port is required for node-to-node communications in StorageGRID 11.7:
 
-* *18086*. Internal TCP port used for new LDR service. Confirm this port is open from all grid nodes to all Storage Nodes.
+* *18086*. Internal TCP port used for new LDR service. Before upgrading, confirm this port is open from all grid nodes to all Storage Nodes.
 +
 IMPORTANT: If you have opened any custom firewall ports, you are notified during the upgrade precheck. You must contact technical support before proceeding with the upgrade.
