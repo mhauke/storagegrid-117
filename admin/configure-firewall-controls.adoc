@@ -25,7 +25,7 @@ NOTE: When changing the configuration of the Client Network, existing client con
 
 StorageGRID includes an internal firewall on each node that enables you to open or close some of the ports on the nodes of your grid. You can use the Firewall control tabs to open or close ports that are open by default on the Grid Network, Admin Network, and Client Network. You can also create a list of privileged IP addresses that can access grid ports that are closed. If you are using a Client Network, you can specify whether a node trusts inbound traffic from the Client Network, and you can configure the access of specific ports on the Client Network.
 
-Limiting the number of ports open to IP addresses outside of your grid to only those that are absolutely necessary enhances the security of your grid. You use the settings on each of the three *Firewall control* tabs to ensure only the needed ports are open.
+Limiting the number of ports open to IP addresses outside of your grid to only those that are absolutely necessary enhances the security of your grid. You use the settings on each of the three Firewall control tabs to ensure only the needed ports are open.
 
 For more information on using firewall controls, including examples, see xref:../admin/manage-firewall-controls.adoc[Manage firewall controls].
 
@@ -37,21 +37,9 @@ For more information on external firewalls and network security, see xref:../adm
 
 Select *CONFIGURATION* > *Security* > *Firewall control*.
 
-There are three tabs on this page:
-
-* Privileged address list
-+
-Use this tab to add IP addresses or subnets in CIDR notation that can access ports closed using the Manage external access tab. 
-* Manage external access
-+
-Use this tab to close ports that are normally open, or reopen ports previously closed. 
-
-* Untrusted Client Network
-+
-If you are using a Client Network, use the Untrusted Client Network tab to specify whether a node trusts inbound traffic from the Client Network.
+The three tabs on this page are described in xref:../admin/manage-firewall-controls.adoc[Manage firewall controls].
 
 You can use these tabs in any order. The configurations you set on one tab do not limit what you can do on the other tabs; however, configuration changes you make on one tab might change the behavior of ports configured on other tabs. 
- 
 
 // start tabbed area
 
@@ -67,10 +55,6 @@ NOTE: Settings on the Privileged address list tab can not override settings on t
 
 . Select *Privileged address list*.
 The tab displays a field where you can enter IP addresses or subnets in CIDR notation you want to allow to access closed ports. Any previously configured addresses are also displayed. 
-
-+
-image::../media/privileged-address-list.png[Privileged address list]
-
 . In the Address 1 field, enter the IP address of a client or subnet you want to allow access to closed ports. 
 . Optionally, select *Add another IP address or subnet in CIDR notation* to add additional privileged clients. 
 . Optionally, select the check box if you want to allow privileged IP addresses or subnets to access StorageGRID internal ports. Select *StorageGRID internal ports* to see documentation on the internal ports. 
@@ -90,9 +74,6 @@ NOTE: Settings on the Manage external access tab can not override settings on th
 
 . Select *Manage external access*.
 The tab displays a table with all of the external ports (ports that are accessible by non-grid nodes by default) for the nodes in your grid. 
-
-+
-image::../media/manage-external-access.png[Manage external access]
 
 +
 You can sort the list by:
@@ -128,8 +109,6 @@ NOTE: Existing client connections might fail if load balancer endpoints have not
 .Steps
 
 . Select *Untrusted Client Network*.
-
-image::../media/untrusted_client_networks_page.png[Untrusted Client Networks]
 
 [start=2]
 . In the *Set New Node Default* section, specify what the default setting should be when new nodes are added to the grid in an expansion procedure.
