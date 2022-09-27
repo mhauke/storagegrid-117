@@ -11,14 +11,14 @@ summary: 'You must create at least one tenant account to control access to the s
 [.lead]
 You must create at least one tenant account to control access to the storage in your StorageGRID system.
 
-The Grid Manager provides a wizard that takes you through the steps for creating a tenant account. The steps vary based on whether xref:using-identity-federation.adoc[identity federation] and xref:configuring-sso.adoc[single sign-on] are configured and whether the Grid Manager account you use to create the tenant account belongs to an admin group with the Root access permission.
+The steps for creating a tenant account vary based on whether xref:using-identity-federation.adoc[identity federation] and xref:configuring-sso.adoc[single sign-on] are configured and whether the Grid Manager account you use to create the tenant account belongs to an admin group with the Root access permission.
 
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Root access or Tenant accounts permission.
 * If the tenant account will use the identity source that was configured for the Grid Manager, and you want to grant Root access permission for the tenant account to a federated group, you have imported that federated group into the Grid Manager. You do not need to assign any Grid Manager permissions to this admin group. See  xref:managing-admin-groups.adoc[Manage admin groups].
-* If you want to allow an S3 tenant to clone account data and replicate bucket objects to another grid in a grid federation connection:
+* If you want to allow an S3 tenant to clone account data and replicate bucket objects to another grid using a grid federation connection:
 
 ** You have xref:grid-federation-manage-connection.adoc[configured the grid federation connection].
 ** The status of the connection is *Connected*.
@@ -47,7 +47,7 @@ The Grid Manager provides a wizard that takes you through the steps for creating
 |The type of client protocol this tenant will use, either *S3* or *Swift*.
 
 |Storage quota (optional)
-|If you want this tenant to have a storage quota, a numerical value for the quota and the units (GB, TB, or PB).
+|If you want this tenant to have a storage quota, a numerical value for the quota and the units.
 
 |===
 
