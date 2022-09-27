@@ -29,7 +29,7 @@ When simulating a policy, the following considerations apply:
 * When you simulate a policy, the ILM rules in the policy filter the test objects, so you can see which rule was applied to each object. However, no object copies are made and no objects are placed. Running a simulation does not modify your data, rules, or the policy in any way.
 * The Simulate proposed policy page retains the objects you tested until you select either *Clear all* or the remove icon image:../media/icon-x-to-remove.png[Remove icon] for each object in the Simulation results list.
 * Simulation returns the name of the matched rule. To determine which storage pool or erasure coding profile is in effect, select *Retention diagram*.
-* If S3 Versioning is enabled, the policy is simulated only against the current version of the object.
+* If S3 versioning is enabled, the policy is simulated only against the current version of the object.
 
 .Steps
 
@@ -83,7 +83,7 @@ In this example, the *Example ILM policy* is being simulated against the ingeste
 
 After simulating the policy, confirm that each object was matched by the correct rule.
 
-image::../media/ilm_simulate_example_1.png[Example 1 simulattion results]
+image::../media/simulate_policy_screen.png[Simulate policy results]
 
 In this example:
 
@@ -118,7 +118,7 @@ However, the rule that the `Havok.png` object was meant to test was the *X-men* 
  .. Select *Save*.
 . Select *Simulate*.
 +
-The objects you previously tested are re-evaluated against the updated policy, and the new simulation results are shown. In the example, the Rule Matched column shows that the `Havok.png` object now matches the X-men metadata rule, as expected. The Previous Match column shows that the PNGs rule matched the object in the previous simulation.
+The objects you previously tested are re-evaluated against the updated policy, and the new simulation results are shown. In the example, the Rule matched column shows that the `Havok.png` object now matches the X-men metadata rule, as expected. The Previous match column shows that the PNGs rule matched the object in the previous simulation.
 +
 image::../media/simulate_reorder_rules_correct_result.png[Example 2: Reordering rules when simulating a proposed ILM policy]
 +
@@ -136,7 +136,7 @@ When a test object is not matched by the expected rule in the policy, you must e
 
 .Steps
 
-. For each rule in the policy, view the rule settings by selecting the rule name or the more details icon image:../media/icon_nms_more_details.gif[more details icon] on any dialog box where the rule is displayed.
+. For each rule in the policy, view the rule settings by selecting *Retention diagram*. Then select *Expand all* and *View details* for each rule as needed.
 . Review the rule's tenant account, reference time, and filtering criteria.
 +
 As an example, suppose the metadata for the X-men rule was entered as "`x-men01`" instead of "`x-men.`"
