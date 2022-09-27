@@ -91,19 +91,19 @@ The list of rules contains only the rules that are compliant and do not use any 
 +
 IMPORTANT: Do not use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If you use this rule, multiple copies of an object might be placed on the same site.
 
-. Select *Continue*.
-
-. For the Select other rules step, select any other compliant or non-compliant rules you want to include in the policy.
-+
-The other rules must use at least one filter (tenant account, bucket name, or an advanced filter, such as object size).
-+
-.. If you need a different "`default`" rule for objects in non-compliant S3 buckets, select the check box, *Include a rule without filters for non-compliant S3 buckets*, and select one non-compliant rule that does not use a filter.
+. If you need a different "`default`" rule for objects in non-compliant S3 buckets, select the check box, *Include a rule without filters for non-compliant S3 buckets*, and select one non-compliant rule that does not use a filter.
 +
 For example, you might want to use a Cloud Storage Pool or an Archive Node to store objects in buckets that do not have S3 Object Lock enabled.
 +
 NOTE: You can only select one non-compliant rule that does not use a filter.
 
-.. Select any other compliant or non-compliant rules you want to use in the policy.
+. Select *Continue*.
+
+. For the Select other rules step, select any other compliant or non-compliant rules you want to include in the policy.
++
+The other rules must use at least one filter (tenant account, bucket name, or an advanced filter, such as object size).
+
+. Select any other compliant or non-compliant rules you want to use in the policy.
 
 . When you are done selecting the rules, select *Select*.
 +
