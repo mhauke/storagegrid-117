@@ -85,6 +85,7 @@ NOTE: To view graphs of these values, click the chart icons image:../media/icon_
 image::../media/nodes_page_storage_tables.png[Object stores tables]
 
 . Monitor the values over time to estimate the rate at which usable storage space is being consumed.
+
 . To maintain normal system operations, add Storage Nodes, add storage volumes, or archive object data before usable space is consumed.
 +
 When planning the timing of an expansion, consider how long it will take to procure and install additional storage.
@@ -125,11 +126,11 @@ image::../media/storage_used_object_metadata.png[Storage Used - Object Metadata]
 |`storagegrid_storage_utilization_metadata_bytes`
 
 |Allowed
-|The space allowed for object metadata on this Storage Node.     To learn how this value is determine for each Storage Node, see the xref:../admin/index.adoc[instructions for administering StorageGRID].
+|The space allowed for object metadata on this Storage Node. To learn how this value is determine for each Storage Node, see the xref:../admin/managing-object-metadata-storage.adoc#allowed-metadata-space[full description of Allowed metadata space].
 |`storagegrid_storage_utilization_metadata_allowed_bytes`
 
 |Actual reserved
-|The actual space reserved for metadata on this Storage Node. Includes the allowed space and the required space for essential metadata operations.     To learn how this value is calculated for each Storage Node, see the xref:../admin/index.adoc[instructions for administering StorageGRID].
+|The actual space reserved for metadata on this Storage Node. Includes the allowed space and the required space for essential metadata operations. To learn how this value is calculated for each Storage Node, see the xref:../admin/managing-object-metadata-storage.adoc#actual-reserved-space-for-metadata[full description of Actual reserved space for metadata].
 |_Metric will be added in a future release._
 //`storagegrid_storage_utilization_metadata_reserved_bytes`
 
@@ -137,6 +138,7 @@ image::../media/storage_used_object_metadata.png[Storage Used - Object Metadata]
 
 NOTE: The total values for a site or the grid do not include nodes that have not reported metrics for at least five minutes, such as offline nodes.
 
+[start=3]
 . If the *Used (%)* value is 70% or higher, expand your StorageGRID system by adding Storage Nodes to each site.
 +
 IMPORTANT: The *Low metadata storage* alert is triggered when the *Used (%)* value reaches certain thresholds. Undesirable results can occur if object metadata uses more than 100% of the allowed space.
@@ -145,14 +147,15 @@ When you add the new nodes, the system automatically rebalances object metadata 
 
 == Monitor space usage forecasts
 
-Monitor space usage forecasts for user data and metadata to estimate how quickly space will be consumed. These values can help you determine when you need to add storage for user data and metadata.
+Monitor space usage forecasts for user data and metadata to estimate when you will need to xref:../expand/index.adoc[expand your grid].
 
-.About this task
+If you notice that the rate of consumption changes over time, select a shorter range from the *Averaged over* pull-down to reflect only the most recent ingest patterns. If you notice seasonal patterns, select a longer range.
 
+If you have a new StorageGRID installation, allow data and metadata to accumulate before evaluating the space usage forecasts.
 
 .Steps
 . On the dashboard, select *Storage*.
 . View the dashboard cards, Forecast of data usage by storage pool and Forecast of metadata usage by site.
-. Use these values to estimate when you need to add new Storage Nodes for data and metadata storage. 
+. Use these values to estimate when you will need to add new Storage Nodes for data and metadata storage.
 
-
+image::../media/forecast-metadata-usage.png[Forcast of metadata usage by site]
