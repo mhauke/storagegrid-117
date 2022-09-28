@@ -2,14 +2,14 @@
 permalink: ilm/working-with-ilm-rules-and-ilm-policies.html
 sidebar: sidebar
 keywords: remove ilm rule, edit ilm rule, clone ilm rule, ilm queue
-summary: 'You can modify the ILM policy and ILM rules as your storage requirements change. You can view ILM metrics to determine system performance.'
+summary: 'As your storage requirements change, you might need to modify the active policy or put a different policy in place. You can also modify the ILM rules associated with the policy. You can view ILM metrics to determine system performance.'
 ---
-= Work with the ILM policy and ILM rules
+= Work with ILM policies and ILM rules
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can modify the ILM policy and ILM rules as your storage requirements change. You can view ILM metrics to determine system performance.
+As your storage requirements change, you might need to modify the active policy or put a different policy in place. You can also modify the ILM rules associated with the policy. You can view ILM metrics to determine system performance.
 
 .What you'll need
 
@@ -25,6 +25,20 @@ To view active, proposed, and historical ILM policies:
 . As needed, select *Active policy*, *Proposed policy*, or *Policy history* to view the details for each. In each tab, you can select *Policy rules* and *Retention diagram*.
 
 image::../media/ilm-policy-active-proposed-history-tabs.png[ILM Policy Tabs]
+
+== Clone a historical ILM policy
+
+To clone a historical ILM policy:
+
+. Select *ILM* > *Policies* > *Policy history*.
+
+. Remove the proposed policy if one exists.
+
+. Select the check box for the policy you want to clone, then select *Clone historical policy*.
+
+. Complete the required details by following the instructions in xref:creating-proposed-ilm-policy.adoc[Create proposed ILM policy].
+
+CAUTION: An ILM policy that has been incorrectly configured can result in unrecoverable data loss. Before activating an ILM policy, carefully review the ILM policy and its ILM rules, and then simulate the ILM policy. Always confirm that the ILM policy will work as intended. 
 
 == View ILM rule details
 
