@@ -34,11 +34,20 @@ To clone a historical ILM policy:
 
 . Remove the proposed policy if one exists.
 
-. Select the check box for the policy you want to clone, then select *Clone historical policy*.
+. Select the radio button for the policy you want to clone, then select *Clone historical policy*.
 
 . Complete the required details by following the instructions in xref:creating-proposed-ilm-policy.adoc[Create proposed ILM policy].
 
 CAUTION: An ILM policy that has been incorrectly configured can result in unrecoverable data loss. Before activating an ILM policy, carefully review the ILM policy and its ILM rules, and then simulate the ILM policy. Always confirm that the ILM policy will work as intended. 
+
+== Remove proposed policy
+
+To remove the proposed policy:
+
+. Select *ILM* > *Policies* > *Proposed policy*.
+. Select *Actions* > *Remove*.
+
+The proposed policy and the Proposed policy tab are removed.
 
 == View ILM rule details
 
