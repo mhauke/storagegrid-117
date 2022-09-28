@@ -11,7 +11,9 @@ summary: 'If any StorageGRID nodes are deployed on Linux hosts, you must install
 [.lead]
 If any StorageGRID nodes are deployed on Linux hosts, you must download and install an additional RPM or DEB package on each of these hosts before you start the upgrade.
 
-.Steps
+== Download upgrade, Linux, and hotfix files
+When you perform a StorageGRID upgrade from the Grid Manager, you are prompted to download the upgrade archive and any required hotfix as the first step. However, if you need to download files to upgrade Linux hosts, you can save time by downloading all required files in advance.
+
 . Go to https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^].
 
 . Select the button for downloading the latest release, or select another version from the drop-down menu and select *Go*.
@@ -19,37 +21,49 @@ If any StorageGRID nodes are deployed on Linux hosts, you must download and inst
 StorageGRID software versions have this format: 11._x.y_. StorageGRID hotfixes have this format: 11._x.y.z_.
 
 . Sign in with the username and password for your NetApp account.
-. If a Caution/MustRead statement appears, read it and select the check box.
-+
-This statement appears if there is a required hotfix for the release.
+. If a Caution/MustRead notice appears, make note of the hotfix number, and select the check box.
 
 . Read the End User License Agreement, select the check box, and then select *Accept & Continue*.
 +
-The downloads page for the version you selected appears. The page contains three columns:
+The downloads page for the version you selected appears. The page contains three columns.
 
- ** Install StorageGRID
- ** Upgrade StorageGRID
- ** Support files for StorageGRID Appliances
+. From the second column (*Upgrade StorageGRID*), download two files:
 
-. In the *Upgrade StorageGRID* column, select and download the RPM or DEB archive in either `.tgz` or `.zip` format. Select the `.zip` file if you are running Windows on the service laptop.
+* The upgrade archive for the latest release (this is the file in the section labeled *VMware, SG1000, or SG100 Primary Admin Node*). While you won't need this file until you perform the upgrade, downloading it now will save time.
 
-* Red Hat Enterprise Linux or CentOS +
+* An RPM or DEB archive in either `.tgz` or `.zip` format. Select the `.zip` file if you are running Windows on the service laptop.
+
+** Red Hat Enterprise Linux or CentOS +
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` +
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz`
 
-* Ubuntu or Debian +
+** Ubuntu or Debian +
 `StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip` +
 `StorageGRID-Webscale-_version_-DEB-_uniqueID_.tgz`
+
+
+. If you needed to agree to a Caution/MustRead notice because of a required hotfix, download the hotfix:
+
+.. Go back to https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^].
+
+.. Select the hotfix number from the drop-down.
+
+.. Agree to the Caution notice and EULA again.
+
+.. Download and save the hotfix and its README.
 +
-NOTE: No additional files are required for the SG100 or SG1000.
+You will be prompted to upload the hotfix file on the StorageGRID Upgrade page when you start the upgrade.
+
+== Install archive on all Linux hosts
+Perform these steps before upgrading StorageGRID software.
  
 . Extract the RPM or DEB packages from the installation file.
 . Install the RPM or DEB packages on all Linux hosts.
 +
-See the steps for installing StorageGRID host services in the installation instructions for your Linux platform.
+See the steps for installing StorageGRID host services in the installation instructions:
 +
-* xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-* xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
+* xref:../rhel/installing-storagegrid-webscale-host-service.adoc[Red Hat Enterprise Linux or CentOS: Install StorageGRID host services]
+* xref:../ubuntu/installing-storagegrid-webscale-host-services.adoc[Ubuntu or Debian: Install StorageGRID host services]
 
 +
 The new packages are installed as additional packages. Do not remove the existing packages.

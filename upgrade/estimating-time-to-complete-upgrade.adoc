@@ -21,15 +21,20 @@ The table summarizes the main upgrade tasks and lists the approximate time requi
 | Upgrade task| Description| Approximate time required| During this task
 
 
-|Upgrade primary Admin Node
-|The primary Admin Node is stopped, upgraded, and restarted.
-|30 minutes to 1 hour, with SG100 and SG1000 appliance nodes requiring the most time.
-|You cannot access the primary Admin Node. Connection errors are reported, which you can ignore.
+|Run prechecks and upgrade primary Admin Node
+|The upgrade prechecks are run, and the primary Admin Node is stopped, upgraded, and restarted. 
+|30 minutes to 1 hour, with SG100 and SG1000 appliance nodes requiring the most time. 
+
+Unresolved precheck errors will increase this time. 
+
+|You cannot access the primary Admin Node. Connection errors might be reported, which you can ignore.
+
+Running the upgrade prechecks before starting the upgrade lets you resolve any errors before the scheduled upgrade maintenance window.
 
 |Start upgrade service
-|Upgrade prechecks are run, the software file is distributed, and the upgrade service is started.
-|3 minutes per grid node, unless validation errors are reported
-|As required, you can run the upgrade prechecks manually before the scheduled upgrade maintenance window.
+|The software file is distributed, and the upgrade service is started.
+|3 minutes per grid node
+|
 
 
 |Upgrade other grid nodes
@@ -99,4 +104,4 @@ The estimated time for this step is 2 hours.
 You should allow up to 17 hours to complete the upgrade of your system to StorageGRID 11.7.0.
 
 [NOTE]
-As required, you can split the maintenance window into smaller windows by upgrading grid nodes in multiple sessions. For example, you might prefer to upgrade the nodes at site A in one session and then upgrade the nodes at site B in a later session. If you choose to perform the upgrade in more than one session, be aware that you can't start using the new features until all nodes have been upgraded.
+As required, you can split the maintenance window into smaller windows by approving subsets of grid nodes to upgrade in multiple sessions. For example, you might prefer to upgrade the nodes at site A in one session and then upgrade the nodes at site B in a later session. If you choose to perform the upgrade in more than one session, be aware that you can't start using the new features until all nodes have been upgraded.
