@@ -234,9 +234,7 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 
 == Step 3 of 6: Create tenant and bucket
 
-A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that the S3 application will use. 
-
-A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the wizard lets you create or select only one tenant and one bucket at a time. You can use the Tenant Manager later to add any additional buckets you need.
+A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create the tenant before you can create the bucket that the S3 application will use to store its objects. 
 
 For details about this task, see xref:creating-tenant-account.adoc[Create tenant account] and xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket].
 
