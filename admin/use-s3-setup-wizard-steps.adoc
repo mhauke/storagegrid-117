@@ -243,10 +243,13 @@ You can create a new tenant and bucket for this S3 application to use, or you ca
 For details about this task, see xref:creating-tenant-account.adoc[Create tenant account] and 
 xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket].
 
-// start collapsible block
+// start tabbed area
 
-[%collapsible]
+[role="tabbed-block"]
 ====
+
+.New tenant and bucket
+--
 
 To create a new tenant and bucket:
 
@@ -327,6 +330,8 @@ Use the default region (us-east-1) unless you expect to use ILM in the future to
 .. Use *Enable object versioning* if you want to store each version of each object in this bucket. 
 
 .. You can use *Create tenant only* to just create a tenant, else select *Create tenant and bucket* and go to the download data step.
+
+--
 ====
 
 == Step 4 of 6: Download S3 settings

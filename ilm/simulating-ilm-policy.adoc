@@ -27,49 +27,20 @@ When simulating a policy, the following considerations apply:
 
 * After you make changes to a policy, save the proposed policy. Then, simulate the behavior of the saved proposed policy.
 * When you simulate a policy, the ILM rules in the policy filter the test objects, so you can see which rule was applied to each object. However, no object copies are made and no objects are placed. Running a simulation does not modify your data, rules, or the policy in any way.
-* The Simulate proposed policy page retains the objects you tested until you select either *Clear all* or the remove icon image:../media/icon-x-to-remove.png[Remove icon] for each object in the Simulation results list.
-* Simulation returns the name of the matched rule. To determine which storage pool or erasure coding profile is in effect, select *Retention diagram*.
-* If S3 versioning is enabled, the policy is simulated only against the current version of the object.
+* The Simulate proposed policy window retains the objects you tested until you select either *Clear all* or the remove icon image:../media/icon-x-to-remove.png[Remove icon] for each object in the Simulation results list.
+* Simulation returns the name of the matched rule. To determine which storage pool or erasure coding profile is in effect, select the name of the rule to go to the rule details page, where you can view the retention diagram and other details about the rule.
+* If S3 versioning is enabled, you can enter the version ID for the version of the object you want to use for the simulation.
 
 .Steps
 
-. Select and arrange the rules, and save the proposed policy.
-+
-The policy in this example has three rules:
-+
-[cols="1a,1a,1a,1a" options="header"]
-|===
-| Rule name| Filter| Type of Copies| Retention
+. xref:creating-proposed-ilm-policy.adoc[Create a proposed policy].
 
-|Large PDFs
-|
- ** Object size (greater than or equal to 8 MB)
- ** Key ends with .pdf
-|2 copies at two data centers
-|2 years
-
-|PNGs
-|Key ends with .png
-|2 copies at two data centers
-|5 years
-
-|Two Copies Two Data Centers
-|_None_
-|2 copies at two data centers
-|Forever
-|===
-+
 . Using an S3 or Swift client or the xref:../tenant/use-s3-console.adoc[experimental S3 Console], which is available in Tenant Manager for each tenant, ingest the objects required to test each rule.
-
 . On the ILM policy page, Proposed policy tab, select *Simulate*.
-. In the *Object* field, enter the S3 bucket/object-key or the Swift container/object-name for a test object. For example, `bucket-01/Fullsteam.png`.
+. In the *Object* field, enter the S3 `bucket/object-key` or the Swift `container/object-name` for a test object. For example, `bucket-01/Fullsteam.png`.
 . Optionally, enter a version ID for the object in the *Version ID* field.
 . Select *Simulate*.
 . In the Simulation results section, confirm that each object was matched by the correct rule.
-+
-In the example, the `Large_PDF_1.pdf` and `Large_PDF_2.pdf` objects were correctly matched by the Large PDFs rule. The `Fullsteam.png` object, which is smaller than 8 MB and does not end with a key of `.pdf`, was not matched by the Large PDFs rule but was correctly matched by the PNGs rule. The default rule was not used because all three objects were matched by other rules.
-+
-image::../media/ilm_policy_simulation_results.png[Simulation results]
 
 == Example 1: Verify rules when simulating a proposed ILM policy
 
@@ -109,10 +80,10 @@ The Simulation results appear, showing that the `Havok.png` object was matched b
 +
 image::../media/simulate_reorder_rules_pngs_result.png[Example 2: Reordering rules when simulating a proposed ILM policy]
 +
-However, the rule that the `Havok.png` object was meant to test was the *X-men* rule.
+However, `Havok.png` was meant to test the *X-men* rule.
 
 . To resolve the issue, reorder the rules.
- .. Select *Clear all*, then select *Finish* to close the Simulate ILM Policy page.
+ .. Select *Finish* to close the Simulate ILM Policy window.
  .. Select *Edit* to edit the policy.
  .. Drag the *X-men* rule to the top of the list.
  .. Select *Save*.
@@ -136,12 +107,12 @@ When a test object is not matched by the expected rule in the policy, you must e
 
 .Steps
 
-. For each rule in the policy, view the rule settings by selecting *Retention diagram*. Then select *Expand all* and *View details* for each rule as needed.
+. Select *Finish* to close the Simulate policy dialog. On the Proposed policy tab, select *Retention diagram*. Then select *Expand all* or *View details* for each rule as needed.
 . Review the rule's tenant account, reference time, and filtering criteria.
 +
 As an example, suppose the metadata for the X-men rule was entered as "`x-men01`" instead of "`x-men.`"
 
-. To resolve the error, correct the rule, as follows:
+. To resolve the error, correct the rule as follows:
  ** If the rule is part of the proposed policy, you can either clone the rule or remove the rule from the policy and then edit it.
  ** If the rule is part of the active policy, you must clone the rule. You cannot edit or remove a rule from the active policy.
 +
@@ -157,11 +128,13 @@ As an example, suppose the metadata for the X-men rule was entered as "`x-men01`
 .. Select *ILM* > *Policies* > *Proposed policy*.
 .. Select *Actions* > *Edit*.
 .. Select *Select rules*, then select *Continue* to accept the same default rule.
-.. In the Select other rules dialog box, select the check box for the new rule, uncheck the check box for the original rule, and select *Select*.
+.. In the Select other rules step, select the check box for the new rule, unselect the check box for the original rule, and select *Select*.
+.. If necessary, reorder the rules by dragging the new rule to the correct location. 
 .. Select *Save*.
 
 |Edit the rule
 |
+.. Select *ILM* > *Policies* > *Proposed policy* and remove the rule you want to edit.
 .. Select *ILM* > *Rules*.
 .. Select the rule you want to edit and select *Edit*. Or select the check box for the rule and select *Actions* > *Edit*.
 .. Change the incorrect information for each part of the wizard, then select *Update*.
