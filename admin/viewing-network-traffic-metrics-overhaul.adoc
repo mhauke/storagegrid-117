@@ -4,12 +4,12 @@ sidebar: sidebar
 keywords: network traffic, traffic classification policy, monitor traffic
 summary: 'You can monitor network traffic by viewing the graphs that are available from the Traffic Classification Policies page.'
 ---
-= View network traffic metrics (DOC WORK IN PROGRESS, STILL NOT READY FOR REVIEW)
+= View network traffic metrics
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can monitor network traffic by viewing the graphs that are available from the Traffic Classification Policies page.
+You can monitor network traffic by viewing the graphs that are available from the Traffic classification policies page.
 
 .What you'll need
 
@@ -18,7 +18,7 @@ You can monitor network traffic by viewing the graphs that are available from th
 
 .About this task
 
-For any existing traffic classification policy, you can view metrics for the Load Balancer service to determine if the policy is successfully limiting traffic across the network. The data in the graphs can help you determine if you need adjust the policy.
+For any existing traffic classification policy, you can view metrics for the load balancer service to determine if the policy is successfully limiting traffic across the network. The data in the graphs can help you determine if you need to adjust the policy.
 
 Even if no limits are set for a traffic classification policy, metrics are collected and the graphs provide useful information for understanding traffic trends.
 
@@ -28,14 +28,14 @@ Even if no limits are set for a traffic classification policy, metrics are colle
 +
 The Traffic Classification Policies page appears, and the existing policies are listed in the table.
 +
-image::../media/traffic_classification_policies_main_screen_w_examples.png[Traffic Policy for Graph Example]
-+
-NOTE: The *Create*, *Edit*, and *Remove* buttons are disabled if you have the Tenant Accounts permission but you do not have the Root access permission. 
 
-. Select the radio button to the left of the policy you want to view metrics for.
-. Select *Metrics*.
+
+NOTE: You must have Root access permission to *Create*, *Edit*, and *Remove* traffic classification policies 
+
+. Select the traffic classification policy for which you want to view metrics.
+. Select *Metrics* tab.
 +
-A new browser window opens, and the Traffic Classification Policy graphs appear. The graphs display metrics only for the traffic that matches the selected policy.
+The traffic classification policy graphs appear. The graphs display metrics only for the traffic that matches the selected policy.
 +
 You can select other policies to view by using the *policy* pull-down.
 +
