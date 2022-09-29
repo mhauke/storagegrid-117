@@ -4,7 +4,8 @@ sidebar: sidebar
 keywords: edit traffic classification policy
 summary: 'You can edit a traffic classification policy to change its name or description, or to create, edit, or delete any rules or limits for the policy.'
 ---
-= Edit traffic classification policy :icons: font
+= Edit traffic classification policy
+:icons: font
 :imagesdir: ../media/
 
 [.lead]
@@ -22,24 +23,14 @@ You can edit a traffic classification policy to change its name or description, 
 The Traffic Classification Policies page appears, and the existing policies are listed in the table.
 
 . Select the policy you want to edit.
-. From the *Actions*, select *Edit*.
-You can also edit a policy by opening the policy details sidebar and selecting *Edit*.
 . Select *Edit*.
 +
-The Edit Traffic Classification Policy wizard appears.
+The Edit traffic classification policy wizard appears.
 
 +
-.. Edit the traffic classification policy name or description in the Enter policy name step and select continue.
-.. In the Add matching rules step, edit the Type and Match value.
-.. In the Set limits step, you can edit the Type, Value, or Unit.
- 
+.. Edit a traffic classification policy name or description in the Enter policy name step and select *Continue*.
+.. Add a rule or edit the *Type* and *Match value* of the existing rule in the Add matching rules step and select *Continue*. You can also follow the instructions mentioned in adding a rule.
+.. Optionally, you can add, edit, or delete a limit in the Set limits step and select *Continue*. You can also follow the instructions mentioned in adding a rule.
+.. Select *Save and continue*. You must make sure that you read and review the updated Traffic classification policy before saving. 
 
-
-. Create, edit, or remove matching rules and limits as needed.
- .. To create a matching rule or limit, select *Create*, and follow the instructions for creating a rule or creating a limit.
- .. To edit a matching rule or limit, select the radio button for the rule or limit, select *Edit* in the *Matching Rules* section or the *Limits* section, and follow the instructions for creating a rule or creating a limit.
- .. To remove a matching rule or limit, select the radio button for the rule or limit, and select *Remove*. Then, select *OK* to confirm that you want to remove the rule or limit.
-. When you are finished creating or editing a rule or a limit, select *Apply*.
-. When you are finished editing the policy, select *Save*.
-+
 The changes you made to the policy are saved, and network traffic is now handled according to the traffic classification policies. You can view traffic charts and verify that the polices are enforcing the traffic limits you expect.
