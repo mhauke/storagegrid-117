@@ -17,6 +17,8 @@ NOTE: If the global S3 Object Lock setting has been enabled, you must ensure tha
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the xref:../admin/admin-group-permissions.adoc[required access permissions].
+* You have created ILM rules based on whether S3 Object Lock is enabled.
+
 //tabbed blocks start here
 +
 [role="tabbed-block"]
@@ -111,28 +113,26 @@ You cannot clone the active policy if a proposed policy already exists.
 +
 NOTE: Periodically, the list of rules is automatically updated to reflect additions or removals. If a rule is removed after you select it, an error message appears.
 +
-
-//tabbed block for Add rules
-[role="tabbed-block"]
-====
-.S3 Object Lock not enabled
---
 If you are cloning a policy:
 
 ** The rules used by the policy you are cloning are selected.
 ** If the policy you are cloning used any rules with no filters that were not the default rule, you are prompted to remove all but one of those rules.
 ** If the default rule used a filter, you are prompted to select a new default rule.
 ** If the default rule was not the last rule, you can move the rule to the end of the new policy.
++
+
+//tabbed block for Add rules
+[role="tabbed-block"]
+====
+
+.S3 Object Lock not enabled
+--
 
 .. Select one default rule for the proposed policy. To create a new default rule, select *ILM rules page* image:../media/icon_nms_more_details.gif[more details icon].
 +
 The default rule applies to any objects that do not match another rule in the policy. The default rule cannot use any filters and is always evaluated last.
 +
-NOTE: If no rule is listed for the Select a default rule step of the wizard, you must exit the Create a proposed policy window and xref:creating-default-ilm-rule.adoc[create a default ILM rule].
-+
 IMPORTANT: Do not use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
-+
-The other rules are evaluated before the default rule and must use at least one filter (tenant account, bucket name, advanced filter, or the Noncurrent reference time).
 
 --
 .S3 Object Lock enabled
@@ -143,7 +143,7 @@ The list of rules contains only the rules that are compliant and do not use any 
 +
 IMPORTANT: Do not use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If you use this rule, multiple copies of an object might be placed on the same site.
 
-.. If you need a different "`default`" rule for objects in non-compliant S3 buckets, select the check box, *Include a rule without filters for non-compliant S3 buckets*, and select one non-compliant rule that does not use a filter.
+.. If you need a different "`default`" rule for objects in non-compliant S3 buckets, select *Include a rule without filters for non-compliant S3 buckets*, and select one non-compliant rule that does not use a filter.
 +
 For example, you might want to use a Cloud Storage Pool or an Archive Node to store objects in buckets that do not have S3 Object Lock enabled.
 +
@@ -158,7 +158,11 @@ NOTE: You can only select one non-compliant rule that does not use a filter.
 
 . For the Other rules step, select any other rules you want to add to the policy, then select *Select*.
 +
-The Create a proposed policy window now lists the rules you selected. The default rule is at the end, with the other rules above it. If S3 Object Lock is enabled and you also selected a non-compliant "`default`" rule, that rule is added as the second-to-last rule in the policy.
+Ensure the other rules use at least one filter (tenant account, bucket name, advanced filter, or the Noncurrent reference time).
++
+The Create a proposed policy window now lists the rules you selected. The default rule is at the end, with the other rules above it.
++
+If S3 Object Lock is enabled and you also selected a non-compliant "`default`" rule, that rule is added as the second-to-last rule in the policy.
 +
 NOTE: A warning appears if the default rule does not retain objects forever. When you activate this policy, you must confirm that you want StorageGRID to delete objects when the placement instructions for the default rule elapse (unless a bucket lifecycle keeps the objects for a longer time period).
 
