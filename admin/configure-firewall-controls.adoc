@@ -47,7 +47,7 @@ You can use these tabs in any order. The configurations you set on one tab do no
 ====
 .Privileged address list
 --
-You use the Privileged address list tab to grant hosts access to ports that are closed by default or by settings on the Manage external access tab.
+You use the Privileged address list tab to grant hosts access to ports that are closed by default or closed by settings on the Manage external access tab.
 
 Privileged IP addresses and subnets do not have internal grid access by default. Also, privileged IP addresses and subnets do not have access to ports blocked by Untrusted Client Network settings. 
 
@@ -84,7 +84,6 @@ You can sort the list by:
 
 . Configure the ports you want open and closed using the following options: 
 * Use the toggle beside each port to open or close the selected port.
-
 * Select *Open all displayed ports* to open all ports listed in the table. 
 * Select *Close all displayed ports* to close all ports listed in the table.
 +

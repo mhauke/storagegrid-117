@@ -13,9 +13,9 @@ StorageGRID includes an internal firewall on each node that enhances the securit
 
 Use the three tabs on the Firewall control page to customize the amount of access you need for your grid. 
 
-*Privileged IP address list*: Use this tab to allow selected access to closed ports. You can add IP addresses or subnets in CIDR notation that can access ports closed using the Manage external access tab.
-*Manage external network access*: Use this tab to close ports that are open by default, or reopen ports previously closed.
-*Untrusted Client Network*: Use this tab to specify whether a node trusts inbound traffic from the Client Network. 
+* *Privileged IP address list*: Use this tab to allow selected access to closed ports. You can add IP addresses or subnets in CIDR notation that can access ports closed using the Manage external access tab.
+* *Manage external access*: Use this tab to close ports that are open by default, or reopen ports previously closed.
+* *Untrusted Client Network*: Use this tab to specify whether a node trusts inbound traffic from the Client Network. 
 The settings on this tab override the settings in the Manage external access tab. A port in the Untrusted Client Network is open on the client network, regardless of whether that port is closed on other networks.
 
 NOTE: The settings you make on one tab can affect the access changes you make on another tab.
@@ -73,16 +73,16 @@ After you save your configuration, the Storage Node no longer allows Swift conne
 
 If you are using a Client Network, you can help secure StorageGRID from hostile attacks by accepting inbound client traffic only on explicitly configured endpoints or additional ports you select on this tab. 
 
-By default, the Client Network on each grid node is _trusted_. That is, by default, StorageGRID trusts inbound connections to each grid node on all xref:../network/index.adoc[available external ports].
+By default, the Client Network on each grid node is _trusted_. That is, by default, StorageGRID trusts inbound connections to each grid node on all xref:../network/external-communications.adoc[available external ports].
 
-You can reduce the threat of hostile attacks on your StorageGRID system by specifying that the Client Network on each node be _untrusted_. If a node's Client Network is untrusted, the node only accepts inbound connections on ports explicitly configured as load balancer endpoints and any additional ports you designate using the Untrusted Client Network tab on the Firewall Controls page. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] and xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
+You can reduce the threat of hostile attacks on your StorageGRID system by specifying that the Client Network on each node be _untrusted_. If a node's Client Network is untrusted, the node only accepts inbound connections on ports explicitly configured as load balancer endpoints and any additional ports you designate using the Untrusted Client Network tab on the Firewall control page. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] and xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
 === Example 1: Gateway Node only accepts HTTPS S3 requests
 
 Suppose you want a Gateway Node to refuse all inbound traffic on the Client Network except for HTTPS S3 requests. You would perform these general steps:
 
-. From the Load Balancer Endpoints page, configure a load balancer endpoint for S3 over HTTPS on port 443.
-. From the Firewall controls page, select Untrusted to specify that the Client Network on the Gateway Node is untrusted.
+. From the xref:../admin/configuring-load-balancer-endpoints.adoc[Load balancer endpoints] page, configure a load balancer endpoint for S3 over HTTPS on port 443.
+. From the Firewall control page, select Untrusted to specify that the Client Network on the Gateway Node is untrusted.
 
 After you save your configuration, all inbound traffic on the Gateway Node's Client Network is dropped except for HTTPS S3 requests on port 443 and ICMP echo (ping) requests.
 
@@ -90,7 +90,7 @@ After you save your configuration, all inbound traffic on the Gateway Node's Cli
 
 Suppose you want to enable outbound S3 platform services traffic from a Storage Node, but you want to prevent any inbound connections to that Storage Node on the Client Network. You would perform this general step:
 
-* From the Untrusted Client Networks tab of the Firewall controls page, indicate that the Client Network on the Storage Node is untrusted.
+* From the Untrusted Client Networks tab of the Firewall control page, indicate that the Client Network on the Storage Node is untrusted.
 
 After you save your configuration, the Storage Node no longer accepts any incoming traffic on the Client Network, but it continues to allow outbound requests to Amazon Web Services.
 
@@ -100,7 +100,7 @@ Suppose you want to allow Grid Manager access only on a specific subnet. You wou
 
 . Attach the client network of your Admin Nodes to the subnet.
 . Use the Untrusted Client Network tab to configure the client network as untrusted.
-. In the *Additional ports open on untrusted Client Network* section of the tab, add ports 443 or 8443.
+. In the *Additional ports open on untrusted Client Network* section of the tab, add port 443 or 8443.
 . Use the Manage external access tab to block all external ports (with or without privileged IPs set for hosts outside that subnet).
 
 After you save your configuration, only hosts on the subnet you specified can access the Grid Manager. All other hosts are are blocked. 
