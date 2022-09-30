@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: firewall controls, untrusted client network, privileged IP address, manage external access
 summary: 'StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to customize access to the Grid Network, Admin Network, and Client Network.'
 ---
-= Manage firewall controls
+= Manage internal firewall controls
 :icons: font
 :imagesdir: ../media/
 
@@ -24,7 +24,7 @@ Be sure to check the settings on all tabs to ensure your network behaves in the 
 
 To configure internal firewall controls, see xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
-For more information on external firewalls and network security, see xref:../admin/controlling-access-through-firewalls.adoc[Control access through firewalls].
+For more information on external firewalls and network security, see xref:../admin/controlling-access-through-firewalls.adoc[Control access through external firewalls].
 
 == Privileged IP address list and Manage external access tabs
 The Privileged IP address list tab enables you to register one or more IP addresses that are granted access to grid ports that are closed. The Manage external access tab enables you to close external access to selected external ports or all open external ports (external ports are ports that are accessible by non-grid nodes by default). These two tabs often can be used together to customize the exact network access you need to allow for your grid.
