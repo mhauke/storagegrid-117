@@ -11,7 +11,7 @@ summary: 'You can create a proposed ILM policy from scratch, or you can clone th
 [.lead]
 You can create a proposed ILM policy from scratch, or you can clone the current active policy if you want to start with the same set of rules.
 
-NOTE: If the global S3 Object Lock setting has been enabled, you must ensure that the ILM policy is compliant with the requirements of buckets that have S3 Object Lock enabled. Follow the steps labeled, _"S3 Object Lock enabled"_.
+NOTE: If the global S3 Object Lock setting has been enabled, you must ensure that the ILM policy is compliant with the requirements of buckets that have S3 Object Lock enabled. Follow the instructions that mention having S3 Object Lock enabled.
 
 .What you'll need
 
@@ -20,7 +20,7 @@ NOTE: If the global S3 Object Lock setting has been enabled, you must ensure tha
 * You have created ILM rules based on whether S3 Object Lock is enabled.
 
 //tabbed blocks start here
-+
+
 [role="tabbed-block"]
 ====
 
@@ -40,7 +40,9 @@ NOTE: If the global S3 Object Lock setting has not been enabled, use the general
 xref:example-7-compliant-ilm-policy-for-s3-object-lock.adoc[Example 7: Compliant ILM policy for S3 Object Lock].
 
 ** You have xref:creating-default-ilm-rule.adoc[created a default ILM rule] for the policy that is compliant.
+
 --
+
 ====
 //end tabbed block
 
@@ -119,7 +121,6 @@ If you are cloning a policy:
 ** If the policy you are cloning used any rules with no filters that were not the default rule, you are prompted to remove all but one of those rules.
 ** If the default rule used a filter, you are prompted to select a new default rule.
 ** If the default rule was not the last rule, you can move the rule to the end of the new policy.
-+
 
 //tabbed block for Add rules
 [role="tabbed-block"]
