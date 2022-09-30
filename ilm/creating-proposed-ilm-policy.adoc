@@ -26,20 +26,19 @@ NOTE: If the global S3 Object Lock setting has been enabled, you must ensure tha
 
 .S3 Object Lock not enabled
 --
-** You have created the ILM rules you want to add to the proposed policy. As required, you can save a proposed policy, create additional rules, and then edit the proposed policy to add the new rules.
-** You have xref:creating-default-ilm-rule.adoc[created a default ILM rule] for the policy that does not contain any filters.
+ ** You have created the ILM rules you want to add to the proposed policy. As required, you can save a proposed policy, create additional rules, and then edit the proposed policy to add the new rules.
+ ** You have xref:creating-default-ilm-rule.adoc[created a default ILM rule] for the policy that does not contain any filters.
+
 //end No S3 Obj Lock, begin Yes S3 Obj Lock
 --
 .S3 Object Lock enabled
 --
-** The global S3 Object Lock setting is already enabled for the StorageGRID system.
-+
-NOTE: If the global S3 Object Lock setting has not been enabled, use the general instructions for xref:creating-proposed-ilm-policy.adoc[creating a proposed ILM policy].
+ ** The global S3 Object Lock setting is already enabled for the StorageGRID system.
 
-** You have created the compliant and non-compliant ILM rules you want to add to the proposed policy. As required, you can save a proposed policy, create additional rules, and then edit the proposed policy to add the new rules. See
+ ** You have created the compliant and non-compliant ILM rules you want to add to the proposed policy. As required, you can save a proposed policy, create additional rules, and then edit the proposed policy to add the new rules. See
 xref:example-7-compliant-ilm-policy-for-s3-object-lock.adoc[Example 7: Compliant ILM policy for S3 Object Lock].
 
-** You have xref:creating-default-ilm-rule.adoc[created a default ILM rule] for the policy that is compliant.
+ ** You have xref:creating-default-ilm-rule.adoc[created a default ILM rule] for the policy that is compliant.
 
 --
 
@@ -61,7 +60,7 @@ Typical reasons for creating a proposed ILM policy include:
 * You added a new tenant that has special data protection requirements.
 * You started to use a Cloud Storage Pool.
 
-IMPORTANT: Use the system's built-in policy, Baseline 2 copies policy, in test systems only. The Make 2 Copies rule in this policy uses the All Storage Nodes storage pool, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
+IMPORTANT: Only use the system-provided policy, Baseline 2 copies policy, in test systems. The Make 2 Copies rule in this policy uses the All Storage Nodes storage pool, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
 
 .Steps
 . Select *ILM* > *Policies*.

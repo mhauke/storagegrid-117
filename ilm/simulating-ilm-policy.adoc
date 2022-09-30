@@ -37,7 +37,7 @@ When simulating a policy, the following considerations apply:
 
 . Using an S3 or Swift client or the xref:../tenant/use-s3-console.adoc[experimental S3 Console], which is available in Tenant Manager for each tenant, ingest the objects required to test each rule.
 . On the ILM policy page, Proposed policy tab, select *Simulate*.
-. In the *Object* field, enter the S3 `bucket/object-key` or the Swift `container/object-name` for a test object. For example, `bucket-01/Fullsteam.png`.
+. In the *Object* field, enter the S3 `bucket/object-key` or the Swift `container/object-name` for a test object. For example, `bucket-01/filename.png`.
 . Optionally, enter a version ID for the object in the *Version ID* field.
 . Select *Simulate*.
 . In the Simulation results section, confirm that each object was matched by the correct rule.
@@ -147,6 +147,7 @@ As an example, suppose the metadata for the X-men rule was entered as "`x-men01`
 .. Select *Actions* > *Edit*.
 .. Select *Select rules*, then select *Continue* to accept the same default rule.
 .. In the Select other rules dialog box, select the check box for the corrected rule, select *Select*, then select *Save*.
+.. Drag and drop the rows for the non-default rules to determine the order in which these rules will be evaluated.
 |===
 
 . Perform the simulation again.

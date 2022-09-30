@@ -44,6 +44,6 @@ When you select *OK*:
 
 .After you finish
 
-After you enable the global S3 Object Lock setting, you might want to create a new ILM policy. After the setting is enabled, the ILM policy can optionally include both a compliant default rule and a non-compliant default rule. For example, you might want to use a non-compliant rule that does not have filters for objects in buckets that do not have S3 Object Lock enabled. For instructions, see   xref:creating-ilm-policy-after-s3-object-lock-is-enabled.adoc[create a an ILM policy after S3 Object Lock is enabled].
+After you enable the global S3 Object Lock setting, you might want to xref:ilm/creating-proposed-ilm-policy.adoc[create a new ILM policy]. After the setting is enabled, the ILM policy can optionally include both a compliant default rule and a non-compliant default rule. For example, you might want to use a non-compliant rule that does not have filters for objects in buckets that do not have S3 Object Lock enabled.
 
 
