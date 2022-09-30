@@ -9,7 +9,7 @@ summary: 'You create traffic classification policies if you want to monitor, and
 :imagesdir: ../media/
 
 [.lead]
-You can create traffic classification policies if you want to monitor, and optionally limit network traffic by bucket, bucket regex, CIDR, load balancer endpoint, or tenant. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
+You can create traffic classification policies if you want to monitor, and optionally limit network traffic by bucket, Bucket regex, CIDR, load balancer endpoint, or tenant. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
 
 .What you'll need
 
@@ -27,7 +27,7 @@ The Traffic classification policies page appears.
 
 . Select *Create*.
 +
-Create a Traffic classification policy wizard appears.
+Create a traffic classification policy wizard appears.
 +
 
 . Enter a descriptive name that can be recognized and a description (optional) for the policy and select *Continue*.
@@ -50,7 +50,7 @@ For example, describe what this traffic classification policy applies to and wha
 |Enter the value that matches the selected Type.
 
 * Bucket: Enter a bucket name.
-* Bucket Regex: Enter a regular expression that will be used to match a set of bucket names.
+* Bucket regex: Enter a regular expression that will be used to match a set of bucket names.
 +
 
 The regular expression is unanchored. Use the ^ anchor to match at the beginning of the bucket name, and use the $ anchor to match at the end of the name.
@@ -82,7 +82,7 @@ NOTE: Even if you do not create limits, StorageGRID collects metrics so that you
 |Type
 |The type of limit you want to apply to the network traffic matched by the rule. For example, you can limit bandwidth or request rate.
 
-*Hint*: When aggregate bandwidth is in use, per-request bandwidth is unavailable.
+Hint: When aggregate bandwidth is in use, per-request bandwidth is unavailable. Conversely, when per-request bandwidth is in use, aggregate bandwidth is unavailable.
 
 Note: You can create policies to limit aggregate bandwidth or to limit per-request bandwidth. However, StorageGRID cannot limit both types of bandwidth at the same time. Aggregate bandwidth limits might impose an additional minor performance impact on non-limited traffic.
 
@@ -99,6 +99,9 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 
 |Value
 |The value that network traffic will be limited to, based on the Unit you select. For example, enter 10 and select MiBs to prevent the network traffic matched by this rule from exceeding 10 MiBs.
+
+Note: Depending on the units setting in the User preferences page of the Grid Manager, the available units will be either base2 (for example, GiB) or base10 (for example, GB).
+
 
 |Unit
 |The unit that describes the value you entered.
