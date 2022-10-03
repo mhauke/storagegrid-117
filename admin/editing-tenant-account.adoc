@@ -2,19 +2,19 @@
 permalink: admin/editing-tenant-account.html
 sidebar: sidebar
 keywords: edit tenant account, change tenant name, allow platform services, tenant quota
-summary: 'You can edit a tenant account to change the display name, change the identity source setting, allow or disallow platform services, or enter a storage quota.'
+summary: 'You can edit a tenant account to change the display name, storage quota, or tenant permissions.'
 ---
 = Edit tenant account
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can edit a tenant account to change the display name, change the identity source setting, allow or disallow platform services, or enter a storage quota.
+You can edit a tenant account to change the display name, storage quota, or tenant permissions.
 
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have specific access permissions.
+* You have the Root access or Tenant accounts permission.
 
 .Steps
 
@@ -22,42 +22,38 @@ You can edit a tenant account to change the display name, change the identity so
 +
 image::../media/tenant_accounts_page.png[Tenant Accounts page]
 
-. Select the tenant account you want to edit.
-+
-Use the search box to search for a tenant account by name or tenant ID.
+. Select the tenant account. You can do either of the following:
 
-. From the Actions drop-down, select *Edit*. 
-+
-This example is for a grid that does not use single sign-on (SSO). This tenant account has not configured its own identity source.
-+
-image::../media/edit_tenant_account.png[Edit Tenant account]
+**  Select the check box for the tenant, and select *Actions* > *Edit*.
 
-. Change the values for these fields as required:
+** Select the tenant's name to display the details page, and select *Edit*.
+
+. Optionally, change the values for these fields:
 +
 * *Name*
 * *Description*
-* *Client type*
 * *Storage quota*
  
 . Select *Continue*.
 
 . Select or unselect the permissions for the tenant account.
 +
-* If you disable *Platform services* for a tenant who is already using them, the services that they have configured for their S3 buckets will stop working. No error message is sent to the tenant. For example, if the tenant has configured CloudMirror replication for an S3 bucket, they can still store objects in the bucket, but copies of those objects will no longer be made in the external S3 bucket that they have configured as an endpoint.
+* If you disable *Platform services* for a tenant who is already using them, the services that they have configured for their S3 buckets will stop working. No error message is sent to the tenant. For example, if the tenant has configured CloudMirror replication for an S3 bucket, they can still store objects in the bucket, but copies of those objects will no longer be made in the external S3 bucket that they have configured as an endpoint. See xref:manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts].
 +
-* Change the setting of the *Uses own identity source* check box to determine whether the tenant account will use its own identity source or the identity source that was configured for the Grid Manager.
+* Change the setting of *Uses own identity source* to determine whether the tenant account will use its own identity source or the identity source that was configured for the Grid Manager.
 +
-If the *Uses own identity source* check box is:
+If *Uses own identity source* is:
 
- ** Disabled and checked, the tenant has already enabled its own identity source. A tenant must disable its identity source before it can use the identity source that was configured for the Grid Manager.
- ** Disabled and unchecked, SSO is enabled for the StorageGRID system. The tenant must use the identity source that was configured for the Grid Manager.
+ ** Disabled and selected, the tenant has already enabled its own identity source. A tenant must disable its identity source before it can use the identity source that was configured for the Grid Manager.
+ ** Disabled and not selected, SSO is enabled for the StorageGRID system. The tenant must use the identity source that was configured for the Grid Manager.
 +
-* Enable or disable *S3 Select* as needed. See xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts].
+* Select or unselect the *Allow S3 Select* permission as needed. See xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts].
+
+* You can only select *Use grid federation connection* when you first create the tenant; you can't select this setting when you edit the tenant. To disable this permission, follow these steps:
++
+.. Go to the Tenants page.
+.. Select the tenant's name to go to the details page.
+.. Select the *Grid federation* tab.
+.. Select *Remove permission*.
 
 . Select *Save*.
-
-.Related information
-
-* xref:manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts]
-
-* xref:../tenant/index.adoc[Use a tenant account]
