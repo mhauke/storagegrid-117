@@ -2,20 +2,63 @@
 permalink: ilm/creating-ilm-policy.html
 sidebar: sidebar
 keywords: create ILM policy, information lifecycle policy considerations
-summary: 'When you create an ILM policy, you start by selecting and arranging the ILM rules. Then, you verify the behavior of your proposed policy by simulating it against previously ingested objects. When you are satisfied that the proposed policy is functioning as intended, you can activate it to create the active policy.'
+summary: 'An information lifecycle management \(ILM\) policy is an ordered set of ILM rules that determines how the StorageGRID system manages object data over time.'
 ---
 = Create ILM policy: Overview
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
+An information lifecycle management \(ILM\) policy is an ordered set of ILM rules that determines how the StorageGRID system manages object data over time.
+
 When you create an ILM policy, you start by selecting and arranging the ILM rules. Then, you verify the behavior of your proposed policy by simulating it against previously ingested objects. When you are satisfied that the proposed policy is functioning as intended, you can activate it to create the active policy.
 
 CAUTION: An ILM policy that has been incorrectly configured can result in unrecoverable data loss. Before activating an ILM policy, carefully review the ILM policy and its ILM rules, and then simulate the ILM policy. Always confirm that the ILM policy will work as intended.
 
+== How does an ILM policy evaluate objects?
+
+The active ILM policy for your StorageGRID system controls the placement, duration, and data protection of all objects.
+
+When clients save objects to StorageGRID, the objects are evaluated against the ordered set of ILM rules in the active policy, as follows:
+
+. If the filters for the first rule in the policy match an object, the object is ingested according to that rule's ingest behavior and stored according to that rule's placement instructions.
+. If the filters for the first rule do not match the object, the object is evaluated against each subsequent rule in the policy until a match is made.
+. If no rules match an object, the ingest behavior and placement instructions for the default rule in the policy are applied. The default rule is the last rule in a policy. The default rule must apply to all tenants, all buckets, and all object versions and cannot use any advanced filters.
+
+== Example ILM policy
+
+As an example, an ILM policy could contain three ILM rules that specify the following:
+
+* *Rule 1: Replicated copies for Tenant A*
+** Match all objects belonging to Tenant A.
+** Store these objects as three replicated copies at three sites.
+** Objects belonging to other tenants are not matched by Rule 1, so they are evaluated against Rule 2.
+
+* *Rule 2: Erasure coding for objects greater than 1 MB*
+** Match all objects from other tenants, but only if they are greater than 1 MB. These larger objects are stored using 6+3 erasure coding at three sites.
+** Does not match objects 1 MB or smaller, so these objects are evaluated against Rule 3.
+
+* *Rule 3: 2 copies 2 data centers* (default)
+** Is the last and default rule in the policy. Does not use filters.
+** Make two replicated copies of all objects not matched by Rule 1 or Rule 2 (objects not belonging to Tenant A that are 1 MB or smaller).
+
+image::../media/ilm_policy_and_rules.png[ILM Policy and Rules]
+
+== What are proposed, active, and historical policies?
+
+Every StorageGRID system must have one active ILM policy. A StorageGRID system might also have one proposed ILM policy and any number of historical policies.
+
+When you first create an ILM policy, you create a proposed policy by selecting one or more ILM rules and arranging them in a specific order. After you have simulated the proposed policy to confirm its behavior, you activate it to create the active policy.
+
+When you activate a new ILM policy, StorageGRID uses that policy to manage all objects, including existing objects and newly ingested objects. Existing objects might be moved to new locations when the ILM rules in the new policy are implemented.
+
+Activating the proposed policy causes the previously active policy to become a historical policy. Historical ILM policies cannot be deleted.
+
+image::../media/ilm_policies_proposed_active_historical.png[conceptual image for ILM policies]
+
 == Considerations for creating an ILM policy
 
-* Use the system's built-in policy, Baseline 2 copies policy, in test systems only. The Make 2 Copies rule in this policy uses the All Storage Nodes storage pool, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
+* Only use the system's built-in policy, Baseline 2 copies policy, in test systems. The Make 2 Copies rule in this policy uses the All Storage Nodes storage pool, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
 * When designing a new policy, consider all of the different types of objects that might be ingested into your grid. Make sure the policy includes rules to match and place these objects as required.
 * Keep the ILM policy as simple as possible. This avoids potentially dangerous situations where object data is not protected as intended when changes are made to the StorageGRID system over time.
 * Make sure that the rules in the policy are in the correct order. When the policy is activated, new and existing objects are evaluated by the rules in the order listed, starting at the top. For example, if the first rule in a policy matches an object, that rule will not be evaluated by any other rule.
