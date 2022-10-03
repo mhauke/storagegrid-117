@@ -11,7 +11,7 @@ summary: 'If you are using FabricPool to tier data to StorageGRID, you must unde
 [.lead]
 If you are using FabricPool to tier data to StorageGRID, you must understand the requirements for using StorageGRID information lifecycle management (ILM) with FabricPool data. You must ensure the ILM rules that apply to FabricPool data are not disruptive.
 
-IMPORTANT: FabricPool has no knowledge of StorageGRID ILM rules or policies. Data loss can occur if the StorageGRID ILM policy is misconfigured. For detailed information, see xref:../ilm/what-ilm-rule-is.adoc[ILM rules] and xref:../ilm/what-ilm-policy-is.adoc[ILM policies].
+IMPORTANT: FabricPool has no knowledge of StorageGRID ILM rules or policies. Data loss can occur if the StorageGRID ILM policy is misconfigured. For detailed information, see xref:../ilm/what-ilm-rule-is.adoc[Create an ILM rule: Overview] and xref:../ilm/creating-ilm-policy.adoc[Create an ILM policy: Overview].
 
 == What is an ILM policy?
 An information lifecycle management policy is an ordered set of ILM rules that determines how the StorageGRID system manages object data over time.
