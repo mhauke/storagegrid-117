@@ -26,16 +26,16 @@ NOTE: If the xref:enabling-s3-object-lock-globally.adoc[global S3 Object Lock se
 
 .S3 Object Lock not enabled
 --
- ** You have created the ILM rules you want to add to the proposed policy. As required, you can save a proposed policy, create additional rules, and then edit the proposed policy to add the new rules.
+ ** You have xref:what-ilm-rule-is.adoc[created the ILM rules] you want to add to the proposed policy. As required, you can save a proposed policy, create additional rules, and then edit the proposed policy to add the new rules.
  ** You have xref:creating-default-ilm-rule.adoc[created a default ILM rule] that does not contain any filters.
 
 //end No S3 Obj Lock, begin Yes S3 Obj Lock
 --
 .S3 Object Lock enabled
 --
- ** The global S3 Object Lock setting is already enabled for the StorageGRID system.
+ ** The xref:enabling-s3-object-lock-globally.adoc[global S3 Object Lock setting is already enabled] for the StorageGRID system.
 
- ** You have created the compliant and non-compliant ILM rules you want to add to the proposed policy. As required, you can save a proposed policy, create additional rules, and then edit the proposed policy to add the new rules.
+ ** You have xref:what-ilm-rule-is.adoc[created the compliant and non-compliant ILM rules] you want to add to the proposed policy. As required, you can save a proposed policy, create additional rules, and then edit the proposed policy to add the new rules.
 
  ** You have xref:creating-default-ilm-rule.adoc[created a default ILM rule] for the policy that is compliant.
 
@@ -48,7 +48,7 @@ NOTE: If the xref:enabling-s3-object-lock-globally.adoc[global S3 Object Lock se
 +
 image::../media/video-screenshot-ilm-policies.png[link="https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c929e94e-353a-4375-b112-acc5013c81c7" alt="Video: StorageGRID ILM Policies", window=_blank]
 
-See also xref:what-ilm-policy-is.adoc[What an ILM policy is].
+See also xref:creating-ilm-policy.adoc[Create an ILM policy:Overview].
 
 .About this task
 
