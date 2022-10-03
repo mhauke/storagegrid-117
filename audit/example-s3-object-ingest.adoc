@@ -37,7 +37,7 @@ For replicated objects, the LOCS field includes the LDR node ID and volume ID of
 2019-07-17T21:18:31.230669[AUDT:[CBID\(UI64\):0x50C4F7AC2BC8EDF7][RULE(CSTR):"Make 2 Copies"][STAT(FC32):DONE][CSIZ(UI64):0][UUID(CSTR):"0B344E18-98ED-4F22-A6C8-A93ED68F8D3F"][LOCS(CSTR):"CLDI 12828634 2148730112, CLDI 12745543 2147552014"][RSLT(FC32):SUCS][AVER(UI32):10][ATYP\(FC32\):ORLM][ATIM(UI64):1563398230669][ATID(UI64):15494889725796157557][ANID(UI32):13100453][AMID(FC32):BCMS]]
 ----
 
-For erasure-coded objects, the LOCS field includes the Erasure Coding profile ID and the Erasure Coding group ID
+For erasure-coded objects, the LOCS field includes the erasure coding profile ID and the erasure coding group ID
 
 [subs="specialcharacters,quotes"]
 ----

@@ -35,7 +35,7 @@ When you create a tenant account, you specify the following information:
 
 * Client protocol for the tenant account (S3 or Swift)
 
-* Optionally, a storage quota for the account--the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. If the quota is exceeded, the tenant cannot create new objects.
+* Optionally, a storage quota for the account, which is the maximum amount of storage available for the tenant's objects. If the quota is exceeded, the tenant cannot create new objects.
 +
 NOTE: A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).
 

@@ -30,10 +30,6 @@ entries:
       url: "/ilm/how-object-retention-is-determined.html"
     - title: How objects are deleted
       url: "/ilm/how-objects-are-deleted.html"
-  - title: What an ILM policy is
-    url: "/ilm/what-ilm-policy-is.html"
-  - title: What an ILM rule is
-    url: "/ilm/what-ilm-rule-is.html"
   - title: Create and assign storage grades
     url: "/ilm/creating-and-assigning-storage-grades.html"
   - title: Use storage pools
@@ -72,16 +68,18 @@ entries:
       url: "/ilm/removing-cloud-storage-pool.html"
     - title: Troubleshoot Cloud Storage Pools
       url: "/ilm/troubleshooting-cloud-storage-pools.html"
-  - title: Manage Erasure Coding profiles
+  - title: Manage erasure coding profiles
     entries:
-    - title: Rename Erasure Coding profile
+    - title: Rename erasure coding profile
       url: "/ilm/renaming-erasure-coding-profile.html"
-    - title: Deactivate Erasure Coding profile
+    - title: Deactivate erasure coding profile
       url: "/ilm/deactivating-erasure-coding-profile.html"
   - title: Configure regions (optional and S3 only)
     url: "/ilm/configuring-regions-optional-and-s3-only.html"
   - title: Create ILM rule 
     entries:
+    - title: Overview
+      url: "/ilm/what-ilm-rule-is.html"
     - title: Access Create ILM rule wizard
       url: "/ilm/access-create-ilm-rule-wizard.html"
     - title: 'Step 1 of 3: Enter details'
@@ -101,17 +99,15 @@ entries:
       url: "/ilm/creating-ilm-policy.html"
     - title: Create proposed ILM policy
       url: "/ilm/creating-proposed-ilm-policy.html"
-    - title: Create ILM policy after S3 Object Lock is enabled
-      url: "/ilm/creating-ilm-policy-after-s3-object-lock-is-enabled.html"
     - title: Simulate ILM policy
       url: "/ilm/simulating-ilm-policy.html"
     - title: Activate ILM policy
       url: "/ilm/activating-ilm-policy.html"
     - title: Verify ILM policy with object metadata lookup
       url: "/ilm/verifying-ilm-policy-with-object-metadata-lookup.html"
-  - title: Work with ILM policies and ILM rules
+  - title: Work with ILM policies and rules
     url: "/ilm/working-with-ilm-rules-and-ilm-policies.html"
-  - title: Use S3 Object Lock with ILM
+  - title: Use S3 Object Lock
     entries:
     - title: Manage objects with S3 Object Lock
       url: "/ilm/managing-objects-with-s3-object-lock.html" 

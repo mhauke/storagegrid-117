@@ -20,4 +20,4 @@ Storage pools have two attributes:
 * *Storage grade*: For Storage Nodes, the relative performance of backing storage.
 * *Site*: The data center where objects will be stored.
 
-Storage pools are used in ILM rules to determine where object data is stored and the type of storage used. When you configure ILM rules for replication, you select one or more storage pools that include either Storage Nodes or Archive Nodes. When you create Erasure Coding profiles, you select a storage pool that includes Storage Nodes.
+Storage pools are used in ILM rules to determine where object data is stored and the type of storage used. When you configure ILM rules for replication, you select one or more storage pools that include either Storage Nodes or Archive Nodes. When you create erasure coding profiles, you select a storage pool that includes Storage Nodes.

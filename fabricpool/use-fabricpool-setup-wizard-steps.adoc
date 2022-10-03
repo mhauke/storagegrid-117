@@ -22,7 +22,7 @@ NOTE: If you want to configure StorageGRID for use with any other S3 client appl
 
 . Sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 
-. If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon image:../media/icon-help-menu-bar.png[help icon on the menu bar] from the header bar in the Grid Manager and select *FabricPool and S3 Setup Wizard*.
+. If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon from the header bar in the Grid Manager and select *FabricPool and S3 setup wizard*.
 +
 image::../media/help_menu.png[help menu]
 . In the FabricPool section of the FabricPool and S3 setup wizard page, select *Configure now*.
@@ -55,7 +55,7 @@ For details about this task, see xref:../admin/managing-high-availability-groups
 
 .. For the *Enter details* step, complete the following fields.
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Field| Description
 
@@ -83,7 +83,7 @@ If the HA group includes more than one interface and the active interface fails,
 
 .. For the *Enter IP addresses* step, complete the following fields.
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Field| Description
 
@@ -135,7 +135,7 @@ To use the StorageGRID Load Balancer service, select the *StorageGRID load balan
 . To create a load balancer endpoint, select *Create endpoint*.
 . For the *Enter endpoint details* step, complete the following fields.
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 |Field| Description
 
@@ -164,7 +164,7 @@ include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 
 . For the *Tenant access* step, select one of the following:
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 |Field| Description
 
@@ -186,7 +186,7 @@ You must select this option if you are using the FabricPool setup wizard for a n
 
 . For the *Attach certificate* step, select one of the following:
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 |Field| Description
 
@@ -220,7 +220,7 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 
 . To use an external load balancer, complete the following fields.
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Field| Description
 
@@ -265,7 +265,7 @@ For details about this task, see xref:creating-tenant-account-for-fabricpool.ado
 
 .. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Option 
 | Do this
