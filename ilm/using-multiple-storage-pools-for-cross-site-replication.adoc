@@ -11,7 +11,7 @@ summary: 'If your StorageGRID deployment includes more than one site, you can us
 [.lead]
 If your StorageGRID deployment includes more than one site, you can use replication and erasure coding with multiple storage pools to enable site-loss protection.
 
-Replication and erasure coding use storage pools differently:
+Replication and erasure coding require different storage pool configurations:
 
 * To use replication for site-loss protection, xref:guidelines-for-creating-storage-pools.adoc#guidelines-for-storage-pools-used-for-replicated-copies[create storage pools that consist of only one site each]. Then create ILM rules with xref:create-ilm-rule-define-placements.adoc[placement instructions] that specify multiple storage pools so that one copy of each object will be placed at each site.
 
