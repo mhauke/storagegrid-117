@@ -2,22 +2,18 @@
 permalink: ilm/using-multiple-storage-pools-for-cross-site-replication.html
 sidebar: sidebar
 keywords: site-loss protection, cross-site replication, storage pools 
-summary: 'If your StorageGRID deployment includes more than one site, you can use multiple storage pools, replication, and erasure coding to enable site-loss protection.'
+summary: 'If your StorageGRID deployment includes more than one site, you can use replication and erasure coding along with multiple storage pools to enable site-loss protection.'
 ---
 = Enable site-loss protection
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If your StorageGRID deployment includes more than one site, you can use multiple storage pools, replication, and erasure coding to enable site-loss protection.
+If your StorageGRID deployment includes more than one site, you can use replication and erasure coding along with multiple storage pools to enable site-loss protection.
 
-Replication and erasure coding use storage pools differently. To use replication for site-loss protection, xref:guidelines-for-creating-storage-pools.adoc#guidelines-for-storage-pools-used-for-replicated-copies[create storage pools that consist of only one site each]. To use erasure coding for site-loss protection, xref:guidelines-for-creating-storage-pools.adoc#guidelines-for-storage-pools-used-for-erasure-coded-copies[create storage pools that consist of multiple sites].
+Replication and erasure coding use storage pools differently. To use replication for site-loss protection, xref:guidelines-for-creating-storage-pools.adoc#guidelines-for-storage-pools-used-for-replicated-copies[create storage pools that consist of only one site each]. Then create ILM rules with xref:create-ilm-rule-define-placements.adoc[placement instructions] that specify multiple storage pools so that one copy of each object will be placed at each site.
 
-Then specify multiple storage pools in the xref:create-ilm-rule-define-placements.adoc[ILM rule’s placement instructions]. For replicated copies, one copy of each object will be placed at each site. For erasure-coded copies, 
-
-//. Alternatively, configure an ILM rule to make two replicated copies and specify three storage pools.
-
-//The copies are distributed to balance disk usage among the storage pools, while ensuring that the two copies are stored at different sites.
+To use erasure coding for site-loss protection, xref:guidelines-for-creating-storage-pools.adoc#guidelines-for-storage-pools-used-for-erasure-coded-copies[create storage pools that consist of multiple sites]. Then create ILM rules that use one storage pool consisting of multiple sites and any available erasure-coding schema.
 
 The following example illustrates what can happen if an ILM rule places replicated object copies to a single storage pool containing Storage Nodes from two sites. Because the system uses any available nodes in the storage pool when it places the replicated copies, it might place all copies of some objects within only one of the sites. In this example, the system stored two copies of object AAA on Storage Nodes at Site 1, and two copies of object CCC on Storage Nodes at Site 2. Only object BBB is protected if one of the sites fails or becomes inaccessible.
 
