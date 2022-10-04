@@ -11,6 +11,8 @@ summary: 'You can edit a tenant account to change the display name, storage quot
 [.lead]
 You can edit a tenant account to change the display name, storage quota, or tenant permissions.
 
+IMPORTANT: If a tenant has the *Use grid federation connection* permission, you can edit tenant details from either grid in the connection. However, any changes you make on one grid in the connection will not be copied to the other grid. If you want to keep the tenant details exactly in sync between grids, make the same edits on both grids.
+
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
