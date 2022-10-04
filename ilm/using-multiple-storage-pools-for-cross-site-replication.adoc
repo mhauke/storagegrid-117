@@ -17,13 +17,41 @@ Replication and erasure coding require different storage pool configurations:
 
 * To use erasure coding for site-loss protection, xref:guidelines-for-creating-storage-pools.adoc#guidelines-for-storage-pools-used-for-erasure-coded-copies[create storage pools that consist of multiple sites]. Then create ILM rules that use one storage pool consisting of multiple sites and any available erasure-coding schema.
 
-The following example illustrates what can happen if an ILM rule places replicated object copies to a single storage pool containing Storage Nodes from two sites. Because the system uses any available nodes in the storage pool when it places the replicated copies, it might place all copies of some objects within only one of the sites. In this example, the system stored two copies of object AAA on Storage Nodes at Site 1, and two copies of object CCC on Storage Nodes at Site 2. Only object BBB is protected if one of the sites fails or becomes inaccessible.
+//The following example illustrates what can happen if an ILM rule places replicated object copies to a single storage pool containing Storage Nodes from two sites. Because the system uses any available nodes in the storage pool when it places the replicated copies, it might place all copies of some objects within only one of the sites. In this example, the system stored two copies of object AAA on Storage Nodes at Site 1, and two copies of object CCC on Storage Nodes at Site 2. Only object BBB is protected if one of the sites fails or becomes inaccessible.
 
-image::../media/ilm_replication_make_2_copies_1_pool_2_sites.png[Make 2 Copies rule at two sites but only one storage pool]
+//image::../media/ilm_replication_make_2_copies_1_pool_2_sites.png[Make 2 Copies rule at two sites but only one storage pool]
 
-In contrast, this example illustrates how objects are stored when you use multiple storage pools. In the example, the ILM rule specifies that two replicated copies of each object be created, and that the copies be distributed to two storage pools. Each storage pool contains all Storage Nodes at one site. Because a copy of each object is stored at each site, object data is protected from site failure or inaccessibility.
+== Replication example
+
+Having storage pools that consist of only one site per storage pool creates the ideal configuration for site-loss protection using replication. In this example:
+
+* Storage pool 1 contains Site 1
+* Storage pool 2 contains Site 2
+* The ILM rule contains two placements:
+** Store objects by replicating 2 copies at Site 1
+** Store objects by replicating 2 copies at Site 2
+
+=== ILM rule placements for Store objects by replicating 2 copies at 2 sites
+
+image::../media/ilm_replication_at_2_sites.png[Replicating 2 copies at 2 sites]
 
 image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Make 2 Copies rule at two sites and two storage pools]
+
+
+//In contrast, this example illustrates how objects are stored when you use multiple storage pools. In the example, the ILM rule specifies that two replicated copies of each object be created, and that the copies be distributed to two storage pools. Each storage pool contains all Storage Nodes at one site. Because a copy of each object is stored at each site, object data is protected from site failure or inaccessibility.
+
+== Erasure coding example
+
+Having storage pools that consist of more than one site per storage pool creates the ideal configuration for site-loss protection using erasure coding. In this example:
+
+* Storage pool 1 contains Site 1, Site 2, and Site 3
+* The ILM rule contains two placements:
+** Store objects by replicating 2 copies at Site 1
+** Store objects by replicating 2 copies at Site 2
+
+
+
+== Guidelines for using multiple storage pools
 
 When using multiple storage pools, keep the following rules in mind:
 
