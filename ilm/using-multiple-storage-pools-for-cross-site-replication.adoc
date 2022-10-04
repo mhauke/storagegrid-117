@@ -23,7 +23,7 @@ Replication and erasure coding require different storage pool configurations:
 
 == Replication example
 
-Having storage pools that consist of only one site per storage pool creates the ideal configuration for site-loss protection using replication. In this example:
+Having storage pools that consist of only one site per storage pool enables you to configure ILM rules that use replication for site-loss protection. In this example:
 
 * Storage pool 1 contains Site 1
 * Storage pool 2 contains Site 2
@@ -42,12 +42,15 @@ image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Make 2 Copies 
 
 == Erasure coding example
 
-Having storage pools that consist of more than one site per storage pool creates the ideal configuration for site-loss protection using erasure coding. In this example:
+Having storage pools that consist of more than one site per storage pool enables you to configure ILM rules that use erasure coding for site-loss protection. In this example:
 
-* Storage pool 1 contains Site 1, Site 2, and Site 3
-* The ILM rule contains two placements:
-** Store objects by replicating 2 copies at Site 1
-** Store objects by replicating 2 copies at Site 2
+* Storage pool 1 contains Sites 1 through 6
+* The ILM rule contains one placement: Store objects by erasure coding using a 6+3 EC scheme at Storage pool 1
+
+=== ILM rule placement for Store objects by erasure coding using a 6+3 EC scheme at Storage pool 1
+
+image::../media/ilm_erasure_coding_6+3.png[Store objects by erasure coding using a 6+3 EC scheme at Storage pool 1]
+
 
 
 
