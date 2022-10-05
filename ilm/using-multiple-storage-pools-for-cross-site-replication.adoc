@@ -31,7 +31,7 @@ Having storage pools that consist of only one site per storage pool enables you 
 ** Store objects by replicating 2 copies at Site 1
 ** Store objects by replicating 2 copies at Site 2
 
-=== ILM rule placements for Store objects by replicating 2 copies at 2 sites
+ILM rule placements:
 
 image::../media/ilm_replication_at_2_sites.png[Replicating 2 copies at 2 sites]
 
@@ -44,21 +44,11 @@ image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Make 2 Copies 
 
 Having storage pools that consist of more than one site per storage pool enables you to configure ILM rules that use erasure coding for site-loss protection. In this example:
 
-* Storage pool 1 contains Sites 1 through 6
-* The ILM rule contains one placement: Store objects by erasure coding using a 6+3 EC scheme at Storage pool 1
+* Storage pool 1 contains Sites 1 through 3
+* The ILM rule contains one placement: Store objects by erasure coding using a 4+2 EC scheme at Storage pool 1
 
-=== ILM rule placement for Store objects by erasure coding using a 6+3 EC scheme at Storage pool 1
+ILM rule placements:
 
-image::../media/ilm_erasure_coding_6+3.png[Store objects by erasure coding using a 6+3 EC scheme at Storage pool 1]
+image::../media/ilm_erasure_coding_site_loss_protection_4+2.png[EC 1 storage pool 9 Storage Nodes 3 sites]
 
-
-
-
-== Guidelines for using multiple storage pools
-
-When using multiple storage pools, keep the following rules in mind:
-
-* If you are creating `_n_` copies, you must add `_n_` or more storage pools. For example, if a rule is configured to make three copies, you must specify three or more storage pools.
-* If the number of copies equals the number of storage pools, one copy of the object is stored in each storage pool.
-* If the number of copies is less than the number of storage pools, the system distributes the copies to keep disk usage among the pools balanced and to ensure that two or more copies are not stored in the same storage pool.
-* If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. You must ensure that the selected storage pools do not contain the same Storage Nodes.
+image::../media/ec_three_sites_4_plus_2_site_loss_example.png[Store objects by erasure coding using a 4+2 EC scheme across 3 sites]

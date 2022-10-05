@@ -9,7 +9,7 @@ summary: 'Erasure coding is one of two methods used by StorageGRID to store obje
 :imagesdir: ../media/
 
 [.lead]
-Erasure coding is the other method used by StorageGRID to store object data. When StorageGRID matches objects to an ILM rule that is configured to create an erasure-coded copy, it slices object data into data fragments, computes additional parity fragments, and stores each fragment on a different Storage Node.
+Erasure coding is one of two methods used by StorageGRID to store object data. When StorageGRID matches objects to an ILM rule that is configured to create an erasure-coded copy, it slices object data into data fragments, computes additional parity fragments, and stores each fragment on a different Storage Node.
 
 When an object is accessed, it is reassembled using the stored fragments. If a data or a parity fragment becomes corrupt or lost, the erasure-coding algorithm can recreate that fragment using a subset of the remaining data and parity fragments.
 
@@ -19,7 +19,7 @@ The following example illustrates the use of an erasure-coding algorithm on an o
 
 image::../media/ec_three_sites_4_plus_2.png[Erasure Coding Three Sites 4 Plus 2]
 
-The 4+2 erasure-coding scheme requires a minimum of nine Storage Nodes, with three Storage Nodes at each of three different sites. An object can be retrieved as long as any four of the six fragments (data or parity) remain available. Up to two fragments can be lost without loss of the object data. If an entire data center site is lost, the object can still be retrieved or repaired, as long as all of the other fragments remain accessible.
+The 4+2 erasure-coding scheme requires a minimum of nine Storage Nodes, with three Storage Nodes at each of three different sites. An object can be retrieved as long as any four of the six fragments (data or parity) remain available. Up to two fragments can be lost without loss of the object data. If an entire site is lost, the object can still be retrieved or repaired, as long as all of the other fragments remain accessible.
 
 image::../media/ec_recoverable_4_plus_2.png[Erasure Coding Recoverable 4 Plus 2]
 

@@ -20,7 +20,7 @@ See xref:using-multiple-storage-pools-for-cross-site-replication.adoc[Examples o
 * Avoid creating or using storage pools that overlap (contain one or more of the same nodes). If storage pools overlap, more than one copy of object data might be saved on the same node.
 * StorageGRID includes a default storage pool, All Storage Nodes, that uses the default site, All Sites, and the default storage grade, All Storage Nodes. The All Storage Nodes storage pool is automatically updated whenever you add new data center sites.
 +
-NOTE: Using the All Storage Nodes storage pool or the All Sites site is not recommended because these items are automatically updated to include any new sites you add in an expansion, which might not be the behavior you want. Before using the All Storage Nodes storage pool or the default site, carefully review the guidelines for creating storage pools used for replicated and erasure-coded copies.
+NOTE: In general, do not use the All Storage Nodes storage pool or the All Sites site. These items are automatically updated to include any new sites you add in an expansion, which might not be the behavior you want. Before using the All Storage Nodes storage pool or the default site, carefully review the guidelines for creating storage pools used for replicated and erasure-coded copies.
 
 == Guidelines for storage pools used for replicated copies
 
@@ -28,7 +28,9 @@ NOTE: Using the All Storage Nodes storage pool or the All Sites site is not reco
 +
 Using a storage pool for each site ensures that replicated object copies are placed exactly where you expect (for example, one copy of every object at each site for site-loss protection).
 * If you add a site in an expansion, create a new storage pool that contains only the new site. Then, xref:working-with-ilm-rules-and-ilm-policies.adoc#edit-an-ilm-rule[update ILM rules] to control which objects are stored on the new site.
-* In general, do not use the default storage pool, All Storage Nodes, or any storage pool that includes the default site, All Sites.
+* If you are creating `_n_` copies, you must add `_n_` or more storage pools. For example, if a rule is configured to make three copies, you must specify three or more storage pools.
+* If the number of copies is less than the number of storage pools, the system distributes the copies to balance disk usage among the pools.
+* If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. You must ensure that the selected storage pools do not contain the same Storage Nodes.
 
 == Guidelines for storage pools used for erasure-coded copies
 
@@ -39,7 +41,6 @@ Using a storage pool for each site ensures that replicated object copies are pla
 * If you have high throughput requirements, using a storage pool that includes multiple sites is not recommended if the network latency between sites is greater than 100 ms. As latency increases, the rate at which StorageGRID can create, place, and retrieve object fragments decreases sharply due to the decrease in TCP network throughput.
 +
 The decrease in throughput affects the maximum achievable rates of object ingest and retrieval (when Balanced or Strict are selected as the ingest behavior) or could lead to ILM queue backlogs (when Dual commit is selected as the ingest behavior). See xref:what-ilm-rule-is.adoc#ilm-rule-ingest-behavior[ILM rule ingest behavior].
-* In general, do not use the default storage pool, All Storage Nodes, or any storage pool that includes the default site, All Sites in any erasure coding profile.
 +
 NOTE: If your grid includes only one site, you are prevented from using the All Storage Nodes storage pool or the All Sites default site in an erasure coding profile. This behavior prevents the erasure coding profile from becoming invalid if a second site is added.
 * You cannot use Archive Nodes for erasure-coded data.
