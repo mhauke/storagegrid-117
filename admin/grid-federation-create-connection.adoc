@@ -2,32 +2,29 @@
 permalink: admin/grid-federation-create-connection.html
 sidebar: sidebar
 keywords: grid federation, create connection, configure connection
-summary: 'You can create a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_).'
+summary: 'You can create a grid federation connection between two StorageGRID systems if you want tenants to be able to clone account details and replicate object data between the grids.'
 ---
 = Create grid federation connections
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can create a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_).
+You can create a grid federation connection between two StorageGRID systems if you want tenants to be able to clone account details and replicate object data between the grids.
 
-Creating a grid federation connection includes steps on both grids. You start the configuration on one grid and complete it on the other grid. You can start the configuration from either grid.
+As shown in the figure, creating a grid federation connection includes steps on both grids. You start the configuration on one grid and complete it on the other grid. You can start a configuration from either grid.
 
-image:../media/grid-federation-create-connection.png[illustration is described by text]
+image:../media/grid-federation-create-connection.png[graphic overview of steps to create a connection on two grids]
 
-. To start the configuration, a grid administrator signs in to the primary Admin Node on the first grid to enter connection details and download a verification file. 
-
-. To complete the configuration, a grid administrator signs in to the primary Admin Node on the second grid to upload the verification file and save and test the connection. 
 
 .What you'll need
 
 * You have reviewed the xref:grid-federation-overview.adoc[considerations and requirements] for configuring grid federation connections. 
-* If you plan to use fully qualified domain names (FQDNs) for each grid instead of IP or VIP addresses, you know which names to use. The DNS servers for each grid have the appropriate entries.
+* If you plan to use fully qualified domain names (FQDNs) for each grid instead of IP or VIP addresses, you know which names to use and you have confirmed that the DNS server for each grid has the appropriate entries.
 * You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * Whoever starts the configuration has Root access permission and the provisioning passphrase for the first grid.
 * Whoever completes the configuration has Root access permission and the provisioning passphrase for the second grid. 
 
-== [[start_configuration]]Start the configuration
+== Start configuration
 
 Perform these steps on either of the two StorageGRID systems.
 
@@ -92,7 +89,7 @@ The verification file contains secrets and must be securely stored and transmitt
 
 . Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
 
-== Complete the configuration
+== Complete configuration
 
 Perform these steps on the StorageGRID system you are connecting to (the other grid).
 
@@ -123,5 +120,7 @@ If an error message appears, address any issues. See xref:grid-federation-troubl
 [IMPORTANT]
 This file contains secrets and must be deleted after the connection is established. If you edit this connection, a new verification file will be created. The original file cannot be reused.
 
-. When you are ready, create one or more new tenant accounts to use this connection. See xref:creating-tenant-account.adoc[Create a tenant account].
+. When you are ready, create one or more new tenant accounts, add the *Use grid federation* permission, and select this connection. See xref:creating-tenant-account.adoc[Create a tenant account].
++
+NOTE: You cannot add the *Use grid federation* permission to an existing tenant.
 
