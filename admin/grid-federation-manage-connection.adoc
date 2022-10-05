@@ -36,9 +36,11 @@ image:../media/grid-federation-permitted-tenants-tab.png[Grid federation Permitt
 
 . To view details for a specific connection, select either tab from the Grid federation page and select the connection name from the table.
 +
-The details page for the connection appears. From this tab, you can <<edit_grid_fed_connection,edit>>, <<test_grid_fed_connection,test>>, or <<remove_grid_fed_connection,remove>> the selected connection.
+The details page for the connection appears. From this page, you can <<edit_grid_fed_connection,edit>>, <<test_grid_fed_connection,test>>, or <<remove_grid_fed_connection,remove>> the selected connection.
 
 * The *Permitted tenants* tab shows which tenant accounts on this grid have permission to use this connection. From this tab, you can access the details page for each tenant or <<remove_tenant_grid_fed_permission,remove a tenant's permission to use the connection>>. 
++
+image:../media/grid-federation-permitted-tenants-tab-for-connection.png[grid-federation-permitted-tenants-tab-for-connection]
 
 * The *Certificates* tab shows the system-generated certificates for this connection. From this tab, you can download the certificate, copy the certificate PEM, or <<rotate_grid_fed_certificates, rotate connection certificates>>.
 +
