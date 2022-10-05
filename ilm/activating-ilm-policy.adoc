@@ -33,7 +33,7 @@ When you activate an ILM policy, the system distributes the new policy to all no
 +
 A warning message is displayed, prompting you to confirm that you want to activate the proposed policy.
 +
-A prompt appears in the warning message if the default rule does not retain objects forever. In this example, the retention diagram shows that the default rule will delete objects after 2 years. You must type *2* in the text box to acknowledge that any objects not matched by another rule in the policy will be removed from StorageGRID after 2 years.
+A prompt appears in the warning message if the default rule does not retain objects forever. In this example, the retention diagram shows that the default rule will delete objects after 730 days (2 years). You must type *730* in the text box to acknowledge that any objects not matched by another rule in the policy will be removed from StorageGRID after 730 days.
 +
 image::../media/ilm_policy_default_rule_not_forever_prompt.png[ILM Policy Default Rule Not Forever Prompt]
 
