@@ -11,7 +11,9 @@ summary: 'You can create a grid federation connection between two StorageGRID sy
 [.lead]
 You can create a grid federation connection between two StorageGRID systems to replicate the object data in selected tenant buckets between grids (_cross-grid replication_).
 
-Creating a grid federation connection is a two-step process. You start the configuration on one grid and complete it on the other grid. You can start the configuration on either grid.
+Creating a grid federation connection includes steps on both grids. You start the configuration on one grid and complete it on the other grid. You can start the configuration from either grid.
+
+image:../media/grid-federation-create-connection.png[illustration is described by text]
 
 . To start the configuration, a grid administrator signs in to the primary Admin Node on the first grid to enter connection details and download a verification file. 
 
@@ -27,7 +29,7 @@ Creating a grid federation connection is a two-step process. You start the confi
 
 == [[start_configuration]]Start the configuration
 
-To start the configuration, enter connection details and download the verification file.
+Perform these steps on either of the two StorageGRID systems.
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 
@@ -90,7 +92,7 @@ The verification file contains secrets and must be securely stored and transmitt
 
 . Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
 
-== Complete the connection
+== Complete the configuration
 
 Perform these steps on the StorageGRID system you are connecting to (the other grid).
 
@@ -112,11 +114,14 @@ In general, use the same number of days for the certificates on both sides of th
 
 . Select *Save and test*.
 +
-If the connection can be established, a success message appears. Otherwise, an error message appears. Review the message and address any issues.
-
-. From the Grid federation page, confirm that the new connection is shown and that its *Connection status* is *Connected*.
+The certificates are generated, a success message appears, and the new connection is listed on the Grid federation page with a *Connection status* of *Connected*.
++
+If an error message appears, address any issues. See xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation connections].
 
 . After the connection has been established, securely delete all copies of the verification file.
 +
 [IMPORTANT]
 This file contains secrets and must be deleted after the connection is established. If you edit this connection, a new verification file will be created. The original file cannot be reused.
+
+. When you are ready, create one or more new tenant accounts to use this connection. See xref:creating-tenant-account.adoc[Create a tenant account].
+
