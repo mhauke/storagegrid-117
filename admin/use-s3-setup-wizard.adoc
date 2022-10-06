@@ -40,3 +40,11 @@ If you plan to use S3 virtual hosted-style requests, you have xref:../admin/conf
 If you plan to use the StorageGRID load balancer, you have reviewed the general considerations for load balancing. You have the certificates you will upload or the values you need to generate a certificate.
 
 If you plan to use an external (third-party) load balancer endpoint, you have the fully qualified domain name (FQDN), port, and certificate for that load balancer.
+
+=== Configure any grid federation connections
+
+If you want to allow the S3 tenant to clone account data and replicate bucket objects to another grid using a grid federation connection, confirm the following before starting the wizard:
+
+* You have xref:grid-federation-manage-connection.adoc[configured the grid federation connection].
+* The status of the connection is *Connected*.
+* You have Root access permission.
