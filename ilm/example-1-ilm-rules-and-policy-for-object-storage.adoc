@@ -13,9 +13,9 @@ You can use the following example rules and policy as a starting point when defi
 
 CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate the proposed policy to confirm it will work as intended to protect content from loss.
 
-== ILM rule 1 for example 1: Copy object data to two data centers
+== ILM rule 1 for example 1: Copy object data to two sites
 
-This example ILM rule copies object data to storage pools in two data centers.
+This example ILM rule copies object data to storage pools in two sites.
 
 [cols="1a,2a" options="header"]
 |===
@@ -23,11 +23,11 @@ This example ILM rule copies object data to storage pools in two data centers.
 a|
 Storage Pools
 a|
-Two storage pools, each at different data centers, named Storage Pool DC1 and Storage Pool DC2.
+Two storage pools, each at different sites, named Storage Pool Site 1 and Storage Pool Site 2.
 a|
 Rule name
 a|
-Two Copies Two Data Centers
+Two Copies Two Sites
 a|
 Reference time
 a|
@@ -35,10 +35,10 @@ Ingest time
 a|
 Content Placement
 a|
-On Day 0, keep two replicated copies forever--one in Storage Pool DC1 and one in Storage Pool DC2.
+On Day 0, keep two replicated copies forever--one in Storage Pool Site 1 and one in Storage Pool Site 2.
 |===
 
-image::../media/ilm_rule_two_copies_two_data_centers.png[ILM rule 1 for example 1: Copy object data to two data centers]
+image::../media/ilm_rule_two_copies_two_data_centers.png[ILM rule 1 for example 1: Copy object data to two sites]
 
 == ILM rule 2 for example 1: erasure coding profile with bucket matching
 
@@ -51,7 +51,7 @@ a|
 Erasure Coding Profile
 a|
 
-* One storage pool across three data centers (All 3 sites)
+* One storage pool across three sites (All 3 sites)
 * Use 6+3 erasure-coding scheme
 
 a|
@@ -75,7 +75,7 @@ The StorageGRID system allows you to design sophisticated and complex ILM polici
 
 A typical ILM policy for a multi-site topology might include ILM rules such as the following:
 
-* At ingest, use 6+3 erasure coding to store all objects belonging to the S3 bucket named `finance-records` across three data centers.
-* If an object does not match the first ILM rule, use the policy's default ILM rule, Two Copies Two Data Centers, to store a copy of that object in two data centers, DC1 and DC2.
+* At ingest, use 6+3 erasure coding to store all objects belonging to the S3 bucket named `finance-records` across three sites.
+* If an object does not match the first ILM rule, use the policy's default ILM rule, Two Copies Two Sites, to store a copy of that object in two sites, Site 1 and Site 2.
 +
 image::../media/policy_1_configured_policy.png[ILM policy for example 1]
