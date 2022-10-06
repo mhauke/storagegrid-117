@@ -27,26 +27,27 @@ Even if no limits are set for a traffic classification policy, metrics are colle
 . Select *CONFIGURATION* > *Network* > *Traffic classification*.
 +
 
-The Traffic Classification Policies page appears, and the existing policies are listed in the table.
+The Traffic classification policies page appears, and the existing policies are listed in the table.
 +
 
 NOTE: You must have Root access permission to *Create*, *Edit*, and *Remove* traffic classification policies 
 
-. Select the traffic classification policy for which you want to view metrics.
+. Press the traffic classification policy name for which you want to view metrics.
 . Select *Metrics* tab.
 +
 The traffic classification policy graphs appear. The graphs display metrics only for the traffic that matches the selected policy.
 +
-You can select other policies to view by using the *policy* pull-down.
+You can select other policies to view by using the selecting the policy name from the list on the left.
 +
 //image::../media/traffic_classification_policy_graph.png[Network Traffic Graph]
 +
 The following graphs are included on the web page.
 
-** Load balancer request traffic: This graph provides the amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
+** Request rate: This graph provides the amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
 +
 
 NOTE: When requests are complete, this chart only shows bandwidth usage. For slow or large object requests the actual instantaneous bandwidth might differ from the values reported in this graph.
++
 
 ** Load balancer request completion rate: This graph provides an approximate rate at which requests matching this policy are being completed. Requests are reported here after all response data has been returned to the client. For slow or large object requests the incoming request rate might differ from the values reported in this graph.
 
@@ -57,6 +58,7 @@ NOTE: When requests are complete, this chart only shows bandwidth usage. For slo
 ** Write request rate by object size: This graph provides the rate for PUT/POST/DELETE requests matching this policy as a heatmap split on request sizes. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and may report 0 when there are non-zero requests in the bucket.
 
 ** Read request rate by object size: This graph provides a rate for GET/HEAD requests matching this policy as a heatmap split on request sizes. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and might report 0 when there are non-zero requests in the bucket.
++
 
 The colors in the graphs indicate the relative frequency of an object size within an individual graph. The cooler colors (for example, purple and blue) indicate lower relative rates, and the warmer colors (for example, orange and red) indicate higher relative rates.
 
@@ -68,18 +70,14 @@ The colors in the graphs indicate the relative frequency of an object size withi
 +
 //image::../media/traffic_classification_policy_heatmap_closeup.png[Traffic Bar Graph Popup Values]
 
-. Use the *Policy* pull-down in the upper left to select a different policy.
+. Use the *Policy* to select a different policy.
 +
 The graphs for the selected policy appear.
 
 . Alternatively, access the graphs from the *SUPPORT* menu.
  .. Select *SUPPORT* > *Tools* > *Metrics*.
- .. Select *Traffic classification policy* from the *Grafana*
- .. Select the policy from the pull-down on the upper left of the page.
+ .. Select *Traffic Classification Policy* from the *Grafana* section.
+ .. Select the policy from the pull-down menu on the upper left of the page.
 +
 Traffic classification policies are identified by their ID. Policy IDs are listed on the Traffic classification policies page.
 . Analyze the graphs to determine how often the policy is limiting traffic and whether you need to adjust the policy.
-
-.Related information
-
-xref:../monitor/index.adoc[Monitor and troubleshoot]

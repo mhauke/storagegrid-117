@@ -9,7 +9,7 @@ summary: 'You create traffic classification policies if you want to monitor, and
 :imagesdir: ../media/
 
 [.lead]
-You can create traffic classification policies if you want to monitor, and optionally limit network traffic by bucket, Bucket regex, CIDR, load balancer endpoint, or tenant. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
+You can create traffic classification policies if you want to monitor, and optionally limit network traffic by bucket, bucket regex, CIDR, load balancer endpoint, or tenant. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
 
 .What you'll need
 
@@ -27,7 +27,7 @@ The Traffic classification policies page appears.
 
 . Select *Create*.
 +
-Create a traffic classification policy wizard appears.
+The Create a traffic classification policy wizard appears.
 +
 
 . Enter a descriptive name that can be recognized and a description (optional) for the policy and select *Continue*.
@@ -44,7 +44,7 @@ For example, describe what this traffic classification policy applies to and wha
 |Field |Description
 
 |Type
-|Select or enter the types of traffic that the matching rule applies to. Traffic types are Bucket, Bucket regex, CIDR, load balancer endpoint, tenant.
+|Select or enter the types of traffic that the matching rule applies to. Traffic types are bucket, bucket regex, CIDR, load balancer endpoint, and tenant.
 
 |Match value
 |Enter the value that matches the selected Type.
@@ -82,9 +82,9 @@ NOTE: Even if you do not create limits, StorageGRID collects metrics so that you
 |Type
 |The type of limit you want to apply to the network traffic matched by the rule. For example, you can limit bandwidth or request rate.
 
-Hint: When aggregate bandwidth is in use, per-request bandwidth is unavailable. Conversely, when per-request bandwidth is in use, aggregate bandwidth is unavailable.
+*Hint*: When aggregate bandwidth is in use, per-request bandwidth is unavailable. Conversely, when per-request bandwidth is in use, aggregate bandwidth is unavailable.
 
-Note: You can create policies to limit aggregate bandwidth or to limit per-request bandwidth. However, StorageGRID cannot limit both types of bandwidth at the same time. Aggregate bandwidth limits might impose an additional minor performance impact on non-limited traffic.
+*Note*: You can create policies to limit aggregate bandwidth or to limit per-request bandwidth. However, StorageGRID cannot limit both types of bandwidth at the same time. Aggregate bandwidth limits might impose an additional minor performance impact on non-limited traffic.
 
 For bandwidth limits, StorageGRID applies the policy that best matches the type of limit set. For example, if you have a policy that limits traffic in only one direction, then traffic in the opposite direction will be unlimited, even if there is traffic that matches additional policies that have bandwidth limits. StorageGRID implements “best” matches for bandwidth limits in the following order:
 
@@ -100,7 +100,7 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 |Value
 |The value that network traffic will be limited to, based on the Unit you select. For example, enter 10 and select MiBs to prevent the network traffic matched by this rule from exceeding 10 MiBs.
 
-Note: Depending on the units setting in the User preferences page of the Grid Manager, the available units will be either base2 (for example, GiB) or base10 (for example, GB).
+*Note*: Depending on the units setting in the User preferences page of the Grid Manager, the available units will be either binary (for example, GiB) or decimal (for example, GB).
 
 
 |Unit
@@ -113,8 +113,10 @@ Note: Depending on the units setting in the User preferences page of the Grid Ma
 For example, if you want to create a 40 Gbps bandwidth limit for an SLA tier, create an Aggregate Bandwidth In limit and an Aggregate Bandwidth Out limit and set each one to 40 Gbps.
 +
 
-NOTE: To convert megabytes per second to gigabits per second, multiply by eight. For example, 125 MB/s is equivalent to 1,000 Mbps or 1 Gbps.
+. Select *Continue*.
 
-. Select *Save and continue*. You must make sure that you read and review the Traffic classification policy before saving. Use the *Previous* button to go back and make changes as required.
+. Read and review the Traffic classification policy. Use the *Previous* button to go back and make changes as required. When you are satisfied with the policy, select *Save and continue*.
+
+
 
 S3 and Swift client traffic is now handled according to the traffic classification policies. You can view traffic charts and verify that the polices are enforcing the traffic limits you expect. See xref:view-network-traffic-metric-overhaul.adoc[View network traffic metrics].
