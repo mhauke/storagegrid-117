@@ -98,7 +98,7 @@ If the order in which nodes are upgraded is important, approve nodes or groups o
 
 IMPORTANT: When the upgrade starts on a grid node, the services on that node are stopped. Later, the grid node is rebooted. To avoid service interruptions for client applications that are communicating with the node, do not approve the upgrade for a node unless you are sure that node is ready to be stopped and rebooted. As required, schedule a maintenance window or notify customers. 
 
-. For the *Upgrade other nodes* step, review the Summary, which provides the status and start time for each major upgrade task.
+. For the *Upgrade other nodes* step, review the Summary, which provides the start time for the upgrade as a whole and the status for each major upgrade task.
 
 ** *Start upgrade service* is the first upgrade task. During this task, the software file is distributed to the grid nodes, and the upgrade service is started on each node. 
 
@@ -155,7 +155,7 @@ If you approve more than one node of the same type, the nodes will be upgraded o
 * Queued
 * Stopping services
 +
-NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Remove* button is hidden.
+NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Remove* button is disabled.
 
 * Stopping container
 * Cleaning up Docker images
