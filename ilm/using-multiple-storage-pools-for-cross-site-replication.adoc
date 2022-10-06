@@ -2,14 +2,14 @@
 permalink: ilm/using-multiple-storage-pools-for-cross-site-replication.html
 sidebar: sidebar
 keywords: site-loss protection, cross-site replication, storage pools 
-summary: 'If your StorageGRID deployment includes more than one site, you can use replication and erasure coding along with multiple storage pools to enable site-loss protection.'
+summary: 'If your StorageGRID deployment includes more than one site, you can use replication and erasure coding with appropriately configured storage pools to enable site-loss protection.'
 ---
 = Enable site-loss protection
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If your StorageGRID deployment includes more than one site, you can use replication and erasure coding with multiple storage pools to enable site-loss protection.
+If your StorageGRID deployment includes more than one site, you can use replication and erasure coding with appropriately configured storage pools to enable site-loss protection.
 
 Replication and erasure coding require different storage pool configurations:
 
@@ -28,14 +28,16 @@ Having storage pools that consist of only one site per storage pool enables you 
 * Storage pool 1 contains Site 1
 * Storage pool 2 contains Site 2
 * The ILM rule contains two placements:
-** Store objects by replicating 2 copies at Site 1
-** Store objects by replicating 2 copies at Site 2
+** Store objects by replicating 1 copy at Site 1
+** Store objects by replicating 1 copy at Site 2
 
 ILM rule placements:
 
-image::../media/ilm_replication_at_2_sites.png[Replicating 2 copies at 2 sites]
+image::../media/ilm_replication_at_2_sites.png[Replicating 1 copy each at 2 sites]
 
-image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Make 2 Copies rule at two sites and two storage pools]
+image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Make 1 copy at each of 2 sites - site-specific storage pool]
+
+If one site is lost, copies of the objects are available at the other site.
 
 
 //In contrast, this example illustrates how objects are stored when you use multiple storage pools. In the example, the ILM rule specifies that two replicated copies of each object be created, and that the copies be distributed to two storage pools. Each storage pool contains all Storage Nodes at one site. Because a copy of each object is stored at each site, object data is protected from site failure or inaccessibility.
@@ -51,4 +53,12 @@ ILM rule placements:
 
 image::../media/ilm_erasure_coding_site_loss_protection_4+2.png[EC 1 storage pool 9 Storage Nodes 3 sites]
 
-image::../media/ec_three_sites_4_plus_2_site_loss_example.png[Store objects by erasure coding using a 4+2 EC scheme across 3 sites]
+In this example, the ILM rule uses a 4+2 erasure-coding scheme. Each object is sliced into four equal data fragments, and two parity fragments are computed from the object data. Each of the six fragments is stored on a different node across three data center sites to provide data protection for node failures or site loss.
+
+NOTE: Erasure coding is allowed in storage pools containing any number of sites _except_ two sites.
+
+image::../media/ec_three_sites_4_plus_2_site_loss_example_template.png[Store objects by erasure coding using a 4+2 EC scheme across 3 sites]
+
+An object can be retrieved as long as any four of the six fragments (data or parity) remain available. Up to two fragments can be lost without loss of the object data. If an entire site is lost, the object can still be retrieved or repaired, as long as all of the other fragments remain accessible.
+
+image::../media/ec_three_sites_4_plus_2_site_loss_example.png[Erasure coding 4+2 EC scheme 1 site lost]
