@@ -2,14 +2,14 @@
 permalink: ilm/working-with-ilm-rules-and-ilm-policies.html
 sidebar: sidebar
 keywords: remove ilm rule, edit ilm rule, clone ilm rule, ilm queue
-summary: 'You can modify the ILM policy and ILM rules as your storage requirements change. You can view ILM metrics to determine system performance.'
+summary: 'As your storage requirements change, you might need to modify the active policy or put a different policy in place. You can also modify the ILM rules associated with the policy. You can view ILM metrics to determine system performance.'
 ---
-= Work with the ILM policy and ILM rules
+= Work with ILM policies and ILM rules
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can modify the ILM policy and ILM rules as your storage requirements change. You can view ILM metrics to determine system performance.
+As your storage requirements change, you might need to modify the active policy or put a different policy in place. You can also modify the ILM rules associated with the policy. You can view ILM metrics to determine system performance.
 
 .What you'll need
 
@@ -24,7 +24,36 @@ To view active, proposed, and historical ILM policies:
 
 . As needed, select *Active policy*, *Proposed policy*, or *Policy history* to view the details for each. In each tab, you can select *Policy rules* and *Retention diagram*.
 
-image::../media/ilm-policy-active-proposed-history-tabs.png[ILM Policy Tabs]
+image::../media/ilm_policy_active_proposed_history_tabs.png[ILM Policy Tabs]
+
+== Remove proposed ILM policy
+
+To remove a proposed ILM policy:
+
+
+
+== Clone a historical ILM policy
+
+To clone a historical ILM policy:
+
+. Select *ILM* > *Policies* > *Policy history*.
+
+. Remove the proposed policy if one exists.
+
+. Select the radio button for the policy you want to clone, then select *Clone historical policy*.
+
+. Complete the required details by following the instructions in xref:creating-proposed-ilm-policy.adoc[Create proposed ILM policy].
+
+CAUTION: An ILM policy that has been incorrectly configured can result in unrecoverable data loss. Before activating an ILM policy, carefully review the ILM policy and its ILM rules, and then simulate the ILM policy. Always confirm that the ILM policy will work as intended. 
+
+== Remove proposed policy
+
+To remove the proposed policy:
+
+. Select *ILM* > *Policies* > *Proposed policy*.
+. Select *Actions* > *Remove*.
+
+The proposed policy and the Proposed policy tab are removed.
 
 == View ILM rule details
 
@@ -46,7 +75,7 @@ Before adding a cloned rule to the active ILM policy, be aware that a change to 
 .Steps
 
 . Select *ILM* > *Rules*.
-. Select the rule you want to clone and select *Clone*.
+. Select the check box for the rule you want to clone, then select *Clone*. Alternatively, select the rule name, then select *Clone* from the rule details page. 
 . Update the cloned rule by following the steps for <<Edit an ILM rule,editing an ILM rule>> and xref:create-ilm-rule-enter-details.adoc#use-advanced-filters-in-ilm-rules[using advanced filters in ILM rules].
 +
 When cloning an ILM rule, you must enter a new name.
@@ -62,7 +91,7 @@ NOTE: Before adding an edited rule to the active ILM policy, be aware that a cha
 .Steps
 . Select *ILM* > *Rules*.
 . Confirm that the rule you want to edit is not used in the active ILM policy or the proposed ILM policy.
-. If the rule you want to edit is not in use, select the rule and select *Edit*.
+. If the rule you want to edit is not in use, select the check box for the rule and select *Actions* > *Edit*. Alternatively, select the name of the rule, then select *Edit* on the rule details page. 
 . Complete the pages of the Edit ILM rule wizard. As necessary, follow the steps for xref:create-ilm-rule-enter-details.adoc[creating an ILM rule] and xref:create-ilm-rule-enter-details.adoc#use-advanced-filters-in-ilm-rules[using advanced filters in ILM rules].
 +
 When editing an ILM rule, you cannot change its name.
