@@ -49,15 +49,9 @@ The following graphs are included on the web page.
 NOTE: When requests are complete, this chart only shows bandwidth usage. For slow or large object requests the actual instantaneous bandwidth might differ from the values reported in this graph.
 +
 
-** Load balancer request completion rate: This graph provides an approximate rate at which requests matching this policy are being completed. Requests are reported here after all response data has been returned to the client. For slow or large object requests the incoming request rate might differ from the values reported in this graph.
-
 ** Error response rate: This graph provides an approximate rate at which requests matching this policy are returning errors (HTTP status code >= 400) to clients.
 
 ** Average request duration (non-error): This graph provides an average duration of successful requests matching this policy.
-
-** Write request rate by object size: This graph provides the rate for PUT/POST/DELETE requests matching this policy as a heatmap split on request sizes. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and may report 0 when there are non-zero requests in the bucket.
-
-** Read request rate by object size: This graph provides a rate for GET/HEAD requests matching this policy as a heatmap split on request sizes. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and might report 0 when there are non-zero requests in the bucket.
 +
 
 The colors in the graphs indicate the relative frequency of an object size within an individual graph. The cooler colors (for example, purple and blue) indicate lower relative rates, and the warmer colors (for example, orange and red) indicate higher relative rates.
