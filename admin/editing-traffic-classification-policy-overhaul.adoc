@@ -9,7 +9,7 @@ summary: 'You can edit a traffic classification policy to change its name or des
 :imagesdir: ../media/
 
 [.lead]
-You can edit a traffic classification policy to change the name, description, or to edit and delete any rules or limits for the policy.
+You can edit a traffic classification policy to change the its name or description, or to create, edit, or delete any rules or limits for the policy.
 
 .What you'll need
 
@@ -22,15 +22,22 @@ You can edit a traffic classification policy to change the name, description, or
 +
 The Traffic classification policies page appears and the existing policies are listed in a table.
 
-. Select the policy you want to edit.
-. Select *Edit*.
+. Edit a policy as described in the following ways:
+.. Traffic classification policy page
+... Select the check box for the policy.
+... Select *Actions* > *Edit*.
+
+.. Policy details page.
+... Press the policy name.
+... Select the *Edit* button beside the policy name.
 +
+
 The Edit traffic classification policy wizard appears.
 
-+
+. Follow these steps to edit a policy in the wizard: 
 .. Edit a traffic classification policy name or description in the Enter policy name step and select *Continue*.
-.. Add a rule or edit the *Type* and *Match value* of the existing rule in the Add matching rules step and select *Continue*. You can also follow the instructions mentioned in adding a rule.
-.. Optionally, you can add, edit, or delete a limit in the Set limits step and select *Continue*. You can also follow the instructions mentioned in adding a rule.
-.. Select *Save and continue*. You must make sure that you read and review the updated Traffic classification policy before saving. 
+.. Add a rule or edit the *Type* and *Match value* of the existing rule in the Add matching rules step and select *Continue*. For details, see the instructions for xref:../admin/creating-traffic-classification-policy-overhaul.adoc[creating traffic classification policies].
+.. Optionally, add, edit, or delete a limit in the Set limits step and select *Continue*. For details, see the instructions for xref:../admin/creating-traffic-classification-policy-overhaul.adoc[creating traffic classification policies].
+.. Read and review the updated policy, and select *Save and continue*.
 
 The changes you made to the policy are saved, and network traffic is now handled according to the traffic classification policies. You can view traffic charts and verify that the polices are enforcing the traffic limits you expect.
