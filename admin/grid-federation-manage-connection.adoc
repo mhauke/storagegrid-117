@@ -16,7 +16,6 @@ Managing grid federation connections between StorageGRID systems includes viewin
 * You are signed in to the Grid Manager on either grid using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Root access permission for the grid you are signed in to. 
 
-
 == View a grid federation connection
 
 You can view details for an existing grid federation connection from either grid in the connection. 
@@ -29,7 +28,7 @@ The Grid federation page appears.
 +
 image:../media/grid-federation-connections-tab.png[Grid federation connections tab]
 
-* The *Permitted tenants* tab lists basic information for all tenant accounts on this grid that have the *Use grid federation* permission. From this tab, you can access the details page for each tenant or <<remove_tenant_grid_fed_permission,remove a tenant's permission to use a connection>>.
+* The *Permitted tenants* tab lists basic information for all tenant accounts on this grid that have the *Use grid federation* permission. From this tab, you can xref:../monitor/monitoring-tenant-activity.adoc[access the details page for each tenant] or <xref:grid-federation-manage-tenants.adoc[remove a tenant's permission] to use a connection.
 +
 image:../media/grid-federation-permitted-tenants-tab.png[Grid federation Permitted tenants tab]
 
@@ -38,11 +37,11 @@ image:../media/grid-federation-permitted-tenants-tab.png[Grid federation Permitt
 +
 The details page for the connection appears. From this page, you can <<edit_grid_fed_connection,edit>>, <<test_grid_fed_connection,test>>, or <<remove_grid_fed_connection,remove>> the selected connection.
 
-* The *Permitted tenants* tab shows which tenant accounts on this grid have permission to use this connection. From this tab, you can access the details page for each tenant or <<remove_tenant_grid_fed_permission,remove a tenant's permission to use the connection>>. 
+* The *Permitted tenants* tab shows which tenant accounts on this grid have permission to use this connection. From this tab, you can you can xref:../monitor/monitoring-tenant-activity.adoc[access the details page for each tenant] or xref:grid-federation-manage-tenants.adoc[remove a tenant's permission] to use the connection. 
 +
 image:../media/grid-federation-permitted-tenants-tab-for-connection.png[grid-federation-permitted-tenants-tab-for-connection]
 
-* The *Certificates* tab shows the system-generated certificates for this connection. From this tab, you can download the certificate, copy the certificate PEM, or <<rotate_grid_fed_certificates, rotate connection certificates>>.
+* The *Certificates* tab shows the system-generated server and client certificates for this connection. From this tab, you can <<rotate_grid_fed_certificates, rotate connection certificates>> or select *Server* or *Client* to download the associated certificate or copy the certificate PEM.
 +
 image:../media/grid-federation-certificates-tab.png[grid-federation-certificates-tab]
 
@@ -98,13 +97,13 @@ The verification file contains secrets and must be securely stored and transmitt
 
 . Select *Close* to return to the Grid federation page. 
 
-. Confirm that the new connection is shown and that its *Connection status* is *Pending edit*.
+. Confirm that the *Connection status* is *Pending edit*.
 
 . Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
 
 === Finish editing the connection
 
-Perform these steps on the other grid.
+Finish ending the connection by uploading the verification file on the other grid.
 
 . Sign in to the Grid Manager from the primary Admin Node.
 
@@ -199,21 +198,6 @@ If the certificates on either end of the connection expire, the connection will 
 In general, use the same number of days for the certificates on both sides of the connection.
 
 
-== [[remove_tenant_grid_fed_permission]]Remove permission for tenant to use grid federation connection
-
-Removing a tenant's permission to use a grid federation connection does not delete any items that have already been copied to the other grid.
-
-Perform these steps from either grid in the grid federation connection.
-
-. Sign in to the Grid Manager from the primary Admin Node.
-. Select *CONFIGURATION* > *System* > *Grid federation*.
-. Select the connection name to display its details page.
-. On the *Permitted tenants* tab, select radio button for the tenant. 
-. Select *Remove permission*.
-. Select *Yes*.
-. Go to the other grid and repeat these steps to remove the permission for the same tenant account on the other grid.
-
-
 == [[remove_grid_fed_connection]]Remove a grid federation connection
 
 You can remove a grid federation connection from either grid in the connection. Before you start, you must confirm that the connection is not being used by any tenant on either grid.
@@ -226,7 +210,7 @@ Perform these steps from either grid in the grid federation connection.
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 . Select the connection name to display its details.
 . On the Permitted tenants tab, determine if the connection is in use by any tenants.
-. If any tenants are using the connection, <<remove_tenant_grid_fed_permission,remove the permission>> for each one.
+. If any tenants are using the connection, xref:grid-federation-manage-tenants.adoc[remove the permission] for each one.
 +
 . Sign in to the other grid, and repeat these steps to remove the permission for the same tenant accounts. 
 
@@ -236,7 +220,7 @@ Perform these steps from either grid in the grid federation connection.
 * If the connection status is anything other than *Error*, the connection is removed, and this procedure is complete.
 * If the connection status is *Error*, the connection will not be removed. You can either resolve the connection error (see xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation]) or force-remove the connection from both grids. Go to the next step.
 
-== [[force-remove_grid_fed_connection]]Force-remove a grid federation connection
+=== [[force-remove_grid_fed_connection]]Force-remove a grid federation connection
 
 If necessary, you can force the removal of an unhealthy connection.
 

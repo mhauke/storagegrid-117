@@ -79,6 +79,8 @@ Some of these permissions have additional requirements. For details, select the 
 |Use grid federation connection (S3 only)
 |The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-overview.adoc[Use grid federation: Overview].
 
+*Note*: You can only enable *Use grid federation connection* when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.
+
 |===
 
 . If you selected *Use grid federation connection*, select one of the available grid federation connections.
