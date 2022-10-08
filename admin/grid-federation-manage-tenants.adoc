@@ -18,9 +18,7 @@ You can allow new S3 tenant accounts to use a grid federation connection between
 * You have xref:grid-federation-create-connection.adoc[created a grid federation connection] between two grids.
 
 == Allow tenant to use grid federation connection
-If you want to allow a tenant account to use a grid federation connection for account clone and cross-grid replication, note the following:
-
-* Follow the general instructions to xref:creating-tenant-account.adoc[create a new S3 tenant].
+If you want to allow a tenant account to use a grid federation connection for account clone and cross-grid replication, follow the general instructions to xref:creating-tenant-account.adoc[create a new S3 tenant] and note the following:
 
 * You can create the tenant from either grid in the connection.
 
@@ -34,9 +32,7 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 == Edit tenant with grid federation permission
 
-If you need to edit a tenant that has the *Use grid federation connection* permission, note the following:
-
-* Follow the general instructions for xref:editing-tenant-accounts.adoc[editing a tenant account].
+If you need to edit a tenant that has the *Use grid federation connection* permission, follow the general instructions for xref:editing-tenant-account.adoc[editing a tenant account] and note the following:
 
 * You can start the edits from either grid in the connection, but any edits you make to the tenant on one grid are not copied to the other grid.
 
