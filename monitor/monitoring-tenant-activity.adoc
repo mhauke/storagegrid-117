@@ -44,7 +44,9 @@ image::../media/tenant_accounts_example_csv.png[Tenant accounts example .csv]
 +
 You can open the `.csv` file in a spreadsheet application or use it in automation.
 
-. Optionally, select *Actions* > *Delete* to remove one or more tenants. See xref:../admin/deleting-tenant-account.adoc[Delete tenant account].
+. If no objects are listed, optionally, select *Actions* > *Delete* to remove one or more tenants. See xref:../admin/deleting-tenant-account.adoc[Delete tenant account].
++
+You can't remove a tenant account if the account includes any buckets or containers.
 
 == View a specific tenant
 
