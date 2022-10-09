@@ -28,7 +28,7 @@ The Grid federation page appears.
 +
 image:../media/grid-federation-connections-tab.png[Grid federation connections tab]
 
-* The *Permitted tenants* tab lists basic information for all tenant accounts on this grid that have the *Use grid federation* permission. From this tab, you can xref:../monitor/monitoring-tenant-activity.adoc[access the details page for each tenant] or xref:grid-federation-manage-tenants.adoc[remove a tenant's permission] to use a connection.
+* The *Permitted tenants* tab lists basic information for all tenant accounts on this grid that have the *Use grid federation* permission. From this tab, you can xref:../monitor/monitoring-tenant-activity.adoc[view the details page for each permitted tenant] or xref:grid-federation-manage-tenants.adoc[remove a tenant's permission] to use a connection.
 +
 image:../media/grid-federation-permitted-tenants-tab.png[Grid federation Permitted tenants tab]
 
@@ -37,7 +37,7 @@ image:../media/grid-federation-permitted-tenants-tab.png[Grid federation Permitt
 +
 The details page for the connection appears. From this page, you can <<edit_grid_fed_connection,edit>>, <<test_grid_fed_connection,test>>, or <<remove_grid_fed_connection,remove>> the selected connection.
 
-* The *Permitted tenants* tab shows which tenant accounts on this grid have permission to use this connection. From this tab, you can you can xref:../monitor/monitoring-tenant-activity.adoc[access the details page for each tenant] or xref:grid-federation-manage-tenants.adoc[remove a tenant's permission] to use the connection. 
+* The *Permitted tenants* tab shows which tenant accounts on this grid have permission to use this connection. From this tab, you can you can xref:../monitor/monitoring-tenant-activity.adoc[view the details page for each permitted tenant] or xref:grid-federation-manage-tenants.adoc[remove a tenant's permission] to use the connection. 
 +
 image:../media/grid-federation-permitted-tenants-tab-for-connection.png[grid-federation-permitted-tenants-tab-for-connection]
 
@@ -216,15 +216,21 @@ Perform these steps from either grid in the grid federation connection.
 
 . When no tenants on either grid are using the connection, select *Remove*.
 . Review the confirmation message, and select *Yes*.
-+
-* If the connection status is anything other than *Error*, the connection is removed, and this procedure is complete.
-* If the connection status is *Error*, the connection will not be removed. You can either resolve the connection error (see xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation]) or force-remove the connection from both grids. Go to the next step.
+
+* If the connection can be removed, you are returned to the details page and a success message is shown. The grid federation connection is now removed.
+
+* If the connection can't be removed (for example, it is still in use or there is a connection error), an error message is displayed. You can do either of the following:
+
+** (Recommended.) Resolve the error (see xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation]).
+** Remove the connection by force. See the next section.
 
 == [[force-remove_grid_fed_connection]]Force-remove a grid federation connection
 
 If necessary, you can force the removal of an unhealthy connection.
 
-. From the grid you are currently signed in to, select *Force remove* to remove the connection. 
+. From the confirmation dialog box, select *Force remove*.
++
+A success message appears. This grid federation connection can no longer be used. However, tenant buckets might still have cross-grid replication enabled and some object copies might have already been replicated between the grids in the connection. 
 
 . From the other grid in the connection, sign in to the Grid Manager from the primary Admin Node.
 

@@ -31,21 +31,17 @@ the *Expiration of grid federation certificate* alert reminds you to rotate the 
 
 Account clone is the replication of S3 tenant accounts and account details between two StorageGRID systems. Account clone is required for cross-grid replication.
 
-A grid administrator must enable account clone for a tenant before that tenant can enable account clone for account details.
-
-. *Enable account clone for a tenant*: The grid admin creates an S3 tenant account on either grid in a grid federation connection.
+. *Create tenant and assign Use grid federation permission*: A grid administrator must create a new S3 tenant account and assign the *Use grid federation* permission before that tenant can enable account clone for account details.The grid admin can create the S3 tenant account on either grid in the connection.
 +
-When creating the tenant, the admin selects one existing grid federation connection and assigns a permission that allows the tenant to perform account clone and cross-grid replication. When a tenant with this permission is saved, the tenant and the tenant's root user are created on both grids in the connection.
+When creating the tenant, the admin selects one existing grid federation connection. When a tenant with this permission is saved, the tenant and the tenant's root user are created on both grids in the connection.
 
 . *Sync tenant details*: If a new tenant has permission to use a grid federation connection for account clone, new S3 access keys, groups, or users created on the source grid are automatically copied to the tenant on the destination grid. Subsequent changes made to these items on the tenant's source grid are also synchronized.
 +
 Note that any S3 access keys, groups, or users that are created or modified on the tenant's destination grid are not replicated back to the tenant's source grid.
 
-
 === What is cross-grid replication?
 
 After the grid administrator establishes a grid federation connection between two grids and creates a new S3 tenant with permission to use that connection, the tenant can create new S3 buckets and optionally enable cross-grid replication for those buckets. When cross-grid replication is enabled for a bucket, all operations to add or remove objects to the bucket are automatically replicated from the tenant's source grid to the tenant's destination grid.
-
 
 == Considerations and requirements
 
@@ -84,7 +80,6 @@ See xref:managing-high-availability-groups.adoc[Manage high availability (HA) gr
 
 * The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
 
-== What happens if a grid fails?
 
 
 

@@ -11,7 +11,7 @@ summary: 'You can edit a tenant account to change the display name, storage quot
 [.lead]
 You can edit a tenant account to change the display name, storage quota, or tenant permissions.
 
-IMPORTANT: If a tenant has the *Use grid federation connection* permission, you can edit tenant details from either grid in the connection. However, any changes you make on one grid in the connection will not be copied to the other grid. If you want to keep the tenant details exactly in sync between grids, make the same edits on both grids.
+IMPORTANT: If a tenant has the *Use grid federation connection* permission, you can edit tenant details from either grid in the connection. However, any changes you make on one grid in the connection will not be copied to the other grid. If you want to keep the tenant details exactly in sync between grids, make the same edits on both grids. See xref:grid-federation-manage-tenants.adoc[Manage the permitted tenants for grid federation connection].
 
 .What you'll need
 
@@ -55,6 +55,6 @@ If *Uses own identity source* is:
 +
 * Select or unselect the *Allow S3 Select* permission as needed. See xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts].
 
-* To disable the *Use grid federation connection* permission, follow the instructions for xref:grid-federation-manage-connection.adoc[removing a tenant's permission to use grid federation].
+* To disable the *Use grid federation connection* permission, follow the instructions for xref:grid-federation-manage-tenants.adoc[removing a tenant's permission to use grid federation].
 +
 NOTE: You can only enable *Use grid federation connection* when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.

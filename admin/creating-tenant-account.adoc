@@ -23,6 +23,7 @@ The steps for creating a tenant account vary based on whether xref:using-identit
 ** You have xref:grid-federation-manage-connection.adoc[configured the grid federation connection].
 ** The status of the connection is *Connected*.
 ** You have Root access permission.
+** You have reviewed the considerations for xref:grid-federation-manage-tenants.adoc[managing the permitted tenants for a grid federation connection].
 
 == Access the wizard
 
@@ -79,7 +80,7 @@ Some of these permissions have additional requirements. For details, select the 
 |Use grid federation connection (S3 only)
 |The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-overview.adoc[Use grid federation: Overview].
 
-*Note*: You can only enable *Use grid federation connection* when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.
+*Note*: You can only select *Use grid federation connection* when you are creating a new S3 tenant; you can't select this permission for an existing tenant.
 
 |===
 
