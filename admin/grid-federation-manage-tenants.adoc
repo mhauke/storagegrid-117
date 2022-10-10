@@ -46,7 +46,10 @@ If you need to edit a tenant that has the *Use grid federation connection* permi
 
 == Remove Use grid federation permission
 
-To prevent a tenant from using a grid federation connection, you must remove the *Use grid federation* permission. For example, you might want the tenant to stop cloning account details and bucket objects between grids. 
+To prevent a tenant from using a grid federation connection, you must remove the *Use grid federation* permission. For example, you might want the tenant to stop cloning account details and bucket objects between grids. As shown in the figure, you must first confirm that the connection is not being used by any tenant on either grid.
+
+image:../media/grid-federation-remove-permission.png[steps to remove grid federation connection]
+
 
 Before removing a tenant's permission to use a grid federation connection, note the following:
 
