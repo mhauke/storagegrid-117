@@ -13,9 +13,9 @@ As a grid administrator, you must coordinate closely with tenant users to establ
 
 The workflow diagram shows the high-level steps that grid administrators and tenant users will perform to establish a grid federation connection between two grids and to set up account clone and cross-grid replication. 
 
-After creating a grid federation connection between two grids, the grid administrator creates new tenant accounts to determine who has permission to use the connection. These new tenants can then optionally enable account clone or cross-grid replication when they create new keys, groups, users, and buckets.
+After creating a grid federation connection between two grids, the grid administrator creates new tenant accounts to determine who has permission to use the connection. These new tenants can then optionally enable account clone when they create new keys, groups, and users. They can also enable cross-grid replication for each new bucket they create.
 
-If account clone and cross-grid replication are enabled for tenant account details and buckets on either grid, StorageGRID automatically replicates the tenant details and bucket objects (but not the bucket itself) to the other grid, using the grid federation connection.
+If account clone and cross-grid replication are enabled for tenant account details and buckets on either grid, StorageGRID uses the grid federation connection to automatically replicate the tenant details and bucket objects to the other grid.
 
 image:../media/grid-federation-workflow.png[Grid federation workflow]
 

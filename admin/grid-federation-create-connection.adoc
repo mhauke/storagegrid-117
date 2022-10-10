@@ -120,7 +120,7 @@ If an error message appears, address any issues. See xref:grid-federation-troubl
 [IMPORTANT]
 This file contains secrets and must be deleted after the connection is established. If you edit this connection, a new verification file will be created. The original file cannot be reused.
 
-. When you are ready, create one or more new tenant accounts, add the *Use grid federation* permission, and select this connection. See xref:creating-tenant-account.adoc[Create a tenant account].
+. When you are ready, create one or more new tenant accounts, add the *Use grid federation* permission, and select this connection. Start by reviewing the considerations for xref:grid-federation-manage-tenants.adoc[permitted tenants].
 +
 NOTE: You cannot add the *Use grid federation* permission to an existing tenant.
 
