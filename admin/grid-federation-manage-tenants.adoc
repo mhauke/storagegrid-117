@@ -34,7 +34,7 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * After the new tenant is available on both grids, you can sign in to configure users, groups, and access keys for account clone and to create buckets for cross-grid replication.
 
-== Edit tenant with grid federation permission
+== Edit tenant with Use grid federation permission
 
 If you need to edit a tenant that has the *Use grid federation connection* permission, follow the general instructions for xref:editing-tenant-account.adoc[editing a tenant account] and note the following:
 
@@ -48,8 +48,6 @@ If you need to edit a tenant that has the *Use grid federation connection* permi
 
 To prevent a tenant from using a grid federation connection, you must remove the *Use grid federation* permission. For example, you might want the tenant to stop cloning account details and bucket objects between grids. 
 
-You must prevent all tenants from using a connection before you can remove the connection itself.
-
 Before removing a tenant's permission to use a grid federation connection, note the following:
 
 * Removing the *Use grid federation* permission from a tenant is a permanent action. You cannot re-enable the permission for this tenant.
@@ -59,6 +57,8 @@ Before removing a tenant's permission to use a grid federation connection, note 
 * Removing the *Use grid federation* permission does not delete any items that have already been copied between grids. For example, bucket objects that have been replicated are not deleted from either grid when the tenant's permission is removed. If you want to delete these items, you must manually delete them from both grids.
 
 * When you remove the *Use grid federation* permission from a tenant account on one grid, the permission is not removed from the corresponding tenant on the other grid. You must perform this procedure on both grids.
+
+* You must remove the *Use grid connection* permission from all tenants on both sides of the connection before you can remove the grid federation connection itself. See xref:grid-federation-manage-connection.adoc[Manage grid federation connections] for details.
 
 .What you'll need
 
