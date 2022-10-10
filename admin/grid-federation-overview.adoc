@@ -16,7 +16,6 @@ You can use grid federation to replicate tenants and their objects between two S
 A grid federation connection is a bidirectional, trusted, and secure connection between Admin and Gateway Nodes in two StorageGRID systems. A grid federation connection must exist before you can use account clone or cross-grid replication.
 
 
-
 === What are account clone and cross-grid replication?
 
 Account clone is the replication of S3 tenant accounts and account details between two StorageGRID systems. Account clone is required for cross-grid replication.
@@ -29,7 +28,7 @@ After the grid administrator establishes a grid federation connection between tw
 
 . *Create tenant and assign "`Use grid federation`" permission*: A grid administrator must create a new S3 tenant account and assign the *Use grid federation* permission before that tenant can enable account clone for account details.The grid admin can create the S3 tenant account on either grid in the connection.
 +
-When creating the tenant, the admin selects one existing grid federation connection. When a tenant with this permission is saved, the tenant and the tenant's root user are created on both grids in the connection.
+When creating the tenant, the admin selects one existing grid federation connection. When a tenant with this permission is saved, identical tenant accounts are created on both grids in the connection. 
 
 . *Clone tenant details*: If a new tenant has permission to use a grid federation connection for account clone, they can specify that each new S3 access key, group, or user created on the source grid be created on the corresponding tenant on the destination grid. However, subsequent changes made to these items on the tenant's source grid are not synchronized.
 +

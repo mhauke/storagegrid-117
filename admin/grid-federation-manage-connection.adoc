@@ -200,7 +200,7 @@ In general, use the same number of days for the certificates on both sides of th
 
 == [[remove_grid_fed_connection]]Remove a grid federation connection
 
-You can remove a grid federation connection from either grid in the connection. As shown in the figure, you must first confirm that the connection is not being used by any tenant on either grid.
+You can remove a grid federation connection from either grid in the connection. As shown in the figure, you must perform steps on both grids to  confirm that the connection is not being used by any tenant on either grid.
 
 image:../media/grid-federation-remove-connection.png[steps to remove grid federation connection]
 
@@ -212,11 +212,15 @@ Perform these steps from either grid in the grid federation connection.
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 . Select the connection name to display its details.
 . On the Permitted tenants tab, determine if the connection is in use by any tenants.
-. If any tenants are using the connection, xref:grid-federation-manage-tenants.adoc[remove the permission] for each one.
-+
-IMPORTANT: If the connection is being used for cross-grid replication, you can't remove tenant permissions until replication has been stopped for every bucket on both sides of the connection.
+. If any tenants are using the connection:
 
-. Sign in to the other grid, and repeat these steps to remove the permission for the same tenant accounts. 
+.. Confirm that the connection is not being used for cross-grid replication.
++
+You can't remove a tenant's permission until you have stopped replication for each of the tenant's buckets on both sides of the connection.
+
+.. From the first grid, xref:grid-federation-manage-tenants.adoc[remove the permission] for each tenant.
+
+.. From the second grid, remove the permission for the same tenant accounts. 
 
 . When no tenants on either grid are using the connection, select *Remove*.
 . Review the confirmation message, and select *Yes*.

@@ -28,9 +28,13 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * You can only select the *Use grid federation connection* permission when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.
 
-* When the new tenant is created on the first grid, a new tenant with the same name, the same 20-digit account ID, and the same root user is automatically created on the other grid in the connection. 
+* When the new tenant is created on the first grid, a new tenant is automatically created on the other grid in the connection.
 
-* You might need to wait up to 15 minutes for the new tenant to appear in Grid Manager on the other grid.
+* You might need to wait up to 15 minutes for the automatically created tenant to appear in Grid Manager on the other grid.
+
+* The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. However, for security reasons, the password for a local root user is not copied to the automatically created tenant.  
+
+* Before a local root user can access the automatically created tenant, a grid administrator for that grid must xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
 
 * After the new tenant is available on both grids, you can sign in to configure users, groups, and access keys for account clone and to create buckets for cross-grid replication.
 
