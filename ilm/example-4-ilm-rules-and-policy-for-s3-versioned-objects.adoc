@@ -31,25 +31,21 @@ This rule applies to all objects, whether or not they are versioned.
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
-a|
-Storage Pools
-a|
-Three storage pools, each at different data centers, named DC1, DC2, and DC3.
-a|
-Rule name
-a|
-Three Copies Ten Years
-a|
-Reference time
-a|
-Ingest time
-a|
-Content Placement
-a|
-On Day 0, keep three replicated copies for 10 years (3,652 days), one in DC1, one in DC2, and one in DC3. At the end of 10 years, delete all copies of the object.
+
+|Storage pools
+|Three storage pools, each consisting of different data centers, named Site 1, Site 2, and Site 3.
+
+|Rule name
+|Three Copies Ten Years
+
+|Reference time
+|Ingest time
+
+|Content placement
+|On Day 0, keep three replicated copies for 10 years (3,652 days), one in Site 1, one in Site 2, and one in Site 3. At the end of 10 years, delete all copies of the object.
 |===
 
-image::../media/ilm_rule_1_example_4.png[ILM rule 1 for example 4: Save three copies for 5 years]
+//image::../media/ilm_rule_1_example_4.png[ILM rule 1 for example 4: Save three copies for 5 years]
 
 == ILM rule 2 for example 4: Save two copies of noncurrent versions for 2 years
 
@@ -62,22 +58,18 @@ In this example, only two copies of the noncurrent versions are stored, and thos
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
-a|
-Storage Pools
-a|
-Two storage pools, each at different data centers, named DC1 and DC2.
-a|
-Rule name
-a|
-Noncurrent Versions: Two Copies Two Years
-a|
-Reference time
-a|
-Noncurrent Time
-a|
-Content Placement
-a|
-On Day 0 relative to Noncurrent Time (that is, starting from the day the object version becomes the noncurrent version), keep two replicated copies of the noncurrent object versions for 2 years (730 days), one in DC1 and one in DC2. At the end of 2 years, delete the noncurrent versions.
+
+|Storage Pools
+|Two storage pools, each at different data centers, named Site 1 and Site 2.
+
+|Rule name
+|Noncurrent Versions: Two Copies Two Years
+
+|Reference time
+|Noncurrent Time
+
+|Content Placement
+|On Day 0 relative to Noncurrent Time (that is, starting from the day the object version becomes the noncurrent version), keep two replicated copies of the noncurrent object versions for 2 years (730 days), one in Site 1 and one in Site 2. At the end of 2 years, delete the noncurrent versions.
 |===
 
 image::../media/ilm_rule_2_example_4.png[ILM rule 2 for example 4: Keep noncurrent object versions for 2 years]
@@ -102,4 +94,4 @@ When you simulate the example policy, you would expect test objects to be evalua
 +
 NOTE: To simulate noncurrent object versions, you must use that version's UUID or CBID. While the object is still current, you can use Object Metadata Lookup to find its UUID and CBID.
 
-* The current object version would be matched by the second rule. When the current object version has been stored for 10 years, the ILM process adds a delete marker as the current version of the object, and it makes the previous object version "`noncurrent.`" The next time ILM evaluation occurs, this noncurrent version is matched by the first rule. As a result, the copy at DC3 is purged and the two copies at DC1 and DC2 are stored for 2 more years.
+* The current object version would be matched by the second rule. When the current object version has been stored for 10 years, the ILM process adds a delete marker as the current version of the object, and it makes the previous object version "`noncurrent.`" The next time ILM evaluation occurs, this noncurrent version is matched by the first rule. As a result, the copy at Site 3 is purged and the two copies at Site 1 and Site 2 are stored for 2 more years.

@@ -29,11 +29,11 @@ IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not u
 |Reference time
 |Ingest time
 
-|Advanced filter for Object Size
-|Object Size (MB) greater than 1.0
+|Advanced filter for Object size
+|Object size greater than 1 MB
 
-|Advanced filter for User Metadata
-|User Metadata type equals image
+|Advanced filter for User metadata
+|User metadata type equals image
 
 |Content placement
 |Create a 2+1 erasure-coded copy using three sites
@@ -50,26 +50,19 @@ This example ILM rule uses advanced filtering to specify that smaller image file
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
-a|
-Rule name
-a|
-2 copies for image files
-a|
-Reference time
-a|
-Ingest time
-a|
-Advanced filter for user metadata
-a|
-User Metadata type equals image files
-a|
-Content placement
-a|
-Create 2 replicated copies in two storage pools
+
+|Rule name
+|2 copies for image files
+
+|Reference time
+|Ingest time
+
+|Advanced filter for user metadata
+|User metadata type equals image files
+
+|Content placement
+|Create 2 replicated copies in two storage pools
 |===
-
-
-
 
 == ILM policy for example 3: Better protection for image files
 
@@ -79,4 +72,4 @@ This example ILM policy includes three rules:
 * The second rule creates two copies of any remaining image files (that is, images that are 1 MB or smaller).
 * The default rule applies to all remaining objects (that is, any non-image files).
 
-image::../media/policy_3_configured_policy.png[ILM policy for example 3: Better protection for image files]
+//image::../media/policy_3_configured_policy.png[ILM policy for example 3: Better protection for image files]
