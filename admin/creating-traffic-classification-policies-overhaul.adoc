@@ -49,7 +49,7 @@ For example, describe what this traffic classification policy applies to and wha
 |Match value
 |Enter the value that matches the selected Type.
 
-* Bucket: Enter a bucket name.
+* Bucket: Enter one or more bucket names.
 * Bucket regex: Enter a regular expression that will be used to match a set of bucket names.
 +
 
@@ -91,9 +91,9 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 * Exact IP address (/32 mask)
 * Exact bucket name
 * Bucket regex
-* Non-exact CIDR matches (not /32)
-* Load balancer endpoint
 * Tenant
+* Endpoint
+* Non-exact CIDR matches (not /32)
 * Inverse matches
 
 |Applies to
@@ -102,7 +102,7 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 |Value
 |The value that network traffic will be limited to, based on the Unit you select. For example, enter 10 and select MiBs to prevent the network traffic matched by this rule from exceeding 10 MiBs.
 
-*Note*: Depending on the units setting in the User preferences page of the Grid Manager, the available units will be either binary (for example, GiB) or decimal (for example, GB).
+*Note*: Depending on the units setting in the xref:../admin/exploring-grid-manager.adoc[User preferences] page of the Grid Manager, the available units will be either binary (for example, GiB) or decimal (for example, GB).
 
 
 |Unit
@@ -112,7 +112,7 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 |===
 +
 
-For example, if you want to create a 40 Gbps bandwidth limit for an SLA tier, create an Aggregate Bandwidth In limit and an Aggregate Bandwidth Out limit and set each one to 40 Gbps.
+For example, if you want to create a 40 Gbps bandwidth limit for an SLA tier, create two Aggregate bandwidth limits: GET/HEAD at 40 Gbps and PUT/POST/DELETE at 40 Gbps.
 +
 
 . Select *Continue*.

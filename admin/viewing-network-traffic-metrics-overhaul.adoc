@@ -54,8 +54,6 @@ NOTE: When requests are complete, this chart only shows bandwidth usage. For slo
 ** Average request duration (non-error): This graph provides an average duration of successful requests matching this policy.
 +
 
-The colors in the graphs indicate the relative frequency of an object size within an individual graph. The cooler colors (for example, purple and blue) indicate lower relative rates, and the warmer colors (for example, orange and red) indicate higher relative rates.
-
 ** Policy bandwidth usage: The amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
 
 . Hover the cursor over a line graph to see a pop-up of values on a specific part of the graph.
