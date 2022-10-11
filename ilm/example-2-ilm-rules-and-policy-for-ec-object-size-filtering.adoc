@@ -19,17 +19,17 @@ This example ILM rule erasure codes objects that are greater than 1 MB.
 
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 
-[cols="1a,2a" options="header"]
+[cols="2a,2a" options="header"]
 |===
 | Rule definition| Example value
 
 |Rule name
-|EC only objects > 1 MB
+|EC Only Objects > 1 MB
 
 |Reference time
 |Ingest time
 
-|Advanced filter for object size
+|Advanced filter for Object size
 |Object size greater than 1 MB
 
 |Content placement
@@ -47,12 +47,12 @@ This example ILM rule creates two replicated copies and does not filter by objec
 | Rule definition| Example value
 
 |Rule name
-|Two replicated copies
+|Two Replicated Copies
 
 |Reference time
 |Ingest time
 
-|Advanced filter for object size
+|Advanced filter for Object size
 |None
 
 |Content placement
