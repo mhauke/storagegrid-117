@@ -16,11 +16,9 @@ To support S3 virtual hosted-style requests, you must use the Grid Manager to co
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have specific access permissions.
 * You have confirmed that a grid upgrade is not in progress.
-+
-CAUTION: Do not make any changes to the domain name configuration when a grid upgrade is in progress.
+
 
 .About this task
-
 To enable clients to use S3 endpoint domain names, you must do all of the following:
 
 * Use the Grid Manager to add the S3 endpoint domain names to the StorageGRID system.
@@ -41,13 +39,14 @@ Clients that use HTTPS connections (recommended) to the grid can use either of t
 
 .Steps
 
-. Select *CONFIGURATION* > *Network* > *Domain names*.
+. Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
 +
-The Endpoint Domain Names page appears.
+The Endpoint domain names page appears.
 +
-image::../media/configure_endpoint_domain_names.png[screenshot of the Endpoint Domain Names dialog box]
 
-. Enter the list of S3 API endpoint domain names in the *Endpoint* fields. Use the image:../media/icon_plus_sign_black_on_white_old.png[plus sign icon] icon to add additional fields.
+. Enter the list of S3 endpoint domain names in the textboxes.
+
+. Select *Add another domain name* to add additional fields.
 +
 If this list is empty, support for S3 virtual hosted-style requests is disabled.
 
