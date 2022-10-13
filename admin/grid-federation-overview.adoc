@@ -2,14 +2,14 @@
 permalink: admin/grid-federation-overview.html
 sidebar: sidebar
 keywords: grid federation, cross-grid replication, account clone, cgr, disaster recovery
-summary: 'You can use grid federation to replicate tenants and their objects between two StorageGRID systems for disaster recovery.'
+summary: 'You can use grid federation to clone tenants and replicate their objects between two StorageGRID systems for disaster recovery.'
 ---
 = Use grid federation: Overview
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use grid federation to replicate tenants and their objects between two StorageGRID systems for disaster recovery.
+You can use grid federation to clone tenants and replicate their objects between two StorageGRID systems for disaster recovery.
 
 == What is a grid federation connection?
 
@@ -26,13 +26,13 @@ After the grid administrator establishes a grid federation connection between tw
 
 === How do I enable account clone and cross-grid replication?
 
-. *Create tenant and assign "`Use grid federation`" permission*: A grid administrator must create a new S3 tenant account and assign the *Use grid federation* permission before that tenant can enable account clone for account details.The grid admin can create the S3 tenant account on either grid in the connection.
+. *Create tenant and assign "`Use grid federation connection`" permission*: A grid administrator must create a new S3 tenant account and assign the *Use grid federation connection* permission before that tenant can enable account clone for account details.The grid admin can create the S3 tenant account on either grid in the connection.
 +
 When creating the tenant, the admin selects one existing grid federation connection. When a tenant with this permission is saved, identical tenant accounts are created on both grids in the connection. 
 
-. *Clone tenant details*: If a new tenant has permission to use a grid federation connection for account clone, they can specify that each new S3 access key, group, or user created on the source grid be created on the corresponding tenant on the destination grid. However, subsequent changes made to these items on the tenant's source grid are not synchronized.
+. *Clone tenant details*: If a new tenant has permission to use a grid federation connection for account clone, each new tenant group or tenant user created on either grid is cloned to the corresponding tenant on the other grid. Optionally, tenants can specify that new S3 access keys also be cloned from one grid to the other.
 +
-Note that any S3 access keys, groups, or users that are created or modified on the tenant's destination grid are not replicated back to the tenant's source grid.
+However, any modifications to S3 access keys, groups, or users on either grid are not replicated back to the other grid in the connection. 
 
 == Considerations and requirements
 
@@ -44,13 +44,15 @@ Note that any S3 access keys, groups, or users that are created or modified on t
 
 * Account clone and cross-grid replication apply only to S3 tenant accounts. These features are not available for Swift tenant accounts.
 
-* After you configure a grid federation connection, you can create new S3 tenant accounts and select the *Use grid federation connection* permission to use the connection.
+* After you configure a grid federation connection, a grid admin can create new S3 tenant accounts and select the *Use grid federation connection* permission to use the connection.
 +
 NOTE: You can only enable *Use grid federation connection* when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.
 
 * Tenant creation is bidirectional. You can create a tenant on either grid, and the same tenant and its root user will be automatically created on the other grid.
 
-* Account clone and cross-grid replication are unidirectional. Either grid in the connection can be the tenant's source grid (the grid where you initially create the tenant). If you change account details or buckets on the tenant's source grid, the changes are automatically replicated to the other grid (known as the tenant's destination grid). However, if you change account details or buckets on the tenant's destination grid, the changes are not replicated back to the source grid. 
+* Account clone is unidirectional. Either grid in the connection can be the tenant's source grid (the grid where you initially create the tenant). However, any changes to account details on either grid are not cloned back to the other grid. 
+
+* Cross-grid replication can be unidirectional or bidirectional. If you enable cross-grid replication for a bucket on one grid, any PUT Object and DELETE Object requests to that bucket are replicated to the other grid. However PUT Object and DELETE Object requests directed to the bucket on the other grid are not replicated back to the first grid unless you enable cross-grid replication for that bucket as well. 
 
 === IP address and DNS requirements
 
@@ -86,7 +88,7 @@ the *Expiration of grid federation certificate* alert reminds you to rotate the 
 [IMPORTANT]
 If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
 
-== How are objects are replicated between grids?
+== How are objects replicated between grids?
 
 * The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
 

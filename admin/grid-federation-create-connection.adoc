@@ -118,9 +118,9 @@ If an error message appears, address any issues. See xref:grid-federation-troubl
 . After the connection has been established, securely delete all copies of the verification file.
 +
 [IMPORTANT]
-This file contains secrets and must be deleted after the connection is established. If you edit this connection, a new verification file will be created. The original file cannot be reused.
+This file contains secrets (masked as `****`) and other sensitive details, and it must be deleted after the connection is established. If you edit this connection, a new verification file will be created. The original file cannot be reused.
 
-. When you are ready, create one or more new tenant accounts, add the *Use grid federation* permission, and select this connection. Start by reviewing the considerations for xref:grid-federation-manage-tenants.adoc[permitted tenants].
+. When you are ready, create one or more new tenant accounts, add the *Use grid federation connection* permission, and select this connection. Start by reviewing the considerations for xref:grid-federation-manage-tenants.adoc[permitted tenants].
 +
-NOTE: You cannot add the *Use grid federation* permission to an existing tenant.
+NOTE: You cannot add the *Use grid federation connection* permission to an existing tenant.
 
