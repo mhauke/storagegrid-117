@@ -55,19 +55,19 @@ NOTE: Modern compatibility is the selected default policy. Some StorageGRID serv
 |The same as the Common Criteria policy, but removes the transitional ciphers and enables FIPS mode in OpenSSL. Using this policy might reduce performance.
 
 |Custom
-|You can create a custom policy to apply your own ciphers.  Custom policy helps you to customize and apply your own security policy. You can edit or modify the existing policy ciphers to create you own custom policy. You must use caution and validate the policy you provide.
+|You can create a custom policy to apply your own ciphers. You can edit or modify the existing policy ciphers to create your own custom policy. You must use caution and validate the policy you provide.
 
 |===
 +
 
-. You can also create a custom policy to apply your ciphers as follows:
+. If you want to create a custom policy to apply your ciphers, follow these steps:
 
 .. Select *View details* for one of the provided policies.
 .. Select *Copy to clipboard* and *Cancel*.
 .. Select *Configure and use* from the *Custom policy*. 
-.. Paste the JSON you copied and make required changes to create a custom policy that meets your requirements.
+.. Paste the JSON you copied and make required changes to create a custom policy.
 .. Select *Use policy*.
 +
 
-A green checkmark next to *Current policy* can be viewed in the Custom policy tile. Select *Edit configuration* to make more changes to the new custom policy.
-
+A green checkmark appears next to *Current policy* in the Custom policy tile.
+.. Optionally, select *Edit configuration* to make more changes to the new custom policy.

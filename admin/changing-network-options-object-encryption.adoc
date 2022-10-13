@@ -10,7 +10,7 @@ summary: 'You can encrypt stored objects if you want to ensure that data cannot 
 
 [.lead]
 
-You can configure network and object options to encrypt stored objects, to prevent certain S3 and Swift requests, or to allow client connections to Storage Nodes to use HTTP instead of HTTPS. By default, StorageGRID does not encrypt stored objects. You can use the Prevent client modification grid option to deny specific HTTP client operations.
+You can configure network and object options to encrypt stored objects, to prevent certain S3 and Swift requests, or to allow client connections to Storage Nodes to use HTTP instead of HTTPS.
 
 == Stored object encryption
 Stored object encryption enables the encryption of all object data as it is ingested through S3. By default, stored objects are not encrypted but you can choose to encrypt objects using the AES‐128 or AES‐256 encryption algorithm. When you enable the setting, all newly ingested objects are encrypted but no change is made to existing stored objects. If you disable encryption, currently encrypted objects remain encrypted but newly ingested objects are not encrypted.
@@ -48,7 +48,7 @@ See xref:summary-ip-addresses-and-ports-for-client-connections.adoc[Summary: IP 
 .Steps
 
 . Select *CONFIGURATION* > *Security settings* > *Network and objects*.
-. For Stored object encryption, use the *None* (default) setting if you do not want stored objects to be encrypted, or select AES-128 or AES-256 to encrypt stored objects.
+. For Stored object encryption, use the *None* (default) setting if you do not want stored objects to be encrypted, or select *AES-128* or *AES-256* to encrypt stored objects.
 +
 
 . Optionally select *Prevent client modification* if you want to prevent S3 and Swift clients from making specific requests.
