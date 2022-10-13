@@ -14,7 +14,7 @@ You can monitor network traffic by viewing the graphs that are available from th
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Root access permission or the Tenant Accounts permission.
+* You have the Root access permission or the Tenant accounts permission.
 
 .About this task
 
@@ -30,18 +30,14 @@ Even if no limits are set for a traffic classification policy, metrics are colle
 The Traffic classification policies page appears, and the existing policies are listed in the table.
 +
 
-NOTE: You must have Root access permission to *Create*, *Edit*, and *Remove* traffic classification policies 
-
-. Press the traffic classification policy name for which you want to view metrics.
-. Select *Metrics* tab.
+. Select the traffic classification policy name for which you want to view metrics.
+. Select the *Metrics* tab.
 +
 The traffic classification policy graphs appear. The graphs display metrics only for the traffic that matches the selected policy.
 +
-You can select other policies to view by using the selecting the policy name from the list on the left.
+
 +
-//image::../media/traffic_classification_policy_graph.png[Network Traffic Graph]
-+
-The following graphs are included on the web page.
+The following graphs are included on the page.
 
 ** Request rate: This graph provides the amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
 +
