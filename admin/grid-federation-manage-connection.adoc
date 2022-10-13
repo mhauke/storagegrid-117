@@ -99,7 +99,7 @@ The verification file contains secrets and must be securely stored and transmitt
 
 . Confirm that the *Connection status* is *Pending edit*.
 +
-NOTE: If the status of the connection wasn't *Connected* when you started editing it, the status will not change to *Pending edit*.
+NOTE: If the connection status was something other than *Connected* when you started editing the connection, it will not change to *Pending edit*.
 
 . Provide the `_connection-name_.grid-federation` file to the grid admin for the other grid.
 

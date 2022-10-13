@@ -18,23 +18,13 @@ A grid federation connection is a bidirectional, trusted, and secure connection 
 
 === What are account clone and cross-grid replication?
 
-Account clone is the replication of S3 tenant accounts and account details between two StorageGRID systems. Account clone is required for cross-grid replication.
+Account clone is the replication of selected S3 tenant accounts, users, and groups between two StorageGRID systems. Account clone is required for cross-grid replication.
 
-Cross-grid replication is the replication of all object operations between selected S3 buckets in two StorageGRID systems.
+Cross-grid replication is the replication of objects between selected S3 buckets in two StorageGRID systems.
 
-After the grid administrator establishes a grid federation connection between two grids and creates a new S3 tenant with permission to use that connection, the tenant can create new S3 buckets and optionally enable cross-grid replication for those buckets. 
 
-=== How do I enable account clone and cross-grid replication?
 
-. *Create tenant and assign "`Use grid federation connection`" permission*: A grid administrator must create a new S3 tenant account and assign the *Use grid federation connection* permission before that tenant can enable account clone for account details.The grid admin can create the S3 tenant account on either grid in the connection.
-+
-When creating the tenant, the admin selects one existing grid federation connection. When a tenant with this permission is saved, identical tenant accounts are created on both grids in the connection. 
-
-. *Clone tenant details*: If a new tenant has permission to use a grid federation connection for account clone, each new tenant group or tenant user created on either grid is cloned to the corresponding tenant on the other grid. Optionally, tenants can specify that new S3 access keys also be cloned from one grid to the other.
-+
-However, any modifications to S3 access keys, groups, or users on either grid are not replicated back to the other grid in the connection. 
-
-== Considerations and requirements
+== Considerations and requirements for grid federation connections
 
 * Each grid can have one or more grid federation connections to other grids. Each grid federation connection is independent of any other connections. That is, if grid A has one connection with grid B and a second connection with grid C, there is no implied connection between grid B and grid C.
 
@@ -42,17 +32,35 @@ However, any modifications to S3 access keys, groups, or users on either grid ar
 
 * At least one grid federation connection is required for account clone and cross-grid replication.
 
-* Account clone and cross-grid replication apply only to S3 tenant accounts. These features are not available for Swift tenant accounts.
-
-* After you configure a grid federation connection, a grid admin can create new S3 tenant accounts and select the *Use grid federation connection* permission to use the connection.
+* After you configure a grid federation connection, a grid admin can create new S3 tenant accounts and select the *Use grid federation connection* permission to allow them to use the specified connection.
 +
-NOTE: You can only enable *Use grid federation connection* when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.
+NOTE: You can only add the *Use grid federation connection* when you are creating a new S3 tenant; you can't add this permission to an existing tenant.
 
-* Tenant creation is bidirectional. You can create a tenant on either grid, and the same tenant and its root user will be automatically created on the other grid.
+== Considerations and requirements for account clone
 
-* Account clone is unidirectional. Either grid in the connection can be the tenant's source grid (the grid where you initially create the tenant). However, any changes to account details on either grid are not cloned back to the other grid. 
+* Tenant creation and the cloning of new account users and groups occur in one direction only:
 
-* Cross-grid replication can be unidirectional or bidirectional. If you enable cross-grid replication for a bucket on one grid, any PUT Object and DELETE Object requests to that bucket are replicated to the other grid. However PUT Object and DELETE Object requests directed to the bucket on the other grid are not replicated back to the first grid unless you enable cross-grid replication for that bucket as well. 
+** When a grid admin creates a tenant on one grid (the tenant's source grid) and selects the *Use grid federation connection* permission, an identical tenant is automatically created on the other grid (the tenant's destination grid). 
+
+** When tenant users create new users and groups on the tenant's source grid, these groups and users are automatically cloned to the destination grid. 
+
+** When tenant users create new S3 access keys on the tenant's source grid, these keys can be optionally cloned to the destination grid. 
+
+** If tenant users create new tenant users, groups, or S3 access keys on the tenant's destination grid, these items are not cloned to the source grid.
++
+image:../media/grid-federation-account-clone.png[image showing how tenant details are cloned between source grid and destination grid]
+
+* Any edits made to the tenant, users, groups, or access keys on either grid are not cloned to the other grid. 
+
+== Considerations and requirements for cross-grid replication
+
+* Before tenants can use cross-grid replication, they must create a bucket with the same name on both grids. They can then configure cross-grid replication to occur in one direction or in both directions:
+
+** If cross-grid replication is enabled for only one of the buckets, objects added to that bucket are replicated, but objects added to the other bucket are not.
+** If cross-grid replication is enabled for both buckets, objects added to either bucket are replicated.
+
++
+image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
 
 === IP address and DNS requirements
 
