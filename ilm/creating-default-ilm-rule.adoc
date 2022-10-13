@@ -54,6 +54,8 @@ The default rule must apply to all tenant accounts.
 +
 The default rule must apply to all S3 buckets and Swift containers.
 
+. Keep the default answer, *No*, for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`"
+
 . Do not add advanced filters.
 +
 The default rule cannot specify any filters.
@@ -62,9 +64,9 @@ The default rule cannot specify any filters.
 +
 Step 2 (Define Placements) appears.
 
-. For Reference time, select any option except *Noncurrent Time*.
+. For Reference time, select any option.
 +
-The default rule must apply all object versions.
+If you kept the default answer, *No* for the question, "`Apply this rule to older object versions only?`" Noncurrent time will not be included in the pull-down list. The default rule must apply all object versions.
 
 . Specify the placement instructions for the default rule.
  * The default rule should retain objects forever. A warning appears when you activate a new policy if the default rule does not retain objects forever. You must confirm this is the behavior you expect.
