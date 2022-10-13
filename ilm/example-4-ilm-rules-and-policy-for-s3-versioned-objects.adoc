@@ -15,7 +15,7 @@ As this example shows, you can control the amount of storage used by versioned o
 
 CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate the proposed policy to confirm it will work as intended to protect content from loss.
 
-NOTE: If you create ILM policies to manage noncurrent object versions, be aware that you must know the object version's UUID or CBID to simulate the policy. To find an object's UUID and CBID, use Object Metadata Lookup while the object is still current. See xref:verifying-ilm-policy-with-object-metadata-lookup.adoc[Verify an ILM policy with object metadata lookup].
+NOTE: To perform ILM policy simulation on a noncurrent version of an object, you must know the object version's UUID or CBID. To find the UUID and CBID, use Object Metadata Lookup while the object is still current. See xref:verifying-ilm-policy-with-object-metadata-lookup.adoc[Verify an ILM policy with object metadata lookup].
 
 .Related information
 
@@ -41,7 +41,7 @@ This rule applies to all objects, whether or not they are versioned.
 |Reference time
 |Ingest time
 
-|Content placement
+|Placements
 |On Day 0, keep three replicated copies for 10 years (3,652 days), one in Site 1, one in Site 2, and one in Site 3. At the end of 10 years, delete all copies of the object.
 |===
 
@@ -74,11 +74,9 @@ In this example, only two copies of the noncurrent versions are stored, and thos
 
 Automatically selected when you select *Yes* for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`" in the Create an ILM rule wizard.
 
-|Content Placement
+|Placements
 |On Day 0 relative to noncurrent time (that is, starting from the day the object version becomes the noncurrent version), keep two replicated copies of the noncurrent object versions for 2 years (730 days), one in Site 1 and one in Site 2. At the end of 2 years, delete the noncurrent versions.
 |===
-
-image::../media/ilm_rule_2_example_4.png[ILM rule 2 for example 4: Keep noncurrent object versions for 2 years]
 
 == ILM policy for example 4: S3 versioned objects
 

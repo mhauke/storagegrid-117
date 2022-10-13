@@ -80,9 +80,9 @@ To free space when deleting versioned objects, you must do one of the following:
 +
 The `NewerNoncurrentVersions` action in the bucket lifecycle configuration specifies the number of noncurrent versions retained in a versioned S3 bucket. If there are more noncurrent versions than `NewerNoncurrentVersions` specifies, StorageGRID removes the older versions once the NoncurrentDays value has elapsed. The `NewerNoncurrentVersions` threshold overrides lifecycle rules provided by ILM, meaning that a noncurrent object with a version within the `NewerNoncurrentVersions` threshold is retained if ILM requests its deletion.
 
-* *ILM*: Add two ILM rules to your ILM policy:
-** Use "`Noncurrent time`" as the Reference time in the first rule to match the noncurrent versions of the object: In Step 1 (Enter details) of the Create an ILM rule wizard, select *Yes* for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`." 
-** Use *Ingest time* in the second rule to match the current version. The "`Noncurrent time`" rule must appear in the policy above the *Ingest time* rule.
+* *ILM*: xref:creating-proposed-ilm-policy.adoc[Clone the active policy] and add two ILM rules to the new proposed policy:
+** First rule: Use "`Noncurrent time`" as the Reference time to match the noncurrent versions of the object. In xref:create-ilm-rule-enter-details.adoc[Step 1 (Enter details) of the Create an ILM rule wizard], select *Yes* for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`" 
+** Second rule: Use *Ingest time* to match the current version. The "`Noncurrent time`" rule must appear in the policy above the *Ingest time* rule.
 
 .Related information
 

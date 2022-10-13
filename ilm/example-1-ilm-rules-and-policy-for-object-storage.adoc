@@ -20,7 +20,7 @@ This example ILM rule copies object data to storage pools in two sites.
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
-|Storage Pools
+|Storage pools
 |Two storage pools, each at different sites, named Site 1 and Site 2.
 
 |Rule name
@@ -29,8 +29,8 @@ This example ILM rule copies object data to storage pools in two sites.
 |Reference time
 |Ingest time
 
-|Content Placement
-|On Day 0, keep two replicated copies forever--one in Site 1 and one in Site 2.
+|Placements
+|On Day 0 to forever, keep one replicated copy at Site 1 and one replicated copy at Site 2.
 |===
 
 image::../media/ilm_rule_two_copies_two_data_centers.png[ILM rule 1 for example 1: Copy object data to two sites]
@@ -42,9 +42,9 @@ This example ILM rule uses an erasure coding profile and an S3 bucket to determi
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
-|Erasure Coding Profile
+|Erasure coding profile
 |
-* One storage pool across three sites (All 3 sites)
+* One storage pool across three sites (all 3 sites)
 * Use 6+3 erasure-coding scheme
 
 |Rule name
@@ -53,7 +53,7 @@ This example ILM rule uses an erasure coding profile and an S3 bucket to determi
 |Reference time
 |Ingest time
 
-|Content Placement
+|Placements
 |For objects in the S3 bucket named finance-records, create one erasure-coded copy in the pool specified by the erasure coding profile. Keep this copy forever.
 |===
 //image:../media/ilm_rule_ec_for_s3_bucket_finance_records.png[ILM rule 2 for example 1: erasure coding profile with bucket matching]
@@ -68,3 +68,8 @@ A typical ILM policy for a multi-site topology might include ILM rules such as t
 * If an object does not match the first ILM rule, use the policy's default ILM rule, Two Copies Two Sites, to store a copy of that object in two data centers, Site 1 and Site 2.
 +
 //image::../media/policy_1_configured_policy.png[ILM policy for example 1]
+
+.Related information
+
+* xref:creating-ilm-policy.adoc[Create an ILM policy: Overview]
+* xref:creating-proposed-ilm-policy.adoc[Create a proposed ILM policy]

@@ -2,22 +2,22 @@
 permalink: ilm/example-6-changing-ilm-policy.html
 sidebar: sidebar
 keywords: change ILM policy, example ILM policy, information lifecycle policy example
-summary: 'If your data protection needs change or you add new sites, you can create and activate a new ILM policy.'
+summary: 'If your data protection needs to be changed or you add new sites, you can create and activate a new ILM policy.'
 ---
 = Example 6: Changing an ILM policy
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If your data protection needs change or you add new sites, you can create and activate a new ILM policy.
+If your data protection needs to be changed or you add new sites, you can create and activate a new ILM policy.
 
 Before changing a policy, you must understand how changes in ILM placements can temporarily affect the overall performance of a StorageGRID system.
 
-In this example, a new StorageGRID site has been added in an expansion, and a new active ILM policy needs to be implemented to store data at the new site. To implement a new active policy, you either xref:working-with-ilm-rules-and-ilm-policies.adoc#clone-a-historical-ilm-policy[clone a historical policy and change it] or xref:creating-proposed-ilm-policy.adoc[create a proposed policy]. In either case, you must xref:simulating-ilm-policy.adoc[simulate] and then xref:activating-ilm-policy.adoc[activate] the new policy.
+In this example, a new StorageGRID site has been added in an expansion, and a new active ILM policy needs to be implemented to store data at the new site. To implement a new active policy, first create a proposed policy by either xref:xref:creating-proposed-ilm-policy.adoc[cloning an existing policy _or_ starting from scratch]. Afterward, you must [simulate] and then [activate] the new policy.
 
 CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate the proposed policy to confirm it will work as intended to protect content from loss.
 
-== How does changing an ILM policy affect performance
+== How changing an ILM policy affects performance
 
 When you activate a new ILM policy, the performance of your StorageGRID system might be temporarily affected, especially if the placement instructions in the new policy require many existing objects to be moved to new locations.
 
@@ -32,7 +32,7 @@ NOTE: StorageGRID considers each erasure coding profile to be unique and does no
 * Changing the type of copies required for existing objects; for example, converting a large percentage of replicated objects to erasure-coded objects.
 * Moving copies of existing objects to a completely different location; for example, moving a large number of objects to or from a Cloud Storage Pool or to or from a remote site.
 
-.== Active ILM policy for example 6: Data protection at two sites
+== Active ILM policy for example 6: Data protection at two sites
 
 In this example, the active ILM policy was initially designed for a two-site StorageGRID system and uses two ILM rules.
 
@@ -57,7 +57,7 @@ NOTE: The first rule in this example uses an advanced filter to ensure that eras
 |Storage Pool
 |Site 1
 
-|Content Placement
+|Placements
 |2+1 erasure coding in Site 1 from day 0 to forever
 |===
 
@@ -76,7 +76,7 @@ NOTE: The first rule in this example uses an advanced filter to ensure that eras
 |Storage Pools
 |Site 1 and Site 2
 
-|Content Placement
+|Placements
 |Two replicated copies from day 0 to forever: one copy at Site 1 and one copy at Site 2.
 |===
 
@@ -105,7 +105,7 @@ When this new ILM policy is activated, objects belonging to Tenant A will be pro
 |Storage Pool
 |All 3 Sites (includes Site 1, Site 2, and Site 3)
 
-|Content Placement
+|Placements
 |2+1 erasure coding in All 3 Sites from day 0 to forever
 |===
 
@@ -124,7 +124,7 @@ When this new ILM policy is activated, objects belonging to Tenant A will be pro
 |Storage Pools
 |Site 1, Site 2, and Site 3
 
-|Content Placement
+|Placements
 |Three replicated copies from day 0 to forever: one copy at Site 1, one copy at Site 2, and one copy at Site 3.
 |===
 
@@ -162,6 +162,6 @@ When the proposed ILM policy in this example is activated, the overall performan
 
 As a result of the ILM policy change, client read and write requests might temporarily experience higher than normal latencies. Latencies will return to normal levels after the placement instructions are fully implemented across the grid.
 
-To avoid resource issues when activating an new ILM policy, you can use the Ingest time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
+To avoid resource issues when activating a new ILM policy, you can use the Ingest time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
 
 NOTE: Contact technical support if you need to slow or increase the rate at which objects are processed after an ILM policy change.
