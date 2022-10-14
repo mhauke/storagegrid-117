@@ -1,5 +1,5 @@
 ---
-permalink: admin/creating-traffic-classification-policies-overhaul.html
+permalink: admin/creating-traffic-classification-policies.html
 sidebar: sidebar
 keywords: traffic classification, network traffic, traffic limits, policy
 summary: 'You create traffic classification policies if you want to monitor, and optionally limit, network traffic by bucket, tenant, IP subnet, or load balancer endpoint. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.'
@@ -50,12 +50,12 @@ For example, describe what this traffic classification policy applies to and wha
 |Enter the value that matches the selected Type.
 
 * Bucket: Enter one or more bucket names.
-* Bucket regex: Enter a regular expression that will be used to match a set of bucket names.
+* Bucket regex: Enter one or more regular expressions used to match a set of bucket names.
 +
 
 The regular expression is unanchored. Use the ^ anchor to match at the beginning of the bucket name, and use the $ anchor to match at the end of the name.
-* CIDR: Enter an IPv4 subnet, in CIDR notation, that matches the desired subnet.
-* Load balancer endpoint: Enter an endpoint name.
+* CIDR: Enter one ore more IPv4 subnets, in CIDR notation, that matches the desired subnet.
+* Load balancer endpoint: Select an endpoint name.
 * Tenant: Tenant matching is based on the access key used ID. If no access key ID is present in the request (such as for anonymous access) then the ownership of the bucket that is being accessed is used to determine the tenant. 
 |Inverse match
 |If you want to match all network traffic _except_ traffic consistent with the Type and Match Value just defined, select the *Inverse match* check box. Otherwise, leave the check box unselected.
@@ -119,4 +119,4 @@ For example, if you want to create a 40 Gbps bandwidth limit for an SLA tier, cr
 
 . Read and review the Traffic classification policy. Use the *Previous* button to go back and make changes as required. When you are satisfied with the policy, select *Save and continue*.
 
-S3 and Swift client traffic is now handled according to the traffic classification policies. You can view traffic charts and verify that the polices are enforcing the traffic limits you expect. See xref:../admin/viewing-network-traffic-metric-overhaul.adoc[View network traffic metrics].
+S3 and Swift client traffic is now handled according to the traffic classification policies. You can view traffic charts and verify that the polices are enforcing the traffic limits you expect. See xref:../admin/viewing-network-traffic-metric.adoc[View network traffic metrics].
