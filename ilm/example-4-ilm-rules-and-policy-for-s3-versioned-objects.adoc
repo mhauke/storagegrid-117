@@ -15,7 +15,7 @@ As this example shows, you can control the amount of storage used by versioned o
 
 CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate the proposed policy to confirm it will work as intended to protect content from loss.
 
-NOTE: To perform ILM policy simulation on a noncurrent version of an object, you must know the object version's UUID or CBID. To find the UUID and CBID, use Object Metadata Lookup while the object is still current. See xref:verifying-ilm-policy-with-object-metadata-lookup.adoc[Verify an ILM policy with object metadata lookup].
+NOTE: To perform ILM policy simulation on a noncurrent version of an object, you must know the object version's UUID or CBID. To find the UUID and CBID, use xref:verifying-ilm-policy-with-object-metadata-lookup.adoc[object metadata lookup] while the object is still current.
 
 .Related information
 
@@ -96,6 +96,6 @@ When you simulate the example policy, you would expect test objects to be evalua
 
 * Any noncurrent object versions would be matched by the first rule. If a noncurrent object version is older than 2 years, it is permanently deleted by ILM (all copies of the noncurrent version removed from the grid).
 +
-NOTE: To simulate noncurrent object versions, you must use that version's UUID or CBID. While the object is still current, you can use Object Metadata Lookup to find its UUID and CBID.
+NOTE: To simulate noncurrent object versions, you must use that version's UUID or CBID. While the object is still current, you can use xref:verifying-ilm-policy-with-object-metadata-lookup.adoc[object metadata lookup] to find its UUID and CBID.
 
 * The current object version would be matched by the second rule. When the current object version has been stored for 10 years, the ILM process adds a delete marker as the current version of the object, and it makes the previous object version "`noncurrent`". The next time ILM evaluation occurs, this noncurrent version is matched by the first rule. As a result, the copy at Site 3 is purged and the two copies at Site 1 and Site 2 are stored for 2 more years.

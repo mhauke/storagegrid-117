@@ -34,8 +34,8 @@ IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not u
 
 |Advanced filters for Key
 |
-* Key ends with .jpg
-* Key ends with .png
+* Ends with .jpg
+* Ends with .png
 
 |Placements
 |Create a 2+1 erasure-coded copy using three sites
@@ -59,8 +59,10 @@ This example ILM rule uses advanced filtering to specify that smaller image file
 |Reference time
 |Ingest time
 
-|Advanced filter for user metadata
-|User metadata type equals image files
+|Advanced filters for Key
+|
+* Ends with .jpg
+* Ends with .png
 
 |Placements
 |Create 2 replicated copies in two storage pools

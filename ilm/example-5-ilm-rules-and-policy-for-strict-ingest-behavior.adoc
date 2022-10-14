@@ -47,7 +47,7 @@ This rule applies to objects that belong to the Paris tenant and that have the S
 |Ingest time
 
 |Placements
-|On Day 0, keep two replicated copies forever in DC1 (Paris)
+|On Day 0, keep two replicated copies forever in Site 1 (Paris)
 
 |Ingest behavior
 |Strict. Always use this rule's placements on ingest. Ingest fails if it is not possible to store two copies of the object at the Paris data center.

@@ -13,7 +13,7 @@ If your data protection needs to be changed or you add new sites, you can create
 
 Before changing a policy, you must understand how changes in ILM placements can temporarily affect the overall performance of a StorageGRID system.
 
-In this example, a new StorageGRID site has been added in an expansion, and a new active ILM policy needs to be implemented to store data at the new site. To implement a new active policy, first create a proposed policy by either xref:xref:creating-proposed-ilm-policy.adoc[cloning an existing policy _or_ starting from scratch]. Afterward, you must [simulate] and then [activate] the new policy.
+In this example, a new StorageGRID site has been added in an expansion, and a new active ILM policy needs to be implemented to store data at the new site. To implement a new active policy, first create a proposed policy by either xref:creating-proposed-ilm-policy.adoc[cloning an existing policy _or_ starting from scratch]. Afterward, you must xref:simulating-ilm-policy.adoc[simulate] and then xref:activating-ilm-policy.adoc[activate] the new policy.
 
 CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate the proposed policy to confirm it will work as intended to protect content from loss.
 
