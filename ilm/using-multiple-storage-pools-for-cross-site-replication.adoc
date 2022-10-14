@@ -47,7 +47,7 @@ If one site is lost, copies of the objects are available at the other site.
 Having storage pools that consist of more than one site per storage pool enables you to configure ILM rules that use erasure coding for site-loss protection. In this example:
 
 * Storage pool 1 contains Sites 1 through 3
-* The ILM rule contains one placement: Store objects by erasure coding using a 4+2 EC scheme at Storage pool 1
+* The ILM rule contains one placement: Store objects by erasure coding using a 4+2 EC scheme at Storage pool 1, which contains three sites
 
 ILM rule placements:
 
