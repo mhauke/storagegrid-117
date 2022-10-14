@@ -15,23 +15,21 @@ image::../media/upgrade_workflow.png[Flowchart of the software upgrade steps]
 
 . If any StorageGRID nodes are deployed on Linux hosts, xref:linux-installing-rpm-or-deb-package-on-all-hosts.adoc[install the RPM or DEB package on each host] before you start the upgrade.
 
-. From the primary Admin Node, access the StorageGRID Upgrade page and upload the upgrade file.
+. From the primary Admin Node, access the StorageGRID Upgrade page and upload the upgrade file and the hotfix file, if required.
+
+. Download the current Recovery Package.
 
 . Optionally run upgrade prechecks to detect and resolve any issues before you start the actual upgrade. 
 
 . Start the upgrade, which runs prechecks and upgrades the primary Admin Node automatically. You cannot access the Grid Manager while the primary Admin Node is being upgraded. Audit logs will also be unavailable. This upgrade can take up to 30 minutes.
 
-. After the primary Admin Node has been upgraded, clear your web browser's cache, sign back in, and return to the StorageGRID Upgrade page.
-
-. Download a new Recovery Package.
+. After the primary Admin Node has been upgraded, download a new Recovery Package.
 
 . Approve the grid nodes. You can approve individual grid nodes, groups of grid nodes, or all grid nodes. 
 +
 IMPORTANT: Do not approve the upgrade for a grid node unless you are sure that node is ready to be stopped and rebooted.
 
-. Resume operations. When all grid nodes have been upgraded, new features are enabled and you can resume operations. You must wait to perform a decommission or expansion procedure until the background *Upgrade Database* task and the *Final Upgrade Steps* task have completed.
-
-. When the upgrade is complete, confirm the software version and apply any hotfixes.
+. Resume operations. When all grid nodes have been upgraded, new features are enabled and you can resume operations. You must wait to perform a decommission or expansion procedure until the background *Upgrade database* task and the *Final upgrade steps* task have completed.
 
 .Related information
 

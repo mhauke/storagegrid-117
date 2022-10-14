@@ -2,14 +2,14 @@
 permalink: ilm/working-with-ilm-rules-and-ilm-policies.html
 sidebar: sidebar
 keywords: remove ilm rule, edit ilm rule, clone ilm rule, ilm queue
-summary: 'As your storage requirements change, you might need to modify the active policy or put a different policy in place. You can also modify the ILM rules associated with the policy. You can view ILM metrics to determine system performance.'
+summary: 'As your storage requirements change, you might need put a different policy in place or modify the ILM rules associated with the policy. You can view ILM metrics to determine system performance.'
 ---
 = Work with ILM policies and ILM rules
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-As your storage requirements change, you might need to modify the active policy or put a different policy in place. You can also modify the ILM rules associated with the policy. You can view ILM metrics to determine system performance.
+As your storage requirements change, you might need put a different policy in place or modify the ILM rules associated with the policy. You can view ILM metrics to determine system performance.
 
 .What you'll need
 
@@ -26,12 +26,6 @@ To view active, proposed, and historical ILM policies:
 
 image::../media/ilm_policy_active_proposed_history_tabs.png[ILM Policy Tabs]
 
-== Remove proposed ILM policy
-
-To remove a proposed ILM policy:
-
-
-
 == Clone a historical ILM policy
 
 To clone a historical ILM policy:
@@ -46,7 +40,7 @@ To clone a historical ILM policy:
 
 CAUTION: An ILM policy that has been incorrectly configured can result in unrecoverable data loss. Before activating an ILM policy, carefully review the ILM policy and its ILM rules, and then simulate the ILM policy. Always confirm that the ILM policy will work as intended. 
 
-== Remove proposed policy
+== Remove the proposed ILM policy
 
 To remove the proposed policy:
 
@@ -132,3 +126,5 @@ You can view metrics for ILM, such as the number of objects in the queue and the
 . Monitor the metrics on the ILM tab.
 +
 You can select the question mark image:../media/icon_nms_question.png[question mark icon] to see a description of the items on the ILM tab.
++
+image::../media/ilm_metrics_on_dashboard.png[ILM metrics on Grid Manager dashboard]
