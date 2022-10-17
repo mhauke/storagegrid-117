@@ -53,10 +53,10 @@ For example, describe what this traffic classification policy applies to and wha
 * Bucket regex: Enter one or more regular expressions used to match a set of bucket names.
 +
 
-The regular expression is unanchored. Use the ^ anchor to match at the beginning of the bucket name, and use the $ anchor to match at the end of the name.
-* CIDR: Enter one ore more IPv4 subnets, in CIDR notation, that matches the desired subnet.
+The regular expression is unanchored. Use the ^ anchor to match at the beginning of the bucket name, and use the $ anchor to match at the end of the name. Regular expression matching supports a subset of PCRE (Perl compatible regular expression) syntax.
+* CIDR: Enter one or more IPv4 subnets, in CIDR notation, that matches the desired subnet.
 * Load balancer endpoint: Select an endpoint name.
-* Tenant: Tenant matching is based on the access key used ID. If no access key ID is present in the request (such as for anonymous access) then the ownership of the bucket that is being accessed is used to determine the tenant. 
+* Tenant: Tenant matching uses the access key ID. If the request does not contain an access key ID (for example, anonymous access), then the ownership of the bucket accessed is used to determine the tenant.
 |Inverse match
 |If you want to match all network traffic _except_ traffic consistent with the Type and Match Value just defined, select the *Inverse match* check box. Otherwise, leave the check box unselected.
 
