@@ -29,14 +29,14 @@ In this example, an S3 tenant account named Bank of ABC has used the Tenant Mana
 |===
 | Bucket definition| Example value
 
-|Tenant Account Name
-|Bank of ABC
+| Tenant Account Name
+| Bank of ABC
 
-|Bucket Name
-|bank-records
+| Bucket Name
+| bank-records
 
-|Bucket Region
-|us-east-1 (default)
+| Bucket Region
+| us-east-1 (default)
 |===
 
 Each object and object version that is added to the bank-records bucket will use the following values for `retain-until-date` and `legal hold` settings.
@@ -45,13 +45,13 @@ Each object and object version that is added to the bank-records bucket will use
 |===
 | Setting for each object| Example value
 
-|`retain-until-date`
-|`"2030-12-30T23:59:59Z"` (December 30, 2030)
+| `retain-until-date`
+| `"2030-12-30T23:59:59Z"` (December 30, 2030)
 
 Each object version has its own `retain-until-date` setting. This setting can be increased, but not decreased.
 
-|`legal hold`
-|`"OFF"` (Not in effect)
+| `legal hold`
+| `"OFF"` (Not in effect)
 
 A legal hold can be placed or lifted on any object version at any time during the retention period. If an object is under a legal hold, the object cannot be deleted even if the `retain-until-date` has been reached.
 |===
@@ -64,17 +64,17 @@ This example ILM rule applies only to the S3 tenant account named Bank of ABC. I
 |===
 | Rule definition| Example value
 
-|Rule name
-|Compliant Rule: EC Objects in bank-records Bucket - Bank of ABC
+| Rule name
+| Compliant Rule: EC Objects in bank-records Bucket - Bank of ABC
 
-|Tenant Account
-|Bank of ABC
+| Tenant Account
+| Bank of ABC
 
-|Bucket Name
-|`bank-records`
+| Bucket Name
+| `bank-records`
 
-|Advanced filter
-|Object Size (MB) greater than 1
+| Advanced filter
+| Object Size (MB) greater than 1
 
 *Note:* This filter ensures that erasure coding is not used for objects 1 MB or smaller.
 |===
@@ -85,14 +85,14 @@ This example ILM rule applies only to the S3 tenant account named Bank of ABC. I
 |===
 | Rule definition| Example value
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Placements
-|From day 0 store forever
+| Placements
+| From day 0 store forever
 
-|Erasure Coding Profile
-|
+| Erasure Coding Profile
+| 
 * Create an erasure-coded copy on Storage Nodes at three data center sites
 * Uses 6+3 erasure-coding scheme
 |===
@@ -107,17 +107,17 @@ This example ILM rule initially stores two replicated object copies on Storage N
 |===
 | Rule definition| Example value
 
-|Rule name
-|Non-compliant rule: Use Cloud Storage Pool
+| Rule name
+| Non-compliant rule: Use Cloud Storage Pool
 
-|Tenant accounts
-|Not specified
+| Tenant accounts
+| Not specified
 
-|Bucket name
-|Not specified, but will only apply to buckets that do not have S3 Object Lock (or the legacy Compliance feature) enabled.
+| Bucket name
+| Not specified, but will only apply to buckets that do not have S3 Object Lock (or the legacy Compliance feature) enabled.
 
-|Advanced filter
-|Not specified
+| Advanced filter
+| Not specified
 |===
 
 //image::../media/ilm_example_non_compliant_rule_step_1.png[Example Non-Compliant Rule Step 1]
@@ -126,11 +126,11 @@ This example ILM rule initially stores two replicated object copies on Storage N
 |===
 | Rule definition| Example value
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Placements
-|
+| Placements
+| 
 * On Day 0, keep two replicated copies on Storage Nodes in Data Center 1 and Data Center 2 for 365 days
 * After 1 year, keep one replicated copy in a Cloud Storage Pool forever
 |===
@@ -143,17 +143,17 @@ This example ILM rule copies object data to storage pools in two data centers. T
 |===
 | Rule definition| Example value
 
-|Rule name
-|Default compliant rule: Two Copies Two Data Centers
+| Rule name
+| Default compliant rule: Two Copies Two Data Centers
 
-|Tenant account
-|Not specified
+| Tenant account
+| Not specified
 
-|Bucket name
-|Not specified
+| Bucket name
+| Not specified
 
-|Advanced filter
-|Not specified
+| Advanced filter
+| Not specified
 |===
 
 //image::../media/compliant_rule_2_copies_2_data_centers_1.png[screenshot showing step 1 of creating default rule for compliance example]
@@ -162,11 +162,11 @@ This example ILM rule copies object data to storage pools in two data centers. T
 |===
 | Rule definition| Example value
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Placements
-|From Day 0 to forever, keep two replicated copies--one on Storage Nodes in Data Center 1 and one on Storage Nodes in Data Center 2.
+| Placements
+| From Day 0 to forever, keep two replicated copies--one on Storage Nodes in Data Center 1 and one on Storage Nodes in Data Center 2.
 |===
 
 //image::../media/compliant_rule_2_copies_2_data_centers_2.png[screenshot showing step 2 of creating default rule for compliance example]

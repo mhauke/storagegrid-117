@@ -23,17 +23,17 @@ IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not u
 |===
 | Rule definition| Example value
 
-|Rule name
-|EC Only Objects > 1 MB
+| Rule name
+| EC Only Objects > 1 MB
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Advanced filter for Object size
-|Object size greater than 1 MB
+| Advanced filter for Object size
+| Object size greater than 1 MB
 
-|Placements
-|Create a 2+1 erasure-coded copy using three sites
+| Placements
+| Create a 2+1 erasure-coded copy using three sites
 |===
 
 image::../media/policy_2_rule_1_ec_objects_adv_filtering.png[ILM rule 1 for example 2: Use EC for all objects greater than 1 MB]
@@ -46,17 +46,17 @@ This example ILM rule creates two replicated copies and does not filter by objec
 |===
 | Rule definition| Example value
 
-|Rule name
-|Two Replicated Copies
+| Rule name
+| Two Replicated Copies
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Advanced filter for Object size
-|None
+| Advanced filter for Object size
+| None
 
-|Placements
-|On Day 0 to forever, keep one replicated copy at Site 1 and one replicated copy at Site 2.
+| Placements
+| On Day 0 to forever, keep one replicated copy at Site 1 and one replicated copy at Site 2.
 |===
 
 == ILM policy for example 2: Use EC for objects greater than 1 MB

@@ -48,17 +48,17 @@ NOTE: The first rule in this example uses an advanced filter to ensure that eras
 |===
 | Rule definition| Example value
 
-|Rule name
-|One-Site Erasure Coding for Tenant A
+| Rule name
+| One-Site Erasure Coding for Tenant A
 
-|Tenant Account
-|Tenant A
+| Tenant Account
+| Tenant A
 
-|Storage Pool
-|Site 1
+| Storage Pool
+| Site 1
 
-|Placements
-|2+1 erasure coding in Site 1 from day 0 to forever
+| Placements
+| 2+1 erasure coding in Site 1 from day 0 to forever
 |===
 
 === Rule 2: Two-site replication for other tenants
@@ -67,17 +67,17 @@ NOTE: The first rule in this example uses an advanced filter to ensure that eras
 |===
 | Rule definition| Example value
 
-|Rule name
-|Two-Site Replication for Other Tenants
+| Rule name
+| Two-Site Replication for Other Tenants
 
-|Tenant Account
-|Ignore
+| Tenant Account
+| Ignore
 
-|Storage Pools
-|Site 1 and Site 2
+| Storage Pools
+| Site 1 and Site 2
 
-|Placements
-|Two replicated copies from day 0 to forever: one copy at Site 1 and one copy at Site 2.
+| Placements
+| Two replicated copies from day 0 to forever: one copy at Site 1 and one copy at Site 2.
 |===
 
 == Proposed ILM policy for example 6: Data protection at three sites
@@ -96,17 +96,17 @@ When this new ILM policy is activated, objects belonging to Tenant A will be pro
 |===
 | Rule definition| Example value
 
-|Rule name
-|Three-Site Erasure Coding for Tenant A
+| Rule name
+| Three-Site Erasure Coding for Tenant A
 
-|Tenant Account
-|Tenant A
+| Tenant Account
+| Tenant A
 
-|Storage Pool
-|All 3 Sites (includes Site 1, Site 2, and Site 3)
+| Storage Pool
+| All 3 Sites (includes Site 1, Site 2, and Site 3)
 
-|Placements
-|2+1 erasure coding in All 3 Sites from day 0 to forever
+| Placements
+| 2+1 erasure coding in All 3 Sites from day 0 to forever
 |===
 
 === Rule 2: Three-site replication for other tenants
@@ -115,17 +115,17 @@ When this new ILM policy is activated, objects belonging to Tenant A will be pro
 |===
 | Rule definition| Example value
 
-|Rule name
-|Three-Site Replication for Other Tenants
+| Rule name
+| Three-Site Replication for Other Tenants
 
-|Tenant Account
-|Ignore
+| Tenant Account
+| Ignore
 
-|Storage Pools
-|Site 1, Site 2, and Site 3
+| Storage Pools
+| Site 1, Site 2, and Site 3
 
-|Placements
-|Three replicated copies from day 0 to forever: one copy at Site 1, one copy at Site 2, and one copy at Site 3.
+| Placements
+| Three replicated copies from day 0 to forever: one copy at Site 1, one copy at Site 2, and one copy at Site 3.
 |===
 
 == Activating the proposed ILM policy for example 6

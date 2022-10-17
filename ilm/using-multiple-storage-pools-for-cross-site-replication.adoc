@@ -23,7 +23,7 @@ image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Make 2 Copies 
 
 When using multiple storage pools, keep the following rules in mind:
 
-* If you are creating n copies, you must add n or more storage pools. For example, if a rule is configured to make three copies, you must specify three or more storage pools.
+* If you are creating `_n_` copies, you must add `_n_` or more storage pools. For example, if a rule is configured to make three copies, you must specify three or more storage pools.
 * If the number of copies equals the number of storage pools, one copy of the object is stored in each storage pool.
 * If the number of copies is less than the number of storage pools, the system distributes the copies to keep disk usage among the pools balanced and to ensure that two or more copies are not stored in the same storage pool.
 * If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. You must ensure that the selected storage pools do not contain the same Storage Nodes.

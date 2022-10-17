@@ -1,14 +1,49 @@
 ---
-permalink: ilm/deactivating-erasure-coding-profile.html
+permalink: ilm/manage-erasure-coding-profiles.html
 sidebar: sidebar
-keywords: deactivate ec profile, remove erasure coding profile
-summary: 'You can deactivate an erasure coding profile if you no longer plan to use it and if the profile is not currently used in any ILM rules.'
+keywords: rename erasure coding profile, ec profile
+summary: 'You can rename an erasure coding profile if needed. You can deactivate an erasure coding profile if it is not currently used in any ILM rules.'
 ---
-= Deactivate an erasure coding profile
+= Manage erasure coding profiles
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
+You can rename an erasure coding profile if needed. You can deactivate an erasure coding profile if it is not currently used in any ILM rules.
+
+== Rename an erasure coding profile
+
+You might want to rename an erasure coding profile to make it more obvious what the profile does.
+
+.What you'll need
+
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the xref:../admin/admin-group-permissions.adoc[required access permissions].
+
+.Steps
+
+. Select *ILM* > *Erasure coding*.
++
+The Erasure Coding Profiles page appears. The *Rename* and *Deactivate* buttons are both disabled.
+
+. Select the profile you want to rename.
++
+The *Rename* and *Deactivate* buttons become enabled.
+
+. Select *Rename*.
++
+The Rename EC Profile dialog box appears.
+
+. Enter a unique name for the erasure coding profile.
++
+The erasure coding profile name is appended to the storage pool name in the placement instruction for an ILM rule.
++
+NOTE: erasure coding profile names must be unique. A validation error occurs if you use the name of an existing profile, even if that profile has been deactivated.
+
+. Select *Save*.
+
+== Deactivate an erasure coding profile
+
 You can deactivate an erasure coding profile if you no longer plan to use it and if the profile is not currently used in any ILM rules.
 
 .What you'll need

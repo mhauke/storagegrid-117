@@ -31,26 +31,26 @@ This rule applies to objects that belong to the Paris tenant and that have the S
 |===
 | Rule definition| Example value
 
-|Tenant account
-|Paris tenant
+| Tenant account
+| Paris tenant
 
-|Advanced filter
-|Location constraint equals eu-west-3
+| Advanced filter
+| Location constraint equals eu-west-3
 
-|Storage pools
-|Site 1 (Paris)
+| Storage pools
+| Site 1 (Paris)
 
-|Rule name
-|Strict ingest to guarantee Paris data center
+| Rule name
+| Strict ingest to guarantee Paris data center
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Placements
-|On Day 0, keep two replicated copies forever in Site 1 (Paris)
+| Placements
+| On Day 0, keep two replicated copies forever in Site 1 (Paris)
 
-|Ingest behavior
-|Strict. Always use this rule's placements on ingest. Ingest fails if it is not possible to store two copies of the object at the Paris data center.
+| Ingest behavior
+| Strict. Always use this rule's placements on ingest. Ingest fails if it is not possible to store two copies of the object at the Paris data center.
 |===
 
 image::../media/ilm_rule_1_example_5_strict_ingest.png[ILM Rule 1 Example 5 Strict Ingest]
@@ -65,26 +65,26 @@ This rule applies to objects that belong to any tenant and any region.
 |===
 | Rule definition| Example value
 
-|Tenant account
-|Ignore
+| Tenant account
+| Ignore
 
-|Advanced filter
-|_Not specified_
+| Advanced filter
+| _Not specified_
 
-|Storage pools
-|Site 1 (Paris) and Site 2 (US)
+| Storage pools
+| Site 1 (Paris) and Site 2 (US)
 
-|Rule name
-|2 Copies 2 Data Centers
+| Rule name
+| 2 Copies 2 Data Centers
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Placements
-|On Day 0, keep two replicated copies forever at two data centers
+| Placements
+| On Day 0, keep two replicated copies forever at two data centers
 
-|Ingest behavior
-|Balanced. Objects that match this rule are placed according to the rule's placement instructions if possible. Otherwise, interim copies are made at any available location.
+| Ingest behavior
+| Balanced. Objects that match this rule are placed according to the rule's placement instructions if possible. Otherwise, interim copies are made at any available location.
 |===
 
 //image::../media/ilm_rule_2_example_5_two_copies_2_data_centers.png[ILM Rule 2 for Example 5 - 2 Copies 2 Data Centers]
