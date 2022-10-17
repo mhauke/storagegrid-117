@@ -18,11 +18,13 @@ You can configure Cross-Origin Resource Sharing (CORS) for an S3 bucket if you w
 
 .About this task
 
-Cross-Origin Resource Sharing (CORS) is a security mechanism that allows client web applications in one domain to access resources in a different domain. For example, suppose you use an S3 bucket named `Images` to store graphics. By configuring CORS for the `Images` bucket, you can allow the images in that bucket to be displayed on the website `http://www.example.com`.
+Cross-Origin Resource Sharing (CORS) is a security mechanism that allows client web applications in one domain to access resources in a different domain. For example, suppose you use an S3 bucket named `Images` to store graphics. By configuring CORS for the `Images` bucket, you can allow the images in that bucket to be displayed on the website `+http://www.example.com+`.
 
-.Steps
+== Enable CORS for a bucket
 
-. Use a text editor to create the XML required to enable CORS.
+To enable CORS for a bucket:
+
+. Use a text editor to create the required XML.
 +
 This example shows the XML used to enable CORS for an S3 bucket. This XML allows any domain to send GET requests to the bucket, but it only allows the `+http://www.example.com+` domain to send POST and DELETE requests. All request headers are allowed.
 +
@@ -46,16 +48,25 @@ This example shows the XML used to enable CORS for an S3 bucket. This XML allows
 +
 For more information about the CORS configuration XML, see http://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html[Amazon Web Services (AWS) Documentation: Amazon Simple Storage Service Developer Guide^].
 
-. In the Tenant Manager, select *STORAGE (S3)* > *Buckets*.
-. Select the bucket name from the list.
+. Select *View buckets* from the dashboard, or select *STORAGE (S3)* > *Buckets*.
+. Select the bucket name from the table.
 +
 The bucket details page appears.
 
-. On the *Bucket access** tab, expand the *Cross-Origin Resource Sharing (CORS)* section.
+. From the *Bucket access* tab, select the *Cross-Origin Resource Sharing (CORS)* accordion.
 . Select the *Enable CORS* check box.
-. Paste the CORS configuration XML into the text box, and select *Save changes*.
-+
-image::../media/cors_configuration_xml.png[screenshot showing COR Configuration XML]
+. Paste the CORS configuration XML into the text box.
+. Select *Save changes*.
 
-. To modify the CORS setting for the bucket, update the CORS configuration XML in the text box or select *Clear* to start over. Then select *Save changes*.
-. To disable CORS for the bucket, unselect the *Enable CORS* check box, and then select *Save changes*.
+== Modify or disable CORS setting
+
+To modify the CORS setting for a bucket:
+
+. Update the CORS configuration XML in the text box, or select *Clear* to start over. 
+. Select *Save changes*.
+
+To disable CORS for the bucket:
+
+. Unselect the *Enable CORS* check box.
+
+. Select *Save changes*.

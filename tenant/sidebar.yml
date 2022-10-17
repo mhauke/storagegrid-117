@@ -73,16 +73,16 @@ entries:
       url: "/tenant/enabling-or-disabling-last-access-time-updates.html"
     - title: Change object versioning for a bucket
       url: "/tenant/changing-bucket-versioning.html"
-    - title: Update default retention settings
+    - title: Use S3 Object Lock to retain objects
+      url: "/tenant/using-s3-object-lock.html"  
+    - title: Update S3 Object Lock default retention
       url: "/tenant/update-default-retention-settings.html"
     - title: Configure Cross-Origin Resource Sharing (CORS)
-      url: "/tenant/configuring-cross-origin-resource-sharing-cors.html"
+      url: "/tenant/configuring-cross-origin-resource-sharing-cors.html" 
     - title: Delete S3 bucket
       url: "/tenant/deleting-s3-bucket.html"
-    - title: Use S3 Object Lock to retain objects
-      url: "/tenant/using-s3-object-lock.html"       
     - title: Use Experimental S3 Console
-      url: "/tenant/use-s3-console.html"
+      url: "/tenant/use-s3-console.html"     
   - title: Manage S3 platform services
     entries:
     - title: What are platform services?
@@ -126,3 +126,4 @@ entries:
         url: "/tenant/json-generated-by-search-integration-service.html"
       - title: Object metadata included in metadata notifications
         url: "/tenant/object-metadata-included-in-metadata-notifications.html"
+    

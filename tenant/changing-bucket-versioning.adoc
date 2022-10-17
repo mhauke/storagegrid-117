@@ -30,26 +30,30 @@ For more information, see the following:
 * xref:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[ILM rules and policies for S3 versioned objects (Example 4)]
 
 .Steps
-. Select *STORAGE (S3)* > *Buckets*.
-. Select the bucket name from the list.
-. Select *Bucket options* > *Object versioning*.
+
+. Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
+. Select the bucket name from the table.
 +
-image::../media/bucket_object_versioning.png[Bucket Change Object Versioning]
+The bucket details page appears.
+
+. From the *Bucket options* tab, select the *Object versioning* accordion.
 
 . Select a versioning state for the objects in this bucket.
 +
-NOTE: If S3 Object Lock or legacy compliance is enabled, the *Object versioning* options are  disabled.
+Object versioning must remain enabled for a bucket used for cross-grid replication. If S3 Object Lock or legacy compliance is enabled, the *Object versioning* options are disabled.
 +
 [cols="1a,3a" options="header"]
 |===
-|Option |Description
-|Enable versioning
-|Enable object versioning if you want to store every version of each object in this bucket. You can then retrieve previous versions of an object as needed.
+|Option  
+| Description
+
+| Enable versioning
+| Enable object versioning if you want to store every version of each object in this bucket. You can then retrieve previous versions of an object as needed.
 
 Objects that were already in the bucket will be versioned when they are modified by a user.
 
-|Suspend versioning
-|Suspend object versioning if you no longer want new object versions to be created. You can still retrieve any existing object versions.
+| Suspend versioning
+| Suspend object versioning if you no longer want new object versions to be created. You can still retrieve any existing object versions.
 
 |===
 

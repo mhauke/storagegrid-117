@@ -51,7 +51,7 @@ Each bucket can have a default retention period in years or days.
 
 To set the default retention for a bucket, use either of these methods:
 
-* Manage bucket settings from the Tenant Manager. See xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket] and xref:../tenant/update-default-retention-settings.adoc[Update default retention settings]. 
+* Manage bucket settings from the Tenant Manager. See xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket] and xref:../tenant/update-default-retention-settings.adoc[Update  S3 Object Lock default retention]. 
 * Issue a PUT Object Lock Configuration request for the bucket to specify the default mode and default number of days or years. 
 
 
