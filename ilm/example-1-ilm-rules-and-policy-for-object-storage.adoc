@@ -40,7 +40,7 @@ The Rule analysis section of the Retention diagram states:
 
 image::../media/ilm_rule_two_copies_two_data_centers.png[ILM rule 1 for example 1: Copy object data to two sites]
 
-== ILM rule 2 for example 1: erasure coding profile with bucket matching
+== ILM rule 2 for example 1: Erasure coding profile with bucket matching
 
 This example ILM rule uses an erasure coding profile and an S3 bucket to determine where and how long the object is stored.
 
@@ -49,7 +49,7 @@ This example ILM rule uses an erasure coding profile and an S3 bucket to determi
 | Rule definition| Example value
 |  Storage pool with multiple sites
 |
-* One storage pool across three sites (all 3 sites)
+* One storage pool across three sites (Sites 1, 2, 3))
 * Use 6+3 erasure-coding scheme
 
 | Rule name

@@ -131,9 +131,9 @@ In this example, the ILM rule stores one replicated copy in Site 1 and one repli
 The Rule analysis section of the Retention diagram states:
 +
 * StorageGRID site-loss protection will apply for the duration of this rule.
+* Objects processed by this rule will be deleted after Day 4015.
 +
 NOTE: See xref:using-multiple-storage-pools-for-cross-site-replication.adoc[Enable site-loss protection.]
-* Objects processed by this rule will be deleted after Day 4015.
 +
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
 
