@@ -25,12 +25,11 @@ As required, you can increase or decrease the timeout period by setting the *Sig
 [NOTE]
 ====
 Browser inactivity timeout is controlled by the following:
-
 * A separate, non-configurable StorageGRID timer, which is included for system security. By default, each user's authentication token expires 16 hours after the user signs in. When a user's authentication expires, that user is automatically signed out, even if you do not select the check box or the value for the browser timeout has not been reached. To renew the token, the user must sign back in.
 * Timeout settings for the identity provider, assuming single sign-on (SSO) is enabled for StorageGRID.
 +
-If SSO is enabled and a user's browser times out, the user must reenter their SSO credentials to access StorageGRID again. See xref:configuring-sso.adoc[Configure single sign-on]. 
 
+If SSO is enabled and a user's browser times out, the user must reenter their SSO credentials to access StorageGRID again. See xref:configuring-sso.adoc[Configure single sign-on]. 
 ====
 
 .Steps

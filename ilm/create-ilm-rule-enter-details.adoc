@@ -62,9 +62,9 @@ The table shows the types of metadata you can specify in advanced filters, the o
 * equals
 * does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
+* greater than or equal to
 
 |Time and date the object was ingested.
 
@@ -90,9 +90,9 @@ For example, you might want to match objects that end with `.txt` or start with 
 * equals
 * does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
+* greater than or equal to
 * exists
 * does not exist
 |Time and date the object was last retrieved (read or viewed).
@@ -107,15 +107,15 @@ For example, you might want to match objects that end with `.txt` or start with 
 
 *Note:* A value of us-east-1 will match objects in buckets created in the us-east-1 region as well as objects in buckets that have no region specified. See xref:configuring-regions-optional-and-s3-only.adoc[Configure regions (optional and S3 only)].
 
-|Object Size (MB)
+|Object Size
 |
 * equals
-* not equals
+* does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
-|The object's size in MB.
+* greater than or equal to
+|The object's size.
 
 Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 

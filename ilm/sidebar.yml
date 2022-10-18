@@ -30,67 +30,56 @@ entries:
       url: "/ilm/how-object-retention-is-determined.html"
     - title: How objects are deleted
       url: "/ilm/how-objects-are-deleted.html"
-  - title: What an ILM policy is
-    url: "/ilm/what-ilm-policy-is.html"
-  - title: What an ILM rule is
-    url: "/ilm/what-ilm-rule-is.html"
-  - title: Create storage grades, storage pools, EC profiles, and regions
+  - title: Create and assign storage grades
+    url: "/ilm/creating-and-assigning-storage-grades.html"
+  - title: Use storage pools
     entries:
-    - title: Create and assign storage grades
-      url: "/ilm/creating-and-assigning-storage-grades.html"
-    - title: Configure storage pools
-      entries:
-      - title: What a storage pool is
-        url: "/ilm/what-storage-pool-is.html"
-      - title: Guidelines for creating storage pools
-        url: "/ilm/guidelines-for-creating-storage-pools.html"
-      - title: Use multiple storage pools for cross-site replication
-        url: "/ilm/using-multiple-storage-pools-for-cross-site-replication.html"
-      - title: Create storage pool
-        url: "/ilm/creating-storage-pool.html"
-      - title: View storage pool details
-        url: "/ilm/viewing-storage-pool-details.html"
-      - title: Edit storage pool
-        url: "/ilm/editing-storage-pool.html"
-      - title: Remove storage pool
-        url: "/ilm/removing-storage-pool.html"
-    - title: Use Cloud Storage Pools
-      entries:
-      - title: What a Cloud Storage Pool is
-        url: "/ilm/what-cloud-storage-pool-is.html"
-      - title: Lifecycle of Cloud Storage Pool object
-        url: "/ilm/lifecycle-of-cloud-storage-pool-object.html"
-      - title: When to use Cloud Storage Pools
-        url: "/ilm/when-to-use-cloud-storage-pools.html"
-      - title: Considerations for Cloud Storage Pools
-        url: "/ilm/considerations-for-cloud-storage-pools.html"
-      - title: Compare Cloud Storage Pools and CloudMirror replication
-        url: "/ilm/comparing-cloud-storage-pools-to-cloudmirror-replication.html"
-      - title: Create Cloud Storage Pool
-        url: "/ilm/creating-cloud-storage-pool.html"
-        entries:
-        - title: 'S3: Specify authentication details'
-          url: "/ilm/s3-authentication-details-for-cloud-storage-pool.html"
-        - title: 'C2S S3: Specify authentication details'
-          url: "/ilm/c2s-s3-authentication-details-for-cloud-storage-pool.html"
-        - title: 'Azure: Specify authentication details'
-          url: "/ilm/azure-authentication-details-for-cloud-storage-pool.html"
-      - title: Edit Cloud Storage Pool
-        url: "/ilm/editing-cloud-storage-pool.html"
-      - title: Remove Cloud Storage Pool
-        url: "/ilm/removing-cloud-storage-pool.html"
-      - title: Troubleshoot Cloud Storage Pools
-        url: "/ilm/troubleshooting-cloud-storage-pools.html"
-    - title: Manage Erasure Coding profiles
-      entries:
-      - title: Rename Erasure Coding profile
-        url: "/ilm/renaming-erasure-coding-profile.html"
-      - title: Deactivate Erasure Coding profile
-        url: "/ilm/deactivating-erasure-coding-profile.html"
-    - title: Configure regions (optional and S3 only)
-      url: "/ilm/configuring-regions-optional-and-s3-only.html"
+    - title: What a storage pool is
+      url: "/ilm/what-storage-pool-is.html"
+    - title: Guidelines for creating storage pools
+      url: "/ilm/guidelines-for-creating-storage-pools.html"
+    - title: Enable site-loss protection
+      url: "/ilm/using-multiple-storage-pools-for-cross-site-replication.html"
+    - title: Create storage pool
+      url: "/ilm/creating-storage-pool.html"
+    - title: View storage pool details
+      url: "/ilm/viewing-storage-pool-details.html"
+    - title: Edit storage pool
+      url: "/ilm/editing-storage-pool.html"
+    - title: Remove storage pool
+      url: "/ilm/removing-storage-pool.html"
+  - title: Use Cloud Storage Pools
+    entries:
+    - title: What a Cloud Storage Pool is
+      url: "/ilm/what-cloud-storage-pool-is.html"
+    - title: Lifecycle of Cloud Storage Pool object
+      url: "/ilm/lifecycle-of-cloud-storage-pool-object.html"
+    - title: When to use Cloud Storage Pools
+      url: "/ilm/when-to-use-cloud-storage-pools.html"
+    - title: Considerations for Cloud Storage Pools
+      url: "/ilm/considerations-for-cloud-storage-pools.html"
+    - title: Compare Cloud Storage Pools and CloudMirror replication
+      url: "/ilm/comparing-cloud-storage-pools-to-cloudmirror-replication.html"
+    - title: Create Cloud Storage Pool
+      url: "/ilm/creating-cloud-storage-pool.html"
+    - title: Edit Cloud Storage Pool
+      url: "/ilm/editing-cloud-storage-pool.html"
+    - title: Remove Cloud Storage Pool
+      url: "/ilm/removing-cloud-storage-pool.html"
+    - title: Troubleshoot Cloud Storage Pools
+      url: "/ilm/troubleshooting-cloud-storage-pools.html"
+  - title: Manage erasure coding profiles
+    entries:
+    - title: Rename erasure coding profile
+      url: "/ilm/renaming-erasure-coding-profile.html"
+    - title: Deactivate erasure coding profile
+      url: "/ilm/deactivating-erasure-coding-profile.html"
+  - title: Configure regions (optional and S3 only)
+    url: "/ilm/configuring-regions-optional-and-s3-only.html"
   - title: Create ILM rule 
     entries:
+    - title: Overview
+      url: "/ilm/what-ilm-rule-is.html"
     - title: Access Create ILM rule wizard
       url: "/ilm/access-create-ilm-rule-wizard.html"
     - title: 'Step 1 of 3: Enter details'
@@ -110,17 +99,15 @@ entries:
       url: "/ilm/creating-ilm-policy.html"
     - title: Create proposed ILM policy
       url: "/ilm/creating-proposed-ilm-policy.html"
-    - title: Create ILM policy after S3 Object Lock is enabled
-      url: "/ilm/creating-ilm-policy-after-s3-object-lock-is-enabled.html"
     - title: Simulate ILM policy
       url: "/ilm/simulating-ilm-policy.html"
     - title: Activate ILM policy
       url: "/ilm/activating-ilm-policy.html"
     - title: Verify ILM policy with object metadata lookup
       url: "/ilm/verifying-ilm-policy-with-object-metadata-lookup.html"
-  - title: Work with ILM policies and ILM rules
+  - title: Work with ILM policies and rules
     url: "/ilm/working-with-ilm-rules-and-ilm-policies.html"
-  - title: Use S3 Object Lock with ILM
+  - title: Use S3 Object Lock
     entries:
     - title: Manage objects with S3 Object Lock
       url: "/ilm/managing-objects-with-s3-object-lock.html" 

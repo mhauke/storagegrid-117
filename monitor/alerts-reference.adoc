@@ -552,6 +552,18 @@ The object existence check job cannot continue. Either one or more Storage Nodes
 |Too few Storage Nodes with the RSM service are running or available at a site.
 |===
 
+== Storage Node alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description
+
+|Storage Node not in desired storage state
+|The LDR service on a Storage Node cannot transition to the desired state because of an internal error or volume issue.
+
+|===
+
+
 == StorageGRID services alerts
 
 [cols="1a,2a" options="header"]

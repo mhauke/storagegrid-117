@@ -128,11 +128,11 @@ It is possible to configure a DNS name for the IP address that clients use to co
 
 When client connections are made using a Load Balancer endpoint, connections must be made using the protocol (HTTP or HTTPS) that was specified for that endpoint. To use HTTP for client connections to Storage Nodes, you must enable its use.
 
-By default, when client applications connect to Storage Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting the *Enable HTTP Connection* grid option in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
+By default, when client applications connect to Storage Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting the *Enable HTTP for Storage Node connections* grid option in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
 
 IMPORTANT: Be careful when enabling HTTP for a production grid since requests will be sent unencrypted.
 
-If the xref:../admin/enabling-http-for-client-communications.adoc[*Enable HTTP Connection* option] is selected, clients must use different ports for HTTP than they use for HTTPS.
+If the xref:../admin/changing-network-options-object-encryption.adoc[*Enable HTTP for Storage Node connections] option is selected, clients must use different ports for HTTP than they use for HTTPS.
 
 == Test your connection in Swift API configuration
 
