@@ -6,7 +6,7 @@ For storage controllers currently using SANtricity OS 08.42.20.00 (11.42) or new
 .What you'll need
 
 * You have consulted the NetApp Interoperability Matrix Tool (IMT) to confirm that the SANtricity OS version you are using for the upgrade is compatible with your appliance.
-* You have the Maintenance or Root access permission.
+* You have the xref:../admin/admin-group-permissions.adoc[Maintenance or Root access permission].
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the provisioning passphrase.
 * You have access to the NetApp downloads page for SANtricity OS.
@@ -15,13 +15,13 @@ For storage controllers currently using SANtricity OS 08.42.20.00 (11.42) or new
 
 You cannot perform other software updates (StorageGRID software upgrade or a hotfix) until you have completed the SANtricity OS upgrade process. If you attempt to start a hotfix or a StorageGRID software upgrade before the SANtricity OS upgrade process has finished, you are redirected to the SANtricity OS upgrade page.
 
-The procedure will not be complete until the SANtricity OS upgrade has been successfully applied to all applicable nodes that have been selected for the upgrade. It might take more than 30 minutes to load the SANtricity OS on each node (sequentially) and up to 90 minutes to reboot each StorageGRID storage appliance.
+The procedure will not be complete until the SANtricity OS upgrade has been successfully applied to all applicable nodes that have been selected for the upgrade. It might take more than 30 minutes to load the SANtricity OS on each node (sequentially) and up to 90 minutes to reboot each StorageGRID storage appliance. Any nodes in your grid that do not use SANtricity OS will not be affected by this procedure. 
 
 CAUTION: The following steps are only applicable when you are using the Grid Manager to perform the upgrade. The storage controllers in the appliance cannot be upgraded using the Grid Manager when the controllers are using SANtricity OS older than 08.42.20.00 (11.42).
 
 NOTE: This procedure will automatically upgrade the NVSRAM to the most recent version associated with the SANtricity OS upgrade. You do not need to apply a separate NVSRAM upgrade file.
 
-IMPORTANT: Be sure to apply the latest StorageGRID hotfix before you begin this procedure. See xref:storagegrid-hotfix-procedure.adoc[StorageGRID hotfix procedure]roo for details. 
+IMPORTANT: Be sure to apply the latest StorageGRID hotfix before you begin this procedure. See xref:storagegrid-hotfix-procedure.adoc[StorageGRID hotfix procedure]for details. 
 
 .Steps
 
@@ -53,7 +53,7 @@ The page lists the details for each appliance node including:
 * Last upgrade status
 
 [start=4]
-. Review the information in the table for all of your appliances. Confirm that all storage controllers have *Nominal* status. If the status for any controller is *Unknown*, go to *Nodes* > *_appliance node_* > *Hardware* to investigate and resolve the issue.
+. Review the information in the table for all of your upgradable appliances. Confirm that all storage controllers have *Nominal* status. If the status for any controller is *Unknown*, go to *Nodes* > *_appliance node_* > *Hardware* to investigate and resolve the issue.
 . Select the SANtricity OS upgrade file you downloaded from the NetApp support site.
  .. Select *Browse*.
  .. Locate and select the file.
@@ -148,7 +148,7 @@ IMPORTANT: The SANtricity OS upgrade process will not be complete until you appr
 .. Select *Skip Nodes and Finish*. 
 +
 
-A warning appears asking if you are sure you want to finish the upgrade process without upgrading all nodes. 
+A warning appears asking if you are sure you want to finish the upgrade process without upgrading all applicable nodes. 
 
 +
 [start=2]
