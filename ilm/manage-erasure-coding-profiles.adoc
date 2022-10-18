@@ -1,20 +1,49 @@
 ---
-permalink: ilm/deactivating-erasure-coding-profile.html
+permalink: ilm/manage-erasure-coding-profiles.html
 sidebar: sidebar
-keywords: deactivate ec profile, remove erasure coding profile
-summary: 'You can deactivate an erasure coding profile if you no longer plan to use it and if the profile is not currently used in any ILM rules.'
+keywords: rename erasure coding profile, ec profile
+summary: 'You can rename an erasure coding profile if needed. You can deactivate an erasure coding profile if it is not currently used in any ILM rules.'
 ---
-= Deactivate an erasure coding profile
+= Manage erasure coding profiles
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
+You can rename an erasure coding profile if needed. You can deactivate an erasure coding profile if it is not currently used in any ILM rules.
+
+== Rename an erasure coding profile
+
+You might want to rename an erasure coding profile to make it more obvious what the profile does.
+
+.What you'll need
+
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the xref:../admin/admin-group-permissions.adoc[required access permissions].
+
+.Steps
+
+. Select *ILM* > *Erasure coding*.
+
+. Select the profile you want to rename.
+
+. Select *Rename*.
+
+. Enter a unique name for the erasure coding profile.
++
+The erasure coding profile name is appended to the storage pool name in the placement instruction for an ILM rule.
++
+NOTE: Erasure coding profile names must be unique. A validation error occurs if you use the name of an existing profile, even if that profile has been deactivated.
+
+. Select *Save*.
+
+== Deactivate an erasure coding profile
+
 You can deactivate an erasure coding profile if you no longer plan to use it and if the profile is not currently used in any ILM rules.
 
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have specific access permissions.
+* You have the xref:../admin/admin-group-permissions.adoc[required access permissions].
 * You have confirmed that no erasure coded data repair operations or decommission procedures are in process. An error message is returned if you attempt to deactivate an erasure coding profile while either of these operations are in progress.
 
 .About this task
@@ -32,46 +61,36 @@ StorageGRID prevents you from deactivating an erasure coding profile if either o
 .Steps
 
 . Select *ILM* > *Erasure Coding*.
-+
-The Erasure Coding Profiles page appears. The *Rename* and *Deactivate* buttons are both disabled.
 
 . Review the *Status* column to confirm that the erasure coding profile you want to deactivate is not used in any ILM rules.
 +
-You cannot deactivate an erasure coding profile if it is used in any ILM rule. In the example, the *2_1 EC Profile* is used in at least one ILM rule.
+You cannot deactivate an erasure coding profile if it is used in any ILM rule. In the example, the *2+1 Data Center 1* profile is used in at least one ILM rule.
 +
 image::../media/ec_profile_used_in_ilm_rule.png[EC Profile Used in ILM Rule]
 
 . If the profile is used in an ILM rule, follow these steps:
- .. Select *ILM* > *Rules*.
- .. For each rule listed, select the radio button and review the retention diagram to determine if the rule uses the erasure coding profile you want to deactivate.
-+
-In the example, the *Three site EC for larger objects* rule uses a storage pool called *All 3 Sites* and the *All sites 6-3* erasure coding profile. erasure coding profiles are represented by this color: image:../media/retention_diag_ec_copy_color.png[EC profiles color]
-+
-image::../media/ilm_rule_ec_profile_used.png[ILM Rule EC Profile Used]
-
- .. If the ILM rule uses the erasure coding profile you want to deactivate, determine if the rule is used in either the active ILM policy or a proposed policy.
-+
-In the example, the *Three site EC for larger objects* rule is used in the active ILM policy.
-
- .. Complete the additional steps in the table, based on where the erasure coding profile is used.
+.. Select *ILM* > *Rules*.
+.. For each rule listed, select the radio button and review the retention diagram to determine if the rule uses the erasure coding profile you want to deactivate.
+.. If the ILM rule uses the erasure coding profile you want to deactivate, determine if the rule is used in either the active ILM policy or a proposed policy.
+.. Complete the additional steps in the table, based on where the erasure coding profile is used.
 +
 [cols="2a,4a,1a" options="header"]
 |===
 | Where has the profile been used?| Additional steps to perform before deactivating the profile| Refer to these additional instructions
 
-|Never used in any ILM rule
-|No additional steps required. Continue with this procedure.
-|_None_
+| Never used in any ILM rule
+| No additional steps required. Continue with this procedure.
+| _None_
 
-|In an ILM rule that has never been used in any ILM policy
-|
+| In an ILM rule that has never been used in any ILM policy
+| 
 . Edit or delete all affected ILM rules. If you edit the rule, remove all placements that use the erasure coding profile.
 . Continue with this procedure.
 
 | xref:working-with-ilm-rules-and-ilm-policies.adoc[Work with ILM rules and ILM policies]
 
-|In an ILM rule that is currently in the active ILM policy
-|
+| In an ILM rule that is currently in the active ILM policy
+| 
 . Clone the active policy.
 . Remove the ILM rule that uses the erasure coding profile.
 . Add one or more new ILM rules to ensure objects are protected.
@@ -84,26 +103,26 @@ While you can safely attempt to deactivate an erasure coding profile while it is
 
 . Edit or delete the rule you removed from the policy. If you edit the rule, remove all placements that use the erasure coding profile.
 . Continue with this procedure.
-|
+| 
 xref:creating-ilm-policy.adoc[Create an ILM policy]
 
 xref:working-with-ilm-rules-and-ilm-policies.adoc[Work with ILM rules and ILM policies]
 
-|In an ILM rule that is currently in a proposed ILM policy
-|
+| In an ILM rule that is currently in a proposed ILM policy
+| 
 . Edit the proposed policy.
 . Remove the ILM rule that uses the erasure coding profile.
 . Add one or more new ILM rules to ensure all objects are protected.
 . Save the proposed policy.
 . Edit or delete the rule you removed from the policy. If you edit the rule, remove all placements that use the erasure coding profile.
 . Continue with this procedure.
-|
+| 
 xref:creating-ilm-policy.adoc[Create an ILM policy]
 
 xref:working-with-ilm-rules-and-ilm-policies.adoc[Work with ILM rules and ILM policies]
 
-|In an ILM rule that is in a historical ILM policy
-|
+| In an ILM rule that is in a historical ILM policy
+| 
 . Edit or delete the rule. If you edit the rule, remove all placements that use the erasure coding profile. (The rule will now appear as a historical rule in the historical policy.)
 . Continue with this procedure.
 | xref:working-with-ilm-rules-and-ilm-policies.adoc[Work with ILM rules and ILM policies]

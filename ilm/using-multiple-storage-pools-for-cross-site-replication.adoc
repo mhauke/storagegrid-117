@@ -59,6 +59,9 @@ NOTE: Erasure coding is allowed in storage pools containing any number of sites 
 
 image::../media/ec_three_sites_4_plus_2_site_loss_example_template.png[Store objects by erasure coding using a 4+2 EC scheme across 3 sites]
 
-An object can be retrieved as long as any four of the six fragments (data or parity) remain available. Up to two fragments can be lost without loss of the object data. If an entire site is lost, the object can still be retrieved or repaired, as long as all of the other fragments remain accessible.
+* If you are creating n copies, you must add n or more storage pools. For example, if a rule is configured to make three copies, you must specify three or more storage pools.
+* If the number of copies equals the number of storage pools, one copy of the object is stored in each storage pool.
+* If the number of copies is less than the number of storage pools, the system distributes the copies to keep disk usage among the pools balanced and to ensure that two or more copies are not stored in the same storage pool.
+* If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. You must ensure that the selected storage pools do not contain the same Storage Nodes.
 
 image::../media/ec_three_sites_4_plus_2_site_loss_example.png[Erasure coding 4+2 EC scheme 1 site lost]

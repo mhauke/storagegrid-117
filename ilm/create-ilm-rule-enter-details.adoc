@@ -36,9 +36,11 @@ If you do not have either the Root access permission or the Tenant accounts perm
 If *matches all* is selected (default), the rule applies to all S3 buckets or Swift containers.
 
 . For S3 tenants, optionally select *Yes* to apply the rule only to older object versions in S3 buckets that have versioning enabled.
-
-NOTE: Noncurrent Time applies only to S3 objects in versioning-enabled buckets. See xref:../s3/operations-on-buckets.adoc[Operations on buckets, PUT Bucket versioning] and xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock].
-
++
+If you select *Yes*, "`Noncurrent time`" will be automatically selected for Reference time in xref:create-ilm-rule-define-placements.adoc[Step 2 of the Create an ILM rule wizard].
++
+NOTE: Noncurrent time applies only to S3 objects in versioning-enabled buckets. See xref:../s3/operations-on-buckets.adoc[Operations on buckets, PUT Bucket versioning] and xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock].
++
 You can use this option to reduce the storage impact of versioned objects by filtering for noncurrent object versions. See xref:example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[Example 4: ILM rules and policy for S3 versioned objects].
 
 . Optionally, select *Add an advanced filter* to specify additional filters.
