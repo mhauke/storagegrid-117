@@ -53,19 +53,19 @@ NOTE: When requests are complete, this chart only shows bandwidth usage. For slo
 ** Policy bandwidth usage: The amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
 
 . Hover the cursor over a line graph to see a pop-up of values on a specific part of the graph.
+
+. Select *Grafana dashboard* right below the Metrics title to view all the graphs for a policy. In addition to the four graphs from the *Metrics* tab, you can view two more graphs: 
 +
 
-. Hover the cursor over a heatmap to see a pop-up that shows the date and time of the sample, object sizes that are aggregated into the count, and the number of requests per second during that time period.
-+
+* Write request rate by object size: The rate for PUT/POST/DELETE requests matching this policy. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and may report 0 when there are non-zero requests in the bucket.
+* Read request rate by object size: The rate for GET/HEAD requests matching this policy. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and might report 0 when there are non-zero requests in the bucket. 
 
-. Use the *Policy* to select a different policy.
-+
-The graphs for the selected policy appear.
-. Select *Grafana dashboard* right below the Metrics title to view all the dashboard for a policy.
 . Alternatively, access the graphs from the *SUPPORT* menu.
  .. Select *SUPPORT* > *Tools* > *Metrics*.
  .. Select *Traffic Classification Policy* from the *Grafana* section.
  .. Select the policy from the pull-down menu on the upper left of the page.
+ .. Hover the cursor over a graph to see a pop-up that shows the date and time of the sample, object sizes that are aggregated into the count, and the number of requests per second during that time period.
 +
+
 Traffic classification policies are identified by their ID. Policy IDs are listed on the Traffic classification policies page.
 . Analyze the graphs to determine how often the policy is limiting traffic and whether you need to adjust the policy.
