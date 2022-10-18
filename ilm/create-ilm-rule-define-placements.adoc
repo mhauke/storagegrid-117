@@ -19,13 +19,6 @@ Each placement instruction can have multiple lines if you want to create differe
 
 In this example, the ILM rule stores one replicated copy in Site 1 and one replicated copy in Site 2 for the first year. After one year, a 2+1 erasure-coded copy is made and saved at only one site.
 
-The Rule analysis section of the Retention diagram states:
-
-* StorageGRID site-loss protection will not apply fom Day 365 - 4015.
-+
-NOTE: See xref:using-multiple-storage-pools-for-cross-site-replication.adoc[Enable site-loss protection.]
-* Objects processed by this rule will be deleted after Day 4015.
-
 image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Step 2]
 
 .Steps
@@ -133,10 +126,15 @@ Each line in the diagram shows where and when object copies will be placed. The 
 |Cloud Storage Pool copy
 |===
 +
-In this example, two replicated copies will be saved to two storage pools (Data Center 1 and Data Center 2) for one year. Then, an erasure-coded copy will be saved for an additional 10 years, using a 6+3 erasure-coding scheme at three sites. After 11 years, the objects will be deleted from StorageGRID.
-
-//In this example, the ILM rule stores one replicated copy in Site 1 and one replicated copy in Site 2 for the first year. After one year, a 2+1 erasure-coded copy will be saved at only one site.
-
+In this example, the ILM rule stores one replicated copy in Site 1 and one replicated copy in Site 2 for the first year. After one year and for an additional 10 years, a 6+3 erasure-coded copy will be saved at three sites. After 11 years total, the objects will be deleted from StorageGRID.
++
+The Rule analysis section of the Retention diagram states:
++
+* StorageGRID site-loss protection will apply for the duration of this rule.
++
+NOTE: See xref:using-multiple-storage-pools-for-cross-site-replication.adoc[Enable site-loss protection.]
+* Objects processed by this rule will be deleted after Day 4015.
++
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
 
 . Select *Continue*. xref:create-ilm-rule-select-ingest-behavior.adoc[Step 3 (Select ingest behavior)] of the Create an ILM rule wizard appears.
