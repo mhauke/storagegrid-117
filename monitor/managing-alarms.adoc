@@ -622,29 +622,3 @@ NOTE: While the legacy alarm system continues to be supported, the alert system 
 . Click *Apply Changes*.
 +
 Legacy alarm notifications are suppressed for the selected mailing lists.
-
-=== Suppress email notifications system wide
-
-You can block the StorageGRID system's ability to send email notifications for legacy alarms and event-triggered AutoSupport messages.
-
-.What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You must have specific access permissions.
-
-.About this task
-Use this option to suppress email notifications for legacy alarms and event-triggered AutoSupport messages.
-
-NOTE: This option does not suppress alert email notifications. It also does not suppress weekly or user-triggered AutoSupport messages.
-
-.Steps
-. Select *CONFIGURATION* > *System settings* > *Display options*.
-. From the Display Options menu, select *Options*.
-. Select *Notification Suppress All*.
-+
-image::../media/suppress_all_notifications.gif[Display Options > Notifications Suppress All selected]
-
-. Click *Apply Changes*.
-+
-The Notifications page (*Configuration* > *Notifications*) displays the following message:
-+
-image::../media/all_notifications_suppressed.gif[Notifications page with all email notifications suppressed]
