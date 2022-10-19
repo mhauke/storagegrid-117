@@ -20,6 +20,11 @@ You might need to troubleshoot alerts related to grid federation as well as any 
 
 After making any changes to resolve a connection issue, test the connection to ensure that its connection status is *Connected*. For instructions, see xref:grid-federation-manage-connection.adoc[Manage a grid federation connection].
 
+== Troubleshoot account clone errors
+
+=== Unable to sign in to a cloned tenant account
+When a tenant account is cloned to the other grid in a grid federation connection, the password you set for the tenant's local root user is not cloned. To sign in as the root user on the cloned tenant, a grid administrator for that grid must first xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
+
 == Troubleshoot cross-grid replication errors
 
 //https://jira.vtc.eng.netapp.com/browse/SGWS-23229

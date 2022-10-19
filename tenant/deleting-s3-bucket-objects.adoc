@@ -2,24 +2,19 @@
 permalink: tenant/deleting-s3-bucket-objects.html
 sidebar: sidebar
 keywords: how to delete S3 bucket objects, empty bucket
-summary: 'You can use the Tenant Manager to delete all objects in an S3 bucket so you can delete the bucket.'
+summary: 'You can use the Tenant Manager to delete all of the objects in one or more S3 buckets.'
 ---
 = Delete objects from S3 bucket
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the Tenant Manager to delete one or more S3 buckets that are empty.
+You can use the Tenant Manager to delete all of the objects in one or more S3 buckets.
 
 .What you'll need
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You belong to a user group that has the Root Access permission. This permission overrides the permissions settings in group or bucket policies. See xref:tenant-management-permissions.adoc[Tenant management permissions].
-
-.About this task
-
-These instructions describe how to delete all objects from an S3 bucket using the Tenant Manager. You can also delete objects from a buckets using the xref:understanding-tenant-management-api.adoc[Tenant Management API] or the xref:../s3/s3-rest-api-supported-operations-and-limitations.adoc[S3 REST API].
-
 
 .Steps
 

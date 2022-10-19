@@ -54,10 +54,10 @@ image:../media/grid-federation-account-clone.png[image showing how tenant detail
 
 == Considerations and requirements for cross-grid replication
 
-* Before tenants can use cross-grid replication, they must create a bucket with the same name on both grids. They can then configure cross-grid replication to occur in one direction or in both directions:
+* Before tenants can use cross-grid replication, they must create identical buckets on both grids in the grid federation connection. They can then configure cross-grid replication to occur in one direction or in both directions:
 
-** If cross-grid replication is enabled for only one of the buckets, objects added to that bucket are replicated, but objects added to the other bucket are not.
-** If cross-grid replication is enabled for both buckets, objects added to either bucket are replicated.
+** If cross-grid replication is enabled for only one of the buckets, objects added to that bucket are replicated to the other grid, but objects added to the other bucket are not.
+** If cross-grid replication is enabled for both buckets, objects added to either bucket are replicated to the other grid.
 
 +
 image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
