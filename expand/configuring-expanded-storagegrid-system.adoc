@@ -50,9 +50,6 @@ xref:../admin/configuring-sso.adoc[Configure single sign-on].
 
 .. Optionally, configure access to the system for auditing purposes through an NFS file share. See xref:../admin/configuring-audit-client-access.adoc[Configure audit client access for NFS].
 
-
-.. Optionally, change the preferred sender for notifications. You can make the expansion Admin Node the preferred sender. Otherwise, an existing Admin Node configured as the preferred sender continues to send notifications, including AutoSupport messages, SNMP notifications, alert emails, and alarm emails (legacy system). See xref:../admin/admin/selecting-preferred-sender.adoc[Select a preferred sender].
-
 . If you added an Archive Node, complete the following configuration tasks.
 
 .. Configure the Archive Node's connection to the targeted external archival storage system. When you complete the expansion, Archive Nodes are in an alarm state until you configure connection information through the *ARC* > *Target* component. See xref:../admin/archiving-to-cloud-through-s3-api.adoc[Archive to the cloud through the S3 API] or xref:../admin/archiving-to-tape-through-tsm-middleware.adoc[Archive to tape through TSM middleware].
