@@ -52,7 +52,7 @@ In general, do not use the default All Sites site in any storage pool. ILM rules
 
 . From the *Storage grade* drop-down list, select the type of storage that will be used if an ILM rule uses this storage pool.
 +
-The default All Storage Nodes storage grade includes all Storage Nodes at the selected site. The default Archive Nodes storage grade includes all Archive Nodes at the selected site. If you created additional storage grades for the Storage Nodes in your grid, they are listed in the drop-down.
+The storage grade, *includes all storage grades* includes all Storage Nodes at the selected site. The default Archive Nodes storage grade includes all Archive Nodes at the selected site. If you created additional storage grades for the Storage Nodes in your grid, they are listed in the drop-down.
 
 . [[entries]]If you want to use the storage pool in a multi-site erasure coding profile, select *Add more nodes* to add an entry for each site to the storage pool.
 +
