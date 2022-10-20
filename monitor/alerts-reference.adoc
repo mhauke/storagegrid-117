@@ -223,6 +223,17 @@ Cassandra automatically restarts if it detects table corruption.
 
 |===
 
+== Debug alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description
+
+|Debug performance impact
+|One or more subcomponents have been in debug mode for an extended time, which might decrease performance.
+
+|===
+
 == DHCP alerts
 
 [cols="1a,2a" options="header"]
@@ -588,4 +599,15 @@ The object existence check job cannot continue. Either one or more Storage Nodes
 
 |Tenant quota usage high
 |A high percentage of tenant quota space is being used. If a tenant exceeds its quota, new ingests are rejected.
+|===
+
+== Trace alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description
+
+|Trace configuration enabled
+|When trace configuration is enabled, system performance might be negatively impacted.
+
 |===
