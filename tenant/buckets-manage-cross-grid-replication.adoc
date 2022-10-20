@@ -37,12 +37,33 @@ Before you can use cross-grid replication, you must sign in to the corresponding
 
 Perform these steps before adding any objects to either bucket. Neither bucket can use bucket-level encryption.
 
-As shown in the figure, you can enable cross-grid replication for either or both of the buckets:
+As shown in the figures, you can enable cross-grid replication for either or both of the buckets.
 
-* If you enable cross-grid replication for the bucket on only one grid, objects added to that bucket are replicated to the other grid, but objects added to the other bucket are not.
-* If you enable cross-grid replication for the bucket on both grids, objects added to either bucket are replicated to the other grid.
+=== Replication in one direction
+
+If you enable cross-grid replication for a bucket on only one grid, objects added to that bucket are replicated to the other grid, but objects added to the other bucket are not. In the figure, cross-grid replication is enabled for `my-bucket` from Grid 1 to Grid 2, but it is not enabled in the other direction. 
+
+image:../media/grid-federation-cross-grid-replication-one-direction.png[image showing grid federation connection in one direction]
+
+=== Replication in both directions
+If you enable cross-grid replication for the bucket on both grids, objects added to either bucket are replicated to the other grid. In the figure, cross-grid replication is enabled for `my-bucket` in both directions. 
 
 image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
+
+=== Replication of client deletes
+
+When enabling cross-grid replication for a bucket, you can specify what happens when objects in the bucket are deleted by an S3 client operation:
+
+*  If client delete operations are not replicated (default), objects that are deleted on the source grid are not deleted on the destination grid.
+
+* If client delete operations are replicated, objects that are deleted on the source grid are also deleted on the destination grid. 
+
+In the figure, client delete operations are not replicated from `my-bucket` on Grid 1 to `my-bucket` on Grid 2. Using the default *No* setting ensures that objects that are accidentally or maliciously deleted from Grid 1 can still be retrieved from Grid 2. In contrast, client delete operations are replicated from `my-bucket` on Grid 2 to `my-bucket` on Grid 1. Using the *Yes* setting keeps the bucket contents in sync between the grids.
+
+image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
+
+
+.Steps
 
 . Starting from a grid whose objects you want to replicate, enable cross-grid replication for the bucket:
 
@@ -57,6 +78,12 @@ image:../media/grid-federation-cross-grid-replication.png[image showing replicat
 .. Review the list of requirements.
 
 .. If all requirements have been met, select the grid federation connection you want to use.
+
+.. Optionally, change the setting of *Replicate client deletes*.
+
+* If *No* (default) and an S3 client deletes an object from this bucket, StorageGRID does not delete that object from the other grid. The default setting helps protect objects from accidental or malicious deletions.
+
+* If *Yes*, any objects that an S3 client deletes from this bucket are also deleted from the other grid. Select *Yes* only if you need keep the contents of the both buckets in sync.
 
 .. Select *Enable and test*.
 +

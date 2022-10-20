@@ -26,6 +26,8 @@ Cross-grid replication is the replication of objects between selected S3 buckets
 
 == Considerations and requirements for grid federation connections
 
+* Both grids used for grid federation must be running StorageGRID 11.7.
+
 * Each grid can have one or more grid federation connections to other grids. Each grid federation connection is independent of any other connections. That is, if grid A has one connection with grid B and a second connection with grid C, there is no implied connection between grid B and grid C.
 
 * Grid federation connections are bidirectional. After the connection is established, you can monitor and manage the connection from either grid. 

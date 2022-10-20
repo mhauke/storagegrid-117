@@ -11,6 +11,14 @@ summary: 'You can use the Tenant Manager to delete all of the objects in one or 
 [.lead]
 You can use the Tenant Manager to delete all of the objects in one or more S3 buckets.
 
+//Delete all bucket objects
+When you delete all bucket objects, StorageGRID permanently deletes all copies of the bucket's objects, including any related metadata. You will not be able to recover this information.
+
+Deleting all bucket objects might take minutes, days, or even weeks, based on the number of objects and concurrent operations. While objects are being deleted, the bucket's state is Read only: Deleting all objects.
+
+Buckets with S3 Object Lock enabled might remain in the Read only: Deleting all objects state for years. This state persists until the retention date is reached for all objects and any legal holds are removed.
+
+
 .What you'll need
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
@@ -44,6 +52,6 @@ The Buckets page appears and shows all existing S3 buckets.
 ====
 
 
-. When the confirmation dialog box appears, select *Yes*.
+. When the confirmation dialog box appears, enter *Yes* and select *OK*.
 +
 StorageGRID deletes objects from each bucket. This operation might take a few minutes.
