@@ -50,7 +50,7 @@ NOTE: When requests are complete, this chart only shows bandwidth usage. For slo
 ** Average request duration (non-error): This graph provides an average duration of successful requests matching this policy.
 +
 
-** Policy bandwidth usage: The amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
+** Policy bandwidth usage: This graph provides the amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
 
 . Hover the cursor over a line graph to see a pop-up of values on a specific part of the graph.
 
