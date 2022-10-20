@@ -19,16 +19,13 @@ You must complete the configuration tasks listed below for the grid nodes you ar
 
 . If you added a Storage Node, complete the following configuration tasks:
 
-.. Review the storage pools used in your ILM rules to ensure the new storage will be used. See xref:../ilm/viewing-storage-pool-details.adoc[View storage pool details].
+.. Manage the storage pools used in your ILM rules to ensure the new storage will be used. 
 
- ** If you added a site, xref:../ilm/creating-storage-pool.adoc[create a storage pool] create a storage pool for the site and update ILM rules to use the new storage pool.
+* If you added a site, xref:../ilm/creating-storage-pool.adoc[create a storage pool] for the site and each storage grade you selected for the new Storage Nodes. Then, configure your ILM rules and policy to use the new location.
 
- ** If you added a Storage Node to an existing site, confirm that the new node uses the correct storage grade. See xref:../ilm/creating-and-assigning-storage-grades.adoc[Create and assign storage grades].
-+
-NOTE: By default, a new Storage Node is assigned to the All Storage Nodes storage grade and added to storage pools that use that grade for the site. If you want a new node to use a custom storage grade, you must assign it to the custom grade manually (*ILM* > *Storage grades*).
+* If you added one or more Storage Nodes to an existing site, xref:../ilm/viewing-storage-pool-details.adoc[view storage pool details] to confirm that each node you added is included in the expected storage pools and used in the expected ILM rules.
 
-
-.. Verify that the Storage Node is ingesting objects. See xref:verifying-storage-node-is-active.adoc[Verify that the Storage Node is active].
+.. xref:verifying-storage-node-is-active.adoc[Verify that the Storage Node is active] and able to ingest objects.
 
 .. Rebalance erasure-coded data (only if you were unable to add the recommended number of Storage Nodes). See 
 xref:rebalancing-erasure-coded-data-after-adding-storage-nodes.adoc[Rebalance erasure-coded data after adding Storage Nodes].

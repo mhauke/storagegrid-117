@@ -17,6 +17,8 @@ Load balancer endpoints determine the ports and network protocols S3 and Swift c
 
 * You have the Root access permission.
 
+* You have reviewed the xref:managing-load-balancing.adoc[considerations for load balancing].
+
 * If you previously remapped a port you intend to use for the load balancer endpoint, you have xref:../maintain/removing-port-remaps.adoc[removed the port remap].
 
 * You have created any high availability (HA) groups you plan to use. HA groups are recommended, but not required. See xref:managing-high-availability-groups.adoc[Manage high availability groups].
@@ -35,8 +37,7 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 
 ** If you want to use the StorageGRID S3 and Swift API certificate (which can also be used for connections directly to Storage Nodes), you have already replaced the default certificate with a custom certificate signed by an external certificate authority. See 
 xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates].
-+
-The certificate can use wildcards to represent the fully qualified domain names of all Admin Nodes and Gateway Nodes running the Load Balancer service. For example, `*.storagegrid._example_.com` uses the * wildcard to represent `adm1.storagegrid._example_.com` and `gn1.storagegrid._example_.com`. See xref:configuring-s3-api-endpoint-domain-names.adoc[Configure S3 API endpoint domain names].
+
 
 == Create a load balancer endpoint
 
@@ -52,8 +53,6 @@ Each load balancer endpoint specifies a port, a client type (S3 or Swift), and a
 
 . Enter details for the endpoint.
 +
-image::../media/load_balancer_endpoint_create_http.png[Create LB Endpoint]
-+
 [cols="1a,3a" options="header"]
 |===
 | Field| Description
@@ -62,13 +61,11 @@ image::../media/load_balancer_endpoint_create_http.png[Create LB Endpoint]
 |A descriptive name for the endpoint, which will appear in the table on the Load balancer endpoints page.
 
 |Port
-|The port clients will use to connect to the Load Balancer service on Admin Nodes and Gateway Nodes.
-
-Accept the suggested port number or enter any external port that is not used by another grid service. Enter a value between 1 and 65535.
+|The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port between 1 and 65535. 
 
 If you enter *80* or *443*, the endpoint is configured only on Gateway Nodes. These ports are reserved on Admin Nodes.
 
-See the xref:../network/index.adoc[Networking guidelines] for information about external ports.
+
 
 |Client type
 |The type of client application that will use this endpoint, either *S3* or *Swift*.
@@ -83,42 +80,44 @@ See the xref:../network/index.adoc[Networking guidelines] for information about 
 
 . Select *Continue*.
 
-=== Select the binding mode
+=== Select a binding mode
 
-. Select a binding mode for the endpoint to control how the endpoint is accessed.
+. Select a binding mode for the endpoint to control how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
-[cols="1a,3a" options="header"]
-|===
-| Option | Description
-
-|Global (default)
-|Clients can access the endpoint using a fully qualified domain name (FQDN), the IP address of any Gateway Node or Admin Node, or the virtual IP address of any HA group on any network.
-
-Use the *Global* setting (default) unless you need to restrict the accessibility of this endpoint.
-
-|Node interfaces
-|Clients must use the IP address of a selected node and network interface to access this endpoint.
-
-|Virtual IPs of HA groups
-|Clients must use a virtual IP address of an HA group to access this endpoint.
-
-Endpoints with this binding mode can all use the same port number, as long as the HA groups you select for the endpoints do not overlap.
+include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 
 
-Endpoints with this mode can all use the same port number as long as the interfaces you select for the endpoints do not overlap.
-
-|===
 +
 [NOTE]
-If you use the same port for more than one endpoint, an endpoint using *Virtual IPs of HA groups* mode overrides an endpoint using *Node interfaces* mode, which overrides an endpoint using *Global* mode.
-
-. If you selected *Node interfaces*, select one or more node interfaces for each Admin Node or Gateway Node that you want to associate with this endpoint.
-+
-image::../media/load_balancer_endpoint_node_interfaces_binding_mode.png[Endpoint Node Interfaces Binding Mode]
+If more than one endpoint uses the same port, StorageGRID uses this priority order to decide which endpoint to use: *Virtual IPs of HA groups* > *Node interfaces* > *Node type* > *Global*. 
 
 . If you selected *Virtual IPs of HA groups*, select one or more HA groups.
+
+. If you selected *Node interfaces*, select one or more node interfaces for each Admin Node or Gateway Node that you want to associate with this endpoint.
+
+. If you selected *Node type*, select either Admin Nodes, which includes both the primary Admin Node and any non-primary Admin Nodes, or Gateway Nodes.
+
+
+=== Control tenant access
+
+. For the *Tenant access* step, select one of the following:
 +
-image::../media/load_balancer_endpoint_ha_group_vips_binding_mode.png[Endpoint HA Group VIPs Binding Mode]
+[cols="1a,2a" options="header"]
+|===
+|Field| Description
+
+|Allow all tenants (default)
+|All tenant accounts can use this endpoint to access their buckets. 
+
+You must select this option if you have not yet created any tenant accounts. After you add tenant accounts, you can edit the load balancer endpoint to allow or block specific accounts. 
+
+|Allow selected tenants
+|Only the selected tenant accounts can use this endpoint to access their buckets.
+
+|Block selected tenants
+|The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+
+|===
 
 +
 
@@ -180,7 +179,8 @@ The load balancer endpoint is created. The custom certificate is used for all su
 .. Specify the certificate information:
  ** *Domain name*: One or more fully qualified domain names to include in the certificate. Use an * as a wildcard to represent multiple domain names.
  ** *IP*: One or more IP addresses to include in the certificate.
- ** *Subject*: X.509 subject or distinguished name (DN) of the certificate owner.
+ ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner. + 
+ If no value is entered in this field, the generated certificate uses the first domain name or IP address as the subject common name (CN).
  ** *Days valid*: Number of days after creation that the certificate expires.
 
 .. Select *Generate*.
@@ -205,13 +205,13 @@ The load balancer endpoint is created. The custom certificate is used for all su
 
 === After you finish
 
-. If you use a domain name system (DNS), ensure that the DNS includes a record to associate the StorageGRID fully qualified domain name to each IP address that clients will use to make connections.
+. If you use a domain name system (DNS), ensure that the DNS includes a record to associate the StorageGRID fully qualified domain name (FQDN) to each IP address that clients will use to make connections.
 +
 The IP address you enter in the DNS record depends on whether you are using an HA group of load-balancing nodes:
 
 ** If you have configured a HA group, clients will connect to the virtual IP addresses of that HA group.
 
-** If you are not using a HA group, clients will connect to the StorageGRID Load Balancer service using the IP address of any Gateway Node or Admin Node.
+** If you are not using a HA group, clients will connect to the StorageGRID Load Balancer service using the IP address of a Gateway Node or Admin Node.
 +
 You must also ensure that the DNS record references all required endpoint domain names, including any wildcard names.
 
@@ -282,6 +282,20 @@ IMPORTANT: After editing an endpoint, you might need to wait up to 15 minutes fo
 .. Select *Edit certificate*.
 .. Upload or generate a new custom certificate or begin using the global S3 and Swift certificate, as required.
 .. Select *Save changes*.
+
+|Edit tenant access
+
+|.. Select the check box for the endpoint. 
+.. Select *Actions* > *Edit tenant access*.
+.. Choose a different access option, select or remove tenants from the list, or do both.
+.. Select *Save changes*.
+
+|.. Select the endpoint name to display the details.
+.. Select the *Tenant access* tab.
+.. Select *Edit tenant access*.
+.. Choose a different access option, select or remove tenants from the list, or do both.
+.. Select *Save changes*.
+
 
 |===
 

@@ -11,6 +11,23 @@ summary: 'As you install and configure the StorageGRID appliance, you must make 
 [.lead]
 As you install and configure the StorageGRID appliance, you must make decisions and gather information about Ethernet switch ports, IP addresses, and port and network bond modes. Record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.
 
+== Check StorageGRID version
+
+Before installing an SG100 or SG1000 appliance, confirm your StorageGRID system is using a required version of StorageGRID software.
+
+[options="header"]
+|===
+| Appliance| Required StorageGRID version
+a|
+SG1000
+a|
+11.3 or later (latest hotfix recommended)
+a|
+SG100
+a|
+11.4 or later (latest hotfix recommended)
+|===
+
 == Administration and maintenance ports
 
 The Admin Network for StorageGRID is an optional network, used for system administration and maintenance. The appliance connects to the Admin Network using the following 1-GbE management ports on the appliance.

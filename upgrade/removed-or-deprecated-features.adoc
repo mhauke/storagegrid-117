@@ -11,15 +11,18 @@ summary: 'Some features were removed or deprecated in this release. Review these
 [.lead]
 Some features were removed or deprecated in this release. Review these items to understand whether you need to update client applications or modify your configuration before you upgrade.
 
-== Audit export through CIFS/Samba is removed
+== Audit export through CIFS/Samba removed
 Audit export through CIFS/Samba was deprecated in StorageGRID Webscale 11.1 and has now been removed. As required, you can xref:../monitor/considerations-for-external-syslog-server.adoc[use an external syslog server] or xref:../admin/configuring-audit-client-access.adoc[configure audit client access for NFS].
 
-== Option to specify a storage pool as a temporary location is removed
-
+== Option to specify a storage pool as a temporary location removed
 Previously, when you created an ILM rule with an object placement that includes a single storage pool, you were prompted to specify a second storage pool to use as a temporary location. Starting with StorageGRID 11.7, this option has been removed.
 
-== SHA-1 and SHA-256 options are removed
-Stored Object Hashing options: SHA-1 and SHA-256, have been removed. They are no longer used for internal background verification, because they require additional CPU resources over MD5 and packet CRC32 check.
+== SHA-1 and SHA-256 options removed
+The SHA-1 and SHA-256 stored object hashing options have been removed. They are no longer used for internal background verification because they require additional CPU resources over MD5 and packet CRC32 check.
 
-== Connection Load Balancer (CLB) service is removed
-The Connection Load Balancer (CLB) service on Gateway Nodes was deprecated in StorageGRID 11.4 and has now been completely removed from the software. To distribute incoming network connections from client applications to Storage Nodes, you can configure load balancer endpoints for the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or you can integrate a third-party load balancer. See xref:../admin/managing-load-balancing.adoc[Manage load balancing].
+== Connection Load Balancer (CLB) service removed
+The Connection Load Balancer (CLB) service on Gateway Nodes was deprecated in StorageGRID 11.4 and has now been completely removed from the software. To distribute incoming network connections from client applications to Storage Nodes, you can configure load balancer endpoints for the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or you can integrate a third-party load balancer. See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
+
+== Option to change the network transfer encryption algorithm removed 
+The *Network Transfer Encryption* internal connection setting on the Grid options page (*CONFIGURATION* > *System* > *Grid options*) was obsoleted by the new cipher configuration system and the setting has been removed. The AES256-SHA option was the default in StorageGRID 11.6 and is the only setting available in StorageGRID 11.7. The AES128-SHA value is ignored in the Grid Management API. During the StorageGRID 11.7 upgrade, the network transfer encryption algorithm is set to AES256-SHA. 
+

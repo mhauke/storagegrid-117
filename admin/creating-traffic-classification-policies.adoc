@@ -9,7 +9,7 @@ summary: 'You create traffic classification policies if you want to monitor, and
 :imagesdir: ../media/
 
 [.lead]
-You create traffic classification policies if you want to monitor, and optionally limit, network traffic by bucket, tenant, IP subnet, or load balancer endpoint. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
+You can create traffic classification policies if you want to monitor, and optionally limit network traffic by bucket, bucket regex, CIDR, load balancer endpoint, or tenant. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
 
 .What you'll need
 
@@ -22,118 +22,99 @@ You create traffic classification policies if you want to monitor, and optionall
 
 . Select *CONFIGURATION* > *Network* > *Traffic classification*.
 +
-The Traffic Classification Policies page appears.
+The Traffic classification policies page appears.
 +
-image::../media/traffic_classification_policies_main_screen.png[Traffic Classification Policies - Main Screen]
 
 . Select *Create*.
 +
-The Create Traffic Classification Policy dialog box appears.
+The Create a traffic classification policy wizard appears.
 +
-image::../media/traffic_classification_policy_create.png[Traffic Classification Policy - Create]
 
-. In the *Name* field, enter a name for the policy.
-+
-Enter a descriptive name so you can recognize the policy.
-
-. Optionally, add a description for the policy in the *Description* field.
+. Enter a descriptive name that can be recognized and a description (optional) for the policy and select *Continue*.
 +
 For example, describe what this traffic classification policy applies to and what it will limit.
++
 
-. Create one or more matching rules for the policy.
+. Select *Add rule* and specify the following details to create one or more matching rules to the policy. Any policy that you create should have at least one matching rule. Select *Continue*.
 +
-Matching rules control which entities will be affected by this traffic classification policy. For example, select Tenant if you want this policy to apply to the network traffic for a specific tenant. Or select Endpoint if you want this policy to apply to the network traffic on a specific load balancer endpoint.
 
- .. Select *Create* in the *Matching Rules* section.
-+
-The Create Matching Rule dialog box appears.
-+
-image::../media/traffic_classification_policy_create_matching_rule.png[Create Matching Rule]
+[cols="1a,2a" options="header"]
+|===
+// header row
+|Field |Description
 
- .. From the *Type* drop-down, select the type of entity to be included in the matching rule.
- .. In the *Match Value* field, enter a match value based on the type of entity you chose.
-  *** Bucket: Enter a bucket name.
-  *** Bucket Regex: Enter a regular expression that will be used to match a set of bucket names.
-+
-The regular expression is unanchored. Use the {caret} anchor to match at the beginning of the bucket name, and use the $ anchor to match at the end of the name.
+|Type
+|Select the types of traffic that the matching rule applies to. Traffic types are bucket, bucket regex, CIDR, load balancer endpoint, and tenant.
 
-  *** CIDR: Enter an IPv4 subnet, in CIDR notation, that matches the desired subnet.
-  *** Endpoint: Select an endpoint from the list of existing endpoints. These are the load balancer endpoints you defined on the Load Balancer Endpoints page. See xref:configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints].
-  *** Tenant: Select a tenant from the list of existing tenants. Tenant matching is based on the ownership of the bucket being accessed. Anonymous access to a bucket matches the tenant that owns the bucket.
- .. If you want to match all network traffic _except_ traffic consistent with the Type and Match Value just defined, select the *Inverse* check box. Otherwise, leave the check box unselected.
-+
-For example, if you want this policy to apply to all but one of the load balancer endpoints, specify the load balancer endpoint to be excluded, and select *Inverse*.
-+
-IMPORTANT: For a policy containing multiple matchers where at least one is an inverse matcher, be careful not to create a policy that matches all requests.
+|Match value
+|Enter the value that matches the selected Type.
 
- .. Select *Apply*.
+* Bucket: Enter one or more bucket names.
+* Bucket regex: Enter one or more regular expressions used to match a set of bucket names.
 +
-The rule is created and is listed in the Matching Rules table.
-+
-image::../media/traffic_classification_policy_rules.png[Traffic Policy Matching Rules]
 
- .. Repeat these steps for each rule you want to create for the policy.
-+
-NOTE: Traffic that matches any rule is handled by the policy.
+The regular expression is unanchored. Use the ^ anchor to match at the beginning of the bucket name, and use the $ anchor to match at the end of the name. Regular expression matching supports a subset of PCRE (Perl compatible regular expression) syntax.
+* CIDR: Enter one or more IPv4 subnets, in CIDR notation, that matches the desired subnet.
+* Load balancer endpoint: Select an endpoint name.
+* Tenant: Tenant matching uses the access key ID. If the request does not contain an access key ID (for example, anonymous access), then the ownership of the bucket accessed is used to determine the tenant.
+|Inverse match
+|If you want to match all network traffic _except_ traffic consistent with the Type and Match Value just defined, select the *Inverse match* check box. Otherwise, leave the check box unselected.
 
-. Optionally, create limits for the policy.
+For example, if you want this policy to apply to all but one of the load balancer endpoints, specify the load balancer endpoint to be excluded, and select *Inverse match*.
+
+For a policy containing multiple matchers where at least one is an inverse matcher, be careful not to create a policy that matches all requests.
+
+// table end
+|===
++
+
+. Optionally, select *Add a limit* and select the following details to add one or more limits to control the network traffic matched by a rule.
 +
 NOTE: Even if you do not create limits, StorageGRID collects metrics so that you can monitor network traffic that matches the policy.
 
- .. Select *Create* in the *Limits* section.
 +
-The Create Limit dialog box appears.
-+
-image::../media/traffic_classification_policy_create_limit.png[Create Limit]
 
- .. From the *Type* drop-down, select the type of limit you want to apply to the policy.
-+
-In the following list, *In* refers to traffic from S3 or Swift clients to the StorageGRID load balancer, and *Out* refers to traffic from the load balancer to S3 or Swift clients.
+[cols="1a,2a" options="header"]
+|===
+// header row
+|Field |Description
 
-  *** Aggregate Bandwidth In
-  *** Aggregate Bandwidth Out
-  *** Concurrent Read Requests
-  *** Concurrent Write Requests
-  *** Per-Request Bandwidth In
-  *** Per-Request Bandwidth Out
-  *** Read Request Rate
-  *** Write Requests Rate
-+
-[NOTE]
-====
-You can create policies to limit aggregate bandwidth or to limit per-request bandwidth. However, StorageGRID cannot limit both types of bandwidth at the same time. Aggregate bandwidth limits might impose an additional minor performance impact on non-limited traffic.
-====
-+
-For bandwidth limits, StorageGRID applies the policy that best matches the type of limit set. For example, if you have a policy that limits traffic in only one direction, then traffic in the opposite direction will be unlimited, even if there is traffic that matches additional policies that have bandwidth limits. StorageGRID implements "`best`" matches for bandwidth limits in the following order:
-+
-  **** Exact IP address (/32 mask)
-  **** Exact bucket name
-  **** Bucket regex
-  **** Tenant
-  **** Endpoint
-  **** Non-exact CIDR matches (not /32)
-  **** Inverse matches
+|Type
+|The type of limit you want to apply to the network traffic matched by the rule. For example, you can limit bandwidth or request rate.
 
- .. In the *Value* field, enter a numerical value for the type of limit you chose.
-+
-The expected units are shown when you select a limit.
+*Note*: You can create policies to limit aggregate bandwidth or to limit per-request bandwidth. However, StorageGRID cannot limit both types of bandwidth at the same time. When aggregate bandwidth is in use, per-request bandwidth is unavailable. Conversely, when per-request bandwidth is in use, aggregate bandwidth is unavailable. Aggregate bandwidth limits might impose an additional minor performance impact on non-limited traffic.
 
- .. Select *Apply*.
-+
-The limit is created and is listed in the Limits table.
-+
-image::../media/traffic_classification_policy_limits.png[Traffic Policy Limits]
+For bandwidth limits, StorageGRID applies the policy that best matches the type of limit set. For example, if you have a policy that limits traffic in only one direction, then traffic in the opposite direction will be unlimited, even if there is traffic that matches additional policies that have bandwidth limits. StorageGRID implements “best” matches for bandwidth limits in the following order:
 
- .. Repeat these steps for each limit you want to add to the policy.
-+
-For example, if you want to create a 40 Gbps bandwidth limit for an SLA tier, create an Aggregate Bandwidth In limit and an Aggregate Bandwidth Out limit and set each one to 40 Gbps.
-+
-NOTE: To convert megabytes per second to gigabits per second, multiply by eight. For example, 125 MB/s is equivalent to 1,000 Mbps or 1 Gbps.
+* Exact IP address (/32 mask)
+* Exact bucket name
+* Bucket regex
+* Tenant
+* Endpoint
+* Non-exact CIDR matches (not /32)
+* Inverse matches
 
-. When you are finished creating rules and limits, select *Save*.
+|Applies to
+|Whether this limit applies to client read requests (GET or HEAD) or write requests (PUT, POST, or DELETE).
+
+|Value
+|The value that network traffic will be limited to, based on the Unit you select. For example, enter 10 and select MiBs to prevent the network traffic matched by this rule from exceeding 10 MiBs.
+
+*Note*: Depending on the units setting in the xref:../admin/exploring-grid-manager.adoc[User preferences] page of the Grid Manager, the available units will be either binary (for example, GiB) or decimal (for example, GB).
+
+
+|Unit
+|The unit that describes the value you entered.
+
+// table end
+|===
 +
-The policy is saved and is listed in the Traffic Classification Policies table.
+
+For example, if you want to create a 40 Gbps bandwidth limit for an SLA tier, create two Aggregate bandwidth limits: GET/HEAD at 40 Gbps and PUT/POST/DELETE at 40 Gbps.
 +
-image::../media/traffic_classification_policies_main_screen_w_examples.png[Traffic Policy Example]
-+
-S3 and Swift client traffic is now handled according to the traffic classification policies. You can view traffic charts and verify that the polices are enforcing the traffic limits you expect. See xref:viewing-network-traffic-metrics.adoc[View network traffic metrics].
+
+. Select *Continue*.
+
+. Read and review the Traffic classification policy. Use the *Previous* button to go back and make changes as required. When you are satisfied with the policy, select *Save and continue*.
+
+S3 and Swift client traffic is now handled according to the traffic classification policies. You can view traffic charts and verify that the polices are enforcing the traffic limits you expect. See xref:../admin/viewing-network-traffic-metrics.adoc[View network traffic metrics].

@@ -15,15 +15,20 @@ If you are using a Client Network, you can specify whether each node's Client Ne
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Root access permission.
-* If you want an Admin Node or Gateway Node to accept inbound traffic only on explicitly configured endpoints, you have defined the load balancer endpoints.
+* If you want an Admin Node or Gateway Node to accept inbound traffic only on explicitly configured endpoints, you have defined the load balancer endpoints or created a list of privileged IP addresses in the Privileged IP addresses tab on the xref:../admin/configure-firewall-controls.adoc[Firewall control page].
 +
 NOTE: Existing client connections might fail if load balancer endpoints have not been configured.
 
 .Steps
 
-. Select *CONFIGURATION* > *Security* > *Untrusted Client Networks*.
+. Select *CONFIGURATION* > *Security* > *Firewall control*.
 +
-The Untrusted Client Networks page lists all nodes in your StorageGRID system. The Unavailable Reason column includes an entry if the Client Network on the node must be trusted.
+. Select the Untrusted Client Network tab.
++ 
+
+The Untrusted Client Network page lists all nodes in your StorageGRID system. You can use this table to select whether Client Network enforcement is used. You can also use this page to configure whether new nodes added during an expansion will be part of the trusted or untrusted Client network. 
+
+The Unavailable Reason column includes an entry if the Client Network on the node must be trusted.
 +
 image::../media/untrusted_client_networks_page.png[Untrusted Client Networks]
 

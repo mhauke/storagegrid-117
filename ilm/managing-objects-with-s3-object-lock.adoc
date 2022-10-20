@@ -13,11 +13,9 @@ As a grid administrator, you can enable S3 Object Lock for your StorageGRID syst
 
 include::../_include/s3-object-lock-what-is.adoc[]
 
-
 == Comparing S3 Object Lock to legacy Compliance
 
 The S3 Object Lock replaces the Compliance feature that was available in earlier StorageGRID versions. Because the  S3 Object Lock feature conforms to Amazon S3 requirements, it deprecates the proprietary StorageGRID Compliance feature, which is now referred to as "`legacy Compliance.`"
-
 
 NOTE: The global Compliance setting is deprecated. If you enabled this setting using a previous version of StorageGRID, the S3 Object Lock setting is enabled automatically. You can continue to use StorageGRID to manage the settings of existing compliant buckets; however, you cannot create new compliant buckets. For details, see https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5[NetApp Knowledge Base: How to manage legacy Compliant buckets in StorageGRID 11.5^].
 

@@ -1,83 +1,81 @@
 ---
 permalink: monitor/viewing-dashboard.html
 sidebar: sidebar
-keywords: how to view the dashboard
-summary: 'You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.'
+keywords: how to view dashboard, how to configure dashboard
+summary: 'You can use the dashboard to monitor system activities at a glance. You can create custom dashboards to monitor your implementation of StorageGRID.'
 ---
-= View the Dashboard
+= View and manage the dashboard
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the Dashboard to monitor system activities at a glance. The Dashboard includes information about system health, usage metrics, and operational trends and charts.
+You can use the dashboard to monitor system activities at a glance. You can create custom dashboards to monitor your implementation of StorageGRID.
 
-image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
+NOTE: To change units for the storage values displayed in the Grid Manager, select the user drop-down in the upper right of the Grid Manager, then select *User Preferences*.
 
-== Search field
+image::../media/grid_manager_dashboard.png[Grid Manager dashboard]
 
-The *Search* field in the header bar allows you to quickly navigate to a specific page or sidebar entry within the Grid Manager. For example, you can enter *key* to access the Key Management Server page.
+== View the dashboard
 
-== Configure the Dashboard
+The dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards.
 
-The Dashboard consists of tabs that contain specific information about the StorageGRID system. Each tab contains categories of information displayed on cards. As needed, you can configure the Dashboard to show, hide, rearrange, or add tabs and cards. To configure the tabs and cards, select *Configure dashboard*. To resize or remove a card, select the three vertical dots in the upper right corner of the card.
+You can use the system-provided dashboard as is. Additionally, you can create custom dashboards that contain only the tabs and cards that are relevant to monitoring your implementation of StorageGRID.
 
-//The default information displayed on each tab is described in the following tables.
+The system-provided dashboard tabs contain cards with the following types of information:
 
-== Available cards by category
+[cols="1a,3a" options="header"]
+|===
+| Tab on system-provided dashboard| Contains
 
-NOTE: You can add a card to any tab you choose, even if it is listed in a different category.
+|Overview
+|General information about the grid, such as active alerts, network traffic, and total objects in the grid.
 
-*Overview*
+|Performance
+|Space usage, storage used over time, S3 or Swift operations, request duration, error rate.
 
-* Health status
-* Data utilization breakdown
-* Metadata utilization breakdown
-* Storage over time
-* Total objects
-//less important (from Confluence page: https://confluence.ngage.netapp.com/display/SGWS/Dashboard)
-* Grid information
+|Storage
+|Tenant quota usage and logical space usage. Forecasts of space usage for user data and metadata.
 
-*Performance*
+|ILM
+|Information lifecycle management queue and evaluation rate.
 
-* S3 operations
-* Network traffic
-* S3 API calls
-* Error rate
-* Average request duration
-//less important
-* Platform services - Pending requests
-* Platform services - Failed requests
-* Platform services - Request rate
+|Nodes
+|CPU, data, and memory usage by node. S3 or Swift operations by node. Node to site distribution.
+|===
 
-*Storage*
+Some of the cards can be maximized for easier viewing. Select the maximize icon image:../media/icon_dashboard_card_maximize.png[Maximize icon] in the upper right corner of the card. To close a maximized card, select the minimize icon image:../media/icon_dashboard_card_minimize.png[Minimize icon] or select *Close*.
 
-* Storage pool level data utilization forecast
-* Site level metadata utilization forecast
-* Storage used by placement type
-* Object count over time
-* Storage information
-* Top 5 tenants by logical space used
-//less important
-* Top 5 buckets by logical space used
-* Top 5 tenants by quota utilization
-* Object size distribution
+== Manage dashboards
 
-*ILM*
+If you have Root Access (see xref:../admin/admin-group-permissions.html[Admin group permissions]), you can perform the following management tasks for dashboards:
 
-* ILM queue
-* ILM evaluation rate
-//less important
-* ILM information
+* Create a custom dashboard from scratch. You can use custom dashboards to control which StorageGRID information is displayed and how that information is organized.
+* Clone a dashboard to create custom dashboards.
+* Set an active dashboard for a user. The active dashboard can be the system-provided dashboard or a custom dashboard.
+* Set a default dashboard, which is what all users see unless they activate their own dashboard.
+* Edit a dashboard name.
+* Edit a dashboard to add or remove tabs and cards. You can have a minimum of 1 and a maximum of 20 tabs.
+* Remove a dashboard.
 
-*Nodes*
+If you have any other permission besides Root Access, you can only set an active dashboard.
 
-* Overall node health
-* Total nodes
-* Top 5 nodes by CPU usage
-* Top 5 nodes by memory usage
-* Top 5 nodes by S3 operations
-//less important
-* Top 5 nodes by alerts
-* Top 5 nodes by data utilization
-* Nodes by deployment type
-* Node to site distribution
+To manage dashboards, select *Actions* > *Manage dashboards*.
+
+image::../media/dashboard_manage.png[Manage dashboards]
+
+== Configure dashboards
+
+To create a new dashboard by cloning the active dashboard, select *Actions* > *Clone active dashboard*.
+
+To edit or clone an existing dashboard, select *Actions* > *Manage dashboards*. 
+
+NOTE: The system-provided dashboard cannot be edited or removed.
+
+When configuring a dashboard, you can:
+
+* Add or remove tabs
+* Rename tabs and give new tabs unique names
+* Add, remove, or rearrange (drag and drop) cards for each tab
+* Select the size for individual cards by selecting *S*, *M*, *L* or *XL* at the top of the card
+
+image::../media/dashboard_configure.png[Configure dashboard]

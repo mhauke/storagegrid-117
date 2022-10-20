@@ -13,14 +13,14 @@ You must create at least one endpoint of the correct type before you can enable 
 
 .What you'll need
 
-* You must be signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* Platform services must be enabled for your tenant account by a StorageGRID administrator.
-* You must belong to a user group that has the Manage Endpoints permission.
-* The resource referenced by the platform services endpoint must have been created:
+* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* Platform services were enabled for your tenant account by a StorageGRID administrator.
+* You belong to a user group that has the Manage Endpoints permission.
+* The resource referenced by the platform services endpoint have been created:
  ** CloudMirror replication: S3 bucket
  ** Event notification: SNS topic
  ** Search notification: Elasticsearch index, if the destination cluster is not configured to automatically create indexes.
-* You must have the information about the destination resource:
+* You have the information about the destination resource:
  ** Host and port for the Uniform Resource Identifier (URI)
 +
 NOTE: If you plan to use a bucket hosted on a StorageGRID system as an endpoint for CloudMirror replication, contact the grid administrator to determine the values you need to enter.

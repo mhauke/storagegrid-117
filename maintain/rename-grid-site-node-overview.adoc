@@ -30,26 +30,34 @@ The following table summarizes where system names and display names are shown in
 |Display name
 
 |Grid Manager pages
-|Shown unless the item has been renamed. 
+|Shown unless the item is renamed 
 
-|When an item is renamed, shown instead of the system name in these locations:
+|If an item is renamed, shown instead of the system name in these locations:
 
+* Dashboard
 * Nodes page
+* Configuration pages for high availability groups, load balancer endpoints, VLAN interfaces, key management servers, grid passwords, and firewall control
 * Alerts
 * Storage pool definitions
-* Maintenance procedures
-* Support pages
+* Object metadata lookup page
+* Pages related to maintenance procedures, including upgrade, hotfix, SANtricity OS upgrade, decommission, expansion, recovery, and object existence check
+* Support pages (logs and diagnostics)
+* Single sign-on page, next to the Admin Node hostname in the table for Admin Node details
+
 
 
 |*NODES* > *Overview* tab for a node
 |Always shown 
-|Always shown
+|Shown only if the item is renamed
 
-If the values for *Display name* and  *System name* on this tab are the same, the item has not been renamed.
 
 |Legacy pages in the Grid Manager (for example, *SUPPORT* > *Grid Topology*)
 |Shown 
 |Not shown
+
+|*node-health* API
+|Always returned
+|Returned only if the item is renamed
 
 
 
@@ -72,8 +80,8 @@ Included in parentheses when the item is renamed:
 
 
 |`Passwords.txt` file in the Recovery Package
-|Shown as `Name`
-|Shown as `Display name`
+|Shown as `Server Name`
+|Shown as `Display Name`
 
 |`/etc/hosts` file on all nodes
 
@@ -84,7 +92,7 @@ For example:
 |Always shown in the second column
 |When the item is renamed, shown in the fourth column
 
-|`topology_display_names.json`, included with AutoSupport data
+|`topology-display-names.json`, included with AutoSupport data
 |Not included
 |Empty unless items have been renamed; otherwise, maps grid, site, and node IDs to their display names. 
 

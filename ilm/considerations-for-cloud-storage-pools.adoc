@@ -52,7 +52,7 @@ When StorageGRID connects to the external Cloud Storage Pool endpoint, it issues
 
 More significant costs might be incurred if you need to move objects from an external Cloud Storage Pool endpoint back to StorageGRID. Objects might be moved back to StorageGRID in either of these cases:
 
-* The only copy of the object is in a Cloud Storage Pool and you decide to store the object in StorageGRID instead. In this case, you simply reconfigure your ILM rules and policy. When ILM evaluation occurs, StorageGRID issues multiple requests to retrieve the object from the Cloud Storage Pool. StorageGRID then creates the specified number of replicated or erasure-coded copies locally. After the object is moved back to StorageGRID, the copy in the Cloud Storage Pool is deleted.
+* The only copy of the object is in a Cloud Storage Pool and you decide to store the object in StorageGRID instead. In this case, you reconfigure your ILM rules and policy. When ILM evaluation occurs, StorageGRID issues multiple requests to retrieve the object from the Cloud Storage Pool. StorageGRID then creates the specified number of replicated or erasure-coded copies locally. After the object is moved back to StorageGRID, the copy in the Cloud Storage Pool is deleted.
 * Objects are lost because of Storage Node failure. If the only remaining copy of an object is in a Cloud Storage Pool, StorageGRID temporarily restores the object and creates a new copy on the recovered Storage Node.
 
 IMPORTANT: When objects are moved back to StorageGRID from a Cloud Storage Pool, StorageGRID issues multiple requests to the Cloud Storage Pool endpoint for each object. Before moving large numbers of objects, contact technical support for help in estimating the time frame and associated costs.
@@ -111,9 +111,3 @@ Do not use Azure Blob Storage lifecycle management for the container used with a
 .Related information
 
 * xref:creating-cloud-storage-pool.adoc[Create a Cloud Storage Pool]
-
-* xref:s3-authentication-details-for-cloud-storage-pool.adoc[S3: Specify authentication details for a Cloud Storage Pool]
-
-* xref:c2s-s3-authentication-details-for-cloud-storage-pool.adoc[C2S S3: Specify authentication details for a Cloud Storage Pool]
-
-* xref:azure-authentication-details-for-cloud-storage-pool.adoc[Azure: Specify authentication details for a Cloud Storage Pool]

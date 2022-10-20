@@ -4,184 +4,196 @@ sidebar: sidebar
 keywords: create tenant, tenant account
 summary: 'You must create at least one tenant account to control access to the storage in your StorageGRID system.'
 ---
-= Create tenant account
+= Create a tenant account
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
 You must create at least one tenant account to control access to the storage in your StorageGRID system.
 
-When you create a tenant account, you specify a name, a client protocol, and optionally a storage quota. If single sign-on (SSO) is enabled for StorageGRID, you also specify which federated group has Root access permission to configure the tenant account. If StorageGRID is not using single sign-on, you must also specify whether the tenant account will use its own identity source and configure the initial password for the tenant's local root user.
-
-The Grid Manager provides a wizard that takes you through the steps for creating a tenant account. The steps vary based on whether xref:using-identity-federation.adoc[identity federation] and xref:configuring-sso.adoc[single sign-on] are configured and whether the Grid Manager account you use to create the tenant account belongs to an admin group with the Root access permission.
+The steps for creating a tenant account vary based on whether xref:using-identity-federation.adoc[identity federation] and xref:configuring-sso.adoc[single sign-on] are configured and whether the Grid Manager account you use to create the tenant account belongs to an admin group with the Root access permission.
 
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have specific access permissions.
-* If the tenant account will use the identity source that was configured for the Grid Manager, and you want to grant Root access permission for the tenant account to a federated group, you have imported that federated group into the Grid Manager. You do not need to assign any Grid Manager permissions to this admin group. See the xref:managing-admin-groups.adoc[instructions for managing admin groups].
+* You have the Root access or Tenant accounts permission.
+* If the tenant account will use the identity source that was configured for the Grid Manager, and you want to grant Root access permission for the tenant account to a federated group, you have imported that federated group into the Grid Manager. You do not need to assign any Grid Manager permissions to this admin group. See  xref:managing-admin-groups.adoc[Manage admin groups].
+* If you want to allow an S3 tenant to clone account data and replicate bucket objects to another grid using a grid federation connection:
 
-.Steps
+** You have xref:grid-federation-manage-connection.adoc[configured the grid federation connection].
+** The status of the connection is *Connected*.
+** You have Root access permission.
+** You have reviewed the considerations for xref:grid-federation-manage-tenants.adoc[managing the permitted tenants for a grid federation connection].
+
+== Access the wizard
 
 . Select *TENANTS*.
-. Select *Create* and enter the following information for the tenant:
-.. *Name*: Enter a name for the tenant account. Tenant names do not have to be unique. When the tenant account is created, it receives a unique, numeric account ID.
-.. *Description* (optional): Enter a description that helps you identify the tenant.
-.. *Client type*: Select the client type of either *S3* or *Swift*.
-.. *Storage quota* (optional): If you want this tenant to have a storage quota, enter a numerical value for the quota and select the correct units (GB, TB, or PB).
-+
-image::../media/tenant_create_wizard_step_1.png[Tenant Accounts Page - Blank]
-. Select *Continue* and configure the S3 or Swift tenant.
 
-[role="tabbed-block"]
-====
+. Select *Create*.
 
-.S3 tenant
---
+== Enter details
 
-Select the appropriate permissions for the tenant. Some of these permissions have additional requirements. For details, see the online help for each permission.
-
-* Allow platform services
-* Use own identity source (selectable only if SSO is not being used)
-* Allow S3 select (see xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts])
-
---
-
-.Swift tenant
---
-If the tenant will use its own identity source, select *Use own identity source* (selectable only if SSO is not being used).
-
---
-
-====
-
-[start=4]
-. Select *Continue* and define root access for the tenant account.
-
-[role="tabbed-block"]
-====
-
-.Identity federation not configured
---
-
-.. Enter a password for the local root user.
-.. Select *Create tenant*.
-
---
-
-.SSO enabled 
---
-
-When SSO is enabled for StorageGRID, the tenant must use the identity source that was configured for the Grid Manager. No local users can sign in. You specify which federated group has Root access permission to configure the tenant account.
-
-.. Select an existing federated group from the Grid Manager to have the initial Root access permission for the tenant.
-+
-NOTE: If you have adequate permissions, the existing federated groups from the Grid Manager are listed when you select the field. Otherwise, enter the group's unique name.
-
-.. Select *Create tenant*.
- 
---
-
-.SSO not enabled
---
-.. Complete the steps described in the table depending on whether the tenant will manage its own groups and users or use the identity source that was configured for the Grid Manager.
+. Enter details for the tenant.
 +
 [cols="1a,3a" options="header"]
 |===
-| If the tenant will... | Do this...
+| Field | Description
 
-|Manage its own groups and users
-|
-... Select *Use own identity source*.
-+
-*Note*: If this check box is selected and you want to use identity federation for tenant groups and users, the tenant must configure its own identity source. See the xref:../tenant/index.adoc[instructions for using tenant accounts].
-+
-... Specify a password for the tenant's local root user, then select *Create tenant*.
-... Select *Sign in as root* to configure the tenant, or select *Finish* to configure the tenant later.
+|Name
+|A name for the tenant account. Tenant names do not need to be unique. When the tenant account is created, it receives a unique, 20-digit account ID.
 
-|Use the groups and users configured for the Grid Manager
-|
-... Do either or both of the following:
-+
-* Select an existing federated group from the Grid Manager that should have the initial Root access permission for the tenant.
-+
-*Note*: If you have adequate permissions, the existing federated groups from the Grid Manager are listed when you select the field. Otherwise, enter the group's unique name.
-+
-* Specify a password for the tenant’s local root user.
+|Description (optional)
+|A description to help identify the tenant.
 
-... Select *Create tenant*.
+|Client type
+|The type of client protocol this tenant will use, either *S3* or *Swift*.
+
+|Storage quota (optional)
+|If you want this tenant to have a storage quota, a numerical value for the quota and the units.
 
 |===
 
---
+. Select *Continue*.
 
-====
+== Select permissions
 
-[start=5]
-. To sign in to the tenant now:
+. Optionally, select any permissions you want this tenant to have.
 +
-* If you are accessing the Grid Manager on a restricted port, select *Restricted* in the Tenant table to learn more about accessing this tenant account.
+[NOTE]
+Some of these permissions have additional requirements. For details, select the help icon for each permission.
++
+[cols="1a,3a" options="header"]
+|===
+| Permission | If selected...
+
+|Allow platform services (S3 only)
+|The tenant can use platform services such as CloudMirror. See xref:manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts].
+
+|Use own identity source 
+|The tenant can configure and manage its own identity source for federated groups and users. This option is disabled if you have xref:configuring-sso.adoc[configured SSO] for your StorageGRID system.
+
+|Allow S3 Select (S3 only)
+|The tenant can issue S3 SelectObjectContent API requests to filter and retrieve object data. See xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts].
+
+*Important*: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
+
+|Use grid federation connection (S3 only)
+|The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-overview.adoc[Use grid federation: Overview].
+
+*Note*: You can only select *Use grid federation connection* when you are creating a new S3 tenant; you can't select this permission for an existing tenant.
+
+|===
+
+. If you selected *Use grid federation connection*, select one of the available grid federation connections.
++
+image:../media/grid-federation-select-tenant-permission.png[Grid federation select tenant permission]
+. Select *Continue*.
+
+== Define root access and create tenant
+
+. Define root access for the tenant account, based on whether your StorageGRID system uses identity federation, single sign-on (SSO), or both.
++
+[cols="1a,2a" options="header"]
+|===
+
+| Option 
+| Do this
+
+|If identity federation is not enabled 
+|Specify the password to use when signing into the tenant as the local root user.
+
+|If identity federation is enabled
+|Select an existing federated group to have Root access permission for the tenant.
+
+Optionally specify the password to use when signing in to the tenant as the local root user.
+
+|If both identity federation and single sign-on (SSO) are enabled
+|Select an existing federated group to have Root access permission for the tenant. No local users can sign in.
+
+|===
+
+. Select *Create tenant*.
++
+A success message appears, and the new tenant is listed on the Tenants page.
+
+. If you selected the *Use grid federation connection* permission for the tenant, follow these additional steps:
+
+.. Confirm that an identical tenant was created on the other grid in the connection.
++
+IMPORTANT: You might need to wait up to 15 minutes for the automatically generated tenant to appear in Grid Manager on the other grid.
++
+The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. 
+
+.. If you provided a local root user password when defining root access, xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user] for the tenant on the other grid. 
++
+For security reasons, this password is not copied to the automatically generated tenant on the other grid.   
+
+== Sign in to tenant
+As required, you can sign in to the new tenant now to complete the configuration, or you can sign in to the tenant later. The sign-in steps depend on whether you are signed in to the Grid Manager using the default port (443) or a restricted port. See xref:controlling-access-through-firewalls.adoc[Control access through firewalls].
+
+=== Sign in now
+
+[cols="1a,3a" options="header"]
+|===
+
+| If you are using...| Do this...
+
+|Port 443 and you set a password for the local root user
+|
+. Select *Sign in as root*.
++
+When you sign in, links appear for configuring buckets, identity federation, groups, and users.
+
+. Select the links to configure the tenant account.
++
+Each link opens the corresponding page in the Tenant Manager. To complete the page, see the xref:../tenant/index.adoc[instructions for using tenant accounts].
+
+
+|Port 443 and you did not set a password for the local root user
+|Select *Sign in*, and enter the credentials for a user in the Root access federated group.
+
+|A restricted port
+|
+. Select *Finish*
+. Select *Restricted* in the Tenant table to learn more about accessing this tenant account.
 +
 The URL for the Tenant Manager has this format:
 +
 `https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_/`
 +
- ** `_FQDN_or_Admin_Node_IP_` is a fully qualified domain name or the IP address of an Admin Node
- ** `_port_` is the tenant-only port
- ** `_20-digit-account-id_` is the tenant's unique account ID
+** `_FQDN_or_Admin_Node_IP_` is a fully qualified domain name or the IP address of an Admin Node
+** `_port_` is the tenant-only port
+** `_20-digit-account-id_` is the tenant's unique account ID
+|===
 
-+
-* If you are accessing the Grid Manager on port 443 but you did not set a password for the local root user, in the Tenants table of the Grid Manager, select *Sign in*, and enter the credentials for a user in the Root access federated group.
-+
-* If you are accessing the Grid Manager on port 443 and you set a password for the local root user:
+=== Sign in later
 
-.. Select *Sign in as root* to configure the tenant now.
-+
-When you sign in, links appear for configuring buckets or containers, identity federation, groups, and users.
-+
-image::../media/configure_tenant_account.png[Configure tenant account]
 
-.. Select the links to configure the tenant account.
-+
-Each link opens the corresponding page in the Tenant Manager. To complete the page, see the xref:../tenant/index.adoc[instructions for using tenant accounts].
-
-.. Otherwise, select *Finish* to access the tenant later.
-
-. To access the tenant later:
-+
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | If you are using...| Do one of these...
 
 |Port 443
 |
-** From the Grid Manager, select *TENANTS*, and select *Sign in* to the right of the tenant name.
-** Enter the tenant's URL in a web browser:
+* From the Grid Manager, select *TENANTS*, and select *Sign in* to the right of the tenant name.
+* Enter the tenant's URL in a web browser:
 +
 `https://_FQDN_or_Admin_Node_IP_/?accountId=_20-digit-account-id_/`
 +
-
-*** `_FQDN_or_Admin_Node_IP_` is a fully qualified domain name or the IP address of an Admin Node
-*** `_20-digit-account-id_` is the tenant's unique account ID
+** `_FQDN_or_Admin_Node_IP_` is a fully qualified domain name or the IP address of an Admin Node
+** `_20-digit-account-id_` is the tenant's unique account ID
 
 |A restricted port
 |
- ** From the Grid Manager, select *TENANTS*, and select *Restricted*.
- ** Enter the tenant's URL in a web browser:
+* From the Grid Manager, select *TENANTS*, and select *Restricted*.
+* Enter the tenant's URL in a web browser:
 +
 `https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_`
 +
-
-*** `_FQDN_or_Admin_Node_IP_` is a fully qualified domain name or the IP address of an Admin Node
-*** `_port_` is the tenant-only restricted port
-*** `_20-digit-account-id_` is the tenant's unique account ID
-
+** `_FQDN_or_Admin_Node_IP_` is a fully qualified domain name or the IP address of an Admin Node
+** `_port_` is the tenant-only restricted port
+** `_20-digit-account-id_` is the tenant's unique account ID
 
 |===
 
-.Related information
-
-* xref:controlling-access-through-firewalls.adoc[Control access through firewalls]
-
-* xref:manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts]
 

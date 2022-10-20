@@ -1,7 +1,7 @@
 ---
 permalink: ilm/requirements-for-s3-object-lock.html
 sidebar: sidebar
-keywords: requirements, s3 object lock
+keywords: requirements, s3 object lock, compliant ilm rule, compliant ilm policy
 summary: 'You must review the requirements for enabling the global S3 Object Lock setting, the requirements for creating compliant ILM rules and ILM policies, and the restrictions StorageGRID places on buckets and objects that use S3 Object Lock.'
 ---
 = Requirements for S3 Object Lock
@@ -17,7 +17,7 @@ You must review the requirements for enabling the global S3 Object Lock setting,
 * Enabling the global S3 Object Lock setting allows all S3 tenant accounts to create buckets with S3 Object Lock enabled.
 * After you enable the global S3 Object Lock setting, you cannot disable the setting.
 * You cannot enable the global S3 Object Lock unless the default rule in the active ILM policy is _compliant_ (that is, the default rule must comply with the requirements of buckets with S3 Object Lock enabled).
-* When the global S3 Object Lock setting is enabled, you cannot create a new proposed ILM policy or activate an existing proposed ILM policy unless the default rule in the policy is compliant. After the global S3 Object Lock setting has been enabled, the ILM Rules and ILM Policies pages indicate which ILM rules are compliant.
+* When the global S3 Object Lock setting is enabled, you cannot create a new proposed ILM policy or activate an existing proposed ILM policy unless the default rule in the policy is compliant. After the global S3 Object Lock setting has been enabled, the ILM rules and ILM policies pages indicate which ILM rules are compliant.
 
 == Requirements for compliant ILM rules
 
@@ -27,7 +27,7 @@ If you want to enable the global S3 Object Lock setting, you must ensure that th
 * These copies must exist on Storage Nodes for the entire duration of each line in the placement instructions.
 * Object copies cannot be saved in a Cloud Storage Pool.
 * Object copies cannot be saved on Archive Nodes.
-* At least one line of the placement instructions must start at day 0, using *Ingest Time* as the reference time.
+* At least one line of the placement instructions must start at day 0, using *Ingest time* as the reference time.
 * At least one line of the placement instructions must be "`forever.`"
 
 == Requirements for active and proposed ILM policies
@@ -48,14 +48,7 @@ include::../_include/s3-object-lock-requirements.adoc[]
 
 .Related information
 
-* xref:../tenant/index.adoc[Use a tenant account]
-
-* xref:../s3/index.adoc[Use S3]
-
-* xref:managing-objects-with-s3-object-lock.adoc#comparing-s3-object-lock-to-legacy-compliance[Comparing S3 Object Lock to legacy Compliance]
-
+* xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket]
+* xref:../tenant/update-default-retention-settings.adoc[Update default retention settings]
+* xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
 * xref:example-7-compliant-ilm-policy-for-s3-object-lock.adoc[Example 7: Compliant ILM policy for S3 Object Lock]
-
-* xref:../audit/index.adoc[Review audit logs]
-
-* xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].

@@ -45,7 +45,7 @@ You can deploy grid nodes on new Linux hosts or on existing Linux hosts. If you 
 +
 IMPORTANT: In a production deployment, do not run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
 
-* If the StorageGRID node uses storage assigned from a NetApp AFF system, confirm that the volume does not have a FabricPool tiering policy enabled. Disabling FabricPool tiering for volumes used with StorageGRID nodes simplifies troubleshooting and storage operations.
+* If the StorageGRID node uses storage assigned from a NetApp ONTAP system, confirm that the volume does not have a FabricPool tiering policy enabled. Disabling FabricPool tiering for volumes used with StorageGRID nodes simplifies troubleshooting and storage operations.
 
 .Steps
 
@@ -68,12 +68,9 @@ To install the StorageGRID software on an appliance node, you use the StorageGRI
 .What you'll need
 
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
-* You have used the StorageGRID Appliance Installer to complete all of the "`configure hardware`" steps in the appliance installation and maintenance instructions.
+* You have completed the xref:../installconfig/configuring-hardware.adoc[Set up hardware] steps.
 +
-** xref:../installconfig/configuring-hardware.adoc[Configure appliance hardware]
-
-+
-Configuring appliance hardware includes the required steps for configuring StorageGRID connections (network links and IP addresses) as well the optional steps for enabling node encryption, changing the RAID mode, and remapping network ports.
+Setting up appliance hardware includes the required steps for configuring StorageGRID connections (network links and IP addresses) as well the optional steps for enabling node encryption, changing the RAID mode, and remapping network ports.
 
 * All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer have been defined in the Grid Network Subnet List on the primary Admin Node.
 

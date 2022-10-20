@@ -13,10 +13,10 @@ The xref:understanding-cloudmirror-replication-service.adoc[CloudMirror replicat
 
 .What you'll need
 
-* Platform services must be enabled for your tenant account by a StorageGRID administrator.
-* You must have already created a bucket to act as the replication source.
-* The endpoint that you intend to use as a destination for CloudMirror replication must already exist, and you must have its URN.
-* You must belong to a user group that has the Manage All Buckets or the Root Access permission, which allows you to manage the settings for all S3 buckets in your tenant account. These permissions override the permission settings in group or bucket policies when configuring the bucket using the Tenant Manager.
+* Platform services were enabled for your tenant account by a StorageGRID administrator.
+* You have already created a bucket to act as the replication source.
+* The endpoint that you intend to use as a destination for CloudMirror replication already exists, and you have its URN.
+* You belong to a user group that has the Manage All Buckets or the Root Access permission, which allows you to manage the settings for all S3 buckets in your tenant account. These permissions override the permission settings in group or bucket policies when configuring the bucket using the Tenant Manager.
 
 .About this task
 
@@ -83,6 +83,6 @@ For small objects, replication happens quickly.
 
 .Related information
 
-xref:../s3/index.adoc[Use S3]
+xref:../s3/index.adoc[Use S3 REST API]
 
 xref:creating-platform-services-endpoint.adoc[Create platform services endpoint]

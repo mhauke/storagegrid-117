@@ -2,23 +2,23 @@
 permalink: admin/viewing-network-traffic-metrics.html
 sidebar: sidebar
 keywords: network traffic, traffic classification policy, monitor traffic
-summary: 'You can monitor network traffic by viewing the graphs that are available from the Traffic Classification Policies page.'
+summary: 'You can monitor network traffic by viewing the graphs that are available from the Traffic classification policies page.'
 ---
 = View network traffic metrics
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can monitor network traffic by viewing the graphs that are available from the Traffic Classification Policies page.
+You can monitor network traffic by viewing the graphs that are available from the Traffic classification policies page.
 
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Root access permission or the Tenant Accounts permission.
+* You have the Root access permission or the Tenant accounts permission.
 
 .About this task
 
-For any existing traffic classification policy, you can view metrics for the Load Balancer service to determine if the policy is successfully limiting traffic across the network. The data in the graphs can help you determine if you need adjust the policy.
+For any existing traffic classification policy, you can view metrics for the load balancer service to determine if the policy is successfully limiting traffic across the network. The data in the graphs can help you determine if you need to adjust the policy.
 
 Even if no limits are set for a traffic classification policy, metrics are collected and the graphs provide useful information for understanding traffic trends.
 
@@ -26,51 +26,46 @@ Even if no limits are set for a traffic classification policy, metrics are colle
 
 . Select *CONFIGURATION* > *Network* > *Traffic classification*.
 +
-The Traffic Classification Policies page appears, and the existing policies are listed in the table.
-+
-image::../media/traffic_classification_policies_main_screen_w_examples.png[Traffic Policy for Graph Example]
-+
-NOTE: The *Create*, *Edit*, and *Remove* buttons are disabled if you have the Tenant Accounts permission but you do not have the Root access permission. 
 
-. Select the radio button to the left of the policy you want to view metrics for.
-. Select *Metrics*.
+The Traffic classification policies page appears, and the existing policies are listed in the table.
 +
-A new browser window opens, and the Traffic Classification Policy graphs appear. The graphs display metrics only for the traffic that matches the selected policy.
-+
-You can select other policies to view by using the *policy* pull-down.
-+
-image::../media/traffic_classification_policy_graph.png[Network Traffic Graph]
-+
-The following graphs are included on the web page.
 
- ** Load Balancer Request Traffic: This graph provides a 3-minute moving average of the throughput of data transmitted between load balancer endpoints and the clients making the requests, in bits per second.
- ** Load Balancer Request Completion Rate: This graph provides a 3-minute moving average of the number of completed requests per second, broken down by request type (GET, PUT, HEAD, and DELETE). This value is updated when the headers of a new request have been validated.
- ** Error Response Rate: This graph provides a 3-minute moving average of the number of error responses returned to clients per second, broken down by the error response code.
- ** Average Request Duration (Non-Error): This graph provides a 3-minute moving average of request durations, broken down by request type (GET, PUT, HEAD, and DELETE). Each request duration starts when a request header is parsed by the Load Balancer service and ends when the complete response body is returned to the client.
- ** Write Request Rate by Object Size: This heatmap provides a 3-minute moving average of the rate at which write requests are completed based on object size. In this context, write requests refer only to PUT requests.
- ** Read Request Rate by Object Size: This heatmap provides a 3-minute moving average of the rate at which read requests are completed based on object size. In this context, read requests refer only to GET requests.
-The colors in the heatmap indicate the relative frequency of an object size within an individual graph. The cooler colors (for example, purple and blue) indicate lower relative rates, and the warmer colors (for example, orange and red) indicate higher relative rates.
+. Select the traffic classification policy name for which you want to view metrics.
+. Select the *Metrics* tab.
++
+The traffic classification policy graphs appear. The graphs display metrics only for the traffic that matches the selected policy.
++
+
++
+The following graphs are included on the page.
+
+** Request rate: This graph provides the amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
++
+
+NOTE: When requests are complete, this chart only shows bandwidth usage. For slow or large object requests the actual instantaneous bandwidth might differ from the values reported in this graph.
++
+
+** Error response rate: This graph provides an approximate rate at which requests matching this policy are returning errors (HTTP status code >= 400) to clients.
+
+** Average request duration (non-error): This graph provides an average duration of successful requests matching this policy.
++
+
+** Policy bandwidth usage: The amount of bandwidth matching this policy handled by all load balancers. Received data includes request headers for all requests and body data size for responses that have body data. Sent includes response headers for all requests and response body data size for requests that include body data in the response.
 
 . Hover the cursor over a line graph to see a pop-up of values on a specific part of the graph.
-+
-image::../media/traffic_classification_policy_graph_popup_closeup.png[Traffic Line Graph Popup Values]
 
-. Hover the cursor over a heatmap to see a pop-up that shows the date and time of the sample, object sizes that are aggregated into the count, and the number of requests per second during that time period.
+. Select *Grafana dashboard* right below the Metrics title to view all the graphs for a policy. In addition to the four graphs from the *Metrics* tab, you can view two more graphs: 
 +
-image::../media/traffic_classification_policy_heatmap_closeup.png[Traffic Bar Graph Popup Values]
 
-. Use the *Policy* pull-down in the upper left to select a different policy.
-+
-The graphs for the selected policy appear.
+* Write request rate by object size: The rate for PUT/POST/DELETE requests matching this policy. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and may report 0 when there are non-zero requests in the bucket.
+* Read request rate by object size: The rate for GET/HEAD requests matching this policy. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and might report 0 when there are non-zero requests in the bucket. 
 
 . Alternatively, access the graphs from the *SUPPORT* menu.
  .. Select *SUPPORT* > *Tools* > *Metrics*.
- .. In the *Grafana* section of the page, select *Traffic Classification Policy*.
- .. Select the policy from the pull-down on the upper left of the page.
+ .. Select *Traffic Classification Policy* from the *Grafana* section.
+ .. Select the policy from the pull-down menu on the upper left of the page.
+ .. Hover the cursor over a graph to see a pop-up that shows the date and time of the sample, object sizes that are aggregated into the count, and the number of requests per second during that time period.
 +
-Traffic classification policies are identified by their ID. Policy IDs are listed on the Traffic Classification Policies page.
+
+Traffic classification policies are identified by their ID. Policy IDs are listed on the Traffic classification policies page.
 . Analyze the graphs to determine how often the policy is limiting traffic and whether you need to adjust the policy.
-
-.Related information
-
-xref:../monitor/index.adoc[Monitor and troubleshoot]

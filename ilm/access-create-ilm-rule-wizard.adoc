@@ -18,7 +18,7 @@ NOTE: If you want to create the default ILM rule for a policy, follow the xref:c
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have specific access permissions.
 * If you want to specify which tenant accounts this rule applies to, you have the Tenant Accounts permission or you know the account ID for each account.
-* If you want the rule to filter objects on last access time metadata, Last Access Time updates must be enabled by bucket for S3 or by container for Swift.
+* If you want the rule to filter objects on last access time metadata, Last access time updates must be enabled by bucket for S3 or by container for Swift.
 * You have configured any Cloud Storage Pools you plan to use. See xref:creating-cloud-storage-pool.adoc[Create Cloud Storage Pool].
 * You are familiar with the xref:data-protection-options-for-ingest.adoc[ingest options].
 * If you need to create a compliant rule for use with S3 Object Lock, you are familiar with the xref:requirements-for-s3-object-lock.adoc[requirements for S3 Object Lock].
@@ -40,10 +40,8 @@ When creating ILM rules:
 
 . Select *ILM* > *Rules*.
 +
-The ILM Rules page appears. The stock rule, Make 2 Copies, is shown in the list of rules.
+The Make 2 Copies rule is shown in the list of rules.
 +
-image::../media/ilm_create_ilm_rule.png[ILM Rules page]
-+
-NOTE: The ILM Rules page looks slightly different if the global S3 Object Lock setting has been enabled for the StorageGRID system. The summary table includes a *Compliant* column, and the details for the selected rule include a *Compliant* field.
+NOTE: If the global S3 Object Lock setting has been enabled for the StorageGRID system, the summary table includes a *Compliant* column, and the details for the selected rule include a *Compliant* field.
 
 . Select *Create*. xref:create-ilm-rule-enter-details.adoc[Step 1 (Enter details)] of the Create an ILM rule wizard appears.

@@ -77,9 +77,9 @@ a|
  .. Wait for the connection state for the new IP address to become ready.
 |===
 
-. In the *Node name* field, enter the name you want to use for this appliance node, and click *Save*.
+. In the *Node name* field, provide the system name you want to use for this appliance node, and click *Save*.
 +
-The node name is assigned to this appliance node in the StorageGRID system. It is shown on the Nodes page (Overview tab) in the Grid Manager. If required, you can change the name when you approve the node.
+The name that appears here will be the appliance node's system name. System names are required for internal StorageGRID operations and cannot be changed.
 
 . In the *Installation* section, confirm that the current state is "Ready to start installation of `_node name_` into grid with primary Admin Node `_admin_ip_` " and that the *Start Installation* button is enabled.
 +
