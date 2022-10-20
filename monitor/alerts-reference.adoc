@@ -223,14 +223,28 @@ Cassandra automatically restarts if it detects table corruption.
 
 |===
 
+== Cross-grid replication alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description
+
+| Cross-grid replication permanent request failure
+| A cross-grid replication error occurred that requires user intervention to resolve.
+
+| Cross-grid replication resources unavailable
+| Cross-grid replication requests are pending because a resource is unavailable.
+
+|===
+
 == Debug alerts
 
 [cols="1a,2a" options="header"]
 |===
 | Alert name| Description
 
-|Debug performance impact
-|One or more subcomponents have been in debug mode for an extended time, which might decrease performance.
+| Debug performance impact
+| One or more subcomponents have been in debug mode for an extended time, which might decrease performance.
 
 |===
 
@@ -321,16 +335,11 @@ This alert is triggered when an alert email notification fails or a test email (
 
 [cols="1a,2a" options="header"]
 |===
-| Alert name| Description and recommended actions
+| Alert name| Description
 
-|Grid federation connection failure
-|The grid federation connection between the local and remote grids is not working.
+| Grid federation connection failure
+| The grid federation connection between the local and remote grids is not working.
 
-. Review the settings on the Grid Federation page for both the local and the remote grids. Confirm that all values are correct. See xref:../admin/grid-federation-manage-connection.adoc[Manage grid federation connections].
-
-. Review the certificates used for the connection. Make sure that certificates have not expired and that the details are valid.
-. Confirm that all Admin and Gateway Nodes in the local and remote grids are online and available. Resolve any alerts that might be affecting these nodes and try again.
-. If you provided a fully qualified domain name (FQDN) for the local or remote grid, confirm the DNS server is online and available.
 
 |===
 
@@ -607,7 +616,7 @@ The object existence check job cannot continue. Either one or more Storage Nodes
 |===
 | Alert name| Description
 
-|Trace configuration enabled
-|When trace configuration is enabled, system performance might be negatively impacted.
+| Trace configuration enabled
+| When trace configuration is enabled, system performance might be negatively impacted.
 
 |===
