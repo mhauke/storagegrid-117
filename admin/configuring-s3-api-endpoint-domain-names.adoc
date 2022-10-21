@@ -66,19 +66,19 @@ You have successfully added a S3 endpoint domain name.
 
 Now, when clients use the endpoint `bucket.s3.company.com`, the DNS server resolves to the correct endpoint and the certificate authenticates the endpoint as expected.
 
-== Edit or delete S3 endpoint domain names
+== Rename or delete S3 endpoint domain names
 You can rename or delete an S3 endpoint domain name.
 
 NOTE: If you change or remove a name used by S3 applications, virtual-hosted-style requests will fail.
 
-. Select the domain name you want to edit and make the necessary change.
+. Select the domain name field you want to edit and make the necessary change.
 . Select *Save*.
 +
 A Warning dialog box appears.
 
 . Select *Yes*.
 
-To delete S3 endpoint domain names, select the delete icon next to the domain name and select *Yes* in the Warning dialog box to confirm your deletion. 
+To delete an S3 endpoint domain name, select the delete icon next to the domain name and select *Yes* in the Warning dialog box to confirm your deletion. 
 
 .Related information
 
