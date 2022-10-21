@@ -40,7 +40,7 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 ** From the tenant's source grid, create new tenant users and groups, which are automatically cloned to the tenant's destination grid.
 ** From the tenant's source grid, create new S3 access keys, which can be optionally cloned to the tenant's destination grid.
-** Create new buckets on both grids and optionally enable cross-grid replication in one direction or both directions.
+** Create identical buckets on both grids in the connection and enable cross-grid replication in one direction or in both directions. See xref:../tenant/buckets-manage-cross-grid-replication.adoc[Manage buckets for cross-grid replication].
 
 == Edit tenant with Use grid federation connection permission
 
@@ -89,7 +89,7 @@ Before removing a tenant's permission to use a grid federation connection, note 
 
 * If one or more tenant buckets still have cross-grid replication enabled, an error is displayed. You can do either of the following:
 
-** (Recommended.) Sign in to the Tenant Manager and stop replication (permanently disable replication) for each of the tenant's buckets. Then, repeat the steps to remove the permission.
+** (Recommended.) Sign in to the Tenant Manager and stop replication (permanently disable replication) for each of the tenant's buckets. See xref:../tenant/buckets-manage-cross-grid-replication.adoc[Manage buckets for cross-grid replication]. Then, repeat the steps to remove the *Use grid connection* permission.
 ** Remove the permission by force. See the next section.
 
 == [[force_remove_permission]]Remove the permission by force
