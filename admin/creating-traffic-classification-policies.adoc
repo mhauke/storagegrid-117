@@ -71,7 +71,6 @@ For a policy containing multiple matchers where at least one is an inverse match
 . Optionally, select *Add a limit* and select the following details to add one or more limits to control the network traffic matched by a rule.
 +
 NOTE: Even if you do not create limits, StorageGRID collects metrics so that you can monitor network traffic that matches the policy.
-
 +
 
 [cols="1a,2a" options="header"]
@@ -101,7 +100,6 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 |The value that network traffic will be limited to, based on the Unit you select. For example, enter 10 and select MiBs to prevent the network traffic matched by this rule from exceeding 10 MiBs.
 
 *Note*: Depending on the units setting, the available units will be either binary (for example, GiB) or decimal (for example, GB). To change the units setting, select the user drop-down in the upper right of the Grid Manager, then select *User Preferences*.
-
 
 |Unit
 |The unit that describes the value you entered.
