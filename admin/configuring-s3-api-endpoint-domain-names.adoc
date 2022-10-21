@@ -9,7 +9,7 @@ summary: 'To support S3 virtual-hosted-style requests, you must use the Grid Man
 :imagesdir: ../media/
 
 [.lead]
-To support S3 virtual-hosted-style requests, you must use the Grid Manager to configure the list of endpoint domain names that S3 clients connect to.
+To support S3 virtual-hosted-style requests, you must use the Grid Manager to configure the list of S3 endpoint domain names that S3 clients connect to.
 
 .What you'll need
 
@@ -31,17 +31,17 @@ CAUTION: Using an IP address for an endpoint domain name is unsupported. Future 
 +
 For example, if the endpoint is `s3.company.com`, you must ensure that the certificate used for HTTPS connections includes the `s3.company.com` endpoint and the endpoint's wildcard Subject Alternative Name (SAN): `*.s3.company.com`.
 
-* Configure the DNS server used by the client. Include DNS records for the IP addresses that clients use to make connections, and ensure that the records reference all required endpoint domain names, including any wildcard names.
+* Configure the DNS server used by the client. Include DNS records for the IP addresses that clients use to make connections, and ensure that the records reference all required S3 endpoint domain names, including any wildcard names.
 +
 NOTE: Clients can connect to StorageGRID using the IP address of a Gateway Node, an Admin Node, or a Storage Node, or by connecting to the virtual IP address of a high availability group. You should understand how client applications connect to the grid so you include the correct IP addresses in the DNS records.
 
 Clients that use HTTPS connections (recommended) to the grid can use either of these certificates:
 
-* Clients that connect to a load balancer endpoint can use a custom certificate for that endpoint. Each load balancer endpoint can be configured to recognize different endpoint domain names.
+* Clients that connect to a load balancer endpoint can use a custom certificate for that endpoint. Each load balancer endpoint can be configured to recognize different S3 endpoint domain names.
  
-* Clients that connect to a load balancer endpoint or directly to a Storage Node can customize the global S3 and Swift API certificate to include all required endpoint domain names.
+* Clients that connect to a load balancer endpoint or directly to a Storage Node can customize the global S3 and Swift API certificate to include all required S3 endpoint domain names.
 
-CAUTION: If the S3 endpoint domain name list is empty, support for S3 virtual-hosted-style requests is disabled.
+NOTE: If you do not add S3 endpoint domain names and the list is empty, support for S3 virtual-hosted-style requests is disabled.
 
 .Steps
 
@@ -57,9 +57,9 @@ The S3 endpoint domain names page appears.
 +
 You have successfully added a S3 endpoint domain name. 
 
-. Ensure that the server certificates that clients use match the required endpoint domain names.
- ** If clients connect to a load balancer endpoint that uses its own certificate, update the certificate associated with the endpoint.
- ** If clients connect to a load balancer endpoint that uses the global S3 and Swift API certificate or directly to Storage Nodes, update the global S3 and Swift API certificate.
+. Ensure that the server certificates that clients use match the required S3 endpoint domain names.
+ ** If clients connect to a load balancer endpoint that uses its own certificate, xref:../admin/configuring-load-balancer-endpoints.adoc[update the certificate associated with the endpoint].
+ ** If clients connect to a load balancer endpoint that uses the global S3 and Swift API certificate or directly to Storage Nodes, xref:../admin/use-s3-setup-wizard-steps.adoc[update the global S3 and Swift API certificate].
 . Add the DNS records required to ensure that endpoint domain name requests can be resolved.
 
 .Result
@@ -79,10 +79,6 @@ A Warning dialog box appears.
 . Select *Yes*.
 
 To delete S3 endpoint domain names, select the delete icon next to the domain name and select *Yes* in the Warning dialog box to confirm your deletion. 
-
-
-
-
 
 .Related information
 
