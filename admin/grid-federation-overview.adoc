@@ -75,13 +75,13 @@ Account clone is the replication of selected S3 tenant accounts, users, and grou
 
 ** When a grid admin creates a tenant on one grid (the tenant's source grid) and selects the *Use grid federation connection* permission, an identical tenant is automatically created on the other grid (the tenant's destination grid). 
 
-** When tenant users create new users and groups on the tenant's source grid, these groups and users are automatically cloned to the destination grid. 
-
-** When tenant users create new S3 access keys on the tenant's source grid, these keys can be optionally cloned to the destination grid. 
-
-** If tenant users create new tenant users, groups, or S3 access keys on the tenant's destination grid, these items are not cloned to the source grid.
+** When tenant users create new users, groups, or S3 access key on the tenant's source grid, the groups and users are automatically cloned to the destination grid and the S3 access keys are optionally cloned to the destination grid. 
 +
-image:../media/grid-federation-account-clone.png[image showing how tenant details are cloned between source grid and destination grid]
+image:../media/grid-federation-account-clone.png[image showing that tenant details are cloned from source grid to destination grid]
+
+** When tenant users create new tenant users, groups, or S3 access keys on the tenant's destination grid, these items are not cloned to the source grid.
++
+image:../media/grid-federation-account-not-cloned.png[image showing that tenant details are cloned back to source grid]
 
 * Any edits made to the tenant, users, groups, or access keys on either grid are not cloned to the other grid. 
 
