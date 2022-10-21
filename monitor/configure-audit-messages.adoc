@@ -79,16 +79,14 @@ image::../media/audit-messages-main-page.png[Audit messages main page]
 | Deprecated. This level behaves the same as the Normal audit level.
 
 |===
-
++
 The messages included for any particular level include those that would be logged at the higher levels. For example, the Normal level includes all of the Error messages.
 
 . Optionally, under *Audit protocol headers*, define any HTTP request headers you want to include in client read and write audit messages. Use an asterisk (\*) as a wildcard to match zero or more characters. Use the escape sequence (\*) to match a literal asterisk. 
-
 +
 NOTE: Audit protocol headers apply to S3 and Swift requests only.
 
 . Select *Add another header* to create additional headers, if needed.
-
 +
 When HTTP headers are found in a request, they are included in the audit message under the field HTRH.
 +
