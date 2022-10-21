@@ -218,26 +218,12 @@ Cassandra automatically restarts if it detects table corruption.
 |===
 | Alert name| Description
 
-|Cloud Storage Pool connectivity error
-|The health check for Cloud Storage Pools detected one or more new errors.
+| Cloud Storage Pool connectivity error
+| The health check for Cloud Storage Pools detected one or more new errors.
 
 |===
 
-== Cross-grid replication alerts
-
-[cols="1a,2a" options="header"]
-|===
-| Alert name| Description
-
-| Cross-grid replication permanent request failure
-| A cross-grid replication error occurred that requires user intervention to resolve.
-
-| Cross-grid replication resources unavailable
-| Cross-grid replication requests are pending because a resource is unavailable.
-
-|===
-
-== Debug alerts
+== Debug and trace alerts
 
 [cols="1a,2a" options="header"]
 |===
@@ -245,6 +231,9 @@ Cassandra automatically restarts if it detects table corruption.
 
 | Debug performance impact
 | One or more subcomponents have been in debug mode for an extended time, which might decrease performance.
+
+| Trace configuration enabled
+| When trace configuration is enabled, system performance might be negatively impacted.
 
 |===
 
@@ -299,26 +288,29 @@ This alert is triggered when an alert email notification fails or a test email (
 |===
 | Alert name| Description
 
-|Expiration of client certificates configured on the Certificates page
-|One or more client certificates configured on the Certificates page are about to expire.
+| Expiration of client certificates configured on the Certificates page
+| One or more client certificates configured on the Certificates page are about to expire.
 
-|Expiration of load balancer endpoint certificate
-|One or more load balancer endpoint certificates are about to expire.
+| Expiration of grid federation certificates
+| One or more grid federation certificates are about to expire.
 
-|Expiration of server certificate for management interface
-|The server certificate used for the management interface is about to expire.
+| Expiration of load balancer endpoint certificate
+| One or more load balancer endpoint certificates are about to expire.
 
-|Expiration of global server certificate for S3 and Swift API 
-|The server certificate used for accessing storage API endpoints is about to expire.
+| Expiration of server certificate for management interface
+| The server certificate used for the management interface is about to expire.
 
-|External syslog CA certificate expiration
-|The certificate authority (CA) certificate used to sign the external syslog server certificate is about to expire.
+| Expiration of global server certificate for S3 and Swift API 
+| The server certificate used for accessing storage API endpoints is about to expire.
 
-|External syslog client certificate expiration
-|The client certificate for an external syslog server is about to expire.
+| External syslog CA certificate expiration
+| The certificate authority (CA) certificate used to sign the external syslog server certificate is about to expire.
 
-|External syslog server certificate expiration
-|The server certificate presented by the external syslog server is about to expire.
+| External syslog client certificate expiration
+| The client certificate for an external syslog server is about to expire.
+
+| External syslog server certificate expiration
+| The server certificate presented by the external syslog server is about to expire.
 |===
 
 == External syslog server alerts
@@ -327,19 +319,24 @@ This alert is triggered when an alert email notification fails or a test email (
 |===
 | Alert name| Description
 
-|External syslog server forwarding error
-|Node cannot forward logs to the external syslog server.
+| External syslog server forwarding error
+| Node cannot forward logs to the external syslog server.
 |===
 
-== Grid federation alerts
+== Grid federation and cross-grid replication alerts
 
 [cols="1a,2a" options="header"]
 |===
 | Alert name| Description
 
+| Cross-grid replication permanent request failure
+| A cross-grid replication error occurred that requires user intervention to resolve.
+
+| Cross-grid replication resources unavailable
+| Cross-grid replication requests are pending because a resource is unavailable.
+
 | Grid federation connection failure
 | The grid federation connection between the local and remote grids is not working.
-
 
 |===
 
@@ -608,15 +605,4 @@ The object existence check job cannot continue. Either one or more Storage Nodes
 
 |Tenant quota usage high
 |A high percentage of tenant quota space is being used. If a tenant exceeds its quota, new ingests are rejected.
-|===
-
-== Trace alerts
-
-[cols="1a,2a" options="header"]
-|===
-| Alert name| Description
-
-| Trace configuration enabled
-| When trace configuration is enabled, system performance might be negatively impacted.
-
 |===
