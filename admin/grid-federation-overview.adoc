@@ -16,15 +16,7 @@ You can use grid federation to clone tenants and replicate their objects between
 A grid federation connection is a bidirectional, trusted, and secure connection between Admin and Gateway Nodes in two StorageGRID systems. A grid federation connection must exist before you can use account clone or cross-grid replication.
 
 
-=== What are account clone and cross-grid replication?
-
-Account clone is the replication of selected S3 tenant accounts, users, and groups between two StorageGRID systems. Account clone is required for cross-grid replication.
-
-Cross-grid replication is the replication of objects between selected S3 buckets in two StorageGRID systems.
-
-
-
-== Considerations and requirements for grid federation connections
+=== Considerations and requirements for grid federation connections
 
 * Both grids used for grid federation must be running StorageGRID 11.7.
 
@@ -38,7 +30,46 @@ Cross-grid replication is the replication of objects between selected S3 buckets
 +
 NOTE: You can only add the *Use grid federation connection* when you are creating a new S3 tenant; you can't add this permission to an existing tenant.
 
-== Considerations and requirements for account clone
+==== IP address and DNS requirements
+
+* A grid federation connection can connect any two nodes that run the nginx-gw service. All Admin Nodes and all Gateway Nodes include this service, so you can configure a connection between the primary Admin Nodes on each grid or between a Gateway Node on one grid and an Admin Node on the other. However, the best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid.
++
+Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface.
++ 
+See xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
+
+* If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must create the appropriate DNS entries, as follows:
+
+** *Grid 1 DNS*: The FQDN for Grid 2 mapped to one or more IP address or virtual IP (VIP) addresses for Grid 1. 
+** *Grid 2 DNS*: The FQDN for Grid 1 mapped to one or more IP addresses or VIP addresses for Grid 2. 
+
+* If the DNS entries for a FQDN map to the IP address of more than one Admin Node or Gateway Node or to the VIP addresses of more than one HA group, the requests to use the connection will be load balanced between the nodes or between the active nodes in the HA groups.
+
+==== Port requirements
+
+When creating a grid federation connection, you can specify any unused port number from 23000 to 23999. Both grids in this connection will use the same port. You must ensure that no node in either grid uses this port for other connections.
+
+==== Certificate requirements
+
+When you configure a grid federation connection, StorageGRID automatically generates four SSL certificates:
+
+* Server and client certificates to authenticate and encrypt the connection between grid 1 and grid 2
+* Server and client certificates to authenticate and encrypt the connection between grid 2 and grid 1
+
+image:../media/grid-federation-certificates.png[Grid federation certificates]
+
+By default, the certificates are valid for 730 days (2 years). When these certificates near their expiration date, 
+the *Expiration of grid federation certificate* alert reminds you to rotate the certificates, which you can do using the Grid Manager. 
+
+[IMPORTANT]
+If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
+
+
+== What is account clone?
+
+Account clone is the replication of selected S3 tenant accounts, users, and groups between two StorageGRID systems. Account clone is required for cross-grid replication.
+
+=== Considerations and requirements for account clone
 
 * Tenant creation and the cloning of new account users and groups occur in one direction only:
 
@@ -54,54 +85,12 @@ image:../media/grid-federation-account-clone.png[image showing how tenant detail
 
 * Any edits made to the tenant, users, groups, or access keys on either grid are not cloned to the other grid. 
 
-== Considerations and requirements for cross-grid replication
+//included content for What is cross-grid replication. Also used in TM
 
-Before tenants can use cross-grid replication, a tenant user that exists on both grids must create identical buckets on both grids. Then, the user can enable cross-grid replication for one or both buckets to determine if objects are replicated in one direction or in both directions.
+include::../_include/what-is-cross-grid-replication.adoc[]
 
-* If cross-grid replication is enabled for only one of the buckets, objects added to that bucket are replicated to the other grid, but objects added to the other bucket are not.
-+
-image:../media/grid-federation-cross-grid-replication-one-direction.png[image showing grid federation connection in one direction]
-* If cross-grid replication is enabled for both buckets, objects added to either bucket are replicated to the other grid.
-+
-image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
 
-For details, see xref:../tenant/buckets-manage-cross-grid-replication.adoc[Manage buckets for cross-grid replication].
-
-=== IP address and DNS requirements
-
-* A grid federation connection can connect any two nodes that run the nginx-gw service. All Admin Nodes and all Gateway Nodes include this service, so you can configure a connection between the primary Admin Nodes on each grid or between a Gateway Node on one grid and an Admin Node on the other. However, the best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid.
-+
-Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface.
-+ 
-See xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
-
-* If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must create the appropriate DNS entries, as follows:
-
-** *Grid 1 DNS*: The FQDN for Grid 2 mapped to one or more IP address or virtual IP (VIP) addresses for Grid 1. 
-** *Grid 2 DNS*: The FQDN for Grid 1 mapped to one or more IP addresses or VIP addresses for Grid 2. 
-
-* If the DNS entries for a FQDN map to the IP address of more than one Admin Node or Gateway Node or to the VIP addresses of more than one HA group, the requests to use the connection will be load balanced between the nodes or between the active nodes in the HA groups.
-
-=== Port requirements
-
-When creating a grid federation connection, you can specify any unused port number from 23000 to 23999. Both grids in this connection will use the same port. You must ensure that no node in either grid uses this port for other connections.
-
-=== Certificate requirements
-
-When you configure a grid federation connection, StorageGRID automatically generates four SSL certificates:
-
-* Server and client certificates to authenticate and encrypt the connection between grid 1 and grid 2
-* Server and client certificates to authenticate and encrypt the connection between grid 2 and grid 1
-
-image:../media/grid-federation-certificates.png[Grid federation certificates]
-
-By default, the certificates are valid for 730 days (2 years). When these certificates near their expiration date, 
-the *Expiration of grid federation certificate* alert reminds you to rotate the certificates, which you can do using the Grid Manager. 
-
-[IMPORTANT]
-If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
-
-== How are objects replicated between grids?
+=== How are objects replicated between grids?
 
 * The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
 
