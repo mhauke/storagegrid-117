@@ -11,36 +11,7 @@ summary: 'You can use cross-grid replication to automatically replicate bucket o
 [.lead]
 You can use cross-grid replication to automatically replicate bucket objects between two StorageGRID systems for disaster recovery.
 
-== What is cross-grid replication?
-
-Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems, which are connected in a xref:../admin/grid-federation-overview.adoc[grid federation connection].
-
-If your tenant account was granted the *Use grid federation connection* permission when it was created, you can configure cross-grid replication when adding new buckets. As a first step, you create identical buckets for the corresponding tenants on each grid. Then, you enable cross-grid replication to occur between these buckets in one direction or in both directions.
-
-=== [[replication-one-direction]]Replication in one direction
-
-If you enable cross-grid replication for a bucket on only one grid, objects added to that bucket are replicated to the other grid, but objects added to the other bucket are not. In the figure, cross-grid replication is enabled for `my-bucket` from Grid 1 to Grid 2, but it is not enabled in the other direction. 
-
-image:../media/grid-federation-cross-grid-replication-one-direction.png[image showing grid federation connection in one direction]
-
-=== [[replication-both-directions]]Replication in both directions
-If you enable cross-grid replication for the same bucket on both grids, objects added to either bucket are replicated to the other grid. In the figure, cross-grid replication is enabled for `my-bucket` in both directions. 
-
-image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
-
-=== [[client-deletes]]Replication of client delete markers
-
-When enabling cross-grid replication for a bucket, you can specify what happens when objects in the bucket are deleted by S3 client operations.
-
-* If you choose to replicate client delete markers, a delete marker is added to the source bucket and replicated to the destination bucket when an S3 client deletes an object. In effect, objects are deleted on both grids.
-
-*  If you choose not to replicate client delete markers, a delete marker is added to the source bucket, but it is not replicated to the destination bucket. In effect, objects that are deleted on the source grid are not deleted on the destination grid.
-
-
-In the figure, the grids are configured for cross-grid replication in both directions, but client delete markers are not replicated from `my-bucket` on Grid 1 to `my-bucket` on Grid 2.
-
-image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
-
+include::../_include/what-is-cross-grid-replication.adoc[]
 
 == Configure cross-grid replication
 
