@@ -152,10 +152,9 @@ If you approve more than one node of the same type, the nodes will be upgraded o
 
 . Wait for the approved nodes to proceed through these upgrade stages:
 +
-* Queued
 * Stopping services
 +
-NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Remove* button is disabled.
+NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Remove from queue* button is disabled.
 
 * Stopping container
 * Cleaning up Docker images
