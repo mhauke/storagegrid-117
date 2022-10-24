@@ -1,7 +1,7 @@
 ---
 permalink: audit/ilm-audit-messages.html
 sidebar: sidebar
-keywords: storagegrid, audit, message, messages, system, IDEL, LKCU, ORLM
+keywords: audit messages, ILM, IDEL, LKCU, ORLM
 summary: 'The audit messages belonging to the ILM audit category are used for events related to information lifecycle operations.'
 ---
 = ILM operations audit messages
@@ -26,7 +26,7 @@ The audit messages belonging to the ILM audit category are used for  events rela
 | xref:lkcu-overwritten-object-cleanup.adoc[LKCU: Overwritten Object Cleanup]
 
 | ORLM
-| Object Rules Met: Object data is stored as specified by the ILM rules.
+| Object Rules Met: This audit message is generated when object data is stored as specified by the ILM rules.
 | xref:orlm-object-rules-met.adoc[ORLM: Object Rules Met]
 
 |===
