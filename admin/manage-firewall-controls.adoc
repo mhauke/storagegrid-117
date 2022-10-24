@@ -9,18 +9,19 @@ summary: 'StorageGRID includes an internal firewall on each node that enhances t
 :imagesdir: ../media/
 
 [.lead]
-StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to control access to the nodes from the Grid Network, Admin Network, and Client Network. Use the firewall to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the Firewall control page are deployed to each node.
+StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to control network access to the node. Use the firewall to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the Firewall control page are deployed to each node.
 
-Use the three tabs on the Firewall control page to customize the amount of access you need for your grid. 
+Use the three tabs on the Firewall control page to customize the access you need for your grid. 
 
 * *Privileged IP address list*: Use this tab to allow selected access to closed ports. You can add IP addresses or subnets in CIDR notation that can access ports closed using the Manage external access tab.
 * *Manage external access*: Use this tab to close ports that are open by default, or reopen ports previously closed.
-* *Untrusted Client Network*: Use this tab to specify whether a node trusts inbound traffic from the Client Network. 
-The settings on this tab override the settings in the Manage external access tab. A port in the Untrusted Client Network is open on the client network, regardless of whether that port is closed on other networks.
+* *Untrusted Client Network*: If a node is in an untrusted client network, the node allows client connections only on explicitly configured load balancer endpoints. Use this tab to specify whether a node trusts inbound traffic from the Client Network. The settings on this tab override the settings in the Manage external access tab. 
++
+If the Client Network is untrusted, there is no external access for the node, even though some of the node's ports are open in the Manage external access tab. Only specific ports configured on the Untrusted Client Network are open on the client network, regardless of whether that port is closed on other networks.
 
-NOTE: The settings you make on one tab can affect the access changes you make on another tab.
-  
-Be sure to check the settings on all tabs to ensure your network behaves in the way you expect. 
+This tab also provides the option to specify additional ports you want open on the untrusted Client Network. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
+
+NOTE: The settings you make on one tab can affect the access changes you make on another tab. Be sure to check the settings on all tabs to ensure your network behaves in the way you expect. 
 
 To configure internal firewall controls, see xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
 
@@ -29,18 +30,9 @@ For more information on external firewalls and network security, see xref:../adm
 == Privileged IP address list and Manage external access tabs
 The Privileged IP address list tab enables you to register one or more IP addresses that are granted access to grid ports that are closed. The Manage external access tab enables you to close external access to selected external ports or all open external ports (external ports are ports that are accessible by non-grid nodes by default). These two tabs often can be used together to customize the exact network access you need to allow for your grid.
 
-NOTE: Privileged IPs do not have internal grid access by default. 
+NOTE: Privileged IPs do not have internal grid port access by default. 
 
-=== Example 1: Limit access to the Grid Manager and Tenant Manager
-Suppose you want to limit access to the Grid Manager and Tenant manager for security reasons. You could use these general steps: 
-
-. Use the toggle on the Manage external access tab to block port 443.
-. Use the toggle on the Manage external access tab to allow access to port 8443.
-. Use the toggle on the Manage external access tab to allow access to port 9443. 
-
-After you save your configuration, hosts will not be able to access port 443, but they can still access the Grid Manager via port 8443 and the Tenant manger via port 9443.
-
-=== Example 2: Use a jump host for maintenance tasks
+=== Example 1: Use a jump host for maintenance tasks
 
 Suppose you want to use a jump host (a security hardened host) for network administration. You could use these general steps:
 
@@ -49,7 +41,17 @@ Suppose you want to use a jump host (a security hardened host) for network admin
 
 IMPORTANT: You must be sure to add the privileged IP address before you block ports 443 and 8443. Any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. 
 
-After you save your configuration, all external ports on the Admin Node in your grid will be blocked for all hosts except the jump host. You can then use the jump host to perform maintenance tasks on your grid more securely. 
+After you save your configuration, all external ports on the Admin Node in your grid will be blocked for all hosts except the jump host. You can then use the jump host to perform maintenance tasks on your grid more securely.
+
+=== Example 2: Limit access to the Grid Manager and Tenant Manager
+Suppose you want to limit access to the Grid Manager and Tenant manager for security reasons. You could use these general steps: 
+
+. Use the toggle on the Manage external access tab to block port 443.
+. Use the toggle on the Manage external access tab to allow access to port 8443.
+. Use the toggle on the Manage external access tab to allow access to port 9443. 
+
+After you save your configuration, hosts will not be able to access port 443, but they can still access the Grid Manager via port 8443 and the Tenant manger via port 9443.
+ 
 
 === Example 3: Lock down sensitive ports
 Suppose you want to lock down sensitive ports and the service on that port (for example, SSH on port 22). You could use the following general steps: 
@@ -67,7 +69,7 @@ At a network level, you could disable some services that you do not intend to us
 . Use the toggle on the Manage external access tab to block port 18083. 
 . Use the toggle on the Manage external access tab to block port 18085.
 
-After you save your configuration, the Storage Node no longer allows Swift connectivity to Amazon Web Services, but continues to allow access to other services on unblocked ports.
+After you save your configuration, the Storage Node no longer allows Swift connectivity, but continues to allow access to other services on unblocked ports.
 
 == Untrusted Client Networks tab
 
