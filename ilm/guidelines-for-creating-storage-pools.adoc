@@ -18,7 +18,7 @@ See xref:using-multiple-storage-pools-for-cross-site-replication.adoc[Examples o
 * Keep storage pool configurations as simple as possible. Do not create more storage pools than necessary.
 * Create storage pools with as many nodes as possible. Each storage pool should contain two or more nodes. A storage pool with insufficient nodes can cause ILM backlogs if a node becomes unavailable.
 * Avoid creating or using storage pools that overlap (contain one or more of the same nodes). If storage pools overlap, more than one copy of object data might be saved on the same node.
-* StorageGRID includes a default storage pool, All Storage Nodes, that uses the default site, All Sites, and the default storage grade, All Storage Nodes. The All Storage Nodes storage pool is automatically updated whenever you add new data center sites.
+* StorageGRID includes a default storage pool, All Storage Nodes, that uses the default site, All Sites, and the storage grade, *includes all storage grades*. The All Storage Nodes storage pool is automatically updated whenever you add new data center sites.
 +
 NOTE: In general, do not use the All Storage Nodes storage pool or the All Sites site. These items are automatically updated to include any new sites you add in an expansion, which might not be the behavior you want. Before using the All Storage Nodes storage pool or the default site, carefully review the guidelines for creating storage pools used for replicated and erasure-coded copies.
 
