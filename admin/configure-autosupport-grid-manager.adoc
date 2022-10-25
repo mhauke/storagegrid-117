@@ -16,8 +16,8 @@ You can enable the AutoSupport feature and the individual AutoSupport options wh
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Root access or Other grid configuration permission.
-* If you will use the HTTPS protocol for sending AutoSupport messages, you have provided outbound internet access to the primary Admin Node, either directly or xref:configuring-admin-proxy-settings.adoc[using a proxy server] (inbound connections not required).
-* If you will use the HTTP protocol, you have xref:configuring-admin-proxy-settings.adoc[configured a proxy server] to convert AutoSupport messages to HTTPS. As of the StorageGRID 11.7 release, NetApp's AutoSupport servers will reject messages sent using HTTP.
+* If you will use HTTPS for sending AutoSupport messages, you have provided outbound internet access to the primary Admin Node, either directly or xref:configuring-admin-proxy-settings.adoc[using a proxy server] (inbound connections not required).
+* If you will use HTTP, you have xref:configuring-admin-proxy-settings.adoc[configured a proxy server] to convert AutoSupport messages to HTTPS. As of the StorageGRID 11.7 release, NetApp's AutoSupport servers will reject messages sent using HTTP.
 
 * If you will use SMTP as the protocol for AutoSupport messages, you have configured an SMTP mail server. The same mail server configuration is used for alarm email notifications (legacy system).
 
@@ -25,8 +25,8 @@ You can enable the AutoSupport feature and the individual AutoSupport options wh
 
 You can use any of the following protocols for sending AutoSupport messages:
 
-* *HTTPS*: This is the default and recommended setting for new installations. The HTTPS protocol uses port 443. If you want to <<Enable AutoSupport on Demand,enable the AutoSupport on Demand feature>>, you must use the HTTPS protocol.
-* *HTTP*: If you select the HTTP protocol, you must xref:configuring-admin-proxy-settings.adoc[configure a proxy server] to convert AutoSupport messages to HTTPS. NetApp's AutoSupport servers reject messages sent using HTTP. The HTTP protocol uses port 80. 
+* *HTTPS*: This is the default and recommended setting for new installations. This protocol uses port 443. If you want to <<Enable AutoSupport on Demand,enable the AutoSupport on Demand feature>>, you must use HTTPS.
+* *HTTP*: If you select HTTP, you must xref:configuring-admin-proxy-settings.adoc[configure a proxy server] to convert AutoSupport messages to HTTPS. NetApp's AutoSupport servers reject messages sent using HTTP. This protocol uses port 80. 
 * *SMTP*: Use this option if you want AutoSupport messages to be emailed. If you use SMTP as the protocol for AutoSupport messages, you must configure an SMTP mail server on the Legacy Email Setup page (*SUPPORT* > *Alarms (legacy)* > *Legacy email setup*).
 +
 NOTE: SMTP was the only protocol available for AutoSupport messages before the StorageGRID 11.2 release. If you installed an earlier version of StorageGRID initially, SMTP might be the selected protocol.

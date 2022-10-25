@@ -42,7 +42,7 @@ You might encounter this error when you try to create or edit a Cloud Storage Po
 
 To correct the issue, review the error message from the endpoint.
 
-* If the error message contains `Get _url_: EOF`, check that the service endpoint used for the Cloud Storage Pool does not use the HTTP protocol for a container or bucket that requires HTTPS.
+* If the error message contains `Get _url_: EOF`, check that the service endpoint used for the Cloud Storage Pool does not use HTTP for a container or bucket that requires HTTPS.
 * If the error message contains `Get _url_: net/http: request canceled while waiting for connection`, verify that the network configuration allows Storage Nodes to access the service endpoint used for the Cloud Storage Pool.
 * For all other endpoint error messages, try one or more of the following:
  ** Create an external container or bucket with the same name you entered for the Cloud Storage Pool, and try to save the new Cloud Storage Pool again.
