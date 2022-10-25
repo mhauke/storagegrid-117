@@ -50,7 +50,7 @@ When you install StorageGRID 11.7 on a new grid, storage pools are automatically
 == Paul's what's new
 === New firewall controls and changes to untrusted Client Networks
 
-You can now better manage access to your grid using the new Firewall control page (*CONFIGURATION* > *Security* > *Firewall control*). This page enables you to manage the external access of ports on nodes in your grid, and to define host addresses and IP subnets that are allowed access to closed ports. The untrusted Client Network settings have been moved to the Firewall control page and have also been enhanced with the ability to select additional ports you want open on the untrusted Client Network. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
+You can now better manage access to your grid using the new Firewall control page (*CONFIGURATION* > *Security* > *Firewall control*). This page enables you to manage the external access of ports on nodes in your grid, and to define host addresses and IP subnets that are allowed access to closed ports. The untrusted Client Network settings have been moved to the Firewall control page and have also been enhanced with the ability to select additional ports you want open when untrusted Client Network is configured. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
 
 
 == Santhosh's what's new

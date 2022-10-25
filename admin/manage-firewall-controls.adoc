@@ -15,17 +15,22 @@ Use the three tabs on the Firewall control page to customize the access you need
 
 * *Privileged IP address list*: Use this tab to allow selected access to closed ports. You can add IP addresses or subnets in CIDR notation that can access ports closed using the Manage external access tab.
 * *Manage external access*: Use this tab to close ports that are open by default, or reopen ports previously closed.
-* *Untrusted Client Network*: If a node is in an untrusted client network, the node allows client connections only on explicitly configured load balancer endpoints. Use this tab to specify whether a node trusts inbound traffic from the Client Network. The settings on this tab override the settings in the Manage external access tab. 
+* *Untrusted Client Network*: Use this tab to specify whether a node trusts inbound traffic from the Client Network. 
 +
-If the Client Network is untrusted, there is no external access for the node, even though some of the node's ports are open in the Manage external access tab. Only specific ports configured on the Untrusted Client Network are open on the client network, regardless of whether that port is closed on other networks.
+This tab also provides the option to specify additional ports you want open when when untrusted Client Network is configured. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
++
+The settings on this tab override the settings in the Manage external access tab. 
 
-This tab also provides the option to specify additional ports you want open on the untrusted Client Network. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
+**	A node with an untrusted client network will accept only connections on load balancer endpoint ports configured on that node (global, node interface and node type bound endpoints).
+** Additional ports opened under the Untrusted client network tab are open on all untrusted client networks, even if no load balancer endpoints are configured.
+** Load balancer endpoint ports and selected additional ports _are the only open ports_ on untrusted client networks, regardless of the settings on the Manage external networks tab.
+** When trusted, all ports opened under the Manage external access tab are accessible, as well as any load balancer endpoints opened on the Client Network.
 
 NOTE: The settings you make on one tab can affect the access changes you make on another tab. Be sure to check the settings on all tabs to ensure your network behaves in the way you expect. 
 
-To configure internal firewall controls, see xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
+To configure internal firewall controls, see link:../admin/configure-firewall-controls.html[Configure firewall controls].
 
-For more information on external firewalls and network security, see xref:../admin/controlling-access-through-firewalls.adoc[Control access through external firewalls].
+For more information on external firewalls and network security, see link:../admin/controlling-access-through-firewalls.html[Control access through external firewalls].
 
 == Privileged IP address list and Manage external access tabs
 The Privileged IP address list tab enables you to register one or more IP addresses that are granted access to grid ports that are closed. The Manage external access tab enables you to close external access to selected external ports or all open external ports (external ports are ports that are accessible by non-grid nodes by default). These two tabs often can be used together to customize the exact network access you need to allow for your grid.
@@ -51,7 +56,6 @@ Suppose you want to limit access to the Grid Manager and Tenant manager for secu
 . Use the toggle on the Manage external access tab to allow access to port 9443. 
 
 After you save your configuration, hosts will not be able to access port 443, but they can still access the Grid Manager via port 8443 and the Tenant manger via port 9443.
- 
 
 === Example 3: Lock down sensitive ports
 Suppose you want to lock down sensitive ports and the service on that port (for example, SSH on port 22). You could use the following general steps: 
@@ -75,15 +79,15 @@ After you save your configuration, the Storage Node no longer allows Swift conne
 
 If you are using a Client Network, you can help secure StorageGRID from hostile attacks by accepting inbound client traffic only on explicitly configured endpoints or additional ports you select on this tab. 
 
-By default, the Client Network on each grid node is _trusted_. That is, by default, StorageGRID trusts inbound connections to each grid node on all xref:../network/external-communications.adoc[available external ports].
+By default, the Client Network on each grid node is _trusted_. That is, by default, StorageGRID trusts inbound connections to each grid node on all link:../network/external-communications.html[available external ports].
 
-You can reduce the threat of hostile attacks on your StorageGRID system by specifying that the Client Network on each node be _untrusted_. If a node's Client Network is untrusted, the node only accepts inbound connections on ports explicitly configured as load balancer endpoints and any additional ports you designate using the Untrusted Client Network tab on the Firewall control page. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] and xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
+You can reduce the threat of hostile attacks on your StorageGRID system by specifying that the Client Network on each node be _untrusted_. If a node's Client Network is untrusted, the node only accepts inbound connections on ports explicitly configured as load balancer endpoints and any additional ports you designate using the Untrusted Client Network tab on the Firewall control page. See link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints] and link:../admin/configure-firewall-controls.html[Configure firewall controls].
 
 === Example 1: Gateway Node only accepts HTTPS S3 requests
 
 Suppose you want a Gateway Node to refuse all inbound traffic on the Client Network except for HTTPS S3 requests. You would perform these general steps:
 
-. From the xref:../admin/configuring-load-balancer-endpoints.adoc[Load balancer endpoints] page, configure a load balancer endpoint for S3 over HTTPS on port 443.
+. From the link:../admin/configuring-load-balancer-endpoints.html[Load balancer endpoints] page, configure a load balancer endpoint for S3 over HTTPS on port 443.
 . From the Firewall control page, select Untrusted to specify that the Client Network on the Gateway Node is untrusted.
 
 After you save your configuration, all inbound traffic on the Gateway Node's Client Network is dropped except for HTTPS S3 requests on port 443 and ICMP echo (ping) requests.
@@ -94,7 +98,7 @@ Suppose you want to enable outbound S3 platform services traffic from a Storage 
 
 * From the Untrusted Client Networks tab of the Firewall control page, indicate that the Client Network on the Storage Node is untrusted.
 
-After you save your configuration, the Storage Node no longer accepts any incoming traffic on the Client Network, but it continues to allow outbound requests to Amazon Web Services.
+After you save your configuration, the Storage Node no longer accepts any incoming traffic on the Client Network, but it continues to allow outbound requests to configured platform services destinations.
 
 === Example 3: Limiting access to Grid Manager to a subnet
 
