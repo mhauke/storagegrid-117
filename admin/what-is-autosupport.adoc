@@ -29,7 +29,7 @@ You can choose one of three protocols for sending AutoSupport messages:
 * HTTP
 * SMTP
 
-NOTE: As of the StorageGRID 11.7 release, NetApp's servers will reject AutoSupport messages sent using HTTP. You must xref:configuring-admin-proxy-settings.adoc[create a proxy server] to convert AutoSupport messages to HTTPS.
+NOTE: As of the StorageGRID 11.7 release, NetApp's AutoSupport servers will reject messages sent using HTTP. You must xref:configuring-admin-proxy-settings.adoc[configure a proxy server] to convert AutoSupport messages to HTTPS.
 
 If you use SMTP as the protocol for AutoSupport messages, you must configure an SMTP mail server.
 
