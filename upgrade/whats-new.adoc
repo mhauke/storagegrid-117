@@ -42,23 +42,26 @@ Related to this change, Tenant Manager users can now enable default retention wh
 See xref:../tenant/using-s3-object-lock.adoc[Use S3 Object Lock to retain objects], xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock], and xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket].
 
 === Can rename grid, sites, and nodes
-A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview] for details.
+A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview].
+
+=== Grid federation and cross-grid replication
+You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery and ransomware mitigation. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].
+
+=== Delete all objects from bucket
+Tenant users can now delete all objects in a bucket, so the bucket can be deleted. See xref:../tenant/delete-s3-bucket-objects.adoc[Delete all objects from bucket].
 
 === Storage pools created for each site during installation
 When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
 
-=== New audit message category and new audit messages
-A new audit message category was added for ILM operations, which includes the IDEL, LKCU, and ORLM messages. This new category is set to *Normal*. See xref:../audit/ilm-audit-messages.adoc[ILM operations audit messages].
-
-The following new audit messages were added:
-
-* *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
-
-=== Grid federation
-You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].
-
 === Can assign custom storage grades to new Storage Nodes
 When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See xref:../expand/performing-expansion.adoc[Perform expansion].
+
+=== New audit message category and new audit message
+A new audit message category was added for ILM operations, which includes the IDEL, LKCU, and ORLM messages. This new category is set to *Normal*. See xref:../audit/ilm-audit-messages.adoc[ILM operations audit messages].
+
+The following new audit message was added:
+
+* *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
 
 === New alerts
 The following new alerts were added for StorageGRID 11.7:
