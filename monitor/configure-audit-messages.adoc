@@ -57,8 +57,6 @@ NOTE: During upgrades, audit level configurations will not be effective immediat
 .Steps
 
 . Select *CONFIGURATION* > *Monitoring* > *Audit and syslog server*.
-+
-image::../media/audit-messages-main-page.png[Audit messages main page]
 
 . For each category of audit message, select an audit level from the drop-down list:
 +
@@ -139,13 +137,11 @@ NOTE: Audit information generated on every local node is stored in `/var/local/l
 
 . Select *Save*.
 +
-A warning message appears: 
-+
-CAUTION: Change the log destination?
+A warning message appears.
 
-. Confirm that you want to change the destination for audit information by selecting *OK*.
+. Select *OK* to confirm that you want to change the destination for audit information.
 +
-A green banner appears notifying you that your audit configuration has been saved successfully. 
+A green banner appears notifying you that your audit configuration has been saved. 
 +
 New logs are sent to the destinations you selected. Existing logs remain in their current location.
 
