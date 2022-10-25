@@ -31,14 +31,28 @@ If you enable cross-grid replication for the same bucket on both grids, objects 
 
 image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
 
-==== [[client-deletes]]Replication of client delete markers
+=== [[client-deletes]]Considerations for deleting objects
 
-When enabling cross-grid replication for a bucket, you can specify what happens when objects in the bucket are deleted by S3 client operations.
+To understand what happens when objects are deleted from a bucket that has cross-grid replication enabled, start by reviewing how objects are deleted from buckets that have versioning enabled.
 
-* If you choose to replicate client delete markers, a delete marker is added to the source bucket and replicated to the destination bucket when an S3 client deletes an object. In effect, objects are deleted on both grids.
+* When versioning is enabled and an S3 client issues a simple `DELETE Object` request, StorageGRID does not permanently delete the object. Instead, it adds a delete marker to the bucket, which serves as the current version of the object with a new ID. The delete marker causes StorageGRID to behave as if the object was deleted.
++
+If a bucket contains a delete marker for an object, a simple `GET` request fails with `404 No Object Found`. In contrast, a `GET versionId` request will succeed and return the requested object version.
 
-*  If you choose not to replicate client delete markers, a delete marker is added to the source bucket, but it is not replicated to the destination bucket. In effect, objects that are deleted on the source grid are not deleted on the destination grid.
+* When versioning is enabled and an S3 client issues a `DELETE Object versionId` request, the object version (or the delete marker) is permanently removed, but no delete marker is added the bucket. Neither a simple `GET` request or a `GET versionId` request for that object version will return the object.
+
+When enabling cross-grid replication for a bucket, you can specify what happens when an S3 client issues `DELETE Object` requests:
+
+* If you choose to replicate client delete markers, a delete marker is added to the source bucket and replicated to the destination bucket when an S3 client issues a `DELETE Object` request. In effect, objects are deleted on both grids.
+
+*  If you choose not to replicate client delete markers, a delete marker is added to the source bucket, but it is not replicated to the destination bucket. In effect, objects that the client deletes on the source grid are not deleted on the destination grid.
+
+IMPORTANT: The option to replicate client delete markers does not affect `DELETE Object versionId` requests, which do not add delete markers. These requests to permanently remove objects are never replicated to the other grid in a grid federation connnection.
 
 In the figure, the grids are configured for cross-grid replication in both directions, but client delete markers are not replicated from `my-bucket` on Grid 1 to `my-bucket` on Grid 2.
 
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
+
+
+
+

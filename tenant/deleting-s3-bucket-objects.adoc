@@ -1,23 +1,23 @@
 ---
-permalink: tenant/deleting-s3-bucket-objects.html
+permalink: tenant/delete-all-bucket-objects.html
 sidebar: sidebar
-keywords: how to delete S3 bucket objects, empty bucket
-summary: 'You can use the Tenant Manager to delete all of the objects in one or more S3 buckets.'
+keywords: how to remove all bucket objects, empty bucket
+summary: 'You can use the Tenant Manager to delete all objects and all object versions in one or more buckets.'
 ---
-= Delete objects from S3 bucket
+= Delete all objects from bucket
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the Tenant Manager to delete all of the objects in one or more S3 buckets.
+You can use the Tenant Manager to delete all objects and all object versions in one or more buckets.
 
-//Delete all bucket objects
-When you delete all bucket objects, StorageGRID permanently deletes all copies of the bucket's objects, including any related metadata. You will not be able to recover this information.
+When you delete all objects from a bucket, StorageGRID permanently deletes all copies of all objects in the selected bucket from all nodes and sites in your StorageGRID system. If the bucket has versioning enabled, all versions of each object are removed. StorageGRID also removes any related object metadata. You will not be able to recover this information.
 
-Deleting all bucket objects might take minutes, days, or even weeks, based on the number of objects and concurrent operations. While objects are being deleted, the bucket's state is Read only: Deleting all objects.
+Deleting all bucket objects might take minutes, days, or even weeks, based on the number of objects and concurrent operations. While objects are being deleted, the bucket's state is *Read only: Deleting all objects*.
 
-Buckets with S3 Object Lock enabled might remain in the Read only: Deleting all objects state for years. This state persists until the retention date is reached for all objects and any legal holds are removed.
+Buckets with S3 Object Lock enabled might remain in the *Read only: Deleting all objects* state for years. This state persists until the retention date is reached for all objects and any legal holds are removed.
 
+If a bucket has cross-grid replication enabled, deleting all objects from one grid does not delete all objects from the corresponding bucket on the other grid. In addition, no delete markers are replicated to the other grid.
 
 .What you'll need
 
@@ -38,20 +38,22 @@ The Buckets page appears and shows all existing S3 buckets.
 .Actions menu
 --
 .. Select the check box for each bucket you want to delete objects from. 
-.. Select *Actions* > *Delete bucket objects*.
+.. Select *Actions* > *Delete objects in bucket*.
 
 --
 
 .Details page
 --
 .. Select a bucket name to display its details.
-.. Select *Delete bucket objects*.
+.. Select *Delete objects in bucket*.
 
 --
 
 ====
 
 
-. When the confirmation dialog box appears, enter *Yes* and select *OK*.
+. When the confirmation dialog box appears, review the details, enter *Yes*, and select *OK*.
 +
-StorageGRID deletes objects from each bucket. This operation might take a few minutes.
+Wait for the delete operation to begin. After a few minutes, a warning message appears on the bucket details page, which includes a progress bar.
+
+
