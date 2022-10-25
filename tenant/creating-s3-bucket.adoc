@@ -20,7 +20,7 @@ NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objec
 
 * If you plan to enable S3 Object Lock for a bucket, a grid admin has enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
 
-== Access wizard
+== Access the wizard
 . Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
 
 . Select *Create bucket*.
@@ -109,5 +109,5 @@ The *Default retention period* indicates how long new objects added to this buck
 +
 The bucket is created and added to the table on the Buckets page.
 
-. Optionally, select *Go to bucket details page* to xref:viewing-s3-bucket-details.adoc[View bucket details] and perform additional configuration.
+. Optionally, select *Go to bucket details page* to xref:viewing-s3-bucket-details.adoc[view bucket details] and perform additional configuration.
 

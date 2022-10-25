@@ -1,10 +1,10 @@
 ---
 permalink: tenant/viewing-s3-bucket-details.html
 sidebar: sidebar
-keywords: how to view s3 bucket details
+keywords: how to view bucket details
 summary: 'You can view the buckets in your tenant account.'
 ---
-= View S3 buckets
+= View bucket details
 :icons: font
 :imagesdir: ../media/
 
@@ -62,10 +62,10 @@ The bucket details page appears. From this page, you can perform the following t
 
 * Configure and manage bucket options, such as xref:changing-consistency-level.adoc[consistency level], xref:enabling-or-disabling-last-access-time-updates.adoc[last access time updates], xref:changing-bucket-versioning.adoc[object versioning], xref:using-s3-object-lock.adoc[S3 Object Lock] and xref:update-default-retention-settings.adoc[default bucket retention]
 * Configure bucket access, such as xref:configuring-cross-origin-resource-sharing-cors.adoc[Cross-Origin Resource Sharing (CORS)]
-* Manage xref:what-platform-services-are.adoc[Platform services] (if allowed for the tenant), including replication, event notifications, and search integration
-* Configure and manage cross-grid replication (if allowed for the tenant) to replicate objects ingested into this bucket to another StorageGRID system
+* Manage xref:what-platform-services-are.adoc[platform services] (if allowed for the tenant), including replication, event notifications, and search integration
+* Enable and xref:bucket-manage-cross-grid replication.adoc[manage cross-grid replication] (if allowed for the tenant) to replicate objects ingested into this bucket to another StorageGRID system
 * Access the experimental xref:use-s3-console.adoc[S3 Console] to add objects to the bucket
-* Delete all objects in a bucket
+* xref:deleting-s3-bucket-objects.adoc[Delete all objects in a bucket]
 * xref:deleting-s3-bucket.adoc[Delete a bucket] that is already empty
 
 

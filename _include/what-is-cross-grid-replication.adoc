@@ -10,7 +10,9 @@ To use cross-grid replication:
 
 * A grid admin creates a tenant account and assigns the *Use grid federation connection* permission for a specific grid federation connection. When the new tenant is saved, an identical tenant is automatically created on the other grid in the connection.
 
-* A tenant user signs in the account on each grid and creates identical new buckets. These buckets: 
+* The tenant root user signs in to the account on each grid and creates one or more groups and users and optionally clones them to the other grid.
+
+* The tenant root user (or a cloned tenant user with the Root Access or Manage All Buckets permission) creates identical new buckets on each grid. These buckets: 
 
 ** Must have the same name and region
 ** Must have versioning enabled
@@ -18,7 +20,7 @@ To use cross-grid replication:
 ** Must be empty
 ** Must not use bucket-level encryption
 
-* A tenant user updates bucket settings to enable cross-grid replication. Replication can be configured to occur between buckets in one direction or in both directions.
+* The tenant root user (or a cloned tenant user with the Root Access or Manage All Buckets permission) updates bucket settings to enable cross-grid replication. Replication can be configured to occur between buckets in one direction or in both directions.
 
 ==== [[replication-one-direction]]Replication in one direction
 
