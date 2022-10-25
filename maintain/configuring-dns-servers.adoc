@@ -11,6 +11,8 @@ summary: 'You can add, remove, and update domain name system \(DNS\) servers, so
 [.lead]
 You can add, remove, and update domain name system (DNS) servers, so that you can use fully qualified domain name (FQDN) hostnames rather than IP addresses.
 
+To use fully qualified domain names (FQDNs) instead of IP addresses when specifying hostnames for external destinations, specify the IP address of each domain name system (DNS) server you will use. These entries are used for AutoSupport, alert emails, SNMP notifications, platform services endpoints, Cloud Storage Pools, and more.
+
 .What you'll need
 
 * You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
@@ -26,8 +28,12 @@ If the DNS server information is omitted or incorrectly configured, a DNST alarm
 .Steps
 
 . Select *MAINTENANCE* > *Network* > *DNS servers*.
-. In the Servers section, add update, or remove DNS server entries, as necessary.
+. Select *Add another server* to add a new DNS server.
+
+NOTE: You should specify the IP address of at least one (recommended) and not more six DNS servers. Specifying at least two servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. The best practice is to specify at least two DNS servers per site.
 +
-The best practice is to specify at least two DNS servers per site. You can specify up to six DNS servers.
+
+//In the Servers section, add update, or remove DNS server entries, as necessary.
+
 
 . Click *Save*.
