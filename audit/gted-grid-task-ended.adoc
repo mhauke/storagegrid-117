@@ -11,7 +11,7 @@ summary: 'This audit message indicates that the CMN service has finished process
 [.lead]
 This audit message indicates that the CMN service has finished processing the specified grid task and has moved the task to the Historical table. If the result is SUCS, ABRT, or ROLF, there will be a corresponding Grid Task Started audit message. The other results indicate that processing of this grid task never started.
 
-[options="header"]
+[cols="1a,1a,4a" options="header"]
 |===
 | Code| Field| Description
 a|

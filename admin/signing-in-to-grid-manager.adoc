@@ -102,9 +102,9 @@ image::../media/sign_in_grid_manager_sso.png[Select Grid Manager from recent acc
 // end tabbed area
 
 
-When you are signed in, the home page of the Grid Manager appears, which includes the Dashboard. To learn what information is provided, see xref:../monitor/viewing-dashboard.adoc[View the Dashboard].
+When you are signed in, the home page of the Grid Manager appears, which includes the Dashboard. To learn what information is provided, see xref:../monitor/viewing-dashboard.adoc[View and configure the Dashboard].
 
-image::../media/grid_manager_dashboard.png[Dashboard]
+image::../media/grid_manager_dashboard.png[dashboard]
 
 == Sign into another Admin Node
 Follow these steps to sign in to another Admin Node.
@@ -124,7 +124,7 @@ If StorageGRID is not using SSO:
 
 .Using SSO
 --
-If StorageGRID is using SSO and you have signed in to one Admin Node, you can access other Admin Nodes without having to sign in again. Simply enter the fully qualified domain name or IP address of the other Admin Node in the browser's address bar.
+If StorageGRID is using SSO and you have signed in to one Admin Node, you can access other Admin Nodes without having to sign in again. Enter the fully qualified domain name or IP address of the other Admin Node in the browser's address bar.
 
 If your SSO session expires, you are prompted for your credentials again.
 

@@ -11,33 +11,40 @@ summary: 'Even though the StorageGRID system can continue to operate when errors
 [.lead]
 Even though the StorageGRID system can continue to operate when errors occur or parts of the grid are unavailable, you should monitor and address potential issues before they affect the grid's efficiency or availability.
 
-A busy system generates large amounts of information. This section provides guidance about the most important information to monitor on an ongoing basis.
+.What you'll need
+
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have specific access permissions.
+
+.About monitoring tasks
+
+A busy system generates large amounts of information. The following list provides guidance about the most important information to monitor on an ongoing basis.
 
 [cols="2a,1a" options="header"]
 |===
 | What to monitor| Frequency
 
-|xref:monitoring-system-health.adoc[System health status]
+| xref:monitoring-system-health.adoc[System health status]
 |Daily
 
 |Rate at which xref:monitoring-storage-capacity.adoc[Storage Node object and metadata capacity] is being consumed
 |Weekly
 
-|xref:monitoring-information-lifecycle-management.adoc[Information lifecycle management operations]
+| xref:monitoring-information-lifecycle-management.adoc[Information lifecycle management operations]
 |Weekly
 
-|xref:monitoring-network-connections-and-performance.adoc[Networking and system resources]
+| xref:monitoring-network-connections-and-performance.adoc[Networking and system resources]
 |Weekly
 
-|xref:monitoring-tenant-activity.adoc[Tenant activity]
+| xref:monitoring-tenant-activity.adoc[Tenant activity]
 |Weekly
 
-|xref:monitoring-archival-capacity.adoc[Capacity of the external archival storage system]
+| xref:monitoring-archival-capacity.adoc[Capacity of the external archival storage system]
 |Weekly
 
-|xref:monitoring-load-balancing-operations.adoc[Load balancing operations]
+| xref:monitoring-load-balancing-operations.adoc[Load balancing operations]
 |After the initial configuration and after any configuration changes
 
-|xref:applying-hotfixes-or-upgrading-software-if-necessary.adoc[Availability of software hotfixes and software upgrades]
+| xref:applying-hotfixes-or-upgrading-software-if-necessary.adoc[Availability of software hotfixes and software upgrades]
 |Monthly
 |===

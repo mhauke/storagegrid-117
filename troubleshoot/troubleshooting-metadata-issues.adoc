@@ -40,13 +40,13 @@ When this Prometheus expression reaches certain thresholds, the *Low metadata st
 * *Minor*: Object metadata is using 70% or more of the allowed metadata space. You should add new Storage Nodes as soon as possible.
 * *Major*: Object metadata is using 90% or more of the allowed metadata space. You must add new Storage Nodes immediately.
 +
-IMPORTANT: When object metadata is using 90% or more of the allowed metadata space, a warning appears on the Dashboard. If this warning appears, you must add new Storage Nodes immediately. You must never allow object metadata to use more than 100% of the allowed space.
+IMPORTANT: When object metadata is using 90% or more of the allowed metadata space, a warning appears on the dashboard. If this warning appears, you must add new Storage Nodes immediately. You must never allow object metadata to use more than 100% of the allowed space.
 
 * *Critical*: Object metadata is using 100% or more of the allowed metadata space and is starting to consume the space required for essential database operations. You must stop the ingest of new objects, and you must add new Storage Nodes immediately.
 
 In the following example, object metadata is using more than 100% of the allowed metadata space. This is a critical situation, which will result in inefficient database operation and errors.
 
-image::../media/cdlp_dashboard_alarm.gif[Metadata Dashboard Alarm]
+image::../media/cdlp_dashboard_alarm.gif[Metadata dashboard Alarm]
 
 IMPORTANT: If the size of volume 0 is smaller than the Metadata Reserved Space storage option (for example, in a non-production environment), the calculation for the *Low metadata storage* alert might be inaccurate.
 

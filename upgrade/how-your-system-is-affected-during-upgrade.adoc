@@ -26,9 +26,9 @@ To allow for continued availability, you must ensure that objects are stored red
 
 During the StorageGRID 11.7 upgrade:
 
-* All StorageGRID appliance nodes are automatically upgraded to StorageGRID Appliance Installer firmware *version x.y*.
-* SG6060 and SGF6024 appliances are automatically upgraded to BIOS firmware version 3B07.EX and BMC firmware *version BMC x.yy.zz*.
-* SG100 and SG1000 appliances are automatically upgraded to BIOS firmware version 3B12.EC and BMC firmware *version x.yy.zz*.
+* All StorageGRID appliance nodes are automatically upgraded to StorageGRID Appliance Installer firmware *version tbd*.
+* SG6060 and SGF6024 appliances are automatically upgraded to BIOS firmware *version tbd* and BMC firmware *version BMC tbd*.
+* SG100 and SG1000 appliances are automatically upgraded to BIOS firmware *version tbd* and BMC firmware *version tbd*.
 
 == Alerts might be triggered
 
@@ -38,7 +38,7 @@ For example, you might see the *Unable to communicate with node* alert when serv
 
 The *ILM placement unachievable* alert might be triggered when Storage Nodes are stopped during the upgrade to StorageGRID 11.7. This alert might persist for 1 day after the upgrade completes.
 
-After the upgrade completes, you can review any upgrade-related alerts by selecting *Recently resolved alerts* or *Current alerts* from the Grid Manager Dashboard.
+After the upgrade completes, you can review any upgrade-related alerts by selecting *Recently resolved alerts* or *Current alerts* from the Grid Manager dashboard.
 
 
 == Many SNMP notifications are generated
@@ -77,5 +77,8 @@ This error will resolve after the upgrade to 11.7 is complete.
 
 While the 11.7 upgrade is in progress, use the following tools to view bucket details or manage buckets, instead of using the Tenant Manager:
 
-*	To perform standard S3 operations on a bucket, use either the xref:../s3/operations-on-bucket.adoc[S3 REST API] or the xref:../tenant/understanding-tenant-management-api.adoc[Tenant Management API].
+*	To perform standard S3 operations on a bucket, use either the xref:../s3/operations-on-buckets.adoc[S3 REST API] or the xref:../tenant/understanding-tenant-management-api.adoc[Tenant Management API].
 * To perform StorageGRID custom operations on a bucket (for example, viewing and modifying the bucket consistency level, enabling or disabling last access time updates, or configuring search integration), use the Tenant Management API.
+
+== TLS ciphers or SSH configurations might change
+If TLS ciphers or SSH configurations have been manually changed or are inconsistent across nodes, all nodes will be overwritten to be either Legacy Compatibility or Modern Compatibility upon upgrade. If you used `fips-ciphers.sh` in StorageGRID 11.6, the Common Criteria policy is applied to all nodes. Otherwise, the Legacy Compatibility policy is applied. If you require Common Criteria validated configurations, you must use the Common Criteria policy or the FIPS strict policy. If you did not use `fips-ciphers.sh`, you should use the new Modern Compatibility setting after upgrade completes. To configure ciphers, go to *CONFIGURATION* > *Security* > *Security settings* and select *TLS and SSH policies*.

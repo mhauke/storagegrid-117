@@ -80,13 +80,13 @@ The tab displays a table with all of the external ports (ports that are accessib
 * Select *Open all displayed ports* to open all ports listed in the table. 
 * Select *Close all displayed ports* to close all ports listed in the table.
 +
+
 CAUTION: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. 
 
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available ports. Use the search field to find the settings for any external port by entering a port number. You can enter a partial port number. For example, if you enter a *2*, all ports that have the string "2" as part of their name are displayed.
 
 [start=3]
 . Select *Save*
-
 
 --
 .Untrusted Client Network

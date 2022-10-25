@@ -2,7 +2,7 @@ section: installconfig
 title: Install appliance hardware
 entries:
   - title: Overview
-    pdf-filename: Install and configure StorageGRID
+    pdf-filename: Install StorageGRID appliance hardware
     url: "/installconfig/index.html"
   - title: Appliance hardware descriptions
     entries:
@@ -14,8 +14,6 @@ entries:
       url: "/installconfig/hardware-description-sg5600.html"
     - title: SG100 and SG1000 hardware
       url: "/installconfig/hardware-description-sg100-and-1000.html"
-  - title: Installation checklist
-    url: "/installconfig/installation-checklist.html"
   - title: Prepare for installation
     entries:
     - title: Prepare site
@@ -62,7 +60,7 @@ entries:
         url: "/installconfig/gathering-installation-information-sg5600.html"
       - title: SG100 and SG1000
         url: "/installconfig/gathering-installation-information-sg100-and-sg1000.html"
-  - title: Install appliance
+  - title: Install hardware
     entries:
     - title: Overview
       url: "/installconfig/install-appliance-hardware.html"
@@ -109,7 +107,7 @@ entries:
         url: "/installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.html"
     - title: View status indicators and codes
       url: "/installconfig/viewing-status-indicators.html"
-  - title: Initial hardware configuration
+  - title: Set up hardware
     entries:
     - title: Overview
       url: "/installconfig/configuring-hardware.html"
@@ -141,7 +139,7 @@ entries:
       url: "/installconfig/optional-changing-raid-mode.html"
     - title: 'Optional - Remap network ports for appliance (Storage Nodes only)'
       url: "/installconfig/optional-remapping-network-ports-for-appliance.html"
-    - title: 'Configure BMC interface (SG6000 and SG1000 only)'
+    - title: 'Configure BMC interface (SG6000, SG100, and SG1000)'
       entries:
       - title: Overview
         url: "/installconfig/configuring-bmc-interface.html"
@@ -155,7 +153,7 @@ entries:
         url: "/installconfig/configuring-snmp-settings-for-bmc.html"
       - title: Set up email notifications for alerts
         url: "/installconfig/setting-up-email-notifications-for-alerts.html"
-  - title: Deploy appliance node to grid
+  - title: Deploy appliance node
     entries:
     - title: Deploy appliance Storage Node
       url: "/installconfig/deploying-appliance-storage-node.html"

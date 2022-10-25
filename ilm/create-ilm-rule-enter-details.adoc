@@ -17,8 +17,6 @@ Entering a description and defining filters for the rule are optional.
 
 When evaluating an object against an xref:what-ilm-rule-is.adoc[ILM rule], StorageGRID compares the object metadata to the rule's filters. If the object metadata matches all filters, StorageGRID uses the rule to place the object. You can design a rule to apply to all objects, or you can specify basic filters, such as one or more tenant accounts or bucket names, or advanced filters, such as the object's size or user metadata.
 
-//image::../media/ilm_create_ilm_rule_wizard_1.png[Create ILM Rule step 1 of 3]
-
 .Steps
 
 . Enter a unique name for the rule in the *Name* field.
@@ -38,6 +36,12 @@ If you do not have either the Root access permission or the Tenant accounts perm
 If *matches all* is selected (default), the rule applies to all S3 buckets or Swift containers.
 
 . For S3 tenants, optionally select *Yes* to apply the rule only to older object versions in S3 buckets that have versioning enabled.
++
+If you select *Yes*, "`Noncurrent time`" will be automatically selected for Reference time in xref:create-ilm-rule-define-placements.adoc[Step 2 of the Create an ILM rule wizard].
++
+NOTE: Noncurrent time applies only to S3 objects in versioning-enabled buckets. See xref:../s3/operations-on-buckets.adoc[Operations on buckets, PUT Bucket versioning] and xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock].
++
+You can use this option to reduce the storage impact of versioned objects by filtering for noncurrent object versions. See xref:example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[Example 4: ILM rules and policy for S3 versioned objects].
 
 . Optionally, select *Add an advanced filter* to specify additional filters.
 +
@@ -55,18 +59,18 @@ The table shows the types of metadata you can specify in advanced filters, the o
 |===
 | Metadata type| Supported operators| Metadata value
 
-|Ingest Time (microseconds)
+|Ingest time (microseconds)
 |
 * equals
 * does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
+* greater than or equal to
 
 |Time and date the object was ingested.
 
-*Note:* To avoid resource issues when activating an new ILM policy, you can use the Ingest Time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest Time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
+*Note:* To avoid resource issues when activating an new ILM policy, you can use the Ingest time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
 
 |Key
 
@@ -83,19 +87,19 @@ The table shows the types of metadata you can specify in advanced filters, the o
 
 For example, you might want to match objects that end with `.txt` or start with `test-object/`.
 
-|Last Access Time (microseconds)
+|Last access time (microseconds)
 |
 * equals
 * does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
+* greater than or equal to
 * exists
 * does not exist
 |Time and date the object was last retrieved (read or viewed).
 
-*Note:* If you plan to xref:using-last-access-time-in-ilm-rules.adoc[use last access time] as an advanced filter, Last Access Time updates must be enabled for the S3 bucket or Swift container.
+*Note:* If you plan to xref:using-last-access-time-in-ilm-rules.adoc[use last access time] as an advanced filter, Last access time updates must be enabled for the S3 bucket or Swift container.
 
 |Location Constraint (S3 only)
 |
@@ -105,15 +109,15 @@ For example, you might want to match objects that end with `.txt` or start with 
 
 *Note:* A value of us-east-1 will match objects in buckets created in the us-east-1 region as well as objects in buckets that have no region specified. See xref:configuring-regions-optional-and-s3-only.adoc[Configure regions (optional and S3 only)].
 
-|Object Size (MB)
+|Object Size
 |
 * equals
-* not equals
+* does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
-|The object's size in MB.
+* greater than or equal to
+|The object's size.
 
 Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 

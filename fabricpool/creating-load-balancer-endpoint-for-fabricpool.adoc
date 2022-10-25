@@ -56,21 +56,8 @@ You will provide this number to ONTAP when you attach StorageGRID as a FabricPoo
 
 . For the *Select binding mode* step, specify the binding mode. The binding mode controls how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
-[cols="1a,2a" options="header"]
-|===
-|Option| Description
+include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 
-|Global (recommended)
-|Clients can access the endpoint using the fully qualified domain name (FQDN), the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) address of any HA group. 
-
-|Node interfaces
-|Clients must access the endpoint using the IP address of a selected node and network interface.
-
-|HA groups VIPs
-|Clients can only access the endpoint using a VIP address of an HA group. Use this selection only if you require much higher levels of isolation of workloads.
-
-|===
- 
 
 . For the *Tenant access* step, select one of the following:
 +

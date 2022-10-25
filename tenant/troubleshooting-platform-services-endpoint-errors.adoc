@@ -2,22 +2,22 @@
 permalink: tenant/troubleshooting-platform-services-endpoint-errors.html
 sidebar: sidebar
 keywords: how to troubleshoot platform services endpoint
-summary: 'If an error occurs when StorageGRID attempts to communicate with a platform services endpoint, a message is displayed on the Dashboard. On the Platform services endpoints page, the Last error column indicates how long ago the error occurred. No error is displayed if the permissions associated with an endpoint’s credentials are incorrect.'
+summary: 'If an error occurs when StorageGRID attempts to communicate with a platform services endpoint, a message is displayed on the dashboard. On the Platform services endpoints page, the Last error column indicates how long ago the error occurred. No error is displayed if the permissions associated with an endpoint’s credentials are incorrect.'
 ---
 = Troubleshoot platform services endpoint errors
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If an error occurs when StorageGRID attempts to communicate with a platform services endpoint, a message is displayed on the Dashboard. On the Platform services endpoints page, the Last error column indicates how long ago the error occurred. No error is displayed if the permissions associated with an endpoint's credentials are incorrect.
+If an error occurs when StorageGRID attempts to communicate with a platform services endpoint, a message is displayed on the dashboard. On the Platform services endpoints page, the Last error column indicates how long ago the error occurred. No error is displayed if the permissions associated with an endpoint's credentials are incorrect.
 
 == Determine if error has occurred
 
 If any platform services endpoint errors have occurred within the past 7 days, the Tenant Manager Dashboard displays an alert message. You can go the Platform services endpoints page to see more details about the error.
 
-image::../media/tenant_dashboard_endpoint_error.png[endpoint error message on the Dashboard]
+image::../media/tenant_dashboard_endpoint_error.png[endpoint error message on the dashboard]
 
-The same error that appears on the Dashboard also appears at the top of the Platform services endpoints page. To view a more detailed error message:
+The same error that appears on the dashboard also appears at the top of the Platform services endpoints page. To view a more detailed error message:
 
 .Steps
 

@@ -28,8 +28,8 @@ Several bucket operations and object operations are tracked in the StorageGRID a
 == Object operations tracked in the audit logs
 
 * Complete Multipart Upload
-* Upload Part (when the ILM rule uses the Strict or Balanced ingest behaviors)
-* Upload Part - Copy (when the ILM rule uses the Strict or Balanced ingest behaviors)
+* Upload Part (when the ILM rule uses the Balanced or Strict ingest behaviors)
+* Upload Part - Copy (when the ILM rule uses the Balanced or Strict ingest behaviors)
 * DELETE Object
 * GET Object
 * HEAD Object

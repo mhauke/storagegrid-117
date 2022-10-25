@@ -1,7 +1,7 @@
 ---
 permalink: network/internal-grid-node-communications.html
 sidebar: sidebar
-keywords: storagegrid, network port, internal communications, ports, TCP, UDP, grid communications
+keywords: storagegrid, network port, internal communications, ports, TCP, UDP, grid communications, port
 summary: 'The StorageGRID internal firewall only allows incoming connections to specific ports on the Grid Network, with the exception of ports 22, 80, 123, and 443 \(see the information about external communications\). Connections are also accepted on ports defined by load balancer endpoints.'
 ---
 = Internal grid node communications
@@ -83,6 +83,16 @@ a|
 Primary Admin Node
 a|
 Used for communicating status to the primary Admin Node during installation and other maintenance procedures.
+a|
+1055
+a|
+TCP
+a|
+Node being added in an expansion or recovery operation
+a|
+Primary Admin Node
+a|
+Internal traffic for expansion and recovery procedures.
 a|
 1139
 a|
@@ -214,6 +224,16 @@ Admin Nodes
 a|
 Internal traffic for maintenance procedures and error reporting.
 a|
+8011
+a|
+TCP
+a|
+Internal traffic for expansion and recovery procedures.
+a|
+Primary Admin Node
+a|
+Internal traffic for expansion and recovery procedures.
+a|
 9042
 a|
 TCP
@@ -243,6 +263,16 @@ a|
 Primary Admin Node
 a|
 Used by StorageGRID appliances for forwarding AutoSupport messages from E-Series SANtricity System Manager to the primary Admin Node.
+a|
+10342
+a|
+TCP
+a|
+Internal traffic for expansion and recovery procedures.
+a|
+Primary Admin Node
+a|
+Internal traffic for expansion and recovery procedures.
 a|
 11139
 a|
@@ -333,6 +363,16 @@ a|
 Storage Nodes
 a|
 Swift-related internal traffic.
+a|
+18086
+a|
+TCP
+a|
+All grid nodes
+a|
+All Storage Nodes
+a|
+Internal traffic related to LDR service.
 a|
 18200
 a|

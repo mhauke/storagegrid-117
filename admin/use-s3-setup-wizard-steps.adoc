@@ -11,18 +11,18 @@ summary: 'You can use the S3 setup wizard to configure StorageGRID as the object
 [.lead]
 You can use the S3 setup wizard to configure StorageGRID for use with an S3 application. The setup wizard provides the values the application needs to access a StorageGRID bucket and to save objects.
 
-NOTE: You must have Root access permission to access the wizard.
+NOTE: You must have Root access permission to access the wizard. Also make sure that you meet all the link:../admin/use-s3-setup-wizard.adoc[prerequisites] before using the wizard. 
 
 == Access the wizard
 
 . Sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 
-. If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon from the header bar in the Grid Manager and select *FabricPool and S3 Setup Wizard*.
+. If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon from the header bar in the Grid Manager and select *FabricPool and S3 setup wizard*.
 +
 image::../media/help_menu.png[help menu]
 . In the S3 application section of the FabricPool and S3 setup wizard page, select *Configure now*.
 +
-*Step 1 of 6: Configure HA group* appears.
+//*Step 1 of 6: Configure HA group* appears.
 
 == Step 1 of 6: Configure HA group
 A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
@@ -81,12 +81,12 @@ If the HA group includes more than one interface and the active interface fails,
 | Field| Description
 
 |Subnet CIDR
-|The address of the VIP subnet in CIDR notation&#8212; an IPv4 address followed by a slash and the subnet length (0-32). 
+|The address of the VIP subnet in CIDR notation &#8212; an IPv4 address followed by a slash and the subnet length (0-32). 
 
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
 
 |Gateway IP address (optional)
-|Optional. If the S3 IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
+|If the S3 IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
 
 |Virtual IP address
 |Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet.
@@ -101,7 +101,7 @@ At least one address must be IPv4. Optionally, you can specify additional IPv4 a
 
 .Use existing HA group
 --
-.. To use an existing HA group, select the HA group name from the *Select an HA group* drop-down list. 
+.. To use an existing HA group, select the HA group name from the *Select an HA group*.
 .. Select *Continue* to go to the load balancer step. 
 --
 ====
@@ -169,22 +169,21 @@ xref:../network/network-port-reference.adoc[Network port reference].
 |===
 
 . For the Tenant access step, select one of the following:
-
++
+[cols="1a,2a" options="header"]
 |===
 |Field	
 |Description
 
 |Allow all tenants (default)
-
 |All tenant accounts can use this endpoint to access their buckets.
 
 |Allow selected tenants
-
 |Only the selected tenant accounts can use this endpoint to access their buckets.
 
 |Block selected tenants
-
 |The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+
 |===
 
 . For the *Attach certificate* step, select one of the following:
@@ -211,14 +210,14 @@ xref:../network/network-port-reference.adoc[Network port reference].
 NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied to all nodes.
 --
 
-.Use the existing load balancer endpoint
+.Use existing load balancer endpoint
 --
-. To use an existing endpoint, select its name from the *Select a load balancer endpoint* drop-down list. 
+. To use an existing endpoint, select its name from the *Select a load balancer endpoint*. 
 . Select *Continue* to go to the tenant and bucket step. 
 --
 
 
-.Use an external load balancer
+.Use external load balancer
 --
 
 . To use an external load balancer, complete the following fields.
@@ -248,65 +247,72 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 
 == Step 3 of 6: Create tenant and bucket
 
-A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create a StorageGRID tenant before you can create the bucket that the S3 application will use. 
+A tenant is an entity that can use S3 applications to store and retrieve objects in StorageGRID. Each tenant has its own users, access keys, buckets, objects, and a specific set of capabilities. You must create the tenant before you can create the bucket that the S3 application will use to store its objects. 
 
-A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the wizard lets you create or select only one tenant and one bucket at a time. You can use the Tenant Manager later to add any additional buckets you need.
 
-You can create a new tenant and bucket for this S3 application to use, or you can select an existing tenant and bucket. If you create a new tenant, the system automatically creates the access key ID and secret access key for the tenant's root user.
+A bucket is a container used to store a tenant's objects and object metadata. Although some tenants might have many buckets, the wizard helps you to create a  tenant and a bucket in the quickest and easiest way. You can use the Tenant Manager later to add any additional buckets you need.
 
-For details about this task, see admin/creating-tenant-account.adoc[Create tenant account] and 
-tenant/creating-s3-bucket.adoc[Create S3 bucket].
+You can create a new tenant for this S3 application to use. Optionally, you can also create a bucket for the new tenant. Finally, you can allow the wizard to create the S3 access keys for the tenant's root user.
 
-// start tabbed area
+For details about this task, see xref:../admin/creating-tenant-account.adoc[Create tenant account] and 
+xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket].
 
-[role="tabbed-block"]
-====
+[cols="1a,3a" options="header"]
+|===
+| Field | Description
 
-.New tenant and bucket
---
+|Name
+|A name for the tenant account. Tenant names do not need to be unique. When the tenant account is created, it receives a unique, numeric account ID.
 
-To create a new tenant and bucket:
+|Description (optional)
+|A description to help identify the tenant.
 
-. Select *Create tenant*.
+|Client type
+|The type of client protocol this tenant will use. For the S3 setup wizard,  *S3* is selected and the field is disabled.
 
-. For the tenant details step, enter the following information:
-+
-
-[cols="1a,2a" options="header"]
+|Storage quota (optional)
+|If you want this tenant to have a storage quota, a numerical value for the quota and the units.
 
 |===
-| Field| Details
 
-|*Name*
-|Enter a name for the tenant account. For example, `S3 tenant`. 
+. Select *Continue*.
 
-|*Description* (optional)
-|Enter a description that helps you identify the tenant.
+. Optionally, select any permissions you want this tenant to have.
++
+[NOTE]
+Some of these permissions have additional requirements. For details, select the help icon for each permission.
++
+[cols="1a,3a" options="header"]
+|===
+| Field| Description
 
-|*Client type*
-|By default client type is *S3* and is disabled.
+|Name
+|The name for the tenant account. For example, `S3 tenant`. 
 
-|*Storage quota* (optional)
+|Description (optional)
+|A description that helps you identify the tenant.
+
+|Client type
+|This field is disabled. Client must be *S3*.
+
+|Storage quota (optional)
 |If you want this tenant to have a storage quota, enter a numerical value for the quota and select the correct units (GB, TB, or PB).
 
 |===
 
 +
-. Select the appropriate permissions for the tenant. Some of these permissions have additional requirements. For details, see the online help for each permission.
+. For the *Select permission* step, select the appropriate permissions for the tenant. Some of these permissions have additional requirements. For details, see the online help for each permission.
 +
 * Allow platform services
 * Use own identity source (selectable only if SSO is not being used)
 * Allow S3 select (see xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts])
  
-. Select *Continue* and define root access for the tenant account.
-+
-
-.. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
+. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
 [cols="1a,2a" options="header"]
 |===
 | Option 
-| To do
+| Do this
 
 |If identity federation is not enabled 
 |Specify the password to use when signing into the tenant as the local root user.
@@ -322,66 +328,58 @@ Optionally specify the password to use when signing in to the tenant as the loca
 |===
 +
 
-.. If you want the wizard to create the access key ID and secret access key for the root user, select *Create root user S3 access key automatically*. 
+. If you want the wizard to create the access key ID and secret access key for the root user, select *Create root user S3 access key automatically*. 
 +
-
 IMPORTANT: Select this option if the only user for the tenant will be the root user. If other users will use this tenant, use Tenant Manager to configure keys and permissions.
-+
 
-.. Select *Continue*.
 
-. Create a bucket for the tenant's object.
+. Create a bucket for the tenant's objects.
 
-.. For *Bucket name*, enter the name of the bucket that the S3 application will use. For example, `S3-bucket`.
+.. Enter the name of the bucket that the S3 application will use. For example, `S3-bucket`.
 +
 IMPORTANT: You cannot change the bucket name after creating the bucket.
 
 .. Select the *Region* for this bucket.
 +
 Use the default region (us-east-1) unless you expect to use ILM in the future to filter objects based on the bucket's region.
-+
 
-.. Use *Enable object versioning* if you want to store each version of each object in this bucket. 
+.. Select *Enable object versioning* if you want to store each version of each object in this bucket. 
 
-.. You can use *Create tenant only* to just create a tenant, else select *Create tenant and bucket* and go to the download data step.
-
---
-====
+.. Use *Create tenant only* to just create a tenant, else select *Create tenant and bucket* and go to the download S3 settings step.
 
 == Step 4 of 6: Download S3 settings
 
-In the download data step, you can download the access key,  configuration values file and save it in a safe location. 
+In the download S3 settings step, you can download the access key file (if generated by the wizard) and the configuration values file and save them in a safe location. 
 
 . Select *Download access keys* to download the credentials details: tenant account name, access key ID, and secret access key.
++
 
-. Select *Download configuration values* to download and view settings of the load balancer endpoint, tenant, bucket, and the root user credentials.
+IMPORTANT: *Download access keys* appears only if you had selected *Create root user S3 access key automatically* during tenant creation.
 
-. Select *Continue* to go to the ILM rule step.
+. Select *Download configuration values* to download settings for the load balancer endpoint, tenant, bucket, and the root user.
+
+. Select the *I have successfully downloaded or copied both the access key ID and secret access key* check box to confirm that you have successfully downloaded and secured the access key file (if generated by the wizard) and the configuration values file.
+
+. Select *Continue* to go to the ILM rule and policy step.
 
 == Step 5 of 6: Review ILM rule and ILM policy for S3
 
-Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior of all objects in your StorageGRID system.
+Information lifecycle management (ILM) rules control the placement, duration, and ingest behavior of all objects in your StorageGRID system. The ILM policy included with StorageGRID makes two replicated copies of all objects. This policy is in effect until you create a new proposed policy and activate it.
 
-For details about this step, see xref:../ilm/access-create-ilm-rule-wizard.adoc[Create ILM rule] and xref:../ilm/creating-ilm-policy.adoc[Create ILM policy: Overview].
+. Review the information on the page.
 
-The ILM policy included with StorageGRID makes two replicated copies of all objects. This policy is in effect until you create a new proposed policy and activate it.
+. If you want to add specific instructions for the objects belonging to the new tenant or bucket, create a new rule and a new policy. See xref:../ilm/access-create-ilm-rule-wizard.adoc[Create ILM rule] and xref:../ilm/creating-ilm-policy.adoc[Create ILM policy: Overview].
 
-. Review the information in the Set ILM rule and ILM policy step to learn about creating a rule, creating a new policy, and simulating and activating that policy. 
+. Select *I have reviewed these steps and understand what I need to do*.
 
-. Select I have reviewed these steps....
+. Select the check box to indicate that you understand what to do next.
 
-. Select Continue.
-
-+
-
-Check the option *I have reviewed these steps and understand what I need to do*.
-
-.  Select *Continue* to go to *Summary*.
+. Select *Continue* to go to *Summary*.
 
 == Step 6 of 6: Review summary 
 
-. Review the summary and the next steps.
+. Review the summary.
+. Make note of the details in the next steps, which describe the additional configuration that might be needed before you connect to the S3 client. For example, selecting *Sign in as root* takes you to the Tenant Manager, where you can add tenant users, create additional buckets, and update bucket settings.
 . Select *Finish*.
-+
 
-. Configure the S3 application using the file you downloaded from StorageGRID or the values you obtained manually.
+. Configure the application using the file you downloaded from StorageGRID or the values you obtained manually.
