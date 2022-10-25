@@ -35,21 +35,21 @@ image:../media/grid-federation-cross-grid-replication.png[image showing replicat
 
 To understand what happens when objects are deleted from a bucket that has cross-grid replication enabled, start by reviewing how objects are deleted from buckets that have versioning enabled.
 
-* When versioning is enabled and an S3 client issues a simple `DELETE Object` request, StorageGRID does not permanently delete the object. Instead, it adds a delete marker to the bucket, which serves as the current version of the object with a new ID. The delete marker causes StorageGRID to behave as if the object was deleted.
+* When versioning is enabled and an S3 client issues a delete request without specifying a version ID, StorageGRID does not permanently delete the object. Instead, it adds a delete marker to the bucket, which serves as the current version of the object with a new ID. The delete marker causes StorageGRID to behave as if the object was deleted.
 +
-If a bucket contains a delete marker for an object, a simple `GET` request fails with `404 No Object Found`. In contrast, a `GET versionId` request will succeed and return the requested object version.
+If a bucket contains a delete marker for an object, a GET request without a version ID will fail with `404 No Object Found`. In contrast, a GET request with a version ID will succeed and return the requested object version.
 
-* When versioning is enabled and an S3 client issues a `DELETE Object versionId` request, the object version (or the delete marker) is permanently removed, but no delete marker is added the bucket. Neither a simple `GET` request or a `GET versionId` request for that object version will return the object.
+* When versioning is enabled and an S3 client issues a delete request with a version ID, the object version is permanently removed. No delete marker is added the bucket. 
 
-When enabling cross-grid replication for a bucket, you can specify what happens when an S3 client issues `DELETE Object` requests:
+When enabling cross-grid replication for a bucket, you can specify what happens when an S3 client delete objects without specifying a version ID, as follows:
 
-* If you choose to replicate client delete markers, a delete marker is added to the source bucket and replicated to the destination bucket when an S3 client issues a `DELETE Object` request. In effect, objects are deleted on both grids.
+* If you choose to replicate delete markers, a delete marker is added to the source bucket and replicated to the destination bucket. In effect, objects are deleted on both grids.
 
-*  If you choose not to replicate client delete markers, a delete marker is added to the source bucket, but it is not replicated to the destination bucket. In effect, objects that the client deletes on the source grid are not deleted on the destination grid.
+*  If you choose not to replicate delete markers, a delete marker is added to the source bucket, but it is not replicated to the destination bucket. In effect, objects that the client deletes on the source grid are not deleted on the destination grid.
 
-IMPORTANT: The option to replicate client delete markers does not affect `DELETE Object versionId` requests, which do not add delete markers. These requests to permanently remove objects are never replicated to the other grid in a grid federation connnection.
+IMPORTANT: The option to replicate client delete markers does not affect delete object requests that include a version ID. These requests to permanently remove objects from the source grid. However, because they do not add delete markers to the bucket, they are are never replicated to the other grid.
 
-In the figure, the grids are configured for cross-grid replication in both directions, but client delete markers are not replicated from `my-bucket` on Grid 1 to `my-bucket` on Grid 2.
+In the figure, the grids are configured for cross-grid replication in both directions, but delete markers are not replicated from `my-bucket` on Grid 1 to `my-bucket` on Grid 2.
 
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
 
