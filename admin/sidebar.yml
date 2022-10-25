@@ -48,8 +48,6 @@ entries:
       url: "/admin/changing-provisioning-passphrase.html"
     - title: Change node console passwords
       url: "/admin/change-node-console-password.html"    
-    - title: Control access through firewalls
-      url: "/admin/controlling-access-through-firewalls.html"
     - title: Use identity federation
       url: "/admin/using-identity-federation.html"
     - title: Manage admin groups
@@ -155,16 +153,14 @@ entries:
         url: "/admin/configuring-storage-proxy-settings.html"
       - title: Configure Admin proxy settings
         url: "/admin/configuring-admin-proxy-settings.html"
-    - title: Control firewall     
+    - title: Control firewalls     
       entries:
-      - title: Manage firewall
+      - title: Control access through external firewalls
+        url: "/admin/controlling-access-through-firewalls.html"  
+      - title: Manage internal firewall
         url: "/admin/manage-firewall-controls.html"      
-      - title: Configure firewall
+      - title: Configure internal firewall
         url: "/admin/configure-firewall-controls.html"
-      - title: Managed untrusted Client Networks
-        url: "/admin/managing-untrusted-client-networks.html"
-      - title: Specify node&#8217;s Client Network is untrusted
-        url: "/admin/specifying-node-client-network-is-untrusted.html"
   - title: Manage tenants
     entries:
     - title: Overview
