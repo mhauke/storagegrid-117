@@ -11,6 +11,8 @@ summary: 'As a grid administrator, you create and manage the tenant accounts tha
 [.lead]
 As a grid administrator, you create and manage the tenant accounts that S3 and Swift clients use to store and retrieve objects, monitor storage usage, and manage the actions that clients are able to perform using your StorageGRID system.
 
+NOTE: Support for Swift client applications has been deprecated and will be removed in a future release.
+
 == What are tenant accounts?
 
 Tenant accounts allow client applications that use the Simple Storage Service (S3) REST API or the Swift REST API to store and retrieve objects on StorageGRID.
