@@ -52,9 +52,6 @@ NOTE: If you do not add S3 endpoint domain names and the list is empty, support 
 
 . Select *Save*.
 
-+
-You have successfully added a S3 endpoint domain name. 
-
 . Ensure that the server certificates that clients use match the required S3 endpoint domain names.
  ** If clients connect to a load balancer endpoint that uses its own certificate, xref:../admin/configuring-load-balancer-endpoints.adoc[update the certificate associated with the endpoint].
  ** If clients connect to a load balancer endpoint that uses the global S3 and Swift API certificate or directly to Storage Nodes, xref:../admin/use-s3-setup-wizard-steps.adoc[update the global S3 and Swift API certificate].
@@ -62,7 +59,7 @@ You have successfully added a S3 endpoint domain name.
 
 .Result
 
-Now, when clients use the endpoint `bucket.s3.company.com`, the DNS server resolves to the correct endpoint and the certificate authenticates the endpoint as expected.
+Now, when clients use the endpoint `_bucket.s3.company.com_`, the DNS server resolves to the correct endpoint and the certificate authenticates the endpoint as expected.
 
 == Rename or delete an S3 endpoint domain name
 
