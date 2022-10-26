@@ -75,13 +75,13 @@ After a few minutes:
 
 * A status message appears on the bucket details page, which includes a progress bar.
 * *(read-only)* appears after the bucket's name on the bucket details page.
-* *(Deleting objects: read-only)* next to the bucket's name on the Buckets page.
+* *(Deleting objects: read-only)* appears next to the bucket's name on the Buckets page.
 
 . When the operation is complete (when 100% of the objects have been removed), do one of the following:
 
 ** Select *Delete bucket* to delete the bucket itself.
 +
-NOTE: If you are unable to delete a versioned bucket that has been emptied, delete markers might remain. To delete the bucket, you must use an S3 application to list and remove these delete markers.
+NOTE: If you are unable to delete a versioned bucket after all objects were deleted, delete markers might remain. To delete the bucket, you must use an S3 application to list and remove all remaining delete markers.
 
 ** Select *Stop emptying bucket* to return the bucket to write mode and optionally reuse it for new objects. 
 ** Exit the page to keep the bucket in read-only mode. For example, you might keep an empty bucket in read-only mode to reserve the bucket name for future use.
