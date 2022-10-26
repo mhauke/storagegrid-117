@@ -43,6 +43,7 @@ Clients that use HTTPS connections (recommended) to the grid can use either of t
 
 NOTE: If you do not add S3 endpoint domain names and the list is empty, support for S3 virtual-hosted-style requests is disabled.
 
+== Add an S3 endpoint domain name
 .Steps
 
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
@@ -61,11 +62,14 @@ NOTE: If you do not add S3 endpoint domain names and the list is empty, support 
 
 Now, when clients use the endpoint `_bucket.s3.company.com_`, the DNS server resolves to the correct endpoint and the certificate authenticates the endpoint as expected.
 
-== Rename or delete an S3 endpoint domain name
+== Rename an S3 endpoint domain name
 
-You can rename or delete an S3 endpoint domain name.
 
 NOTE: If you change or remove a name used by S3 applications, virtual-hosted-style requests will fail.
+
+.Steps
+
+To rename an S3 endpoint domain name:
 
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
 . Select the domain name field you want to edit and make the necessary changes.
@@ -75,8 +79,14 @@ NOTE: If you change or remove a name used by S3 applications, virtual-hosted-sty
 +
 S3 endpoint domain name is modified.
 
+== Delete an S3 endpoint domain name
+.Steps
 
-To delete an S3 endpoint domain name, select the delete icon next to the domain name and select *Yes* in the confirmation dialog box to confirm your deletion.
+To delete an S3 endpoint domain name:
+
+. Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
+. Select the delete icon image:../media/icon-x-to-remove.png[delete icon] next to the domain name.
+. Select *Yes* in the confirmation dialog box to confirm your deletion.
 
 .Related information
 
