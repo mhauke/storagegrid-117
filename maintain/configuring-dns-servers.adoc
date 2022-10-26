@@ -19,9 +19,9 @@ To use fully qualified domain names (FQDNs) instead of IP addresses when specify
 * You must have the Maintenance or Root Access permission.
 * You must have the IP addresses of the DNS servers to configure.
 
-Specifying DNS server information allows you to use fully qualified domain name (FQDN) hostnames rather than IP addresses for email or SNMP notifications and AutoSupport. Specifying at least two DNS servers is recommended.
+Specifying DNS server information allows you to use fully qualified domain name (FQDN) hostnames rather than IP addresses for email or SNMP notifications and AutoSupport. Specifying IP address of at least two DNS servers is recommended.
 
-IMPORTANT: Provide between two to six IP addresses for DNS servers. In general, select DNS servers that each site can access locally in the event of network islanding. This is to ensure an islanded site continues to have access to the DNS service. After configuring the grid-wide DNS server list, you can xref:modifying-dns-configuration-for-single-grid-node.adoc[further customize the DNS server list for each node].
+IMPORTANT: Specify the IP address of at least one DNS server. Specifying at least two servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. After configuring the grid-wide DNS server list, you can xref:modifying-dns-configuration-for-single-grid-node.adoc[further customize the DNS server list for each node].
 
 If the DNS server information is omitted or incorrectly configured, a DNST alarm is triggered on each grid node's SSM service. The alarm clears when DNS is configured correctly and the new server information has reached all grid nodes.
 
@@ -29,11 +29,13 @@ If the DNS server information is omitted or incorrectly configured, a DNST alarm
 
 . Select *MAINTENANCE* > *Network* > *DNS servers*.
 . Select *Add another server* to add a new DNS server.
++
 
 NOTE: You should specify the IP address of at least one (recommended) and not more six DNS servers. Specifying at least two servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. The best practice is to specify at least two DNS servers per site.
 +
+. Select *Save*.
 
+To delete an IP address of a DNS server, select the delete icon next to the IP address.
 //In the Servers section, add update, or remove DNS server entries, as necessary.
 
 
-. Click *Save*.
