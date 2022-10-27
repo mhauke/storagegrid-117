@@ -71,15 +71,19 @@ Account clone is the replication of selected S3 tenant accounts, users, and grou
 
 === Considerations and requirements for account clone
 
+* If you use identity federation for tenant groups and users, both grids must have access to the same federated groups and users. That is, you must configure the same LDAP server on both grids. If tenants use their own identity source, they will need to use the same LDAP server as well.
+
 * Tenant creation and the cloning of new account users and groups occur in one direction only:
 
 ** When a grid admin creates a tenant on one grid (the tenant's source grid) and selects the *Use grid federation connection* permission, an identical tenant is automatically created on the other grid (the tenant's destination grid). 
 
-** When tenant users create new users, groups, or S3 access key on the tenant's source grid, the groups and users are automatically cloned to the destination grid and the S3 access keys are optionally cloned to the destination grid. 
+** When a tenant creates local groups, local users, or S3 access keys on the tenant's source grid, the local groups and local users are automatically cloned to the destination grid, and the S3 access keys are optionally cloned to the destination grid. 
+
+** When a tenant imports a federated group on the tenant's source grid, assigns group permissions, and selects an S3 policy, the same federated group is imported into the tenant account on the destination grid. The permissions and S3 policy will be the same.
 +
 image:../media/grid-federation-account-clone.png[image showing that tenant details are cloned from source grid to destination grid]
 
-** When tenant users create new tenant users, groups, or S3 access keys on the tenant's destination grid, these items are not cloned to the source grid.
+** When tenant users creates or imports groups, creates local users, or S3 access keys on the tenant's destination grid, these items are not cloned to the source grid.
 +
 image:../media/grid-federation-account-not-cloned.png[image showing that tenant details are cloned back to source grid]
 
