@@ -48,7 +48,6 @@ NOTE: If you do not add S3 endpoint domain names and the list is empty, support 
 
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
 
-
 . Enter the domain name in the *Domain name 1* field. Select *Add another domain name* to add more domain names.
 
 . Select *Save*.
@@ -63,7 +62,6 @@ NOTE: If you do not add S3 endpoint domain names and the list is empty, support 
 Now, when clients use the endpoint `_bucket.s3.company.com_`, the DNS server resolves to the correct endpoint and the certificate authenticates the endpoint as expected.
 
 == Rename an S3 endpoint domain name
-
 
 NOTE: If you change or remove a name used by S3 applications, virtual-hosted-style requests will fail.
 
