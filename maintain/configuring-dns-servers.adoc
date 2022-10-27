@@ -21,7 +21,7 @@ To use fully qualified domain names (FQDNs) instead of IP addresses when specify
 
 Specifying DNS server information allows you to use fully qualified domain name (FQDN) hostnames rather than IP addresses for email or SNMP notifications and AutoSupport.
 
-IMPORTANT: Specify the IP address of at least one DNS server. Specifying at least two servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. After configuring the grid-wide DNS server list, you can xref:modifying-dns-configuration-for-single-grid-node.adoc[further customize the DNS server list for each node].
+IMPORTANT: Specifying the IP address of at least one and not more than six DNS servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. After configuring the grid-wide DNS server list, you can xref:modifying-dns-configuration-for-single-grid-node.adoc[further customize the DNS server list for each node].
 
 If the DNS server information is omitted or incorrectly configured, a DNST alarm is triggered on each grid node's SSM service. The alarm clears when the DNS is configured correctly and the new server information has reached all grid nodes.
 
