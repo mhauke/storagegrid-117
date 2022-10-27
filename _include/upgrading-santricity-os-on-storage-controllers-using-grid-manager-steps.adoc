@@ -6,8 +6,8 @@ For storage controllers currently using SANtricity OS 08.42.20.00 (11.42) or new
 .What you'll need
 
 * You have consulted the NetApp Interoperability Matrix Tool (IMT) to confirm that the SANtricity OS version you are using for the upgrade is compatible with your appliance.
-* You have the xref:../admin/admin-group-permissions.adoc[Maintenance or Root access permission].
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the link:../admin/admin-group-permissions.html[Maintenance or Root access permission].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the provisioning passphrase.
 * You have access to the NetApp downloads page for SANtricity OS.
 
@@ -21,7 +21,7 @@ CAUTION: The following steps are only applicable when you are using the Grid Man
 
 NOTE: This procedure will automatically upgrade the NVSRAM to the most recent version associated with the SANtricity OS upgrade. You do not need to apply a separate NVSRAM upgrade file.
 
-IMPORTANT: Be sure to apply the latest StorageGRID hotfix before you begin this procedure. See xref:../maintain/storagegrid-hotfix-procedure.adoc[StorageGRID hotfix procedure] for details. 
+IMPORTANT: Be sure to apply the latest StorageGRID hotfix before you begin this procedure. See link:../maintain/storagegrid-hotfix-procedure.html[StorageGRID hotfix procedure] for details. 
 
 .Steps
 
@@ -36,12 +36,10 @@ https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/dow
 +
 image::../media/software_update_landing.png[Software Update Landing Page]
 
-
 . In the SANtricity OS update section, select *Update*.
 +
 The SANtricity OS upgrade page appears.
 +
-image::../media/santricity_os_upgrade_first.png[screenshot showing StorageGRID first SANtricity OS page]
 
 The page lists the details for each appliance node including: 
 
@@ -84,20 +82,25 @@ NOTE: The table shows all appliance Storage Nodes. Software-based Storage Nodes 
 +
 image::../media/santricity_upgrade_progress_table.png[screenshot showing the SANtricity OS Upgrade Progress part of the SANtricity OS Upgrade page]
 
-. Optionally, sort the list of nodes in ascending or descending order by *Site*, *Name*, *Progress*, *Stage*, *Details*, or *Current Controller Firmware Version*. Or, enter a term in the *Search* box to search for specific nodes.
+. Optionally, sort the list of nodes in ascending or descending order by:
+ * *Name* 
+ * *Current Controller Firmware Version*
+ * *Progress*
+ * *Stage*
+ * *Status*
 +
-You can scroll through the list of nodes by using the left and right arrows at the bottom right corner of the section.
+You can also enter a term in the *Search* box to search for specific nodes.
 
 . Approve the grid nodes you are ready to add to the upgrade queue. Approved nodes of the same type are upgraded one at a time. 
 +
 IMPORTANT: Do not approve the SANtricity OS upgrade for an appliance storage node unless you are sure the node is ready to be stopped and rebooted. When the SANtricity OS upgrade is approved on a node, the services on that node are stopped and the upgrade process begins. Later, when the node is finished upgrading, the appliance node is rebooted. These operations might cause service interruptions for clients that are communicating with the node.
 
- ** Select either of the *Approve All* buttons to add all Storage Nodes to the SANtricity OS upgrade queue. 
+ ** Select the *Approve All* button to add all Storage Nodes to the SANtricity OS upgrade queue. 
 +
 NOTE: If the order in which nodes are upgraded is important, approve nodes or groups of nodes one at a time and wait until the upgrade is complete on each node before approving the next node(s).
 
 +
-** Select one or more *Approve* buttons to add one or more nodes to the SANtricity OS upgrade queue.
+** Select one or more *Approve* buttons to add one or more nodes to the SANtricity OS upgrade queue. The *Approve* button is disabled if the Status is not Nominal. 
 
 +
 After you select *Approve*, the upgrade process determines if the node can be upgraded. If a node can be upgraded, it is added to the upgrade queue. 
@@ -123,8 +126,6 @@ When the stage progresses beyond Queued, the *Remove* button is hidden and you c
 
 +
 When the SANtricity OS upgrade is complete on all approved nodes, the SANtricity OS Upgrade Progress table closes and a green banner shows the number of nodes upgraded, and the date and time the upgrade completed.
-
-image::../media/santricity_upgrade_finish_banner.png[screenshot of SANtricity OS upgrade page after the upgrade completes]
 
 [start=12]
 . If a node cannot be upgraded, note the reason shown in the Details column and take the appropriate action:
