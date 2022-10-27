@@ -54,6 +54,7 @@ The *Cross-grid replication failure* alert indicates that tenant objects can't b
 * Both buckets have object versioning enabled (versioning cannot be suspended on either grid).
 * Both buckets have S3 Object Lock disabled. 
 * Neither bucket uses bucket-level encryption. 
+* Neither bucket is in the *Read only: Deleting all objects* state.
 
 . After resolving any issues, go back to the Grid Federation page, select the affected tenants and select *Clear Error*.
 

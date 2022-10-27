@@ -85,11 +85,11 @@ Before stopping cross-grid replication, note the following:
 
 * Stopping cross-grid replication for a bucket is a permanent action. You cannot restart replication after it has been stopped.
 
+* Stopping cross-grid replication does not remove any objects that have already been copied between grids. For example, objects in `my-bucket` on Grid 1 that have been copied to `my-bucket` on Grid 2 are not removed if you stop cross-grid replication for that bucket. If you want to delete these objects, you must remove them manually.
+
 * If cross-grid replication was enabled for each of the buckets (that is, if replication occurs in both directions), you can stop cross-grid replication for either or both buckets. For example, you might want to stop replicating objects from `my-bucket` on Grid 1 to `my-bucket` on Grid 2, while continuing to replicate objects from `my-bucket` on Grid 2 to `my-bucket` on Grid 1.
 
-* Stopping cross-grid replication does not remove any objects that have already been copied between grids. For example, objects in `my-bucket`  on Grid 1 that have been copied to `my-bucket` on Grid 2 are not removed if you stop cross-grid replication for that bucket. If you want to delete these objects, you must remove them manually.
-
-* You must stop cross-grid replication for the bucket on each side of the grid federation connection before you can delete that bucket or remove the grid federation connection. See xref:grid-federation-manage-connection.adoc[Manage grid federation connections].
+* You must stop cross-grid replication before you can remove the grid federation connection. See xref:grid-federation-manage-connection.adoc[Manage grid federation connections].
 
 .What you'll need
 

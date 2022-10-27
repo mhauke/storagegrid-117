@@ -2,16 +2,16 @@
 permalink: tenant/delete-all-bucket-objects.html
 sidebar: sidebar
 keywords: how to remove all bucket objects, empty bucket
-summary: 'You can use the Tenant Manager to delete all objects and all object versions in one or more buckets.'
+summary: 'You can use the Tenant Manager to remove the contents of one or more buckets.'
 ---
 = Delete all objects from bucket
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the Tenant Manager to delete all objects or all object versions in one or more buckets.
+You can use the Tenant Manager to remove the contents of one or more buckets.
 
-When you delete all bucket objects, StorageGRID permanently deletes all copies of all objects in each selected bucket from all nodes and sites in your StorageGRID system. StorageGRID also removes any related object metadata. You will not be able to recover this information.
+When you delete all bucket objects, StorageGRID permanently deletes all objects and all object versions in each selected bucket from all nodes and sites in your StorageGRID system. StorageGRID also removes any related object metadata. You will not be able to recover this information.
 
 .Considerations and requirements
 
@@ -27,16 +27,22 @@ Before performing these steps, note the following:
 ** Keep the bucket in read-only mode to reserve its name for future use
 ** Return the bucket to write mode and reuse it for new objects 
 
-* If a bucket has object versioning enabled, any delete markers that were in the bucket when you started these steps will not be removed by the delete bucket objects operation. If you want to delete a versioned bucket after all objects have been deleted, you might need to use an S3 application to list and remove these delete markers.
+* If a bucket has object versioning enabled, any delete markers that are in the bucket when you start these steps will not be removed by the delete objects operation. If you want to delete a versioned bucket after all objects have been deleted, you will need to remove any pre-existing delete markers.
 
-* If a bucket has xref:using-s3-object-lock.adoc[S3 Object Lock enabled], it might remain in the *Read only: Deleting all objects* state for years. This state persists until the retention date is reached for all objects and any legal holds are removed.
+* If a bucket has xref:using-s3-object-lock.adoc[S3 Object Lock enabled], it might remain in the *Read only: Deleting all objects* state for _years_.
++
+IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Read only: Deleting all objects* state until the retention date is reached for all objects and any legal holds are removed.
 
-* If a bucket has xref:buckets-manage-cross-grid-replication.adoc[cross-grid replication enabled], deleting all objects from one grid does not delete all objects from the corresponding bucket on the other grid.
+* If you use xref:buckets-manage-cross-grid-replication.adoc[cross-grid replication] and:
 
+** Replication is enabled only for this bucket, deleting all objects does not delete any objects from the corresponding bucket on the other grid. You can also continue to add objects to the other bucket.
+
+** Replication is enabled for both buckets, the *Cross-grid replication failure - Destination* alert will be triggered on the other grid if objects are added to that bucket while this bucket is in the *Read only: Deleting all objects* state. If you can't guarantee no one will add objects to the other bucket, xref:../tenant/buckets-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects on this grid.
 
 .What you'll need
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+
 * You belong to a user group that has the Root Access permission. This permission overrides the permissions settings in group or bucket policies. See xref:tenant-management-permissions.adoc[Tenant management permissions].
 
 .Steps
@@ -66,7 +72,6 @@ The Buckets page appears and shows all existing S3 buckets.
 
 ====
 
-
 . When the confirmation dialog box appears, review the details, enter *Yes*, and select *OK*.
 
 . Wait for the delete operation to begin.
@@ -81,7 +86,7 @@ After a few minutes:
 
 ** Select *Delete bucket* to delete the bucket itself.
 +
-NOTE: If you are unable to delete a versioned bucket after all objects were deleted, delete markers might remain. To delete the bucket, you must use an S3 application to list and remove all remaining delete markers.
+NOTE: If you are unable to delete a versioned bucket after all objects were deleted, delete markers might remain. To delete the bucket, you must remove all remaining delete markers.
 
 ** Select *Stop emptying bucket* to return the bucket to write mode and optionally reuse it for new objects. 
 ** Exit the page to keep the bucket in read-only mode. For example, you might keep an empty bucket in read-only mode to reserve the bucket name for future use.
