@@ -4,23 +4,21 @@
 
 Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a xref:../admin/grid-federation-overview.adoc[grid federation connection].
 
-=== Considerations and requirements for cross-grid replication
+=== Requirements for cross-grid replication
 
-To use cross-grid replication:
+If a tenant account has the *Use grid federation connection* permission, a tenant user with Root Access permission can create identical buckets in the corresponding tenant accounts on each grid. These buckets:
 
-* A grid admin creates a tenant account and assigns the *Use grid federation connection* permission for a specific grid federation connection. When the new tenant is saved, an identical tenant is automatically created on the other grid in the connection.
+* Must have the same name and region
 
-* The tenant root user signs in to the account on each grid and creates one or more groups and users and optionally clones them to the other grid.
+* Must have versioning enabled
 
-* The tenant root user (or a cloned tenant user with the Root Access or Manage All Buckets permission) creates identical new buckets on each grid. These buckets: 
+* Must have S3 Object Lock disabled
 
-** Must have the same name and region
-** Must have versioning enabled
-** Must have S3 Object Lock disabled
-** Must be empty
-** Must not use bucket-level encryption
+* Must be empty
 
-* The tenant root user (or a cloned tenant user with the Root Access or Manage All Buckets permission) updates bucket settings to enable cross-grid replication. Replication can be configured to occur between buckets in one direction or in both directions.
+* Must not use bucket-level encryption
+
+After both buckets have been created, cross-grid replication can be configured to occur in one direction or in both directions.
 
 ==== [[replication-one-direction]]Replication in one direction
 
@@ -33,23 +31,24 @@ If you enable cross-grid replication for the same bucket on both grids, objects 
 
 image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
 
-=== [[client-deletes]]Considerations for deleting objects
+=== [[client-deletes]]What happens when objects are deleted?
 
-To understand what happens when objects are deleted from a bucket that has cross-grid replication enabled, start by reviewing how objects are deleted from buckets that have versioning enabled.
+To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, start by reviewing how S3 clients delete objects from buckets that have versioning enabled, as follows:
 
-* When versioning is enabled and an S3 client issues a delete request without specifying a version ID, StorageGRID does not permanently delete the object. Instead, it adds a delete marker to the bucket, which serves as the current version of the object with a new ID. The delete marker causes StorageGRID to behave as if the object was deleted.
-+
-If a bucket contains a delete marker for an object, a GET request without a version ID will fail with `404 No Object Found`. In contrast, a GET request with a version ID will succeed and return the requested object version.
+* If an S3 client issues a delete request that includes a version ID, that version of the object is permanently removed. No delete marker is added the bucket. 
 
-* When versioning is enabled and an S3 client issues a delete request with a version ID, the object version is permanently removed. No delete marker is added the bucket. 
+* If an S3 client issues a delete request that does not include a version ID, StorageGRID does not delete any object versions. Instead, it adds a delete marker to the bucket. The delete marker causes StorageGRID to behave as if the object was deleted:
 
-When enabling cross-grid replication for a bucket, you can specify what happens when an S3 client delete objects without specifying a version ID, as follows:
+** A GET request without a version ID will fail with `404 No Object Found`
+** A GET request with a valid version ID will succeed and return the requested object version.
 
-* If you choose to replicate delete markers, a delete marker is added to the source bucket and replicated to the destination bucket. In effect, objects are deleted on both grids.
+When you enable cross-grid replication for a bucket, you can specify what happens when S3 clients issue a delete request that does not include a version ID:
+
+* If you choose to replicate delete markers, a delete marker is added to the source bucket and replicated to the destination bucket. In effect, the objects appear to be deleted on both grids.
 
 *  If you choose not to replicate delete markers, a delete marker is added to the source bucket, but it is not replicated to the destination bucket. In effect, objects that the client deletes on the source grid are not deleted on the destination grid.
 
-IMPORTANT: The option to replicate client delete markers does not affect delete object requests that include a version ID. These requests to permanently remove objects from the source grid. However, because they do not add delete markers to the bucket, they are are never replicated to the other grid.
+IMPORTANT: The option to replicate client delete markers does not affect delete object requests that include a version ID. When you include a version ID, objects are permanently removed from the source grid. However, these requests are never replicated to the destination grid because they do not add delete markers to the bucket. 
 
 In the figure, the grids are configured for cross-grid replication in both directions, but delete markers are not replicated from `my-bucket` on Grid 1 to `my-bucket` on Grid 2.
 

@@ -2,25 +2,38 @@
 permalink: admin/grid-federation-workflow.html
 sidebar: sidebar
 keywords: grid federation workflow, cross-grid replication, account clone, cgr, disaster recovery
-summary: 'As a grid administrator, you must coordinate closely with tenant users to establish and use a grid federation connection between two StorageGRID systems for account clone and cross-grid replication.'
+summary: 'As a grid administrator, you must coordinate closely with tenant users to establish and use a grid federation connection between two StorageGRID systems for account clone and cross-grid replication. The workflow diagrams summarize the steps.'
 ---
-= Grid federation workflow
+= Grid federation workflow diagrams
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-As a grid administrator, you must coordinate closely with tenant users to establish and use a grid federation connection between two StorageGRID systems for account clone and cross-grid replication.
+As a grid administrator, you must coordinate closely with tenant users to establish and use a grid federation connection between two StorageGRID systems for account clone and cross-grid replication. The workflow diagrams summarize the steps.
 
-The workflow diagram shows the high-level steps that grid administrators and tenant users will perform to establish a grid federation connection between two grids and to set up account clone and cross-grid replication. 
+== Workflow for grid federation connection
 
-. The grid admins for both grids work together to xref:grid-federation-create-connection.adoc[create a grid federation connection] between the grids.
-. A grid admin for either grid creates one or more new tenant accounts to xref:grid-federation-manage-tenants.adoc[determine who is allowed] to use the connection. When a tenant with the *Use grid federation connection* permission is saved on its source grid, StorageGRID automatically creates an identical tenant on its destination grid.
-
-After the new tenant is available on both grids, tenant users can perform these operations:
-
-. From the tenant's source grid, create new tenant users and groups, which are automatically cloned to the tenant's destination grid.
-. From the tenant's source grid, create new S3 access keys, which can be optionally cloned to the tenant's destination grid.
-. Create new buckets on both grids and optionally enable cross-grid replication to occur in  one or both directions. See xref:../tenant/buckets-manage-cross-grid-replication.adoc[Manage buckets for cross-grid replication].
+This workflow diagram shows the high-level steps that the grid administrators on both grids will perform to xref:grid-federation-create-connection.adoc[create a grid federation connection] between the grids.
 
 image:../media/grid-federation-workflow.png[Grid federation workflow]
+
+== Workflow for account clone and cross-grid replication
+
+This workflow diagram shows the high-level steps that grid administrators and tenant users will perform to set up account clone and cross-grid replication. 
+
+image:../media/grid-federation-account-clone-workflow.png[workflow for cross-grid replication]
+
+. A grid admin for either grid creates one or more new tenant accounts to xref:grid-federation-manage-tenants.adoc[determine who is allowed] to use the connection. When the grid admin saves a tenant with the *Use grid federation connection* permission, the tenant is created on its source grid and replicated to its destination grid.
+
+. If the tenant has permission to *Use own identity source*, the tenant's root user can configure the same LDAP server on both the source and destination grids.
+
+. The tenant's root user can create local groups and users or import federated groups. When groups and users are created or imported on the source grid, StorageGRID automatically clones them to the tenant's destination grid.
++
+Groups and users created on the destination grid are not cloned to the source grid.
+
+. Tenant users can sign in to create new S3 access keys and optionally clone them to the tenant's destination grid.
+
+. A tenant user with Root Access permission can create identical buckets on both grids and then update bucket settings to enable cross-grid replication of bucket objects to occur in  one or both directions. See xref:../tenant/buckets-manage-cross-grid-replication.adoc[Manage buckets for cross-grid replication].
+
+
 
