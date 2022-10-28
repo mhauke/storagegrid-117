@@ -91,7 +91,7 @@ image::../media/santricity_upgrade_progress_table.png[screenshot showing the SAN
 +
 You can also enter a term in the *Search* box to search for specific nodes.
 
-. Approve the grid nodes you are ready to add to the upgrade queue. Approved nodes of the same type are upgraded one at a time. 
+. Approve the grid nodes you are ready to add to the upgrade queue. Approved nodes are upgraded one at a time. 
 +
 IMPORTANT: Do not approve the SANtricity OS upgrade for an appliance storage node unless you are sure the node is ready to be stopped and rebooted. When the SANtricity OS upgrade is approved on a node, the services on that node are stopped and the upgrade process begins. Later, when the node is finished upgrading, the appliance node is rebooted. These operations might cause service interruptions for clients that are communicating with the node.
 
@@ -165,6 +165,3 @@ NOTE: Nodes already approved and upgraded without errors remain upgraded.
 
 +
 NOTE: For any nodes with a status of Needs Attention, use maintenance mode to perform the upgrade.
-
-+
-NOTE: When you repeat the upgrade procedure, you have to approve previously upgraded nodes.
