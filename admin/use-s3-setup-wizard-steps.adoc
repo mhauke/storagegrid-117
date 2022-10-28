@@ -287,29 +287,27 @@ Some of these permissions have additional requirements. For details, select the 
 +
 [cols="1a,3a" options="header"]
 |===
-| Field| Description
+| Permission | If selected...
 
-| Name
-| The name for the tenant account. For example, `S3 tenant`. 
+| Allow platform services
+| The tenant can use platform services such as CloudMirror. See xref:manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts].
 
-| Description (optional)
-| A description that helps you identify the tenant.
+| Use own identity source 
+| The tenant can configure and manage its own identity source for federated groups and users. This option is disabled if you have xref:configuring-sso.adoc[configured SSO] for your StorageGRID system.
 
-| Client type
-| This field is disabled. Client must be *S3*.
+| Allow S3 Select
+| The tenant can issue S3 SelectObjectContent API requests to filter and retrieve object data. See xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts].
 
-| Storage quota (optional)
-| If you want this tenant to have a storage quota, enter a numerical value for the quota and select the correct units (GB, TB, or PB).
+*Important*: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
+
+| Use grid federation connection
+| The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-overview.adoc[Use grid federation: Overview].
+
 
 |===
 
-+
-. For the *Select permission* step, select the appropriate permissions for the tenant. Some of these permissions have additional requirements. For details, see the online help for each permission.
-+
-* Allow platform services
-* Use own identity source (selectable only if SSO is not being used)
-* Allow S3 select (see xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts])
- 
+. If you selected *Use grid federation connection*, select one of the available grid federation connections.
+
 . Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
 [cols="1a,2a" options="header"]
