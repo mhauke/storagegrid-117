@@ -17,9 +17,9 @@ When you delete all bucket objects, StorageGRID permanently deletes all objects 
 
 Before performing these steps, note the following:
 
-* Deleting all bucket objects might take minutes, days, or even weeks, based on the number of objects, object copies, and concurrent operations. While objects are being deleted, the bucket's state is *Read only: Deleting all objects*.
+* Deleting all bucket objects might take minutes, days, or even weeks, based on the number of objects, object copies, and concurrent operations. While objects are being deleted, the bucket's state is *Deleting objects: read-only*.
 
-* In the *Read only: Deleting all objects* state, you can't add new objects to the bucket. 
+* In the *Deleting objects: read-only* state, you can't add new objects to the bucket. 
 
 * When all objects have been deleted, you can do one of the following:
 
@@ -27,17 +27,17 @@ Before performing these steps, note the following:
 ** Keep the bucket in read-only mode to reserve its name for future use
 ** Return the bucket to write mode and reuse it for new objects 
 
-* If a bucket has object versioning enabled, any delete markers that are in the bucket when you start these steps will not be removed by the delete objects operation. If you want to delete a versioned bucket after all objects have been deleted, you will need to remove any pre-existing delete markers.
+* If a bucket has object versioning enabled, any delete markers that are in the bucket when you start these steps will not be removed by the delete objects operation. If you want to delete a versioned bucket after all objects have been deleted, you must remove any pre-existing delete markers.
 
-* If a bucket has xref:using-s3-object-lock.adoc[S3 Object Lock enabled], it might remain in the *Read only: Deleting all objects* state for _years_.
+* If a bucket has xref:using-s3-object-lock.adoc[S3 Object Lock enabled], it might remain in the *Deleting objects: read-only* state for _years_.
 +
-IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Read only: Deleting all objects* state until the retention date is reached for all objects and any legal holds are removed.
+IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Deleting objects: read-only* state until the retention date is reached for all objects and any legal holds are removed.
 
 * If you use xref:buckets-manage-cross-grid-replication.adoc[cross-grid replication] and:
 
 ** Replication is enabled only for this bucket, deleting all objects does not delete any objects from the corresponding bucket on the other grid. You can also continue to add objects to the other bucket.
 
-** Replication is enabled for both buckets, the *Cross-grid replication failure - Destination* alert will be triggered on the other grid if objects are added to that bucket while this bucket is in the *Read only: Deleting all objects* state. If you can't guarantee no one will add objects to the other bucket, xref:../tenant/buckets-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects on this grid.
+** Replication is enabled for both buckets, the *Cross-grid replication failure* alert will be triggered if objects are added to the corresponding bucket on the other grid while this bucket is in the *Deleting objects: read-only state*. If you can't guarantee no one will add objects to the bucket on the other grid, xref:../tenant/buckets-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects on this grid.
 
 .What you'll need
 

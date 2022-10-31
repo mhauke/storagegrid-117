@@ -30,13 +30,38 @@ When a tenant account is cloned to the other grid in a grid federation connectio
 
 //https://jira.vtc.eng.netapp.com/browse/SGWS-23229
 
-=== Cross-grid replication failure alert
+=== Cross-grid replication permanent failure alerts
 
-The *Cross-grid replication failure* alert indicates that tenant objects can't be replicated between the buckets on two grids for a reason that requires user intervention to resolve. For example, a tenant's quota might have been exceeded or a bucket setting might have changed.
+The *Cross-grid replication permanent failure - Source grid* and *Cross-grid replication permanent failure - Destination grid* alerts indicate that tenant objects can't be replicated between the buckets on two grids for a reason that requires user intervention to resolve. For example, a tenant's quota might have been exceeded or a bucket setting might have changed. The recommended actions for both alerts are the same, but you need to know which grid has the error before performing the steps.
 
-. From the grid where the alert was triggered, go to *CONFIGURATION* > *System* > *Grid Federation*.
+==== Cross-grid replication permanent failure - Source grid
 
-. On the *Permitted tenants* tab, look at the *Last Error* column to determine which tenant accounts have errors.
+This alert indicates that a problem with the source of a cross-grid replication operation is preventing objects from being replicated. You must access the source grid to determine and resolve the alert. 
+
+. Sign into the grid where the alert was triggered.
+. Go to *Configuration* > *System* > *Grid federation*, and locate the connection.
+. On the Permitted tenants tab, look at the *Last error* column to determine which tenant accounts have errors.
+. Go to <<affected_tenants,Steps for each affected tenant>>.
+
+==== Cross-grid replication permanent failure - Destination grid
+
+This alert indicates that a problem with the destination of a cross-grid replication operation is preventing objects from being replicated. You must access the destination grid to determine and resolve the alert.
+   
+. Sign into the grid where the alert was triggered.
+
+. Go to *Configuration* > *System* > *Grid federation*, and select the connection.
+
+. On the connection details page, locate the FQDN or IP address in the *Remote hostname (other grid)* field.
+
+. Sign in to the other grid, and go to *Configuration* > *System* > *Grid federation*.
+
+. Select the connection name from the table to open the details page.
+
+. On the Permitted tenants tab, look at the *Last error* column to determine which tenant accounts have errors.
+
+. Go to <<affected_tenants,Steps for each affected tenant>>.
+
+==== [[affected_tenants]]Steps for each affect tenant
 
 . For each affected tenant account:
 
