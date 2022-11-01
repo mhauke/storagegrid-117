@@ -1,7 +1,7 @@
 ---
 permalink: audit/object-storage-audit-messages.html
 sidebar: sidebar
-keywords: audit, object storage, object management, object retrieval, node transfer, verification, APCT, ARCB, ARCE, ARCT, AREM, ASCE, ASCT, ATCE, AVCC, BROR, CBSE, CBRE, SCMT, SREM
+keywords: audit, object storage, object management, object retrieval, node transfer, verification, APCT, ARCB, ARCE, ARCT, AREM, ASCE, ASCT, ATCE, AVCC, BROR, CBSE, CBRE, CGRR, SCMT, SREM
 summary: 'The audit messages belonging to the object storage audit category are used for events related to the storage and management of objects within the StorageGRID system. These include object storage and retrievals, grid-node to grid-node transfers, and verifications.'
 ---
 = Object storage audit messages
@@ -62,6 +62,10 @@ The audit messages belonging to the object storage audit category are used for e
 |CBRE
 |Object Receive End: The destination entity completed a grid-node to grid-node data transfer operation.
 | xref:cbre-object-receive-end.adoc[CBRE: Object Receive End]
+
+| CGRR
+| Cross-Grid Replication Request:
+| xref:cgrr-cross-grid-replication.adoc[CGRR: Cross-Grid Replication Request]
 
 |SCMT
 |Object Store Commit: A content block was completely stored and verified, and can now be requested.
