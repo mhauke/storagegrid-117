@@ -1,41 +1,41 @@
 ---
 permalink: tenant/delete-all-bucket-objects.html
 sidebar: sidebar
-keywords: how to remove all bucket objects, empty bucket
-summary: 'You can use the Tenant Manager to remove the contents of one or more buckets.'
+keywords: how to delete bucket objects, empty bucket
+summary: 'You can use the Tenant Manager to delete the objects in one or more buckets.'
 ---
-= Delete all objects from bucket
+= Delete objects in bucket
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use the Tenant Manager to remove the contents of one or more buckets.
-
-When you delete all bucket objects, StorageGRID permanently deletes all objects and all object versions in each selected bucket from all nodes and sites in your StorageGRID system. StorageGRID also removes any related object metadata. You will not be able to recover this information.
+You can use the Tenant Manager to delete the objects in one or more buckets.
 
 .Considerations and requirements
 
 Before performing these steps, note the following:
 
-* Deleting all bucket objects might take minutes, days, or even weeks, based on the number of objects, object copies, and concurrent operations. While objects are being deleted, the bucket's state is *Deleting objects: read-only*.
+* When you delete the objects in a bucket, StorageGRID permanently removes all objects and all object versions in each selected bucket from all nodes and sites in your StorageGRID system. StorageGRID also removes any related object metadata. You will not be able to recover this information.
 
-* In the *Deleting objects: read-only* state, you can't add new objects to the bucket. 
-
-* When all objects have been deleted, you can do one of the following:
-
-** Delete the bucket
-** Keep the bucket in read-only mode to reserve its name for future use
-** Return the bucket to write mode and reuse it for new objects 
-
-* If a bucket has object versioning enabled, any delete markers that are in the bucket when you start these steps will not be removed by the delete objects operation. If you want to delete a versioned bucket after all objects have been deleted, you must remove any pre-existing delete markers.
+* Deleting all of the objects in a bucket might take minutes, days, or even weeks, based on the number of objects, object copies, and concurrent operations.
 
 * If a bucket has xref:using-s3-object-lock.adoc[S3 Object Lock enabled], it might remain in the *Deleting objects: read-only* state for _years_.
 +
 IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Deleting objects: read-only* state until the retention date is reached for all objects and any legal holds are removed.
 
+* While objects are being deleted, the bucket's state is *Deleting objects: read-only*. In this state, you can't add new objects to the bucket. 
+
+* When all objects have been deleted, you can do one of the following:
+
+** Return the bucket to write mode and reuse it for new objects 
+** Delete the bucket
+** Keep the bucket in read-only mode to reserve its name for future use
+
+* If a bucket has object versioning enabled, any delete markers that are in the bucket when you start these steps will not be removed by the delete objects operation. If you want to delete a versioned bucket after all objects have been deleted, you must remove any pre-existing delete markers.
+
 * If you use xref:buckets-manage-cross-grid-replication.adoc[cross-grid replication] and:
 
-** Replication is enabled only for this bucket, deleting all objects does not delete any objects from the corresponding bucket on the other grid. You can also continue to add objects to the other bucket.
+** Replication is enabled only for one of the buckets, deleting all objects does not delete any objects from the corresponding bucket on the other grid. You can also continue to add objects to the other bucket.
 
 ** Replication is enabled for both buckets, the *Cross-grid replication failure* alert will be triggered if objects are added to the corresponding bucket on the other grid while this bucket is in the *Deleting objects: read-only state*. If you can't guarantee no one will add objects to the bucket on the other grid, xref:../tenant/buckets-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects on this grid.
 
@@ -82,14 +82,20 @@ After a few minutes:
 * *(read-only)* appears after the bucket's name on the bucket details page.
 * *(Deleting objects: read-only)* appears next to the bucket's name on the Buckets page.
 
+. As required while the operation is running, select *Stop deleting objects* to halt the process. Then, optionally, select *Delete objects in bucket* to resume the process.
++
+When you select *Stop deleting objects*, the bucket is returned to write mode; however, you cannot access or restore any objects that have been deleted.
+
 . When the operation is complete (when 100% of the objects have been removed), do one of the following:
 
-** Select *Delete bucket* to delete the bucket itself.
+** Exit the page to keep the bucket in read-only mode. For example, you might keep an empty bucket in read-only mode to reserve the bucket name for future use.
+
+** Delete the bucket. You can select *Delete bucket* to delete a single bucket or return the Buckets page and select *Actions* > *Delete* buckets to remove more than one bucket.
 +
 NOTE: If you are unable to delete a versioned bucket after all objects were deleted, delete markers might remain. To delete the bucket, you must remove all remaining delete markers.
 
-** Select *Stop emptying bucket* to return the bucket to write mode and optionally reuse it for new objects. 
-** Exit the page to keep the bucket in read-only mode. For example, you might keep an empty bucket in read-only mode to reserve the bucket name for future use.
+** Return the bucket to write mode and optionally reuse it for new objects. You can select *Stop deleting objects* for a single bucket or return to the Buckets page and select *Action* > *Stop deleting objects* for more than one bucket. 
+
 
 
 

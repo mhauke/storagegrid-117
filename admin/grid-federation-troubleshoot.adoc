@@ -36,7 +36,7 @@ The *Cross-grid replication permanent failure - Source grid* and *Cross-grid rep
 
 ==== Cross-grid replication permanent failure - Source grid
 
-This alert indicates that a problem with the source of a cross-grid replication operation is preventing objects from being replicated. You must access the source grid to determine and resolve the alert. 
+This alert indicates that a problem with the source of a cross-grid replication operation is preventing objects from being replicated between the grids. You must access the source grid to determine and resolve the alert. 
 
 . Sign into the grid where the alert was triggered.
 . Go to *Configuration* > *System* > *Grid federation*, and locate the connection.
@@ -45,7 +45,7 @@ This alert indicates that a problem with the source of a cross-grid replication 
 
 ==== Cross-grid replication permanent failure - Destination grid
 
-This alert indicates that a problem with the destination of a cross-grid replication operation is preventing objects from being replicated. You must access the destination grid to determine and resolve the alert.
+This alert indicates that a problem with the destination of a cross-grid replication operation is preventing objects from being replicated between the grids. You (or a grid admin with Root access permission) must access the destination grid to determine and resolve the alert.
    
 . Sign into the grid where the alert was triggered.
 

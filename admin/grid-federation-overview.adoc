@@ -15,7 +15,6 @@ You can use grid federation to clone tenants and replicate their objects between
 
 A grid federation connection is a bidirectional, trusted, and secure connection between Admin and Gateway Nodes in two StorageGRID systems. A grid federation connection must exist before you can use account clone or cross-grid replication.
 
-
 === Considerations and requirements for grid federation connections
 
 * Both grids used for grid federation must be running StorageGRID 11.7.
@@ -63,7 +62,6 @@ the *Expiration of grid federation certificate* alert reminds you to rotate the 
 
 [IMPORTANT]
 If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
-
 
 == What is account clone?
 

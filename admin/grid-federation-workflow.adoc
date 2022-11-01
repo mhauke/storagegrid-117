@@ -2,24 +2,30 @@
 permalink: admin/grid-federation-workflow.html
 sidebar: sidebar
 keywords: grid federation workflow, cross-grid replication, account clone, cgr, disaster recovery
-summary: 'As a grid administrator, you must coordinate closely with tenant users to establish and use a grid federation connection between two StorageGRID systems for account clone and cross-grid replication. The workflow diagrams summarize the steps.'
+summary: 'These workflow diagrams summarize the steps that grid admins and tenant users will follow when configuring grid federation,account clone, and cross grid replication.'
 ---
 = Grid federation workflow diagrams
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-As a grid administrator, you must coordinate closely with tenant users to establish and use a grid federation connection between two StorageGRID systems for account clone and cross-grid replication. The workflow diagrams summarize the steps.
+These workflow diagrams summarize the steps that grid admins and tenant users will follow when configuring <<workflow_gf,grid federation>>, <<workflow_ac,account clone>>, and <<workflow_cgr,cross-grid replication>>.
 
-== Workflow for grid federation connection
+== [[workflow_gf]]Workflow for grid federation connection
 
-This workflow diagram shows the high-level steps that the grid administrators on both grids will perform to xref:grid-federation-create-connection.adoc[create a grid federation connection] between the grids.
+This workflow diagram shows the steps that grid administrators on both grids will perform to create and manage a grid federation connection.
 
 image:../media/grid-federation-workflow.png[Grid federation workflow]
 
-== Workflow for account clone and cross-grid replication
+.Learn how
 
-This workflow diagram shows the high-level steps that grid administrators and tenant users will perform to set up account clone and cross-grid replication. 
+* xref:grid-federation-create-connection.adoc[Create grid federation connections] 
+* xref:grid-federation-manage-connections.adoc[Manage grid federation connections]
+* xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation errors]
+
+== [[workflow_ac]]Workflow for account clone
+
+This workflow diagram shows the steps that grid administrators and permitted tenants will perform to set up account clone. 
 
 image:../media/grid-federation-account-clone-workflow.png[workflow for cross-grid replication]
 
@@ -33,7 +39,18 @@ Groups and users created on the destination grid are not cloned to the source gr
 
 . Tenant users can sign in to create new S3 access keys and optionally clone them to the tenant's destination grid.
 
-. A tenant user with Root Access permission can create identical buckets on both grids and then update bucket settings to enable cross-grid replication of bucket objects to occur in  one or both directions. See xref:../tenant/buckets-manage-cross-grid-replication.adoc[Manage buckets for cross-grid replication].
+.Learn how
+
+* xref:grid-federation-manage-tenants.adoc[Manage permitted tenants] 
 
 
+== [[workflow_cgr]]Workflow for cross-grid replication
+
+This workflow diagram shows the steps that permitted tenants will perform to configure cross-grid replication between buckets on two grids. 
+
+image:../media/grid-federation-cgr-workflow.png[Cross-grid replication workflow]
+
+.Learn how
+
+* xref:../tenant/buckets-manage-cross-grid-replication.adoc[Manage buckets for cross-grid replication]
 
