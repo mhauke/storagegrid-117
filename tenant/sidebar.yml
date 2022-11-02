@@ -79,8 +79,6 @@ entries:
       url: "/tenant/update-default-retention-settings.html"
     - title: Configure Cross-Origin Resource Sharing (CORS)
       url: "/tenant/configuring-cross-origin-resource-sharing-cors.html" 
-    - title: Manage cross-grid replication
-      url: "/tenant/buckets-manage-cross-grid-replication.html"  
     - title: Delete objects in bucket
       url: "/tenant/delete-all-bucket-objects.html"
     - title: Delete bucket
@@ -130,4 +128,15 @@ entries:
         url: "/tenant/json-generated-by-search-integration-service.html"
       - title: Object metadata included in metadata notifications
         url: "/tenant/object-metadata-included-in-metadata-notifications.html"
+  - title: Use grid federation connections
+    entries:
+    - title: Overview
+      pdf-filename: Use a grid federation connection
+      url: "/tenant/grid-federation-tenant-overview.html"
+    - title: Use account clone
+      url: "/tenant/grid-federation-use-account-clone.html"  
+    - title: Manage cross-grid replication
+      url: "/tenant/grid-federation-manage-cross-grid-replication.html" 
+    - title: View grid federation connections
+      url: "/tenant/grid-federation-connections-view.html"           
     

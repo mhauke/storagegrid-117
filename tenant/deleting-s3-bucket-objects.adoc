@@ -33,11 +33,11 @@ IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Deleting object
 
 * If a bucket has object versioning enabled, any delete markers that are in the bucket when you start these steps will not be removed by the delete objects operation. If you want to delete a versioned bucket after all objects have been deleted, you must remove any pre-existing delete markers.
 
-* If you use xref:buckets-manage-cross-grid-replication.adoc[cross-grid replication] and:
+* If you use xref:grid-federation-manage-cross-grid-replication.adoc[cross-grid replication] and:
 
 ** Replication is enabled only for one of the buckets, deleting all objects does not delete any objects from the corresponding bucket on the other grid. You can also continue to add objects to the other bucket.
 
-** Replication is enabled for both buckets, the *Cross-grid replication failure* alert will be triggered if objects are added to the corresponding bucket on the other grid while this bucket is in the *Deleting objects: read-only state*. If you can't guarantee no one will add objects to the bucket on the other grid, xref:../tenant/buckets-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects on this grid.
+** Replication is enabled for both buckets, the *Cross-grid replication failure* alert will be triggered if objects are added to the corresponding bucket on the other grid while this bucket is in the *Deleting objects: read-only state*. If you can't guarantee no one will add objects to the bucket on the other grid, xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects on this grid.
 
 .What you'll need
 

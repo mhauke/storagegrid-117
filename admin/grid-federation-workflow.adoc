@@ -29,19 +29,11 @@ This workflow diagram shows the steps that grid administrators and permitted ten
 
 image:../media/grid-federation-account-clone-workflow.png[workflow for cross-grid replication]
 
-. A grid admin for either grid creates one or more new tenant accounts to xref:grid-federation-manage-tenants.adoc[determine who is allowed] to use the connection. When the grid admin saves a tenant with the *Use grid federation connection* permission, the tenant is created on its source grid and replicated to its destination grid.
-
-. If the tenant has permission to *Use own identity source*, the tenant's root user can configure the same LDAP server on both the source and destination grids.
-
-. The tenant's root user can create local groups and users or import federated groups. When groups and users are created or imported on the source grid, StorageGRID automatically clones them to the tenant's destination grid.
-+
-Groups and users created on the destination grid are not cloned to the source grid.
-
-. Tenant users can sign in to create new S3 access keys and optionally clone them to the tenant's destination grid.
 
 .Learn how
 
 * xref:grid-federation-manage-tenants.adoc[Manage permitted tenants] 
+* xref:../tenant/grid-federation-use-account-clone.adoc[Use account clone]
 
 
 == [[workflow_cgr]]Workflow for cross-grid replication
@@ -52,5 +44,5 @@ image:../media/grid-federation-cgr-workflow.png[Cross-grid replication workflow]
 
 .Learn how
 
-* xref:../tenant/buckets-manage-cross-grid-replication.adoc[Manage buckets for cross-grid replication]
+* xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[Manage cross-grid replication]
 
