@@ -11,5 +11,24 @@ summary: If your tenant account has the Use grid federation connection permissio
 [.lead]
 If your tenant account has the *Use grid federation connection* permission, you can view the allowed connections.
 
-You can view the connection name, access the bucket details page for each bucket that has cross-grid replication enabled, and view the most recent error to occur when bucket data was being replicated to the other grid in the connection.
+.What you'll need
+
+* The tenant account has the *Use grid federation connection* permission.
+* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+
+.Steps
+
+. Select *STORAGE (S3)* > *Grid federation connections*.
++
+The Grid federation connection page appears, and includes a table that summarizes the following information:
+
+* The *Connection name* column shows the grid federation connections this tenant has permission to use. 
+
+* The *Buckets with cross-grid replication* column shows which buckets for this tenant on this grid have cross-grid replication enabled. Objects added to these buckets will be replicated to the other grid in the connection.
+
+* The *Last error* column shows the most recent error to occur for this tenant when bucket data was being replicated to the other grid.
+
+. Optionally, select a bucket name to xref:viewing-s3-bucket-details.adoc[view bucket details].
+
+.  Optionally, select *Clear error* to clear the last error.
 

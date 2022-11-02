@@ -9,20 +9,26 @@ summary: If your tenant account has the Use grid federation connection permissio
 :imagesdir: ../media/
 
 [.lead]
-If your tenant account has the Use grid federation connection permission, you should understand how groups and users are cloned to the other grid in the grid federation connection.
+If your tenant account has the *Use grid federation connection* permission, you should understand how groups and users are cloned to the other grid in the grid federation connection.
 
-== [[workflow_ac]]Workflow for account clone
-
-This workflow diagram shows the steps that grid administrators and permitted tenants will perform to set up account clone. 
+This workflow diagram shows the steps that grid administrators and permitted tenants will perform to set up account clone. These steps can only be performed after the grid federation connection is configured.
 
 image:../media/grid-federation-account-clone-workflow.png[workflow for cross-grid replication]
 
-. A grid admin for either grid creates one or more new tenant accounts to determine who is allowed to use the connection. When the grid admin saves a tenant with the *Use grid federation connection* permission, the tenant is created on its source grid and replicated to its destination grid.
+As shown in the figure:
 
-. If the tenant has permission to *Use own identity source*, the tenant's root user can configure the same LDAP server on both the source and destination grids.
+. If identity federation and single sign-on will be used for both Grid Manager and Tenant Manager, the grid admin configures the same identity source and the same SSO identity provider on both grids in the grid federation connection.
 
-. The tenant's root user can create local groups and users or import federated groups. When groups and users are created or imported on the source grid, StorageGRID automatically clones them to the tenant's destination grid.
-+
-Groups and users created on the destination grid are not cloned to the source grid.
+. The grid admin creates a new tenant account and adds the *Use grid federation connection* permission for a specific grid federation connection.
 
-. Tenant users can sign in to create new S3 access keys and optionally clone them to the tenant's destination grid.
+. When the new tenant is saved, StorageGRID automatically creates a replica of that tenant on the other grid.
+
+. The tenant root use signs in to Tenant Manager on the source grid.
+
+. If the tenant has permission to *Use own identity source*, the tenant root user configures the same identity source on both the source and destination grids.
+
+. The tenant root user imports federated groups or creates local groups and users.
+
+. When new groups are imported or new groups and users are created on the source grid, StorageGRID automatically clones these items to the destination grid.
+
+. Tenant users can sign in to the source grid to create new S3 access keys and optionally clone these keys to the destination grid.
