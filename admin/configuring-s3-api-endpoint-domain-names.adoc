@@ -27,7 +27,7 @@ To enable clients to use S3 endpoint domain names, you must do all of the follow
 
 
 * Use the Grid Manager to add the S3 endpoint domain names to the StorageGRID system.
-* Ensure that the certificate the client uses for HTTPS connections to StorageGRID is signed for all domain names that the client requires.
+* Ensure that the xref:../admin/admin/configuring-administrator-client-certificates.adoc[certificate the client uses for HTTPS connections to StorageGRID] is signed for all domain names that the client requires.
 +
 For example, if the endpoint is `s3.company.com`, you must ensure that the certificate used for HTTPS connections includes the `s3.company.com` endpoint and the endpoint's wildcard Subject Alternative Name (SAN): `*.s3.company.com`.
 
