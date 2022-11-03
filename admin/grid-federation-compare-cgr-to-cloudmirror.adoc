@@ -1,0 +1,70 @@
+---
+permalink: admin/grid-federation-compare-cgr-to-cloudmirror.html
+sidebar: sidebar
+keywords: cross-grid replication, cloudmirror replication
+summary: 'As you begin using grid federation, it might be helpful to understand the similarities and differences between cross-grid replication and the StorageGRID CloudMirror replication service.'
+---
+= Compare cross-grid replication and CloudMirror replication
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+As you begin using grid federation, it might be helpful to understand the similarities and differences between cross-grid replication and the StorageGRID CloudMirror replication service.
+
+[cols="1a,3a,3a" options="header"]
+|===
+|  | Cross-grid replication| CloudMirror replication service
+
+| What is the primary purpose?
+| One StorageGRID system acts as the backup for another system for disaster recovery or ransomware mitigation. Bucket objects can be replicated between the grids in one or both directions.
+
+| The CloudMirror replication service enables a tenant to automatically replicate objects from a bucket in StorageGRID (source) to an external S3 bucket (destination). CloudMirror replication creates an independent copy of an object in an independent S3 infrastructure.
+
+
+| How is it set up?
+| . Configure a grid federation connection between two grids. 
+. Add new tenant accounts, which are  automatically cloned to the other grid. 
+. Add new tenant groups and users, which are also cloned.
+. Create corresponding buckets on each grid and enable cross-grid replication to occur in one or both directions.
+
+| . A tenant user xref:../tenant/configuring-cloudmirror-replication.adoc[configures CloudMirror replication] by defining a CloudMirror endpoint (IP address, credentials, and so on) using the Tenant Manager or the S3 API. 
+. Any bucket owned by that tenant account can be configured to point to the CloudMirror endpoint. 
+
+| Who is responsible for setting it up?
+| * A grid admin configures the connection and the tenants.
+* Tenant users configure the groups, users, keys, and buckets.
+| Typically, a tenant user
+
+| What is the destination?
+| A corresponding S3 bucket on the other StorageGRID system in the grid federation connection.
+
+| Any compatible S3 infrastructure (including Amazon S3)
+
+| What causes objects to be moved to the destination?
+| When objects are added to a bucket that has cross-grid replication enabled, the objects are automatically replicated to the corresponding bucket on the other grid.
+
+| The act of ingesting a new object into a source bucket that has been configured with a CloudMirror endpoint. Objects that existed in the source bucket before the bucket was configured with the CloudMirror endpoint are not replicated, unless they are modified.
+
+| How are objects retrieved?
+| Applications can retrieve objects by making requests to the bucket on either grid.
+
+|Because the mirrored copy in the destination bucket is an independent copy, applications can retrieve the object by making requests either to StorageGRID or to the S3 destination. For example, suppose you use CloudMirror replication to mirror objects to a partner organization. The partner can use its own applications to read or update objects directly from the S3 destination. Using StorageGRID is not required.
+
+| Can you read from the destination directly?
+| Yes
+| Yes, because the mirrored copy is an independent copy.
+
+
+| What happens if an object is deleted?
+| * Delete requests that include a version ID are never replicated to the destination grid.
+* Delete requests that do not include a version ID add a delete marker to the source bucket, which can optionally be replicated to the destination grid.
+* If cross-grid replication is configured for only one direction, objects in the destination bucket can be deleted without affecting the source.
+
+| The delete action is not replicated from the source to the destination. A deleted object no longer exists in the StorageGRID bucket, but it continues to exist in the destination bucket. Similarly, objects in the destination bucket can be deleted without affecting the source.
+
+
+| How do you access objects after a disaster (StorageGRID system not operational)?
+| Refer to xref:grid-federation-how-disaster-recovery-is-performed/adoc[How disaster recovery is performed by technical support].
+| The object copies in the CloudMirror destination are independent of StorageGRID, so they can be accessed directly before the StorageGRID nodes are recovered.
+
+|===
