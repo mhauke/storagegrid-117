@@ -11,7 +11,7 @@ summary: 'This message is generated whenever a location for an object copy \(rep
 [.lead]
 This message is generated whenever a location for an object copy (replicated or erasure coded) cannot be found.
 
-[options="header"]
+[cols="1a,1a,4a" options="header"]
 |===
 | Code| Field| Description
 a|
@@ -37,7 +37,7 @@ ECPR
 a|
 Erasure Coding Profile
 a|
-For erasure-coded object data. The ID of the Erasure Coding profile used.
+For erasure-coded object data. The ID of the erasure coding profile used.
 a|
 LTYP
 a|

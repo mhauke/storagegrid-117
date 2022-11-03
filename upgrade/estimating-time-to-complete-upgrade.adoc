@@ -20,18 +20,24 @@ The table summarizes the main upgrade tasks and lists the approximate time requi
 |===
 | Upgrade task| Description| Approximate time required| During this task
 
-|Start Upgrade Service
-|Upgrade prechecks are run, the software file is distributed, and the upgrade service is started.
-|3 minutes per grid node, unless validation errors are reported
-|As required, you can run the upgrade prechecks manually before the scheduled upgrade maintenance window.
+
+|Run prechecks and upgrade primary Admin Node
+|The upgrade prechecks are run, and the primary Admin Node is stopped, upgraded, and restarted. 
+|30 minutes to 1 hour, with SG100 and SG1000 appliance nodes requiring the most time. 
+
+Unresolved precheck errors will increase this time. 
+
+|You cannot access the primary Admin Node. Connection errors might be reported, which you can ignore.
+
+Running the upgrade prechecks before starting the upgrade lets you resolve any errors before the scheduled upgrade maintenance window.
+
+|Start upgrade service
+|The software file is distributed, and the upgrade service is started.
+|3 minutes per grid node
+|
 
 
-|Upgrade Grid Nodes (primary Admin Node)
-|The primary Admin Node is stopped, upgraded, and restarted.
-|30 minutes to 1 hour, with SG100 and SG1000 appliance nodes requiring the most time.
-|You cannot access the primary Admin Node. Connection errors are reported, which you can ignore.
-
-|Upgrade Grid Nodes (all other nodes)
+|Upgrade other grid nodes
 |The software on all other grid nodes is upgraded, in the order in which you approve the nodes. Every node in your system will be brought down one at a time for several minutes each.
 |15 minutes to 1 hour per node, with appliance nodes requiring the most time
 
@@ -45,7 +51,7 @@ The table summarizes the main upgrade tasks and lists the approximate time requi
 +
 *Note:* If you need to perform a recovery, contact technical support.
 
-|Enable Features
+|Enable features
 |The new features for the new version are enabled.
 |Less than 5 minutes
 |
@@ -54,17 +60,17 @@ The table summarizes the main upgrade tasks and lists the approximate time requi
 * Do not update the ILM configuration.
 * You cannot perform another maintenance procedure.
 
-|Upgrade Database
+|Upgrade database
 |The upgrade process checks each node to verify that the Cassandra database does not need to be updated.
 |10 seconds per node or a few minutes for the entire grid
 |The upgrade from StorageGRID 11.6 to 11.7 does not require a Cassandra database upgrade; however, the Cassandra service will be stopped and restarted on each Storage Node. 
 
 For future StorageGRID feature releases, the Cassandra database update step might take several days to complete.
 
-|Final Upgrade Steps
+|Final upgrade steps
 |Temporary files are removed and the upgrade to the new release completes.
 |5 minutes
-|When the *Final Upgrade Steps* task completes, you can perform all maintenance procedures.
+|When the *Final upgrade steps* task completes, you can perform all maintenance procedures.
 
 |===
 
@@ -96,3 +102,6 @@ The estimated time for this step is 2 hours.
 . Add the values together.
 +
 You should allow up to 17 hours to complete the upgrade of your system to StorageGRID 11.7.0.
+
+[NOTE]
+As required, you can split the maintenance window into smaller windows by approving subsets of grid nodes to upgrade in multiple sessions. For example, you might prefer to upgrade the nodes at site A in one session and then upgrade the nodes at site B in a later session. If you choose to perform the upgrade in more than one session, be aware that you can't start using the new features until all nodes have been upgraded.

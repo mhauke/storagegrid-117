@@ -36,9 +36,11 @@ If you do not have either the Root access permission or the Tenant accounts perm
 If *matches all* is selected (default), the rule applies to all S3 buckets or Swift containers.
 
 . For S3 tenants, optionally select *Yes* to apply the rule only to older object versions in S3 buckets that have versioning enabled.
-
-NOTE: Noncurrent Time applies only to S3 objects in versioning-enabled buckets. See xref:../s3/operations-on-buckets.adoc[Operations on buckets, PUT Bucket versioning] and xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock].
-
++
+If you select *Yes*, "`Noncurrent time`" will be automatically selected for Reference time in xref:create-ilm-rule-define-placements.adoc[Step 2 of the Create an ILM rule wizard].
++
+NOTE: Noncurrent time applies only to S3 objects in versioning-enabled buckets. See xref:../s3/operations-on-buckets.adoc[Operations on buckets, PUT Bucket versioning] and xref:managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock].
++
 You can use this option to reduce the storage impact of versioned objects by filtering for noncurrent object versions. See xref:example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[Example 4: ILM rules and policy for S3 versioned objects].
 
 . Optionally, select *Add an advanced filter* to specify additional filters.
@@ -62,9 +64,9 @@ The table shows the types of metadata you can specify in advanced filters, the o
 * equals
 * does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
+* greater than or equal to
 
 |Time and date the object was ingested.
 
@@ -90,9 +92,9 @@ For example, you might want to match objects that end with `.txt` or start with 
 * equals
 * does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
+* greater than or equal to
 * exists
 * does not exist
 |Time and date the object was last retrieved (read or viewed).
@@ -107,15 +109,15 @@ For example, you might want to match objects that end with `.txt` or start with 
 
 *Note:* A value of us-east-1 will match objects in buckets created in the us-east-1 region as well as objects in buckets that have no region specified. See xref:configuring-regions-optional-and-s3-only.adoc[Configure regions (optional and S3 only)].
 
-|Object Size (MB)
+|Object Size
 |
 * equals
-* not equals
+* does not equal
 * less than
-* less than or equals
+* less than or equal to
 * greater than
-* greater than or equals
-|The object's size in MB.
+* greater than or equal to
+|The object's size.
 
 Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 

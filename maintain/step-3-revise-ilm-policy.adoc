@@ -13,7 +13,7 @@ From Step 3 (Revise ILM Policy) of the Decommission Site wizard, you can determi
 
 .What you'll need
 
-You have a good understanding of how ILM works and you are familiar with creating storage pools, Erasure Coding profiles, ILM rules, and simulating and activating an ILM policy.
+You have a good understanding of how ILM works and you are familiar with creating storage pools, erasure coding profiles, ILM rules, and simulating and activating an ILM policy.
 
 xref:../ilm/index.adoc[Manage objects with ILM]
 
@@ -24,9 +24,9 @@ StorageGRID cannot decommission a site if that site is referred to by any ILM ru
 If your current ILM policy refers to the site you want to remove, you must activate a new ILM policy that meets certain requirements. Specifically, the new ILM policy:
 
 * Cannot use a storage pool that refers to the site.
-* Cannot use an Erasure Coding profile that refers to the site.
+* Cannot use an erasure coding profile that refers to the site.
 * Cannot use the default *All Storage Nodes* storage pool or the default *All Sites* site.
-* Cannot use the stock *Make 2 Copies* rule.
+* Cannot use the *Make 2 Copies* rule.
 * Must be designed to fully protect all object data.
 +
 IMPORTANT: Never create a single-copy ILM rule to accommodate the removal of a site. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. If only one replicated copy of an object exists, that object is lost if a Storage Node fails or has a significant error. You also temporarily lose access to the object during maintenance procedures such as upgrades.
@@ -53,11 +53,11 @@ The ILM policies page appears in a new browser tab. Use this tab to update ILM. 
 +
 NOTE: For details, see the instructions for managing objects with information lifecycle management.
 
- .. If you plan to use erasure coding, select *ILM* > *Erasure coding* to create one or more Erasure Coding profiles.
+ .. If you plan to use erasure coding, select *ILM* > *Erasure coding* to create one or more erasure coding profiles.
 +
 You must select storage pools that do not refer to the site.
 +
-NOTE: Do not use the *All Storage Nodes* storage pool in the Erasure Coding profiles.
+NOTE: Do not use the *All Storage Nodes* storage pool in the erasure coding profiles.
 
 . Select *ILM* > *Rules* and clone each of the rules listed in the table for Step 3 (Revise ILM Policy).
 +
@@ -66,7 +66,7 @@ NOTE: For details, see the instructions for managing objects with information li
  .. Use names that will make it easy to select these rules in a new policy.
  .. Update the placement instructions.
 +
-Remove any storage pools or Erasure Coding profiles that refer to the site and replace them with new storage pools or Erasure Coding profiles.
+Remove any storage pools or erasure coding profiles that refer to the site and replace them with new storage pools or erasure coding profiles.
 +
 NOTE: Do not use the *All Storage Nodes* storage pool in the new rules.
 

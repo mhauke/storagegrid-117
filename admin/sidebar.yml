@@ -48,8 +48,6 @@ entries:
       url: "/admin/changing-provisioning-passphrase.html"
     - title: Change node console passwords
       url: "/admin/change-node-console-password.html"    
-    - title: Control access through firewalls
-      url: "/admin/controlling-access-through-firewalls.html"
     - title: Use identity federation
       url: "/admin/using-identity-federation.html"
     - title: Manage admin groups
@@ -78,6 +76,21 @@ entries:
         url: "/admin/disabling-single-sign-on.html"
       - title: Temporarily disable and reenable single sign-on for one Admin Node
         url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
+  - title: Use grid federation
+    entries:
+    - title: Overview
+      pdf-filename: Overview of grid federation
+      url: "/admin/grid-federation-overview.html"
+    - title: Grid federation workflow  
+      url: "/admin/grid-federation-workflow.html"
+    - title: Create grid federation connections
+      url: "/admin/grid-federation-create-connection.html"  
+    - title: Manage grid federation connections
+      url: "/admin/grid-federation-manage-connection.html" 
+    - title: Manage permitted tenants
+      url: "/admin/grid-federation-manage-tenants.html"  
+    - title: Troubleshoot grid federation errors
+      url: "/admin/grid-federation-troubleshoot.html"       
   - title: Manage security
     entries:  
     - title: Overview
@@ -103,12 +116,12 @@ entries:
         url: "/admin/configuring-administrator-client-certificates.html"
     - title: Configure security settings
       entries:
-      - title: Control which client operations are permitted
-        url: "/admin/controlling-which-client-operations-are-permitted.html"
-      - title: Enable HTTP for client communications
-        url: "/admin/enabling-http-for-client-communications.html"    
-      - title: Change the browser session timeout
-        url: "/admin/changing-browser-session-timeout.html"
+      - title: Manage TLS and SSH policy
+        url: "/admin/using-tls-ssh-policy.html"
+      - title: Configure network and object options
+        url: "/admin/changing-network-options-object-encryption.html"  
+      - title: Change browser inactivity timeout
+        url: "/admin/changing-browser-session-timeout-interface.html"      
     - title: Configure key management servers
       entries:
       - title: Overview
@@ -140,27 +153,25 @@ entries:
         url: "/admin/configuring-storage-proxy-settings.html"
       - title: Configure Admin proxy settings
         url: "/admin/configuring-admin-proxy-settings.html"
-    - title: Control firewall     
+    - title: Control firewalls     
       entries:
-      - title: Manage firewall
+      - title: Control access through external firewalls
+        url: "/admin/controlling-access-through-firewalls.html"  
+      - title: Manage internal firewall
         url: "/admin/manage-firewall-controls.html"      
-      - title: Configure firewall
+      - title: Configure internal firewall
         url: "/admin/configure-firewall-controls.html"
-      - title: Managed untrusted Client Networks
-        url: "/admin/managing-untrusted-client-networks.html"
-      - title: Specify node&#8217;s Client Network is untrusted
-        url: "/admin/specifying-node-client-network-is-untrusted.html"
   - title: Manage tenants
     entries:
     - title: Overview
       url: "/admin/managing-tenants.html"
       pdf-filename: Manage tenants - Overview
     - title: Create tenant account
-      url: "/admin/creating-tenant-account.html"
-    - title: Change password for tenant&#8217;s local root user
-      url: "/admin/changing-password-for-tenant-local-root-user.html"
+      url: "/admin/creating-tenant-account.html"  
     - title: Edit tenant account
       url: "/admin/editing-tenant-account.html"
+    - title: Change password for tenant&#8217;s local root user
+      url: "/admin/changing-password-for-tenant-local-root-user.html"      
     - title: Delete tenant account
       url: "/admin/deleting-tenant-account.html"
     - title: Manage platform services
@@ -279,8 +290,6 @@ entries:
       url: "/admin/using-multiple-admin-nodes.html"
     - title: Identify the primary Admin Node
       url: "/admin/identifying-primary-admin-node.html"
-    - title: Select a preferred sender
-      url: "/admin/selecting-preferred-sender.html"
     - title: View notification status and queues
       url: "/admin/viewing-notification-status-and-queues.html"
     - title: How Admin Nodes show acknowledged alarms (legacy system)
