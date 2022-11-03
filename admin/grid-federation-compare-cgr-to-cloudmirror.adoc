@@ -13,7 +13,9 @@ As you begin using grid federation, it might be helpful to understand the simila
 
 [cols="1a,3a,3a" options="header"]
 |===
-|  | Cross-grid replication| CloudMirror replication service
+|  
+| Cross-grid replication
+| CloudMirror replication service
 
 | What is the primary purpose?
 | One StorageGRID system acts as the backup for another system for disaster recovery or ransomware mitigation. Bucket objects can be replicated between the grids in one or both directions.
@@ -48,7 +50,7 @@ As you begin using grid federation, it might be helpful to understand the simila
 | How are objects retrieved?
 | Applications can retrieve objects by making requests to the bucket on either grid.
 
-|Because the mirrored copy in the destination bucket is an independent copy, applications can retrieve the object by making requests either to StorageGRID or to the S3 destination. For example, suppose you use CloudMirror replication to mirror objects to a partner organization. The partner can use its own applications to read or update objects directly from the S3 destination. Using StorageGRID is not required.
+| Because the mirrored copy in the destination bucket is an independent copy, applications can retrieve the object by making requests either to StorageGRID or to the S3 destination. For example, suppose you use CloudMirror replication to mirror objects to a partner organization. The partner can use its own applications to read or update objects directly from the S3 destination. Using StorageGRID is not required.
 
 | Can you read from the destination directly?
 | Yes
