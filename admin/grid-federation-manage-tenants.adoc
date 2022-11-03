@@ -30,8 +30,6 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * When the new tenant is saved on the first grid, an identical tenant is automatically created on the other grid. The grid where the cloned tenant is created is known as the _tenant's destination grid_.
 
-* You might need to wait up to 15 minutes for the cloned tenant to appear in Grid Manager on the destination grid.
-
 * The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. However, for security reasons, the password for a local root user is not copied to the destination grid.  
 
 * Before a local root user can access the cloned tenant on the destination grid, a grid administrator for that grid must xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].

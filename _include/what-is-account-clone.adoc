@@ -2,7 +2,7 @@
 
 == What is account clone?
 
-Account clone is the replication of selected S3 tenant accounts, users, and groups between two StorageGRID systems. Account clone is required for cross-grid replication. Having cloned accounts ensures that the same tenant users and groups can access the corresponding buckets on each grid.
+Account clone is the automatic replication of selected S3 tenant accounts, users, and groups between two StorageGRID systems. Account clone is required for cross-grid replication. Using cloned accounts ensures that the same tenant users and groups can access the corresponding buckets on each grid.
 
 === Considerations and requirements for creating tenants
 
