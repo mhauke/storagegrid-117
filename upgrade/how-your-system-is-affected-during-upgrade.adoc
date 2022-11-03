@@ -85,4 +85,4 @@ If TLS ciphers or SSH configurations have been manually changed or are inconsist
 
 == CLB ports will be converted to load balancer endpoints
 
-The legacy CLB service has been removed in StorageGRID 11.7. The CLB ports 8082, 8083, 8084, and 8085 will be converted to load balancer endpoints during the upgrade, and the *Legacy CLB load balancer activity detected* alert will be triggered. See the alert text for more information.
+The legacy CLB service has been removed in StorageGRID 11.7. If CLB configuration is detected during upgrade prechecks, the *Legacy CLB load balancer activity detected* alert will be triggered. During the upgrade, the CLB ports 8082, 8083, 8084, and 8085 will be converted to load balancer endpoints.
