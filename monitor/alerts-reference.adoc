@@ -564,6 +564,11 @@ The object existence check job cannot continue. Either one or more Storage Nodes
 |Storage Node not in desired storage state
 |The LDR service on a Storage Node cannot transition to the desired state because of an internal error or volume issue.
 
+|Storage volume needs attention
+|A storage volume is offline and needs attention.
+
+|Storage volume needs to be restored
+|A storage volume has been recovered and needs to be restored.
 |===
 
 == StorageGRID services alerts
