@@ -50,7 +50,13 @@ When you install StorageGRID 11.7 on a new grid, storage pools are automatically
 === New audit messages
 The following new audit messages were added:
 
+* *EBDL: Empty Bucket Delete*: Related to the new functionality for emptying a bucket, this message is generated when the ILM scanner deletes an object in a bucket that is deleting all objects (performing an empty bucket operation).
+
+* *EBKR: Empty Bucket Request*: Related to the new functionality for emptying a bucket, this message is generated when a user sends a request to turn Empty Bucket (also known as deleting bucket objects) on or off.
+
 * *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
+
+* *S3SL: S3 Select Request*: Related to the new S3 Select functionality, this message is generated when a user initiates an S3 Select job. 
 
 === Grid federation
 You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].

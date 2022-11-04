@@ -2,14 +2,14 @@
 permalink: audit/empty-bucket-delete.html
 sidebar: sidebar
 keywords: storagegrid, audit, message, EBDL, Empty Bucket Delete 
-summary: 'This message is initiated whenever the ILM Scanner encounters an object that is in an emptying bucket and indicates that it deleted the object.'
+summary: 'The ILM scanner deleted an object in a bucket that is deleting all objects (performing an empty bucket operation).'
 ---
 = EBDL: Empty Bucket Delete
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-This message is initiated whenever the ILM Scanner encounters an object that is in an emptying bucket and indicates that it deleted the object. 
+The ILM scanner deleted an object in a bucket that is deleting all objects (performing an empty bucket operation).
 
 [cols="1a,1a,4a" options="header"]
 |===

@@ -64,11 +64,11 @@ You should be familiar with audit messages belonging to the object storage audit
 |xref:cbre-object-receive-end.adoc[CBRE: Object Receive End]
 
 |EBDL
-|Empty Bucket Delete: The ILM Scanner encounters an object that is in an emptying bucket and indicates that it deleted the object.
+|Empty Bucket Delete: The ILM scanner deleted an object in a bucket that is deleting all objects (performing an empty bucket operation).
 |xref:empty-bucket-delete.adoc[EBDL: Empty Bucket Delete]
 
 |EBKR
-|Empty Bucket Request: A user sends a request to turn Empty Bucket (also known as deleting bucket objects) on or off.
+|Empty Bucket Request: A user sent a request to turn Empty Bucket (also known as deleting bucket objects) on or off.
 |xref:empty-bucket-request.adoc[EBKR: Empty Bucket Request]
 
 |SCMT
