@@ -101,7 +101,9 @@ entries:
     entries:  
     - title: Overview
       pdf-filename: Manage security
-      url: "/admin/manage-security.html"    
+      url: "/admin/manage-security.html" 
+    - title: Review StorageGRID encryption methods
+      url: "/admin/reviewing-storagegrid-encryption-methods.html"     
     - title: Manage certificates
       entries:
       - title: About security certificates
@@ -133,8 +135,6 @@ entries:
       - title: Overview
         pdf-filename: Overview of configuring key management servers
         url: "/admin/kms-configuring.html"
-      - title: Review StorageGRID encryption methods
-        url: "/admin/reviewing-storagegrid-encryption-methods.html"
       - title: Overview of KMS and appliance configuration
         url: "/admin/kms-overview-of-kms-and-appliance-configuration.html"
       - title: Considerations and requirements for using a key management server

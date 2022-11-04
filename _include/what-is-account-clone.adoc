@@ -32,10 +32,10 @@ Any edits made to the tenant, users, groups, or access keys on either grid are n
 
 === [[account-clone-access-keys]]Considerations and requirements for cloning S3 access keys
 
-For security reasons, StorageGRID does not clone S3 access keys from the tenant's source grid to the destination grid. If tenant users need to access the buckets on both grids, you must use the Tenant Manager API to manually copy the keys from the source grid to the destination grid. 
+For security reasons, StorageGRID does not clone S3 access keys from the tenant's source grid to the destination grid. If tenant users need to access the buckets on both grids, you must use the Tenant Manager API to manually copy the keys from the source grid to the destination grid. See xref:../tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
 
 [IMPORTANT]
-You must clone S3 access keys to the destination grid if you want federated users to access the destination grid.
+You must clone a federated user's S3 access keys to the destination grid before that user will be allowed to access the destination grid.
 
 
 === [[account-clone-identity-federation]]Considerations and requirements for SSO and identity federation
