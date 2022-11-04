@@ -63,17 +63,128 @@ the *Expiration of grid federation certificate* alert reminds you to rotate the 
 [IMPORTANT]
 If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
 
-//included content for What is account clone. Also used in TM
+== What is account clone?
 
-include::../_include/what-is-account-clone.adoc[]
+Account clone is the automatic replication of selected S3 tenant accounts, users, and groups between two StorageGRID systems. Account clone is required for cross-grid replication. Using cloned accounts ensures that the same tenant users and groups can access the corresponding buckets on each grid.
+
+=== Considerations and requirements for creating tenants
+
+To create the tenants that will own the buckets used for cross-grid replication, a grid admin follows the standard tenant-creation steps but adds the *Use grid federation connection* permission for a specific grid federation connection. When a new tenant with that permission is saved, StorageGRID automatically creates a replica of that tenant on the other grid. 
+
+The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
+
+The *Use grid federation connection* permission can be selected for a new tenant account only. This permission can't be added to an existing account.
+
+=== Considerations and requirements for groups, users, and S3 access keys
+
+After tenants have been created and replicated, new groups and users are automatically cloned from the tenant's source grid to the tenant's destination grid.
+
+image:../media/grid-federation-account-clone.png[image showing that tenant details are cloned from source grid to destination grid]
+
+As indicated by the figure:
+
+* Assuming the <<account-clone-identity-federation,requirements for identity federation>> have been met, federated groups imported to the tenant on the source grid are automatically imported to the tenant on the destination grid. The group permissions and S3 policy are the same.
+
+* Local tenant groups and users created on the source grid are automatically cloned to the destination grid.
+
+* Optionally, S3 access keys created on the source grid can be manually cloned to the destination grid.
++ 
+For security reasons, StorageGRID does not automatically clone S3 access keys from the tenant's source grid to the destination grid. If tenant users need to access the buckets on both grids, you must use the Tenant Manager API to manually copy the keys from the source grid to the destination grid. See xref:../tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
++
+[IMPORTANT]
+You must clone a federated user's S3 access keys to the destination grid before that user will be allowed to access the destination grid.
+
+Note that account cloning occurs in one direction only. If you create groups, users, and S3 access keys on the tenant's destination grid, these items are not cloned back to the source grid. 
+
+image:../media/grid-federation-account-not-cloned.png[image showing that tenant details are cloned back to source grid]
 
 
-//included content for What is cross-grid replication. Also used in TM
+Also note that any edits made to the tenant, users, groups, or access keys on either grid are not cloned to the other grid. 
 
-include::../_include/what-is-cross-grid-replication.adoc[]
+=== [[account-clone-identity-federation]]Considerations and requirements for SSO and identity federation
 
+* If either StorageGRID system in the connection uses single sign-on (SSO), the grid administrator must configure the same identity source and the same SSO identity provider (IdP) on both grids.
 
-=== How are objects replicated between grids?
+* If either StorageGRID system in the connection uses identity federation (but not SSO), either the grid admin or a tenant user must configure the same identity source. Tenant accounts that have the *Use own identity source* permission must configure the same identity source for both the source and destination tenant accounts. 
+
+== What is cross-grid replication?
+
+Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a xref:../admin/grid-federation-overview.adoc[grid federation connection].
+
+=== Requirements for cross-grid replication
+
+If a tenant account has the *Use grid federation connection* permission, a tenant user with Root Access permission can create identical buckets in the corresponding tenant accounts on each grid. These buckets:
+
+* Must have the same name and region
+* Must have versioning enabled
+* Must have S3 Object Lock disabled
+* Must be empty
+
+=== How cross-grid replication works
+
+After both buckets have been created, cross-grid replication can be configured to occur in one direction or in both directions.
+
+==== [[replication-one-direction]]Replication in one direction
+
+If you enable cross-grid replication for a bucket on only one grid, objects added to the source bucket are replicated to the destination bucket, but objects added to the destination bucket are not replicated back to the source. In the figure, cross-grid replication is enabled for `my-bucket` from Grid 1 to Grid 2, but it is not enabled in the other direction. 
+
+image:../media/grid-federation-cross-grid-replication-one-direction.png[image showing grid federation connection in one direction]
+
+==== [[replication-both-directions]]Replication in both directions
+If you enable cross-grid replication for the same bucket on both grids, objects added to either bucket are replicated to the other grid. In the figure, cross-grid replication is enabled for `my-bucket` in both directions. 
+
+image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
+
+==== [[client-writes]]What happens when objects are added
+
+When an S3 client adds an object to a bucket that has cross-grid replication enabled, that object version is immediately replicated from the source bucket to the destination bucket. The object is then stored according to the matching ILM rule in each grid's active ILM policy. For example, object A on grid 1 might be stored as two replicated copies and retained forever, while the copy of object A that was replicated to grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
+
+==== [[client-deletes]]What happens when objects are deleted
+
+To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, start by reviewing how S3 clients delete objects from buckets that have versioning enabled, as follows:
+
+* If an S3 client issues a delete request that includes a version ID, that version of the object is permanently removed. No delete marker is added the bucket. 
+
+* If an S3 client issues a delete request that does not include a version ID, StorageGRID does not delete any object versions. Instead, it adds a delete marker to the bucket. The delete marker causes StorageGRID to behave as if the object was deleted:
+
+** A GET request without a version ID will fail with `404 No Object Found`
+** A GET request with a valid version ID will succeed and return the requested object version.
+
+When you enable cross-grid replication for a bucket, you can specify what happens when S3 clients issue a delete request that does not include a version ID:
+
+* If you choose to replicate delete markers, a delete marker is added to the source bucket and replicated to the destination bucket. In effect, the objects appear to be deleted on both grids.
+
+*  If you choose not to replicate delete markers, a delete marker is added to the source bucket, but it is not replicated to the destination bucket. In effect, objects that the client deletes on the source grid are not deleted on the destination grid.
+
+IMPORTANT: The option to replicate client delete markers does not affect delete object requests that include a version ID. When you include a version ID, objects are permanently removed from the source grid. However, these requests are never replicated to the destination grid because they do not add delete markers to the bucket. 
+
+In the figure, the grids are configured for cross-grid replication in both directions, but delete markers are not replicated from `my-bucket` on Grid 1 to `my-bucket` on Grid 2.
+
+image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
+
+==== How encrypted objects are replicated
+When using cross-grid replication to replicate objects between grids, you can encrypt individual objects, use default bucket encryption, or configure grid-wide encryption. You can add, modify, or remove encryption settings before or after you enable cross-grid replication for a bucket.
+
+To encrypt individual objects, you can use SSE (server-side encryption with StorageGRID-managed keys) when adding the objects to the source bucket. Use the `x-amz-server-side-encryption` request header and specify `AES256`. See xref:../s3/using-server-side-encryption.adoc[Use server-side encryption]. 
+
+NOTE: Using SSE-C (server-side encryption with customer-provided keys) is not supported for cross-grid replication. The ingest operation will fail.
+
+To use default encryption for a bucket, use a PUT bucket encryption request and set the `SSEAlgorithm` parameter to `AES256`. See xref:../s3/operations-on-buckets.adoc[Operations on buckets]. This option encrypts any objects that are not encrypted at the object level during ingest.
+
+To use grid-level encryption, set the *Stored object encryption* option to *AES-256*. This option encrypts any objects that are not encrypted at the bucket level or at the object level during ingest. See xref:..admin/changing-network-options-object-encryption.adoc[Configure network and object options].
+
+NOTE: SSE does not support AES128. If *Stored object encryption* option is enabled for the source grid using the *AES-128* option, objects replicated to the destination grid will not be encrypted.
+
+When encryption is enabled, StorageGRID uses these rules to determine whether to encrypt the replicated objects at the destination:
+
+* If a source object uses SSE, the object replicated to the destination bucket will also use SSE.  
+* If a source object does not use SSE, the object replicated to the destination bucket will not be encrypted, unless the destination bucket or grid has encryption configured. In that case, the destination bucket or grid's default encryption is applied to the replicated object.
+
+* If the *Stored object encryption* option is enabled for the source grid using the *AES-256* option, objects replicated to the destination grid will also be encrypted.
+
+* If the *Stored object encryption* option is enabled only for the destination grid, objects replicated to the destination will be encrypted.
+
+==== How segmented objects are replicated
 
 * The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
 
