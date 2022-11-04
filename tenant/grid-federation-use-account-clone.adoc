@@ -12,9 +12,20 @@ summary: 'If your tenant account was assigned the Use grid federation connection
 If your tenant account was assigned the *Use grid federation connection* permission when it was created, you can use a grid federation connection to perform account clone.
 
 == What is account clone?
-Account clone is the automatic replication of selected S3 tenant accounts, users, and groups between two StorageGRID systems. Account clone is required for cross-grid replication. Using cloned accounts ensures that the same tenant users and groups can access the corresponding buckets and objects on each grid.
+
+Account clone is the replication of tenant accounts, tenant groups, tenant users, and, optionally, S3 access keys between a source StorageGRID system and a destination StorageGRID system. Account clone is required for cross-grid replication. Cloning account information from a source grid to a destination grid ensures that tenant users and groups can access the corresponding buckets and objects on either grid.
+
+To enable account clone, a grid admin follows the standard tenant-creation steps but adds the *Use grid federation connection* permission for a specific grid federation connection. When a new tenant with that permission is saved, StorageGRID automatically creates a replica of that tenant on the other grid. For details, see xref:grid-federation-manage-tenants.adoc[Manage permitted tenants].  
+
+The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
+
+After tenants have been created and replicated, new groups and users are automatically cloned from the tenant's source grid to the tenant's destination grid.
 
 For details and requirements for using this feature, see link:../admin/grid-federation-overview.html#what-is-account-clone[Use grid federation: What is account clone?]
 
-To see a workflow diagram for how to configure account clone, see link:../admin/grid-federation-workflow.html#workflow-for-account-clone[Workflow for account clone].
 
+== Workflow for account clone
+
+The workflow diagram shows the steps that grid administrators and permitted tenants will perform to set up account clone. These steps can only be performed after the grid federation connection is configured.
+
+image:../media/grid-federation-account-clone-workflow.png[workflow for cross-grid replication]

@@ -13,29 +13,23 @@ You can use grid federation to clone tenants and replicate their objects between
 
 == What is a grid federation connection?
 
-A grid federation connection is a bidirectional, trusted, and secure connection between Admin and Gateway Nodes in two StorageGRID systems. A grid federation connection must exist before you can use account clone or cross-grid replication.
+A grid federation connection is a bidirectional, trusted, and secure connection between Admin and Gateway Nodes in two StorageGRID systems.
 
 === Considerations and requirements for grid federation connections
 
 * Both grids used for grid federation must be running StorageGRID 11.7.
 
-* Each grid can have one or more grid federation connections to other grids. Each grid federation connection is independent of any other connections. That is, if grid 1 has one connection with grid 2 and a second connection with grid 3, there is no implied connection between grid 2 and grid 3.
+* A grid can have one or more grid federation connections to other grids. Each grid federation connection is independent of any other connections. That is, if grid 1 has one connection with grid 2 and a second connection with grid 3, there is no implied connection between grid 2 and grid 3.
 
 * Grid federation connections are bidirectional. After the connection is established, you can monitor and manage the connection from either grid. 
 
-* At least one grid federation connection is required for account clone and cross-grid replication.
-
-* After you configure a grid federation connection, a grid admin can create new S3 tenant accounts and select the *Use grid federation connection* permission to allow them to use the specified connection.
-+
-NOTE: You can only add the *Use grid federation connection* when you are creating a new S3 tenant; you can't add this permission to an existing tenant.
+* At least one grid federation connection must exist before you can use <<account-clone,account clone>> or <<cross-grid-replication,cross-grid replication>>.
 
 ==== IP address and DNS requirements
 
 * A grid federation connection can connect any two nodes that run the nginx-gw service. All Admin Nodes and all Gateway Nodes include this service, so you can configure a connection between the primary Admin Nodes on each grid or between a Gateway Node on one grid and an Admin Node on the other. However, the best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid.
 +
-Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface.
-+ 
-See xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
+Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface. For details, see xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
 
 * If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must create the appropriate DNS entries, as follows:
 
@@ -63,19 +57,26 @@ the *Expiration of grid federation certificate* alert reminds you to rotate the 
 [IMPORTANT]
 If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
 
-== What is account clone?
+.Learn more
+* xref:grid-federation-create-connection.adoc[Create grid federation connections]
+* xref:grid-federation-manage-connection.adoc[Manage grid federation connections]
 
-Account clone is the automatic replication of selected S3 tenant accounts, users, and groups between two StorageGRID systems. Account clone is required for cross-grid replication. Using cloned accounts ensures that the same tenant users and groups can access the corresponding buckets on each grid.
+== [[account-clone]]What is account clone?
 
-=== Considerations and requirements for creating tenants
+Account clone is the replication of tenant accounts, tenant groups, tenant users, and, optionally, S3 access keys between a source StorageGRID system and a destination StorageGRID system. Account clone is required for cross-grid replication. Cloning account information from a source grid to a destination grid ensures that tenant users and groups can access the corresponding buckets and objects on either grid.
 
-To create the tenants that will own the buckets used for cross-grid replication, a grid admin follows the standard tenant-creation steps but adds the *Use grid federation connection* permission for a specific grid federation connection. When a new tenant with that permission is saved, StorageGRID automatically creates a replica of that tenant on the other grid. 
+=== How are tenant accounts cloned?
+
+After creating a grid federation connection, a grid admin can create new S3 tenant accounts on either grid. Tenants that have the *Use grid federation connection* permission can be allowed to use one or more grid federation connections. When the new tenant is saved, StorageGRID automatically creates a replica of that tenant on the other grid.
 
 The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
 
-The *Use grid federation connection* permission can be selected for a new tenant account only. This permission can't be added to an existing account.
+NOTE: You can only add the *Use grid federation connection* when you are creating a new S3 tenant; you can't add this permission to an existing tenant.
 
-=== Considerations and requirements for groups, users, and S3 access keys
+.Learn more:
+xref:grid-federation-manage-tenants.adoc[Manage permitted tenants].
+
+=== How are groups, users, and S3 access keys cloned?
 
 After tenants have been created and replicated, new groups and users are automatically cloned from the tenant's source grid to the tenant's destination grid.
 
@@ -85,14 +86,14 @@ As indicated by the figure:
 
 * Assuming the <<account-clone-identity-federation,requirements for identity federation>> have been met, federated groups imported to the tenant on the source grid are automatically imported to the tenant on the destination grid. The group permissions and S3 policy are the same.
 
+* If a federated group has been imported to the source grid, federated users will be allowed to access the source grid. However, the federated user's S3 access keys must be cloned to the destination grid before that user will be allowed to access the destination grid.
+
 * Local tenant groups and users created on the source grid are automatically cloned to the destination grid.
 
 * Optionally, S3 access keys created on the source grid can be manually cloned to the destination grid.
 + 
 For security reasons, StorageGRID does not automatically clone S3 access keys from the tenant's source grid to the destination grid. If tenant users need to access the buckets on both grids, you must use the Tenant Manager API to manually copy the keys from the source grid to the destination grid. See xref:../tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
-+
-[IMPORTANT]
-You must clone a federated user's S3 access keys to the destination grid before that user will be allowed to access the destination grid.
+
 
 Note that account cloning occurs in one direction only. If you create groups, users, and S3 access keys on the tenant's destination grid, these items are not cloned back to the source grid. 
 
@@ -103,13 +104,17 @@ Also note that any edits made to the tenant, users, groups, or access keys on ei
 
 === [[account-clone-identity-federation]]Considerations and requirements for SSO and identity federation
 
-* If either StorageGRID system in the connection uses single sign-on (SSO), the grid administrator must configure the same identity source and the same SSO identity provider (IdP) on both grids.
+* If either StorageGRID system in the connection uses single sign-on (SSO), the grid administrator must configure the same identity source and the same SSO identity provider (IdP) for both grids.
 
-* If either StorageGRID system in the connection uses identity federation (but not SSO), either the grid admin or a tenant user must configure the same identity source. Tenant accounts that have the *Use own identity source* permission must configure the same identity source for both the source and destination tenant accounts. 
+* If either StorageGRID system in the connection uses identity federation (but not SSO), the grid admin user must configure the same identity source for both grids. Tenant accounts that have the *Use own identity source* permission must configure the same identity source for both the source and destination tenant accounts. 
 
-== What is cross-grid replication?
+.Learn more
 
-Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a xref:../admin/grid-federation-overview.adoc[grid federation connection].
+xref:../tenant/grid-federation-use-account-clone.adoc[Use account clone]
+
+== [[cross-grid-replication]]What is cross-grid replication?
+
+Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a grid federation connection.
 
 === Requirements for cross-grid replication
 
@@ -119,6 +124,11 @@ If a tenant account has the *Use grid federation connection* permission, a tenan
 * Must have versioning enabled
 * Must have S3 Object Lock disabled
 * Must be empty
+
+.Learn more
+
+xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[Manage cross-grid replication
+]
 
 === How cross-grid replication works
 
@@ -163,15 +173,15 @@ In the figure, the grids are configured for cross-grid replication in both direc
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
 
 ==== How encrypted objects are replicated
-When using cross-grid replication to replicate objects between grids, you can encrypt individual objects, use default bucket encryption, or configure grid-wide encryption. You can add, modify, or remove encryption settings before or after you enable cross-grid replication for a bucket.
+When you use cross-grid replication to replicate objects between grids, you can encrypt individual objects, use default bucket encryption, or configure grid-wide encryption. You can add, modify, or remove encryption settings before or after you enable cross-grid replication for a bucket.
 
 To encrypt individual objects, you can use SSE (server-side encryption with StorageGRID-managed keys) when adding the objects to the source bucket. Use the `x-amz-server-side-encryption` request header and specify `AES256`. See xref:../s3/using-server-side-encryption.adoc[Use server-side encryption]. 
 
 NOTE: Using SSE-C (server-side encryption with customer-provided keys) is not supported for cross-grid replication. The ingest operation will fail.
 
-To use default encryption for a bucket, use a PUT bucket encryption request and set the `SSEAlgorithm` parameter to `AES256`. See xref:../s3/operations-on-buckets.adoc[Operations on buckets]. This option encrypts any objects that are not encrypted at the object level during ingest.
+To use default encryption for a bucket, use a PUT bucket encryption request and set the `SSEAlgorithm` parameter to `AES256`. Bucket-level encryption applies to objects that are not encrypted at the object level during ingest. See xref:../s3/operations-on-buckets.adoc[Operations on buckets]. 
 
-To use grid-level encryption, set the *Stored object encryption* option to *AES-256*. This option encrypts any objects that are not encrypted at the bucket level or at the object level during ingest. See xref:..admin/changing-network-options-object-encryption.adoc[Configure network and object options].
+To use grid-level encryption, set the *Stored object encryption* option to *AES-256*. Grid-level encryption applies to any objects that are not encrypted at the bucket level or at the object level during ingest. See xref:../admin/changing-network-options-object-encryption.adoc[Configure network and object options].
 
 NOTE: SSE does not support AES128. If *Stored object encryption* option is enabled for the source grid using the *AES-128* option, objects replicated to the destination grid will not be encrypted.
 
@@ -186,7 +196,7 @@ When encryption is enabled, StorageGRID uses these rules to determine whether to
 
 ==== How segmented objects are replicated
 
-* The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
+The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
 
 
 
