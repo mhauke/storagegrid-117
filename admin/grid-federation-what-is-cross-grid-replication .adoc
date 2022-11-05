@@ -48,13 +48,13 @@ If you enable cross-grid replication for the same bucket on both grids, objects 
 
 image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
 
-=== What happens when objects are added to the source bucket?
+=== What happens when objects are ingested?
 
-When an S3 client adds an object to a bucket that has cross-grid replication enabled, that object version is immediately replicated from the source bucket to the destination bucket. The object is then stored according to the matching ILM rule in each grid's active ILM policy. For example, object A on grid 1 might be stored as two replicated copies and retained forever, while the copy of object A that was replicated to grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
+When an S3 client adds an object to a bucket that has cross-grid replication enabled, that object version is immediately replicated from the source bucket to the destination bucket. The object is then stored according to the matching ILM rule in each grid's active ILM policy. For example, Object A on Grid 1 might be stored as two replicated copies and retained forever, while the copy of Object A that was replicated to Grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
 
-=== What happens when objects are deleted from the source bucket?
+=== What happens when objects are deleted?
 
-To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, start by reviewing how S3 clients delete objects from buckets that have versioning enabled, as follows:
+To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, review how S3 clients delete objects from buckets that have versioning enabled, as follows:
 
 * If an S3 client issues a delete request that includes a version ID, that version of the object is permanently removed. No delete marker is added the bucket. 
 
@@ -63,15 +63,17 @@ To understand what happens when an S3 client deletes objects from a bucket that 
 ** A GET request without a version ID will fail with `404 No Object Found`
 ** A GET request with a valid version ID will succeed and return the requested object version.
 
-When you enable cross-grid replication for a bucket, you can specify what happens when S3 clients issue a delete request that does not include a version ID:
+When an S3 client deletes an object from a bucket that has cross-grid replication enabled, StorageGRID determines whether to replicate the delete request to the destination, as follows:
 
-* If you choose to replicate delete markers, a delete marker is added to the source bucket and replicated to the destination bucket. In effect, the objects appear to be deleted on both grids.
+* If the delete request includes a version ID, that object version is permanently removed from the source grid. However, StorageGRID does not replicate delete requests that include a version ID, so the same object version is not deleted from the destination.
 
-*  If you choose not to replicate delete markers, a delete marker is added to the source bucket, but it is not replicated to the destination bucket. In effect, objects that the client deletes on the source grid are not deleted on the destination grid.
+* If the delete request does not include a version ID, StorageGRID can optionally replicate the delete marker, based on cross-grid replication is configured for the bucket:
 
-IMPORTANT: The option to replicate client delete markers does not affect delete object requests that include a version ID. When you include a version ID, objects are permanently removed from the source grid. However, these requests are never replicated to the destination grid because they do not add delete markers to the bucket. 
+** If you choose to replicate delete markers, a delete marker is added to the source bucket and replicated to the destination bucket. In effect, the object appears to be deleted on both grids.
 
-In the figure, the grids are configured for cross-grid replication in both directions, but delete markers are not replicated from `my-bucket` on Grid 1 to `my-bucket` on Grid 2.
+**  If you choose not to replicate delete markers, a delete marker is added to the source bucket but is not replicated to the destination bucket. In effect, objects that are deleted on the source grid are not deleted on the destination grid.
+
+In the figure, cross-grid replication is enabled from `my-bucket` on Grid 1 to `my-bucket` on Grid 2, and *Replicate client delete markers* is set to *Yes*. Delete requests on Grid 1 that include a version ID will not delete objects on Grid 2. Delete requests on Grid 1 that do not include a version ID will appear to delete objects on Grid 2.
 
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
 

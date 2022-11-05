@@ -15,10 +15,10 @@ If your tenant account was assigned the *Use grid federation connection* permiss
 
 Account clone is the replication of tenant accounts, tenant groups, tenant users, and, optionally, S3 access keys between a source StorageGRID system and a destination StorageGRID system. Account clone is required for cross-grid replication. Cloning account information from a source grid to a destination grid ensures that tenant users and groups can access the corresponding buckets and objects on either grid.
 
-To enable account clone, a grid admin follows the standard tenant-creation steps but adds the *Use grid federation connection* permission for a specific grid federation connection. When a new tenant with that permission is saved, StorageGRID automatically creates a replica of that tenant on the other grid. For details, see xref:grid-federation-manage-tenants.adoc[Manage permitted tenants].  
+To enable account clone, a grid admin follows the standard tenant-creation steps but adds the *Use grid federation connection* permission for a specific grid federation connection. When a new tenant with that permission is saved, StorageGRID automatically creates a replica of that tenant on the other grid. For details, see link:../admin/grid-federation-manage-tenants.html[Manage permitted tenants].  
 
 The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
 
 After tenants have been created and replicated, new groups and users are automatically cloned from the tenant's source grid to the tenant's destination grid.
 
-For more details, requirements, and a workflow diagram for using account clone, go to link:../admin/grid-federation-what-is-account-clone[What is account clone].
+For more details, requirements, and a workflow diagram for using account clone, go to link:../admin/grid-federation-what-is-account-clone.html[What is account clone].

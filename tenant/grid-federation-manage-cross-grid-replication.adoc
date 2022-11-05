@@ -17,7 +17,7 @@ Before you can use cross-grid replication, you must sign in to the corresponding
 
 .What you'll need
 
-* You have reviewed the requirements and workflow for cross-grid replication. See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
+* You have reviewed the workflow and requirements for cross-grid replication. See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
 * You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * The tenant account has the *Use grid federation connection* permission, and identical tenant accounts exist on both grids. See xref:../admin/grid-federation-manage-tenants.adoc[Manage the permitted tenants for grid federation connection].
 * The tenant user you will be signing in as already exists on both grids and has the Root Access permission.
@@ -40,7 +40,7 @@ Before you can use cross-grid replication, you must sign in to the corresponding
 
 You must perform these steps before adding any objects to either bucket.
 
-. Starting from a grid whose objects you want to replicate, enable cross-grid replication in link:../admin/grid-federation-what-is-cross-grid-replication.html#Replication-in-one-direction[one direction]:
+. Starting from a grid whose objects you want to replicate, enable link:../admin/grid-federation-what-is-cross-grid-replication.html[cross-grid replication in one direction]:
 
 .. Sign in to the tenant account for the bucket.
 
@@ -56,13 +56,15 @@ You must perform these steps before adding any objects to either bucket.
 
 .. Optionally, change the setting of *Replicate client delete markers* to determine what happens on the other grid when an S3 client deletes an object from this bucket.
 +
-See link:../admin/grid-federation-what-is-cross-grid-replication.html#What-happens-when-objects-are-deleted[What happens when objects are deleted].
+image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
++
+See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication] for details.
 
 .. Select *Enable and test*.
 +
 After a few moments, a success message appears. Objects added to this bucket will now be automatically replicated to the other grid. *Cross-grid replication* is shown as an enabled feature on the bucket details page.
 
-. Optionally, go to the corresponding bucket on the other grid and enable cross-grid replication link:../admin/grid-federation-what-is-cross-grid-replication.html#Replication-in-both-directions[both directions].
+. Optionally, go to the corresponding bucket on the other grid and link:../admin/grid-federation-what-is-cross-grid-replication.html[enable cross-grid replication in both directions].
 
 == Test replication between grids
 
@@ -88,7 +90,7 @@ Before stopping cross-grid replication, note the following:
 
 * If cross-grid replication was enabled for each of the buckets (that is, if replication occurs in both directions), you can stop cross-grid replication for either or both buckets. For example, you might want to stop replicating objects from `my-bucket` on Grid 1 to `my-bucket` on Grid 2, while continuing to replicate objects from `my-bucket` on Grid 2 to `my-bucket` on Grid 1.
 
-* You must stop cross-grid replication before you can remove the grid federation connection. See xref:grid-federation-manage-connection.adoc[Manage grid federation connections].
+* You must stop cross-grid replication before you can remove the grid federation connection. See xref:../admin/grid-federation-manage-connection.adoc[Manage grid federation connections].
 
 .What you'll need
 

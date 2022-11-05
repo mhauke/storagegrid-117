@@ -2,21 +2,21 @@
 permalink: tenant/grid-federation-clone-keys-with-api.html
 sidebar: sidebar
 keywords: s3 access key, secret key id, account clone, tenant manager api
-summary: If your tenant account has the Use grid federation connection permission, you might need to use the Tenant Management API to manually clone S3 access keys from the tenant on the source grid to the tenant on the destination grid.
+summary: If your tenant account has the Use grid federation connection permission, you can use the Tenant Management API to manually clone S3 access keys from the tenant on the source grid to the tenant on the destination grid.
 ---
 = Clone S3 access keys using the API
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If your tenant account has the *Use grid federation connection* permission, you might need to use the Tenant Management API to manually clone S3 access keys from the tenant on the source grid to the tenant on the destination grid.
+If your tenant account has the *Use grid federation connection* permission, you can use the Tenant Management API to manually clone S3 access keys from the tenant on the source grid to the tenant on the destination grid.
 
 .What you'll need
 
 * The tenant account has the *Use grid federation connection* permission. 
-* The grid federation connection is connected.
+* The grid federation connection has a *Connection status* of *Connected*.
 * You are signed in to the Tenant Manager on the tenant's source grid using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have Root access permission for the tenant account.
+* You have Root Access permission for the tenant account.
 * You will be cloning your own access key, or you have already created each user whose access key you will be cloning.
 
 == Clone your own access key
@@ -32,6 +32,8 @@ If your tenant account has the *Use grid federation connection* permission, you 
 . Select *Try it out*.
 
 . In the *body* text box, replace the example entries for *accessKey* and *secretAccessKey* with the values from the *.csv* file you downloaded.
++
+Be sure to retain the single quotes around each string.
 
 . If the key will expire, replace the entry for *expires* with the time from the *.csv* file. If the key will not expire, delete the example value for the *expires* entry.
 
@@ -43,7 +45,7 @@ If your tenant account has the *Use grid federation connection* permission, you 
 
 . From the top of the Tenant Manager, select the help icon and select *API documentation*.
 
-. Obtain the user ID. You will need this value to clone another user's access keys.
+. Obtain the user ID. You will need this value to clone the other user's access keys.
 
 .. From the *users* section, select the following endpoint:
 +
@@ -66,6 +68,8 @@ If your tenant account has the *Use grid federation connection* permission, you 
 . In the *userId* text box, paste the user ID you copied.
 
 . In the *body* text box, replace the entries for *example access key* and *secret access key* with the values from the *.csv* file for that user.
++
+Be sure to retain the single quotes around the string.
 
 . If the key will expire, replace the entry for *expires* with the time from the .csv file. If the key will not expire, delete the example value for the *expires* entry.
 

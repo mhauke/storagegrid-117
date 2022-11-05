@@ -26,7 +26,7 @@ The grid where the tenant is originally created is known as the tenant's _source
 NOTE: You can only add the *Use grid federation connection* when you are creating a new S3 tenant; you can't add this permission to an existing tenant.
 
 .Learn more
-xref:grid-federation-manage-tenants.adoc[Manage permitted tenants].
+xref:grid-federation-manage-tenants.adoc[Manage permitted tenants for grid federation]
 
 == How are groups, users, and S3 access keys cloned?
 
@@ -34,19 +34,19 @@ After tenants have been created and replicated, new groups and users are automat
 
 image:../media/grid-federation-account-clone.png[image showing that tenant details are cloned from source grid to destination grid]
 
-As indicated by the figure:
+As shown in the figure:
 
-* Assuming the <<account-clone-identity-federation,requirements for identity federation>> have been met, federated groups imported to the tenant on the source grid are automatically imported to the tenant on the destination grid. The group permissions and S3 policy are the same.
+* Local tenant groups and users created on the source grid are automatically cloned to the destination grid. The group permissions and S3 policy are the same.
 
-* If a federated group has been imported to the source grid, federated users will be allowed to access the source grid. However, the federated user's S3 access keys must be cloned to the destination grid before that user will be allowed to access the destination grid.
+* Assuming the <<account-clone-identity-federation,requirements for identity federation>> have been met, federated groups imported to the tenant on the source grid are automatically imported to the tenant on the destination grid. 
 
-* Local tenant groups and users created on the source grid are automatically cloned to the destination grid.
+* If a federated group has been imported to the source grid, federated users will be allowed to access the source grid. However, federated user can't sign in to the destination grid unless their S3 access keys are manually cloned to the destination grid.
 
 * Optionally, S3 access keys created on the source grid can be manually cloned to the destination grid.
 + 
 For security reasons, StorageGRID does not automatically clone S3 access keys from the tenant's source grid to the destination grid. If tenant users need to access the buckets on both grids, you must use the Tenant Manager API to manually copy the keys from the source grid to the destination grid. See xref:../tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
 
-Note that account cloning occurs in one direction only. If you create groups, users, and S3 access keys on the tenant's destination grid, these items are not cloned back to the source grid. 
+Note that account cloning occurs in one direction only. If you import or create groups, users, and S3 access keys on the tenant's destination grid, these items are not cloned back to the source grid. 
 
 image:../media/grid-federation-account-not-cloned.png[image showing that tenant details are cloned back to source grid]
 
@@ -54,12 +54,12 @@ Also note that any edits made to the tenant, users, groups, or access keys on ei
 
 == [[account-clone-identity-federation]]Considerations and requirements for SSO and identity federation
 
-* If either StorageGRID system in the connection uses single sign-on (SSO), the grid administrator must configure the same identity source and the same SSO identity provider (IdP) for both grids.
+* If either StorageGRID system in the connection uses single sign-on (SSO), a grid administrator must configure the same identity source and the same SSO identity provider (IdP) for both grids.
 
-* If either StorageGRID system in the connection uses identity federation (but not SSO), either or both of the following is true:
+* If either StorageGRID system in the connection uses identity federation (but not SSO), either or both of the following must be true:
 
 ** A grid admin must configure the same identity source for both grids.
-** A tenant account that has the *Use own identity source* permission must configure the same identity source for both the source and destination tenant accounts 
+** A tenant account that has the *Use own identity source* permission must configure the same identity source for both the source and destination tenant accounts. 
 
 .Learn more
 
