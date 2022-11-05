@@ -78,11 +78,12 @@ entries:
         url: "/admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html"
   - title: Use grid federation
     entries:
-    - title: Overview
-      pdf-filename: Overview of grid federation
+    - title: What is grid federation
       url: "/admin/grid-federation-overview.html"
-    - title: Grid federation workflow  
-      url: "/admin/grid-federation-workflow.html"
+    - title: What is account clone 
+      url: "/admin/grid-federation-what-is-account-clone.html"
+    - title: What is cross-grid replication
+      url: "/admin/grid-federation-what-is-cross-grid-replication.html"      
     - title: Create grid federation connections
       url: "/admin/grid-federation-create-connection.html"  
     - title: Manage grid federation connections
@@ -90,12 +91,18 @@ entries:
     - title: Manage permitted tenants
       url: "/admin/grid-federation-manage-tenants.html"  
     - title: Troubleshoot grid federation errors
-      url: "/admin/grid-federation-troubleshoot.html"       
+      url: "/admin/grid-federation-troubleshoot.html" 
+    - title: Compare cross-grid replication and CloudMirror replication
+      url: "/admin/grid-federation-compare-cgr-to-cloudmirror.html"   
+    - title: How disaster recovery is performed
+      url: "/admin/grid-federation-how-disaster-recovery-is-performed.html"       
   - title: Manage security
     entries:  
     - title: Overview
       pdf-filename: Manage security
-      url: "/admin/manage-security.html"    
+      url: "/admin/manage-security.html" 
+    - title: Review StorageGRID encryption methods
+      url: "/admin/reviewing-storagegrid-encryption-methods.html"     
     - title: Manage certificates
       entries:
       - title: About security certificates
@@ -127,8 +134,6 @@ entries:
       - title: Overview
         pdf-filename: Overview of configuring key management servers
         url: "/admin/kms-configuring.html"
-      - title: Review StorageGRID encryption methods
-        url: "/admin/reviewing-storagegrid-encryption-methods.html"
       - title: Overview of KMS and appliance configuration
         url: "/admin/kms-overview-of-kms-and-appliance-configuration.html"
       - title: Considerations and requirements for using a key management server

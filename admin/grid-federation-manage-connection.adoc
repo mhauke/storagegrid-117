@@ -50,6 +50,8 @@ image:../media/grid-federation-certificates-tab.png[grid-federation-certificates
 
 You can edit a grid federation connection by signing in to the primary Admin Node on either grid in the connection. After you make changes to the first grid, you must download a new verification file and upload it to the other grid.
 
+NOTE: While the connection is being edited, account clone or cross-grid replication requests will continue to use the existing connection settings. Any edits you make to the first grid are not used until they have been uploaded to the second grid, saved, and tested. 
+
 === Start editing the connection
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
@@ -111,7 +113,7 @@ Finish ending the connection by uploading the verification file on the other gri
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
-. Select *Add connection* > *Upload verification file*. 
+. Select *Upload verification file* to access the upload page. 
 
 . Select *Upload verification file*. Then, browse to and select the file that was downloaded from the first grid.
 
@@ -231,7 +233,7 @@ You can't remove a tenant's permission until you have stopped replication for ea
 
 * If the connection can't be removed (for example, it is still in use or there is a connection error), an error message is displayed. You can do either of the following:
 
-** (Recommended.) Resolve the error (see xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation]).
+** (Recommended.) Resolve the error (see xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation errors]).
 ** Remove the connection by force. See the next section.
 
 == [[force-remove_grid_fed_connection]]Remove a grid federation connection by force

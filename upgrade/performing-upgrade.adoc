@@ -174,7 +174,7 @@ NOTE: When an appliance node reaches this stage, the StorageGRID Appliance Insta
 
 When all grid nodes have completed the upgrade stages, the *Upgrade other grid nodes* task is shown as Completed. The remaining upgrade tasks are performed automatically in the background.
 
-. As soon as the *Enable features* task is complete (which occurs quickly), you can start using the new features in the upgraded StorageGRID version.
+. As soon as the *Enable features* task is complete (which occurs quickly), you can start using the xref:whats-new.adoc[new features] in the upgraded StorageGRID version.
 
 . During the *Upgrade database* task, the upgrade process checks each node to verify that the Cassandra database does not need to be updated.
 +

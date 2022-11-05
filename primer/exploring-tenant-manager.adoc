@@ -63,6 +63,10 @@ If a grid administrator has enabled the use of platform services for the tenant 
 
 If a grid administrator has enabled the use of platform services for the tenant account, an S3 tenant user with the Manage Endpoints permission can configure a destination endpoint for each platform service.
 
+=== Grid federation connections
+
+If a grid administrator has enabled the use of a grid federation connection for the tenant account, an S3 tenant user can view the connection name, access the bucket details page for each bucket that has cross-grid replication enabled, and view the most recent error to occur when bucket data was being replicated to the other grid in the connection. See xref:../tenant/grid-federation-connections-view.adoc[View grid federation connections].
+
 == Access Management menu
 
 The Access Management menu allows StorageGRID tenants to import user groups from a federated identity source and assign management permissions. Tenants can also manage local tenant groups and users, unless single sign-on (SSO) is in effect for the entire StorageGRID system.
