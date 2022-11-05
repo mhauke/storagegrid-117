@@ -21,11 +21,4 @@ The grid where the tenant is originally created is known as the tenant's _source
 
 After tenants have been created and replicated, new groups and users are automatically cloned from the tenant's source grid to the tenant's destination grid.
 
-For details and requirements for using this feature, see link:../admin/grid-federation-overview.html#what-is-account-clone[Use grid federation: What is account clone?]
-
-
-== Workflow for account clone
-
-The workflow diagram shows the steps that grid administrators and permitted tenants will perform to set up account clone. These steps can only be performed after the grid federation connection is configured.
-
-image:../media/grid-federation-account-clone-workflow.png[workflow for cross-grid replication]
+For more details, requirements, and a workflow diagram for using account clone, go to link:../admin/grid-federation-what-is-account-clone[What is account clone].

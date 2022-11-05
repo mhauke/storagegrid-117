@@ -52,8 +52,8 @@ The following new audit messages were added:
 
 * *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
 
-=== Grid federation
-You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].
+=== Grid federation, account clone, and cross-grid replication
+You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[What is grid federation], xref:../admin/grid-federation-what-is-account-clone.adoc[What is account clone], and xref:../admin/grid-federation-what-is-cross-grid-replication.adoc[What is cross-grid replication].
 
 === Can assign custom storage grades to new Storage Nodes
 When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See xref:../expand/performing-expansion.adoc[Perform expansion].
