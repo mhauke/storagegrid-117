@@ -19,7 +19,7 @@ image::../media/upgrade_workflow.png[Flowchart of the software upgrade steps]
 
 . Download the current Recovery Package.
 
-. Optionally run upgrade prechecks to detect and resolve any issues before you start the actual upgrade. 
+. Run upgrade prechecks to detect and resolve any issues before you start the actual upgrade. 
 
 . Start the upgrade, which runs prechecks and upgrades the primary Admin Node automatically. You cannot access the Grid Manager while the primary Admin Node is being upgraded. Audit logs will also be unavailable. This upgrade can take up to 30 minutes.
 

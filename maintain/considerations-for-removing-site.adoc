@@ -112,7 +112,7 @@ Before StorageGRID can remove a disconnected site, you must ensure the following
 IMPORTANT: You should not attempt a disconnected site decommission if you believe it might be possible to recover the site or to recover any object data from the site.
 
 * All nodes at the site must have a Connection State of one of the following:
- ** *Unknown* (image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown]): The node is not connected to the grid for an unknown reason. For example, the network connection between nodes has been lost or the power is down.
+ ** *Unknown* (image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown]): For an unknown reason, a node is disconnected or services on the node are unexpectedly down. For example, a service on the node might be stopped, or the node might have lost its network connection because of a power failure or unexpected outage.
  ** *Administratively Down* (image:../media/icon_alarm_gray_administratively_down.png[Icon Alarm Gray Administratively Down]): The node is not connected to the grid for an expected reason. For example, the node or services on the node have been gracefully shut down.
 * All nodes at all other sites must have a Connection State of *Connected* (image:../media/icon_alert_green_checkmark.png[Icon Alert Green Checkmark]); however, these other nodes can have active alerts.
 * You must understand that you will no longer be able to use StorageGRID to view or retrieve any object data that was stored at the site. When StorageGRID performs this procedure, it makes no attempt to preserve any data from the disconnected site.

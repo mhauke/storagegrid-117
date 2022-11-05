@@ -48,6 +48,8 @@ The steps for creating a tenant account vary based on whether xref:using-identit
 |Client type
 |The type of client protocol this tenant will use, either *S3* or *Swift*.
 
+*Note*: Support for Swift client applications has been deprecated and will be removed in a future release.
+
 |Storage quota (optional)
 |If you want this tenant to have a storage quota, a numerical value for the quota and the units.
 

@@ -3,7 +3,7 @@ settings:
   internal:
     pdf_enabled: false
   prod:
-    pdf_enabled: true
+    pdf_enabled: false
 sidebar:
   entries:
     - title: StorageGRID 11.7 Docs
@@ -100,7 +100,7 @@ homepage:
         url: /tenant/index.html
       - title: Use S3 REST API
         url: /s3/index.html
-      - title: Use Swift REST API
+      - title: Use Swift REST API (deprecated)
         url: /swift/index.html
     - title: Monitor & maintain
       links:

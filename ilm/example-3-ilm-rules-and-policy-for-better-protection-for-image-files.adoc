@@ -23,25 +23,27 @@ IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not u
 |===
 | Rule definition| Example value
 
-|Rule name
-|EC image files > 1 MB
+| Rule name
+| EC Image Files > 1 MB
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Advanced filter for Object Size
-|Object Size (MB) greater than 1.0
+| Advanced filter for Object size
+| Object size greater than 1 MB
 
-|Advanced filter for User Metadata
-|User Metadata type equals image
+| Advanced filters for Key
+| 
+* Ends with .jpg
+* Ends with .png
 
-|Content placement
-|Create a 2+1 erasure-coded copy using three sites
+| Placements
+| Create a 2+1 erasure-coded copy using three sites
 |===
 
 image::../media/policy_3_rule_1_ec_images_adv_filtering.png[ILM rule 1 for example 3: Use EC for image files greater than 1 MB]
 
-Because this rule is configured as the first rule in the policy, the erasure-coding placement instruction only applies to images that are greater than 1 MB.
+Because this rule is configured as the first rule in the policy, the erasure-coding placement instruction only applies to .jpg and .png files that are greater than 1 MB.
 
 == ILM rule 2 for example 3: Create 2 replicated copies for all remaining image files
 
@@ -50,26 +52,21 @@ This example ILM rule uses advanced filtering to specify that smaller image file
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
-a|
-Rule name
-a|
-2 copies for image files
-a|
-Reference time
-a|
-Ingest time
-a|
-Advanced filter for user metadata
-a|
-User Metadata type equals image files
-a|
-Content placement
-a|
-Create 2 replicated copies in two storage pools
+
+|Rule name
+|2 Copies for Image Files
+
+|Reference time
+|Ingest time
+
+|Advanced filters for Key
+|
+* Ends with .jpg
+* Ends with .png
+
+| Placements
+| Create 2 replicated copies in two storage pools
 |===
-
-
-
 
 == ILM policy for example 3: Better protection for image files
 

@@ -27,7 +27,7 @@ The AutoSupport feature can be disabled. However, NetApp recommends enabling it 
 
 AutoSupport supports HTTPS, HTTP, and SMTP for transport protocols. Because of the sensitive nature of AutoSupport messages, NetApp strongly recommends using HTTPS as the default transport protocol for sending AutoSupport messages to NetApp support.
 
-Optionally, you can configure an Admin proxy for more control over AutoSupport communication from Admin Nodes to NetApp technical support. See the steps for xref:../admin/configuring-admin-proxy-settings.adoc[creating an Admin proxy].
+NOTE: As of the StorageGRID 11.7 release, NetApp's AutoSupport servers will reject messages sent using HTTP. You must configure a proxy server to forward AutoSupport messages as HTTPS.
 
 == Cross-Origin Resource Sharing (CORS)
 
