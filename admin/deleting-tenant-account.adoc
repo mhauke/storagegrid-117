@@ -16,6 +16,7 @@ You can delete a tenant account if you want to permanently remove the tenant's a
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have specific access permissions.
 * You have removed all buckets (S3), containers (Swift), and objects associated with the tenant account.
+* If the tenant is permitted to use a grid federation connection, you have reviewed the considerations for xref:admin/grid-federation-manage-tenants.adoc[deleting a tenant with the Use grid federation connection permission].
 
 .Steps
 
