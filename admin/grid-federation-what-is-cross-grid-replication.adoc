@@ -50,7 +50,29 @@ image:../media/grid-federation-cross-grid-replication.png[image showing replicat
 
 === What happens when objects are ingested?
 
-When an S3 client adds an object to a bucket that has cross-grid replication enabled, that object version is immediately replicated from the source bucket to the destination bucket. The object is then stored according to the matching ILM rule in each grid's active ILM policy. For example, Object A on Grid 1 might be stored as two replicated copies and retained forever, while the copy of Object A that was replicated to Grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
+When an S3 client adds an object to a bucket that has cross-grid replication enabled, the following happens:
+
+. StorageGRID automatically replicates the object from the source bucket to the destination bucket. 
++
+The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-cgr-replication-status` response header, which will have one of the following values:
++
+[cols="1a,2a" options="header"]
+|===
+| Grid| Replication status 
+
+| Source
+| * *SUCCESS*: The replication was successful.
+* *PENDING*: The object hasn't been replicated yet.
+* *FAILURE*: The replication failed with a permanent failure. A user must resolve the error.
+
+| Destination
+| *REPLICA*: The object was replicated from the source grid.
+
+|===
++
+NOTE: StorageGRID does not support the `x-amz-replication-status` header.
+
+. StorageGRID places and stores the object according to the matching ILM rule in each grid's active ILM policy. For example, Object A on Grid 1 might be stored as two replicated copies and retained forever, while the copy of Object A that was replicated to Grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
 
 === What happens when objects are deleted?
 
@@ -88,7 +110,7 @@ To use default encryption for a bucket, use a PUT bucket encryption request and 
 
 To use grid-level encryption, set the *Stored object encryption* option to *AES-256*. Grid-level encryption applies to any objects that are not encrypted at the bucket level or that are ingested without the `x-amz-server-side-encryption` request header. See xref:../admin/changing-network-options-object-encryption.adoc[Configure network and object options].
 
-NOTE: SSE does not support AES128. If *Stored object encryption* option is enabled for the source grid using the *AES-128* option, the use of the AES128 algorithm will not be propagated to the replicated object. Instead, the replicated object will use the destination's default bucket or grid-level encryption setting, if available. 
+NOTE: SSE does not support AES-128. If the *Stored object encryption* option is enabled for the source grid using the *AES-128* option, the use of the AES-128 algorithm will not be propagated to the replicated object. Instead, the replicated object will use the destination's default bucket or grid-level encryption setting, if available. 
 
 When determining how to encrypt source objects, StorageGRID applies these rules in this order:
 

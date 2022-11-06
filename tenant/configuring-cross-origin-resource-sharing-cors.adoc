@@ -2,14 +2,14 @@
 permalink: tenant/configuring-cross-origin-resource-sharing-cors.html
 sidebar: sidebar
 keywords: how to configure cross-origin resource sharing, cors
-summary: 'You can configure Cross-Origin Resource Sharing \(CORS\) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains.'
+summary: 'You can configure cross-origin resource sharing \(CORS\) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains.'
 ---
-= Configure Cross-Origin Resource Sharing (CORS)
+= Configure cross-origin resource sharing (CORS)
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can configure Cross-Origin Resource Sharing (CORS) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains.
+You can configure cross-origin resource sharing (CORS) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains.
 
 .What you'll need
 
@@ -18,7 +18,7 @@ You can configure Cross-Origin Resource Sharing (CORS) for an S3 bucket if you w
 
 .About this task
 
-Cross-Origin Resource Sharing (CORS) is a security mechanism that allows client web applications in one domain to access resources in a different domain. For example, suppose you use an S3 bucket named `Images` to store graphics. By configuring CORS for the `Images` bucket, you can allow the images in that bucket to be displayed on the website `+http://www.example.com+`.
+Cross-origin resource sharing (CORS) is a security mechanism that allows client web applications in one domain to access resources in a different domain. For example, suppose you use an S3 bucket named `Images` to store graphics. By configuring CORS for the `Images` bucket, you can allow the images in that bucket to be displayed on the website `+http://www.example.com+`.
 
 == Enable CORS for a bucket
 

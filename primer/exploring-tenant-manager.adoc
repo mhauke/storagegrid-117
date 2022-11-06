@@ -23,10 +23,9 @@ The value shown above the bar chart is a sum of the space used for all of the te
 
 image::../media/tenant_dashboard_with_buckets.png[Tenant Manager Dashboard]
 
-== Storage menu (S3 tenants only)
+== Storage menu (S3)
 
-
-The Storage menu is provided for S3 tenant accounts only. This menu allows S3 users to manage access keys, create and delete buckets, and manage platform service endpoints.
+The Storage menu is provided for S3 tenant accounts only. This menu allows S3 users to manage access keys; create, manage, and delete buckets; manage platform service endpoints; and view any grid federation connections they are permitted to use.
 
 image::../media/s3_menu.png[S3 Menu]
 
@@ -37,21 +36,22 @@ S3 tenant users can manage access keys as follows:
 * Users who have the Manage Your Own S3 Credentials permission can create or remove their own S3 access keys.
 * Users who have the Root Access permission can manage the access keys for the S3 root account, their own account, and all other users. Root access keys also provide full access to the tenant's buckets and objects unless explicitly disabled by a bucket policy.
 +
-
 NOTE: Managing the access keys for other users takes place from the Access Management menu.
 
 === Buckets
 
-S3 tenant users with the appropriate permissions can perform the following tasks related to buckets:
+S3 tenant users with the appropriate permissions can perform the following tasks for their buckets:
 
 * Create buckets
 * Enable S3 Object Lock for a new bucket (assumes that S3 Object Lock is enabled for the StorageGRID system)
 * Update consistency level settings
-* Apply a default retention setting
+* Enable and disable last access time updates
+* Enable or suspend object versioning
+* Update S3 Object Lock default retention
 * Configure cross-origin resource sharing (CORS)
-* Enable and disable last access time update settings for the buckets belonging to the tenant
+* Delete all objects in a bucket
 * Delete empty buckets
-* Manage the objects in a bucket using the xref:../tenant/use-s3-console.adoc[experimental S3 Console]
+* Use the xref:../tenant/use-s3-console.adoc[experimental S3 Console] to manage bucket objects
 
 If a grid administrator has enabled the use of platform services for the tenant account, an S3 tenant user with the appropriate permissions can also perform these tasks:
 
