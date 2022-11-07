@@ -16,7 +16,7 @@ If your tenant account has the *Use grid federation connection* permission, you 
 * The tenant account has the *Use grid federation connection* permission. 
 * The grid federation connection has a *Connection status* of *Connected*.
 * You are signed in to the Tenant Manager on the tenant's source grid using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have Root Access permission for the tenant account.
+* You have the Root Access or Manage Your Own S3 Credentials permission for the tenant account.
 * You will be cloning your own access key, or you have already created each user whose access key you will be cloning.
 
 == Clone your own access key
@@ -35,9 +35,13 @@ If your tenant account has the *Use grid federation connection* permission, you 
 +
 Be sure to retain the single quotes around each string.
 
-. If the key will expire, replace the entry for *expires* with the time from the *.csv* file. If the key will not expire, delete the example value for the *expires* entry.
+. Optionally, replace the entry for *expires* with the expiration date and time in UTC seconds. If the key will not expire, enter *null* as value for the *expires* entry (or remove the *Expires* line and the preceding comma).
++
+image::../media/grid-federation-clone-access-key.png[Tenant Manager API entering values to clone access key]
 
 . Select *Execute*.
+
+. Confirm that the server response code is *204*, indicating that the key was successfully cloned to the other grid. 
 
 == Clone another user's access keys
 
@@ -71,6 +75,8 @@ Be sure to retain the single quotes around each string.
 +
 Be sure to retain the single quotes around the string.
 
-. If the key will expire, replace the entry for *expires* with the time from the .csv file. If the key will not expire, delete the example value for the *expires* entry.
+. Optionally, replace the entry for *expires* with the expiration date and time in UTC seconds. If the key will not expire, enter *null* as value for the *expires* entry (or remove the *Expires* line and the preceding comma).
 
 . Select *Execute*.
+
+. Confirm that the server response code is *204*, indicating that the key was successfully cloned to the other grid. 
