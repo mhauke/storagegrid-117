@@ -8,10 +8,13 @@ summary: 'For storage controllers currently using SANtricity OS 08.42.20.00 \(11
 :icons: font
 :imagesdir: ../media/
 
+[.lead]
+For storage controllers currently using SANtricity OS 08.42.20.00 (11.42) or newer, you must use the Grid Manager to apply an upgrade.
+
 include::../_include/upgrading-santricity-os-on-storage-controllers-using-grid-manager-steps.adoc[] 
 
 .Related information
 
-https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^]
+* https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^]
 
-xref:upgrading-santricity-os-on-e2800-controller-using-maintenance-mode.adoc[Upgrade SANtricity OS on E2800 controller using maintenance mode]
+* xref:upgrading-santricity-os-on-e2800-controller-using-maintenance-mode.adoc[Upgrade SANtricity OS on E2800 controller using maintenance mode]
