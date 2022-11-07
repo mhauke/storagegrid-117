@@ -112,17 +112,20 @@ To use grid-level encryption, set the *Stored object encryption* option to *AES-
 
 NOTE: SSE does not support AES-128. If the *Stored object encryption* option is enabled for the source grid using the *AES-128* option, the use of the AES-128 algorithm will not be propagated to the replicated object. Instead, the replicated object will use the destination's default bucket or grid-level encryption setting, if available. 
 
-When determining how to encrypt source objects, StorageGRID applies these rules in this order:
+When determining how to encrypt source objects, StorageGRID applies these rules:
 
 . Use the `x-amz-server-side-encryption` ingest header, if present.
-. Use the bucket default encryption setting, if configured.
-. Use the grid-wide encryption setting, if configured.
+. If an ingest header is not present, use the bucket default encryption setting, if configured.
+. If a bucket setting is not configured, use the grid-wide encryption setting, if configured.
+. If a grid-wide setting is not present, do not encrypt the source object.
+
 
 When determining how to encrypt replicated objects, StorageGRID applies these rules in this order:
 
 . Use the same encryption as the source object, unless that object uses AES-128 encryption.
-. Use the destination bucket's default encryption setting, if configured.
-. Use the destination's grid-wide encryption setting, if configured.
+. If the source object is not encrypted or it uses AES-128, use the destination bucket's default encryption setting, if configured.
+. If the destination bucket does not have an encryption setting, use the destination's grid-wide encryption setting, if configured.
+. If a grid-wide setting is not present, do not encrypt the destination object.
 
 === How segmented objects are replicated
 
