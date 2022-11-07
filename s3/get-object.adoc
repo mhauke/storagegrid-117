@@ -88,7 +88,7 @@ In these cases:
 * A subsequent GET Object request might return `403 Forbidden`.
 
 == GET Object and cross-grid replication
-If you are using xref:../admin/grid-federation-overview.adoc[grid federation] and xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[cross-grid replication] is enabled for a bucket, the S3 client can verify an object's replication status by issuing a GET Object request. The response includes the StorageGRID-specific `x-ntap-cgr-replication-status` response header, which will have one of the following values:
+If you are using xref:../admin/grid-federation-overview.adoc[grid federation] and xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[cross-grid replication] is enabled for a bucket, the S3 client can verify an object's replication status by issuing a GET Object request. The response includes the StorageGRID-specific `x-ntap-sg-cgr-replication-state` response header, which will have one of the following values:
 
 [cols="1a,2a" options="header"]
 |===

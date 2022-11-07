@@ -105,7 +105,7 @@ The `expiry-date` indicates when the object in the Cloud Storage Pool will be re
 If you uploaded a multipart object or if StorageGRID split a large object into segments, StorageGRID determines whether the object is available in the Cloud Storage Pool by sampling a subset of the object's parts or segments. In some cases, a HEAD Object request might incorrectly return `x-amz-restore: ongoing-request="false"` when some parts of the object have already been transitioned to a non-retrievable state or when some parts of the object have not yet been restored.
 
 == HEAD Object and cross-grid replication
-If you are using xref:../admin/grid-federation-overview.adoc[grid federation] and xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[cross-grid replication] is enabled for a bucket, the S3 client can verify an object's replication status by issuing a HEAD Object request. The response includes the StorageGRID-specific `x-ntap-cgr-replication-status` response header, which will have one of the following values:
+If you are using xref:../admin/grid-federation-overview.adoc[grid federation] and xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[cross-grid replication] is enabled for a bucket, the S3 client can verify an object's replication status by issuing a HEAD Object request. The response includes the StorageGRID-specific `x-ntap-sg-cgr-replication-state` response header, which will have one of the following values:
 
 [cols="1a,2a" options="header"]
 |===
