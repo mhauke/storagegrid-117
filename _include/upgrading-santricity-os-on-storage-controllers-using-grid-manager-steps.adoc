@@ -117,7 +117,7 @@ When the stage progresses beyond Queued, the *Remove* button is hidden and you c
 [start=11]
 . Wait while the SANtricity OS upgrade is applied to each approved grid node.
 
-* If any node shows a stage of Error while the SANtricity OS upgrade is being applied, the upgrade has failed for the node. With the assistance of technical support, you might need to place the appliance in maintenance mode to recover it.
+* If any node shows a stage of Error while the SANtricity OS upgrade is applied, the upgrade has failed for the node. With the assistance of technical support, you might need to place the appliance in maintenance mode to recover it.
 
 * If the firmware on the node is too old to be upgraded with the Grid Manager, the node shows a stage of Error with the details: "`You must use maintenance mode to upgrade SANtricity OS on this node. See the installation and maintenance instructions for your appliance. After the upgrade, you can use this utility for future upgrades.`" To resolve the error, do the following:
 
