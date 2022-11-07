@@ -61,7 +61,7 @@ This column appears only if S3 Object Lock is enabled for the grid. This column 
 The bucket details page appears. From this page, you can perform the following tasks:
 
 * Configure and manage bucket options, such as xref:changing-consistency-level.adoc[consistency level], xref:enabling-or-disabling-last-access-time-updates.adoc[last access time updates], xref:changing-bucket-versioning.adoc[object versioning], xref:using-s3-object-lock.adoc[S3 Object Lock] and xref:update-default-retention-settings.adoc[default bucket retention]
-* Configure bucket access, such as xref:configuring-cross-origin-resource-sharing-cors.adoc[Cross-Origin Resource Sharing (CORS)]
+* Configure bucket access, such as xref:configuring-cross-origin-resource-sharing-cors.adoc[cross-origin resource sharing (CORS)]
 * Manage xref:what-platform-services-are.adoc[platform services] (if allowed for the tenant), including replication, event notifications, and search integration
 * Enable and link:grid-federation-manage-cross-grid-replication.html[manage cross-grid replication] (if allowed for the tenant) to replicate objects ingested into this bucket to another StorageGRID system
 * Access the experimental xref:use-s3-console.adoc[S3 Console] to add objects to the bucket
