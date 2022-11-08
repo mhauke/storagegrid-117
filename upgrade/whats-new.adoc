@@ -56,7 +56,7 @@ The following new audit messages were added:
 
 * *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
 
-* *S3SL: S3 Select Request*: Related to the S3 Select functionality, this message is generated when a user initiates an S3 Select job. 
+* *S3SL: S3 Select Request*: Related to the S3 Select functionality, this message is generated after an S3 Select request has been returned to the client.
 
 === Grid federation
 You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].

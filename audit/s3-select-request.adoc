@@ -9,7 +9,7 @@ summary: 'This message indicates a user initiated an S3 Select job.'
 :imagesdir: ../media/
 
 [.lead]
-This message indicates a user initiated an S3 Select job. 
+This message logs a completion after an S3 Select request has been returned to the client. The S3SL message can include error message and error code details. The request might not have been successful.
 
 [cols="1a,1a,4a" options="header"]
 |===
@@ -20,6 +20,7 @@ a|
 Bytes Scanned
 a|
 Number of bytes scanned (received) from Storage Nodes.
+*Note*: BYSC and BYPR are likely to be different if the object is compressed. If the object is compressed BYSC would have the compressed byte count and BYPR would be the bytes after decompression.
 a|
 BYPR
 a|
@@ -99,7 +100,7 @@ S3AK
 a|
 S3 Access Key ID (request sender)	
 a|
-The hashed S3 access key ID for the user that sent the request.
+The S3 access key ID for the user that sent the request.
 
 a|
 S3AI

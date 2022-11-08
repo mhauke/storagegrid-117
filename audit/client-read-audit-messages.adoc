@@ -17,8 +17,7 @@ Client read audit messages are logged when an S3 or Swift client application mak
 a|
 S3SL
 a|
-S3 Select request: Logs a successful initiation of an S3 Select job.
-
+S3 Select request: Logs a completion after an S3 Select request has been returned to the client. The S3SL message can include error message and error code details. The request might not have been successful. 
 
 a|
 S3 client
