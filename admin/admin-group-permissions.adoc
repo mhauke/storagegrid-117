@@ -69,6 +69,9 @@ Users must have the Maintenance permission to use these options:
 * *CONFIGURATION* > *Access control*:
 ** Grid passwords
 
+* *CONFIGURATION* > *Network*:
+** S3 endpoint domain names
+
 * *MAINTENANCE* > *Tasks*:
  ** Decommission
  ** Expansion
@@ -93,9 +96,12 @@ Users who do not have the Maintenance permission can view, but not edit, these p
 * *MAINTENANCE* > *System*:
  ** License
 
+* *CONFIGURATION* > *Network*:
+** S3 endpoint domain names
+
 * *CONFIGURATION* > *Security*:
 ** Certificates
-** Domain names
+
 * *CONFIGURATION* > *Monitoring*:
  ** Audit and syslog server
 
@@ -123,17 +129,15 @@ IMPORTANT: To see these additional options, users must also have the *Grid topol
 
 * *ILM*:
  ** Storage grades
-* *CONFIGURATION* > *Network*:
- ** Link cost
 * *CONFIGURATION* > *System*:
- ** Display options
  ** Grid options
  ** Storage options
 * *SUPPORT* > *Alarms (legacy)*:
  ** Custom events
  ** Global alarms
  ** Legacy email setup
-
+ * *SUPPORT* > *Other*:
+ ** Link cost
 
 == Storage appliance administrator
 

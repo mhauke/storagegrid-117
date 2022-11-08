@@ -157,16 +157,6 @@ Appliance functionality is not impacted, but you should address the issue immedi
 This alert indicates that a volume cannot be mounted or accessed because of a problem with an underlying storage device.
 |===
 
-== Audit log alerts
-
-[cols="1a,2a" options="header"]
-|===
-| Alert name| Description
-
-|Audit logs are being added to the in-memory queue
-|Node cannot send logs to the local syslog server and the in-memory queue is filling up.
-|===
-
 == Cassandra alerts
 
 [cols="1a,2a" options="header"]
@@ -218,8 +208,22 @@ Cassandra automatically restarts if it detects table corruption.
 |===
 | Alert name| Description
 
-|Cloud Storage Pool connectivity error
-|The health check for Cloud Storage Pools detected one or more new errors.
+| Cloud Storage Pool connectivity error
+| The health check for Cloud Storage Pools detected one or more new errors.
+
+|===
+
+== Debug and trace alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description
+
+| Debug performance impact
+| One or more subcomponents have been in debug mode for an extended time, which might decrease performance.
+
+| Trace configuration enabled
+| When trace configuration is enabled, system performance might be negatively impacted.
 
 |===
 
@@ -274,26 +278,29 @@ This alert is triggered when an alert email notification fails or a test email (
 |===
 | Alert name| Description
 
-|Expiration of client certificates configured on the Certificates page
-|One or more client certificates configured on the Certificates page are about to expire.
+| Expiration of client certificates configured on the Certificates page
+| One or more client certificates configured on the Certificates page are about to expire.
 
-|Expiration of load balancer endpoint certificate
-|One or more load balancer endpoint certificates are about to expire.
+| Expiration of grid federation certificates
+| One or more grid federation certificates are about to expire.
 
-|Expiration of server certificate for management interface
-|The server certificate used for the management interface is about to expire.
+| Expiration of load balancer endpoint certificate
+| One or more load balancer endpoint certificates are about to expire.
 
-|Expiration of global server certificate for S3 and Swift API 
-|The server certificate used for accessing storage API endpoints is about to expire.
+| Expiration of server certificate for management interface
+| The server certificate used for the management interface is about to expire.
 
-|External syslog CA certificate expiration
-|The certificate authority (CA) certificate used to sign the external syslog server certificate is about to expire.
+| Expiration of global server certificate for S3 and Swift API 
+| The server certificate used for accessing storage API endpoints is about to expire.
 
-|External syslog client certificate expiration
-|The client certificate for an external syslog server is about to expire.
+| External syslog CA certificate expiration
+| The certificate authority (CA) certificate used to sign the external syslog server certificate is about to expire.
 
-|External syslog server certificate expiration
-|The server certificate presented by the external syslog server is about to expire.
+| External syslog client certificate expiration
+| The client certificate for an external syslog server is about to expire.
+
+| External syslog server certificate expiration
+| The server certificate presented by the external syslog server is about to expire.
 |===
 
 == External syslog server alerts
@@ -302,24 +309,24 @@ This alert is triggered when an alert email notification fails or a test email (
 |===
 | Alert name| Description
 
-|External syslog server forwarding error
-|Node cannot forward logs to the external syslog server.
+| External syslog server forwarding error
+| Node cannot forward logs to the external syslog server.
 |===
 
-== Grid federation alerts
+== Grid federation and cross-grid replication alerts
 
 [cols="1a,2a" options="header"]
 |===
-| Alert name| Description and recommended actions
+| Alert name| Description
 
-|Grid federation connection failure
-|The grid federation connection between the local and remote grids is not working.
+| Cross-grid replication permanent request failure
+| A cross-grid replication error occurred that requires user intervention to resolve.
 
-. Review the settings on the Grid Federation page for both the local and the remote grids. Confirm that all values are correct. See xref:../admin/grid-federation-manage-connection.adoc[Manage grid federation connections].
+| Cross-grid replication resources unavailable
+| Cross-grid replication requests are pending because a resource is unavailable.
 
-. Review the certificates used for the connection. Make sure that certificates have not expired and that the details are valid.
-. Confirm that all Admin and Gateway Nodes in the local and remote grids are online and available. Resolve any alerts that might be affecting these nodes and try again.
-. If you provided a fully qualified domain name (FQDN) for the local or remote grid, confirm the DNS server is online and available.
+| Grid federation connection failure
+| The grid federation connection between the local and remote grids is not working.
 
 |===
 
@@ -422,21 +429,17 @@ This alert indicates that someone has changed the ILM scan rate for your system 
 |The server certificate used by the key management server (KMS) is about to expire.
 |===
 
-== Large audit queue alerts
+== Log, audit log, and audit queue alerts
 
 [cols="1a,2a" options="header"]
 |===
 | Alert name| Description
+
+|Audit logs are being added to the in-memory queue
+|Node cannot send logs to the local syslog server and the in-memory queue is filling up.
 
 |Large audit queue
 |The disk queue for audit messages is full.
-|===
-
-== Log alerts
-
-[cols="1a,2a" options="header"]
-|===
-| Alert name| Description
 
 |Logs are being added to the on-disk queue
 |Node cannot forward logs to the external syslog server and the on-disk queue is filling up.
@@ -510,7 +513,7 @@ This alert might indicate a hardware issue, such as a bad cable or a failed tran
 |Unable to communicate with node
 |One or more services are unresponsive, or the node cannot be reached.
 
-This alert indicates that a node is disconnected for an unknown reason. For example, a service on the node might be stopped, or the node might have lost its network connection because of a power failure or unexpected outage.
+For an unknown reason, a node is disconnected or services on the node are unexpectedly down. For example, a service on the node might be stopped, or the node might have lost its network connection because of a power failure or unexpected outage.
 
 |Unexpected node reboot
 |A node rebooted unexpectedly within the last 24 hours.
@@ -562,7 +565,6 @@ The object existence check job cannot continue. Either one or more Storage Nodes
 |The LDR service on a Storage Node cannot transition to the desired state because of an internal error or volume issue.
 
 |===
-
 
 == StorageGRID services alerts
 

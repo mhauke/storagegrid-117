@@ -11,6 +11,8 @@ summary: 'As a grid administrator, you manage the configuration options that con
 [.lead]
 As a grid administrator, you manage the configuration options that control how S3 and Swift client applications connect to your StorageGRID system to store and retrieve data.
 
+NOTE: Support for Swift client applications has been deprecated and will be removed in a future release. 
+
 == Configuration workflow
 
 As shown in the workflow diagram, there are four primary steps for connecting StorageGRID to any S3 or Swift application:

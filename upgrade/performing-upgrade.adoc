@@ -116,7 +116,7 @@ A grid node can be in one of these stages when the tables first appear:
 
 * Downloading
 
-* Waiting to be approved, or approved and waiting in the upgrade queue
+* Waiting to be approved
 
 . [[approval-step]]When you are ready to add grid nodes to the upgrade queue (or if you need to remove approved nodes from the queue), use these instructions:
 +
@@ -152,10 +152,10 @@ If you approve more than one node of the same type, the nodes will be upgraded o
 
 . Wait for the approved nodes to proceed through these upgrade stages:
 +
-* Queued
+* Approved and waiting in the upgrade queue
 * Stopping services
 +
-NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Remove* button is disabled.
+NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Remove from queue* button is disabled.
 
 * Stopping container
 * Cleaning up Docker images
@@ -174,7 +174,7 @@ NOTE: When an appliance node reaches this stage, the StorageGRID Appliance Insta
 
 When all grid nodes have completed the upgrade stages, the *Upgrade other grid nodes* task is shown as Completed. The remaining upgrade tasks are performed automatically in the background.
 
-. As soon as the *Enable features* task is complete (which occurs quickly), you can start using the new features in the upgraded StorageGRID version.
+. As soon as the *Enable features* task is complete (which occurs quickly), you can start using the xref:whats-new.adoc[new features] in the upgraded StorageGRID version.
 
 . During the *Upgrade database* task, the upgrade process checks each node to verify that the Cassandra database does not need to be updated.
 +

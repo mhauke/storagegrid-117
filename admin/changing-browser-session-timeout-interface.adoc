@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: browser inactivity timeout, inactive users
 summary: 'You can control whether Grid Manager and Tenant Manager users are signed out if they are inactive for more than a certain amount of time.'
 ---
-= Change the browser inactivity timeout
+= Change browser inactivity timeout
 :icons: font
 :imagesdir: ../media/
 
@@ -25,24 +25,19 @@ As required, you can increase or decrease the timeout period by setting the *Sig
 [NOTE]
 ====
 Browser inactivity timeout is controlled by the following:
-
-* A separate, non-configurable StorageGRID timer, which is included for system security. By default, each user's authentication token expires 16 hours after the user signs in. When a user's authentication expires, that user is automatically signed out, even if the value for the browser timeout has not been reached. To renew the token, the user must sign back in.
+* A separate, non-configurable StorageGRID timer, which is included for system security. By default, each user's authentication token expires 16 hours after the user signs in. When a user's authentication expires, that user is automatically signed out, even if you do not select the check box or the value for the browser timeout has not been reached. To renew the token, the user must sign back in.
 * Timeout settings for the identity provider, assuming single sign-on (SSO) is enabled for StorageGRID.
 +
-If SSO is enabled and a user's browser times out, the user must reenter their SSO credentials to access StorageGRID again. See xref:configuring-sso.adoc[Configure single sign-on]. 
 
+If SSO is enabled and a user's browser times out, the user must reenter their SSO credentials to access StorageGRID again. See xref:configuring-sso.adoc[Configure single sign-on]. 
 ====
 
 .Steps
-. Select *CONFIGURATION* > *Security settings* > *Interface*.
+. Select *CONFIGURATION* > *Security settings* > *Browser inactivity timeout*.
 . In the *Sign out inactive users after* field, select a browser timeout period between 60 seconds and 7 days.
-You can select the browser timeout period in seconds, minutes, hours, or days. 
+You can select the browser timeout period in seconds, minutes, hours, or days.
 +
-//Set this field to 0 if you do not want to use this functionality. Users are signed out 16 hours after they sign in, when their authentication tokens expire.
-+
-//image::../media/configuration_display_options.gif[Display Options page]
-image::../media/securitysettings_interface_browser_session_timeout.png[Browser session timeout]
-. Select *Save*. If a browser is inactive for the specified amount of time, the user is signed out of the Grid Manager or Tenant Manager.
 
+. Select *Save*. If a browser is inactive for the specified amount of time, the user is signed out of the Grid Manager or Tenant Manager.
 +
 The new setting does not affect currently signed in users. Users must sign in again or refresh their browsers for the new timeout setting to take effect.

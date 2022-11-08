@@ -1,0 +1,91 @@
+---
+permalink: admin/grid-federation-troubleshoot.html
+sidebar: sidebar
+keywords: grid federation, troubleshoot
+summary: 'You might need to troubleshoot alerts related to grid federation as well as any permanent errors that occur when tenant accounts use a grid federation connection to clone account data between StorageGRID systems or cross-grid replication to copy objects between buckets.'
+---
+= Troubleshoot grid federation errors
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might need to troubleshoot alerts related to grid federation as well as any permanent errors that occur when tenant accounts use a grid federation connection to clone account data between StorageGRID systems or cross-grid replication to copy objects between buckets.
+
+// doc task: https://jira.vtc.eng.netapp.com/browse/SGWS-21308
+
+// doc task: https://jira.vtc.eng.netapp.com/browse/SGWS-22990
+
+// doc task: https://jira.vtc.eng.netapp.com/browse/SGWS-22991
+
+// see https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-troubleshoot.html
+
+After making any changes to resolve a connection issue, test the connection to ensure that its connection status is *Connected*. For instructions, see xref:grid-federation-manage-connection.adoc[Manage grid federation connections].
+
+== Troubleshoot account clone errors
+
+=== Unable to sign in to a cloned tenant account
+When a tenant account is cloned to the other grid in a grid federation connection, the password you set for the tenant's local root user is not cloned. To sign in as the root user on the cloned tenant, a grid administrator for that grid must first xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
+
+== Troubleshoot cross-grid replication errors
+
+//https://jira.vtc.eng.netapp.com/browse/SGWS-23229
+
+=== Cross-grid replication permanent failure alerts
+
+The *Cross-grid replication permanent failure - Source grid* and *Cross-grid replication permanent failure - Destination grid* alerts indicate that tenant objects can't be replicated between the buckets on two grids for a reason that requires user intervention to resolve. For example, a tenant's quota might have been exceeded or a bucket setting might have changed. The recommended actions for both alerts are the same, but you need to know which grid has the error before performing the steps.
+
+==== Cross-grid replication permanent failure - Source grid
+
+This alert indicates that a problem with the source of a cross-grid replication operation is preventing objects from being replicated between the grids. You must access the source grid to determine and resolve the alert. 
+
+. Sign into the grid where the alert was triggered.
+. Go to *Configuration* > *System* > *Grid federation*, and locate the connection.
+. On the Permitted tenants tab, look at the *Last error* column to determine which tenant accounts have errors.
+. Go to <<affected_tenants,Steps for each affected tenant>>.
+
+==== Cross-grid replication permanent failure - Destination grid
+
+This alert indicates that a problem with the destination of a cross-grid replication operation is preventing objects from being replicated between the grids. You (or a grid admin with Root access permission) must access the destination grid to determine and resolve the alert.
+   
+. Sign into the grid where the alert was triggered.
+
+. Go to *Configuration* > *System* > *Grid federation*, and select the connection.
+
+. On the connection details page, locate the FQDN or IP address in the *Remote hostname (other grid)* field.
+
+. Sign in to the other grid, and go to *Configuration* > *System* > *Grid federation*.
+
+. Select the connection name from the table to open the details page.
+
+. On the Permitted tenants tab, look at the *Last error* column to determine which tenant accounts have errors.
+
+. Go to <<affected_tenants,Steps for each affected tenant>>.
+
+==== [[affected_tenants]]Steps for each affect tenant
+
+. For each affected tenant account:
+
+.. Select the tenant name to display the tenant details page.
+.. Confirm that the tenant has not exceeded its quota for this grid.
+.. As required, increase the quota to allow new objects to be saved.
+
+.. Repeat these steps for the corresponding tenant account on the other grid in the connection.
+	
+. For each affected tenant, sign in to Tenant Manager on both grids, so you can compare the list of buckets.
+
+. For each bucket that has cross-grid replication enabled, confirm the following:
+
+* There is a corresponding bucket on the other grid (must use the exact name). 
+* Both buckets have object versioning enabled (versioning cannot be suspended on either grid).
+* Both buckets have S3 Object Lock disabled. 
+* Neither bucket is in the *Read only: Deleting all objects* state.
+
+. After resolving any issues, go back to the Grid Federation page, select the affected tenants and select *Clear Error*.
+
+=== Check if an error has been resolved
+After resolving any underlying issues, you can determine if the error has been resolved. From the Permitted tenants tab for the connection, select the tenant, and select *Clear error*. A confirmation message indicates that StorageGRID has cleared the error for the tenant.
+
+If the underlying problem has been resolved, the error message is no longer displayed. However, if the underlying problem has not been fixed (or if a different error is encountered), the error message will be shown in the *Last error* column as soon as new objects are saved to one of the tenant's buckets.
+
+//. To retry replication of objects that failed to replicate, see <cgr troubleshooting topic link implemented in SGWS-22825>  //  
+

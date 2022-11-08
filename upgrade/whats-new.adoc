@@ -16,7 +16,7 @@ This release of StorageGRID introduces the following features.
 === FabricPool and S3 setup wizard and dashboard reminder
 The new FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with ONTAP FabricPool or other S3 client application and produces a file you can use when entering required values in the other application. Use the wizard to create an HA group, load balancer endpoint, tenant, bucket, and access keys more quickly and to make sure your settings conform to StorageGRID best practices.
 
-As part of this change, a new banner is displayed on the dashboard to remind new users to configure endpoint domain names for S3 virtual hosted-style requests and to set up email notifications for alerts.
+As part of this change, a new banner is displayed on the dashboard to remind new users to configure endpoint domain names for S3 virtual-hosted-style requests and to set up email notifications for alerts.
 
 See xref:../admin/use-s3-setup-wizard.adoc[Use S3 setup wizard]  and xref:../fabricpool/use-fabricpool-setup-wizard.adoc[Use FabricPool setup wizard].
 
@@ -35,39 +35,53 @@ When you create a load balancer endpoint, you can now do the following:
 When added as the group policy for an S3 tenant account, the sample policy helps mitigate ransomware attacks. It prevents older object versions from being permanently deleted. See xref:../tenant/creating-groups-for-s3-tenant.adoc[Create groups for an S3 tenant].
 
 === S3 Object Lock supports governance mode
-When specifying the S3 Object Lock settings for an object or the default retention settings for a bucket, you can now use governance mode. This retention mode allows users with special permission to bypass certain retention settings. These users can delete an object version before its retention period has elapsed, or they can increase, decrease, or remove an object's retention period.
+When specifying the S3 Object Lock settings for an object or the default retention settings for a bucket, you can now use governance mode. This retention mode allows users with special permission to bypass certain retention settings. These users can delete an object version before its retention period has elapsed, or they can increase, decrease, or remove an object's retention period. See xref:../tenant/using-s3-object-lock.adoc[Use S3 Object Lock to retain objects] and xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
 
-Related to this change, Tenant Manager users can now enable default retention while they are creating a bucket, and they can specify a default retention mode and retention period.
-
-See xref:../tenant/using-s3-object-lock.adoc[Use S3 Object Lock to retain objects], xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock], and xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket].
+Related to this change, Tenant Manager users can now enable default retention while they are creating a bucket, and they can specify a default retention mode and retention period. See xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket].
 
 === Can rename grid, sites, and nodes
-A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview] for details.
+A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes: Overview].
+
+=== Grid federation, account sync, and cross-grid replication
+You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery and ransomware mitigation. See xref:../admin/grid-federation-overview.adoc[What is grid federation], xref:../admin/grid-federation-what-is-account-clone.adoc[What is account clone], and xref:../admin/grid-federation-what-is-cross-grid-replication.adoc[What is cross-grid replication].
+
+=== Delete all objects from bucket
+Tenant users can now delete all objects in a bucket, so the bucket can be deleted. See xref:../tenant/deleting-s3-bucket-objects.adoc[Delete objects in bucket].
 
 === Storage pools created for each site during installation
 When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
 
-=== New audit messages
+=== Can assign custom storage grades to new Storage Nodes
+When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See xref:../expand/performing-expansion.adoc[Perform expansion].
+
+
+
+=== Grid federation
+You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].
+=======
+=== New audit message category and new audit message
+A new audit message category was added for ILM operations, which includes the IDEL, LKCU, and ORLM messages. This new category is set to *Normal*. See xref:../audit/ilm-audit-messages.adoc[ILM operations audit messages].
+
 The following new audit messages were added:
+
+* *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
 
 * *EBDL: Empty Bucket Delete*: Related to the new functionality for emptying a bucket, this message is generated when the ILM scanner deletes an object in a bucket that is deleting all objects (performing an empty bucket operation).
 
 * *EBKR: Empty Bucket Request*: Related to the new functionality for emptying a bucket, this message is generated when a user sends a request to turn empty bucket on or off (that is, to delete bucket objects or to stop deleting objects).
 
-* *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
-
 * *S3SL: S3 Select Request*: Related to the S3 Select functionality, this message is generated after an S3 Select request has been returned to the client.
-
-=== Grid federation
-You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].
-
-=== Can assign custom storage grades to new Storage Nodes
-When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See xref:../expand/performing-expansion.adoc[Perform expansion].
 
 === New alerts
 The following new alerts were added for StorageGRID 11.7:
 
+* Cross-grid replication permanent request failure
+* Cross-grid replication resources unavailable
+* Debug performance impact
+* Expiration of grid federation certificate
+* Grid federation connection failure
 * Storage Node not in desired storage state
+* Trace configuration enabled
 
 == Kevin's what's new
 
@@ -90,9 +104,12 @@ The ILM wizard in the Grid Manager has been improved.
 
 === New units setting for storage values
 
-You can now select base 10 or base 2 units for the storage values displayed in the Grid Manager and Tenant Manager. Select the user drop-down in the upper right of the Grid Manager or Tenant Manager, then select *User Preferences*.
+You can now select base 10 or base 2 units for the storage values displayed in the Grid Manager and Tenant Manager. Select the user drop-down in the upper right of the Grid Manager or Tenant Manager, then select *User preferences*.
 
 == Paul's what's new
+=== New firewall controls and changes to untrusted Client Networks
+
+You can now better manage access to your grid using the new Firewall control page (*CONFIGURATION* > *Security* > *Firewall control*). This page enables you to manage the external access of ports on nodes in your grid, and to define host addresses and IP subnets that are allowed access to closed ports. The untrusted Client Network settings have been moved to the Firewall control page and have also been enhanced with the ability to select additional ports you want open when untrusted Client Network is configured. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
 
 
 == Santhosh's what's new

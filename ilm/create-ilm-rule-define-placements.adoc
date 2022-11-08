@@ -17,9 +17,9 @@ An ILM rule can include one or more placement instructions. Each placement instr
 
 Each placement instruction can have multiple lines if you want to create different types of copies or use different locations during that time period.
 
-This example ILM rule creates two replicated copies for the first year. Each copy is saved in a storage pool at a different site. After one year, a 2+1 erasure-coded copy is made and saved at only one site.
+In this example, the ILM rule stores one replicated copy in Site 1 and one replicated copy in Site 2 for the first year. After one year, a 2+1 erasure-coded copy is made and saved at only one site.
 
-image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
+image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Step 2]
 
 .Steps
 
@@ -39,6 +39,9 @@ image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Page 2]
 
 |User defined creation time
 |A time specified in user-defined metadata.
+
+|Noncurrent time
+|"`Noncurrent time`" is automatically selected if you selected *Yes* for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`" in xref:create-ilm-rule-enter-details.adoc[Step 1 of the Create an ILM rule wizard].
 |===
 +
 NOTE: If you want to create a compliant rule, you must select *Ingest time*.
@@ -123,7 +126,14 @@ Each line in the diagram shows where and when object copies will be placed. The 
 |Cloud Storage Pool copy
 |===
 +
-In this example, two replicated copies will be saved to two storage pools (Data Center 1 and Data Center 2) for one year. Then, an erasure-coded copy will be saved for an additional 10 years, using a 6+3 erasure-coding scheme at three sites. After 11 years, the objects will be deleted from StorageGRID.
+In this example, the ILM rule stores one replicated copy in Site 1 and one replicated copy in Site 2 for the first year. After one year and for an additional 10 years, a 6+3 erasure-coded copy will be saved at three sites. After 11 years total, the objects will be deleted from StorageGRID.
++
+The Rule analysis section of the Retention diagram states:
++
+* StorageGRID site-loss protection will apply for the duration of this rule.
+* Objects processed by this rule will be deleted after Day 4015.
++
+NOTE: See xref:using-multiple-storage-pools-for-cross-site-replication.adoc[Enable site-loss protection.]
 +
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
 

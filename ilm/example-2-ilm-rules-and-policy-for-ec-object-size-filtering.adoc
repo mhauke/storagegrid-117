@@ -19,25 +19,21 @@ This example ILM rule erasure codes objects that are greater than 1 MB.
 
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 
-[cols="1a,2a" options="header"]
+[cols="2a,2a" options="header"]
 |===
 | Rule definition| Example value
-a|
-Rule name
-a|
-EC only objects > 1 MB
-a|
-Reference time
-a|
-Ingest time
-a|
-Advanced filter for object size
-a|
-Object size (MB) greater than 1
-a|
-Content placement
-a|
-Create a 2+1 erasure-coded copy using three sites
+
+| Rule name
+| EC Only Objects > 1 MB
+
+| Reference time
+| Ingest time
+
+| Advanced filter for Object size
+| Object size greater than 1 MB
+
+| Placements
+| Create a 2+1 erasure-coded copy using three sites
 |===
 
 image::../media/policy_2_rule_1_ec_objects_adv_filtering.png[ILM rule 1 for example 2: Use EC for all objects greater than 1 MB]
@@ -49,24 +45,19 @@ This example ILM rule creates two replicated copies and does not filter by objec
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
-a|
-Rule name
-a|
-Two replicated copies
-a|
-Reference time
-a|
-Ingest time
-a|
-Advanced filter for object size
-a|
-None
-a|
-Content placement
-a|
-Create two replicated copies and save them at two data centers, DC1 and DC2
-|===
 
+| Rule name
+| Two Replicated Copies
+
+| Reference time
+| Ingest time
+
+| Advanced filter for Object size
+| None
+
+| Placements
+| On Day 0 to forever, keep one replicated copy at Site 1 and one replicated copy at Site 2.
+|===
 
 == ILM policy for example 2: Use EC for objects greater than 1 MB
 
@@ -75,4 +66,4 @@ This example ILM policy includes two ILM rules:
 * The first rule erasure codes all objects that are greater than 1 MB.
 * The second (default) ILM rule creates two replicated copies. Because objects greater than 1 MB have been filtered out by rule 1, rule 2 only applies to objects that are 1 MB or smaller.
 +
-image::../media/policy_2_configured_policy.png[ILM policy for example 2: Use EC for objects greater than 1 MB]
+//image::../media/policy_2_configured_policy.png[ILM policy for example 2: Use EC for objects greater than 1 MB]

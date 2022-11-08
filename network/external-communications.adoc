@@ -13,7 +13,7 @@ Clients need to communicate with grid nodes to ingest and retrieve content. The 
 
 == Restricted access to ports
 
-If enterprise networking policies restrict access to any of the ports, you can use xref:../admin/configuring-load-balancer-endpoints.adoc[load balancer endpoints] to allow access on user-defined ports. You can then use xref:../admin/managing-untrusted-client-networks.adoc[untrusted Client Networks] to allow access only on load balancer endpoint ports.
+If enterprise networking policies restrict access to any of the ports, you can use xref:../admin/configuring-load-balancer-endpoints.adoc[load balancer endpoints] to allow access on user-defined ports. You can then use xref:../admin/manage-firewall-controls.adoc[untrusted Client Networks] to allow access only on load balancer endpoint ports.
 
 == Port remapping
 
@@ -215,6 +215,8 @@ Used for connecting to an Active Directory or LDAP server for Identity Federatio
 |Admin Nodes
 |Used by web browsers and management API clients for accessing the Grid Manager and Tenant Manager.
 
+Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.
+
 |443
 |TCP
 |HTTPS
@@ -336,6 +338,8 @@ Browser
 Admin Nodes
 |
 Optional. Used by web browsers and management API clients for accessing the Grid Manager. Can be used to separate Grid Manager and Tenant Manager communications.
+
+Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.
 |
 9022
 |

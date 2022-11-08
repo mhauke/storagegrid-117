@@ -59,7 +59,7 @@ Use a text editor to create the replication configuration XML required to enable
 </ReplicationConfiguration>
 ----
 
-. In the Tenant Manager select *STORAGE (S3)* > *Buckets*.
+. Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
 . Select the name of the source bucket.
 +
 The bucket details page appears.
@@ -83,6 +83,6 @@ For small objects, replication happens quickly.
 
 .Related information
 
-xref:../s3/index.adoc[Use S3]
+xref:../s3/index.adoc[Use S3 REST API]
 
 xref:creating-platform-services-endpoint.adoc[Create platform services endpoint]
