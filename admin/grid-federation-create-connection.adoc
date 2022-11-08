@@ -68,7 +68,7 @@ StorageGRID automatically generates client and server certificates for each grid
 
 * The FQDN of the grid you want to connect to
 * A VIP address of an HA group on the other grid
-* An IP address of an Admin Node or Gateway Node on the other grid
+* An IP address of an Admin Node or Gateway Node on the other grid. The IP can be on any network that the source grid can reach.
 
 |===
 

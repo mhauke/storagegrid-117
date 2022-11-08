@@ -22,13 +22,13 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * You must have Root access permission.
 
-* You can create the tenant from either grid in the connection. The grid where a tenant is created is known as the _tenant's source grid_.
+* You can create the tenant from either grid in the connection. The grid where a tenant is created is the _tenant's source grid_.
 
 * The status of the connection must be *Connected*.
 
-* You can only select the *Use grid federation connection* permission when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.
+* You can only select the *Use grid federation connection* permission when you are creating a new S3 tenant; you can't enable this permission when you edit an existing tenant.
 
-* When the new tenant is saved on the first grid, an identical tenant is automatically created on the other grid. The grid where the cloned tenant is created is known as the _tenant's destination grid_.
+* When the new tenant is saved on the first grid, an identical tenant is automatically created on the other grid. The grid where the tenant is replicated to is the _tenant's destination grid_.
 
 * The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. However, for security reasons, the password for a local root user is not copied to the destination grid.  
 
