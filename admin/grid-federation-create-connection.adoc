@@ -55,7 +55,7 @@ Perform these steps on either of the two StorageGRID systems.
 
 Both grids in this connection will use the same port. You must ensure that no node in either grid uses this port for other connections.
 
-|Certificate valid days (this grid)
+|Certificate valid days for this grid
 |The number of days you want the security certificates for this grid in the connection to be valid. The default value is 730 days (2 years), but you can enter any value from 1 to 762 days.
 
 StorageGRID automatically generates client and server certificates for each grid when you save the connection.
@@ -111,7 +111,7 @@ In general, use the same number of days for the certificates on both sides of th
 
 . Select *Save and test*.
 +
-The certificates are generated, a success message appears, and the new connection is listed on the Grid federation page with a *Connection status* of *Connected*.
+The certificates are generated and the connection is tested. If the connection is valid, a success message appears and the new connection is listed on the Grid federation page of both grids. The *Connection status* will be *Connected*.
 +
 If an error message appears, address any issues. See xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation errors].
 
@@ -120,6 +120,4 @@ If an error message appears, address any issues. See xref:grid-federation-troubl
 If you edit this connection, a new verification file will be created. The original file cannot be reused.
 
 . When you are ready, create one or more new tenant accounts, add the *Use grid federation connection* permission, and select this connection. Start by reviewing the considerations for xref:grid-federation-manage-tenants.adoc[permitted tenants].
-+
-NOTE: You cannot add the *Use grid federation connection* permission to an existing tenant.
 

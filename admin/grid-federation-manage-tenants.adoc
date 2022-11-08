@@ -36,19 +36,36 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * After the new tenant is available on both grids, tenant users can perform these operations:
 
-** From the tenant's source grid, create new tenant users and groups, which are automatically cloned to the tenant's destination grid.
-** From the tenant's source grid, create new S3 access keys, which can be optionally cloned to the tenant's destination grid.
+** From the tenant's source grid, import or create tenant group and users, which are automatically cloned to the tenant's destination grid. See xref:../tenant/grid-federation-use-account-clone.adoc[Use account clone].
+** From the tenant's source grid, create new S3 access keys, which can be optionally cloned to the tenant's destination grid. See xref:../tenant/tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
 ** Create identical buckets on both grids in the connection and enable cross-grid replication in one direction or in both directions. See xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[Manage cross-grid replication].
 
 == Edit tenant with Use grid federation connection permission
 
 If you need to edit a tenant that has the *Use grid federation connection* permission, follow the general instructions for xref:editing-tenant-account.adoc[editing a tenant account] and note the following:
 
-* If a tenant has the *Use grid federation connection* permission, you can edit tenant details from either grid in the connection. However, any changes you make on one grid in the connection will not be copied to the other grid. If you want to keep the tenant details exactly in sync between grids, you must make the same edits on both grids.
+* If a tenant has the *Use grid federation connection* permission, you can edit tenant details from either grid in the connection. However, any changes you make will not be copied to the other grid. If you want to keep the tenant details exactly in sync between grids, you must make the same edits on both grids.
 
-* You can't select (or re-select) the *Use grid federation connection* permission when you are editing an existing tenant.
+* You can't select the *Use grid federation connection* permission when you are editing an existing tenant.
 
 * If you need to remove the *Use grid federation connection* permission for a tenant, use the Grid federation page as described in the next section. You can't remove this permission by editing the tenant.
+
+== Delete a tenant with Use grid federation connection permission
+
+If you need to remove a tenant that has the *Use grid federation connection* permission, follow the general instructions for xref:deleting-tenant-account.adoc[deleting a tenant account] and note the following:
+
+* Before you can remove the original tenant on the source grid, you must remove all buckets for the account on the source grid.
+
+* Before you can remove the cloned tenant on the destination grid, you must remove all buckets for the account on the destination grid.
+
+* If you remove either the original or the cloned tenant, the account can no longer be used for cross-grid replication. 
+
+* If you are removing the original tenant on the source grid, any tenant groups, users, or keys that were cloned to the destination grid will be unaffected. You can either delete the cloned tenant or allow it to manage its own groups, users, access keys, and buckets.
+
+* If you are removing the cloned tenant on the destination grid, clone errors will occur if new groups, users, or keys are added to the original tenant.
++
+To avoid these errors,  remove the tenant's permission to use the grid federation connection before deleting the tenant from this grid.
+
 
 == Remove Use grid federation connection permission
 
