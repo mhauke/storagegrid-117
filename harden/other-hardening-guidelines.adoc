@@ -27,13 +27,13 @@ The AutoSupport feature can be disabled. However, NetApp recommends enabling it 
 
 AutoSupport supports HTTPS, HTTP, and SMTP for transport protocols. Because of the sensitive nature of AutoSupport messages, NetApp strongly recommends using HTTPS as the default transport protocol for sending AutoSupport messages to NetApp support.
 
-Optionally, you can configure an Admin proxy for more control over AutoSupport communication from Admin Nodes to NetApp technical support. See the steps for xref:../admin/configuring-admin-proxy-settings.adoc[creating an Admin proxy].
+NOTE: As of the StorageGRID 11.7 release, NetApp's AutoSupport servers will reject messages sent using HTTP. You must configure a proxy server to forward AutoSupport messages as HTTPS.
 
-== Cross-Origin Resource Sharing (CORS)
+== Cross-origin resource sharing (CORS)
 
-You can configure Cross-Origin Resource Sharing (CORS) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains. In general, do not enable CORS unless it is required. If CORS is required, restrict it to trusted origins.
+You can configure cross-origin resource sharing (CORS) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains. In general, do not enable CORS unless it is required. If CORS is required, restrict it to trusted origins.
 
-See the steps for xref:../tenant/configuring-cross-origin-resource-sharing-cors.adoc[configuring Cross-Origin Resource Sharing (CORS)].
+See the steps for xref:../tenant/configuring-cross-origin-resource-sharing-cors.adoc[configuring cross-origin resource sharing (CORS)].
 
 == External security devices
 

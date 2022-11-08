@@ -45,7 +45,7 @@ Newly ingested S3 and Swift object data.
 
 Existing stored objects are not encrypted. Object metadata and other sensitive data are not encrypted.
 
-* xref:changing-network-options-object-encryption.adoc[Configure stored object encryption]
+* xref:changing-network-options-object-encryption.adoc[Configure network and object options]
 
 a|
 S3 bucket encryption
@@ -56,7 +56,7 @@ Newly ingested S3 object data only.
 
 Encryption must be specified for the bucket. Existing bucket objects are not encrypted. Object metadata and other sensitive data are not encrypted.
 
-* xref:../s3/index.adoc[Use S3]
+* xref:../s3/index.adoc[Use S3 REST API]
 
 a|
 S3 object server-side encryption (SSE)
@@ -69,7 +69,7 @@ Encryption must be specified for the object. Object metadata and other sensitive
 
 StorageGRID manages the keys.
 
-* xref:../s3/index.adoc[Use S3]
+* xref:../s3/index.adoc[Use S3 REST API]
 
 a|
 S3 object server-side encryption with customer-provided keys (SSE-C)
@@ -87,7 +87,7 @@ Encryption must be specified for the object. Object metadata and other sensitive
 
 Keys are managed outside of StorageGRID.
 
-* xref:../s3/index.adoc[Use S3]
+* xref:../s3/index.adoc[Use S3 REST API]
 
 a|
 External volume or datastore encryption

@@ -18,10 +18,10 @@ You can use the Tenant Manager to create S3 buckets for object data.
 +
 NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objects can be granted by xref:../s3/bucket-and-group-access-policies.adoc[bucket policy or group policy].
 
-* If you plan to create a bucket with S3 Object Lock, a grid admin has enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
+* If you plan to enable S3 Object Lock for a bucket, a grid admin has enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
 
-== Access wizard
-. Select *STORAGE (S3)* > *Buckets*.
+== Access the wizard
+. Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
 
 . Select *Create bucket*.
 
@@ -32,11 +32,11 @@ NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objec
 [cols="1a,3a" options="header"]
 |===
 
-|Field |Description
+| Field | Description
 
-|Bucket name
+| Bucket name
 
-|A name for the bucket that complies with these rules:
+| A name for the bucket that complies with these rules:
 
 * Must be unique across each StorageGRID system (not just unique within the tenant account).
 * Must be DNS compliant.
@@ -48,9 +48,9 @@ For more information, see the https://docs.aws.amazon.com/AmazonS3/latest/usergu
 
 *Note*: You cannot change the bucket name after creating the bucket.
 
-|Region 
+| Region 
 
-|The bucket's region.
+| The bucket's region.
 
 Your StorageGRID administrator manages the available regions. A bucket's region can affect the data-protection policy applied to objects. By default, all buckets are created in the `us-east-1` region.
 
@@ -63,7 +63,7 @@ Your StorageGRID administrator manages the available regions. A bucket's region 
 
 . Optionally, enable object versioning for the bucket.
 +
-Enable object versioning if you want to store every version of each object in this bucket. You can then retrieve previous versions of an object as needed.
+Enable object versioning if you want to store every version of each object in this bucket. You can then retrieve previous versions of an object as needed. You must enable object versioning if the bucket will be used for cross-grid replication.
 
 . If the global S3 Object Lock setting is enabled, optionally enable S3 Object Lock for the bucket to store objects using a write-once-read-many (WORM) model. 
 +
@@ -108,4 +108,6 @@ The *Default retention period* indicates how long new objects added to this buck
 . Select *Create bucket*.
 +
 The bucket is created and added to the table on the Buckets page.
+
+. Optionally, select *Go to bucket details page* to xref:viewing-s3-bucket-details.adoc[view bucket details] and perform additional configuration.
 

@@ -59,11 +59,11 @@ For details about this task, see xref:../admin/managing-high-availability-groups
 |===
 | Field| Description
 
-|HA group name
-|A unique display name for this HA group.
+| HA group name
+| A unique display name for this HA group.
 
-|Description (optional)
-|The description of this HA group.
+| Description (optional)
+| The description of this HA group.
 
 |===
 
@@ -87,16 +87,16 @@ If the HA group includes more than one interface and the active interface fails,
 |===
 | Field| Description
 
-|Subnet CIDR
-|The address of the VIP subnet in CIDR notation&#8212;an IPv4 address followed by a slash and the subnet length (0-32). 
+| Subnet CIDR
+| The address of the VIP subnet in CIDR notation&#8212;an IPv4 address followed by a slash and the subnet length (0-32). 
 
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
 
-|Gateway IP address (optional)
-|Optional. If the ONTAP IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
+| Gateway IP address (optional)
+| Optional. If the ONTAP IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
 
-|Virtual IP address
-|Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet.
+| Virtual IP address
+| Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet.
 
 At least one address must be IPv4. Optionally, you can specify additional IPv4 and IPv6 addresses.
 
@@ -139,20 +139,20 @@ To use the StorageGRID Load Balancer service, select the *StorageGRID load balan
 |===
 |Field| Description
 
-|Name
-|A descriptive name for the endpoint.
+| Name
+| A descriptive name for the endpoint.
 
-|Port
-|The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
+| Port
+| The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
 
 *Note:* Ports used by other grid services are not permitted. See the 
 xref:../network/network-port-reference.adoc[Network port reference].
 
-|Client type
-|Must be *S3*.
+| Client type
+| Must be *S3*.
 
-|Network protocol
-|Select *HTTPS*.
+| Network protocol
+| Select *HTTPS*.
 
 *Note*: Communicating with StorageGRID without TLS encryption is supported but not recommended.
 
@@ -168,18 +168,18 @@ include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 |===
 |Field| Description
 
-|Allow all tenants (default)
-|All tenant accounts can use this endpoint to access their buckets. 
+| Allow all tenants (default)
+| All tenant accounts can use this endpoint to access their buckets. 
 
 *Allow all tenants* is almost always the appropriate option for the load balancer endpoint used for FabricPool. 
 
 You must select this option if you are using the FabricPool setup wizard for a new StorageGRID system and you have not yet created any tenant accounts.
 
-|Allow selected tenants
-|Only the selected tenant accounts can use this endpoint to access their buckets.
+| Allow selected tenants
+| Only the selected tenant accounts can use this endpoint to access their buckets.
 
-|Block selected tenants
-|The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+| Block selected tenants
+| The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
 
 |===
 
@@ -190,14 +190,14 @@ You must select this option if you are using the FabricPool setup wizard for a n
 |===
 |Field| Description
 
-|Upload certificate (recommended)
-|Use this option to upload a CA-signed server certificate, certificate private key, and optional CA bundle.
+| Upload certificate (recommended)
+| Use this option to upload a CA-signed server certificate, certificate private key, and optional CA bundle.
 
-|Generate certificate
-|Use this option to generate a self-signed certificate. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
+| Generate certificate
+| Use this option to generate a self-signed certificate. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
 
-|Use StorageGRID S3 and Swift certificate
-|This option is available only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates] for details. 
+| Use StorageGRID S3 and Swift certificate
+| This option is available only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates] for details. 
 
 |===
 
@@ -224,14 +224,14 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 |===
 | Field| Description
 
-|FQDN
-|The fully qualified domain name (FQDN) of the external load balancer.
+| FQDN
+| The fully qualified domain name (FQDN) of the external load balancer.
 
-|Port
-|The port number that FabricPool will use to connect to the external load balancer.
+| Port
+| The port number that FabricPool will use to connect to the external load balancer.
 
-|Certificate
-|Copy the server certificate for the external load balancer and paste it into this field.
+| Certificate
+| Copy the server certificate for the external load balancer and paste it into this field.
 
 |===
 
@@ -270,16 +270,16 @@ For details about this task, see xref:creating-tenant-account-for-fabricpool.ado
 | Option 
 | Do this
 
-|If identity federation is not enabled 
-|Specify the password to use when signing into the tenant as the local root user.
+| If identity federation is not enabled 
+| Specify the password to use when signing into the tenant as the local root user.
 
-|If identity federation is enabled
-|Select an existing federated group to have Root access permission for the tenant.
+| If identity federation is enabled
+| Select an existing federated group to have Root access permission for the tenant.
 
 Optionally specify the password to use when signing in to the tenant as the local root user.
 
-|If both identity federation and single sign-on (SSO) are enabled
-|Select an existing federated group to have Root access permission for the tenant. No local users can sign in.
+| If both identity federation and single sign-on (SSO) are enabled
+| Select an existing federated group to have Root access permission for the tenant. No local users can sign in.
 
 |===
 
@@ -313,9 +313,11 @@ FabricPool does not support object versioning, so buckets that have versioning e
 
 == Step 4 of 9: Download ONTAP settings 
 
-. To save the values you've entered so far to a text file, select *Download ONTAP settings*.
+. Optionally, select the copy icon (image:../media/icon_tenant_copy_url.png[copy icon]) to copy both the access key ID and secret access key to the clipboard.
 +
-Later, you can enter these values into ONTAP System Manager. 
+These values are included in the download file, but you might want to save them separately. 
+
+. Select *Download ONTAP settings* to download a text file that contains the values you've entered so far.
 +
 The `ONTAP_FabricPool_settings___bucketname__.txt` file includes the information you need to configure StorageGRID as the object storage system for a FabricPool cloud tier, including: 
 +
@@ -323,9 +325,11 @@ The `ONTAP_FabricPool_settings___bucketname__.txt` file includes the information
 *	Bucket name 
 * Access key ID and secret access key for the root user of the tenant account
 
-. Save the file to a secure location.
+. Save the copied keys and downloaded file to a secure location.
 +
-IMPORTANT: Do not close this page until you have downloaded the ONTAP settings or copied both access keys. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
+IMPORTANT: Do not close this page until you have copied both access keys, downloaded the ONTAP settings, or both. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
+
+. Select the check box to confirm you have downloaded or copied the access key ID and secret access key.
 
 . Select *Continue* to go to the ILM storage pool step.
 
@@ -353,27 +357,27 @@ For details about this step, see xref:../ilm/access-create-ilm-rule-wizard.adoc[
 +
 [cols="1a,3a" options="header"]
 |===
-|Field
-|Description
+| Field
+| Description
 
-|Rule name 
-|Automatically generated and cannot be changed
+| Rule name 
+| Automatically generated and cannot be changed
 
-|Description
-|Automatically generated and cannot be changed
+| Description
+| Automatically generated and cannot be changed
 
-|Filter
-|The bucket name
+| Filter
+| The bucket name
 
 This rule only applies to objects that are saved in the bucket you specified.
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
 The placement instruction starts when objects are initially saved to the bucket.
 
-|Placement instruction
-|2+1 erasure coding 
+| Placement instruction
+| 2+1 erasure coding 
 
 |===
 
@@ -408,18 +412,19 @@ To review and activate the policy:
 +
 [cols="1a,3a" options="header"]
 |===
-|Policy to start from
-|Steps
-|Active policy 
-|. Select *ILM* > *Policies* from the left menu in Grid Manager.
+| Policy to start from
+| Steps
+
+| Active policy 
+| . Select *ILM* > *Policies* from the left menu in Grid Manager.
 . Select the Proposed policy tab.
 . Select *Actions* > *Delete* to remove the existing proposed policy.
 . Return to the FabricPool setup wizard.
 
 The wizard can now clone your active policy to create a new proposed policy. The new FabricPool rule will be added to the top.
 
-|Proposed policy
-|. Select *ILM* > *Policies* from the left menu in Grid Manager.
+| Proposed policy
+| . Select *ILM* > *Policies* from the left menu in Grid Manager.
 . Select the Proposed policy tab.
 . Select *Actions* > *Edit* to edit the existing proposed policy.
 . Add the new FabricPool rule to the top.

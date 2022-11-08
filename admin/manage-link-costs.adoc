@@ -23,7 +23,6 @@ image::../media/link_costs.gif[Conceptual diagram for link costs between data ce
 
 * The Load Balancer service on Admin Nodes and Gateway Nodes equally distributes client connections to all Storage Nodes at the same data center site and to any data center sites with a link cost of 0.
 +
-
 In the example, a Gateway Node at data center site 1 (DC1) equally distributes client connections to Storage Nodes at DC1 and to Storage Nodes at DC2. A Gateway Node at DC3 sends client connections only to Storage Nodes at DC3.
 
 * When retrieving an object that exists as multiple replicated copies, StorageGRID retrieves the copy at the data center that has the lowest link cost.
@@ -35,18 +34,14 @@ Link costs are arbitrary relative numbers with no specific unit of measure. For 
 [cols="1a,1a,2a" options="header"]
 |===
 | Link| Link cost| Notes
-a|
-Between physical data center sites
-a|
-25 (default)
-a|
-Data centers connected by a WAN link.
-a|
-Between logical data center sites at the same physical location
-a|
-0
-a|
-Logical data centers in the same physical building or campus connected by a LAN.
+
+|Between physical data center sites
+|25 (default)
+|Data centers connected by a WAN link.
+
+|Between logical data center sites at the same physical location
+|0
+|Logical data centers in the same physical building or campus connected by a LAN.
 |===
 
 == Update link costs
@@ -56,11 +51,11 @@ You can update the link costs between data center sites to reflect latency betwe
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Grid Topology Page Configuration permission.
+* You have the xref:admin-group-permissions.adoc[Grid Topology Page Configuration permission].
 
 .Steps
 
-. Select *CONFIGURATION* > *Network* > *Link cost*.
+. Select *SUPPORT* > *Other* > *Link cost*.
 +
 image::../media/configuring_link_costs.png[Link Cost]
 
