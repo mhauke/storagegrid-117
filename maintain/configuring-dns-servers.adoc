@@ -21,7 +21,9 @@ To use fully qualified domain names (FQDNs) instead of IP addresses when specify
 
 IMPORTANT: Specifying the IP address of at least two and no more than six DNS servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. After configuring the grid-wide DNS server list, you can xref:modifying-dns-configuration-for-single-grid-node.adoc[customize the DNS server list for each node].
 
-If the DNS server information is omitted or incorrectly configured, a DNS Status (DNST) alarm is triggered on each grid node's SSM service. The alarm clears when the DNS is configured correctly and the new server information has reached all grid nodes.
+//If the DNS server information is omitted or incorrectly configured, a DNS Status (DNST) alarm is triggered on each grid node's SSM service. The alarm clears when the DNS is configured correctly and the new server information has reached all grid nodes.
+
+If the DNS server information is omitted or incorrectly configured, an error message appears. You must correct the errors.
 
 == Add a DNS server
 .Steps
