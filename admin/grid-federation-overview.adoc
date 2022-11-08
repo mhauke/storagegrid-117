@@ -31,11 +31,13 @@ image:../media/grid-federation-workflow.png[Grid federation connection workflow]
 
 * At least one grid federation connection must exist before you can use link:grid-federation-what-is-account-clone.html[account clone] or link:grid-federation-what-is-cross-grid-replication.html[cross-grid replication].
 
-=== IP address and DNS requirements
+=== Networking, IP address, and DNS requirements
 
-* A grid federation connection can connect any two Admin Nodes or Gateway Nodes. For example, you can configure a connection between the primary Admin Nodes on each grid or between a Gateway Node on one grid and an Admin Node on the other. However, the best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid.
-+
-Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface. For details, see xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
+* A grid federation connection connects Admin Nodes or Gateway Nodes in one grid to Admin Nodes or Gateway Nodes in another grid. For example, you can configure a connection between the Admin Nodes on each grid or between the Gateway Nodes on one grid and the Admin Nodes on the other.
+
+* The best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid. Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface. For details, see xref:managing-high-availability-groups.adoc[Manage high availability (HA) groups].
+
+* Cross-grid replication requires that the Storage Nodes on each grid be able to access the configured Admin and Gateway Nodes on the other grid. For each grid, confirm that all Storage Nodes are on the same StorageGRID network as the Admin Nodes or Gateway Nodes used for the connection.
 
 * If you plan to use fully qualified domain names (FQDN) to identify each grid in the connection (recommended), you must create the appropriate DNS entries, as follows:
 
@@ -44,7 +46,7 @@ Using HA groups helps ensure that grid federation connections will remain online
 
 * If the DNS entries for a FQDN map to the IP address of more than one Admin Node or Gateway Node or to the VIP addresses of more than one HA group, the requests to use the connection will be load balanced between the nodes or between the active nodes in the HA groups.
 
-* The IP addresses must be on a network that can be reached by both grids.
+* Creating a grid federation connection that uses the IP address of a single Admin Node or Gateway Node is not recommended. If the node becomes unavailable, the grid federation connection will also become unavailable.
 
 === Port requirements
 
