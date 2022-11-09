@@ -23,7 +23,7 @@ NOTE: Versioning can be enabled only on buckets created with StorageGRID version
 
 ILM policies are applied to each version of an object. An ILM scanning process continuously scans all objects and re-evaluates them against the current ILM policy. Any changes you make to ILM policies are applied to all previously ingested objects. This includes previously ingested versions if versioning is enabled. ILM scanning applies new ILM changes to previously ingested objects.
 
-For S3 objects in versioning-enabled buckets, versioning support allows you to create ILM rules that use "`Noncurrent time`" as the Reference time (select *Yes* for the question, "`Apply this rule to older object versions only?`" in xref:create-ilm-rule-enter-details.adoc[Step 1 of the Create an ILM rule wizard]). When an object is updated, its previous versions become noncurrent. Using a "`Noncurrent time`" filter allows you to create policies that reduce the storage impact of previous versions of objects.
+For S3 objects in versioning-enabled buckets, versioning support allows you to create ILM rules that use "`Noncurrent time`" as the Reference time (select *Yes* for the question, "`Apply this rule to older object versions only?`" in xref:../ilm/create-ilm-rule-enter-details.adoc[Step 1 of the Create an ILM rule wizard]). When an object is updated, its previous versions become noncurrent. Using a "`Noncurrent time`" filter allows you to create policies that reduce the storage impact of previous versions of objects.
 
 
 
