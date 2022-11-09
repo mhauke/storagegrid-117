@@ -38,7 +38,7 @@ As shown in the figure:
 
 * Local tenant groups and users created on the source grid are automatically cloned to the destination grid. The group permissions and S3 policy are the same.
 
-* Assuming the <<account-clone-identity-federation,requirements for identity federation>> have been met, federated groups imported to the tenant on the source grid are automatically imported to the tenant on the destination grid. 
+* Assuming the <<account-clone-identity-federation,requirements for identity federation>> have been met, federated groups imported to the tenant on the source grid are automatically cloned to the tenant on the destination grid. Both groups have the same access mode, group permissions and S3 group policy.
 
 * If a federated group has been imported to the source grid, federated users will be allowed to access the source grid. However, federated user can't sign in to the destination grid unless their S3 access keys are manually cloned to the destination grid.
 

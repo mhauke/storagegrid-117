@@ -60,7 +60,7 @@ The *Cross-grid replication permanent failure* alert indicates that tenant objec
 === Check if an error has been resolved
 After resolving any underlying issues, you can determine if the error has been resolved. From the Permitted tenants tab for the connection, select the tenant, and select *Clear error*. A confirmation message indicates that StorageGRID has cleared the error for the tenant.
 
-If the underlying problem has been resolved, the error message is no longer displayed. However, if the underlying problem has not been fixed (or if a different error is encountered), the error message will be shown in the *Last error* column as soon as new objects are saved to one of the tenant's buckets.
+If the underlying problem has been resolved, the error message is no longer displayed. However, if the underlying problem has not been fixed (or if a different error is encountered), the error message will be shown in the *Last error* column after new objects are saved to one of the tenant's buckets.
 
 //. To retry replication of objects that failed to replicate, see <cgr troubleshooting topic link implemented in SGWS-22825>  //  
 
