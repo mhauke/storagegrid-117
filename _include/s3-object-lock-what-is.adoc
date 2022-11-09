@@ -4,24 +4,28 @@
 
 The StorageGRID S3 Object Lock feature is an object-protection solution that is equivalent to S3 Object Lock in Amazon Simple Storage Service (Amazon S3).
 
-As shown in the figure, when the global S3 Object Lock setting is enabled for a StorageGRID system, an S3 tenant account can create buckets with or without S3 Object Lock enabled. If a bucket has S3 Object Lock enabled, bucket versioning is required and is enabled automatically. S3 client applications can optionally specify retention settings for any object version. Object versions that do not have retention settings are not protected by S3 Object Lock. 
+As shown in the figure, when the global S3 Object Lock setting is enabled for a StorageGRID system, an S3 tenant account can create buckets with or without S3 Object Lock enabled. If a bucket has S3 Object Lock enabled, bucket versioning is required and is enabled automatically. 
 
-In addition, each bucket that has S3 Object Lock enabled can optionally have a default retention mode and retention period. The default bucket retention settings apply to any objects that are added to the bucket without their own retention settings.
+If a bucket has S3 Object Lock enabled, S3 client applications can optionally specify retention settings for any object version saved to that bucket.
+
+In addition, a bucket that has S3 Object Lock enabled can optionally have a default retention mode and retention period. The default settings apply only to objects that are added to the bucket without their own retention settings.
 
 image::../media/s3_object_lock_architecture.png[S3 Object Lock Architecture]
 
 === Retention modes
-The StorageGRID S3 Object Lock feature supports two retention modes to apply different levels of protection to objects. These modes are equivalent to the Amazon S3 retention modes:
+The StorageGRID S3 Object Lock feature supports two retention modes to apply different levels of protection to objects. These modes are equivalent to the Amazon S3 retention modes.
 
-* In _compliance_ mode:
+* In compliance mode:
 
 ** The object cannot be deleted until its retain-until-date is reached. 
 ** The object's retain-until-date can be increased, but it cannot be decreased.
 ** The object's retain-until-date cannot be removed until that date is reached.  
 
-* In _governance_ mode, users with special permission can use a bypass header in requests to modify certain retention settings, as follows: 
-** They can delete an object version before its retain-until-date is reached.
-** They can increase, decrease, or remove an object's retain-until-date.
+* In governance mode:
+
+** Users with special permission can use a bypass header in requests to modify certain retention settings. 
+** These users can delete an object version before its retain-until-date is reached.
+** These users can increase, decrease, or remove an object's retain-until-date.
 
 
 === Retention settings for object versions
@@ -47,5 +51,5 @@ If a bucket is created with S3 Object Lock enabled, users can optionally specify
 
 The default bucket settings apply only to new objects that do not have their own retention settings. Existing bucket objects are not affected when you add or change these default settings. 
 
-See xref:../tenant/configure-s3-object-lock-settings-for-bucket.adoc[Configure S3 Object Lock settings for a bucket].
+See xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket] and xref:../tenant/update-default-retention-settings.adoc[Update S3 Object Lock default retention].
 

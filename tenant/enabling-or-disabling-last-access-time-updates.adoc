@@ -11,7 +11,7 @@ summary: 'When grid administrators create the information lifecycle management \
 [.lead]
 When grid administrators create the information lifecycle management (ILM) rules for a StorageGRID system, they can optionally specify that an object's last access time be used to determine whether to move that object to a different storage location. If you are using an S3 tenant, you can take advantage of such rules by enabling last access time updates for the objects in an S3 bucket.
 
-These instructions only apply to StorageGRID systems that include at least one ILM rule that uses the *Last access time* option in its placement instructions. You can ignore these instructions if your StorageGRID system does not include such a rule. See xref:../ilm/index.adoc[Manage objects with ILM] for details.
+These instructions only apply to StorageGRID systems that include at least one ILM rule that uses the *Last access time* option as an advanced filter or as a reference time. You can ignore these instructions if your StorageGRID system does not include such a rule. See xref:../ilm/using-last-access-time-in-ilm-rules.adoc[Use Last access time in ILM rules] for details.
 
 .What you'll need
 
@@ -26,8 +26,6 @@ For example, to ensure that recently viewed objects remain on faster storage, a 
 
 * Objects that have been retrieved in the past month should remain on local Storage Nodes.
 * Objects that have not been retrieved in the past month should be moved to an off-site location.
-
-NOTE: See the instructions for managing objects with information lifecycle management.
 
 By default, updates to last access time are disabled. If your StorageGRID system includes an ILM rule that uses the *Last access time* option and you want this option to apply to objects in this bucket, you must enable updates to last access time for the S3 buckets specified in that rule.
 
@@ -88,15 +86,14 @@ h|Object added to ILM evaluation queue?
 |===
 
 .Steps
-. Select *STORAGE (S3)* > *Buckets*.
-. Select the bucket name from the list.
+. Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
+. Select the bucket name from the table.
 +
 The bucket details page appears.
 
-. On the *Bucket options* tab, expand the *Last access time updates* section.
-. Select the appropriate radio button to enable or disable last access time updates.
-+
-image::../media/buckets_last_update_time_dialog_box.png[screenshot showing dialog box for setting last access time updates]
+. From the *Bucket options* tab, select the *Last access time updates* accordion.
+
+. Enable or disable last access time updates.
 
 . Select *Save changes*.
 

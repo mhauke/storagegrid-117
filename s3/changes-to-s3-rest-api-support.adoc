@@ -18,6 +18,7 @@ You should be aware of changes to the StorageGRID system's support for the S3 RE
 |11.7
 |
 * Added support for using GOVERNANCE mode with S3 Object Lock.
+* Added support for the StorageGRID-specific `x-ntap-sg-cgr-replication-state` response header for GET Object and HEAD Object requests. This header provides an object's replication status for cross-grid replication.
 
 |11.6
 |
@@ -57,7 +58,7 @@ IMPORTANT: In StorageGRID 11.6, the maximum _supported_ size for a single PUT Ob
 *Note:* Uses of ARN/URN in other configuration JSON/XML, including those used in custom StorageGRID features, have not changed.
 
 |11.1
-|Added support for Cross-Origin Resource Sharing (CORS), HTTP for S3 client connections to grid nodes, and compliance settings on buckets.
+|Added support for cross-origin resource sharing (CORS), HTTP for S3 client connections to grid nodes, and compliance settings on buckets.
 
 |11.0
 |Added support for configuring platform services (CloudMirror replication, notifications, and Elasticsearch search integration) for buckets. Also added support for object tagging location constraints for buckets, and the Available consistency control setting.

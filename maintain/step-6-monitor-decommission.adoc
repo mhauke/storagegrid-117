@@ -130,7 +130,7 @@ If you are monitoring the progress of a disconnected site decommission, refer to
 image::../media/decommission_site_step_6_repair_cassandra.png[Decommission Site Step 6 Repair Cassandra]
 
  ** During the *Deactivate EC Profiles & Delete Storage Pools* step, the following ILM changes are made:
-  *** Any Erasure Coding profiles that referred to the site are deactivated.
+  *** Any erasure coding profiles that referred to the site are deactivated.
   *** Any Storage Pools that referred to the site are deleted.
 +
 IMPORTANT: The system-default All Storage Nodes storage pool is also removed because it uses the All Sites site.

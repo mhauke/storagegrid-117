@@ -21,3 +21,6 @@ Related to the new xref:../maintain/rename-grid-site-node-overview.adoc[Rename g
 == Can create bucket and access keys for new S3 tenant
 
 New `s3Bucket` and `s3AccessKey` options were added to the *accounts* API. When you create an S3 tenant account using the Grid Management API, you can optionally create a bucket for that tenant as well as the access key ID and secret key for the tenant's root user.
+
+== Can change storage state for Storage Node
+You can use the new *node-storage-state* API endpoints to determine and change the state of the storage in a Storage Node (online, offline, read-only).

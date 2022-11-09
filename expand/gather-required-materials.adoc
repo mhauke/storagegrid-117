@@ -45,7 +45,7 @@ For details, see the instructions for <<download-and-extract-install-files,downl
 ** xref:../vmware/index.adoc[Install VMware]
 
 |Current documentation for your platform
-|For supported versions, see the https://mysupport.netapp.com/matrix[Interoperability Matrix^].
+|For supported versions, see the https://imt.netapp.com/matrix/#welcome[Interoperability Matrix^].
 
 |===
 
@@ -124,7 +124,15 @@ Before beginning the expansion of your StorageGRID system, ensure the following:
 
 *  The hardware needed to support the new grid nodes or new site has been installed and configured.
 
-* All new nodes have bidirectional communication paths to all existing and new nodes (a requirement for the Grid Network).
+* All new nodes have bidirectional communication paths to all existing and new nodes (a requirement for the Grid Network). In particular, confirm that the following TCP ports are open between the new nodes you are adding in the expansion and the primary Admin Node:
+
+** 1055
+** 7443
+** 8011
+** 10342
+
++
+See xref:../network/internal-grid-node-communications.adoc[Internal grid node communications].
 
 * The primary Admin Node can communicate with all expansion servers that are intended to host the StorageGRID system.
 

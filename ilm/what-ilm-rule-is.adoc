@@ -2,26 +2,18 @@
 permalink: ilm/what-ilm-rule-is.html
 sidebar: sidebar
 keywords: what is information lifecycle rule, ilm rule
-summary: 'To manage objects, you create a set of information lifecycle management \(ILM\) rules and organize them into an ILM policy. Every object ingested into the system is evaluated against the active policy. When a rule in the policy matches an object’s metadata, the instructions in the rule determine what actions StorageGRID takes to copy and store that object.'
+summary: 'To manage objects, you create a set of information lifecycle management \(ILM\) rules and organize them into an ILM policy.'
 ---
-= What an ILM rule is
+= Create an ILM rule: Overview
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-To manage objects, you create a set of information lifecycle management (ILM) rules and organize them into an ILM policy. Every object ingested into the system is evaluated against the active policy. When a rule in the policy matches an object's metadata, the instructions in the rule determine what actions StorageGRID takes to copy and store that object.
+To manage objects, you create a set of information lifecycle management (ILM) rules and organize them into an ILM policy.
 
-ILM rules define:
+Every object ingested into the system is evaluated against the active policy. When a rule in the policy matches an object’s metadata, the instructions in the rule determine what actions StorageGRID takes to copy and store that object.
 
-* Which objects should be stored. A rule can apply to all objects, or you can specify filters to identify which objects a rule applies to. For example, a rule can apply only to objects associated with certain tenant accounts, specific S3 buckets or Swift containers, or specific metadata values.
-* The storage type and location. Objects can be stored on Storage Nodes, in Cloud Storage Pools, or on Archive Nodes.
-* The type of object copies made. Copies can be replicated or erasure coded.
-* For replicated copies, the number of copies made.
-* For erasure-coded copies, the erasure-coding scheme used.
-* The changes over time to an object's storage location and type of copies.
-* How object data is protected as objects are ingested into the grid (synchronous placement or dual commit).
-
-Note that object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss. The copies are evenly distributed across all Storage Nodes.
+NOTE: Object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss. The copies are evenly distributed across all Storage Nodes.
 
 == Elements of an ILM rule
 
@@ -31,7 +23,7 @@ An ILM rule has three elements:
 * *Placement instructions*: A rule's placement instructions define the number, type, and location of object copies. Each rule can include a sequence of placement instructions to change the number, type, and location of object copies over time. When the time period for one placement expires, the instructions in the next placement are automatically applied by the next ILM evaluation.
 * *Ingest behavior*: A rule's ingest behavior allows you to choose how the objects filtered by the rule are protected as they are ingested (when an S3 or Swift client saves an object to the grid).
 
-== What ILM rule filtering is
+== ILM rule filtering
 
 When you create an ILM rule, you specify filters to identify which objects the rule applies to.
 
@@ -55,7 +47,7 @@ You can filter objects on very specific criteria. For example, objects stored by
 
 You can combine filters as needed in a single rule. For example, the marketing department might want to store large image files differently than their vendor records, while the Human Resources department might need to store personnel records in a specific geography and policy information centrally. In this case you can create rules that filter by tenant account to segregate the records from each department, while using filters in each rule to identify the specific type of objects that the rule applies to.
 
-== What ILM rule placement instructions are
+== ILM rule placement instructions
 
 Placement instructions determine where, when, and how object data is stored. An ILM rule can include one or more placement instructions. Each placement instruction applies to a single period of time.
 
@@ -72,30 +64,22 @@ Each rule can define multiple placements for a single time period and different 
 * To place  objects in multiple locations during a single time period, select *Add other type or location* to add more than one line for that time period.
 * To place objects in different locations in different time periods, select *Add another time period* to add the next time period. Then, specify one or more lines within the time period.
 
-The example shows the Define placements page of the Create ILM rule wizard.
+The example shows two placement instructions on the Define placements page of the Create ILM rule wizard.
 
 image::../media/ilm_rule_multiple_placements_in_single_time_period.png[ILM placements screen from Grid Manager]
 
-[cols="1a,3a"]
-|===
-a|
-image:../media/icon_number_1.png[icon number 1]
-a|
-The first placement instruction has two lines for the first year:
+The first placement instruction image:../media/icon_number_1.png[Icon number 1] has two lines for the first year:
 
-. The first line creates two replicated object copies at two data center sites.
-. The second line creates a 6+3 erasure-coded copy using three data center sites.
+* The first line creates two replicated object copies at two data center sites.
+* The second line creates a 6+3 erasure-coded copy using three data center sites.
 
-a|
-image:../media/icon_number_2.png[icon number 2]
-a|
-The second placement instruction creates two archived copies after one year and keeps those copies forever.
-|===
+The second placement instruction image:../media/icon_number_2.png[Icon number 1] creates two archived copies after one year and keeps those copies forever.
+
 When you define the set of placement instructions for a rule, you must ensure that at least one placement instruction begins at day 0, that there are no gaps between the time periods you have defined, and that the final placement instruction continues either forever or until you no longer require any object copies.
 
 As each time period in the rule expires, the content placement instructions for the next time period are applied. New object copies are created and any unneeded copies are deleted.
 
-== What ILM rule ingest behavior is
+== ILM rule ingest behavior
 
 Ingest behavior controls whether object copies are immediately placed according to the instructions in the rule, or if interim copies are made and the placement instructions are applied later. The following ingest behaviors are available for ILM rules:
 
