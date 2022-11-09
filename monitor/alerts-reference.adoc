@@ -1146,16 +1146,6 @@ When you resolve steps 1 and 2, the job will automatically start where it left o
 . If the selected consistency control cannot be satisfied, cancel the job and start another job using a lower consistency control.
 . If you are unable to resolve the issues, contact technical support.
 
-|S3 PUT Object size too large
-|An S3 client is attempting to perform a PUT Object operation that exceeds the S3 size limits.
-
-. Use the tenant ID shown in the alert details to identify the tenant account.
-. Go to *Support* > *Tools* > *Logs*, and collect the Application Logs for the Storage Node shown in the alert details. Specify a time period that is 15 minutes before and after the time of the alert.
-. Extract the downloaded archive, and navigate to the location of `bycast.log` (`/GID<grid_id>_<time_stamp>/<site_node>/<time_stamp>/grid/bycast.log`).
-. Search the contents of `bycast.log` for `"method=PUT"` and identify the IP address of the S3 client by looking at the `clientIP` field.
-. Inform all client users that the maximum PUT Object size is 5 GiB.
-. Use multipart uploads for objects larger than 5 GiB.
-
 |Unidentified corrupt object detected
 |A file was found in replicated object storage that could not be identified as a replicated object.
 
