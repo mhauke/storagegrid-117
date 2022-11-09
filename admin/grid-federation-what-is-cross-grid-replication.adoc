@@ -119,13 +119,18 @@ When determining how to encrypt source objects, StorageGRID applies these rules:
 . If a bucket setting is not configured, use the grid-wide encryption setting, if configured.
 . If a grid-wide setting is not present, do not encrypt the source object.
 
-
 When determining how to encrypt replicated objects, StorageGRID applies these rules in this order:
 
 . Use the same encryption as the source object, unless that object uses AES-128 encryption.
 . If the source object is not encrypted or it uses AES-128, use the destination bucket's default encryption setting, if configured.
 . If the destination bucket does not have an encryption setting, use the destination's grid-wide encryption setting, if configured.
 . If a grid-wide setting is not present, do not encrypt the destination object.
+
+=== Object tagging is not supported
+
+To ensure that object content remains the same on the source and destination grids, PUT Object tagging and DELETE Object tagging requests are not supported for objects in buckets that have cross-grid replication enabled.
+
+If an S3 client issues a PUT Object tagging or DELETE Object tagging request, `501 Not Implemented` is returned. The message is `Put(Delete) ObjectTagging is not available for buckets that have cross-grid replication configured`.
 
 === How segmented objects are replicated
 
