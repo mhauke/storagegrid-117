@@ -70,6 +70,6 @@ The best practice is for the grid-wide DNS server list to contain some DNS serve
 +
 IMPORTANT: Provide two to six IPv4 addresses for DNS servers. You should select DNS servers that each site can access locally in the event of network islanding. This is to ensure an islanded site continues to have access to the DNS service. After configuring the grid-wide DNS server list, you can further customize the DNS server list for each node. For details, see xref:../maintain/modifying-dns-configuration-for-single-grid-node.adoc[Modify DNS configuration for single grid node]..
 
-. If you added a new site, confirm that Network Time Protocol (NTP) servers are accessible from that site. See xref:../maintain/configuring-ntp-servers.adoc[Configure NTP servers].
+. If you added a new site, confirm that Network Time Protocol (NTP) servers are accessible from that site. See xref:../maintain/configuring-ntp-servers.adoc[Manage NTP servers].
 +
 IMPORTANT: Make sure that at least two nodes at each site can access at least four external NTP sources. If only one node at a site can reach the NTP sources, timing issues will occur if that node goes down. In addition, designating two nodes per site as primary NTP sources ensures accurate timing if a site is isolated from the rest of the grid.

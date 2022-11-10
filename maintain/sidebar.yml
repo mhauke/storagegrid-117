@@ -260,9 +260,10 @@ entries:
         url: "/maintain/vmware-adding-trunk-or-access-interfaces-to-node.html"  
     - title: Configure DNS servers
       url: "/maintain/configuring-dns-servers.html"
-    - title: Modify DNS configuration for single grid node
-      url: "/maintain/modifying-dns-configuration-for-single-grid-node.html"
-    - title: Configure NTP servers
+      entries:
+      - title: Modify DNS configuration for single grid node
+        url: "/maintain/modifying-dns-configuration-for-single-grid-node.html"
+    - title: Manage NTP servers
       url: "/maintain/configuring-ntp-servers.html"
     - title: Restore network connectivity for isolated nodes
       url: "/maintain/restoring-network-connectivity-for-isolated-nodes.html"
