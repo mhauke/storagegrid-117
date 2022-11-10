@@ -475,5 +475,5 @@ As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic 
 After completing the FabricPool wizard, perform these additional steps:
 
 . Go to xref:configure-ontap.adoc[Configure ONTAP System Manager] to enter the saved values and to complete the ONTAP side of the connection. You must add StorageGRID as a cloud tier, attach the cloud tier to a local tier to create a FabricPool, and set volume tiering policies.
-. Go to xref:fabricpool/configure-dns-server.adoc[Configure the DNS server] and ensure that the domain name system (DNS) includes a record to associate the StorageGRID server name (fully qualified domain name) to each StorageGRID IP address you will use. 
+. Go to xref:configure-dns-server.adoc[Configure the DNS server] and ensure that the domain name system (DNS) includes a record to associate the StorageGRID server name (fully qualified domain name) to each StorageGRID IP address you will use. 
 . Go to xref:other-best-practices-for-storagegrid-and-fabricpool.adoc[Other best practices for StorageGRID and FabricPool] to learn the best practices for StorageGRID audit logs and other global configuration options.
