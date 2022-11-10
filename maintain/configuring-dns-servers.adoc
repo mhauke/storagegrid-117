@@ -9,31 +9,40 @@ summary: 'You can add, remove, and update domain name system \(DNS\) servers, so
 :imagesdir: ../media/
 
 [.lead]
-You can add, remove, and update domain name system (DNS) servers, so that you can use fully qualified domain name (FQDN) hostnames rather than IP addresses.
+You can add, update, and remove domain name system (DNS) servers, so that you can use fully qualified domain name (FQDN) hostnames rather than IP addresses.
+
+To use fully qualified domain names (FQDNs) instead of IP addresses when specifying hostnames for external destinations, specify the IP address of each domain name system (DNS) server you will use. These entries are used for AutoSupport, alert emails, SNMP notifications, platform services endpoints, Cloud Storage Pools, and more.
 
 .What you'll need
 
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You must have the Maintenance or Root Access permission.
-* You must have the IP addresses of the DNS servers to configure.
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the xref:../admin/admin-group-permissions.adoc[Maintenance or Root Access permission].
+* You have the IP addresses of the DNS servers to configure.
 
-Specifying DNS server information allows you to use fully qualified domain name (FQDN) hostnames rather than IP addresses for email or SNMP notifications and AutoSupport. Specifying IP address of at least two DNS servers is recommended.
+IMPORTANT: Specifying the IP address of at least two and no more than six DNS servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. After configuring the grid-wide DNS server list, you can xref:modifying-dns-configuration-for-single-grid-node.adoc[customize the DNS server list for each node].
 
-IMPORTANT: Specify the IP address of at least one DNS server. Specifying at least two servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. After configuring the grid-wide DNS server list, you can xref:modifying-dns-configuration-for-single-grid-node.adoc[further customize the DNS server list for each node].
-
-If the DNS server information is omitted or incorrectly configured, a DNST alarm is triggered on each grid node's SSM service. The alarm clears when DNS is configured correctly and the new server information has reached all grid nodes.
-
+== Add a DNS server
 .Steps
+To add a DNS server:
 
 . Select *MAINTENANCE* > *Network* > *DNS servers*.
-. Select *Add another server* to add a new DNS server.
-+
-
-NOTE: You should specify the IP address of at least one (recommended) and not more six DNS servers. Specifying at least two servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. The best practice is to specify at least two DNS servers per site.
-+
+. Select *Add another server* to add a DNS server.
 . Select *Save*.
 
-To delete an IP address of a DNS server, select the delete icon next to the IP address.
-//In the Servers section, add update, or remove DNS server entries, as necessary.
+== Modify a DNS server
+.Steps
 
+To modify a DNS server:
 
+. Select *MAINTENANCE* > *Network* > *DNS servers*.
+. Select the IP address of the server name you want to edit and make the necessary changes.
+. Select *Save*.
+
+== Delete a DNS server
+.Steps
+
+To delete an IP address of a DNS server:
+
+. Select *MAINTENANCE* > *Network* > *DNS servers*.
+. Select the delete icon image:../media/icon-x-to-remove.png[delete icon] next to the IP address.
+. Select *Save*.
