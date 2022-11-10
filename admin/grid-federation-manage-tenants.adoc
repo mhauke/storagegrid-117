@@ -36,7 +36,7 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * After the new tenant is available on both grids, tenant users can perform these operations:
 
-** From the tenant's source grid, import or create tenant group and users, which are automatically cloned to the tenant's destination grid. See xref:../tenant/grid-federation-use-account-clone.adoc[Use account clone].
+** From the tenant's source grid, import or create tenant group and users, which are automatically cloned to the tenant's destination grid. See xref:../tenant/grid-federation-clone-account.adoc[Clone account information].
 ** From the tenant's source grid, create new S3 access keys, which can be optionally cloned to the tenant's destination grid. See xref:../tenant/tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
 ** Create identical buckets on both grids in the connection and enable cross-grid replication in one direction or in both directions. See xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[Manage cross-grid replication].
 
