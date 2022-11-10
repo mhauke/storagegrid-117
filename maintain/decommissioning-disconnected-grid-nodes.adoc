@@ -18,7 +18,7 @@ You might need to decommission a node that is not currently connected to the gri
 * You have ensured that no data repair jobs are active. See xref:checking-data-repair-jobs.adoc[Check data repair jobs].
 * You have confirmed that Storage Node recovery is not in progress anywhere in the grid. If it is, you must wait until any Cassandra rebuild performed as part of the recovery is complete. You can then proceed with decommissioning.
 * You have ensured that other maintenance procedures will not be run while the node decommission procedure is running, unless the node decommission procedure is paused.
-* The *Decommission Possible* column for the disconnected node or nodes you want to decommission includes a green check mark.
+* The *Decommission Possible* column for the disconnected node or nodes you want to decommission includes a green checkmark.
 * You must have the provisioning passphrase.
 
 .About this task

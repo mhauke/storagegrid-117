@@ -22,34 +22,35 @@ Consistency level makes a trade-off between the availability of the objects and 
 NOTE: When you change a bucket's consistency level, only those objects that are ingested after the change are guaranteed to meet the revised level.
 
 .Steps
-. Select *STORAGE (S3)* > *Buckets*.
-. Select the bucket name from the list.
+. Select *View buckets* from the dashboard, or select *STORAGE (S3)* > *Buckets*.
+. Select the bucket name from the table.
 +
 The bucket details page appears.
 
-. Select *Bucket options* > *Consistency level*.
+. From the *Bucket options* tab, select the *Consistency level* accordion.
 
 . Select a consistency level for operations performed on the objects in this bucket.
 +
 [cols="1a,3a" options="header"]
 |===
 | Consistency level| Description
-|All
-|All nodes receive the data immediately, or the request will fail.
+| All
+| Provides the highest level of consistency. All nodes receive the data immediately, or the request will fail.
 
-|Strong-global
-|Guarantees read-after-write consistency for all client requests across all sites.
+| Strong-global
+| Guarantees read-after-write consistency for all client requests across all sites.
 
-|Strong-site
-|Guarantees read-after-write consistency for all client requests within a site.
+| Strong-site
+| Guarantees read-after-write consistency for all client requests within a site.
 
-|Read-after-new-write (Default)
-|Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability, and data protection guarantees. Most closely matches Amazon S3 consistency guarantees.
+| Read-after-new-write (default)
+| Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability, and data protection guarantees. Most closely matches Amazon S3 consistency guarantees.
 
 *Note:* If your application attempts HEAD or GET operations on keys that do not exist, set the Consistency Level to *Available*, unless you require Amazon S3 consistency guarantees. Otherwise, a high number of 500 Internal Server errors can result if two or more Storage Nodes at the same site are unavailable.
 
-|Available (eventual consistency for HEAD or GET operations)
-|Behaves the same as the *Read-after-new-write* consistency level, but provides eventual consistency for HEAD and GET operations. Offers higher availability for HEAD and GET operations than *Read-after-new-write* if Storage Nodes are unavailable. Differs from Amazon S3 consistency guarantees for HEAD and GET operations.
+| Available (eventual consistency for HEAD or GET operations)
+| Behaves the same as the *Read-after-new-write* consistency level, but provides eventual consistency for HEAD and GET operations. Offers higher availability for HEAD and GET operations than *Read-after-new-write* if Storage Nodes are unavailable. Differs from Amazon S3 consistency guarantees for HEAD and GET operations.
+
 |===
 
 . Select *Save changes*.
