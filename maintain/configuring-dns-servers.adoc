@@ -16,7 +16,7 @@ To use fully qualified domain names (FQDNs) instead of IP addresses when specify
 .What you'll need
 
 * You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Maintenance or Root Access permission.
+* You have the xref:../admin/admin-group-permissions[Maintenance or Root Access permission].
 * You have the IP addresses of the DNS servers to configure.
 
 IMPORTANT: Specifying the IP address of at least two and no more than six DNS servers is recommended. If possible, use servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations. After configuring the grid-wide DNS server list, you can xref:modifying-dns-configuration-for-single-grid-node.adoc[customize the DNS server list for each node].
