@@ -23,9 +23,10 @@ The SHA-1 and SHA-256 stored object hashing options have been removed. They are 
 == Connection Load Balancer (CLB) service removed
 The Connection Load Balancer (CLB) service on Gateway Nodes was deprecated in StorageGRID 11.4 and has now been completely removed from the software. To distribute incoming network connections from client applications to Storage Nodes, you can configure load balancer endpoints for the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or you can integrate a third-party load balancer. See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
 
+If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be automatically converted to load balancer endpoints during the upgrade to StorageGRID 11.7.
+
 == Option to change the network transfer encryption algorithm removed 
 The *Network Transfer Encryption* internal connection setting on the Grid options page (*CONFIGURATION* > *System* > *Grid options*) was obsoleted by the new cipher configuration system and the setting has been removed. The AES256-SHA option was the default in StorageGRID 11.6 and is the only setting available in StorageGRID 11.7. The AES128-SHA value is ignored in the Grid Management API. During the StorageGRID 11.7 upgrade, the network transfer encryption algorithm is set to AES256-SHA. 
 
 == Swift support deprecated
-
 As of the StorageGRID 11.7 release, support for Swift client applications has been deprecated. The user interface and APIs that support Swift client applications will be removed in a future release.

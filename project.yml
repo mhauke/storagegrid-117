@@ -3,7 +3,7 @@ settings:
   internal:
     pdf_enabled: false
   prod:
-    pdf_enabled: false
+    pdf_enabled: true
 sidebar:
   entries:
     - title: StorageGRID 11.7 Docs
@@ -52,7 +52,7 @@ sidebar:
     - title: Earlier versions
       url: /earlier-versions.html
     - title: Legal notices
-      url: /legal-notice.html 
+      url: /legal-notices.html 
 
 homepage:
   tiles:
@@ -127,7 +127,7 @@ homepage:
       - title: StorageGRID support page
         url: https://mysupport.netapp.com/site/products/all/details/5d9f1107e01d9c0001ee50f6/downloads-tab
       - title: NetApp Interoperability Matrix Tool (IMT)
-        url: https://mysupport.netapp.com/matrix
+        url: https://imt.netapp.com/matrix/#welcome
       - title: StorageGRID knowledge base
         url: https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID
       - title: NetApp blog

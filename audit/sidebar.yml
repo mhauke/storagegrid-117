@@ -103,6 +103,10 @@ entries:
         url: "/audit/cbsb-object-send-begin.html"
       - title: 'CBSE: Object Send End'
         url: "/audit/cbse-object-send-end.html"
+      - title: 'EBDL: Empty Bucket Delete'
+        url: "/audit/empty-bucket-delete.html"        
+      - title: 'EBKR: Empty Bucket Request'
+        url: "/audit/empty-bucket-request.html"
       - title: 'ECMC: Missing Erasure Coded Data Fragment'
         url: "/audit/ecmc-missing-erasure-coded-data-fragment.html"
       - title: 'ECOC: Corrupt Erasure Coded Data Fragment'
@@ -132,7 +136,9 @@ entries:
       - title: 'ORLM: Object Rules Met'
         url: "/audit/orlm-object-rules-met.html"
       - title: 'OVWR: Object Overwrite'
-        url: "/audit/ovwr-object-overwrite.html"
+        url: "/audit/ovwr-object-overwrite.html"      
+      - title: 'S3SL: S3 Select request'
+        url: "/audit/s3-select-request.html"
       - title: 'SADD: Security Audit Disable'
         url: "/audit/sadd-security-audit-disable.html"
       - title: 'SADE: Security Audit Enable'
