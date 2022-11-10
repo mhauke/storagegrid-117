@@ -37,15 +37,15 @@ Storage appliances that have Full Disk Encryption (FDE) drives or Federal Inform
 * xref:../sg5600/index.adoc[SG5600 storage appliances]
 
 a|
-Stored Object Encryption grid option
+Stored object encryption
 a|
-The *Stored Object Encryption* option can be enabled in the Grid Manager (*CONFIGURATION* > *System* > *Grid options*). When enabled, any new objects that are not encrypted at the bucket level or at the object level are encrypted during ingest.
+The *Stored object encryption* option can be enabled in the Grid Manager (*CONFIGURATION* > *Security* > *Security settings*). When enabled, any new objects that are not encrypted at the bucket level or at the object level are encrypted during ingest.
 a|
 Newly ingested S3 and Swift object data.
 
 Existing stored objects are not encrypted. Object metadata and other sensitive data are not encrypted.
 
-* xref:configuring-stored-object-encryption.adoc[Configure stored object encryption]
+* xref:changing-network-options-object-encryption.adoc[Configure network and object options]
 
 a|
 S3 bucket encryption
@@ -56,7 +56,7 @@ Newly ingested S3 object data only.
 
 Encryption must be specified for the bucket. Existing bucket objects are not encrypted. Object metadata and other sensitive data are not encrypted.
 
-* xref:../s3/index.adoc[Use S3]
+* xref:../s3/index.adoc[Use S3 REST API]
 
 a|
 S3 object server-side encryption (SSE)
@@ -69,7 +69,7 @@ Encryption must be specified for the object. Object metadata and other sensitive
 
 StorageGRID manages the keys.
 
-* xref:../s3/index.adoc[Use S3]
+* xref:../s3/index.adoc[Use S3 REST API]
 
 a|
 S3 object server-side encryption with customer-provided keys (SSE-C)
@@ -87,7 +87,7 @@ Encryption must be specified for the object. Object metadata and other sensitive
 
 Keys are managed outside of StorageGRID.
 
-* xref:../s3/index.adoc[Use S3]
+* xref:../s3/index.adoc[Use S3 REST API]
 
 a|
 External volume or datastore encryption
@@ -116,6 +116,6 @@ An external encryption method provides tighter control over encryption algorithm
 Depending on your requirements, you can use more than one encryption method at a time. For example:
 
 * You can use a KMS to protect appliance nodes and also use the drive security feature in SANtricity System Manager to "`double encrypt`" data on the self-encrypting drives in the same appliances.
-* You can use a KMS to secure data on appliance nodes and also use the Stored Object Encryption grid option to encrypt all objects when they are ingested.
+* You can use a KMS to secure data on appliance nodes and also use the Stored object encryption grid option to encrypt all objects when they are ingested.
 
 If only a small portion of your objects require encryption, consider controlling encryption at the bucket or individual object level instead. Enabling multiple levels of encryption has an additional performance cost.

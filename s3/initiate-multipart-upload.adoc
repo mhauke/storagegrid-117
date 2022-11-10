@@ -18,7 +18,7 @@ If the ILM rule matching an ingested object uses the Strict option for Ingest Be
 The following values can be used for `x-amz-storage-class`:
 
 * `STANDARD` (Default)
- ** *Dual commit*: If the ILM rule specifies the Dual commit option for Ingest Behavior, as soon as an object is ingested a second copy of that object is created and distributed to a different Storage Node (dual commit). When the ILM is evaluated,StorageGRID determines if these initial interim copies satisfy the placement instructions in the rule. If they do not, new object copies might need to be made in different locations and the initial interim copies might need to be deleted.
+ ** *Dual commit*: If the ILM rule specifies the Dual commit option for Ingest Behavior, as soon as an object is ingested a second copy of that object is created and distributed to a different Storage Node (dual commit). When the ILM is evaluated, StorageGRID determines if these initial interim copies satisfy the placement instructions in the rule. If they do not, new object copies might need to be made in different locations and the initial interim copies might need to be deleted.
  ** *Balanced*: If the ILM rule specifies the Balanced option and StorageGRID cannot immediately make all copies specified in the rule, StorageGRID makes two interim copies on different Storage Nodes.
 +
 If StorageGRID can immediately create all object copies specified in the ILM rule (synchronous placement), the `x-amz-storage-class` header has no effect.
@@ -88,7 +88,7 @@ You can use the following request headers to encrypt a multipart object with ser
  ** `x-amz-server-side-encryption-customer-key`: Specify your encryption key for the new object.
  ** `x-amz-server-side-encryption-customer-key-MD5`: Specify the MD5 digest of the new object's encryption key.
 
-*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations in "`Use server-side encryption.`"
+*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for xref:using-server-side-encryption.adoc[using server-side encryption].
 
 == Unsupported request headers
 
@@ -103,7 +103,5 @@ Multipart upload consists of separate operations for initiating the upload, list
 .Related information
 
 xref:../ilm/index.adoc[Manage objects with ILM]
-
-xref:using-server-side-encryption.adoc[Use server-side encryption]
 
 xref:put-object.adoc[PUT Object]

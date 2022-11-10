@@ -1,0 +1,73 @@
+---
+permalink: admin/using-tls-ssh-policy.html
+sidebar: sidebar
+keywords: TLS and SSH policy, secure connection
+summary: 'You can use TLS and SSH policies to configure TLS and SSH policies and establish secure connections while still maintaining compatibility with the client applications.'
+---
+= Manage the TLS and SSH policy
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The TLS and SSH policy determines which protocols and ciphers are used to establish secure TLS connections with client applications and secure SSH connections to internal StorageGRID services. In general, use the default Modern policy, unless your system needs to be Common Criteria-compliant or you need to use other ciphers.
+
+.What you'll need
+
+* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have the Root access permission.
+
+.About this task
+
+Select a security policy to control how TLS and SSH encrypt data in motion.
+
+.Steps
+. Select *CONFIGURATION* > *Security settings* > *TLS and SSH policies*.
++
+
+image::../media/securitysettings_tls_ssh_policies_homepg.png[TLS and SSH policies]
++
+
+. Select *View details* to review each policy.
++
+
+. Select *Use policy* to apply one of the provided policies.
+A green checkmark next to *Current policy* can be seen on the policy that is applied.
++
+
+NOTE: Modern compatibility is the selected default policy. Some StorageGRID services have not been updated to use the ciphers in these policies.
++
+
+[cols="1a,2a" options="header"]
+|===
+|Policy
+|Description
+
+|Modern compatibility
+|Use this policy if you need strong encryption. This policy is compatible with most TLS and SSH clients. You can use this default policy unless you have special requirements.
+
+|Legacy compatibility
+|Use this policy if you need additional compatibility options to support older clients. The additional options in Legacy policy can be less secure than the Modern compatibility policy.
+
+|Common Criteria
+|Matches the test configuration used for Common Criteria certification.
+
+|FIPS strict
+|The same as the Common Criteria policy, but removes the transitional ciphers and enables FIPS mode in OpenSSL. Using this policy might reduce performance.
+
+|Custom
+|You can create a custom policy to apply your own ciphers. You can edit or modify the existing policy ciphers to create your own custom policy. You must use caution and validate the policy you provide.
+
+|===
++
+
+. If you want to create a custom policy to apply your ciphers, follow these steps:
+
+.. Select *View details* for one of the provided policies.
+.. Select *Copy to clipboard* and *Cancel*.
+.. Select *Configure and use* from the *Custom policy*. 
+.. Paste the JSON you copied and make required changes to create a custom policy.
+.. Select *Use policy*.
++
+
+A green checkmark appears next to *Current policy* in the Custom policy tile.
+.. Optionally, select *Edit configuration* to make more changes to the new custom policy.

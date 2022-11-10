@@ -105,7 +105,7 @@ Monitor events
 |
 Events include any system error or fault events for a node, including errors such as network errors. Monitor events to learn more about issues or to help with troubleshooting.
 |
-* xref:monitoring-events.adoc[Monitor events]
+* xref:../monitor/monitoring-events.adoc[Monitor events]
 
 |
 Identify trends using charts and text reports
@@ -113,9 +113,9 @@ Identify trends using charts and text reports
 Trends can provide valuable clues about when issues first appeared, and can help you understand how quickly things are changing.
 |
 
-* xref:using-charts-and-reports.adoc[Use charts and graphs]
+* xref:../monitor/using-charts-and-reports.adoc[Use charts and graphs]
 
-* xref:types-of-text-reports.adoc[Use text reports]
+* xref:../monitor/types-of-text-reports.adoc[Use text reports]
 
 |
 Establish baselines
@@ -131,7 +131,7 @@ Perform ingest and retrieval tests
 To troubleshoot performance issues with ingest and retrieval, use a workstation to store and retrieve objects. Compare results against those seen when using the client application.
 |
 
-* xref:monitoring-put-and-get-performance.adoc[Monitor PUT and GET performance]
+* xref:../monitor/monitoring-put-and-get-performance.adoc[Monitor PUT and GET performance]
 
 |
 Review audit messages
@@ -147,9 +147,9 @@ Check object locations and storage integrity
 If you are having storage problems, verify that objects are being placed where you expect. Check the integrity of object data on a Storage Node.
 |
 
-* xref:monitoring-object-verification-operations.adoc[Monitor object verification operations]
-* xref:confirming-object-data-locations.adoc[Confirm object data locations]
-* xref:verifying-object-integrity.adoc[Verify object integrity]
+* xref:../monitor/monitoring-object-verification-operations.adoc[Monitor object verification operations]
+* xref:../monitor/confirming-object-data-locations.adoc[Confirm object data locations]
+* xref:../monitor/verifying-object-integrity.adoc[Verify object integrity]
 
 |
 Collect data for technical support
@@ -157,9 +157,9 @@ Collect data for technical support
 Technical support might ask you to collect data or review specific information to help troubleshoot issues.
 |
 
-* xref:collecting-log-files-and-system-data.adoc[Collect log files and system data]
-* xref:manually-triggering-autosupport-message.adoc[Manually trigger an AutoSupport message]
-* xref:reviewing-support-metrics.adoc[Review support metrics]
+* xref:../monitor/collecting-log-files-and-system-data.adoc[Collect log files and system data]
+* xref:../monitor/manually-triggering-autosupport-message.adoc[Manually trigger an AutoSupport message]
+* xref:../monitor/reviewing-support-metrics.adoc[Review support metrics]
 
 |===
 
@@ -250,7 +250,7 @@ You can collect this information for the entire system or for a specific data ce
 |Rate of S3/Swift operations
 |Operations/second
 
-|Go to the Dashboard in the Grid Manager. In the Protocol Operations section, view the values for S3 rate and the Swift rate.
+|On the Grid Manager dashboard, select *Performance* > *S3 operations* or *Performance* > *Swift operations*.
 
 To see ingest and retrieval rates and counts for a specific site or node, select *NODES* > *_site or Storage Node_* > *Objects*. Hover your cursor over the Ingest and Retrieve chart for S3 or Swift.
 
@@ -339,7 +339,7 @@ You can collect logs for the entire grid, or for selected nodes.
 
 If you are collecting logs only for selected nodes, be sure to include at least one Storage Node that has the ADC service. (The first three Storage Nodes at a site include the ADC service.)
 
-xref:collecting-log-files-and-system-data.adoc[Collect log files and system data]
+xref:../monitor/collecting-log-files-and-system-data.adoc[Collect log files and system data]
 
 |
 |Baseline information

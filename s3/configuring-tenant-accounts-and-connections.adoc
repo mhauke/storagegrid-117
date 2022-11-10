@@ -147,11 +147,11 @@ xref:../admin/index.adoc[Administer StorageGRID]
 
 When client connections are made using a Load Balancer endpoint, connections must be made using the protocol (HTTP or HTTPS) that was specified for that endpoint. To use HTTP for client connections to Storage Nodes, you must enable its use.
 
-By default, when client applications connect to Storage Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting the *Enable HTTP Connection* grid option in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
+By default, when client applications connect to Storage Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting the *Enable HTTP for Storage Node connections* grid option in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
 
 IMPORTANT: Be careful when enabling HTTP for a production grid since requests will be sent unencrypted.
 
-If the *Enable HTTP Connection* option is selected, clients must use different ports for HTTP than they use for HTTPS. See the instructions for administering StorageGRID.
+If the *Enable HTTP for Storage Node connections* option is selected, clients must use different ports for HTTP than they use for HTTPS. See the instructions for administering StorageGRID.
 
 .Related information
 
@@ -159,9 +159,9 @@ xref:../admin/index.adoc[Administer StorageGRID]
 
 xref:benefits-of-active-idle-and-concurrent-http-connections.adoc[Benefits of active, idle, and concurrent HTTP connections]
 
-== Endpoint domain names for S3 requests
+== S3 endpoint domain names for S3 requests
 
-Before you can use S3 domain names for client requests, a StorageGRID administrator must configure the system to accept connections that use S3 domain names in S3 path-style and S3 virtual hosted-style requests.
+Before you can use S3 endpoint domain names for client requests, a StorageGRID administrator must configure the system to accept connections that use S3 endpoint domain names in S3 path-style and S3 virtual-hosted-style requests.
 
 .About this task
 To enable you to use S3 virtual hosted style-requests, a grid administrator must perform the following tasks:
@@ -171,11 +171,11 @@ To enable you to use S3 virtual hosted style-requests, a grid administrator must
 +
 For example, if the endpoint is `s3.company.com`, the grid administrator must ensure that the certificate used for HTTPS connections includes the `s3.company.com` endpoint and the endpoint's wildcard Subject Alternative Name (SAN): `*.s3.company.com`.
 
-* Configure the DNS server used by the client to include DNS records that match the endpoint domain names, including any required wildcard records.
+* Configure the DNS server used by the client to include DNS records that match the S3 endpoint domain names, including any required wildcard records.
 
 If the client connects using the Load Balancer service, the certificate that the grid administrator configures is the certificate for the load balancer endpoint that the client uses.
 
-NOTE: Each load balancer endpoint has its own certificate, and each endpoint can be configured to recognize different endpoint domain names.
+NOTE: Each load balancer endpoint has its own certificate, and each endpoint can be configured to recognize different S3 endpoint domain names.
 
 If the client connects to Storage Nodes, the certificate that the grid administrator configures is the single custom server certificate used for the grid.
 

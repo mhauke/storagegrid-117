@@ -18,7 +18,7 @@ As described in xref:../admin/manage-platform-services-for-tenants.adoc[Manage p
 Platform services require access from Storage Nodes that host the StorageGRID ADC service to the external service endpoints. Examples for providing access include:
 
 * On the Storage Nodes with ADC services, configure unique Admin Networks with AESL entries that route to the target endpoints.
-* Rely on the default route provided by a Client Network. If you use the default route, you can use the xref:../admin/managing-untrusted-client-networks.adoc[untrusted Client Network feature] to restrict inbound connections.
+* Rely on the default route provided by a Client Network. If you use the default route, you can use the xref:../admin/manage-firewall-controls.adoc[untrusted Client Network feature] to restrict inbound connections.
 
 == Networking for Cloud Storage Pools
 

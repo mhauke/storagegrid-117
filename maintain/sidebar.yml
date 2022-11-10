@@ -97,8 +97,6 @@ entries:
           url: "/maintain/configuring-replacement-primary-admin-node.html"
         - title: Restore audit log on recovered primary Admin Node
           url: "/maintain/restoring-audit-log-on-recovered-primary-admin-node.html"
-        - title: Reset preferred sender on recovered primary Admin Node
-          url: "/maintain/resetting-preferred-sender-on-recovered-primary-admin-node.html"
         - title: Restore Admin Node database when recovering primary Admin Node
           url: "/maintain/restoring-admin-node-database-primary-admin-node.html"
         - title: Restore Prometheus metrics when recovering primary Admin Node
@@ -114,8 +112,6 @@ entries:
           url: "/maintain/selecting-start-recovery-to-configure-non-primary-admin-node.html"
         - title: Restore audit log on recovered non-primary Admin Node
           url: "/maintain/restoring-audit-log-on-recovered-non-primary-admin-node.html"
-        - title: Reset preferred sender on recovered non-primary Admin Node
-          url: "/maintain/resetting-preferred-sender-on-recovered-non-primary-admin-node.html"
         - title: Restore Admin Node database when recovering non-primary Admin Node
           url: "/maintain/restoring-admin-node-database-non-primary-admin-node.html"
         - title: Restore Prometheus metrics when recovering non-primary Admin Node
@@ -267,7 +263,7 @@ entries:
       entries:
       - title: Modify DNS configuration for single grid node
         url: "/maintain/modifying-dns-configuration-for-single-grid-node.html"
-    - title: Configure NTP servers
+    - title: Manage NTP servers
       url: "/maintain/configuring-ntp-servers.html"
     - title: Restore network connectivity for isolated nodes
       url: "/maintain/restoring-network-connectivity-for-isolated-nodes.html"

@@ -79,7 +79,7 @@ IMPORTANT: StorageGRID rejects any requests made over http when using SSE-C. For
 +
 IMPORTANT: The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object.
 
-* If CloudMirror replication is configured for the bucket, you cannot ingest SSE-C objects. The ingest operation will fail.
+* If cross-grid replication or CloudMirror replication is configured for the bucket, you cannot ingest SSE-C objects. The ingest operation will fail.
 
 .Related information
 

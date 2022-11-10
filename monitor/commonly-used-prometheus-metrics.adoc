@@ -25,7 +25,7 @@ The metrics collected by Prometheus are used in a number of places in the Grid M
 image::../media/nodes_page_network_traffic_graph.png[Prometheus graph]
 
 * *Alerts*: Alerts are triggered at specific severity levels when alert rule conditions that use Prometheus metrics evaluate as true.
-* *Grid Management API*: You can use Prometheus metrics in custom alert rules or with external automation tools to monitor your StorageGRID system. A complete list of Prometheus metrics is available from the Grid Management API. (From the top of the Grid Manager, select the help icon and select *API Documentation* > *metrics*.) While more than a thousand metrics are available, only a relatively small number are required to monitor the most critical StorageGRID operations.
+* *Grid Management API*: You can use Prometheus metrics in custom alert rules or with external automation tools to monitor your StorageGRID system. A complete list of Prometheus metrics is available from the Grid Management API. (From the top of the Grid Manager, select the help icon and select *API documentation* > *metrics*.) While more than a thousand metrics are available, only a relatively small number are required to monitor the most critical StorageGRID operations.
 +
 NOTE: Metrics that include _private_ in their names are intended for internal use only and are subject to change between StorageGRID releases without notice.
 
@@ -82,7 +82,7 @@ NOTE: Metrics that include _private_ in their names are for internal use only an
 |storagegrid_content_objects_lost
 |The total number of objects this service detects as missing from the StorageGRID system. Action should be taken to determine the cause of the loss and if recovery is possible.
 
-xref:troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and missing object data]
+xref:../troubleshoot/troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and missing object data]
 
 |storagegrid_http_sessions_incoming_attempted
 |The total number of HTTP sessions that have been attempted to a Storage Node.
@@ -196,7 +196,7 @@ xref:troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and mis
 * 30 = Volume(s) Unavailable
 * 40 = Error
 
-|storagegrid_storage_utilization_metadata_bytes
+|storagegrid_storage_utilization_data_bytes
 |An estimate of the total size of replicated and erasure coded object data on the Storage Node.
 
 |storagegrid_storage_utilization_metadata_allowed_bytes
@@ -243,7 +243,7 @@ xref:troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and mis
 
 [[obtain-all-metrics]]To obtain the complete list of metrics, use the Grid Management API.
 
-. From the top of the Grid Manager, select the help icon and select *API Documentation*.
+. From the top of the Grid Manager, select the help icon and select *API documentation*.
 . Locate the *metrics* operations.
 . Execute the `GET /grid/metric-names` operation.
 . Download the results.

@@ -15,11 +15,11 @@ When you sign in to the Grid Manager, you are connecting to an Admin Node. Each 
 
 You can access the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 
-== Grid Manager Dashboard
+== Grid Manager dashboard
 
-When you first sign in to the Grid Manager, you can use the Dashboard to monitor system activities at a glance.
+When you first sign in to the Grid Manager, you can use the dashboard to monitor system activities at a glance.
 
-The Dashboard contains information about system health and performance, storage use, ILM processes, S3 and Swift operations, and the nodes in the grid. You can configure the Dashboard by selecting from a collection of cards that contain the information you need to effectively monitor your system.
+The dashboard contains information about system health and performance, storage use, ILM processes, S3 and Swift operations, and the nodes in the grid. You can configure the dashboard by selecting from a collection of cards that contain the information you need to effectively monitor your system.
 
 image::../media/grid_manager_dashboard.png[Dashboard in the Grid Manager]
 
@@ -27,7 +27,7 @@ For an explanation of the information on each card, select the help icon image:.
 
 .Learn more
 
-* xref:../monitor/viewing-dashboard.adoc[View and configure the Dashboard]
+* xref:../monitor/viewing-dashboard.adoc[View and configure the dashboard]
 
 == Search field
 
@@ -35,9 +35,9 @@ The *Search* field in the header bar allows you to quickly navigate to a specifi
 
 == Help menu
 
-The Help menu image:../media/icon-help-menu-bar.png[help icon on the menu bar] provides access to the FabricPool and S3 setup wizard, the StorageGRID Documentation Center for the current release, and the API documentation. You can also determine which version of StorageGRID is currently installed.
+The help menu image:../media/icon-help-menu-bar.png[help icon on the menu bar] provides access to the FabricPool and S3 setup wizard, the StorageGRID documentation center for the current release, and the API documentation. You can also determine which version of StorageGRID is currently installed.
 
-image::../media/help_menu.png[Help Menu]
+image::../media/help_menu.png[Help menu]
 
 .Learn more
 
@@ -109,34 +109,30 @@ The Configuration menu allows you to specify network settings, security settings
 
 image::../media/configuration_menu.png[Configuration Menu]
 
-
 === Network tasks
 
 Network tasks include:
 
-* xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[Configuring S3 endpoint domain names]
-* xref:../admin/managing-high-availability-groups.adoc[Managing high availability groups]
-* xref:../admin/manage-link-costs.adoc[Managing link costs]
-* xref:../admin/managing-load-balancing.adoc[Managing load balancing]
-* xref:../admin/managing-traffic-classification-policies.adoc[Managing traffic classification policies]
-* xref:../admin/configure-vlan-interfaces.adoc[Configuring VLAN interfaces]
-
+* xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[Configure S3 endpoint domain names]
+* xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups]
+* xref:../admin/managing-load-balancing.adoc[Manage load balancing]
+* xref:../admin/managing-traffic-classification-policies.adoc[Manage traffic classification policies]
+* xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces]
 
 === Security tasks
 Security tasks include:
 
-* xref:../admin/using-storagegrid-security-certificates.adoc[Using security certificates]
-* xref:../admin/kms-configuring.adoc[Configuring key management servers]
-* Configuring the settings for a xref:../admin/configuring-storage-proxy-settings.adoc[Storage proxy] or an xref:../admin/configuring-admin-proxy-setting.adoc[Admin proxy] 
-* Controlling firewall settings
+* xref:../admin/using-storagegrid-security-certificates.adoc[Use security certificates]
+* xref:../admin/kms-configuring.adoc[Configure key management servers]
+* Configure the settings for a xref:../admin/configuring-storage-proxy-settings.adoc[Storage proxy] or an xref:../admin/configuring-admin-proxy-setting.adoc[Admin proxy] 
+* Control firewall settings
 * Grid passwords
 * Security settings
 
 === System tasks
 System tasks include:
 
-* Managing display options
-* Managing grid options
+* Manage grid options
 * xref:../ilm/managing-objects-with-s3-object-lock.adoc[Managing S3 Object Lock]
 * xref:../admin/managing-storage-options.adoc[Managing Storage options]
 
@@ -144,17 +140,17 @@ System tasks include:
 
 Monitoring tasks include:
 
-* xref:../monitor/configure-audit-messages.adoc[Configuring audit messages and log destinations]
-* xref:../monitor/using-snmp-monitoring.adoc[Using SNMP monitoring]
+* xref:../monitor/configure-audit-messages.adoc[Configure audit messages and log destinations]
+* xref:../monitor/using-snmp-monitoring.adoc[Use SNMP monitoring]
 
 === Access control tasks
 
 Access control tasks include:
 
-* xref:../admin/using-identity-federation.adoc[Using identity federation]
-* xref:../admin/managing-admin-groups.adoc[Managing admin groups]
-* xref:../admin/managing-users.adoc[Managing admin users]
-* xref:../admin/configuring-sso.adoc[Configuring SSO]
+* xref:../admin/using-identity-federation.adoc[Use identity federation]
+* xref:../admin/managing-admin-groups.adoc[Manage admin groups]
+* xref:../admin/managing-users.adoc[Manage admin users]
+* xref:../admin/configuring-sso.adoc[Configure SSO]
 
 == Maintenance menu
 
@@ -171,13 +167,13 @@ Maintenance tasks include:
 * xref:../maintain/grid-node-recovery-procedures.adoc[Grid node recovery procedures] to replace a failed node and restore data
 * xref:../maintain/rename-grid-site-node-overview.adoc[Rename procedures] to change the display names of your grid, sites, and nodes
 * xref:../troubleshoot/verifying-object-integrity.adoc[Object existence check operations] to verify the existence (although not the correctness) of object data
-* Volume restoration
+* xref:../maintain/restoring-volume.adoc[Volume restoration]
 
 === System
 
 System maintenance tasks you can perform include:
 
-* xref:../admin/viewing-storagegrid-license-information.adoc[Viewing StorageGRID license information] or xref:../admin/updating-storagegrid-license-information.adoc[updating license information]
+* xref:../admin/viewing-storagegrid-license-information.adoc[View StorageGRID license information] or xref:../admin/updating-storagegrid-license-information.adoc[update license information]
 * Generating and downloading a xref:../maintain/downloading-recovery-package.adoc[Recovery Package]
 * Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances
 
@@ -190,15 +186,13 @@ System maintenance tasks you can perform include:
 
 Network maintenance tasks you can perform include:
 
-* Configuring xref:../maintain/configuring-dns-servers.adoc[DNS servers]
-* Updating 
-xref:../maintain/updating-subnets-for-grid-network.adoc[Grid Network subnets]
-* Configuring xref:../maintain/configuring-ntp-servers.adoc[NTP servers]
-
+* xref:../maintain/configuring-dns-servers.adoc[Configure DNS servers]
+* xref:../maintain/updating-subnets-for-grid-network.adoc[Update Grid Network subnets]
+* xref:../maintain/configuring-ntp-servers.adoc[Manage NTP servers]
 
 == Support menu
 
-The Support menu provides options that help technical support analyze and troubleshoot your system. There are two parts to the Support menu: Tools and Alarms (legacy).
+The Support menu provides options that help technical support analyze and troubleshoot your system. There are three parts to the Support menu: Tools, Alarms (legacy), and Other.
 
 image::../media/support_menu.png[Support menu]
 

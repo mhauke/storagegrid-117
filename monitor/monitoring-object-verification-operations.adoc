@@ -16,7 +16,7 @@ The StorageGRID system can verify the integrity of object data on Storage Nodes,
 * You must have the Maintenance or Root Access permission.
 
 .About this task
-Two xref:..\troubleshoot\verifying-object-integrity.adoc[verification processes] work together to ensure data integrity:
+Two xref:../troubleshoot/verifying-object-integrity.adoc[verification processes] work together to ensure data integrity:
 
 * *Background verification* runs automatically, continuously checking the correctness of object data.
 +
@@ -47,6 +47,6 @@ Select the question mark image:../media/icon_nms_question.png[question mark] nex
 
 . Review the results from object existence check jobs:
 .. Select *MAINTENANCE* > *Object existence check* > *Job history*.
-.. Scan the Missing object copies detected column. If any jobs resulted in 100 or more missing object copies and the xref:alerts-reference.adoc[Objects lost alert] has been triggered, contact technical support.
+.. Scan the Missing object copies detected column. If any jobs resulted in 100 or more missing object copies and the *Objects lost* alert has been triggered, contact technical support.
 +
 image::../media/oec_job_history.png[Object existence check job history]

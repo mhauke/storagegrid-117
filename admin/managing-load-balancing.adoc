@@ -74,7 +74,7 @@ Subject DN: /C=Country/ST=State/O=Company,Inc./CN=s3.storagegrid.example.com
 As required, the certificate can use wildcards to represent the fully qualified domain names of all Admin Nodes and Gateway Nodes running the Load Balancer service. For example, `*.storagegrid._example_.com` uses the * wildcard to represent `adm1.storagegrid._example_.com` and `gn1.storagegrid._example_.com`. 
 
 
-If you plan to use S3 virtual hosted-style requests, the certificate must also include an *Alternative Name* entry for each xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 API endpoint domain name] you have configured, including any wildcard names. For example:
+If you plan to use S3 virtual hosted-style requests, the certificate must also include an *Alternative Name* entry for each xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 endpoint domain name] you have configured, including any wildcard names. For example:
 
 ----
 Alternative Name: DNS:*.s3.storagegrid.example.com
@@ -102,15 +102,17 @@ To avoid certificate expiration issues, follow these best practices:
 
 === Considerations for the binding mode
 
-The binding mode lets you control which IP addresses can be used to access a load balancer endpoint. If an endpoint uses a binding mode, client applications can only access the endpoint if they use an allowed IP address. Client applications using any other IP address cannot access the endpoint. 
+The binding mode lets you control which IP addresses can be used to access a load balancer endpoint. If an endpoint uses a binding mode, client applications can only access the endpoint if they use an allowed IP address or its corresponding fully qualified domain name (FQDN). Client applications using any other IP address or FQDN cannot access the endpoint. 
 
 You can specify any of the following binding modes:
 
-* *Global* (default): Client applications can access the endpoint using a fully qualified domain name (FQDN), the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) address of any HA group on any network. Use this setting unless you need to restrict the accessibility of an endpoint.
+* *Global* (default): Client applications can access the endpoint using the IP address of any Gateway Node or Admin Node, the virtual IP (VIP) address of any HA group on any network, or a corresponding FQDN. Use this setting unless you need to restrict the accessibility of an endpoint.
 
-* *Node interfaces*. Client applications must use the IP address of a selected Gateway or Admin Node and network interface. 
+* *Virtual IPs of HA groups*. Client applications must use a virtual IP address (or corresponding FQDN) of an HA group.
 
-* *Virtual IPs of HA groups*. Client applications must use a virtual IP address of an HA group.
+* *Node interfaces*. Client applications must use the IP address (or corresponding FQDN) of a selected Gateway or Admin Node and network interface. 
+
+* *Node type*. Based on the type of node you select, clients must use either the IP address (or corresponding FQDN) of any Admin Node or the IP address (or corresponding FQDN) of any Gateway Node.
 
 === Considerations for tenant access
 
