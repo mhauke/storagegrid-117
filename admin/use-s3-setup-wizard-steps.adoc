@@ -11,11 +11,14 @@ summary: 'You can use the S3 setup wizard to configure StorageGRID as the object
 [.lead]
 You can use the S3 setup wizard to configure StorageGRID for use with an S3 application. The setup wizard provides the values the application needs to access a StorageGRID bucket and to save objects.
 
-NOTE: You must have Root access permission to access the wizard. Also make sure that you meet all the link:../admin/use-s3-setup-wizard.adoc[prerequisites] before using the wizard. 
+.What you'll need
+
+* You have the link:../admin/admin-group-permissions.adoc[Root access permission].
+* You link:use-s3-setup-wizard.adoc[meet the prerequisites]. 
 
 == Access the wizard
 
-. Sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+. Sign in to the Grid Manager using a xref:web-browser-requirements.adoc[supported web browser].
 
 . If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon from the header bar in the Grid Manager and select *FabricPool and S3 setup wizard*.
 +
@@ -29,7 +32,7 @@ A high availability (HA) group is a collection of nodes that each contain the St
 
 You can use an HA group to help keep the S3 data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to S3 operations.
 
-For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups].
+For details about this task, see xref:managing-high-availability-groups.adoc[Manage high availability groups].
 
 . If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 6: Configure load balancer endpoint>>.
 
@@ -115,7 +118,7 @@ StorageGRID uses a load balancer to manage the workload from client applications
 
 You can use the StorageGRID Load Balancer service, which exists on all Gateway and Admin Nodes, or you can connect to an external (third-party) load balancer. Using the StorageGRID load balancer is recommended.
 
-For details about this task, see xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
+For details about this task, see xref:managing-load-balancing.adoc[Considerations for load balancing].
 
 To use the StorageGRID Load Balancer service, select the *StorageGRID load balancer* tab and then create or select the load balancer endpoint you want to use. To use an external load balancer, select the *External load balancer* tab and provide details about the system you have already configured. 
 
@@ -196,10 +199,10 @@ xref:../network/network-port-reference.adoc[Network port reference].
 | Use this option to upload a CA-signed server certificate, certificate private key, and optional CA bundle.
 
 | Generate certificate
-| Use this option to generate a self-signed certificate. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
+| Use this option to generate a self-signed certificate. See xref:configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
 
 | Use StorageGRID S3 and Swift certificate
-| Use this option only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates] for details. 
+| Use this option only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates] for details. 
 
 |===
 
@@ -253,7 +256,7 @@ A bucket is a container used to store a tenant's objects and object metadata. Al
 
 You can create a new tenant for this S3 application to use. Optionally, you can also create a bucket for the new tenant. Finally, you can allow the wizard to create the S3 access keys for the tenant's root user.
 
-For details about this task, see xref:../admin/creating-tenant-account.adoc[Create tenant account] and 
+For details about this task, see xref:creating-tenant-account.adoc[Create tenant account] and 
 xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket].
 
 . Select *Create tenant*.
@@ -307,7 +310,7 @@ Some of these permissions have additional requirements. For details, select the 
 
 . If you selected *Use grid federation connection*, select one of the available grid federation connections.
 
-. Define root access for the tenant account, based on whether your StorageGRID system uses xref:../admin/using-identity-federation.adoc[identity federation], xref:../admin/configuring-sso.adoc[single sign-on (SSO)], or both. 
+. Define root access for the tenant account, based on whether your StorageGRID system uses xref:using-identity-federation.adoc[identity federation], xref:configuring-sso.adoc[single sign-on (SSO)], or both. 
 +
 [cols="1a,2a" options="header"]
 |===

@@ -82,3 +82,8 @@ While the 11.7 upgrade is in progress, use the following tools to view bucket de
 
 == TLS ciphers or SSH configurations might change
 If TLS ciphers or SSH configurations have been manually changed or are inconsistent across nodes, all nodes will be overwritten to be either Legacy Compatibility or Modern Compatibility upon upgrade. If you used `fips-ciphers.sh` in StorageGRID 11.6, the Common Criteria policy is applied to all nodes. Otherwise, the Legacy Compatibility policy is applied. If you require Common Criteria validated configurations, you must use the Common Criteria policy or the FIPS strict policy. If you did not use `fips-ciphers.sh`, you should use the new Modern Compatibility setting after upgrade completes. To configure ciphers, go to *CONFIGURATION* > *Security* > *Security settings* and select *TLS and SSH policies*.
+
+== CLB ports might be converted to load balancer endpoints
+The legacy Connection Load Balancer (CLB) service has been removed in StorageGRID 11.7. If CLB configuration is detected during upgrade prechecks, the *Legacy CLB load balancer activity detected* alert will be triggered. If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be converted to load balancer endpoints during upgrade to StorageGRID 11.7.
+
+See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].

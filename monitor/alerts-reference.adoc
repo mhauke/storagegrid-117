@@ -538,9 +538,6 @@ This alert might indicate that data has been permanently lost and is not retriev
 
 The object existence check job cannot continue. Either one or more Storage Nodes or volumes included in the job are offline or unresponsive, or the selected consistency control can no longer be satisfied because too many nodes are down or unavailable.
 
-|S3 PUT Object size too large
-|An S3 client is attempting to perform a PUT Object operation that exceeds the S3 size limits.
-
 |Unidentified corrupt object detected
 |A file was found in replicated object storage that could not be identified as a replicated object.
 |===
