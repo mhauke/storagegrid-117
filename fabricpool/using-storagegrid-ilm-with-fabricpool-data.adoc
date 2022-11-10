@@ -5,7 +5,10 @@ keywords: FabricPool, requirements, ILM, information lifecycle management, ILM r
 summary: 'You can use this simple example policy as a starting point for your own ILM rules and policy.'
 ---
 = Create ILM policy for FabricPool data
+:icons: font
+:imagesdir: ../media/
 
+[.lead]
 You can use this simple example policy as a starting point for your own ILM rules and policy.
 
 This example assumes you are designing the ILM rules and an ILM policy for a StorageGRID system that has four Storage Nodes at a single data center in Denver, Colorado. The FabricPool data in this example uses a bucket named `fabricpool-bucket`.

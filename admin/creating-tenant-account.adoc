@@ -48,6 +48,8 @@ The steps for creating a tenant account vary based on whether xref:using-identit
 |Client type
 |The type of client protocol this tenant will use, either *S3* or *Swift*.
 
+*Note*: Support for Swift client applications has been deprecated and will be removed in a future release.
+
 |Storage quota (optional)
 |If you want this tenant to have a storage quota, a numerical value for the quota and the units.
 
@@ -78,7 +80,7 @@ Some of these permissions have additional requirements. For details, select the 
 *Important*: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
 
 |Use grid federation connection (S3 only)
-|The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-overview.adoc[Use grid federation: Overview].
+|The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-overview.adoc[What is grid federation].
 
 *Note*: You can only select *Use grid federation connection* when you are creating a new S3 tenant; you can't select this permission for an existing tenant.
 
@@ -119,8 +121,6 @@ A success message appears, and the new tenant is listed on the Tenants page.
 . If you selected the *Use grid federation connection* permission for the tenant, follow these additional steps:
 
 .. Confirm that an identical tenant was created on the other grid in the connection.
-+
-IMPORTANT: You might need to wait up to 15 minutes for the automatically generated tenant to appear in Grid Manager on the other grid.
 +
 The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. 
 

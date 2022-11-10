@@ -21,22 +21,38 @@ You can use the Tenant Manager to delete one or more S3 buckets that are empty.
 
 These instructions describe how to delete an S3 bucket using the Tenant Manager. You can also delete S3 buckets using the xref:understanding-tenant-management-api.adoc[Tenant Management API] or the xref:../s3/s3-rest-api-supported-operations-and-limitations.adoc[S3 REST API].
 
-You cannot delete an S3 bucket if it contains objects or noncurrent object versions. For information about how S3 versioned objects are deleted, see the xref:../ilm/index.adoc[instructions for managing objects with information lifecycle management].
+You cannot delete an S3 bucket if it contains objects, noncurrent object versions, or delete markers. For information about how S3 versioned objects are deleted, see xref:../ilm/how-objects-are-deleted.adoc[How objects are deleted].
 
 .Steps
 
-. Select *STORAGE (S3)* > *Buckets*.
+. Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
 +
 The Buckets page appears and shows all existing S3 buckets.
 
-. Select the check box for the empty bucket you want to delete. You can select more than one bucket at a time.
+. Use the *Actions* menu or the details page for a specific bucket.
 +
-The Actions menu is enabled.
+[role="tabbed-block"]
+====
 
-. From the Actions menu, select *Delete bucket* (or *Delete buckets* if you have chosen more than one).
+.Actions menu
+--
+.. Select the check box for each bucket you want to delete. 
+.. Select *Actions* > *Delete buckets*.
 
-. When the confirmation dialog box appears, select *Yes* to delete all of the buckets you have chosen.
+--
+
+.Details page
+--
+.. Select a bucket name to display its details.
+.. Select *Delete bucket*.
+
+--
+
+====
+
+
+. When the confirmation dialog box appears, select *Yes*.
 +
 StorageGRID confirms that each bucket is empty and then deletes each bucket. This operation might take a few minutes.
 +
-If a bucket is not empty, an error message appears. You must delete all objects before you can delete a bucket.
+If a bucket is not empty, an error message appears. You must delete all objects and any delete markers in the bucket before you can delete the bucket.

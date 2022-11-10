@@ -553,9 +553,9 @@ HTTP Status
 a|
 BLDR
 a|
-HSTE and HSTU are related to the HTTP protocol for all LDR traffic, including S3, Swift, and other internal StorageGRID traffic. An alarm indicates that one of the following situations has occurred:
+HSTE and HSTU are related to HTTP for all LDR traffic, including S3, Swift, and other internal StorageGRID traffic. An alarm indicates that one of the following situations has occurred:
 
-* The HTTP protocol has been taken offline manually.
+* HTTP has been taken offline manually.
 * The Auto-Start HTTP attribute has been disabled.
 * The LDR service is shutting down.
 
@@ -563,9 +563,9 @@ The Auto-Start HTTP attribute is enabled by default. If this setting is changed,
 
 If necessary, wait for the LDR service to restart.
 
-Select *SUPPORT* > *Tools* > *Grid topology*. Then select *_Storage Node_* > *LDR* > *Configuration*. If the HTTP protocol is offline, place it online. Verify that the Auto-Start HTTP attribute is enabled.
+Select *SUPPORT* > *Tools* > *Grid topology*. Then select *_Storage Node_* > *LDR* > *Configuration*. If HTTP is offline, place it online. Verify that the Auto-Start HTTP attribute is enabled.
 
-If the HTTP protocol remains offline, contact technical support.
+If HTTP remains offline, contact technical support.
 a|
 HTAS
 a|
@@ -1164,7 +1164,7 @@ If the value of Storage Status is Volume(s) Unavailable, a part of the storage i
 
 If the value of Storage Status is Error, contact technical support.
 
-xref:troubleshooting-storage-status-alarm.adoc[Troubleshoot the Storage Status (SSTS) alarm]
+xref:../troubleshoot/troubleshooting-storage-status-alarm.adoc[Troubleshoot the Storage Status (SSTS) alarm]
 
 a|
 SVST
