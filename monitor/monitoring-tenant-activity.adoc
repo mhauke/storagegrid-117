@@ -17,7 +17,6 @@ All S3 and Swift client activity is associated with StorageGRID tenant accounts.
 * You have the Root access or Tenant accounts permission.
 
 
-
 == View all tenants 
 
 . Select *TENANTS*.
@@ -92,9 +91,7 @@ You can open the `.csv` file in a spreadsheet application or use it in automatio
 
 . If the tenant has the *Use grid federation connection* permission, optionally select the *Grid federation* tab to learn more about the connection.
 +
-image::../media/tenant_view_grid_federation_tab.png[Grid federation tab from Tenant details page]
-+
-See xref:../admin/grid-federation-overview.adoc[What is grid federation].
+See xref:../admin/grid-federation-overview.adoc[What is grid federation] and xref:../admin/grid-federation/manage-tenants.adoc[Manage the permitted tenants for grid federation].
 
 == View network traffic
 

@@ -20,7 +20,7 @@ The steps for creating a tenant account vary based on whether xref:using-identit
 * If the tenant account will use the identity source that was configured for the Grid Manager, and you want to grant Root access permission for the tenant account to a federated group, you have imported that federated group into the Grid Manager. You do not need to assign any Grid Manager permissions to this admin group. See  xref:managing-admin-groups.adoc[Manage admin groups].
 * If you want to allow an S3 tenant to clone account data and replicate bucket objects to another grid using a grid federation connection:
 
-** You have xref:grid-federation-manage-connection.adoc[configured the grid federation connection].
+** You have xref:grid-federation-create-connection.adoc[configured the grid federation connection].
 ** The status of the connection is *Connected*.
 ** You have Root access permission.
 ** You have reviewed the considerations for xref:grid-federation-manage-tenants.adoc[managing the permitted tenants for a grid federation connection].
@@ -116,7 +116,7 @@ Optionally specify the password to use when signing in to the tenant as the loca
 
 . Select *Create tenant*.
 +
-A success message appears, and the new tenant is listed on the Tenants page.
+A success message appears, and the new tenant is listed on the Tenants page. To learn how to view tenant details and monitor tenant activity, see xref:../monitor/monitoring-tenant-activity.adoc[Monitor tenant activity].
 
 . If you selected the *Use grid federation connection* permission for the tenant, follow these additional steps:
 
@@ -128,7 +128,7 @@ The tenants on both grids will have the same 20-digit account ID, name, descript
 +
 For security reasons, this password is not copied to the automatically generated tenant on the other grid.   
 
-== Sign in to tenant
+== Sign in to tenant (optional)
 As required, you can sign in to the new tenant now to complete the configuration, or you can sign in to the tenant later. The sign-in steps depend on whether you are signed in to the Grid Manager using the default port (443) or a restricted port. See xref:controlling-access-through-firewalls.adoc[Control access through firewalls].
 
 === Sign in now
