@@ -28,11 +28,13 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * You can only select the *Use grid federation connection* permission when you are creating a new S3 tenant; you can't enable this permission when you edit an existing tenant.
 
-* When the new tenant is saved on the first grid, an identical tenant is automatically created on the other grid. The grid where the tenant is replicated to is the _tenant's destination grid_.
+* When the new tenant is saved on the first grid, an identical tenant is automatically replicated to the other grid. The grid where the tenant is replicated to is the _tenant's destination grid_.
 
-* The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. However, for security reasons, the password for a local root user is not copied to the destination grid.  
+* The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. Optionally, you can use the *Description* field to help identify which is the source tenant and which is the destination tenant. For example, this description for a tenant created on Grid 1 will also appear for the tenant replicated to Grid 2: "`This tenant was created on Grid 1.`"
 
-* Before a local root user can access the cloned tenant on the destination grid, a grid administrator for that grid must xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
+* For security reasons, the password for a local root user is not copied to the destination grid.
++
+Before a local root user can sign in to the replicated tenant on the destination grid, a grid administrator for that grid must xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
 
 * After the new tenant is available on both grids, tenant users can perform these operations:
 
