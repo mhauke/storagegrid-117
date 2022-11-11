@@ -96,6 +96,7 @@ For more information on planning a storage expansion, see the xref:../expand/ind
 +
 The xref:../troubleshoot/troubleshooting-low-object-data-storage-alert.adoc[*Low object data storage*] alert is triggered when insufficient space remains for storing object data on a Storage Node.
 
+[[monitor-object-metadata-capacity-for-each-storage-node]]
 == Monitor object metadata capacity for each Storage Node
 
 Monitor the metadata usage for each Storage Node to ensure that adequate space remains available for essential database operations. You must add new Storage Nodes at each site before object metadata exceeds 100% of the allowed metadata space.

@@ -17,7 +17,7 @@ The StorageGRID system can continue to operate when parts of the grid are unavai
 
 To be notified of alerts as soon as they are triggered, you can xref:../installconfig/setting-up-email-notifications-for-alerts.adoc[set up email notifications for alerts] or xref:using-snmp-monitoring.adoc[configure SNMP traps].
 
-image::../media/health_status_card.png[Dashboard Health status card]
+image::../media/health_status_card.png[Health status card - dashboard]
 
 When issues exist, links appear that allow you to view additional details:
 
@@ -37,6 +37,7 @@ When issues exist, links appear that allow you to view additional details:
 |There is an issue with the software license for this StorageGRID system. You can xref:../admin/updating-storagegrid-license-information.adoc[update license information as needed].
 |===
 
+[#monitor-node-connection-states]
 == Monitor node connection states
 
 If one or more nodes are disconnected from the grid, critical StorageGRID operations might be affected. Monitor node connection states and address any issues promptly.

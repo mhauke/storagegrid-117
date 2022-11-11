@@ -11,6 +11,9 @@ summary: 'You can configure various security settings from the Grid Manager to h
 [.lead]
 You can configure various security settings from the Grid Manager to help secure your StorageGRID system.
 
+== Manage encryption
+StorageGRID provides a number of options for encrypting data. You should xref:reviewing-storagegrid-encryption-methods.adoc[review the available encryption methods] to determine which ones meet your data-protection requirements. 
+
 == Manage certificates
 
 You can xref:using-storagegrid-security-certificates.adoc[configure and manage] the server certificates used for HTTP connections or the client certificates used to authenticate a client or user identity to the server.
