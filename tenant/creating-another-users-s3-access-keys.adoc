@@ -2,14 +2,14 @@
 permalink: tenant/creating-another-users-s3-access-keys.html
 sidebar: sidebar
 keywords: how to create other user access key
-summary: 'If you are using an S3 tenant and you have the appropriate permission, you can create, view, and manage S3 access keys for other users, such as applications that need access to buckets and objects.'
+summary: 'If you are using an S3 tenant and you have the appropriate permission, you can create, view, and delete S3 access keys for other users, such as applications that need access to buckets and objects.'
 ---
 = Create another user's S3 access keys
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are using an S3 tenant and you have the appropriate permission, you can create, view, and manage S3 access keys for other users, such as applications that need access to buckets and objects.
+If you are using an S3 tenant and you have the appropriate permission, you can create, view, and delete S3 access keys for other users, such as applications that need access to buckets and objects.
 
 .What you'll need
 
@@ -56,6 +56,8 @@ image::../media/tenant_s3_access_key_save_keys.png[screenshot of the Save Keys d
 . Select *Finish*.
 +
 The new key is listed on the Access keys tab of the user details page.
+
+. If your tenant account has the *Use grid federation connection* permission, optionally use the Tenant Management API to manually clone S3 access keys from the tenant on the source grid to the tenant on the destination grid. See xref:grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
 
 == View access keys
 
