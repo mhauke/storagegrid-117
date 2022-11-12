@@ -25,7 +25,7 @@ image:../media/grid-federation-account-clone-workflow-tm.png[workflow for cross-
 
 Before account information can be cloned from one grid to another, a grid admin must create a new tenant account that has the *Use grid federation connection* permission for a specific grid federation connection. When the new tenant is saved, StorageGRID automatically creates a replica of that tenant on the other grid. For details, see link:../admin/grid-federation-manage-tenants.html[Manage permitted tenants].  
 
-The grid where the tenant is originally created is the tenant's _source grid_. The grid where the tenant is replicated to is the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
+The grid where the tenant is originally created is the tenant's _source grid_. The grid where the tenant is replicated to is the tenant's _destination grid_. Both tenant accounts have the same account ID, name, description, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
 
 == Configure identity federation on both grids
 

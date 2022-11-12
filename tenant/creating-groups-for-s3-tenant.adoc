@@ -1,7 +1,7 @@
 ---
 permalink: tenant/creating-groups-for-s3-tenant.html
 sidebar: sidebar
-keywords: how to create S3 tenant groups
+keywords: how to create S3 tenant groups, federated group, local group
 summary: 'You can manage permissions for S3 user groups by importing federated groups or creating local groups.'
 ---
 = Create groups for an S3 tenant
@@ -13,13 +13,20 @@ You can manage permissions for S3 user groups by importing federated groups or c
 
 .What you'll need
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+
 * You belong to a user group that has the Root Access permission. See xref:tenant-management-permissions.adoc[Tenant management permissions].
+
 * If you plan to import a federated group, you have configured identity federation and the federated group already exists in the configured identity source.
 
-For information about S3, see xref:../s3/index.adoc[Use S3 REST API].
+* If your tenant account has the *Use grid federation connection* permission,  you have reviewed the workflow and considerations for xref:grid-federation-account-clone.adoc[cloning account information], and you are signed in to the tenant's source grid.
 
-== Access the wizard
+== Access the Create group wizard
+
 . Select *ACCESS MANAGEMENT* > *Groups*.
++
+If your tenant account has the *Use grid federation connection* permission, a blue banner indicates that this is the tenant's source grid. Any groups you create on this grid will be cloned to the other grid in the connection.
++
+image::../media/grid-federation-tenant-group-banner.png[image of blue banner on Groups page if this is the tenant source grid]
 
 . Select *Create group*.
 
@@ -29,8 +36,13 @@ For information about S3, see xref:../s3/index.adoc[Use S3 REST API].
 If single sign-on (SSO) is enabled for your StorageGRID system, users belonging to local groups will not be able to sign in to the Tenant Manager, although they can use client applications to manage the tenant's resources, based on group permissions.
 
 . Enter the group's name.
- ** *Local group*: Enter both a display name and a unique name. You can edit the display name later.
- ** *Federated group*: Enter the unique name. For Active Directory, the unique name is the name associated with the `sAMAccountName` attribute. For OpenLDAP, the unique name is the name associated with the `uid` attribute.
+
+** *Local group*: Enter both a display name and a unique name. You can edit the display name later.
++
+NOTE: If your tenant account has the *Use grid federation connection* permission, confirm that the *Unique name* does not already exist on the destination grid. A cloning error will occur if the same name already exists for the tenant on the destination grid.
+
+** *Federated group*: Enter the unique name. For Active Directory, the unique name is the name associated with the `sAMAccountName` attribute. For OpenLDAP, the unique name is the name associated with the `uid` attribute.
+
 . Select *Continue*.
 
 == Manage group permissions
@@ -64,7 +76,6 @@ For detailed information about group policies, including language syntax and exa
 
 . If you are creating a local group, select *Continue*. If you are creating a federated group, select *Create group* and *Finish*. 
 
-
 == Add users (local groups only)
 
 . Optionally, select one or more local users for this group.
@@ -74,3 +85,5 @@ If you have not yet created local users, you can save the group without adding u
 . Select *Create group* and *Finish*.
 +
 The group you created appears in the list of groups.
++
+If your tenant account has the *Use grid federation connection* permission and you are on the tenant's source grid, the new group is cloned to the tenant's destination grid. You can optionally sign in to that grid to see the cloned group.
