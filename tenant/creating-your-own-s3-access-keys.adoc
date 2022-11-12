@@ -2,14 +2,14 @@
 permalink: tenant/creating-your-own-s3-access-keys.html
 sidebar: sidebar
 keywords: how to create access key
-summary: 'If you are using an S3 tenant and you have the appropriate permission, you can create your own S3 access keys. You must have an access key to access your buckets and objects in the S3 tenant account.'
+summary: 'If you are using an S3 tenant and you have the appropriate permission, you can create, view, and manage your own S3 access keys. You must have an access key to access your buckets and objects in th'
 ---
 = Create your own S3 access keys
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are using an S3 tenant and you have the appropriate permission, you can create your own S3 access keys. You must have an access key to access your buckets and objects in the S3 tenant account.
+If you are using an S3 tenant and you have the appropriate permission, you can create, view, and manage your own S3 access keys. You must have an access key to access your buckets and objects in the S3 tenant account.
 
 .What you'll need
 
@@ -27,20 +27,22 @@ Each key can have a specific expiration time or no expiration. Follow these guid
 
 IMPORTANT: The S3 buckets and objects belonging to your account can be accessed using the access key ID and secret access key displayed for your account in the Tenant Manager. For this reason, protect access keys as you would a password. Rotate access keys on a regular basis, remove any unused keys from your account, and never share them with other users.
 
-.Steps
+== Create access keys
+
 . Select *STORAGE (S3)* > *My access keys*.
 +
 The My access keys page appears and lists any existing access keys.
 
 . Select *Create key*.
+
 . Do one of the following:
  ** Select *Do not set an expiration time* to create a key that will not expire. (Default)
  ** Select *Set an expiration time*, and set the expiration date and time.
 +
 NOTE: In the expiration date textbox, the expiration date should not exceed five years from the current date.
-
 +
 image::../media/tenant_s3_access_key_create_save.png[screenshot of Create Access key dialog box]
+
 . Select *Create access key*.
 +
 The Download access key dialog box appears, listing your access key ID and secret access key.
@@ -54,3 +56,42 @@ image::../media/tenant_s3_access_key_save_keys.png[screenshot of Save Keys dialo
 . Select *Finish*.
 +
 The new key is listed on the My access keys page.
+
+== View access keys
+
+If you are using an S3 tenant and you have the appropriate permission, you can view a list of your S3 access keys. You can sort the list by expiration time, so you can determine which keys will expire soon.
+
+. Select *STORAGE (S3)* > *My access keys*.
++
+The My access keys page appears and lists any existing access keys.
++
+image::../media/access_keys_view_list.png[List of Access Keys]
+
+. Sort the keys by *Expiration time* or *Access key ID*.
+
+. As needed, create new keys and manually delete keys that you are no longer using.
++
+If you create new keys before the existing keys expire, you can begin using the new keys without temporarily losing access to the objects in the account.
++
+Expired keys are removed automatically.
+
+== Delete access keys
+
+If you are using an S3 tenant and you have the appropriate permission, you can delete your own S3 access keys. After an access key is deleted, it can no longer be used to access the objects and buckets in the tenant account.
+
+. Select *STORAGE (S3)* > *My access keys*.
++
+The My access keys page appears and lists any existing access keys.
+
+. Select the check box for each access key you want to remove.
+
+. Select *Delete key*.
++
+A confirmation dialog box appears.
++
+image::../media/access_key_confirm_delete.png[Access Key - Confirm Delete]
+
+. Select *Delete key*.
++
+A confirmation message appears in the upper right corner of the page.
+
