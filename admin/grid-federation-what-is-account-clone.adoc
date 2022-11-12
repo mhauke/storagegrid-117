@@ -54,7 +54,7 @@ Also note that any edits made to the tenant, users, groups, or access keys on ei
 
 == [[account-clone-identity-federation]]Considerations and requirements for SSO and identity federation
 
-* If either StorageGRID system in the connection uses single sign-on (SSO), a grid administrator must configure the same identity source and the same SSO identity provider (IdP) for both grids.
+* If either StorageGRID system in the connection uses single sign-on (SSO), a grid administrator must configure the same identity source and the same SSO identity provider (IdP) for both grids. See xref:using-identity-federation.adoc[Use identity federation] and xref:configuring-sso.adoc[Configure single sign-in].
 
 * If either StorageGRID system in the connection uses identity federation (but not SSO), either or both of the following must be true:
 

@@ -33,8 +33,8 @@ image::../media/s3_menu.png[S3 Menu]
 
 S3 tenant users can manage access keys as follows:
 
-* Users who have the Manage Your Own S3 Credentials permission can create or remove their own S3 access keys.
-* Users who have the Root Access permission can manage the access keys for the S3 root account, their own account, and all other users. Root access keys also provide full access to the tenant's buckets and objects unless explicitly disabled by a bucket policy.
+* Users who have the Manage your own S3 credentials permission can create or remove their own S3 access keys.
+* Users who have the Root access permission can manage the access keys for the S3 root account, their own account, and all other users. Root access keys also provide full access to the tenant's buckets and objects unless explicitly disabled by a bucket policy.
 +
 NOTE: Managing the access keys for other users takes place from the Access Management menu.
 
@@ -61,11 +61,11 @@ If a grid administrator has enabled the use of platform services for the tenant 
 
 === Platform services endpoints
 
-If a grid administrator has enabled the use of platform services for the tenant account, an S3 tenant user with the Manage Endpoints permission can configure a destination endpoint for each platform service.
+If a grid administrator has enabled the use of platform services for the tenant account, an S3 tenant user with the Manage endpoints permission can configure a destination endpoint for each platform service.
 
 === Grid federation connections
 
-If a grid administrator has enabled the use of a grid federation connection for the tenant account, an S3 tenant user who has Root Access permission can view the connection name, access the bucket details page for each bucket that has cross-grid replication enabled, and view the most recent error to occur when bucket data was being replicated to the other grid in the connection. See xref:../tenant/grid-federation-connections-view.adoc[View grid federation connections].
+If a grid administrator has enabled the use of a grid federation connection for the tenant account, an S3 tenant user who has Root access permission can view the connection name, access the bucket details page for each bucket that has cross-grid replication enabled, and view the most recent error to occur when bucket data was being replicated to the other grid in the connection. See xref:../tenant/grid-federation-connections-view.adoc[View grid federation connections].
 
 == Access Management menu
 
