@@ -1,27 +1,28 @@
 ---
-permalink: tenant/viewing-and-editing-group-details.html
+permalink: tenant/viewing-and-editing-groups.html
 sidebar: sidebar
-keywords: how to view and edit tenant groups, manage groups
-summary: 'When you view the details for a group, you can change the group’s display name, permissions, policies, and the users that belong to the group.'
+keywords: how to view and edit tenant groups, manage groups, duplicate group, remove group, edit group
+summary: 'You can view a group; edit a group’s name, permissions, policies, and users; duplicate a group; or delete a group.'
 ---
-= View and edit group details
+= View and edit groups
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-When you view the details for a group, you can change the group's display name, permissions, policies, and the users that belong to the group.
+You can view a group; edit a group’s name, permissions, policies, and users; duplicate a group; or delete a group.
 
 .What you'll need
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You belong to a user group that has the Root access permission.
+* You belong to a user group that has the Root access permission. See xref:tenant-management-permissions.adoc[Tenant management permissions].
 
-.Steps
+== View or edit group
+
 . Select *ACCESS MANAGEMENT* > *Groups*.
 
 . Review the information on the Groups page, which lists basic information for all local and federated groups for this tenant account.
 +
-If the tenant account has the *Use grid federation connection* permission and you are viewing groups on the tenant's source grid, a blue banner indicates that if you edit or remove a group, your changes will not be synced to the other grid.
+If the tenant account has the *Use grid federation connection* permission and you are viewing groups on the tenant's source grid, a blue banner indicates that if you edit or remove a group, your changes will not be synced to the other grid. See xref:grid-federation-account-clone.adoc[Clone account information].
 
 . If you want to change the group's name:
 
@@ -68,4 +69,30 @@ If the tenant account has the *Use grid federation connection* permission and yo
 image::../media/manage_users.png[Manage users]
 
 . Confirm that you selected *Save changes* for each section you changed.
+
+== Duplicate group
+
+You can duplicate an existing group to create new groups more quickly.
+
+. Select *ACCESS MANAGEMENT* > *Groups*.
+
+. Select the check box for the group you want to duplicate.
+
+. Select *Actions* > *Duplicate group*.
+
+. See xref:creating-groups-for-s3-tenant.adoc[Create groups for an S3 tenant] or xref:creating-groups-for-swift-tenant.adoc[Create groups for a Swift tenant] for details about what to enter.
+
+. Select *Create group*.
+
+== Delete one or more groups
+
+You can delete one or more groups. Any users who belong only to a group that is deleted will no longer be able to sign in to the Tenant Manager or use the tenant account.
+
+. Select *ACCESS MANAGEMENT* > *Groups*.
+
+. Select the check box for each group you want to delete.
+
+. Select *Actions* > *Delete group* or *Actions* > *Delete groups*
+
+. Select *Delete group* or *Delete groups*.
 
