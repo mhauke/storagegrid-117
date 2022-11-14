@@ -15,7 +15,7 @@ You must create at least one endpoint of the correct type before you can enable 
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * Platform services were enabled for your tenant account by a StorageGRID administrator.
-* You belong to a user group that has the Manage endpoints permission.
+* You belong to a user group that has the xref:tenant-management-permissions.adoc[Manage endpoints or Root access permission].
 * The resource referenced by the platform services endpoint have been created:
  ** CloudMirror replication: S3 bucket
  ** Event notification: SNS topic

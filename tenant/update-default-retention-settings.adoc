@@ -13,7 +13,8 @@ If you enabled S3 Object Lock when you created the bucket, you can edit the buck
 
 .What you'll need
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Manage all buckets or the Root access permission. These permissions override the permissions settings in group or bucket policies. See xref:tenant-management-permissions.adoc[Tenant management permissions].
+* You belong to a user group that has the xref:tenant-management-permissions.adoc[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies.
+
 * S3 Object Lock is enabled globally for your StorageGRID system, and you enabled S3 Object Lock when you created the bucket. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
 
 .Steps

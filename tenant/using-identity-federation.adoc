@@ -3,7 +3,6 @@ permalink: tenant/using-identity-federation.html
 sidebar: sidebar
 keywords: how to use identity federation, how to use federated groups with Tenant Manager
 summary: 'Using identity federation makes setting up tenant groups and users faster, and it allows tenant users to sign in to the tenant account using familiar credentials.'
-
 ---
 = Use identity federation
 :icons: font
@@ -19,7 +18,7 @@ You can configure identity federation for the Tenant Manager if you want tenant 
 .What you'll need
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have specific access permissions.
+* You belong to a group that has the xref:tenant-management-permissions.adoc[Root access permission].
 * You are using Active Directory, Azure AD, OpenLDAP, or Oracle Directory Server as the identity provider.
 +
 NOTE: If you want to use an LDAP v3 service that is not listed, contact technical support.

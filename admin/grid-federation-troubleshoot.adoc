@@ -32,12 +32,15 @@ When a tenant account is cloned to the other grid in a grid federation connectio
 
 === Cross-grid replication permanent failure alert
 
-The *Cross-grid replication permanent failure* alert indicates that tenant objects can't be replicated between the buckets on two grids for a reason that requires user intervention to resolve. For example, a tenant's quota might have been exceeded or a bucket setting might have changed. 
+The *Cross-grid replication permanent failure* alert indicates that tenant objects can't be replicated between the buckets on two grids for a reason that requires user intervention to resolve. This alert is typically caused by a change to either the source or the destination bucket. 
+
+To troubleshoot this alert, follow these steps:
 
 . Sign into the grid where the alert was triggered.
 . Go to *CONFIGURATION* > *System* > *Grid federation*, and locate the connection name listed in the alert.
 
 . On the Permitted tenants tab, look at the *Last error* column to determine which tenant accounts have errors.
+
 . For each affected tenant account:
 
 .. Select the tenant name to display the tenant details page.
@@ -50,7 +53,7 @@ The *Cross-grid replication permanent failure* alert indicates that tenant objec
 
 . For each bucket that has cross-grid replication enabled, confirm the following:
 
-* There is a corresponding bucket on the other grid (must use the exact name). 
+* There is a corresponding bucket for the same tenant on the other grid (must use the exact name). 
 * Both buckets have object versioning enabled (versioning cannot be suspended on either grid).
 * Both buckets have S3 Object Lock disabled. 
 * Neither bucket is in the *Deleting all objects: Read only* state.

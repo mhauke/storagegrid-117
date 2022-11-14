@@ -127,7 +127,7 @@ When determining how to encrypt replicated objects, StorageGRID applies these ru
 
 === Object tagging is not supported
 
-To ensure that object content remains the same on the source and destination grids, PUT Object tagging and DELETE Object tagging requests are not supported for objects in buckets that have cross-grid replication enabled.
+PUT Object tagging and DELETE Object tagging requests are not supported for objects in buckets that have cross-grid replication enabled.
 
 If an S3 client issues a PUT Object tagging or DELETE Object tagging request, `501 Not Implemented` is returned. The message is `Put(Delete) ObjectTagging is not available for buckets that have cross-grid replication configured`.
 
