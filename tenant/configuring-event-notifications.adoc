@@ -16,7 +16,7 @@ The notifications service is one of the three StorageGRID platform services. You
 * Platform services were enabled for your tenant account by a StorageGRID administrator.
 * You have already created a bucket to act as the source of notifications.
 * The endpoint that you intend to use as a destination for event notifications already exists, and you have its URN.
-* You belong to a user group that has the Manage all buckets or the Root access permission, which allows you to manage the settings for all S3 buckets in your tenant account. These permissions override the permission settings in group or bucket policies when configuring the bucket using the Tenant Manager.
+* You belong to a user group that has the xref:tenant-management-permissions.adoc[Manage all buckets or Root access permission]. These permissions override the permission settings in group or bucket policies when configuring the bucket using the Tenant Manager.
 
 .About this task
 
