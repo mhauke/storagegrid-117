@@ -32,8 +32,10 @@ When one or more storage volumes fail, Grid Manger displays them as candidates f
 
 In most cases, using Grid Manager to restore storage volumes and nodes is preferred to using link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[CLI commands]. Grid Manager can also be used to <<view_restoration_progress,monitor the volume restoration process>> and <<view_restoration_history,view the restoration history>> for both GUI- and CLI-initiated restorations.
 
-* If you are _restoring_ a storage node, use <<restore_lost_volume_or_node,Grid Manager to restore volumes>>.
-* If you are _recovering_ a storage node, use link:../maintain/recovering-storagegrid-appliance-storage-node.html[CLI commands to restore volumes]. 
+// Remove commented lines following review approval. Per Dheeraj, use of UI for node recovery was a late change:
+// * If you are _restoring_ a storage node, use <<restore_lost_volume_or_node,Grid Manager to restore volumes>>.
+// * If you are _recovering_ a storage node, use link:../maintain/recovering-storagegrid-appliance-storage-node.html[CLI commands to restore volumes]. 
+
 // decision tree for choosing OEC vs 'volume restoration' vs 'node repair' has to be clear.
 
 Two types of data objects can be restored:
