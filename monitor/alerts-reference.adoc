@@ -171,6 +171,9 @@ This alert indicates that a volume cannot be mounted or accessed because of a pr
 |Cassandra compactions overloaded
 |The Cassandra compaction process is overloaded.
 
+| Cassandra oversize write error
+| An internal StorageGRID process sent a write request to Cassandra that was too large.
+
 |Cassandra repair metrics out of date
 |The metrics that describe Cassandra repair jobs are out of date. If this condition persists for more than 48 hours, client queries, such as bucket listings, might show deleted data.
 
