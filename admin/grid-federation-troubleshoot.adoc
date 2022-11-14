@@ -28,7 +28,6 @@ When a tenant account is cloned to the other grid in a grid federation connectio
 
 == Troubleshoot cross-grid replication errors
 
-//https://jira.vtc.eng.netapp.com/browse/SGWS-23229
 
 === Cross-grid replication permanent failure alert
 
@@ -62,8 +61,22 @@ To troubleshoot this alert, follow these steps:
 +
 NOTE: After you resolve the issue, it might take up to 1 day for the alert to clear.
 
+=== Cross-grid replication resource unavailable alert
 
-=== Check if an error has been resolved
+The *Cross-grid replication resource unavailable* alert indicates that cross-grid replication requests are pending because a resource is unavailable. For example, there might be a network error.
+
+To troubleshoot this alert, follow these steps:
+
+. Monitor the alert to see if the issue resolves on its own.
+
+. If the issue persists, determine if either grid has a *Grid federation connection failure* alert for the same connection or an *Unable to communicate with node* alert for a node. This alert might be resolved when you resolve those alerts.
+
+. If you cannot resolve the alert, contact technical support.
+
+Cross-grid replication will proceed as normal once the issue is resolved.
+
+
+== Check if an error has been resolved
 After resolving any underlying issues, you can determine if the error has been resolved. From the Permitted tenants tab for the connection, select the tenant, and select *Clear error*. A confirmation message indicates that StorageGRID has cleared the error for the tenant.
 
 If the underlying problem has been resolved, the error message is no longer displayed. However, if the underlying problem has not been fixed (or if a different error is encountered), the error message will be shown in the *Last error* column after new objects are saved to one of the tenant's buckets.
