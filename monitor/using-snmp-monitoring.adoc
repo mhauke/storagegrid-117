@@ -16,7 +16,9 @@ If you want to monitor StorageGRID using the Simple Network Management Protocol 
 
 == Capabilities
 
-Each StorageGRID node runs an SNMP agent, or daemon, that provides a management information base (MIB). The StorageGRID MIB contains table and notification definitions for alerts and alarms. The MIB also contains system description information such as platform and model number for each node. Each StorageGRID node also supports a subset of MIB-II objects.
+Each StorageGRID node runs an SNMP agent, or daemon, that provides a management information base (MIB). The StorageGRID MIB contains table and notification definitions for alerts and alarms. The MIB also contains system description information such as platform and model number for each node. Each StorageGRID node also supports a subset of MIB-II objects. 
+
+NOTE: See xref:access-snmp-mib.adoc[Access MIB files] if you want to access MIB files. 
 
 Initially, SNMP is disabled on all nodes. When you configure the SNMP agent, all StorageGRID nodes receive the same configuration.
 
@@ -88,12 +90,6 @@ USM user for each trap destination
 * SNMPv3: StorageGRID does not support the Transport Support Mode (TSM).
 * SNMPv3: The only authentication protocol supported is SHA (HMAC-SHA-96).
 * SNMPv3: The only privacy protocol supported is AES.
-
-== Access the MIB
-
-You can access the MIB definition file at the following location on any StorageGRID node:
-
-`/usr/share/snmp/mibs/NETAPP-STORAGEGRID-MIB.txt`
 
 .Related information
 

@@ -1,0 +1,29 @@
+---
+permalink: monitor/access-snmp-mib.html
+sidebar: sidebar
+keywords: mib, snmp, monitoring
+summary: 'Managed Information Base (MIB) files contain definitions and information about the properties of managed resources and services for the nodes in your grid. You can access MIB files that define the objects and notifications for StorageGRID.'
+---
+= Access MIB files
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Managed Information Base (MIB) files contain definitions and information about the properties of managed resources and services for the nodes in your grid. You can access MIB files that define the objects and notifications for StorageGRID. 
+
+See xref:using-snmp-monitoring.adoc[SNMP monitoring] for more information on SNMP and MIB files. 
+
+== Access MIB files
+
+.Steps
+
+. Select *CONFIGURATION* > *SNMP Agent*
+. On the SNMP page, select the file you want to download:
++
+* *NETAPP-STORAGEGRID-MIB.txt*: Defines the alert table and notifications (traps) accessible on all Admin Nodes.
+* *ES-NETAPP-06-MIB.mib*: Defines objects and notifications for E-Series-based appliances.
+* *MIB_1_10.zip*: Defines objects and notifications for appliances with a BMC interface.
+. Optionally, you can access MIB files at the following locations on any StorageGRID node:
+* `/usr/share/snmp/mibs/NETAPP-STORAGEGRID-MIB.txt`
+* `/usr/share/snmp/mibs/QCT-RACK-MIB.mib`
+* `/usr/share/snmp/mibs/MIB_1_10.zip`
