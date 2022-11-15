@@ -2,12 +2,8 @@
 permalink: audit/object-storage-audit-messages.html
 sidebar: sidebar
 
-keywords: audit, object storage, object management, object retrieval, node transfer, verification, APCT, ARCB, ARCE, ARCT, AREM, ASCE, ASCT, ATCE, AVCC, BROR, CBSE, CBRE, EBDL, EBKR, SCMT, SREM
+keywords: audit, object storage, object management, object retrieval, node transfer, verification, APCT, ARCB, ARCE, ARCT, AREM, ASCE, ASCT, ATCE, AVCC, BROR, CBSE, CBRE, CGRR, EBDL, EBKR, SCMT, SREM
 summary: 'You should be familiar with audit messages belonging to the object storage audit category. These are events related to the storage and management of objects within the StorageGRID system. These include object storage and retrievals, grid-node to grid-node transfers, and verifications.'
-
----
-keywords: audit, object storage, object management, object retrieval, node transfer, verification, APCT, ARCB, ARCE, ARCT, AREM, ASCE, ASCT, ATCE, AVCC, BROR, CBSE, CBRE, CGRR, SCMT, SREM
-summary: 'The audit messages belonging to the object storage audit category are used for events related to the storage and management of objects within the StorageGRID system. These include object storage and retrievals, grid-node to grid-node transfers, and verifications.'
 ---
 = Object storage audit messages
 :icons: font
@@ -68,23 +64,21 @@ The audit messages belonging to the object storage audit category are used for e
 | Object Receive End: The destination entity completed a grid-node to grid-node data transfer operation.
 | xref:cbre-object-receive-end.adoc[CBRE: Object Receive End]
 
+| CGRR
+| Cross-Grid Replication Request: StorageGRID attempted a cross-grid replication operation to replicate objects between buckets in a grid federation connection. 
+| xref:cgrr-cross-grid-replication-request.adoc[CGRR: Cross-Grid Replication Request]
+
 | EBDL
 | Empty Bucket Delete: The ILM scanner deleted an object in a bucket that is deleting all objects (performing an empty bucket operation).
-|xref:empty-bucket-delete.adoc[EBDL: Empty Bucket Delete]
+| xref:empty-bucket-delete.adoc[EBDL: Empty Bucket Delete]
 
 | EBKR
 | Empty Bucket Request: A user sent a request to turn empty bucket on or off (that is, to delete bucket objects or to stop deleting objects).
-|xref:empty-bucket-request.adoc[EBKR: Empty Bucket Request]
+| xref:empty-bucket-request.adoc[EBKR: Empty Bucket Request]
 
 | SCMT
 | Object Store Commit: A content block was completely stored and verified, and can now be requested.
-| CGRR
-| Cross-Grid Replication Request:
-| xref:cgrr-cross-grid-replication-request.adoc[CGRR: Cross-Grid Replication Request]
-
-| SCMT
-| Object Store Commit: A content block was completely stored and verified, and can now be requested.
-| xref:scmt-object-store-commit.adoc[SCMT: Object Store Commit]
+| xref:scmt-object-store-commit.adoc[SCMT: Object Store Commit Request]
 
 | SREM
 | Object Store Remove: A content block was deleted from a grid node, and can no longer be requested directly.
