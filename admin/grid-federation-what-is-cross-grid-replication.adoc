@@ -125,7 +125,7 @@ When determining how to encrypt replicated objects, StorageGRID applies these ru
 . If the destination bucket does not have an encryption setting, use the destination's grid-wide encryption setting, if configured.
 . If a grid-wide setting is not present, do not encrypt the destination object.
 
-=== Object tagging is not supported
+=== PUT Object tagging and DELETE Object tagging are not supported
 
 PUT Object tagging and DELETE Object tagging requests are not supported for objects in buckets that have cross-grid replication enabled.
 
