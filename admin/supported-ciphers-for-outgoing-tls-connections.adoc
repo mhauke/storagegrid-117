@@ -11,6 +11,8 @@ summary: 'The StorageGRID system supports a limited set of cipher suites for Tra
 [.lead]
 The StorageGRID system supports a limited set of cipher suites for Transport Layer Security (TLS) connections to the external systems used for identity federation and Cloud Storage Pools.
 
+CAUTION: The cipher type must match the server certificate type. For example, RSA ciphers require RSA certificates, and ECDSA ciphers require ECDSA certificates. See xref:using-storagegrid-security-certificates.adoc[About security certificates].
+
 == Supported versions of TLS
 
 StorageGRID supports TLS 1.2 and TLS 1.3 for connections to external systems used for identity federation and Cloud Storage Pools.
