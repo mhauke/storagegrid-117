@@ -53,7 +53,7 @@ image::../media/grid-federation-tenant-user-banner.png[image of blue banner on U
 | Username
 | The name this user will use to sign in. Usernames must be unique and cannot be changed.
 
-*Note*: If your tenant account has the *Use grid federation connection* permission, confirm that the *Username* does not already exist on the destination grid. A cloning error will occur if the same name already exists for the tenant on the destination grid.
+*Note*: If your tenant account has the *Use grid federation connection* permission, a cloning error will occur if the same *Username* already exists for the tenant on the destination grid.
 
 | Password
 Confirm password

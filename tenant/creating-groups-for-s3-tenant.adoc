@@ -39,7 +39,7 @@ If single sign-on (SSO) is enabled for your StorageGRID system, users belonging 
 
 ** *Local group*: Enter both a display name and a unique name. You can edit the display name later.
 +
-NOTE: If your tenant account has the *Use grid federation connection* permission, confirm that the *Unique name* does not already exist on the destination grid. A cloning error will occur if the same name already exists for the tenant on the destination grid.
+NOTE: If your tenant account has the *Use grid federation connection* permission, a cloning error will occur if the same *Unique name* already exists for the tenant on the destination grid.
 
 ** *Federated group*: Enter the unique name. For Active Directory, the unique name is the name associated with the `sAMAccountName` attribute. For OpenLDAP, the unique name is the name associated with the `uid` attribute.
 
