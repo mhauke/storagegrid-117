@@ -39,6 +39,8 @@ To troubleshoot this alert, follow these steps:
 
 . On the Permitted tenants tab, look at the *Last error* column to determine which tenant accounts have errors.
 
+. To learn more about the failure, review the <<cross-grid-metrics,cross-grid replication metrics>>.
+
 . For each affected tenant account:
 
 .. Select the tenant name to display the tenant details page.
@@ -56,7 +58,7 @@ To troubleshoot this alert, follow these steps:
 * Both buckets have S3 Object Lock disabled. 
 * Neither bucket is in the *Deleting all objects: Read only* state.
 
-. Confirm that the issue was resolved.
+. Confirm that the issue was resolved, you can review the cross-grid replication metrics or perform these steps:
 
 .. Go back to the Grid Federation page.
 .. Select the affected tenant, and select *Clear Error* in the *Last error* column.
@@ -65,7 +67,7 @@ The error message no longer appears. However, if the issue was not resolved (or 
 
 .. Ingest new objects in to the bucket, and confirm that the error does not reappear. 
 +
-NOTE: It might take up to 1 day for the alert to clear after it is resolved.
+NOTE: It might take up to a day for the alert to clear after it is resolved.
 
 === Cross-grid replication resource unavailable alert
 
@@ -77,11 +79,13 @@ To troubleshoot this alert, follow these steps:
 
 . If the issue persists, determine if either grid has a *Grid federation connection failure* alert for the same connection or an *Unable to communicate with node* alert for a node. This alert might be resolved when you resolve those alerts.
 
+. To learn more about the failure, review the <<cross-grid-metrics,cross-grid replication metrics>>. 
+
 . If you cannot resolve the alert, contact technical support.
 
 Cross-grid replication will proceed as normal once the issue is resolved.
 
-== Use cross-grid replication metrics
+== [[cross-grid-metrics]]Use cross-grid replication metrics
 
 You can use the Cross-Grid Replication dashboard in Grafana to view metrics about cross-grid replication operations on your grid.
 
