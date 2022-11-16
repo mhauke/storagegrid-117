@@ -35,26 +35,30 @@ As you begin using grid federation, it might be helpful to understand the simila
 | Who is responsible for setting it up?
 | * A grid admin configures the connection and the tenants.
 * Tenant users configure the groups, users, keys, and buckets.
-| Typically, a tenant user
-
-| Is object versioning required?
-| Yes, both the source and destination buckets must have object versioning enabled.
-| No, the StorageGRID bucket is not required to have object versioning enabled. 
+| Typically, a tenant user.
 
 | What is the destination?
 | A corresponding S3 bucket on the other StorageGRID system in the grid federation connection.
 
-| Any compatible S3 infrastructure (including Amazon S3)
+| Any compatible S3 infrastructure (including Amazon S3).
+
+| Is object versioning required?
+| Yes, both the source and destination buckets must have object versioning enabled.
+| No, CloudMirror replication supports any combination of unversioned and versioned buckets on both the source and destination.
+
 
 | What causes objects to be moved to the destination?
 | Objects are automatically replicated when they are added to a bucket that has cross-grid replication enabled.
 
 | Objects are automatically replicated when they are added to a bucket that has been configured with a CloudMirror endpoint. Objects that existed in the source bucket before the bucket was configured with the CloudMirror endpoint are not replicated, unless they are modified.
 
+| How are objects replicated?
+| Cross-grid replication creates versioned objects, and it replicates the version ID from the source bucket to the destination bucket. This allow the version order to be maintained across both grids.
+| CloudMirror replication doesn't require versioning-enabled buckets, so CloudMirror can only maintain ordering for a key within a site. There are no guarantees that ordering will be maintained for requests to an object at different site.
+
+
 | How are objects retrieved?
 | Applications can retrieve an object by making a request to the bucket on either grid. 
-
-
 | Applications can retrieve an object by making a request either to StorageGRID or to the S3 destination. For example, suppose you use CloudMirror replication to mirror objects to a partner organization. The partner can use its own applications to read or update objects directly from the S3 destination. Using StorageGRID is not required.
 
 
@@ -73,7 +77,13 @@ As you begin using grid federation, it might be helpful to understand the simila
 * Delete requests that do not include a version ID add a delete marker to the source bucket, which can optionally be replicated to the destination grid.
 * If cross-grid replication is configured for only one direction, objects in the destination bucket can be deleted without affecting the source.
 
-| The delete action is not replicated from the source to the destination. A deleted object no longer exists in the StorageGRID bucket, but it continues to exist in the destination bucket. Similarly, objects in the destination bucket can be deleted without affecting the source.
+| The results will vary based on the versioning state of the source and destination buckets (which do not need to be the same):
+
+* If both buckets are versioned, a delete request will add a delete marker in both locations.
+* If only the source bucket is versioned, a delete request will add a delete marker to the source but not to the destination.
+* If neither bucket is versioned, a delete request will delete the object from the source but not from the destination.
+
+Similarly, objects in the destination bucket can be deleted without affecting the source.
 
 
 | How do you access objects after a disaster (StorageGRID system not operational)?
