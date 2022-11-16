@@ -21,11 +21,9 @@ image:../media/grid-federation-account-clone-workflow.png[workflow for cross-gri
 
 == How are tenant accounts cloned?
 
-After creating a link:grid-federation-overview.html[grid federation connection], a grid admin can create new S3 tenant accounts on either grid. Tenants that have the *Use grid federation connection* permission can be allowed to use that connection. When the new tenant is saved, StorageGRID automatically creates a replica of the new tenant on the other grid.
+After creating a link:grid-federation-overview.html[grid federation connection], a grid admin can create new S3 tenant accounts on either grid. Tenants that are created with the *Use grid federation connection* permission can be allowed to use that connection. When the new tenant is saved, StorageGRID automatically creates a replica of the new tenant on the other grid.
 
 The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
-
-NOTE: You can only add the *Use grid federation connection* when you are creating a new S3 tenant; you can't add this permission to an existing tenant.
 
 .Learn more
 xref:grid-federation-manage-tenants.adoc[Manage permitted tenants for grid federation]
@@ -52,7 +50,9 @@ Account cloning occurs only from the tenant's source grid to the tenant's destin
 
 image:../media/grid-federation-account-not-cloned.png[image showing that tenant details are cloned back to source grid]
 
-Account cloning occurs only for new information. If you edit or delete the tenant or its users, groups, or access keys on either grid, your changes are not cloned to the other grid. 
+Account cloning occurs only for new information. If you edit or delete the tenant or its users, groups, or access keys on either grid, your changes are not cloned to the other grid. However, if you delete a tenant from the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
+
+image:../media/grid-federation-account-clone-edit-delete.png[image showing that edited or deleted tenant details are cloned]
 
 .Learn more
 
