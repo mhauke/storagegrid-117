@@ -47,25 +47,23 @@ See the instructions for administering StorageGRID for information on configurin
 
 The following table shows how security issues are implemented in the S3 and Swift REST APIs:
 
-[options="header"]
+[cols="2a,3a" options="header"]
 |===
 | Security issue| Implementation for REST API
-a|
-Connection security
-a|
-TLS
-a|
-Server authentication
-a|
-X.509 server certificate signed by system CA or custom server certificate supplied by administrator
-a|
-Client authentication
-a|
+
+|Connection security
+|TLS
+
+|Server authentication
+|X.509 server certificate signed by system CA or custom server certificate supplied by administrator
+
+|Client authentication
+|
 * S3: S3 account (access key ID and secret access key)
 * Swift: Swift account (user name and password)
-a|
-Client authorization
-a|
+
+|Client authorization
+|
 * S3: Bucket ownership and all applicable access control policies
 * Swift: Administrator role access
 |===
@@ -85,48 +83,39 @@ IMPORTANT: SSLv3 and TLS 1.1 (or earlier versions) are no longer supported.
 
 === Supported cipher suites
 
-CAUTION: The cipher type must match the server certificate type. For example, RSA ciphers require RSA certificates, and ECDSA ciphers require ECDSA certificates. See xref:../admin/using-storagegrid-security-certificates.adoc[About security certificates].
-
-[options="header"]
+[cols="1a,4a" options="header"]
 |===
 | TLS version| IANA name of cipher suite
-a|
-1.2
-a|
-TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-a|
-1.2
-a|
-TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
-a|
-1.2
-a|
-TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-a|
-1.3
-a|
-TLS_AES_256_GCM_SHA384
-a|
-1.3
-a|
-TLS_CHACHA20_POLY1305_SHA256
-a|
-1.3
-a|
-TLS_AES_128_GCM_SHA256
+
+|1.2
+|TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+
+|1.2
+|TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+
+|1.2
+|TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+
+|1.3
+|TLS_AES_256_GCM_SHA384
+
+|1.3
+|TLS_CHACHA20_POLY1305_SHA256
+
+|1.3
+|TLS_AES_128_GCM_SHA256
 |===
 
 === Deprecated cipher suites
 
 The following cipher suites are deprecated. Support for these ciphers will be removed in a future release.
 
-[options="header"]
+[cols="1a" options="header"]
 |===
 | IANA Name
-a|
-TLS_RSA_WITH_AES_128_GCM_SHA256
-a|
-TLS_RSA_WITH_AES_256_GCM_SHA384
+
+|TLS_RSA_WITH_AES_128_GCM_SHA256
+|TLS_RSA_WITH_AES_256_GCM_SHA384
 |===
 .Related information
 

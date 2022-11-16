@@ -86,8 +86,6 @@ IMPORTANT: SSLv3 and TLS 1.1 (or earlier versions) are no longer supported.
 
 === Supported cipher suites
 
-CAUTION: The cipher type must match the server certificate type. For example, RSA ciphers require RSA certificates, and ECDSA ciphers require ECDSA certificates. See xref:../admin/using-storagegrid-security-certificates.adoc[About security certificates].
-
 [cols="1a,1a" options="header"]
 |===
 | TLS version| IANA name of cipher suite
