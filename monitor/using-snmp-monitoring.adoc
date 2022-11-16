@@ -11,14 +11,14 @@ summary: 'If you want to monitor StorageGRID using the Simple Network Management
 [.lead]
 If you want to monitor StorageGRID using the Simple Network Management Protocol (SNMP), you must configure the SNMP agent that is included with StorageGRID.
 
-* xref:configuring-snmp-agent.adoc[Configure the SNMP agent]
-* xref:updating-snmp-agent.adoc[Update the SNMP agent]
+* link:configuring-snmp-agent.html[Configure the SNMP agent]
+* link:updating-snmp-agent.html[Update the SNMP agent]
 
 == Capabilities
 
 Each StorageGRID node runs an SNMP agent, or daemon, that provides a management information base (MIB). The StorageGRID MIB contains table and notification definitions for alerts and alarms. The MIB also contains system description information such as platform and model number for each node. Each StorageGRID node also supports a subset of MIB-II objects. 
 
-NOTE: See xref:access-snmp-mib.adoc[Access MIB files] if you want to access MIB files. 
+NOTE: See link:access-snmp-mib.html[Access MIB files] if you want to download the MIB files on your grid nodes. 
 
 Initially, SNMP is disabled on all nodes. When you configure the SNMP agent, all StorageGRID nodes receive the same configuration.
 
@@ -36,7 +36,7 @@ Trap and inform notifications are sent in the following cases:
 
 * A default or custom alert is triggered at any severity level. To suppress SNMP notifications for an alert, you must configure a silence for the alert. Alert notifications are sent by whichever Admin Node is configured to be the preferred sender.
 +
-Each alert is mapped to one of three trap types based on the severity level of the alert: activeMinorAlert, activeMajorAlert, and activeCriticalAlert. For a list of the alerts that can trigger these traps, see the xref:alerts-reference.adoc[Alerts reference].
+Each alert is mapped to one of three trap types based on the severity level of the alert: activeMinorAlert, activeMajorAlert, and activeCriticalAlert. For a list of the alerts that can trigger these traps, see the link:alerts-reference.html[Alerts reference].
 
 * Certain alarms (legacy system) are triggered at specified severity levels or higher.
 +
@@ -93,10 +93,10 @@ USM user for each trap destination
 
 .Related information
 
-* xref:alerts-reference.adoc[Alerts reference]
+* link:alerts-reference.html[Alerts reference]
 
-* xref:alarms-reference.adoc[Alarms reference (legacy system)]
+* link:alarms-reference.html[Alarms reference (legacy system)]
 
-* xref:alarms-that-generate-snmp-notifications.adoc[Alarms that generate SNMP notifications (legacy system)]
+* link:alarms-that-generate-snmp-notifications.html[Alarms that generate SNMP notifications (legacy system)]
 
-* xref:silencing-alert-notifications.adoc[Silence alert notifications]
+* link:silencing-alert-notifications.html[Silence alert notifications]
