@@ -11,4 +11,6 @@ summary: 'The StorageGRID system supports server certificates encrypted with RSA
 [.lead]
 The StorageGRID system supports custom certificates encrypted with RSA or ECDSA (Elliptic Curve Digital Signature Algorithm).
 
-For more information on how StorageGRID secures client connections for the REST API, see xref:../s3/index.adoc[Use S3 REST API] or xref:../swift/index.adoc[Use Swift REST API].
+CAUTION: The cipher type for the security policy must match the server certificate type. For example, RSA ciphers require RSA certificates, and ECDSA ciphers require ECDSA certificates. See xref:using-storagegrid-security-certificates.adoc[About security certificates]. If you configure a custom security policy that is not compatible with the server certificate, you can xref:using-tls-ssh-policy.adoc#temporarily-revert-to-default-security-policy[temporarily revert to the default security policy].
+
+For more information on how StorageGRID secures client connections for the REST API, see xref:../s3/configuring-security-for-rest-api.adoc[Configure security for S3 REST API] or xref:../swift/configuring-security-for-rest-api.adoc[Configure security for Swift REST API].
