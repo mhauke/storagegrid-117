@@ -54,11 +54,9 @@ When you install StorageGRID 11.7 on a new grid, storage pools are automatically
 === Can assign custom storage grades to new Storage Nodes
 When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See xref:../expand/performing-expansion.adoc[Perform expansion].
 
-
-
 === Grid federation
 You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].
-=======
+
 === New audit message category and new audit message
 A new audit message category was added for ILM operations, which includes the IDEL, LKCU, and ORLM messages. This new category is set to *Normal*. See xref:../audit/ilm-audit-messages.adoc[ILM operations audit messages].
 
@@ -107,6 +105,7 @@ The ILM wizard in the Grid Manager has been improved.
 You can now select base 10 or base 2 units for the storage values displayed in the Grid Manager and Tenant Manager. Select the user drop-down in the upper right of the Grid Manager or Tenant Manager, then select *User preferences*.
 
 == Paul's what's new
+
 === New firewall controls and changes to untrusted Client Networks
 
 You can now better manage access to your grid using the new Firewall control page (*CONFIGURATION* > *Security* > *Firewall control*). This page enables you to manage the external access of ports on nodes in your grid, and to define host addresses and IP subnets that are allowed access to closed ports. The untrusted Client Network settings have been moved to the Firewall control page and have also been enhanced with the ability to select additional ports you want open when untrusted Client Network is configured. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
