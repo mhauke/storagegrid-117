@@ -40,3 +40,7 @@ See the steps for xref:../tenant/configuring-cross-origin-resource-sharing-cors.
 A complete hardening solution must address security mechanisms outside of StorageGRID. Using additional infrastructure devices for filtering and limiting access to StorageGRID is an effective way to establish and maintain a stringent security posture. These external security devices include firewalls, intrusion prevention systems (IPSs), and other security devices.
 
 A third-party load balancer is recommended for untrusted client traffic. Third-party load balancing offers more control and additional layers of protection against attack.
+
+== Ransomware mitigation
+
+Help protect your object data from ransomware attacks by following the guidelines in https://www.netapp.com/media/69498-tr-4921.pdf[Ransomware defense with StorageGRID^].
