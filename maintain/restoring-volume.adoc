@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, restore, volume
 summary: 'You can restore object data for a failed storage volume or storage node using Grid Manager. You can also use Grid Manager to monitor restoration processes in progress and display a restoration history.'
 ---
-= Restore volume using Grid Manager
+= Restore object data using Grid Manager (automated process)
 :icons: font
 :imagesdir: ../media/
 
@@ -30,11 +30,11 @@ NOTE: You can force a volume or node restoration to start when a decommission is
 
 When one or more storage volumes fail, Grid Manger displays them as candidates for restoration on the volume restoration pending data tab.
 
-In most cases, using Grid Manager to restore storage volumes and nodes is preferred to using link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[CLI commands]. Grid Manager can also be used to <<view_restoration_progress,monitor the volume restoration process>> and <<view_restoration_history,view the restoration history>> for both GUI- and CLI-initiated restorations.
+In most cases, using Grid Manager to restore storage volumes and nodes is preferred to using link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[manual steps]. Grid Manager can also be used to <<view_restoration_progress,monitor the volume restoration process>> and <<view_restoration_history,view the restoration history>> for restorations initiated using Gris Manager or manual steps.
 
 // Remove commented lines following review approval. Per Dheeraj, use of UI for node recovery was a late change:
 // * If you are _restoring_ a storage node, use <<restore_lost_volume_or_node,Grid Manager to restore volumes>>.
-// * If you are _recovering_ a storage node, use link:../maintain/recovering-storagegrid-appliance-storage-node.html[CLI commands to restore volumes]. 
+// * If you are _recovering_ a storage node, use link:../maintain/recovering-storagegrid-appliance-storage-node.html[manual steps to restore volumes]. 
 
 // decision tree for choosing OEC vs 'volume restoration' vs 'node repair' has to be clear.
 
@@ -48,10 +48,10 @@ Two types of data objects can be restored:
 
 NOTE: Replicated data restoration is dependant on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
 
-// Add Notes in CLI topics about monitoring and history in GUI and that an XXXX volume restore can be performed in the GUI or CLI (GUI preferred unless scripting?).
+// Add Notes in CLI (manual steps) topics about monitoring and history in GUI and that an XXXX volume restore can be performed in the GUI or CLI (GUI preferred unless scripting?).
 // Volume recovery procedure documentation for SOLO and all non-SOLO (SGAs, VMs and baremetal) platforms updated to use volume recovery from UI. (NOT repair-data CLI.)
 
-== Restore lost volume or node
+== Restore failed volume or node
 
 .Steps
 
@@ -89,7 +89,7 @@ The Restoration progress tab shows the status of the volume restoration process 
 
 // Image of progress tab.
 
-The Percentage complete section displays information about all volumes being restored, including volume restorations started using CLI commands.
+The Percentage complete section displays information about all volumes being restored, including volume restorations started using manual steps.
 
 * Number of objects or chunks remaining are actual item counts.
 * The overall percentage complete and completion time are statistical estimates.
