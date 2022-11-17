@@ -38,6 +38,10 @@ The user detail page appears.
  ** Select *Do not set an expiration time* to create a key that does not expire. (Default)
  ** Select *Set an expiration time*, and set the expiration date and time.
 +
+
+NOTE: In the expiration date textbox, the expiration date should not exceed five years from the current date. The expiration time should be a minimum of one minute from the current time.
+
++
 image::../media/tenant_s3_access_key_create_save.png[screenshot of the Create Access Key dialog]
 . Select *Create access key*.
 +
