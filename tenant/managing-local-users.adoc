@@ -55,8 +55,7 @@ image::../media/grid-federation-tenant-user-banner.png[image of blue banner on U
 
 *Note*: If your tenant account has the *Use grid federation connection* permission, a cloning error will occur if the same *Username* already exists for the tenant on the destination grid.
 
-| Password
-Confirm password
+| Password and Confirm password
 | The password the user will initially use when signing in.
 
 | Deny access
@@ -78,7 +77,7 @@ Users who do not belong to any groups will have no management permissions. Permi
 
 . Select *Create user*.
 +
-If your tenant account has the *Use grid federation connection* permission and you are on the tenant's source grid, the new user is cloned to the tenant's destination grid.
+If your tenant account has the *Use grid federation connection* permission and you are on the tenant's source grid, the new local user is cloned to the tenant's destination grid. *Success* appears as the *Cloning status* in the Overview section of the user's detail page.
 
 . Select *Finish* to return to the Users page.
 
@@ -88,7 +87,7 @@ If your tenant account has the *Use grid federation connection* permission and y
 
 . Review the information on the Users page, which lists basic information for all local and federated users for this tenant account.
 +
-If the tenant account has the *Use grid federation connection* permission and you are viewing user on the tenant's source grid, a blue banner indicates that if you edit or remove a user, your changes will not be synced to the other grid.
+If the tenant account has the *Use grid federation connection* permission and you are viewing the user on the tenant's source grid, a blue banner indicates that if you edit or remove the user, your changes will not be synced to the other grid.
 
 . If you want to change the user's full name:
 
@@ -154,7 +153,7 @@ NOTE: If your tenant account has the *Use grid federation connection* permission
 
 You can permanently delete one or more local users who no longer need to access the StorageGRID tenant account.
 
-NOTE: If your tenant account has the *Use grid federation connection* permission, be aware that account cloning occurs for new account information only. If you delete a local user, StorageGRID will not delete the corresponding user on the other grid. If you need to keep this information in sync, you must delete the same user from both grids.
+NOTE: If your tenant account has the *Use grid federation connection* permission and you delete a local user, StorageGRID will not delete the corresponding user on the other grid. If you need to keep this information in sync, you must delete the same user from both grids.
 
 NOTE: You must use the federated identity source to delete federated users.
 
@@ -163,5 +162,7 @@ NOTE: You must use the federated identity source to delete federated users.
 . Select the check box for each user you want to delete.
 
 . Select *Actions* > *Delete user* or *Actions* > *Delete users*.
++
+A confirmation dialog box appears.
 
-. In the confirmation dialog box, select *Delete user* or *Delete users*.
+. Select *Delete user* or *Delete users*.

@@ -90,13 +90,15 @@ NOTE: If your tenant account has the *Use grid federation connection* permission
 
 You can delete one or more groups. Any users who belong only to a group that is deleted will no longer be able to sign in to the Tenant Manager or use the tenant account.
 
-NOTE: If your tenant account has the *Use grid federation connection* permission, be aware that account cloning occurs for new account information only. If you delete a group, StorageGRID will not delete the corresponding group on the other grid. If you need to keep this information in sync, you must delete the same group from both grids.
+NOTE: If your tenant account has the *Use grid federation connection* permission and you delete a group, StorageGRID will not delete the corresponding group on the other grid. If you need to keep this information in sync, you must delete the same group from both grids.
 
 . Select *ACCESS MANAGEMENT* > *Groups*.
 
 . Select the check box for each group you want to delete.
 
-. Select *Actions* > *Delete group* or *Actions* > *Delete groups*
+. Select *Actions* > *Delete group* or *Actions* > *Delete groups*.
++
+A confirmation dialog box appears.
 
 . Select *Delete group* or *Delete groups*.
 

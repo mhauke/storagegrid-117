@@ -24,7 +24,7 @@ You can manage permissions for S3 user groups by importing federated groups or c
 
 . Select *ACCESS MANAGEMENT* > *Groups*.
 
-. If your tenant account has the *Use grid federation connection* permission, confirm that a blue banner appears, indicating that new groups created on this grid will be cloned to the other grid in the grid federation connection. If this banner does not appear, you might be signed in to the tenant's destination grid. 
+. If your tenant account has the *Use grid federation connection* permission, confirm that a blue banner appears, indicating that new groups created on this grid will be cloned to the same tenant on the other grid in the connection. If this banner does not appear, you might be signed in to the tenant's destination grid. 
 +
 image::../media/grid-federation-tenant-group-banner.png[image of blue banner on Groups page of tenant source grid]
 
@@ -86,4 +86,4 @@ If you have not yet created local users, you can save the group without adding u
 +
 The group you created appears in the list of groups.
 +
-If your tenant account has the *Use grid federation connection* permission and you are on the tenant's source grid, the new group is cloned to the tenant's destination grid.
+If your tenant account has the *Use grid federation connection* permission and you are on the tenant's source grid, the new group is cloned to the tenant's destination grid. *Success* appears as the *Cloning status* in the Overview section of the group's detail page.
