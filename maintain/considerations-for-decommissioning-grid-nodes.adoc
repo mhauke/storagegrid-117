@@ -15,7 +15,8 @@ You cannot decommission a node if doing so will leave StorageGRID in an invalid 
 
 * You cannot decommission the primary Admin Node.
 * You cannot decommission Archive Nodes.
-* You cannot decommission an Admin Node or a Gateway Node if one of its network interfaces is part of a high availability (HA) group.
+* You cannot decommission an Admin Node or a Gateway Node if one of its network interfaces is part of a high availability (HA) group. 
+* You cannot decommission an Admin Node or a Gateway Node if the node's IP address was used for a grid federation connection.
 * You cannot decommission a Storage Node if its removal would affect the ADC quorum.
 * You cannot decommission a Storage Node if it is required for the active ILM policy.
 * You should not decommission more than 10 Storage Nodes in a single Decommission Node procedure.

@@ -20,7 +20,7 @@ S3 tenant accounts are created by a StorageGRID grid administrator using the Gri
 * Display name for the tenant (the tenant's account ID is assigned automatically and cannot be changed).
 * Whether the tenant account is allowed to use platform services. If the use of platform services is allowed, the grid must be configured to support their use.
 * Optionally, a storage quota for the tenant account--the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).
-* If identity federation is enabled for the StorageGRID system, which federated group has Root Access permission to configure the tenant account.
+* If identity federation is enabled for the StorageGRID system, which federated group has Root access permission to configure the tenant account.
 * If single sign-on (SSO) is not in use for the StorageGRID system, whether the tenant account will use its own identity source or share the grid's identity source, and the initial password for the tenant's local root user.
 
 After an S3 tenant account is created, tenant users can access the Tenant Manager to perform tasks such as the following:

@@ -2,14 +2,14 @@
 permalink: admin/grid-federation-what-is-cross-grid-replication.html
 sidebar: sidebar
 keywords: cross-grid replication, cgr, disaster recovery, grid federation
-summary: 'Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a grid federation connection.'
+summary: 'Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a grid federation connection. Account clone is required for cross-grid replication.'
 ---
 = What is cross-grid replication?
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a grid federation connection.
+Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a xref:grid-federation-overview.adoc[grid federation connection]. xref:grid-federation-what-is-account-clone.adoc[Account clone] is required for cross-grid replication.
 
 == Workflow for cross-grid replication
 
@@ -19,7 +19,7 @@ image:../media/grid-federation-cgr-workflow.png[Cross-grid replication workflow]
 
 == Requirements for cross-grid replication
 
-If a tenant account has the *Use grid federation connection* permission to use one or more link:grid-federation-overview.html[grid federation connections], a tenant user with Root Access permission can create identical buckets in the corresponding tenant accounts on each grid. These buckets:
+If a tenant account has the *Use grid federation connection* permission to use one or more link:grid-federation-overview.html[grid federation connections], a tenant user with Root access permission can create identical buckets in the corresponding tenant accounts on each grid. These buckets:
 
 * Must have the same name and region
 * Must have versioning enabled
@@ -30,8 +30,7 @@ After both buckets have been created, cross-grid replication can be configured f
 
 .Learn more
 
-xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[Manage cross-grid replication
-]
+xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[Manage cross-grid replication]
 
 == How cross-grid replication works
 
@@ -119,13 +118,18 @@ When determining how to encrypt source objects, StorageGRID applies these rules:
 . If a bucket setting is not configured, use the grid-wide encryption setting, if configured.
 . If a grid-wide setting is not present, do not encrypt the source object.
 
-
 When determining how to encrypt replicated objects, StorageGRID applies these rules in this order:
 
 . Use the same encryption as the source object, unless that object uses AES-128 encryption.
 . If the source object is not encrypted or it uses AES-128, use the destination bucket's default encryption setting, if configured.
 . If the destination bucket does not have an encryption setting, use the destination's grid-wide encryption setting, if configured.
 . If a grid-wide setting is not present, do not encrypt the destination object.
+
+=== PUT Object tagging and DELETE Object tagging are not supported
+
+PUT Object tagging and DELETE Object tagging requests are not supported for objects in buckets that have cross-grid replication enabled.
+
+If an S3 client issues a PUT Object tagging or DELETE Object tagging request, `501 Not Implemented` is returned. The message is `Put(Delete) ObjectTagging is not available for buckets that have cross-grid replication configured`.
 
 === How segmented objects are replicated
 

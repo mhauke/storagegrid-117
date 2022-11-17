@@ -25,20 +25,20 @@ You can assign the following permissions to a group. Note that S3 tenants and Sw
 [cols="1a,3a" options="header"]
 |===
 | Permission| Description
-| Root Access
+| Root access
 | Provides full access to the Tenant Manager and the Tenant Management API.
 
-*Note:* Swift users must have Root Access permission to sign in to the tenant account.
+*Note:* Swift users must have Root access permission to sign in to the tenant account.
 
 | Administrator
 | Swift tenants only. Provides full access to the Swift containers and objects for this tenant account
 
 *Note:* Swift users must have the Swift Administrator permission to perform any operations with the Swift REST API.
 
-| Manage Your Own S3 Credentials
+| Manage your own S3 credentials
 | S3 tenants only. Allows users to create and remove their own S3 access keys. Users who do not have this permission do not see the *STORAGE (S3)* > *My S3 access keys* menu option.
 
-| Manage All Buckets
+| Manage all buckets
 |
 * S3 tenants: Allows users to use the Tenant Manager and the Tenant Management API to create and delete S3 buckets and to manage the settings for all S3 buckets in the tenant account, regardless of S3 bucket or group policies.
 +
@@ -46,9 +46,9 @@ Users who do not have this permission do not see the *Buckets* menu option.
 
 * Swift tenants: Allows Swift users to control the consistency level for Swift containers using the Tenant Management API.
 
-*Note:* You can only assign the Manage All Buckets permission to Swift groups from the Tenant Management API. You cannot assign this permission to Swift groups using the Tenant Manager.
+*Note:* You can only assign the Manage all buckets permission to Swift groups from the Tenant Management API. You cannot assign this permission to Swift groups using the Tenant Manager.
 
-| Manage Endpoints
+| Manage endpoints
 | S3 tenants only. Allows users to use the Tenant Manager or the Tenant Management API to create or edit endpoints, which are used as the destination for StorageGRID platform services.
 
 Users who do not have this permission do not see the *Platform services endpoints* menu option.
