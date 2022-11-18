@@ -22,14 +22,14 @@ When xref:../swift/configuring-tenant-accounts-and-connections.adoc[creating a S
 * xref:../admin/editing-tenant-account.adoc[Display name for the tenant] (the tenant's account ID is assigned automatically and cannot be changed)
 * Optionally, a xref:../admin/editing-tenant-account.adoc[storage quota for the tenant account] -- the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).
 * If xref:../admin/configuring-sso.adoc[single sign-on (SSO)] is not in use for the StorageGRID system, whether the tenant account will use its own identity source or share the grid's identity source, and the initial password for the tenant's local root user.
-* If SSO is enabled, which federated group has Root Access permission to configure the tenant account.
+* If SSO is enabled, which federated group has Root access permission to configure the tenant account.
 
-After a Swift tenant account is created, users with the Root Access permission can access the Tenant Manager to perform tasks such as the following:
+After a Swift tenant account is created, users with the Root access permission can access the Tenant Manager to perform tasks such as the following:
 
 * Setting up identity federation (unless the identity source is shared with the grid), and creating local groups and users
 * Monitoring storage usage
 
-IMPORTANT: Swift users must have the Root Access permission to xref:../tenant/signing-in-to-tenant-manager.adoc[access the Tenant Manager]. However, the Root Access permission does not allow users to authenticate into the Swift REST API to create containers and ingest objects. Users must have the Swift Administrator permission to authenticate into the Swift REST API.
+IMPORTANT: Swift users must have the Root access permission to xref:../tenant/signing-in-to-tenant-manager.adoc[access the Tenant Manager]. However, the Root access permission does not allow users to authenticate into the Swift REST API to create containers and ingest objects. Users must have the Swift Administrator permission to authenticate into the Swift REST API.
 
 == How client connections can be configured
 

@@ -176,27 +176,24 @@ entries:
     - title: Grid node decommission
       url: "/maintain/grid-node-decommissioning.html"
       entries:
-      - title: Prepare to decommission grid nodes
-        url: "/maintain/preparing-to-decommission-grid-nodes.html"
+      - title: Considerations for grid node decommission
+        url: "/maintain/considerations-for-decommissioning-grid-nodes.html"
         entries:
-        - title: Considerations for grid node decommission
-          url: "/maintain/considerations-for-decommissioning-grid-nodes.html"
+        - title: Considerations Admin Node or Gateway Node decommission
+          url: "/maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html"
+        - title: Considerations for Storage Node decommission
+          url: "/maintain/considerations-for-decommissioning-storage-nodes.html"
           entries:
-          - title: Considerations Admin Node or Gateway Node decommission
-            url: "/maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html"
-          - title: Considerations for Storage Node decommission
-            url: "/maintain/considerations-for-decommissioning-storage-nodes.html"
-            entries:
-            - title: Understand the ADC quorum
-              url: "/maintain/understanding-adc-service-quorum.html"
-            - title: Review ILM policy and storage configuration
-              url: "/maintain/reviewing-ilm-policy-and-storage-configuration.html"
-            - title: Decommission disconnected Storage Nodes
-              url: "/maintain/decommissioning-disconnected-storage-nodes.html"
-            - title: Consolidate Storage Nodes
-              url: "/maintain/consolidating-storage-nodes.html"
-            - title: Decommission multiple Storage Nodes
-              url: "/maintain/decommissioning-multiple-storage-nodes.html"
+          - title: Understand the ADC quorum
+            url: "/maintain/understanding-adc-service-quorum.html"
+          - title: Review ILM policy and storage configuration
+            url: "/maintain/reviewing-ilm-policy-and-storage-configuration.html"
+          - title: Decommission disconnected Storage Nodes
+            url: "/maintain/decommissioning-disconnected-storage-nodes.html"
+          - title: Consolidate Storage Nodes
+            url: "/maintain/consolidating-storage-nodes.html"
+          - title: Decommission multiple Storage Nodes
+            url: "/maintain/decommissioning-multiple-storage-nodes.html"
         - title: Check data repair jobs
           url: "/maintain/checking-data-repair-jobs.html"
       - title: Gather required materials
