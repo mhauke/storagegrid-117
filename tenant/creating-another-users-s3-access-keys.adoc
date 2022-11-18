@@ -2,19 +2,19 @@
 permalink: tenant/creating-another-users-s3-access-keys.html
 sidebar: sidebar
 keywords: how to create other user access key
-summary: 'If you are using an S3 tenant and you have the appropriate permission, you can create S3 access keys for other users, such as applications that need access to buckets and objects.'
+summary: 'If you are using an S3 tenant and you have the appropriate permission, you can create, view, and delete S3 access keys for other users, such as applications that need access to buckets and objects.'
 ---
 = Create another user's S3 access keys
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are using an S3 tenant and you have the appropriate permission, you can create S3 access keys for other users, such as applications that need access to buckets and objects.
+If you are using an S3 tenant and you have the appropriate permission, you can create, view, and delete S3 access keys for other users, such as applications that need access to buckets and objects.
 
 .What you'll need
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Root Access permission.
+* You belong to a user group that has the xref:tenant-management-permissions.adoc[Root access permission].
 
 .About this task
 
@@ -27,22 +27,26 @@ Each key can have a specific expiration time or no expiration. Follow these guid
 
 IMPORTANT: The S3 buckets and objects belonging to a user can be accessed using the access key ID and secret access key displayed for that user in the Tenant Manager. For this reason, protect access keys as you would a password. Rotate access keys on a regular basis, remove any unused keys from the account, and never share them with other users.
 
-.Steps
+== Create access keys
+
 . Select *ACCESS MANAGEMENT* > *Users*.
+
 . Select the user whose S3 access keys you want to manage.
 +
 The user detail page appears.
 
 . Select *Access keys*, then select *Create key*.
+
 . Do one of the following:
  ** Select *Do not set an expiration time* to create a key that does not expire. (Default)
  ** Select *Set an expiration time*, and set the expiration date and time.
 +
 
-NOTE: In the expiration date textbox, the expiration date should not exceed five years from the current date. The expiration time should be a minimum of one minute from the current time.
+NOTE: The expiration date can be a maximum of five years from the current date. The expiration time can be a minimum of one minute from the current time.
 
 +
 image::../media/tenant_s3_access_key_create_save.png[screenshot of the Create Access Key dialog]
+
 . Select *Create access key*.
 +
 The Download access key dialog box appears, listing the access key ID and secret access key.
@@ -57,6 +61,52 @@ image::../media/tenant_s3_access_key_save_keys.png[screenshot of the Save Keys d
 +
 The new key is listed on the Access keys tab of the user details page.
 
-.Related information
+. If your tenant account has the *Use grid federation connection* permission, optionally use the Tenant Management API to manually clone S3 access keys from the tenant on the source grid to the tenant on the destination grid. See xref:grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
 
-xref:tenant-management-permissions.adoc[Tenant management permissions]
+== View access keys
+
+If you are using an S3 tenant and you have appropriate permissions, you can view another user's S3 access keys. You can sort the list by expiration time so you can determine which keys will expire soon. As needed, you can create new keys and delete keys that are no longer in use.
+
+. Select *ACCESS MANAGEMENT* > *Users*.
++
+The Users page appears and lists the existing users.
+
+. Select the user whose S3 access keys you want to view.
++
+The User details page appears.
+
+. Select *Access keys*.
++
+image::../media/access_key_view_list_for_other_user.png[Access Keys List for Other User]
+
+. Sort the keys by *Expiration time* or *Access key ID*.
+
+. As needed, create new keys and manually delete keys that the are no longer in use.
++
+If you create new keys before the existing keys expire, the user can begin using the new keys without temporarily losing access to the objects in the account.
++
+Expired keys are removed automatically.
+
+== Delete another user's S3 access keys
+
+If you are using an S3 tenant and you have appropriate permissions, you can delete another user's S3 access keys. After an access key is deleted, it can no longer be used to access the objects and buckets in the tenant account.
+
+. Select *ACCESS MANAGEMENT* > *Users*.
++
+The Users page appears and lists the existing users.
+
+. Select the user whose S3 access keys you want to manage.
++
+The User details page appears.
+
+. Select *Access keys*, and then select the check box for each access key you want to delete.
+
+. Select *Actions* > *Delete selected key*.
++
+A confirmation dialog box appears.
++
+image::../media/access_key_confirm_delete.png[Access Key - Confirm Delete]
+
+. Select *Delete key*.
++
+A confirmation message appears in the upper right corner of the page.

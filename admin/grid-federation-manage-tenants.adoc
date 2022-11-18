@@ -22,25 +22,39 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * You must have Root access permission.
 
-* You can create the tenant from either grid in the connection. The grid where a tenant is created is known as the _tenant's source grid_.
+* You can create the tenant from either grid in the connection. The grid where a tenant is created is the _tenant's source grid_.
 
 * The status of the connection must be *Connected*.
 
-* You can only select the *Use grid federation connection* permission when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.
+* You can only select the *Use grid federation connection* permission when you are creating a new S3 tenant; you can't enable this permission when you edit an existing tenant.
 
-* When the new tenant is saved on the first grid, an identical tenant is automatically created on the other grid. The grid where the cloned tenant is created is known as the _tenant's destination grid_.
+* When the new tenant is saved on the first grid, an identical tenant is automatically replicated to the other grid. The grid where the tenant is replicated to is the _tenant's destination grid_.
 
-* The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. However, for security reasons, the password for a local root user is not copied to the destination grid.  
+* The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions. Optionally, you can use the *Description* field to help identify which is the source tenant and which is the destination tenant. For example, this description for a tenant created on Grid 1 will also appear for the tenant replicated to Grid 2: "`This tenant was created on Grid 1.`"
 
-* Before a local root user can access the cloned tenant on the destination grid, a grid administrator for that grid must xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
+* For security reasons, the password for a local root user is not copied to the destination grid.
++
+Before a local root user can sign in to the replicated tenant on the destination grid, a grid administrator for that grid must xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
 
 * After the new tenant is available on both grids, tenant users can perform these operations:
 
-** From the tenant's source grid, import or create tenant group and users, which are automatically cloned to the tenant's destination grid. See xref:../tenant/grid-federation-use-account-clone.adoc[Use account clone].
-** From the tenant's source grid, create new S3 access keys, which can be optionally cloned to the tenant's destination grid. See xref:../tenant/tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
+** From the tenant's source grid, create tenant group and users, which are automatically cloned to the tenant's destination grid. See xref:../tenant/grid-federation-account-clone.adoc[Clone account information].
+** From the tenant's source grid, create new S3 access keys, which can be optionally cloned to the tenant's destination grid. See xref:../tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
 ** Create identical buckets on both grids in the connection and enable cross-grid replication in one direction or in both directions. See xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[Manage cross-grid replication].
 
-== Edit tenant with Use grid federation connection permission
+== View a permitted tenant
+
+. Select *TENANTS*.
+
+. From the Tenants page, select the tenant name to view the tenant details page.
++ 
+If this is the source grid for the tenant (that is, if the tenant was created on this grid), a banner appears to remind you that the tenant was cloned to another grid. If you edit or delete this tenant, your changes will not be synced to the other grid.
++
+image::../media/grid-federation-tenant-detail.png[Grid federation tab from Tenant details page]
+
+. Optionally select the *Grid federation* tab to learn more about the connection, including connection status, remote hostname, and the most recent error to occur when data was being replicated from this tenant's buckets to the other grid in the connection.
+
+== Edit a permitted tenant
 
 If you need to edit a tenant that has the *Use grid federation connection* permission, follow the general instructions for xref:editing-tenant-account.adoc[editing a tenant account] and note the following:
 
@@ -50,7 +64,7 @@ If you need to edit a tenant that has the *Use grid federation connection* permi
 
 * If you need to remove the *Use grid federation connection* permission for a tenant, use the Grid federation page as described in the next section. You can't remove this permission by editing the tenant.
 
-== Delete a tenant with Use grid federation connection permission
+== Delete a permitted tenant
 
 If you need to remove a tenant that has the *Use grid federation connection* permission, follow the general instructions for xref:deleting-tenant-account.adoc[deleting a tenant account] and note the following:
 
@@ -66,8 +80,7 @@ If you need to remove a tenant that has the *Use grid federation connection* per
 +
 To avoid these errors,  remove the tenant's permission to use the grid federation connection before deleting the tenant from this grid.
 
-
-== Remove Use grid federation connection permission
+== [[remove-grid-federation-permission]]Remove Use grid federation connection permission
 
 To prevent a tenant from using a grid federation connection, you must remove the *Use grid federation connection* permission. As shown in the figure, you can perform these steps on one or both grids in the connection, depending on your requirements. For example, you would perform these steps on only one grid if you wanted to prevent the tenant on grid 1 from replicating objects to grid 2 while still allowing the same tenant on grid 2 to replicate objects back to grid 1.
 
@@ -109,12 +122,22 @@ Before removing a tenant's permission to use a grid federation connection, note 
 
 == [[force_remove_permission]]Remove the permission by force
 
-If necessary, you can force the removal of a tenant's permission to use a grid federation connection even if even if tenant buckets still have cross-grid replication enabled. When the permission is removed, data in these buckets can no longer be copied between the grids
+If necessary, you can force the removal of a tenant's permission to use a grid federation connection even if tenant buckets have cross-grid replication enabled. Before removing a tenant's permission by force, note the general considerations for <<remove-grid-federation-permission,removing the permission>> as well as these additional considerations:
 
-. From the confirmation dialog box, select *Force remove*.
+* If you remove the *Use grid federation connection* permission by force, any objects that are already in the process of being replicated to the other grid will continue to be replicated. To prevent these in-process objects from reaching the destination bucket, you must remove the tenant's permission on the other grid as well.
+
+* Any objects ingested into the source bucket after you remove the *Use grid federation connection* permission will never be replicated to the destination bucket.
+
+.Steps
+. Sign in to the Grid Manager from the primary Admin Node.
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+. Select the connection name to display its details page.
+. On the *Permitted tenants* tab, select radio button for the tenant. 
+. Select *Remove permission*.
+. Review the warnings in the confirmation dialog box, and select  *Force remove*.
 +
-A success message appears. This tenant can no longer use the grid federation connection. However, tenant buckets might still have cross-grid replication enabled and some object copies might have already been replicated between the grids in the connection.
+A success message appears. This tenant can no longer use the grid federation connection.
 
-. As required, go to the other grid and repeat these steps to force-remove the permission for the same tenant account on the other grid.
+. As required, go to the other grid and repeat these steps to force-remove the permission for the same tenant account on the other grid. For example, you should repeat these steps on the other grid to prevent in-process objects from reaching the destination bucket.
 
 

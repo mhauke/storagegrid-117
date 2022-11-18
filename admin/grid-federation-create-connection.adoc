@@ -21,7 +21,7 @@ image:../media/grid-federation-create-connection.png[graphic overview of steps t
 * You have reviewed the xref:grid-federation-overview.adoc[considerations and requirements] for configuring grid federation connections. 
 * If you plan to use fully qualified domain names (FQDNs) for each grid instead of IP or VIP addresses, you know which names to use and you have confirmed that the DNS server for each grid has the appropriate entries.
 * You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* Whoever starts the configuration has Root access permission and the provisioning passphrase for the first grid.
+* Whoever adds the configuration has Root access permission and the provisioning passphrase for the first grid.
 * Whoever completes the configuration has Root access permission and the provisioning passphrase for the second grid. 
 
 == Add connection
@@ -68,7 +68,7 @@ StorageGRID automatically generates client and server certificates for each grid
 
 * The FQDN of the grid you want to connect to
 * A VIP address of an HA group on the other grid
-* An IP address of an Admin Node or Gateway Node on the other grid
+* An IP address of an Admin Node or Gateway Node on the other grid. The IP can be on any network that the source grid can reach.
 
 |===
 
@@ -78,7 +78,7 @@ StorageGRID automatically generates client and server certificates for each grid
 +
 After the connection is successfully completed on the other grid, you can no longer download the verification file from this grid.
 
-. When the green checkmark appears, locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
+. Locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
 +
 [IMPORTANT]
 This file contains secrets (masked as `****`) and other sensitive details and must be securely stored and transmitted.
@@ -103,7 +103,7 @@ Perform these steps on the StorageGRID system you are connecting to (the other g
 +
 The details for the connection are shown.
 
-. Optionally, enter a different number of valid days for the security certificates for this grid. *Certificate valid days* defaults to the value you entered on the first grid, but each grid can use different expiration dates.
+. Optionally, enter a different number of valid days for the security certificates for this grid. The *Certificate valid days* entry defaults to the value you entered on the first grid, but each grid can use different expiration dates.
 +
 In general, use the same number of days for the certificates on both sides of the connection. If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
 
