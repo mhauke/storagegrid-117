@@ -19,14 +19,6 @@ S3 Select allows S3 clients to use SelectObjectContent requests to filter and re
 
 == Considerations and requirements for using S3 Select
 
-Queries cannot be sent directly to Storage Nodes.
-
-IMPORTANT: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
-
-See the xref:../s3/use-s3-select.adoc[instructions for using S3 Select].
-
-To view xref:../monitor/reviewing-support-metrics.adoc[Grafana charts] for S3 Select operations over time, select *SUPPORT* > *Tools* > *Metrics* in the Grid Manager.
-
 === Grid administration requirements
 Tenants must be granted S3 Select ability by the grid administrator. Select *Allow S3 Select* when xref:creating-tenant-account.adoc[creating a tenant] or xref:editing-tenant-account.adoc[editing a tenant].
 
@@ -59,3 +51,12 @@ The Admin and Gateway Nodes used by the endpoint must be one of the following:
 ** RHEL 8.4
 ** Ubuntu 20.04
 ** Debian 10 
+
+=== General considerations
+Queries cannot be sent directly to Storage Nodes.
+
+IMPORTANT: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
+
+See the xref:../s3/use-s3-select.adoc[instructions for using S3 Select].
+
+To view xref:../monitor/reviewing-support-metrics.adoc[Grafana charts] for S3 Select operations over time, select *SUPPORT* > *Tools* > *Metrics* in the Grid Manager.
