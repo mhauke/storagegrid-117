@@ -17,14 +17,14 @@ You can restore object data for a failed storage volume or storage node using Gr
 
 * Confirm that the Storage Node where you are restoring objects has a Connection State of *Connected* image:../media/icon_alert_green_checkmark.png[icon alert green checkmark] on the *NODES* > *Overview* tab in the Grid Manager.
 
-*	Confirm that none of the following tasks are running:
-** Grid expansion to add a Storage Node
-** Storage Node decommission + 
+*	Confirm that none of the following are true:
+** Grid expansion to add a Storage Node is in process
+** Storage Node decommission in process or failed + 
 NOTE: You can force a volume or node restoration to start when a decommission is paused.
-** Recovery of a failed storage volume
-** Recovery of a Storage Node with a failed system drive
-** EC rebalance
-** Appliance node cloning
+** Recovery of a failed storage volume is in process
+** Recovery of a Storage Node with a failed system drive is in process
+** EC rebalance is in process
+** Appliance node cloning is in process
 
 .About this task
 
@@ -77,7 +77,7 @@ Each volume in the node should indicate that it is ready to restore.
 
 . Select *Start restore*.
 
-. Address any warnings that might display or select *Start anyway*.
+. Address any warnings that might display or select *Start anyway* to ignore the warnings and start the restoration.
 
 Nodes are moved from the Pending data tab to the Restoration progress tab when the restoration starts.
 
