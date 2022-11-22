@@ -40,7 +40,7 @@ You should be aware of changes to the StorageGRID system's support for the S3 RE
 * For buckets created in StorageGRID 11.4, restricting object key names to meet performance best practices is no longer required.
 * Added support for bucket notifications on the `s3:ObjectRestore:Post` event type.
 * AWS size limits for multipart parts are now enforced. Each part in a multipart upload must be between 5 MiB and 5 GiB. The last part can be smaller than 5 MiB.
-* Added support for TLS 1.3, and updated list of supported TLS cipher suites.
+* Added support for TLS 1.3
 
 |11.3
 |
@@ -48,7 +48,7 @@ You should be aware of changes to the StorageGRID system's support for the S3 RE
 * Added support for server-side encryption of object data with customer-provided keys (SSE-C).
 * Added support for DELETE, GET, and PUT Bucket lifecycle operations (Expiration action only) and for the `x-amz-expiration` response header.
 * Updated PUT Object, PUT Object - Copy, and Multipart Upload to describe the impact of ILM rules that use synchronous placement at ingest.
-* Updated list of supported TLS cipher suites. TLS 1.1 ciphers are no longer supported.
+* TLS 1.1 ciphers are no longer supported.
 
 |11.2
 |Added support for POST Object restore for use with Cloud Storage Pools. Added support for using the AWS syntax for ARN, policy condition keys, and policy variables in group and bucket policies. Existing group and bucket policies that use the StorageGRID syntax will continue to be supported.
