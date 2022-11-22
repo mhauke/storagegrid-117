@@ -48,6 +48,8 @@ After you create (import) a federated group on the source grid, federated users 
 
 If you are not using identity federation, you can create new local groups and users. Always start from the tenant's source grid, and note the following:
 
+* Always create local groups on the source grid before creating any local users you want to clone to the destination grid. When you create the local users on the source grid, you can then select the groups, which will already exist on both grids.
+
 * When you create a new local group on the source grid, StorageGRID automatically clones that group to the replicated tenant on the destination grid. Both the original group and its clone have the same access mode, group permissions, and S3 group policy. For instructions, see xref:creating-groups-for-s3-tenant.adoc[Create groups for S3 tenant].
 
 * When you create a new local user on the source grid, StorageGRID automatically clones that user to the destination grid. Both the original user and its clone have the same full name, username, and *Deny access* setting, and both belong to the same groups.
@@ -56,7 +58,6 @@ For security reasons, local user passwords are not cloned to the destination gri
 
 
 == Manage S3 access keys
-
 
 To create S3 access keys, always start from the tenant's source grid. See the instructions to xref:creating-your-own-s3-access-keys.adoc[create your own access keys] or to xref:creating-another-users-s3-access-keys.adoc[create another user's access keys]. 
 
