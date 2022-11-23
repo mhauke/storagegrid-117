@@ -20,18 +20,13 @@ S3 Select allows S3 clients to use SelectObjectContent requests to filter and re
 == Considerations and requirements for using S3 Select
 
 === Grid administration requirements
-Tenants must be granted S3 Select ability by the grid administrator. Select *Allow S3 Select* when xref:creating-tenant-account.adoc[creating a tenant] or xref:editing-tenant-account.adoc[editing a tenant].
+The grid administrator must grant tenants S3 Select ability. Select *Allow S3 Select* when xref:creating-tenant-account.adoc[creating a tenant] or xref:editing-tenant-account.adoc[editing a tenant].
 
 === Object format requirements
-The object you want to query is one of the following formats: 
+The object you want to query must be in one of the following formats: 
 
-* CSV
-+ 
-
-CSV files can be used as is, or compressed into GZIP or BZIP2 archives. 
-* Parquet
-+
-There are additional requirements when using S3 Select with Parquet objects:
+* *CSV*. Can be used as is or compressed into GZIP or BZIP2 archives. 
+* *Parquet*. Additional requirements for Parquet objects:
 
 ** S3 Select supports only columnar compression using GZIP or Snappy. S3 Select doesn't support whole-object compression for Parquet objects.
 ** S3 Select doesn't support Parquet output. You must specify the output format as CSV or JSON.
