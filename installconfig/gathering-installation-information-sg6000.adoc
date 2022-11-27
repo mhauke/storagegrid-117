@@ -2,45 +2,24 @@
 permalink: installconfig/gathering-installation-information-sg6000.html
 sidebar: sidebar
 keywords: storagegrid, sg6000, storage node, storage appliance StorageGRID, install, information, site, pre-install, preparing, prepare, preinstall, info, preparation
-summary: 'As you install and configure the StorageGRID appliance, you must make decisions and gather information about Ethernet switch ports, IP addresses, and port and network bond modes. Record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.'
+summary: 'As you install and configure the StorageGRID appliance, you must make decisions and gather information about Ethernet switch ports, IP addresses, and port and network bond modes.'
 ---
 = Gather installation information (SG6000)
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-As you install and configure the StorageGRID appliance, you must make decisions and gather information about Ethernet switch ports, IP addresses, and port and network bond modes. Record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.
+As you install and configure the StorageGRID appliance, you must make decisions and gather information about Ethernet switch ports, IP addresses, and port and network bond modes.
 
-== Check StorageGRID version
+.About this task
 
-Before installing an SG6000 appliance, confirm your StorageGRID system is using a required version of StorageGRID software.
-
-[options="header"]
-|===
-| Appliance| Required StorageGRID version
-a|
-SG6060 with no expansion shelves
-a|
-11.1.1 or later
-a|
-SG6060 with expansion shelves (one or two)
-a|
-11.3 or later
-
-*Note:* If you add expansion shelves after the initial deployment, you must use version 11.4 or later.
-
-a|
-SGF6024
-a|
-11.3 or later
-|===
-
+You can use the following tables to record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.
 
 == Information needed to connect to SANtricity System Manager on storage controllers
 
-You must connect both of the storage controllers in the appliance (either the E2800 controllers or the EF570 controllers) to the management network you will use for SANtricity System Manager. The controllers are located in each appliance as follows:
+You must connect both of the storage controllers in the appliance (either the E2800 series controllers or the EF570 controllers) to the management network you will use for SANtricity System Manager. The controllers are located in each appliance as follows:
 
-* SG6060: Controller A is on the top, and controller B is on the bottom.
+* SG6060 and SG6060X: Controller A is on the top, and controller B is on the bottom.
 * SGF6024: Controller A is on the left, and controller B is on the right.
 
 [options="header"]
@@ -380,12 +359,12 @@ a|
 
 .Related information
 
-xref:hardware-description-sg6000.adoc[Controllers in SG6000 appliances]
+xref:controllers-in-sg6000-appliances.adoc[Controllers in SG6000 appliances]
 
-xref:reviewing-appliance-network-connections.adoc[Review appliance network connections]
+xref:reviewing-appliance-network-connections-sg6000.adoc[Review appliance network connections (SG6000)]
 
 xref:port-bond-modes-for-sg6000-cn-controller.adoc[Port bond modes for SG6000-CN controller]
 
 xref:cabling-appliance-sg6000.adoc[Cable appliance (SG6000)]
 
-xref:setting-ip-configuration.adoc[Configure StorageGRID IP addresses]
+xref:configuring-storagegrid-ip-addresses-sg6000.adoc[Configure StorageGRID IP addresses]
