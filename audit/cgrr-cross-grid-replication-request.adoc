@@ -17,7 +17,7 @@ This message is generated when StorageGRID attempts a cross-grid replication ope
 
 | S3AI
 | S3 tenant account ID
-| The ID of the tenant account that sent the request. An empty value indicates anonymous access.
+| The ID of the tenant account that owns the bucket from which the object is being replicated.
 
 | GFID
 | Grid federation connection ID
@@ -25,8 +25,12 @@ This message is generated when StorageGRID attempts a cross-grid replication ope
 
 | OPER
 | CGR operation
-| The type of cross-grid replication operation that was attempted: replicate object, replicate multipart object, or replicate delete marker.
+| The type of cross-grid replication operation that was attempted:
 
+* 0 = Replicate object
+* 1 = Replicate multipart object
+* 2 = Replicate delete marker
+ 
 | S3BK
 | S3 bucket 
 | The S3 bucket name.
@@ -41,6 +45,6 @@ This message is generated when StorageGRID attempts a cross-grid replication ope
 
 | RSLT
 | Result Code
-| Returns successful (SUCS) or the error reported by the backend.
+| Returns successful (SUCS) or general error (GERR).
 
 |===
