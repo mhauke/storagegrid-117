@@ -22,12 +22,15 @@ Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
 
 [cols="1a,3a,1a,1a" options="header"]
 |===
-| Amazon Simple Storage Service (S3) API| StorageGRID support for request header |StorageGRID support for request body |Learn more
+| Amazon Simple Storage Service (S3) API
+| StorageGRID support for request header 
+| StorageGRID support for request body 
+| Learn more
 
 //AbortMultipartUpload
-|[[A]]
+| [[A]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
-|These parameters are supported:
+| These parameters are supported:
 
 * `Key`	
 * `uploadedId`	
@@ -35,14 +38,14 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[Ab
 *	`Date`
 *	`Authorization`
 
-|This request does not have a request body.
-|xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
+| This request does not have a request body.
+| xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 
 
 //CompleteMultipartUpload
-|[[C]]
+| [[C]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
-|These parameters are supported:
+| These parameters are supported:
 
 * `Key`	
 * `uploadedId`	
@@ -51,13 +54,13 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html
 *	`Content-Length`
 *	`Authorization`
 
-|Implemented with all Amazon S3 REST API behavior.
-|xref:complete-multipart-upload.adoc[Complete Multipart Upload]
+| Implemented with all Amazon S3 REST API behavior.
+| xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 
 
 //CopyObject
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[CopyObject^]
-|These parameters are supported:
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[CopyObject^]
+| These parameters are supported:
 
 * `Key`	
 * `Host`
@@ -92,26 +95,26 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html
 * `Date`
 * `Authorization`
 
-|This request does not have a request body.
-|xref:put-object-copy.html.adoc[PUT Object-Copy]
+| This request does not have a request body.
+| xref:put-object-copy.html.adoc[PUT Object-Copy]
 
 
 //CreateBucket
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[CreateBucket^]
-|These parameters are supported:
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[CreateBucket^]
+| These parameters are supported:
 
 * `Host`
 * `x-amz-bucket-object-lock-enabled`
 * `Date`
 * `Authorization`
 
-|Implemented with all Amazon S3 REST API behavior.
-|xref:operations-on-buckets.adoc[Operations on buckets]
+| Implemented with all Amazon S3 REST API behavior.
+| xref:operations-on-buckets.adoc[Operations on buckets]
 
 
 //CreateMultipartUpload
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html[CreateMultipartUpload^]
-|These parameters are supported:
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html[CreateMultipartUpload^]
+| These parameters are supported:
 
 * `Key`	
 * `Host`
@@ -136,87 +139,288 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html
 *	`Date`
 *	`Authorization`
 
-|This request does not have a request body.
-|
+| This request does not have a request body.
+| 
 
 
 //DeleteBucket
-|[[D]]
+| [[D]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBucket^]
-|Implemented with all Amazon S3 REST API behavior.
-|This request does not have a request body.
-|xref:operations-on-buckets.adoc[Operations on buckets]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets]
 
 
 //DeleteBucketCors
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html[DeleteBucketCors^]
-|Implemented with all Amazon S3 REST API behavior.
-|This request does not have a request body.
-|
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html[DeleteBucketCors^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
 
 
 
 //DeleteBucketLifecycle
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html[DeleteBucketLifecycle^]
-|Implemented with all Amazon S3 REST API behavior.
-|This request does not have a request body.
-|
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html[DeleteBucketLifecycle^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
 
 
 
 //DeleteBucketPolicy
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html[DeleteBucketLifecycle^]
-|Implemented with all Amazon S3 REST API behavior.
-|This request does not have a request body.
-|
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html[DeleteBucketPolicy^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
+
+
+//DeleteBucketTagging
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html[DeleteBucketTagging^]
+| Implemented with all Amazon S3 REST API behavior.
+
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
+
+
+//DeleteObject
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html[DeleteObject^]
+| These parameters are supported:
+
+* `Key`
+* `VersionId`
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-Type`
+* `Content-Length`
+| This request does not have a request body.
+| 
+
+
+//DeleteObjects
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html[DeleteObjects^]
+| These parameters are supported:
+
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-MD5`
+* `Accept`
+* `Connection`
+
+| Implemented with all Amazon S3 REST API behavior.
+| 
+
+
+//DeleteObjectTagging
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html[DeleteObjectTagging^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| 
 
 
 //GetBucketAcl
-|[[G]]
+| [[G]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketAcl^]
-|Implemented with all Amazon S3 REST API behavior.
-|Implemented with all Amazon S3 REST API behavior.
-|xref:operations-on-buckets.adoc[Operations on buckets]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets]
 
+
+//GetBucketCors
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html[GetBucketCors^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
+
+
+//GetBucketEncryption
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html[GetBucketEncryption^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
+
+
+
+//GetBucketLifecycle
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html[GetBucketLifecycle^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
+
+
+//GetBucketLifecycleConfiguration
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html[GetBucketLifecycleConfiguration^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
+
+
+//GetBucketLocation
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html[GetBucketLocation^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
+
+
+//GetBucketNotification
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotification.html[GetBucketNotification^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets] 
+
+
+//GetBucketNotificationConfiguration
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html[GetBucketNotificationConfiguration^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| 
+
+
+//GetBucketPolicy
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html[GetBucketPolicy^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+//GetBucketReplication
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html[GetBucketReplication^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+//GetBucketTagging
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html[GetBucketTagging^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+//GetBucketVersioning
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html[GetBucketVersioning^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+//GetObject
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html[GetObject^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:get-object.adoc[GET Object]
+
+
+//GetObjectAcl
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html[GetObjectAcl^]
+| These parameters are supported:
+
+* `Key`	
+* `VersionId`
+* `Host`
+* `Date`
+* `Authorization`
+
+| This request does not have a request body.
+| xref:operations-on-objects.adoc[Operations on objects]
+
+
+//GetObjectLegalHold
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html[GetObjectLegalHold^]
+| These parameters are supported:
+
+* `Key`	
+* `VersionId`
+* `Host`
+* `Date`
+* `Authorization`
+
+| This request does not have a request body.
+| xref:operations-on-objects.adoc[Operations on objects]
+
+
+//GetObjectLockConfiguration
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html[GetObjectLockConfiguration^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-objects.adoc[Operations on objects]
+
+
+//GetObjectRetention
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html[GetObjectRetention^]
+| These parameters are supported:
+
+* `Key`	
+* `VersionId`
+* `Host`
+* `Date`
+* `Authorization`
+
+| This request does not have a request body.
+| xref:operations-on-objects.adoc[Operations on objects]
+
+
+//GetObjectTagging
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html[GetObjectTagging^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-objects.adoc[Operations on objects]
 
 
 // ListBuckets
-|[[L]]
+| [[L]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^]
-|Implemented with all Amazon S3 REST API behavior.
-|Implemented with all Amazon S3 REST API behavior.
-|xref:operations-on-buckets.adoc[Operations on buckets]
+| These parameters are supported:
+
+* Key
+* VersionId
+* response-cache-control	
+* response-content-disposition	
+* response-content-encoding	
+* response-content-type		
+* Host
+* Range
+* x-amz-server-side-encryption-customer-algorithm
+* x-amz-server-side-encryption-customer-key
+* x-amz-server-side-encryption-customer-key-MD5	
+* Date
+* Authorization
+* Accept
+
+| Implemented with all Amazon S3 REST API behavior.
+| xref:operations-on-buckets.adoc[Operations on buckets]
 
 
 // PutBucketCors
-|[[P]]
+| [[P]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucketCors^]
-|These parameters are supported:
+| These parameters are supported:
 
 * `Host`
 * `Date`
 * `Authorization`
 * `Content-Length`
 
-|
-|xref:operations-on-buckets.adoc[Operations on buckets]
+| 
+| xref:operations-on-buckets.adoc[Operations on buckets]
 
 //PutBucketNotificationConfiguration
-|https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
-|Implemented with all Amazon S3 REST API behavior.
-|These parameters are supported:
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
+| Implemented with all Amazon S3 REST API behavior.
+| These parameters are supported:
 
 * `NotificationConfiguration`
 
-|
+| 
 
 
 
 
 // SelectObjectContent
-|[[S]]
+| [[S]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[SelectObjectContent^]
-|These parameters are supported:
+| These parameters are supported:
 
 * `Key`
 * `Date`
@@ -224,7 +428,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[Sel
 * `Content-Length`
 
 
-|These parameters are supported:
+| These parameters are supported:
 
 ----
 SelectObjectContentRequest							
