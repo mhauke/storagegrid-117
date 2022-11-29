@@ -16,7 +16,7 @@ The search integration service sends object metadata to a destination search ind
 * Platform services were enabled for your tenant account by a StorageGRID administrator.
 * You have already created an S3 bucket whose contents you want to index.
 * The endpoint that you intend to use as a destination for the search integration service already exists, and you have its URN.
-* You belong to a user group that has the Manage All Buckets or the Root Access permission, which allows you to manage the settings for all S3 buckets in your tenant account. These permissions override the permission settings in group or bucket policies when configuring the bucket using the Tenant Manager.
+* You belong to a user group that has the xref:tenant-management-permissions.adoc[Manage all buckets or Root access permission]. These permissions override the permission settings in group or bucket policies when configuring the bucket using the Tenant Manager.
 
 .About this task
 

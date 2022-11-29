@@ -20,18 +20,15 @@ The Stored object encryption setting applies only to S3 objects that have not be
 For more details on StorageGRID encryption methods, see xref:../admin/reviewing-storagegrid-encryption-methods.html[Review StorageGRID encryption methods].
 
 == Prevent client modification
-Prevent client modification is a system wide setting. When the Prevent client modification option is selected, the following requests are denied:
+Prevent client modification is a system wide setting. When the *Prevent client modification* option is selected, the following requests are denied.
 
-* *S3 REST API*
- ** Delete Bucket requests
- ** Any requests to modify an existing object's data, user-defined metadata, or S3 object tagging
-+
+=== S3 REST API
+* Delete Bucket requests
+* Any requests to modify an existing object's data, user-defined metadata, or S3 object tagging
 
-NOTE: This setting does not apply to buckets with versioning enabled. Versioning already prevents modifications to object data, user-defined metadata, and object tagging.
-
-* *Swift REST API*
- ** Delete Container requests
- ** Requests to modify any existing object. For example, the following operations are denied: Put Overwrite, Delete, Metadata Update, and so on.
+=== Swift REST API
+* Delete Container requests
+* Requests to modify any existing object. For example, the following operations are denied: Put Overwrite, Delete, Metadata Update, and so on.
 
 == Enable HTTP for Storage Node connections
 By default, client applications use the HTTPS network protocol for any direct connections to Storage Nodes. You can optionally enable HTTP for these connections, for example, when testing a non-production grid.

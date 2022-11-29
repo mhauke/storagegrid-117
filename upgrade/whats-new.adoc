@@ -57,12 +57,14 @@ When you perform an expansion to add a new site or new Storage Nodes, you can no
 === Grid federation
 You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See xref:../admin/grid-federation-overview.adoc[Use grid federation: Overview].
 
-=== New audit message category and new audit message
+=== Changes to audit messages
 A new audit message category was added for ILM operations, which includes the IDEL, LKCU, and ORLM messages. This new category is set to *Normal*. See xref:../audit/ilm-audit-messages.adoc[ILM operations audit messages].
 
 The following new audit messages were added:
 
 * *BROR: Bucket Read Only Request*: Related to the new functionality for emptying a bucket, this message is generated when a bucket enters or exits read-only mode.
+
+* *CGRR: Cross-Grid Replication Request*: This message is generated when StorageGRID attempts a cross-grid replication operation to replicate objects between buckets in a grid federation connection.
 
 * *EBDL: Empty Bucket Delete*: Related to the new functionality for emptying a bucket, this message is generated when the ILM scanner deletes an object in a bucket that is deleting all objects (performing an empty bucket operation).
 
@@ -73,6 +75,7 @@ The following new audit messages were added:
 === New alerts
 The following new alerts were added for StorageGRID 11.7:
 
+* Cassandra oversize write error
 * Cross-grid replication permanent request failure
 * Cross-grid replication resources unavailable
 * Debug performance impact
