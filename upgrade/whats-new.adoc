@@ -108,9 +108,21 @@ The ILM wizard in the Grid Manager has been improved.
 You can now select base 10 or base 2 units for the storage values displayed in the Grid Manager and Tenant Manager. Select the user drop-down in the upper right of the Grid Manager or Tenant Manager, then select *User preferences*.
 
 == Paul's what's new
+
 === New firewall controls and changes to untrusted Client Networks
 
 You can now better manage access to your grid using the new Firewall control page (*CONFIGURATION* > *Security* > *Firewall control*). This page enables you to manage the external access of ports on nodes in your grid, and to define host addresses and IP subnets that are allowed access to closed ports. The untrusted Client Network settings have been moved to the Firewall control page and have also been enhanced with the ability to select additional ports you want open when untrusted Client Network is configured. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
 
+=== Can access MIB from Grid Manager
+
+You can now access SNMP-compliant MIB files from the Grid Manager using the SNMP agent page (*CONFIGURATION* > *Monitoring* > *SNMP agent*).
+
+=== S3 Select supported on bare metal endpoints
+
+You can now use S3 Select with Admin and Gateway load balancer endpoints that are bare metal nodes running a kernel with cgroup v2 enabled.
+
+=== Upgrade drive firmware using the Grid Manager
+
+You can now update the firmware on the drives in your storage appliances by using the Grid Manager. Using the Grid Manager enables you to update the firmware without needing to put the appliance into maintenance mode.
 
 == Santhosh's what's new
