@@ -59,17 +59,17 @@ To restore a lost volume or node:
 
 . In Grid Manager go to *Maintenance* > *Volume restoration*.
 
-. Select the *Pending data* tab.
+. Select the *Nodes to restore* tab.
 +
 The number on the tab indicates the number of nodes with volumes requiring restoration.
-+
-// Image of pending tab.
+
+image::../media/vol-restore-nodes-to-restore.png[Volume restoration - Nodes to restore tab]
 
 . Expand each node to see the volumes in it that need restoration and their status.
  
 . Correct any issues preventing restoration of each volume, as indicated.
 
-. Select the node to restore.
+. Select a node to restore that indicates a ready to restore status.
 +
 You can only restore the volumes for one node at a time.
 +
@@ -79,24 +79,21 @@ Each volume in the node should indicate that it is ready to restore.
 
 . Address any warnings that might display or select *Start anyway* to ignore the warnings and start the restoration.
 
-Nodes are moved from the Pending data tab to the Restoration progress tab when the restoration starts.
+Nodes are moved from the Nodes to restore tab to the Restoration progress tab when the restoration starts.
 
-If a volume restoration fails, the node returns to the Pending data tab.
+If a volume restoration fails, the node returns to the Nodes to restore tab.
 
 == View restoration progress
 
 The Restoration progress tab shows the status of the volume restoration process and information about the volumes in a node being restored.
 
-// Image of progress tab.
+image::../media/vol-restore-restore-progress.png[Volume restoration - Restoration progress tab]
 
-The Percentage complete section displays information about all volumes being restored, including volume restorations started using manual steps.
+A summery shows the data repair rates for replicated and erasure-coded objects in all volumes being restored. It also indicates the percentage objects in those volumes that are intact and do not require restoration.
 
-* Number of objects or chunks remaining are actual item counts.
-* The overall percentage complete and completion time are statistical estimates.
-+
 NOTE: Replicated data restoration is dependant on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
 
-The Restoration jobs section only displays information about volume restorations started from Grid Manager.
+The Restoration jobs section displays information about volume restorations started from Grid Manager.
 
 * The number in the Restoration jobs section heading indicates the number of volumes currently being restored or that are queued for restoration.
 
@@ -117,6 +114,4 @@ If multiple restoration jobs have failed, selecting *Retry* starts the most rece
 
 The Restoration history tab shows information about all volume restorations that have successfully completed.
 
-// Image of history tab.
-
-
+image::../media/vol-restore-restore-history.png[Volume restoration - Restoration history tab]
