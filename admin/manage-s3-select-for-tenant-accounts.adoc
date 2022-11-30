@@ -41,11 +41,7 @@ The Admin and Gateway Nodes used by the endpoint must be one of the following:
 
 * An SG100 or SG1000 appliance node 
 * A VMware-based software node
-* A bare metal node running a kernel with cgroup v2 enabled: 
-
-** RHEL 8.4
-** Ubuntu 20.04
-** Debian 10 
+* A bare metal node running a kernel with cgroup v2 enabled 
 
 === General considerations
 Queries cannot be sent directly to Storage Nodes.
