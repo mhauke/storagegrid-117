@@ -60,11 +60,13 @@ You must perform these steps before adding any objects to either bucket.
 
 .. If all requirements have been met, select the grid federation connection you want to use.
 
-.. Optionally, change the setting of *Replicate client delete markers* to determine what happens on the other grid when an S3 client deletes an object from this bucket.
+.. Optionally, change the setting of *Replicate client deletes* to determine what happens on the other grid when an S3 client deletes an object from this bucket.
 +
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
 +
 See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication] for details.
+
+.. Review your selections. You won't be able to change these settings unless both buckets are empty.
 
 .. Select *Enable and test*.
 +
