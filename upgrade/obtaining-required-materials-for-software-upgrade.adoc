@@ -28,7 +28,9 @@ Before you begin the software upgrade, you must obtain all required materials so
 |The passphrase is created and documented when the StorageGRID system is first installed. The provisioning passphrase is not listed in the `Passwords.txt` file.
 
 |Linux RPM or DEB archive
-|If any nodes are deployed on Linux hosts, you must xref:linux-installing-rpm-or-deb-package-on-all-hosts.adoc[download and install the RPM or DEB package on all hosts] before you start the upgrade. 
+|If any nodes are deployed on Linux hosts, you must xref:linux-installing-rpm-or-deb-package-on-all-hosts.adoc[download and install the RPM or DEB package on all hosts] before you start the upgrade.
+
+*Important*: You must ensure that you have upgraded your operating system to Linux kernel 4.15 or more.
     
 |StorageGRID documentation
 |* xref:../release-notes/index.adoc[Release notes] for StorageGRID 11.7 (sign in required). Be sure to read these carefully before starting the upgrade. 
