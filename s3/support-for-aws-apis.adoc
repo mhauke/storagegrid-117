@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Amazon s3, API, request headers, s3 support, request syntax, supported, aws s3
 summary: 'This table summarizes StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
 ---
-= StorageGRID support for Amazon Simple Storage Service (S3) APIs
+= AWS S3 APIs supported by StorageGRID
 :icons: font
 :imagesdir: ../media/
 
@@ -16,7 +16,7 @@ This table:
 * Includes only those S3 commands that are supported.
 * List only the supported parameters for each supported command.
 
-Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<L,L>>, <<P,P>>, <<S,S>>
+Jump to: <<A,A>>, <<C,C>>, <<D,D>>, <<G,G>>, <<H,H>>, <<L,L>>, <<P,P>>, <<S,S>>
 
 
 
@@ -368,28 +368,127 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketA
 | xref:operations-on-objects.adoc[Operations on objects]
 
 
-// ListBuckets
-| [[L]]
-https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^]
+//HeadBucket
+| [[H]]
+https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html[HeadBucket^]
+| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+//HeadObject
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html[HeadObject^]
 | These parameters are supported:
 
-* Key
-* VersionId
-* response-cache-control	
-* response-content-disposition	
-* response-content-encoding	
-* response-content-type		
-* Host
-* Range
-* x-amz-server-side-encryption-customer-algorithm
-* x-amz-server-side-encryption-customer-key
-* x-amz-server-side-encryption-customer-key-MD5	
-* Date
-* Authorization
-* Accept
+* `Key`		
+* `VersionId`	
+* `Host`	
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`
+* `Date`
+* `Authorization`
 
-| Implemented with all Amazon S3 REST API behavior.
+| This request does not have a request body.
+| xref:head-object.adoc[HEAD Object]
+
+
+// ListBuckets
+| [[L]]
+https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^] 
+(GET server)
+| This request does not use any URI parameters.
+| This request does not have a request body.
 | xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+//ListMultipartUploads
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html[ListMultipartUploads^]
+| These parameters are supported:
+
+* `encoding-type`	
+* `key-marker`	
+* `max-uploads`	
+* `prefix`	
+* `upload-id-marker`	
+* `Host`
+* `Date`
+* `Authorization`
+
+| This request does not have a request body.
+| xref:list-multipart-uploads.adoc[List Multipart Uploads]
+
+
+// ListObjects
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html[ListObjects^] 
+| These parameters are supported:
+
+* `delimiter`
+* `encoding-type`	
+* `marker`	
+* `max-keys`	
+* `prefix`	
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-Type`
+
+| This request does not have a request body.
+| xref:operations-on-objects.adoc[Operations on objects]
+
+
+// ListObjectsV2
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html[ListObjectsV2^] 
+| These parameters are supported:
+
+* `continuation-token` 
+* `delimiter`
+* `encoding-type`	
+* `fetch-owner`	
+* `max-keys`	
+* `prefix`	
+* `start-after`
+* `Date`
+* `Authorization`
+* `Content-Type`
+
+| This request does not have a request body.
+| xref:operations-on-objects.adoc[Operations on objects]
+
+
+// ListObjectVersions
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html[ListObjectVersions^] 
+| These parameters are supported:
+ 
+* `delimiter`
+* `encoding-type`	
+* `key-marker`	
+* `max-keys`	
+* `prefix`	
+* `version-id-marker`
+* `Date`
+* `Authorization`
+* `Content-Type`
+
+| This request does not have a request body.
+| xref:operations-on-objects.adoc[Operations on objects]
+
+
+// ListParts
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html[ListParts^] 
+| These parameters are supported:
+
+	
+* `key`	
+* `max-parts`	
+* `part-number-marker`	
+* `uploadId`
+* `Host`
+* `Date`
+* `Authorization`
+
+| This request does not have a request body.
+| xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
+
 
 
 // PutBucketCors
@@ -398,11 +497,31 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucket
 | These parameters are supported:
 
 * `Host`
+* `Content-MD5`
 * `Date`
 * `Authorization`
 * `Content-Length`
 
-| 
+| Implemented with all Amazon S3 REST API behavior.
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+// PutBucketEncryption
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html[PutBucketEncryption^]
+| These parameters are supported:
+
+* `Host`
+* `Content-MD5`
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported:
+* `ServerSideEncryptionConfiguration` 			
+* `Rule`		
+* `ApplyServerSideEncryptionByDefault`	
+* `SSEAlgorithm`
+
 | xref:operations-on-buckets.adoc[Operations on buckets]
 
 //PutBucketNotificationConfiguration
@@ -414,7 +533,115 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucket
 
 | 
 
+//PutBucketLifecycle
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html[PutBucketLifecycle^]
+| These parameters are supported:
 
+* `Host`
+* `Content-MD5`
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported:
+
+* `LifecycleConfiguration`			
+* `Rule`		
+* `Expiration`
+* `Date`
+* `Days`
+
+* `ID`	
+* `NoncurrentVersionExpiration`	
+* `NoncurrentDays`
+
+* `Prefix`	
+* `Status`	
+
+| xref:create-s3-lifecycle-configuration.adoc[Create S3 lifecycle configuration]
+
+
+//PutBucketLifecycleConfiguration
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html[PutBucketLifecycleConfiguration^]
+| These parameters are supported:
+
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported:
+
+* `LifecycleConfiguration`						
+* `Rule`					
+			
+* `Expiration`				
+* `Date`			
+* `Days`			
+		
+* `Filter`				
+* `And`			
+* `Prefix`		
+* `Tag`		
+* `Key`	
+* `Value`	
+* `Prefix`			
+* `Tag`			
+* `Key`		
+* `Value`		
+* `ID`				
+* `NoncurrentVersionExpiration`				
+* `NoncurrentDays`			
+					
+* `Prefix`				
+* `Status`	
+
+| xref:create-s3-lifecycle-configuration.adoc[Create S3 lifecycle configuration]
+
+//PutBucketNotification
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html[PutBucketNotification^]
+| These parameters are supported: 
+
+* `Host`
+* `Content-MD5`
+
+| These parameters are supported:
+
+* `NotificationConfiguration`		
+* `TopicConfiguration`	
+* `Event`
+* `Id`
+* `Topic`
+
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+//PutBucketNotificationConfiguration
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
+| These parameters are supported: 
+
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-Length`
+* `User-Agent`
+* `Pragma`
+* `Accept`
+* `Proxy-Connection`
+
+| These parameters are supported:
+
+* `NotificationConfiguration`					
+* `TopicConfiguration`				
+* `Event`			
+* `Filter`			
+* `S3Key`	
+* `Filterrule`	
+* `Name`
+* `Value`
+* `Id`			
+* `Topic`		
+
+| xref:operations-on-buckets.adoc[Operations on buckets]
 
 
 // SelectObjectContent
