@@ -644,6 +644,222 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucket
 | xref:operations-on-buckets.adoc[Operations on buckets]
 
 
+//PutBucketPolicy
+
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html[PutBucketPolicy^]
+| These parameters are supported:
+
+* `Host`
+* `Date`
+* `Authorization`
+
+| These parameters are supported:
+
+* `Policy` (in JSON format)			
+* `Version`		
+* `Statement`		
+* `Sid`	
+* `Effect`	
+* `Principal`	
+* `Action`	
+* `Resource`	
+* `Condition`	
+
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+//PutBucketReplication
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html[PutBucketReplication^]
+| These parameters are supported:
+
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported: 
+
+* tbd
+
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+//PutBucketTagging
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html[PutBucketTagging^]
+| These parameters are supported:
+
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported: 
+
+* `Tagging`	
+* `TagSet`
+* `Tag`
+* `Key`
+* `Value`
+
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+
+//PutBucketVersioning
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html[PutBucketVersioning^]
+| These parameters are supported:
+
+* `Host`
+* `Date`
+* `Authorization`
+* `Content-Length`
+* `Content-Type`
+
+| These parameters are supported: 
+
+* `VersioningConfiguration`	
+* `Status`
+
+| xref:operations-on-buckets.adoc[Operations on buckets]
+
+//PutObject
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html[PutObject^]
+| These parameters are supported:
+
+* `Key`	
+* `Host`
+* `Cache-Control`
+* `Content-Disposition`
+* `Content-Encoding`
+* `Content-Language`
+* `Content-Length`
+* `Content-MD5`
+* `Content-Type`
+
+* `x-amz-server-side-encryption`
+* `x-amz-storage-class`
+
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`
+
+* `x-amz-tagging`
+* `x-amz-object-lock-mode`
+* `x-amz-object-lock-retain-until-date`
+* `x-amz-object-lock-legal-hold`
+
+* `Date`
+* `Authorization`
+* `Content-Length`
+* `Content-Type`
+* `x-amz-meta-author`
+* `Expect`
+* `Accept`
+
+
+
+| These parameters are supported: 
+
+* `Body`	
+
+| xref:put-object.adoc[PUT Object]
+
+
+//PutObjectLegalHold
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html[PutObjectLegalHold^]
+| These parameters are supported:
+
+* `Key`	
+* `VersionId`
+* `Host`
+
+* `Content-MD5`
+
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported:
+
+* `LegalHold`
+* `Status`
+
+| xref:use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
+
+
+//PutObjectLockConfiguration
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html[PutObjectLockConfiguration^]
+| These parameters are supported:
+
+* `Host`	
+* `x-amz-bucket-object-lock-token`
+
+* `Content-MD5`
+
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported:
+
+* `ObjectLockConfiguration`			
+* `ObjectLockEnabled`			
+* `Rule`		
+* `DefaultRetention`	
+* `Days`
+* `Mode`
+* `Years`
+
+| xref:use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
+
+
+//PutObjectRetention
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html[PutObjectRetention^]
+| These parameters are supported:
+
+* `Key`	
+* `VersionId`
+* `Host`
+* `x-amz-bypass-governance-retention`
+
+* `Content-MD5`
+
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported:
+
+* `Retention`			
+* `Mode`			
+* `RetainUntilDate`
+
+| xref:use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
+
+
+//PutObjectTagging
+| https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html[PutObjectTagging^]
+| These parameters are supported:
+
+* `Key`	
+* `VersionId`
+* `Host`
+
+* `Date`
+* `Authorization`
+* `Content-Length`
+
+| These parameters are supported:
+
+* `Tagging`				
+* `TagSet`			
+* `Tag`		
+* `Key`	
+* `Value`	
+
+| xref:put-object.adoc[PUT Object]
+
+
+
 // SelectObjectContent
 | [[S]]
 https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[SelectObjectContent^]
@@ -659,27 +875,27 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[Sel
 
 ----
 SelectObjectContentRequest							
-	Expression						
-	ExpressionType						
-	RequestProgress						
-		Enabled					
-	InputSerialization						
-		CompressionType					
-		CSV					
+	Expression
+	ExpressionType			
+	RequestProgress		
+		Enabled	
+	InputSerialization			
+		CompressionType		
+		CSV
 			AllowQuotedRecordDelimiter				
-			Comments				
-			FieldDelimiter				
-			FileHeaderInfo				
-			QuoteCharacter				
-			QuoteEscapeCharacter				
-			RecordDelimiter													
-	OutputSerialization						
-		CSV					
-			FieldDelimiter				
-			QuoteCharacter				
-			QuoteEscapeCharacter				
-			QuoteFields				
-			RecordDelimiter									
+			Comments
+			FieldDelimiter
+			FileHeaderInfo
+			QuoteCharacter
+			QuoteEscapeCharacter
+			RecordDelimiter					
+	OutputSerialization
+		CSV
+			FieldDelimiter
+			QuoteCharacter
+			QuoteEscapeCharacter
+			QuoteFields
+			RecordDelimiter
 ----
 |
 
