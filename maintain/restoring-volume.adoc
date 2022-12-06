@@ -36,8 +36,6 @@ In most cases, using Grid Manager to restore storage volumes and nodes is prefer
 // * If you are _restoring_ a storage node, use <<restore_lost_volume_or_node,Grid Manager to restore volumes>>.
 // * If you are _recovering_ a storage node, use link:../maintain/recovering-storagegrid-appliance-storage-node.html[manual steps to restore volumes]. 
 
-// decision tree for choosing OEC vs 'volume restoration' vs 'node repair' has to be clear.
-
 Two types of data objects can be restored:
 
 * Erasure coded (EC) data objects are restored by reassembling the stored fragments. Corrupt or lost fragments are recreated by the erasure-coding algorithm from the remaining data and parity fragments.
@@ -47,9 +45,6 @@ Two types of data objects can be restored:
 ** If the only remaining copy of an object is on an Archive Node, object data is retrieved from the Archive Node. Restoring object data to a Storage Node from an Archive Node takes longer than restoring copies from other Storage Nodes.
 
 NOTE: Replicated data restoration is dependant on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
-
-// Add Notes in CLI (manual steps) topics about monitoring and history in GUI and that an XXXX volume restore can be performed in the GUI or CLI (GUI preferred unless scripting?).
-// Volume recovery procedure documentation for SOLO and all non-SOLO (SGAs, VMs and baremetal) platforms updated to use volume recovery from UI. (NOT repair-data CLI.)
 
 == Restore failed volume or node
 
