@@ -118,7 +118,7 @@ A grid node can be in one of these stages when the tables first appear:
 
 * Waiting to be approved
 
-. [[approval-step]]When you are ready to add grid nodes to the upgrade queue (or if you need to remove approved nodes from the queue), use these instructions:
+. [[approval-step]]When you are ready to select grid nodes for upgrade (or if you need to remove selected nodes), use these instructions:
 +
 
 [cols="1a,1a" options="header"]
@@ -128,34 +128,34 @@ A grid node can be in one of these stages when the tables first appear:
 |Search for specific nodes to approve, such as all nodes at a particular site
 |Enter the search string in the *Search* field
 
-|Add all nodes to the queue
+|Select all nodes for upgrade
 |Select *Approve all nodes*
 
-|Add all nodes of the same type to the queue (for example, all Storage Nodes) 
+|Select all nodes of the same type for upgrade (for example, all Storage Nodes) 
 |Select the *Approve all* button for the node type
 
 If you approve more than one node of the same type, the nodes will be upgraded one at a time.
 
-|Add individual nodes to the queue
+|Select an individual node for upgrade
 |Select the *Approve* button for the node
 
-|Remove all nodes from the queue
+|Remove all selected nodes
 |Select *Remove all nodes* 
 
-|Remove all nodes of the same type from the queue
+|Remove all selected nodes of the same type 
 |Select the *Remove all* button for the node type
 
-|Remove individual nodes from the queue
-|Select the *Remove from queue* button for the node
+|Remove an individual node
+|Select the *Remove* button for the node
 
 |===
 
 . Wait for the approved nodes to proceed through these upgrade stages:
 +
-* Approved and waiting in the upgrade queue
+* Approved and waiting to be upgraded
 * Stopping services
 +
-NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Remove from queue* button is disabled.
+NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Remove* button is disabled.
 
 * Stopping container
 * Cleaning up Docker images
