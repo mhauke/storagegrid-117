@@ -30,7 +30,7 @@ NOTE: You can force a volume or node restoration to start when a decommission is
 
 When one or more storage volumes fail, Grid Manger displays them as candidates for restoration on the volume restoration pending data tab.
 
-In most cases, using Grid Manager to restore storage volumes and nodes is preferred to using link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[manual steps]. Grid Manager can also be used to <<view_restoration_progress,monitor the volume restoration process>> and <<view_restoration_history,view the restoration history>> for restorations initiated using Gris Manager or manual steps.
+In most cases, using Grid Manager to restore storage volumes and nodes is preferred to using link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[manual steps]. Grid Manager can also be used to <<view_restoration_progress,monitor the volume restoration process>> and <<view_restoration_history,view the restoration history>> for restorations initiated using Grid Manager or using manual steps.
 
 // Remove commented lines following review approval. Per Dheeraj, use of UI for node recovery was a late change:
 // * If you are _restoring_ a storage node, use <<restore_lost_volume_or_node,Grid Manager to restore volumes>>.
@@ -42,7 +42,7 @@ Two types of data objects can be restored:
 * Replicated data objects are restored from other locations, assuming that the grid's ILM rules were configured to make object copies available. 
 ** If an ILM rule was configured to store only one replicated copy and that copy existed on a storage volume that failed, you will not be able to recover the object.
 ** If the only remaining copy of an object is in a Cloud Storage Pool, StorageGRID must issue multiple requests to the Cloud Storage Pool endpoint to restore object data. 
-** If the only remaining copy of an object is on an Archive Node, object data is retrieved from the Archive Node. Restoring object data to a Storage Node from an Archive Node takes longer than restoring copies from other Storage Nodes.
+** If the only remaining copy of an object is on an Archive Node, object data is retrieved from the Archive Node. Restoring object data to a Storage Node from an Archive Node takes longer than restoring object copies from other Storage Nodes.
 
 NOTE: Replicated data restoration is dependant on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
 
@@ -64,11 +64,11 @@ image::../media/vol-restore-nodes-to-restore.png[Volume restoration - Nodes to r
  
 . Correct any issues preventing restoration of each volume, as indicated.
 
-. Select a node to restore that indicates a ready to restore status.
+. Select a node to restore where all the volumes indicate a ready to restore status.
 +
 You can only restore the volumes for one node at a time.
 +
-Each volume in the node should indicate that it is ready to restore.
+Each volume in the node must indicate that it is ready to restore.
 
 . Select *Start restore*.
 
@@ -84,7 +84,7 @@ The Restoration progress tab shows the status of the volume restoration process 
 
 image::../media/vol-restore-restore-progress.png[Volume restoration - Restoration progress tab]
 
-A summery shows the data repair rates for replicated and erasure-coded objects in all volumes being restored. It also indicates the percentage objects in those volumes that are intact and do not require restoration.
+Data repair rates for replicated and erasure-coded objects in all volumes are summarized for all restorations in process, including those restorations initiated using manual steps. The percentage of objects in those volumes that are intact and do not require restoration is also indicated.
 
 NOTE: Replicated data restoration is dependant on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
 
@@ -101,9 +101,9 @@ The Restoration jobs section displays information about volume restorations star
 ** The Status column indicates failed
 ** A warning displays, indicating the cause of failure.
 +
- Correct issues indicated in the warning and then select *Retry* to re-initiate the volume restoration. 
+Correct issues indicated in the warning and then select *Retry* to re-initiate the volume restoration. 
 +
-If multiple restoration jobs have failed, selecting *Retry* starts the most recently failed job that is shown.
+If multiple restoration jobs have failed, selecting *Retry* starts the most recently failed job.
 
 == View restoration history
 
