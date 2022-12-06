@@ -517,6 +517,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucket
 * `Content-Length`
 
 | These parameters are supported:
+
 * `ServerSideEncryptionConfiguration` 			
 * `Rule`		
 * `ApplyServerSideEncryptionByDefault`	
@@ -882,18 +883,18 @@ SelectObjectContentRequest
 	InputSerialization			
 		CompressionType		
 		CSV
-			AllowQuotedRecordDelimiter				
+			AllowQuotedRecord Delimiter				
 			Comments
 			FieldDelimiter
 			FileHeaderInfo
 			QuoteCharacter
-			QuoteEscapeCharacter
+			QuoteEscape Character
 			RecordDelimiter					
 	OutputSerialization
 		CSV
 			FieldDelimiter
 			QuoteCharacter
-			QuoteEscapeCharacter
+			QuoteEscape Character
 			QuoteFields
 			RecordDelimiter
 ----
