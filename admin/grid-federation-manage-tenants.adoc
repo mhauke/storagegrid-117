@@ -20,8 +20,6 @@ You can allow new S3 tenant accounts to use a grid federation connection between
 == Allow tenant to use grid federation connection
 If you want to allow a tenant account to use a grid federation connection for account clone and cross-grid replication, follow the general instructions to xref:creating-tenant-account.adoc[create a new S3 tenant] and note the following:
 
-* You must have Root access permission.
-
 * You can create the tenant from either grid in the connection. The grid where a tenant is created is the _tenant's source grid_.
 
 * The status of the connection must be *Connected*.
@@ -34,7 +32,7 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * For security reasons, the password for a local root user is not copied to the destination grid.
 +
-Before a local root user can sign in to the replicated tenant on the destination grid, a grid administrator for that grid must xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
+IMPORTANT: Before a local root user can sign in to the replicated tenant on the destination grid, a grid administrator for that grid must xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
 
 * After the new tenant is available on both grids, tenant users can perform these operations:
 
