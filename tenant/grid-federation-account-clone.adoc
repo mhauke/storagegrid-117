@@ -54,8 +54,9 @@ If you are not using identity federation, you can create new local groups and us
 
 * When you create a new local user on the source grid, StorageGRID automatically clones that user to the destination grid. Both the original user and its clone have the same full name, username, and *Deny access* setting, and both belong to the same groups. For instructions, see xref:managing-local-users.adoc[Manage local users].
 
-* For security reasons, local user passwords are not cloned to the destination grid. If a local user needs to access Tenant Manager on the destination grid, you must add a password for that user on the destination grid. For instructions, see xref:managing-local-users.adoc[Manage local users].
-
+* For security reasons, local user passwords are not cloned to the destination grid.
++
+IMPORTANT: If a local user needs to access Tenant Manager on the destination grid, you must add a password for that user on the destination grid. For instructions, see xref:managing-local-users.adoc[Manage local users].
 
 == Manage S3 access keys
 
