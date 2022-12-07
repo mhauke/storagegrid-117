@@ -30,3 +30,6 @@ The *Network Transfer Encryption* internal connection setting on the Grid option
 
 == Swift support deprecated
 As of the StorageGRID 11.7 release, support for Swift client applications has been deprecated. The user interface and APIs that support Swift client applications will be removed in a future release.
+
+== IPv4 and IPv6 addresses are not supported 
+The use of IP addresses as endpoint domain names is unsupported. Future releases will prevent the configuration. If you need to use IP addresses, contact technical support. See xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 endpoint domain names].
