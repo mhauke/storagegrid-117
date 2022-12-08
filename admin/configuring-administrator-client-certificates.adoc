@@ -49,11 +49,13 @@ Use this procedure to add a client certificate if a management interface certifi
 . In the Grid Manager, select *CONFIGURATION* > *Security* > *Certificates* and then select the *Client* tab.
 . Select *Add*.
 . Enter a certificate name that contains at least 1 and no more than 32 characters.
-. To access Prometheus metrics using your external monitoring tool, select *Allow Prometheus*.
-. In the *Certificate type* section, upload the management interface certificate `.pem` file.
+. To access Prometheus metrics using your external monitoring tool, select *Allow prometheus*.
+. Select *Continue*.
 
-.. Select *Upload certificate* and then select *Continue*.
-.. Upload the management interface certificate file (`.pem`).
+. For the *Attach certificates* step, upload the management interface certificate.
+
+.. Select *Upload certificate*.
+.. Select *Browse* and select the management interface certificate file (`.pem`).
 +
 * Select *Client certificate details* to display the certificate metadata and certificate PEM.
 * Select *Copy certificate PEM* to copy the certificate contents for pasting elsewhere.
@@ -103,11 +105,13 @@ Use this procedure to add an administrator client certificate if a management in
 . In the Grid Manager, select *CONFIGURATION* > *Security* > *Certificates* and then select the *Client* tab.
 . Select *Add*.
 . Enter a certificate name that contains at least 1 and no more than 32 characters.
-. To access Prometheus metrics using your external monitoring tool, select *Allow Prometheus*.
-. In the *Certificate type* section, upload the client certificate, private key and CA bundle `.pem` files:
+. To access Prometheus metrics using your external monitoring tool, select *Allow prometheus*.
+. Select *Continue*.
 
-.. Select *Upload certificate* and then select *Continue*.
-.. Upload client certificate, private key and CA bundle files (`.pem`).
+. For the *Attach certificates* step, upload the client certificate, private key, and CA bundle files:
+
+.. Select *Upload certificate*.
+.. Select *Browse* and select the client certificate, private key, and CA bundle files (`.pem`).
 +
 * Select *Client certificate details* to display the certificate metadata and certificate PEM.
 * Select *Copy certificate PEM* to copy the certificate contents for pasting elsewhere.
@@ -123,27 +127,27 @@ The new certificates appear on the Client tab.
 // +
 // image::../media/grafana_add_url_and_auth.png[Grafana - Add URL and Auth]
 
- .. *Name*: Enter a name for the connection.
+.. *Name*: Enter a name for the connection.
 +
 StorageGRID does not require this information, but you must provide a name to test the connection.
 
- .. *URL*: Enter the domain name or IP address for the Admin Node. Specify HTTPS and port 9091.
+.. *URL*: Enter the domain name or IP address for the Admin Node. Specify HTTPS and port 9091.
 +
 For example: `+https://admin-node.example.com:9091+`
 
- .. Enable *TLS Client Auth* and *With CA Cert*.
+.. Enable *TLS Client Auth* and *With CA Cert*.
 
- .. Under TLS/SSL Auth Details, copy and paste: +
- * The management interface CA certificate to **CA Cert**
- * The client certificate to **Client Cert**
- * The private key to **Client Key**
+.. Under TLS/SSL Auth Details, copy and paste:
 
+* The management interface CA certificate to **CA Cert**
+* The client certificate to **Client Cert**
+* The private key to **Client Key**
 
- .. *ServerName*: Enter the domain name of the Admin Node.
+.. *ServerName*: Enter the domain name of the Admin Node.
 +
 ServerName must match the domain name as it appears in the management interface certificate.
 
- .. Save and test the certificate and private key that you copied from StorageGRID or a local file.
+.. Save and test the certificate and private key that you copied from StorageGRID or a local file.
 +
 You can now access the Prometheus metrics from StorageGRID with your external monitoring tool.
 +
@@ -158,15 +162,19 @@ Use this procedure to add an administrator client certificate if a management in
 . In the Grid Manager, select *CONFIGURATION* > *Security* > *Certificates* and then select the *Client* tab.
 . Select *Add*.
 . Enter a certificate name that contains at least 1 and no more than 32 characters.
-. To access Prometheus metrics using your external monitoring tool, select *Allow Prometheus*.
+. To access Prometheus metrics using your external monitoring tool, select *Allow prometheus*.
+. Select *Continue*.
 
-. In the *Certificate type* section, select *Generate certificate*.
+. For the *Attach certificates* step, select *Generate certificate*.
 
 . Specify the certificate information:
- ** *Domain name*: One or more fully qualified domain names of the Admin Node to include in the certificate. Use an * as a wildcard to represent multiple domain names.
- ** *IP*: One or more Admin Node IP addresses to include in the certificate.
- ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner. + 
- If no value is entered in this field, the generated certificate uses the first domain name or IP address as the subject common name (CN).
+
+** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
++
+If the subject does not contain a CN value, the CN is set to /CN=_first domain or IP_ if a domain or IP is present. Otherwise, it is set to /CN=StorageGRID or /CN StorageGRID client, based on the extendedKeyUsage for the generated certificate.
+
+** *Days valid*: The number of days the generated certificate is valid, starting at the time it is generated.
+
 . Select *Generate*. 
 
 . [[client_cert_details]] Select *Client certificate details* to display the certificate metadata and certificate PEM.
@@ -242,7 +250,7 @@ Certificate expiration dates and Prometheus access permissions are listed in the
 . Select the certificate you want to edit.
 . Select *Edit* and then select *Edit name and permission*
 . Enter a certificate name that contains at least 1 and no more than 32 characters.
-. To access Prometheus metrics using your external monitoring tool, select *Allow Prometheus*.
+. To access Prometheus metrics using your external monitoring tool, select *Allow prometheus*.
 . Select *Continue* to save the certificate in the Grid Manager.
 +
 The updated certificate displays on the Client tab.
@@ -294,11 +302,13 @@ Generate the certificate text to paste elsewhere.
 
 . Select *Generate certificate*.
 . Specify the certificate information:
- ** *Domain name*: One or more fully qualified domain names to include in the certificate. Use an * as a wildcard to represent multiple domain names.
- ** *IP*: One or more IP addresses to include in the certificate.
- ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner. + 
- If no value is entered in this field, the generated certificate uses the first domain name or IP address as the subject common name (CN).
- ** *Days valid*: Number of days after creation that the certificate expires.
+
+** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
++
+The distinguished name of this certificate's entity. If the subject does not contain a CN value, the CN is set to /CN=_first domain or IP_ if a domain or IP is present. Otherwise, it is set to /CN=StorageGRID or /CN StorageGRID client, based on the extendedKeyUsage for the generated certificate.
+
+** *Days valid*: Number of days after creation that the certificate expires.
+
 . Select *Generate*. 
 
 . Select *Client certificate details* to display the certificate metadata and certificate PEM.
