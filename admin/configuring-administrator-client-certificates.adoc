@@ -170,8 +170,6 @@ Use this procedure to add an administrator client certificate if a management in
 . Specify the certificate information:
 
 ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
-+
-If the subject does not contain a CN value, the CN is set to /CN=_first domain or IP_ if a domain or IP is present. Otherwise, it is set to /CN=StorageGRID or /CN StorageGRID client, based on the extendedKeyUsage for the generated certificate.
 
 ** *Days valid*: The number of days the generated certificate is valid, starting at the time it is generated.
 
@@ -304,10 +302,8 @@ Generate the certificate text to paste elsewhere.
 . Specify the certificate information:
 
 ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
-+
-The distinguished name of this certificate's entity. If the subject does not contain a CN value, the CN is set to /CN=_first domain or IP_ if a domain or IP is present. Otherwise, it is set to /CN=StorageGRID or /CN StorageGRID client, based on the extendedKeyUsage for the generated certificate.
 
-** *Days valid*: Number of days after creation that the certificate expires.
+** *Days valid*: The number of days the generated certificate is valid, starting at the time it is generated.
 
 . Select *Generate*. 
 
