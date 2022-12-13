@@ -11,7 +11,7 @@ summary: 'After recovering a storage volume on a Storage Node where the system d
 [.lead]
 After recovering a storage volume on a Storage Node where the system drive is intact, you can restore the object data that was lost when the storage volume failed.
 
-NOTE: xref:../maintain/restoring-volume.adoc[Restoring object data using Grid Manager] is the preferred method.
+NOTE: When possible, xref:../maintain/restoring-volume.adoc[restore object data using Grid Manager].
 
 include::../_include/restore-data-intro.adoc[]
 include::../_include/restore-data-repair.adoc[]

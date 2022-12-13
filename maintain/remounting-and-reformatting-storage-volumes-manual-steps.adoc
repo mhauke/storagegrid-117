@@ -196,7 +196,7 @@ The Progress bar and the Stage column on the Recovery page provide a high-level 
 image::../media/recovering_cassandra.png[screenshot showing recovery progress in Grid Management Interface]
 
 After the sn-recovery-postinstall.sh script has started services on the node, you can restore object data to any storage volumes that were formatted by the script. 
-When prompted if you want to perform manual steps to recover the data for all storage volumes:
+When prompted, if you want to perform manual steps to recover the data for all storage volumes:
 
 * If the replacement node has a different number of storage volumes than the original node (for example, you replaced a node with 8 volumes with a node that has 16 volumes), enter `y` to link:../maintain/restoring-object-data-to-storage-volume-if-required.html[restore object data manually].
 +
