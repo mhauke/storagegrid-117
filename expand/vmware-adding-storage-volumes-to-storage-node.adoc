@@ -14,7 +14,7 @@ If a Storage Node includes fewer than 16 storage volumes, you can increase its c
 
 .What you'll need
 * You have access to the instructions for installing StorageGRID for VMware deployments.
-** xref:../vmware/index.adoc[Install VMware]
+** link:../vmware/index.html[Install VMware]
 
 * You have the `Passwords.txt` file.
 * You have specific access permissions.
@@ -69,8 +69,9 @@ The status is updated automatically.
  .. Exit the status screen:
 +
 `Ctrl+C`
+. link:../maintain/starting-or-restarting-service.html[Restart the LDR service].
 . Verify that the Storage Node is online:
- .. Sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+ .. Sign in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
  .. Select *SUPPORT* > *Tools* > *Grid topology*.
  .. Select *_site_* > *_Storage Node_* > *LDR* > *Storage*.
  .. Select the *Configuration* tab and then the *Main* tab.
