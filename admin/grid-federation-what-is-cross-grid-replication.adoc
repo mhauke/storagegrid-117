@@ -53,7 +53,7 @@ When an S3 client adds an object to a bucket that has cross-grid replication ena
 
 . StorageGRID automatically replicates the object from the source bucket to the destination bucket. The time to perform this background replication operation depends on a number of factors, including the size of the replication queue.
 +
-The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-sg-cgr-replication-state` response header, which will have one of the following values:
+The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
 +
 [cols="1a,2a" options="header"]
 |===
