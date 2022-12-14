@@ -111,13 +111,17 @@ In general, use the same number of days for the certificates on both sides of th
 
 . Select *Save and test*.
 +
-The certificates are generated and the connection is tested. If the connection is valid, a success message appears and the new connection is listed on the Grid federation page of both grids. The *Connection status* will be *Connected*.
+The certificates are generated and the connection is tested. If the connection is valid, a success message appears and the new connection is listed on the Grid federation page. The *Connection status* will be *Connected*.
 +
 If an error message appears, address any issues. See xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation errors].
+
+. Go to the Grid federation page on the first grid and refresh the browser. Confirm that the *Connection status* is now *Connected*.
 
 . After the connection has been established, securely delete all copies of the verification file.
 +
 If you edit this connection, a new verification file will be created. The original file cannot be reused.
 
-. When you are ready, create one or more new tenant accounts, add the *Use grid federation connection* permission, and select this connection. Start by reviewing the considerations for xref:grid-federation-manage-tenants.adoc[permitted tenants].
+.After you finish
+
+Review the considerations for xref:grid-federation-manage-tenants.adoc[managing permitted tenants]. Then, create one or more new tenant accounts, assign the *Use grid federation connection* permission, and select the new connection. 
 

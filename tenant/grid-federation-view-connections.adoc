@@ -1,7 +1,7 @@
 ---
-permalink: tenant/grid-federation-connections-view.html
+permalink: tenant/grid-federation-view-connections.html
 sidebar: sidebar
-keywords: 
+keywords: grid federation connection, view, clear error, last error
 summary: If your tenant account has the Use grid federation connection permission, you can view the allowed connections.
 ---
 = View grid federation connections
@@ -21,15 +21,17 @@ If your tenant account has the *Use grid federation connection* permission, you 
 
 . Select *STORAGE (S3)* > *Grid federation connections*.
 +
-NOTE: You must have Root access permission to see this entry on the sidebar.
-+
 The Grid federation connection page appears, and includes a table that summarizes the following information:
 
 * The *Connection name* column shows the grid federation connections this tenant has permission to use. 
 
 * The *Buckets with cross-grid replication* column shows which buckets for this tenant on this grid have cross-grid replication enabled. Objects added to these buckets will be replicated to the other grid in the connection.
 
-* The *Last error* column shows the most recent error to occur for this tenant when bucket data was being replicated to the other grid. An error in this column might occur for one of these reasons:
+* The *Last error* column shows the most recent error, if any, to occur for this tenant when bucket data was being replicated to the other grid. For example:
++
+image:../media/grid-federation-cgr-object-example-last-error.png[grid-federation-cgr-object-example-last-error]
++
+An error in this column might occur for one of these reasons:
 
 ** The source object version was not found.
 ** The source bucket was not found.
@@ -40,5 +42,14 @@ The Grid federation connection page appears, and includes a table that summarize
 
 . Optionally, select a bucket name to xref:viewing-s3-bucket-details.adoc[view bucket details].
 
-. Optionally, select *Clear error* to clear the last error.
+. If a message appears in the *Last error* column:
+.. Review the text and perform any recommended actions.
+.. Select the connection from the table.
+.. Select *Clear error*.
+.. Select *Yes* to clear the message and update the system's status.
+.. Ingest a new object into the bucket and confirm that the error message does not reappear.
++
+NOTE: If the underlying issue still exists, the error will reappear when new objects are ingested.
+
+
 
