@@ -40,7 +40,6 @@ The *ILM placement unachievable* alert might be triggered when Storage Nodes are
 
 After the upgrade completes, you can review any upgrade-related alerts by selecting *Recently resolved alerts* or *Current alerts* from the Grid Manager dashboard.
 
-
 == Many SNMP notifications are generated
 
 Be aware that a large number of SNMP notifications might be generated when grid nodes are stopped and restarted during the upgrade. To avoid excessive notifications, unselect the *Enable SNMP Agent Notifications* check box (*CONFIGURATION* > *Monitoring* > *SNMP agent*) to disable SNMP notifications before you start the upgrade. Then, re-enable notifications after the upgrade is complete.
@@ -53,9 +52,12 @@ Until the *Enable New Feature* task completes:
 
 * Do not make any grid configuration changes.
 * Do not change the audit level configuration or configure an external syslog server.
-* Do not enable or disable any new features.
+* Do not enable or disable any new features. For example, do not attempt to create a grid federation connection until both StorageGRID systems have been updated to StorageGRID 11.7.
 * Do not update the ILM configuration. Otherwise, you might experience inconsistent and unexpected ILM behavior.
 * Do not apply a hotfix or recover a grid node.
++
+NOTE: Contact technical support if you need to recover a node during upgrade.
+
 * You cannot manage HA groups, VLAN interfaces, or load balancer endpoints while you are upgrading to StorageGRID 11.7.
 
 Until the *Final Upgrade Steps* task completes:
