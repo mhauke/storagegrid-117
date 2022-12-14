@@ -13,7 +13,7 @@ After completing an expansion, you must perform additional integration and confi
 
 .About this task
 
-You must complete the configuration tasks listed below for the grid nodes you are adding in your expansion. Some tasks might be optional, depending on the options selected when installing and administering your system, and how you want to configure the grid nodes added during the expansion.
+You must complete the configuration tasks listed below for the grid nodes or sites you are adding in your expansion. Some tasks might be optional, depending on the options selected when installing and administering your system, and how you want to configure the nodes and sites added during the expansion.
 
 .Steps
 
@@ -21,7 +21,7 @@ You must complete the configuration tasks listed below for the grid nodes you ar
 
 .. Manage the storage pools used in your ILM rules to ensure the new storage will be used. 
 
-* If you added a site, xref:../ilm/creating-storage-pool.adoc[create a storage pool] for the site and each storage grade you selected for the new Storage Nodes. Then, configure your ILM rules and policy to use the new location.
+* If you added a site, xref:../ilm/creating-storage-pool.adoc[create a storage pool] for the site and each storage grade you selected for the new Storage Nodes. Confirm that the ILM policy meets the new requirements. If rule changes are required, link:../ilm/access-create-ilm-rule-wizard.html[create new rules] and link:../ilm/working-with-ilm-rules-and-ilm-policies.html[update the ILM policy]. If the rules are already correct, link:../ilm/activating-ilm-policy.html[activate a new policy] with no rule changes to ensure StorageGRID uses the new nodes.
 
 * If you added one or more Storage Nodes to an existing site, xref:../ilm/viewing-storage-pool-details.adoc[view storage pool details] to confirm that each node you added is included in the expected storage pools and used in the expected ILM rules.
 
