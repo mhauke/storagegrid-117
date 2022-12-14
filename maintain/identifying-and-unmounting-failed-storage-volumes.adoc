@@ -78,3 +78,14 @@ Unmounting /var/local/rangedb/0
 ----
 +
 In a few seconds, the volume is unmounted. Messages appear indicating each step of the process. The final message indicates that the volume is unmounted.
+
+. If the unmount fails because the volume is busy, you can force an unmount using the `--use-umountof` option:
++
+NOTE: Forcing an unmount using the `--use-umountof` option might cause processes or services using the volume to behave unexpectedly or crash.
++
+----
+root@Storage-180:~ # sn-unmount-volume --use-umountof /var/local/rangedb/2
+Unmounting /var/local/rangedb/2 using umountof
+/var/local/rangedb/2 is unmounted.
+Informing LDR service of changes to storage volumes
+----
