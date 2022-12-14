@@ -23,6 +23,6 @@ NOTE: Do not install any graphical desktop environments. When installing Ubuntu,
 . If swap is enabled:
  .. Run the following command: `$ sudo swapoff --all`
  .. Remove all swap entries from `/etc/fstab` to persist the settings.
-
 +
+
 IMPORTANT: Failing to disable swap entirely can severely lower performance.
