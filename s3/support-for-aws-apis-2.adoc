@@ -19,8 +19,7 @@ This list:
 //AbortMultipartUpload
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `uploadedId`	
@@ -28,7 +27,6 @@ These parameters are supported:
 *	`Date`
 *	`Authorization`
 
-.Request body 
 This request does not have a request body.
 
 .Learn more
@@ -37,8 +35,7 @@ xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 //CompleteMultipartUpload
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `uploadedId`	
@@ -47,8 +44,7 @@ These parameters are supported:
 *	`Content-Length`
 *	`Authorization`
 
-.Request body 
-Implemented with all Amazon S3 REST API behavior.
+The request body is implemented with all Amazon S3 REST API behavior.
 
 .Learn more
 xref:complete-multipart-upload.adoc[Complete Multipart Upload]
@@ -56,8 +52,7 @@ xref:complete-multipart-upload.adoc[Complete Multipart Upload]
 //CopyObject
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html[CopyObject^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `Host`
@@ -92,7 +87,6 @@ These parameters are supported:
 * `Date`
 * `Authorization`
 
-.Request body
 This request does not have a request body.
 
 .Learn more
@@ -102,16 +96,14 @@ xref:put-object-copy.html.adoc[PUT Object-Copy]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[CreateBucket^]
 
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `x-amz-bucket-object-lock-enabled`
 * `Date`
 * `Authorization`
 
-.Request body 
-Implemented with all Amazon S3 REST API behavior.
+The request body is implemented with all Amazon S3 REST API behavior.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -119,8 +111,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //CreateMultipartUpload
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html[CreateMultipartUpload^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `Host`
@@ -145,7 +136,7 @@ These parameters are supported:
 *	`Date`
 *	`Authorization`
 
-.Request body 
+
 This request does not have a request body.
 
 .Learn more
@@ -154,11 +145,7 @@ xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 //DeleteBucket
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBucket^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -166,11 +153,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //DeleteBucketCors
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html[DeleteBucketCors^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -178,11 +161,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //DeleteBucketLifecycle
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html[DeleteBucketLifecycle^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -190,11 +169,8 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //DeleteBucketPolicy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html[DeleteBucketPolicy^]
 
-.Request header 
 Implemented with all Amazon S3 REST API behavior.
 
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -202,11 +178,8 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //DeleteBucketTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html[DeleteBucketTagging^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
 
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -214,8 +187,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //DeleteObject
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html[DeleteObject^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`
 * `VersionId`
@@ -225,7 +197,6 @@ These parameters are supported:
 * `Content-Type`
 * `Content-Length`
 
-.Request body 
 This request does not have a request body.
 
 .Learn more
@@ -234,8 +205,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 //DeleteObjects
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html[DeleteObjects^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Date`
@@ -244,8 +214,7 @@ These parameters are supported:
 * `Accept`
 * `Connection`
 
-.Request body 
-Implemented with all Amazon S3 REST API behavior.
+The request body is implemented with all Amazon S3 REST API behavior.
 
 .Learn more
 xref:operations-on-objects.adoc[Operations on objects]
