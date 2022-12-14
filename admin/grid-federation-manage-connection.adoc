@@ -165,26 +165,26 @@ If the connection can be established using the edited values, a success message 
 +
 [cols="1a,2a" options="header"]
 |===
-|Connection status| Description
+| Connection status| Description
 
-|Connected
-|Both grids are connected and communicating normally.
+| Connected
+| Both grids are connected and communicating normally.
 
-|Error
-|The connection is in an error state. For example, a certificate has expired or a configuration value is no longer valid.
+| Error
+| The connection is in an error state. For example, a certificate has expired or a configuration value is no longer valid.
 
-|Pending edit
-|You have edited the connection on this grid, but the connection is still using the existing configuration. To complete the edit, upload the new verification file to the other grid.
+| Pending edit
+| You have edited the connection on this grid, but the connection is still using the existing configuration. To complete the edit, upload the new verification file to the other grid.
 
-|Waiting to connect
-|You have configured the connection on this grid, but the connection hasn't been completed on the other grid. Download the verification file from this grid and upload it to the other grid.
+| Waiting to connect
+| You have configured the connection on this grid, but the connection hasn't been completed on the other grid. Download the verification file from this grid and upload it to the other grid.
 
-|Unknown
-|The connection is in an unknown state, possibly because a networking issue or an offline node.
+| Unknown
+| The connection is in an unknown state, possibly because a networking issue or an offline node.
 
 |===
 
-. If the Connection status is *Error* resolve any issues. Then, select *Test connection* again to confirm the issue has been fixed.
+. If the Connection status is *Error*, resolve any issues. Then, select *Test connection* again to confirm the issue has been fixed.
 +
 IMPORTANT: You might need to wait up to 30 minutes for the Connection status to be updated. 
 
