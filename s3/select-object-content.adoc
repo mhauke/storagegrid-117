@@ -17,7 +17,16 @@ For more information see the https://docs.aws.amazon.com/AmazonS3/latest/API/API
 
 * The tenant account has the S3 Select permission.
 * You have `s3:GetObject` permission for the object you want to query.
-* The object you want to query is in CSV format, or is a GZIP or BZIP2 compressed file containing a CSV formatted file. 
+* The object you want to query must be in one of the following formats: 
+
+** *CSV*. Can be used as is or compressed into GZIP or BZIP2 archives. 
+** *Parquet*. Additional requirements for Parquet objects:
+
+*** S3 Select supports only columnar compression using GZIP or Snappy. S3 Select doesn't support whole-object compression for Parquet objects.
+*** S3 Select doesn't support Parquet output. You must specify the output format as CSV or JSON.
+*** The maximum uncompressed row group size is 512 MB.
+*** You must use the data types specified in the object's schema.
+*** You cannot use INTERVAL, JSON, LIST, TIME, or UUID logical types.
 * Your SQL expression has a maximum length of 256 KB.
 * Any record in the input or results has a maximum length of 1 MiB.
 
