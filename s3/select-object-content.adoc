@@ -151,11 +151,13 @@ Colorado,5029196,5454328,8.4532796097030221132761578590295546246
 
 == AWS-CLI usage example (Parquet)
 [source,asciidoc]
+
 ----
 aws s3api select-object-content  -endpoint-url https://10.224.7.44:10443 --bucket 619c0755-9e38-42e0-a614-05064f74126d --key SUB-EST2020_ALL.parquet --expression "SELECT STNAME, CENSUS2010POP, POPESTIMATE2015, CAST((POPESTIMATE2015 - CENSUS2010POP) AS DECIMAL) / CENSUS2010POP * 100.0 FROM S3Object WHERE NAME = STNAME" --expression-type 'SQL' --input-serialization '{"Parquet":{}}'  --output-serialization '{"CSV": {}}' changes.csv
 ----
 
 The first few lines of the output file, changes.csv, look like this:
+
 ----
 Alabama,4779736,4854803,1.5705260708959658022953568983726297854
 Alaska,710231,738430,3.9703983633493891424057806544631253775
