@@ -34,11 +34,12 @@ NOTE: If you are using a key management server (KMS) to protect the data on spec
 
 == Add client certificates
 
-Follow the procedure for your scenario to add a client certificate:
+To add the client certificate, use one of these procedures:
 
 * <<Management interface certificate already configured>>
 * <<CA issued client certificate>>
 * <<Generated certificate from Grid Manager>>
+
 
 === Management interface certificate already configured
 
@@ -64,36 +65,8 @@ Use this procedure to add a client certificate if a management interface certifi
 +
 The new certificate appears on the Client tab.
 
-. Configure the following settings on your external monitoring tool, such as Grafana.
-+
-// A Grafana example is shown in the following screenshot:
-// +
-// image::../media/grafana_add_url_and_auth.png[Grafana - Add URL and Auth]
+. <<configure-external-monitoring-tool,Configure an external monitoring tool>>, such as Grafana. 
 
- .. *Name*: Enter a name for the connection.
-+
-StorageGRID does not require this information, but you must provide a name to test the connection.
-
- .. *URL*: Enter the domain name or IP address for the Admin Node. Specify HTTPS and port 9091.
-+
-For example: `+https://admin-node.example.com:9091+`
-
- .. Enable *TLS Client Auth* and *With CA Cert*.
-
- .. Under TLS/SSL Auth Details, copy and paste: +
- * The management interface CA certificate to **CA Cert**
- * The client certificate to **Client Cert**
- * The private key to **Client Key**
-
- .. *ServerName*: Enter the domain name of the Admin Node.
-+
-ServerName must match the domain name as it appears in the management interface certificate.
-
- .. Save and test the certificate and private key that you copied from StorageGRID or a local file.
-+
-You can now access the Prometheus metrics from StorageGRID with your external monitoring tool.
-+
-For information about the metrics, see the xref:../monitor/index.adoc[instructions for monitoring StorageGRID].
 
 === CA issued client certificate
 
@@ -120,38 +93,7 @@ Use this procedure to add an administrator client certificate if a management in
 +
 The new certificates appear on the Client tab.
 
-
-. Configure the following settings on your external monitoring tool, such as Grafana.
-+
-// A Grafana example is shown in the following screenshot:
-// +
-// image::../media/grafana_add_url_and_auth.png[Grafana - Add URL and Auth]
-
-.. *Name*: Enter a name for the connection.
-+
-StorageGRID does not require this information, but you must provide a name to test the connection.
-
-.. *URL*: Enter the domain name or IP address for the Admin Node. Specify HTTPS and port 9091.
-+
-For example: `+https://admin-node.example.com:9091+`
-
-.. Enable *TLS Client Auth* and *With CA Cert*.
-
-.. Under TLS/SSL Auth Details, copy and paste:
-
-* The management interface CA certificate to **CA Cert**
-* The client certificate to **Client Cert**
-* The private key to **Client Key**
-
-.. *ServerName*: Enter the domain name of the Admin Node.
-+
-ServerName must match the domain name as it appears in the management interface certificate.
-
-.. Save and test the certificate and private key that you copied from StorageGRID or a local file.
-+
-You can now access the Prometheus metrics from StorageGRID with your external monitoring tool.
-+
-For information about the metrics, see the xref:../monitor/index.adoc[instructions for monitoring StorageGRID].
+. <<configure-external-monitoring-tool,Configure an external monitoring tool>>, such as Grafana. 
 
 === Generated certificate from Grid Manager
 
@@ -205,6 +147,12 @@ The new certificate appears on the Client tab.
 +
 The new certificate appears on the Client tab.
 
+. <<configure-external-monitoring-tool,Configure an external monitoring tool>>, such as Grafana. 
+
+=== [[configure-external-monitoring-tool]]Configure an external monitoring tool
+
+.Steps
+
 . Configure the following settings on your external monitoring tool, such as Grafana.
 +
 // A Grafana example is shown in the following screenshot:
@@ -222,14 +170,15 @@ For example: `+https://admin-node.example.com:9091+`
  .. Enable *TLS Client Auth* and *With CA Cert*.
 
  .. Under TLS/SSL Auth Details, copy and paste: +
- * The management interface client certificate to both **CA Cert** and **Client Cert**
+ * The management interface CA certificate to **CA Cert**
+ * The client certificate to **Client Cert**
  * The private key to **Client Key**
 
  .. *ServerName*: Enter the domain name of the Admin Node.
 +
 ServerName must match the domain name as it appears in the management interface certificate.
 
- .. Save and test the certificate and private key that you copied from StorageGRID or a local file.
+. Save and test the certificate and private key that you copied from StorageGRID or a local file.
 +
 You can now access the Prometheus metrics from StorageGRID with your external monitoring tool.
 +
