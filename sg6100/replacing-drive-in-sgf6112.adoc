@@ -1,0 +1,59 @@
+---
+permalink: sg6100/replacing-drive-in-sgf6112.html
+sidebar: sidebar
+keywords: storagegrid, sg6112, Replacing, replace, drive, remove, removing, removal, install, installing, installation
+summary: 'The SG6100 series storage appliances contain SSD drives. The drives are mirrored using RAID for redundancy. If one of the drives fails, you must replace it as soon as possible to ensure redundancy.'
+---
+= Replace drive in the SG6100 series appliance
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The SG6100 series storage appliances contain SSD drives. The drives are mirrored using RAID for redundancy. If one of the drives fails, you must replace it as soon as possible to ensure redundancy.
+
+.What you'll need
+
+* You have xref:locating-controller-in-data-center.adoc[physically located the appliance].
+
+* You have verified which drive has failed by noting that its left LED is blinking amber.
++
+IMPORTANT: See the information about viewing status indicators to verify the failure.
+
+* You have obtained the replacement drive.
+* You have obtained proper ESD protection.
+
+.Steps
+
+. Verify that the drive's left LED is blinking amber.
++
+You can also use the Grid Manager to monitor the status of the SSDs. Select *NODES*. Then select `*Storage Node*` > *Hardware*. If a drive has failed, the Storage RAID Mode field contains a message about which drive has failed.
+
+. Wrap the strap end of the ESD wristband around your wrist, and secure the clip end to a metal ground to prevent static discharge.
+. Unpack the replacement drive, and set it on a static-free, level surface near the appliance.
++
+Save all packing materials.
+
+. Press the release button on the failed drive.
++
+image::../media/h600s_driveremoval.gif[Drive Removal]
++
+The handle on the drive springs open partially, and the drive releases from the slot.
+
+. Open the handle, slide the drive out, and place it on a static-free, level surface.
+. Press the release button on the replacement drive before you insert it into the drive slot.
++
+The latch springs open.
++
+image::../media/h600s_driveinstall.gif[Drive Installation]
+
+. Insert the replacement drive in the slot, and then close the drive handle.
++
+IMPORTANT: Do not use excessive force while closing the handle.
++
+When the drive is fully inserted, you hear a click.
++
+The drive is automatically rebuilt with mirrored data from the working drives. You can check the status of the rebuild by using the Grid Manager. Select *NODES*. Then select `*Storage Node*` > *Hardware*. The Storage RAID Mode field contains a "`rebuilding`" message until the drive is completely rebuilt.
+
+. Contact technical support about the drive replacement.
++
+Technical support will provide instructions for returning the failed drive.
