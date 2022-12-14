@@ -86,4 +86,4 @@ If TLS ciphers or SSH configurations have been manually changed or are inconsist
 == CLB ports might be converted to load balancer endpoints
 The legacy Connection Load Balancer (CLB) service has been removed in StorageGRID 11.7. If CLB configuration is detected during upgrade prechecks, the *Legacy CLB load balancer activity detected* alert will be triggered. If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be converted to load balancer endpoints during upgrade to StorageGRID 11.7.
 
-See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
+See also xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
