@@ -92,8 +92,8 @@ The `NewerNoncurrentVersions` action in the bucket lifecycle configuration speci
 === Certificate subject optional
 The certificate subject field is now optional. If this field is left blank, the generated certificate uses the first domain name or IP address as the subject common name (CN).
 
-=== User Initiated Volume Lost command deprecated
-The `proc/CMSI/Volume_Lost` has been depreciated. Use the `repair-data start-replicated-volume-repair` command to restore replicated data for a volume.
+=== User Initiated Volume Lost command removed
+The `proc/CMSI/Volume_Lost` has been removed. Use the `repair-data start-replicated-volume-repair` command to restore replicated data for a volume.
 
 == Lisa's what's new
 
