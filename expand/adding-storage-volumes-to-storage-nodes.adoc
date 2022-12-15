@@ -14,9 +14,9 @@ You can expand the storage capacity of Storage Nodes that have 16 or fewer stora
 
 .What you'll need
 
-Before adding storage volumes, review the xref:guidelines-for-adding-object-capacity.adoc[guidelines for adding object capacity] to ensure that you know where to add volumes to meet the requirements of your ILM policy.
+Before adding storage volumes, review the link:guidelines-for-adding-object-capacity.html[guidelines for adding object capacity] to ensure that you know where to add volumes to meet the requirements of your ILM policy.
 
-NOTE: These instructions apply to software-based Storage Nodes only. See xref:../sg6000/adding-expansion-shelf-to-deployed-sg6060.adoc[Add expansion shelf to deployed SG6060] to learn how to add storage volumes to SG6060 by installing expansion shelves. Other appliance Storage Nodes cannot be expanded.
+NOTE: These instructions apply to software-based Storage Nodes only. See link:../sg6000/adding-expansion-shelf-to-deployed-sg6060.html[Add expansion shelf to deployed SG6060] to learn how to add storage volumes to SG6060 by installing expansion shelves. Other appliance Storage Nodes cannot be expanded.
 
 
 .About this task
@@ -40,8 +40,8 @@ To help you interpret disk read and write statistics related to volume mount poi
 +
 image::../media/nodes_page_storage_tables_vol_expansion.png[Nodes Page Storage Tables]
 
-. Follow the instructions for your platform to add new storage volumes to the Storage Node.
+. Follow the instructions for your platform to add new storage volumes to the Storage Node.  
 
-** xref:vmware-adding-storage-volumes-to-storage-node.adoc[VMware: Add storage volumes to Storage Node]
+** link:vmware-adding-storage-volumes-to-storage-node.html[VMware: Add storage volumes to Storage Node]
 
-** xref:linux-adding-direct-attached-or-san-volumes-to-storage-node.adoc[Linux: Add direct-attached or SAN volumes to Storage Node]
+** link:linux-adding-direct-attached-or-san-volumes-to-storage-node.html[Linux: Add direct-attached or SAN volumes to Storage Node]

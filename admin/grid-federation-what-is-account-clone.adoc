@@ -30,7 +30,11 @@ xref:grid-federation-manage-tenants.adoc[Manage permitted tenants for grid feder
 
 == How are groups, users, and S3 access keys cloned?
 
-After tenants have been created and replicated, new groups and users are automatically cloned from the tenant's source grid to the tenant's destination grid.
+This section describes how groups, users, and S3 access keys are cloned between the tenant source grid and the tenant destination grid.
+
+=== Groups and users added to source grid are cloned
+
+After a tenant account is created and replicated to the destination grid, any new groups and users added to the tenant's source grid are automatically cloned to the tenant's destination grid.
 
 image:../media/grid-federation-account-clone.png[image showing that tenant details are cloned from source grid to destination grid]
 
@@ -38,17 +42,32 @@ As shown in the figure:
 
 * Local tenant groups created on the source grid are automatically cloned to the destination grid. Both groups have the same access mode, group permissions, and S3 policy.
 
-* Local tenant users created on the source grid are also automatically cloned to the destination grid. However, for security reasons, local user passwords are not cloned to the destination grid. If a local user needs to access Tenant Manager on the destination grid, you must add a password for that user on the destination grid.
+* Local tenant users created on the source grid are also automatically cloned to the destination grid.
+
+* For security reasons, local user passwords are not cloned to the destination grid.
++
+IMPORTANT: If a local user needs to sign in to Tenant Manager on the destination grid, a user with Root access permission must sign in to Tenant Manager on the destination grid to add a password for the user on that grid. See xref:../tenant/managing-local-users.adoc[Manage local users].
 
 * Assuming the requirements for <<account-clone-sso,single sign-on>> and <<account-clone-identity-federation,identity federation>> have been met, federated groups that are created (imported) for the tenant on the source grid are automatically cloned to the tenant on the destination grid. Both groups have the same access mode, group permissions and S3 group policy. Users in the imported group can sign in to either grid.
 
-* Optionally, S3 access keys created on the source grid can be manually cloned to the destination grid.
-+ 
-For security reasons, StorageGRID does not automatically clone S3 access keys from the tenant's source grid to the destination grid. If tenant users need to access the buckets on both grids, you must use the Tenant Manager API to manually clone the keys from the source grid to the destination grid. See xref:../tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
+=== S3 access keys can be manually cloned
 
-Account cloning occurs only from the tenant's source grid to the tenant's destination grid. If you create or import groups, users, and S3 access keys on the tenant's destination grid, these items are not cloned back to the source grid. 
+For security reasons, StorageGRID does not automatically clone S3 access keys from the tenant's source grid to the destination grid. If tenant users need to access the buckets on both grids, you can use the Tenant Manager API to manually clone the access keys.
+
+image:../media/grid-federation-s3-access-key.png[image showing that s3 access keys can be optionally cloned from source grid to destination grid]
+
+.Learn more
+xref:../tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
+
+=== Groups and users added to destination grid are not cloned
+
+Account cloning occurs only from the tenant's source grid to the tenant's destination grid. 
+
+As shown in the figure, if you create or import groups, users, and S3 access keys on the tenant's destination grid, these items are not cloned back to the source grid. 
 
 image:../media/grid-federation-account-not-cloned.png[image showing that tenant details are cloned back to source grid]
+
+=== Edited or deleted groups and users are not cloned
 
 Account cloning occurs only for new information. If you edit or delete the tenant or its users, groups, or access keys on either grid, your changes are not cloned to the other grid. However, if you delete a tenant from the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
 

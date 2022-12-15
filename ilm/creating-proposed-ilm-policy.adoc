@@ -11,6 +11,8 @@ summary: 'You can create a proposed ILM policy from scratch, or you can clone th
 [.lead]
 You can create a proposed ILM policy from scratch, or you can clone the current active policy if you want to start with the same set of rules.
 
+Before creating your own policy, verify that the link:creating-ilm-policy.html#default-ilm-policy[default ILM policy] does not meet your storage requirements.
+
 NOTE: If the xref:enabling-s3-object-lock-globally.adoc[global S3 Object Lock setting has been enabled], you must ensure that the ILM policy is compliant with the requirements of buckets that have S3 Object Lock enabled. In this section, follow the instructions that mention having S3 Object Lock enabled.
 
 .What you'll need

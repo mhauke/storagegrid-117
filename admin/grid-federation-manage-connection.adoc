@@ -50,11 +50,15 @@ image:../media/grid-federation-certificates-tab.png[grid-federation-certificates
 
 You can edit a grid federation connection by signing in to the primary Admin Node on either grid in the connection. After you make changes to the first grid, you must download a new verification file and upload it to the other grid.
 
-NOTE: While the connection is being edited, account clone or cross-grid replication requests will continue to use the existing connection settings. Any edits you make to the first grid are not used until they have been uploaded to the second grid, saved, and tested. 
+NOTE: While the connection is being edited, account clone or cross-grid replication requests will continue to use the existing connection settings. Any edits you make to the first grid are saved locally but are not used until they have been uploaded to the second grid, saved, and tested. 
 
 === Start editing the connection
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
+
+. Select *NODES* and confirm that all other Admin Nodes in your system are online.
++
+NOTE: When you edit a grid federation configuration, StorageGRID attempts to save a "`candidate configuration`" file on all Admin Nodes on the first grid. If this file can't be saved to all Admin Nodes, a warning message appears when you select *Save and test*.
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
@@ -161,24 +165,28 @@ If the connection can be established using the edited values, a success message 
 +
 [cols="1a,2a" options="header"]
 |===
-|Connection status| Description
+| Connection status| Description
 
-|Connected
-|Both grids are connected and communicating normally.
+| Connected
+| Both grids are connected and communicating normally.
 
-|Error
-|The connection is in an error state. For example, a certificate has expired or a configuration value is no longer valid.
+| Error
+| The connection is in an error state. For example, a certificate has expired or a configuration value is no longer valid.
 
-|Pending edit
-|You have edited the connection on this grid, but the connection is still using the existing configuration. To complete the edit, upload the new verification file to the other grid.
+| Pending edit
+| You have edited the connection on this grid, but the connection is still using the existing configuration. To complete the edit, upload the new verification file to the other grid.
 
-|Waiting to connect
-|You have configured the connection on this grid, but the connection hasn't been completed on the other grid. Download the verification file from this grid and upload it to the other grid.
+| Waiting to connect
+| You have configured the connection on this grid, but the connection hasn't been completed on the other grid. Download the verification file from this grid and upload it to the other grid.
 
-|Unknown
-|The connection is in an unknown state, possibly because a networking issue or an offline node.
+| Unknown
+| The connection is in an unknown state, possibly because a networking issue or an offline node.
 
 |===
+
+. If the Connection status is *Error*, resolve any issues. Then, select *Test connection* again to confirm the issue has been fixed.
++
+IMPORTANT: You might need to wait up to 30 minutes for the Connection status to be updated. 
 
 
 == [[rotate_grid_fed_certificates]]Rotate connection certificates
@@ -204,30 +212,28 @@ In general, use the same number of days for the certificates on both sides of th
 
 == [[remove_grid_fed_connection]]Remove a grid federation connection
 
-You can remove a grid federation connection from either grid in the connection. As shown in the figure, you must perform steps on both grids to confirm that the connection is not being used by any tenant on either grid.
+You can remove a grid federation connection from either grid in the connection. As shown in the figure, you must perform prerequisite steps on both grids to confirm that the connection is not being used by any tenant on either grid.
 
 image:../media/grid-federation-remove-connection.png[steps to remove grid federation connection]
 
-IMPORTANT: After you remove a connection, you can no longer replicate data between grids. However, any tenant account information that was cloned to the other grid or any objects that were previously replicated between grids is not deleted. If you want to delete this information from either grid, you must delete it manually.
+IMPORTANT: Removing a connection does not delete any items that have already been copied between grids. For example, any tenant users, groups, and objects that exist on both grids are not deleted from either grid when the tenant’s permission is removed. If you want to delete these items, you must manually delete them from both grids.
 
-Start these steps from either grid in the grid federation connection.
+Start these steps from either grid in the connection.
+
+=== Remove permission for each tenant
 
 . Sign in to the Grid Manager from the primary Admin Node.
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 . Select the connection name to display its details.
-. On the *Permitted tenants* tab, determine if the connection is in use by any tenants.
-. If any tenants are using the connection:
-
-.. Confirm that the connection is not being used for cross-grid replication.
+. On the *Permitted tenants* tab, determine if the connection is being used by any tenants.
+. If any tenants are listed, follow the instructions in xref:grid-federation-manage-tenants.adoc[Manage permitted tenants] to remove the *Use grid federation connection* permission from each tenant on each grid.
 +
-You can't remove a tenant's permission until you have stopped replication for each of the tenant's buckets.
+IMPORTANT: You can't remove the *Use grid federation connection* permission if any of the tenant's buckets have cross-grid replication enabled. The tenant account must stop cross-grid replication for all of their buckets first. 
 
-.. From the first grid, xref:grid-federation-manage-tenants.adoc[remove the permission] for each tenant.
-
-.. From the second grid, remove the permission for the same tenant accounts. 
+== Remove connection
 
 . When no tenants on either grid are using the connection, select *Remove*.
-. Review the confirmation message, and select *Yes*.
+. Review the confirmation message, and select *Remove*.
 
 * If the connection can be removed, you are returned to the details page and a success message is shown. The grid federation connection is now removed from both grids.
 

@@ -26,10 +26,10 @@ The Connection Load Balancer (CLB) service on Gateway Nodes was deprecated in St
 If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be automatically converted to load balancer endpoints during the upgrade to StorageGRID 11.7.
 
 == Option to change the network transfer encryption algorithm removed 
-The *Network Transfer Encryption* internal connection setting on the Grid options page (*CONFIGURATION* > *System* > *Grid options*) was obsoleted by the new cipher configuration system and the setting has been removed. The AES256-SHA option was the default in StorageGRID 11.6 and is the only setting available in StorageGRID 11.7. The AES128-SHA value is ignored in the Grid Management API. During the StorageGRID 11.7 upgrade, the network transfer encryption algorithm is set to AES256-SHA. 
+The *Network Transfer Encryption* internal connection setting on the Grid options page (*CONFIGURATION* > *System* > *Grid options*) was obsoleted by the new cipher configuration system and the setting has been removed. The AES256-SHA option was the default in StorageGRID 11.6 and is the only setting available in StorageGRID 11.7. The AES128-SHA value is ignored in the Grid Management API. During the StorageGRID 11.7 upgrade, the network transfer encryption algorithm is set to AES256-SHA.
 
 == Swift support deprecated
 As of the StorageGRID 11.7 release, support for Swift client applications has been deprecated. The user interface and APIs that support Swift client applications will be removed in a future release.
 
-== IPv4 and IPv6 addresses are not supported 
-The use of IP addresses as endpoint domain names is unsupported. Future releases will prevent the configuration. If you need to use IP addresses, contact technical support. See xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 endpoint domain names].
+== S3 endpoint domain name format restrictions 
+The use of IP addresses as endpoint domain names is unsupported. Future releases will prevent the configuration. If you need to use IP addresses for endpoint domain names, contact technical support. See xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 endpoint domain names].
