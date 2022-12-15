@@ -4,7 +4,7 @@
 * The storage appliance has an Optimal status.
 * All drives have an Optimal status.
 * You have the latest version of SANtricity System Manager installed that is compatible with your StorageGRID version.
-* If you are performing an offline upgrade, you have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
+* If you are performing an offline upgrade, you have xref:../maintain/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
 +
 NOTE: While in maintenance mode I/O activity to the storage controller is stopped to make disruptive storage operations safe.
 
@@ -26,7 +26,7 @@ The offline method is faster than the online method and is recommended.
 
 .Steps
 
-. If you are performing an offline upgrade, confirm that the appliance is in xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[maintenance mode].
+. If you are performing an offline upgrade, confirm that the appliance is in xref:../maintain/placing-appliance-into-maintenance-mode.adoc[maintenance mode].
 
 . Access SANtricity System Manager using one of these methods:
  ** Use the StorageGRID Appliance Installer and select *Advanced* > *SANtricity System Manager*
@@ -192,6 +192,3 @@ It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To
 +
 image::../media/node_rejoin_grid_confirmation.png[Appliance node rejoined grid]
 
-.Related information
-
-xref:../sg5700/upgrading-santricity-os-on-storage-controllers-using-grid-manager-steps.adoc[Upgrade SANtricity OS on storage controllers]

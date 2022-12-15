@@ -303,8 +303,8 @@ Some of these permissions have additional requirements. For details, select the 
 
 *Important*: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
 
-|Use grid federation connection
-|The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-overview.adoc[What is grid federation].
+| Use grid federation connection
+| The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-manage-tenants.adoc[Manage the permitted tenants for grid federation].
 
 |===
 
@@ -321,15 +321,15 @@ Some of these permissions have additional requirements. For details, select the 
 | Specify the password to use when signing into the tenant as the local root user.
 
 | If identity federation is enabled
-| Select an existing federated group to have Root access permission for the tenant.
+| . Select an existing federated group to have Root access permission for the tenant.
 
-Optionally specify the password to use when signing in to the tenant as the local root user.
+. Optionally, specify the password to use when signing in to the tenant as the local root user.
 
 | If both identity federation and single sign-on (SSO) are enabled
 | Select an existing federated group to have Root access permission for the tenant. No local users can sign in.
 
 |===
-+
+
 
 . If you want the wizard to create the access key ID and secret access key for the root user, select *Create root user S3 access key automatically*. 
 +
