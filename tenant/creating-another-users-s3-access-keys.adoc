@@ -30,7 +30,6 @@ IMPORTANT: The S3 buckets and objects belonging to a user can be accessed using 
 == Create access keys
 
 . Select *ACCESS MANAGEMENT* > *Users*.
-
 . Select the user whose S3 access keys you want to manage.
 +
 The user detail page appears.
@@ -40,6 +39,10 @@ The user detail page appears.
 . Do one of the following:
  ** Select *Do not set an expiration time* to create a key that does not expire. (Default)
  ** Select *Set an expiration time*, and set the expiration date and time.
++
+
+NOTE: The expiration date can be a maximum of five years from the current date. The expiration time can be a minimum of one minute from the current time.
+
 +
 image::../media/tenant_s3_access_key_create_save.png[screenshot of the Create Access Key dialog]
 
@@ -96,7 +99,6 @@ The Users page appears and lists the existing users.
 The User details page appears.
 
 . Select *Access keys*, and then select the check box for each access key you want to delete.
-
 . Select *Actions* > *Delete selected key*.
 +
 A confirmation dialog box appears.

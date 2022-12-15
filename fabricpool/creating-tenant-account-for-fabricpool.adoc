@@ -62,16 +62,16 @@ FabricPool tenants do not typically need to use S3 Select.
 | Option 
 | Do this
 
-|If identity federation is not enabled 
-|Specify the password to use when signing into the tenant as the local root user.
+| If identity federation is not enabled 
+| Specify the password to use when signing into the tenant as the local root user.
 
-|If identity federation is enabled
-|Select an existing federated group to have Root access permission for the tenant.
+| If identity federation is enabled
+| . Select an existing federated group to have Root access permission for the tenant.
 
-Optionally specify the password to use when signing in to the tenant as the local root user.
+. Optionally, specify the password to use when signing in to the tenant as the local root user.
 
-|If both identity federation and single sign-on (SSO) are enabled
-|Select an existing federated group to have Root access permission for the tenant. No local users can sign in.
+| If both identity federation and single sign-on (SSO) are enabled
+| Select an existing federated group to have Root access permission for the tenant. No local users can sign in.
 
 |===
 
