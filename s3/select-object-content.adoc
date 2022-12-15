@@ -131,7 +131,7 @@ POPESTIMATE2020
 725,723,719,717
 ----
 
-== AWS-CLI usage example
+== AWS-CLI usage example (CSV)
 
 ----
 aws s3api select-object-content --endpoint-url https://10.224.7.44:10443 --no-verify-ssl  --bucket 619c0755-9e38-42e0-a614-05064f74126d --key SUB-EST2020_ALL.csv --expression-type SQL --input-serialization '{"CSV": {"FileHeaderInfo": "USE", "Comments": "#", "QuoteEscapeCharacter": "\"", "RecordDelimiter": "\n", "FieldDelimiter": ",", "QuoteCharacter": "\"", "AllowQuotedRecordDelimiter": false}, "CompressionType": "NONE"}' --output-serialization '{"CSV": {"QuoteFields": "ASNEEDED", "QuoteEscapeCharacter": "#", "RecordDelimiter": "\n", "FieldDelimiter": ",", "QuoteCharacter": "\""}}' --expression "SELECT STNAME, CENSUS2010POP, POPESTIMATE2015, CAST((POPESTIMATE2015 - CENSUS2010POP) AS DECIMAL) / CENSUS2010POP * 100.0 FROM S3Object WHERE NAME = STNAME" changes.csv
