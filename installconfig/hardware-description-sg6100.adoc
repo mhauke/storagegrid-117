@@ -21,7 +21,14 @@ SG6100 appliances provide the following features:
 * Supports Federal Information Processing Standard (FIPS) drives to prevent unauthorized access to the drives. 
 
 == SGF6112 hardware description
-The StorageGRID SGF6112 is an all-flash appliance that features a compact design with compute controller and storage controller integrated into a 1 RU chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 7.68TB per drive. 
+The StorageGRID SGF6112 is an all-flash appliance that features a compact design with compute controller and storage controller integrated into a 1 RU chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 7.68TB per drive.
+
+=== Resilient object storage
+The SSDs in the SGF6112 are built into a specialized RAID that provides the following data protection features: 
+
+* Ability to function after the failure of a single SSD with no impact on object availability.
+* Ability to continue to function after multiple SSD failures with a minimum necessary reduction in object availability (based on the design of the underlying RAID scheme).
+* Fully recoverable, while in service, from any number of SSD failures that do not result in extreme damage to the RAID housing the node's root volume (the StorageGrid operating system).
 
 === SGF6112 hardware components
 The SGF6112 appliance includes the following components:
