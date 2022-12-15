@@ -15,6 +15,13 @@ When you create an ILM policy, you start by selecting and arranging the ILM rule
 
 CAUTION: An ILM policy that has been incorrectly configured can result in unrecoverable data loss. Before activating an ILM policy, carefully review the ILM policy and its ILM rules, and then simulate the ILM policy. Always confirm that the ILM policy will work as intended.
 
+[[default-ilm-policy]]
+== Default ILM policy
+ 
+When you install StorageGRID and add sites, a default ILM policy is automatically created. If your grid contains one site, the default policy contains a default rule that replicates two copies of each object at that site. If your grid contains more than one site, the default rule replicates one copy of each object at each site.
+ 
+If the default policy does not meet your storage requirements, you can create your own rules and policy. See link:what-ilm-rule-is.html[What an ILM rule is] and link:creating-proposed-ilm-policy.html[Creating a proposed ILM policy].
+
 == How does an ILM policy evaluate objects?
 
 The active ILM policy for your StorageGRID system controls the placement, duration, and data protection of all objects.

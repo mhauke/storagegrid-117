@@ -25,7 +25,7 @@ IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Deleting object
 
 * While objects are being deleted, the bucket's state is *Deleting objects: read-only*. In this state, you can't add new objects to the bucket. 
 
-* When all objects have been deleted, you can do one of the following:
+* When all objects have been deleted, the bucket remains in the read-only state. You can do one of the following:
 
 ** Return the bucket to write mode and reuse it for new objects 
 ** Delete the bucket
@@ -33,11 +33,11 @@ IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Deleting object
 
 * If a bucket has object versioning enabled, any delete markers that are in the bucket when you start these steps will not be removed by the delete objects operation. If you want to delete a versioned bucket after all objects have been deleted, you must remove any pre-existing delete markers.
 
-* If you use xref:grid-federation-manage-cross-grid-replication.adoc[cross-grid replication] and:
+* If you use xref:grid-federation-manage-cross-grid-replication.adoc[cross-grid replication], note the following: 
 
-** Replication is enabled only for one of the buckets, deleting all objects does not delete any objects from the corresponding bucket on the other grid. You can also continue to add objects to the other bucket.
+** Using this option does not delete any objects from the bucket on the other grid.
 
-** Replication is enabled for both buckets, the *Cross-grid replication failure* alert will be triggered if objects are added to the corresponding bucket on the other grid while this bucket is in the *Deleting objects: read-only state*. If you can't guarantee no one will add objects to the bucket on the other grid, xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects on this grid.
+** If you select this option for the source bucket, the *Cross-grid replication failure* alert will be triggered if you add objects to the destination bucket on the other grid. If you can't guarantee no one will add objects to the bucket on the other grid, xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects.
 
 .What you'll need
 
@@ -78,15 +78,25 @@ The Buckets page appears and shows all existing S3 buckets.
 +
 After a few minutes:
 
-* A status message appears on the bucket details page, which includes a progress bar.
+* A yellow status banner appears on the bucket details page. The progress bar represents what percentage of objects have been deleted.
+
 * *(read-only)* appears after the bucket's name on the bucket details page.
 * *(Deleting objects: read-only)* appears next to the bucket's name on the Buckets page.
+
++
+image::../media/delete-bucket-objects-in-progress.png[screenshot showing bucket objects being deleted]
 
 . As required while the operation is running, select *Stop deleting objects* to halt the process. Then, optionally, select *Delete objects in bucket* to resume the process.
 +
 When you select *Stop deleting objects*, the bucket is returned to write mode; however, you cannot access or restore any objects that have been deleted.
 
-. When the operation is complete (when 100% of the objects have been removed), do one of the following:
+. Wait for the operation to complete.
++ 
+When the bucket is empty, the status banner is updated, but the bucket remains read only.
++
+image::../media/delete-bucket-objects-complete.png[screenshot showing all bucket objects deleted]
+
+. Do one of the following:
 
 ** Exit the page to keep the bucket in read-only mode. For example, you might keep an empty bucket in read-only mode to reserve the bucket name for future use.
 

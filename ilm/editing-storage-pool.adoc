@@ -18,7 +18,7 @@ You can edit a storage pool to change its name or to update sites and storage gr
 * If you plan to edit a storage pool that is used by a rule in the active ILM policy, you have considered how your changes will affect object data placement.
 
 .About this task
-If you are adding a new storage grade to a storage pool that is used in the active ILM policy, be aware that the Storage Nodes in the new storage grade will not be used automatically. To force StorageGRID to use a new storage grade, you must activate a new ILM policy after saving the edited storage pool.
+If you are adding a new site or storage grade to a storage pool that is used in the active ILM policy, be aware that the Storage Nodes in the new site or storage grade will not be used automatically. To force StorageGRID to use a new site or storage grade, you must activate a new ILM policy after saving the edited storage pool.
 
 .Steps
 . Select *ILM* > *Storage pools*.
@@ -36,4 +36,4 @@ NOTE: You are prevented from changing the site or storage grade if the storage p
 . Select *Save*.
 
 .After you finish
-If you added a new storage grade to a storage pool used in the active ILM policy, activate a new ILM policy to force StorageGRID to use the new storage grade. For example, clone your existing ILM policy and then activate the clone.
+If you added a new site or storage grade to a storage pool used in the active ILM policy, activate a new ILM policy to force StorageGRID to use the new site or storage grade. For example, clone your existing ILM policy and then activate the clone. See link:working-with-ilm-rules-and-ilm-policies.html[Work with ILM rules and ILM policies].

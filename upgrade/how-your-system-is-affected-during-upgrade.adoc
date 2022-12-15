@@ -53,9 +53,12 @@ Until the *Enable New Feature* task completes:
 
 * Do not make any grid configuration changes.
 * Do not change the audit level configuration or configure an external syslog server.
-* Do not enable or disable any new features.
+* Do not enable or disable any new features. For example, do not attempt to create a grid federation connection until both StorageGRID systems have been updated to StorageGRID 11.7.
 * Do not update the ILM configuration. Otherwise, you might experience inconsistent and unexpected ILM behavior.
 * Do not apply a hotfix or recover a grid node.
++
+NOTE: Contact technical support if you need to recover a node during upgrade.
+
 * You cannot manage HA groups, VLAN interfaces, or load balancer endpoints while you are upgrading to StorageGRID 11.7.
 
 Until the *Final Upgrade Steps* task completes:
@@ -86,4 +89,4 @@ If TLS ciphers or SSH configurations have been manually changed or are inconsist
 == CLB ports might be converted to load balancer endpoints
 The legacy Connection Load Balancer (CLB) service has been removed in StorageGRID 11.7. If CLB configuration is detected during upgrade prechecks, the *Legacy CLB load balancer activity detected* alert will be triggered. If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be converted to load balancer endpoints during upgrade to StorageGRID 11.7.
 
-See xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
+See also xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].

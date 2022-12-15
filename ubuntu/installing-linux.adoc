@@ -11,6 +11,8 @@ summary: 'You must install Ubuntu or Debian on all grid hosts. Use the NetApp In
 [.lead]
 You must install Linux on all grid hosts. Use the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool^] to get a list of supported versions.
 
+IMPORTANT: Ensure that your operating system is upgraded to Linux kernel 4.15 or higher.
+
 .Steps
 
 . Install Linux on all physical or virtual grid hosts according to the distributor's instructions or your standard procedure.
@@ -21,6 +23,6 @@ NOTE: Do not install any graphical desktop environments. When installing Ubuntu,
 . If swap is enabled:
  .. Run the following command: `$ sudo swapoff --all`
  .. Remove all swap entries from `/etc/fstab` to persist the settings.
-
 +
+
 IMPORTANT: Failing to disable swap entirely can severely lower performance.
