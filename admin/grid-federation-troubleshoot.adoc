@@ -69,6 +69,8 @@ The error message no longer appears. However, if the issue was not resolved (or 
 +
 NOTE: It might take up to a day for the alert to clear after it is resolved.
 
+.. Go xref:grid-federation-retry-failed-replication.adoc[Identify and retry failed replication operations] to identify any objects or delete markers that failed to be replicated to the other grid and to retry replication as needed.
+
 === Cross-grid replication resource unavailable alert
 
 The *Cross-grid replication resource unavailable* alert indicates that cross-grid replication requests are pending because a resource is unavailable. For example, there might be a network error.

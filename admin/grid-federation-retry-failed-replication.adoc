@@ -1,0 +1,121 @@
+---
+permalink: admin/grid-federation-retry-failed-replication.html
+sidebar: sidebar
+keywords: grid federation, troubleshoot
+summary: 'After resolving the Cross-grid replication permanent failure alert, you should determine if any objects or delete markers failed to be replicated to the other grid. You can then reingest these objects or use the Grid Management API to retry replication.'
+---
+= Identify and retry failed replication operations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After resolving the *Cross-grid replication permanent failure* alert, you should determine if any objects or delete markers failed to be replicated to the other grid. You can then reingest these objects or use the Grid Management API to retry replication.
+
+The *Cross-grid replication permanent failure* alert indicates that tenant objects can't be replicated between the buckets on two grids for a reason that requires user intervention to resolve. This alert is typically caused by a change to either the source or the destination bucket.
+
+== Determine if any objects failed to be replicated
+
+You can use the xref:../audit/using-audit-explain-tool.adoc[audit-explain tool] to list the objects and delete markers that had errors during cross-grid replication.
+
+.What you'll need
+
+* You have Root access permissions.
+* You have the `Passwords.txt` file.
+* You know the IP address of the primary Admin Node.
+
+.Steps
+
+. Log in to the primary Admin Node:
+
+.. Enter the following command: `ssh admin@primary_Admin_Node_IP`
+
+.. Enter the password listed in the `Passwords.txt` file.
+
+. Search the `audit.log` for Cross-Grid Replication Request (CGRR) messages, and use the audit-explain tool to format the results.
++
+For example, this command greps for all CGRR messages in the past 30 minutes and uses the audit-explain tool to translate the results into an easier-to-read format.
++
+`# awk -vdate=$(date -d "30 minutes ago" '+%Y-%m-%dT%H:%M:%S') '$1$2 >= date { print }' audit.log | grep CGRR | audit-explain`
+
+The results of the command will look like this example, which has entries for six CGRR general errors. Of these, three errors are for failed objects and three errors are for failed delete markers.
+
+----
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate object" bucket:bucket123 object:"audit-0" version:QjRBNDIzODAtNjQ3My0xMUVELTg2QjEtODJBMjAwQkI3NEM4 error:general error
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate object" bucket:bucket123 object:"audit-3" version:QjRDOTRCOUMtNjQ3My0xMUVELTkzM0YtOTg1MTAwQkI3NEM4 error:general error
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate object" bucket:bucket123 object:"audit-1" version:QjRCMjJEQzItNjQ3My0xMUVELTkxQzctMzk2NzAwQkI3NEM4 error:general error
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-1" version:NUQ0OEYxMDAtNjQ3NC0xMUVELTg2NjMtOTY5NzAwQkI3NEM4 error:general error
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-5" version:NUQ1ODUwQkUtNjQ3NC0xMUVELTg1NTItRDkwNzAwQkI3NEM4 error:general error
+CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-9" version:NUQ2Mzg2QTAtNjQ3NC0xMUVELTkwNzAtQTk2MzAwQkI3NEM4 error:general error
+
+----
+
+An audit log entry is created for each object that StorageGRID attempts to replicate to the destination bucket. Each entry contains the following information:
+
+[cols="1a,2a" options=header] 
+|===
+
+| Field | Description
+
+| CGRR Cross-Grid Replication Request
+| The name of the request
+
+| tenant
+| The tenant's account ID
+
+| connection
+| The ID of the grid federation connection
+
+| operation
+| The type of replication operation that was being attempted:
+
+* replicate object
+* replicate delete marker
+
+| bucket
+| The bucket name
+
+| object
+| The object name
+
+| version
+| The version ID for the object
+
+| error
+| The type of error. If cross-grid replication failed, the error is always  "General error".
+
+|===
+
+== Retry failed replications
+
+After generating a list of objects and delete marker that were not replicated to the destination bucket, you can retry replication in either of two ways:
+
+* Reingest each object into the source bucket.
+
+* Use the Grid Management private API, as described.
+
+.Steps
+
+. From the top of the Grid Manager, select the help icon and select *API documentation*.
+
+. Select *Go to private API documentation*.
++
+IMPORTANT: The StorageGRID API endpoints that are marked "`Private`" are subject to change without notice. StorageGRID private endpoints also ignore the API version of the request.
+
+. In the *cross-grid-replication-advanced* section, select the following endpoint:
++
+`POST /private/cross-grid-replication-retry-failed`
+
+. Select *Try it out*.
+
+. In the *body* text box, replace the example entry for *versionID* with a version ID from the audit.log that corresponds to a failed cross-grid-replication request.
++
+Be sure to retain the double quotes around the string.
+
+. Select *Execute*.
+
+. Confirm that the server response code is *204*, indicating that the object or delete marker has now been successfully replicated to the other grid. 
+
+
+
+
+
