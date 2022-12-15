@@ -35,7 +35,7 @@ If your tenant account has the *Use grid federation connection* permission, you 
 +
 Be sure to retain the double quotes around each string.
 
-. Optionally, replace the entry for *expires* with the expiration date and time in UTC seconds. If the key will not expire, enter *null* as value for the *expires* entry (or remove the *Expires* line and the preceding comma).
+. If the key will expire, replace the entry for *expires* with the expiration date and time in UTC seconds. If the key will not expire, enter *null* as value for the *expires* entry (or remove the *Expires* line and the preceding comma).
 +
 image::../media/grid-federation-clone-access-key.png[Tenant Manager API entering values to clone access key]
 
@@ -75,7 +75,7 @@ image::../media/grid-federation-clone-access-key.png[Tenant Manager API entering
 +
 Be sure to retain the double quotes around the string.
 
-. Optionally, replace the entry for *expires* with the expiration date and time in UTC seconds. If the key will not expire, enter *null* as value for the *expires* entry (or remove the *Expires* line and the preceding comma).
+. If the key will expire, replace the entry for *expires* with the expiration date and time in UTC seconds. If the key will not expire, enter *null* as value for the *expires* entry (or remove the *Expires* line and the preceding comma).
 
 . Select *Execute*.
 

@@ -55,6 +55,4 @@ If *Uses own identity source* is:
 +
 * Select or unselect the *Allow S3 Select* permission as needed. See xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts].
 
-* To disable the *Use grid federation connection* permission, follow the instructions for xref:grid-federation-manage-tenants.adoc[removing a tenant's permission to use grid federation].
-+
-NOTE: You can only enable *Use grid federation connection* when you are creating a new S3 tenant; you can't enable this permission for an existing tenant.
+* To remove the *Use grid federation connection* permission, follow the instructions for xref:grid-federation-manage-tenants.adoc[removing a tenant's permission to use grid federation].
