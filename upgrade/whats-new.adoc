@@ -87,7 +87,7 @@ The following new alerts were added for StorageGRID 11.7:
 == Kevin's what's new
 
 === Volume restoration
-Storage volume recovery lets you restore object data if a storage volume fails. For StorageGRID 11.7, volume restoration can be started using an automated process Grid Manager in addition to the existing method of entering commands manually. See xref:../maintain/restoring-volume.adoc[Restore object data using Grid Manager (automated process)].
+Storage volume restoration lets you restore object data if a storage volume fails. For StorageGRID 11.7, volume restoration can be started using an automated process Grid Manager in addition to the existing method of entering commands manually. See xref:../maintain/restoring-volume.adoc[Restore object data using Grid Manager (automated process)].
 
 === NewerNoncurrentVersions threshold for S3 buckets 
 The `NewerNoncurrentVersions` action in the bucket lifecycle configuration specifies the number of noncurrent versions retained in a versioned S3 bucket. This threshold overrides lifecycle rules provided by ILM. See xref:../ilm/how-objects-are-deleted.adoc[How objects are deleted].
