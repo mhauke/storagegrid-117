@@ -2,23 +2,32 @@
 permalink: installconfig/accessing-bmc-interface.html
 sidebar: sidebar
 keywords: BMC, baseboard management controller, access, open, login
-summary: 'You can access the BMC interface on the SG6000-CN controller or services appliance using the DHCP or static IP address for the BMC management port.'
+summary: 'You can access the BMC interface using the DHCP or static IP address for the BMC management port on the following appliance models: '
 ---
 = Access BMC interface
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can access the BMC interface on the SG6000-CN controller or services appliance using the DHCP or static IP address for the BMC management port.
+You can access the BMC interface using the DHCP or static IP address for the BMC management port on the following appliance models: 
+* SG6100
+* SG6000
+* SG1000
+* SG100
 
 .What you'll need
 
 * The management client is using a xref:web-browser-requirements.adoc[supported web browser].
 
-* The BMC management port on the SG6000-CN controller or services appliance is connected to the management network you plan to use.
+* The BMC management port on the appliance is connected to the management network you plan to use.
 +
 [role="tabbed-block"]
 ====
+
+.SGF6100
+--
+image::../media/sgf6112_cn_bmc_management_port.png[SGF6112 BMC management port]
+--
 
 .SG6000
 --
