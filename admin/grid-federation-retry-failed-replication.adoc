@@ -15,7 +15,9 @@ The *Cross-grid replication permanent failure* alert indicates that tenant objec
 
 == Determine if any objects failed to be replicated
 
-To determine if any objects or delete markers have not been replicated to the other grid, you can search the audit log for link:../audit/cgrr-cross-grid-replication-request.html[CGRR (Cross-Grid Replication Request)] messages, and then use the link:../audit/using-audit-explain-tool.html[audit-explain tool] to format the results.
+To determine if any objects or delete markers have not been replicated to the other grid, you can search the audit log for link:../audit/cgrr-cross-grid-replication-request.html[CGRR (Cross-Grid Replication Request)] messages. This message is added to the log when StorageGRID fails to replicate an object, multipart object, or delete marker to the destination bucket.
+
+You can use the link:../audit/using-audit-explain-tool.html[audit-explain tool] to translate the results into an easier-to-read format.
 
 .What you'll need
 
@@ -33,7 +35,7 @@ To determine if any objects or delete markers have not been replicated to the ot
 
 . Search the audit.log for CGRR messages, and use the audit-explain tool to format the results.
 +
-For example, this command greps for all CGRR messages in the past 30 minutes and uses the audit-explain tool to translate the results into an easier-to-read format.
+For example, this command greps for all CGRR messages in the past 30 minutes and uses the audit-explain tool.
 +
 `# awk -vdate=$(date -d "30 minutes ago" '+%Y-%m-%dT%H:%M:%S') '$1$2 >= date { print }' audit.log | grep CGRR | audit-explain`
 
@@ -48,7 +50,7 @@ CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:44789
 CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-9" version:NUQ2Mzg2QTAtNjQ3NC0xMUVELTkwNzAtQTk2MzAwQkI3NEM4 error:general error
 ----
 
-An audit log entry is created for each object that StorageGRID failed to replicate to the destination bucket. Each entry contains the following information:
+Each entry contains the following information:
 
 [cols="1a,2a" options=header] 
 |===
