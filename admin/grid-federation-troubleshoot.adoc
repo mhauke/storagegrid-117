@@ -19,12 +19,17 @@ You might need to troubleshoot alerts related to grid federation as well as any 
 
 // see https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-troubleshoot.html
 
-After making any changes to resolve a connection issue, test the connection to ensure that its connection status is *Connected*. For instructions, see xref:grid-federation-manage-connection.adoc[Manage grid federation connections].
+After making any changes to resolve a connection issue, test the connection to ensure that its connection status is *Connected*. For instructions, see link:grid-federation-manage-connection.html[Manage grid federation connections].
 
 == Troubleshoot account clone errors
 
 === Unable to sign in to a cloned tenant account
-When a tenant account is cloned to the other grid in a grid federation connection, the password you set for the tenant's local root user is not cloned. To sign in as the root user on the cloned tenant, a grid administrator for that grid must first xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user].
+
+For security reasons, when a tenant account is cloned from the tenant's source grid to the tenant's destination grid, the password you set for the tenant's local root user is not cloned. Similarly, when a tenant creates local users on its source grid, the local user passwords are not cloned to the destination grid.
+
+Before the root user can sign in to the tenant's destination grid, a grid administrator for that grid must first link:changing-password-for-tenant-local-root-user.html[change the password for the local root user].
+
+Before a cloned local user can sign in to the tenant's destination grid, the root user for the cloned tenant must add a password for the user on the destination grid. For instructions, see link:../tenant/managing-local-users.html[Manage local users].
 
 == Troubleshoot cross-grid replication errors
 
