@@ -19,26 +19,20 @@ Before installing an SG6100 series appliance, confirm your StorageGRID system is
 |===
 | Appliance| Required StorageGRID version
 a|
-SG1000
+SGF6112
 a|
-11.3 or later (latest hotfix recommended)
-a|
-SG100
-a|
-11.4 or later (latest hotfix recommended)
+xxxxx11.3 or later (latest hotfix recommended)
+
 |===
 
 == Administration and maintenance ports
 
 The Admin Network for StorageGRID is an optional network, used for system administration and maintenance. The appliance connects to the Admin Network using the following 1-GbE management ports on the appliance.
 
-*SG100 RJ-45 ports*
+*SG6100 RJ-45 ports*
 
-image::../media/sg100_rj_45_ports_circled.png[]
+image::../media/sg6100_rj_45_ports_circled.png[SG6100 RJ-45 ports]
 
-*SG1000 RJ-45 ports*
-
-image::../media/sg1000_rj_45_ports_circled.png[SG1000 RJ-45 ports]
 
 *Administration and maintenance connections*
 
@@ -115,21 +109,14 @@ a|
 Link speed
 
 a|
-For the SG100, choose one of the following:
+For the SGF6112, choose one of the following:
 
 * Auto (default)
 * 10 GbE
 * 25 GbE
 
-For the SG1000, choose one of the following:
 
-* Auto (default)
-* 10 GbE
-* 25 GbE
-* 40 GbE
-* 100 GbE
-
-*Note:* For the SG1000, 10- and 25-GbE speeds require the use of QSA adapters.
+//*Note:* For the SG1000, 10- and 25-GbE speeds require the use of QSA adapters.
 
 a|
 Port bond mode
@@ -188,7 +175,7 @@ Choose one:
 * Yes
 
 a|
-VLAN tag(if VLAN tagging is enabled)
+VLAN tag (if VLAN tagging is enabled)
 
 a|
 Enter a value between 0 and 4095:
@@ -282,13 +269,10 @@ a|
 
 You can access the BMC interface on the services appliance using the 1-GbE management port circled in the diagram. This port supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management Interface (IPMI) standard.
 
-*SG100 BMC management port*
+*SG6100 BMC management port*
 
-image::../media/sg100_bmc_management_port.png[SG100 management port]
+image::../media/sgf6112_cn_bmc_management_port.png[SG6100 management port]
 
-*SG1000 BMC management port*
-
-image::../media/sg1000_bmc_management_port.png[SG1000 BMC management port]
 
 *BMC management network connections*
 
@@ -316,6 +300,6 @@ a|
 |===
 .Related information
 
-xref:cabling-appliance-sg100-and-sg1000.adoc[Cable appliance SG100 and SG1000]
+xref:cabling-appliance-sgf6112.adoc[Cable appliance SGF6112]
 
 xref:setting-ip-configuration.adoc[Configure StorageGRID IP addresses]
