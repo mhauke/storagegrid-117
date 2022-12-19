@@ -29,7 +29,7 @@ NOTE: You can force a volume or node restoration to start when a decommission is
 
 .About this task
 
-When one or more storage volumes fail, Grid Manger displays them as candidates for restoration on the volume restoration pending data tab.
+When one or more storage volumes fail, Grid Manger displays them as candidates for restoration on the volume restoration Nodes to restore tab.
 
 When possible, use Grid Manager for restoring storage volumes and nodes. You can also use Grid Manager to <<view_restoration_progress,monitor the volume restoration process>> and <<view_restoration_history,view restoration history>>. If necessary, you can follow the link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[manual steps to restore volumes and nodes].
 
@@ -100,9 +100,9 @@ The Restoration jobs section displays information about volume restorations star
 
 * If a volume restoration fails:
 ** The Status column indicates failed
-** A warning displays, indicating the cause of failure.
+** An error displays, indicating the cause of failure.
 +
-Correct the issues indicated in the warning and then select *Retry* to re-initiate the volume restoration. 
+Correct the issues indicated in the error and then select *Retry* to re-initiate the volume restoration. 
 +
 If multiple restoration jobs have failed, selecting *Retry* starts the most recently failed job.
 

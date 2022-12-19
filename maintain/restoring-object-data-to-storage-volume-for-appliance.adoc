@@ -11,6 +11,8 @@ summary: 'After recovering storage volumes for the appliance Storage Node, you c
 [.lead]
 After recovering storage volumes for the appliance Storage Node, you can restore the object data that was lost when the Storage Node failed.
 
+NOTE: When possible, xref:../maintain/restoring-volume.adoc[restore object data using Grid Manager].
+
 include::../_include/restore-data-intro.adoc[]
 include::../_include/restore-data-repair.adoc[]
 

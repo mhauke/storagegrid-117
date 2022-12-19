@@ -11,6 +11,8 @@ summary: 'If the sn-recovery-postinstall.sh script is needed to reformat one or 
 [.lead]
 If the `sn-recovery-postinstall.sh` script is needed to reformat one or more failed storage volumes, you must restore object data to the reformatted storage volume from other Storage Nodes and Archive Nodes. These steps are not required unless one or more storage volumes were reformatted.
 
+NOTE: When possible, xref:../maintain/restoring-volume.adoc[restore object data using Grid Manager].
+
 include::../_include/restore-data-intro.adoc[]
 include::../_include/restore-data-repair.adoc[]
 

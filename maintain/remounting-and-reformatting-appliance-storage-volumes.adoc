@@ -185,7 +185,10 @@ When prompted, if you want to perform manual steps to recover the data for all s
 
 * If the replacement node has a different number of storage volumes than the original node (for example, you replaced a node with 8 volumes with a node that has 16 volumes), enter `y` to link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[restore object data manually].
 +
-If manual restoration is initiated, you will not be able to restore object data automatically using Grid Manager.
+If manual restoration is initiated:
++
+** You will not be able to restore object data automatically using Grid Manager. 
+** You can monitor the progress of manual restoration jobs using Grid Manager.
 * If the replacement node has the same number of storage volumes as the original node, enter `n` to link:../maintain/restoring-volume.html[restore object data using Grid Manager].
 
 
