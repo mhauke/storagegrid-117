@@ -63,11 +63,18 @@ You must perform these steps before adding any objects to either bucket.
 
 .. If all requirements have been met, select the grid federation connection you want to use.
 
-.. Optionally, change the setting of *Replicate client deletes* to determine what happens on the other grid when an S3 client deletes an object from this bucket.
+.. Optionally, change the setting of *Replicate client deletes* to determine what happens on the destination grid if an S3 client issues a delete request to the source grid that doesn't include a version ID:
+
+* If *Yes* (default), a delete marker is added to the source bucket and replicated to the destination bucket.
+
+* If *No*, a delete marker is added to the source bucket but is not replicated to the destination bucket. 
 +
-image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
+image:../media/grid-federation-cross-grid-replication-client-deletes.png[image showing replicate client delete on both grids]
++
+NOTE: If the delete request includes a version ID, that object version is permanently removed from the source bucket. StorageGRID does not replicate delete requests that include a version ID, so the same object version is not deleted from the destination.
 +
 See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication] for details.
+
 
 .. Review your selections. You won't be able to change these settings unless both buckets are empty.
 
@@ -79,7 +86,7 @@ After a few moments, a success message appears. Objects added to this bucket wil
 
 == Test replication between grids
 
-If cross-grid replication is enabled for a bucket, you might need to verify that the connection and cross-grid replication are working correctly.
+If cross-grid replication is enabled for a bucket, you might need to verify that the connection and cross-grid replication are working correctly and that the source and destination buckets still meet all requirements (for example, versioning is still enabled). 
 
 .What you'll need
 
