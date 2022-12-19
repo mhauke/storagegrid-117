@@ -33,3 +33,9 @@ As of the StorageGRID 11.7 release, support for Swift client applications has be
 
 == S3 endpoint domain name format restrictions 
 The use of IP addresses as endpoint domain names is unsupported. Future releases will prevent the configuration. If you need to use IP addresses for endpoint domain names, contact technical support. See xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 endpoint domain names].
+
+== Archive Node support is deprecated
+Support of Archive Nodes is deprecated and will be removed in a future release.
+Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. The Cloud Tiering - Simple Storage Service (S3) option is now deprecated.
+
+If you are currently using an Archive Node with the Cloud Tiering - Simple Storage Service (S3) option, migrate your objects to a Cloud Storage Pool. See xref:../ilm/index.adoc[Manage objects with ILM].
