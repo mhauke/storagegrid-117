@@ -14,7 +14,7 @@ The appliances and controllers include indicators that help you determine the st
 [role="tabbed-block"]
 ====
 
-.SG6100
+.SG6100 series appliances
 --
 
 The appliance includes indicators that help you determine the status of the appliance controller and the SSDs:
@@ -53,7 +53,7 @@ a|
 a|
 Identify button
 a|
-This button can be set to Blink, On (Solid), or Off.
+Using the BMC, this button can be set to blink, On (Solid), or Off.
 
 * Blue, blinking: Identifies the appliance in the cabinet or rack.
 * Blue, solid: Identifies the appliance in the cabinet or rack.
@@ -62,7 +62,7 @@ This button can be set to Blink, On (Solid), or Off.
 a|
 4
 a|
-Alarm LED
+Status LED
 a|
 
 * Amber, solid: An error has occurred.
@@ -73,12 +73,11 @@ a|
 a|
 5
 a|
-Heartbeat LED
+PFR
 a|
 
-* Green, blinking: BMC is ready.
+This light is not used by SG6100 series appliances and remains off. 
 
-* Off: BMC is not ready.
 |===
 
 [[general_boot_codes_SG6100]]
@@ -109,6 +108,8 @@ a|
 * Blue (solid): drive is online
 * Amber (blinking): drive failure
 * Off: slot is empty
+
+*Note:* If a new working SSD is inserted into a working SG6100 series StorageGRID node, the LEDs on the SSD should blink initially, but stop blinking as soon as the system determines that the drive has enough capacity and is functional.
 
 a|
 2
