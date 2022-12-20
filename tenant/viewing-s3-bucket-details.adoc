@@ -15,7 +15,9 @@ You can view the buckets in your tenant account.
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 
+
 .Steps
+
 . Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
 +
 The Buckets page appears.
@@ -64,7 +66,7 @@ The bucket details page appears. From this page, you can perform the following t
 * Configure bucket access, such as xref:configuring-cross-origin-resource-sharing-cors.adoc[cross-origin resource sharing (CORS)]
 * Manage xref:what-platform-services-are.adoc[platform services] (if allowed for the tenant), including replication, event notifications, and search integration
 * Enable and link:grid-federation-manage-cross-grid-replication.html[manage cross-grid replication] (if allowed for the tenant) to replicate objects ingested into this bucket to another StorageGRID system
-* Access the experimental xref:use-s3-console.adoc[S3 Console] to add objects to the bucket
+* Access the xref:use-s3-console.adoc[Experimental S3 Console] to manage the objects in the bucket
 * xref:deleting-s3-bucket-objects.adoc[Delete all objects in a bucket]
 * xref:deleting-s3-bucket.adoc[Delete a bucket] that is already empty
 

@@ -14,15 +14,17 @@ You must understand the impact of the StorageGRID upgrade, so that you can updat
 
 == Changes to group permissions and options
 
-After upgrading to StorageGRID 11.7, optionally select the following updated or new permissions and options (*CONFIGURATION* > *Access control* > *Admin groups*).
+After upgrading to StorageGRID 11.7, optionally assign the following updated or new permissions to admin groups or tenant user groups.
 
 [cols="1a,2a" options="header"]
 |===
 | Permission | Description
 
-|permission name
-|description
+| Tenant Manager > Manage objects with S3 Console
+| When combined with the Manage all buckets permission, allows users to access the link:../tenant/use-s3-console.html[Experimental S3 Console] and use it to manage objects.
+
+Users who do not have both of these permissions do not see the *Experimental S3 Console* link on the Buckets page.
 
 |===
 
-See xref:../admin/managing-admin-groups.adoc[Manage admin groups].
+See link:../tenant/tenant-management-permissions.html[Tenant management permissions].

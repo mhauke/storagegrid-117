@@ -9,14 +9,14 @@ summary: 'If you are using an S3 tenant and you have the appropriate permission,
 :imagesdir: ../media/
 
 [.lead]
-If you are using an S3 tenant and you have the appropriate permission, you can view a list of your S3 access keys. You can sort the list by expiration time, so you can determine which keys will expire soon. As needed, you can create new keys or delete keys that you are no longer using.
+If you are using an S3 tenant and you have the appropriate permission, you can view a list of your S3 access keys. You can sort the list by expiration time, so you can determine which keys will expire soon. As needed, you can link:creating-your-own-s3-access-keys.html[create new keys] or link:deleting-your-own-s3-access-keys.html[delete keys] that you are no longer using.
+
+IMPORTANT: The S3 buckets and objects belonging to your account can be accessed using the access key ID and secret access key displayed for your account in the Tenant Manager. For this reason, protect access keys as you would a password. Rotate access keys on a regular basis, remove any unused keys from your account, and never share them with other users.
 
 .What you'll need
 
 * You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the Manage Your Own S3 Credentials permission.
-
-IMPORTANT: The S3 buckets and objects belonging to your account can be accessed using the access key ID and secret access key displayed for your account in the Tenant Manager. For this reason, protect access keys as you would a password. Rotate access keys on a regular basis, remove any unused keys from your account, and never share them with other users.
+* You belong to a user group that has the Manage your own S3 credentials xref:tenant-management-permissions.adoc[permission].
 
 .Steps
 
@@ -27,14 +27,13 @@ The My access keys page appears and lists any existing access keys.
 image::../media/access_keys_view_list.png[List of Access Keys]
 
 . Sort the keys by *Expiration time* or *Access key ID*.
-. As needed, create new keys and manually delete keys that you are no longer using.
+. As needed, create new keys or delete any keys that you are no longer using.
 +
 If you create new keys before the existing keys expire, you can begin using the new keys without temporarily losing access to the objects in the account.
 +
 Expired keys are removed automatically.
 
-.Related information
 
-xref:creating-your-own-s3-access-keys.adoc[Create your own S3 access keys]
 
-xref:deleting-your-own-s3-access-keys.adoc[Delete your own S3 access keys]
+
+
