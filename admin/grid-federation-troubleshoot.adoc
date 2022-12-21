@@ -38,7 +38,7 @@ This alert is triggered if one or more grid federation certificates are about to
 
 === Tenant created without a clone
 
-In rare cases, you might see the message "`Tenant created without a clone`" after creating a new tenant with the *Use grid federation connection* permission. The issue occurs when the source grid appears to be *Connected* on the source grid even though the underlying connection is unhealthy. 
+In rare cases, you might see the message "`Tenant created without a clone`" after creating a new tenant with the *Use grid federation connection* permission. This issue can occur if updates to the Connection status are delayed, which might cause an unhealthy connection to be listed as *Connected*. 
 
 If this error appears, you can try to clone the account again:
 
