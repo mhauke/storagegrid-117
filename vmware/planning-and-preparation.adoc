@@ -15,8 +15,7 @@ The StorageGRID deployment and configuration procedures assume that you are fami
 
 You can deploy a single site or multiple sites at one time; however, all sites must meet the minimum requirement of having at least three Storage Nodes.
 
-IMPORTANT: StorageGRID does not support the use of virtual storage area networks (vSANs), because the underlying disk protection is not hardware
-RAID.
+IMPORTANT: StorageGRID that are not using StorageGRID appliances, must use storage with hardware RAID with battery-backed write cache (BBWC). StorageGRID does not support the use of virtual storage area networks (vSANs), software RAID, or no RAID protection.
 
 Before starting the node deployment and grid configuration procedure, you must:
 
