@@ -32,7 +32,7 @@ NOTE: You can force a volume or node restoration to start when a decommission is
 
 When one or more storage volumes fail, Grid Manger displays them as candidates for restoration on the volume restoration Nodes to restore tab.
 
-When possible, use Grid Manager for restoring storage volumes and nodes. You can also use Grid Manager to <<view_restoration_progress,monitor the volume restoration process>> and <<view_restoration_history,view restoration history>>. If necessary, you can follow the link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[manual steps to restore volumes and nodes].
+When possible, use Grid Manager for restoring storage volumes and nodes. You can also use Grid Manager to <<view-restoration-progress,monitor the volume restoration process>> and <<view-restoration-history,view restoration history>>. If necessary, you can follow the link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[manual steps to restore volumes and nodes].
 
 // Remove commented lines following review approval. Per Dheeraj, use of UI for node recovery was a late change:
 // * If you are _restoring_ a storage node, use <<restore_lost_volume_or_node,Grid Manager to restore volumes>>.
@@ -80,7 +80,7 @@ Nodes are moved from the Nodes to restore tab to the Restoration progress tab wh
 
 If a volume restoration fails, the node returns to the Nodes to restore tab.
 
-== View restoration progress
+== [[view-restoration-progress]]View restoration progress
 
 The Restoration progress tab shows the status of the volume restoration process and information about the volumes for a node being restored.
 
@@ -107,7 +107,7 @@ Correct the issues indicated in the error and then select *Retry* to re-initiate
 +
 If multiple restoration jobs have failed, selecting *Retry* starts the most recently failed job.
 
-== View restoration history
+== [[view-restoration-history]]View restoration history
 
 The Restoration history tab shows information about all volume restorations that have successfully completed.
 
