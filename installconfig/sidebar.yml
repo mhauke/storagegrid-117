@@ -161,7 +161,7 @@ entries:
         url: "/installconfig/setting-ip-address-for-bmc-management-port.html"
       - title: Access BMC interface
         url: "/installconfig/accessing-bmc-interface.html"
-      - title: Configure SNMP settings for SG6000-CN controller or services appliance
+      - title: Configure SNMP settings for SG6100, SG6000, or services appliances
         url: "/installconfig/configuring-snmp-settings-for-bmc.html"
       - title: Set up email notifications for alerts
         url: "/installconfig/setting-up-email-notifications-for-alerts.html"
@@ -175,14 +175,14 @@ entries:
       url: "/installconfig/monitoring-appliance-installation.html"
     - title: Reboot appliance while StorageGRID Appliance Installer is running
       url: "/installconfig/rebooting-appliance-while-sg-appliance-installer-is-running.html"
-    - title: 'Troubleshoot general storage appliances installation'
+    - title: 'Troubleshoot storage appliances installation'
       url: "/installconfig/troubleshooting-hardware-installation.html"
       entries:
       - title: Hardware setup appears to hang
         url: "/installconfig/hardware-setup-appears-to-hang.html"
       - title: Connection issues
         url: "/installconfig/troubleshooting-connection-issues.html"
-    - title: 'Troubleshoot SG6000 series appliances installation'
+    - title: 'Troubleshoot SG6100 series appliances installation'
       url: "/installconfig/troubleshooting-hardware-installation-sg6100.html"
       entries:
       - title: View boot-up codes for SGF6112 appliance
@@ -193,6 +193,9 @@ entries:
         url: "/installconfig/hardware-setup-appears-to-hang-sgf6112.html"
       - title: 'Troubleshoot connection issues (SGF6112)'
         url: "/installconfig/troubleshooting-connection-issues-sgf6112.html"
+    - title: 'Troubleshoot SG6000 series appliances installation'
+      url: "/installconfig/troubleshooting-hardware-installation-sg6000-cn-controller.html"
+      entries:       
       - title: 'HE error: Error synchronizing with SANtricity OS Software (SG5600 and SG5700)'
         url: "/installconfig/he-error-error-synchronizing-with-santricity-os-software.html"
       - title: SG6000 boot-up and error codes
