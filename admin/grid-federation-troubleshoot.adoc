@@ -22,9 +22,10 @@ After making any changes to resolve a connection issue, test the connection to e
 .Issue
 The *Grid federation connection failure* alert was triggered.
 
-.Recommended actions
-This alert indicates that the grid federation connection between the grids is not working. Follow these steps:
+.Details
+This alert indicates that the grid federation connection between the grids is not working.
 
+.Recommended actions
 . Review the settings on the Grid Federation page for both grids. Confirm that all values are correct. See link:grid-federation-manage-connection.html[Manage grid federation connections].
 
 . Review the certificates used for the connection. Make sure that certificates have not expired and that the details are valid. See the instructions for rotating connection certificates in link:grid-federation-manage-connection.html[Manage grid federation connections].
@@ -38,8 +39,11 @@ This alert indicates that the grid federation connection between the grids is no
 .Issue
 The *Expiration of grid federation certificate* alert was triggered.
 
+.Details
+This alert indicates that one or more grid federation certificates are about to expire. 
+
 .Recommended actions
-This alert indicates that one or more grid federation certificates are about to expire. See the instructions for rotating connection certificates in link:grid-federation-manage-connection.html[Manage grid federation connections].
+See the instructions for rotating connection certificates in link:grid-federation-manage-connection.html[Manage grid federation connections].
 
 
 == Account clone errors
@@ -51,9 +55,10 @@ You can't sign in to a cloned tenant account. The error message is "`Your creden
 
 image::../media/grid-federation-tenant-account-credentials-invalid.png[screenshot showing an error message when signing into tenant]
 
-.Recommended actions
+.Details
 For security reasons, when a tenant account is cloned from the tenant's source grid to the tenant's destination grid, the password you set for the tenant's local root user is not cloned. Similarly, when a tenant creates local users on its source grid, the local user passwords are not cloned to the destination grid.
 
+.Recommended actions
 Before the root user can sign in to the tenant's destination grid, a grid administrator must first link:changing-password-for-tenant-local-root-user.html[change the password for the local root user] on the destination grid.
 
 Before a cloned local user can sign in to the tenant's destination grid, the root user for the cloned tenant must add a password for the user on the destination grid. For instructions, see link:../tenant/managing-local-users.html[Manage local users].
@@ -63,9 +68,10 @@ Before a cloned local user can sign in to the tenant's destination grid, the roo
 .Issue
 You see the message "`Tenant created without a clone`" after creating a new tenant with the *Use grid federation connection* permission. 
 
-.Recommended actions
- This issue can occur if updates to the Connection status are delayed, which might cause an unhealthy connection to be listed as *Connected*.
+.Details
+This issue can occur if updates to the Connection status are delayed, which might cause an unhealthy connection to be listed as *Connected*.
  
+.Recommended actions
 Try to clone the account again:
 
 . Review the reason listed in the error message and resolve any networking or other issues that might be preventing the connection from working. See <<grid-federation-errors,Grid federation connection alerts and errors>>.
@@ -85,6 +91,49 @@ If the error has been resolved, the tenant account will now be cloned to the oth
 
 
 == Cross-grid replication alerts and errors
+
+== Last error shown for a connection or tenant
+
+.Issue
+When viewing a grid federation connection (or when managing the permitted tenants for the connection), you notice an error in the *Last error* column.
+
+image:../media/grid-federation-last-error.png[Screenshot showing a message in the Last error column of a grid federation connection]
+
+.Details
+This column show the most recent error, if any, to occur for a tenant or connection when StorageGRID attempted to replicate object data from the bucket on one grid to the corresponding bucket on the other grid.
+
+An error in this column might occur for one of these reasons:
+
+* The source object version was not found.
+* The source bucket was not found.
+* The destination bucket was deleted.
+* The destination bucket was re-created by a different account.	
+* The destination bucket has versioning suspended.
+* The destination bucket was re-created by same account but is now unversioned.
+
+.Recommended action
+If an error message appears in the *Last error* column, follow these steps:
+
+. Review the text and perform any recommended actions.
+. Select the connection or tenant account from the table.
+. Select *Clear error*.
+. Select *Yes* to clear the message and update the system's status.
+. Ingest a new object into the bucket and confirm that the error message does not reappear.
++
+NOTE: If the underlying issue still exists, the error will reappear when new objects are ingested.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 === Cross-grid replication permanent failure alert
 

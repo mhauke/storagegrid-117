@@ -1,49 +1,20 @@
 ---
 permalink: admin/grid-federation-manage-connection.html
 sidebar: sidebar
-keywords: grid federation, view connection, edit connection, remove connection, rotate certificates
-summary: 'Managing grid federation connections between StorageGRID systems includes viewing and editing connection details, viewing and rotating the certificates, removing tenant permissions, and removing unused connections.'
+keywords: grid federation, edit connection, remove connection, rotate certificates
+summary: 'Managing grid federation connections between StorageGRID systems includes editing connection details, rotating the certificates, removing tenant permissions, and removing unused connections.'
 ---
 = Manage grid federation connections
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Managing grid federation connections between StorageGRID systems includes viewing and editing connection details, viewing and rotating the certificates, removing tenant permissions, and removing unused connections.
+Managing grid federation connections between StorageGRID systems includes editing connection details, rotating the certificates, removing tenant permissions, and removing unused connections.
 
 .What you'll need
 
 * You are signed in to the Grid Manager on either grid using a xref:../admin/web-browser-requirements.adoc[supported web browser].
 * You have the Root access permission for the grid you are signed in to. 
-
-== View a grid federation connection
-
-You can view details for an existing grid federation connection from either grid in the connection. 
-
-. Select *CONFIGURATION* > *System* > *Grid federation*.
-+
-The Grid federation page appears. 
-
-* The *Connections* tab lists basic information for all connections on this grid. From this tab, you can xref:grid-federation-create-connection.adoc[add a connection], <<edit_grid_fed_connection,edit a connection>>, or <<test_grid_fed_connection,test a connection>>. 
-+
-image:../media/grid-federation-connections-tab.png[Grid federation connections tab]
-
-* The *Permitted tenants* tab lists basic information for all tenant accounts on this grid that have the *Use grid federation connection* permission. From this tab, you can xref:../monitor/monitoring-tenant-activity.adoc[view the details page for each permitted tenant] or xref:grid-federation-manage-tenants.adoc[remove a tenant's permission] to use a connection.
-+
-image:../media/grid-federation-permitted-tenants-tab.png[Grid federation Permitted tenants tab]
-
-
-. To view details for a specific connection, select either tab from the Grid federation page and select the connection name from the table.
-+
-The details page for the connection appears. From this page, you can <<edit_grid_fed_connection,edit>>, <<test_grid_fed_connection,test>>, or <<remove_grid_fed_connection,remove>> the selected connection.
-
-* The *Permitted tenants* tab shows which tenant accounts on this grid have permission to use this connection. From this tab, you can you can xref:../monitor/monitoring-tenant-activity.adoc[view the details page for each permitted tenant] or xref:grid-federation-manage-tenants.adoc[remove a tenant's permission] to use the connection. 
-+
-image:../media/grid-federation-permitted-tenants-tab-for-connection.png[grid-federation-permitted-tenants-tab-for-connection]
-
-* The *Certificates* tab shows the system-generated server and client certificates for this connection. From this tab, you can <<rotate_grid_fed_certificates, rotate connection certificates>> or select *Server* or *Client* to download the associated certificate or copy the certificate PEM.
-+
-image:../media/grid-federation-certificates-tab.png[grid-federation-certificates-tab]
 
 
 == [[edit_grid_fed_connection]]Edit a grid federation connection
@@ -253,15 +224,4 @@ A success message appears. This grid federation connection can no longer be used
 . Select the connection name to display its details.
 . Select *Remove* and *Yes*.
 . Select *Force remove* to remove the other end of the connection.
-
-
-
-
-
-
-
-
-
-
-
 
