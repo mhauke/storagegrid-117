@@ -17,7 +17,9 @@ StorageGRID provides secure, durable storage for unstructured data at scale. Int
 
 StorageGRID is composed of geographically distributed, redundant, heterogeneous nodes, which can be integrated with both existing and next-generation client applications.
 
-NOTE: Support for Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality.
+NOTE: Support for Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. The Cloud Tiering - Simple Storage Service (S3) option is now deprecated.
+
+If you are currently using an Archive Node with the Cloud Tiering - Simple Storage Service (S3) option, migrate your objects to a Cloud Storage Pool. See xref:../ilm/index.adoc[Manage objects with ILM].
 
 image::../media/storagegrid_system_diagram.png[Image with multiple clients]
 
