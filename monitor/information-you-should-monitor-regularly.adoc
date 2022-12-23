@@ -25,25 +25,28 @@ A busy system generates large amounts of information. The following list provide
 | What to monitor| Frequency
 
 | xref:monitoring-system-health.adoc[System health status]
-|Daily
+| Daily
 
-|Rate at which xref:monitoring-storage-capacity.adoc[Storage Node object and metadata capacity] is being consumed
-|Weekly
+| Rate at which xref:monitoring-storage-capacity.adoc[Storage Node object and metadata capacity] is being consumed
+| Weekly
 
 | xref:monitoring-information-lifecycle-management.adoc[Information lifecycle management operations]
-|Weekly
+| Weekly
 
 | xref:monitoring-network-connections-and-performance.adoc[Networking and system resources]
-|Weekly
+| Weekly
 
 | xref:monitoring-tenant-activity.adoc[Tenant activity]
-|Weekly
-
-| xref:monitoring-archival-capacity.adoc[Capacity of the external archival storage system]
-|Weekly
+| Weekly
 
 | xref:monitoring-load-balancing-operations.adoc[Load balancing operations]
-|After the initial configuration and after any configuration changes
+| After the initial configuration and after any configuration changes
+
+| xref:grid-federation-monitor-connections.adoc[Grid federation connections]
+| Weekly
+
+| xref:monitoring-archival-capacity.adoc[Capacity of the external archival storage system]
+| Weekly
 
 | xref:applying-hotfixes-or-upgrading-software-if-necessary.adoc[Availability of software hotfixes and software upgrades]
 |Monthly
