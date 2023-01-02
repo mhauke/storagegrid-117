@@ -15,7 +15,7 @@ Monitor the overall health of your StorageGRID system on a daily basis.
 
 The StorageGRID system can continue to operate when parts of the grid are unavailable. Potential issues indicated by alerts or alarms (legacy system) are not necessarily issues with system operations. Investigate issues summarized on the Health status card of the Grid Manager Dashboard.
 
-To be notified of alerts as soon as they are triggered, you can xref:../installconfig/setting-up-email-notifications-for-alerts.adoc[set up email notifications for alerts] or xref:using-snmp-monitoring.adoc[configure SNMP traps].
+To be notified of alerts as soon as they are triggered, you can link:../installconfig/setting-up-email-notifications-for-alerts.html[set up email notifications for alerts] or link:using-snmp-monitoring.html[configure SNMP traps].
 
 image::../media/health_status_card.png[Health status card - dashboard]
 
@@ -34,7 +34,7 @@ When issues exist, links appear that allow you to view additional details:
 |Alerts triggered in the past week <<View current and resolved alerts,are now resolved>>.
 
 |License
-|There is an issue with the software license for this StorageGRID system. You can xref:../admin/updating-storagegrid-license-information.adoc[update license information as needed].
+|There is an issue with the software license for this StorageGRID system. You can link:../admin/updating-storagegrid-license-information.html[update license information as needed].
 |===
 
 [#monitor-node-connection-states]
@@ -153,7 +153,7 @@ The Current alerts page is refreshed every two minutes.
 
 . To filter current alerts by status (*All alerts*, *Active*, or *Silenced*, use the drop-down menu at the top of the table.
 +
-See xref:silencing-alert-notifications.adoc[Silence alert notifications].
+See link:silencing-alert-notifications.html[Silence alert notifications].
 
 . To sort resolved alerts:
  ** Select a time period from the *When triggered* drop-down menu.

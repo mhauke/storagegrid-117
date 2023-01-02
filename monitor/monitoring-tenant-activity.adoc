@@ -13,7 +13,7 @@ All S3 and Swift client activity is associated with StorageGRID tenant accounts.
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access or Tenant accounts permission.
 
 
@@ -43,7 +43,7 @@ image::../media/tenant_accounts_example_csv.png[Tenant accounts example .csv]
 +
 You can open the `.csv` file in a spreadsheet application or use it in automation.
 
-. If no objects are listed, optionally, select *Actions* > *Delete* to remove one or more tenants. See xref:../admin/deleting-tenant-account.adoc[Delete tenant account].
+. If no objects are listed, optionally, select *Actions* > *Delete* to remove one or more tenants. See link:../admin/deleting-tenant-account.html[Delete tenant account].
 +
 You can't remove a tenant account if the account includes any buckets or containers.
 
@@ -73,7 +73,7 @@ IMPORTANT: Quota utilization is based on internal estimates and might be exceede
 +
 NOTE: A tenant's quota utilization indicates the total amount of object data the tenant has uploaded to StorageGRID (logical size). The quota utilization does not represent the space used to store copies of those objects and their metadata (physical size).
 +
-NOTE: You can enable the *Tenant quota usage high* alert rule to determine if tenants are consuming their quotas. If enabled, this alert is triggered when a tenant has used 90% of its quota. For instructions, see xref:../monitor/editing-alert-rules.adoc[Edit alert rules].
+NOTE: You can enable the *Tenant quota usage high* alert rule to determine if tenants are consuming their quotas. If enabled, this alert is triggered when a tenant has used 90% of its quota. For instructions, see link:../monitor/editing-alert-rules.html[Edit alert rules].
 
 . From the *Space breakdown* tab, review the *Bucket details*.
 +
@@ -87,11 +87,11 @@ image::../media/tenant_bucket_details_csv.png[Tenant bucket details CSV example]
 +
 You can open the `.csv` file in a spreadsheet application or use it in automation.
 
-. Optionally, select the *Allowed features* tab to see a list of the permissions and features that are enabled for the tenant. See xref:../admin/editing-tenant-account.adoc[Edit tenant account] if you need to change any of these settings.
+. Optionally, select the *Allowed features* tab to see a list of the permissions and features that are enabled for the tenant. See link:../admin/editing-tenant-account.html[Edit tenant account] if you need to change any of these settings.
 
 . If the tenant has the *Use grid federation connection* permission, optionally select the *Grid federation* tab to learn more about the connection.
 +
-See xref:../admin/grid-federation-overview.adoc[What is grid federation] and xref:../admin/grid-federation-manage-tenants.adoc[Manage the permitted tenants for grid federation].
+See link:../admin/grid-federation-overview.html[What is grid federation] and link:../admin/grid-federation-manage-tenants.html[Manage the permitted tenants for grid federation].
 
 == View network traffic
 
@@ -106,7 +106,7 @@ The Traffic Classification Policies page appears, and the existing policies are 
 . To view metrics associated with a policy, select the radio button to the left of the policy, and select *Metrics*.
 . Analyze the graphs to determine how often the policy is limiting traffic and whether you need to adjust the policy.
 
-See xref:../admin/managing-traffic-classification-policies.adoc[Manage traffic classification policies] for more information.
+See link:../admin/managing-traffic-classification-policies.html[Manage traffic classification policies] for more information.
 
 == Use the audit log
 Optionally, you can use the audit log for more granular monitoring of a tenant's activities.
@@ -120,7 +120,7 @@ For instance, you can monitor the following types of information:
 
 Audit logs are written to text files that you can analyze using your choice of log analysis tool. This allows you to better understand client activities, or to implement sophisticated chargeback and billing models.
 
-See xref:../audit/index.adoc[Review audit logs] for more information.
+See link:../audit/index.html[Review audit logs] for more information.
 
 == Use Prometheus metrics
 Optionally, use Prometheus metrics to report on tenant activity.
@@ -131,5 +131,5 @@ IMPORTANT: The tools available on the Metrics page are primarily intended for us
 
 * From the top of the Grid Manager, select the help icon and select *API documentation*. You can use the metrics in the Metrics section of the Grid Management API to create custom alert rules and dashboards for tenant activity.
 
-See xref:reviewing-support-metrics.adoc[Review support metrics] for more information.
+See link:reviewing-support-metrics.html[Review support metrics] for more information.
 

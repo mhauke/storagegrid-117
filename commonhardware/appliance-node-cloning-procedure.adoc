@@ -23,13 +23,13 @@ NOTE: Leave the StorageGRID Appliance Installer open after you complete initial 
 
 * You have optionally enabled node encryption for the target appliance.
 * You have optionally set the RAID mode for the target appliance (storage appliances only).
-* xref:considerations-and-requirements-for-appliance-node-cloning.adoc[Considerations and requirements for appliance node cloning]
+* link:considerations-and-requirements-for-appliance-node-cloning.html[Considerations and requirements for appliance node cloning]
 
 You should clone only one appliance node at a time to maintain StorageGRID network performance and data availability.
 
 .Steps
 
-. xref:../maintain/placing-appliance-into-maintenance-mode.adoc[Place the source node you are cloning into maintenance mode].
+. link:../maintain/placing-appliance-into-maintenance-mode.html[Place the source node you are cloning into maintenance mode].
 
 . From the StorageGRID Appliance Installer on the source node, in the Installation section of the Home page, select *Enable Cloning*.
 +
@@ -53,7 +53,7 @@ If issues exist that prevent cloning, *Start Cloning* is not enabled and issues 
 +
 When *Start Cloning* is enabled, the *Current state* indicates the StorageGRID network that was selected for cloning traffic, along with information about using that network connection.
 +
-xref:considerations-and-requirements-for-appliance-node-cloning.adoc[Considerations and requirements for appliance node cloning]
+link:considerations-and-requirements-for-appliance-node-cloning.html[Considerations and requirements for appliance node cloning]
 
 . Select *Start Cloning* on the source node.
 . Monitor the cloning progress using the StorageGRID Appliance Installer on either the source or target node.
@@ -82,7 +82,7 @@ When cloning successfully completes:
  ** The target node now uses the IP addresses originally assigned to the source node for the Grid, Admin, and Client Networks.
  ** The source node now uses the temporary IP address initially assigned to the target node.
 * The target node exits maintenance mode and joins StorageGRID, replacing the source node.
-* The source appliance is in a pre-installed state, as if you had xref:../maintain/preparing-appliance-for-reinstallation-platform-replacement-only.adoc[prepared it for reinstallation].
+* The source appliance is in a pre-installed state, as if you had link:../maintain/preparing-appliance-for-reinstallation-platform-replacement-only.html[prepared it for reinstallation].
 
 NOTE: If the appliance does not rejoin the grid, go to the StorageGRID Appliance Installer Home page for the source node, select *Advanced* > *Reboot Controller*, and then select *Reboot into Maintenance Mode*. After the source node reboots in maintenance mode, repeat the node cloning procedure.
 

@@ -13,15 +13,15 @@ You can configure high availability (HA) groups to provide highly available acce
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission.
-* If you plan to use a VLAN interface in an HA group, you have created the VLAN interface. See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces].
+* If you plan to use a VLAN interface in an HA group, you have created the VLAN interface. See link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces].
 * If you plan to use an access interface for a node in an HA group, you have created the interface:
 
-** *Red Hat Enterprise Linux or CentOS (before installing the node)*: xref:../rhel/creating-node-configuration-files.adoc[Create node configuration files]
-** *Ubuntu or Debian (before installing the node)*: xref:../ubuntu/creating-node-configuration-files.adoc[Create node configuration files]
-** *Linux (after installing the node)*: xref:../maintain/linux-adding-trunk-or-access-interfaces-to-node.adoc[Linux: Add trunk or access interfaces to a node]
-** *VMware (after installing the node)*: xref:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.adoc[VMware: Add trunk or access interfaces to a node]
+** *Red Hat Enterprise Linux or CentOS (before installing the node)*: link:../rhel/creating-node-configuration-files.html[Create node configuration files]
+** *Ubuntu or Debian (before installing the node)*: link:../ubuntu/creating-node-configuration-files.html[Create node configuration files]
+** *Linux (after installing the node)*: link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html[Linux: Add trunk or access interfaces to a node]
+** *VMware (after installing the node)*: link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html[VMware: Add trunk or access interfaces to a node]
 
 
 == Create a high availability group
@@ -119,7 +119,7 @@ NOTE: Wait up to 15 minutes for changes to an HA group to be applied to all node
 
 === Next steps
 
-If you will use this HA group for load balancing, create a load balancer endpoint to determine the port and network protocol and to attach any required certificates. See xref:configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints].
+If you will use this HA group for load balancing, create a load balancer endpoint to determine the port and network protocol and to attach any required certificates. See link:configuring-load-balancer-endpoints.html[Configure load balancer endpoints].
 
 == Edit a high availability group
 

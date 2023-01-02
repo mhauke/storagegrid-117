@@ -11,9 +11,9 @@ summary: 'The Admin Node, through the Audit Management System (AMS) service, log
 [.lead]
 The Admin Node, through the Audit Management System (AMS) service, logs all audited system events to a log file available through the audit share, which is added to each Admin Node at installation. The audit share is automatically enabled as a read-only share. 
 
-To access audit logs, you can configure client access to audit shares for NFS. Or, you can xref:../monitor/considerations-for-external-syslog-server.adoc[use an external syslog server].
+To access audit logs, you can configure client access to audit shares for NFS. Or, you can link:../monitor/considerations-for-external-syslog-server.html[use an external syslog server].
 
-The StorageGRID system uses positive acknowledgment to prevent loss of audit messages before they are written to the log file. A message remains queued at a service until the AMS service or an intermediate audit relay service has acknowledged control of it. For more information, see xref:../audit/index.adoc[Review audit logs].
+The StorageGRID system uses positive acknowledgment to prevent loss of audit messages before they are written to the log file. A message remains queued at a service until the AMS service or an intermediate audit relay service has acknowledged control of it. For more information, see link:../audit/index.html[Review audit logs].
 
 
 .What you'll need

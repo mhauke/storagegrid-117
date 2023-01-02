@@ -21,10 +21,10 @@ IMPORTANT: Before performing a disconnected site decommission, you must contact 
 
 If a site contains a mixture of connected (image:../media/icon_alert_green_checkmark.png[Icon Alert Green Checkmark]) and disconnected nodes (image:../media/icon_alarm_gray_administratively_down.png[Icon Alarm Gray Administratively Down] or image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown]), you must bring all offline nodes back online.
 
-NOTE: If you need to perform a second maintenance procedure, you can xref:pausing-and-resuming-decommission-process-for-storage-nodes.adoc[pause the decommission procedure while the Storage Nodes are being removed]. The *Pause* button is enabled only when the ILM evaluation or erasure-coded data decommissioning stages are reached; however, ILM evaluation (data migration) will continue to run in the background. After the second maintenance procedure is complete, you can resume decommissioning.
+NOTE: If you need to perform a second maintenance procedure, you can link:pausing-and-resuming-decommission-process-for-storage-nodes.html[pause the decommission procedure while the Storage Nodes are being removed]. The *Pause* button is enabled only when the ILM evaluation or erasure-coded data decommissioning stages are reached; however, ILM evaluation (data migration) will continue to run in the background. After the second maintenance procedure is complete, you can resume decommissioning.
 
 .Related information
 
-xref:grid-node-decommissioning.adoc[Grid node decommission]
+link:grid-node-decommissioning.html[Grid node decommission]
 
-xref:site-decommissioning.adoc[Site decommission]
+link:site-decommissioning.html[Site decommission]

@@ -13,12 +13,12 @@ You can use the Tenant Manager to create S3 buckets for object data.
 
 .What you'll need
 
-* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You belong to a user group that has the Root access or Manage all buckets xref:tenant-management-permissions.adoc[permission]. These permissions override the permissions settings in group or bucket policies. 
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You belong to a user group that has the Root access or Manage all buckets link:tenant-management-permissions.html[permission]. These permissions override the permissions settings in group or bucket policies. 
 +
-NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objects can be granted by xref:../s3/bucket-and-group-access-policies.adoc[bucket policy or group policy].
+NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objects can be granted by link:../s3/bucket-and-group-access-policies.html[bucket policy or group policy].
 
-* If you plan to enable S3 Object Lock for a bucket, a grid admin has enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See xref:using-s3-object-lock.adoc[Use S3 Object Lock to retain objects].
+* If you plan to enable S3 Object Lock for a bucket, a grid admin has enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See link:using-s3-object-lock.html[Use S3 Object Lock to retain objects].
 
 == Access the wizard
 . Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
@@ -109,5 +109,5 @@ The *Default retention period* indicates how long new objects added to this buck
 +
 The bucket is created and added to the table on the Buckets page.
 
-. Optionally, select *Go to bucket details page* to xref:viewing-s3-bucket-details.adoc[view bucket details] and perform additional configuration.
+. Optionally, select *Go to bucket details page* to link:viewing-s3-bucket-details.html[view bucket details] and perform additional configuration.
 

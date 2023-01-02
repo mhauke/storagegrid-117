@@ -24,9 +24,9 @@ Before you can use cross-grid replication, you must sign in to the corresponding
 .What you'll need
 
 * You have reviewed the requirements for cross-grid replication. See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
-* You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* The tenant account has the *Use grid federation connection* permission, and identical tenant accounts exist on both grids. See xref:../admin/grid-federation-manage-tenants.adoc[Manage the permitted tenants for grid federation connection].
-* The tenant user you will be signing in as already exists on both grids and belongs to a user group that has the xref:tenant-management-permissions.adoc[Root access permission].
+* You are using a link:../admin/web-browser-requirements.html[supported web browser].
+* The tenant account has the *Use grid federation connection* permission, and identical tenant accounts exist on both grids. See link:../admin/grid-federation-manage-tenants.html[Manage the permitted tenants for grid federation connection].
+* The tenant user you will be signing in as already exists on both grids and belongs to a user group that has the link:tenant-management-permissions.html[Root access permission].
 * If you will be signing in to the tenant's destination grid as a local user, the root user for the tenant account has set a password for your user account on that grid .
 
 === Create two identical buckets
@@ -37,7 +37,7 @@ Before you can use cross-grid replication, you must sign in to the corresponding
 +
 NOTE: If you are unable to sign in to the tenant's destination grid as a local user, confirm that the root user for the tenant account has set a password for your user account.
 
-.. Follow the instructions to xref:creating-s3-bucket.adoc[create an S3 bucket].
+.. Follow the instructions to link:creating-s3-bucket.html[create an S3 bucket].
 .. On the *Manage object settings* tab, select *Enable object versioning*.
 .. If S3 Object Lock is enabled for your StorageGRID system, do not enable S3 Object Lock for the bucket. 
 .. Select *Create bucket*.
@@ -90,8 +90,8 @@ If cross-grid replication is enabled for a bucket, you might need to verify that
 
 .What you'll need
 
-* You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You belong to a user group that has the xref:tenant-management-permissions.adoc[Root access permission].
+* You are using a link:../admin/web-browser-requirements.html[supported web browser].
+* You belong to a user group that has the link:tenant-management-permissions.html[Root access permission].
 
 .Steps
 
@@ -121,12 +121,12 @@ Before disabling cross-grid replication, note the following:
 
 * If cross-grid replication was enabled for each of the buckets (that is, if replication occurs in both directions), you can disable cross-grid replication for either or both buckets. For example, you might want to disable replicating objects from `my-bucket` on Grid 1 to `my-bucket` on Grid 2, while continuing to replicate objects from `my-bucket` on Grid 2 to `my-bucket` on Grid 1.
 
-* You must disable cross-grid replication before you can remove a tenant's permission to use the grid federation connection. See xref:../admin/grid-federation-manage-tenants.adoc[Manage permitted tenants].
+* You must disable cross-grid replication before you can remove a tenant's permission to use the grid federation connection. See link:../admin/grid-federation-manage-tenants.html[Manage permitted tenants].
 
 .What you'll need
 
-* You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You belong to a user group that has the xref:tenant-management-permissions.adoc[Root access permission].
+* You are using a link:../admin/web-browser-requirements.html[supported web browser].
+* You belong to a user group that has the link:tenant-management-permissions.html[Root access permission].
 
 .Steps
 

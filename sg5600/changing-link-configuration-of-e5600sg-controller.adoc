@@ -13,7 +13,7 @@ You can change the Ethernet link configuration of the E5600SG controller. You ca
 
 .What you'll need
 
-xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[Place the E5600SG controller into maintenance mode]. 
+link:../commonhardware/placing-appliance-into-maintenance-mode.html[Place the E5600SG controller into maintenance mode]. 
 
 NOTE: In rare instances, placing a StorageGRID appliance into maintenance mode might make the appliance unavailable for remote access.
 
@@ -41,7 +41,7 @@ For more information on the options, see "`Configuring network links.`"
 NOTE: You might lose your connection if you made changes to the network or link you are connected through. If you are not reconnected within 1 minute, re-enter the URL for the StorageGRID Appliance Installer using one of the other IP addresses assigned to the appliance: +
 `*https://_E5600SG_Controller_IP_:8443*`
 +
-If you made changes to the VLAN settings, the subnet for the appliance might have changed. If you need to change the IP addresses for the appliance, follow the xref:../installconfig/setting-ip-configuration.adoc[configure StorageGRID IP addresses] instructions.
+If you made changes to the VLAN settings, the subnet for the appliance might have changed. If you need to change the IP addresses for the appliance, follow the link:../installconfig/setting-ip-configuration.html[configure StorageGRID IP addresses] instructions.
 
 . From the StorageGRID Appliance Installer, select *Configure Networking* > *Ping Test*.
 . Use the Ping Test tool to check connectivity to IP addresses on any networks that may have been affected by the link configuration changes you made in the <<change_link_configuration_sg5600,Change link configuration>> step.
@@ -60,4 +60,4 @@ image::../media/nodes_menu.png[Appliance node rejoined grid]
 
 .Related information
 
-xref:../installconfig/configuring-network-links.adoc[Configure network links]
+link:../installconfig/configuring-network-links.html[Configure network links]

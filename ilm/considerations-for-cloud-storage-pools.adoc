@@ -42,7 +42,7 @@ By default, Cloud Storage Pools use the following ports:
 
 You can specify a different port when you create or edit a Cloud Storage Pool.
 
-If you use a non-transparent proxy server, you must also xref:../admin/configuring-storage-proxy-settings.adoc[configure a Storage proxy] to allow messages to be sent to external endpoints, such as an endpoint on the internet.
+If you use a non-transparent proxy server, you must also link:../admin/configuring-storage-proxy-settings.html[configure a Storage proxy] to allow messages to be sent to external endpoints, such as an endpoint on the internet.
 
 == Considerations for costs
 
@@ -110,4 +110,4 @@ Do not use Azure Blob Storage lifecycle management for the container used with a
 
 .Related information
 
-* xref:creating-cloud-storage-pool.adoc[Create a Cloud Storage Pool]
+* link:creating-cloud-storage-pool.html[Create a Cloud Storage Pool]

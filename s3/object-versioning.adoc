@@ -23,11 +23,11 @@ NOTE: Versioning can be enabled only on buckets created with StorageGRID version
 
 ILM policies are applied to each version of an object. An ILM scanning process continuously scans all objects and re-evaluates them against the current ILM policy. Any changes you make to ILM policies are applied to all previously ingested objects. This includes previously ingested versions if versioning is enabled. ILM scanning applies new ILM changes to previously ingested objects.
 
-For S3 objects in versioning-enabled buckets, versioning support allows you to create ILM rules that use "`Noncurrent time`" as the Reference time (select *Yes* for the question, "`Apply this rule to older object versions only?`" in xref:../ilm/create-ilm-rule-enter-details.adoc[Step 1 of the Create an ILM rule wizard]). When an object is updated, its previous versions become noncurrent. Using a "`Noncurrent time`" filter allows you to create policies that reduce the storage impact of previous versions of objects.
+For S3 objects in versioning-enabled buckets, versioning support allows you to create ILM rules that use "`Noncurrent time`" as the Reference time (select *Yes* for the question, "`Apply this rule to older object versions only?`" in link:../ilm/create-ilm-rule-enter-details.html[Step 1 of the Create an ILM rule wizard]). When an object is updated, its previous versions become noncurrent. Using a "`Noncurrent time`" filter allows you to create policies that reduce the storage impact of previous versions of objects.
 
 
 
 NOTE: When you upload a new version of an object using a multipart upload operation, the noncurrent time for the original version of the object reflects when the multipart upload was created for the new version, not when the multipart upload was completed. In limited cases, the noncurrent time for the original version might be hours or days earlier than the time for the current version.
 
-See xref:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[ILM rules and policies for S3 versioned objects (Example 4)].
+See link:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.html[ILM rules and policies for S3 versioned objects (Example 4)].
 

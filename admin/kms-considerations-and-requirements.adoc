@@ -75,6 +75,6 @@ When the new key version is available:
 
 == Can I reuse an appliance node after it has been encrypted?
 
-If you need to install an encrypted appliance into another StorageGRID system, you must first decommission the grid node to move object data to another node. Then, you can use the StorageGRID Appliance Installer to xref:../commonhardware/monitoring-node-encryption-in-maintenance-mode.adoc[clear the KMS configuration]. Clearing the KMS configuration disables the *Node Encryption* setting and removes the association between the appliance node and the KMS configuration for the StorageGRID site.
+If you need to install an encrypted appliance into another StorageGRID system, you must first decommission the grid node to move object data to another node. Then, you can use the StorageGRID Appliance Installer to link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html[clear the KMS configuration]. Clearing the KMS configuration disables the *Node Encryption* setting and removes the association between the appliance node and the KMS configuration for the StorageGRID site.
 
 NOTE: With no access to the KMS encryption key, any data that remains on the appliance can no longer be accessed and is permanently locked.

@@ -13,9 +13,9 @@ You might need to decommission a node that is not currently connected to the gri
 
 .What you'll need
 
-* You understand the requirements and xref:considerations-for-decommissioning-grid-nodes.adoc[considerations for decommissioning grid nodes].
+* You understand the requirements and link:considerations-for-decommissioning-grid-nodes.html[considerations for decommissioning grid nodes].
 * You have obtained all prerequisite items.
-* You have ensured that no data repair jobs are active. See xref:checking-data-repair-jobs.adoc[Check data repair jobs].
+* You have ensured that no data repair jobs are active. See link:checking-data-repair-jobs.html[Check data repair jobs].
 * You have confirmed that Storage Node recovery is not in progress anywhere in the grid. If it is, you must wait until any Cassandra rebuild performed as part of the recovery is complete. You can then proceed with decommissioning.
 * You have ensured that other maintenance procedures will not be run while the node decommission procedure is running, unless the node decommission procedure is paused.
 * The *Decommission Possible* column for the disconnected node or nodes you want to decommission includes a green checkmark.
@@ -46,7 +46,7 @@ IMPORTANT: If you believe that object data can still be recovered from the node,
 IMPORTANT: If you have more than one disconnected Storage Node that you cannot recover, contact technical support to determine the best course of action.
 
 * When you decommission a disconnected Storage Node, StorageGRID starts data repair jobs at the end of the decommissioning process. These jobs attempt to reconstruct the object data and metadata that was stored on the disconnected node.
-* When you decommission a disconnected Storage Node, the decommission procedure completes relatively quickly. However, the data repair jobs can take days or weeks to run and are not monitored by the decommission procedure. You must manually monitor these jobs and restart them as needed. See xref:checking-data-repair-jobs.adoc[Check data repair jobs].
+* When you decommission a disconnected Storage Node, the decommission procedure completes relatively quickly. However, the data repair jobs can take days or weeks to run and are not monitored by the decommission procedure. You must manually monitor these jobs and restart them as needed. See link:checking-data-repair-jobs.html[Check data repair jobs].
 
 * If you decommission a disconnected Storage Node that contains the only copy of an object, the object will be lost. The data repair jobs can only reconstruct and recover objects if at least one replicated copy or enough erasure-coded fragments exist on Storage Nodes that are currently connected.
 
@@ -85,7 +85,7 @@ image::../media/decommission_nodes_procedure_in_progress_disconnected.png[screen
 
 . As soon as the new Recovery Package is available, click the link or select *MAINTENANCE* > *System* > *Recovery package* to access the Recovery Package page. Then, download the `.zip` file.
 +
-See the instructions for xref:downloading-recovery-package.adoc[downloading the Recovery Package].
+See the instructions for link:downloading-recovery-package.html[downloading the Recovery Package].
 +
 NOTE: Download the Recovery Package as soon as possible to ensure you can recover your grid if something goes wrong during the decommission procedure.
 +
@@ -112,8 +112,8 @@ As soon as the disconnected nodes have been decommissioned and all data repair j
 Then, complete these steps after you complete the decommission procedure:
 
 * Ensure that the drives of the decommissioned grid node are wiped clean. Use a commercially available data wiping tool or service to permanently and securely remove data from the drives.
-* If you decommissioned an appliance node and the data on the appliance was protected using node encryption, use the StorageGRID Appliance Installer to clear the key management server configuration (Clear KMS). You must xref:../commonhardware/monitoring-node-encryption-in-maintenance-mode.adoc[clear the KMS configuration] if you want to add the appliance to another grid.
+* If you decommissioned an appliance node and the data on the appliance was protected using node encryption, use the StorageGRID Appliance Installer to clear the key management server configuration (Clear KMS). You must link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html[clear the KMS configuration] if you want to add the appliance to another grid.
 
 .Related information
 
-xref:grid-node-recovery-procedures.adoc[Grid node recovery procedures]
+link:grid-node-recovery-procedures.html[Grid node recovery procedures]

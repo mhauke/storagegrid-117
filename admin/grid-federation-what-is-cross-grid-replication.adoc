@@ -9,7 +9,7 @@ summary: 'Cross-grid replication is the automatic replication of objects between
 :imagesdir: ../media/
 
 [.lead]
-Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a xref:grid-federation-overview.adoc[grid federation connection]. xref:grid-federation-what-is-account-clone.adoc[Account clone] is required for cross-grid replication.
+Cross-grid replication is the automatic replication of objects between selected S3 buckets in two StorageGRID systems that are connected in a link:grid-federation-overview.html[grid federation connection]. link:grid-federation-what-is-account-clone.html[Account clone] is required for cross-grid replication.
 
 == Workflow for cross-grid replication
 
@@ -30,7 +30,7 @@ After both buckets have been created, cross-grid replication can be configured f
 
 .Learn more
 
-xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[Manage cross-grid replication]
+link:../tenant/grid-federation-manage-cross-grid-replication.html[Manage cross-grid replication]
 
 == How cross-grid replication works
 
@@ -103,20 +103,20 @@ When an S3 client deletes an object from a bucket that has cross-grid replicatio
 
 **  If you choose not to replicate delete markers, a delete marker is added to the source bucket but is not replicated to the destination bucket. In effect, objects that are deleted on the source grid are not deleted on the destination grid.
 
-In the figure, *Replicate client deletes* was set to *Yes* when xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[cross-grid replication was enabled]. Delete requests for the source bucket that include a version ID will not delete objects from the destination bucket. Delete requests for the source bucket that do not include a version ID will appear to delete objects in the destination bucket.
+In the figure, *Replicate client deletes* was set to *Yes* when link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication was enabled]. Delete requests for the source bucket that include a version ID will not delete objects from the destination bucket. Delete requests for the source bucket that do not include a version ID will appear to delete objects in the destination bucket.
 
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
 
 === How encrypted objects are replicated
 When you use cross-grid replication to replicate objects between grids, you can encrypt individual objects, use default bucket encryption, or configure grid-wide encryption. You can add, modify, or remove default bucket or grid-wide encryption settings before or after you enable cross-grid replication for a bucket.
 
-To encrypt individual objects, you can use SSE (server-side encryption with StorageGRID-managed keys) when adding the objects to the source bucket. Use the `x-amz-server-side-encryption` request header and specify `AES256`. See xref:../s3/using-server-side-encryption.adoc[Use server-side encryption]. 
+To encrypt individual objects, you can use SSE (server-side encryption with StorageGRID-managed keys) when adding the objects to the source bucket. Use the `x-amz-server-side-encryption` request header and specify `AES256`. See link:../s3/using-server-side-encryption.html[Use server-side encryption]. 
 
 NOTE: Using SSE-C (server-side encryption with customer-provided keys) is not supported for cross-grid replication. The ingest operation will fail.
 
-To use default encryption for a bucket, use a PUT bucket encryption request and set the `SSEAlgorithm` parameter to `AES256`. Bucket-level encryption applies to any objects ingested without the `x-amz-server-side-encryption` request header. See xref:../s3/operations-on-buckets.adoc[Operations on buckets]. 
+To use default encryption for a bucket, use a PUT bucket encryption request and set the `SSEAlgorithm` parameter to `AES256`. Bucket-level encryption applies to any objects ingested without the `x-amz-server-side-encryption` request header. See link:../s3/operations-on-buckets.html[Operations on buckets]. 
 
-To use grid-level encryption, set the *Stored object encryption* option to *AES-256*. Grid-level encryption applies to any objects that are not encrypted at the bucket level or that are ingested without the `x-amz-server-side-encryption` request header. See xref:../admin/changing-network-options-object-encryption.adoc[Configure network and object options].
+To use grid-level encryption, set the *Stored object encryption* option to *AES-256*. Grid-level encryption applies to any objects that are not encrypted at the bucket level or that are ingested without the `x-amz-server-side-encryption` request header. See link:../admin/changing-network-options-object-encryption.html[Configure network and object options].
 
 NOTE: SSE does not support AES-128. If the *Stored object encryption* option is enabled for the source grid using the *AES-128* option, the use of the AES-128 algorithm will not be propagated to the replicated object. Instead, the replicated object will use the destination's default bucket or grid-level encryption setting, if available. 
 
