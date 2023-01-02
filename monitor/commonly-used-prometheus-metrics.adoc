@@ -13,6 +13,8 @@ Refer to this list of commonly used Prometheus metrics to better understand cond
 
 You can also <<obtain-all-metrics,obtain a complete list of all metrics>>.
 
+For details on the syntax of Prometheus queries, see https://prometheus.io/docs/prometheus/latest/querying/basics/[Querying Prometheus^].
+
 == What are Prometheus metrics?
 
 The Prometheus service on Admin Nodes collects time series metrics from the services on all nodes. Metrics are stored on each Admin Node until the space reserved for Prometheus data is full. When the `/var/local/mysql_ibdata/` volume reaches capacity, the oldest metrics are deleted first.

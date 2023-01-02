@@ -135,9 +135,9 @@ A success message appears, and the new tenant is listed on the Tenants page. To 
 
 . If you selected the *Use grid federation connection* permission for the tenant:
 
-.. Confirm that an identical tenant was replicated to the other grid in the connection.
+.. Confirm that an identical tenant was replicated to the other grid in the connection. The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions.
 +
-The tenants on both grids will have the same 20-digit account ID, name, description, quota, and permissions.
+NOTE: If you see the error message "`Tenant created without a clone,`" refer to the instructions in link:grid-federation-troubleshoot.html[Troubleshoot grid federation errors].
 
 .. If you provided a local root user password when defining root access, link:changing-password-for-tenant-local-root-user.html[change the password for the local root user] for the replicated tenant. 
 +
