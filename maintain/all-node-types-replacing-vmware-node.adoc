@@ -31,7 +31,7 @@ This procedure is only one step in the grid node recovery process. The node remo
 . If the failed grid node is a Storage Node, determine if any of the virtual hard disks used for data storage are undamaged and preserve them for reattachment to the recovered grid node.
 . Power off the virtual machine.
 . Select *Actions* > *All vCenter Actions* > *Delete from Disk* to delete the virtual machine.
-. Deploy a new virtual machine to be the replacement node, and connect it to one or more StorageGRID networks. For instructions see xref:../vmware/deploying-storagegrid-node-as-virtual-machine.adoc[Deploying a StorageGRID node as a virtual machine].
+. Deploy a new virtual machine to be the replacement node, and connect it to one or more StorageGRID networks. For instructions see link:../vmware/deploying-storagegrid-node-as-virtual-machine.html[Deploying a StorageGRID node as a virtual machine].
 +
 When you deploy the node, you can optionally remap node ports or increase CPU or memory settings.
 +
@@ -43,17 +43,17 @@ NOTE: After deploying the new node, you can add new virtual disks according to y
 |===
 | Type of node| Go to
 |Primary Admin Node
-| xref:configuring-replacement-primary-admin-node.adoc[Configure replacement primary Admin Node]
+| link:configuring-replacement-primary-admin-node.html[Configure replacement primary Admin Node]
 
 |Non-primary Admin Node
-| xref:selecting-start-recovery-to-configure-non-primary-admin-node.adoc[Select Start Recovery to configure non-primary Admin Node]
+| link:selecting-start-recovery-to-configure-non-primary-admin-node.html[Select Start Recovery to configure non-primary Admin Node]
 
 |Gateway Node
-| xref:selecting-start-recovery-to-configure-gateway-node.adoc[Select Start Recovery to configure Gateway Node]
+| link:selecting-start-recovery-to-configure-gateway-node.html[Select Start Recovery to configure Gateway Node]
 
 |Storage Node
-| xref:selecting-start-recovery-to-configure-storage-node.adoc[Select Start Recovery to configure Storage Node]
+| link:selecting-start-recovery-to-configure-storage-node.html[Select Start Recovery to configure Storage Node]
 
 |Archive Node
-| xref:selecting-start-recovery-to-configure-archive-node.adoc[Select Start Recovery to configure Archive Node]
+| link:selecting-start-recovery-to-configure-archive-node.html[Select Start Recovery to configure Archive Node]
 |===

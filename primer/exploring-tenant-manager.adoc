@@ -51,7 +51,7 @@ S3 tenant users with the appropriate permissions can perform the following tasks
 * Configure cross-origin resource sharing (CORS)
 * Delete all objects in a bucket
 * Delete empty buckets
-* Use the xref:../tenant/use-s3-console.adoc[experimental S3 Console] to manage bucket objects
+* Use the link:../tenant/use-s3-console.html[experimental S3 Console] to manage bucket objects
 
 If a grid administrator has enabled the use of platform services for the tenant account, an S3 tenant user with the appropriate permissions can also perform these tasks:
 
@@ -65,7 +65,7 @@ If a grid administrator has enabled the use of platform services for the tenant 
 
 === Grid federation connections
 
-If a grid administrator has enabled the use of a grid federation connection for the tenant account, an S3 tenant user who has Root access permission can view the connection name, access the bucket details page for each bucket that has cross-grid replication enabled, and view the most recent error to occur when bucket data was being replicated to the other grid in the connection. See xref:../tenant/grid-federation-view-connections.adoc[View grid federation connections].
+If a grid administrator has enabled the use of a grid federation connection for the tenant account, an S3 tenant user who has Root access permission can view the connection name, access the bucket details page for each bucket that has cross-grid replication enabled, and view the most recent error to occur when bucket data was being replicated to the other grid in the connection. See link:../tenant/grid-federation-view-connections.html[View grid federation connections].
 
 == Access Management menu
 
@@ -75,4 +75,4 @@ image::../media/access_management_menu.png[Access Management Menu]
 
 .Related information
 
-* xref:../tenant/index.adoc[Use a tenant account]
+* link:../tenant/index.html[Use a tenant account]

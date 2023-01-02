@@ -18,15 +18,15 @@ The audit messages belonging to the ILM audit category are used for  events rela
 
 | IDEL
 | ILM Initiated Delete: This audit message is generated when ILM starts the process of deleting an object.
-| xref:idel-ilm-initiated-delete.adoc[IDEL: ILM Initiated Delete]
+| link:idel-ilm-initiated-delete.html[IDEL: ILM Initiated Delete]
 
 
 | LKCU
 | Overwritten Object Cleanup. This audit message is generated when an overwritten object is automatically removed to free up storage space.
-| xref:lkcu-overwritten-object-cleanup.adoc[LKCU: Overwritten Object Cleanup]
+| link:lkcu-overwritten-object-cleanup.html[LKCU: Overwritten Object Cleanup]
 
 | ORLM
 | Object Rules Met: This audit message is generated when object data is stored as specified by the ILM rules.
-| xref:orlm-object-rules-met.adoc[ORLM: Object Rules Met]
+| link:orlm-object-rules-met.html[ORLM: Object Rules Met]
 
 |===

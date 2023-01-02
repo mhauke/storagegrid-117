@@ -13,9 +13,9 @@ You must create at least one endpoint of the correct type before you can enable 
 
 .What you'll need
 
-* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * Platform services were enabled for your tenant account by a StorageGRID administrator.
-* You belong to a user group that has the xref:tenant-management-permissions.adoc[Manage endpoints or Root access permission].
+* You belong to a user group that has the link:tenant-management-permissions.html[Manage endpoints or Root access permission].
 * The resource referenced by the platform services endpoint have been created:
  ** CloudMirror replication: S3 bucket
  ** Event notification: SNS topic
@@ -27,7 +27,7 @@ NOTE: If you plan to use a bucket hosted on a StorageGRID system as an endpoint 
 
  ** Unique Resource Name (URN)
 +
-xref:specifying-urn-for-platform-services-endpoint.adoc[Specify URN for platform services endpoint]
+link:specifying-urn-for-platform-services-endpoint.html[Specify URN for platform services endpoint]
 
  ** Authentication credentials (if required):
   *** Access Key: Access key ID and secret access key
@@ -151,10 +151,10 @@ After you have configured an endpoint, you can use its URN to configure a platfo
 
 .Related information
 
-xref:specifying-urn-for-platform-services-endpoint.adoc[Specify URN for platform services endpoint]
+link:specifying-urn-for-platform-services-endpoint.html[Specify URN for platform services endpoint]
 
-xref:configuring-cloudmirror-replication.adoc[Configure CloudMirror replication]
+link:configuring-cloudmirror-replication.html[Configure CloudMirror replication]
 
-xref:configuring-event-notifications.adoc[Configure event notifications]
+link:configuring-event-notifications.html[Configure event notifications]
 
-xref:configuring-search-integration-service.adoc[Configure search integration service]
+link:configuring-search-integration-service.html[Configure search integration service]

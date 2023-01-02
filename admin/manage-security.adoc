@@ -12,20 +12,20 @@ summary: 'You can configure various security settings from the Grid Manager to h
 You can configure various security settings from the Grid Manager to help secure your StorageGRID system.
 
 == Manage encryption
-StorageGRID provides a number of options for encrypting data. You should xref:reviewing-storagegrid-encryption-methods.adoc[review the available encryption methods] to determine which ones meet your data-protection requirements. 
+StorageGRID provides a number of options for encrypting data. You should link:reviewing-storagegrid-encryption-methods.html[review the available encryption methods] to determine which ones meet your data-protection requirements. 
 
 == Manage certificates
 
-You can xref:using-storagegrid-security-certificates.adoc[configure and manage] the server certificates used for HTTP connections or the client certificates used to authenticate a client or user identity to the server.
+You can link:using-storagegrid-security-certificates.html[configure and manage] the server certificates used for HTTP connections or the client certificates used to authenticate a client or user identity to the server.
 
 == Configure key management servers
 
-Using a xref:kms-configuring.adoc[key management server] lets you protect StorageGRID data even if an appliance is removed from the data center. After the appliance volumes are encrypted, you cannot access any data on the appliance unless the node can communicate with the KMS.
+Using a link:kms-configuring.html[key management server] lets you protect StorageGRID data even if an appliance is removed from the data center. After the appliance volumes are encrypted, you cannot access any data on the appliance unless the node can communicate with the KMS.
 
 NOTE: To use encryption key management, you must enable the *Node Encryption* setting for each appliance during installation, before the appliance is added to the grid.
 
 == Manage proxy settings
 
-If you are using S3 platform services or Cloud Storage Pools, you can configure a xref:configuring-storage-proxy-settings.adoc[Storage proxy server] between Storage Nodes and the external S3 endpoints. If you send AutoSupport messages using HTTPS or HTTP, you can configure an xref:configuring-admin-proxy-settings.adoc[Admin proxy server] between Admin Nodes and technical support.
+If you are using S3 platform services or Cloud Storage Pools, you can configure a link:configuring-storage-proxy-settings.html[Storage proxy server] between Storage Nodes and the external S3 endpoints. If you send AutoSupport messages using HTTPS or HTTP, you can configure an link:configuring-admin-proxy-settings.html[Admin proxy server] between Admin Nodes and technical support.
 
 NOTE: As of the StorageGRID 11.7 release, NetApp's AutoSupport servers will reject messages sent using HTTP. You must configure a proxy server to forward AutoSupport messages as HTTPS.

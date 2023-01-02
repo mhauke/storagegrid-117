@@ -40,7 +40,7 @@ Temporary IP addresses are normally on the same subnet as the source node applia
 +
 NOTE: Using the 1-GbE Admin Network for clone data transfer results in slower cloning.
 
-* Determine if node encryption using a key management server (KMS) will be used on the target appliance, so that you can enable node encryption during initial target appliance installation before cloning. You can check if node encryption is enabled on the source appliance node as described in the xref:../installconfig/optional-enabling-node-encryption.adoc[enabling node encryption].
+* Determine if node encryption using a key management server (KMS) will be used on the target appliance, so that you can enable node encryption during initial target appliance installation before cloning. You can check if node encryption is enabled on the source appliance node as described in the link:../installconfig/optional-enabling-node-encryption.html[enabling node encryption].
 +
 The source node and target appliance can have different node-encryption settings. Data decryption and encryption is performed automatically during data transfer and when the target node restarts and joins the grid.
 

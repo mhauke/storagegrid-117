@@ -19,7 +19,7 @@ Before using Last access time in an ILM rule, review the following consideration
 +
 Take this latency into account when creating ILM rules based on Last access time and avoid placements that use short time periods (less than one month).
 
-* When using Last access time as an advanced filter or as a reference time, you must enable last access time updates for S3 buckets. You can use the xref:../tenant/enabling-or-disabling-last-access-time-updates.adoc[Tenant Manager] or the xref:../s3/put-bucket-last-access-time-request.adoc[Tenant Management API].
+* When using Last access time as an advanced filter or as a reference time, you must enable last access time updates for S3 buckets. You can use the link:../tenant/enabling-or-disabling-last-access-time-updates.html[Tenant Manager] or the link:../s3/put-bucket-last-access-time-request.html[Tenant Management API].
 +
 NOTE: Last access time updates are always enabled for Swift containers, but are disabled by default for S3 buckets.
 +
