@@ -9,19 +9,18 @@ summary: 'The StorageGRID SGF6100 appliances are integrated storage and computin
 :imagesdir: ../media/
 
 [.lead]
-The StorageGRID SG6100 appliances are integrated storage and computing platforms that operate as Storage Nodes in a StorageGRID system. These appliances can be used in a hybrid grid environment that combines appliance Storage Nodes and virtual (software-based) Storage Nodes.
+The StorageGRID SG6100 appliances operate as Storage Nodes in a StorageGRID system. These appliances can be used in a hybrid grid environment that combines appliance Storage Nodes and virtual (software-based) Storage Nodes.
 
-SG6100 appliances provide the following features:
+The SGF6112 appliance provide the following features:
 
-* Available in the following model: SGF6112, which offers 12 NVMe (nonvolatile memory express) SSD drives with integrated compute and storage controllers. 
+* 12 NVMe (nonvolatile memory express) SSD drives with integrated compute and storage controllers. 
 * Integrates the storage and computing elements for a StorageGRID Storage Node.
 * Includes the StorageGRID Appliance Installer to simplify Storage Node deployment and configuration.
 * Includes a baseboard management controller (BMC) for monitoring and diagnosing the hardware in the compute controller.
 * Supports up to four 10-GbE or 25-GbE connections to the StorageGRID Grid Network and Client Network.
-* Supports Federal Information Processing Standard (FIPS) drives to prevent unauthorized access to the drives. 
 
 == SGF6112 hardware description
-The StorageGRID SGF6112 is an all-flash appliance that features a compact design with compute controller and storage controller integrated into a 1 RU chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 7.68TB per drive.
+The StorageGRID SGF6112 is an all-flash appliance that features a compact design with compute controller and storage controller integrated into a 1 RU chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 15.3TB per drive.
 
 === Resilient object storage
 The SGF6112 is designed with SSDs in a RAID that provides the following data protection features: 
@@ -41,12 +40,13 @@ Compute and storage platform
 a|
 A one-rack unit (1U) server that includes:
 
-* 24 cores (48 threads)
+* Two 2.1/2.6GHz 165W processors providing 48 cores
 * 256 GB RAM
 * 2 × 1/10GBase-T ports
 * 4 × 10/25GbE Ethernet ports
-* 1 × 240GB Internal Boot drive (includes StorageGRID software) 
+* 1 × 256GB Internal Boot drive (includes StorageGRID software) 
 * Baseboard management controller (BMC) that simplifies hardware management
+* TPM (Trusted Platform Module) that can be used to safely store certificates and keys
 * Redundant power supplies and fans
 
 |===
