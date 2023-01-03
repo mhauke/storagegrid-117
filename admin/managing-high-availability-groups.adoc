@@ -21,7 +21,7 @@ Each HA group provides access to the shared services on the selected nodes.
 
 * HA groups that include only Admin Nodes provide highly available connections to the Grid Manager and the Tenant Manager.
 
-* An HA group that includes only SG100 or SG1000 appliances and VMware-based software nodes can provide highly available connections for xref:../admin/manage-s3-select-for-tenant-accounts.adoc[S3 tenants that use S3 Select].
+* An HA group that includes only SG100 or SG1000 appliances and VMware-based software nodes can provide highly available connections for link:../admin/manage-s3-select-for-tenant-accounts.html[S3 tenants that use S3 Select].
  HA groups are recommended when using S3 Select, but not required.
 
 == How do you create an HA group?
@@ -35,7 +35,7 @@ NOTE: You cannot add an interface to an HA group if it has a DHCP-assigned IP ad
 
 . You assign one to 10 virtual IP (VIP) addresses to the group. Clients applications can use any of these VIP addresses to connect to StorageGRID.
 
-For instructions, see xref:configure-high-availability-group.adoc[Configure high availability groups].
+For instructions, see link:configure-high-availability-group.html[Configure high availability groups].
 
 == What is the active interface?
 

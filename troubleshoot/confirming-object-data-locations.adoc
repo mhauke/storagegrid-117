@@ -9,14 +9,14 @@ summary: 'Depending on the problem, you might want to confirm where object data 
 :imagesdir: ../media/
 
 [.lead]
-Depending on the problem, you might want to xref:../audit/object-ingest-transactions.adoc[confirm where object data is being stored]. For example, you might want to verify that the ILM policy is performing as expected and object data is being stored where intended.
+Depending on the problem, you might want to link:../audit/object-ingest-transactions.html[confirm where object data is being stored]. For example, you might want to verify that the ILM policy is performing as expected and object data is being stored where intended.
 
 .What you'll need
 * You must have an object identifier, which can be one of:
  ** *UUID*: The object's Universally Unique Identifier. Enter the UUID in all uppercase.
  ** *CBID*: The object's unique identifier within StorageGRID . You can obtain an object's CBID from the audit log. Enter the CBID in all uppercase.
- ** *S3 bucket and object key*: When an object is ingested through the xref:../s3/operations-on-objects.adoc[S3 interface], the client application uses a bucket and object key combination to store and identify the object.
- ** *Swift container and object name*: When an object is ingested through the xref:../swift/object-operations.adoc[Swift interface], the client application uses a container and object name combination to store and identify the object.
+ ** *S3 bucket and object key*: When an object is ingested through the link:../s3/operations-on-objects.html[S3 interface], the client application uses a bucket and object key combination to store and identify the object.
+ ** *Swift container and object name*: When an object is ingested through the link:../swift/object-operations.html[Swift interface], the client application uses a container and object name combination to store and identify the object.
 
 .Steps
 . Select *ILM* > *Object metadata lookup*.
@@ -30,7 +30,7 @@ image::../media/object_lookup.png[Object Lookup page]
 
 . Select *Look Up*.
 +
-The xref:../ilm/verifying-ilm-policy-with-object-metadata-lookup.adoc[object metadata lookup results] appear. This page lists the following types of information:
+The link:../ilm/verifying-ilm-policy-with-object-metadata-lookup.html[object metadata lookup results] appear. This page lists the following types of information:
 
  ** System metadata, including the object ID (UUID), the version ID (optional), the object name, the name of the container, the tenant account name or ID, the logical size of the object, the date and time the object was first created, and the date and time the object was last modified.
  ** Any custom user metadata key-value pairs associated with the object.

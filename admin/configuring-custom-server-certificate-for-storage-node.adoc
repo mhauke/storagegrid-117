@@ -119,7 +119,7 @@ When you restore the default version of the global S3 and Swift API certificate,
 
 . Select *OK* to confirm the warning and restore the default S3 and Swift API certificate.
 +
-If you have Root access permission and the custom S3 and Swift API certificate was used for load balancer endpoint connections, a list is displayed of load balancer endpoints that will no longer be accessible using the default S3 and Swift API certificate. Go to xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] to edit or remove the affected endpoints.
+If you have Root access permission and the custom S3 and Swift API certificate was used for load balancer endpoint connections, a list is displayed of load balancer endpoints that will no longer be accessible using the default S3 and Swift API certificate. Go to link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints] to edit or remove the affected endpoints.
 
 . Refresh the page to ensure the web browser is updated.
 
@@ -169,8 +169,8 @@ For example: `storagegrid_certificate.pem`
 
 .Related information
 
-* xref:../s3/index.adoc[Use S3 REST API]
+* link:../s3/index.html[Use S3 REST API]
 
-* xref:../swift/index.adoc[Use Swift REST API]
+* link:../swift/index.html[Use Swift REST API]
 
-* xref:configuring-s3-api-endpoint-domain-names.adoc[Configure S3 endpoint domain names]
+* link:configuring-s3-api-endpoint-domain-names.html[Configure S3 endpoint domain names]

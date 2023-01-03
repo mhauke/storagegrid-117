@@ -27,7 +27,7 @@ StorageGRID supports up to 1,000 lifecycle rules in a lifecycle configuration. E
 
 If you apply a lifecycle configuration to a bucket, the lifecycle settings for the bucket always override StorageGRID ILM settings. StorageGRID uses the Expiration settings for the bucket, not ILM, to determine whether to delete or retain specific objects.
 
-As a result, an object might be removed from the grid even though the placement instructions in an ILM rule still apply to the object. Or, an object might be retained on the grid even after any ILM placement instructions for the object have lapsed. For details, see xref:../ilm/how-ilm-operates-throughout-objects-life.adoc[How ILM operates throughout an object's life].
+As a result, an object might be removed from the grid even though the placement instructions in an ILM rule still apply to the object. Or, an object might be retained on the grid even after any ILM placement instructions for the object have lapsed. For details, see link:../ilm/how-ilm-operates-throughout-objects-life.html[How ILM operates throughout an object's life].
 
 NOTE: Bucket lifecycle configuration can be used with buckets that have S3 Object Lock enabled, but bucket lifecycle configuration is not supported for legacy Compliant buckets.
 
@@ -117,7 +117,7 @@ A successful response lists the lifecycle configuration you just applied.
 
 You can determine if an expiration rule in the lifecycle configuration applies to a specific object when issuing a PUT Object, HEAD Object, or GET Object request. If a rule applies, the response includes an `Expiration` parameter that indicates when the object expires and which expiration rule was matched.
 
-NOTE: Because bucket lifecycle overrides ILM, the `expiry-date` shown is the actual date the object will be deleted. For details, see xref:../ilm/how-object-retention-is-determined.adoc[How object retention is determined].
+NOTE: Because bucket lifecycle overrides ILM, the `expiry-date` shown is the actual date the object will be deleted. For details, see link:../ilm/how-object-retention-is-determined.html[How object retention is determined].
 
 For example, this PUT Object request was issued on 22 Jun 2020 and places an object in the `testbucket` bucket.
 

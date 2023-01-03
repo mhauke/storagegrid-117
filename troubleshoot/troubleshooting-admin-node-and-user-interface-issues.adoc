@@ -14,7 +14,7 @@ There are several tasks you can perform to help determine the source of issues r
 
 == Troubleshoot sign-on errors
 
-If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the xref:../admin/using-identity-federation.adoc[identity federation configuration], a xref:../troubleshooting-network-hardware-and-platform-issues.adoc[networking] or xref:../installconfig/troubleshooting-hardware-installation.adoc[hardware] problem, an issue with xref:../admin/what-admin-node-is.adoc[Admin Node services], or an xref:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.adoc[issue with the Cassandra database] on connected Storage Nodes.
+If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the link:../admin/using-identity-federation.html[identity federation configuration], a link:../troubleshooting-network-hardware-and-platform-issues.html[networking] or link:../installconfig/troubleshooting-hardware-installation.html[hardware] problem, an issue with link:../admin/what-admin-node-is.html[Admin Node services], or an link:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html[issue with the Cassandra database] on connected Storage Nodes.
 
 .What you'll need
 * You must have the `Passwords.txt` file.
@@ -138,7 +138,7 @@ Make sure the idnt, acct, nginx, and cassandra services are all running.
 . Repeat steps <<use_Lumberjack_to_collect_logs,Use Lumberjack to collect logs>> and <<review_logs,Review logs>> to review the logs on the Storage Nodes.
 . If you are unable to resolve the issue, contact technical support.
 +
-Provide the logs you collected to technical support. See also xref:../monitor/logs-files-reference.adoc[Log files reference].
+Provide the logs you collected to technical support. See also link:../monitor/logs-files-reference.html[Log files reference].
 
 == Troubleshoot user interface issues
 
@@ -150,7 +150,7 @@ The Grid Manager or the Tenant Manager might not respond as expected after Stora
 
 If you experience issues with the web interface:
 
-* Make sure you are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* Make sure you are using a link:../admin/web-browser-requirements.html[supported web browser].
 +
 NOTE: Browser support has changed for StorageGRID 11.5. Confirm you are using a supported version.
 
@@ -167,7 +167,7 @@ If the StorageGRID system includes multiple Admin Nodes, you can use another Adm
 You must have specific access permissions.
 
 .Steps
-. From an available Admin Node, sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+. From an available Admin Node, sign in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 . Select *SUPPORT* > *Tools* > *Grid topology*.
 . Select *_Site* > *unavailable Admin Node_* > *SSM* > *Services* > *Overview* > *Main*.
 . Look for services that have a status of Not Running and that might also be displayed in blue.

@@ -55,7 +55,7 @@ You can specify `REPLACE` to overwrite the existing tags when copying the object
  ** `x-amz-object-lock-retain-until-date`
  ** `x-amz-object-lock-legal-hold`
 +
-If a request is made without these headers, the bucket default retention settings are used to calculate the object version mode and retain-until-date. See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
+If a request is made without these headers, the bucket default retention settings are used to calculate the object version mode and retain-until-date. See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
 
 * SSE request headers:
  ** `x-amz-copy-source​-server-side​-encryption​-customer-algorithm`
@@ -117,7 +117,7 @@ If you use server-side encryption, the request headers you provide depend on whe
  ** `x-amz-server-side-encryption-customer-key`: Specify a new encryption key for the target object.
  ** `x-amz-server-side-encryption-customer-key-MD5`: Specify the MD5 digest of the new encryption key.
 
-*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for xref:using-server-side-encryption.adoc[using server-side encryption].
+*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for link:using-server-side-encryption.html[using server-side encryption].
 
 * If you want to encrypt the target object (the copy) with a unique key managed by StorageGRID (SSE), include this header in the PUT Object - Copy request:
  ** `x-amz-server-side-encryption`
@@ -130,10 +130,10 @@ If the source bucket is versioned, you can use the `x-amz-copy-source` header to
 
 .Related information
 
-xref:../ilm/index.adoc[Manage objects with ILM]
+link:../ilm/index.html[Manage objects with ILM]
 
 
 
-xref:s3-operations-tracked-in-audit-logs.adoc[S3 operations tracked in audit logs]
+link:s3-operations-tracked-in-audit-logs.html[S3 operations tracked in audit logs]
 
-xref:put-object.adoc[PUT Object]
+link:put-object.html[PUT Object]

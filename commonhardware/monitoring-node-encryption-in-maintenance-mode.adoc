@@ -11,12 +11,12 @@ summary: 'If you enabled node encryption for the appliance during installation, 
 [.lead]
 If you enabled node encryption for the appliance during installation, you can monitor the node-encryption status of each appliance node, including the node-encryption state and key management server (KMS) details.
 
-See xref:../admin/kms-configuring.adoc[Configure key management servers] for information about implementing KMS for StorageGRID appliances.
+See link:../admin/kms-configuring.html[Configure key management servers] for information about implementing KMS for StorageGRID appliances.
 
 .What you'll need
 
 * You enabled node encryption for the appliance during installation. You cannot enable node encryption after the appliance is installed.
-* You have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the appliance into maintenance mode].
+* You have link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed the appliance into maintenance mode].
 
 .Steps
 
@@ -28,8 +28,8 @@ The Node Encryption page includes three sections:
 
  ** Encryption Status shows whether node encryption is enabled or disabled for the appliance.
  ** Key Management Server Details shows information about the KMS being used to encrypt the appliance. You can expand the server and client certificate sections to view certificate details and status.
-  *** To address issues with the certificates themselves, such as renewing expired certificates, see the xref:../admin/kms-configuring.adoc[instructions for configuring KMS].
-  *** If there are unexpected problems connecting to KMS hosts, verify that the xref:../commonhardware/checking-dns-server-configuration.adoc[domain name system (DNS) servers are correct] and that xref:../installconfig/configuring-network-links.adoc[appliance networking is correctly configured].
+  *** To address issues with the certificates themselves, such as renewing expired certificates, see the link:../admin/kms-configuring.html[instructions for configuring KMS].
+  *** If there are unexpected problems connecting to KMS hosts, verify that the link:../commonhardware/checking-dns-server-configuration.html[domain name system (DNS) servers are correct] and that link:../installconfig/configuring-network-links.html[appliance networking is correctly configured].
   *** If you are unable to resolve your certificate issues, contact technical support.
  ** Clear KMS Key disables node encryption for the appliance, removes the association between the appliance and the key management server that was configured for the StorageGRID site, and deletes all data from the appliance. You must <<Clear key management server configuration,clear the KMS key>> before you can install the appliance into another StorageGRID system.
 +
@@ -55,7 +55,7 @@ If you need to preserve data on the appliance, you must either perform a node de
 
 IMPORTANT: When KMS is cleared, data on the appliance will be permanently deleted and no longer accessible. This data is not recoverable.
 
-xref:../maintain/grid-node-decommissioning.adoc[Decommission the node] to move any data it contains to other nodes in StorageGRID.
+link:../maintain/grid-node-decommissioning.html[Decommission the node] to move any data it contains to other nodes in StorageGRID.
 
 .About this task
 
@@ -112,4 +112,4 @@ Node encryption cannot be reenabled on the appliance until it is reinstalled in 
 
 .After you finish
 
-After the appliance reboots and you have verified that KMS has been cleared and that the appliance is in a pre-install state, you can physically remove the appliance from your StorageGRID system. See the xref:../maintain/preparing-appliance-for-reinstallation-platform-replacement-only.adoc[instructions for preparing the appliance for reinstallation].
+After the appliance reboots and you have verified that KMS has been cleared and that the appliance is in a pre-install state, you can physically remove the appliance from your StorageGRID system. See the link:../maintain/preparing-appliance-for-reinstallation-platform-replacement-only.html[instructions for preparing the appliance for reinstallation].

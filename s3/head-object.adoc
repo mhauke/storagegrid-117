@@ -39,11 +39,11 @@ Use all three of these headers if the object is encrypted with a unique key that
 * `x-amz-server-side-encryption-customer-key`: Specify your encryption key for the object.
 * `x-amz-server-side-encryption-customer-key-MD5`: Specify the MD5 digest of the object's encryption key.
 
-IMPORTANT: The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations in xref:using-server-side-encryption.adoc[Use server-side encryption].
+IMPORTANT: The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations in link:using-server-side-encryption.html[Use server-side encryption].
 
 == HEAD Object responses for Cloud Storage Pool objects
 
-If the object is stored in a xref:../ilm/what-cloud-storage-pool-is.adoc[Cloud Storage Pool], the following response headers are returned:
+If the object is stored in a link:../ilm/what-cloud-storage-pool-is.html[Cloud Storage Pool], the following response headers are returned:
 
 * `x-amz-storage-class: GLACIER`
 * `x-amz-restore`
@@ -75,7 +75,7 @@ Until the object is transitioned to a non-retrievable state, the value for `expi
 
 The value for `expiry-date` is set to some distant time in the future.
 
-*Note*: If the copy on the grid is not available (for example, a Storage Node is down), you must issue a xref:post-object-restore.adoc[POST Object restore] request to restore the copy from the Cloud Storage Pool before you can successfully retrieve the object.
+*Note*: If the copy on the grid is not available (for example, a Storage Node is down), you must issue a link:post-object-restore.html[POST Object restore] request to restore the copy from the Cloud Storage Pool before you can successfully retrieve the object.
 
 | Object transitioned to a non-retrievable state, and no copy exists on the grid
 | `200 OK`
@@ -105,7 +105,7 @@ The `expiry-date` indicates when the object in the Cloud Storage Pool will be re
 If you uploaded a multipart object or if StorageGRID split a large object into segments, StorageGRID determines whether the object is available in the Cloud Storage Pool by sampling a subset of the object's parts or segments. In some cases, a HEAD Object request might incorrectly return `x-amz-restore: ongoing-request="false"` when some parts of the object have already been transitioned to a non-retrievable state or when some parts of the object have not yet been restored.
 
 == HEAD Object and cross-grid replication
-If you are using xref:../admin/grid-federation-overview.adoc[grid federation] and xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[cross-grid replication] is enabled for a bucket, the S3 client can verify an object's replication status by issuing a HEAD Object request. The response includes the StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
+If you are using link:../admin/grid-federation-overview.html[grid federation] and link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication] is enabled for a bucket, the S3 client can verify an object's replication status by issuing a HEAD Object request. The response includes the StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
 
 [cols="1a,2a" options="header"]
 |===
@@ -125,4 +125,4 @@ NOTE: StorageGRID does not support the `x-amz-replication-status` header.
 
 .Related information
 
-xref:s3-operations-tracked-in-audit-logs.adoc[S3 operations tracked in audit logs]
+link:s3-operations-tracked-in-audit-logs.html[S3 operations tracked in audit logs]

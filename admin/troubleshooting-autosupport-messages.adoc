@@ -36,7 +36,7 @@ If a user-triggered or an event-triggered AutoSupport message fails to send, the
 
 If a failure occurs and SMTP is the selected protocol, verify that the StorageGRID system's email server is correctly configured and that your email server is running (*SUPPORT* > *Alarms (legacy)* > *> Legacy Email Setup*). The following error message might appear on the AutoSupport page: `AutoSupport messages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
 
-Learn how to xref:../monitor/email-alert-notifications.adoc[configure email server settings].
+Learn how to link:../monitor/email-alert-notifications.html[configure email server settings].
 
 == Correct an AutoSupport message failure
 

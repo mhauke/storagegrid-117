@@ -17,11 +17,11 @@ You upgrade your drive firmware to make sure you have all the latest features an
 * All drives have an Optimal status.
 * You have installed the latest version of SANtricity Storage Manager that is compatible with your StorageGRID version.
 
-** xref:upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5600.adoc[Upgrade SANtricity OS on storage controllers using Grid Manager]
+** link:upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5600.html[Upgrade SANtricity OS on storage controllers using Grid Manager]
 
-** xref:upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.adoc[Upgrade SANtricity OS on the E2700 controller using maintenance mode]
+** link:upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.html[Upgrade SANtricity OS on the E2700 controller using maintenance mode]
 
-* You have xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed the StorageGRID appliance in maintenance mode].
+* You have link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed the StorageGRID appliance in maintenance mode].
 +
 NOTE: Maintenance mode interrupts the connection to the storage controller, stopping all I/O activity and placing all drives offline.
 
@@ -29,7 +29,7 @@ IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID applia
 
 .Steps
 
-. Confirm that the appliance is in xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[maintenance mode].
+. Confirm that the appliance is in link:../commonhardware/placing-appliance-into-maintenance-mode.html[maintenance mode].
 
 . Open a web browser, and enter the IP address as the URL for SANtricity Storage Manager: +
 `*https://_E2700_Controller_IP_*`

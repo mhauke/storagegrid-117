@@ -135,7 +135,7 @@ image::../media/disabling_alarms.gif[Volumes page showing critical alarms]
 Legacy alarms are triggered when system attributes reach alarm threshold values. Optionally, if you want to reduce or clear the list of legacy alarms, you can acknowledge the alarms.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have the Acknowledge Alarms permission.
 
 .About this task
@@ -177,7 +177,7 @@ image::../media/current_alarms_page_show_acknowledged.png[Current Alarms Page Sh
 You can view the list of all Default legacy alarms.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 NOTE: While the legacy alarm system continues to be supported, the alert system offers significant benefits and is easier to use.
@@ -197,7 +197,7 @@ image::../media/global_alarms.gif[Global Alarms page]
 When troubleshooting an issue, you can review how often a legacy alarm was triggered in the past.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 NOTE: While the legacy alarm system continues to be supported, the alert system offers significant benefits and is easier to use.
@@ -224,7 +224,7 @@ The alarms are listed in reverse chronological order.
 You might have used Global Custom alarms for the legacy system to address specific monitoring requirements. Global Custom alarms might have alarm levels that override Default alarms, or they might monitor attributes that do not have a Default alarm.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 NOTE: While the legacy alarm system continues to be supported, the alert system offers significant benefits and is easier to use.
@@ -323,7 +323,7 @@ NOTE: While the legacy alarm system continues to be supported, the alert system 
 You can disable one of the legacy Default alarms for the entire system.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 .About this task
@@ -359,7 +359,7 @@ The Default alarm is disabled.
 You can disable a legacy Global Custom alarm for the entire system.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 .About this task
@@ -400,7 +400,7 @@ The alarm is cleared.
 
 == Configure notifications for alarms (legacy system)
 
-StorageGRID system can automatically send email and xref:using-snmp-monitoring.adoc[SNMP notifications] when an alarm is triggered or a service state changes.
+StorageGRID system can automatically send email and link:using-snmp-monitoring.html[SNMP notifications] when an alarm is triggered or a service state changes.
 
 By default, alarm email notifications are not sent. For email notifications, you must configure the email server and specify the email recipients. For SNMP notifications, you must configure the SNMP agent.
 
@@ -433,13 +433,13 @@ A mailing list receives all notifications related to changes in the selected sta
 If you want StorageGRID to send email notifications when a legacy alarm is triggered, you must specify the SMTP mail server settings. The StorageGRID system only sends email; it cannot receive email.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 .About this task
 Use these settings to define the SMTP server used for legacy alarm email notifications and AutoSupport email messages. These settings are not used for alert notifications.
 
-NOTE: If you use SMTP as the protocol for AutoSupport messages, you might have already configured an SMTP mail server. The same SMTP server is used for alarm email notifications, so you can skip this procedure. See the xref:../admin/index.adoc[instructions for administering StorageGRID].
+NOTE: If you use SMTP as the protocol for AutoSupport messages, you might have already configured an SMTP mail server. The same SMTP server is used for alarm email notifications, so you can skip this procedure. See the link:../admin/index.html[instructions for administering StorageGRID].
 
 SMTP is the only protocol supported for sending email.
 
@@ -490,7 +490,7 @@ The SMTP mail server settings are saved. If you entered information for a test e
 Email templates let you customize the header, footer, and subject line of a legacy alarm email notification. You can use email templates to send unique notifications that contain the same body text to different mailing lists.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 .About this task
@@ -537,7 +537,7 @@ A new template for notifications is added.
 Mailing lists let you notify recipients when a legacy alarm is triggered or when a service state changes. You must create at least one mailing list before any alarm email notifications can be sent. To send a notification to a single recipient, create a mailing list with one email address.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 * If you want to specify an email template for the mailing list (custom header, footer, and subject line), you must have already created the template.
 
@@ -583,7 +583,7 @@ A new mailing list is created.
 In order to receive email notifications for the legacy alarm system, recipients must be a member of a mailing list and that list must be added to the Notifications page. Notifications are configured to send email to recipients only when an alarm with a specified severity level is triggered or when a service state changes. Thus, recipients only receive the notifications they need to receive.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 * You must have configured an email list.
 
@@ -607,7 +607,7 @@ Notifications will be sent to the mailing list when alarms with the selected ala
 You can suppress alarm notifications for a mailing list when you no longer want the mailing list to receive notifications about alarms. For example, you might want to suppress notifications about legacy alarms after you have transitioned to using alert email notifications.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 Use these settings to suppress email notifications for the legacy alarm system. These settings do not apply to alert email notifications.

@@ -11,19 +11,19 @@ summary: 'You must create at least one tenant account to control access to the s
 [.lead]
 You must create at least one tenant account to control access to the storage in your StorageGRID system.
 
-The steps for creating a tenant account vary based on whether xref:using-identity-federation.adoc[identity federation] and xref:configuring-sso.adoc[single sign-on] are configured and whether the Grid Manager account you use to create the tenant account belongs to an admin group with the Root access permission.
+The steps for creating a tenant account vary based on whether link:using-identity-federation.html[identity federation] and link:configuring-sso.html[single sign-on] are configured and whether the Grid Manager account you use to create the tenant account belongs to an admin group with the Root access permission.
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access or Tenant accounts permission.
-* If the tenant account will use the identity source that was configured for the Grid Manager, and you want to grant Root access permission for the tenant account to a federated group, you have imported that federated group into the Grid Manager. You do not need to assign any Grid Manager permissions to this admin group. See  xref:managing-admin-groups.adoc[Manage admin groups].
+* If the tenant account will use the identity source that was configured for the Grid Manager, and you want to grant Root access permission for the tenant account to a federated group, you have imported that federated group into the Grid Manager. You do not need to assign any Grid Manager permissions to this admin group. See  link:managing-admin-groups.html[Manage admin groups].
 * If you want to allow an S3 tenant to clone account data and replicate bucket objects to another grid using a grid federation connection:
 
-** You have xref:grid-federation-create-connection.adoc[configured the grid federation connection].
+** You have link:grid-federation-create-connection.html[configured the grid federation connection].
 ** The status of the connection is *Connected*.
 ** You have Root access permission.
-** You have reviewed the considerations for xref:grid-federation-manage-tenants.adoc[managing the permitted tenants for grid federation].
+** You have reviewed the considerations for link:grid-federation-manage-tenants.html[managing the permitted tenants for grid federation].
 ** If the tenant account will use the identity source that was configured for Grid Manager, you have imported the same federated group into Grid Manager on both grids.
 +
 When you create the tenant, you will select this group to have the initial Root access permission for both the source and destination tenant accounts.
@@ -76,13 +76,13 @@ Some of these permissions have additional requirements. For details, select the 
 | Permission | If selected...
 
 | Allow platform services
-| The tenant can use S3 platform services such as CloudMirror. See xref:manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts].
+| The tenant can use S3 platform services such as CloudMirror. See link:manage-platform-services-for-tenants.html[Manage platform services for S3 tenant accounts].
 
 | Use own identity source 
-| The tenant can configure and manage its own identity source for federated groups and users. This option is disabled if you have xref:configuring-sso.adoc[configured SSO] for your StorageGRID system.
+| The tenant can configure and manage its own identity source for federated groups and users. This option is disabled if you have link:configuring-sso.html[configured SSO] for your StorageGRID system.
 
 | Allow S3 Select
-| The tenant can issue S3 SelectObjectContent API requests to filter and retrieve object data. See xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts].
+| The tenant can issue S3 SelectObjectContent API requests to filter and retrieve object data. See link:manage-s3-select-for-tenant-accounts.html[Manage S3 Select for tenant accounts].
 
 *Important*: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
 
@@ -95,7 +95,7 @@ Selecting this option:
 
 * Allows this tenant to configure cross-grid replication between corresponding buckets on each grid.
 
-See xref:grid-federation-manage-tenants.adoc[Manage the permitted tenants for grid federation].
+See link:grid-federation-manage-tenants.html[Manage the permitted tenants for grid federation].
 
 *Note*: You can only select *Use grid federation connection* when you are creating a new S3 tenant; you can't select this permission for an existing tenant.
 
@@ -131,7 +131,7 @@ image:../media/grid-federation-select-tenant-permission.png[Grid federation sele
 
 . Select *Create tenant*.
 +
-A success message appears, and the new tenant is listed on the Tenants page. To learn how to view tenant details and monitor tenant activity, see xref:../monitor/monitoring-tenant-activity.adoc[Monitor tenant activity].
+A success message appears, and the new tenant is listed on the Tenants page. To learn how to view tenant details and monitor tenant activity, see link:../monitor/monitoring-tenant-activity.html[Monitor tenant activity].
 
 . If you selected the *Use grid federation connection* permission for the tenant:
 
@@ -139,12 +139,12 @@ A success message appears, and the new tenant is listed on the Tenants page. To 
 +
 NOTE: If you see the error message "`Tenant created without a clone,`" refer to the instructions in link:grid-federation-troubleshoot.html[Troubleshoot grid federation errors].
 
-.. If you provided a local root user password when defining root access, xref:changing-password-for-tenant-local-root-user.adoc[change the password for the local root user] for the replicated tenant. 
+.. If you provided a local root user password when defining root access, link:changing-password-for-tenant-local-root-user.html[change the password for the local root user] for the replicated tenant. 
 +
 IMPORTANT: A local root user can't sign in to Tenant Manager on the destination grid until the password is changed.
 
 == Sign in to tenant (optional)
-As required, you can sign in to the new tenant now to complete the configuration, or you can sign in to the tenant later. The sign-in steps depend on whether you are signed in to the Grid Manager using the default port (443) or a restricted port. See xref:controlling-access-through-firewalls.adoc[Control access through firewalls].
+As required, you can sign in to the new tenant now to complete the configuration, or you can sign in to the tenant later. The sign-in steps depend on whether you are signed in to the Grid Manager using the default port (443) or a restricted port. See link:controlling-access-through-firewalls.html[Control access through firewalls].
 
 === Sign in now
 
@@ -161,7 +161,7 @@ When you sign in, links appear for configuring buckets, identity federation, gro
 
 . Select the links to configure the tenant account.
 +
-Each link opens the corresponding page in the Tenant Manager. To complete the page, see the xref:../tenant/index.adoc[instructions for using tenant accounts].
+Each link opens the corresponding page in the Tenant Manager. To complete the page, see the link:../tenant/index.html[instructions for using tenant accounts].
 
 
 |Port 443 and you did not set a password for the local root user
@@ -213,7 +213,7 @@ The URL for the Tenant Manager has this format:
 
 == Configure the tenant
 
-Follow the instructions in xref:../tenant/index.adoc[Use a tenant account] to manage tenant groups and users, S3 access keys, buckets, platform services, and account clone and cross-grid replication.
+Follow the instructions in link:../tenant/index.html[Use a tenant account] to manage tenant groups and users, S3 access keys, buckets, platform services, and account clone and cross-grid replication.
 
 
 

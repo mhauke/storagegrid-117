@@ -13,16 +13,16 @@ Client certificates allow authorized external clients to access the StorageGRID 
 
 If you need to access StorageGRID using an external monitoring tool, you must upload or generate a client certificate using the Grid Manager and copy the certificate information to the external tool.
 
-See the information about xref:using-storagegrid-security-certificates.adoc[general security certificate use] and xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc[configuring custom server certificates]. 
+See the information about link:using-storagegrid-security-certificates.html[general security certificate use] and link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[configuring custom server certificates]. 
 
 NOTE: To ensure that operations are not disrupted by a failed server certificate, the *Expiration of client certificates configured on the Certificates page* alert is triggered when this server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the client certificate on the Client tab.
 
-NOTE: If you are using a key management server (KMS) to protect the data on specially configured appliance nodes, see the specific information about xref:kms-adding.adoc[uploading a KMS client certificate].
+NOTE: If you are using a key management server (KMS) to protect the data on specially configured appliance nodes, see the specific information about link:kms-adding.html[uploading a KMS client certificate].
 
 .What you'll need
 
 * You have Root access permission.
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * To configure a client certificate:
 ** You have the IP address or domain name of the Admin Node.
 ** If you have configured the StorageGRID management interface certificate, you have the CA, client certificate, and private key used to configure the management interface certificate.
@@ -74,7 +74,7 @@ Use this procedure to add an administrator client certificate if a management in
 
 .Steps
 
-. Perform the steps to xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc[configure a management interface certificate].
+. Perform the steps to link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[configure a management interface certificate].
 . In the Grid Manager, select *CONFIGURATION* > *Security* > *Certificates* and then select the *Client* tab.
 . Select *Add*.
 . Enter a certificate name that contains at least 1 and no more than 32 characters.
@@ -182,7 +182,7 @@ ServerName must match the domain name as it appears in the management interface 
 +
 You can now access the Prometheus metrics from StorageGRID with your external monitoring tool.
 +
-For information about the metrics, see the xref:../monitor/index.adoc[instructions for monitoring StorageGRID].
+For information about the metrics, see the link:../monitor/index.html[instructions for monitoring StorageGRID].
 
 == Edit client certificates
 

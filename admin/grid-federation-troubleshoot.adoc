@@ -180,7 +180,7 @@ The error message no longer appears. However, if the issue was not resolved (or 
 +
 NOTE: It might take up to a day for the alert to clear after it is resolved.
 
-.. Go xref:grid-federation-retry-failed-replication.adoc[Identify and retry failed replication operations] to identify any objects or delete markers that failed to be replicated to the other grid and to retry replication as needed.
+.. Go link:grid-federation-retry-failed-replication.html[Identify and retry failed replication operations] to identify any objects or delete markers that failed to be replicated to the other grid and to retry replication as needed.
 
 === Cross-grid replication resource unavailable alert
 
@@ -208,11 +208,12 @@ You can use the Cross-Grid Replication dashboard in Grafana to view metrics abou
 
 . From the Grid Manager, go to *SUPPORT* > *Tools* > *Metrics*.
 +
-NOTE: The tools available on the Metrics page are intended for use by technical support. Some features and menu items within these tools are intentionally non-functional and are subject to change. See the list of xref:../monitor/commonly-used-prometheus-metrics.adoc[commonly used Prometheus metrics].
+NOTE: The tools available on the Metrics page are intended for use by technical support. Some features and menu items within these tools are intentionally non-functional and are subject to change. See the list of link:../monitor/commonly-used-prometheus-metrics.html[commonly used Prometheus metrics].
 
 . In the Grafana section of the page, select *Cross Grid Replication*. 
 +
-For detailed instructions, see xref:../monitor/reviewing-support-metrics.adoc[Review support metrics].
 
-. To retry replication of objects that failed to replicate, see xref:grid-federation-retry-failed-replication.adoc[Identify and retry failed replication operations].  
+For detailed instructions, see link:../monitor/reviewing-support-metrics.html[Review support metrics].
+
+. To retry replication of objects that failed to replicate, see link:grid-federation-retry-failed-replication.html[Identify and retry failed replication operations].  
 

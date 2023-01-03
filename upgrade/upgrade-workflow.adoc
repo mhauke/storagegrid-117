@@ -13,7 +13,7 @@ Before starting the upgrade, review the general workflow. The StorageGRID Upgrad
 
 image::../media/upgrade_workflow.png[Flowchart of the software upgrade steps]
 
-. If any StorageGRID nodes are deployed on Linux hosts, xref:linux-installing-rpm-or-deb-package-on-all-hosts.adoc[install the RPM or DEB package on each host] before you start the upgrade.
+. If any StorageGRID nodes are deployed on Linux hosts, link:linux-installing-rpm-or-deb-package-on-all-hosts.html[install the RPM or DEB package on each host] before you start the upgrade.
 
 . From the primary Admin Node, access the StorageGRID Upgrade page and upload the upgrade file and the hotfix file, if required.
 
@@ -33,4 +33,4 @@ IMPORTANT: Do not approve the upgrade for a grid node unless you are sure that n
 
 .Related information
 
-xref:estimating-time-to-complete-upgrade.adoc[Estimate the time to complete an upgrade]
+link:estimating-time-to-complete-upgrade.html[Estimate the time to complete an upgrade]

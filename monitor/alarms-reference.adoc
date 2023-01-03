@@ -152,7 +152,7 @@ To allow you to respond in time to prevent an outage, AMQS alarms are triggered 
 
 If an AMQS alarm is triggered, check the load on the system--if there have been a significant number of transactions, the alarm should resolve itself over time. In this case, you can ignore the alarm.
 
-If the alarm persists and increases in severity, view a chart of the queue size. If the number is steadily increasing over hours or days, the audit load has likely exceeded the audit capacity of the system. Reduce the client operation rate or decrease the number of audit messages logged by changing the audit level to Error or Off. See xref:../monitor/configure-audit-messages.adoc[Configure audit messages and log destinations].
+If the alarm persists and increases in severity, view a chart of the queue size. If the number is steadily increasing over hours or days, the audit load has likely exceeded the audit capacity of the system. Reduce the client operation rate or decrease the number of audit messages logged by changing the audit level to Error or Off. See link:../monitor/configure-audit-messages.html[Configure audit messages and log destinations].
 
 a|
 AOTE
@@ -397,7 +397,7 @@ Check the status of Cassandra:
 
 This alarm might also indicate that the metadata store (Cassandra database) for a Storage Node requires rebuilding.
 
-See information about troubleshooting the Services: Status - Cassandra (SVST) alarm in xref:../troubleshoot/troubleshooting-metadata-issues.adoc[Troubleshoot metadata issues].
+See information about troubleshooting the Services: Status - Cassandra (SVST) alarm in link:../troubleshoot/troubleshooting-metadata-issues.html[Troubleshoot metadata issues].
 
 If the problem persists, contact technical support.
 
@@ -426,7 +426,7 @@ DDS
 a|
 This alarm is triggered when the Metadata Effective Space (CEMS) reaches 70% full (minor alarm), 90% full (major alarm), and 100% full (critical alarm).
 
-If this alarm reaches the 90% threshold, a warning appears on the dashboard in the Grid Manager. You must perform an expansion procedure to add new Storage Nodes as soon as possible. See xref:../expand/index.adoc[Expand your grid].
+If this alarm reaches the 90% threshold, a warning appears on the dashboard in the Grid Manager. You must perform an expansion procedure to add new Storage Nodes as soon as possible. See link:../expand/index.html[Expand your grid].
 
 If this alarm reaches the 100% threshold, you must stop ingesting objects and add Storage Nodes immediately. Cassandra requires a certain amount of space to perform essential operations such as compaction and repair. These operations will be impacted if object metadata uses more than 100% of the allowed space. Undesirable results can occur.
 
@@ -434,7 +434,7 @@ If this alarm reaches the 100% threshold, you must stop ingesting objects and ad
 
 After new Storage Nodes are added, the system automatically rebalances object metadata across all Storage Nodes, and the alarm clears.
 
-Also see information about troubleshooting the Low metadata storage alert in xref:../troubleshoot/troubleshooting-metadata-issues.adoc[Troubleshoot metadata issues].
+Also see information about troubleshooting the Low metadata storage alert in link:../troubleshoot/troubleshooting-metadata-issues.html[Troubleshoot metadata issues].
 
 If the problem persists, contact technical support.
 
@@ -623,7 +623,7 @@ Lost objects represent a loss of data. The Lost Objects attribute is incremented
 
 Investigate LOST (LOST Object) alarms immediately. If the problem persists, contact technical support.
 
-xref:../troubleshoot/troubleshooting-lost-and-missing-object-data.adoc[Troubleshoot lost and missing object data]
+link:../troubleshoot/troubleshooting-lost-and-missing-object-data.html[Troubleshoot lost and missing object data]
 
 a|
 MCEP
@@ -636,7 +636,7 @@ Triggered when the certificate used for accessing the management interface is ab
 
 . From the Grid Manager, select *CONFIGURATION* > *Security* > *Certificates*.
 . On the *Global* tab, select *Management interface certificate*.
-. xref:../admin/configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#add-a-custom-management-interface-certificate[Upload a new management interface certificate.]
+. link:../admin/configuring-custom-server-certificate-for-grid-manager-tenant-manager.html#add-a-custom-management-interface-certificate[Upload a new management interface certificate.]
 
 a|
 MINQ
@@ -647,7 +647,7 @@ NMS
 a|
 Check the network connections of the servers hosting the NMS service and the external mail server. Also confirm that the email server configuration is correct.
 
-xref:managing-alarms.adoc[Configure email server settings for alarms (legacy system)]
+link:managing-alarms.html[Configure email server settings for alarms (legacy system)]
 
 a|
 MINS
@@ -658,7 +658,7 @@ BNMS
 a|
 A minor alarm is triggered if the NMS service is unable to connect to the mail server. Check the network connections of the servers hosting the NMS service and the external mail server. Also confirm that the email server configuration is correct.
 
-xref:managing-alarms.adoc[Configure email server settings for alarms (legacy system)]
+link:managing-alarms.html[Configure email server settings for alarms (legacy system)]
 
 a|
 MISS
@@ -720,7 +720,7 @@ The following can be causes of NRER alarms:
 * High link error rates
 * NIC ring buffer overrun
 
-See information about troubleshooting the Network Receive Error (NRER) alarm in xref:../troubleshoot/troubleshooting-network-hardware-and-platform-issues.adoc[Troubleshoot network, hardware, and platform issues].
+See information about troubleshooting the Network Receive Error (NRER) alarm in link:../troubleshoot/troubleshooting-network-hardware-and-platform-issues.html[Troubleshoot network, hardware, and platform issues].
 
 a|
 NRLY
@@ -1019,7 +1019,7 @@ Triggered when the certificate used for accessing storage API endpoints is about
 
 . Select *CONFIGURATION* > *Security* > *Certificates*. 
 . On the *Global* tab, select *S3 and Swift API certificate*.
-. xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc#add-a-custom-s3-and-swift-api-certificate[Upload a new S3 and Swift API certificate.]
+. link:../admin/configuring-custom-server-certificate-for-storage-node.html#add-a-custom-s3-and-swift-api-certificate[Upload a new S3 and Swift API certificate.]
 
 a|
 SCHR
@@ -1164,7 +1164,7 @@ If the value of Storage Status is Volume(s) Unavailable, a part of the storage i
 
 If the value of Storage Status is Error, contact technical support.
 
-xref:../troubleshoot/troubleshooting-storage-status-alarm.adoc[Troubleshoot the Storage Status (SSTS) alarm]
+link:../troubleshoot/troubleshooting-storage-status-alarm.html[Troubleshoot the Storage Status (SSTS) alarm]
 
 a|
 SVST
@@ -1188,7 +1188,7 @@ This alarm might also indicate that the metadata store (Cassandra database) for 
 
 If the problem persists, contact technical support.
 
-xref:../troubleshoot/troubleshooting-metadata-issues.adoc[Troubleshoot the Services: Status - Cassandra (SVST) alarm]
+link:../troubleshoot/troubleshooting-metadata-issues.html[Troubleshoot the Services: Status - Cassandra (SVST) alarm]
 
 a|
 TMEM

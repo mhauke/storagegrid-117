@@ -19,11 +19,11 @@ S3 Object Lock is a permanent setting that can only be enabled when you create a
 
 To enable S3 Object Lock for a bucket, use either of these methods:
 
-* Create the bucket using the Tenant Manager. See xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket].
+* Create the bucket using the Tenant Manager. See link:../tenant/creating-s3-bucket.html[Create S3 bucket].
 
-* Create the bucket using a PUT Bucket request with the `x-amz-bucket-object-lock-enabled` request header. See xref:operations-on-buckets.adoc[Operations on buckets].
+* Create the bucket using a PUT Bucket request with the `x-amz-bucket-object-lock-enabled` request header. See link:operations-on-buckets.html[Operations on buckets].
 
-S3 Object Lock requires bucket versioning, which is enabled automatically when the bucket is created. You cannot suspend versioning for the bucket. See xref:object-versioning.adoc[Object versioning].
+S3 Object Lock requires bucket versioning, which is enabled automatically when the bucket is created. You cannot suspend versioning for the bucket. See link:object-versioning.html[Object versioning].
 
 == Default retention settings for a bucket
 
@@ -51,7 +51,7 @@ Each bucket can have a default retention period in years or days.
 
 To set the default retention for a bucket, use either of these methods:
 
-* Manage bucket settings from the Tenant Manager. See xref:../tenant/creating-s3-bucket.adoc[Create an S3 bucket] and xref:../tenant/update-default-retention-settings.adoc[Update  S3 Object Lock default retention]. 
+* Manage bucket settings from the Tenant Manager. See link:../tenant/creating-s3-bucket.html[Create an S3 bucket] and link:../tenant/update-default-retention-settings.html[Update  S3 Object Lock default retention]. 
 * Issue a PUT Object Lock Configuration request for the bucket to specify the default mode and default number of days or years. 
 
 
@@ -99,7 +99,7 @@ Authorization: _authorization-string_
 
 To determine if S3 Object Lock is enabled for a bucket and to see the default retention mode and retention period, use either of these methods:
 
-* View the bucket in the Tenant Manager. See xref:../tenant/viewing-s3-bucket-details.adoc[View S3 buckets].
+* View the bucket in the Tenant Manager. See link:../tenant/viewing-s3-bucket-details.html[View S3 buckets].
 * Issue a GET Object Lock Configuration request.
 
 === GET Object Lock Configuration
@@ -166,7 +166,7 @@ You can specify the following settings for each object:
 The legal hold setting for an object is independent of the retention mode and the retain-until-date. If an object version is under a legal hold, no one can delete that version.
 
 
-To specify S3 Object Lock settings when adding an object version to a bucket, issue a xref:put-object.adoc[PUT Object], xref:put-object-copy.adoc[PUT Object - Copy], or xref:initiate-multipart-upload.adoc[Initiate Multipart Upload] request. 
+To specify S3 Object Lock settings when adding an object version to a bucket, issue a link:put-object.html[PUT Object], link:put-object-copy.html[PUT Object - Copy], or link:initiate-multipart-upload.html[Initiate Multipart Upload] request. 
 
 
 You can use the following:
@@ -223,8 +223,8 @@ Changing the mode from COMPLIANCE to GOVERNANCE is never allowed.
 
 .Related information
 
-* xref:../ilm/managing-objects-with-s3-object-lock.adoc[Manage objects with S3 Object Lock]
+* link:../ilm/managing-objects-with-s3-object-lock.html[Manage objects with S3 Object Lock]
 
-* xref:../tenant/using-s3-object-lock.adoc[Use S3 Object Lock to retain objects]
+* link:../tenant/using-s3-object-lock.html[Use S3 Object Lock to retain objects]
 
 * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html[Amazon Simple Storage Service User Guide: Using S3 Object Lock^]
