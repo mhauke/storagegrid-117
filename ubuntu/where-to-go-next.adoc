@@ -27,7 +27,7 @@ NOTE: When you install StorageGRID, the default ILM policy, Baseline 2 copies po
 
 NOTE: If any Archive Nodes will use Tivoli Storage Manager as the external archival storage system, you must also configure Tivoli Storage Manager.
 
-* Review and follow the StorageGRID xref:../harden/index.adoc[system hardening guidelines] to eliminate security risks.
+* Review and follow the StorageGRID link:../harden/index.html[system hardening guidelines] to eliminate security risks.
 * Configure email notifications for system alerts.
 
 == Optional tasks
@@ -36,34 +36,34 @@ NOTE: If any Archive Nodes will use Tivoli Storage Manager as the external archi
 * Update grid node IP addresses if they have changed since you planned your deployment and generated the Recovery Package. See information about changing IP addresses in the recovery and maintenance instructions.
 * Configure storage encryption, if required.
 * Configure storage compression to reduce the size of stored objects, if required.
-* Configure access to the system for auditing purposes through an NFS file share. See xref:../admin/configuring-audit-client-access.adoc[Configure audit client access for NFS].
+* Configure access to the system for auditing purposes through an NFS file share. See link:../admin/configuring-audit-client-access.html[Configure audit client access for NFS].
 
 .Related information
 
-xref:../admin/index.adoc[Administer StorageGRID]
+link:../admin/index.html[Administer StorageGRID]
 
-xref:../s3/index.adoc[Use S3 REST API]
+link:../s3/index.html[Use S3 REST API]
 
-xref:../swift/index.adoc[Use Swift REST API]
+link:../swift/index.html[Use Swift REST API]
 
-xref:../ilm/index.adoc[Manage objects with ILM]
+link:../ilm/index.html[Manage objects with ILM]
 
-xref:../monitor/index.adoc[Monitor and troubleshoot]
+link:../monitor/index.html[Monitor and troubleshoot]
 
-xref:../maintain/index.adoc[Recover and maintain]
+link:../maintain/index.html[Recover and maintain]
 
-xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
+link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
 
-xref:../sg5600/index.adoc[SG5600 storage appliances]
+link:../sg5600/index.html[SG5600 storage appliances]
 
-xref:../sg5700/index.adoc[SG5700 storage appliances]
+link:../sg5700/index.html[SG5700 storage appliances]
 
-xref:../sg6000/index.adoc[SG6000 storage appliances]
+link:../sg6000/index.html[SG6000 storage appliances]
 
-xref:../sg6100/index.adoc[SG6100 storage appliances]
+link:../sg6100/index.html[SG6100 storage appliances]
 
-xref:../release-notes/index.adoc[Release notes]
+link:../release-notes/index.html[Release notes]
 
-xref:../audit/index.adoc[Review audit logs]
+link:../audit/index.html[Review audit logs]
 
-xref:../upgrade/index.adoc[Upgrade software]
+link:../upgrade/index.html[Upgrade software]

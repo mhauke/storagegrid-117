@@ -15,13 +15,13 @@ An HA group is a collection of nodes that each contain the StorageGRID Load Bala
 
 You can use an HA group to help keep FabricPool data connections available. An HA group uses virtual IP addresses (VIPs) to provide highly available access to the Load Balancer service. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to FabricPool operations. 
 
-For details about this task, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups]. To use the FabricPool setup wizard to complete this task, go to xref:use-fabricpool-setup-wizard-steps.adoc[Access and complete the FabricPool setup wizard].
+For details about this task, see link:../admin/managing-high-availability-groups.html[Manage high availability groups]. To use the FabricPool setup wizard to complete this task, go to link:use-fabricpool-setup-wizard-steps.html[Access and complete the FabricPool setup wizard].
 
 .What you'll need
-* You have reviewed the xref:best-practices-for-high-availability-groups.adoc[best practices for high availability groups].
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have reviewed the link:best-practices-for-high-availability-groups.html[best practices for high availability groups].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission.
-* If you plan to use a VLAN, you have created the VLAN interface. See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces].
+* If you plan to use a VLAN, you have created the VLAN interface. See link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces].
 
 
 .Steps

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot a StorageGRID system
 summary: 'If you encounter a problem when using a StorageGRID system, refer to the tips and guidelines in this section for help in determining and resolving the issue.'
 ---
-= Troubleshoot: Overview
+= Troubleshoot a StorageGRID system: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -13,7 +13,7 @@ If you encounter a problem when using a StorageGRID system, refer to the tips an
 
 == Overview of problem determination
 
-If you encounter a problem when xref:../admin/index.adoc[administering a StorageGRID system], you can use the process outlined in this figure to identify and analyze the issue. In many cases, you can resolve problems on your own; however, you might need to escalate some issues to technical support.
+If you encounter a problem when link:../admin/index.html[administering a StorageGRID system], you can use the process outlined in this figure to identify and analyze the issue. In many cases, you can resolve problems on your own; however, you might need to escalate some issues to technical support.
 
 image::../media/problem_determination_methodology.gif[Flowchart showing major steps in problem determination procedure]
 
@@ -97,15 +97,15 @@ Review the list of current alerts and alarms to see if StorageGRID has identifie
 Review alerts and alarms triggered in the past for additional insights.
 
 |
-* xref:../monitor/monitoring-system-health.adoc#view-current-and-resolved-alerts[View current and resolved alerts]
-* xref:../monitor/managing-alarms.adoc[Manage alarms (legacy system)]
+* link:../monitor/monitoring-system-health.html#view-current-and-resolved-alerts[View current and resolved alerts]
+* link:../monitor/managing-alarms.html[Manage alarms (legacy system)]
 
 |
 Monitor events
 |
 Events include any system error or fault events for a node, including errors such as network errors. Monitor events to learn more about issues or to help with troubleshooting.
 |
-* xref:../monitor/monitoring-events.adoc[Monitor events]
+* link:../monitor/monitoring-events.html[Monitor events]
 
 |
 Identify trends using charts and text reports
@@ -113,9 +113,9 @@ Identify trends using charts and text reports
 Trends can provide valuable clues about when issues first appeared, and can help you understand how quickly things are changing.
 |
 
-* xref:../monitor/using-charts-and-reports.adoc[Use charts and graphs]
+* link:../monitor/using-charts-and-reports.html[Use charts and graphs]
 
-* xref:../monitor/types-of-text-reports.adoc[Use text reports]
+* link:../monitor/types-of-text-reports.html[Use text reports]
 
 |
 Establish baselines
@@ -131,7 +131,7 @@ Perform ingest and retrieval tests
 To troubleshoot performance issues with ingest and retrieval, use a workstation to store and retrieve objects. Compare results against those seen when using the client application.
 |
 
-* xref:../monitor/monitoring-put-and-get-performance.adoc[Monitor PUT and GET performance]
+* link:../monitor/monitoring-put-and-get-performance.html[Monitor PUT and GET performance]
 
 |
 Review audit messages
@@ -139,7 +139,7 @@ Review audit messages
 Review audit messages to follow StorageGRID operations in detail. The details in audit messages can be useful for troubleshooting many types of issues, including performance issues.
 |
 
-* xref:../monitor/reviewing-audit-messages.adoc[Review audit messages]
+* link:../monitor/reviewing-audit-messages.html[Review audit messages]
 
 |
 Check object locations and storage integrity
@@ -147,9 +147,9 @@ Check object locations and storage integrity
 If you are having storage problems, verify that objects are being placed where you expect. Check the integrity of object data on a Storage Node.
 |
 
-* xref:../monitor/monitoring-object-verification-operations.adoc[Monitor object verification operations]
-* xref:../monitor/confirming-object-data-locations.adoc[Confirm object data locations]
-* xref:../monitor/verifying-object-integrity.adoc[Verify object integrity]
+* link:../monitor/monitoring-object-verification-operations.html[Monitor object verification operations]
+* link:../monitor/confirming-object-data-locations.html[Confirm object data locations]
+* link:../monitor/verifying-object-integrity.html[Verify object integrity]
 
 |
 Collect data for technical support
@@ -157,9 +157,9 @@ Collect data for technical support
 Technical support might ask you to collect data or review specific information to help troubleshoot issues.
 |
 
-* xref:../monitor/collecting-log-files-and-system-data.adoc[Collect log files and system data]
-* xref:../monitor/manually-triggering-autosupport-message.adoc[Manually trigger an AutoSupport message]
-* xref:../monitor/reviewing-support-metrics.adoc[Review support metrics]
+* link:../monitor/collecting-log-files-and-system-data.html[Collect log files and system data]
+* link:../monitor/manually-triggering-autosupport-message.html[Manually trigger an AutoSupport message]
+* link:../monitor/reviewing-support-metrics.html[Review support metrics]
 
 |===
 
@@ -339,7 +339,7 @@ You can collect logs for the entire grid, or for selected nodes.
 
 If you are collecting logs only for selected nodes, be sure to include at least one Storage Node that has the ADC service. (The first three Storage Nodes at a site include the ADC service.)
 
-xref:../monitor/collecting-log-files-and-system-data.adoc[Collect log files and system data]
+link:../monitor/collecting-log-files-and-system-data.html[Collect log files and system data]
 
 |
 |Baseline information

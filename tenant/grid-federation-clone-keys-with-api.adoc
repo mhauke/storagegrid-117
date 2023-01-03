@@ -15,13 +15,13 @@ If your tenant account has the *Use grid federation connection* permission, you 
 
 * The tenant account has the *Use grid federation connection* permission. 
 * The grid federation connection has a *Connection status* of *Connected*.
-* You are signed in to the Tenant Manager on the tenant's source grid using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You belong to a user group that has the xref:tenant-management-permissions.adoc[Manage your own S3 credentials or Root access permission].
+* You are signed in to the Tenant Manager on the tenant's source grid using a link:../admin/web-browser-requirements.html[supported web browser].
+* You belong to a user group that has the link:tenant-management-permissions.html[Manage your own S3 credentials or Root access permission].
 * You will be cloning your own access key, or you have already created each user whose access key you will be cloning.
 
 == Clone your own access key
 
-. Using the Tenant Manager, xref:creating-your-own-s3-access-keys.adoc[create your own access keys] and download the `.csv` file.
+. Using the Tenant Manager, link:creating-your-own-s3-access-keys.html[create your own access keys] and download the `.csv` file.
 
 . From the top of the Tenant Manager, select the help icon and select *API documentation*.
 
@@ -45,7 +45,7 @@ image::../media/grid-federation-clone-access-key.png[Tenant Manager API entering
 
 == Clone another user's access keys
 
-. Using the Tenant Manager, xref:creating-another-users-s3-access-keys.adoc[create the other user's S3 access keys] and download the `.csv` file.
+. Using the Tenant Manager, link:creating-another-users-s3-access-keys.html[create the other user's S3 access keys] and download the `.csv` file.
 
 . From the top of the Tenant Manager, select the help icon and select *API documentation*.
 

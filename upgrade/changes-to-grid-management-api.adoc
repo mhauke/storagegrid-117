@@ -13,10 +13,10 @@ StorageGRID 11.7 uses version 3 of the Grid Management API. Version 3 deprecates
 
 IMPORTANT: You can continue to use version 1 and version 2 of the management API with StorageGRID 11.7; however, support for these versions of the API will be removed in a future release of StorageGRID. After upgrading to StorageGRID 11.7, the deprecated v1 and v2 APIs can be deactivated using the `PUT /grid/config/management` API.
 
-To learn more, go to xref:../admin/using-grid-management-api.adoc[Use the Grid Management API].
+To learn more, go to link:../admin/using-grid-management-api.html[Use the Grid Management API].
 
 == Display names now included in responses to node-health requests
-Related to the new xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, sites, and nodes procedure], after you rename a site or node, the item's name (its system name) and its display name are both returned by the *node-health* API. 
+Related to the new link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes procedure], after you rename a site or node, the item's name (its system name) and its display name are both returned by the *node-health* API. 
 
 == Can create bucket and access keys for new S3 tenant
 

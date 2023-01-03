@@ -130,7 +130,7 @@ The SG6000 appliance controllers include indicators that help you determine the 
 * <<general_boot_codes_sg6000,General boot-up codes>>
 * <<boot_codes_sg6000_storage_controller,Boot-up status codes for SG6000 storage controllers>>
 
-Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
+Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot the storage appliance hardware installation].
 
 [[status_indicators_sg6000cn]]
 *Status indicators and buttons on SG6000-CN controller*
@@ -179,7 +179,7 @@ During boot-up or after a hard reset of the SG6000-CN controller, the following 
 . The power button lights up.
 . If any errors occur during boot-up, the alarm LED lights up.
 +
-To view the boot-up and error codes, you must xref:accessing-bmc-interface.adoc[access the BMC interface].
+To view the boot-up and error codes, you must link:accessing-bmc-interface.html[access the BMC interface].
 
 [[boot_codes_sg6000_storage_controller]]
 *Boot-up status codes for SG6000 storage controllers*
@@ -200,13 +200,13 @@ Make sure this value is displayed on both storage controllers, as shown in this 
 +
 image::../media/seven_segment_display_codes_for_e2800.gif[Seven-Segment Display Codes for E2800]
 
-. If one or both controllers show other values, see xref:troubleshooting-hardware-installation.adoc[Troubleshoot hardware installation (SG6000)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
+. If one or both controllers show other values, see link:troubleshooting-hardware-installation.html[Troubleshoot hardware installation (SG6000)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
 
 .Related information
 
 https://mysupport.netapp.com/site/global/dashboard[NetApp Support^]
 
-xref:../sg6000/powering-on-sg6000-cn-controller-and-verifying-operation.adoc[Power on SG6000-CN controller and verify operation]
+link:../sg6000/powering-on-sg6000-cn-controller-and-verifying-operation.html[Power on SG6000-CN controller and verify operation]
 --
 
 .SG5700
@@ -220,7 +220,7 @@ The appliance controllers include indicators that help you determine the status 
 * <<boot_codes_e5700sg_controller,E5700SG controller boot-up codes>>
 * <<error_codes_e5700sg_controller,E5700SG controller error codes>>
 
-Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
+Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot the storage appliance hardware installation].
 
 [[boot_codes_sg5700]]
 *SG5700 boot-up status codes*
@@ -279,7 +279,7 @@ In the sequence, the first set of numbers is the DHCP-assigned IP address for th
 
 |===
 
-. If the seven-segment displays show other values, see xref:troubleshooting-hardware-installation.adoc[Troubleshoot hardware installation (SG5700)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
+. If the seven-segment displays show other values, see link:troubleshooting-hardware-installation.html[Troubleshoot hardware installation (SG5700)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
 
 [[status_indicators_e5700sg_controller]]
 *Status indicators on E5700SG controller*
@@ -489,7 +489,7 @@ The appliance controllers include indicators that help you determine the status 
 * <<normal_boot_codes_sg5600,Normal boot-up codes>>
 * <<error_codes_e5600sg_controller,E5600SG controller error codes>>
 
-Use this information to help xref:troubleshooting-hardware-installation.adoc[troubleshoot the storage appliance hardware installation].
+Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot the storage appliance hardware installation].
 
 [[boot_error_codes_sg5600_controller]]
 *Boot-up status and error codes on SG5600 controllers*
@@ -717,7 +717,7 @@ The appliance includes indicators that help you determine the status of the appl
 * <<general_boot_codes_SG100_1000,General boot-up codes>>
 * <<ssd_indicators_SG100_1000,SSD indicators>>
 
-Use this information to help xref:troubleshooting-hardware-installation-sg100-and-sg1000.adoc[troubleshoot the SG100 and SG1000 hardware installation].
+Use this information to help link:troubleshooting-hardware-installation-sg100-and-sg1000.html[troubleshoot the SG100 and SG1000 hardware installation].
 
 [[appliance_indicators_SG100_1000]]
 *Appliance indicators and buttons*
@@ -776,7 +776,7 @@ During boot-up or after a hard reset of the appliance, the following occurs:
 . The power button lights up.
 . If any errors occur during boot-up, the alarm LED lights up.
 +
-To view the boot-up and error codes, you must xref:accessing-bmc-interface.adoc[access the BMC interface].
+To view the boot-up and error codes, you must link:accessing-bmc-interface.html[access the BMC interface].
 
 [[ssd_indicators_SG100_1000]]
 *SSD indicators*

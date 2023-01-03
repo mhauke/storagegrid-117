@@ -11,7 +11,7 @@ summary: 'Before attaching StorageGRID as a FabricPool cloud tier, review the be
 [.lead]
 Before attaching StorageGRID as a FabricPool cloud tier, review the best practices for using load balancers with FabricPool.
 
-To learn general information about the StorageGRID load balancer and the load balancer certificate, see xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
+To learn general information about the StorageGRID load balancer and the load balancer certificate, see link:../admin/managing-load-balancing.html[Considerations for load balancing].
 
 == Best practices for tenant access to the load balancer endpoint used for FabricPool
 
@@ -25,9 +25,9 @@ In most cases, the connection between ONTAP and StorageGRID should use Transport
 
 To learn more about the server certificate for a load balancing endpoint:
 
-* xref:../admin/using-storagegrid-security-certificates.adoc[About security certificates]
-* xref:../admin/managing-load-balancing.adoc[Considerations for load balancing]
-* xref:../harden/hardening-guideline-for-server-certificates.adoc[Hardening guidelines for server certificates]
+* link:../admin/using-storagegrid-security-certificates.html[About security certificates]
+* link:../admin/managing-load-balancing.html[Considerations for load balancing]
+* link:../harden/hardening-guideline-for-server-certificates.html[Hardening guidelines for server certificates]
 
 
 === Add certificate to ONTAP

@@ -39,11 +39,11 @@ Use all three of the headers if the object is encrypted with a unique key that y
 * `x-amz-server-side-encryption-customer-key`: Specify your encryption key for the object.
 * `x-amz-server-side-encryption-customer-key-MD5`: Specify the MD5 digest of the object's encryption key.
 
-IMPORTANT: The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations in xref:using-server-side-encryption.adoc[Use server-side encryption].
+IMPORTANT: The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations in link:using-server-side-encryption.html[Use server-side encryption].
 
 == Behavior of GET Object for Cloud Storage Pool objects
 
-If an object has been stored in a xref:../ilm/what-cloud-storage-pool-is.adoc[Cloud Storage Pool], the behavior of a GET Object request depends on the state of the object. See xref:head-object.adoc[HEAD Object] for more details.
+If an object has been stored in a link:../ilm/what-cloud-storage-pool-is.html[Cloud Storage Pool], the behavior of a GET Object request depends on the state of the object. See link:head-object.html[HEAD Object] for more details.
 
 NOTE: If an object is stored in a Cloud Storage Pool and one or more copies of the object also exist on the grid, GET Object requests will attempt to retrieve data from the grid, before retrieving it from the Cloud Storage Pool.
 
@@ -64,7 +64,7 @@ A copy of the object is retrieved.
 | Object transitioned to a non-retrievable state
 | `403 Forbidden`, `InvalidObjectState`
 
-Use a xref:post-object-restore.adoc[POST Object restore] request to restore the object to a retrievable state.
+Use a link:post-object-restore.html[POST Object restore] request to restore the object to a retrievable state.
 
 | Object in process of being restored from a non-retrievable state
 | `403 Forbidden`, `InvalidObjectState`
@@ -88,7 +88,7 @@ In these cases:
 * A subsequent GET Object request might return `403 Forbidden`.
 
 == GET Object and cross-grid replication
-If you are using xref:../admin/grid-federation-overview.adoc[grid federation] and xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[cross-grid replication] is enabled for a bucket, the S3 client can verify an object's replication status by issuing a GET Object request. The response includes the StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
+If you are using link:../admin/grid-federation-overview.html[grid federation] and link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication] is enabled for a bucket, the S3 client can verify an object's replication status by issuing a GET Object request. The response includes the StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
 
 [cols="1a,2a" options="header"]
 |===
@@ -108,4 +108,4 @@ NOTE: StorageGRID does not support the `x-amz-replication-status` header.
 
 .Related information
 
-xref:s3-operations-tracked-in-audit-logs.adoc[S3 operations tracked in audit logs]
+link:s3-operations-tracked-in-audit-logs.html[S3 operations tracked in audit logs]

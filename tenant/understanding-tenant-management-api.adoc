@@ -15,7 +15,7 @@ The Tenant Management API:
 
 * Uses the Swagger open source API platform. Swagger provides an intuitive user interface that allows developers and non-developers to interact with the API. The Swagger user interface provides complete details and documentation for each API operation.
 
-* Uses xref:tenant-management-api-versioning.adoc[versioning to support non-disruptive upgrades].
+* Uses link:tenant-management-api-versioning.html[versioning to support non-disruptive upgrades].
 
 To access the Swagger documentation for the Tenant Management API:
 
@@ -33,9 +33,9 @@ The Tenant Management API organizes the available API operations into the follow
 +
 The Tenant Management API supports the Bearer Token Authentication Scheme. For a tenant login, you provide a username, password, and accountId in the JSON body of the authentication request (that is, `POST /api/v3/authorize`). If the user is successfully authenticated, a security token is returned. This token must be provided in the header of subsequent API requests ("Authorization: Bearer token").
 +
-For information about improving authentication security, see xref:protecting-against-cross-site-request-forgery-csrf.adoc[Protect against Cross-Site Request Forgery].
+For information about improving authentication security, see link:protecting-against-cross-site-request-forgery-csrf.html[Protect against Cross-Site Request Forgery].
 +
-NOTE: If single sign-on (SSO) is enabled for the StorageGRID system, you must perform different steps to authenticate. See the xref:../admin/using-grid-management-api.adoc[instructions for using the Grid Management API].
+NOTE: If single sign-on (SSO) is enabled for the StorageGRID system, you must perform different steps to authenticate. See the link:../admin/using-grid-management-api.html[instructions for using the Grid Management API].
 
 * *config* -- Operations related to the product release and versions of the Tenant Management API. You can list the product release version and the major versions of the API supported by that release.
 * *containers* -- Operations on S3 buckets or Swift containers, as follows:

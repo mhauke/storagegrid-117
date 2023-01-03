@@ -44,7 +44,7 @@ You can configure networking in the following ways:
 
 The Grid Network is mandatory and can manage all grid traffic. The Admin and Client Networks can be included at the time of installation or added later to adapt to changes in requirements. Although the Admin Network and Client Network are optional, when you use these networks to handle administrative and client traffic, the Grid Network can be made isolated and secure.
 
-Internal ports are only accessible over the Grid Network. External ports are accessible from all network types. This flexibility provides multiple options for designing a StorageGRID deployment and setting up external IP and port filtering in switches and firewalls. See xref:../network/internal-grid-node-communications.adoc[internal grid node communications] and xref:../network/external-communications.adoc[external communications].
+Internal ports are only accessible over the Grid Network. External ports are accessible from all network types. This flexibility provides multiple options for designing a StorageGRID deployment and setting up external IP and port filtering in switches and firewalls. See link:../network/internal-grid-node-communications.html[internal grid node communications] and link:../network/external-communications.html[external communications].
 
 == Network interfaces
 
@@ -69,16 +69,17 @@ eth2
 For details about mapping virtual or physical ports to node network interfaces, see the installation instructions:
 
 .Software-based nodes
-* xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-* xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
-* xref:../vmware/index.adoc[Install VMware]
+* link:../rhel/index.html[Install Red Hat Enterprise Linux or CentOS]
+* link:../ubuntu/index.html[Install Ubuntu or Debian]
+* link:../vmware/index.html[Install VMware]
 
 .Appliance nodes
-* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
-* xref:../sg6100/index.adoc[SG6100 storage appliances]
-* xref:../sg6000/index.adoc[SG6000 storage appliances]
-* xref:../sg5700/index.adoc[SG5700 storage appliances]
-* xref:../sg5600/index.adoc[SG5600 storage appliances]
+
+* link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
+* link:../sg6100/index.html[SG6100 storage appliances]
+* link:../sg6000/index.html[SG6000 storage appliances]
+* link:../sg5700/index.html[SG5700 storage appliances]
+* link:../sg5600/index.html[SG5600 storage appliances]
 
 === Network information for each node
 You must configure the following for each network you enable on a node:
@@ -91,7 +92,7 @@ You can only configure one IP address/mask/gateway combination for each of the t
 
 === High availability groups
 
-High availability (HA) groups provide the ability to add virtual IP (VIP) addresses to the Grid or Client Network interface. For more information, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups]. 
+High availability (HA) groups provide the ability to add virtual IP (VIP) addresses to the Grid or Client Network interface. For more information, see link:../admin/managing-high-availability-groups.html[Manage high availability groups]. 
 
 
 == Grid Network
@@ -137,7 +138,7 @@ The Client Network is optional. When configured, it is used to provide access to
 
 You can choose which grid nodes should have the Client Network enabled on them. All nodes do not have to be on the same Client Network, and nodes will never communicate with each other over the Client Network. The Client Network does not become operational until grid installation is complete.
 
-For added security, you can specify that a node's Client Network interface be untrusted so that the Client Network will be more restrictive of which connections are allowed. If a node's Client Network interface is untrusted, the interface accepts outbound connections such as those used by CloudMirror replication, but only accepts inbound connections on ports that have been explicitly configured as load balancer endpoints. See xref:../admin/manage-firewall-controls.adoc[Manage firwall controls] and xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints].
+For added security, you can specify that a node's Client Network interface be untrusted so that the Client Network will be more restrictive of which connections are allowed. If a node's Client Network interface is untrusted, the interface accepts outbound connections such as those used by CloudMirror replication, but only accepts inbound connections on ports that have been explicitly configured as load balancer endpoints. See link:../admin/manage-firewall-controls.html[Manage firwall controls] and link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints].
 
 When you use a Client Network, client traffic does not need to travel across the Grid Network. Grid Network traffic can be separated onto a secure, non-routable network. The following node types are often configured with a Client Network:
 
@@ -162,13 +163,13 @@ Only inbound admin traffic, such as used for SSH, Grid Manager, or Tenant Manage
 
 IMPORTANT: VLAN interfaces can be added to Admin Nodes and Gateway Nodes only. You cannot use a VLAN interface for client or admin access to Storage Nodes or Archive Nodes.
 
-See xref:../admin/configure-vlan-interfaces.adoc[Configure VLAN interfaces] for instructions and guidelines.
+See link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces] for instructions and guidelines.
 
-VLAN interfaces are only used in HA groups and are assigned VIP addresses on the active node. See xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups] for instructions and guidelines.
+VLAN interfaces are only used in HA groups and are assigned VIP addresses on the active node. See link:../admin/managing-high-availability-groups.html[Manage high availability groups] for instructions and guidelines.
 
 .Related information
 
-* xref:networking-requirements-and-guidelines.adoc[Networking requirements]
+* link:networking-requirements-and-guidelines.html[Networking requirements]
 
 
 

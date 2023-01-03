@@ -19,9 +19,9 @@ Note that a grid's object metadata capacity might be consumed faster than its ob
 
 For more information, see the following:
 
-* xref:../admin/managing-object-metadata-storage.adoc[Manage object metadata storage]
+* link:../admin/managing-object-metadata-storage.html[Manage object metadata storage]
 
-* xref:../monitor/monitoring-storage-capacity.adoc#monitor-object-metadata-capacity-for-each-storage-node[Monitor object metadata capacity for each Storage Node]
+* link:../monitor/monitoring-storage-capacity.html#monitor-object-metadata-capacity-for-each-storage-node[Monitor object metadata capacity for each Storage Node]
 
 == Guidelines for increasing metadata capacity
 
@@ -35,7 +35,7 @@ Before adding Storage Nodes to increase metadata capacity, review the following 
 * StorageGRID keeps three copies of all object metadata at every site. For this reason, the metadata capacity for your system is limited by the metadata capacity of your smallest site.
 * When adding metadata capacity, you should add the same number of Storage Nodes to each site.
 
-See the xref:../admin/managing-object-metadata-storage.adoc[description of what Metadata Reserved Space is] and xref:../upgrade/increasing-metadata-reserved-space-setting.adoc[how to increase Metadata Reserved Space].
+See the link:../admin/managing-object-metadata-storage.html[description of what Metadata Reserved Space is] and link:../upgrade/increasing-metadata-reserved-space-setting.html[how to increase Metadata Reserved Space].
 
 == How metadata is redistributed when you add Storage Nodes
 

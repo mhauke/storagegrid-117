@@ -29,13 +29,13 @@ If StorageGRID is unable to make contact with any of the provisioned NTP or DNS 
 
 IMPORTANT: Although you can use these automatically discovered host routes, in general you should manually configure the DNS and NTP routes to ensure connectivity in case automatic discovery fails.
 
-If you are not ready to configure the optional Admin and Client Networks during deployment, you can configure these networks when you approve grid nodes during the configuration steps. Additionally, you can configure these networks after installation has been completed by using the Change IP tool (see xref:../maintain/configuring-ip-addresses.adoc[Configure IP addresses]).
+If you are not ready to configure the optional Admin and Client Networks during deployment, you can configure these networks when you approve grid nodes during the configuration steps. Additionally, you can configure these networks after installation has been completed by using the Change IP tool (see link:../maintain/configuring-ip-addresses.html[Configure IP addresses]).
 
 == Connections for Admin Nodes and Gateway Nodes
 
 Admin Nodes must always be secured from untrusted clients, such as those on the open internet. You must ensure that no untrusted client can access any Admin Node on the Grid Network, the Admin Network, or the Client Network.
 
-Admin Nodes and Gateway Nodes that you plan to add to high availability groups must be configured with a static IP address. See xref:../admin/managing-high-availability-groups.adoc[Manage high-availability groups].
+Admin Nodes and Gateway Nodes that you plan to add to high availability groups must be configured with a static IP address. See link:../admin/managing-high-availability-groups.html[Manage high-availability groups].
 
 == Using network address translation (NAT)
 

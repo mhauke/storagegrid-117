@@ -64,7 +64,7 @@ TLS handshake failed
 
 |This message appears if you try to use an unsupported cipher to make a Transport Layer Security (TLS) connection from StorageGRID to an external system used for identify federation or Cloud Storage Pools.
 
-Check the ciphers that are offered by the external system. The system must use one of the xref:../admin/supported-ciphers-for-outgoing-tls-connections.adoc[ciphers supported by StorageGRID] for outgoing TLS connections, as shown in the instructions for administering StorageGRID.
+Check the ciphers that are offered by the external system. The system must use one of the link:../admin/supported-ciphers-for-outgoing-tls-connections.html[ciphers supported by StorageGRID] for outgoing TLS connections, as shown in the instructions for administering StorageGRID.
 
 |===
 
@@ -80,7 +80,7 @@ The differences in MTU settings could indicate that some, but not all, eth0 netw
 . List the MTU settings for eth0 on all nodes.
  ** Use the query provided in the Grid Manager.
  ** Navigate to `_primary Admin Node IP address_/metrics/graph` and enter the following query: `node_network_mtu_bytes{interface='eth0'}`
-. xref:../commonhardware/changing-mtu-setting.adoc[Modify the MTU settings] as necessary to ensure they are the same for the Grid Network interface (eth0) on all nodes.
+. link:../commonhardware/changing-mtu-setting.html[Modify the MTU settings] as necessary to ensure they are the same for the Grid Network interface (eth0) on all nodes.
  ** For Linux- and VMware-based nodes, use the following command: `+/usr/sbin/change-ip.py [-h] [-n node] mtu network [network...]+`
 +
 *Example*: `change-ip.py -n node 1500 grid admin`
@@ -141,10 +141,10 @@ NRER alarms can be caused by the following issues with networking hardware that 
   ... Check the physical integrity of the cables from the appliance to the switch.
   ... If you want to change FEC settings to try to resolve the NRER alarm, first ensure that the appliance is configured for *Auto* mode on the Link Configuration page of the StorageGRID Appliance Installer (see the instructions for your appliance:
   +
-  * xref:../sg6000/changing-link-configuration-of-sg6000-cn-controller.adoc[SG6000]
-  * xref:../sg5700/changing-link-configuration-of-e5700sg-controller.adoc[SG5700]
-  * xref:../sg5600/changing-link-configuration-of-e5600sg-controller.adoc[SG5600]
-  * xref:../sg100-1000/changing-link-configuration-of-services-appliance.adoc[Sg100 and SG1000]
+  * link:../sg6000/changing-link-configuration-of-sg6000-cn-controller.html[SG6000]
+  * link:../sg5700/changing-link-configuration-of-e5700sg-controller.html[SG5700]
+  * link:../sg5600/changing-link-configuration-of-e5600sg-controller.html[SG5600]
+  * link:../sg100-1000/changing-link-configuration-of-services-appliance.html[Sg100 and SG1000]
   ... Then, change the FEC settings on the switch ports. The StorageGRID appliance ports will adjust their FEC settings to match, if possible.
 +
 (You cannot configure FEC settings on StorageGRID appliances. Instead, the appliances attempt to discover and mirror the FEC settings on the switch ports they are connected to. If the links are forced to 25-GbE or 100-GbE network speeds, the switch and NIC might fail to negotiate a common FEC setting. Without a common FEC setting, the network will fall back to "`no-FEC`" mode. When FEC is not enabled, the connections are more susceptible to errors caused by electrical noise.)
@@ -158,7 +158,7 @@ The MTU size configured on the node might be smaller than the setting on the swi
 +
 IMPORTANT: For the best network performance, all nodes should be configured with similar MTU values on their Grid Network interfaces. The *Grid Network MTU mismatch* alert is triggered if there is a significant difference in MTU settings for the Grid Network on individual nodes. The MTU values do not have to be the same for all network types. See <<troubleshoot_MTU_alert,Troubleshoot the Grid Network MTU mismatch alert>> for more information.
 +
-NOTE: Also see xref:../commonhardware/changing-mtu-setting.adoc[Change MTU setting].
+NOTE: Also see link:../commonhardware/changing-mtu-setting.html[Change MTU setting].
 
  ** If the error is caused by high link error rates, perform the following steps:
   ... Enable FEC, if not already enabled.
@@ -176,7 +176,7 @@ The ring buffer can be overrun when the StorageGRID system is overloaded and una
 
 .Related information
 
-xref:../monitor/alarms-reference.adoc[Alarms reference (legacy system)]
+link:../monitor/alarms-reference.html[Alarms reference (legacy system)]
 
 
 == Troubleshoot time synchronization errors
@@ -185,7 +185,7 @@ You might see issues with time synchronization in your grid.
 
 If you encounter time synchronization problems, verify that you have specified at least four external NTP sources, each providing a Stratum 3 or better reference, and that all external NTP sources are operating normally and are accessible by your StorageGRID nodes.
 
-NOTE: When xref:../maintain/configuring-ntp-servers.adoc[specifying the external NTP source] for a production-level StorageGRID installation, do not use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in high-accuracy environments, such as StorageGRID.
+NOTE: When link:../maintain/configuring-ntp-servers.html[specifying the external NTP source] for a production-level StorageGRID installation, do not use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in high-accuracy environments, such as StorageGRID.
 
 == Linux: Network connectivity issues
 
@@ -193,17 +193,17 @@ You might see issues with network connectivity for StorageGRID grid nodes hosted
 
 === MAC address cloning
 
-In some cases, network issues can be resolved by using MAC address cloning. If you are using virtual hosts, set the value of the MAC address cloning key for each of your networks to "true" in your node configuration file. This setting causes the MAC address of the StorageGRID container to use the MAC address of the host. To create node configuration files, see the instructions for xref:../rhel/creating-node-configuration-files.adoc[Red Hat Enterprise Linux or CentOS] or xref:../ubuntu/creating-node-configuration-files.adoc[Ubuntu or Debian].
+In some cases, network issues can be resolved by using MAC address cloning. If you are using virtual hosts, set the value of the MAC address cloning key for each of your networks to "true" in your node configuration file. This setting causes the MAC address of the StorageGRID container to use the MAC address of the host. To create node configuration files, see the instructions for link:../rhel/creating-node-configuration-files.html[Red Hat Enterprise Linux or CentOS] or link:../ubuntu/creating-node-configuration-files.html[Ubuntu or Debian].
 
 IMPORTANT: Create separate virtual network interfaces for use by the Linux host OS. Using the same network interfaces for the Linux host OS and the StorageGRID container might cause the host OS to become unreachable if promiscuous mode has not been enabled on the hypervisor.
 
-For more information on enabling MAC cloning, see the instructions for xref:../rhel/configuring-host-network.adoc[Red Hat Enterprise Linux or CentOS] or xref:../ubuntu/configuring-host-network.adoc[Ubuntu or Debian].
+For more information on enabling MAC cloning, see the instructions for link:../rhel/configuring-host-network.html[Red Hat Enterprise Linux or CentOS] or link:../ubuntu/configuring-host-network.html[Ubuntu or Debian].
 
 === Promiscuous mode
 
 If you do not want to use MAC address cloning and would rather allow all interfaces to receive and transmit data for MAC addresses other than the ones assigned by the hypervisor, ensure that the security properties at the virtual switch and port group levels are set to *Accept* for Promiscuous Mode, MAC Address Changes, and Forged Transmits. The values set on the virtual switch can be overridden by the values at the port group level, so ensure that settings are the same in both places.
 
-For more information about using Promiscuous Mode, see the instructions for xref:../rhel/configuring-host-network.adoc[Red Hat Enterprise Linux or CentOS] or xref:../ubuntu/configuring-host-network.adoc[Ubuntu or Debian].
+For more information about using Promiscuous Mode, see the instructions for link:../rhel/configuring-host-network.html[Red Hat Enterprise Linux or CentOS] or link:../ubuntu/configuring-host-network.html[Ubuntu or Debian].
 
 == Linux: Node status is "`orphaned`"
 

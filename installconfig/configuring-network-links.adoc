@@ -105,7 +105,7 @@ The tables summarize the options for configuring the four network ports. The def
  ** Two VLAN tags allow Grid Network packets to be segregated from Client Network packets.
 |===
 
-See xref:port-bond-modes-for-sg6000-cn-controller.adoc[Port bond modes for SG6000-CN controller] for more information about port bond and network bond modes.
+See link:port-bond-modes-for-sg6000-cn-controller.html[Port bond modes for SG6000-CN controller] for more information about port bond and network bond modes.
 
 This figure shows how the two 1-GbE management ports on the SG6000-CN controller are bonded in Active-Backup network bond mode for the Admin Network.
 
@@ -160,7 +160,7 @@ image::../media/network_link_configuration_aggregate.gif[Screen shot showing Lin
 
 . When you are satisfied with your selections, click *Save*.
 +
-NOTE: You might lose your connection if you made changes to the network or link you are connected through. If you are not reconnected within 1 minute, re-enter the URL for the StorageGRID Appliance Installer using one of the other xref:setting-ip-configuration.adoc[IP addresses] assigned to the appliance: `*https://_SG6000-CN_Controller_IP_:8443*`
+NOTE: You might lose your connection if you made changes to the network or link you are connected through. If you are not reconnected within 1 minute, re-enter the URL for the StorageGRID Appliance Installer using one of the other link:setting-ip-configuration.html[IP addresses] assigned to the appliance: `*https://_SG6000-CN_Controller_IP_:8443*`
 
 --
 
@@ -674,10 +674,10 @@ NOTE: You might lose your connection if you made changes to the network or link 
 
 .Related information
 
-xref:obtaining-additional-equipment-and-tools.adoc[Obtain additional equipment and tools]
+link:obtaining-additional-equipment-and-tools.html[Obtain additional equipment and tools]
 
-xref:port-bond-modes-for-sg6000-cn-controller.adoc[Port bond modes for SG6000-CN controller]
+link:port-bond-modes-for-sg6000-cn-controller.html[Port bond modes for SG6000-CN controller]
 
-xref:port-bond-modes-for-e5700sg-controller-ports.adoc[Port bond modes for E5700SG controller ports]
+link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes for E5700SG controller ports]
 
-xref:port-bond-modes-for-e5600sg-controller-ports.adoc[Port bond modes for the E5600SG controller ports]
+link:port-bond-modes-for-e5600sg-controller-ports.html[Port bond modes for the E5600SG controller ports]

@@ -13,7 +13,7 @@ Clients need to communicate with grid nodes to ingest and retrieve content. The 
 
 == Restricted access to ports
 
-If enterprise networking policies restrict access to any of the ports, you can use xref:../admin/configuring-load-balancer-endpoints.adoc[load balancer endpoints] to allow access on user-defined ports. You can then use xref:../admin/manage-firewall-controls.adoc[untrusted Client Networks] to allow access only on load balancer endpoint ports.
+If enterprise networking policies restrict access to any of the ports, you can use link:../admin/configuring-load-balancer-endpoints.html[load balancer endpoints] to allow access on user-defined ports. You can then use link:../admin/manage-firewall-controls.html[untrusted Client Networks] to allow access only on load balancer endpoint ports.
 
 == Port remapping
 
@@ -21,29 +21,29 @@ To use systems and protocols such as SMTP, DNS, SSH, or DHCP, you must remap por
 
 .Software-based nodes
 
-* xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
+* link:../rhel/index.html[Install Red Hat Enterprise Linux or CentOS]
 
-* xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
+* link:../ubuntu/index.html[Install Ubuntu or Debian]
 
-* xref:../vmware/index.adoc[Install VMware]
+* link:../vmware/index.html[Install VMware]
 
 .Appliance nodes
 
-* xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
+* link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
 
-* xref:../sg6100/index.adoc[SG6100 storage appliances]
+* link:../sg6100/index.html[SG6100 storage appliances]
 
-* xref:../sg6000/index.adoc[SG6000 storage appliances]
+* link:../sg6000/index.html[SG6000 storage appliances]
 
-* xref:../sg5700/index.adoc[SG5700 storage appliances]
+* link:../sg5700/index.html[SG5700 storage appliances]
 
-* xref:../sg5600/index.adoc[SG5600 storage appliances]
+* link:../sg5600/index.html[SG5600 storage appliances]
 
 == Ports used for external communications
 
 The following table shows the ports used for traffic into the nodes.
 
-NOTE: This list does not include ports that might be configured as xref:../admin/configuring-load-balancer-endpoints.adoc[load balancer endpoints].
+NOTE: This list does not include ports that might be configured as link:../admin/configuring-load-balancer-endpoints.html[load balancer endpoints].
 
 [cols="1a,1a,1a,1a,1a,2a" options="header"]
 |===
@@ -217,7 +217,7 @@ Used for connecting to an Active Directory or LDAP server for Identity Federatio
 |Admin Nodes
 |Used by web browsers and management API clients for accessing the Grid Manager and Tenant Manager.
 
-Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.
+Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged IP addresses.
 
 |443
 |TCP
@@ -341,7 +341,7 @@ Admin Nodes
 |
 Optional. Used by web browsers and management API clients for accessing the Grid Manager. Can be used to separate Grid Manager and Tenant Manager communications.
 
-Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.See xref:../admin/configure-firewall-controls.adoc[Configure firewall controls] to configure privileged IP addresses.
+Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged IP addresses.See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged IP addresses.
 |
 9022
 |

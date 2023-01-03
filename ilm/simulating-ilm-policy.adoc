@@ -13,8 +13,8 @@ Simulate a proposed policy on test objects before activating the policy and appl
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the xref:../admin/admin-group-permissions.adoc[required access permissions].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You have the link:../admin/admin-group-permissions.html[required access permissions].
 * You know the S3 bucket/object-key or the Swift container/object-name for each object you want to test.
 
 .About this task
@@ -33,9 +33,9 @@ When simulating a policy, the following considerations apply:
 
 .Steps
 
-. xref:creating-proposed-ilm-policy.adoc[Create a proposed policy].
+. link:creating-proposed-ilm-policy.html[Create a proposed policy].
 
-. Using an S3 or Swift client or the xref:../tenant/use-s3-console.adoc[experimental S3 Console], which is available in Tenant Manager for each tenant, ingest the objects required to test each rule.
+. Using an S3 or Swift client or the link:../tenant/use-s3-console.html[experimental S3 Console], which is available in Tenant Manager for each tenant, ingest the objects required to test each rule.
 . On the ILM policy page, Proposed policy tab, select *Simulate*.
 . In the *Object* field, enter the S3 `bucket/object-key` or the Swift `container/object-name` for a test object. For example, `bucket-01/filename.png`.
 . Optionally, enter a version ID for the object in the *Version ID* field.

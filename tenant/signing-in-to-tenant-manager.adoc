@@ -9,7 +9,7 @@ summary: 'You access the Tenant Manager by entering the URL for the tenant into 
 :imagesdir: ../media/
 
 [.lead]
-You access the Tenant Manager by entering the URL for the tenant into the address bar of a xref:../admin/web-browser-requirements.adoc[supported web browser].
+You access the Tenant Manager by entering the URL for the tenant into the address bar of a link:../admin/web-browser-requirements.html[supported web browser].
 
 .What you'll need
 
@@ -35,12 +35,12 @@ https://FQDN_or_Admin_Node_IP:port/?accountId=20-digit-account-id
 The URL always includes a fully qualified domain name (FQDN), the IP address of an Admin Node, or the virtual IP address of an HA group of Admin Nodes. It might also include a port number, the 20-digit tenant account ID, or both.
 
 * If the URL does not include the tenant's 20-digit account ID, you have this account ID.
-* You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * Cookies are enabled in your web browser.
-* You belong to a user group that has xref:tenant-management-permissions.adoc[specific access permissions]. 
+* You belong to a user group that has link:tenant-management-permissions.html[specific access permissions]. 
 
 .Steps
-. Launch a xref:../admin/web-browser-requirements.adoc[supported web browser].
+. Launch a link:../admin/web-browser-requirements.html[supported web browser].
 . In the browser's address bar, enter the URL for accessing Tenant Manager.
 . If you are prompted with a security alert, install the certificate using the browser's installation wizard.
 . Sign in to the Tenant Manager.

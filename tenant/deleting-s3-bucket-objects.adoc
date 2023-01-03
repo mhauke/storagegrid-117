@@ -19,7 +19,7 @@ Before performing these steps, note the following:
 
 * Deleting all of the objects in a bucket might take minutes, days, or even weeks, based on the number of objects, object copies, and concurrent operations.
 
-* If a bucket has xref:using-s3-object-lock.adoc[S3 Object Lock enabled], it might remain in the *Deleting objects: read-only* state for _years_.
+* If a bucket has link:using-s3-object-lock.html[S3 Object Lock enabled], it might remain in the *Deleting objects: read-only* state for _years_.
 +
 IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Deleting objects: read-only* state until the retention date is reached for all objects and any legal holds are removed.
 
@@ -33,17 +33,17 @@ IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Deleting object
 
 * If a bucket has object versioning enabled, any delete markers that are in the bucket when you start these steps will not be removed by the delete objects operation. If you want to delete a versioned bucket after all objects have been deleted, you must remove any pre-existing delete markers.
 
-* If you use xref:grid-federation-manage-cross-grid-replication.adoc[cross-grid replication], note the following: 
+* If you use link:grid-federation-manage-cross-grid-replication.html[cross-grid replication], note the following: 
 
 ** Using this option does not delete any objects from the bucket on the other grid.
 
-** If you select this option for the source bucket, the *Cross-grid replication failure* alert will be triggered if you add objects to the destination bucket on the other grid. If you can't guarantee no one will add objects to the bucket on the other grid, xref:../tenant/grid-federation-manage-cross-grid-replication.adoc[disable cross-grid replication] for that bucket before deleting all bucket objects.
+** If you select this option for the source bucket, the *Cross-grid replication failure* alert will be triggered if you add objects to the destination bucket on the other grid. If you can't guarantee no one will add objects to the bucket on the other grid, link:../tenant/grid-federation-manage-cross-grid-replication.html[disable cross-grid replication] for that bucket before deleting all bucket objects.
 
 .What you'll need
 
-* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
-* You belong to a user group that has the xref:tenant-management-permissions.adoc[Root access permission]. This permission overrides the permissions settings in group or bucket policies.
+* You belong to a user group that has the link:tenant-management-permissions.html[Root access permission]. This permission overrides the permissions settings in group or bucket policies.
 
 .Steps
 
