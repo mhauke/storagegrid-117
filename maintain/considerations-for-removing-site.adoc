@@ -43,13 +43,13 @@ Before removing a connected or disconnected site, you must be aware of the follo
 * You cannot decommission a site if any of the nodes have an interface that belongs to a high availability (HA) group. You must either edit the HA group to remove the node's interface or remove the entire HA group.
 * You cannot decommission a site if it contains a mixture of connected (image:../media/icon_alert_green_checkmark.png[Icon Alert Green Checkmark]) and disconnected (image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown] or image:../media/icon_alarm_gray_administratively_down.png[Icon Alarm Gray Administratively Down]) nodes.
 * You cannot decommission a site if any node at any other site is disconnected (image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown] or image:../media/icon_alarm_gray_administratively_down.png[Icon Alarm Gray Administratively Down]).
-* You cannot start the site decommission procedure if an ec-node-repair operation is in progress. See xref:checking-data-repair-jobs.adoc[Check data repair jobs] to track repairs of erasure-coded data.
+* You cannot start the site decommission procedure if an ec-node-repair operation is in progress. See link:checking-data-repair-jobs.html[Check data repair jobs] to track repairs of erasure-coded data.
 
 * While the site decommission procedure is running:
  ** You cannot create ILM rules that refer to the site being decommissioned. You also cannot edit an existing ILM rule to refer to the site.
  ** You cannot perform other maintenance procedures, such as expansion or upgrade.
 +
-NOTE: If you need to perform another maintenance procedure during a connected site decommission, you can xref:pausing-and-resuming-decommission-process-for-storage-nodes.adoc[pause the procedure while the Storage Nodes are being removed]. The *Pause* button is enabled only when the ILM evaluation or erasure-coded data decommissioning stages are reached; however, ILM evaluation (data migration) will continue to run in the background. After the second maintenance procedure is complete, you can resume decommissioning.
+NOTE: If you need to perform another maintenance procedure during a connected site decommission, you can link:pausing-and-resuming-decommission-process-for-storage-nodes.html[pause the procedure while the Storage Nodes are being removed]. The *Pause* button is enabled only when the ILM evaluation or erasure-coded data decommissioning stages are reached; however, ILM evaluation (data migration) will continue to run in the background. After the second maintenance procedure is complete, you can resume decommissioning.
 
  ** If you need to recover any node after starting the site decommission procedure, you must contact support.
 * You cannot decommission more than one site at a time.
@@ -67,7 +67,7 @@ When StorageGRID decommissions the site, it will automatically deactivate any un
 
 IMPORTANT: Before you can remove a site, you might be required to create new ILM rules and activate a new ILM policy. These instructions assume that you have a good understanding of how ILM works and that you are familiar with creating storage pools, erasure coding profiles, ILM rules, and simulating and activating an ILM policy. See the instructions for managing objects with information lifecycle management.
 
-xref:../ilm/index.adoc[Manage objects with ILM]
+link:../ilm/index.html[Manage objects with ILM]
 
 == Considerations for the object data at a connected site
 
@@ -131,8 +131,8 @@ As a result of this temporary override, be aware that any client write, update, 
 
 .Related information
 
-xref:how-site-recovery-is-performed-by-technical-support.adoc[How site recovery is performed by technical support]
+link:how-site-recovery-is-performed-by-technical-support.html[How site recovery is performed by technical support]
 
-xref:../ilm/index.adoc[Manage objects with ILM]
+link:../ilm/index.html[Manage objects with ILM]
 
-xref:../expand/index.adoc[Expand your grid]
+link:../expand/index.html[Expand your grid]

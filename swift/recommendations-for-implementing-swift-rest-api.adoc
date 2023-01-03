@@ -17,7 +17,7 @@ If your application routinely checks to see if an object exists at a path where 
 
 Otherwise, if the HEAD operation does not find the object, you might receive a high number of 500 Internal Server errors if one or more Storage Nodes are unavailable.
 
-You can set the "`Available`" consistency control for each container using the xref:put-container-consistency-request.adoc[PUT container consistency request]. You view set the "`Available`" consistency control for each container using the xref:get-container-consistency-request.adoc[GET container consistency request].
+You can set the "`Available`" consistency control for each container using the link:put-container-consistency-request.html[PUT container consistency request]. You view set the "`Available`" consistency control for each container using the link:get-container-consistency-request.html[GET container consistency request].
 
 == Recommendations for object names
 
@@ -40,7 +40,7 @@ mycontainer/f8e3-image3132.jpg
 
 == Recommendations for "`range reads`"
 
-If the xref:../admin/configuring-stored-object-compressio.adoc[*Compress Stored Objects* option] is selected (*CONFIGURATION* > *System* > *Grid options*), Swift client applications should avoid performing GET object operations that specify a range of bytes be returned. These "`range read`" operations are inefficient because StorageGRID must effectively uncompress the objects to access the requested bytes. GET Object operations that request a small range of bytes from a very large object are especially inefficient; for example, it is very inefficient to read a 10 MB range from a 50 GB compressed object.
+If the link:../admin/configuring-stored-object-compressio.html[*Compress Stored Objects* option] is selected (*CONFIGURATION* > *System* > *Grid options*), Swift client applications should avoid performing GET object operations that specify a range of bytes be returned. These "`range read`" operations are inefficient because StorageGRID must effectively uncompress the objects to access the requested bytes. GET Object operations that request a small range of bytes from a very large object are especially inefficient; for example, it is very inefficient to read a 10 MB range from a 50 GB compressed object.
 
 If ranges are read from compressed objects, client requests can time out.
 

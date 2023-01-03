@@ -20,6 +20,16 @@ entries:
       url: "/tenant/tenant-management-api-versioning.html"
     - title: Protect against Cross-Site Request Forgery (CSRF)
       url: "/tenant/protecting-against-cross-site-request-forgery-csrf.html"
+  - title: Use grid federation connections
+    entries:
+    - title: Clone account information
+      url: "/tenant/grid-federation-account-clone.html"  
+    - title: Clone S3 access keys using the API
+      url: "/tenant/grid-federation-clone-keys-with-api.html"  
+    - title: Manage cross-grid replication
+      url: "/tenant/grid-federation-manage-cross-grid-replication.html" 
+    - title: View grid federation connections
+      url: "/tenant/grid-federation-view-connections.html"      
   - title: Manage groups and users
     entries:
     - title: Use identity federation
@@ -112,14 +122,5 @@ entries:
         url: "/tenant/json-generated-by-search-integration-service.html"
       - title: Object metadata included in metadata notifications
         url: "/tenant/object-metadata-included-in-metadata-notifications.html"
-  - title: Use grid federation connections
-    entries:
-    - title: Clone account information
-      url: "/tenant/grid-federation-account-clone.html"  
-    - title: Clone S3 access keys using the API
-      url: "/tenant/grid-federation-clone-keys-with-api.html"  
-    - title: Manage cross-grid replication
-      url: "/tenant/grid-federation-manage-cross-grid-replication.html" 
-    - title: View grid federation connections
-      url: "/tenant/grid-federation-view-connections.html"           
+     
     

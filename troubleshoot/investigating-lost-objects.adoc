@@ -13,7 +13,7 @@ summary: 'When the *Objects lost* alert is triggered, you must investigate immed
 When the *Objects lost* alert is triggered, you must investigate immediately. Collect information about the affected objects and contact technical support.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 * You must have the `Passwords.txt` file.
 
@@ -31,7 +31,7 @@ This number indicates the total number of objects this grid node detects as miss
 +
 image::../media/nodes_storage_nodes_objects_page_lost_object.png[Nodes Storage Nodes Object Page lost object]
 
-. From an Admin Node, xref:../audit/accessing-audit-log-file.adoc[access the audit log] to determine the unique identifier (UUID) of the object that triggered the *Objects lost* alert:
+. From an Admin Node, link:../audit/accessing-audit-log-file.html[access the audit log] to determine the unique identifier (UUID) of the object that triggered the *Objects lost* alert:
  .. Log in to the grid node:
   ... Enter the following command: `ssh admin@grid_node_IP`
   ... Enter the password listed in the `Passwords.txt` file.
@@ -159,7 +159,7 @@ If the object is not found, you can reset the count of *Objects lost* to clear t
 
 Confirm that the objects exist. Use the Node ID and filepath listed in the output to confirm that the object file is in the listed location.
 
-(The procedure for xref:searching-for-and-restoring-potentially-lost-objects.adoc[searching for potentially lost objects] explains how to use the Node ID to find the correct Storage Node.)
+(The procedure for link:searching-for-and-restoring-potentially-lost-objects.html[searching for potentially lost objects] explains how to use the Node ID to find the correct Storage Node.)
 
 
 
@@ -167,10 +167,10 @@ If the objects exist, you can reset the count of *Objects lost* to clear the ale
 
 
 |Locations = 0
-|If there are no locations listed in the output, the object is potentially missing. You can try to xref:searching-for-and-restoring-potentially-lost-objects.adoc[search for and restore the object] yourself, or you can contact technical support.
+|If there are no locations listed in the output, the object is potentially missing. You can try to link:searching-for-and-restoring-potentially-lost-objects.html[search for and restore the object] yourself, or you can contact technical support.
 
 
 
-Technical support might ask you to determine if there is a storage recovery procedure in progress. That is, has a _repair-data_ command been issued on any Storage Node, and is the recovery still in progress? See the information about xref:../maintain/restoring-object-data-to-storage-volume-if-required.adoc[restoring object data to a storage volume].
+Technical support might ask you to determine if there is a storage recovery procedure in progress. That is, has a _repair-data_ command been issued on any Storage Node, and is the recovery still in progress? See the information about link:../maintain/restoring-object-data-to-storage-volume-if-required.html[restoring object data to a storage volume].
 |===
 

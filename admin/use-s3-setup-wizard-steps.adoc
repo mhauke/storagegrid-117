@@ -13,12 +13,12 @@ You can use the S3 setup wizard to configure StorageGRID for use with an S3 appl
 
 .What you'll need
 
-* You have the xref:../admin/admin-group-permissions.adoc[Root access permission].
-* You xref:use-s3-setup-wizard.adoc[meet the prerequisites]. 
+* You have the link:../admin/admin-group-permissions.html[Root access permission].
+* You link:use-s3-setup-wizard.html[meet the prerequisites]. 
 
 == Access the wizard
 
-. Sign in to the Grid Manager using a xref:web-browser-requirements.adoc[supported web browser].
+. Sign in to the Grid Manager using a link:web-browser-requirements.html[supported web browser].
 
 . If the *FabricPool and S3 setup wizard* banner appears on the dashboard, select the link in the banner. If the banner no longer appears, select the help icon from the header bar in the Grid Manager and select *FabricPool and S3 setup wizard*.
 +
@@ -32,7 +32,7 @@ A high availability (HA) group is a collection of nodes that each contain the St
 
 You can use an HA group to help keep the S3 data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to S3 operations.
 
-For details about this task, see xref:managing-high-availability-groups.adoc[Manage high availability groups].
+For details about this task, see link:managing-high-availability-groups.html[Manage high availability groups].
 
 . If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 6: Configure load balancer endpoint>>.
 
@@ -118,7 +118,7 @@ StorageGRID uses a load balancer to manage the workload from client applications
 
 You can use the StorageGRID Load Balancer service, which exists on all Gateway and Admin Nodes, or you can connect to an external (third-party) load balancer. Using the StorageGRID load balancer is recommended.
 
-For details about this task, see xref:managing-load-balancing.adoc[Considerations for load balancing].
+For details about this task, see link:managing-load-balancing.html[Considerations for load balancing].
 
 To use the StorageGRID Load Balancer service, select the *StorageGRID load balancer* tab and then create or select the load balancer endpoint you want to use. To use an external load balancer, select the *External load balancer* tab and provide details about the system you have already configured. 
 
@@ -142,7 +142,7 @@ To use the StorageGRID Load Balancer service, select the *StorageGRID load balan
 | The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
 
 *Note:* Ports used by other grid services are not permitted. See the 
-xref:../network/network-port-reference.adoc[Network port reference].
+link:../network/network-port-reference.html[Network port reference].
 
 | Client type
 | Must be *S3*.
@@ -199,10 +199,10 @@ xref:../network/network-port-reference.adoc[Network port reference].
 | Use this option to upload a CA-signed server certificate, certificate private key, and optional CA bundle.
 
 | Generate certificate
-| Use this option to generate a self-signed certificate. See xref:configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
+| Use this option to generate a self-signed certificate. See link:configuring-load-balancer-endpoints.html[Configure load balancer endpoints] for details of what to enter.
 
 | Use StorageGRID S3 and Swift certificate
-| Use this option only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates] for details. 
+| Use this option only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See link:configuring-custom-server-certificate-for-storage-node.html[Configure S3 and Swift API certificates] for details. 
 
 |===
 
@@ -256,8 +256,8 @@ A bucket is a container used to store a tenant's objects and object metadata. Al
 
 You can create a new tenant for this S3 application to use. Optionally, you can also create a bucket for the new tenant. Finally, you can allow the wizard to create the S3 access keys for the tenant's root user.
 
-For details about this task, see xref:creating-tenant-account.adoc[Create tenant account] and 
-xref:../tenant/creating-s3-bucket.adoc[Create S3 bucket].
+For details about this task, see link:creating-tenant-account.html[Create tenant account] and 
+link:../tenant/creating-s3-bucket.html[Create S3 bucket].
 
 . Select *Create tenant*.
 
@@ -293,24 +293,24 @@ Some of these permissions have additional requirements. For details, select the 
 | Permission | If selected...
 
 | Allow platform services
-| The tenant can use platform services such as CloudMirror. See xref:manage-platform-services-for-tenants.adoc[Manage platform services for S3 tenant accounts].
+| The tenant can use platform services such as CloudMirror. See link:manage-platform-services-for-tenants.html[Manage platform services for S3 tenant accounts].
 
 | Use own identity source 
-| The tenant can configure and manage its own identity source for federated groups and users. This option is disabled if you have xref:configuring-sso.adoc[configured SSO] for your StorageGRID system.
+| The tenant can configure and manage its own identity source for federated groups and users. This option is disabled if you have link:configuring-sso.html[configured SSO] for your StorageGRID system.
 
 | Allow S3 Select
-| The tenant can issue S3 SelectObjectContent API requests to filter and retrieve object data. See xref:manage-s3-select-for-tenant-accounts.adoc[Manage S3 Select for tenant accounts].
+| The tenant can issue S3 SelectObjectContent API requests to filter and retrieve object data. See link:manage-s3-select-for-tenant-accounts.html[Manage S3 Select for tenant accounts].
 
 *Important*: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
 
 | Use grid federation connection
-| The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See xref:grid-federation-manage-tenants.adoc[Manage the permitted tenants for grid federation].
+| The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See link:grid-federation-manage-tenants.html[Manage the permitted tenants for grid federation].
 
 |===
 
 . If you selected *Use grid federation connection*, select one of the available grid federation connections.
 
-. Define root access for the tenant account, based on whether your StorageGRID system uses xref:using-identity-federation.adoc[identity federation], xref:configuring-sso.adoc[single sign-on (SSO)], or both. 
+. Define root access for the tenant account, based on whether your StorageGRID system uses link:using-identity-federation.html[identity federation], link:configuring-sso.html[single sign-on (SSO)], or both. 
 +
 [cols="1a,2a" options="header"]
 |===
@@ -377,7 +377,7 @@ Information lifecycle management (ILM) rules control the placement, duration, an
 
 . Review the information on the page.
 
-. If you want to add specific instructions for the objects belonging to the new tenant or bucket, create a new rule and a new policy. See xref:../ilm/access-create-ilm-rule-wizard.adoc[Create ILM rule] and xref:../ilm/creating-ilm-policy.adoc[Create ILM policy: Overview].
+. If you want to add specific instructions for the objects belonging to the new tenant or bucket, create a new rule and a new policy. See link:../ilm/access-create-ilm-rule-wizard.html[Create ILM rule] and link:../ilm/creating-ilm-policy.html[Create ILM policy: Overview].
 
 . Select *I have reviewed these steps and understand what I need to do*.
 

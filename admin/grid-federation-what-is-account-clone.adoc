@@ -26,7 +26,7 @@ After creating a link:grid-federation-overview.html[grid federation connection],
 The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
 
 .Learn more
-xref:grid-federation-manage-tenants.adoc[Manage permitted tenants for grid federation]
+link:grid-federation-manage-tenants.html[Manage permitted tenants for grid federation]
 
 == How are groups, users, and S3 access keys cloned?
 
@@ -46,7 +46,7 @@ As shown in the figure:
 
 * For security reasons, local user passwords are not cloned to the destination grid.
 +
-IMPORTANT: If a local user needs to sign in to Tenant Manager on the destination grid, a user with Root access permission must sign in to Tenant Manager on the destination grid to add a password for the user on that grid. See xref:../tenant/managing-local-users.adoc[Manage local users].
+IMPORTANT: If a local user needs to sign in to Tenant Manager on the destination grid, a user with Root access permission must sign in to Tenant Manager on the destination grid to add a password for the user on that grid. See link:../tenant/managing-local-users.html[Manage local users].
 
 * Assuming the requirements for <<account-clone-sso,single sign-on>> and <<account-clone-identity-federation,identity federation>> have been met, federated groups that are created (imported) for the tenant on the source grid are automatically cloned to the tenant on the destination grid. Both groups have the same access mode, group permissions and S3 group policy. Users in the imported group can sign in to either grid.
 
@@ -57,7 +57,7 @@ For security reasons, StorageGRID does not automatically clone S3 access keys fr
 image:../media/grid-federation-s3-access-key.png[image showing that s3 access keys can be optionally cloned from source grid to destination grid]
 
 .Learn more
-xref:../tenant/grid-federation-clone-keys-with-api.adoc[Clone S3 access keys using the API].
+link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
 
 === Groups and users added to destination grid are not cloned
 
@@ -75,17 +75,17 @@ image:../media/grid-federation-account-clone-edit-delete.png[image showing that 
 
 .Learn more
 
-xref:../tenant/grid-federation-account-clone.adoc[Clone account information]
+link:../tenant/grid-federation-account-clone.html[Clone account information]
 
 == [[account-clone-sso]]Considerations and requirements for SSO
 
 If either StorageGRID system in the connection uses single sign-on (SSO), both grids must use SSO. The grid admins for the tenant's source and destination grids must perform these steps before creating permitted tenant accounts:
 
-. Configure the same identity source for both grids. See xref:using-identity-federation.adoc[Use identity federation].
+. Configure the same identity source for both grids. See link:using-identity-federation.html[Use identity federation].
 
-. Configure the same SSO identity provider (IdP) for both grids. See xref:configuring-sso.adoc[Configure single sign-in].
+. Configure the same SSO identity provider (IdP) for both grids. See link:configuring-sso.html[Configure single sign-in].
 
-. xref:managing-admin-groups.adoc[Create the same admin group] on both grids by importing the same federated group.
+. link:managing-admin-groups.html[Create the same admin group] on both grids by importing the same federated group.
 +
 When you create the tenant, you will select this group to have the initial Root access permission for both the source and destination tenant accounts. 
 +
@@ -99,9 +99,9 @@ Identity federation can be configured for the entire grid, or each tenant can be
 
 If either grid in the connection has identity federation configured, both grids must use identity federation. The grid admins for the tenant's source and destination grids must perform these steps before creating tenant accounts:
 
-. Configure the same identity source for both grids. See xref:using-identity-federation.adoc[Use identity federation].
+. Configure the same identity source for both grids. See link:using-identity-federation.html[Use identity federation].
 
-. Optionally, xref:managing-admin-groups.adoc[create the same admin group] on both grids by importing the same federated group.
+. Optionally, link:managing-admin-groups.html[create the same admin group] on both grids by importing the same federated group.
 +
 When you create the tenant, you can select this group to have initial Root access permission for both the source and destination tenant accounts, or you can specify a password for the local root user.
 +

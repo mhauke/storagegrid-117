@@ -13,6 +13,8 @@ A storage pool is a logical grouping of Storage Nodes or Archive Nodes.
 
 When you install StorageGRID, one storage pool per site is automatically created. You can configure additional storage pools as needed for your storage requirements.
 
+NOTE: Support for Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality.
+
 Storage pools have two attributes:
 
 * *Storage grade*: For Storage Nodes, the relative performance of backing storage.

@@ -15,19 +15,19 @@ NOTE: Support for Swift client applications has been deprecated and will be remo
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
 * You have the Root access permission.
 
-* You have reviewed the xref:managing-load-balancing.adoc[considerations for load balancing].
+* You have reviewed the link:managing-load-balancing.html[considerations for load balancing].
 
-* If you previously remapped a port you intend to use for the load balancer endpoint, you have xref:../maintain/removing-port-remaps.adoc[removed the port remap].
+* If you previously remapped a port you intend to use for the load balancer endpoint, you have link:../maintain/removing-port-remaps.html[removed the port remap].
 
-* You have created any high availability (HA) groups you plan to use. HA groups are recommended, but not required. See xref:managing-high-availability-groups.adoc[Manage high availability groups].
+* You have created any high availability (HA) groups you plan to use. HA groups are recommended, but not required. See link:managing-high-availability-groups.html[Manage high availability groups].
 
-* If the load balancer endpoint will be used by xref:../admin/manage-s3-select-for-tenant-accounts.adoc[S3 tenants for S3 Select], it must not use the IP addresses or FQDNs of any bare-metal nodes. Only SG100 or SG1000 appliances and VMware-based software nodes are allowed for the load balancer endpoints used for S3 Select.
+* If the load balancer endpoint will be used by link:../admin/manage-s3-select-for-tenant-accounts.html[S3 tenants for S3 Select], it must not use the IP addresses or FQDNs of any bare-metal nodes. Only SG100 or SG1000 appliances and VMware-based software nodes are allowed for the load balancer endpoints used for S3 Select.
 
-*  You have configured any VLAN interfaces you plan to use. See xref:configure-vlan-interfaces.adoc[Configure VLAN interfaces].
+*  You have configured any VLAN interfaces you plan to use. See link:configure-vlan-interfaces.html[Configure VLAN interfaces].
 
 * If you are creating an HTTPS endpoint (recommended), you have the information for the server certificate.
 +
@@ -38,7 +38,7 @@ NOTE: Changes to an endpoint certificate can take up to 15 minutes to be applied
 ** To generate a certificate, you need all of the domain names and IP addresses that S3 or Swift clients will use to access the endpoint. You must also know the subject (Distinguished Name).
 
 ** If you want to use the StorageGRID S3 and Swift API certificate (which can also be used for connections directly to Storage Nodes), you have already replaced the default certificate with a custom certificate signed by an external certificate authority. See 
-xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates].
+link:../admin/configuring-custom-server-certificate-for-storage-node.html[Configure S3 and Swift API certificates].
 
 
 == Create a load balancer endpoint
@@ -139,7 +139,7 @@ The certificate secures the connections between S3 and Swift clients and the Loa
 * *Use StorageGRID S3 and Swift certificate*. Select this option if you want to use the global S3 and Swift API certificate, which can also be used for connections directly to Storage Nodes. 
 +
 You cannot select this option unless you have replaced the default S3 and Swift API certificate, which is signed by the grid CA, with a custom certificate signed by an external certificate authority. See
-xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates].
+link:../admin/configuring-custom-server-certificate-for-storage-node.html[Configure S3 and Swift API certificates].
 
 . If you are not using the StorageGRID S3 and Swift certificate, upload or generate the certificate.
 //tabbed blocks start here

@@ -11,7 +11,7 @@ summary: 'The StorageGRID system supports up to three network interfaces per gri
 [.lead]
 The StorageGRID system supports up to three network interfaces per grid node, allowing you to configure the networking for each individual grid node to match your security and access requirements.
 
-For detailed information about StorageGRID networks, see the xref:../network/storagegrid-network-types.adoc[StorageGRID network types].
+For detailed information about StorageGRID networks, see the link:../network/storagegrid-network-types.html[StorageGRID network types].
 
 == Guidelines for Grid Network
 
@@ -30,7 +30,7 @@ The Admin Network is typically used for administrative tasks (trusted employees 
 
 If you are using the Admin Network, follow these guidelines:
 
-* Block all internal traffic ports on the Admin Network. See the xref:../network/internal-grid-node-communications.adoc[list of internal ports].
+* Block all internal traffic ports on the Admin Network. See the link:../network/internal-grid-node-communications.html[list of internal ports].
 * If untrusted clients can access the Admin Network, block access to StorageGRID on the Admin Network with an external firewall.
 
 == Guidelines for Client Network
@@ -39,5 +39,5 @@ The Client Network is typically used for tenants and for communicating with exte
 
 If you are using the Client Network, follow these guidelines:
 
-* Block all internal traffic ports on the Client Network. See the xref:../network/internal-grid-node-communications.adoc[list of internal ports].
-* Accept inbound client traffic only on explicitly configured endpoints. See the information about xref:../admin/manage-firewall-controls.adoc[managing firewall controls].
+* Block all internal traffic ports on the Client Network. See the link:../network/internal-grid-node-communications.html[list of internal ports].
+* Accept inbound client traffic only on explicitly configured endpoints. See the information about link:../admin/manage-firewall-controls.html[managing firewall controls].

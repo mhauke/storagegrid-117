@@ -18,9 +18,9 @@ image:../media/grid-federation-create-connection.png[graphic overview of steps t
 
 .What you'll need
 
-* You have reviewed the xref:grid-federation-overview.adoc[considerations and requirements] for configuring grid federation connections. 
+* You have reviewed the link:grid-federation-overview.html[considerations and requirements] for configuring grid federation connections. 
 * If you plan to use fully qualified domain names (FQDNs) for each grid instead of IP or VIP addresses, you know which names to use and you have confirmed that the DNS server for each grid has the appropriate entries.
-* You are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * Whoever adds the configuration has Root access permission and the provisioning passphrase for the first grid.
 * Whoever completes the configuration has Root access permission and the provisioning passphrase for the second grid. 
 
@@ -113,7 +113,7 @@ In general, use the same number of days for the certificates on both sides of th
 +
 The certificates are generated and the connection is tested. If the connection is valid, a success message appears and the new connection is listed on the Grid federation page. The *Connection status* will be *Connected*.
 +
-If an error message appears, address any issues. See xref:grid-federation-troubleshoot.adoc[Troubleshoot grid federation errors].
+If an error message appears, address any issues. See link:grid-federation-troubleshoot.html[Troubleshoot grid federation errors].
 
 . Go to the Grid federation page on the first grid and refresh the browser. Confirm that the *Connection status* is now *Connected*.
 
@@ -123,5 +123,5 @@ If you edit this connection, a new verification file will be created. The origin
 
 .After you finish
 
-Review the considerations for xref:grid-federation-manage-tenants.adoc[managing permitted tenants]. Then, create one or more new tenant accounts, assign the *Use grid federation connection* permission, and select the new connection. 
+Review the considerations for link:grid-federation-manage-tenants.html[managing permitted tenants]. Then, create one or more new tenant accounts, assign the *Use grid federation connection* permission, and select the new connection. 
 

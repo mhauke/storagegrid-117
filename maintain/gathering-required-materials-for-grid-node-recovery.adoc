@@ -24,7 +24,7 @@ Before performing maintenance procedures, you must ensure you have the necessary
 
 * Network port
 * SSH client (for example, PuTTY)
-* xref:../admin/web-browser-requirements.adoc[Supported web browser]
+* link:../admin/web-browser-requirements.html[Supported web browser]
 
 |Recovery Package `.zip` file
 |Obtain a copy of the most recent Recovery Package `.zip` file:
@@ -52,7 +52,7 @@ For the current supported versions of your platform, see the https://imt.netapp.
 .[[download-and-extract-install-files-recover]]
 == Download and extract StorageGRID installation files
 
-Download the software and extract the files, unless you are xref:recovering-from-storage-node-failures.adoc[recovering failed storage volumes on a Storage Node].
+Download the software and extract the files, unless you are link:recovering-from-storage-node-failures.html[recovering failed storage volumes on a Storage Node].
 
 You must use the version of StorageGRID that is currently running on the grid.
 
@@ -95,17 +95,17 @@ include::../_include/installation-archives-vmware.adoc[]
 +
 The paths listed in the step for each platform are relative to the top-level directory installed by the archive file.
 
-. If you are recovering a xref:../rhel/index.adoc[Red Hat Enterprise Linux or CentOS system], select the appropriate files.
+. If you are recovering a link:../rhel/index.html[Red Hat Enterprise Linux or CentOS system], select the appropriate files.
 +
 include::../_include/installation-files-rhel.adoc[]
 
 [start=10]
-. If you are recovering an xref:../ubuntu/index.adoc[Ubuntu or Debian system], select the appropriate files.
+. If you are recovering an link:../ubuntu/index.html[Ubuntu or Debian system], select the appropriate files.
 +
 include::../_include/installation-files-ubuntu.adoc[]
 
 [start=11]
-. If you are recovering a xref:../vmware/index.adoc[VMware system], select the appropriate files.
+. If you are recovering a link:../vmware/index.html[VMware system], select the appropriate files.
 +
 include::../_include/installation-files-vmware.adoc[]
 

@@ -13,12 +13,12 @@ You can use this simple example policy as a starting point for your own ILM rule
 
 This example assumes you are designing the ILM rules and an ILM policy for a StorageGRID system that has four Storage Nodes at a single data center in Denver, Colorado. The FabricPool data in this example uses a bucket named `fabricpool-bucket`.
 
-CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate the proposed policy to confirm it will work as intended to protect content from loss. To learn more, see xref:../ilm/index.adoc[Manage objects with ILM].
+CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate the proposed policy to confirm it will work as intended to protect content from loss. To learn more, see link:../ilm/index.html[Manage objects with ILM].
 
 
 .What you'll need
-* You have reviewed the xref:best-practices-ilm.adoc[best practices for using ILM with FabricPool data].
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have reviewed the link:best-practices-ilm.html[best practices for using ILM with FabricPool data].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the ILM or Root access permission.
 * If you upgraded to StorageGRID 11.7 from a previous StorageGRID version, you have configured the storage pool you will use. In general, you should create a storage pool for each StorageGRID site. 
 +

@@ -29,7 +29,7 @@ As you begin using grid federation, it might be helpful to understand the simila
 . Add new tenant groups and users, which are also cloned.
 . Create corresponding buckets on each grid and enable cross-grid replication to occur in one or both directions.
 
-| . A tenant user xref:../tenant/configuring-cloudmirror-replication.adoc[configures CloudMirror replication] by defining a CloudMirror endpoint (IP address, credentials, and so on) using the Tenant Manager or the S3 API. 
+| . A tenant user link:../tenant/configuring-cloudmirror-replication.html[configures CloudMirror replication] by defining a CloudMirror endpoint (IP address, credentials, and so on) using the Tenant Manager or the S3 API. 
 . Any bucket owned by that tenant account can be configured to point to the CloudMirror endpoint. 
 
 | Who is responsible for setting it up?
@@ -87,7 +87,7 @@ Similarly, objects in the destination bucket can be deleted without affecting th
 
 
 | How do you access objects after a disaster (StorageGRID system not operational)?
-| Refer to xref:grid-federation-how-disaster-recovery-is-performed.adoc[How disaster recovery is performed by technical support].
+| Refer to link:grid-federation-how-disaster-recovery-is-performed.html[How disaster recovery is performed by technical support].
 | The object copies in the CloudMirror destination are independent of StorageGRID, so they can be accessed directly before the StorageGRID nodes are recovered.
 
 |===

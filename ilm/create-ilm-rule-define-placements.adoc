@@ -35,13 +35,13 @@ image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Step 2]
 |Last access time
 |The time when the object was last retrieved (read or viewed).
 
-*Note:* To use this option, updates to Last access time must be enabled for the S3 bucket or Swift container. See xref:using-last-access-time-in-ilm-rules.adoc[Use Last access time in ILM rules].
+*Note:* To use this option, updates to Last access time must be enabled for the S3 bucket or Swift container. See link:using-last-access-time-in-ilm-rules.html[Use Last access time in ILM rules].
 
 |User defined creation time
 |A time specified in user-defined metadata.
 
 |Noncurrent time
-|"`Noncurrent time`" is automatically selected if you selected *Yes* for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`" in xref:create-ilm-rule-enter-details.adoc[Step 1 of the Create an ILM rule wizard].
+|"`Noncurrent time`" is automatically selected if you selected *Yes* for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`" in link:create-ilm-rule-enter-details.html[Step 1 of the Create an ILM rule wizard].
 |===
 +
 NOTE: If you want to create a compliant rule, you must select *Ingest time*.
@@ -54,7 +54,7 @@ For example, you might want to specify where to store objects for the first year
 .. From the *Store objects by* drop-down list, select *replicating*.
 .. Select the number of copies you want to make.
 +
-A warning appears if you change the number of copies to 1. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. See xref:why-you-should-not-use-single-copy-replication.adoc[Why you should not use single-copy replication].
+A warning appears if you change the number of copies to 1. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. See link:why-you-should-not-use-single-copy-replication.html[Why you should not use single-copy replication].
 +
 To avoid the risk, do one or more of the following:
 
@@ -74,7 +74,7 @@ NOTE: The *ILM placement unachievable* alert is triggered to indicate that the I
 
   *** The number of copies cannot be greater than the number of storage pools.
   *** If the number of copies equals the number of storage pools, one copy of the object is stored in each storage pool.
-  *** If the number of copies is less than the number of storage pools, the system distributes the copies to keep disk usage among the pools balanced, while ensuring that no site gets more than one copy of an object.
+  *** If the number of copies is less than the number of storage pools, one copy is stored at the ingest site, and then the system distributes the remaining copies to keep disk usage among the pools balanced, while ensuring that no site gets more than one copy of an object.
   *** If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. For this reason, do not specify the default All Storage Nodes storage pool and another storage pool.
 
 . If you want to create an erasure-coded copy:
@@ -133,8 +133,8 @@ The Rule analysis section of the Retention diagram states:
 * StorageGRID site-loss protection will apply for the duration of this rule.
 * Objects processed by this rule will be deleted after Day 4015.
 +
-NOTE: See xref:using-multiple-storage-pools-for-cross-site-replication.adoc[Enable site-loss protection.]
+NOTE: See link:using-multiple-storage-pools-for-cross-site-replication.html[Enable site-loss protection.]
 +
 image::../media/ilm_rule_retention_diagram.png[ILM Rule Retention Diagram]
 
-. Select *Continue*. xref:create-ilm-rule-select-ingest-behavior.adoc[Step 3 (Select ingest behavior)] of the Create an ILM rule wizard appears.
+. Select *Continue*. link:create-ilm-rule-select-ingest-behavior.html[Step 3 (Select ingest behavior)] of the Create an ILM rule wizard appears.

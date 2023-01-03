@@ -13,9 +13,9 @@ If an S3 tenant account needs to comply with regulatory requirements when saving
 
 .What you'll need
 * You have the Root access permission.
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have reviewed the S3 Object Lock workflow, and you understand the considerations.
-* You have confirmed that the default rule in the active ILM policy is compliant. See xref:creating-default-ilm-rule.adoc[Create a default ILM rule] for details.
+* You have confirmed that the default rule in the active ILM policy is compliant. See link:creating-default-ilm-rule.html[Create a default ILM rule] for details.
 
 
 .About this task
@@ -40,10 +40,10 @@ A confirmation dialog box appears and reminds you that you cannot disable S3 Obj
 When you select *OK*:
 
  ** If the default rule in the active ILM policy is compliant, S3 Object Lock is now enabled for the entire grid and cannot be disabled.
- ** If the default rule is not compliant, an error appears. You must create and activate a new ILM policy that includes a compliant rule as its default rule. Select *OK*. Then, create a new proposed policy, simulate it, and activate it. See xref:creating-ilm-policy.adoc[Create ILM policy] for instructions.
+ ** If the default rule is not compliant, an error appears. You must create and activate a new ILM policy that includes a compliant rule as its default rule. Select *OK*. Then, create a new proposed policy, simulate it, and activate it. See link:creating-ilm-policy.html[Create ILM policy] for instructions.
 
 .After you finish
 
-After you enable the global S3 Object Lock setting, you might want to xref:creating-proposed-ilm-policy.adoc[create a new ILM policy]. After the setting is enabled, the ILM policy can optionally include both a compliant default rule and a non-compliant default rule. For example, you might want to use a non-compliant rule that does not have filters for objects in buckets that do not have S3 Object Lock enabled.
+After you enable the global S3 Object Lock setting, you might want to link:creating-proposed-ilm-policy.html[create a new ILM policy]. After the setting is enabled, the ILM policy can optionally include both a compliant default rule and a non-compliant default rule. For example, you might want to use a non-compliant rule that does not have filters for objects in buckets that do not have S3 Object Lock enabled.
 
 

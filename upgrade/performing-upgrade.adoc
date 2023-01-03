@@ -16,7 +16,7 @@ You have reviewed all of the considerations and completed all of the planning an
 
 == Access StorageGRID Upgrade page
 
-. Sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+. Sign in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 . Select *MAINTENANCE* > *System* > *Software update*.
 
 . From the StorageGRID upgrade tile, select *Upgrade*.
@@ -174,7 +174,7 @@ NOTE: When an appliance node reaches this stage, the StorageGRID Appliance Insta
 
 When all grid nodes have completed the upgrade stages, the *Upgrade other grid nodes* task is shown as Completed. The remaining upgrade tasks are performed automatically in the background.
 
-. As soon as the *Enable features* task is complete (which occurs quickly), you can start using the xref:whats-new.adoc[new features] in the upgraded StorageGRID version.
+. As soon as the *Enable features* task is complete (which occurs quickly), you can start using the link:whats-new.html[new features] in the upgraded StorageGRID version.
 
 . During the *Upgrade database* task, the upgrade process checks each node to verify that the Cassandra database does not need to be updated.
 +

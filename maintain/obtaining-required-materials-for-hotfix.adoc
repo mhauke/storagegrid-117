@@ -18,12 +18,12 @@ Before applying a hotfix, you must obtain all required materials.
 |You must download the StorageGRID hotfix file.
 
 |* Network port
-* xref:../admin/web-browser-requirements.adoc[Supported web browser]
+* link:../admin/web-browser-requirements.html[Supported web browser]
 * SSH client (for example, PuTTY)
 |
 
 |Recovery Package (`.zip`) file
-|Before applying a hotfix, xref:downloading-recovery-package.adoc[download the most recent Recovery Package file] in case any problems occur during the hotfix.Then, after the hotfix has been applied, download a new copy of the Recovery Package file and save it in a safe location. The updated Recovery Package file allows you to restore the system if a failure occurs.
+|Before applying a hotfix, link:downloading-recovery-package.html[download the most recent Recovery Package file] in case any problems occur during the hotfix.Then, after the hotfix has been applied, download a new copy of the Recovery Package file and save it in a safe location. The updated Recovery Package file allows you to restore the system if a failure occurs.
 
 m|Passwords.txt file
 |Optional and used only if you are applying a hotfix manually using the SSH client. The `Passwords.txt` file is part of the Recovery Package `.zip` file.
@@ -37,4 +37,4 @@ m|Passwords.txt file
 
 .Related information
 
-xref:downloading-hotfix-file.adoc[Download hotfix file]
+link:downloading-hotfix-file.html[Download hotfix file]

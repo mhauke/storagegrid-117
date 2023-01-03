@@ -19,7 +19,7 @@ This approach allows you to use the primary Admin Node to monitor the status of 
 
 NOTE: If a single host includes more than one grid node, do not shut down the host until you have stopped all of the nodes on that host. If the host includes the primary Admin Node, shut down that host last.
 
-NOTE: If required, you can xref:linux-migrating-grid-node-to-new-host.adoc[migrate nodes from one Linux host to another] to perform host maintenance without impacting the functionality or availability of your grid.
+NOTE: If required, you can link:linux-migrating-grid-node-to-new-host.html[migrate nodes from one Linux host to another] to perform host maintenance without impacting the functionality or availability of your grid.
 
 .Steps
 
@@ -75,8 +75,8 @@ The StorageGRID grid has now been shut down.
 
 .Related information
 
-xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
+link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
 
-xref:../sg6000/index.adoc[SG6000 storage appliances]
+link:../sg6000/index.html[SG6000 storage appliances]
 
-xref:../sg5700/index.adoc[SG5700 storage appliances]
+link:../sg5700/index.html[SG5700 storage appliances]

@@ -36,7 +36,7 @@ You can assign the following permissions to a group. Note that S3 tenants and Sw
 *Note:* Swift users must have the Swift Administrator permission to perform any operations with the Swift REST API.
 
 | Manage your own S3 credentials
-| S3 tenants only. Allows users to create and remove their own S3 access keys. Users who do not have this permission do not see the *STORAGE (S3)* > *My S3 access keys* menu option.
+| Allows users to create and remove their own S3 access keys. Users who do not have this permission do not see the *STORAGE (S3)* > *My S3 access keys* menu option.
 
 | Manage all buckets
 |
@@ -49,13 +49,13 @@ Users who do not have this permission do not see the *Buckets* menu option.
 *Note:* You can only assign the Manage all buckets permission to Swift groups from the Tenant Management API. You cannot assign this permission to Swift groups using the Tenant Manager.
 
 | Manage endpoints
-| S3 tenants only. Allows users to use the Tenant Manager or the Tenant Management API to create or edit endpoints, which are used as the destination for StorageGRID platform services.
+| Allows users to use the Tenant Manager or the Tenant Management API to create or edit platform service endpoints, which are used as the destination for StorageGRID platform services.
 
 Users who do not have this permission do not see the *Platform services endpoints* menu option.
 
+| Manage objects with S3 Console
+| When combined with the Manage all buckets permission, allows users to access the Experimental S3 Console and use it to manage objects.
+
+Users who do not have both of these permissions do not see the *Experimental S3 Console* link on the Buckets page.
+
 |===
-.Related information
-
-xref:../s3/index.adoc[Use S3 REST API]
-
-xref:../swift/index.adoc[Use Swift REST API]
