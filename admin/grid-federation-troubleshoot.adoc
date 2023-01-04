@@ -109,7 +109,7 @@ An error in this column might occur for one of these reasons:
 * The destination bucket was deleted.
 * The destination bucket was re-created by a different account.	
 * The destination bucket has versioning suspended.
-* The destination bucket was re-created by same account but is now unversioned.
+* The destination bucket was re-created by the same account but is now unversioned.
 
 .Recommended action
 If an error message appears in the *Last error* column, follow these steps:
@@ -118,22 +118,13 @@ If an error message appears in the *Last error* column, follow these steps:
 . Select the connection or tenant account from the table.
 . Select *Clear error*.
 . Select *Yes* to clear the message and update the system's status.
-. Ingest a new object into the bucket and confirm that the error message does not reappear.
+. Ingest a new object into the bucket listed in the message and confirm that the error message does not reappear for that bucket.
 +
-NOTE: If the underlying issue still exists, the error will reappear when new objects are ingested.
+NOTE: If the underlying issue still exists, the error will appear again 5 to 6 minutes after the new object is ingested.
 
+. Repeat these steps if the error reappears or if an error occurs for a different tenant or bucket.
 
-
-
-
-
-
-
-
-
-
-
-
+. To retry replication of objects that failed to replicate, see link:grid-federation-retry-failed-replication.html[Identify and retry failed replication operations].  
 
 === Cross-grid replication permanent failure alert
 
