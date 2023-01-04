@@ -22,7 +22,7 @@ Determine which clients use objects that are larger than 5 GiB, so you can notif
 . Go to *Configuration* > *Audit and syslog server*.
  
 . If Client Writes are Normal, access the audit log:
-.. Enter: `ssh admin@primary_Admin_Node_IP`
+.. Enter `ssh admin@primary_Admin_Node_IP`
 .. Enter the password listed in the `Passwords.txt` file.
 .. Enter the following command to switch to root: `su -`
 .. Enter the password listed in the `Passwords.txt` file.
@@ -42,7 +42,9 @@ CSIZ=Size (bytes)
 
 . Or, use the tenant ID from the alert to identify the tenant:
 .. Go to *Support* > *Logs*. Collect application logs for the Storage Node in the alert. Specify 15 minutes before and after the alert.
-.. Extract the file and go to `bycast.log` (`/GID<grid_id>_<time_stamp>/<site_node>/<time_stamp>/grid/bycast.log`).
+.. Extract the file and go to `bycast.log`:
++
+`/GID<grid_id>_<time_stamp>/<site_node>/<time_stamp>/grid/bycast.log`
 .. Search the log for `method=PUT` and identify the client in the `clientIP` field.
  
 . Inform clients that the maximum PUT Object size is 5 GiB.
