@@ -1,0 +1,52 @@
+---
+permalink: troubleshoot/troubleshoot-s3-put-object-size-too-large-alert.html
+sidebar: sidebar
+keywords: how to troubleshoot S3 PUT Object size too large alert, S3 PUT Object size
+summary: 'The S3 PUT Object size too large alert is triggered if a client attempts a PUT Object operation that exceeds the S3 size limit of 5 GiB.'
+---
+= Troubleshoot S3 PUT Object size too large alert
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The S3 PUT Object size too large alert is triggered if a client attempts a PUT Object operation that exceeds the S3 size limit of 5 GiB.
+
+.What you'll need
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You have link:../admin/admin-group-permissions.html[specific access permissions].
+
+Determine which clients use objects that are larger than 5 GiB, so you can notify them.
+
+.Steps
+
+. Go to *Configuration* > *Audit and syslog server*.
+ 
+. If Client Writes are Normal, access the audit log:
+.. Enter: `ssh admin@primary_Admin_Node_IP`
+.. Enter the password listed in the `Passwords.txt` file.
+.. Enter the following command to switch to root: `su -`
+.. Enter the password listed in the `Passwords.txt` file.
++
+When you are logged in as root, the prompt changes from `$` to `#`.
+.. Enter `cd /var/local/audit/export`
+.. Enter `grep "CSIZ(UI64):[0-9]*[5-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" audit.log |grep SPUT`
+.. Identify who uses objects > 5 GiB.
++
+----
+SAIP=Source IP
+S3AI=Tenant ID
+S3BK=Bucket
+S3KY=Object 
+CSIZ=Size (bytes)
+----
+
+. Or, use the tenant ID from the alert to identify the tenant:
+.. Go to *Support* > *Logs*. Collect application logs for the Storage Node in the alert. Specify 15 minutes before and after the alert.
+.. Extract the file and go to `bycast.log` (`/GID<grid_id>_<time_stamp>/<site_node>/<time_stamp>/grid/bycast.log`).
+.. Search the log for `method=PUT` and identify the client in the `clientIP` field.
+ 
+. Inform clients that the maximum PUT Object size is 5 GiB.
+ 
+. Use multipart uploads for objects > 5 GiB.
+ 
+. Ignore the alert for one week if the application has been changed.
