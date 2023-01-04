@@ -46,7 +46,7 @@ Two types of data objects can be restored:
 ** If the only remaining copy of an object is in a Cloud Storage Pool, StorageGRID must issue multiple requests to the Cloud Storage Pool endpoint to restore object data. 
 ** If the only remaining copy of an object is on an Archive Node, object data is retrieved from the Archive Node. Restoring object data to a Storage Node from an Archive Node takes longer than restoring object copies from other Storage Nodes.
 
-NOTE: Replicated data restoration is dependent on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
+NOTE: Volume restoration is dependent on the availability of resources where object copies are stored. Progress of volume restoration is nonlinear and might take days or weeks to complete.
 
 == Restore failed volume or node
 
@@ -110,5 +110,7 @@ If multiple restoration jobs have failed, selecting *Retry* starts the most rece
 == [[view-restoration-history]]View restoration history
 
 The Restoration history tab shows information about all volume restorations that have successfully completed.
+
+NOTE: Sizes are not applicable for replicated objects and display only for restorations that contain Erasure coded (EC) data objects.
 
 image::../media/vol-restore-restore-history.png[Volume restoration - Restoration history tab]
