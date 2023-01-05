@@ -99,7 +99,7 @@ When link:../monitor/grid-federation-monitor-connections.html[viewing a grid fed
 image:../media/grid-federation-last-error.png[Screenshot showing a message in the Last error column of a grid federation connection]
 
 .Details
-For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when a tenant's bucket data was being replicated to the other grid. This column only shows the last cross-grid replication error to occur; previous errors that might have occurred for other buckets will not be shown.
+For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when a tenant's data was being replicated to the other grid. This column only shows the last cross-grid replication error to occur; previous errors that might have occurred will not be shown.
 An error in this column might occur for one of these reasons:
 
 * The source object version was not found.
@@ -120,7 +120,7 @@ If an error message appears in the *Last error* column, follow these steps:
 +
 NOTE: To ensure the error message is cleared, wait at least 5 minutes after the timestamp in the message before ingesting a new object.
 +
-IMPORTANT: After you clear an error for one bucket, a new *Last error* might appear if objects are ingested in a different bucket that also has an error. 
+IMPORTANT: After you clear the error, a new *Last error* might appear if objects are ingested in a different bucket that also has an error. 
 
 . To determine if any objects failed to be replicated because of the bucket error, see link:../admin/grid-federation-retry-failed-replication.html[Identify and retry failed replication operations]. 
 
@@ -143,11 +143,9 @@ This alert indicates that tenant objects can't be replicated between the buckets
 
 . For each affected tenant account:
 
-.. Use the instructions in link:../monitor/monitoring-tenant-activity.html[Monitor tenant activity] to confirm that the tenant has not exceeded its quota for this grid.
+.. See the instructions in link:../monitor/monitoring-tenant-activity.html[Monitor tenant activity] to confirm that the tenant has not exceeded its quota on the destination grid for cross-grid replication.
 
-.. As required, increase the quota to allow new objects to be saved.
-
-.. Repeat these steps for the corresponding tenant account on the other grid in the connection.
+.. As required, increase the tenant's quota on the destination grid to allow new objects to be saved.
 	
 . For each affected tenant, sign in to Tenant Manager on both grids, so you can compare the list of buckets.
 
