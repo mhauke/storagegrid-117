@@ -26,6 +26,8 @@ NOTE: S3 Console has not been fully tested and is marked as “experimental.” 
 
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the Root access permission or that has both the Manage all buckets and Manage objects with S3 Console link:tenant-management-permissions.html[permissions].
++
+NOTE: Users who have the Manage objects with S3 Console permission but who do not have the Manage all buckets permission can navigate directly to the Experimental S3 Console.
 * You have created a bucket.
 * You know the user's access key ID and secret access key. Optionally, you have a `.csv` file containing this information. See the link:creating-your-own-s3-access-keys.html[instructions for creating access keys].
 
