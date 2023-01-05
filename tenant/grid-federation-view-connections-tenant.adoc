@@ -27,7 +27,7 @@ The Grid federation connection page appears, and includes a table that summarize
 
 * For each grid federation connection, the *Buckets with cross-grid replication* column lists all tenant buckets that have cross-grid replication enabled. Objects added to these buckets will be replicated to the other grid in the connection.
 
-* For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when bucket data was being replicated to the other grid. This column only shows the last cross-grid replication error to occur; previous errors that might have occurred for other buckets will not be shown.
+* For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when data was being replicated to the other grid. This column only shows the last cross-grid replication error to occur; previous errors that might have occurred will not be shown.
 +
 For example:
 +
@@ -54,7 +54,7 @@ An error in this column might occur for one of these reasons:
 +
 NOTE: To ensure the error message is cleared, wait at least 5 minutes after the timestamp in the message before ingesting a new object.
 +
-IMPORTANT: After you clear an error for one bucket, a new *Last error* might appear after objects are ingested in a different bucket that also has an error. 
+IMPORTANT: After you clear the error, a new *Last error* might appear if objects are ingested in a different bucket that also has an error. 
 
 . To determine if any objects failed to be replicated because of the bucket error, see link:../admin/grid-federation-retry-failed-replication.html[Identify and retry failed replication operations]. 
 
