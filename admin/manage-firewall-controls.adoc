@@ -21,9 +21,9 @@ This tab also provides the option to specify additional ports you want open when
 +
 The settings on this tab override the settings in the Manage external access tab. 
 
-**	A node with an untrusted client network will accept only connections on load balancer endpoint ports configured on that node (global, node interface and node type bound endpoints).
-** Additional ports opened under the Untrusted client network tab are open on all untrusted client networks, even if no load balancer endpoints are configured.
-** Load balancer endpoint ports and selected additional ports _are the only open ports_ on untrusted client networks, regardless of the settings on the Manage external networks tab.
+**	A node with an untrusted Client Network will accept only connections on load balancer endpoint ports configured on that node (global, node interface and node type bound endpoints).
+** Additional ports opened under the Untrusted Client Network tab are open on all untrusted Client Networks, even if no load balancer endpoints are configured.
+** Load balancer endpoint ports and selected additional ports _are the only open ports_ on untrusted Client Networks, regardless of the settings on the Manage external networks tab.
 ** When trusted, all ports opened under the Manage external access tab are accessible, as well as any load balancer endpoints opened on the Client Network.
 
 NOTE: The settings you make on one tab can affect the access changes you make on another tab. Be sure to check the settings on all tabs to ensure your network behaves in the way you expect. 
@@ -104,8 +104,8 @@ After you save your configuration, the Storage Node no longer accepts any incomi
 
 Suppose you want to allow Grid Manager access only on a specific subnet. You would perform the following steps: 
 
-. Attach the client network of your Admin Nodes to the subnet.
-. Use the Untrusted Client Network tab to configure the client network as untrusted.
+. Attach the Client Network of your Admin Nodes to the subnet.
+. Use the Untrusted Client Network tab to configure the Client Network as untrusted.
 . In the *Additional ports open on untrusted Client Network* section of the tab, add port 443 or 8443.
 . Use the Manage external access tab to block all external ports (with or without privileged IPs set for hosts outside that subnet).
 
