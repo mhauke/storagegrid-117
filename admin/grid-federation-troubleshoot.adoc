@@ -139,7 +139,7 @@ This alert indicates that tenant objects can't be replicated between the buckets
 
 . On the Permitted tenants tab, look at the *Last error* column to determine which tenant accounts have errors.
 
-. To learn more about the failure, review the link:../monitor/grid-federation-monitor-connections.html[cross-grid replication metrics].
+. To learn more about the failure, see the instructions in link:../monitor/grid-federation-monitor-connections.html[Monitor grid federation connections] to review the cross-grid replication metrics.
 
 . For each affected tenant account:
 
@@ -156,7 +156,7 @@ This alert indicates that tenant objects can't be replicated between the buckets
 * Both buckets have S3 Object Lock disabled. 
 * Neither bucket is in the *Deleting objects: read-only* state.
 
-. To confirm that the issue was resolved, review the link:../monitor/grid-federation-monitor-connections.html[cross-grid replication metrics] or perform these steps:
+. To confirm that the issue was resolved, see the instructions in link:../monitor/grid-federation-monitor-connections.html[Monitor grid federation connections] to review the cross-grid replication metrics, or perform these steps:
 
 .. Go back to the Grid federation page.
 .. Select the affected tenant, and select *Clear Error* in the *Last error* column.
@@ -185,7 +185,7 @@ This alert indicates that cross-grid replication requests are pending because a 
 
 . If the issue persists, determine if either grid has a *Grid federation connection failure* alert for the same connection or an *Unable to communicate with node* alert for a node. This alert might be resolved when you resolve those alerts.
 
-. To learn more about the failure, review the link:../monitor/grid-federation-monitor-connections.html[cross-grid replication metrics]. 
+. To learn more about the failure, see the instructions in link:../monitor/grid-federation-monitor-connections.html[Monitor grid federation connections] to review the cross-grid replication metrics. 
 
 . If you cannot resolve the alert, contact technical support.
 
