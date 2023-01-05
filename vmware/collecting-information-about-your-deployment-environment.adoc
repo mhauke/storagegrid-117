@@ -54,9 +54,9 @@ You can optionally add trunk or access interfaces to the VM in vCenter after you
 
 The interfaces you add are displayed on the VLAN interfaces page and on the HA groups page in the Grid Manager.
 
-* If you add a trunk interface, configure one or more VLAN interfaces for each new parent interface. See xref:../admin/configure-vlan-interfaces.html[configure VLAN interfaces]. 
+* If you add a trunk interface, configure one or more VLAN interfaces for each new parent interface. See link:../admin/configure-vlan-interfaces.html[configure VLAN interfaces]. 
 
-* If you add an access interface, you must add it directly to HA groups. See xref:../admin/configure-high-availability-group.html[configure high availability groups].
+* If you add an access interface, you must add it directly to HA groups. See link:../admin/configure-high-availability-group.html[configure high availability groups].
 
 
 == Storage volumes for virtual Storage Nodes
@@ -75,6 +75,6 @@ You must collect information to configure your grid:
 
 .Related information
 
-xref:how-grid-nodes-discover-primary-admin-node.adoc[How grid nodes discover the primary Admin Node]
+link:how-grid-nodes-discover-primary-admin-node.html[How grid nodes discover the primary Admin Node]
 
-xref:storage-and-performance-requirements.adoc[Storage and performance requirements]
+link:storage-and-performance-requirements.html[Storage and performance requirements]

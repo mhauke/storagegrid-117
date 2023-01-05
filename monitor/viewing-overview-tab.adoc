@@ -21,7 +21,7 @@ image::../media/nodes_page_overview_tab.png[Nodes Page Overview Tab]
 
 The overview information for a node includes the following:
 
-* *Display name* (shown only if the node has been renamed): The current display name for the node. Use the xref:../maintain/rename-grid-site-node-overview.adoc[Rename grid, site, and nodes] procedure to update this value.
+* *Display name* (shown only if the node has been renamed): The current display name for the node. Use the link:../maintain/rename-grid-site-node-overview.html[Rename grid, site, and nodes] procedure to update this value.
 * *System name*: The name you entered for the node during installation. System names are used for internal StorageGRID operations and cannot be changed.
 * *Type*: The type of node -- Admin Node, primary Admin Node, Storage Node, Gateway Node, or Archive Node.
 * *ID*: The unique identifier for the node, which is also referred to as the UUID.
@@ -43,8 +43,8 @@ NOTE: A node might appear as Unknown during managed shutdown operations. You can
 
 == Alerts
 
-The Alerts section of the Overview tab lists any xref:monitoring-system-health.adoc#view-current-and-resolved-alerts[alerts currently affecting this node that have not been silenced]. Select the alert name to view additional details and recommended actions.
+The Alerts section of the Overview tab lists any link:monitoring-system-health.html#view-current-and-resolved-alerts[alerts currently affecting this node that have not been silenced]. Select the alert name to view additional details and recommended actions.
 
 image::../media/nodes_page_alerts_table.png[Nodes Page Alerts Table]
 
-Alerts are also included for xref:monitoring-system-health.adoc#monitor-node-connection-states[node connection states].
+Alerts are also included for link:monitoring-system-health.html#monitor-node-connection-states[node connection states].

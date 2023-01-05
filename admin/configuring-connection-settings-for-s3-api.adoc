@@ -16,13 +16,13 @@ If you are connecting to an Archive Node using the S3 interface, you must config
 ====
 Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. The *Cloud Tiering - Simple Storage Service (S3)* option is still supported, but you might prefer to implement Cloud Storage Pools instead.
 
-If you are currently using an Archive Node with the *Cloud Tiering - Simple Storage Service (S3)* option, consider migrating your objects to a Cloud Storage Pool. See xref:../ilm/index.adoc[Manage objects with ILM].
+If you are currently using an Archive Node with the *Cloud Tiering - Simple Storage Service (S3)* option, consider migrating your objects to a Cloud Storage Pool. See link:../ilm/index.html[Manage objects with ILM].
 
 ====
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have specific access permissions.
 * You have created a bucket on the target archival storage system:
  ** The bucket is dedicated to a single Archive Node. It cannot be used by other Archive Nodes or other applications.

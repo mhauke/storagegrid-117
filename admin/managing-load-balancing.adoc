@@ -31,14 +31,14 @@ A load balancer endpoint defines the port and the network protocol (HTTPS or HTT
 
 To create a load balancer endpoint, either select *CONFIGURATION* > *Network* > *Load balancer endpoints* or complete the FabricPool and S3 setup wizard. For instructions:
 
-* xref:configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints]
-* xref:use-s3-setup-wizard-steps.adoc[Use the S3 setup wizard]
-* xref:../fabricpool/use-fabricpool-setup-wizard-steps.adoc[Use the FabricPool setup wizard]
+* link:configuring-load-balancer-endpoints.html[Configure load balancer endpoints]
+* link:use-s3-setup-wizard-steps.html[Use the S3 setup wizard]
+* link:../fabricpool/use-fabricpool-setup-wizard-steps.html[Use the FabricPool setup wizard]
 
 === Considerations for the port
 The port for a load balancer endpoint defaults to 10433 for the first endpoint you create, but you can specify any unused external port between 1 and 65535. If you use port 80 or 443, the endpoint will use the Load Balancer service on Gateway Nodes only. These ports are reserved on Admin Nodes. If you use the same port for more than one endpoint, you must specify a different binding mode for each endpoint.
 
-Ports used by other grid services are not permitted. See the xref:../network/network-port-reference.adoc[Network port reference].
+Ports used by other grid services are not permitted. See the link:../network/network-port-reference.html[Network port reference].
 
 === Considerations for the network protocol
 
@@ -58,7 +58,7 @@ You must obtain the following files before you create the load balancer endpoint
 
 * *Generate a self-signed certificate*. 
 
-* *Use the global StorageGRID S3 and Swift certificate*. You must upload or generate a custom version of this certificate before you can select it for the load balancer endpoint. See xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates]. 
+* *Use the global StorageGRID S3 and Swift certificate*. You must upload or generate a custom version of this certificate before you can select it for the load balancer endpoint. See link:../admin/configuring-custom-server-certificate-for-storage-node.html[Configure S3 and Swift API certificates]. 
 
 ==== What values do I need?
 
@@ -74,14 +74,14 @@ Subject DN: /C=Country/ST=State/O=Company,Inc./CN=s3.storagegrid.example.com
 As required, the certificate can use wildcards to represent the fully qualified domain names of all Admin Nodes and Gateway Nodes running the Load Balancer service. For example, `*.storagegrid._example_.com` uses the * wildcard to represent `adm1.storagegrid._example_.com` and `gn1.storagegrid._example_.com`. 
 
 
-If you plan to use S3 virtual hosted-style requests, the certificate must also include an *Alternative Name* entry for each xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[S3 endpoint domain name] you have configured, including any wildcard names. For example:
+If you plan to use S3 virtual hosted-style requests, the certificate must also include an *Alternative Name* entry for each link:../admin/configuring-s3-api-endpoint-domain-names.html[S3 endpoint domain name] you have configured, including any wildcard names. For example:
 
 ----
 Alternative Name: DNS:*.s3.storagegrid.example.com
 ----
 
 
-NOTE: If you use wildcards for domain names, review the xref:../harden/hardening-guideline-for-server-certificates.adoc[Hardening guidelines for server certificates].
+NOTE: If you use wildcards for domain names, review the link:../harden/hardening-guideline-for-server-certificates.html[Hardening guidelines for server certificates].
 
 You must also define a DNS entry for each name in the security certificate.
 

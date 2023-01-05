@@ -15,7 +15,7 @@ You can expand the object storage capacity of your StorageGRID system by adding 
 
 Before adding storage volumes to existing Storage Nodes, review the following guidelines and limitations:
 
-* You must examine your current ILM rules to determine where and when to xref:../expand/adding-storage-volumes-to-storage-nodes.adoc[add storage volumes] to increase the storage available for xref:../ilm/what-replication-is.adoc[replicated objects] or xref:../ilm/what-erasure-coding-schemes-are.adoc[erasure-coded objects].
+* You must examine your current ILM rules to determine where and when to link:../expand/adding-storage-volumes-to-storage-nodes.html[add storage volumes] to increase the storage available for link:../ilm/what-replication-is.html[replicated objects] or link:../ilm/what-erasure-coding-schemes-are.html[erasure-coded objects].
 
 * You cannot increase the metadata capacity of your system by adding storage volumes because object metadata is stored only on volume 0.
 * Each software-based Storage Node can support a maximum of 16 storage volumes. If you need to add capacity beyond that, you must add new Storage Nodes.
@@ -26,28 +26,28 @@ Before adding storage volumes to existing Storage Nodes, review the following gu
 
 After you have decided to add storage volumes and have determined which Storage Nodes you must expand to satisfy your ILM policy, follow the instructions for your type of Storage Node:
 
-* To add one or two expansion shelves to an SG6060 storage appliance, go to xref:../sg6000/adding-expansion-shelf-to-deployed-sg6060.adoc[Add expansion shelf to deployed SG6060].
+* To add one or two expansion shelves to an SG6060 storage appliance, go to link:../sg6000/adding-expansion-shelf-to-deployed-sg6060.html[Add expansion shelf to deployed SG6060].
 
 * For a software-based node, follow the instructions for 
-xref:adding-storage-volumes-to-storage-nodes.adoc[adding storage volumes to Storage Nodes].
+link:adding-storage-volumes-to-storage-nodes.html[adding storage volumes to Storage Nodes].
 
 == Guidelines for adding Storage Nodes
 
 Before adding Storage Nodes to existing sites, review the following guidelines and limitations:
 
-* You must examine your current ILM rules to determine where and when to add Storage Nodes to increase the storage available for xref:../ilm/what-replication-is.adoc[replicated objects] or xref:../ilm/what-erasure-coding-schemes-are.adoc[erasure-coded objects].
+* You must examine your current ILM rules to determine where and when to add Storage Nodes to increase the storage available for link:../ilm/what-replication-is.html[replicated objects] or link:../ilm/what-erasure-coding-schemes-are.html[erasure-coded objects].
 
 * You should not add more than 10 Storage Nodes in a single expansion procedure.
 * You can add Storage Nodes to more than one site in a single expansion procedure.
 * You can add Storage Nodes and other types of nodes in a single expansion procedure.
-* Before starting the expansion procedure, you must confirm that all data-repair operations performed as part of a recovery are complete. See xref:../maintain/checking-data-repair-jobs.adoc[Check data repair jobs]. 
+* Before starting the expansion procedure, you must confirm that all data-repair operations performed as part of a recovery are complete. See link:../maintain/checking-data-repair-jobs.html[Check data repair jobs]. 
 * If you need to remove Storage Nodes before or after performing an expansion, you should not decommission more than 10 Storage Nodes in a single Decommission Node procedure.
 
 == Guidelines for ADC service on Storage Nodes
 
 When configuring the expansion, you must choose whether to include the Administrative Domain Controller (ADC) service on each new Storage Node. The ADC service keeps track of the location and availability of grid services.
 
-* The StorageGRID system requires a xref:../maintain/understanding-adc-service-quorum.adoc[quorum of ADC services] to be available at each site and at all times.
+* The StorageGRID system requires a link:../maintain/understanding-adc-service-quorum.html[quorum of ADC services] to be available at each site and at all times.
 
 * At least three Storage Nodes at each site must include the ADC service.
 * Adding the ADC service to every Storage Node is not recommended. Including too many ADC services can cause slowdowns due to the increased amount of communication between nodes.

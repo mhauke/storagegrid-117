@@ -17,7 +17,7 @@ See the following for more information:
 
 * https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html[Amazon Web Services (AWS) Documentation: Bucket Restrictions and Limitations^]
 
-* xref:../admin/configuring-s3-api-endpoint-domain-names.adoc[Configure S3 endpoint domain names]
+* link:../admin/configuring-s3-api-endpoint-domain-names.html[Configure S3 endpoint domain names]
 
 The GET Bucket (List Objects) and GET Bucket versions operations support StorageGRID consistency controls.
 
@@ -121,7 +121,7 @@ GET Object Lock Configuration
 a|
 This operation returns the bucket default retention mode and default retention period, if configured.
 
-See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
+See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
 
 a|
 HEAD Bucket
@@ -148,7 +148,7 @@ This operation creates a new bucket. By creating the bucket, you become the buck
 +
 *Note*: An error will occur if your PUT Bucket request uses a region that has not been defined in StorageGRID.
 
-* You can include the `x-amz-bucket-object-lock-enabled` request header to create a bucket with S3 Object Lock enabled. See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
+* You can include the `x-amz-bucket-object-lock-enabled` request header to create a bucket with S3 Object Lock enabled. See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
 +
 You must enable S3 Object Lock when you create the bucket. You cannot add or disable S3 Object Lock after a bucket is created. S3 Object Lock requires bucket versioning, which is enabled automatically when you create the bucket.
 
@@ -263,20 +263,20 @@ This operation configures or removes the bucket default retention mode and defau
 
 If the default retention period is modified, the retain-until-date of existing object versions remains the same and is not recalculated using the new default retention period.
 
-See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock] for detailed information.
+See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock] for detailed information.
 |===
 
 .Related information
 
-xref:consistency-controls.adoc[Consistency controls]
+link:consistency-controls.html[Consistency controls]
 
-xref:get-bucket-last-access-time-request.adoc[GET Bucket last access time request]
+link:get-bucket-last-access-time-request.html[GET Bucket last access time request]
 
-xref:bucket-and-group-access-policies.adoc[Use bucket and group access policies]
+link:bucket-and-group-access-policies.html[Use bucket and group access policies]
 
-xref:s3-operations-tracked-in-audit-logs.adoc[S3 operations tracked in audit logs]
+link:s3-operations-tracked-in-audit-logs.html[S3 operations tracked in audit logs]
 
-xref:../ilm/index.adoc[Manage objects with ILM]
+link:../ilm/index.html[Manage objects with ILM]
 
-xref:../tenant/index.adoc[Use tenant account]
+link:../tenant/index.html[Use tenant account]
 

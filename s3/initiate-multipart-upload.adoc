@@ -64,7 +64,7 @@ NOTE: Adding `creation-time` as user-defined metadata is not allowed if you are 
 +
 If a request is made without these headers, the bucket default retention settings are used to calculate the object version retain-until-date.
 +
-xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock]
+link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 * SSE request headers:
  ** `x-amz-server-side-encryption`
@@ -88,7 +88,7 @@ You can use the following request headers to encrypt a multipart object with ser
  ** `x-amz-server-side-encryption-customer-key`: Specify your encryption key for the new object.
  ** `x-amz-server-side-encryption-customer-key-MD5`: Specify the MD5 digest of the new object's encryption key.
 
-*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for xref:using-server-side-encryption.adoc[using server-side encryption].
+*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for link:using-server-side-encryption.html[using server-side encryption].
 
 == Unsupported request headers
 
@@ -102,6 +102,6 @@ Multipart upload consists of separate operations for initiating the upload, list
 
 .Related information
 
-xref:../ilm/index.adoc[Manage objects with ILM]
+link:../ilm/index.html[Manage objects with ILM]
 
-xref:put-object.adoc[PUT Object]
+link:put-object.html[PUT Object]

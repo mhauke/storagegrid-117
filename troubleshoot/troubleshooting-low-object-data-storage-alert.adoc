@@ -14,7 +14,7 @@ summary: 'The *Low object data storage* alert monitors how much space is availab
 The *Low object data storage* alert monitors how much space is available for storing object data on each Storage Node.
 
 .What you'll need
-* You must be signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
 .About this task
@@ -66,13 +66,13 @@ image::../media/nodes_page_storage_used_object_data.png[Nodes Page Storage Used 
 +
 Looking at storage use over time can help you understand how much storage was used before and after the alert was triggered and can help you estimate how long it might take for the node's remaining space to become full.
 
-. As soon as possible, xref:../expand/guidelines-for-adding-object-capacity.adoc[add storage capacity] to your grid.
+. As soon as possible, link:../expand/guidelines-for-adding-object-capacity.html[add storage capacity] to your grid.
 +
 You can add storage volumes (LUNs) to existing Storage Nodes, or you can add new Storage Nodes.
 +
-NOTE: For more information, see xref:../admin/managing-full-storage-nodes.adoc[Manage full Storage Nodes].
+NOTE: For more information, see link:../admin/managing-full-storage-nodes.html[Manage full Storage Nodes].
 
 .Related information
 
-xref:troubleshooting-storage-status-alarm.adoc[Troubleshoot the Storage Status (SSTS) alarm (legacy)]
+link:troubleshooting-storage-status-alarm.html[Troubleshoot the Storage Status (SSTS) alarm (legacy)]
 

@@ -13,7 +13,7 @@ You must specify Domain Name System (DNS) information for your StorageGRID syste
 
 .About this task
 
-Specifying xref:../commonhardware/checking-dns-server-configuration.adoc[DNS server information] allows you to use Fully Qualified Domain Name (FQDN) hostnames rather than IP addresses for email notifications and AutoSupport. Specifying at least two DNS servers is recommended.
+Specifying link:../commonhardware/checking-dns-server-configuration.html[DNS server information] allows you to use Fully Qualified Domain Name (FQDN) hostnames rather than IP addresses for email notifications and AutoSupport. Specifying at least two DNS servers is recommended.
 
 IMPORTANT: Provide two to six IPv4 addresses for DNS servers. You should select DNS servers that each site can access locally in the event of network islanding. This is to ensure an islanded site continues to have access to the DNS service. After configuring the grid-wide DNS server list, you can further customize the DNS server list for each node. For details, see the information about modifying the DNS configuration in the recovery and maintenance instructions.
 

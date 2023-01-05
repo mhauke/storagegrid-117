@@ -19,11 +19,11 @@ You must deploy a virtual machine in VMware vSphere for each VMware node you wan
 
 .Steps
 
-. xref:../vmware/deploying-storagegrid-node-as-virtual-machine.adoc[Deploy the new node as virtual machine] and connect it to one or more StorageGRID networks.
+. link:../vmware/deploying-storagegrid-node-as-virtual-machine.html[Deploy the new node as virtual machine] and connect it to one or more StorageGRID networks.
 +
 When you deploy the node, you can optionally remap node ports or increase CPU or memory settings.
 
-. After you have deployed all new VMware nodes, xref:performing-expansion.adoc[perform the expansion procedure].
+. After you have deployed all new VMware nodes, link:performing-expansion.html[perform the expansion procedure].
 
 
 
@@ -35,9 +35,9 @@ You can deploy grid nodes on new Linux hosts or on existing Linux hosts. If you 
 
 * You have the instructions for installing StorageGRID for your version of Linux, and you have reviewed the hardware and storage requirements.
 
-** xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
+** link:../rhel/index.html[Install Red Hat Enterprise Linux or CentOS]
 
-** xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
+** link:../ubuntu/index.html[Install Ubuntu or Debian]
 
 
 * If you plan to deploy new grid nodes on existing hosts, you have confirmed the existing hosts have enough CPU, RAM, and storage capacity for the additional nodes.
@@ -57,7 +57,7 @@ IMPORTANT: In a production deployment, do not run more than one Storage Node on 
 
 .After you finish
 
-After deploying all new grid nodes, you can xref:performing-expansion.adoc[perform the expansion].
+After deploying all new grid nodes, you can link:performing-expansion.html[perform the expansion].
 
 
 
@@ -68,7 +68,7 @@ To install the StorageGRID software on an appliance node, you use the StorageGRI
 .What you'll need
 
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
-* You have completed the xref:../installconfig/configuring-hardware.adoc[Set up hardware] steps.
+* You have completed the link:../installconfig/configuring-hardware.html[Set up hardware] steps.
 +
 Setting up appliance hardware includes the required steps for configuring StorageGRID connections (network links and IP addresses) as well the optional steps for enabling node encryption, changing the RAID mode, and remapping network ports.
 
@@ -76,7 +76,7 @@ Setting up appliance hardware includes the required steps for configuring Storag
 
 * The StorageGRID Appliance Installer firmware on the replacement appliance is compatible with the StorageGRID software version currently running on your grid. For example, version 3.6 of the StorageGRID Appliance Installer is compatible with version 11.6 of StorageGRID. (If the versions are not compatible, you must upgrade the StorageGRID Appliance Installer firmware.)
 
-* You have a service laptop with a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You have a service laptop with a link:../admin/web-browser-requirements.html[supported web browser].
 * You know one of the IP addresses assigned to the appliance's compute controller. You can use the IP address for any attached StorageGRID network.
 
 .About this task

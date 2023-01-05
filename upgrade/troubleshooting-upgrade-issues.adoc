@@ -36,7 +36,7 @@ If the database upgrade fails with an error, retry the upgrade. If it fails agai
 
 .Related information
 
-xref:checking-systems-condition-before-upgrading-software.adoc[Checking the system's condition before upgrading software]
+link:checking-systems-condition-before-upgrading-software.html[Checking the system's condition before upgrading software]
 
 == User interface issues
 
@@ -54,7 +54,7 @@ The Grid Manager or the Tenant Manager might not respond as expected after Stora
 
 If you experience issues with the web interface:
 
-* Make sure you are using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* Make sure you are using a link:../admin/web-browser-requirements.html[supported web browser].
 +
 NOTE: Browser support typically changes for each StorageGRID release.
 * Clear your web browser cache.
@@ -103,7 +103,7 @@ The RPM or DEB packages for the upgrade have not been installed on the host wher
 a|
 Check to make sure that the RPM or DEB packages have been installed on all Linux hosts where nodes are running. Make sure the version is correct for both the service and the images file. Wait a few minutes, and try again.
 
-See xref:../upgrade/linux-installing-rpm-or-deb-package-on-all-hosts.adoc[Linux: Install RPM or DEB package on all hosts].
+See link:../upgrade/linux-installing-rpm-or-deb-package-on-all-hosts.html[Linux: Install RPM or DEB package on all hosts].
 
 a|
 Error while checking node `{node_name}`

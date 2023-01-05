@@ -17,7 +17,7 @@ You might need to replace the SG6000-CN controller if it is not functioning opti
 * You have labels to identify each cable that is connected to the controller.
 * You have physically located the controller to replace in the data center.
 +
-xref:locating-controller-in-data-center.adoc[Locate controller in data center]
+link:locating-controller-in-data-center.html[Locate controller in data center]
 
 .About this task
 
@@ -29,7 +29,7 @@ NOTE: If you are replacing the controller before installing StorageGRID software
 
 . If the SG6000-CN controller is functioning sufficiently to allow for a controlled shutdown, shut down the SG6000-CN controller.
 +
-xref:shutting-down-sg6000-cn-controller.adoc[Shut down SG6000-CN controller]
+link:shutting-down-sg6000-cn-controller.html[Shut down SG6000-CN controller]
 
 . Use one of two methods to verify that the power for the SG6000-CN controller is off:
  ** The power indicator LED on the front of the controller is off.
@@ -60,12 +60,12 @@ IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step o
 If the node controller IP address is not valid or is not in the expected range, reconfigure the IP address as described in the recovery and maintenance instructions.
 
 +
-NOTE: If you xref:../installconfig/configuring-bmc-interfacee.adoc[configured the BMC interface] when you set up hardware, you should record and validate the configuration and reapply it if necessary. For example, you should confirm the settings for SNMP trap destinations and email notifications.
+NOTE: If you link:../installconfig/configuring-bmc-interface.html[configured the BMC interface] when you set up hardware, you should record and validate the configuration and reapply it if necessary. For example, you should confirm the settings for SNMP trap destinations and email notifications.
 
 .Related information
 
-xref:../installconfig/sg6000-cn-installing-into-cabinet-or-rack.adoc[SG6000-CN: Install into cabinet or rack]
+link:../installconfig/sg6000-cn-installing-into-cabinet-or-rack.html[SG6000-CN: Install into cabinet or rack]
 
-xref:../installconfig/viewing-status-indicators.adoc[View status indicators]
+link:../installconfig/viewing-status-indicators.html[View status indicators]
 
-xref:../installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.adoc[View boot-up codes for SG6000-CN controller]
+link:../installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.html[View boot-up codes for SG6000-CN controller]

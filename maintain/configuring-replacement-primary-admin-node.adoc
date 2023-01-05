@@ -16,7 +16,7 @@ The replacement node must be configured as the primary Admin Node for your Stora
 * For primary Admin Nodes hosted on virtual machines, the virtual machine must be deployed, powered on, and initialized.
 * For primary Admin Nodes hosted on a services appliance, you have replaced the appliance and have installed software. See the installation guide for your appliance.
 +
-xref:../sg100-1000/index.adoc[SG100 and SG1000 services appliances]
+link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
 
 * You must have the latest backup of the Recovery Package file (`sgws-recovery-package-_id-revision_.zip`).
 * You must have the provisioning passphrase.
@@ -41,7 +41,7 @@ The recovery process begins. The Grid Manager might become unavailable for a few
 NOTE: To configure a relying party trust, see the instructions for administering StorageGRID. To access the default server certificate, log in to the command shell of the Admin Node. Go to the `/var/local/mgmt-api` directory, and select the `server.crt` file.
 
 . Determine if you need to apply a hotfix.
- .. Sign in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+ .. Sign in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
  .. Select *NODES*.
  .. From the list on the left, select the primary Admin Node.
  .. On the Overview tab, note the version displayed in the *Software Version* field.
@@ -52,6 +52,6 @@ NOTE: To configure a relying party trust, see the instructions for administering
 
 .Related information
 
-xref:../admin/index.adoc[Administer StorageGRID]
+link:../admin/index.html[Administer StorageGRID]
 
-xref:storagegrid-hotfix-procedure.adoc[StorageGRID hotfix procedure]
+link:storagegrid-hotfix-procedure.html[StorageGRID hotfix procedure]

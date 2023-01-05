@@ -27,7 +27,7 @@ For details, see the instructions for <<download-and-extract-install-files,downl
 
 * Network port
 * SSH client (for example, PuTTY)
-* xref:../admin/web-browser-requirements.adoc[Supported web browser]
+* link:../admin/web-browser-requirements.html[Supported web browser]
 
 |`Passwords.txt` file
 |Contains the passwords required to access grid nodes on the command line. Included in the Recovery Package.
@@ -37,12 +37,12 @@ For details, see the instructions for <<download-and-extract-install-files,downl
 
 |StorageGRID documentation
 |
-* xref:../admin/index.adoc[Administer StorageGRID]
-* xref:../release-notes/index.adoc[Release notes]
+* link:../admin/index.html[Administer StorageGRID]
+* link:../release-notes/index.html[Release notes]
 * Installation instructions for your platform
-** xref:../rhel/index.adoc[Install Red Hat Enterprise Linux or CentOS]
-** xref:../ubuntu/index.adoc[Install Ubuntu or Debian]
-** xref:../vmware/index.adoc[Install VMware]
+** link:../rhel/index.html[Install Red Hat Enterprise Linux or CentOS]
+** link:../ubuntu/index.html[Install Ubuntu or Debian]
+** link:../vmware/index.html[Install VMware]
 
 |Current documentation for your platform
 |For supported versions, see the https://imt.netapp.com/matrix/#welcome[Interoperability Matrix^].
@@ -132,11 +132,11 @@ Before beginning the expansion of your StorageGRID system, ensure the following:
 ** 10342
 
 +
-See xref:../network/internal-grid-node-communications.adoc[Internal grid node communications].
+See link:../network/internal-grid-node-communications.html[Internal grid node communications].
 
 * The primary Admin Node can communicate with all expansion servers that are intended to host the StorageGRID system.
 
-* If any of the new nodes has a Grid Network IP address on a subnet not previously used, you have already xref:updating-subnets-for-grid-network.adoc[added the new subnet] to the Grid Network subnet list. Otherwise, you will have to cancel the expansion, add the new subnet, and start the procedure again.
+* If any of the new nodes has a Grid Network IP address on a subnet not previously used, you have already link:updating-subnets-for-grid-network.html[added the new subnet] to the Grid Network subnet list. Otherwise, you will have to cancel the expansion, add the new subnet, and start the procedure again.
 
 * You are not using network address translation (NAT) on the Grid Network between grid nodes or between StorageGRID sites. When you use private IPv4 addresses for the Grid Network, those addresses must be directly routable from every grid node at every site. Using NAT to bridge the Grid Network across a public network segment is supported only if you use a tunneling application that is transparent to all
 nodes in the grid, meaning the grid nodes require no knowledge of public IP addresses. 

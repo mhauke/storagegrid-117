@@ -14,7 +14,7 @@ StorageGRID uses three storage volume watermarks to ensure that Storage Nodes ar
 image::../media/storage_volume_watermarks.png[Storage volume watermarks]
 
 NOTE: Storage volume watermarks only apply to the space used for replicated and erasure-coded object data. To learn about the space reserved for object metadata on volume 0, go to 
-xref:managing-object-metadata-storage.adoc[Manage object metadata storage].
+link:managing-object-metadata-storage.html[Manage object metadata storage].
 
 == What is the Soft Read-Only Watermark?
 The *Storage Volume Soft Read-Only Watermark* is the first watermark to indicate that a Storage Node's usable space for object data is becoming full. 
@@ -49,7 +49,7 @@ You can view the current watermark settings and the system-optimized values. If 
 
 * You have completed the upgrade to StorageGRID 11.6.
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
 * You have the Root access permission.
 
@@ -68,7 +68,7 @@ image::../media/storage-volume-watermark-overrides.png[Storage volume watermark 
 +
 This is the default and recommended setting. You should not update these values. As required, you can optionally <<View optimized storage watermarks>>.
 
-* If the watermark overrides are non-0 values, custom (non-optimized) watermarks are being used. Using custom watermark settings is not recommended. Use the instructions for xref:../troubleshoot/troubleshoot-low-watermark-alert.adoc[troubleshooting Low read-only watermark override alerts] to determine if you can or should adjust the settings.
+* If the watermark overrides are non-0 values, custom (non-optimized) watermarks are being used. Using custom watermark settings is not recommended. Use the instructions for link:../troubleshoot/troubleshoot-low-watermark-alert.html[troubleshooting Low read-only watermark override alerts] to determine if you can or should adjust the settings.
 
 === View optimized storage watermarks
 
