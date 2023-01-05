@@ -27,11 +27,16 @@ The Grid federation connection page appears, and includes a table that summarize
 
 * For each grid federation connection, the *Buckets with cross-grid replication* column lists all tenant buckets that have cross-grid replication enabled. Objects added to these buckets will be replicated to the other grid in the connection.
 
-* For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when bucket data was being replicated to the other grid. This column shows only the last cross-grid replication error to occur for all tenant buckets; previous errors might have occurred for other buckets but will not be shown.
+* For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when bucket data was being replicated to the other grid. This column only shows the last cross-grid replication error to occur; previous errors that might have occurred for other buckets will not be shown.
 +
 For example:
 +
 image:../media/grid-federation-cgr-object-example-last-error.png[grid-federation-cgr-object-example-last-error]
+
+. Optionally, select a bucket name to link:viewing-s3-bucket-details.html[view bucket details].
+
+. If a message appears in the *Last error* column:
+.. Review the message text and perform any recommended actions.
 +
 An error in this column might occur for one of these reasons:
 
@@ -42,11 +47,6 @@ An error in this column might occur for one of these reasons:
 ** The destination bucket has versioning suspended.
 ** The destination bucket was re-created by the same account but is now unversioned.
 
-
-. Optionally, select a bucket name to link:viewing-s3-bucket-details.html[view bucket details].
-
-. If a message appears in the *Last error* column:
-.. Review the text and perform any recommended actions.
 .. Select the connection from the table.
 .. Select *Clear error*.
 .. Select *Yes* to clear the message and update the system's status.

@@ -61,7 +61,7 @@ For security reasons, when a tenant account is cloned from the tenant's source g
 .Recommended actions
 Before the root user can sign in to the tenant's destination grid, a grid administrator must first link:changing-password-for-tenant-local-root-user.html[change the password for the local root user] on the destination grid.
 
-Before a cloned local user can sign in to the tenant's destination grid, the root user for the cloned tenant must add a password for the user on the destination grid. For instructions, see link:../tenant/managing-local-users.html[Manage local users] in the instructions for using Tenant Manager.
+Before a cloned local user can sign in to the tenant's destination grid, the root user for the cloned tenant must add a password for the user on the destination grid. For instructions, see link:../tenant/managing-local-users.html[Manage local users] in the instructions for using the Tenant Manager.
 
 === Tenant created without a clone
 
@@ -94,14 +94,12 @@ If the error has been resolved, the tenant account will now be cloned to the oth
 === Last error shown for connection or tenant
 
 .Issue
-When link:..monitor/grid-federation-monitor-connections.html[viewing a grid federation connection] (or when link:grid-federation-manage-tenants.html[managing the permitted tenants] for a connection), you notice an error in the *Last error* column on the connection details page. For example:
+When link:../monitor/grid-federation-monitor-connections.html[viewing a grid federation connection] (or when link:grid-federation-manage-tenants.html[managing the permitted tenants] for a connection), you notice an error in the *Last error* column on the connection details page. For example:
 
 image:../media/grid-federation-last-error.png[Screenshot showing a message in the Last error column of a grid federation connection]
 
 .Details
-For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when a tenant's bucket data was being replicated to the other grid. This column shows only the last cross-grid replication error to occur for all tenant buckets; previous errors might have occurred for other buckets but will not be shown.
-
-
+For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when a tenant's bucket data was being replicated to the other grid. This column only shows the last cross-grid replication error to occur; previous errors that might have occurred for other buckets will not be shown.
 An error in this column might occur for one of these reasons:
 
 * The source object version was not found.
@@ -111,10 +109,10 @@ An error in this column might occur for one of these reasons:
 * The destination bucket has versioning suspended.
 * The destination bucket was re-created by the same account but is now unversioned.
 
-.Recommended action
+.Recommended actions
 If an error message appears in the *Last error* column, follow these steps:
 
-. Review the text and perform any recommended actions.
+. Review the message text and perform any recommended actions.
 . Select the connection or tenant account from the table.
 . Select *Clear error*.
 . Select *Yes* to clear the message and update the system's status.
@@ -131,10 +129,10 @@ IMPORTANT: After you clear an error for one bucket, a new *Last error* might app
 .Issue
 The *Cross-grid replication permanent failure* alert was triggered.
 
-.Recommended actions
+.Details
 This alert indicates that tenant objects can't be replicated between the buckets on two grids for a reason that requires user intervention to resolve. This alert is typically caused by a change to either the source or the destination bucket. 
 
-Follow these steps:
+.Recommended actions
 
 . Sign in to the grid where the alert was triggered.
 . Go to *CONFIGURATION* > *System* > *Grid federation*, and locate the connection name listed in the alert.
@@ -180,10 +178,10 @@ NOTE: It might take up to a day for the alert to clear after it is resolved.
 .Issue
 The *Cross-grid replication resource unavailable* alert was triggered.
 
-.Recommended actions
+.Details
 This alert indicates that cross-grid replication requests are pending because a resource is unavailable. For example, there might be a network error.
 
-Follow these steps:
+.Recommended actions
 
 . Monitor the alert to see if the issue resolves on its own.
 
