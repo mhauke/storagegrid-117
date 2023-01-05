@@ -15,7 +15,7 @@ StorageGRID nodes can be deployed on VMware virtual machines, within a container
 
 As part of the system hardening process, you must review external firewall configurations and modify them so that traffic is accepted only from the IP addresses and on the ports from which it is strictly needed. 
 
-StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to control network access to the node. You should link:..admin/manage-firewall-controls.html[manage internal firewall controls] to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the Firewall control page are deployed to each node.
+StorageGRID includes an internal firewall on each node that enhances the security of your grid by enabling you to control network access to the node. You should link:../admin/manage-firewall-controls.html[manage internal firewall controls] to prevent network access on all ports except those necessary for your specific grid deployment. The configuration changes you make on the Firewall control page are deployed to each node.
 
 Specifically, you can manage these areas:
 
