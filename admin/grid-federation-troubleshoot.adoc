@@ -2,32 +2,33 @@
 permalink: admin/grid-federation-troubleshoot.html
 sidebar: sidebar
 keywords: troubleshoot, grid federation connection, account clone, cross-grid replication, alerts, errors
-summary: 'You might need to troubleshoot alerts related to grid federation connections as well as errors related to account clone and cross-grid replication.'
+summary: 'You might need to troubleshoot alerts and errors related to grid federation connections, account clone, and cross-grid replication.'
 ---
 = Troubleshoot grid federation errors
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You might need to troubleshoot alerts related to grid federation connections as well as errors related to account clone and cross-grid replication.
+You might need to troubleshoot alerts and errors related to grid federation connections, account clone, and cross-grid replication.
 
 == [[grid-federation-errors]]Grid federation connection alerts and errors
 
 You might receive alerts or experience errors with your grid federation connections.
 
-After making any changes to resolve a connection issue, test the connection to ensure that its connection status is *Connected*. For instructions, see link:grid-federation-manage-connection.html[Manage grid federation connections].
+After making any changes to resolve a connection issue, test the connection to ensure that the connection status returns to *Connected*. For instructions, see link:grid-federation-manage-connection.html[Manage grid federation connections].
 
 === Grid federation connection failure alert
 
 .Issue
 The *Grid federation connection failure* alert was triggered.
 
-.Solution
-This alert indicates that the grid federation connection between the grids is not working. Follow these steps:
+.Details
+This alert indicates that the grid federation connection between the grids is not working.
 
+.Recommended actions
 . Review the settings on the Grid Federation page for both grids. Confirm that all values are correct. See link:grid-federation-manage-connection.html[Manage grid federation connections].
 
-. Review the certificates used for the connection. Make sure that certificates have not expired and that the details are valid. See the instructions for rotating connection certificates in link:grid-federation-manage-connection.html[Manage grid federation connections].
+. Review the certificates used for the connection. Make sure there are no alerts for expired grid federation certificates and that the details for each certificate are valid. See the instructions for rotating connection certificates in link:grid-federation-manage-connection.html[Manage grid federation connections].
 
 . Confirm that all Admin and Gateway Nodes in both grids are online and available. Resolve any alerts that might be affecting these nodes and try again.
 
@@ -38,8 +39,11 @@ This alert indicates that the grid federation connection between the grids is no
 .Issue
 The *Expiration of grid federation certificate* alert was triggered.
 
-.Solution
-This alert indicates that one or more grid federation certificates are about to expire. See the instructions for rotating connection certificates in link:grid-federation-manage-connection.html[Manage grid federation connections].
+.Details
+This alert indicates that one or more grid federation certificates are about to expire. 
+
+.Recommended actions
+See the instructions for rotating connection certificates in link:grid-federation-manage-connection.html[Manage grid federation connections].
 
 
 == Account clone errors
@@ -51,20 +55,23 @@ You can't sign in to a cloned tenant account. The error message is "`Your creden
 
 image::../media/grid-federation-tenant-account-credentials-invalid.png[screenshot showing an error message when signing into tenant]
 
-.Solution
+.Details
 For security reasons, when a tenant account is cloned from the tenant's source grid to the tenant's destination grid, the password you set for the tenant's local root user is not cloned. Similarly, when a tenant creates local users on its source grid, the local user passwords are not cloned to the destination grid.
 
+.Recommended actions
 Before the root user can sign in to the tenant's destination grid, a grid administrator must first link:changing-password-for-tenant-local-root-user.html[change the password for the local root user] on the destination grid.
 
-Before a cloned local user can sign in to the tenant's destination grid, the root user for the cloned tenant must add a password for the user on the destination grid. For instructions, see link:../tenant/managing-local-users.html[Manage local users].
+Before a cloned local user can sign in to the tenant's destination grid, the root user for the cloned tenant must add a password for the user on the destination grid. For instructions, see link:../tenant/managing-local-users.html[Manage local users] in the instructions for using the Tenant Manager.
 
 === Tenant created without a clone
 
 .Issue
-You see the message "`Tenant created without a clone`" after creating a new tenant with the *Use grid federation connection* permission. This issue can occur if updates to the Connection status are delayed, which might cause an unhealthy connection to be listed as *Connected*. 
+You see the message "`Tenant created without a clone`" after creating a new tenant with the *Use grid federation connection* permission. 
 
-.Solution
-Try to clone the account again:
+.Details
+This issue can occur if updates to the Connection status are delayed, which might cause an unhealthy connection to be listed as *Connected*.
+ 
+.Recommended actions
 
 . Review the reason listed in the error message and resolve any networking or other issues that might be preventing the connection from working. See <<grid-federation-errors,Grid federation connection alerts and errors>>.
 
@@ -84,30 +91,61 @@ If the error has been resolved, the tenant account will now be cloned to the oth
 
 == Cross-grid replication alerts and errors
 
+=== Last error shown for connection or tenant
+
+.Issue
+When link:../monitor/grid-federation-monitor-connections.html[viewing a grid federation connection] (or when link:grid-federation-manage-tenants.html[managing the permitted tenants] for a connection), you notice an error in the *Last error* column on the connection details page. For example:
+
+image:../media/grid-federation-last-error.png[Screenshot showing a message in the Last error column of a grid federation connection]
+
+.Details
+For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when a tenant's data was being replicated to the other grid. This column only shows the last cross-grid replication error to occur; previous errors that might have occurred will not be shown.
+An error in this column might occur for one of these reasons:
+
+* The source object version was not found.
+* The source bucket was not found.
+* The destination bucket was deleted.
+* The destination bucket was re-created by a different account.	
+* The destination bucket has versioning suspended.
+* The destination bucket was re-created by the same account but is now unversioned.
+
+.Recommended actions
+If an error message appears in the *Last error* column, follow these steps:
+
+. Review the message text and perform any recommended actions.
+. Select the connection or tenant account from the table.
+. Select *Clear error*.
+. Select *Yes* to clear the message and update the system's status.
+. Wait 5-6 minutes and then ingest a new object into the bucket. Confirm that the error message does not reappear.
++
+NOTE: To ensure the error message is cleared, wait at least 5 minutes after the timestamp in the message before ingesting a new object.
++
+IMPORTANT: After you clear the error, a new *Last error* might appear if objects are ingested in a different bucket that also has an error. 
+
+. To determine if any objects failed to be replicated because of the bucket error, see link:../admin/grid-federation-retry-failed-replication.html[Identify and retry failed replication operations]. 
+
 === Cross-grid replication permanent failure alert
 
 .Issue
 The *Cross-grid replication permanent failure* alert was triggered.
 
-.Solution
+.Details
 This alert indicates that tenant objects can't be replicated between the buckets on two grids for a reason that requires user intervention to resolve. This alert is typically caused by a change to either the source or the destination bucket. 
 
-Follow these steps:
+.Recommended actions
 
 . Sign in to the grid where the alert was triggered.
 . Go to *CONFIGURATION* > *System* > *Grid federation*, and locate the connection name listed in the alert.
 
 . On the Permitted tenants tab, look at the *Last error* column to determine which tenant accounts have errors.
 
-. To learn more about the failure, review the <<cross-grid-metrics,cross-grid replication metrics>>.
+. To learn more about the failure, see the instructions in link:../monitor/grid-federation-monitor-connections.html[Monitor grid federation connections] to review the cross-grid replication metrics.
 
 . For each affected tenant account:
 
-.. Select the tenant name to display the tenant details page.
-.. Confirm that the tenant has not exceeded its quota for this grid.
-.. As required, increase the quota to allow new objects to be saved.
+.. See the instructions in link:../monitor/monitoring-tenant-activity.html[Monitor tenant activity] to confirm that the tenant has not exceeded its quota on the destination grid for cross-grid replication.
 
-.. Repeat these steps for the corresponding tenant account on the other grid in the connection.
+.. As required, increase the tenant's quota on the destination grid to allow new objects to be saved.
 	
 . For each affected tenant, sign in to Tenant Manager on both grids, so you can compare the list of buckets.
 
@@ -118,51 +156,40 @@ Follow these steps:
 * Both buckets have S3 Object Lock disabled. 
 * Neither bucket is in the *Deleting objects: read-only* state.
 
-. Confirm that the issue was resolved, you can review the cross-grid replication metrics or perform these steps:
+. To confirm that the issue was resolved, see the instructions in link:../monitor/grid-federation-monitor-connections.html[Monitor grid federation connections] to review the cross-grid replication metrics, or perform these steps:
 
-.. Go back to the Grid Federation page.
+.. Go back to the Grid federation page.
 .. Select the affected tenant, and select *Clear Error* in the *Last error* column.
-+
-The error message no longer appears. However, if the issue was not resolved (or if a different error is encountered), the error message will be shown in the *Last error* column after new objects are saved to one of the tenant's buckets.
 
-.. Ingest new objects in to the bucket, and confirm that the error does not reappear. 
+.. Select *Yes* to clear the message and update the system's status.
+
+.. Wait 5-6 minutes and then ingest a new object into the bucket. Confirm that the error message does not reappear.
++
+NOTE: To ensure the error message is cleared, wait at least 5 minutes after the timestamp in the message before ingesting a new object.
 +
 NOTE: It might take up to a day for the alert to clear after it is resolved.
 
-.. Go link:grid-federation-retry-failed-replication.html[Identify and retry failed replication operations] to identify any objects or delete markers that failed to be replicated to the other grid and to retry replication as needed.
+.. Go to link:grid-federation-retry-failed-replication.html[Identify and retry failed replication operations] to identify any objects or delete markers that failed to be replicated to the other grid and to retry replication as needed.
 
 === Cross-grid replication resource unavailable alert
 
 .Issue
 The *Cross-grid replication resource unavailable* alert was triggered.
 
-.Solution
+.Details
 This alert indicates that cross-grid replication requests are pending because a resource is unavailable. For example, there might be a network error.
 
-Follow these steps:
+.Recommended actions
 
 . Monitor the alert to see if the issue resolves on its own.
 
 . If the issue persists, determine if either grid has a *Grid federation connection failure* alert for the same connection or an *Unable to communicate with node* alert for a node. This alert might be resolved when you resolve those alerts.
 
-. To learn more about the failure, review the <<cross-grid-metrics,cross-grid replication metrics>>. 
+. To learn more about the failure, see the instructions in link:../monitor/grid-federation-monitor-connections.html[Monitor grid federation connections] to review the cross-grid replication metrics. 
 
 . If you cannot resolve the alert, contact technical support.
 
 Cross-grid replication will proceed as normal once the issue is resolved.
 
-== [[cross-grid-metrics]]Use cross-grid replication metrics
 
-You can use the Cross-Grid Replication dashboard in Grafana to view metrics about cross-grid replication operations on your grid.
-
-. From the Grid Manager, go to *SUPPORT* > *Tools* > *Metrics*.
-+
-NOTE: The tools available on the Metrics page are intended for use by technical support. Some features and menu items within these tools are intentionally non-functional and are subject to change. See the list of link:../monitor/commonly-used-prometheus-metrics.html[commonly used Prometheus metrics].
-
-. In the Grafana section of the page, select *Cross Grid Replication*. 
-+
-
-For detailed instructions, see link:../monitor/reviewing-support-metrics.html[Review support metrics].
-
-. To retry replication of objects that failed to replicate, see link:grid-federation-retry-failed-replication.html[Identify and retry failed replication operations].  
 

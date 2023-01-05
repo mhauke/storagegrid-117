@@ -1,5 +1,5 @@
 ---
-permalink: tenant/grid-federation-view-connections.html
+permalink: tenant/grid-federation-view-connections-tenant.html
 sidebar: sidebar
 keywords: grid federation connection, view, clear error, last error
 summary: If your tenant account has the Use grid federation connection permission, you can view the allowed connections.
@@ -25,11 +25,18 @@ The Grid federation connection page appears, and includes a table that summarize
 
 * The *Connection name* column shows the grid federation connections this tenant has permission to use. 
 
-* The *Buckets with cross-grid replication* column shows which buckets for this tenant on this grid have cross-grid replication enabled. Objects added to these buckets will be replicated to the other grid in the connection.
+* For each grid federation connection, the *Buckets with cross-grid replication* column lists all tenant buckets that have cross-grid replication enabled. Objects added to these buckets will be replicated to the other grid in the connection.
 
-* The *Last error* column shows the most recent error, if any, to occur for this tenant when bucket data was being replicated to the other grid. For example:
+* For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when data was being replicated to the other grid. This column only shows the last cross-grid replication error to occur; previous errors that might have occurred will not be shown.
++
+For example:
 +
 image:../media/grid-federation-cgr-object-example-last-error.png[grid-federation-cgr-object-example-last-error]
+
+. Optionally, select a bucket name to link:viewing-s3-bucket-details.html[view bucket details].
+
+. If a message appears in the *Last error* column:
+.. Review the message text and perform any recommended actions.
 +
 An error in this column might occur for one of these reasons:
 
@@ -38,18 +45,17 @@ An error in this column might occur for one of these reasons:
 ** The destination bucket was deleted.
 ** The destination bucket was re-created by a different account.	
 ** The destination bucket has versioning suspended.
-** The destination bucket was re-created by same account but is now unversioned.
+** The destination bucket was re-created by the same account but is now unversioned.
 
-. Optionally, select a bucket name to link:viewing-s3-bucket-details.html[view bucket details].
-
-. If a message appears in the *Last error* column:
-.. Review the text and perform any recommended actions.
 .. Select the connection from the table.
 .. Select *Clear error*.
 .. Select *Yes* to clear the message and update the system's status.
-.. Ingest a new object into the bucket and confirm that the error message does not reappear.
+.. Wait 5-6 minutes and then ingest a new object into the bucket. Confirm that the error message does not reappear.
 +
-NOTE: If the underlying issue still exists, the error will reappear when new objects are ingested.
+NOTE: To ensure the error message is cleared, wait at least 5 minutes after the timestamp in the message before ingesting a new object.
++
+IMPORTANT: After you clear the error, a new *Last error* might appear if objects are ingested in a different bucket that also has an error. 
 
+. To determine if any objects failed to be replicated because of the bucket error, see link:../admin/grid-federation-retry-failed-replication.html[Identify and retry failed replication operations]. 
 
 
