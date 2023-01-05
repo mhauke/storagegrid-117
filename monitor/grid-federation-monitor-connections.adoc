@@ -1,7 +1,7 @@
 ---
 permalink: monitor/grid-federation-monitor-connections.html
 sidebar: sidebar
-keywords: grid federation, monitor connection
+keywords: grid federation, monitor connection, cross grid replication metrics
 summary: 'You can monitor basic information about all grid federation connections or detailed information about a specific connection. You can monitor a connection from either grid.'
 ---
 = Monitor grid federation connections
@@ -75,3 +75,17 @@ From this tab, you can:
 +
 image:../media/grid-federation-certificates-tab.png[grid-federation-certificates-tab]
 
+== Use cross-grid replication metrics
+
+You can use the Cross-Grid Replication dashboard in Grafana to view Prometheus metrics about cross-grid replication operations on your grid.
+
+. From the Grid Manager, select *SUPPORT* > *Tools* > *Metrics*.
++
+NOTE: The tools available on the Metrics page are intended for use by technical support. Some features and menu items within these tools are intentionally non-functional and are subject to change. See the list of link:../monitor/commonly-used-prometheus-metrics.html[commonly used Prometheus metrics].
+
+. In the Grafana section of the page, select *Cross Grid Replication*. 
++
+
+For detailed instructions, see link:../monitor/reviewing-support-metrics.html[Review support metrics].
+
+. To retry replication of objects that failed to replicate, see link:../admin/grid-federation-retry-failed-replication.html[Identify and retry failed replication operations].  
