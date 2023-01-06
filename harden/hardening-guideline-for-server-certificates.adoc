@@ -2,13 +2,17 @@
 permalink: harden/hardening-guideline-for-server-certificates.html
 sidebar: sidebar
 keywords: Hardening guidelines, certificates
-summary: 'You should replace the default certificates created during installation with your own custom certificates.'
+summary: 'You should replace the default certificates created during installation and select the appropriate security policy for TLS and SSH connections.'
 ---
-= Hardening guidelines for server certificates
+= Hardening guidelines for TLS and SSH
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
+You should replace the default certificates created during installation and select the appropriate security policy for TLS and SSH connections.
+
+== Hardening guidelines for certificates
+
 You should replace the default certificates created during installation with your own custom certificates.
 
 For many organizations, the self-signed digital certificate for StorageGRID web access is not compliant with their information security policies. On production systems, you should install a CA-signed digital certificate for use in authenticating StorageGRID.
@@ -31,7 +35,7 @@ When using custom server certificates, follow these guidelines:
 
 In addition, clients should use strict hostname checking when communicating with StorageGRID.
 
-== Hardening guidelines for TLS and SSH policies
+== Hardening guidelines for TLS and SSH policy
 
 You can select a security policy to determine which protocols and ciphers are used to establish secure TLS connections with client applications and secure SSH connections to internal StorageGRID services.
 
