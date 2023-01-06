@@ -13,7 +13,7 @@ There are operations added on to the Swift REST API that are specific to Storage
 
 == GET container consistency request
 
-xref:../s3/consistency-controls.adoc[Consistency level] makes a trade-off between the availability of the objects and the consistency of those objects across different Storage Nodes and sites. The GET container consistency request allows you to determine the consistency level being applied to a particular container.
+link:../s3/consistency-controls.html[Consistency level] makes a trade-off between the availability of the objects and the consistency of those objects across different Storage Nodes and sites. The GET container consistency request allows you to determine the consistency level being applied to a particular container.
 
 === Request
 
@@ -110,9 +110,9 @@ The PUT container consistency request allows you to specify the consistency leve
 
 === How consistency controls and ILM rules interact to affect data protection
 
-Both your choice of xref:../s3/consistency-controls.adoc[consistency control] and your ILM rule affect how objects are protected. These settings can interact.
+Both your choice of link:../s3/consistency-controls.html[consistency control] and your ILM rule affect how objects are protected. These settings can interact.
 
-For example, the consistency control used when an object is stored affects the initial placement of object metadata, while the xref:../ilm/what-ilm-rule-is.adoc#ilm-rule-ingest-behavior[ingest behavior] selected for the ILM rule affects the initial placement of object copies. Because StorageGRID requires access to both an object's metadata and its data to fulfill client requests, selecting matching levels of protection for the consistency level and ingest behavior can provide better initial data protection and more predictable system responses.
+For example, the consistency control used when an object is stored affects the initial placement of object metadata, while the link:../ilm/what-ilm-rule-is.html#ilm-rule-ingest-behavior[ingest behavior] selected for the ILM rule affects the initial placement of object copies. Because StorageGRID requires access to both an object's metadata and its data to fulfill client requests, selecting matching levels of protection for the consistency level and ingest behavior can provide better initial data protection and more predictable system responses.
 
 === Example of how consistency control and ILM rule can interact
 

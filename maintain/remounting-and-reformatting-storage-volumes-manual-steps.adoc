@@ -19,7 +19,7 @@ Running the `sn-remount-volumes` script might help you identify additional faile
 
 * You have checked that a Storage Node decommissioning is not in progress, or you have paused the node decommission procedure. (In the Grid Manager, select *MAINTENANCE* > *Tasks* > *Decommission*.)
 * You have checked that an expansion is not in progress. (In the Grid Manager, select *MAINTENANCE* > *Tasks* > *Expansion*.)
-* You have xref:reviewing-warnings-for-system-drive-recovery.adoc[reviewed the warnings for Storage Node system drive recovery].
+* You have link:reviewing-warnings-for-system-drive-recovery.html[reviewed the warnings for Storage Node system drive recovery].
 +
 CAUTION: Contact technical support if more than one Storage Node is offline or if a Storage Node in this grid has been rebuilt in the last 15 days. Do not run the `sn-recovery-postinstall.sh` script. Rebuilding Cassandra on two or more Storage Nodes within 15 days of each other might result in data loss.
 
@@ -199,6 +199,6 @@ After the `sn-recovery-postinstall.sh` script has started services on the node, 
 
 .Related information
 
-xref:reviewing-warnings-for-system-drive-recovery.adoc[Review warnings for Storage Node system drive recovery]
+link:reviewing-warnings-for-system-drive-recovery.html[Review warnings for Storage Node system drive recovery]
 
-xref:restoring-object-data-to-storage-volume-if-required.adoc[Restore object data to storage volume, if required]
+link:restoring-object-data-to-storage-volume-if-required.html[Restore object data to storage volume, if required]

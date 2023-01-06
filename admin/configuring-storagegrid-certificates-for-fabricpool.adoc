@@ -14,13 +14,13 @@ For S3 clients that perform strict hostname validation and do not support disabl
 .What you'll need
 
 * You have specific access permissions.
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
 .About this task
 
 When you create a load balancer endpoint, you can generate a self-signed server certificate or upload a certificate that is signed by a known certificate authority (CA). In production environments, you should use a certificate that is signed by a known CA. Certificates signed by a CA can be rotated non-disruptively. They are also more secure because they provide better protection against man-in-the-middle attacks.
 
-The following steps provide general guidelines for S3 clients that use FabricPool. For more detailed information and procedures, see xref:../fabricpool/index.adoc[Configure StorageGRID for FabricPool].
+The following steps provide general guidelines for S3 clients that use FabricPool. For more detailed information and procedures, see link:../fabricpool/index.html[Configure StorageGRID for FabricPool].
 
 .Steps
 

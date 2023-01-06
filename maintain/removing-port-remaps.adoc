@@ -19,7 +19,7 @@ For information about configuring load balancer endpoints, see the instructions 
 
 IMPORTANT: If the port remap provides client access, the client should be reconfigured to use a different port configured as an load balancer endpoint if possible, to avoid loss of service, Otherwise, removing the port mapping will result in loss of client access and should be scheduled appropriately.
 
-IMPORTANT: This procedure does not work for a StorageGRID system deployed as a container on bare metal hosts. See the instructions for xref:removing-port-remaps-on-bare-metal-hosts.adoc[removing port remaps on bare metal hosts].
+IMPORTANT: This procedure does not work for a StorageGRID system deployed as a container on bare metal hosts. See the instructions for link:removing-port-remaps-on-bare-metal-hosts.html[removing port remaps on bare metal hosts].
 
 .Steps
 
@@ -36,10 +36,10 @@ When you are logged in as root, the prompt changes from `$` to `#`.
 . Run the following script: `remove-port-remap.sh`
 . Reboot the node.
 +
-Follow the instructions for xref:rebooting-grid-node.adoc[rebooting a grid node].
+Follow the instructions for link:rebooting-grid-node.html[rebooting a grid node].
 
 . Repeat these steps on each Admin Node and Gateway Node that has conflicting remapped ports.
 
 .Related information
 
-xref:../admin/index.adoc[Administer StorageGRID]
+link:../admin/index.html[Administer StorageGRID]

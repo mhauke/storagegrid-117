@@ -20,67 +20,67 @@ Follow these high-level steps to install and set up a StorageGRID appliance and 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Prepare for installation
 
 [role="quick-margin-list"]
-. xref:preparing-site.adoc[Prepare site]
-. xref:unpacking-boxes.adoc[Unpack boxes]
-. xref:obtaining-additional-equipment-and-tools.adoc[Obtain additional equipment and tools]
-. xref:../admin/web-browser-requirements.adoc[Review web browser requirements]
-. xref:reviewing-appliance-network-connections.adoc[Review appliance network connections]
-. xref:gathering-installation-information-overview.adoc[Gather installation information]
+. link:preparing-site.html[Prepare site]
+. link:unpacking-boxes.html[Unpack boxes]
+. link:obtaining-additional-equipment-and-tools.html[Obtain additional equipment and tools]
+. link:../admin/web-browser-requirements.html[Review web browser requirements]
+. link:reviewing-appliance-network-connections.html[Review appliance network connections]
+. link:gathering-installation-information-overview.html[Gather installation information]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Install hardware
 
 [role="quick-margin-para"]
-See the xref:install-appliance-hardware.adoc[installing appliance hardware overview] for general installation information.
+See the link:install-appliance-hardware.html[installing appliance hardware overview] for general installation information.
 
 [role="quick-margin-list"]
-. xref:registering-hardware.adoc[Register hardware]
+. link:registering-hardware.html[Register hardware]
 
 . Install appliance
-** xref:installing-hardware-sg6000.adoc[SG6000]
-** xref:installing-appliance-in-cabinet-or-rack-sg5700.adoc[SG5700]
-** xref:installing-appliance-in-cabinet-or-rack-sg5600.adoc[SG5600]
-** xref:installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.adoc[SG100 and SG1000]
+** link:installing-hardware-sg6000.html[SG6000]
+** link:installing-appliance-in-cabinet-or-rack-sg5700.html[SG5700]
+** link:installing-appliance-in-cabinet-or-rack-sg5600.html[SG5600]
+** link:installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html[SG100 and SG1000]
 
 . Cable appliance
-** xref:cabling-appliance-sg6000.adoc[SG6000]
-** xref:cabling-appliance-sg5700.adoc[SG5700]
-** xref:cabling-appliance-sg5600.adoc[SG5600]
-** xref:cabling-appliance-sg100-and-sg1000.adoc[SG100 and SG1000]
+** link:cabling-appliance-sg6000.html[SG6000]
+** link:cabling-appliance-sg5700.html[SG5700]
+** link:cabling-appliance-sg5600.html[SG5600]
+** link:cabling-appliance-sg100-and-sg1000.html[SG100 and SG1000]
 
 . Connect power cords and apply power
-** xref:connecting-power-cords-and-applying-power-sg6000.adoc[SG6000]
-** xref:connecting-power-cords-and-applying-power-sg5700.adoc[SG5700]
-** xref:connecting-ac-power-cords-sg5600.adoc[SG5600]
-** xref:connecting-power-cords-and-applying-power-sg100-and-sg1000.adoc[SG100 and SG1000]
+** link:connecting-power-cords-and-applying-power-sg6000.html[SG6000]
+** link:connecting-power-cords-and-applying-power-sg5700.html[SG5700]
+** link:connecting-ac-power-cords-sg5600.html[SG5600]
+** link:connecting-power-cords-and-applying-power-sg100-and-sg1000.html[SG100 and SG1000]
 
-. xref:viewing-status-indicators.adoc[View status indicators and codes]
+. link:viewing-status-indicators.html[View status indicators and codes]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up hardware
 
 [role="quick-margin-para"]
-If you are configuring and deploying more than one appliance, use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to generate a JSON file that can be uploaded into the StorageGRID Appliance Installer. Using the tool allows you to automate most of the following configuration and deployment steps. For details, see xref:automating-appliance-configuration-using-storagegrid-appliance-installer.adoc[Automate appliance configuration using StorageGRID Appliance Installer]. 
+If you are configuring and deploying more than one appliance, use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to generate a JSON file that can be uploaded into the StorageGRID Appliance Installer. Using the tool allows you to automate most of the following configuration and deployment steps. For details, see link:automating-appliance-configuration-using-storagegrid-appliance-installer.html[Automate appliance configuration using StorageGRID Appliance Installer]. 
 
 [role="quick-margin-list"]
 
 . Configure StorageGRID connections
-** xref:accessing-storagegrid-appliance-installer.adoc[Access StorageGRID Appliance Installer and verify you are running most recent version]
-** xref:configuring-network-links.adoc[Configure network links]
-** xref:setting-ip-configuration.adoc[Configure StorageGRID IP addresses]
-** xref:verifying-network-connections.adoc[Verify network connections]
-** xref:verifying-port-level-network-connections.adoc[Verify port-level network connections]
+** link:accessing-storagegrid-appliance-installer.html[Access StorageGRID Appliance Installer and verify you are running most recent version]
+** link:configuring-network-links.html[Configure network links]
+** link:setting-ip-configuration.html[Configure StorageGRID IP addresses]
+** link:verifying-network-connections.html[Verify network connections]
+** link:verifying-port-level-network-connections.html[Verify port-level network connections]
 
 . Access and configure SANtricity management tools (Storage Nodes only)
-** xref:accessing-and-configuring-santricity-system-manager.adoc[SANtricity System Manager (SG6000 and SG5700)]
-** xref:configuring-santricity-storage-manager.adoc[SANtricity Storage Manager (SG5600)]
+** link:accessing-and-configuring-santricity-system-manager.html[SANtricity System Manager (SG6000 and SG5700)]
+** link:configuring-santricity-storage-manager.html[SANtricity Storage Manager (SG5600)]
 
-. xref:configuring-bmc-interface.adoc[Configure the BMC interface (SG6000, SG100, and SG1000)] 
+. link:configuring-bmc-interface.html[Configure the BMC interface (SG6000, SG100, and SG1000)] 
 
 . Perform optional setup steps
-** xref:optional-enabling-node-encryption.adoc[Optional - Enable node encryption]
-** xref:optional-changing-raid-mode.adoc[Optional - Change RAID mode (Storage Nodes only)]
-** xref:optional-remapping-network-ports-for-appliance.adoc[Optional - Remap network ports for appliance (Storage Nodes only)]
+** link:optional-enabling-node-encryption.html[Optional - Enable node encryption]
+** link:optional-changing-raid-mode.html[Optional - Change RAID mode (Storage Nodes only)]
+** link:optional-remapping-network-ports-for-appliance.html[Optional - Remap network ports for appliance (Storage Nodes only)]
 
 
 
@@ -90,5 +90,5 @@ If you are configuring and deploying more than one appliance, use the link:https
 Deploy the appliance as a new node in your StorageGRID system. 
 
 [role="quick-margin-list"]
-* xref:deploying-appliance-storage-node.adoc[Deploy appliance Storage Node]
-* xref:deploying-services-appliance-node.adoc[Deploy services appliance node]
+* link:deploying-appliance-storage-node.html[Deploy appliance Storage Node]
+* link:deploying-services-appliance-node.html[Deploy services appliance node]

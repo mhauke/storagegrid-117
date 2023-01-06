@@ -15,8 +15,8 @@ The security policy controls how TLS and SSH encrypt data in motion. In general,
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You have the xref:admin-group-permissions.adoc[Root access permission].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You have the link:admin-group-permissions.html[Root access permission].
 
 [[select-a-security-policy]]
 == Select a security policy
@@ -75,7 +75,7 @@ A green checkmark appears next to *Current policy* in the Custom policy tile.
 [[temporarily-revert-to-default-security-policy]]
 == Temporarily revert to the default security policy
 
-If you configured a custom security policy, you might not be able to sign in to the Grid Manager if the configured TLS policy is incompatible with the xref:global-certificate-types.adoc[configured server certificate].
+If you configured a custom security policy, you might not be able to sign in to the Grid Manager if the configured TLS policy is incompatible with the link:global-certificate-types.html[configured server certificate].
 
 You can temporarily revert to the default security policy as follows:
 

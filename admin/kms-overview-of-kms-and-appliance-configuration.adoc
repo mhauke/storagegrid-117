@@ -27,15 +27,15 @@ Setting up a key management server includes the following high-level steps.
 a|
 Access the KMS software and add a client for StorageGRID to each KMS or KMS cluster.
 a|
-xref:kms-configuring-storagegrid-as-client.adoc[Configure StorageGRID as a client in the KMS]
+link:kms-configuring-storagegrid-as-client.html[Configure StorageGRID as a client in the KMS]
 a|
 Obtain the required information for the StorageGRID client on the KMS.
 a|
-xref:kms-configuring-storagegrid-as-client.adoc[Configure StorageGRID as a client in the KMS]
+link:kms-configuring-storagegrid-as-client.html[Configure StorageGRID as a client in the KMS]
 a|
 Add the KMS to the Grid Manager, assign it to a single site or to a default group of sites, upload the required certificates, and save the KMS configuration.
 a|
-xref:kms-adding.adoc[Add a key management server (KMS)]
+link:kms-adding.html[Add a key management server (KMS)]
 |===
 
 == Set up the appliance
@@ -51,7 +51,7 @@ IMPORTANT: You cannot enable the *Node Encryption* setting after an appliance is
  ** Each individual DEK is encrypted by a master key encryption key (KEK). The initial KEK is a temporary key that encrypts the DEKs until the appliance can connect to the KMS.
 . Add the appliance node to StorageGRID.
 
-See xref:../installconfig/optional-enabling-node-encryption.adoc[Enable node encryption] for details.
+See link:../installconfig/optional-enabling-node-encryption.html[Enable node encryption] for details.
 
 == Key management encryption process (occurs automatically)
 

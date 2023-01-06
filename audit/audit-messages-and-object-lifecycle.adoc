@@ -36,7 +36,7 @@ Because of factors such as timing differences between grid nodes, object size, a
 
 == Information lifecycle management policy configuration
 
-With the default ILM policy (Baseline 2 Copy), object data is copied once for a total of two copies. If the ILM policy requires more than two copies, there will be an additional set of CBRE, CBSE, and SCMT messages for each extra copy. For more information about ILM policies, see xref:../ilm/creating-ilm-policy.adoc[Create an ILM policy: Overview].
+With the default ILM policy (Baseline 2 Copy), object data is copied once for a total of two copies. If the ILM policy requires more than two copies, there will be an additional set of CBRE, CBSE, and SCMT messages for each extra copy. For more information about ILM policies, see link:../ilm/creating-ilm-policy.html[Create an ILM policy: Overview].
 
 == Archive Nodes
 

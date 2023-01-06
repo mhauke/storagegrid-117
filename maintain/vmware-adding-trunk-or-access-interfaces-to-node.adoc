@@ -16,7 +16,7 @@ You can add a trunk or access interface to a VM node after the node has been ins
 
 * You have access to the instructions for installing StorageGRID on your VMware platform.
 
-xref:../vmware/index.adoc[Install VMware]
+link:../vmware/index.html[Install VMware]
 
 * You have configured StorageGRID 11.6.
 * You have Admin Node and Gateway Node VMware virtual machines.
@@ -57,6 +57,6 @@ ip link show
 
 .After you finish
 
-* If you added one or more trunk interfaces, go to xref:../admin/configure-vlan-interfaces.html[configure VLAN interfaces] to configure one or more VLAN interfaces for each new parent interface.
+* If you added one or more trunk interfaces, go to link:../admin/configure-vlan-interfaces.html[configure VLAN interfaces] to configure one or more VLAN interfaces for each new parent interface.
 
-* If you added one or more access interfaces, go to xref:../admin/configure-high-availability-group.html[configure high availability groups] to add the new interfaces directly to HA groups. 
+* If you added one or more access interfaces, go to link:../admin/configure-high-availability-group.html[configure high availability groups] to add the new interfaces directly to HA groups. 

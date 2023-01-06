@@ -17,7 +17,7 @@ Stored object encryption enables the encryption of all object data as it is inge
 
 The Stored object encryption setting applies only to S3 objects that have not been encrypted by bucket-level or object-level encryption.
 
-For more details on StorageGRID encryption methods, see xref:../admin/reviewing-storagegrid-encryption-methods.html[Review StorageGRID encryption methods].
+For more details on StorageGRID encryption methods, see link:../admin/reviewing-storagegrid-encryption-methods.html[Review StorageGRID encryption methods].
 
 == Prevent client modification
 Prevent client modification is a system wide setting. When the *Prevent client modification* option is selected, the following requests are denied.
@@ -33,13 +33,13 @@ Prevent client modification is a system wide setting. When the *Prevent client m
 == Enable HTTP for Storage Node connections
 By default, client applications use the HTTPS network protocol for any direct connections to Storage Nodes. You can optionally enable HTTP for these connections, for example, when testing a non-production grid.
 
-Use HTTP for Storage Node connections only if S3 and Swift clients need to make HTTP connections directly to Storage Nodes. You do not need to use this option for clients that only use HTTPS connections or for clients that connect to the Load Balancer service (because you can xref:../admin/configuring-load-balancer-endpoints.adoc[configure each load balancer endpoint] to use either HTTP or HTTPS).
+Use HTTP for Storage Node connections only if S3 and Swift clients need to make HTTP connections directly to Storage Nodes. You do not need to use this option for clients that only use HTTPS connections or for clients that connect to the Load Balancer service (because you can link:../admin/configuring-load-balancer-endpoints.html[configure each load balancer endpoint] to use either HTTP or HTTPS).
 
-See xref:summary-ip-addresses-and-ports-for-client-connections.adoc[Summary: IP addresses and ports for client connections] to learn which ports S3 and Swift clients use when connecting to Storage Nodes using HTTP or HTTPS.
+See link:summary-ip-addresses-and-ports-for-client-connections.html[Summary: IP addresses and ports for client connections] to learn which ports S3 and Swift clients use when connecting to Storage Nodes using HTTP or HTTPS.
 
 == Select options
 .What you'll need
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have Root access permission.
 
 .Steps

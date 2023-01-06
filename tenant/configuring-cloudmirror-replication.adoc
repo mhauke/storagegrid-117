@@ -9,14 +9,14 @@ summary: 'The CloudMirror replication service is one of the three StorageGRID pl
 :imagesdir: ../media/
 
 [.lead]
-The xref:understanding-cloudmirror-replication-service.adoc[CloudMirror replication service] is one of the three StorageGRID platform services. You can use CloudMirror replication to automatically replicate objects to an external S3 bucket.
+The link:understanding-cloudmirror-replication-service.html[CloudMirror replication service] is one of the three StorageGRID platform services. You can use CloudMirror replication to automatically replicate objects to an external S3 bucket.
 
 .What you'll need
 
 * Platform services were enabled for your tenant account by a StorageGRID administrator.
 * You have already created a bucket to act as the replication source.
 * The endpoint that you intend to use as a destination for CloudMirror replication already exists, and you have its URN.
-* You belong to a user group that has the xref:tenant-management-permissions.adoc[Manage all buckets or Root access permission]. These permissions override the permission settings in group or bucket policies when configuring the bucket using the Tenant Manager.
+* You belong to a user group that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. These permissions override the permission settings in group or bucket policies when configuring the bucket using the Tenant Manager.
 
 .About this task
 
@@ -24,7 +24,7 @@ CloudMirror replication copies objects from a source bucket to a destination buc
 
 NOTE: Replication is not supported for source or destination buckets with S3 Object Lock enabled.
 
-For general information on bucket replication and how to configure it, see the Amazon Simple Storage Service (S3) documentation on cross-region replication (CRR). For information on how StorageGRID implements the S3 bucket replication configuration API, see the xref:../s3/index.adoc[instructions for implementing S3 client applications].
+For general information on bucket replication and how to configure it, see the Amazon Simple Storage Service (S3) documentation on cross-region replication (CRR). For information on how StorageGRID implements the S3 bucket replication configuration API, see the link:../s3/index.html[instructions for implementing S3 client applications].
 
 If you enable CloudMirror replication on a bucket that contains objects, new objects added to the bucket are replicated, but the existing objects in the bucket are not. You must update existing objects to trigger replication.
 
@@ -83,6 +83,6 @@ For small objects, replication happens quickly.
 
 .Related information
 
-xref:../s3/index.adoc[Use S3 REST API]
+link:../s3/index.html[Use S3 REST API]
 
-xref:creating-platform-services-endpoint.adoc[Create platform services endpoint]
+link:creating-platform-services-endpoint.html[Create platform services endpoint]

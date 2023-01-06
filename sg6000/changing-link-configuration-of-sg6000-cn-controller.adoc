@@ -13,7 +13,7 @@ You can change the Ethernet link configuration of the SG6000-CN controller. You 
 
 .What you'll need
 
-The appliance has been xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed maintenance mode].
+The appliance has been link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed maintenance mode].
 
 .About this task
 
@@ -32,16 +32,16 @@ image::../media/link_configuration_option.gif[Link Configuration]
 
 . [[link_config_changes, start=2]]Make the desired changes to the link configuration.
 +
-For more information on the options, see xref:../installconfig/configuring-network-links.adoc[Configure network links].
+For more information on the options, see link:../installconfig/configuring-network-links.html[Configure network links].
 
 . When you are satisfied with your selections, click *Save*.
 +
 NOTE: You might lose your connection if you made changes to the network or link you are connected through. If you are not reconnected within 1 minute, re-enter the URL for the StorageGRID Appliance Installer using one of the other IP addresses assigned to the appliance: +
 `*https://_Appliance_Controller_IP_:8443*`
 +
-If you made changes to the VLAN settings, the subnet for the appliance might have changed. If you need to change the IP addresses for the appliance, follow the xref:../maintain/configuring-ip-addresses.adoc[Configure IP addresses] instructions.
+If you made changes to the VLAN settings, the subnet for the appliance might have changed. If you need to change the IP addresses for the appliance, follow the link:../maintain/configuring-ip-addresses.html[Configure IP addresses] instructions.
 +
-xref:../installconfig/setting-ip-configuration.adoc[Configure StorageGRID IP addresses]
+link:../installconfig/setting-ip-configuration.html[Configure StorageGRID IP addresses]
 
 . Select *Configure Networking* > *Ping Test* from the menu.
 . Use the Ping Test tool to check connectivity to IP addresses on any networks that might have been affected by the link configuration changes you made in the <<link_config_changes,link configuration changes>> step.

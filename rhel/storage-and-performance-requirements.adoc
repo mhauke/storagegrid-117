@@ -17,7 +17,7 @@ StorageGRID nodes require three logical categories of storage:
 * *System data* -- Performance-tier (10K SAS or SSD) storage for per-node persistent storage of system data and transaction logs, which the StorageGRID host services will consume and map into individual nodes.
 * *Object data* -- Performance-tier (10K SAS or SSD) storage and capacity-tier (NL-SAS/SATA) bulk storage for the persistent storage of object data and object metadata.
 
-You must use RAID-backed block devices for all storage categories. Non-redundant disks, SSDs, or JBODs are not supported. You can use shared or local RAID storage for any of the storage categories; however, if you want to use StorageGRID's node migration capability, you must store both system data and object data on shared storage. For more information, see xref:node-container-migration-requirements.adoc[Node container migration requirements].
+You must use RAID-backed block devices for all storage categories. Non-redundant disks, SSDs, or JBODs are not supported. You can use shared or local RAID storage for any of the storage categories; however, if you want to use StorageGRID's node migration capability, you must store both system data and object data on shared storage. For more information, see link:node-container-migration-requirements.html[Node container migration requirements].
 
 == Performance requirements
 
@@ -84,7 +84,7 @@ IMPORTANT: Depending on the audit level configured, the size of user inputs such
 
 The following table shows the minimum storage space required for each type of node. You can use this table to determine the minimum amount of storage you must provide to the host in each storage category, based on which nodes will be deployed on that host.
 
-NOTE: Disk snapshots cannot be used to restore grid nodes. Instead, refer to the xref:../maintain/grid-node-recovery-procedures.adoc[grid node recovery] procedures for each type of node.
+NOTE: Disk snapshots cannot be used to restore grid nodes. Instead, refer to the link:../maintain/grid-node-recovery-procedures.html[grid node recovery] procedures for each type of node.
 
 [options="header"]
 |===
@@ -181,9 +181,11 @@ When you assign space to volume 0 of a new Storage Node, you must ensure there i
 * At a minimum, you must assign at least 4 TB to volume 0.
 +
 NOTE: If you use only one storage volume for a Storage Node and you assign 4 TB or less to the volume, the Storage Node might enter the Storage Read-Only state on startup and store object metadata only.
++
+NOTE: If you assign less than 500 GB to volume 0 (non-production use only), 10% of the storage volume's capacity is reserved for metadata.
 
 * If you are installing a new StorageGRID 11.6 system and each Storage Node has 128 GB or more of RAM, you should assign 8 TB or more to volume 0. Using a larger value for volume 0 can increase the space allowed for metadata on each Storage Node.
 * When configuring different Storage Nodes for a site, use the same setting for volume 0 if possible. If a site contains Storage Nodes of different sizes, the Storage Node with the smallest volume 0 will determine the metadata capacity of that site.
 
-For details, go to xref:../admin/managing-object-metadata-storage.adoc[Manage object metadata storage].
+For details, go to link:../admin/managing-object-metadata-storage.html[Manage object metadata storage].
 

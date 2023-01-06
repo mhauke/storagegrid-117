@@ -13,8 +13,8 @@ After completing the Linux installation on your hosts, you might need to perform
 
 .What you'll need
 
-* You have reviewed the xref:../network/index.adoc[StorageGRID networking guidelines].
-* You have reviewed the information about xref:node-container-migration-requirements.adoc[node container migration requirements].
+* You have reviewed the link:../network/index.html[StorageGRID networking guidelines].
+* You have reviewed the information about link:node-container-migration-requirements.html[node container migration requirements].
 * If you are using virtual hosts, you have read the <<mac_address_cloning_rhel,considerations and recommendations for MAC address cloning>> before configuring the host network.
 
 NOTE: If you are using VMs as hosts, you should select VMXNET 3 as the virtual network adapter. The VMware E1000 network adapter has caused connectivity issues with StorageGRID containers deployed on certain distributions of Linux.
@@ -33,7 +33,7 @@ NOTE: Do not use bond or bridge devices directly as the container network interf
 
 .Related information
 
-xref:creating-node-configuration-files.adoc[Creating node configuration files]
+link:creating-node-configuration-files.html[Creating node configuration files]
 
 .[[mac_address_cloning_rhel]]
 == Considerations and recommendations for MAC address cloning
@@ -69,7 +69,7 @@ There are two use cases to consider with MAC cloning:
 
 NOTE: If you do not want to use MAC address cloning and would rather allow all interfaces to receive and transmit data for MAC addresses other than the ones assigned by the hypervisor, ensure that the security properties at the virtual switch and port group levels are set to *Accept* for Promiscuous Mode, MAC Address Changes, and Forged Transmits. The values set on the virtual switch can be overridden by the values at the port group level, so ensure that settings are the same in both places.
 
-To enable MAC cloning, see the xref:creating-node-configuration-files.adoc[instructions for creating node configuration files].
+To enable MAC cloning, see the link:creating-node-configuration-files.html[instructions for creating node configuration files].
 
 === MAC cloning example
 
@@ -121,4 +121,4 @@ Sample interface configuration files for this per-host networking configuration 
 
 .Related information
 
-xref:example-etc-sysconfig-network-scripts.adoc[Example /etc/sysconfig/network-scripts]
+link:example-etc-sysconfig-network-scripts.html[Example /etc/sysconfig/network-scripts]

@@ -19,11 +19,11 @@ StorageGRID uses the following security measures.
 
 * Client communications with the Load Balancer service use HTTPS if HTTPS is configured for the load balancer endpoint.
 +
-When you xref:../admin/configuring-load-balancer-endpoints.adoc[configure a load balancer endpoint], HTTP can optionally be enabled. For example, you might want to use HTTP for testing or other non-production purposes.
+When you link:../admin/configuring-load-balancer-endpoints.html[configure a load balancer endpoint], HTTP can optionally be enabled. For example, you might want to use HTTP for testing or other non-production purposes.
 
 * By default, StorageGRID uses HTTPS for client communications with Storage Nodes.
 +
-Optionally, xref:../admin/enabling-http-for-client-communications.adoc[enable HTTP for these connections]. For example, you might want to use HTTP for testing or other non-production purposes.
+Optionally, link:../admin/enabling-http-for-client-communications.html[enable HTTP for these connections]. For example, you might want to use HTTP for testing or other non-production purposes.
 +
 
 * Communications between StorageGRID and the client are encrypted using TLS.
@@ -41,7 +41,7 @@ In all cases, client applications can make TLS connections using either a custom
 
 Clients should be configured to trust the certificate authority that signed whichever certificate they use to establish TLS connections.
 
-See xref:../admin/configuring-load-balancer-endpoints.adoc[configuring load balancer endpoints] and xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[adding a single custom server certificate] for TLS connections directly to Storage Nodes.
+See link:../admin/configuring-load-balancer-endpoints.html[configuring load balancer endpoints] and link:../admin/configuring-custom-server-certificate-for-storage-node.html[adding a single custom server certificate] for TLS connections directly to Storage Nodes.
 
 === Summary
 
@@ -86,4 +86,4 @@ IMPORTANT: SSLv3 and TLS 1.1 (or earlier versions) are no longer supported.
 
 .Related information
 
-xref:configuring-tenant-accounts-and-connections.adoc[Configure tenant accounts and connections]
+link:configuring-tenant-accounts-and-connections.html[Configure tenant accounts and connections]

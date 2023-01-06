@@ -42,7 +42,7 @@ You can use the IP address of the appliance on the Grid Network, the Admin Netwo
 
  .. If the IP address is correct, check appliance cabling, SFP transceivers, and the network setup.
 
- .. If physical access to the SG6000-CN is available, you can use a direct connection to the permanent link-local IP `169.254.0.1` to check controller networking configuration and update if necessary. For detailed instructions, see step 2 in xref:../installconfig/accessing-storagegrid-appliance-installer.adoc[Accessing StorageGRID Appliance Installer].
+ .. If physical access to the SG6000-CN is available, you can use a direct connection to the permanent link-local IP `169.254.0.1` to check controller networking configuration and update if necessary. For detailed instructions, see step 2 in link:../installconfig/accessing-storagegrid-appliance-installer.html[Accessing StorageGRID Appliance Installer].
 +
 If that does not resolve the issue, contact technical support.
 
@@ -72,8 +72,8 @@ If the StorageGRID Appliance Installer pages do not indicate that expansion shel
 
 .Steps
 
-. Verify that xref:cabling-appliance-sg6000.adoc[all required cables have been firmly connected].
-. Verify that you have xref:connecting-power-cords-and-applying-power-sg6000.adoc[powered on the expansion shelves].
+. Verify that link:cabling-appliance-sg6000.html[all required cables have been firmly connected].
+. Verify that you have link:connecting-power-cords-and-applying-power-sg6000.html[powered on the expansion shelves].
 . If you need help resolving an issue, contact technical support.
 
 
@@ -145,4 +145,4 @@ For Management_Port_IP, enter the IP address for management port 1 on the E5600S
 
 .Related information
 
-xref:../installconfig/viewing-status-indicators.adoc[View status indicators]
+link:../installconfig/viewing-status-indicators.html[View status indicators]

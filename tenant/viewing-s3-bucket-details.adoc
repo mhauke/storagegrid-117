@@ -13,9 +13,11 @@ You can view the buckets in your tenant account.
 
 .What you'll need
 
-* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+
 
 .Steps
+
 . Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
 +
 The Buckets page appears.
@@ -60,12 +62,12 @@ This column appears only if S3 Object Lock is enabled for the grid. This column 
 +
 The bucket details page appears. From this page, you can perform the following tasks:
 
-* Configure and manage bucket options, such as xref:changing-consistency-level.adoc[consistency level], xref:enabling-or-disabling-last-access-time-updates.adoc[last access time updates], xref:changing-bucket-versioning.adoc[object versioning], xref:using-s3-object-lock.adoc[S3 Object Lock] and xref:update-default-retention-settings.adoc[default bucket retention]
-* Configure bucket access, such as xref:configuring-cross-origin-resource-sharing-cors.adoc[cross-origin resource sharing (CORS)]
-* Manage xref:what-platform-services-are.adoc[platform services] (if allowed for the tenant), including replication, event notifications, and search integration
+* Configure and manage bucket options, such as link:changing-consistency-level.html[consistency level], link:enabling-or-disabling-last-access-time-updates.html[last access time updates], link:changing-bucket-versioning.html[object versioning], link:using-s3-object-lock.html[S3 Object Lock] and link:update-default-retention-settings.html[default bucket retention]
+* Configure bucket access, such as link:configuring-cross-origin-resource-sharing-cors.html[cross-origin resource sharing (CORS)]
+* Manage link:what-platform-services-are.html[platform services] (if allowed for the tenant), including replication, event notifications, and search integration
 * Enable and link:grid-federation-manage-cross-grid-replication.html[manage cross-grid replication] (if allowed for the tenant) to replicate objects ingested into this bucket to another StorageGRID system
-* Access the experimental xref:use-s3-console.adoc[S3 Console] to add objects to the bucket
-* xref:deleting-s3-bucket-objects.adoc[Delete all objects in a bucket]
-* xref:deleting-s3-bucket.adoc[Delete a bucket] that is already empty
+* Access the link:use-s3-console.html[Experimental S3 Console] to manage the objects in the bucket
+* link:deleting-s3-bucket-objects.html[Delete all objects in a bucket]
+* link:deleting-s3-bucket.html[Delete a bucket] that is already empty
 
 
