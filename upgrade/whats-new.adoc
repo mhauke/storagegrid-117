@@ -21,7 +21,7 @@ As part of this change, a new banner is displayed on the dashboard to remind new
 See link:../admin/use-s3-setup-wizard.html[Use S3 setup wizard]  and link:../fabricpool/use-fabricpool-setup-wizard.html[Use FabricPool setup wizard].
 
 === Changes to load balancer endpoints
-When you create a load balancer endpoint, you can now do the following:
+When you link:../admin/configuring-load-balancer-endpoints.html[configure load balancer endpoints], you can now do the following:
 
 * Allow all tenants to access the endpoint (default), or specify a list of allowed or blocked tenants to provide better security isolation between tenants and their endpoints. 
 * Use the *Node Type* binding mode to require clients to use the IP address (or corresponding FQDN) of any Admin Node or the IP address of any Gateway Node, based on the type of node you select.
@@ -53,9 +53,6 @@ When you install StorageGRID 11.7 on a new grid, storage pools are automatically
 
 === Can assign custom storage grades to new Storage Nodes
 When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See link:../expand/performing-expansion.html[Perform expansion].
-
-=== Grid federation
-You can now create a connection between two StorageGRID systems. Grid connections let you synchronize account information and replicate objects between grids for disaster recovery. See link:../admin/grid-federation-overview.html[Use grid federation: Overview].
 
 === Changes to audit messages
 A new audit message category was added for ILM operations, which includes the IDEL, LKCU, and ORLM messages. This new category is set to *Normal*. See link:../audit/ilm-audit-messages.html[ILM operations audit messages].
