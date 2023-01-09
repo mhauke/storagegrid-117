@@ -86,8 +86,4 @@ As you begin using grid federation, it might be helpful to understand the simila
 Similarly, objects in the destination bucket can be deleted without affecting the source.
 
 
-| How do you access objects after a disaster (StorageGRID system not operational)?
-| Refer to link:grid-federation-how-disaster-recovery-is-performed.html[How disaster recovery is performed by technical support].
-| The object copies in the CloudMirror destination are independent of StorageGRID, so they can be accessed directly before the StorageGRID nodes are recovered.
-
 |===
