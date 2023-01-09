@@ -70,7 +70,7 @@ IMPORTANT: This option removes some protections for internal services. Leave it 
 
 When a port is closed in the Manage external access tab, the port can't be accessed by any non-grid IP address unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
 
-NOTE: Settings on the Manage external access tab can not override settings on the Untrusted Client Network tab. For example, if a node is untrusted, port SSH/22 is blocked on the client network even if it is open on the Manage external access tab. Settings on the Untrusted Client Network tab override blocked ports (such as 443, 8443, 9443) on the client network.
+NOTE: Settings on the Manage external access tab cannot override settings on the Untrusted Client Network tab. For example, if a node is untrusted, port SSH/22 is blocked on the Client Network even if it is open on the Manage external access tab. Settings on the Untrusted Client Network tab override blocked ports (such as 443, 8443, 9443) on the Client Network.
 
 . Select *Manage external access*.
 The tab displays a table with all of the external ports (ports that are accessible by non-grid nodes by default) for the nodes in your grid. 
@@ -123,10 +123,10 @@ NOTE: Use the scroll bar on the right side of the table to be sure you have view
 . Optionally, select any additional ports you want open on the untrusted Client Network. These ports can provide access to the Grid Manager, the Tenant Manager, or both. 
 
 + 
-For example, you might want to use this option to ensure that the Grid Manager can be accessed on the client network for maintenance purposes. 
+For example, you might want to use this option to ensure that the Grid Manager can be accessed on the Client Network for maintenance purposes. 
 
 +
-NOTE: These additional ports are open on the client network, regardless of whether they are closed in the Manage external access tab.
+NOTE: These additional ports are open on the Client Network, regardless of whether they are closed in the Manage external access tab.
 
 . Select *Save*.
 +
