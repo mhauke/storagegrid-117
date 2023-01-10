@@ -8,14 +8,7 @@ summary: 'This reference lists the default alerts that appear in the Grid Manage
 :icons: font
 :imagesdir: ../media/
 
-// To automatically update all alert summaries for _this_ file during or at the end of a release cycle:
-// 1. Go to a build server in the VED/BigTop (http://vtcsgbuild.vtc.eng.netapp.com/output/storagegrid/ or http://rtpsgbuild.rtp.netapp.com/output/storagegrid/).
-// 2. On the Build Output Status page that appears, select one of the build servers in the left panel in the section, Build Server Output.
-// 3. Select storagegrid/ from the Index of /output/ page.
-// 4. Select Ctrl+F to search the page for "adoc" (the entire file name is alert-rules-adoc-format.txt). If a build is in progress, you might have to wait a few seconds or minutes.
-// 5. When you locate the .txt file (alert-rules-adoc-format.txt), select the file name to open the file.
-// 6. When the file opens, copy the contents and paste over the similar contents in alerts-reference.adoc.
-// See also: instructions at https://jira.vtc.eng.netapp.com/browse/SGWS-24003
+// Update _this_ file using automatically generated content. See SG IE instructions in Confluence.
 
 [.lead]
 This reference lists the default alerts that appear in the Grid Manager. Recommended actions are in the alert message you receive.
