@@ -40,13 +40,13 @@ When using Fixed port bond mode, the ports can be bonded using active-backup mod
 * In active-backup mode (default), only one port is active at a time. If the active port fails, its backup port automatically provides a failover connection. Port 4 provides a backup path for port 2 (Grid Network), and port 3 provides a backup path for port 1 (Client Network).
 * In LACP mode, each pair of ports forms a logical channel between the services appliance and the network, allowing for higher throughput. If one port fails, the other port continues to provide the channel. Throughput is reduced, but connectivity is not impacted.
 
-NOTE: If you do not need redundant connections, you can use only one port for each network. However, be aware that the *Services appliance link down* alert might be triggered in the Grid Manager after StorageGRID is installed, indicating that a cable is unplugged. You can safely disable this alert rule.
+NOTE: If you do not need redundant connections, you can use only one port for each network. However, be aware that the *Storage appliance link down* alert might be triggered in the Grid Manager after StorageGRID is installed, indicating that a cable is unplugged. You can safely disable this alert rule.
 
 === Aggregate port bond mode
 
 Aggregate port bond mode significantly increases the throughput for each StorageGRID network and provides additional failover paths.
 
-*SG6100 aggregate port bond mode (SGF6112 shown)*
+*SGF6112 aggregate port bond mode*
 
 image::../media/sgf6112_aggregate_ports.png[SGF6100 aggregate port bond mode]
 
@@ -74,11 +74,11 @@ NOTE: If you choose to use fewer than four network ports, be aware that a *Servi
 
 For the two 1-GbE management ports on the services appliance, you can choose Independent network bond mode or Active-Backup network bond mode to connect to the optional Admin Network.
 
-*SG6100 network management ports (SGF6112 shown)*
+*SGF6112 network management ports*
 
 image::../media/sgf6112_bonded_management_ports.png[Network Management Ports]
 
-In Independent mode, only the management port on the left is connected to the Admin Network. This mode does not provide a redundant path. The management port on the right is unconnected and available for temporary local connections (uses IP address 169.254.0.1)
+In Independent mode, only the management port on the left is connected to the Admin Network. This mode does not provide a redundant path. The management port on the right is unconnected and available for temporary local connections (uses IP address 169.254.0.1).
 
 In Active-Backup mode, both management ports are connected to the Admin Network. Only one port is active at a time. If the active port fails, its backup port automatically provides a failover connection. Bonding these two physical ports into one logical management port provides a redundant path to the Admin Network.
 

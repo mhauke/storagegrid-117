@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, sg6100, sgf6112, install, information, site, pre-install, preparing, prepare, preinstall, info, preparation
 summary: 'As you install and configure the StorageGRID appliance, you must make decisions and gather information about Ethernet switch ports, IP addresses, and port and network bond modes. Record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.'
 ---
-= Gather installation information (SG6100)
+= Gather installation information (SGF6112)
 :icons: font
 :imagesdir: ../media/
 
@@ -13,7 +13,7 @@ As you install and configure the StorageGRID appliance, you must make decisions 
 
 == Check StorageGRID version
 
-Before installing an SG6100 series appliance, confirm your StorageGRID system is using a required version of StorageGRID software.
+Before installing an SGF6112 appliance, confirm your StorageGRID system is using a required version of StorageGRID software.
 
 [options="header"]
 |===
@@ -267,9 +267,9 @@ a|
 
 == BMC management network ports
 
-You can access the BMC interface on the services appliance using the 1-GbE management port circled in the diagram. This port supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management Interface (IPMI) standard.
+You can access the BMC interface on the appliance using the 1-GbE management port circled in the diagram. This port supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management Interface (IPMI) standard.
 
-*SG6100 BMC management port*
+*SGF6112 BMC management port*
 
 image::../media/sgf6112_cn_bmc_management_port.png[SG6100 management port]
 
