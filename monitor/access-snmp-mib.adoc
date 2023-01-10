@@ -30,7 +30,7 @@ See link:using-snmp-monitoring.html[Use SNMP monitoring] for more information on
 +
 `root@user-adm1:~ # snmptranslate -On -IR storagegrid`
 +
-Result: .`1.3.6.1.4.1.789.28669` (28669 is always the OID for StorageGRID)
+Result: .`1.3.6.1.4.1.789.28669` (`28669` is always the OID for StorageGRID)
 
 .. Then grep for the StorageGRID OID in the entire tree (using paste to join lines): 
 +
