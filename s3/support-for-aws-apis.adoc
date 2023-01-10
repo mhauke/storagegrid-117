@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Amazon s3, API, request headers, s3 support, request syntax, supported, aws s3
 summary: 'This table summarizes StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
 ---
-= AWS S3 APIs supported by StorageGRID
+= Quick reference: Supported S3 API requests
 :icons: font
 :imagesdir: ../media/
 
@@ -21,10 +21,10 @@ To see the AWS documentation for each command, select the link in the headers.
 These request header parameters are supported:
 ----
 Key	
-uploadedId	
-	Host
-	Date
-	Authorization
+uploadId	
+Host
+Date
+Authorization
 ----
 
 This request does not have a request body.
@@ -38,11 +38,11 @@ xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 These request header parameters are supported:
 ----
 Key		
-uploadedId		
-	Host	
-	Date	
-	Content-Length	
-	Authorization	
+uploadId		
+Host	
+Date	
+Content-Length	
+Authorization	
 ----
 
 The request body is implemented with all Amazon S3 REST API behavior.
@@ -57,7 +57,6 @@ These request header parameters are supported:
 
 * `Key`	
 * `Host`
-
 * `Cache-Control`
 * `Content-Disposition`
 * `Content-Encoding`
@@ -68,23 +67,20 @@ These request header parameters are supported:
 * `x-amz-copy-source-if-modified-since`
 * `x-amz-copy-source-if-none-match`
 * `x-amz-copy-source-if-unmodified-since`
-
-* `x-amz-metadata-directive`
-* `x-amz-tagging-directive`
-* `x-amz-server-side-encryption`
-* `x-amz-storage-class`
-
-* `x-amz-server-side-encryption-customer-algorithm`
-* `x-amz-server-side-encryption-customer-key`
-* `x-amz-server-side-encryption-customer-key-MD5`
-
 * `x-amz-copy-source-server-side-encryption-customer-algorithm`
 * `x-amz-copy-source-server-side-encryption-customer-key`
 * `x-amz-copy-source-server-side-encryption-customer-key-MD5`
-* `x-amz-tagging`
+* `x-amz-metadata-directive`
+* `x-amz-object-lock-legal-hold`
 * `x-amz-object-lock-mode`
 * `x-amz-object-lock-retain-until-date`
-* `x-amz-object-lock-legal-hold`
+* `x-amz-server-side-encryption`
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`
+* `x-amz-storage-class`
+* `x-amz-tagging`
+* `x-amz-tagging-directive`
 * `Date`
 * `Authorization`
 
@@ -955,7 +951,7 @@ These request header parameters are supported:
 ----
 Key	
 PartNumber	
-UploadedId	
+UploadId	
 	Host
 	Content-Length
 	Content-MD5
@@ -981,7 +977,7 @@ These request header parameters are supported:
 ----
 Key	
 PartNumber	
-UploadedId	
+UploadId	
 	Host
 	x-amz-copy-source
 	x-amz-copy-source-if-match
