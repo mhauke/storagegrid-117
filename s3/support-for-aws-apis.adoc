@@ -1,5 +1,5 @@
 ---
-permalink: s3/support-for-aws-apis-2.html
+permalink: s3/support-for-aws-apis.html
 sidebar: sidebar
 keywords: Amazon s3, API, request headers, s3 support, request syntax, supported, aws s3
 summary: 'This table summarizes StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
@@ -9,12 +9,11 @@ summary: 'This table summarizes StorageGRID support for Amazon Simple Storage Se
 :imagesdir: ../media/
 
 [.lead]
-This list summarizes StorageGRID's support for Amazon Simple Storage Service (S3) APIs.
+This topic summarizes StorageGRID's support for Amazon Simple Storage Service (S3) APIs.
 
-This list:
+This topic only includes the S3 commands that are supported by StorageGRID. For each supported command, this topic only lists the parameters that are supported by StorageGRID.
 
-* Includes only those S3 commands that are supported.
-* List only the supported parameters for each supported command.
+To see the AWS documentation for each command, select the link in the headers.
 
 //AbortMultipartUpload
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
@@ -222,12 +221,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 //DeleteObjectTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html[DeleteObjectTagging^]
 
-
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-objects.adoc[Operations on objects]
@@ -235,11 +229,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 //GetBucketAcl
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketAcl^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -247,11 +237,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketCors
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html[GetBucketCors^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -259,11 +245,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketEncryption
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html[GetBucketEncryption^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -271,11 +253,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketLifecycle
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html[GetBucketLifecycle^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -283,11 +261,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketLifecycleConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html[GetBucketLifecycleConfiguration^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -295,11 +269,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketLocation
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html[GetBucketLocation^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -307,11 +277,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketNotification
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotification.html[GetBucketNotification^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -319,11 +285,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketNotificationConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html[GetBucketNotificationConfiguration^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets] 
@@ -331,11 +293,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketPolicy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html[GetBucketPolicy^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -343,11 +301,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketReplication
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html[GetBucketReplication^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -355,11 +309,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html[GetBucketTagging^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -367,11 +317,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetBucketVersioning
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html[GetBucketVersioning^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -379,11 +325,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //GetObject
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html[GetObject^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:get-object.adoc[GET Object]
@@ -391,8 +333,7 @@ xref:get-object.adoc[GET Object]
 //GetObjectAcl
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html[GetObjectAcl^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `VersionId`
@@ -400,7 +341,6 @@ These parameters are supported:
 * `Date`
 * `Authorization`
 
-.Request body 
 This request does not have a request body.
 
 .Learn more
@@ -409,8 +349,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 //GetObjectLegalHold
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html[GetObjectLegalHold^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `VersionId`
@@ -418,7 +357,6 @@ These parameters are supported:
 * `Date`
 * `Authorization`
 
-.Request body 
 This request does not have a request body.
 
 .Learn more
@@ -430,17 +368,13 @@ xref:operations-on-objects.adoc[Operations on objects]
 .Request header
 Implemented with all Amazon S3 REST API behavior.
 
-.Request body 
-This request does not have a request body.
-
 .Learn more
 xref:operations-on-objects.adoc[Operations on objects]
 
 //GetObjectRetention
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html[GetObjectRetention^]
 
-.Request header
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `VersionId`
@@ -448,7 +382,6 @@ These parameters are supported:
 * `Date`
 * `Authorization`
 
-.Request body 
 This request does not have a request body.
 
 .Learn more
@@ -457,11 +390,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 //GetObjectTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html[GetObjectTagging^]
 
-.Request header 
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body 
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-objects.adoc[Operations on objects]
@@ -469,11 +398,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 //HeadBucket
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html[HeadBucket^]
 
-.Request header 
 Implemented with all Amazon S3 REST API behavior.
-
-.Request body
-This request does not have a request body.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -482,7 +407,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html[HeadObject^]
 
 .Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`		
 * `VersionId`	
@@ -493,7 +418,6 @@ These parameters are supported:
 * `Date`
 * `Authorization`
 
-.Request body
 This request does not have a request body.
 
 .Learn more
@@ -502,10 +426,8 @@ xref:head-object.adoc[HEAD Object]
 // ListBuckets
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^] 
 
-.Request header 
-This request does not use any URI parameters.
+This request header does not use any URI parameters.
 
-.Request body
 This request does not have a request body.
 
 .Learn more
@@ -514,8 +436,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //ListMultipartUploads
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html[ListMultipartUploads^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `encoding-type`	
 * `key-marker`	
@@ -526,7 +447,6 @@ These parameters are supported:
 * `Date`
 * `Authorization`
 
-.Request body
 This request does not have a request body.
 
 .Learn more
@@ -535,8 +455,7 @@ xref:list-multipart-uploads.adoc[List Multipart Uploads]
 // ListObjects
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html[ListObjects^] 
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `delimiter`
 * `encoding-type`	
@@ -548,7 +467,6 @@ These parameters are supported:
 * `Authorization`
 * `Content-Type`
 
-.Request body
 This request does not have a request body.
 
 .Learn more
@@ -557,8 +475,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 // ListObjectsV2
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html[ListObjectsV2^] 
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `continuation-token` 
 * `delimiter`
@@ -571,7 +488,6 @@ These parameters are supported:
 * `Authorization`
 * `Content-Type`
 
-.Request body
 This request does not have a request body.
 
 .Learn more
@@ -580,8 +496,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 // ListObjectVersions
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html[ListObjectVersions^] 
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
  
 * `delimiter`
 * `encoding-type`	
@@ -593,7 +508,6 @@ These parameters are supported:
 * `Authorization`
 * `Content-Type`
 
-.Request body
 This request does not have a request body.
 
 .Learn more
@@ -602,8 +516,7 @@ xref:operations-on-objects.adoc[Operations on objects]
 // ListParts
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html[ListParts^] 
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 	
 * `key`	
 * `max-parts`	
@@ -613,7 +526,6 @@ These parameters are supported:
 * `Date`
 * `Authorization`
 
-.Request body
 This request does not have a request body.
 
 .Learn more
@@ -622,8 +534,7 @@ xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 // PutBucketCors
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucketCors^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Content-MD5`
@@ -631,8 +542,7 @@ These parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-.Request body
-Implemented with all Amazon S3 REST API behavior.
+The request body is implemented with all Amazon S3 REST API behavior.
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -640,8 +550,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 // PutBucketEncryption
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html[PutBucketEncryption^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Content-MD5`
@@ -649,8 +558,7 @@ These parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `ServerSideEncryptionConfiguration` 			
 * `Rule`		
@@ -660,15 +568,12 @@ These parameters are supported:
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
 
-
 //PutBucketNotificationConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
 
-.Request header 
-Implemented with all Amazon S3 REST API behavior.
+The request header is implemented with all Amazon S3 REST API behavior.
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `NotificationConfiguration`
 
@@ -677,8 +582,7 @@ These parameters are supported:
 //PutBucketLifecycle
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html[PutBucketLifecycle^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Content-MD5`
@@ -686,8 +590,7 @@ These parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `LifecycleConfiguration`			
 * `Rule`		
@@ -708,16 +611,14 @@ xref:create-s3-lifecycle-configuration.adoc[Create S3 lifecycle configuration]
 //PutBucketLifecycleConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html[PutBucketLifecycleConfiguration^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Date`
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `LifecycleConfiguration`						
 * `Rule`					
@@ -749,14 +650,12 @@ xref:create-s3-lifecycle-configuration.adoc[Create S3 lifecycle configuration]
 //PutBucketNotification
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html[PutBucketNotification^]
 
-.Request header 
-These parameters are supported: 
+These request header parameters are supported: 
 
 * `Host`
 * `Content-MD5`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `NotificationConfiguration`		
 * `TopicConfiguration`	
@@ -770,8 +669,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //PutBucketNotificationConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
 
-.Request header 
-These parameters are supported: 
+These request header parameters are supported: 
 
 * `Host`
 * `Date`
@@ -782,8 +680,7 @@ These parameters are supported:
 * `Accept`
 * `Proxy-Connection`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `NotificationConfiguration`					
 * `TopicConfiguration`				
@@ -802,15 +699,13 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //PutBucketPolicy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html[PutBucketPolicy^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Date`
 * `Authorization`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `Policy` (in JSON format)			
 * `Version`		
@@ -828,18 +723,16 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //PutBucketReplication
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html[PutBucketReplication^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Date`
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported: 
+These request header parameters are supported: 
 
-* tbd
+//tbd
 
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
@@ -848,16 +741,14 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //PutBucketTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html[PutBucketTagging^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Date`
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported: 
+These request body parameters are supported: 
 
 * `Tagging`	
 * `TagSet`
@@ -871,8 +762,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //PutBucketVersioning
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html[PutBucketVersioning^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`
 * `Date`
@@ -880,8 +770,7 @@ These parameters are supported:
 * `Content-Length`
 * `Content-Type`
 
-.Request body
-These parameters are supported: 
+These request body parameters are supported: 
 
 * `VersioningConfiguration`	
 * `Status`
@@ -892,8 +781,7 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //PutObject
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html[PutObject^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `Host`
@@ -925,8 +813,7 @@ These parameters are supported:
 * `Expect`
 * `Accept`
 
-.Request body
-These parameters are supported: 
+These request body parameters are supported: 
 
 * `Body`	
 
@@ -936,8 +823,7 @@ xref:put-object.adoc[PUT Object]
 //PutObjectLegalHold
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html[PutObjectLegalHold^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `VersionId`
@@ -949,8 +835,7 @@ These parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `LegalHold`
 * `Status`
@@ -961,8 +846,7 @@ xref:use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object L
 //PutObjectLockConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html[PutObjectLockConfiguration^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Host`	
 * `x-amz-bucket-object-lock-token`
@@ -973,8 +857,7 @@ These parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-.Request body 
-These parameters are supported:
+These request body parameters are supported:
 
 * `ObjectLockConfiguration`			
 * `ObjectLockEnabled`			
@@ -990,8 +873,7 @@ xref:use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object L
 //PutObjectRetention
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html[PutObjectRetention^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `VersionId`
@@ -1004,8 +886,7 @@ These parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `Retention`			
 * `Mode`			
@@ -1016,8 +897,7 @@ xref:use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object L
 //PutObjectTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html[PutObjectTagging^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`	
 * `VersionId`
@@ -1027,8 +907,7 @@ These parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 * `Tagging`				
 * `TagSet`			
@@ -1041,16 +920,14 @@ xref:put-object.adoc[PUT Object]
 // SelectObjectContent
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[SelectObjectContent^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 
 * `Key`
 * `Date`
 * `Authorization`
 * `Content-Length`
 
-.Request body
-These parameters are supported:
+These request body parameters are supported:
 
 ----
 SelectObjectContentRequest							
@@ -1084,8 +961,7 @@ xref:select-object-content.adoc[Select Object Content]
 // UploadPart
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html[UploadPart^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 ----
 Key	
 PartNumber	
@@ -1101,11 +977,9 @@ UploadedId
 	Content-Length
 ----
 
-.Request body
-These parameters are supported:
-----
-Body
-----
+These request body parameters are supported:
+
+* `Body`
 
 .Learn more
 xref:upload-part.adoc[Upload Part]
@@ -1113,8 +987,7 @@ xref:upload-part.adoc[Upload Part]
 // UploadPartCopy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html[UploadPartCopy^]
 
-.Request header 
-These parameters are supported:
+These request header parameters are supported:
 ----
 Key	
 PartNumber	
@@ -1136,7 +1009,6 @@ UploadedId
 	Authorization
 ----
 
-.Request body
 This request does not have a request body.
 
 .Learn more
