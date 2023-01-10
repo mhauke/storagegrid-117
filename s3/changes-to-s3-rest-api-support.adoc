@@ -19,6 +19,7 @@ You should be aware of changes to the StorageGRID system's support for the S3 RE
 |
 * Added support for using GOVERNANCE mode with S3 Object Lock.
 * Added support for the StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header for GET Object and HEAD Object requests. This header provides an object's replication status for cross-grid replication.
+* SelectObjectContent requests now support Parquet objects.
 
 |11.6
 |
