@@ -4,12 +4,12 @@ sidebar: sidebar
 keywords: storagegrid, sgf6112, storage appliance, Replacing, replace, fan, remove, removing, removal, install, installing
 summary: 'The SG6100 series appliances have eight cooling fans. If one of the fans fails, you must replace it as soon as possible to ensure that the appliance has proper cooling.'
 ---
-= Replace fan in a SG6100 series appliances
+= Replace fan in a SGF6112 appliance
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-SG6100 series appliances have eight cooling fans. If one of the fans fails, you must replace it as soon as possible to ensure that the appliance has proper cooling.
+the SGF6112 appliance has eight cooling fans. If one of the fans fails, you must replace it as soon as possible to ensure that the appliance has proper cooling.
 
 .What you'll need
 
@@ -56,3 +56,5 @@ image::../media/sgf6112_fan_socket_check.png[Fan Connector Check]
 Use the BMC interface to monitor boot-up status.
 
 . Confirm that the appliance node appears in the Grid Manager and that no alerts appear.
+
+include::../_include/fru-statement.adoc[] 

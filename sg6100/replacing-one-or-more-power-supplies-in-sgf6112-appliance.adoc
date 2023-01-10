@@ -4,12 +4,12 @@ sidebar: sidebar
 keywords: storagegrid, sg6100, sgf6112, Replacing, replace, power supply, remove, removing, removal, install, installing, installation 
 summary: 'SG6100 series appliances have two power supplies for redundancy. If one of the power supplies fails, you must replace it as soon as possible to ensure that the appliance has redundant power. Both power supplies operating in the controller must be of the same model and wattage.'
 ---
-= Replace one or both power supplies in the SG6100 series appliance
+= Replace one or both power supplies in the SGF6112 appliance
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-SG6100 series appliances have two power supplies for redundancy. If one of the power supplies fails, you must replace it as soon as possible to ensure that the appliance has redundant power. Both power supplies operating in the controller must be of the same model and wattage.
+The SGF6112 appliance has two power supplies for redundancy. If one of the power supplies fails, you must replace it as soon as possible to ensure that the appliance has redundant power. Both power supplies operating in the controller must be of the same model and wattage.
 
 .What you'll need
 
@@ -72,5 +72,7 @@ image::../media/sg6000_cn_insert_power_supply.gif[Sliding power supply in]
 
 . If you are replacing both power supplies, repeat steps 2 though 6 to replace the second power supply. 
 //update link
-. xref:../installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.adoc[Connect the power cords to the replaced units and apply power].
+. xref:../installconfig/connecting-power-cords-and-applying-power-sgf6112.adoc[Connect the power cords to the replaced units and apply power].
 . If you  placed the appliance in maintenance mode, exit maintenance mode. From the StorageGRID Appliance Installer, select *Advanced* > *Reboot Controller*, and then select *Reboot into StorageGRID*.
+
+include::../_include/fru-statement.adoc[] 
