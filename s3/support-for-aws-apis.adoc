@@ -19,12 +19,13 @@ To see the AWS documentation for each command, select the link in the headers.
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
 
 These request header parameters are supported:
-
-* `Key`	
-* `uploadedId`	
-*	`Host`
-*	`Date`
-*	`Authorization`
+----
+Key	
+uploadedId	
+	Host
+	Date
+	Authorization
+----
 
 This request does not have a request body.
 
@@ -35,13 +36,14 @@ xref:operations-for-multipart-uploads.adoc[Operations for multipart uploads]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
 
 These request header parameters are supported:
-
-* `Key`	
-* `uploadedId`	
-*	`Host`
-*	`Date`
-*	`Content-Length`
-*	`Authorization`
+----
+Key		
+uploadedId		
+	Host	
+	Date	
+	Content-Length	
+	Authorization	
+----
 
 The request body is implemented with all Amazon S3 REST API behavior.
 
@@ -365,7 +367,6 @@ xref:operations-on-objects.adoc[Operations on objects]
 //GetObjectLockConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html[GetObjectLockConfiguration^]
 
-.Request header
 Implemented with all Amazon S3 REST API behavior.
 
 .Learn more
@@ -406,7 +407,6 @@ xref:operations-on-buckets.adoc[Operations on buckets]
 //HeadObject
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html[HeadObject^]
 
-.Request header 
 These request header parameters are supported:
 
 * `Key`		
@@ -568,16 +568,6 @@ These request body parameters are supported:
 .Learn more
 xref:operations-on-buckets.adoc[Operations on buckets]
 
-//PutBucketNotificationConfiguration
-== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
-
-The request header is implemented with all Amazon S3 REST API behavior.
-
-These request body parameters are supported:
-
-* `NotificationConfiguration`
-
-.Learn more
 
 //PutBucketLifecycle
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html[PutBucketLifecycle^]
