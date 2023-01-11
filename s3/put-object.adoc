@@ -163,9 +163,7 @@ When using the `Authorization` header to authenticate requests, StorageGRID diff
 * StorageGRID doesn't require `Content-Type` to be included within `CanonicalHeaders`.
 * StorageGRID doesn't require `x-amz-*` headers to be included within `CanonicalHeaders`.
 
-As a general best practice, you should always include these headers within `CanonicalHeaders` to ensure they are verified; however, if you exclude these headers, StorageGRID does not return an error.
-
-IMPORTANT: If you use HTTPS, the StorageGRID behavior presents no security concern. If you use HTTP, a replay attack is potentially possible if you do not include these three types of headers in `CanonicalHeaders`.
+IMPORTANT: As a general best practice, always include these headers within `CanonicalHeaders` to ensure they are verified; however, if you exclude these headers, StorageGRID does not return an error.
 
 For details, refer to https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html[Signature Calculations for the Authorization Header: Transferring Payload in a Single Chunk (AWS Signature Version 4)^].
 
