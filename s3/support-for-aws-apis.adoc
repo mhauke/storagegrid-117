@@ -153,6 +153,15 @@ Implemented with all Amazon S3 REST API behavior.
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets] 
 
+//DeleteBucketEncryption
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html[DeleteBucketEncryption^]
+
+Implemented with all Amazon S3 REST API behavior.
+
+*StorageGRID documentation*:
+link:operations-on-buckets.html[Operations on buckets] 
+
+
 //DeleteBucketLifecycle
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html[DeleteBucketLifecycle^]
 
@@ -500,7 +509,7 @@ These request header parameters are supported:
 This request does not have a request body.
 
 *StorageGRID documentation*:
-link:list-multipart-uploads.html.html[List Multipart Uploads]
+link:list-multipart-uploads.html[List Multipart Uploads]
 
 // PutBucketCors
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucketCors^]
