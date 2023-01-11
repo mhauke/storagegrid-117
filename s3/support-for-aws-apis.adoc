@@ -29,7 +29,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:operations-for-multipart-uploads.html[Operations for multipart uploads]
 
 //CompleteMultipartUpload
@@ -46,7 +46,7 @@ These request header parameters are supported:
 
 The request body is implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:complete-multipart-upload.html[Complete Multipart Upload]
 
 //CopyObject
@@ -85,7 +85,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:put-object-copy.html[PUT Object-Copy]
 
 //CreateBucket
@@ -100,7 +100,7 @@ These request header parameters are supported:
 
 The request body is implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //CreateMultipartUpload
@@ -134,7 +134,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:initiate-multipart-upload.html[Initiate Multipart Upload]
 
 //DeleteBucket
@@ -142,7 +142,7 @@ link:initiate-multipart-upload.html[Initiate Multipart Upload]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //DeleteBucketCors
@@ -150,7 +150,7 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets] 
 
 //DeleteBucketLifecycle
@@ -158,15 +158,16 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
-link:operations-on-buckets.html[Operations on buckets] 
+.StorageGRID documentation
+* link:operations-on-buckets.html[Operations on buckets] 
+* link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration]
 
 //DeleteBucketPolicy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html[DeleteBucketPolicy^]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets] 
 
 //DeleteBucketTagging
@@ -174,7 +175,7 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets] 
 
 //DeleteObject
@@ -192,7 +193,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-objects.html[Operations on objects]
 
 //DeleteObjects
@@ -209,15 +210,15 @@ These request header parameters are supported:
 
 The request body is implemented with all Amazon S3 REST API behavior.
 
-.Learn more
-link:operations-on-objects.html[Operations on objects]
+.StorageGRID documentation
+link:operations-on-objects.html[Operations on objects > DELETE Multiple Objects]
 
 //DeleteObjectTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html[DeleteObjectTagging^]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-objects.html[Operations on objects]
 
 //GetBucketAcl
@@ -225,7 +226,7 @@ link:operations-on-objects.html[Operations on objects]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //GetBucketCors
@@ -233,7 +234,7 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets] 
 
 //GetBucketEncryption
@@ -241,7 +242,7 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets] 
 
 //GetBucketLifecycleConfiguration
@@ -249,15 +250,16 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
-link:operations-on-buckets.html[Operations on buckets] 
+.StorageGRID documentation
+* link:operations-on-buckets.html[Operations on buckets > GET Bucket lifecycle]  
+* link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration]
 
 //GetBucketLocation
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html[GetBucketLocation^]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets] 
 
 //GetBucketNotificationConfiguration
@@ -265,15 +267,15 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
-link:operations-on-buckets.html[Operations on buckets] 
+.StorageGRID documentation
+link:operations-on-buckets.html[Operations on buckets > GET Bucket notification] 
 
 //GetBucketPolicy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html[GetBucketPolicy^]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //GetBucketReplication
@@ -281,7 +283,7 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //GetBucketTagging
@@ -289,7 +291,7 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //GetBucketVersioning
@@ -297,15 +299,30 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //GetObject
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html[GetObject^]
 
-Implemented with all Amazon S3 REST API behavior.
+These request header parameters are supported:
 
-.Learn more
+* `Key`	
+* `versionId`	
+* `response-cache-control`	
+* `response-content-disposition`	
+* `response-content-encoding	`
+* `response-content-type`	
+* `Host`
+* `Range`
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`
+* `Date`
+* `Authorization`
+* `Accept`
+
+.StorageGRID documentation
 link:get-object.html[GET Object]
 
 //GetObjectAcl
@@ -321,7 +338,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-objects.html[Operations on objects]
 
 //GetObjectLegalHold
@@ -337,7 +354,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //GetObjectLockConfiguration
@@ -345,7 +362,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Ob
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //GetObjectRetention
@@ -361,7 +378,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //GetObjectTagging
@@ -369,7 +386,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Ob
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-objects.html[Operations on objects]
 
 //HeadBucket
@@ -377,7 +394,7 @@ link:operations-on-objects.html[Operations on objects]
 
 Implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //HeadObject
@@ -396,7 +413,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:head-object.html[HEAD Object]
 
 // ListBuckets
@@ -406,8 +423,8 @@ This request header does not use any URI parameters.
 
 This request does not have a request body.
 
-.Learn more
-link:operations-on-the-service.html[Operations on the service]
+.StorageGRID documentation
+link:operations-on-the-service.html[Operations on the service > GET Service]
 
 //ListMultipartUploads
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html[ListMultipartUploads^]
@@ -425,28 +442,16 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:list-multipart-uploads.html[List Multipart Uploads]
 
 // ListObjects
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html[ListObjects^] 
 
-These request header parameters are supported:
+Implemented with all Amazon S3 REST API behavior.
 
-* `delimiter`
-* `encoding-type`	
-* `marker`	
-* `max-keys`	
-* `prefix`	
-* `Host`
-* `Date`
-* `Authorization`
-* `Content-Type`
-
-This request does not have a request body.
-
-.Learn more
-link:operations-on-buckets.html[Operations on buckets]
+.StorageGRID documentation
+link:operations-on-buckets.html[Operations on buckets > GET Bucket]
 
 // ListObjectsV2
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html[ListObjectsV2^] 
@@ -466,28 +471,16 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
-link:operations-on-buckets.html[Operations on buckets]
+.StorageGRID documentation
+link:operations-on-buckets.html[Operations on buckets > GET Bucket]
 
 // ListObjectVersions
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html[ListObjectVersions^] 
 
-These request header parameters are supported:
- 
-* `delimiter`
-* `encoding-type`	
-* `key-marker`	
-* `max-keys`	
-* `prefix`	
-* `version-id-marker`
-* `Date`
-* `Authorization`
-* `Content-Type`
+Implemented with all Amazon S3 REST API behavior.
 
-This request does not have a request body.
-
-.Learn more
-link:operations-on-buckets.html[Operations on buckets]
+.StorageGRID documentation
+link:operations-on-buckets.html[Operations on buckets > GET Bucket Object versions]
 
 // ListParts
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html[ListParts^] 
@@ -504,7 +497,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:list-multipart-uploads.html.html[List Multipart Uploads]
 
 // PutBucketCors
@@ -520,7 +513,7 @@ These request header parameters are supported:
 
 The request body is implemented with all Amazon S3 REST API behavior.
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 // PutBucketEncryption
@@ -541,7 +534,7 @@ These request body parameters are supported:
 * `ApplyServerSideEncryptionByDefault`	
 * `SSEAlgorithm`
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 
@@ -581,8 +574,9 @@ These request body parameters are supported:
 * `Prefix`				
 * `Status`	
 
-.Learn more
-link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration]
+.StorageGRID documentation
+* link:operations-on-buckets.html[Operations on buckets > PUT Bucket lifecycle]
+* link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration]
 
 
 //PutBucketNotificationConfiguration
@@ -612,8 +606,8 @@ These request body parameters are supported:
 * `Id`			
 * `Topic`		
 
-.Learn more
-link:operations-on-buckets.html[Operations on buckets]
+.StorageGRID documentation
+link:operations-on-buckets.html[Operations on buckets > PUT Bucket notification]
 
 //PutBucketPolicy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html[PutBucketPolicy^]
@@ -636,7 +630,7 @@ These request body parameters are supported:
 * `Resource`	
 * `Condition`	
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //PutBucketReplication
@@ -649,7 +643,7 @@ These request header parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 
@@ -671,7 +665,7 @@ These request body parameters are supported:
 * `Key`
 * `Value`
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //PutBucketVersioning
@@ -690,7 +684,7 @@ These request body parameters are supported:
 * `VersioningConfiguration`	
 * `Status`
 
-.Learn more
+.StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
 
 //PutObject
@@ -732,7 +726,7 @@ These request body parameters are supported:
 
 * `Body`	
 
-.Learn more
+.StorageGRID documentation
 link:put-object.html[PUT Object]
 
 //PutObjectLegalHold
@@ -755,7 +749,7 @@ These request body parameters are supported:
 * `LegalHold`
 * `Status`
 
-.Learn more
+.StorageGRID documentation
 link:use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //PutObjectLockConfiguration
@@ -782,7 +776,7 @@ These request body parameters are supported:
 * `Mode`
 * `Years`
 
-.Learn more
+.StorageGRID documentation
 link:use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //PutObjectRetention
@@ -868,7 +862,7 @@ These request body parameters are supported:
 *			`RecordDelimiter`
 
 
-.Learn more
+.StorageGRID documentation
 link:select-object-content.html[Select Object Content]
 
 
@@ -895,7 +889,7 @@ These request body parameters are supported:
 
 * `Body`
 
-.Learn more
+.StorageGRID documentation
 link:upload-part.html[Upload Part]
 
 // UploadPartCopy
@@ -924,7 +918,7 @@ These request header parameters are supported:
 
 This request does not have a request body.
 
-.Learn more
+.StorageGRID documentation
 link:upload-part-copy.html[Upload Part - Copy]
 
 
