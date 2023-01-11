@@ -15,9 +15,9 @@ The StorageGRID system supports the following operations on the service.
 |===
 | Operation| Implementation
 
-| ListBuckets
+| GET Service
 
- (GET Service)
+ (ListBuckets)
 | Implemented with all Amazon S3 REST API behavior.
 
 | GET Storage Usage
