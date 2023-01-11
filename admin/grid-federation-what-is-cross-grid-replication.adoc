@@ -82,7 +82,7 @@ As described in link:../primer/delete-data-flow.html[Delete data flow], StorageG
 * The bucket has a lifecycle configuration, which expires.
 * The last time period in the ILM rule for the object ends, and there are no further placements specified.
 
-When StorageGRID deletes an object because of a *Delete objects in bucket* operation, bucket lifecycle expiration, or ILM placement expiration, the replicated object is never deleted from the other grid in a grid federation connection. However, S3 client deletes can optionally be replicated between grids.
+When StorageGRID deletes an object because of a Delete objects in bucket operation, bucket lifecycle expiration, or ILM placement expiration, the replicated object is never deleted from the other grid in a grid federation connection. However, S3 client deletes can optionally be replicated between grids.
 
 To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, review how S3 clients delete objects from buckets that have versioning enabled, as follows:
 
