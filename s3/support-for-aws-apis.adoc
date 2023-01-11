@@ -19,13 +19,13 @@ To see the AWS documentation for each command, select the link in the headers.
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
 
 These request header parameters are supported:
-----
-Key	
-uploadId	
-Host
-Date
-Authorization
-----
+
+* `Key`	
+* `uploadId`	
+* `Host`
+* `Date`
+* `Authorization`
+
 
 This request does not have a request body.
 
@@ -36,14 +36,13 @@ link:operations-for-multipart-uploads.html[Operations for multipart uploads]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html[CompleteMultipartUpload^]
 
 These request header parameters are supported:
-----
-Key		
-uploadId		
-Host	
-Date	
-Content-Length	
-Authorization	
-----
+
+* `Key`	
+* `uploadId`		
+* `Host`	
+* `Date`	
+* `Content-Length`	
+* `Authorization`	
 
 The request body is implemented with all Amazon S3 REST API behavior.
 
@@ -92,7 +91,6 @@ link:put-object-copy.html[PUT Object-Copy]
 //CreateBucket
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html[CreateBucket^]
 
-
 These request header parameters are supported:
 
 * `Host`
@@ -137,7 +135,7 @@ These request header parameters are supported:
 This request does not have a request body.
 
 .Learn more
-link:operations-for-multipart-uploads.html[Operations for multipart uploads]
+link:initiate-multipart-upload.html[Initiate Multipart Upload]
 
 //DeleteBucket
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBucket^]
@@ -168,7 +166,6 @@ link:operations-on-buckets.html[Operations on buckets]
 
 Implemented with all Amazon S3 REST API behavior.
 
-
 .Learn more
 link:operations-on-buckets.html[Operations on buckets] 
 
@@ -176,7 +173,6 @@ link:operations-on-buckets.html[Operations on buckets]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html[DeleteBucketTagging^]
 
 Implemented with all Amazon S3 REST API behavior.
-
 
 .Learn more
 link:operations-on-buckets.html[Operations on buckets] 
@@ -248,14 +244,6 @@ Implemented with all Amazon S3 REST API behavior.
 .Learn more
 link:operations-on-buckets.html[Operations on buckets] 
 
-//GetBucketLifecycle
-== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html[GetBucketLifecycle^]
-
-Implemented with all Amazon S3 REST API behavior.
-
-.Learn more
-link:operations-on-buckets.html[Operations on buckets] 
-
 //GetBucketLifecycleConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html[GetBucketLifecycleConfiguration^]
 
@@ -266,14 +254,6 @@ link:operations-on-buckets.html[Operations on buckets]
 
 //GetBucketLocation
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html[GetBucketLocation^]
-
-Implemented with all Amazon S3 REST API behavior.
-
-.Learn more
-link:operations-on-buckets.html[Operations on buckets] 
-
-//GetBucketNotification
-== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotification.html[GetBucketNotification^]
 
 Implemented with all Amazon S3 REST API behavior.
 
@@ -358,7 +338,7 @@ These request header parameters are supported:
 This request does not have a request body.
 
 .Learn more
-link:operations-on-objects.html[Operations on objects]
+link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //GetObjectLockConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html[GetObjectLockConfiguration^]
@@ -366,7 +346,7 @@ link:operations-on-objects.html[Operations on objects]
 Implemented with all Amazon S3 REST API behavior.
 
 .Learn more
-link:operations-on-objects.html[Operations on objects]
+link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //GetObjectRetention
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html[GetObjectRetention^]
@@ -382,7 +362,7 @@ These request header parameters are supported:
 This request does not have a request body.
 
 .Learn more
-link:operations-on-objects.html[Operations on objects]
+link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //GetObjectTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html[GetObjectTagging^]
@@ -427,7 +407,7 @@ This request header does not use any URI parameters.
 This request does not have a request body.
 
 .Learn more
-link:operations-on-buckets.html[Operations on buckets]
+link:operations-on-the-service.html[Operations on the service]
 
 //ListMultipartUploads
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html[ListMultipartUploads^]
@@ -466,7 +446,7 @@ These request header parameters are supported:
 This request does not have a request body.
 
 .Learn more
-link:operations-on-objects.html[Operations on objects]
+link:operations-on-buckets.html[Operations on buckets]
 
 // ListObjectsV2
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html[ListObjectsV2^] 
@@ -487,7 +467,7 @@ These request header parameters are supported:
 This request does not have a request body.
 
 .Learn more
-link:operations-on-objects.html[Operations on objects]
+link:operations-on-buckets.html[Operations on buckets]
 
 // ListObjectVersions
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html[ListObjectVersions^] 
@@ -507,7 +487,7 @@ These request header parameters are supported:
 This request does not have a request body.
 
 .Learn more
-link:operations-on-objects.html[Operations on objects]
+link:operations-on-buckets.html[Operations on buckets]
 
 // ListParts
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html[ListParts^] 
@@ -525,7 +505,7 @@ These request header parameters are supported:
 This request does not have a request body.
 
 .Learn more
-link:operations-for-multipart-uploads.html[Operations for multipart uploads]
+link:list-multipart-uploads.html.html[List Multipart Uploads]
 
 // PutBucketCors
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html[PutBucketCors^]
@@ -564,35 +544,6 @@ These request body parameters are supported:
 .Learn more
 link:operations-on-buckets.html[Operations on buckets]
 
-
-//PutBucketLifecycle
-== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html[PutBucketLifecycle^]
-
-These request header parameters are supported:
-
-* `Host`
-* `Content-MD5`
-* `Date`
-* `Authorization`
-* `Content-Length`
-
-These request body parameters are supported:
-
-* `LifecycleConfiguration`			
-* `Rule`		
-* `Expiration`
-* `Date`
-* `Days`
-
-* `ID`	
-* `NoncurrentVersionExpiration`	
-* `NoncurrentDays`
-
-* `Prefix`	
-* `Status`	
-
-.Learn more
-link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration]
 
 //PutBucketLifecycleConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html[PutBucketLifecycleConfiguration^]
@@ -633,24 +584,6 @@ These request body parameters are supported:
 .Learn more
 link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration]
 
-//PutBucketNotification
-== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html[PutBucketNotification^]
-
-These request header parameters are supported: 
-
-* `Host`
-* `Content-MD5`
-
-These request body parameters are supported:
-
-* `NotificationConfiguration`		
-* `TopicConfiguration`	
-* `Event`
-* `Id`
-* `Topic`
-
-.Learn more
-link:operations-on-buckets.html[Operations on buckets]
 
 //PutBucketNotificationConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
@@ -715,10 +648,6 @@ These request header parameters are supported:
 * `Date`
 * `Authorization`
 * `Content-Length`
-
-These request header parameters are supported: 
-
-//tbd
 
 .Learn more
 link:operations-on-buckets.html[Operations on buckets]
@@ -901,7 +830,7 @@ These request body parameters are supported:
 * `Key`	
 * `Value`	
 
-link:put-object.html[PUT Object]
+link:operations-on-objects.html[Operations on objects]
 
 // SelectObjectContent
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[SelectObjectContent^]
@@ -915,30 +844,29 @@ These request header parameters are supported:
 
 These request body parameters are supported:
 
-----
-SelectObjectContentRequest							
-	Expression
-	ExpressionType			
-	RequestProgress		
-		Enabled	
-	InputSerialization			
-		CompressionType		
-		CSV
-			AllowQuotedRecord Delimiter				
-			Comments
-			FieldDelimiter
-			FileHeaderInfo
-			QuoteCharacter
-			QuoteEscape Character
-			RecordDelimiter					
-	OutputSerialization
-		CSV
-			FieldDelimiter
-			QuoteCharacter
-			QuoteEscape Character
-			QuoteFields
-			RecordDelimiter
-----
+* `SelectObjectContentRequest`							
+* 	`Expression`
+* 	`ExpressionType`			
+*	`RequestProgress`		
+*		`Enabled`
+*	`InputSerialization`			
+*		`CompressionType`		
+*		`CSV`
+*			`AllowQuotedRecord Delimiter`			
+*			`Comments`
+*			`FieldDelimiter`
+*			`FileHeaderInfo`
+*			`QuoteCharacter`
+*			`QuoteEscape Character`
+*			`RecordDelimiter`					
+*	`OutputSerialization`
+*		`CSV`
+*			`FieldDelimiter`
+*			`QuoteCharacter`
+*			`QuoteEscape Character`
+*			`QuoteFields`
+*			`RecordDelimiter`
+
 
 .Learn more
 link:select-object-content.html[Select Object Content]
@@ -948,20 +876,20 @@ link:select-object-content.html[Select Object Content]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html[UploadPart^]
 
 These request header parameters are supported:
-----
-Key	
-PartNumber	
-UploadId	
-	Host
-	Content-Length
-	Content-MD5
-	x-amz-server-side-encryption-customer-algorithm
-	x-amz-server-side-encryption-customer-key
-	x-amz-server-side-encryption-customer-key-MD5		
-	Date
-	Authorization
-	Content-Length
-----
+
+* `Key`	
+* `PartNumber`	
+* `uploadId`	
+* `Host`
+* `Content-Length`
+* `Content-MD5`
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`		
+* `Date`
+* `Authorization`
+* `Content-Length`
+
 
 These request body parameters are supported:
 
@@ -974,26 +902,25 @@ link:upload-part.html[Upload Part]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html[UploadPartCopy^]
 
 These request header parameters are supported:
-----
-Key	
-PartNumber	
-UploadId	
-	Host
-	x-amz-copy-source
-	x-amz-copy-source-if-match
-	x-amz-copy-source-if-modified-since
-	x-amz-copy-source-if-none-match
-	x-amz-copy-source-if-unmodified-since
-	x-amz-copy-source-range
-	x-amz-server-side-encryption-customer-algorithm
-	x-amz-server-side-encryption-customer-key
-	x-amz-server-side-encryption-customer-key-MD5
-	x-amz-copy-source-server-side-encryption-customer-algorithm
-	x-amz-copy-source-server-side-encryption-customer-key
-	x-amz-copy-source-server-side-encryption-customer-key-MD5
-	Date
-	Authorization
-----
+
+* `Key`	
+* `PartNumber`	
+* `UploadId`	
+* `Host`
+* `x-amz-copy-source`
+*	`x-amz-copy-source-if-match`
+*	`x-amz-copy-source-if-modified-since`
+*	`x-amz-copy-source-if-none-match`
+*	`x-amz-copy-source-if-unmodified-since`
+*	`x-amz-copy-source-range`
+*	`x-amz-server-side-encryption-customer-algorithm`
+*	`x-amz-server-side-encryption-customer-key`
+*	`x-amz-server-side-encryption-customer-key-MD5`
+*	`x-amz-copy-source-server-side-encryption-customer-algorithm`
+*	`x-amz-copy-source-server-side-encryption-customer-key`
+*	`x-amz-copy-source-server-side-encryption-customer-key-MD5`
+*	`Date`
+*	`Authorization`
 
 This request does not have a request body.
 

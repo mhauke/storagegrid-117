@@ -28,114 +28,100 @@ The following table describes how StorageGRID implements S3 REST API bucket oper
 [cols="1a,3a" options="header"]
 |===
 | Operation| Implementation
-a|
-DELETE Bucket
-a|
-Implemented with all Amazon S3 REST API behavior.
-a|
-DELETE Bucket cors
-a|
-This operation deletes the CORS configuration for the bucket.
-a|
-DELETE Bucket encryption
-a|
-This operation deletes the default encryption from the bucket. Existing encrypted objects remain encrypted, but any new objects added to the bucket are not encrypted.
-a|
-DELETE Bucket lifecycle
-a|
-This operation deletes the lifecycle configuration from the bucket.
-a|
-DELETE Bucket policy
-a|
-This operation deletes the policy attached to the bucket.
-a|
-DELETE Bucket replication
-a|
-This operation deletes the replication configuration attached to the bucket.
-a|
-DELETE Bucket tagging
-a|
-This operation uses the `tagging` subresource to remove all tags from a bucket.
-a|
-GET Bucket (List Objects), version 1 and version 2
-a|
-This operation returns some or all (up to 1,000) of the objects in a bucket. The Storage Class for objects can have either of two values, even if the object was ingested with the `REDUCED_REDUNDANCY` storage class option:
+
+| DELETE Bucket
+| Implemented with all Amazon S3 REST API behavior.
+
+| DELETE Bucket cors
+| This operation deletes the CORS configuration for the bucket.
+
+| DELETE Bucket encryption
+| This operation deletes the default encryption from the bucket. Existing encrypted objects remain encrypted, but any new objects added to the bucket are not encrypted.
+
+| DELETE Bucket lifecycle
+| This operation deletes the lifecycle configuration from the bucket.
+
+| DELETE Bucket policy
+| This operation deletes the policy attached to the bucket.
+
+| DELETE Bucket replication
+| This operation deletes the replication configuration attached to the bucket.
+
+| DELETE Bucket tagging
+| This operation uses the `tagging` subresource to remove all tags from a bucket.
+
+| GET Bucket acl
+| This operation returns a positive response and the ID, DisplayName, and Permission of the bucket owner, indicating that the owner has full access to the bucket.
+
+| GET Bucket cors
+| This operation returns the `cors` configuration for the bucket.
+
+| GET Bucket encryption
+| This operation returns the default encryption configuration for the bucket.
+
+| GetBucketLifecycleConfiguration
+
+(GET Bucket lifecycle)
+
+| This operation returns the lifecycle configuration for the bucket.
+
+| GET Bucket location
+| This operation returns the region that was set using the `LocationConstraint` element in the PUT Bucket request. If the bucket's region is `us-east-1`, an empty string is returned for the region.
+
+| GetBucketNotificationConfiguration
+
+(GET Bucket notification)
+
+| This operation returns the notification configuration attached to the bucket.
+
+
+
+| GET Bucket policy
+| This operation returns the policy attached to the bucket.
+
+| GET Bucket replication
+| This operation returns the replication configuration attached to the bucket.
+
+| GET Bucket tagging
+| This operation uses the `tagging` subresource to return all tags for a bucket.
+
+| GET Bucket versioning
+| This implementation uses the `versioning` subresource to return the versioning state of a bucket.
+
+* _blank_: Versioning has never been enabled (bucket is "`Unversioned`")
+* Enabled: Versioning is enabled
+* Suspended: Versioning was previously enabled and is suspended
+
+| GET Object Lock Configuration
+| This operation returns the bucket default retention mode and default retention period, if configured.
+
+See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
+
+| HEAD Bucket
+| This operation determines if a bucket exists and you have permission to access it.
+
+This operation returns:
+
+* `x-ntap-sg-bucket-id`: The UUID of the bucket in UUID format.
+* `x-ntap-sg-trace-id`: The unique trace ID of the associated request.
+| ListObjects and ListObjectsV2
+
+(GET Bucket)
+
+| This operation returns some or all (up to 1,000) of the objects in a bucket. The Storage Class for objects can have either of two values, even if the object was ingested with the `REDUCED_REDUNDANCY` storage class option:
 
 * `STANDARD`, which indicates the object is stored in a storage pool consisting of Storage Nodes.
 * `GLACIER`, which indicates that the object has been moved to the external bucket specified by the Cloud Storage Pool.
 
 If the bucket contains large numbers of deleted keys that have the same prefix, the response might include some `CommonPrefixes` that do not contain keys.
 
-a|
-GET Bucket acl
-a|
-This operation returns a positive response and the ID, DisplayName, and Permission of the bucket owner, indicating that the owner has full access to the bucket.
-a|
-GET Bucket cors
-a|
-This operation returns the `cors` configuration for the bucket.
-a|
-GET Bucket encryption
-a|
-This operation returns the default encryption configuration for the bucket.
-a|
-GET Bucket lifecycle
-a|
-This operation returns the lifecycle configuration for the bucket.
-a|
-GET Bucket location
-a|
-This operation returns the region that was set using the `LocationConstraint` element in the PUT Bucket request. If the bucket's region is `us-east-1`, an empty string is returned for the region.
-a|
-GET Bucket notification
-a|
-This operation returns the notification configuration attached to the bucket.
-a|
-GET Bucket Object versions
-a|
-With READ access on a bucket, this operation with the `versions` subresource lists metadata of all of the versions of objects in the bucket.
+| ListObjectVersions
 
-a|
-GET Bucket policy
-a|
-This operation returns the policy attached to the bucket.
-a|
-GET Bucket replication
-a|
-This operation returns the replication configuration attached to the bucket.
-a|
-GET Bucket tagging
-a|
-This operation uses the `tagging` subresource to return all tags for a bucket.
-a|
-GET Bucket versioning
-a|
-This implementation uses the `versioning` subresource to return the versioning state of a bucket.
+(GET Bucket Object versions)
+| With READ access on a bucket, this operation with the `versions` subresource lists metadata of all of the versions of objects in the bucket.
 
-* _blank_: Versioning has never been enabled (bucket is "`Unversioned`")
-* Enabled: Versioning is enabled
-* Suspended: Versioning was previously enabled and is suspended
-
-a|
-GET Object Lock Configuration
-a|
-This operation returns the bucket default retention mode and default retention period, if configured.
-
-See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
-
-a|
-HEAD Bucket
-a|
-This operation determines if a bucket exists and you have permission to access it.
-
-This operation returns:
-
-* `x-ntap-sg-bucket-id`: The UUID of the bucket in UUID format.
-* `x-ntap-sg-trace-id`: The unique trace ID of the associated request.
-a|
-PUT Bucket
-a|
-This operation creates a new bucket. By creating the bucket, you become the bucket owner.
+| PUT Bucket
+| This operation creates a new bucket. By creating the bucket, you become the bucket owner.
 
 * Bucket names must comply with the following rules:
  ** Must be unique across each StorageGRID system (not just unique within the tenant account).
@@ -152,23 +138,19 @@ This operation creates a new bucket. By creating the bucket, you become the buck
 +
 You must enable S3 Object Lock when you create the bucket. You cannot add or disable S3 Object Lock after a bucket is created. S3 Object Lock requires bucket versioning, which is enabled automatically when you create the bucket.
 
+| PUT Bucket cors
+| This operation sets the CORS configuration for a bucket so that the bucket can service cross-origin requests. Cross-origin resource sharing (CORS) is a security mechanism that allows client web applications in one domain to access resources in a different domain. For example, suppose you use an S3 bucket named `images` to store graphics. By setting the CORS configuration for the `images` bucket, you can allow the images in that bucket to be displayed on the website `+http://www.example.com+`.
 
-a|
-PUT Bucket cors
-a|
-This operation sets the CORS configuration for a bucket so that the bucket can service cross-origin requests. Cross-origin resource sharing (CORS) is a security mechanism that allows client web applications in one domain to access resources in a different domain. For example, suppose you use an S3 bucket named `images` to store graphics. By setting the CORS configuration for the `images` bucket, you can allow the images in that bucket to be displayed on the website `+http://www.example.com+`.
-
-a|
-PUT Bucket encryption
-a|
-This operation sets the default encryption state of an existing bucket. When bucket-level encryption is enabled, any new objects added to the bucket are encrypted.StorageGRID supports server-side encryption with StorageGRID-managed keys. When specifying the server-side encryption configuration rule, set the `SSEAlgorithm` parameter to `AES256`, and do not use the `KMSMasterKeyID` parameter.
+| PUT Bucket encryption
+| This operation sets the default encryption state of an existing bucket. When bucket-level encryption is enabled, any new objects added to the bucket are encrypted.StorageGRID supports server-side encryption with StorageGRID-managed keys. When specifying the server-side encryption configuration rule, set the `SSEAlgorithm` parameter to `AES256`, and do not use the `KMSMasterKeyID` parameter.
 
 Bucket default encryption configuration is ignored if the object upload request already specifies encryption (that is, if the request includes the `x-amz-server-side-encryption-*` request header).
 
-a|
-PUT Bucket lifecycle
-a|
-This operation creates a new lifecycle configuration for the bucket or replaces an existing lifecycle configuration. StorageGRID supports up to 1,000 lifecycle rules in a lifecycle configuration. Each rule can include the following XML elements:
+| PutBucketLifecycleConfiguration
+
+(PUT Bucket lifecycle)
+
+| This operation creates a new lifecycle configuration for the bucket or replaces an existing lifecycle configuration. StorageGRID supports up to 1,000 lifecycle rules in a lifecycle configuration. Each rule can include the following XML elements:
 
 * Expiration (Days, Date)
 * NoncurrentVersionExpiration (NoncurrentDays)
@@ -186,10 +168,10 @@ To understand how the Expiration action in a bucket lifecycle interacts with ILM
 
 *Note*: Bucket lifecycle configuration can be used with buckets that have S3 Object Lock enabled, but bucket lifecycle configuration is not supported for legacy Compliant buckets.
 
-a|
-PUT Bucket notification
-a|
-This operation configures notifications for the bucket using the notification configuration XML included in the request body. You should be aware of the following implementation details:
+| PutBucketNotificationConfiguration
+
+(PUT Bucket notification)
+| This operation configures notifications for the bucket using the notification configuration XML included in the request body. You should be aware of the following implementation details:
 
 * StorageGRID supports Simple Notification Service (SNS) topics as destinations. Simple Queue Service (SQS) or Amazon Lambda endpoints are not supported.
 * The destination for notifications must be specified as the URN of an StorageGRID endpoint. Endpoints can be created using the Tenant Manager or the Tenant Management API.
@@ -216,14 +198,11 @@ not included
 +
 `urn:sgws:s3:::bucket_name`
 
-a|
-PUT Bucket policy
-a|
-This operation sets the policy attached to the bucket.
-a|
-PUT Bucket replication
-a|
-This operation configures StorageGRID CloudMirror replication for the bucket using the replication configuration XML provided in the request body. For CloudMirror replication, you should be aware of the following implementation details:
+| PUT Bucket policy
+| This operation sets the policy attached to the bucket.
+
+| PUT Bucket replication
+| This operation configures StorageGRID CloudMirror replication for the bucket using the replication configuration XML provided in the request body. For CloudMirror replication, you should be aware of the following implementation details:
 
 * StorageGRID only supports V1 of the replication configuration. This means that StorageGRID does not support the use of the `Filter` element for rules, and follows V1 conventions for deletion of object versions. For details, see the https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html[Amazon S3 documentation on replication configuration^].
 * Bucket replication can be configured on versioned or unversioned buckets.
@@ -238,28 +217,22 @@ The endpoint must exist for replication configuration to succeed. If the endpoin
  ** If you delete the object or bucket before it has been replicated, the object/bucket is not replicated and you are not notified.
  ** If you delete the object or bucket after it has been replicated, StorageGRID follows standard Amazon S3 delete behavior for V1 of cross-region replication.
 
-a|
-PUT Bucket tagging
-a|
-This operation uses the `tagging` subresource to add or update a set of tags for a bucket. When adding bucket tags, be aware of the following limitations:
+| PUT Bucket tagging
+| This operation uses the `tagging` subresource to add or update a set of tags for a bucket. When adding bucket tags, be aware of the following limitations:
 
 * Both StorageGRID and Amazon S3 support up to 50 tags for each bucket.
 * Tags associated with a bucket must have unique tag keys. A tag key can be up to 128 Unicode characters in length.
 * Tag values can be up to 256 Unicode characters in length.
 * Key and values are case sensitive.
 
-a|
-PUT Bucket versioning
-a|
-This implementation uses the `versioning` subresource to set the versioning state of an existing bucket. You can set the versioning state with one of the following values:
+| PUT Bucket versioning
+| This implementation uses the `versioning` subresource to set the versioning state of an existing bucket. You can set the versioning state with one of the following values:
 
 * Enabled: Enables versioning for the objects in the bucket. All objects added to the bucket receive a unique version ID.
 * Suspended: Disables versioning for the objects in the bucket. All objects added to the bucket receive the version ID `null`.
 
-a|
-PUT Object Lock Configuration
-a|
-This operation configures or removes the bucket default retention mode and default retention period.
+| PUT Object Lock Configuration
+| This operation configures or removes the bucket default retention mode and default retention period.
 
 If the default retention period is modified, the retain-until-date of existing object versions remains the same and is not recalculated using the new default retention period.
 

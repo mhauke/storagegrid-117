@@ -14,19 +14,19 @@ The StorageGRID system supports the following operations on the service.
 [options="header"]
 |===
 | Operation| Implementation
-a|
-GET Service
-a|
-Implemented with all Amazon S3 REST API behavior.
-a|
-GET Storage Usage
-a|
-The GET Storage Usage request tells you the total amount of storage in use by an account, and for each bucket associated with the account. This is an operation on the service with a path of / and a custom query parameter (`?x-ntap-sg-usage`) added.
-a|
-OPTIONS /
-a|
-Client applications can issue `OPTIONS /` requests to the S3 port on a Storage Node, without providing S3 authentication credentials, to determine whether the Storage Node is available. You can use this request for monitoring, or to allow external load balancers to identify when a Storage Node is down.
+
+| ListBuckets
+
+ (GET Service)
+| Implemented with all Amazon S3 REST API behavior.
+
+| GET Storage Usage
+| The GET Storage Usage request tells you the total amount of storage in use by an account, and for each bucket associated with the account. This is an operation on the service with a path of / and a custom query parameter (`?x-ntap-sg-usage`) added.
+
+| OPTIONS /
+| Client applications can issue `OPTIONS /` requests to the S3 port on a Storage Node, without providing S3 authentication credentials, to determine whether the Storage Node is available. You can use this request for monitoring, or to allow external load balancers to identify when a Storage Node is down.
 |===
+
 .Related information
 
 link:get-storage-usage-request.html[GET Storage Usage request]
