@@ -37,6 +37,6 @@ The use of IP addresses as endpoint domain names is unsupported. Future releases
 == Archive Node support is deprecated
 Support of Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. The Cloud Tiering - Simple Storage Service (S3) option is now deprecated. If you are currently using an Archive Node with the Cloud Tiering - Simple Storage Service (S3) option, migrate your objects to a Cloud Storage Pool.
 
-Archive Nodes should be removed from active ILM policies in StorageGRID 11.7 or earlier. Removing any object data stored in Archive Nodes will simplify future upgrades.
+You should remove Archive Nodes from active ILM policies in StorageGRID 11.7 or earlier. Removing object data stored in Archive Nodes will simplify future upgrades.
 
 See link:../ilm/index.html[Manage objects with ILM].
