@@ -83,11 +83,11 @@ For the two 1-GbE management ports on the services appliance, you can choose Ind
 
 *SG100 network management ports*
 
-image::../media/sg100_bonded_management_ports.png[]
+image::../media/sg100_bonded_management_ports.png[SG100 Bonded Network Management Ports]
 
 *SG1000 network management ports*
 
-image::../media/sg1000_bonded_management_ports.png[SG1000 Network Management Ports]
+image::../media/sg1000_bonded_management_ports.png[SG1000 Bonded Network Management Ports]
 
 In Independent mode, only the management port on the left is connected to the Admin Network. This mode does not provide a redundant path. The management port on the right is unconnected and available for temporary local connections (uses IP address 169.254.0.1)
 
@@ -95,15 +95,12 @@ In Active-Backup mode, both management ports are connected to the Admin Network.
 
 NOTE: If you need to make a temporary local connection to the services appliance when the 1-GbE management ports are configured for Active-Backup mode, remove the cables from both management ports, plug your temporary cable into the management port on the right, and access the appliance using IP address 169.254.0.1.
 
-[options="header"]
+[cols="1a,5a" options="header"]
 |===
 | Callout| Network bond mode
-a|
-A
-a|
-Active-Backup mode. Both management ports are bonded into one logical management port connected to the Admin Network.
-a|
-I
-a|
-Independent mode. The port on the left is connected to the Admin Network. The port on the right is available for temporary local connections (IP address 169.254.0.1).
+|A
+|Active-Backup mode. Both management ports are bonded into one logical management port connected to the Admin Network.
+
+|I
+|Independent mode. The port on the left is connected to the Admin Network. The port on the right is available for temporary local connections (IP address 169.254.0.1).
 |===
