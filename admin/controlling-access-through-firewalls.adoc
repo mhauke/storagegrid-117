@@ -15,7 +15,7 @@ When you want to control access through firewalls, you may open or close specifi
 
 You can control access to the user interfaces and APIs on StorageGRID Admin Nodes by opening or closing specific ports at the external firewall. For example, you might want to prevent tenants from being able to connect to the Grid Manager at the firewall, in addition to using other methods to control system access. 
 
-If you want to configure the StorageGRID internal firewall, see xref:../admin/configure-firewall-controls.adoc[Configure firewall controls].
+If you want to configure the StorageGRID internal firewall, see link:../admin/configure-firewall-controls.html[Configure firewall controls].
 
 [cols="1a,1a,2a" options="header"]
 |===
@@ -55,9 +55,9 @@ IMPORTANT: Single sign-on (SSO) is not available on the restricted Grid Manager 
 
 .Related information
 
-* xref:signing-in-to-grid-manager.adoc[Sign in to the Grid Manager]
+* link:signing-in-to-grid-manager.html[Sign in to the Grid Manager]
 
-* xref:creating-tenant-account.adoc[Create tenant account]
+* link:creating-tenant-account.html[Create tenant account]
 
-* xref:../network/external-communications.adoc[External communications]
+* link:../network/external-communications.html[External communications]
 

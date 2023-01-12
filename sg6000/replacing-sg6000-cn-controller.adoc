@@ -17,7 +17,7 @@ You might need to replace the SG6000-CN controller if it is not functioning opti
 * You have labels to identify each cable that is connected to the controller.
 * You have physically located the controller to replace in the data center.
 +
-xref:locating-controller-in-data-center.adoc[Locate controller in data center]
+link:locating-controller-in-data-center.html[Locate controller in data center]
 
 .About this task
 
@@ -29,7 +29,7 @@ NOTE: If you are replacing the controller before installing StorageGRID software
 
 . If the SG6000-CN controller is functioning sufficiently to allow for a controlled shutdown, shut down the SG6000-CN controller.
 +
-xref:shutting-down-sg6000-cn-controller.adoc[Shut down SG6000-CN controller]
+link:shutting-down-sg6000-cn-controller.html[Shut down SG6000-CN controller]
 
 . Use one of two methods to verify that the power for the SG6000-CN controller is off:
  ** The power indicator LED on the front of the controller is off.
@@ -54,18 +54,24 @@ IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step o
  .. Install the replacement controller into the cabinet or rack.
  .. Replace the cables and any SFP+ or SFP28 transceivers.
  .. Power on the controller and monitor the controller LEDs and boot-up codes.
+. If the appliance where you replaced the controller used a key management server (KMS) to encrypt data, additional configuration might be required before the node can join the grid. If the node does not automatically join the grid, make sure that these configuration settings have transferred to the new controller and manually configure any settings that do not have the expected configuration:
+** link:../sg6000/configuring-storagegrid-connections.html[Configure the appliance network settings] 
+** link:../admin/kms-overview-of-kms-and-appliance-configuration.html#set-up-the-appliance[Configure node encryption for the appliance]
+
 . Confirm that the appliance Storage Node appears in the Grid Manager and that no alarms appear.
 . From the Grid Manager, select *NODES*, and verify that the BMC IP address for the node controller is correct.
 +
 If the node controller IP address is not valid or is not in the expected range, reconfigure the IP address as described in the recovery and maintenance instructions.
 
 +
-NOTE: If you xref:../installconfig/configuring-bmc-interfacee.adoc[configured the BMC interface] when you set up hardware, you should record and validate the configuration and reapply it if necessary. For example, you should confirm the settings for SNMP trap destinations and email notifications.
+NOTE: If you link:../installconfig/configuring-bmc-interface.html[configured the BMC interface] when you set up hardware, you should record and validate the configuration and reapply it if necessary. For example, you should confirm the settings for SNMP trap destinations and email notifications.
+
+include::../_include/fru-statement.adoc[]
 
 .Related information
 
-xref:../installconfig/sg6000-cn-installing-into-cabinet-or-rack.adoc[SG6000-CN: Install into cabinet or rack]
+link:../installconfig/sg6000-cn-installing-into-cabinet-or-rack.html[SG6000-CN: Install into cabinet or rack]
 
-xref:../installconfig/viewing-status-indicators.adoc[View status indicators]
+link:../installconfig/viewing-status-indicators.html[View status indicators]
 
-xref:../installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.adoc[View boot-up codes for SG6000-CN controller]
+link:../installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.html[View boot-up codes for SG6000-CN controller]

@@ -17,7 +17,7 @@ Always protect StorageGRID logs and audit message output in a secure manner. Sto
 
 Configure StorageGRID to send security events to an external syslog server. If using syslog export, select TLS and RELP/TLS for the transport protocols.
 
-See the xref:../monitor/logs-files-reference.adoc[Log files reference] for more information about StorageGRID logs. See xref:../audit/audit-messages-main.adoc[Audit messages] for more information about StorageGRID audit messages.
+See the link:../monitor/logs-files-reference.html[Log files reference] for more information about StorageGRID logs. See link:../audit/audit-messages-main.html[Audit messages] for more information about StorageGRID audit messages.
 
 == NetApp AutoSupport
 
@@ -33,7 +33,7 @@ NOTE: As of the StorageGRID 11.7 release, NetApp's AutoSupport servers will reje
 
 You can configure cross-origin resource sharing (CORS) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains. In general, do not enable CORS unless it is required. If CORS is required, restrict it to trusted origins.
 
-See the steps for xref:../tenant/configuring-cross-origin-resource-sharing-cors.adoc[configuring cross-origin resource sharing (CORS)].
+See the steps for link:../tenant/configuring-cross-origin-resource-sharing-cors.html[configuring cross-origin resource sharing (CORS)].
 
 == External security devices
 

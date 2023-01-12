@@ -16,11 +16,11 @@ Remove the SG6000-CN controller from a cabinet or rack to access the top cover o
 * You have labels to identify each cable that is connected to the SG6000-CN controller.
 * You have physically located the SG6000-CN controller where you are performing maintenance in the data center.
 +
-xref:locating-controller-in-data-center.adoc[Locate controller in data center]
+link:locating-controller-in-data-center.html[Locate controller in data center]
 
 * You have shut down the SG6000-CN controller.
 +
-xref:shutting-down-sg6000-cn-controller.adoc[Shut down SG6000-CN controller]
+link:shutting-down-sg6000-cn-controller.html[Shut down SG6000-CN controller]
 +
 CAUTION: Do not shut down the controller using the power switch.
 
@@ -42,6 +42,8 @@ The controller top cover is accessible.
 
 . Optional: If you are fully removing the controller from the cabinet or rack, follow the instructions for the rail kit to remove the controller from the rails.
 
+include::../_include/fru-statement.adoc[]
+
 .Related information
 
-xref:removing-sg6000-cn-controller-cover.adoc[Remove SG6000-CN controller cover]
+link:removing-sg6000-cn-controller-cover.html[Remove SG6000-CN controller cover]

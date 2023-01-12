@@ -5,7 +5,6 @@ keywords: how to troubleshoot lost object data, how to troubleshoot missing obje
 summary: 'Objects can be retrieved for several reasons, including read requests from a client application, background verifications of replicated object data, ILM re-evaluations, and the restoration of object data during the recovery of a Storage Node.'
 ---
 = Troubleshoot lost and missing object data
-:experimental:
 :icons: font
 :imagesdir: ../media/
 
@@ -25,6 +24,6 @@ In the case where object data without copies is lost, there is no recovery solut
 
 .Related information
 
-xref:investigating-lost-objects.adoc[Investigate lost objects]
+link:investigating-lost-objects.html[Investigate lost objects]
 
-xref:resetting-lost-and-missing-object-counts.adoc[Reset lost and missing object counts]
+link:resetting-lost-and-missing-object-counts.html[Reset lost and missing object counts]

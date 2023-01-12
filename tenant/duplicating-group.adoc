@@ -13,16 +13,16 @@ You can create new groups more quickly by duplicating an existing group.
 
 .What you'll need
 
-* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You belong to a user group that has the Root Access permission. See xref:tenant-management-permissions.adoc[Tenant management permissions].
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You belong to a user group that has the Root Access permission. See link:tenant-management-permissions.html[Tenant management permissions].
 
 .Steps
 . Select *ACCESS MANAGEMENT* > *Groups*.
 . Select the check box for the group you want to duplicate.
-. Select *Duplicate group*. For additional details on creating a group, see the instructions for creating groups for xref:creating-groups-for-s3-tenant.adoc[an S3 tenant] or for xref:creating-groups-for-swift-tenant.adoc[a Swift tenant].
+. Select *Duplicate group*. For additional details on creating a group, see the instructions for creating groups for link:creating-groups-for-s3-tenant.html[an S3 tenant] or for link:creating-groups-for-swift-tenant.html[a Swift tenant].
 . Select the *Local group* tab to create a local group, or select the *Federated group* tab to import a group from the previously configured identity source.
 +
-If single sign-on (SSO) is enabled for your StorageGRID system, users belonging to local groups will not be able to sign in to the Tenant Manager, although they can use client applications to manage the tenant's resources, based on xref:tenant-management-permissions.adoc[group permissions].
+If single sign-on (SSO) is enabled for your StorageGRID system, users belonging to local groups will not be able to sign in to the Tenant Manager, although they can use client applications to manage the tenant's resources, based on link:tenant-management-permissions.html[group permissions].
 
 . Enter the group's name.
  ** *Local group*: Enter both a display name and a unique name. You can edit the display name later.

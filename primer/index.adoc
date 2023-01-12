@@ -2,20 +2,22 @@
 permalink: primer/index.html
 sidebar: sidebar
 keywords: grid primer, what is storagegrid, storagegrid basics 
-summary: 'NetApp StorageGRID is a software-defined, object-based storage solution that supports industry-standard object APIs, including the Amazon Simple Storage Service (S3) API and the OpenStack Swift API.'
+summary: 'NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multicloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods.'
 ---
 = What is StorageGRID?
 :icons: font
 :imagesdir: ../media/
 
 [.lead] 
-NetApp StorageGRID is a software-defined, object-based storage solution that supports industry-standard object APIs, including the Amazon Simple Storage Service (S3) API and the OpenStack Swift API.
-
-NOTE: Support for Swift client applications has been deprecated and will be removed in a future release.
+NetApp® StorageGRID® is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multicloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods.
 
 StorageGRID provides secure, durable storage for unstructured data at scale. Integrated, metadata-driven lifecycle management policies optimize where your data lives throughout its life. Content is placed in the right location, at the right time, and on the right storage tier to reduce cost.
 
 StorageGRID is composed of geographically distributed, redundant, heterogeneous nodes, which can be integrated with both existing and next-generation client applications.
+
+NOTE: Support for Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. The Cloud Tiering - Simple Storage Service (S3) option is now deprecated.
+
+If you are currently using an Archive Node with the Cloud Tiering - Simple Storage Service (S3) option, migrate your objects to a Cloud Storage Pool. See link:../ilm/index.html[Manage objects with ILM].
 
 image::../media/storagegrid_system_diagram.png[Image with multiple clients]
 
@@ -25,8 +27,12 @@ Advantages of the StorageGRID system include the following:
 
 * Massively scalable and easy-to-use a geographically distributed data repository for unstructured data.
 * Standard object storage protocols:
- ** Amazon Web Services Simple Storage Service (S3)
- ** OpenStack Swift
+ 
+** Amazon Web Services Simple Storage Service (S3)
+** OpenStack Swift
++
+NOTE: Support for Swift client applications has been deprecated and will be removed in a future release.
+
 * Hybrid cloud enabled. Policy-based information lifecycle management (ILM) stores objects to public clouds, including Amazon Web Services (AWS) and Microsoft Azure. StorageGRID platform services enable content replication, event notification, and metadata searching of objects stored to public clouds.
 * Flexible data protection to ensure durability and availability. Data can be protected using replication and layered erasure coding. At-rest and in-flight data verification ensures integrity for long-term retention.
 * Dynamic data lifecycle management to help manage storage costs. You can create ILM rules that manage data lifecycle at the object level, and customize data locality, durability, performance, cost, and retention time. Tape is available as an integrated archive tier.

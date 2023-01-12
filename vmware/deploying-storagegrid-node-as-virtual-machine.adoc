@@ -17,7 +17,7 @@ Optionally, you can remap node ports or increase CPU or memory settings for the 
 
 .What you'll need
 
-* You have reviewed how to xref:planning-and-preparation.adoc[plan and prepare for installation], and you understand the requirements for software, CPU and RAM, and storage and performance.
+* You have reviewed how to link:planning-and-preparation.html[plan and prepare for installation], and you understand the requirements for software, CPU and RAM, and storage and performance.
 
 * You are familiar with VMware vSphere Hypervisor and have experience deploying virtual machines in this environment.
 +
@@ -70,7 +70,7 @@ vsphere-storage.mf
 +
 IMPORTANT: In a production deployment, do not run more than one Storage Node on a single virtual machine server. Using a dedicated virtual machine host for each Storage Node provides an isolated failure domain.
 
-* If you are deploying a node as part of an expansion or recovery operation, you have the xref:../expand/index.adoc[instructions for expanding a StorageGRID system] or the xref:../maintain/index.adoc[recovery and maintenance instructions].
+* If you are deploying a node as part of an expansion or recovery operation, you have the link:../expand/index.html[instructions for expanding a StorageGRID system] or the link:../maintain/index.html[recovery and maintenance instructions].
 
 * If you are deploying a StorageGRID node as a virtual machine with storage assigned from a NetApp ONTAP system, you have confirmed that the volume does not have a FabricPool tiering policy enabled. For example, if a StorageGRID node is running as an virtual machine on a VMWare host, ensure the volume backing the datastore for the node does not have a FabricPool tiering policy enabled. Disabling FabricPool tiering for volumes used with StorageGRID nodes simplifies troubleshooting and storage operations.
 +
@@ -181,7 +181,7 @@ Note the following important guidelines:
   *** The Storage Node .ovf file defines several VMDKs for storage. Unless these VMDKs meet your storage requirements, you should remove them and assign appropriate VMDKs or RDMs for storage before powering up the node. VMDKs are more commonly used in VMware environments and are easier to manage, while RDMs may provide better performance for workloads that use larger object sizes (for example, greater than 100 MB).
 . If you need to remap the ports used by this node, follow these steps.
 +
-You might need to remap a port if your enterprise networking policies restrict access to one or more ports that are used by StorageGRID. See the xref:../network/index.adoc[networking guidelines] for the ports used by StorageGRID.
+You might need to remap a port if your enterprise networking policies restrict access to one or more ports that are used by StorageGRID. See the link:../network/index.html[networking guidelines] for the ports used by StorageGRID.
 +
 IMPORTANT: Do not remap the ports used in load balancer endpoints.
 
@@ -198,21 +198,17 @@ NOTE: If only PORT_REMAP is set, the mapping that you specify applies to both in
   ... Select *Set Value*.
   ... Enter the port mapping:
 +
-----
-<network type>/<protocol>/<default port used by grid node>/<new port>
-----
+`<network type>/<protocol>/<default port used by grid node>/<new port>`
 +
 `<network type>` is grid, admin, or client, and `<protocol>` is tcp or udp.
 +
 For example, to remap ssh traffic from port 22 to port 3022, enter:
 +
-----
-client/tcp/22/3022
-----
+`client/tcp/22/3022`
 
-  ... Select *OK*.
+... Select *OK*.
 
- .. To specify the port used for inbound communications to the node, select *PORT_REMAP_INBOUND*.
+.. To specify the port used for inbound communications to the node, select *PORT_REMAP_INBOUND*.
 +
 NOTE: If you specify PORT_REMAP_INBOUND and do not specify a value for PORT_REMAP, outbound communications for the port are unchanged.
 
@@ -221,19 +217,15 @@ NOTE: If you specify PORT_REMAP_INBOUND and do not specify a value for PORT_REMA
   ... Select *Set Value*.
   ... Enter the port mapping:
 +
-----
-<network type>/<protocol>/<remapped inbound port>/<default inbound port used by grid node>
-----
+`<network type>/<protocol>/<remapped inbound port>/<default inbound port used by grid node>`
 +
 `<network type>` is grid, admin, or client, and `<protocol>` is tcp or udp.
 +
 For example, to remap inbound SSH traffic that is sent to port 3022 so that it is received at port 22 by the grid node, enter the following:
 +
-----
-client/tcp/3022/22
-----
+`client/tcp/3022/22`
 
-  ... Select *OK*
+... Select *OK*
 
 . If you want to increase the CPU or memory for the node from the default settings:
  .. Right-click the virtual machine, and select *Edit Settings*.

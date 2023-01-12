@@ -76,7 +76,8 @@ CTMO: connection timed-out during establishment or transfer
 
 UNRE: destination node ID unreachable
 
-CRPT: transfer ended due to reception of corrupt or invalid data (might indicate tampering)
+CRPT: transfer ended due to reception of corrupt or invalid data
 
 |===
+
 This audit message means a node-to-node data transfer operation was completed. If the Transfer Result was successful, the operation transferred data from "Start Sequence Count" to "Actual End Sequence Count". Sending and receiving nodes are identified by their node IDs. This information can be used to track system data flow and to locate, tabulate, and analyze errors. When combined with storage audit messages, it can also be used to verify replica counts.

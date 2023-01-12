@@ -46,41 +46,29 @@ NOTE: SNMP notifications are not sent for every alarm or every alarm severity.
 
 The table provides a high-level summary of what is supported for each SNMP version.
 
-[options="header"]
+[cols="1a,2a,2a,2a" options="header"]
 |===
 |  | SNMPv1| SNMPv2c| SNMPv3
-a|
-Queries
-a|
-Read-only MIB queries
-a|
-Read-only MIB queries
-a|
-Read-only MIB queries
-a|
-Query authentication
-a|
-Community string
-a|
-Community string
-a|
-User-based Security Model (USM) user
-a|
-Notifications
-a|
-Traps only
-a|
-Traps and informs
-a|
-Traps and informs
-a|
-Notification authentication
-a|
-Default trap community or a custom community string for each trap destination
-a|
-Default trap community or a custom community string for each trap destination
-a|
-USM user for each trap destination
+
+|Queries
+|Read-only MIB queries
+|Read-only MIB queries
+|Read-only MIB queries
+
+|Query authentication
+|Community string
+|Community string
+|User-based Security Model (USM) user
+
+|Notifications
+|Traps only
+|Traps and informs
+|Traps and informs
+
+|Notification authentication
+|Default trap community or a custom community string for each trap destination
+|Default trap community or a custom community string for each trap destination
+|USM user for each trap destination
 |===
 
 == Limitations

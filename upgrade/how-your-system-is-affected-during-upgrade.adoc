@@ -26,9 +26,10 @@ To allow for continued availability, you must ensure that objects are stored red
 
 During the StorageGRID 11.7 upgrade:
 
-* All StorageGRID appliance nodes are automatically upgraded to StorageGRID Appliance Installer firmware *version tbd*.
-* SG6060 and SGF6024 appliances are automatically upgraded to BIOS firmware *version tbd* and BMC firmware *version BMC tbd*.
-* SG100 and SG1000 appliances are automatically upgraded to BIOS firmware *version tbd* and BMC firmware *version tbd*.
+* All StorageGRID appliance nodes are automatically upgraded to StorageGRID Appliance Installer firmware version 3.7.
+* SG6060 and SGF6024 appliances are automatically upgraded to BIOS firmware version 3B07.EX and BMC firmware version 3.97.07.
+* SG100 and SG1000 appliances are automatically upgraded to BIOS firmware version 3B12.EC and BMC firmware version 4.71.07.
+
 
 == Alerts might be triggered
 
@@ -80,7 +81,7 @@ This error will resolve after the upgrade to 11.7 is complete.
 
 While the 11.7 upgrade is in progress, use the following tools to view bucket details or manage buckets, instead of using the Tenant Manager:
 
-*	To perform standard S3 operations on a bucket, use either the xref:../s3/operations-on-buckets.adoc[S3 REST API] or the xref:../tenant/understanding-tenant-management-api.adoc[Tenant Management API].
+*	To perform standard S3 operations on a bucket, use either the link:../s3/operations-on-buckets.html[S3 REST API] or the link:../tenant/understanding-tenant-management-api.html[Tenant Management API].
 * To perform StorageGRID custom operations on a bucket (for example, viewing and modifying the bucket consistency level, enabling or disabling last access time updates, or configuring search integration), use the Tenant Management API.
 
 == TLS ciphers or SSH configurations might change
@@ -89,4 +90,4 @@ If TLS ciphers or SSH configurations have been manually changed or are inconsist
 == CLB ports might be converted to load balancer endpoints
 The legacy Connection Load Balancer (CLB) service has been removed in StorageGRID 11.7. If CLB configuration is detected during upgrade prechecks, the *Legacy CLB load balancer activity detected* alert will be triggered. If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be converted to load balancer endpoints during upgrade to StorageGRID 11.7.
 
-See also xref:../admin/managing-load-balancing.adoc[Considerations for load balancing].
+See also link:../admin/managing-load-balancing.html[Considerations for load balancing].

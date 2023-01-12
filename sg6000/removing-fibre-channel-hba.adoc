@@ -16,22 +16,22 @@ You might need to replace the Fibre Channel host bus adapter (HBA) in the SG6000
 * You have the correct replacement Fibre Channel HBA.
 * You have determined which SG6000-CN controller contains the Fibre Channel HBA to replace.
 +
-xref:verifying-fibre-channel-hba-to-replace.adoc[Verify Fibre Channel HBA to replace]
+link:verifying-fibre-channel-hba-to-replace.html[Verify Fibre Channel HBA to replace]
 
 * You have physically located the SG6000-CN controller where you are replacing the Fibre Channel HBA in the data center.
 +
-xref:locating-controller-in-data-center.adoc[Locate controller in data center]
+link:locating-controller-in-data-center.html[Locate controller in data center]
 
 * You have removed the controller cover.
 +
-xref:removing-sg6000-cn-controller-cover.adoc[Remove SG6000-CN controller cover]
+link:removing-sg6000-cn-controller-cover.html[Remove SG6000-CN controller cover]
 
 .About this task
 
-To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Fibre Channel HBA replacement or replace the adapter during a scheduled maintenance window when periods of service disruption are normally expected. See the information about xref:../monitor/monitoring-node-connection-states.adoc[monitoring node connection states].
+To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Fibre Channel HBA replacement or replace the adapter during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:../monitor/monitoring-node-connection-states.html[monitoring node connection states].
 
 IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the Fibre Channel HBA during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. +
-See information about xref:../ilm/why-you-should-not-use-single-copy-replication.adoc[why you should not use single-copy replication].
+See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
 
 .Steps
 
@@ -52,5 +52,6 @@ There are two adapters in the riser assembly: a Fibre Channel HBA and an Etherne
 
 .After you finish
 
-xref:reinstalling-fibre-channel-hba.adoc[Install the replacement Fibre Channel HBA].
+link:reinstalling-fibre-channel-hba.html[Install the replacement Fibre Channel HBA].
 
+include::../_include/fru-statement.adoc[] 

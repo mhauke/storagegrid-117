@@ -11,7 +11,7 @@ summary: 'You can monitor events that are detected by a grid node, including cus
 [.lead]
 You can monitor events that are detected by a grid node, including custom events that you have created to track events that are logged to the syslog server. The Last Event message shown in the Grid Manager provides more information about the most recent event.
 
-Event messages are also listed in the `/var/local/log/bycast-err.log` log file. See the xref:logs-files-reference.adoc[Log files reference].
+Event messages are also listed in the `/var/local/log/bycast-err.log` log file. See the link:logs-files-reference.html[Log files reference].
 
 The SMTT (Total events) alarm can be repeatedly triggered by issues such as network problems, power outages or upgrades. This section has information on investigating events so that you can better understand why these alarms have occurred. If an event occurred because of a known issue, it is safe to reset the event counters.
 
@@ -28,7 +28,7 @@ The SMTT (Total events) alarm can be repeatedly triggered by issues such as netw
 .. Select *_site_* > *_grid node_* > *SSM* > *Events* > *Reports*.
 .. Select *Text*.
 +
-The *Last Event* attribute is not shown in the xref:using-charts-and-reports.adoc[charts view]. To view it:
+The *Last Event* attribute is not shown in the link:using-charts-and-reports.html[charts view]. To view it:
 +
 .. Change *Attribute* to *Last Event*.
 .. Optionally, select a time period for *Quick Query*.

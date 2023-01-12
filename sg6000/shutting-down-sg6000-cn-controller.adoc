@@ -15,13 +15,13 @@ Shut down the SG6000-CN controller to perform hardware maintenance.
 
 * You have physically located the SG6000-CN controller requiring maintenance in the data center.
 +
-xref:locating-controller-in-data-center.adoc[Locate controller in data center]
+link:locating-controller-in-data-center.html[Locate controller in data center]
 
-* The appliance has been xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed into maintenance mode].
+* The appliance has been link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed into maintenance mode].
 
 .About this task
 
-To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before shutting down the controller or shut down the controller during a scheduled maintenance window when periods of service disruption are acceptable. See the information about xref:../monitor/monitoring-node-connection-states.adoc[monitoring node connection states].
+To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before shutting down the controller or shut down the controller during a scheduled maintenance window when periods of service disruption are acceptable. See the information about link:../monitor/monitoring-node-connection-states.html[monitoring node connection states].
 
 IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must shut down the controller during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. 
 +
@@ -57,7 +57,7 @@ image::../media/sg6060_rear_panel_power_led_on.jpg[SG6060 rear panel power LED]
  ** Use the controller BMC interface:
   ... Access the controller BMC interface.
 +
-xref:../installconfig/accessing-bmc-interface.adoc[Access BMC interface]
+link:../installconfig/accessing-bmc-interface.html[Access BMC interface]
 
   ... Select *Power Control*.
   ... Verify that the Power Actions indicates that the host is currently off.
@@ -66,4 +66,4 @@ image::../media/bmc_power_control_page_controller_off.png[BMC Power control page
 
 .Related information
 
-xref:removing-sg6000-cn-controller-from-cabinet-or-rack.adoc[Remove SG6000-CN controller from cabinet or rack]
+link:removing-sg6000-cn-controller-from-cabinet-or-rack.html[Remove SG6000-CN controller from cabinet or rack]

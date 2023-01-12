@@ -33,7 +33,7 @@ If StorageGRID is unable to make contact with any of the provisioned NTP or DNS 
 
 IMPORTANT: Although you can use these automatically discovered host routes, in general you should manually configure the DNS and NTP routes to ensure connectivity in case automatic discovery fails.
 
-If you are not ready to configure the optional Admin and Client Networks during deployment, you can configure these networks when you approve grid nodes during the configuration steps. Additionally, you can configure these networks after installation, using the Change IP tool (see xref:../maintain/configuring-ip-addresses.adoc[Configure IP addresses]).
+If you are not ready to configure the optional Admin and Client Networks during deployment, you can configure these networks when you approve grid nodes during the configuration steps. Additionally, you can configure these networks after installation, using the Change IP tool (see link:../maintain/configuring-ip-addresses.html[Configure IP addresses]).
 
 Only S3 and Swift client connections and SSH, Grid Manager, and Tenant Manager administrative connections are supported over VLAN interfaces. Outbound connections, such as to NTP, DNS, LDAP, AutoSupport, and KMS servers, must go over the Client, Admin, or Grid Network interfaces directly. If the interface is configured as a trunk to support VLAN interfaces, this traffic will flow over the interface's native VLAN, as configured at the switch.
 
@@ -47,7 +47,7 @@ Actual minimum WAN bandwidth requirements depend on client activity and the ILM 
 
 Admin Nodes must always be secured from untrusted clients, such as those on the open internet. You must ensure that no untrusted client can access any Admin Node on the Grid Network, the Admin Network, or the Client Network.
 
-Admin Nodes and Gateway Nodes that you plan to add to high availability groups must be configured with a static IP address. For more information, see xref:../admin/managing-high-availability-groups.adoc[Manage high availability groups]. 
+Admin Nodes and Gateway Nodes that you plan to add to high availability groups must be configured with a static IP address. For more information, see link:../admin/managing-high-availability-groups.html[Manage high availability groups]. 
 
 == Using network address translation (NAT)
 

@@ -48,7 +48,7 @@ If a problem occurs when you remove a controller, you can use the saved file to 
 +
 NOTE: Collecting support data before and after replacing a component ensures you can send a full set of logs to technical support in case the replacement does not resolve the problem.
 
-. If the StorageGRID appliance is running in a StorageGRID system, xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[place the E5600SG controller into maintenance mode].
+. If the StorageGRID appliance is running in a StorageGRID system, link:../commonhardware/placing-appliance-into-maintenance-mode.html[place the E5600SG controller into maintenance mode].
 
 . If the E2700 controller is functioning sufficiently to allow for a controlled shutdown, confirm that all operations have completed.
  .. From the title bar of the Array Management Window, select *Monitor* > *Reports* > *Operations in Progress*.
@@ -81,6 +81,8 @@ The appliance reboots and rejoins the grid. This process can take up to 20 minut
 image::../media/node_rejoin_grid_confirmation.png[Appliance node rejoined grid]
 
 . From SANtricity Storage Manager, confirm that the new controller is Optimal, and collect support data.
+
+include::../_include/fru-statement.adoc[]
 
 .Related information
 

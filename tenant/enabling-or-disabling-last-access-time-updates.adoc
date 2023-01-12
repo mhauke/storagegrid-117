@@ -11,12 +11,12 @@ summary: 'When grid administrators create the information lifecycle management \
 [.lead]
 When grid administrators create the information lifecycle management (ILM) rules for a StorageGRID system, they can optionally specify that an object's last access time be used to determine whether to move that object to a different storage location. If you are using an S3 tenant, you can take advantage of such rules by enabling last access time updates for the objects in an S3 bucket.
 
-These instructions only apply to StorageGRID systems that include at least one ILM rule that uses the *Last access time* option as an advanced filter or as a reference time. You can ignore these instructions if your StorageGRID system does not include such a rule. See xref:../ilm/using-last-access-time-in-ilm-rules.adoc[Use Last access time in ILM rules] for details.
+These instructions only apply to StorageGRID systems that include at least one ILM rule that uses the *Last access time* option as an advanced filter or as a reference time. You can ignore these instructions if your StorageGRID system does not include such a rule. See link:../ilm/using-last-access-time-in-ilm-rules.html[Use Last access time in ILM rules] for details.
 
 .What you'll need
 
-* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
-* You belong to a user group that has the xref:tenant-management-permissions.adoc[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies. 
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You belong to a user group that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies. 
 
 .About this task
 

@@ -34,53 +34,42 @@ SPUT S3 PUT object bucket1/part3.txt tenant:92484777680322627870  cbid:5373D7383
 
 The `audit-explain` tool can process plain or compressed audit logs. For example:
 
-----
-audit-explain audit.log
-----
+`audit-explain audit.log`
 
-----
-audit-explain 2019-08-12.txt.gz
-----
+`audit-explain 2019-08-12.txt.gz`
 
 The `audit-explain` tool can also process multiple files at once. For example:
 
-----
-audit-explain audit.log 2019-08-12.txt.gz 2019-08-13.txt.gz
-----
+`audit-explain audit.log 2019-08-12.txt.gz 2019-08-13.txt.gz`
 
-----
-audit-explain /var/local/audit/export/*
-----
+`audit-explain /var/local/audit/export/*`
 
 Finally, the `audit-explain` tool can accept input from a pipe, which allows you to filter and preprocess the input using the `grep` command or other means. For example:
 
-----
-grep SPUT audit.log | audit-explain
-----
+`grep SPUT audit.log | audit-explain`
 
-----
-grep bucket-name audit.log | audit-explain
-----
+`grep bucket-name audit.log | audit-explain`
 
 Since audit logs can be very large and slow to parse, you can save time by filtering parts that you want to look at and running `audit-explain` on the parts, instead of the entire file.
 
 NOTE: The `audit-explain` tool does not accept compressed files as piped input. To process compressed files, provide their file names as command-line arguments, or use the `zcat` tool to decompress the files first. For example:
 
-----
-zcat audit.log.gz | audit-explain
-----
+`zcat audit.log.gz | audit-explain`
 
 Use the `help (-h)` option to see the available options. For example:
 
-----
- $ audit-explain -h
-----
+`$ audit-explain -h`
 
 .Steps
 
 . Log in to the primary Admin Node:
- .. Enter the following command: `ssh admin@_primary_Admin_Node_IP_`
- .. Enter the password listed in the `Passwords.txt` file.
+.. Enter the following command: `ssh admin@_primary_Admin_Node_IP_`
+.. Enter the password listed in the `Passwords.txt` file.
+.. Enter the following command to switch to root: `su -`
+.. Enter the password listed in the `Passwords.txt` file.
++
+When you are logged in as root, the prompt changes from `$` to `#`.
+
 . Enter the following command, where `/var/local/audit/export/audit.log` represents the name and the location of the file or files you want to analyze:
 +
 `$ audit-explain /var/local/audit/export/audit.log`
@@ -91,4 +80,4 @@ NOTE: To reduce line lengths and to aid readability, timestamps are not shown by
 
 .Related information
 
-xref:sput-s3-put.adoc[SPUT: S3 PUT]
+link:sput-s3-put.html[SPUT: S3 PUT]

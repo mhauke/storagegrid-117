@@ -13,14 +13,14 @@ StorageGRID uses a load balancer to manage the workload from client applications
 
 When configuring StorageGRID for use with FabricPool, you must configure a load balancer endpoint and upload or generate a load balancer endpoint certificate, which is used to secure the connection between ONTAP and StorageGRID. 
 
-To use the FabricPool setup wizard to complete this task, go to xref:use-fabricpool-setup-wizard-steps.adoc[Access and complete the FabricPool setup wizard].
+To use the FabricPool setup wizard to complete this task, go to link:use-fabricpool-setup-wizard-steps.html[Access and complete the FabricPool setup wizard].
 
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission.
-* You have reviewed the general xref:../admin/managing-load-balancing.adoc[considerations for load balancing] as well as the xref:best-practices-for-load-balancing.adoc[best practices for load balancing for FabricPool].
+* You have reviewed the general link:../admin/managing-load-balancing.html[considerations for load balancing] as well as the link:best-practices-for-load-balancing.html[best practices for load balancing for FabricPool].
 
 .Steps
 . Select *CONFIGURATION* > *Network* > *Load balancer endpoints*.
@@ -40,7 +40,7 @@ To use the FabricPool setup wizard to complete this task, go to xref:use-fabricp
 |The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes. These ports are reserved on Admin Nodes.
 
 *Note:* Ports used by other grid services are not permitted. See the 
-xref:../network/network-port-reference.adoc[Network port reference].
+link:../network/network-port-reference.html[Network port reference].
 
 You will provide this number to ONTAP when you attach StorageGRID as a FabricPool cloud tier.
 
@@ -92,10 +92,10 @@ You must select this option if you have not yet created any tenant accounts.
 |Use this option to upload a CA-signed server certificate, certificate private key, and optional CA bundle.
 
 |Generate certificate
-|Use this option to generate a self-signed certificate. See xref:../admin/configuring-load-balancer-endpoints.adoc[Configure load balancer endpoints] for details of what to enter.
+|Use this option to generate a self-signed certificate. See link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints] for details of what to enter.
 
 |Use StorageGRID S3 and Swift certificate
-|This option is available only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See xref:../admin/configuring-custom-server-certificate-for-storage-node.adoc[Configure S3 and Swift API certificates] for details.
+|This option is available only if you have already uploaded or generated a custom version of the StorageGRID global certificate. See link:../admin/configuring-custom-server-certificate-for-storage-node.html[Configure S3 and Swift API certificates] for details.
 
 |===
 

@@ -90,7 +90,7 @@ NOTE: An ILM rule cannot use both a *User defined creation time* for the Referen
  ** `x-amz-object-lock-retain-until-date`
  ** `x-amz-object-lock-legal-hold`
 +
-If a request is made without these headers, the bucket default retention settings are used to calculate the object version mode and retain-until-date. See xref:../s3/use-s3-api-for-s3-object-lock.adoc[Use S3 REST API to configure S3 Object Lock].
+If a request is made without these headers, the bucket default retention settings are used to calculate the object version mode and retain-until-date. See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
 
 * SSE request headers:
  ** `x-amz-server-side-encryption`
@@ -145,7 +145,7 @@ You can use the following request headers to encrypt an object with server-side 
  ** `x-amz-server-side-encryption-customer-key`: Specify your encryption key for the new object.
  ** `x-amz-server-side-encryption-customer-key-MD5`: Specify the MD5 digest of the new object's encryption key.
 
-*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for xref:using-server-side-encryption.adoc[using server-side encryption].
+*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for link:using-server-side-encryption.html[using server-side encryption].
 
 *Note:* If an object is encrypted with SSE or SSE-C, any bucket-level or grid-level encryption settings are ignored.
 
@@ -155,12 +155,24 @@ If versioning is enabled for a bucket, a unique `versionId` is automatically gen
 
 If versioning is suspended, the object version is stored with a null `versionId` and if a null version already exists it will be overwritten.
 
+== Signature calculations for the Authorization header
+
+When using the `Authorization` header to authenticate requests, StorageGRID differs from AWS in the following ways: 
+ 
+* StorageGRID doesn't require `host` headers to be included within `CanonicalHeaders`.
+* StorageGRID doesn't require `Content-Type` to be included within `CanonicalHeaders`.
+* StorageGRID doesn't require `x-amz-*` headers to be included within `CanonicalHeaders`.
+
+IMPORTANT: As a general best practice, always include these headers within `CanonicalHeaders` to ensure they are verified; however, if you exclude these headers, StorageGRID does not return an error.
+
+For details, refer to https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html[Signature Calculations for the Authorization Header: Transferring Payload in a Single Chunk (AWS Signature Version 4)^].
+
 .Related information
 
-xref:../ilm/index.adoc[Manage objects with ILM]
+link:../ilm/index.html[Manage objects with ILM]
 
-xref:operations-on-buckets.adoc[Operations on buckets]
+link:operations-on-buckets.html[Operations on buckets]
 
-xref:s3-operations-tracked-in-audit-logs.adoc[S3 operations tracked in audit logs]
+link:s3-operations-tracked-in-audit-logs.html[S3 operations tracked in audit logs]
 
-xref:configuring-tenant-accounts-and-connections.adoc[How client connections can be configured]
+link:configuring-tenant-accounts-and-connections.html[How client connections can be configured]

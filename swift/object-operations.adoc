@@ -9,7 +9,7 @@ summary: 'The following Swift API operations are performed on objects.'
 :imagesdir: ../media/
 
 [.lead]
-The following Swift API operations are performed on objects. These operations can be tracked in the xref:monitoring-and-auditing-operations.adoc[StorageGRID audit log].
+The following Swift API operations are performed on objects. These operations can be tracked in the link:monitoring-and-auditing-operations.html[StorageGRID audit log].
 
 == DELETE object
 
@@ -34,7 +34,7 @@ A successful execution returns the following response headers with an `HTTP/1.1 
 
 When processing a DELETE Object request, StorageGRID attempts to immediately remove all copies of the object from all stored locations. If successful, StorageGRID returns a response to the client immediately. If all copies cannot be removed within 30 seconds (for example, because a location is temporarily unavailable), StorageGRID queues the copies for removal and then indicates success to the client.
 
-For more information, see xref:../ilm/how-objects-are-deleted.adoc[How objects are deleted].
+For more information, see link:../ilm/how-objects-are-deleted.html[How objects are deleted].
 
 == GET object
 
@@ -134,7 +134,7 @@ If an ILM rule filters objects by size and uses synchronous placement on ingest,
 +
 NOTE: If you do not follow these guidelines for `Content-Encoding`, `Transfer-Encoding`, and `Content-Length`, StorageGRID must save the object before it can determine object size and apply the ILM rule. In other words, StorageGRID must default to creating interim copies of an object on ingest. That is, StorageGRID must use the Dual Commit option for Ingest Behavior.
 +
-For more information about synchronous placement and ILM rules, see xref:../ilm/data-protection-options-for-ingest.adoc[Data-protection options for ingest].
+For more information about synchronous placement and ILM rules, see link:../ilm/data-protection-options-for-ingest.html[Data-protection options for ingest].
 
 * `Content-Type`
 * `ETag`

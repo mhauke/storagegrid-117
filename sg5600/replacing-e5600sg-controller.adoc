@@ -18,7 +18,7 @@ You must have access to the following resources:
 * E-Series hardware replacement information on the NetApp Support Site at +
 http://mysupport.netapp.com/[mysupport.netapp.com^]
 * E5600 documentation on the Support Site
-* The appliance has been xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed maintenance mode].
+* The appliance has been link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed maintenance mode].
 
 .About this task
 
@@ -60,6 +60,8 @@ The final LED state is `HA`.
 . Monitor the status of the appliance Storage Node in the Grid Manager.
 +
 Verify that the appliance Storage Nodes returns to the expected status.
+
+include::../_include/fru-statement.adoc[]
 
 .Related information
 

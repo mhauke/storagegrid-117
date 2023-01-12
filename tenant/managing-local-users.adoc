@@ -15,11 +15,11 @@ NOTE: If single sign-on (SSO) is enabled for your StorageGRID system, local user
 
 .What you'll need
 
-* You are signed in to the Tenant Manager using a xref:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
-* You belong to a user group that has the xref:tenant-management-permissions.adoc[Root access permission].
+* You belong to a user group that has the link:tenant-management-permissions.html[Root access permission].
 
-* If your tenant account has the *Use grid federation connection* permission, you have reviewed the workflow and considerations for xref:grid-federation-account-clone.adoc[cloning account information], and you are signed in to the tenant's source grid.
+* If your tenant account has the *Use grid federation connection* permission, you have reviewed the workflow and considerations for link:grid-federation-account-clone.html[cloning account information], and you are signed in to the tenant's source grid.
 
 == [[create-user]]Create a local user
 
@@ -73,7 +73,7 @@ For example, select *Yes* to temporarily suspend a user's ability to sign in.
 +
 Assigning a user to groups is optional. If you'd prefer, you can select users when you create or edit groups. 
 +
-Users who do not belong to any groups will have no management permissions. Permissions are cumulative. Users will have all permissions for all groups they belong to. See xref:tenant-management-permissions.adoc[Tenant management permissions].
+Users who do not belong to any groups will have no management permissions. Permissions are cumulative. Users will have all permissions for all groups they belong to. See link:tenant-management-permissions.html[Tenant management permissions].
 
 . Select *Create user*.
 +
@@ -126,7 +126,7 @@ You cannot change the username.
 
 .. On the *Access* tab, select *No* to allow the user to sign in or select *Yes* to prevent the user from signing in. Then, select *Save changes*.
 
-.. On the *Access keys* tab, select *Create key* and follow the instructions for xref:creating-another-users-s3-access-keys.adoc[creating another user's S3 access keys]. 
+.. On the *Access keys* tab, select *Create key* and follow the instructions for link:creating-another-users-s3-access-keys.html[creating another user's S3 access keys]. 
 
 .. On the *Groups* tab, select *Edit groups* to add the user to groups or remove the user from groups. Then, select *Save changes*.
 
