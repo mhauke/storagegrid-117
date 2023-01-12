@@ -282,6 +282,10 @@ a|
 
 You can access the BMC interface on the services appliance using the 1-GbE management port circled in the diagram. This port supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management Interface (IPMI) standard.
 
+NOTE: You can enable or disable remote IPMI access for all services appliances by using the management API private endpoint, `PUT /private/bmc`, as described in link:../harden/hardening-guidelines-for-storagegrid-nodes.html#guidelines-for-hardware-appliance-nodes[Guidelines for hardware appliance nodes].
+
+Remote IPMI access would result in a security issue, you can disable 
+
 *SG100 BMC management port*
 
 image::../media/sg100_bmc_management_port.png[SG100 management port]
