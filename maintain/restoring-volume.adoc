@@ -4,7 +4,8 @@ sidebar: sidebar
 keywords: storagegrid, restore, volume
 summary: 'You can restore object data for a failed storage volume or storage node using Grid Manager. You can also use Grid Manager to monitor restoration processes in progress and display a restoration history.'
 ---
-= Restore volume using Grid Manager
+
+= Restore object data using Grid Manager
 :icons: font
 :imagesdir: ../media/
 
@@ -13,30 +14,34 @@ You can restore object data for a failed storage volume or storage node using Gr
 
 .What you'll need
 
-* link:../maintain/remounting-and-reformatting-appliance-storage-volumes.html[Format failed volumes] prior to restoration.
+* You have link:../maintain/remounting-and-reformatting-appliance-storage-volumes.html[formatted failed volumes] before beginning the restoration.
 
-* Confirm that the Storage Node where you are restoring objects has a Connection State of *Connected* image:../media/icon_alert_green_checkmark.png[icon alert green checkmark] on the *NODES* > *Overview* tab in the Grid Manager.
+* You have confirmed that the Storage Node where you are restoring objects has a Connection State of *Connected* image:../media/icon_alert_green_checkmark.png[icon alert green checkmark] on the *NODES* > *Overview* tab in the Grid Manager.
 
-*	Confirm that none of the following tasks are running:
-** Grid expansion to add a Storage Node
-** Storage Node decommission + 
-NOTE: You can force a volume or node restoration to start when a decommission is paused.
-** Recovery of a failed storage volume
-** Recovery of a Storage Node with a failed system drive
-** EC rebalance
-** Appliance node cloning
+*	You have confirmed that none of the following are true:
+** Grid expansion to add a Storage Node is in process
+** Storage Node decommission in process or failed
+** Recovery of a failed storage volume is in process
+** Recovery of a Storage Node with a failed system drive is in process
+** EC rebalance is in process
+** Appliance node cloning is in process
 
 .About this task
 
-When one or more storage volumes fail, Grid Manger displays them as candidates for restoration on the volume restoration pending data tab.
+After drives are replaced and manual steps to format the volumes are performed, Grid Manger displays the volumes as candidates for restoration in *Maintenance* > *Volume restoration* on the *Nodes to restore* tab.
 
-In most cases, using Grid Manager to restore storage volumes and nodes is preferred to using link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[CLI commands]. Grid Manager can also be used to <<view_restoration_progress,monitor the volume restoration process>> and <<view_restoration_history,view the restoration history>> for both GUI- and CLI-initiated restorations.
+Use Grid Manager to restore storage volumes and nodes:
+
+* If some, but not all, storage volumes in a node have failed
+* If all storage volumes in a node have failed and are being replaced with same number of volumes or more volumes
+
+Use the `repair-data` script to restore storage volumes and nodes if all storage volumes in a node have failed and are being replaced with fewer storage volumes than before.
+
+You can also use Grid Manager to <<view-restoration-progress,monitor the volume restoration process>> and <<view-restoration-history,view restoration history>>. If necessary, you can link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[use the repair-data script to restore volumes and nodes].
 
 // Remove commented lines following review approval. Per Dheeraj, use of UI for node recovery was a late change:
 // * If you are _restoring_ a storage node, use <<restore_lost_volume_or_node,Grid Manager to restore volumes>>.
-// * If you are _recovering_ a storage node, use link:../maintain/recovering-storagegrid-appliance-storage-node.html[CLI commands to restore volumes]. 
-
-// decision tree for choosing OEC vs 'volume restoration' vs 'node repair' has to be clear.
+// * If you are _recovering_ a storage node, use link:../maintain/recovering-storagegrid-appliance-storage-node.html[manual steps to restore volumes]. 
 
 Two types of data objects can be restored:
 
@@ -44,79 +49,73 @@ Two types of data objects can be restored:
 * Replicated data objects are restored from other locations, assuming that the grid's ILM rules were configured to make object copies available. 
 ** If an ILM rule was configured to store only one replicated copy and that copy existed on a storage volume that failed, you will not be able to recover the object.
 ** If the only remaining copy of an object is in a Cloud Storage Pool, StorageGRID must issue multiple requests to the Cloud Storage Pool endpoint to restore object data. 
-** If the only remaining copy of an object is on an Archive Node, object data is retrieved from the Archive Node. Restoring object data to a Storage Node from an Archive Node takes longer than restoring copies from other Storage Nodes.
+** If the only remaining copy of an object is on an Archive Node, object data is retrieved from the Archive Node. Restoring object data to a Storage Node from an Archive Node takes longer than restoring object copies from other Storage Nodes.
 
-NOTE: Replicated data restoration is dependant on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
+NOTE: Volume restoration is dependent on the availability of resources where object copies are stored. Progress of volume restoration is nonlinear and might take days or weeks to complete.
 
-// Add Notes in CLI topics about monitoring and history in GUI and that an XXXX volume restore can be performed in the GUI or CLI (GUI preferred unless scripting?).
-// Volume recovery procedure documentation for SOLO and all non-SOLO (SGAs, VMs and baremetal) platforms updated to use volume recovery from UI. (NOT repair-data CLI.)
-
-== Restore lost volume or node
+== Restore failed volume or node
 
 .Steps
 
-To restore a lost volume or node:
+To restore a failed volume or node:
 
 . In Grid Manager go to *Maintenance* > *Volume restoration*.
 
-. Select the *Pending data* tab.
+. Select the *Nodes to restore* tab.
 +
 The number on the tab indicates the number of nodes with volumes requiring restoration.
-+
-// Image of pending tab.
+
+image::../media/vol-restore-nodes-to-restore.png[Volume restoration - Nodes to restore tab]
 
 . Expand each node to see the volumes in it that need restoration and their status.
  
-. Correct any issues preventing restoration of each volume, as indicated.
+. Correct any issues preventing restoration of each volume that are indicated when you select Waiting for manual steps, if it displays as the volume status.
 
-. Select the node to restore.
+. Select a node to restore where all the volumes indicate a Ready to restore status.
 +
 You can only restore the volumes for one node at a time.
 +
-Each volume in the node should indicate that it is ready to restore.
+Each volume in the node must indicate that it is ready to restore.
 
 . Select *Start restore*.
 
-. Address any warnings that might display or select *Start anyway*.
+. Address any warnings that might display or select *Start anyway* to ignore the warnings and start the restoration.
 
-Nodes are moved from the Pending data tab to the Restoration progress tab when the restoration starts.
+Nodes are moved from the Nodes to restore tab to the Restoration progress tab when the restoration starts.
 
-If a volume restoration fails, the node returns to the Pending data tab.
+If a volume restoration cannot be started, the node returns to the Nodes to restore tab.
 
-== View restoration progress
+== [[view-restoration-progress]]View restoration progress
 
-The Restoration progress tab shows the status of the volume restoration process and information about the volumes in a node being restored.
+The Restoration progress tab shows the status of the volume restoration process and information about the volumes for a node being restored.
 
-// Image of progress tab.
+image::../media/vol-restore-restore-progress.png[Volume restoration - Restoration progress tab]
 
-The Percentage complete section displays information about all volumes being restored, including volume restorations started using CLI commands.
+Data repair rates for replicated and erasure-coded objects in all volumes are estimates summarizing all restorations in process, including those restorations initiated using the `repair-data` script. The percentage of objects in those volumes that are intact and do not require restoration is also indicated.
 
-* Number of objects or chunks remaining are actual item counts.
-* The overall percentage complete and completion time are statistical estimates.
-+
-NOTE: Replicated data restoration is dependant on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
+NOTE: Replicated data restoration is dependent on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
 
-The Restoration jobs section only displays information about volume restorations started from Grid Manager.
+The Restoration jobs section displays information about volume restorations started from Grid Manager.
 
-* The number in the Restoration jobs section heading indicates the number of volumes currently being restored or that are queued for restoration.
+* The number in the Restoration jobs section heading indicates the number of volumes that are either being restored or queued for restoration.
 
 * The table displays information about each volume in a node being restored and its progress.
 
-** The progress for each node is accurate.
+** The progress for each node displays the percentage for each job.
 ** Expand the Details column to display the restoration start time and job ID.
 
 * If a volume restoration fails:
 ** The Status column indicates failed
-** A warning displays, indicating the cause of failure.
+** An error displays, indicating the cause of failure.
 +
- Correct issues indicated in the warning and then select *Retry* to re-initiate the volume restoration. 
+Correct the issues indicated in the error and then select *Retry* to re-initiate the volume restoration. 
 +
-If multiple restoration jobs have failed, selecting *Retry* starts the most recently failed job that is shown.
+If multiple restoration jobs have failed, selecting *Retry* starts the most recently failed job.
 
-== View restoration history
+== [[view-restoration-history]]View restoration history
 
 The Restoration history tab shows information about all volume restorations that have successfully completed.
 
-// Image of history tab.
+NOTE: Sizes are not applicable for replicated objects and display only for restorations that contain erasure coded (EC) data objects.
 
-
+image::../media/vol-restore-restore-history.png[Volume restoration - Restoration history tab]
