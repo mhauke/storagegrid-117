@@ -86,7 +86,21 @@ When cloning successfully completes:
 
 NOTE: If the appliance does not rejoin the grid, go to the StorageGRID Appliance Installer Home page for the source node, select *Advanced* > *Reboot Controller*, and then select *Reboot into Maintenance Mode*. After the source node reboots in maintenance mode, repeat the node cloning procedure.
 
-User data remains on the source appliance as a recovery option if an unexpected issue occurs with the target node. After the target node has successfully rejoined StorageGRID, user data on the source appliance is outdated and is no longer needed. If desired, ask StorageGRID Support to clear the source appliance to destroy this data.
+* User data remains on the source appliance as a recovery option if an unexpected issue occurs with the target node. After the target node has successfully rejoined StorageGRID, user data on the source appliance is outdated and is no longer needed.
++
+Outdated user data is overwritten when you install or expand the source appliance as a new node in another grid. 
++
+You can also reset the controller configuration on the source appliance to make this data inaccessible:
++
+. Open the link:../installconfig/accessing-storagegrid-appliance-installer.html[StorageGRID Appliance Installer] for the source appliance using the temporary IP address initially assigned to the target node.
+
+. Select *Help* > *Support and Debug Tools*.
+
+. Select *Reset Storage Controller Configuration*.
++
+NOTE: If needed, contact technical support for assistance resetting the storage controller configuration. 
++
+NOTE: Overwriting the data or resetting the controller configuration makes the outdated data difficult or impossible to retrieve; however, neither method securely removes the data from the source appliance. If a secure erase is required, use a data-wiping tool or service to permanently and securely remove data from the source appliance.
 
 You can:
 
