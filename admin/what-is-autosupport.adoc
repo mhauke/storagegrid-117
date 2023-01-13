@@ -13,6 +13,8 @@ The AutoSupport feature enables your StorageGRID system to send health and statu
 
 Using AutoSupport can significantly speed problem determination and resolution. Technical support can also monitor the storage needs of your system and help you determine if you need to add new nodes or sites. Optionally, you can configure AutoSupport messages to be sent to one additional destination.
 
+StorageGRID AutoSupport only needs to be configured on the primary Admin Node. If <<hardware_autosupport,hardware AutoSupport>> is being set up for appliances, it must be configured on each appliance.
+
 == Information included in AutoSupport messages
 
 include::../_include/autosupport-message-info.adoc[]
@@ -41,6 +43,22 @@ You can use any combination of the following options to send AutoSupport message
 * *Event-triggered*: Automatically send AutoSupport messages every hour or when significant system events occur. Default setting: Enabled.
 * *On Demand*: Allow technical support to request that your StorageGRID system send AutoSupport messages automatically, which is useful when they are actively working an issue (requires HTTPS AutoSupport transmission protocol). Default setting: Disabled.
 * *User-triggered*: Manually send AutoSupport messages at any time.
+
+== [[hardware_autosupport]] AutoSupport for appliances
+
+AutoSupport for appliance hardware is different than StorageGRID AutoSupport, which reports StorageGRID software issues. AutoSupport for appliance hardware needs to be configured on each appliance and is implemented differently for services and storage appliances.
+
+AutoSupport needs to be enabled in SANtricity for each storage appliance. SANtricity AutoSupport can be configured during initial appliance setup or after an appliance has been installed:
+
+* For SG6000 and SG5700 appliances link:../installconfig/accessing-and-configuring-santricity-system-manager.html[configure AutoSupport in SANtricity System Manager]
+* For SG5600 appliances link:../installconfig/configuring-santricity-storage-manager.html#configure-autosupport[configure AutoSupport in SANtricity Storage Manager]
+
+AutoSupport messages from E-Series appliances can be included in StorageGRID AutoSupport if you configure AutoSupport delivery via proxy in link:../admin/sending-eseries-autosupport-messages-through-storagegrid.html[SANtricity System Manager].
+
+StorageGRID AutoSupport does not report hardware issues, such as DIMM or host interface card (HIC) faults. However, some some component failures might trigger link:../monitor/alerts-reference.html[hardware alerts]. For StorageGRID appliances with a baseboard management controller (BMC), such as the SG100, SG1000, SG6060, or SGF6024, use you can configure email and SNMP traps to report hardware failures:
+
+* link:../installconfig/setting-up-email-notifications-for-alerts.html[Set up email notifications for alerts]
+* link:../installconfig/configuring-snmp-settings-for-bmc.html[Configure SNMP settings] for the SG6000-CN controller or the SG100 and SG1000 services appliances
 
 .Related information
 
