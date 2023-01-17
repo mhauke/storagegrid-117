@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, sg6100 storage appliance, SGF6112 storage appliance, maintain, maintaining, hardware, procedures, tasks
 summary: 'You might need to perform maintenance procedures on the appliance. The procedures in this section assume that the appliance has already been deployed as a Storage Node in a StorageGRID system.'
 ---
-= Maintain SG6100 appliances
+= Maintain SGF6112 appliances
 :icons: font
 :imagesdir: ../media/
 
@@ -13,20 +13,23 @@ You might need to perform maintenance procedures on your appliance. The procedur
 
 Procedures specific to maintaining your SGF6112 appliance are in this section. 
 
-Maintenance configuration procedures include procedures that are performed using software including the Appliance Installer, Grid Manager, or BMC interface such as:
+*Maintenance configuration procedures* are performed using the Appliance Installer, Grid Manager, or BMC interface. These procedures include:
 
 * Turn controller identify LED on and off
 * Locate controller in data center
 * Shut down the appliance
 * Change link configuration of the appliance
 
-Hardware procedures are procedurs that require the physical manipulation of components such as: 
+*Hardware procedures* require the physical manipulation of components. These procedures include: 
 
 * Replace one or both power supplies
 * Replace fans
 * Replace drives
 * Replace entire appliance
 
+== Drive firmware upgrade
+
+Every time an SGF6112 is rebooted, the drive firmware is automatically checked. The firmware is automatically upgraded to the version expected by the current StorageGRID release when necessary. Usually this firmware upgrade will happen during the reboot that occurs during a StorageGRID software upgrade. In the event that it is necessary to release a drive firmware upgrade for an existing StorageGRID version, the new firmware will be included in a hotfix. Follow the instructions provided with the hotfix to ensure that all drives that could benefit from a firmware update do, in fact, get updated.
 
 See xref:../commonhardware/index.adoc[Common procedures] for maintenance procedures that are used by all appliances. 
 
