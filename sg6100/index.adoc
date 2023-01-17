@@ -2,16 +2,16 @@
 permalink: sg6100/index.html
 sidebar: sidebar
 keywords: storagegrid, sg6100 storage appliance, SGF6112 storage appliance, maintain, maintaining, hardware, procedures, tasks
-summary: 'You might need to perform maintenance procedures on the appliance. The procedures in this section assume that the appliance has already been deployed as a Storage Node in a StorageGRID system.'
+summary: 'You might need to perform maintenance procedures on your appliance. Procedures specific to maintaining your SGF6112 appliance are in this section.'
 ---
 = Maintain SGF6112 appliances
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You might need to perform maintenance procedures on your appliance. The procedures in this section assume that the appliance has already been deployed as a Storage Node in a StorageGRID system.
+You might need to perform maintenance procedures on your appliance. Procedures specific to maintaining your SGF6112 appliance are in this section. 
 
-Procedures specific to maintaining your SGF6112 appliance are in this section. 
+The procedures in this section assume that the appliance has already been deployed as a Storage Node in a StorageGRID system.
 
 *Maintenance configuration procedures* are performed using the Appliance Installer, Grid Manager, or BMC interface. These procedures include:
 
@@ -20,7 +20,7 @@ Procedures specific to maintaining your SGF6112 appliance are in this section.
 * Shut down the appliance
 * Change link configuration of the appliance
 
-*Hardware procedures* require the physical manipulation of components. These procedures include: 
+*Hardware maintenance procedures* require the physical manipulation of components. These procedures include: 
 
 * Replace one or both power supplies
 * Replace fans
@@ -29,8 +29,8 @@ Procedures specific to maintaining your SGF6112 appliance are in this section.
 
 == Drive firmware upgrade
 
-Every time an SGF6112 is rebooted, the drive firmware is automatically checked. The firmware is automatically upgraded to the version expected by the current StorageGRID release when necessary. Usually this firmware upgrade will happen during the reboot that occurs during a StorageGRID software upgrade. In the event that it is necessary to release a drive firmware upgrade for an existing StorageGRID version, the new firmware will be included in a hotfix. Follow the instructions provided with the hotfix to ensure that all drives that could benefit from a firmware update do, in fact, get updated.
+The firmware on the drives in the SGF6112 is automatically checked every time the appliance is rebooted. The firmware is automatically upgraded to the version expected by the current StorageGRID release when necessary. Usually this firmware upgrade will happen during the reboot that occurs during a StorageGRID software upgrade. In the event that it is necessary to release a drive firmware upgrade for an existing StorageGRID version, the new firmware will be included in a hotfix. Follow the instructions provided with the hotfix to ensure that all drives that could benefit from a firmware update do, in fact, get updated.
 
-See xref:../commonhardware/index.adoc[Common procedures] for maintenance procedures that are used by all appliances. 
+See xref:../commonhardware/index.adoc[Common maintenance procedures] for maintenance procedures that are used by all appliances. 
 
-See xref:../installconfig/configuring-hardware.adoc[Set up hardware] for maintenance procedures that are also performed during initial appliance installation and configuration.
+See xref:../installconfig/configuring-hardware.adoc[Set up appliance hardware] for maintenance procedures that are also performed during initial appliance installation and configuration.
