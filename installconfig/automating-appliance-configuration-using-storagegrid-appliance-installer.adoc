@@ -13,8 +13,8 @@ You can automate the configuration of an appliance by using a JSON file that con
 
 .What you'll need
 
-* Your appliance must be on the latest firmware compatible with StorageGRID 11.5 or higher.
-* You must be connected to the StorageGRID Appliance Installer on the appliance you are configuring using a link:../admin/web-browser-requirements.html[supported web browser].
+* Your appliance contains the latest firmware compatible with StorageGRID 11.5 or higher.
+* You are connected to the StorageGRID Appliance Installer on the appliance you are configuring using a link:../admin/web-browser-requirements.html[supported web browser].
 
 .About this task
 
@@ -34,7 +34,7 @@ NOTE: Experienced users who want to automate both the installation and configura
 .Steps
 
 . Generate the JSON file using one of the following:
- ** link:https://configbuilder.netapp.com/[NetApp ConfigBuilder tool^].
+ ** The link:https://configbuilder.netapp.com/[NetApp ConfigBuilder tool^].
 
  ** The link:automating-installation-configuration-appliance-nodes-configure-sga-py-script.html[configure-sga.py appliance configuration script]. You can download the script from the StorageGRID Appliance Installer (*Help* > *Appliance Configuration Script*).
 +
