@@ -55,7 +55,7 @@ AutoSupport needs to be enabled in SANtricity for each storage appliance. SANtri
 
 AutoSupport messages from E-Series appliances can be included in StorageGRID AutoSupport if you configure AutoSupport delivery via proxy in link:../admin/sending-eseries-autosupport-messages-through-storagegrid.html[SANtricity System Manager].
 
-StorageGRID AutoSupport does not report hardware issues, such as DIMM or host interface card (HIC) faults. However, some some component failures might trigger link:../monitor/alerts-reference.html[hardware alerts]. For StorageGRID appliances with a baseboard management controller (BMC), such as the SG100, SG1000, SG6060, or SGF6024, use you can configure email and SNMP traps to report hardware failures:
+StorageGRID AutoSupport does not report hardware issues, such as DIMM or host interface card (HIC) faults. However, some component failures might trigger link:../monitor/alerts-reference.html[hardware alerts]. For StorageGRID appliances with a baseboard management controller (BMC), such as the SG100, SG1000, SG6060, or SGF6024, use you can configure email and SNMP traps to report hardware failures:
 
 * link:../installconfig/setting-up-email-notifications-for-alerts.html[Set up email notifications for alerts]
 * link:../installconfig/configuring-snmp-settings-for-bmc.html[Configure SNMP settings] for the SG6000-CN controller or the SG100 and SG1000 services appliances
