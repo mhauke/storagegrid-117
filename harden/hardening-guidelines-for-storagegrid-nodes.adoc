@@ -87,7 +87,7 @@ Follow these guidelines to secure any hardware appliance nodes in your StorageGR
 * If the appliance has a baseboard management controller (BMC), be aware that the BMC management port allows low-level hardware access. Connect the BMC management port only to a secure, trusted, internal management network. If no such network is available, leave the BMC management port unconnected or blocked, unless a BMC connection is requested by technical support.
 * If the appliance supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management Interface (IPMI) standard, block untrusted traffic on port 623.
 +
-You can enable or disable remote IPMI access for all services appliances by using the management API private endpoint, PUT /private/bmc.
+You can enable or disable remote IPMI access for all services appliances by using the management API private endpoint, `PUT /private/bmc`.
 
 * If the storage controller in the appliance includes FDE or FIPS drives and the Drive Security feature is enabled, use SANtricity to configure Drive Security keys.
 * For appliances without FDE or FIPS drives, enable node encryption using a Key Management Server (KMS).
