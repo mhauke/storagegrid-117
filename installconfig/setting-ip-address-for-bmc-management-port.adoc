@@ -11,6 +11,8 @@ summary: 'Before you can access the BMC interface, you must configure the IP add
 [.lead]
 Before you can access the BMC interface, you must configure the IP address for the BMC management port on the SG6000-CN controller or services appliance.
 
+If you are using https://configbuilder.netapp.com/index.aspx[ConfigBuilder^] or the link:automating-installation-configuration-appliance-nodes-configure-sga-py-script.html[configure-sga.py script] to generate a JSON file, you can configure IP addresses automatically.
+
 .What you'll need
 
 * The management client is using a link:web-browser-requirements.html[supported web browser].

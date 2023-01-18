@@ -11,6 +11,8 @@ summary: 'You use the StorageGRID Appliance Installer to configure the IP addres
 [.lead]
 You use the StorageGRID Appliance Installer to configure the IP addresses and routing information used for the services appliance or appliance Storage Node on the StorageGRID Grid, Admin, and Client Networks.
 
+If you are using https://configbuilder.netapp.com/index.aspx[ConfigBuilder^] or the link:automating-installation-configuration-appliance-nodes-configure-sga-py-script.html[configure-sga.py script] to generate a JSON file, you can configure IP addresses automatically.
+
 .About this task
 
 You must either assign a static IP for the appliance on each connected network or assign a permanent lease for the address on the DHCP server.
@@ -173,4 +175,3 @@ NOTE: If the Client Network is enabled, the default route is displayed. The defa
  .. If you want to use jumbo frames, change the MTU field to a value suitable for jumbo frames, such as 9000. Otherwise, keep the default value of 1500.
 +
 IMPORTANT: The MTU value of the network must match the value configured on the switch port the node is connected to. Otherwise, network performance issues or packet loss might occur.
-

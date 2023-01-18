@@ -11,6 +11,8 @@ summary: 'If you enable node encryption, the disks in your appliance can be prot
 [.lead]
 If you enable node encryption, the disks in your appliance can be protected by secure key management server (KMS) encryption against physical loss or removal from the site. You must select and enable node encryption during appliance installation and cannot unselect node encryption once the KMS encryption process starts.
 
+If you are using https://configbuilder.netapp.com/index.aspx[ConfigBuilder^] or the link:automating-installation-configuration-appliance-nodes-configure-sga-py-script.html[configure-sga.py script] to generate a JSON file, you can enable node encryption automatically.
+
 .What you'll need
 
 Review the information about link:../admin/kms-configuring.html[configuring KMS].
