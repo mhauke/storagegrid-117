@@ -26,6 +26,8 @@ link:locating-controller-in-data-center.html[Locate controller in data center]
 +
 link:removing-sg6000-cn-controller-cover.html[Remove SG6000-CN controller cover]
 
+NOTE: A link:shutting-down-sg6000-cn-controller.html[controlled shutdown of the controller] is required before removing the controller from the rack.
+
 .About this task
 
 To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Fibre Channel HBA replacement or replace the adapter during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:../monitor/monitoring-node-connection-states.html[monitoring node connection states].
