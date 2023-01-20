@@ -21,6 +21,8 @@ link:verifying-fibre-channel-hba-to-replace.html[Verify Fibre Channel HBA to rep
 * You have physically located the SG6000-CN controller where you are replacing the Fibre Channel HBA in the data center.
 +
 link:locating-controller-in-data-center.html[Locate controller in data center]
++
+NOTE: A link:shutting-down-sg6000-cn-controller.html[controlled shutdown of the controller] is required before removing the controller from the rack.
 
 * You have removed the controller cover.
 +
