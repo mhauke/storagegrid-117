@@ -2,24 +2,24 @@
 permalink: sg6100/replace-network-adapter-in-sgf6112-appliance.html
 sidebar: sidebar
 keywords: storagegrid, sg6100, sgf6112, Replacing, replace, network adapter, remove, removing, removal, install, installing, installation 
-summary: 'The SGF6112 has three 2-port network adapters. If one of them fails, use these procedures to replace it.'
+summary: 'The SGF6112 has three 2-port NICs. If one of them fails, use these procedures to replace it.'
 ---
-= Replace a network adapter in the SGF6112 appliance
+= Replace a NIC in the SGF6112 appliance
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-The SGF6112 has three 2-port network adapters. If one of them fails, use these procedures to replace it.
+The SGF6112 has three 2-port NICs. If one of them fails, use these procedures to replace it.
 
 .What you'll need
 
-* You have xref:locating-sgf6112-in-data-center.adoc[physically located the controller] with the power supply to be replaced.
+* You have xref:locating-sgf6112-in-data-center.adoc[physically located the appliance] with the NIC to be replaced.
 
-* You have unpacked the replacement network adapter and ensured that it is the same model as the one you are replacing. 
+* You have unpacked the replacement NIC and ensured that it is the same model as the one you are replacing. 
 
 .About this task
 
-The figure shows the locations of the network adapters for the SGF6112. The adapters are accessible after the appliance cover is removed.
+The figure shows the locations of the NICs for the SGF6112. The NICS are accesible after the appliance cover is removed.
 
 image::../media/sgf6112_power_sxxxxxxxupplies.png[SGF6112 with cover removed]
 
@@ -35,7 +35,7 @@ image::../media/sgf6112_power_sxxxxxxxupplies.png[SGF6112 with cover removed]
 
 . [[Unplug_the_power_cord]]Unplug the power cord from each power supply.
 
-. remove the cables from the ports on the adapter that is to be replaced.
+. remove the cables from the ports on the NIC to be replaced.
 
 . remove the appliance cover
 
@@ -74,5 +74,15 @@ You will feel a click when the xxxxxxxxxx locked into place.
 . If you  placed the appliance in maintenance mode, exit maintenance mode. From the StorageGRID Appliance Installer, select *Advanced* > *Reboot Controller*, and then select *Reboot into StorageGRID*.
 
 . check adapter is working lights shold be green? Go into StorageGRID and check xxxx tab?  
+
+Troubleshoot
+
+. check that the switch the appliance is connected to is powered on and functioning properly
+
+. check the cables and any transcievers used to connect to the appliance. 
+
+. check that the adapter is seated properly in the bracket socket and that that bracket is seated properly in the motherboard. 
+
+
 
 include::../_include/fru-statement.adoc[] 

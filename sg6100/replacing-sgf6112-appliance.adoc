@@ -11,6 +11,8 @@ summary: 'You might need to replace the appliance if it is not functioning optim
 [.lead]
 You might need to replace the appliance if it is not functioning optimally or if it has failed.
 
+//when replacing the appliance, you must remove xxxx from the failed appliance to the new appliance. 
+
 .What you'll need
 
 * You have a replacement appliance with the same part number as the appliance you are replacing.
@@ -58,9 +60,11 @@ NOTE: If the original appliance used a static IP address, the new appliance will
 IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step on the cables.
 
  .. Remove the failed appliance from the cabinet or rack.
- .. Transfer the two power supplies, eight cooling fans, and twelve SSDs from the failed appliance to the replacement appliance.
+ .. Transfer the two power supplies, eight cooling fans, three NICs, and twelve SSDs from the failed appliance to the replacement appliance.
 +
 Follow the instructions provided for replacing these components.
+
+// add nic procedure here
 
  .. Install the replacement appliance into the cabinet or rack.
  .. Replace the cables and any optical transceivers.
