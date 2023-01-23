@@ -18,7 +18,6 @@ You must have access to the following resources:
 * E-Series hardware replacement information on the NetApp Support Site at +
 http://mysupport.netapp.com/[mysupport.netapp.com^]
 * E5600 documentation on the Support Site
-* The appliance has been link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed maintenance mode].
 
 .About this task
 
@@ -33,7 +32,7 @@ NOTE: If you are replacing the controller before installing StorageGRID software
 +
 IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step on the cables. Do not bend the cables tighter than a 5-cm (2-in) radius.
 
-. When the appliance has been placed maintenance mode, shut down the E5600SG controller.
+. Shut down the E5600SG controller.
  .. Log in to the grid node:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
   ... Enter the password listed in the `Passwords.txt` file.
