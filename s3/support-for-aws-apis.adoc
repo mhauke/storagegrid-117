@@ -13,7 +13,7 @@ This topic summarizes StorageGRID's support for Amazon Simple Storage Service (S
 
 This topic only includes the S3 commands that are supported by StorageGRID. For each supported command, this topic only lists the parameters that are supported by StorageGRID.
 
-To see the AWS documentation for each command, select the link in the headers.
+To see the AWS documentation for each command, select the link in the header.
 
 //AbortMultipartUpload
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
@@ -322,7 +322,7 @@ These request header parameters are supported:
 * `versionId`	
 * `response-cache-control`	
 * `response-content-disposition`	
-* `response-content-encoding	`
+* `response-content-encoding`
 * `response-content-type`	
 * `Host`
 * `Range`
@@ -377,7 +377,7 @@ Implemented with all Amazon S3 REST API behavior.
 link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //GetObjectRetention
-== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html[GetObjectRetention^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html[GetObjectRetention^]
 
 These request header parameters are supported:
 
@@ -813,6 +813,7 @@ These request body parameters are supported:
 * `Mode`			
 * `RetainUntilDate`
 
+*StorageGRID documentation*:
 link:use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 //PutObjectTagging
@@ -836,6 +837,7 @@ These request body parameters are supported:
 * `Key`	
 * `Value`	
 
+*StorageGRID documentation*:
 link:operations-on-objects.html[Operations on objects]
 
 // SelectObjectContent
