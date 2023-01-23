@@ -19,8 +19,6 @@ You might need to replace the appliance if it is not functioning optimally or if
 * You have labels to identify each cable that is connected to the appliance.
 * You have xref:locating-sgf6112-in-data-center.adoc[physically located the appliance].
 
-* The appliance has been xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[placed into maintenance mode].
-
 .About this task
 
 The StorageGRID node will not be accessible while you replace the appliance. If the appliance is functioning sufficiently, you can perform a controlled shutdown at the start of this procedure.
@@ -29,7 +27,7 @@ NOTE: If you are replacing the appliance before installing StorageGRID software,
 
 .Steps
 
-. When the appliance has been placed maintenance mode, shut down the appliance.
+. Shut down the appliance.
  .. Log in to the grid node:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
   ... Enter the password listed in the `Passwords.txt` file.
