@@ -11,18 +11,11 @@ summary: 'You can automate the installation and configuration of your StorageGRI
 [.lead]
 You can automate the installation and configuration of your StorageGRID appliances. After you install and configure the appliances, you can automate the configuration of the entire StorageGRID system.
 
-Automating installation and configuration can be useful for deploying multiple StorageGRID instances or one large, complex StorageGRID instance. You can automate the configuration of the following:
-
-* Grid Network, Admin Network, and Client Network IP addresses
-* BMC interface
-* Network links
-** Port bond mode
-** Network bond mode
-** Link speed
+Automating installation and configuration can be useful for deploying multiple StorageGRID instances or one large, complex StorageGRID instance.
 
 To automate installation and configuration, use one or more of the following options:
 
-* Using ConfigBuilder, create a JSON file that specifies the configuration settings for your appliances. Upload the JSON file using the StorageGRID Appliance Installer. For guidance using ConfigBuilder, contact your account representative.
+* Using the NetApp ConfigBuilder tool, create a JSON file that specifies the configuration settings for your appliances. Upload the JSON file using the StorageGRID Appliance Installer. For guidance using link:https://configbuilder.netapp.com/index.aspx[ConfigBuilder^], contact your NetApp account representative.
 +
 NOTE: You can use the same file to configure more than one appliance.
 
@@ -57,7 +50,7 @@ Configuring your appliance using an uploaded JSON file is often more efficient t
 
 .Steps
 
-. Generate the JSON file using the link:https://configbuilder.netapp.com/[NetApp ConfigBuilder tool^]. Contact your account representative for guidance.
+. Generate the JSON file using the link:https://configbuilder.netapp.com/[NetApp ConfigBuilder tool^]. Contact your NetApp account representative for guidance.
 
 NOTE: Experienced users who want to automate both the installation and configuration of their appliances can <<automate-with-configure-sga-py-script,use the configure-sga.py script>>.
 
