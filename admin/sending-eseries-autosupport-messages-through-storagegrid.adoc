@@ -11,9 +11,14 @@ summary: 'You can send E-Series SANtricity System Manager AutoSupport messages t
 [.lead]
 You can send E-Series SANtricity System Manager AutoSupport messages to technical support through a StorageGRID Admin Node rather than the storage appliance management port.
 
+See https://docs.netapp.com/us-en/e-series-santricity/sm-support/autosupport-feature-overview.html[E-Series hardware AutoSupport^] for more information about using AutoSupport with E-Series appliances.
+
 .What you'll need
 * You are signed into the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Storage Appliance Administrator permission or Root access permission.
+* You have configured SANtricity AutoSupport:
+** For SG6000 and SG5700 appliances, link:../installconfig/accessing-and-configuring-santricity-system-manager.html[configure AutoSupport in SANtricity System Manager]
+** For SG5600 appliances, link:../installconfig/configuring-santricity-storage-manager.html#configure-autosupport[configure AutoSupport in SANtricity Storage Manager]
 
 NOTE: You must have SANtricity firmware 8.70 or higher to access SANtricity System Manager using the Grid Manager.
 
