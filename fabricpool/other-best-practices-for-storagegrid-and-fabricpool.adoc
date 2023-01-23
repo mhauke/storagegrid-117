@@ -21,11 +21,11 @@ FabricPool workloads often have a high rate of read operations, which can genera
 
 == Object encryption
 
-When configuring StorageGRID, you can optionally enable the global *Stored Object Encryption* setting if data encryption is required for other StorageGRID clients (*CONFIGURATION* > *System* > *Grid options*). The data that is tiered from FabricPool to StorageGRID is already encrypted, so enabling the StorageGRID setting is not required. Client-side encryption keys are owned by ONTAP.
+When configuring StorageGRID, you can optionally enable the global *Stored object encryption* setting if data encryption is required for other StorageGRID clients (*CONFIGURATION* > *Security settings* > *Network and objects*). The data that is tiered from FabricPool to StorageGRID is already encrypted, so enabling the StorageGRID setting is not required. Client-side encryption keys are owned by ONTAP.
 
 == Object compression
 
-When configuring StorageGRID, do not enable the global *Compress Stored Objects* setting (*CONFIGURATION* > *System* > *Grid options*). The data that is tiered from FabricPool to StorageGRID is already compressed. Enabling *Compress Stored Objects* will not further reduce an object's size.
+When configuring StorageGRID, do not enable the global option to compress stored objects. The data that is tiered from FabricPool to StorageGRID is already compressed. Using the StorageGRID option will not further reduce an object's size.
 
 == Bucket consistency level
 For FabricPool buckets, the recommended bucket consistency level is *Read-after-new-write*, which is the default setting for a new bucket. Do not edit FabricPool buckets to use *Available* or any other consistency level.
