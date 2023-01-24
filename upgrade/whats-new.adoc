@@ -16,7 +16,7 @@ This release of StorageGRID introduces the following features and functional cha
 === Grid federation, account sync, and cross-grid replication
 You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery and ransomware mitigation. See link:../admin/grid-federation-overview.html[What is grid federation], link:../admin/grid-federation-what-is-account-clone.html[What is account clone], and link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
 
-=== Can rename grid, sites, and nodes
+=== Rename grid, sites, and nodes
 A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes: Overview].
 
 === FabricPool and S3 setup wizard and dashboard reminder
@@ -69,7 +69,7 @@ The following new audit messages were added:
 === New units setting for storage values
 You can now select base 10 or base 2 units for the storage values displayed in the Grid Manager and Tenant Manager. Select the user drop-down in the upper right of the Grid Manager or Tenant Manager, then select *User preferences*.
 
-=== Can access MIB from Grid Manager
+=== Access MIB from Grid Manager
 You can now access SNMP-compliant MIB files from the Grid Manager using the SNMP agent page (*CONFIGURATION* > *Monitoring* > *SNMP agent*).
 
 === Upgrade drive firmware using the Grid Manager
@@ -122,5 +122,5 @@ The `proc/CMSI/Volume_Lost` has been removed. Use the `repair-data start-replica
 === Storage pools created for each site during installation
 When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
 
-=== Can assign custom storage grades to new Storage Nodes
+=== Assign custom storage grades to new Storage Nodes
 When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See link:../expand/performing-expansion.html[Perform expansion].
