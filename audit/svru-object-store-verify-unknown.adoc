@@ -14,17 +14,15 @@ The LDR service's Storage component continuously scans all copies of replicated 
 [cols="1a,1a,4a" options="header"]
 |===
 | Code| Field| Description
-a|
-FPTH
-a|
-File Path
-a|
-The file path of the unexpected object copy.
-a|
-RSLT
-a|
-Result
-a|
-This field has the value 'NONE'. RSLT is a mandatory message field, but is not relevant for this message. 'NONE' is used rather than 'SUCS' so that this message is not filtered.
+
+| FPTH
+| File Path
+
+| The file path of the unexpected object copy.
+| RSLT
+
+| Result
+| This field has the value 'NONE'. RSLT is a mandatory message field, but is not relevant for this message. 'NONE' is used rather than 'SUCS' so that this message is not filtered.
 |===
-*Note:* The SVRU: Object Store Verify Unknown audit message should be monitored closely. It means unexpected copies of object data were detected in the object store. This situation should be investigated immediately to determine how theses copies were created, because it can indicate attempts to tamper with content or impending hardware failures.
+
+NOTE: The SVRU: Object Store Verify Unknown audit message should be monitored closely. It means unexpected copies of object data were detected in the object store. This situation should be investigated immediately to determine how theses copies were created, because it can indicate impending hardware failures.

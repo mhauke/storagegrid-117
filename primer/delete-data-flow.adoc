@@ -27,6 +27,9 @@ StorageGRID provides several methods for controlling when objects are retained o
 +
 NOTE: The Expiration action in an S3 bucket lifecycle always overrides ILM settings. As a result, an object might be retained on the grid even after any ILM instructions for placing the object have lapsed.
 
+=== How S3 delete markers are deleted
+When a versioned object is deleted, StorageGRID creates a delete marker as the current version of the object. To remove the zero-byte delete marker from the bucket, the S3 client must explicitly delete the object version. Delete markers are not removed by ILM, bucket lifecycle rules, or Delete objects in bucket operations. 
+
 == Data flow for client deletes
 
 image::../media/delete_data_flow.png[Client delete data flow]

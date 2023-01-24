@@ -5,7 +5,6 @@ keywords: how to troubleshoot admin node issues, how to troubleshoot user interf
 summary: 'There are several tasks you can perform to help determine the source of issues related to Admin Nodes and the StorageGRID user interface.'
 ---
 = Troubleshoot Admin Node and user interface issues
-:experimental:
 :icons: font
 :imagesdir: ../media/
 
@@ -17,8 +16,8 @@ There are several tasks you can perform to help determine the source of issues r
 If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the link:../admin/using-identity-federation.html[identity federation configuration], a link:../troubleshooting-network-hardware-and-platform-issues.html[networking] or link:../installconfig/troubleshooting-hardware-installation.html[hardware] problem, an issue with link:../admin/what-admin-node-is.html[Admin Node services], or an link:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html[issue with the Cassandra database] on connected Storage Nodes.
 
 .What you'll need
-* You must have the `Passwords.txt` file.
-* You must have specific access permissions.
+* You have the `Passwords.txt` file.
+* You have link:../admin/admin-group-permissions.html[specific access permissions].
 
 .About this task
 Use these troubleshooting guidelines if you see any of the following error messages when attempting to sign in to an Admin Node:

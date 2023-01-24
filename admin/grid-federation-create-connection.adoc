@@ -123,5 +123,16 @@ If you edit this connection, a new verification file will be created. The origin
 
 .After you finish
 
-Review the considerations for link:grid-federation-manage-tenants.html[managing permitted tenants]. Then, create one or more new tenant accounts, assign the *Use grid federation connection* permission, and select the new connection. 
+* Review the considerations for link:grid-federation-manage-tenants.html[managing permitted tenants].
+
+* link:creating-tenant-account.html[Create one or more new tenant accounts], assign the *Use grid federation connection* permission, and select the new connection. 
+
+* link:grid-federation-manage-connection.html[Manage the connection] as required. You can edit connection values, test a connection, rotate connection certificates, or remove a connection.
+
+* link:../monitor/grid-federation-monitor-connections.html[Monitor the connection] as part of your normal StorageGRID monitoring activities.
+
+* link:grid-federation-troubleshoot.html[Troubleshoot the connection], including including resolving any alerts and errors related to account clone and cross-grid replication.
+
+
+
 

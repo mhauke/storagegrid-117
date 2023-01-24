@@ -3,7 +3,30 @@ settings:
   internal:
     pdf_enabled: true
   prod:
-    pdf_enabled: true
+    pdf_enabled: false
+  # versions:
+    # Version selector
+    # Current repo stanza comes first
+    #- name: StorageGRID
+    #  url: /storagegrid-117
+    #  version-number: "11.7"
+    # Additional releases newest to oldest
+    # Release in GitHub (typical)
+    #- name: StorageGRID
+    #  url: /storagegrid-116
+    #  version-number: "11.6"
+    # Release in GitHub (typical)
+    #- name: StorageGRID
+    #  url: /storagegrid-115
+    #  version-number: "11.5"
+    # Release not in GitHub
+    #- name: StorageGRID
+    #  url: https://mysupport.netapp.com/documentation/docweb/index.html?productID=63374&language=en-US
+    #  version-number: "11.4"
+    # Release not in GitHub
+    #- name: StorageGRID
+    #  url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61023&archive=true
+    #  version-number: "11.3"
 sidebar:
   entries:
     - title: StorageGRID 11.7 Docs
@@ -14,7 +37,7 @@ sidebar:
       - section: primer
       - section: network
       - title: StorageGRID quick start
-        url: /primer/quick-start.html      
+        url: /primer/quick-start.html
     - title: Install and upgrade
       entries:
       - section: installconfig
@@ -23,19 +46,19 @@ sidebar:
       - section: vmware
       - section: upgrade
     - title: Configure and manage
-      entries:  
+      entries:
       - section: admin
       - section: ilm
       - section: harden
       - section: fabricpool
     - title: Use StorageGRID
-      entries: 
+      entries:
       - section: tenant
       - section: s3
       - section: swift
     - title: Monitor and troubleshoot
-      entries:  
-      - section: monitor  
+      entries:
+      - section: monitor
       - section: troubleshoot
       - section: audit
     - title: Maintain
@@ -53,7 +76,7 @@ sidebar:
     - title: Earlier versions
       url: /earlier-versions.html
     - title: Legal notices
-      url: /legal-notices.html 
+      url: /legal-notices.html
 
 homepage:
   tiles:
@@ -68,7 +91,7 @@ homepage:
       - title: Networking guidelines
         url: /network/index.html
       - title: StorageGRID quick start
-        url: /primer/quick-start.html   
+        url: /primer/quick-start.html
     - title: Install & maintain hardware
       links:
       - title: Install and deploy appliances
@@ -118,7 +141,7 @@ homepage:
     - title: Demos & tutorials
       links:
       - title: Learn how to enable StorageGRID
-        url: https://docs.netapp.com/us-en/storagegrid-enable/index.html      
+        url: https://docs.netapp.com/us-en/storagegrid-enable/index.html
       - title: StorageGRID video library
         url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
       - title: NetApp learning services
@@ -140,7 +163,7 @@ homepage:
       - title: StorageGRID 11.6 documentation
         url:  https://docs.netapp.com/us-en/storagegrid-116/index.html
       - title: StorageGRID 11.5 documentation
-        url: https://docs.netapp.com/sgws-115/index.jsp
+        url: https://docs.netapp.com/us-en/storagegrid-115/index.html
       - title: StorageGRID 11.4 documentation
         url: https://docs.netapp.com/sgws-114/index.jsp
       - title: StorageGRID 11.3 documentation

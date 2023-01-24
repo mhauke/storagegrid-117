@@ -2,13 +2,17 @@
 permalink: harden/hardening-guideline-for-server-certificates.html
 sidebar: sidebar
 keywords: Hardening guidelines, certificates
-summary: 'You should replace the default certificates created during installation with your own custom certificates.'
+summary: 'You should replace the default certificates created during installation and select the appropriate security policy for TLS and SSH connections.'
 ---
-= Hardening guidelines for server certificates
+= Hardening guidelines for TLS and SSH
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
+You should replace the default certificates created during installation and select the appropriate security policy for TLS and SSH connections.
+
+== Hardening guidelines for certificates
+
 You should replace the default certificates created during installation with your own custom certificates.
 
 For many organizations, the self-signed digital certificate for StorageGRID web access is not compliant with their information security policies. On production systems, you should install a CA-signed digital certificate for use in authenticating StorageGRID.
@@ -18,7 +22,9 @@ Specifically, you should use custom server certificates instead of these default
 * *Management interface certificate*: Used to secure access to the Grid Manager, the Tenant Manager, the Grid Management API, and the Tenant Management API.
 * *S3 and Swift API certificate*: Used to secure access to Storage Nodes and Gateway Nodes, which S3 and Swift client applications use to upload and download object data.
 
-NOTE: StorageGRID manages the certificates used for load balancer endpoints separately. To configure load balancer certificates, see the steps for configuring load balancer endpoints in the instructions for administering StorageGRID.
+See link:../admin/using-storagegrid-security-certificates.html[About security certificates] for details and instructions.
+
+NOTE: StorageGRID manages the certificates used for load balancer endpoints separately. To configure load balancer certificates, see link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints].
 
 When using custom server certificates, follow these guidelines:
 
@@ -28,3 +34,11 @@ When using custom server certificates, follow these guidelines:
 * Set the certificate expiration times to be short (for example, 2 months), and use the Grid Management API to automate certificate rotation. This especially important for wildcard certificates.
 
 In addition, clients should use strict hostname checking when communicating with StorageGRID.
+
+== Hardening guidelines for TLS and SSH policy
+
+You can select a security policy to determine which protocols and ciphers are used to establish secure TLS connections with client applications and secure SSH connections to internal StorageGRID services.
+
+The security policy controls how TLS and SSH encrypt data in motion. As a best practice, you should disable encryption options that are not required for application compatibility. Use the default Modern policy, unless your system needs to be Common Criteria-compliant or you need to use other ciphers.
+
+See link:../admin/using-tls-ssh-policy.html[Manage the TLS and SSH policy] for details and instructions.

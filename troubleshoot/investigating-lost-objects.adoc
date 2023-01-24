@@ -5,7 +5,6 @@ keywords: lost objects, investigating, objects
 summary: 'When the *Objects lost* alert is triggered, you must investigate immediately. Collect information about the affected objects and contact technical support.'
 ---
 = Investigate lost objects
-:experimental:
 :icons: font
 :imagesdir: ../media/
 
@@ -149,28 +148,24 @@ ade 12448208: / > /proc/OBRP/ObjectByUUID 926026C4-00A4-449B-AC72-BCCA72DD1311
 
 | Metadata| Conclusion
 
-|No object found ("ERROR":"" )
-|If the object is not found, the message "ERROR":"" is returned.
+| No object found ("ERROR":"" )
+| If the object is not found, the message "ERROR":"" is returned.
 
 If the object is not found, you can reset the count of *Objects lost* to clear the alert. The lack of an object indicates that the object was intentionally deleted.
 
-|Locations > 0
-|If there are locations listed in the output, the *Objects lost* alert might be a false positive.
+| Locations > 0
+| If there are locations listed in the output, the *Objects lost* alert might be a false positive.
 
 Confirm that the objects exist. Use the Node ID and filepath listed in the output to confirm that the object file is in the listed location.
 
 (The procedure for link:searching-for-and-restoring-potentially-lost-objects.html[searching for potentially lost objects] explains how to use the Node ID to find the correct Storage Node.)
 
-
-
 If the objects exist, you can reset the count of *Objects lost* to clear the alert.
-
 
 |Locations = 0
 |If there are no locations listed in the output, the object is potentially missing. You can try to link:searching-for-and-restoring-potentially-lost-objects.html[search for and restore the object] yourself, or you can contact technical support.
 
-
-
 Technical support might ask you to determine if there is a storage recovery procedure in progress. That is, has a _repair-data_ command been issued on any Storage Node, and is the recovery still in progress? See the information about link:../maintain/restoring-object-data-to-storage-volume-if-required.html[restoring object data to a storage volume].
+
 |===
 
