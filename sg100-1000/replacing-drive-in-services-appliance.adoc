@@ -17,6 +17,10 @@ The SSDs in the services appliance contain the StorageGRID operating system. Add
 
 * You have verified which drive has failed by noting that its left LED is blinking amber.
 +
+The two SSDs are placed in the slots as shown in the following diagram: 
++
+image::../media/drive_locations_sg1000_front_with_ssds.png[Drive locations]
++
 IMPORTANT: If you remove the working drive, you will bring down the appliance node. See the information about viewing status indicators to verify the failure.
 
 * You have obtained the replacement drive.
@@ -24,7 +28,7 @@ IMPORTANT: If you remove the working drive, you will bring down the appliance no
 
 .Steps
 
-. Verify that the drive's left LED is blinking amber.
+. Verify that the drive to be replaced has the left LED blinking amber.
 +
 You can also use the Grid Manager to monitor the status of the SSDs. Select *NODES*. Then select `*Appliance Node*` > *Hardware*. If a drive has failed, the Storage RAID Mode field contains a message about which drive has failed.
 
