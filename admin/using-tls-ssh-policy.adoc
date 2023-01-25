@@ -26,20 +26,20 @@ The security policy controls how TLS and SSH encrypt data in motion. In general,
 +
 image::../media/securitysettings_tls_ssh_policies_homepg.png[TLS and SSH policies]
 
-. Select *View details* to review each policy.
+. On the TLS and SSH policies tab, select *View details* to review each policy.
 
 . Select *Use policy* to apply one of the provided policies.
 A green checkmark next to *Current policy* can be seen on the policy that is applied.
 +
-NOTE: Modern compatibility is the selected default policy. Some StorageGRID services have not been updated to use the ciphers in these policies.
+NOTE: Some StorageGRID services have not been updated to use the ciphers in these policies.
 +
 [cols="1a,2a" options="header"]
 |===
 | Policy
 | Description
 
-| Modern compatibility
-| Use this policy if you need strong encryption. This policy is compatible with most TLS and SSH clients. You can use this default policy unless you have special requirements.
+| Modern compatibility (default)
+| Use the default policy if you need strong encryption. This policy is compatible with most TLS and SSH clients. You can use this policy unless you have special requirements.
 
 | Legacy compatibility
 | Use this policy if you need additional compatibility options to support older clients. The additional options in Legacy policy can be less secure than the Modern compatibility policy.
@@ -48,7 +48,7 @@ NOTE: Modern compatibility is the selected default policy. Some StorageGRID serv
 | Matches the test configuration used for Common Criteria certification.
 
 | FIPS strict
-| The same as the Common Criteria policy, but removes the transitional ciphers and enables use of the NetApp Cryptographic Security Module 3.0 for external client connections to load balancer endpoints, Tenant Manager, and Grid Manager. Using this policy might reduce performance. 
+| The same as the Common Criteria policy, but removes the transitional ciphers and enables use of the NetApp Cryptographic Security Module 3.0.0 for external client connections to load balancer endpoints, Tenant Manager, and Grid Manager. Using this policy might reduce performance. 
 
 | Custom
 | You can create a custom policy to apply your own ciphers. You can edit or modify the existing policy ciphers to create your own custom policy. You must use caution and validate the policy you provide.
