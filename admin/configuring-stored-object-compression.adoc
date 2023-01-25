@@ -33,19 +33,23 @@ NOTE: If you need to compress objects and your client application must use range
 
 .Steps
 
-. From the top of the Grid Manager, select the help icon and select *API documentation*.
-. Select *Go to private API documentation*.
-+
-NOTE: The StorageGRID API endpoints that are marked “Private” are subject to change without notice. StorageGRID private endpoints also ignore the API version of the request.
+//. From the top of the Grid Manager, select the help icon and select *API documentation*.
+//. Select *Go to private API documentation*.
+//+
+//NOTE: The StorageGRID API endpoints that are marked “Private” are subject to change without notice. StorageGRID private endpoints also ignore the API version of the request.
 
-. In the *grid-config* section, select the following endpoint to determine the current setting for `objectCompression` (the default is `false`):
-+
-`GET ​/private​/grid-config`
+//. In the *grid-config* section, select the following endpoint to determine the current setting for `objectCompression` (the default is `false`):
+//+
+//`GET ​/private​/grid-config`
 
-. Select *Try it out*.
+//. Select *Try it out*.
 
-. Select *Execute*.
+//. Select *Execute*.
 
-. As required, use the following endpoint to update the setting for `objectCompression`:
-+
-`PUT ​/private​/grid-config`
+//. As required, use the following endpoint to update the setting for `objectCompression`:
+//+
+//`PUT ​/private​/grid-config`
+
+. Select *CONFIGURATION* > *System* > *Grid options*.
+. In the Stored Object Options section, select the *Compress Stored Objects* check box.
+. Select *Save*.

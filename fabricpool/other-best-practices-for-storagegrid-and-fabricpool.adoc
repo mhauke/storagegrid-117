@@ -25,7 +25,7 @@ When configuring StorageGRID, you can optionally enable the global *Stored objec
 
 == Object compression
 
-When configuring StorageGRID, do not enable the global option to compress stored objects. The data that is tiered from FabricPool to StorageGRID is already compressed. Using the StorageGRID option will not further reduce an object's size.
+When configuring StorageGRID, do not enable the link:../admin/configuring-stored-object-compression.html[global option to compress stored objects]. The data that is tiered from FabricPool to StorageGRID is already compressed. Using the StorageGRID option will not further reduce an object's size.
 
 == Bucket consistency level
 For FabricPool buckets, the recommended bucket consistency level is *Read-after-new-write*, which is the default setting for a new bucket. Do not edit FabricPool buckets to use *Available* or any other consistency level.
