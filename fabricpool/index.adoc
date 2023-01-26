@@ -19,26 +19,68 @@ Use these instructions to:
 * Learn how to configure a StorageGRID object storage system for use with FabricPool.
 * Learn how to provide the required values to ONTAP when attaching StorageGRID as a FabricPool cloud tier. 
 
-== Configuration workflow
+== Configuration quickstart
 
 
-As shown in the workflow diagram, there are four primary steps for connecting StorageGRID as a FabricPool cloud tier:
+// Start snippet: Quick start headings as block titles
+// 1 placeholder per entry: Heading text here
 
-. Perform prerequisite tasks in StorageGRID, based on how ONTAP will connect to StorageGRID.
-. Use StorageGRID to obtain the values ONTAP needs to connect to the grid. You can either use the FabricPool setup wizard or configure each StorageGRID entity manually.
-. Use ONTAP to add a cloud tier that uses the StorageGRID values. Create DNS entries to associate IP addresses to any domain names you plan to use.
-. Perform ongoing tasks in ONTAP and StorageGRID to manage and monitor FabricPool data tiering over time. 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Plan your configuration
 
-image::../media/fabricpool_storagegrid_workflow.png[FabricPool StorageGRID Workflow]
-
-== Before you start
+[role="quick-margin-list"]
 * Decide which FabricPool volume tiering policy you will use to tier inactive ONTAP data to StorageGRID.
 * Plan and install a StorageGRID system to meet your storage capacity and performance needs.
 * Become familiar with StorageGRID system software, including the Grid Manager and the Tenant Manager.
+* Review the best practices for HA groups, load balancing, ILM, and more.
 * Review these additional resources, which provide details about using and configuring ONTAP and FabricPool:
-
++
 ** https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf[TR-4598: FabricPool Best Practices in ONTAP^]
 ** https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html[ONTAP 9: FabricPool tier management overview with System Manager^]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Perform prerequisite tasks
+
+[role="quick-margin-para"]
+Obtain the link:information-needed-to-attach-storagegrid-as-cloud-tier.html[information needed to attach StorageGRID as a cloud tier], including:
+
+[role="quick-margin-list"]
+* IP addresses
+* Domain names
+* SSL certificate
+
+[role="quick-margin-para"]
+Optionally, configure identity federation and single sign-on.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Configure StorageGRID settings
+
+[role="quick-margin-para"]
+Use StorageGRID to obtain the values ONTAP needs to connect to the grid. You can link:use-fabricpool-setup-wizard.html[use the FabricPool setup wizard] for the entire configuration (recommended), or you can configure each entity manually:
+
+[role="quick-margin-list"]
+
+* link:creating-ha-group-for-fabricpool.html[Create an HA group for FabricPool]
+* link:creating-load-balancer-endpoint-for-fabricpool.html[Create a load balancer endpoint for FabricPool]
+* link:creating-tenant-account-for-fabricpool.html[Create a tenant account for FabricPool]
+* link:fabricpool/creating-s3-bucket-and-access-key.html[Create an S3 bucket and obtain access keys] 
+* link:using-storagegrid-ilm-with-fabricpool-data.html[Create ILM policy for FabricPool data]
+* link:creating-traffic-classification-policy-for-fabricpool.html[
+Create a traffic classification policy for FabricPool]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Configure ONTAP and DNS
+
+[role="quick-margin-para"]
+Use ONTAP to link:configure-ontap.html[add a cloud tier that uses the StorageGRID values]. Then, link:configure-dns-server.html[configure DNS entries] to associate IP addresses to any domain names you plan to use.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Monitor and manage
+
+[role="quick-margin-para"]
+When your system is up and running, perform ongoing tasks in ONTAP and StorageGRID to manage and monitor FabricPool data tiering over time. 
+
+// End snippet
+ 
+
+//image::../media/fabricpool_storagegrid_workflow.png[FabricPool StorageGRID Workflow]
 
 
 == What is FabricPool?
