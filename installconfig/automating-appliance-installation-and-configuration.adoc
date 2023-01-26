@@ -18,7 +18,23 @@ Using NetApp StorageGRID tools, you can automate the installation and configurat
 
 To automate appliance installation and configuration, use one or more of the following options:
 
-* Contact your NetApp account representative for guidance using the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to complete these steps:
+* Work with your NetApp professional services consultant to use link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to complete these numbered steps:
+
+[cols="1a,1a" options=header] 
+|===
+| Professional services| ConfigBuilder
+| 1 Sales order number
+| 2 Get workbook
+
+| 3 Complete workbook
+| 4 Upload workbook
+
+| 5 Import JSON file
+| 6 Generate JSON file
+
+| 7 Appliance ready for installation
+| 
+|===
 
 . Request and download the installation workbook from ConfigBuilder. Complete the workbook to collect infrastructure and network details.
 . Upload the completed workbook to ConfigBuilder to create a JSON file that specifies the configuration settings for your appliances.
@@ -26,10 +42,10 @@ To automate appliance installation and configuration, use one or more of the fol
 +
 NOTE: You can use the same JSON file to configure more than one appliance.
 
-* If you are an advanced user, you can:
+* If you are an advanced user, you can use the following StorageGRID Python scripts to configure your system:
 // ** Use the StorageGRID `configure-sga.py` Python script to load the JSON configuration file for multiple appliances.
-** Use the StorageGRID `configure-sga.py` Python script to automate the installation and configuration of your appliances.
-** Use additional Python scripts to configure other components of the entire StorageGRID system (the grid).
+** `configure-sga.py`: Automate the installation and configuration of your appliances
+** `configure-storagegrid.py`: Configure other components of the entire StorageGRID system (the "grid")
 
 NOTE: You can use StorageGRID automation Python scripts directly, or you can use them as examples of how to use the StorageGRID Installation REST API in grid deployment and configuration tools you develop yourself. See the instructions for link:../maintain/downloading-and-extracting-storagegrid-installation-files.html[downloading and extracting the StorageGRID installation files].
 
