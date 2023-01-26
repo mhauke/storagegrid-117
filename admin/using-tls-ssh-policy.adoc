@@ -24,7 +24,7 @@ The security policy controls how TLS and SSH encrypt data in motion. In general,
 .Steps
 . Select *CONFIGURATION* > *Security settings* > *TLS and SSH policies*.
 + 
-The TLS and SSH policies tab shows the available policies. The currently active policy is noted by a green checkmark in the policy tile.
+The TLS and SSH policies tab shows the available policies. The currently active policy is noted by a green checkmark on the policy tile.
 +
 image::../media/securitysettings_tls_ssh_policies_current.png[TLS and SSH policies]
 +
@@ -56,7 +56,7 @@ NOTE: Some StorageGRID services have not been updated to use the ciphers in thes
 
 . To change the current policy, select *Use policy*.
 +
-A green checkmark appears next to *Current policy* in the policy tile.
+A green checkmark appears next to *Current policy* on the policy tile.
 
 == Create a custom security policy
 
@@ -68,7 +68,7 @@ To create a custom policy to apply your ciphers:
 . Paste the JSON you copied and make required changes to create a custom policy.
 . Select *Use policy*.
 +
-A green checkmark appears next to *Current policy* in the Custom policy tile.
+A green checkmark appears next to *Current policy* on the Custom policy tile.
 . Optionally, select *Edit configuration* to make more changes to the new custom policy.
 
 [[temporarily-revert-to-default-security-policy]]
