@@ -16,6 +16,7 @@ You might need to replace the appliance if it is not functioning optimally or if
 * You have a replacement appliance with the same part number as the appliance you are replacing.
 * You have labels to identify each cable that is connected to the appliance.
 * You have link:locating-controller-in-data-center.html[physically located the appliance].
+* You have recorded any configuration changes you have made in the the BMC interface link:../installconfig/accessing-bmc-interface.html[Access the BMC interface]
 
 .About this task
 
@@ -72,13 +73,13 @@ Follow the instructions provided for replacing these components.
  .. Power on the appliance and monitor the appliance LEDs and boot-up codes.
 +
 Use the BMC interface to monitor boot-up status.
+. place the appliance in maintenance mode. 
+. Restore any configuration changes that were made for the replaced appliance. See link:../installconfig/configuring-bmc-interface.html[Configure BMC interface]
 . Confirm that the appliance node appears in the Grid Manager and that no alerts appear.
 
 include::../_include/fru-statement.adoc[]
 
 .Related information
-
-link:../installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html[Install appliance into a cabinet or rack (SG100 and SG1000)]
 
 link:../installconfig/viewing-status-indicators.html[View status indicators]
 
