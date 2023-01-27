@@ -20,7 +20,7 @@ To automate appliance installation and configuration, use one or more of the fol
 
 * Work with your NetApp professional services consultant to use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to complete these steps:
 +
-[cols="1a,4a,3a" options=header] 
+[cols="1a,5a,3a" options=header] 
 |===
 | Step| Consult NetApp Professional Services| Use ConfigBuilder
 
@@ -45,7 +45,10 @@ To automate appliance installation and configuration, use one or more of the fol
 | Generate JSON file
 
 | 6
-| Upload JSON file to appliance
+| Upload JSON file to appliance by using one of these methods:
+
+* <<automate-with-appliance-installer,Automate using Appliance Installer>>
+* <<automate-with-configure-sga-py-script,Automate using Python script>> (for advanced users)
 |
 
 3+| Appliance ready for installation
