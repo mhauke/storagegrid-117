@@ -19,8 +19,8 @@ Using NetApp StorageGRID tools, you can automate the installation and configurat
 To automate appliance installation and configuration, use one or more of the following options:
 
 * Work with your NetApp professional services consultant to use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to complete these steps:
-
-[cols="1a,3a,3a" options=header] 
++
+[cols="1a,4a,3a" options=header] 
 |===
 | Step| Consult NetApp Professional Services| Use ConfigBuilder
 
@@ -79,16 +79,16 @@ You can automate the configuration of the following:
 * Grid Network, Admin Network, and Client Network IP addresses
 * BMC interface
 * Network links
- ** Port bond mode
- ** Network bond mode
- ** Link speed
+** Port bond mode
+** Network bond mode
+** Link speed
 
 Configuring your appliance using an uploaded JSON file is often more efficient than performing the configuration manually, especially if you have to configure many nodes. Performing the configuration manually requires using multiple pages in the StorageGRID Appliance Installer and applying the configuration file for each node one at a time.
 
 .Steps
 
-. <<automation-options,Generate the JSON file using the ConfigBuilder tool>>. Contact your NetApp account representative for guidance.
-
+. <<automation-options,Generate the JSON file using the ConfigBuilder tool>>. Contact your NetApp professional services consultant for guidance.
++
 NOTE: Experienced users who want to automate both the installation and configuration of their appliances can <<automate-with-configure-sga-py-script,use the configure-sga.py script>>.
 
 . In the StorageGRID Appliance Installer, select *Advanced* > *Update Appliance Configuration*. The Update Appliance Configuration page appears.
@@ -105,7 +105,9 @@ The *Node name* drop down is populated with the top-level node names defined in 
 +
 NOTE: If the file is not valid, the file name is shown in red and an error message is displayed in a yellow banner. The invalid file is not applied to the appliance. ConfigBuilder verifies that you have a valid JSON file.
 
-. Select a node from the list in the *Node name* drop down. The *Apply JSON configuration* button is enabled.
+. Select a node from the list in the *Node name* drop down.
++
+The *Apply JSON configuration* button becomes enabled.
 
 . Select *Apply JSON configuration*.
 +
@@ -157,10 +159,10 @@ If you will <<back-up-appliance-config,back up the appliance configuration to a 
 * Cannot start or end with a hyphen.
 * Cannot contain only numbers.
 
-. To apply the configuration from the JSON file to the appliance, enter the following where `_SGA-install-ip_` is the Admin Network IP address of the appliance, `_json-file-name_` is the name of your JSON file, and `_node-name-inside-json-file_` is the name of the primary Admin Node: +
+. To apply the configuration from the JSON file to the appliance, enter the following, where `_SGA-install-ip_` is the Admin Network IP address for the appliance, `_json-file-name_` is the name of the JSON file, and `_node-name-inside-json-file_` is the name of the node with the configuration being applied: +
 `configure-sga.py advanced --restore-file _json-file-name_ --restore-node _node-name-inside-json-file_ _SGA-install-ip_`
 
-. To confirm the current configuration of the appliance node, enter the following where `_SGA-install-ip_` is the Admin Network IP address of the appliance: +
+. To confirm the current configuration of the appliance node, enter the following where `_SGA-install-ip_` is the Admin Network IP address for the appliance: +
 `configure-sga.py configure _SGA-install-ip_`
 +
 The results show current IP information for the appliance, including the IP address of the primary Admin Node and information about the Admin, Grid, and Client Networks.
