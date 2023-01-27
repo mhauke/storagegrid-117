@@ -20,19 +20,36 @@ To automate appliance installation and configuration, use one or more of the fol
 
 * Work with your NetApp professional services consultant to use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to complete these steps:
 
-[cols="3a,3a" options=header] 
+[cols="1a,3a,3a" options=header] 
 |===
-| Consult professional services| Use ConfigBuilder
-| Step 1: Get sales order number
-| Step 2: Get workbook
+| Step| Consult NetApp Professional Services| Use ConfigBuilder
 
-| Step 3: Complete workbook
-| Step 4: Upload workbook
+| 1
+| Get sales order number
+|
 
-| Step 5: Import JSON file
-| Step 6: Generate JSON file
+| 2
+| 
+| Get workbook
 
-2+| Appliance ready for installation
+| 3
+| Complete workbook
+|
+
+| 4
+| 
+| Upload workbook
+
+| 5
+| 
+| Generate JSON file
+
+| 6
+| Upload JSON file to appliance
+|
+
+3+| Appliance ready for installation
+|
 | 
 |===
 
@@ -140,8 +157,11 @@ If you will <<back-up-appliance-config,back up the appliance configuration to a 
 * Cannot start or end with a hyphen.
 * Cannot contain only numbers.
 
-. To confirm the current configuration of the appliance node, enter the following where `_SGA-install-ip_` is any one of the IP addresses for the appliance node: +
-`configure-sga.py configure _SGA-INSTALL-IP_`
+. To apply the configuration from the JSON file to the appliance, enter the following where `_SGA-install-ip_` is the Admin Network IP address of the appliance, `_json-file-name_` is the name of your JSON file, and `_node-name-inside-json-file_` is the name of the primary Admin Node: +
+`configure-sga.py advanced --restore-file _json-file-name_ --restore-node _node-name-inside-json-file_ _SGA-install-ip_`
+
+. To confirm the current configuration of the appliance node, enter the following where `_SGA-install-ip_` is the Admin Network IP address of the appliance: +
+`configure-sga.py configure _SGA-install-ip_`
 +
 The results show current IP information for the appliance, including the IP address of the primary Admin Node and information about the Admin, Grid, and Client Networks.
 +
