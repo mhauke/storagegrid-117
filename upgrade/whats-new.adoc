@@ -116,6 +116,7 @@ The following new alerts were added for StorageGRID 11.7:
 * Grid federation connection failure
 * Storage Node not in desired storage state
 * Trace configuration enabled
+* Volume Restoration failed to start replicated data repair
 
 === User Initiated Volume Lost command removed
 The `proc/CMSI/Volume_Lost` has been removed. Use the `repair-data start-replicated-volume-repair` command to restore replicated data for a volume.
