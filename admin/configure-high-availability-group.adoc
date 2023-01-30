@@ -132,8 +132,6 @@ For example, you might need to edit an HA group if you want to remove the node a
 . Select *CONFIGURATION* > *Network* > *High availability groups*.
 +
 The High availability groups page shows all existing HA groups.
-+
-image::../media/ha_groups_page_with_groups.png[HA Groups page with groups]
 
 . Select the check box for the HA group you want to edit. 
 
@@ -163,7 +161,9 @@ NOTE: Wait up to 15 minutes for changes to an HA group to be applied to all node
 
 ==  Remove a high availability group
 
-You can remove one or more high availability (HA) groups at a time. However, you cannot remove an HA group if it is bound to one or more load balancer endpoints.
+You can remove one or more high availability (HA) groups at a time. 
+
+IMPORTANT: You cannot remove an HA group if it is bound to a load balancer endpoint. To delete an HA group, you must remove it from any load balancer endpoints that use it.
 
 To prevent client disruptions, update any affected S3 or Swift client applications before you remove an HA group. Update each client to connect using another IP address, for example, the virtual IP address of a different HA group or the IP address that was configured for an interface during installation.
 
@@ -171,7 +171,17 @@ To prevent client disruptions, update any affected S3 or Swift client applicatio
 
 . Select *CONFIGURATION* > *Network* > *High availability groups*.
 
-. Select the check box for each HA group you want to remove. Then, select *Actions* > *Remove HA group*.
+.  Review the *Load balancer endpoints* column for each HA group you want to remove. If any load balancer endpoints are listed:
+
+.. Go to *CONFIGURATION* > *Network* > *Load balancer endpoints*.
+.. Select the check box for the endpoint. 
+.. Select *Actions* > *Edit endpoint binding mode*.
+.. Update the binding mode to remove the HA group.
+.. Select *Save changes*.
+
+. If no load balancer endpoints are listed, select the check box for each HA group you want to remove.
+
+. Select *Actions* > *Remove HA group*.
 
 . Review the message and select *Delete HA group* to confirm your selection.
 + 
