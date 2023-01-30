@@ -118,15 +118,11 @@ The following new alerts were added for StorageGRID 11.7:
 * Trace configuration enabled
 * Volume Restoration failed to start replicated data repair
 
-=== User Initiated Volume Lost command removed
-The `proc/CMSI/Volume_Lost` has been removed. Use the `repair-data start-replicated-volume-repair` command to restore replicated data for a volume.
-
 === Storage pools created for each site during installation
 When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site to reduce the number of steps required to create new ILM rules. Site-specific storage pools are not created during upgrades to StorageGRID 11.7.
 
 === Assign custom storage grades to new Storage Nodes
 When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See link:../expand/performing-expansion.html[Perform expansion].
-
 
 === Grid option moved
 
