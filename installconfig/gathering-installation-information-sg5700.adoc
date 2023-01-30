@@ -2,14 +2,16 @@
 permalink: installconfig/gathering-installation-information-sg5700.html
 sidebar: sidebar
 keywords: storagegrid, sg5700, storage node, storage appliance, install, information, site, pre-install, preparing, prepare, preinstall, info, preparation
-summary: 'As you install and configure the StorageGRID appliance, you must make decisions and gather information about Ethernet switch ports, IP addresses, and port and network bond modes.'
+summary: 'Using the tables, record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.'
 ---
 = Gather installation information (SG5700)
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-As you install and configure the StorageGRID appliance, you must make decisions and gather information about Ethernet switch ports, IP addresses, and port and network bond modes.
+Using the tables, record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.
+
+Instead of using the tables below, you can use the workbook provided with ConfigBuilder. Using the ConfigBuilder workbook allows you to upload your system information and generate a JSON file to automatically complete some configuration steps in the StorageGRID Appliance Installer. See link:automating-appliance-installation-and-configuration.html[Automate appliance installation and configuration].
 
 .About this task
 
