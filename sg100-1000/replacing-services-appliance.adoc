@@ -17,8 +17,6 @@ You might need to replace the appliance if it is not functioning optimally or if
 * You have labels to identify each cable that is connected to the appliance.
 * You have link:locating-controller-in-data-center.html[physically located the appliance].
 
-* The appliance has been link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed maintenance mode].
-
 .About this task
 
 The StorageGRID node will not be accessible while you replace the appliance. If the appliance is functioning sufficiently, you can perform a controlled shutdown at the start of this procedure.
@@ -27,7 +25,7 @@ NOTE: If you are replacing the appliance before installing StorageGRID software,
 
 .Steps
 
-. When the appliance has been placed maintenance mode, shut down the appliance.
+. Shut down the appliance.
  .. Log in to the grid node:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
   ... Enter the password listed in the `Passwords.txt` file.
@@ -51,14 +49,21 @@ To determine the MAC address for the Admin Network port, you must add *2* to the
 +
 IMPORTANT: You must ensure that all IP addresses for the original appliance have been updated before you apply power to the replacement appliance. Otherwise, the appliance will obtain new DHCP IP addresses when it boots up and might not be able to reconnect to StorageGRID. This step applies to all StorageGRID networks that are attached to the appliance.
 +
+
 NOTE: If the original appliance used static IP address, the new appliance will automatically adopt the IP addresses of the appliance you removed.
+
 . Remove and replace the appliance:
  .. Label the cables and then disconnect the cables and any network transceivers.
 +
 IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step on the cables.
-
  .. Remove the failed appliance from the cabinet or rack.
  .. Transfer the two power supplies, eight cooling fans, and two SSDs from the failed appliance to the replacement appliance.
++
+The two SSDs are placed in the slots as shown in the following diagram: 
++
+image::../media/drive_locations_sg1000_front_with_ssds.png[Drive locations]
++
+HDD02 or HDD2 refer to the drive in the upper slot, and HDD03 or HDD3 refer to the drive in the lower slot.
 +
 Follow the instructions provided for replacing these components.
 
