@@ -16,7 +16,6 @@ You might need to replace the appliance if it is not functioning optimally or if
 * You have a replacement appliance with the same part number as the appliance you are replacing.
 * You have labels to identify each cable that is connected to the appliance.
 * You have link:locating-controller-in-data-center.html[physically located the appliance].
-* You have recorded any configuration changes you have made in the the BMC interface link:../installconfig/accessing-bmc-interface.html[Access the BMC interface]
 
 .About this task
 
@@ -25,17 +24,19 @@ The StorageGRID node will not be accessible while you replace the appliance. If 
 NOTE: If you are replacing the appliance before installing StorageGRID software, you might not be able to access the StorageGRID Appliance Installer immediately after completing this procedure. While you can access the StorageGRID Appliance Installer from other hosts on the same subnet as the appliance, you cannot access it from hosts on other subnets. This condition should resolve itself within 15 minutes (when any ARP cache entries for the original appliance time out), or you can clear the condition immediately by purging any old ARP cache entries manually from the local router or gateway.
 
 .Steps
-
-. Shut down the appliance.
- .. Log in to the grid node:
+. Display the current settings of the appliance and record them.
+.. Log in to the grid node:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
   ... Enter the password listed in the `Passwords.txt` file.
   ... Enter the following command to switch to root: `su -`
   ... Enter the password listed in the `Passwords.txt` file.
 +
 When you are logged in as root, the prompt changes from `$` to `#`.
- .. Shut down the appliance: +
-`*shutdown -h now*`
+.. Enter: `*ipmitool lan print*` to display the settings.
+
+. Shut down the appliance:
++
+Enter: `*shutdown -h now*`
 . Use one of two methods to verify that the power for the appliance is off:
  ** The power indicator LED on the front of the appliance is off.
  ** The Power Control page of the BMC interface indicates that the appliance is off.
@@ -72,9 +73,22 @@ Follow the instructions provided for replacing these components.
  .. Replace the cables and any optical transceivers.
  .. Power on the appliance and monitor the appliance LEDs and boot-up codes.
 +
-Use the BMC interface to monitor boot-up status.
-. place the appliance in maintenance mode. 
-. Restore any configuration changes that were made for the replaced appliance. See link:../installconfig/configuring-bmc-interface.html[Configure BMC interface]
+. Restore the BMC configuration for the replaced appliance. 
+
+.. To restore the BMC configuration to use a static IP, netmask, and gateway, enter the following commands:
+
+`*ipmitool lan set 1 ipaddr _Appliance_IP_*`
+
+`*ipmitool lan set 1 netmask _Netmask_IP_*`
+
+`*ipmitool lan set 1 defgw ipaddr _Default_gateway_*`
+
+.. To restore the BMC configuration to use DHCP to obtain an IP, netmask, and gateway, enter the following command: 
+
+`*ipmitool lan set 1 ipsrc dhcp*`
+
+[start=7]
+. After restoring BMC network connectivity, connect to the BMC interface to audit and restore any additional custom BMC configuration you might have applied. For example, you should confirm the settings for SNMP trap destinations and email notifications. See link:../installconfig/configuring-bmc-interface.html[Configure BMC interface]
 . Confirm that the appliance node appears in the Grid Manager and that no alerts appear.
 
 include::../_include/fru-statement.adoc[]
