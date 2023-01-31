@@ -28,7 +28,7 @@ Use these instructions to:
 * Decide which FabricPool volume tiering policy you will use to tier inactive ONTAP data to StorageGRID.
 * Plan and install a StorageGRID system to meet your storage capacity and performance needs.
 * Become familiar with StorageGRID system software, including the link:../primer/exploring-grid-manager.html[Grid Manager] and the link:../primer/exploring-tenant-manager.html[Tenant Manager].
-* Review the best practices for link:best-practices-for-high-availability-groups.html[HA groups], link:best-practices-for-load-balancing.html[load balancing], link:best-practices-ilm.html[ILM], and link:other-best-practices-for-storagegrid-and-fabricpool.html[more].
+* Review the FabricPool best practices for link:best-practices-for-high-availability-groups.html[HA groups], link:best-practices-for-load-balancing.html[load balancing], link:best-practices-ilm.html[ILM], and link:other-best-practices-for-storagegrid-and-fabricpool.html[more].
 * Review these additional resources, which provide details about using and configuring ONTAP and FabricPool:
 +
 https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf[TR-4598: FabricPool Best Practices in ONTAP^]
@@ -54,13 +54,14 @@ Optionally, configure link:../admin/using-identity-federation.html[identity fede
 [role="quick-margin-para"]
 Use StorageGRID to obtain the values ONTAP needs to connect to the grid.
 
+[role="quick-margin-para"]
 Using the link:use-fabricpool-setup-wizard.html[FabricPool setup wizard] is the recommended and the fastest way to configure all items, but you can also configure each entity manually, if required.
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Configure ONTAP and DNS
 
 [role="quick-margin-para"]
-Use ONTAP to link:configure-ontap.html[add a cloud tier that uses the StorageGRID values]. Then, link:configure-dns-server.html[configure DNS entries] to associate IP addresses to any domain names you plan to use.
+Use ONTAP to link:configure-ontap.html[add a cloud tier] that uses the StorageGRID values. Then, link:configure-dns-server.html[configure DNS entries] to associate IP addresses to any domain names you plan to use.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Monitor and manage
 
