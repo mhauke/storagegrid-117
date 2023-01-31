@@ -55,6 +55,7 @@ NOTE: If single sign-on (SSO) is enabled for the StorageGRID system, you must pe
 
 * *deactivated-features* -- Operations to view features that might have been deactivated.
 * *endpoints* -- Operations to manage an endpoint. Endpoints allow an S3 bucket to use an external service for StorageGRID CloudMirror replication, notifications, or search integration.
+* *grid-federation-connections* -- Operations on grid federation connections and cross-grid replication.
 * *groups* -- Operations to manage local tenant groups and to retrieve federated tenant groups from an external identity source.
 * *identity-source* -- Operations to configure an external identity source and to manually synchronize federated group and user information.
 * *regions* -- Operations to determine which regions have been configured for the StorageGRID system.
