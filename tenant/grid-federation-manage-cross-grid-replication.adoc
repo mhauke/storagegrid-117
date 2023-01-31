@@ -63,7 +63,7 @@ You must perform these steps before adding any objects to either bucket.
 
 .. If all requirements have been met, select the grid federation connection you want to use.
 
-.. Optionally, change the setting of *Replicate client deletes* to determine what happens on the destination grid if an S3 client issues a delete request to the source grid that doesn't include a version ID:
+.. Optionally, change the setting of *Replicate delete markers* to determine what happens on the destination grid if an S3 client issues a delete request to the source grid that doesn't include a version ID:
 
 * If *Yes* (default), a delete marker is added to the source bucket and replicated to the destination bucket.
 

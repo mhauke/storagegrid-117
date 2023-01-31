@@ -123,9 +123,9 @@ entries:
         url: "/admin/configuring-administrator-client-certificates.html"
     - title: Configure security settings
       entries:
-      - title: Manage TLS and SSH policy
+      - title: Manage TLS and SSH policies
         url: "/admin/using-tls-ssh-policy.html"
-      - title: Configure network and object options
+      - title: Configure network and object security
         url: "/admin/changing-network-options-object-encryption.html"  
       - title: Change browser inactivity timeout
         url: "/admin/changing-browser-session-timeout-interface.html"      
@@ -277,12 +277,8 @@ entries:
         url: "/admin/what-storage-volume-watermarks-are.html"
     - title: Manage object metadata storage
       url: "/admin/managing-object-metadata-storage.html"
-    - title: Configure global settings for stored objects
-      entries:
-      - title: Configure stored object compression
-        url: "/admin/configuring-stored-object-compression.html"
-      - title: Configure stored object encryption
-        url: "/admin/configuring-stored-object-encryption.html"      
+    - title: Configure stored object compression
+      url: "/admin/configuring-stored-object-compression.html" 
     - title: Storage Node configuration settings
       url: "/admin/storage-node-configuration-settings.html"
     - title: Manage full Storage Nodes

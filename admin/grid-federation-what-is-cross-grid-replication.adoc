@@ -113,7 +113,7 @@ When an S3 client deletes an object from a bucket that has cross-grid replicatio
 
 **  If you choose not to replicate delete markers, a delete marker is added to the source bucket but is not replicated to the destination bucket. In effect, objects that are deleted on the source grid are not deleted on the destination grid.
 
-In the figure, *Replicate client deletes* was set to *Yes* when link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication was enabled]. Delete requests for the source bucket that include a version ID will not delete objects from the destination bucket. Delete requests for the source bucket that do not include a version ID will appear to delete objects in the destination bucket.
+In the figure, *Replicate delete markers* was set to *Yes* when link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication was enabled]. Delete requests for the source bucket that include a version ID will not delete objects from the destination bucket. Delete requests for the source bucket that do not include a version ID will appear to delete objects in the destination bucket.
 
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
 
