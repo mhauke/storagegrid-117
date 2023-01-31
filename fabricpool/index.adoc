@@ -11,16 +11,13 @@ summary: 'If you use NetApp ONTAP software, you can use NetApp FabricPool to tie
 [.lead]
 If you use NetApp ONTAP software, you can use NetApp FabricPool to tier inactive data to a NetApp StorageGRID object storage system.
 
-== About these instructions
-
 Use these instructions to:
 
 * Learn the considerations and best practices for configuring StorageGRID for a FabricPool workload.
 * Learn how to configure a StorageGRID object storage system for use with FabricPool.
 * Learn how to provide the required values to ONTAP when attaching StorageGRID as a FabricPool cloud tier. 
 
-== Configuration quickstart
-
+== Quickstart for configuring StorageGRID for FabricPool
 
 // Start snippet: Quick start headings as block titles
 // 1 placeholder per entry: Heading text here
@@ -30,12 +27,13 @@ Use these instructions to:
 [role="quick-margin-list"]
 * Decide which FabricPool volume tiering policy you will use to tier inactive ONTAP data to StorageGRID.
 * Plan and install a StorageGRID system to meet your storage capacity and performance needs.
-* Become familiar with StorageGRID system software, including the Grid Manager and the Tenant Manager.
-* Review the best practices for HA groups, load balancing, ILM, and more.
+* Become familiar with StorageGRID system software, including the link:../primer/exploring-grid-manager.html[Grid Manager] and the link:../primer/exploring-tenant-manager.html[Tenant Manager].
+* Review the best practices for link:best-practices-for-high-availability-groups.html[HA groups], link:best-practices-for-load-balancing.html[load balancing], link:best-practices-ilm.html[ILM], and link:other-best-practices-for-storagegrid-and-fabricpool.html[more].
 * Review these additional resources, which provide details about using and configuring ONTAP and FabricPool:
 +
-** https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf[TR-4598: FabricPool Best Practices in ONTAP^]
-** https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html[ONTAP 9: FabricPool tier management overview with System Manager^]
+https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf[TR-4598: FabricPool Best Practices in ONTAP^]
++
+https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html[ONTAP 9: FabricPool tier management overview with System Manager^]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Perform prerequisite tasks
 
@@ -48,23 +46,15 @@ Obtain the link:information-needed-to-attach-storagegrid-as-cloud-tier.html[info
 * SSL certificate
 
 [role="quick-margin-para"]
-Optionally, configure identity federation and single sign-on.
+Optionally, configure link:../admin/using-identity-federation.html[identity federation] and link:../admin/configuring-sso.html[single sign-on].
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Configure StorageGRID settings
 
 [role="quick-margin-para"]
-Use StorageGRID to obtain the values ONTAP needs to connect to the grid. You can link:use-fabricpool-setup-wizard.html[use the FabricPool setup wizard] for the entire configuration (recommended), or you can configure each entity manually:
+Use StorageGRID to obtain the values ONTAP needs to connect to the grid.
 
-[role="quick-margin-list"]
-
-* link:creating-ha-group-for-fabricpool.html[Create an HA group for FabricPool]
-* link:creating-load-balancer-endpoint-for-fabricpool.html[Create a load balancer endpoint for FabricPool]
-* link:creating-tenant-account-for-fabricpool.html[Create a tenant account for FabricPool]
-* link:fabricpool/creating-s3-bucket-and-access-key.html[Create an S3 bucket and obtain access keys] 
-* link:using-storagegrid-ilm-with-fabricpool-data.html[Create ILM policy for FabricPool data]
-* link:creating-traffic-classification-policy-for-fabricpool.html[
-Create a traffic classification policy for FabricPool]
+Using the link:use-fabricpool-setup-wizard.html[FabricPool setup wizard] is the recommended and the fastest way to configure all items, but you can also configure each entity manually, if required.
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Configure ONTAP and DNS
