@@ -9,7 +9,9 @@ summary: 'Understanding the advantages and disadvantages of each of the three op
 :imagesdir: ../media/
 
 [.lead]
-Understanding the advantages and disadvantages of each of the three options for protecting data at ingest (Balanced, Strict, or Dual commit\) can help you decide which one to select for an ILM rule.
+Understanding the advantages and disadvantages of each of the three options for protecting data at ingest (Balanced, Strict, or Dual commit) can help you decide which one to select for an ILM rule.
+
+For an overview of ingest options, see link:data-protection-options-for-ingest.html[Ingest options].
 
 == Advantages of the Balanced and Strict options
 
@@ -45,7 +47,7 @@ These restrictions exist because StorageGRID cannot synchronously make copies to
 
 Both your ILM rule and your choice of consistency control affect how objects are protected. These settings can interact.
 
-For example, the ingest behavior selected for an ILM rule affects the initial placement of object copies, while the consistency control used when an object is stored affects the initial placement of object metadata. Because StorageGRID requires access to both an object's metadata and its data to fulfill client requests, selecting matching levels of protection for the consistency level and ingest behavior can provide better initial data protection and more predictable system responses.
+For example, the ingest behavior selected for an ILM rule affects the initial placement of object copies, while the consistency control used when an object is stored affects the initial placement of object metadata. Because StorageGRID requires access to both an object's data and metadata to fulfill client requests, selecting matching levels of protection for the consistency level and ingest behavior can provide better initial data protection and more predictable system responses.
 
 Here is a brief summary of the consistency controls that are available in StorageGRID:
 
@@ -55,7 +57,7 @@ Here is a brief summary of the consistency controls that are available in Storag
 * *read-after-new-write*: Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees.
 * *available* (eventual consistency for HEAD operations): Behaves the same as the "`read-after-new-write`" consistency level, but only provides eventual consistency for HEAD operations.
 
-NOTE: Before selecting a consistency level, read the full description of consistency controls in the instructions for link:../s3/consistency-controls.html[S3] or link:../swift/storagegrid-swift-rest-api-operations.html[Swift] client applications. You should understand the benefits and limitations before changing the default value.
+NOTE: Before selecting a consistency level, read the full description of consistency controls in the instructions for link:../s3/consistency-controls.html[Use S3 REST API]. You should understand the benefits and limitations before changing the default value.
 
 == Example of how the consistency control and ILM rule can interact
 
