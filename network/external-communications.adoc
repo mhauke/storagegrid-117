@@ -376,12 +376,6 @@ Grants access to StorageGRID appliances in pre-configuration mode for support an
 | Admin Nodes
 | Optional. Used by web browsers and management API clients for accessing the Tenant Manager. Can be used to separate Grid Manager and Tenant Manager communications.
 
-| 10443
-| TCP
-| HTTPS
-| S3 clients
-| Load balancer endpoints on Admin Nodes and Gateway Nodes
-| 10443 is the default port when you create the first load balancer endpoint and increments for each additional load balancer endpoint you create. However, a load balancer endpoint can use any unused external port. 
 
 | 18082
 | TCP
@@ -414,9 +408,9 @@ Grants access to StorageGRID appliances in pre-configuration mode for support an
 | 23000-23999
 | TCP
 | HTTPS
-| Grid federation connections on all nodes
-| Grid federation connections on all nodes
-| These ports are reserved for any grid federation connections you might create. Both grids in a given connection must use the same port.
+| All nodes on the source grid for cross-grid replication
+| Admin Nodes and Gateway Nodes on the destination grid for cross-grid replication
+| This range of ports is reserved for grid federation connections. Both grids in a given connection must use the same port.
 
 |===
 
