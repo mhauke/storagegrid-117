@@ -54,6 +54,6 @@ When the drive is fully inserted, you hear a click.
 +
 The drive is automatically rebuilt with mirrored data from the working drives. You can check the status of the rebuild by using the Grid Manager. Select *NODES*. Then select `*Storage Node*` > *Hardware*. The Storage RAID Mode field contains a "`rebuilding`" message until the drive is completely rebuilt.
 
-. In the Grid Manager, select *NODES* > `*Storage Node*` > *Hardware* > *StorageGRID Appliance* > *Storage RAID mode* to ensure the RAID is healthy before proceeding.
+. In the Grid Manager, go to *NODES* > `*appliance Storage Node*` > *Hardware*. In the StorageGRID Appliance section of the page, verify that the Storage RAID mode is healthy.
 
 include::../_include/fru-statement.adoc[] 
