@@ -33,7 +33,7 @@ You must create a unique bucket for each ONTAP cluster you plan to use.
  .. Select *Create bucket*.
  .. Enter the name of the StorageGRID bucket you will use with FabricPool. For example, `fabricpool-bucket`.
 +
-IMPORTANT: You cannot change the bucket name after creating the bucket.
+TIP: You cannot change the bucket name after creating the bucket.
 +
 Bucket names must comply with these rules:
 
@@ -62,4 +62,4 @@ NOTE: For FabricPool buckets, the recommended bucket consistency level is *Read-
 +
 You will enter these values in ONTAP when you configure StorageGRID as a FabricPool cloud tier.
 +
-IMPORTANT: If you create a new access key and secret access key in the future, you must update the corresponding values in ONTAP immediately to ensure that ONTAP can store and retrieve data in StorageGRID without interruption.
+CAUTION: If you create a new access key and secret access key in the future, you must update the corresponding values in ONTAP immediately to ensure that ONTAP can store and retrieve data in StorageGRID without interruption.
