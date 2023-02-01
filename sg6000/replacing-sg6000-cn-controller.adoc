@@ -65,11 +65,6 @@ IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step o
 ** link:../sg6000/configuring-storagegrid-connections.html[Configure the appliance network settings] 
 ** link:../admin/kms-overview-of-kms-and-appliance-configuration.html#set-up-the-appliance[Configure node encryption for the appliance]
 
-. Confirm that the appliance Storage Node appears in the Grid Manager and that no alarms appear.
-. From the Grid Manager, select *NODES*, and verify that the BMC IP address for the node controller is correct.
-+
-If the node controller IP address is not valid or is not in the expected range, reconfigure the IP address as described in the recovery and maintenance instructions.
-
 . Log in to the appliance with the replaced controller:
   .. Enter the following command: `ssh admin@_grid_node_IP_`
   .. Enter the password listed in the `Passwords.txt` file.
