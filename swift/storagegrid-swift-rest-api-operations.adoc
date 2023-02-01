@@ -17,16 +17,18 @@ link:../s3/consistency-controls.html[Consistency controls] provide a balance bet
 
 === Request
 
-[cols="1a,2a" options="header"]
+[cols="2a,4a" options="header"]
 |===
 | Request HTTP Header| Description
-|`X-Auth-Token`
-|Specifies the Swift authentication token for the account to use for the request.
 
-|`x-ntap-sg-consistency`
-|Specifies the type of request, where `true` = GET container consistency, and `false` = GET container.
-|`Host`
-|The hostname to which the request is directed.
+m| X-Auth-Token
+| Specifies the Swift authentication token for the account to use for the request.
+
+m| x-ntap-sg-consistency
+| Specifies the type of request, where `true` = GET container consistency, and `false` = GET container.
+
+m| Host
+| The hostname to which the request is directed.
 |===
 
 === Request example
@@ -40,33 +42,34 @@ Host: test.com
 
 === Response
 
-[cols="1a,3a" options="header"]
+[cols="2a,4a" options="header"]
 |===
 | Response HTTP Header| Description
-|`Date`
-|The date and time of the response.
 
-|`Connection`
-|Whether the connection to the server is open or closed.
+m| Date
+| The date and time of the response.
 
-|`X-Trans-Id`
-|The unique transaction identifier for the request.
+m| Connection
+| Whether the connection to the server is open or closed.
 
-|`Content-Length`
-|The length of the response body.
+m| X-Trans-Id
+| The unique transaction identifier for the request.
 
-|`x-ntap-sg-consistency`
-|The consistency control level being applied to the container. The following values are supported:
+m| Content-Length
+| The length of the response body.
 
-* *all*: All nodes receive the data immediately or the request will fail.
-* *strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
-* *strong-site*: Guarantees read-after-write consistency for all client requests within a site.
-* *read-after-new-write*: Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees.
-+
-*Note*: If your application uses HEAD requests on objects that do not exist, you might receive a high number of 500 Internal Server errors if two or more Storage Nodes at the same site are unavailable. To prevent these errors, use the "`available`" level.
+m| x-ntap-sg-consistency
+| The consistency control level being applied to the container. The following values are supported:
 
-* *available* (eventual consistency for HEAD operations): Behaves the same as the "`read-after-new-write`" consistency level, but only provides eventual consistency for HEAD operations. Offers higher availability for HEAD operations than "`read-after-new-write`" if Storage Nodes are unavailable.
+*all*: All nodes receive the data immediately or the request will fail.
 
+*strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
+
+*strong-site*: Guarantees read-after-write consistency for all client requests within a site.
+
+*read-after-new-write*: (Default) Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
+
+*available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that do not exist). Not supported for S3 FabricPool buckets.
 |===
 
 === Response example
@@ -86,23 +89,25 @@ The PUT container consistency request allows you to specify the consistency leve
 
 === Request
 
-[cols="1a,3a" options="header"]
+[cols="2a,4a" options="header"]
 |===
 | Request HTTP Header| Description
 
-|`X-Auth-Token`
-|The Swift authentication token for the account to use for the request.
-|`x-ntap-sg-consistency`
-|The consistency control level to apply to operations on the container. The following values are supported:
+m| X-Auth-Token
+| The Swift authentication token for the account to use for the request.
 
-* *all*: All nodes receive the data immediately or the request will fail.
-* *strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
-* *strong-site*: Guarantees read-after-write consistency for all client requests within a site.
-* *read-after-new-write*: Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees.
-+
-*Note*: If your application uses HEAD requests on objects that do not exist, you might receive a high number of 500 Internal Server errors if two or more Storage Nodes at the same site are unavailable. To prevent these errors, use the "`available`" level.
+m| x-ntap-sg-consistency
+| The consistency control level to apply to operations on the container. The following values are supported:
 
-* *available* (eventual consistency for HEAD operations): Behaves the same as the "`read-after-new-write`" consistency level, but only provides eventual consistency for HEAD operations. Offers higher availability for HEAD operations than "`read-after-new-write`" if Storage Nodes are unavailable.
+*all*: All nodes receive the data immediately or the request will fail.
+
+*strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
+
+*strong-site*: Guarantees read-after-write consistency for all client requests within a site.
+
+*read-after-new-write*: (Default) Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
+
+*available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that do not exist). Not supported for S3 FabricPool buckets.
 
 |`Host`
 |The hostname to which the request is directed.
