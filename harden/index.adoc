@@ -15,7 +15,7 @@ This document provides an overview of the hardening guidelines that are specific
 
 As you install and configure StorageGRID, you can use these guidelines to help you meet any prescribed security objectives for information system confidentiality, integrity, and availability.
 
-StorageGRID follows the _NetApp Vulnerability Handling Policy_. Reported vulnerabilities are verified and addressed according to the product security incident response process.
+StorageGRID follows the https://security.netapp.com/policy/[NetApp Vulnerability Handling Policy^]. Reported vulnerabilities are verified and addressed according to the product security incident response process.
 
 == General considerations for hardening StorageGRID systems
 
@@ -26,6 +26,3 @@ When hardening a StorageGRID system, you must consider the following:
 * How trusted the tenant accounts are. If you are a service provider with untrusted tenant accounts, you will have different security concerns than if you only use trusted, in-house tenants.
 * Which security requirements and conventions are followed by your organization. You might need to comply with specific regulatory or corporate requirements.
 
-.Related information
-
-https://security.netapp.com/policy/[Vulnerability Handling Policy^]
