@@ -64,8 +64,7 @@ image:../media/grid-federation-certificates.png[Grid federation certificates]
 By default, the certificates are valid for 730 days (2 years). When these certificates near their expiration date, 
 the *Expiration of grid federation certificate* alert reminds you to rotate the certificates, which you can do using the Grid Manager. 
 
-[IMPORTANT]
-If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
+CAUTION: If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
 
 .Learn more
 * link:grid-federation-create-connection.html[Create grid federation connections]

@@ -11,7 +11,7 @@ summary: 'If you are connecting to an Archive Node using the S3 interface, you m
 [.lead]
 If you are connecting to an Archive Node using the S3 interface, you must configure the connection settings for the S3 API. Until these settings are configured, the ARC service remains in a Major alarm state as it is unable to communicate with the external archival storage system.
 
-[IMPORTANT]
+[CAUTION]
 ====
 Support for Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. 
 

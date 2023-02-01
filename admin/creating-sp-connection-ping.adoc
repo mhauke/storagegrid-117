@@ -73,7 +73,7 @@ If you haven't already, create or import the signing certificate.
 
 When you create an SP connection in PingFederate, you import the SAML metadata you downloaded from StorageGRID for the Admin Node. The metadata file contains many of the specific values you need.
 
-IMPORTANT: You must create an SP connection for each Admin Node in your StorageGRID system, so that users can securely sign in to and out of any node. Use these instructions to create the first SP connection. Then, go to <<Create additional SP connections>> to create any additional connections you need.
+TIP: You must create an SP connection for each Admin Node in your StorageGRID system, so that users can securely sign in to and out of any node. Use these instructions to create the first SP connection. Then, go to <<Create additional SP connections>> to create any additional connections you need.
 
 === Choose SP connection type
 

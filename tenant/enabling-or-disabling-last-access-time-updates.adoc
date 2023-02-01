@@ -29,7 +29,7 @@ For example, to ensure that recently viewed objects remain on faster storage, a 
 
 By default, updates to last access time are disabled. If your StorageGRID system includes an ILM rule that uses the *Last access time* option and you want this option to apply to objects in this bucket, you must enable updates to last access time for the S3 buckets specified in that rule.
 
-IMPORTANT: Updating the last access time when an object is retrieved can reduce StorageGRID performance, especially for small objects.
+CAUTION: Updating the last access time when an object is retrieved can reduce StorageGRID performance, especially for small objects.
 
 A performance impact occurs with last access time updates because StorageGRID must perform these additional steps every time objects are retrieved:
 
