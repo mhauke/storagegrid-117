@@ -13,31 +13,28 @@ The PUT container consistency request allows you to specify the consistency leve
 
 == Request
 
-[options="header"]
+[cols="2a,4a" options="header"]
 |===
 | Request HTTP Header| Description
-a|
-`X-Auth-Token`
-a|
-The Swift authentication token for the account to use for the request.
-a|
-`x-ntap-sg-consistency`
-a|
-The consistency control level to apply to operations on the container. The following values are supported:
 
-* *all*: All nodes receive the data immediately or the request will fail.
-* *strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
-* *strong-site*: Guarantees read-after-write consistency for all client requests within a site.
-* *read-after-new-write*: Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees.
-+
-*Note*: If your application uses HEAD requests on objects that do not exist, you might receive a high number of 500 Internal Server errors if one or more Storage Nodes are unavailable. To prevent these errors, use the "`available`" level.
+m| X-Auth-Token
+| The Swift authentication token for the account to use for the request.
 
-* *available* (eventual consistency for HEAD operations): Behaves the same as the "`read-after-new-write`" consistency level, but only provides eventual consistency for HEAD operations. Offers higher availability for HEAD operations than "`read-after-new-write`" if Storage Nodes are unavailable.
+m| x-ntap-sg-consistency
+| The consistency control level to apply to operations on the container. The following values are supported:
 
-a|
-`Host`
-a|
-The hostname to which the request is directed.
+*all*: All nodes receive the data immediately or the request will fail.
+
+*strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
+
+*strong-site*: Guarantees read-after-write consistency for all client requests within a site.
+
+*read-after-new-write*: (Default) Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
+
+*available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that do not exist). Not supported for S3 FabricPool buckets.
+
+m| Host
+| The hostname to which the request is directed.
 |===
 
 == How consistency controls and ILM rules interact to affect data protection

@@ -9,7 +9,9 @@ summary: 'Understanding the advantages and disadvantages of each of the three op
 :imagesdir: ../media/
 
 [.lead]
-Understanding the advantages and disadvantages of each of the three options for protecting data at ingest (Balanced, Strict, or Dual commit\) can help you decide which one to select for an ILM rule.
+Understanding the advantages and disadvantages of each of the three options for protecting data at ingest (Balanced, Strict, or Dual commit) can help you decide which one to select for an ILM rule.
+
+For an overview of ingest options, see link:data-protection-options-for-ingest.html[Ingest options].
 
 == Advantages of the Balanced and Strict options
 
@@ -45,17 +47,17 @@ These restrictions exist because StorageGRID cannot synchronously make copies to
 
 Both your ILM rule and your choice of consistency control affect how objects are protected. These settings can interact.
 
-For example, the ingest behavior selected for an ILM rule affects the initial placement of object copies, while the consistency control used when an object is stored affects the initial placement of object metadata. Because StorageGRID requires access to both an object's metadata and its data to fulfill client requests, selecting matching levels of protection for the consistency level and ingest behavior can provide better initial data protection and more predictable system responses.
+For example, the ingest behavior selected for an ILM rule affects the initial placement of object copies, while the consistency control used when an object is stored affects the initial placement of object metadata. Because StorageGRID requires access to both an object's data and metadata to fulfill client requests, selecting matching levels of protection for the consistency level and ingest behavior can provide better initial data protection and more predictable system responses.
 
 Here is a brief summary of the consistency controls that are available in StorageGRID:
 
 * *all*: All nodes receive object metadata immediately or the request will fail.
 * *strong-global*: Object metadata is immediately distributed to all sites. Guarantees read-after-write consistency for all client requests across all sites.
 * *strong-site*: Object metadata is immediately distributed to other nodes at the site. Guarantees read-after-write consistency for all client requests within a site.
-* *read-after-new-write*: Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees.
-* *available* (eventual consistency for HEAD operations): Behaves the same as the "`read-after-new-write`" consistency level, but only provides eventual consistency for HEAD operations.
+* *read-after-new-write*: Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
+* *available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that do not exist). Not supported for S3 FabricPool buckets.
 
-NOTE: Before selecting a consistency level, read the full description of consistency controls in the instructions for link:../s3/consistency-controls.html[S3] or link:../swift/storagegrid-swift-rest-api-operations.html[Swift] client applications. You should understand the benefits and limitations before changing the default value.
+NOTE: Before selecting a consistency level, read the full description of consistency controls in the instructions for link:../s3/consistency-controls.html[Use S3 REST API]. You should understand the benefits and limitations before changing the default value.
 
 == Example of how the consistency control and ILM rule can interact
 
