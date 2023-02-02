@@ -61,9 +61,9 @@ IMPORTANT: The Recovery Package file must be secured because it contains encrypt
 
 . Select *Run prechecks*, and wait for the prechecks to complete. 
 
-. Review the details for each reported precheck, and follow the instructions to resolve any reported errors.
+. Review the details for each reported precheck and resolve any reported errors. See the https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/StorageGRID_software_upgrade_resolution_guide[StorageGRID software upgrade resolution guide^] for the StorageGRID 11.7 release.
 +
-You must resolve all precheck errors before you can upgrade your system. However, you do not need to address precheck warnings before upgrading.
+You must resolve all precheck _errors_ before you can upgrade your system. However, you do not need to address precheck _warnings_ before upgrading.
 +
 IMPORTANT: If you have opened any custom firewall ports, you are notified during the precheck validation. You must contact technical support before proceeding with the upgrade.
 
