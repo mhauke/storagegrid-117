@@ -333,7 +333,7 @@ Some of these permissions have additional requirements. For details, select the 
 
 . If you want the wizard to create the access key ID and secret access key for the root user, select *Create root user S3 access key automatically*. 
 +
-IMPORTANT: Select this option if the only user for the tenant will be the root user. If other users will use this tenant, use Tenant Manager to configure keys and permissions.
+TIP: Select this option if the only user for the tenant will be the root user. If other users will use this tenant, use Tenant Manager to configure keys and permissions.
 
 . Select *Continue*.
 
@@ -341,7 +341,7 @@ IMPORTANT: Select this option if the only user for the tenant will be the root u
 
 .. Enter the name of the bucket that the S3 application will use. For example, `S3-bucket`.
 +
-IMPORTANT: You cannot change the bucket name after creating the bucket.
+TIP: You cannot change the bucket name after creating the bucket.
 
 .. Select the *Region* for this bucket.
 +
@@ -365,7 +365,7 @@ In the download data step, you can download one or two files to save the details
 
 . Save this information to a secure location.
 +
-IMPORTANT: Do not close this page until you have copied both access keys. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
+CAUTION: Do not close this page until you have copied both access keys. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
 
 . If prompted, select the check box to confirm that you have downloaded or copied the keys.
 

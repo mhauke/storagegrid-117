@@ -285,7 +285,7 @@ For details about this task, see link:creating-tenant-account-for-fabricpool.htm
 
 .. For *Bucket name*, enter the name of the bucket FabricPool will use to store ONTAP data. For example, `fabricpool-bucket`.
 +
-IMPORTANT: You cannot change the bucket name after creating the bucket.
+TIP: You cannot change the bucket name after creating the bucket.
 
 .. Select the *Region* for this bucket.
 +
@@ -327,7 +327,7 @@ The `ONTAP_FabricPool_settings___bucketname__.txt` file includes the information
 
 . Save the copied keys and downloaded file to a secure location.
 +
-IMPORTANT: Do not close this page until you have copied both access keys, downloaded the ONTAP settings, or both. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
+CAUTION: Do not close this page until you have copied both access keys, downloaded the ONTAP settings, or both. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
 
 . Select the check box to confirm you have downloaded or copied the access key ID and secret access key.
 
@@ -447,7 +447,7 @@ Because the FabricPool rule is the first rule, any objects in the FabricPool buc
 
 . When you have reviewed the proposed policy, select *Activate and continue* to activate the policy and go to the traffic classification step.
 
-IMPORTANT: Errors in an ILM policy can cause irreparable data loss. Review the policy carefully before activating.
+CAUTION: Errors in an ILM policy can cause irreparable data loss. Review the policy carefully before activating.
 
 [[traffic-classification]]
 == Step 8 of 9: Create traffic classification policy

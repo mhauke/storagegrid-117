@@ -113,9 +113,9 @@ image::../media/configuration_menu.png[Configuration Menu]
 
 Network tasks include:
 
-* link:../admin/configuring-s3-api-endpoint-domain-names.html[Configure S3 endpoint domain names]
 * link:../admin/managing-high-availability-groups.html[Manage high availability groups]
-* link:../admin/managing-load-balancing.html[Manage load balancing]
+* link:../admin/managing-load-balancing.html[Manage load balancer endpoints]
+* link:../admin/configuring-s3-api-endpoint-domain-names.html[Configure S3 endpoint domain names]
 * link:../admin/managing-traffic-classification-policies.html[Manage traffic classification policies]
 * link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces]
 
@@ -123,18 +123,17 @@ Network tasks include:
 Security tasks include:
 
 * link:../admin/using-storagegrid-security-certificates.html[Use security certificates]
+* link:../admin/manage-firewall-controls.html[Manage internal firewall controls]
 * link:../admin/kms-configuring.html[Configure key management servers]
+* Configure security settings including the link:../admin/manage-tls-ssh-policy.html[TLS and SSH policy], link:../admin/changing-network-options-object-encryption.html[network and object security options], and the link:../admin/changing-browser-session-timeout-interface.html[browser inactivity timeout].
 * Configure the settings for a link:../admin/configuring-storage-proxy-settings.html[Storage proxy] or an link:../admin/configuring-admin-proxy-setting.html[Admin proxy] 
-* Control firewall settings
-* Grid passwords
-* Security settings
 
 === System tasks
 System tasks include:
 
-* Using link:../admin/grid-federation-overview.html[grid federation] to clone tenant account information and replicate object data between two StorageGRID systems.
-* link:../ilm/managing-objects-with-s3-object-lock.html[Managing S3 Object Lock]
-* link:../admin/managing-storage-options.html[Managing Storage options]
+* Use link:../admin/grid-federation-overview.html[grid federation] to clone tenant account information and replicate object data between two StorageGRID systems.
+* link:../ilm/managing-objects-with-s3-object-lock.html[Manage S3 Object Lock]
+* link:../admin/managing-storage-options.html[Manage Storage options]
 
 === Monitoring tasks
 
@@ -149,6 +148,7 @@ Access control tasks include:
 
 * link:../admin/using-identity-federation.html[Use identity federation]
 * link:../admin/managing-admin-groups.html[Manage admin groups]
+* Change the link:../admin/changing-provisioning-passphrase.html[provisioning passphrase] or link:../admin/change-node-console-password.html[node console passwords]
 * link:../admin/managing-users.html[Manage admin users]
 * link:../admin/configuring-sso.html[Configure SSO]
 
@@ -167,15 +167,15 @@ Maintenance tasks include:
 * link:../maintain/grid-node-recovery-procedures.html[Grid node recovery procedures] to replace a failed node and restore data
 * link:../maintain/rename-grid-site-node-overview.html[Rename procedures] to change the display names of your grid, sites, and nodes
 * link:../troubleshoot/verifying-object-integrity.html[Object existence check operations] to verify the existence (although not the correctness) of object data
-* link:../maintain/restoring-volume.html[Volume restoration]
+* link:../maintain/restoring-volume.html[Volume restoration operations]
 
 === System
 
 System maintenance tasks you can perform include:
 
 * link:../admin/viewing-storagegrid-license-information.html[View StorageGRID license information] or link:../admin/updating-storagegrid-license-information.html[update license information]
-* Generating and downloading a link:../maintain/downloading-recovery-package.html[Recovery Package]
-* Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances
+* Generate and download a link:../maintain/downloading-recovery-package.html[Recovery Package]
+* Perform StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances
 
 ** link:../upgrade/index.html[Upgrade procedure]
 ** link:../maintain/storagegrid-hotfix-procedure.html[Hotfix procedure]
@@ -206,7 +206,7 @@ From the Tools section of the Support menu, you can:
 * link:../monitor/collecting-log-files-and-system-data.html[Collect log files and system data]
 * link:../monitor/reviewing-support-metrics.html[Review support metrics]
 +
-IMPORTANT: The tools available from the *Metrics* option are intended for use by technical support. Some features and menu items within these tools are intentionally non-functional.
+NOTE: The tools available from the *Metrics* option are intended for use by technical support. Some features and menu items within these tools are intentionally non-functional.
 
 === Alarms (legacy)
 

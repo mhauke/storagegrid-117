@@ -44,7 +44,7 @@ Setting up an appliance node for KMS use includes the following high-level steps
 
 . During the hardware configuration stage of appliance installation, use the StorageGRID Appliance Installer to enable the *Node Encryption* setting for the appliance.
 +
-IMPORTANT: You cannot enable the *Node Encryption* setting after an appliance is added to the grid, and you cannot use external key management for appliances that do not have node encryption enabled.
+NOTE: You cannot enable the *Node Encryption* setting after an appliance is added to the grid, and you cannot use external key management for appliances that do not have node encryption enabled.
 
 . Run the StorageGRID Appliance Installer. During installation, a random data encryption key (DEK) is assigned to each appliance volume, as follows:
  ** The DEKs are used to encrypt the data on each volume. These keys are generated using Linux Unified Key Setup (LUKS) disk encryption in the appliance OS and cannot be changed.
@@ -63,6 +63,6 @@ Key management encryption includes the following high-level steps that are perfo
 . The appliance uses the KMS configuration to connect to the KMS and request an encryption key.
 . The KMS sends an encryption key to the appliance. The new key from the KMS replaces the temporary KEK and is now used to encrypt and decrypt the DEKs for the appliance volumes.
 +
-IMPORTANT: Any data that exists before the encrypted appliance node connects to the configured KMS is encrypted with a temporary key. However, the appliance volumes should not be considered protected from removal from the data center until the temporary key is replaced by the KMS encryption key.
+CAUTION: Any data that exists before the encrypted appliance node connects to the configured KMS is encrypted with a temporary key. However, the appliance volumes should not be considered protected from removal from the data center until the temporary key is replaced by the KMS encryption key.
 
 . If the appliance is powered on or rebooted, it reconnects to the KMS to request the key. The key, which is saved in volatile memory, cannot survive a loss of power or a reboot.
