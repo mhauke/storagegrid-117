@@ -13,7 +13,7 @@ If your tenant account was assigned the *Use grid federation connection* permiss
 
 Account cloning is required for cross-grid replication. It ensures that the same tenant users and groups can access the corresponding buckets and objects on either grid.
 
-The grid where the tenant is originally created is the tenant's _source grid_. The grid where the tenant is replicated to is the tenant's _destination grid_. Both tenant accounts have the same account ID, name, description, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
+The grid where the tenant is originally created is the tenant's _source grid_. The grid where the tenant is replicated to is the tenant's _destination grid_. Both tenant accounts have the same account ID, name, description, storage quota, and assigned permissions, but the tenant replicated to the destination grid does not initially have a root user password.
 
 For more details and requirements, go to:
 
@@ -64,7 +64,7 @@ TIP: If a local user needs to access Tenant Manager on the destination grid, the
 
 To create S3 access keys, always start from the tenant's source grid. See the instructions to link:creating-your-own-s3-access-keys.html[create your own access keys] or to link:creating-another-users-s3-access-keys.html[create another user's access keys]. 
 
-For security reasons, StorageGRID does not automatically clone S3 access keys to the tenant's destination grid. If a tenant user needs to access their buckets from both grids, use the Tenant Manager API to manually clone the keys from the source grid to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
+StorageGRID does not automatically clone S3 access keys to the tenant's destination grid because security is improved by having different keys on each grid. If a tenant user needs to access their buckets from both grids, use the Tenant Manager API to manually clone the keys from the source grid to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
 
 == Edit or delete tenant groups, users, or keys
 

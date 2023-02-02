@@ -23,7 +23,7 @@ image:../media/grid-federation-account-clone-workflow.png[workflow for cross-gri
 
 After creating a link:grid-federation-overview.html[grid federation connection], a grid admin can create new S3 tenant accounts on either grid. Tenants that are created with the *Use grid federation connection* permission can be allowed to use that connection. When the new tenant is saved, StorageGRID automatically creates a replica of the new tenant on the other grid.
 
-The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
+The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid does not initially have a root user password.
 
 .Learn more
 link:grid-federation-manage-tenants.html[Manage permitted tenants for grid federation]
@@ -32,9 +32,9 @@ link:grid-federation-manage-tenants.html[Manage permitted tenants for grid feder
 
 This section describes how groups, users, and S3 access keys are cloned between the tenant source grid and the tenant destination grid.
 
-=== Groups and users added to source grid are cloned
+=== Groups and local users added to the source grid are cloned
 
-After a tenant account is created and replicated to the destination grid, any new groups and users added to the tenant's source grid are automatically cloned to the tenant's destination grid.
+After a tenant account is created and replicated to the destination grid, any new groups and local users added to the tenant's source grid are automatically cloned to the tenant's destination grid.
 
 image:../media/grid-federation-account-clone.png[image showing that tenant details are cloned from source grid to destination grid]
 
@@ -46,13 +46,13 @@ As shown in the figure:
 
 * For security reasons, local user passwords are not cloned to the destination grid.
 +
-TIP: If a local user needs to sign in to Tenant Manager on the destination grid, a user with Root access permission must sign in to Tenant Manager on the destination grid to add a password for the user on that grid. See link:../tenant/managing-local-users.html[Manage local users].
+TIP: If a local user needs to sign in to the Tenant Manager on the destination grid, a user with Root access permission must sign in to the Tenant Manager on the destination grid to add a password for the user on that grid. See link:../tenant/managing-local-users.html[Manage local users].
 
 * Assuming the requirements for <<account-clone-sso,single sign-on>> and <<account-clone-identity-federation,identity federation>> have been met, federated groups that are created (imported) for the tenant on the source grid are automatically cloned to the tenant on the destination grid. Both groups have the same access mode, group permissions and S3 group policy. Users in the imported group can sign in to either grid.
 
 === S3 access keys can be manually cloned
 
-For security reasons, StorageGRID does not automatically clone S3 access keys from the tenant's source grid to the destination grid. If tenant users need to access the buckets on both grids, you can use the Tenant Manager API to manually clone the access keys.
+StorageGRID does not automatically clone S3 access keys from the tenant's source grid to the destination grid because security is improved by having different keys on each grid. If tenant users need to access the buckets on both grids, you can use the Tenant Manager API to manually clone the access keys.
 
 image:../media/grid-federation-s3-access-key.png[image showing that s3 access keys can be optionally cloned from source grid to destination grid]
 
