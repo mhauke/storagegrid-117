@@ -33,7 +33,7 @@ If you want to allow a tenant account to use a grid federation connection for ac
 
 * For security reasons, the password for a local root user is not copied to the destination grid.
 +
-IMPORTANT: Before a local root user can sign in to the replicated tenant on the destination grid, a grid administrator for that grid must link:changing-password-for-tenant-local-root-user.html[change the password for the local root user].
+TIP: Before a local root user can sign in to the replicated tenant on the destination grid, a grid administrator for that grid must link:changing-password-for-tenant-local-root-user.html[change the password for the local root user].
 
 * After the new tenant is available on both grids, tenant users can perform these operations:
 

@@ -28,7 +28,7 @@ The steps for creating a tenant account vary based on whether link:using-identit
 +
 When you create the tenant, you will select this group to have the initial Root access permission for both the source and destination tenant accounts.
 +
-IMPORTANT: If this admin group doesn't exist on both grids before you create the tenant, the tenant won't be replicated to the destination.
+TIP: If this admin group doesn't exist on both grids before you create the tenant, the tenant won't be replicated to the destination.
 
 == Access the wizard
 
@@ -141,7 +141,7 @@ NOTE: If you see the error message "`Tenant created without a clone,`" refer to 
 
 .. If you provided a local root user password when defining root access, link:changing-password-for-tenant-local-root-user.html[change the password for the local root user] for the replicated tenant. 
 +
-IMPORTANT: A local root user can't sign in to Tenant Manager on the destination grid until the password is changed.
+TIP: A local root user can't sign in to Tenant Manager on the destination grid until the password is changed.
 
 == Sign in to tenant (optional)
 As required, you can sign in to the new tenant now to complete the configuration, or you can sign in to the tenant later. The sign-in steps depend on whether you are signed in to the Grid Manager using the default port (443) or a restricted port. See link:controlling-access-through-firewalls.html[Control access through firewalls].

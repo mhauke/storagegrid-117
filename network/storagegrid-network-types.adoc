@@ -101,7 +101,7 @@ NOTE: StorageGRID does not support network address translation (NAT) between nod
 
 The Grid Network can be used for all admin traffic and all client traffic, even if the Admin Network and Client Network are configured. The Grid Network gateway is the node default gateway unless the node has the Client Network configured.
 
-IMPORTANT: When configuring the Grid Network, you must ensure that the network is secured from untrusted clients, such as those on the open internet.
+CAUTION: When configuring the Grid Network, you must ensure that the network is secured from untrusted clients, such as those on the open internet.
 
 Note the following requirements and details for the Grid Network gateway:
 
@@ -159,7 +159,7 @@ If eth0 is configured as a trunk, Grid Network traffic flows over the trunk nati
 
 Only inbound admin traffic, such as used for SSH, Grid Manager, or Tenant Manager traffic, is supported over VLAN networks. Outbound traffic, such as used for NTP, DNS, LDAP, KMS, and Cloud Storage Pools, is not supported over VLAN networks.
 
-IMPORTANT: VLAN interfaces can be added to Admin Nodes and Gateway Nodes only. You cannot use a VLAN interface for client or admin access to Storage Nodes or Archive Nodes.
+NOTE: VLAN interfaces can be added to Admin Nodes and Gateway Nodes only. You cannot use a VLAN interface for client or admin access to Storage Nodes or Archive Nodes.
 
 See link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces] for instructions and guidelines.
 

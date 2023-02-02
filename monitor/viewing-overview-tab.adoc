@@ -24,6 +24,9 @@ The overview information for a node includes the following:
 * *Display name* (shown only if the node has been renamed): The current display name for the node. Use the link:../maintain/rename-grid-site-node-overview.html[Rename grid, site, and nodes] procedure to update this value.
 * *System name*: The name you entered for the node during installation. System names are used for internal StorageGRID operations and cannot be changed.
 * *Type*: The type of node -- Admin Node, primary Admin Node, Storage Node, Gateway Node, or Archive Node.
++
+IMPORTANT: Support for Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. 
+
 * *ID*: The unique identifier for the node, which is also referred to as the UUID.
 * *Connection state*: One of three states. The icon for the most severe state is shown.
  ** *Unknown* image:../media/icon_alarm_blue_unknown.png[blue question mark icon]: For an unknown reason, the node is not connected to the grid, or one or more services are unexpectedly down. For example, the network connection between nodes has been lost, the power is down, or a service is down. The *Unable to communicate with node* alert might also be triggered. Other alerts might be active as well. This situation requires immediate attention.
