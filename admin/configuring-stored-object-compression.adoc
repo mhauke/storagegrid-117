@@ -1,7 +1,7 @@
 ---
 permalink: admin/configuring-stored-object-compression.html
 sidebar: sidebar
-keywords: stored object compression, compress stored objects 
+keywords: object compression, compress stored objects 
 summary: 'You can compress stored objects to reduce the size of objects stored in StorageGRID, so that objects consume less storage.'
 ---
 = Compress stored objects
@@ -34,6 +34,6 @@ NOTE: If you need to compress objects and your client application must use range
 .Steps
 
 
-. Select *CONFIGURATION* > *System* > *Compress stored objects*.
+. Select *CONFIGURATION* > *System* > *Object compression*.
 . Select the check box.
 . Select *Save*.
