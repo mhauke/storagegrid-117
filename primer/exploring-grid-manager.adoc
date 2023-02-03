@@ -76,7 +76,6 @@ image::../media/nodes_menu.png[nodes page main]
 
 * link:../monitor/viewing-nodes-page.html[View the Nodes page]
 
-
 == Tenants page
 
 The Tenants page allows you to create and monitor the storage tenant accounts for your StorageGRID system. You must create at least one tenant account to specify who can store and retrieve objects and which functionality is available to them.
@@ -131,9 +130,8 @@ Security tasks include:
 === System tasks
 System tasks include:
 
-* Optionally, enabling the link:../admin/configuring-stored-object-compression.html[Compress stored objects] option.
-
 * Using link:../admin/grid-federation-overview.html[grid federation] to clone tenant account information and replicate object data between two StorageGRID systems.
+* Optionally, enabling the link:../admin/configuring-stored-object-compression.html[Compress stored objects] option.
 * link:../ilm/managing-objects-with-s3-object-lock.html[Managing S3 Object Lock]
 * link:../admin/managing-storage-options.html[Managing Storage options]
 
