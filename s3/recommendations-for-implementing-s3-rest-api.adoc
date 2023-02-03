@@ -21,24 +21,25 @@ You can set the "`Available`" consistency control for each bucket using the PUT 
 
 == Recommendations for object keys
 
-* *For buckets created in StorageGRID 11.4 or later*, restricting object key names to meet performance best practices is not required. In most cases, you can use random values for the first four characters of object key names.
-+
-CAUTION: An exception to this is traffic that includes a large number of small S3 objects that have a short retention cycle. For this use case, you should use non-random prefixes.
+Follow these recommendations for object key names, based on when the bucket was first created.
 
-* *For buckets created in StorageGRID 11.4 or earlier*, follow these recommendations for object key names:
+.Buckets created in StorageGRID 11.4 or earlier
 
-** Do not use random values as the first four characters of object keys. This is in contrast to the former AWS recommendation for key prefixes. Instead, you should use non-random, non-unique prefixes, such as `image`.
-** If you do follow the former AWS recommendation to use random and unique characters in key prefixes, you should prefix the object keys with a directory name. That is, use this format:
+* Do not use random values as the first four characters of object keys. This is in contrast to the former AWS recommendation for key prefixes. Instead, use non-random, non-unique prefixes, such as `image`.
+
+* If you do follow the former AWS recommendation to use random and unique characters in key prefixes, prefix the object keys with a directory name. That is, use this format:
 +
-----
-mybucket/mydir/f8e3-image3132.jpg
-----
+`mybucket/mydir/f8e3-image3132.jpg`
 +
 Instead of this format:
 +
-----
-mybucket/f8e3-image3132.jpg
-----
+`mybucket/f8e3-image3132.jpg`
+
+.Buckets created in StorageGRID 11.4 or later
+
+Restricting object key names to meet performance best practices is not required. In most cases, you can use random values for the first four characters of object key names.
+
+CAUTION: An exception to this is traffic that includes a large number of small S3 objects that have a short retention cycle. For this use case, you should use non-random prefixes.
 
 == Recommendations for "`range reads`"
 
