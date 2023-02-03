@@ -140,7 +140,9 @@ link:initiate-multipart-upload.html[Initiate Multipart Upload]
 //DeleteBucket
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html[DeleteBucket^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]
@@ -148,7 +150,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //DeleteBucketCors
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html[DeleteBucketCors^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets] 
@@ -156,7 +160,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //DeleteBucketEncryption
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html[DeleteBucketEncryption^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets] 
@@ -165,7 +171,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //DeleteBucketLifecycle
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html[DeleteBucketLifecycle^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 
@@ -175,7 +183,9 @@ Implemented with all Amazon S3 REST API behavior.
 //DeleteBucketPolicy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html[DeleteBucketPolicy^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets] 
@@ -183,7 +193,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //DeleteBucketTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html[DeleteBucketTagging^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets] 
@@ -226,7 +238,9 @@ link:operations-on-objects.html[Operations on objects > DELETE Multiple Objects]
 //DeleteObjectTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html[DeleteObjectTagging^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-objects.html[Operations on objects]
@@ -234,7 +248,9 @@ link:operations-on-objects.html[Operations on objects]
 //GetBucketAcl
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html[GetBucketAcl^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]
@@ -242,7 +258,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //GetBucketCors
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html[GetBucketCors^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets] 
@@ -250,7 +268,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //GetBucketEncryption
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html[GetBucketEncryption^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets] 
@@ -258,7 +278,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //GetBucketLifecycleConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html[GetBucketLifecycleConfiguration^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 
@@ -268,7 +290,9 @@ Implemented with all Amazon S3 REST API behavior.
 //GetBucketLocation
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html[GetBucketLocation^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets] 
@@ -276,7 +300,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //GetBucketNotificationConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html[GetBucketNotificationConfiguration^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets > GET Bucket notification] 
@@ -284,7 +310,9 @@ link:operations-on-buckets.html[Operations on buckets > GET Bucket notification]
 //GetBucketPolicy
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html[GetBucketPolicy^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]
@@ -292,7 +320,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //GetBucketReplication
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html[GetBucketReplication^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]
@@ -300,7 +330,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //GetBucketTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html[GetBucketTagging^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`.
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]
@@ -308,7 +340,9 @@ link:operations-on-buckets.html[Operations on buckets]
 //GetBucketVersioning
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html[GetBucketVersioning^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]
@@ -319,7 +353,7 @@ link:operations-on-buckets.html[Operations on buckets]
 These request header parameters are supported:
 
 * `Key`	
-* `versionId`	
+* `VersionId`	
 * `response-cache-control`	
 * `response-content-disposition`	
 * `response-content-encoding`
@@ -371,7 +405,9 @@ link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Ob
 //GetObjectLockConfiguration
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html[GetObjectLockConfiguration^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
@@ -395,7 +431,11 @@ link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Ob
 //GetObjectTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html[GetObjectTagging^]
 
-Implemented with all Amazon S3 REST API behavior.
+These request header parameters are supported:
+
+* `Key`	
+* `VersionId`
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-objects.html[Operations on objects]
@@ -403,7 +443,9 @@ link:operations-on-objects.html[Operations on objects]
 //HeadBucket
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html[HeadBucket^]
 
-Implemented with all Amazon S3 REST API behavior.
+This request header parameter is supported:
+
+* `Host`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]
