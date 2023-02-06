@@ -46,6 +46,10 @@ NOTE: The AES256-SHA option was the default in StorageGRID 11.6 and is the only 
 
 * The link:../admin/changing-browser-session-timeout-interface.html[Browser inactivity timeout] option was moved to the new *CONFIGURATION* > *Security settings* page. 
 
+* The link:../admin/manage-link-costs.html[Link cost] option was moved to *SUPPORT* > *Other* > *Link cost*.
+
+* The list of NMS entities was moved to *SUPPORT* > *Other* > *NMS entities*.
+
 * The *Stored Object Hashing* option was removed. The *SHA-1* and *SHA-256* settings are no longer used for internal background verification because they require additional CPU resources over MD5 and packet CRC32 check.
 
 == S3 endpoint domain name format restrictions 
