@@ -96,7 +96,7 @@ When StorageGRID deletes an object because of bucket lifecycle expiration, ILM p
 
 To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, review how S3 clients delete objects from buckets that have versioning enabled, as follows:
 
-* If an S3 client issues a delete request that includes a version ID, that version of the object is permanently removed. No delete marker is added to to the bucket. 
+* If an S3 client issues a delete request that includes a version ID, that version of the object is permanently removed. No delete marker is added to the bucket. 
 
 * If an S3 client issues a delete request that does not include a version ID, StorageGRID does not delete any object versions. Instead, it adds a delete marker to the bucket. The delete marker causes StorageGRID to act as if the object was deleted:
 
@@ -107,7 +107,7 @@ When an S3 client deletes an object from a bucket that has cross-grid replicatio
 
 * If the delete request includes a version ID, that object version is permanently removed from the source grid. However, StorageGRID does not replicate delete requests that include a version ID, so the same object version is not deleted from the destination.
 
-* If the delete request does not include a version ID, StorageGRID can optionally replicate the delete marker, based on how how cross-grid replication is configured for the bucket:
+* If the delete request does not include a version ID, StorageGRID can optionally replicate the delete marker, based on how cross-grid replication is configured for the bucket:
 
 ** If you choose to replicate delete markers, a delete marker is added to the source bucket and replicated to the destination bucket. In effect, the object appears to be deleted on both grids.
 
