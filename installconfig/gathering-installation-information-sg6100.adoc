@@ -269,6 +269,8 @@ a|
 
 You can access the BMC interface on the appliance using the 1-GbE management port circled in the diagram. This port supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management Interface (IPMI) standard.
 
+include::../_include/enable-disable-ipmi.adoc[]
+
 *SGF6112 BMC management port*
 
 image::../media/sgf6112_cn_bmc_management_port.png[SG6100 management port]
