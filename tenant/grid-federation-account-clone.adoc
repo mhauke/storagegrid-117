@@ -11,9 +11,9 @@ summary: 'If your tenant account was assigned the Use grid federation connection
 [.lead]
 If your tenant account was assigned the *Use grid federation connection* permission when it was created, tenant accounts, groups, users, and, optionally, S3 access keys are cloned from the tenant's source grid to the tenant's destination grid. 
 
-Account cloning is required for cross-grid replication. It ensures that the same tenant users and groups can access the corresponding buckets and objects on either grid.
+Account cloning is required for cross-grid replication to ensure that the same tenant users and groups can access the corresponding buckets and objects on either grid.
 
-The grid where the tenant is originally created is the tenant's _source grid_. The grid where the tenant is replicated to is the tenant's _destination grid_. Both tenant accounts have the same account ID, name, description, storage quota, and assigned permissions, but the tenant replicated to the destination grid does not initially have a root user password.
+The grid where the tenant is originally created is the tenant's _source grid_. The grid where the tenant is replicated is the tenant's _destination grid_. Both tenant accounts have the same account ID, name, description, storage quota, and assigned permissions, but the tenant replicated to the destination grid does not initially have a root user password.
 
 For more details and requirements, go to:
 
@@ -68,7 +68,10 @@ StorageGRID does not automatically clone S3 access keys to the tenant's destinat
 
 == Edit or delete tenant groups, users, or keys
 
-Account cloning occurs only for new information. If you edit or delete the tenant or its users, groups, or access keys on either grid, your changes are not cloned to the other grid. However, if you delete a tenant from the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
+Account cloning occurs only for new information. 
+
+CAUTION: If you edit or delete a tenant or its users, groups, or access keys on either grid, your changes are not cloned to the other grid. 
+If you delete a tenant on the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
 
 == Create groups, users, and keys on destination grid
 
