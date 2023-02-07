@@ -501,7 +501,16 @@ link:list-multipart-uploads.html[List Multipart Uploads]
 // ListObjects
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html[ListObjects^] 
 
-Implemented with all Amazon S3 REST API behavior.
+These request header parameters are supported:
+
+* `Host`
+* `delimiter`
+* `encoding-type`
+* `marker`
+* `max-keys`
+* `prefix`
+* `Date`
+* `Authorization`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets > GET Bucket]
@@ -511,6 +520,7 @@ link:operations-on-buckets.html[Operations on buckets > GET Bucket]
 
 These request header parameters are supported:
 
+* `Host`
 * `continuation-token` 
 * `delimiter`
 * `encoding-type`	
@@ -530,7 +540,17 @@ link:operations-on-buckets.html[Operations on buckets > GET Bucket]
 // ListObjectVersions
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html[ListObjectVersions^] 
 
-Implemented with all Amazon S3 REST API behavior.
+These request header parameters are supported:
+
+* `Host`
+* `delimiter`
+* `encoding-type`	
+* `key-marker`	
+* `max-keys`
+* `prefix`	
+* `version-id-marker`
+
+This request does not have a request body.
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets > GET Bucket Object versions]
@@ -608,8 +628,7 @@ These request body parameters are supported:
 			
 * `Expiration`				
 * `Date`			
-* `Days`			
-		
+* `Days`				
 * `Filter`				
 * `And`			
 * `Prefix`		
@@ -622,8 +641,7 @@ These request body parameters are supported:
 * `Value`		
 * `ID`				
 * `NoncurrentVersionExpiration`				
-* `NoncurrentDays`			
-					
+* `NoncurrentDays`							
 * `Prefix`				
 * `Status`	
 
@@ -791,9 +809,7 @@ These request header parameters are supported:
 * `Key`	
 * `VersionId`
 * `Host`
-
 * `Content-MD5`
-
 * `Date`
 * `Authorization`
 * `Content-Length`
@@ -812,10 +828,7 @@ link:use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object L
 These request header parameters are supported:
 
 * `Host`	
-* `x-amz-bucket-object-lock-token`
-
 * `Content-MD5`
-
 * `Date`
 * `Authorization`
 * `Content-Length`
@@ -842,9 +855,7 @@ These request header parameters are supported:
 * `VersionId`
 * `Host`
 * `x-amz-bypass-governance-retention`
-
 * `Content-MD5`
-
 * `Date`
 * `Authorization`
 * `Content-Length`
@@ -866,7 +877,6 @@ These request header parameters are supported:
 * `Key`	
 * `VersionId`
 * `Host`
-
 * `Date`
 * `Authorization`
 * `Content-Length`
@@ -895,27 +905,27 @@ These request header parameters are supported:
 These request body parameters are supported:
 
 * `SelectObjectContentRequest`							
-* 	`Expression`
-* 	`ExpressionType`			
-*	`RequestProgress`		
-*		`Enabled`
-*	`InputSerialization`			
-*		`CompressionType`		
-*		`CSV`
-*			`AllowQuotedRecord Delimiter`			
-*			`Comments`
-*			`FieldDelimiter`
-*			`FileHeaderInfo`
-*			`QuoteCharacter`
-*			`QuoteEscape Character`
-*			`RecordDelimiter`					
-*	`OutputSerialization`
-*		`CSV`
-*			`FieldDelimiter`
-*			`QuoteCharacter`
-*			`QuoteEscape Character`
-*			`QuoteFields`
-*			`RecordDelimiter`
+* `Expression`
+* `ExpressionType`			
+* `RequestProgress`		
+* `Enabled` (tag in RequestProgress)
+* `InputSerialization`			
+* `CompressionType`		
+* `CSV`
+* `AllowQuotedRecord Delimiter`			
+* `Comments`
+* `FieldDelimiter`
+* `FileHeaderInfo`
+* `QuoteCharacter`
+* `QuoteEscapeCharacter`
+* `RecordDelimiter`					
+* `OutputSerialization`
+* `CSV`
+* `FieldDelimiter`
+* `QuoteCharacter`
+* `QuoteEscape Character`
+* `QuoteFields`
+* `RecordDelimiter`
 
 
 *StorageGRID documentation*:
@@ -940,7 +950,6 @@ These request header parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-
 These request body parameters are supported:
 
 * `Body`
@@ -958,19 +967,19 @@ These request header parameters are supported:
 * `UploadId`	
 * `Host`
 * `x-amz-copy-source`
-*	`x-amz-copy-source-if-match`
-*	`x-amz-copy-source-if-modified-since`
-*	`x-amz-copy-source-if-none-match`
-*	`x-amz-copy-source-if-unmodified-since`
-*	`x-amz-copy-source-range`
-*	`x-amz-server-side-encryption-customer-algorithm`
-*	`x-amz-server-side-encryption-customer-key`
-*	`x-amz-server-side-encryption-customer-key-MD5`
-*	`x-amz-copy-source-server-side-encryption-customer-algorithm`
-*	`x-amz-copy-source-server-side-encryption-customer-key`
-*	`x-amz-copy-source-server-side-encryption-customer-key-MD5`
-*	`Date`
-*	`Authorization`
+* `x-amz-copy-source-if-match`
+* `x-amz-copy-source-if-modified-since`
+* `x-amz-copy-source-if-none-match`
+* `x-amz-copy-source-if-unmodified-since`
+* `x-amz-copy-source-range`
+* `x-amz-server-side-encryption-customer-algorithm`
+* `x-amz-server-side-encryption-customer-key`
+* `x-amz-server-side-encryption-customer-key-MD5`
+* `x-amz-copy-source-server-side-encryption-customer-algorithm`
+* `x-amz-copy-source-server-side-encryption-customer-key`
+* `x-amz-copy-source-server-side-encryption-customer-key-MD5`
+* `Date`
+* `Authorization`
 
 This request does not have a request body.
 
