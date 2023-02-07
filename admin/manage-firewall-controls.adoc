@@ -44,7 +44,7 @@ Suppose you want to use a jump host (a security hardened host) for network admin
 . Use the Privileged IP address list tab to add the IP address of the jump host. 
 . Use the Manage external access tab to block all ports.
 
-IMPORTANT: You must be sure to add the privileged IP address before you block ports 443 and 8443. Any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. 
+CAUTION: You must be sure to add the privileged IP address before you block ports 443 and 8443. Any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. 
 
 After you save your configuration, all external ports on the Admin Node in your grid will be blocked for all hosts except the jump host. You can then use the jump host to perform maintenance tasks on your grid more securely.
 
@@ -63,7 +63,7 @@ Suppose you want to lock down sensitive ports and the service on that port (for 
 . Use the Privileged IP address list tab to grant access only to the hosts that need access to the service.
 . Use the Manage external access tab to block all ports. 
 
-IMPORTANT: You must be sure to add the privileged IP address before you block ports 443 and 8443. Any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. 
+CAUTION: You must be sure to add the privileged IP address before you block ports 443 and 8443. Any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. 
 
 After you save your configuration, port 22 and SSH service will be available to hosts on the privileged IP address list. All other hosts will be denied access to the service no matter what interface the request comes from.
 

@@ -37,7 +37,7 @@ When you add StorageGRID as a FabricPool cloud tier, you must install the same c
 
 === Manage certificate expiration
 
-IMPORTANT: If the certificate used to secure the connection between ONTAP and StorageGRID expires, FabricPool will temporarily stop working and ONTAP will temporarily lose access to data tiered to StorageGRID. 
+CAUTION: If the certificate used to secure the connection between ONTAP and StorageGRID expires, FabricPool will temporarily stop working and ONTAP will temporarily lose access to data tiered to StorageGRID. 
 
 To avoid certificate expiration issues, follow these best practices:
 

@@ -62,7 +62,7 @@ Admin Nodes can also be used to load balance S3 and Swift client traffic.
 
 * *Storage Nodes* manage and store object data and metadata. Each StorageGRID system must have at least three Storage Nodes. If you have multiple sites, each site within your StorageGRID system must also have three Storage Nodes.
 * *Gateway Nodes (optional)* provide a load-balancing interface that client applications can use to connect to StorageGRID. A load balancer seamlessly directs clients to an optimal Storage Node, so that the failure of nodes or even an entire site is transparent. You can use a combination of Gateway Nodes and Admin Nodes for load balancing, or you can implement a third-party HTTP load balancer.
-* *Archive Nodes (optional)* provide an interface through which object data can be archived to tape.
+* *Archive Nodes (deprecated)* provide an optional interface through which object data can be archived to tape.
 
 To learn more, see link:../admin/index.html[Administer StorageGRID].
 

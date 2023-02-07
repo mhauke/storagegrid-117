@@ -69,8 +69,7 @@ To download this file at a later time, go to the details page for the connection
 
 . Locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
 +
-[IMPORTANT]
-The verification file contains secrets and must be securely stored and transmitted.
+CAUTION: The verification file contains secrets and must be securely stored and transmitted.
 
 . Select *Close* to return to the Grid federation page. 
 
@@ -161,7 +160,7 @@ If the connection can be established using the edited values, a success message 
 
 Each grid federation connection uses four automatically-generated SSL certificates to secure the connection. When the two certificates for each grid near their expiration date, the *Expiration of grid federation certificate* alert reminds you to rotate the certificates.
 
-[IMPORTANT]
+[CAUTION]
 If the certificates on either end of the connection expire, the connection will stop working and data will no longer be replicated between grids. 
 
 
@@ -184,7 +183,7 @@ You can remove a grid federation connection from either grid in the connection. 
 
 image:../media/grid-federation-remove-connection.png[steps to remove grid federation connection]
 
-IMPORTANT: Removing a connection does not delete any items that have already been copied between grids. For example, any tenant users, groups, and objects that exist on both grids are not deleted from either grid when the tenant’s permission is removed. If you want to delete these items, you must manually delete them from both grids.
+TIP: Removing a connection does not delete any items that have already been copied between grids. For example, any tenant users, groups, and objects that exist on both grids are not deleted from either grid when the tenant’s permission is removed. If you want to delete these items, you must manually delete them from both grids.
 
 Start these steps from either grid in the connection.
 
@@ -196,7 +195,7 @@ Start these steps from either grid in the connection.
 . On the *Permitted tenants* tab, determine if the connection is being used by any tenants.
 . If any tenants are listed, follow the instructions in link:grid-federation-manage-tenants.html[Manage permitted tenants] to remove the *Use grid federation connection* permission from each tenant on each grid.
 +
-IMPORTANT: You can't remove the *Use grid federation connection* permission if any of the tenant's buckets have cross-grid replication enabled. The tenant account must stop cross-grid replication for all of their buckets first. 
+TIP: You can't remove the *Use grid federation connection* permission if any of the tenant's buckets have cross-grid replication enabled. The tenant account must stop cross-grid replication for all of their buckets first. 
 
 == Remove connection
 

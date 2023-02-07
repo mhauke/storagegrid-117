@@ -46,7 +46,7 @@ The Admin and Gateway Nodes used by the endpoint must be one of the following:
 === General considerations
 Queries cannot be sent directly to Storage Nodes.
 
-IMPORTANT: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
+CAUTION: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
 
 See the link:../s3/use-s3-select.html[instructions for using S3 Select].
 

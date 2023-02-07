@@ -56,10 +56,10 @@ NOTE: Settings on the Privileged address list tab can not override settings on t
 . On the Privileged address list tab, enter the address or IP subnet you want to grant access to closed ports. 
 . Optionally, select *Add another IP address or subnet in CIDR notation* to add additional privileged clients. 
 +
-IMPORTANT: Add as few addresses as possible to the privileged list.
+TIP: Add as few addresses as possible to the privileged list.
 . Optionally, select *Allow privileged IP addresses to access StorageGRID internal ports*. Select link:../network/internal-grid-node-communications.html[StorageGRID internal ports] for documentation on the internal ports. 
 +
-IMPORTANT: This option removes some protections for internal services. Leave it disabled if possible.
+TIP: This option removes some protections for internal services. Leave it disabled if possible.
 
 . Select *Save*.
 
@@ -94,7 +94,7 @@ NOTE: Use the scroll bar on the right side of the table to be sure you have view
 
 If the Client Network for a node is untrusted, the node only accepts inbound traffic on ports configured as load balancer endpoints and, optionally, additional ports you select on this tab. You can also use this tab to specify the default setting for new nodes added in an expansion. 
 
-IMPORTANT: Existing client connections might fail if load balancer endpoints have not been configured. 
+CAUTION: Existing client connections might fail if load balancer endpoints have not been configured. 
 
 The configuration changes you make on the *Untrusted Client Network* tab override the settings on the *Manage external access* tab.
 
