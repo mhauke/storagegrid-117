@@ -26,9 +26,7 @@ NOTE: You must have SANtricity firmware 8.70 or higher to access SANtricity Syst
 
 E-Series AutoSupport messages contain details of the storage hardware and are more specific than other AutoSupport messages sent by the StorageGRID system.
 
-Configure a special proxy server address in SANtricity System Manager to cause the AutoSupport messages to be transmitted through a StorageGRID Admin Node without the use of the appliance's management port. AutoSupport messages transmitted in this way respect the Preferred Sender and Admin proxy settings which may have been configured in the Grid Manager.
-
-If you want to configure the Admin proxy server in Grid Manager, see link:configuring-admin-proxy-settings.html[Configure Admin proxy settings].
+You can configure a special proxy server address in SANtricity System Manager to cause AutoSupport messages to be transmitted through a StorageGRID Admin Node without the use of the appliance's management port. AutoSupport messages transmitted in this way are sent by whichever  Admin Node is acting as the preferred sender, and they use any link:../admin/configuring-admin-proxy-settings.html[Admin proxy settings] that have been configured in the Grid Manager.
 
 NOTE: This procedure is only for configuring a StorageGRID proxy server for E-Series AutoSupport messages. For additional details on E-Series AutoSupport configuration, see the https://mysupport.netapp.com/info/web/ECMP1658252.html[NetApp E-Series and SANtricity Documentation^].
 

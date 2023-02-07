@@ -15,28 +15,29 @@ When you sign in to the Grid Manager or the Tenant Manager, you are connecting t
 
 Admin Nodes can also be used to load balance S3 and Swift client traffic.
 
-Admin Nodes host the following services:
+== What is the preferred sender 
 
-* AMS service
-* CMN service
-* NMS service
-* Prometheus service
-* Load Balancer and High Availability services (to support S3 and Swift client traffic)
+If your StorageGRID deployment includes multiple Admin Nodes, the primary Admin Node is the default _preferred sender_ for alert notifications, legacy alarm notifications, AutoSupport messages, and SNMP traps and informs. 
 
-Admin Nodes also support the Management Application Program Interface (mgmt-api) to process requests from the Grid Management API and the Tenant Management API. See link:using-grid-management-api.html[Use the Grid Management API].
+Under normal system operations, only the preferred sender sends notifications. However, all other Admin Nodes monitor the preferred sender. If a problem is detected, other Admin Nodes act as _standby senders_.
 
-== What the AMS service is
+Multiple notifications might sent in these cases:
 
-The Audit Management System (AMS) service tracks system activity and events.
+* If Admin Nodes become “islanded” from each other, both the preferred sender and the standby senders will attempt to send notifications, and multiple copies of notifications might be received.
 
-== What the CMN service is
+* If standby sender detects problems with the preferred sender and starts sending notifications, the preferred sender might regain its ability to send notifications. If this occurs, duplicate notifications might be sent. The standby sender will stop sending notifications when it no longer detects errors on the preferred sender.
++
+NOTE: When you test AutoSupport messages, all Admin Nodes send the test email. When you test alert notifications, you must sign in to every Admin Node to verify connectivity.
 
-The Configuration Management Node (CMN) service manages system-wide configurations of connectivity and protocol features needed by all services. In addition, the CMN service is used to run and monitor grid tasks. There is only one CMN service per StorageGRID deployment. The Admin Node that hosts the CMN service is known as the primary Admin Node.
 
-== What the NMS service is
+== Primary services for Admin Nodes
 
-The Network Management System (NMS) service powers the monitoring, reporting, and configuration options that are displayed through the Grid Manager, the StorageGRID system's browser-based interface.
+include::../_include/services-admin-node.adoc[]
 
-== What the Prometheus service is
 
-The Prometheus service collects time series metrics from the services on all nodes.
+
+
+
+
+
+
