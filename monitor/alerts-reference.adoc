@@ -166,6 +166,16 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 | Node cannot forward logs to the external syslog server and the on-disk queue is filling up.
 |===
 
+== Bucket alerts
+
+[cols="1a,2a" options="header"]
+|===
+| Alert name| Description
+
+| FabricPool bucket has unsupported bucket consistency setting
+| A FabricPool bucket uses the Available consistency level, which is not supported.
+|===
+
 == Cassandra alerts
 
 [cols="1a,2a" options="header"]
@@ -546,6 +556,9 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 | Objects lost
 | One or more objects have been lost from the grid.
 
+| S3 PUT object size too large
+| A client is attempting a PUT Object operation that exceeds S3 size limits.
+
 | Unidentified corrupt object detected
 | A file was found in replicated object storage that could not be identified as a replicated object.
 |===
@@ -571,6 +584,9 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 
 | Storage volume needs to be restored
 | A storage volume has been recovered and needs to be restored.
+
+| Volume Restoration failed to start replicated data repair
+| Replicated data repair for a repaired volume couldn't be started automatically.
 |===
 
 == StorageGRID services alerts
