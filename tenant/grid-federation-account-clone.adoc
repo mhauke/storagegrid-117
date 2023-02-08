@@ -70,8 +70,9 @@ StorageGRID does not automatically clone S3 access keys to the tenant's destinat
 
 Account cloning occurs only for new information. 
 
-CAUTION: If you edit or delete a tenant or its users, groups, or access keys on either grid, your changes are not cloned to the other grid. 
-If you delete a tenant on the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
+CAUTION: If you edit or delete a tenant or its users, groups, or access keys on either grid, your changes will not be cloned to the other grid. 
+
+CAUTION: If you delete a tenant on the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
 
 == Create groups, users, and keys on destination grid
 

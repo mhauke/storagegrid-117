@@ -21,6 +21,8 @@ These services allow tenants to use the following functionality with their S3 bu
 +
 For example, you might use CloudMirror replication to mirror specific customer records into Amazon S3 and then leverage AWS services to perform analytics on your data.
 +
+NOTE: CloudMirror replication has some important similarities and differences with the cross-grid replication feature. To learn more, see link:../admin/grid-federation-compare-cgr-to-cloudmirror.html[Compare cross-grid replication and CloudMirror replication].
++
 NOTE: CloudMirror replication is not supported if the source bucket has S3 Object Lock enabled.
 
 * *Notifications*: Per-bucket event notifications are used to send notifications about specific actions performed on objects to a specified external Amazon Simple Notification Service™ (SNS).

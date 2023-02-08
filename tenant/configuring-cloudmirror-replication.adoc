@@ -20,7 +20,11 @@ The link:understanding-cloudmirror-replication-service.html[CloudMirror replicat
 
 .About this task
 
-CloudMirror replication copies objects from a source bucket to a destination bucket that is specified in an endpoint. To enable CloudMirror replication for a bucket, you must create and apply valid bucket replication configuration XML. The replication configuration XML must use the URN of an S3 bucket endpoint for each destination.
+CloudMirror replication copies objects from a source bucket to a destination bucket that is specified in an endpoint. 
+
+NOTE: CloudMirror replication has important similarities and differences with the cross-grid replication feature. To learn more, see link:../admin/grid-federation-compare-cgr-to-cloudmirror.html[Compare cross-grid replication and CloudMirror replication].
+
+To enable CloudMirror replication for a bucket, you must create and apply valid bucket replication configuration XML. The replication configuration XML must use the URN of an S3 bucket endpoint for each destination.
 
 NOTE: Replication is not supported for source or destination buckets with S3 Object Lock enabled.
 

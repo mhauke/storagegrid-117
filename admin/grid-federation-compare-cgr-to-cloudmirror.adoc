@@ -2,14 +2,14 @@
 permalink: admin/grid-federation-compare-cgr-to-cloudmirror.html
 sidebar: sidebar
 keywords: cross-grid replication, cloudmirror replication
-summary: 'As you begin using grid federation, it might be helpful to understand the similarities and differences between cross-grid replication and the StorageGRID CloudMirror replication service.'
+summary: 'As you begin using grid federation, review the similarities and differences between cross-grid replication and the StorageGRID CloudMirror replication service.'
 ---
 = Compare cross-grid replication and CloudMirror replication
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-As you begin using grid federation, it might be helpful to understand the similarities and differences between cross-grid replication and the StorageGRID CloudMirror replication service.
+As you begin using grid federation, review the similarities and differences between cross-grid replication and the StorageGRID CloudMirror replication service.
 
 [cols="1a,3a,3a" options="header"]
 |===
@@ -18,9 +18,11 @@ As you begin using grid federation, it might be helpful to understand the simila
 | CloudMirror replication service
 
 | What is the primary purpose?
-| One StorageGRID system acts as the backup for another system. Objects in a bucket can be replicated between the grids in one or both directions.
+| One StorageGRID system acts as a disaster recovery system. Objects in a bucket can be replicated between the grids in one or both directions.
 
-| The CloudMirror replication service enables a tenant to automatically replicate objects from a bucket in StorageGRID (source) to an external S3 bucket (destination). CloudMirror replication creates an independent copy of an object in an independent S3 infrastructure.
+| Enables a tenant to automatically replicate objects from a bucket in StorageGRID (source) to an external S3 bucket (destination). 
+
+CloudMirror replication creates an independent copy of an object in an independent S3 infrastructure. This independent copy is not used as a backup, but often further processed in the cloud.
 
 
 | How is it set up?
@@ -29,7 +31,7 @@ As you begin using grid federation, it might be helpful to understand the simila
 . Add new tenant groups and users, which are also cloned.
 . Create corresponding buckets on each grid and enable cross-grid replication to occur in one or both directions.
 
-| . A tenant user link:../tenant/configuring-cloudmirror-replication.html[configures CloudMirror replication] by defining a CloudMirror endpoint (IP address, credentials, and so on) using the Tenant Manager or the S3 API. 
+| . A tenant user configures CloudMirror replication by defining a CloudMirror endpoint (IP address, credentials, and so on) using the Tenant Manager or the S3 API. 
 . Any bucket owned by that tenant account can be configured to point to the CloudMirror endpoint. 
 
 | Who is responsible for setting it up?
@@ -38,7 +40,7 @@ As you begin using grid federation, it might be helpful to understand the simila
 | Typically, a tenant user.
 
 | What is the destination?
-| A corresponding S3 bucket on the other StorageGRID system in the grid federation connection.
+| A corresponding and identical S3 bucket on the other StorageGRID system in the grid federation connection.
 
 | Any compatible S3 infrastructure (including Amazon S3).
 
@@ -53,7 +55,7 @@ As you begin using grid federation, it might be helpful to understand the simila
 | Objects are automatically replicated when they are added to a bucket that has been configured with a CloudMirror endpoint. Objects that existed in the source bucket before the bucket was configured with the CloudMirror endpoint are not replicated, unless they are modified.
 
 | How are objects replicated?
-| Cross-grid replication creates versioned objects, and it replicates the version ID from the source bucket to the destination bucket. This allow the version order to be maintained across both grids.
+| Cross-grid replication creates versioned objects, and it replicates the version ID from the source bucket to the destination bucket. This allows the version order to be maintained across both grids.
 | CloudMirror replication doesn't require versioning-enabled buckets, so CloudMirror can only maintain ordering for a key within a site. There are no guarantees that ordering will be maintained for requests to an object at different site.
 
 
