@@ -57,5 +57,5 @@ NOTE: The AES256-SHA option was the default in StorageGRID 11.6 and is the only 
 == S3 endpoint domain name format restrictions 
 The use of IP addresses as endpoint domain names is unsupported. Future releases will prevent the configuration. If you need to use IP addresses for endpoint domain names, contact technical support. See link:../admin/configuring-s3-api-endpoint-domain-names.html[S3 endpoint domain names].
 
-== User Initiated Volume Lost command removed
+== User initiated Volume Lost command removed
 The `proc/CMSI/Volume_Lost` has been removed. Use the `repair-data start-replicated-volume-repair` command to restore replicated data for a volume.
