@@ -41,7 +41,6 @@ The *ILM placement unachievable* alert might be triggered when Storage Nodes are
 
 After the upgrade completes, you can review any upgrade-related alerts by selecting *Recently resolved alerts* or *Current alerts* from the Grid Manager dashboard.
 
-
 == Many SNMP notifications are generated
 
 Be aware that a large number of SNMP notifications might be generated when grid nodes are stopped and restarted during the upgrade. To avoid excessive notifications, unselect the *Enable SNMP Agent Notifications* check box (*CONFIGURATION* > *Monitoring* > *SNMP agent*) to disable SNMP notifications before you start the upgrade. Then, re-enable notifications after the upgrade is complete.
