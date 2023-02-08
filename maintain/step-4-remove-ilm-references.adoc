@@ -21,9 +21,6 @@ You are prevented from starting the site decommission procedure in these cases:
 .Steps
 
 . If a proposed policy is listed, remove it.
-+
-image::../media/decommission_site_step_4_proposed_policy.png[Decommission Site Step 4 Proposed Policy]
-
  .. Select *Delete Proposed Policy*.
  .. Select *OK* in the confirmation dialog box.
 
@@ -33,7 +30,7 @@ image::../media/decommission_site_step_4_ilm_rules.png[Decommission Site Step 4 
 +
 Any ILM rules that are listed still refer to the site but are not used in any policy. In the example:
 
- ** The *Make 2 Copies* rule uses the system-default *All Storage Nodes* storage pool, which uses the All Sites site.
+ ** The *Make 2 Copies* rule uses the *All Storage Nodes* storage pool (StorageGRID 11.6 or earlier), which uses the *All Sites* site.
  ** The unused *3 copies for S3 tenant* rule refers to the *Raleigh* storage pool.
  ** The unused *2 copy 2 sites for smaller objects* rule refers to the *Raleigh* storage pool.
  ** The unused *EC larger objects* rules uses the Raleigh site in the *All 3 Sites* erasure coding profile.
@@ -41,7 +38,7 @@ Any ILM rules that are listed still refer to the site but are not used in any po
 +
 link:step-5-resolve-node-conflicts.html[Step 5: Resolve Node Conflicts (and start decommission)]
 +
-NOTE: When StorageGRID decommissions the site, it will automatically deactivate any unused erasure coding profiles that refer to the site, and it will automatically delete any unused storage pools that refer to the site. The system-default All Storage Nodes storage pool is removed because it uses the All Sites site.
+NOTE: When StorageGRID decommissions the site, it will automatically deactivate any unused erasure coding profiles that refer to the site, and it will automatically delete any unused storage pools that refer to the site. The All Storage Nodes storage pool (StorageGRID 11.6 or earlier) is removed because it uses the All Sites site.
 
  ** If one or more ILM rules are listed, go to the next step.
 
@@ -59,6 +56,6 @@ image::../media/decommission_site_step_4_no_policy_or_rules.png[Decommission Sit
 
 . Select *Next*.
 +
-NOTE: Any remaining storage pools and erasure coding profiles that refer to the site will become invalid when the site is removed. When StorageGRID decommissions the site, it will automatically deactivate any unused erasure coding profiles that refer to the site, and it will automatically delete any unused storage pools that refer to the site. The system-default All Storage Nodes storage pool is removed because it uses the All Sites site.
+NOTE: Any remaining storage pools and erasure coding profiles that refer to the site will become invalid when the site is removed. When StorageGRID decommissions the site, it will automatically deactivate any unused erasure coding profiles that refer to the site, and it will automatically delete any unused storage pools that refer to the site. The All Storage Nodes storage pool (StorageGRID 11.6 or earlier) is removed because it uses the All Sites site.
 +
 Step 5 (Resolve Node Conflicts) appears.
