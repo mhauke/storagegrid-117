@@ -17,7 +17,7 @@ Admin Nodes can also be used to load balance S3 and Swift client traffic.
 
 == What is the preferred sender 
 
-If your StorageGRID deployment includes multiple Admin Nodes, the primary Admin Node is the default preferred sender for alert notifications, AutoSupport messages, SNMP traps and informs, and legacy alarm notifications. 
+If your StorageGRID deployment includes multiple Admin Nodes, the primary Admin Node is the preferred sender for alert notifications, AutoSupport messages, SNMP traps and informs, and legacy alarm notifications. 
 
 Under normal system operations, only the preferred sender sends notifications. However, all other Admin Nodes monitor the preferred sender. If a problem is detected, other Admin Nodes act as _standby senders_.
 
