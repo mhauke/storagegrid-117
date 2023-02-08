@@ -17,14 +17,14 @@ You can upgrade your appliance drive firmware using two methods:
 
 *Online*: The drives are upgraded one at a time while the appliance is performing I/O (input/output operations). This method does not require you to place the appliance in maintenance mode. However, system performance might be impacted and it might take several hours longer than the offline method. 
 
-NOTE: Drives that do not have redundancy must be updated using the offline method. This requirement includes any drive associated with SSD cache (including, for example, drives in the SG6060), or any pool or volume group that is degraded. 
+NOTE: Drives that do not have redundancy must be updated using the offline method. This requirement includes any drive associated with SSD cache (including, for example, SSD drives in the SG6060), or any pool or volume group that is degraded. 
 
 *Offline*: 
 The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy, or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped on the drives to be upgraded. You must stop all I/O on any drives you intend to upgrade by placing the node into maintenance mode.
 
 The offline method is faster than the online method and is recommended.
 
-IMPORTANT: You must use the offline method to upgrade the drive firmware on the SG6060. You cannot use the online method to upgrade the drive firmware on the SG6060. 
+IMPORTANT: There are two types of drives in the SG6060: SSD and HDD. You must use the offline method to upgrade the drive firmware on the SSD drives. You may use the online method to upgrade the drive firmware on the HDD drives. 
 
 .Steps
 
