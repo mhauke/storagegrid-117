@@ -87,7 +87,7 @@ Drag and drop rows to change the values in the *Priority order* column.
 +
 image::../media/ha_group_determine_failover.png[HA Groups determine priority order]
 +
-IMPORTANT: If the HA group provides access to the Grid Manager, you must select an interface on the primary Admin Node to be the Primary interface. Some maintenance procedures can only be performed from the primary Admin Node.
+TIP: If the HA group provides access to the Grid Manager, you must select an interface on the primary Admin Node to be the Primary interface. Some maintenance procedures can only be performed from the primary Admin Node.
 +
 The first interface in the list is the Primary interface. The Primary interface is the active interface unless a failure occurs.
 +
@@ -163,7 +163,7 @@ NOTE: Wait up to 15 minutes for changes to an HA group to be applied to all node
 
 You can remove one or more high availability (HA) groups at a time. 
 
-IMPORTANT: You cannot remove an HA group if it is bound to a load balancer endpoint. To delete an HA group, you must remove it from any load balancer endpoints that use it.
+TIP: You cannot remove an HA group if it is bound to a load balancer endpoint. To delete an HA group, you must remove it from any load balancer endpoints that use it.
 
 To prevent client disruptions, update any affected S3 or Swift client applications before you remove an HA group. Update each client to connect using another IP address, for example, the virtual IP address of a different HA group or the IP address that was configured for an interface during installation.
 

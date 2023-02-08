@@ -16,7 +16,7 @@ In some cases, you might need to rebalance erasure-coded data after you add new 
 * You have completed the expansion steps to add the new Storage Nodes.
 * You have reviewed the link:considerations-for-rebalancing-erasure-coded-data.html[considerations for rebalancing erasure-coded data].
 +
-IMPORTANT: Only perform this procedure if the *Low Object Storage* alert has been triggered for one or more Storage Nodes at a site and you were unable to add the recommended number of new Storage Nodes.
+CAUTION: Only perform this procedure if the *Low Object Storage* alert has been triggered for one or more Storage Nodes at a site and you were unable to add the recommended number of new Storage Nodes.
 
 * You understand that replicated object data will not be moved by this procedure and that the EC rebalance procedure does not consider the replicated data usage on each Storage Node when determining where to move erasure-coded data.
 

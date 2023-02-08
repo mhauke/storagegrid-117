@@ -24,16 +24,10 @@ NOTE: These instructions describe how to use ONTAP System Manager to add Storage
 . Navigate to *STORAGE* > *Tiers* > *Add Cloud Tier*.
 
 . Select *StorageGRID* from the list of object store providers.
-+
-image::../media/ontap_systemmanager_addcloudtier.png[Add StorageGRID as cloud tier in ONTAP System Manager]
 
 == Enter StorageGRID values
 
 Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file or the values you obtained manually.
-
-image::../media/ontap_systemmanager_cloudtier_details.png[Add Cloud Tier details]
-
-The following table describes these fields in more detail. 
 
 [cols="1a,2a" options="header"]
 |===

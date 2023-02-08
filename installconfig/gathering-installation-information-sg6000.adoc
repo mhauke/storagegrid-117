@@ -330,11 +330,11 @@ a|
 
 == Information needed to connect SG6000-CN controller to BMC management network
 
-You can access the BMC interface on the SG6000-CN controller using the following 1-GbE management port. This
-port supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management
-Interface (IPMI) standard.
+You can access the BMC interface on the SG6000-CN controller using the following 1-GbE management port. This port supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management Interface (IPMI) standard.
 
 image::../media/bmc_management_port.gif[BMC management port]
+
+include::../_include/enable-disable-ipmi.adoc[]
 
 [options="header"]
 |===

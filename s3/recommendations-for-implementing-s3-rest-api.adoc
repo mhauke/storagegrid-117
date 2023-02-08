@@ -21,22 +21,25 @@ You can set the "`Available`" consistency control for each bucket using the PUT 
 
 == Recommendations for object keys
 
-For buckets that are created in StorageGRID 11.4 or later, restricting object key names to meet performance best practices is no longer required. For example, you can now use random values for the first four characters of object key names.
+Follow these recommendations for object key names, based on when the bucket was first created.
 
-For buckets that were created in releases earlier than StorageGRID 11.4, continue to follow these recommendations for object key names:
+.Buckets created in StorageGRID 11.4 or earlier
 
-* You should not use random values as the first four characters of object keys. This is in contrast to the former AWS recommendation for key prefixes. Instead, you should use non-random, non-unique prefixes, such as `image`.
-* If you do follow the former AWS recommendation to use random and unique characters in key prefixes, you should prefix the object keys with a directory name. That is, use this format:
+* Do not use random values as the first four characters of object keys. This is in contrast to the former AWS recommendation for key prefixes. Instead, use non-random, non-unique prefixes, such as `image`.
+
+* If you do follow the former AWS recommendation to use random and unique characters in key prefixes, prefix the object keys with a directory name. That is, use this format:
 +
-----
-mybucket/mydir/f8e3-image3132.jpg
-----
+`mybucket/mydir/f8e3-image3132.jpg`
 +
 Instead of this format:
 +
-----
-mybucket/f8e3-image3132.jpg
-----
+`mybucket/f8e3-image3132.jpg`
+
+.Buckets created in StorageGRID 11.4 or later
+
+Restricting object key names to meet performance best practices is not required. In most cases, you can use random values for the first four characters of object key names.
+
+TIP: An exception to this is an S3 workload that continuously removes all objects after a short period of time. To minimize the performance impact for this use case, include a string that varies the leading portion of the key name every several thousand objects, such as a date. For example, suppose an S3 client typically writes 2,000 objects/second and the ILM or bucket lifecycle policy removes all objects after three days. To minimize the performance impact, you might name keys using a pattern like this: `/mybucket/mydir/_yyyymmddhhmmss_-_random_UUID_.jpg`
 
 == Recommendations for "`range reads`"
 

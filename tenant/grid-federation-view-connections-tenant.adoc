@@ -61,7 +61,7 @@ image:../media/grid-federation-cgr-object-example-last-error.png[grid-federation
 +
 NOTE: To ensure the error message is cleared, wait at least 5 minutes after the timestamp in the message before ingesting a new object.
 +
-IMPORTANT: After you clear the error, a new *Last error* might appear if objects are ingested in a different bucket that also has an error. 
+TIP: After you clear the error, a new *Last error* might appear if objects are ingested in a different bucket that also has an error. 
 
 . To determine if any objects failed to be replicated because of the bucket error, see link:../admin/grid-federation-retry-failed-replication.html[Identify and retry failed replication operations]. 
 

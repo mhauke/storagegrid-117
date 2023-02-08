@@ -25,7 +25,7 @@ You must complete the configuration tasks listed below for the grid nodes or sit
 
 * Confirm that Network Time Protocol (NTP) servers are accessible from that site. See link:../maintain/configuring-ntp-servers.html[Manage NTP servers].
 +
-IMPORTANT: Make sure that at least two nodes at each site can access at least four external NTP sources. If only one node at a site can reach the NTP sources, timing issues will occur if that node goes down. In addition, designating two nodes per site as primary NTP sources ensures accurate timing if a site is isolated from the rest of the grid.
+CAUTION: Make sure that at least two nodes at each site can access at least four external NTP sources. If only one node at a site can reach the NTP sources, timing issues will occur if that node goes down. In addition, designating two nodes per site as primary NTP sources ensures accurate timing if a site is isolated from the rest of the grid.
 
 . If you added one or more Storage Nodes to an existing site:
 
@@ -75,4 +75,4 @@ If you have been specifying DNS settings separately for each grid node, you must
 +
 The best practice is for the grid-wide DNS server list to contain some DNS servers that are accessible locally from each site. If you just added a new site, add new DNS servers for the site to the grid-wide DNS configuration.
 +
-IMPORTANT: Provide two to six IPv4 addresses for DNS servers. You should select DNS servers that each site can access locally in the event of network islanding. This is to ensure an islanded site continues to have access to the DNS service. After configuring the grid-wide DNS server list, you can further customize the DNS server list for each node. For details, see link:../maintain/modifying-dns-configuration-for-single-grid-node.html[Modify DNS configuration for single grid node]..
+CAUTION: Provide two to six IPv4 addresses for DNS servers. You should select DNS servers that each site can access locally in the event of network islanding. This is to ensure an islanded site continues to have access to the DNS service. After configuring the grid-wide DNS server list, you can further customize the DNS server list for each node. For details, see link:../maintain/modifying-dns-configuration-for-single-grid-node.html[Modify DNS configuration for single grid node]..

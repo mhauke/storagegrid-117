@@ -103,7 +103,7 @@ After generating a list of objects and delete markers that were not replicated t
 
 . Select *Go to private API documentation*.
 +
-IMPORTANT: The StorageGRID API endpoints that are marked "`Private`" are subject to change without notice. StorageGRID private endpoints also ignore the API version of the request.
+NOTE: The StorageGRID API endpoints that are marked "`Private`" are subject to change without notice. StorageGRID private endpoints also ignore the API version of the request.
 
 . In the *cross-grid-replication-advanced* section, select the following endpoint:
 +
@@ -125,7 +125,7 @@ NOTE: Pending means the cross-grid replication request has been added to the int
 
 You should monitor the replication retry operations to make sure they complete.
 
-IMPORTANT: It might take 2 hours or more for an object or delete marker to be replicated to the other grid.
+TIP: It might take 2 hours or more for an object or delete marker to be replicated to the other grid.
 
 You can monitor retry operations in either of two ways:
 

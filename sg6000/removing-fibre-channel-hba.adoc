@@ -14,19 +14,19 @@ You might need to replace the Fibre Channel host bus adapter (HBA) in the SG6000
 .What you'll need
 
 * You have the correct replacement Fibre Channel HBA.
-* You have determined which SG6000-CN controller contains the Fibre Channel HBA to replace.
-+
-link:verifying-fibre-channel-hba-to-replace.html[Verify Fibre Channel HBA to replace]
 
-* You have physically located the SG6000-CN controller where you are replacing the Fibre Channel HBA in the data center.
-+
-link:locating-controller-in-data-center.html[Locate controller in data center]
-+
-NOTE: A link:shutting-down-sg6000-cn-controller.html[controlled shutdown of the controller] is required before removing the controller from the rack.
+* You have link:verifying-fibre-channel-hba-to-replace.html[determined which SG6000-CN controller contains the Fibre Channel HBA to replace].
 
-* You have removed the controller cover.
+* You have link:locating-controller-in-data-center.html[physically located the SG6000-CN controller] in the data center.
+
+* You have link:shutting-down-sg6000-cn-controller.html[shut down the SG6000-CN controller].
 +
-link:removing-sg6000-cn-controller-cover.html[Remove SG6000-CN controller cover]
+CAUTION: A controlled shutdown is required before you remove the controller from the rack.
+
+* You have link:removing-sg6000-cn-controller-from-cabinet-or-rack.html[removed the controller from the cabinet or rack].
+
+* You have link:removing-sg6000-cn-controller-cover.html[removed the controller cover].
+
 
 .About this task
 

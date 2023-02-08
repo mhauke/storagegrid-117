@@ -30,8 +30,10 @@ As you begin using Cloud Storage Pools, it might be helpful to understand the si
 | 
 * Any compatible S3 infrastructure (including Amazon S3)
 * Azure Blob Archive tier
+* Google Cloud Platform (GCP)
 |
 * Any compatible S3 infrastructure (including Amazon S3)
+* Google Cloud Platform (GCP)
 
 | What causes objects to be moved to the destination?
 | One or more ILM rules in the active ILM policy. The ILM rules define which objects StorageGRID moves to the Cloud Storage Pool and when the objects are moved.

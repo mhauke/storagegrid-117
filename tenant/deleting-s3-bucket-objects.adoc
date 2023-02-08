@@ -21,7 +21,7 @@ Before performing these steps, note the following:
 
 * If a bucket has link:using-s3-object-lock.html[S3 Object Lock enabled], it might remain in the *Deleting objects: read-only* state for _years_.
 +
-IMPORTANT: A bucket that uses S3 Object Lock will remain in the *Deleting objects: read-only* state until the retention date is reached for all objects and any legal holds are removed.
+TIP: A bucket that uses S3 Object Lock will remain in the *Deleting objects: read-only* state until the retention date is reached for all objects and any legal holds are removed.
 
 * While objects are being deleted, the bucket's state is *Deleting objects: read-only*. In this state, you can't add new objects to the bucket. 
 
