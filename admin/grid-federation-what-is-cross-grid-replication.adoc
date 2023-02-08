@@ -54,6 +54,7 @@ When an S3 client adds an object to a bucket that has cross-grid replication ena
 . StorageGRID automatically replicates the object from the source bucket to the destination bucket. The time to perform this background replication operation depends on a number of factors, including the number of other replication operations that are pending.
 +
 The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
+The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
 +
 [cols="1a,2a" options="header"]
 |===
@@ -84,6 +85,15 @@ As described in link:../primer/delete-data-flow.html[Delete data flow], StorageG
 * The last time period in the ILM rule for the object ends, and there are no further placements specified.
 
 When StorageGRID deletes an object because of a Delete objects in bucket operation, bucket lifecycle expiration, or ILM placement expiration, the replicated object is never deleted from the other grid in a grid federation connection. However, delete markers from S3 client deletes can optionally be replicated between grids.
+
+As described in link:../primer/delete-data-flow.html[Delete data flow], StorageGRID can delete an object for any of these reasons: 
+
+* The S3 client issues a delete request.
+* The bucket has a lifecycle configuration, which expires.
+* The last time period in the ILM rule for the object ends, and there are no further placements specified.
+* The tenant user chooses to link:../tenant/deleting-s3-bucket-objects.html[delete objects in the bucket]. 
+
+When StorageGRID deletes an object because of bucket lifecycle expiration, ILM placement expiration, or a delete objects operation, the replicated object is never deleted from the other grid in a grid federation connection. However, S3 client deletes can optionally be replicated between the grids in the connection as described below.
 
 To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, review how S3 clients delete objects from buckets that have versioning enabled, as follows:
 

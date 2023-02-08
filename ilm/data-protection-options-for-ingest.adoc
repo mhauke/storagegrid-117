@@ -19,7 +19,7 @@ The flowchart shows what happens when objects are matched by an ILM rule that us
 
 image::../media/ingest_object_lifecycle.png[Diagram showing how object ingest occurs for each ingest option]
 
-== Dual commit (default)
+== Dual commit
 
 When you select the Dual commit option, StorageGRID immediately makes interim object copies on two different Storage Nodes and returns an "`ingest successful`" message to the client. The object is queued for ILM evaluation, and copies that meet the rule's placement instructions are made later.
 
@@ -40,9 +40,9 @@ When you select the Strict option, StorageGRID uses synchronous placement on ing
 
 Use the Strict option if you have an operational or regulatory requirement to immediately store objects only in the locations outlined in the ILM rule. For example, to satisfy a regulatory requirement, you might need to use the Strict option and a Location Constraint advanced filter to guarantee that objects are never stored at certain data centers.
 
-link:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.html[Example 5: ILM rules and policy for Strict ingest behavior]
+See link:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.html[Example 5: ILM rules and policy for Strict ingest behavior].
 
-== Balanced
+== Balanced (default)
 
 When you select the Balanced option, StorageGRID also uses synchronous placement on ingest and immediately makes all copies specified in the rule's placement instructions. In contrast with the Strict option, if StorageGRID cannot immediately make all copies, it uses Dual commit instead.
 

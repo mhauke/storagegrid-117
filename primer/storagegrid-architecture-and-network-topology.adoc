@@ -119,50 +119,7 @@ See the following for more information:
 
 === Primary services for Admin Nodes
 
-The following table shows the primary services for Admin Nodes; however, this table does not list all node services.
-
-[cols="1a,2a" options="header"]
-|===
-| Service| Key function
-a|
-Audit Management System (AMS)
-a|
-Tracks system activity.
-a|
-Configuration Management Node (CMN)
-a|
-Manages system-wide configuration. Primary Admin Node only.
-a|
-Management Application Program Interface (mgmt-api)
-a|
-Processes requests from the Grid Management API and the Tenant Management API.
-a|
-High Availability
-a|
-Manages high availability virtual IP addresses for groups of Admin Nodes and Gateway Nodes.
-
-*Note:* This service is also found on Gateway Nodes.
-
-a|
-Load Balancer
-a|
-Provides load balancing of S3 and Swift traffic from clients to Storage Nodes.
-
-*Note:* This service is also found on Gateway Nodes.
-
-a|
-Network Management System (NMS)
-a|
-Provides functionality for the Grid Manager.
-a|
-Prometheus
-a|
-Collects and stores metrics.
-a|
-Server Status Monitor (SSM)
-a|
-Monitors the operating system and underlying hardware.
-|===
+include::../_include/services-admin-node.adoc[]
 
 === Primary services for Storage Nodes
 
@@ -212,7 +169,7 @@ Processes object storage protocol requests and manages object data on disk.
 a|
 Replicated State Machine (RSM)
 a|
-Ensures that S3 platform service requests are sent to their respective endpoints.
+Ensures that S3 platform services requests are sent to their respective endpoints.
 a|
 Server Status Monitor (SSM)
 a|
@@ -249,7 +206,9 @@ Monitors the operating system and underlying hardware.
 
 === Primary services for Archive Nodes
 
-The following table shows the primary services for Archive Nodes; however, this table does not list all node services.
+The following table shows the primary services for Archive Nodes (now deprecated); however, this table does not list all node services.
+
+NOTE: Support for Archive Nodes is deprecated and will be removed in a future release.
 
 [cols="1a,2a" options="header"]
 |===

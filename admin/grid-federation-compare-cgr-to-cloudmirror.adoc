@@ -42,7 +42,8 @@ CloudMirror replication creates an independent copy of an object in an independe
 | What is the destination?
 | A corresponding and identical S3 bucket on the other StorageGRID system in the grid federation connection.
 
-| Any compatible S3 infrastructure (including Amazon S3).
+| * Any compatible S3 infrastructure (including Amazon S3).
+* Google Cloud Platform (GCP)
 
 | Is object versioning required?
 | Yes, both the source and destination buckets must have object versioning enabled.

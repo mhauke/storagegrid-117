@@ -284,6 +284,8 @@ a|
 
 You can access the BMC interface on the services appliance using the 1-GbE management port circled in the diagram. This port supports remote management of the controller hardware over Ethernet using the Intelligent Platform Management Interface (IPMI) standard.
 
+include::../_include/enable-disable-ipmi.adoc[]
+
 *SG100 BMC management port*
 
 image::../media/sg100_bmc_management_port.png[SG100 management port]

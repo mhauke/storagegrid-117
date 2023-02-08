@@ -24,10 +24,12 @@ entries:
       url: "/s3/create-s3-lifecycle-configuration.html"          
     - title: Recommendations for implementing S3 REST API
       url: "/s3/recommendations-for-implementing-s3-rest-api.html"
-  - title: S3 REST API supported operations and limitations
+  - title: Support for Amazon S3 REST API
     entries:
-    - title: S3 REST API operations
-      url: "/s3/s3-rest-api-supported-operations-and-limitations.html"
+    - title: 'Quick reference'
+      url: "/s3/support-for-aws-apis.html"         
+    - title: Implementation details
+      url: "/s3/s3-rest-api-supported-operations-and-limitations.html"  
     - title: Authenticate requests
       url: "/s3/authenticating-requests.html"
     - title: Operations on the service
@@ -71,7 +73,7 @@ entries:
         url: "/s3/complete-multipart-upload.html"
     - title: Error responses
       url: "/s3/error-responses.html"
-  - title: StorageGRID S3 REST API operations
+  - title: StorageGRID S3 requests
     entries:
       - title: GET Bucket consistency request
         url: "/s3/get-bucket-consistency-request.html"
