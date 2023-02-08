@@ -169,7 +169,7 @@ Processes object storage protocol requests and manages object data on disk.
 a|
 Replicated State Machine (RSM)
 a|
-Ensures that S3 platform service requests are sent to their respective endpoints.
+Ensures that S3 platform services requests are sent to their respective endpoints.
 a|
 Server Status Monitor (SSM)
 a|
@@ -207,6 +207,8 @@ Monitors the operating system and underlying hardware.
 === Primary services for Archive Nodes
 
 The following table shows the primary services for Archive Nodes (now deprecated); however, this table does not list all node services.
+
+NOTE: Support for Archive Nodes is deprecated and will be removed in a future release.
 
 [cols="1a,2a" options="header"]
 |===
