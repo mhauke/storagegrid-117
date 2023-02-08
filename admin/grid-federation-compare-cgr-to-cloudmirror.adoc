@@ -40,7 +40,8 @@ As you begin using grid federation, it might be helpful to understand the simila
 | What is the destination?
 | A corresponding S3 bucket on the other StorageGRID system in the grid federation connection.
 
-| Any compatible S3 infrastructure (including Amazon S3).
+| * Any compatible S3 infrastructure (including Amazon S3).
+* Google Cloud Platform (GCP)
 
 | Is object versioning required?
 | Yes, both the source and destination buckets must have object versioning enabled.

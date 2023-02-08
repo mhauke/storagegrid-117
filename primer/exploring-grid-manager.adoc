@@ -76,7 +76,6 @@ image::../media/nodes_menu.png[nodes page main]
 
 * link:../monitor/viewing-nodes-page.html[View the Nodes page]
 
-
 == Tenants page
 
 The Tenants page allows you to create and monitor the storage tenant accounts for your StorageGRID system. You must create at least one tenant account to specify who can store and retrieve objects and which functionality is available to them.
@@ -113,44 +112,45 @@ image::../media/configuration_menu.png[Configuration Menu]
 
 Network tasks include:
 
-* link:../admin/managing-high-availability-groups.html[Manage high availability groups]
-* link:../admin/managing-load-balancing.html[Manage load balancer endpoints]
-* link:../admin/configuring-s3-api-endpoint-domain-names.html[Configure S3 endpoint domain names]
-* link:../admin/managing-traffic-classification-policies.html[Manage traffic classification policies]
-* link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces]
+* link:../admin/managing-high-availability-groups.html[Managing high availability groups]
+* link:../admin/managing-load-balancing.html[Managing load balancer endpoints]
+* link:../admin/configuring-s3-api-endpoint-domain-names.html[Configuring S3 endpoint domain names]
+* link:../admin/managing-traffic-classification-policies.html[Managing traffic classification policies]
+* link:../admin/configure-vlan-interfaces.html[Configuring VLAN interfaces]
 
 === Security tasks
 Security tasks include:
 
-* link:../admin/using-storagegrid-security-certificates.html[Use security certificates]
-* link:../admin/manage-firewall-controls.html[Manage internal firewall controls]
-* link:../admin/kms-configuring.html[Configure key management servers]
-* Configure security settings including the link:../admin/manage-tls-ssh-policy.html[TLS and SSH policy], link:../admin/changing-network-options-object-encryption.html[network and object security options], and the link:../admin/changing-browser-session-timeout-interface.html[browser inactivity timeout].
-* Configure the settings for a link:../admin/configuring-storage-proxy-settings.html[Storage proxy] or an link:../admin/configuring-admin-proxy-setting.html[Admin proxy] 
+* link:../admin/using-storagegrid-security-certificates.html[Using security certificates]
+* link:../admin/manage-firewall-controls.html[Managing internal firewall controls]
+* link:../admin/kms-configuring.html[Configuring key management servers]
+* Configuring security settings including the link:../admin/manage-tls-ssh-policy.html[TLS and SSH policy], link:../admin/changing-network-options-object-encryption.html[network and object security options], and the link:../admin/changing-browser-session-timeout-interface.html[browser inactivity timeout].
+* Configuring the settings for a link:../admin/configuring-storage-proxy-settings.html[Storage proxy] or an link:../admin/configuring-admin-proxy-setting.html[Admin proxy] 
 
 === System tasks
 System tasks include:
 
-* Use link:../admin/grid-federation-overview.html[grid federation] to clone tenant account information and replicate object data between two StorageGRID systems.
-* link:../ilm/managing-objects-with-s3-object-lock.html[Manage S3 Object Lock]
-* link:../admin/managing-storage-options.html[Manage Storage options]
+* Using link:../admin/grid-federation-overview.html[grid federation] to clone tenant account information and replicate object data between two StorageGRID systems.
+* Optionally, enabling the link:../admin/configuring-stored-object-compression.html[Compress stored objects] option.
+* link:../ilm/managing-objects-with-s3-object-lock.html[Managing S3 Object Lock]
+* link:../admin/managing-storage-options.html[Managing Storage options]
 
 === Monitoring tasks
 
 Monitoring tasks include:
 
-* link:../monitor/configure-audit-messages.html[Configure audit messages and log destinations]
-* link:../monitor/using-snmp-monitoring.html[Use SNMP monitoring]
+* link:../monitor/configure-audit-messages.html[Configuring audit messages and log destinations]
+* link:../monitor/using-snmp-monitoring.html[Using SNMP monitoring]
 
 === Access control tasks
 
 Access control tasks include:
 
-* link:../admin/using-identity-federation.html[Use identity federation]
-* link:../admin/managing-admin-groups.html[Manage admin groups]
-* Change the link:../admin/changing-provisioning-passphrase.html[provisioning passphrase] or link:../admin/change-node-console-password.html[node console passwords]
-* link:../admin/managing-users.html[Manage admin users]
-* link:../admin/configuring-sso.html[Configure SSO]
+* link:../admin/managing-admin-groups.html[Managing admin groups]
+* link:../admin/managing-users.html[Managing admin users]
+* Changing the link:../admin/changing-provisioning-passphrase.html[provisioning passphrase] or link:../admin/change-node-console-password.html[node console passwords]
+* link:../admin/using-identity-federation.html[Using identity federation]
+* link:../admin/configuring-sso.html[Configuring SSO]
 
 == Maintenance menu
 
@@ -173,9 +173,9 @@ Maintenance tasks include:
 
 System maintenance tasks you can perform include:
 
-* link:../admin/viewing-storagegrid-license-information.html[View StorageGRID license information] or link:../admin/updating-storagegrid-license-information.html[update license information]
-* Generate and download a link:../maintain/downloading-recovery-package.html[Recovery Package]
-* Perform StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances
+* link:../admin/viewing-storagegrid-license-information.html[Viewing StorageGRID license information] or link:../admin/updating-storagegrid-license-information.html[updating license information]
+* Generating and downloading the link:../maintain/downloading-recovery-package.html[Recovery Package]
+* Performing StorageGRID software updates, including software upgrades, hotfixes, and updates to the SANtricity OS software on selected appliances
 
 ** link:../upgrade/index.html[Upgrade procedure]
 ** link:../maintain/storagegrid-hotfix-procedure.html[Hotfix procedure]
@@ -186,9 +186,9 @@ System maintenance tasks you can perform include:
 
 Network maintenance tasks you can perform include:
 
-* link:../maintain/configuring-dns-servers.html[Configure DNS servers]
-* link:../maintain/updating-subnets-for-grid-network.html[Update Grid Network subnets]
-* link:../maintain/configuring-ntp-servers.html[Manage NTP servers]
+* link:../maintain/configuring-dns-servers.html[Configuring DNS servers]
+* link:../maintain/updating-subnets-for-grid-network.html[Updating Grid Network subnets]
+* link:../maintain/configuring-ntp-servers.html[Managing NTP servers]
 
 == Support menu
 

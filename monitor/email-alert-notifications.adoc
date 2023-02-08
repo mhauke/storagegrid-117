@@ -18,7 +18,7 @@ If you want email notifications to be sent when alerts occur, you must provide i
 .About this task
 Because alarms and alerts are independent systems, the email setup used for alert notifications is not used for alarm notifications and AutoSupport messages. However, you can use the same email server for all notifications.
 
-If your StorageGRID deployment includes multiple Admin Nodes, you can select which Admin Node should be the preferred sender of alert notifications. The same "`preferred sender`" is also used for alarm notifications and AutoSupport messages. By default, the primary Admin Node is selected. For details, see the link:../admin/index.html[instructions for administering StorageGRID]. 
+If your StorageGRID deployment includes multiple Admin Nodes, the primary Admin Node is the preferred sender for alert notifications, AutoSupport messages, SNMP traps and informs, and legacy alarm notifications. If the primary Admin Node becomes unavailable, notifications are temporarily sent by other Admin Nodes. See link:../admin/what-admin-node-is.html[What an Admin Node is].
 
 .Steps
 . Select *ALERTS* > *Email setup*.
@@ -118,7 +118,7 @@ NOTE: If the email is not received within a few minutes or if the *Email notific
 
  .. Sign in to any other Admin Nodes and send a test email to verify connectivity from all sites.
 +
-NOTE: When you test alert notifications, you must sign in to every Admin Node to verify connectivity. This is in contrast to testing alarm notifications and AutoSupport messages, where all Admin Nodes send the test email.
+NOTE: When you test alert notifications, you must sign in to every Admin Node to verify connectivity. This is in contrast to testing AutoSupport messages and legacy alarm notifications, where all Admin Nodes send the test email.
 . Select *Save*.
 +
 Sending a test email does not save your settings. You must select *Save*.

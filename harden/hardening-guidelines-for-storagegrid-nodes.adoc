@@ -19,11 +19,11 @@ StorageGRID includes an internal firewall on each node that enhances the securit
 
 Specifically, you can manage these areas:
 
-* Privileged IP addresses: You can allow selected IP addresses or subnets to access ports closed using the Manage external access tab.
+* Privileged IP addresses: You can allow selected IP addresses or subnets to access ports that are closed by settings on the Manage external access tab.
 
 * Manage external access: You can close ports that are open by default, or reopen ports previously closed.
 
-* Untrusted Client Network: You can specify whether a node trusts inbound traffic from the Client Network and specify additional ports you want open when when untrusted Client Network is configured. 
+* Untrusted Client Network: You can specify whether a node trusts inbound traffic from the Client Network as well as the additional ports you want open when untrusted Client Network is configured. 
 
 While this internal firewall provides an additional layer of protection against some common threats, it does not remove the need for an external firewall.
 
