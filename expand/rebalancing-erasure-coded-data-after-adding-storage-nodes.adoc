@@ -2,42 +2,37 @@
 permalink: expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html
 sidebar: sidebar
 keywords: erasure coding, EC, rebalancing, site rebalance procedure
-summary: 'In some cases, you might need to rebalance erasure-coded data after you add new Storage Nodes.'
+summary: 'After you add Storage Nodes, you can use the EC rebalance procedure to redistribute erasure-coded fragments among the existing and new Storage Nodes.
+'
 ---
 = Rebalance erasure-coded data after adding Storage Nodes
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-In some cases, you might need to rebalance erasure-coded data after you add new Storage Nodes.
+After you add Storage Nodes, you can use the EC rebalance procedure to redistribute erasure-coded fragments among the existing and new Storage Nodes.
 
 .What you'll need
 
 * You have completed the expansion steps to add the new Storage Nodes.
 * You have reviewed the link:considerations-for-rebalancing-erasure-coded-data.html[considerations for rebalancing erasure-coded data].
-+
-CAUTION: Only perform this procedure if the *Low Object Storage* alert has been triggered for one or more Storage Nodes at a site and you were unable to add the recommended number of new Storage Nodes.
-
 * You understand that replicated object data will not be moved by this procedure and that the EC rebalance procedure does not consider the replicated data usage on each Storage Node when determining where to move erasure-coded data.
-
 * You have the `Passwords.txt` file.
 
-.About this task
+.What happens when this procedure runs
 
-The EC rebalance procedure will not start if one or more volumes are offline (unmounted) or if they are online (mounted) but in an error state. 
+Before starting the procedure, note the following:
 
-The EC rebalance procedure temporarily reserves a large amount of storage. Storage alerts might be triggered, but will resolve when the rebalance is complete. If there is not enough storage for the reservation, the EC rebalance procedure will fail. Storage reservations are released when the EC rebalance procedure completes, whether the procedure failed or succeeded.
+* The EC rebalance procedure will not start if one or more volumes are offline (unmounted) or if they are online (mounted) but in an error state. 
 
-If a volume goes offline or experiences an error while an EC rebalance is in process, the rebalance process terminates partially completed with no loss of data. The EC rebalance procedure can be resumed at the point where it terminated when all volumes are online without error.
+* The EC rebalance procedure temporarily reserves a large amount of storage. Storage alerts might be triggered, but will resolve when the rebalance is complete. If there is not enough storage for the reservation, the EC rebalance procedure will fail. Storage reservations are released when the EC rebalance procedure completes, whether the procedure failed or succeeded.
 
-When the EC rebalance procedure is running, the performance of ILM operations and S3 and Swift client operations are likely to be impacted. For this reason, you should only perform this procedure in limited cases.
+* If a volume goes offline or experiences an error while an EC rebalance is in process, the rebalance process terminates partially completed with no loss of data. The EC rebalance procedure can be resumed at the point where it terminated when all volumes are online without error.
 
-[NOTE]
-====
-S3 and Swift API operations to upload objects (or object parts) might fail during the EC rebalancing procedure if they require more than 24 hours to complete. Long-duration PUT operations will fail if the applicable ILM rule uses Balanced or Strict placement on ingest. The following error will be reported:
+* When the EC rebalance procedure is running, the performance of ILM operations and S3 and Swift client operations are likely to be impacted. 
 
-`500 Internal Server Error`
-====
+NOTE: S3 and Swift API operations to upload objects (or object parts) might fail during the EC rebalancing procedure if they require more than 24 hours to complete. Long-duration PUT operations will fail if the applicable ILM rule uses Balanced or Strict placement on ingest. The following error will be reported: `500 Internal Server Error`.
+
 
 .Steps
 
@@ -84,10 +79,6 @@ To get help on the rebalance-data command:
 +
 ** To view the estimated time to completion and the completion percentage for the current job, select *SUPPORT* > *Tools* > *Metrics*. Then, select *EC Overview* in the Grafana section. Look at the *Grid EC Job Estimated Time to Completion* and *Grid EC Job Percentage Completed* dashboards.
 
-. Perform additional steps, based on the status returned:
- ** If the status is `In progress`, the EC rebalance operation is still running. You should periodically monitor the procedure until it completes.
- ** If the status is `Failure`, perform the <<rebalance_fail,failure steps>>.
- ** If the status is `Success`, perform the <<rebalance_succeed,success step>>.
 . If the EC rebalance procedure is generating too much load (for example, ingest operations are affected), pause the procedure.
 +
 `rebalance-data pause --job-id _job-id_`
@@ -98,20 +89,23 @@ To get help on the rebalance-data command:
 +
 NOTE: When you terminate an EC rebalance procedure, any data fragments that have already been moved remain in the new location. Data is not moved back to the original location.
 
-. [[rebalance_fail]]If the status of the EC rebalance procedure is `Failure`, follow these steps:
- .. Confirm that all Storage Nodes at the site are connected to the grid.
- .. Check for and resolve any alerts that might be affecting these Storage Nodes.
-+
-For information about specific alerts, see the monitoring and troubleshooting instructions.
+. Perform additional steps, based on the status returned:
 
- .. Restart the EC rebalance procedure:
- +
-`rebalance-data start –-job-id _job-id_`
- .. If the status of the EC rebalance procedure is still `Failure`, contact technical support.
-. [[rebalance_succeed]]If the status of the EC rebalance procedure is `Success`, optionally <<review_object_storage,review object storage>> to see the updated details for the site.
+** If the status is `In progress`, the EC rebalance operation is still running. You should periodically monitor the procedure until it completes.
+** If the status is `Success`, optionally <<review_object_storage,review object storage>> to see the updated details for the site.
 +
 Erasure-coded data should now be more balanced among the Storage Nodes at the site.
 
+** If the status is `Failure`:
+
+.. Confirm that all Storage Nodes at the site are connected to the grid.
+.. Check for and resolve any alerts that might be affecting these Storage Nodes.
+
+.. Restart the EC rebalance procedure:
++
+`rebalance-data start –-job-id _job-id_`
+ 
+.. If the status of the EC rebalance procedure is still `Failure`, contact technical support.
 
 . If you are using erasure coding at more than one site, run this procedure for all other affected sites.
 
