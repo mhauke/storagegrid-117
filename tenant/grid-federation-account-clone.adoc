@@ -66,11 +66,11 @@ To create S3 access keys, always start from the tenant's source grid. See the in
 
 StorageGRID does not automatically clone S3 access keys to the tenant's destination grid because security is improved by having different keys on each grid. If a tenant user needs to access their buckets from both grids, use the Tenant Manager API to manually clone the keys from the source grid to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
 
-== Edit or delete tenant groups, users, or keys
+== Edit or delete tenant groups and users
 
-Account cloning occurs only for new information. 
+Account cloning only occurs when you create tenant groups and users on the source grid. 
 
-CAUTION: If you edit or delete a tenant or its users, groups, or access keys on either grid, your changes will not be cloned to the other grid. 
+CAUTION: If you edit or delete a tenant or its users and groups on either grid, your changes will not be cloned to the other grid. 
 
 CAUTION: If you delete a tenant on the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
 

@@ -28,6 +28,8 @@ If your tenant account has the *Use grid federation connection* permission, you 
 . In the *s3* section, select the following endpoint:
 +
 `POST /org/users/current-user/replicate-s3-access-key`
++
+image::../media/grid-federation-post-current-user-replicate.png[POST endpoint for replicating own access key]
 
 . Select *Try it out*.
 
@@ -66,6 +68,8 @@ image::../media/grid-federation-clone-access-key.png[Tenant Manager API entering
 . In the *s3* section, select the following endpoint:
 +
 `POST /org/users/{userId}/replicate-s3-access-key`
++
+image::../media/grid-federation-post-other-user.png[POST endpoint for replicating another user's access key]
 
 . Select *Try it out*.
 
