@@ -125,3 +125,26 @@ When you install StorageGRID 11.7 on a new grid, storage pools are automatically
 === Assign custom storage grades to new Storage Nodes
 When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See link:../expand/performing-expansion.html[Perform expansion].
 
+=== StorageGRID documentation changes
+
+* A quick reference was added to summarize StorageGRID’s support for Amazon Simple Storage Service (S3) APIs.
++
+link:../s3/support-for-aws-apis.html[Quick reference: Supported S3 API requests]
+
+* The appliance hardware installation sections were combined and consolidated for ease of use. A quick start was added as a high-level guide to hardware installation.
++
+link:../installconfig/index.html[Quick start for hardware installation]
+
+* The maintenance instructions common to all appliance models were combined, consolidated, and moved to the maintenance section of this documentation site.
++
+link:../commonhardware/index.html[Common node maintenance: Overview]
+
+* The maintenance instructions specific to each appliance model were moved to the maintenance section of this documentation site.
++
+link:../sg100-1000/index.html[Maintain SG100 and SG1000 appliance]
++
+link:../sg6000/index.html[Maintain SG6000 appliance]
++
+link:../sg5700/index.html[Maintain SG5700 appliance]
++
+link:../sg5600/index.html[Maintain SG5600 appliance]
