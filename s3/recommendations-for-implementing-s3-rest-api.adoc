@@ -39,7 +39,7 @@ Instead of this format:
 
 Restricting object key names to meet performance best practices is not required. In most cases, you can use random values for the first four characters of object key names.
 
-TIP: An exception to this is an S3 workload that continuously removes all objects after a short period of time. To minimize the performance impact for this use case, include a string that varies the leading portion of the key name every several thousand objects, such as a date. For example, suppose an S3 client typically writes 2,000 objects/second and the ILM or bucket lifecycle policy removes all objects after three days. To minimize the performance impact, you might name keys using a pattern like this: `/mybucket/mydir/_yyyymmddhhmmss_-_random_UUID_.jpg`
+TIP: An exception to this is an S3 workload that continuously removes all objects after a short period of time. To minimize the performance impact for this use case, vary a leading portion of the key name every several thousand objects with something like the date. For example, suppose an S3 client typically writes 2,000 objects/second and the ILM or bucket lifecycle policy removes all objects after three days. To minimize the performance impact, you might name keys using a pattern like this: `/mybucket/mydir/_yyyymmddhhmmss_-_random_UUID_.jpg`
 
 == Recommendations for "`range reads`"
 

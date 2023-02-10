@@ -61,7 +61,7 @@ Typical reasons for creating a proposed ILM policy include:
 * You added a new tenant that has special data protection requirements.
 * You started to use a Cloud Storage Pool.
 
-IMPORTANT: Only use the system-provided policy, Baseline 2 copies policy, in test systems. The Make 2 Copies rule in this policy uses the All Storage Nodes storage pool, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
+IMPORTANT: Only use the system-provided policy, Baseline 2 copies policy, in test systems. The Make 2 Copies rule in this policy uses the All Storage Nodes storage pool (StorageGRID 11.6 and earlier), which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
 
 .Steps
 . Select *ILM* > *Policies*.

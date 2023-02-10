@@ -24,7 +24,8 @@ NOTE: You cannot use erasure coding if the storage pool includes two sites.
  ** <<Erasure-coding schemes for storage pools containing three or more sites,Erasure-coding schemes for storage pools containing three or more sites>>
  ** <<Erasure-coding schemes for one-site storage pools,Erasure-coding schemes for one-site storage pools>>
 
-* Do not use the default storage pool, All Storage Nodes, or a storage pool that includes the default site, All Sites.
+* Do not use a storage pool that includes the default site, All Sites.
+
 * The storage pool should include at least `_k+m_ +1` Storage Nodes.
 +
 The minimum number of Storage Nodes required is `k+m`. However, having at least one additional Storage Node can help prevent ingest failures or ILM backlogs if a required Storage Node is temporarily unavailable.

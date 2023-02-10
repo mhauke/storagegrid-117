@@ -23,10 +23,9 @@ StorageGRID cannot decommission a site if that site is referred to by any ILM ru
 
 If your current ILM policy refers to the site you want to remove, you must activate a new ILM policy that meets certain requirements. Specifically, the new ILM policy:
 
-* Cannot use a storage pool that refers to the site.
+* Cannot use a storage pool that refers to the site or uses the All Sites option.
 * Cannot use an erasure coding profile that refers to the site.
-* Cannot use the default *All Storage Nodes* storage pool or the default *All Sites* site.
-* Cannot use the *Make 2 Copies* rule.
+* Cannot use the Make 2 Copies rule from StorageGRID 11.6 or earlier installations.
 * Must be designed to fully protect all object data.
 +
 IMPORTANT: Never create a single-copy ILM rule to accommodate the removal of a site. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. If only one replicated copy of an object exists, that object is lost if a Storage Node fails or has a significant error. You also temporarily lose access to the object during maintenance procedures such as upgrades.
@@ -38,8 +37,6 @@ Contact technical support if you need assistance designing the new policy.
 .Steps
 
 . From Step 3 (Revise ILM Policy), determine if any ILM rules in the active ILM policy refer to the site you selected to remove.
-+
-image::../media/decommission_site_step_3_revise_ilm_policy.png[Decommission Site Step 3 Revise ILM Policy]
 
 . If no rules are listed, select *Next* to go to Step 4 (Remove ILM References)
 +
@@ -57,7 +54,7 @@ NOTE: For details, see the instructions for managing objects with information li
 +
 You must select storage pools that do not refer to the site.
 +
-NOTE: Do not use the *All Storage Nodes* storage pool in the erasure coding profiles.
+NOTE: Do not use the *All Storage Nodes* storage pool (StorageGRID 11.6 or earlier) in the erasure coding profiles.
 
 . Select *ILM* > *Rules* and clone each of the rules listed in the table for Step 3 (Revise ILM Policy).
 +
