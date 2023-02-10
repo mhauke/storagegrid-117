@@ -25,38 +25,30 @@ The following conditions and notes apply to all multipart upload operations:
 * All of the multipart upload operations support StorageGRID consistency controls.
 * As required, you can use server-side encryption with multipart uploads. To use SSE (server-side encryption with StorageGRID-managed keys), you include the `x-amz-server-side-encryption` request header in the Initiate Multipart Upload request only. To use SSE-C (server-side encryption with customer-provided keys), you specify the same three encryption key request headers in the Initiate Multipart Upload request and in each subsequent Upload Part request.
 
-[options="header"]
+[cols="2a,3a" options="header"]
 |===
 | Operation| Implementation
-a|
-List Multipart Uploads
-a|
-See link:list-multipart-uploads.html[List Multipart Uploads]
-a|
-Initiate Multipart Upload
-a|
-See link:initiate-multipart-upload.html[Initiate Multipart Upload]
-a|
-Upload Part
-a|
-See link:upload-part.html[Upload Part]
-a|
-Upload Part - Copy
-a|
-See link:upload-part-copy.html[Upload Part - Copy]
-a|
-Complete Multipart Upload
-a|
-See link:complete-multipart-upload.html[Complete Multipart Upload]
-a|
-Abort Multipart Upload
-a|
-Implemented with all Amazon S3 REST API behavior
 
-a|
-List Parts
-a|
-Implemented with all Amazon S3 REST API behavior
+| List Multipart Uploads
+| See link:list-multipart-uploads.html[List Multipart Uploads]
+
+| Initiate Multipart Upload
+| See link:initiate-multipart-upload.html[Initiate Multipart Upload]
+
+| Upload Part
+| See link:upload-part.html[Upload Part]
+
+| Upload Part - Copy
+| See link:upload-part-copy.html[Upload Part - Copy]
+
+| Complete Multipart Upload
+| See link:complete-multipart-upload.html[Complete Multipart Upload]
+
+| Abort Multipart Upload
+| Implemented with all Amazon S3 REST API behavior. Subject to change without notice.
+
+| List Parts
+| Implemented with all Amazon S3 REST API behavior. Subject to change without notice.
 
 |===
 .Related information

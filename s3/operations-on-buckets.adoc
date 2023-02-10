@@ -30,7 +30,7 @@ The following table describes how StorageGRID implements S3 REST API bucket oper
 | Operation| Implementation
 
 | DELETE Bucket
-| Implemented with all Amazon S3 REST API behavior.
+| This operation deletes the bucket.
 
 | DELETE Bucket cors
 | This operation deletes the CORS configuration for the bucket.
