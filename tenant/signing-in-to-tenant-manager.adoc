@@ -16,21 +16,14 @@ You access the Tenant Manager by entering the URL for the tenant into the addres
 * You have your login credentials.
 * You have a URL for accessing the Tenant Manager, as supplied by your grid administrator. The URL will look like one of these examples:
 +
-----
-https://FQDN_or_Admin_Node_IP/
-----
+`\https://FQDN_or_Admin_Node_IP/`
 +
-----
-https://FQDN_or_Admin_Node_IP:port/
-----
+`\https://FQDN_or_Admin_Node_IP:port/`
 +
-----
-https://FQDN_or_Admin_Node_IP/?accountId=20-digit-account-id
-----
+`\https://FQDN_or_Admin_Node_IP/?accountId=20-digit-account-id`
 +
-----
-https://FQDN_or_Admin_Node_IP:port/?accountId=20-digit-account-id
-----
+`\https://FQDN_or_Admin_Node_IP:port/?accountId=20-digit-account-id`
+
 +
 The URL always includes a fully qualified domain name (FQDN), the IP address of an Admin Node, or the virtual IP address of an HA group of Admin Nodes. It might also include a port number, the 20-digit tenant account ID, or both.
 
@@ -46,9 +39,7 @@ The URL always includes a fully qualified domain name (FQDN), the IP address of 
 . Sign in to the Tenant Manager.
 +
 The sign-in screen that appears depends on the URL you entered and whether single sign-on (SSO) has been configured for StorageGRID.
-
-// start tabbed area
-
++
 [role="tabbed-block"]
 ====
 
@@ -70,8 +61,7 @@ image::../media/tenant_user_sign_in.png[Tenant Manager Sign In page]
 +
 The Tenant Manager Dashboard appears.
 
-.. If you received an initial password from someone else, change your password to secure your account. Select *_username_* > *Change password*.
-
+.. If you received an initial password from someone else, select *_username_* > *Change password* to secure your account.
 
 --
 

@@ -24,7 +24,7 @@ NOTE: When you install StorageGRID, the default ILM policy, Baseline 2 copies po
  ** Connect to each StorageGRID appliance.
  ** Verify receipt of AutoSupport data.
 * If your StorageGRID system includes any Archive Nodes, configure the Archive Node's connection to the target external archival storage system.
-
++
 NOTE: If any Archive Nodes will use Tivoli Storage Manager as the external archival storage system, you must also configure Tivoli Storage Manager.
 
 * Review and follow the StorageGRID StorageGRID link:../harden/index.html[system hardening guidelines] to eliminate security risks.
@@ -49,17 +49,17 @@ link:../swift/index.html[Use Swift REST API]
 
 link:../ilm/index.html[Manage objects with ILM]
 
-link:../monitor/index.html[Monitor and troubleshoot]
+link:../monitor/index.html[Monitor StorageGRID]
 
 link:../maintain/index.html[Recover and maintain]
 
-link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
+link:../sg100-1000/index.html[Maintain SG100 and SG1000 services appliances]
 
-link:../sg5600/index.html[SG5600 storage appliances]
+link:../sg5600/index.html[Maintain SG5600 storage appliances]
 
-link:../sg5700/index.html[SG5700 storage appliances]
+link:../sg5700/index.html[Maintain SG5700 storage appliances]
 
-link:../sg6000/index.html[SG6000 storage appliances]
+link:../sg6000/index.html[Maintain SG6000 storage appliances]
 
 link:../release-notes/index.html[Release notes]
 
