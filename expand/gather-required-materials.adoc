@@ -15,27 +15,27 @@ Before performing an expansion operation, gather the materials and install and c
 |===
 | Item| Notes
 
-|StorageGRID installation archive
-|If you are adding new grid nodes or a new site, you must download and extract the StorageGRID installation archive. You must use the same version that is currently running on the grid.
+| StorageGRID installation archive
+| If you are adding new grid nodes or a new site, you must download and extract the StorageGRID installation archive. You must use the same version that is currently running on the grid.
 
 For details, see the instructions for <<download-and-extract-install-files,downloading and extracting the StorageGRID installation files>>.
 
 *Note:* You do not need to download files if you are adding new storage volumes to existing Storage Nodes or installing a new StorageGRID appliance.
 
-|Service laptop
-|The service laptop has the following:
+| Service laptop
+| The service laptop has the following:
 
 * Network port
 * SSH client (for example, PuTTY)
 * link:../admin/web-browser-requirements.html[Supported web browser]
 
-|`Passwords.txt` file
-|Contains the passwords required to access grid nodes on the command line. Included in the Recovery Package.
+| `Passwords.txt` file
+| Contains the passwords required to access grid nodes on the command line. Included in the Recovery Package.
 
-|Provisioning passphrase
-|The passphrase is created and documented when the StorageGRID system is first installed. The provisioning passphrase is not in the `Passwords.txt` file.
+| Provisioning passphrase
+| The passphrase is created and documented when the StorageGRID system is first installed. The provisioning passphrase is not in the `Passwords.txt` file.
 
-|StorageGRID documentation
+| StorageGRID documentation
 |
 * link:../admin/index.html[Administer StorageGRID]
 * link:../release-notes/index.html[Release notes]
@@ -44,8 +44,8 @@ For details, see the instructions for <<download-and-extract-install-files,downl
 ** link:../ubuntu/index.html[Install Ubuntu or Debian]
 ** link:../vmware/index.html[Install VMware]
 
-|Current documentation for your platform
-|For supported versions, see the https://imt.netapp.com/matrix/#welcome[Interoperability Matrix^].
+| Current documentation for your platform
+| For supported versions, see the https://imt.netapp.com/matrix/#welcome[Interoperability Matrix^].
 
 |===
 
@@ -60,9 +60,7 @@ You must perform expansion operations using the version of StorageGRID that is c
 
 .Steps
 
-. Go to the NetApp Downloads page for StorageGRID.
-+
-https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^]
+. Go to https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^].
 
 . Select the version of StorageGRID that is currently running on the grid.
 . Sign in with the username and password for your NetApp account.
@@ -77,20 +75,20 @@ Use the `.zip` file if you are running Windows on the service laptop.
 |===
 | Platform| Installation archive
 
-|Red Hat Enterprise Linux or CentOS
+| Red Hat Enterprise Linux or CentOS
 m|
 include::../_include/installation-archives-rhel.adoc[]
 
-|Ubuntu or Debian or Appliances
+| Ubuntu or Debian or Appliances
 m|
 include::../_include/installation-archives-ubuntu.adoc[]
 
-|VMware
+| VMware
 m|
 include::../_include/installation-archives-vmware.adoc[]
 
-|OpenStack/other Hypervisor
-|To expand an existing deployment on OpenStack, you must deploy a virtual machine running one of the supported Linux distributions listed above and follow the appropriate instructions for Linux.
+| OpenStack/other Hypervisor
+| To expand an existing deployment on OpenStack, you must deploy a virtual machine running one of the supported Linux distributions listed above and follow the appropriate instructions for Linux.
 
 |===
 

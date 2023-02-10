@@ -17,11 +17,11 @@ These instructions describe how to perform a StorageGRID expansion to add storag
 
 These instructions are for technical personnel who are responsible for configuring and supporting the StorageGRID system after it has been installed.
 
-== Overview of expansion procedure
+== Expansion workflow
 
 The reason you are performing the expansion determines how many new nodes of each type you must add and the location of those new nodes. For example, there are different node requirements if you are performing an expansion to increase storage capacity, add metadata capacity, or add redundancy or new capabilities. 
 
-As shown in the workflow diagram, the steps for performing an expansion depend on whether you are adding storage volumes to a Storage Node, adding new nodes to an existing site, or adding a new site. In all cases, you can perform the expansion without interrupting the operation of your current system.
+As shown in the workflow, the steps for performing an expansion depend on whether you are adding storage volumes to a Storage Node, adding new nodes to an existing site, or adding a new site. In all cases, you can perform the expansion without interrupting the operation of your current system.
 
 The steps for adding nodes also depend on whether you are adding StorageGRID appliances or hosts running VMware or Linux.
 

@@ -36,7 +36,7 @@ The following examples can help you understand the impact of the erasure-coding 
 
 Similar considerations affect the calculations for an ILM policy that stores both replicated and erasure-coded data and the calculations for a grid that has been previously expanded.
 
-IMPORTANT: The examples in this section represent the best practices for adding storage capacity to a StorageGRID system. If you are unable to add the recommended number of nodes, you might need to run the EC rebalance procedure to allow additional erasure-coded objects to be stored. See link:considerations-for-rebalancing-erasure-coded-data.html[Rebalance erasure-coded data].
+TIP: The examples in this section represent the best practices for adding storage capacity to a StorageGRID system. If you are unable to add the recommended number of nodes, you can run the EC rebalance procedure to allow additional erasure-coded objects to be stored. See link:considerations-for-rebalancing-erasure-coded-data.html[Considerations for rebalancing erasure-coded data].
 
 
 == Example 1: Expand one-site grid that uses 2+1 erasure coding
@@ -56,9 +56,11 @@ You have a number of options, based on how full the Storage Nodes are when you p
 
 * *Add three 100 TB Storage Nodes when the existing nodes are 100% full*
 +
-In this example, the existing nodes are 100% full. Because there is no free capacity, you must immediately add three nodes to continue 2+1 erasure coding.
+In this example, the existing nodes are 100% full. Because there is no free capacity, you must immediately add three nodes.
 +
-After the expansion is complete, when objects are erasure-coded, all fragments will be placed on the new nodes.
+NOTE: If you are unable to add three new nodes, see link:considerations-for-rebalancing-erasure-coded-data.html[Considerations for rebalancing erasure-coded data].
++
+After you add three nodes, new erasure-coded fragments will be placed on the new nodes.
 +
 image::../media/used_space_after_3_node_expansion.png[Used Space After 3-Node Expansion]
 +
