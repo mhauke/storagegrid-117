@@ -2,18 +2,18 @@
 permalink: s3/support-for-aws-apis.html
 sidebar: sidebar
 keywords: Amazon s3, API, request headers, s3 support, request syntax, supported, aws s3
-summary: 'This table summarizes StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
+summary: 'This page summarizes StorageGRID support for Amazon Simple Storage Service (S3) APIs.'
 ---
 = Quick reference: Supported S3 API requests
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-This topic summarizes StorageGRID's support for Amazon Simple Storage Service (S3) APIs.
+This page summarizes StorageGRID's support for Amazon Simple Storage Service (S3) APIs.
 
-This topic only includes the S3 commands that are supported by StorageGRID. For each supported command, this topic only lists the parameters that are supported by StorageGRID.
+This page includes only the S3 commands that are supported by StorageGRID. For each supported command, only the parameters  supported by StorageGRID are listed.
 
-To see the AWS documentation for each command, select the link in the header.
+To see the AWS documentation for each command, select the link in the heading.
 
 //AbortMultipartUpload
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
@@ -44,7 +44,7 @@ These request header parameters are supported:
 * `Content-Length`	
 * `Authorization`	
 
-The request body is implemented with all Amazon S3 REST API behavior.
+The request body is implemented with all Amazon S3 REST API behavior. Subject to change without notice.
 
 *StorageGRID documentation*:
 link:complete-multipart-upload.html[Complete Multipart Upload]
@@ -98,7 +98,7 @@ These request header parameters are supported:
 * `Date`
 * `Authorization`
 
-The request body is implemented with all Amazon S3 REST API behavior.
+The request body is implemented with all Amazon S3 REST API behavior. Subject to change without notice.
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]
@@ -230,7 +230,7 @@ These request header parameters are supported:
 * `Accept`
 * `Connection`
 
-The request body is implemented with all Amazon S3 REST API behavior.
+The request body is implemented with all Amazon S3 REST API behavior. Subject to change without notice.
 
 *StorageGRID documentation*:
 link:operations-on-objects.html[Operations on objects > DELETE Multiple Objects]
@@ -509,8 +509,6 @@ These request header parameters are supported:
 * `marker`
 * `max-keys`
 * `prefix`
-* `Date`
-* `Authorization`
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets > GET Bucket]
@@ -584,7 +582,7 @@ These request header parameters are supported:
 * `Authorization`
 * `Content-Length`
 
-The request body is implemented with all Amazon S3 REST API behavior.
+The request body is implemented with all Amazon S3 REST API behavior. Subject to change without notice.
 
 *StorageGRID documentation*:
 link:operations-on-buckets.html[Operations on buckets]

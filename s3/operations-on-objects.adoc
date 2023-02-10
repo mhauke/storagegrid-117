@@ -56,7 +56,7 @@ Multiple objects can be deleted in the same request message.
 See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock] to learn how to delete object versions in GOVERNANCE mode.
 
 | DELETE Object tagging
-| Uses the `tagging` subresource to remove all tags from an object. Implemented with all Amazon S3 REST API behavior.
+| Uses the `tagging` subresource to remove all tags from an object.
 
 *Versioning*
 
@@ -75,7 +75,7 @@ If the `versionId` query parameter is not specified in the request, the operatio
 | link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 | GET Object tagging
-| Uses the `tagging` subresource to return all tags for an object. Implemented with all Amazon S3 REST API behavior
+| Uses the `tagging` subresource to return all tags for an object.
 
 *Versioning*
 
@@ -100,7 +100,7 @@ If the `versionId` query parameter is not specified in the request, the operatio
 | link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
 
 | PUT Object tagging
-| Uses the `tagging` subresource to add a set of tags to an existing object. Implemented with all Amazon S3 REST API behavior
+| Uses the `tagging` subresource to add a set of tags to an existing object.
 
 *Object tag limits*
 
