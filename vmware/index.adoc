@@ -23,7 +23,8 @@ Installing a StorageGRID system in a VMware environment includes three primary s
  .. Use the VMware vSphere Web Client, a .vmdk file, and a set of .ovf file templates to deploy the software-based nodes as virtual machines (VMs) on the servers you prepared in step 1.
  .. Use the StorageGRID Appliance Installer to deploy StorageGRID appliance nodes.
 +
-NOTE: Hardware-specific installation and integration instructions are not included in the StorageGRID installation procedure. To learn how to install StorageGRID appliances, see the installation and maintenance instructions for your appliance.
+NOTE: Hardware-specific installation and integration instructions are not included in the StorageGRID installation procedure. To learn how to install StorageGRID appliances, see the link:../installconfig/index.html[Quick start for hardware installation] to locate instructions for your appliance.
+
 . *Configuration*: When all nodes have been deployed, use the Grid Manager to configure the grid and complete the installation.
 
 These instructions recommend a standard approach for deploying and configuring a StorageGRID system in a VMware environment. See also the information about the following alternative approaches:
