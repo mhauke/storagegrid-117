@@ -44,7 +44,7 @@ When you link:../admin/configuring-load-balancer-endpoints.html[configure load b
 You can now configure custom dashboards for the Grid Manager. See link:../monitor/viewing-dashboard.html[View and manage the dashboard].
 
 === Volume restoration
-Storage volume restoration lets you restore object data if a storage volume fails. For StorageGRID 11.7, volume restoration can be started in Grid Manager in addition to the existing method of entering commands manually. See xref:../maintain/restoring-volume.adoc[Restore object data using Grid Manager]. Using Grid Manager is now the preferred method for restoring object data: entering commands manually to restore object data should only be used when replacing a node where the replacement node has fewer volumes than the original.
+Storage volume restoration lets you restore object data if a storage volume fails. For StorageGRID 11.7, volume restoration can be started in Grid Manager in addition to the existing method of entering commands manually. See link:../maintain/restoring-volume.html[Restore object data using Grid Manager]. Using Grid Manager is now the preferred method for restoring object data: entering commands manually to restore object data should only be used when replacing a node where the replacement node has fewer volumes than the original.
 
 === New upgrade and hotfix process
 * You can now use the Grid Manager to upgrade to a future release and apply a hotfix for that release at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
