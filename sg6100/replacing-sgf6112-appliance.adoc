@@ -39,18 +39,8 @@ When you are logged in as root, the prompt changes from `$` to `#`.
 +
 link:shut-down-sgf6112.html[Shut down SGF6112]
 
-. If the StorageGRID networks attached to the appliance use DHCP servers, update DNS/network and IP address settings.
- .. Locate the MAC address label on the front of the appliance, and determine the MAC address for the Admin Network port.
-+
-NOTE: The MAC address label lists the MAC address for the BMC management port.
-+
-To determine the MAC address for the Admin Network port, you must add *2* to the hexadecimal number on the label. For example, if the MAC address on the label ends in *09*, the MAC address for the Admin Port would end in *0B*. If the MAC address on the label ends in *(_y_)FF*, the MAC address for the Admin Port would end in *(_y_+1)01*. You can easily make this calculation by opening Calculator in Windows, setting it to Programmer mode, selecting Hex, typing the MAC address, then typing *+ 2 =*.
+. If any of the network interfaces on this StorageGRID appliance are configured for DHCP, you may need to update the permanent DHCP lease assignments on the DHCP servers to reference the MAC addresses of the replacement appliance, to ensure the appliance is assigned the expected IP addresses. See link:../commonhardware/locate-mac-address.html[Update MAC address references]. 
 
- .. Ask your network administrator to associate the DNS/network and IP address for the appliance you removed with the MAC address for the replacement appliance.
-+
-IMPORTANT: You must ensure that all IP addresses for the original appliance have been updated before you apply power to the replacement appliance. Otherwise, the appliance will obtain new DHCP IP addresses when it boots up and might not be able to reconnect to StorageGRID. This step applies to all StorageGRID networks that are attached to the appliance.
-+
-NOTE: If the original appliance used a static IP address, the new appliance will automatically adopt the IP addresses of the appliance you removed.
 . Remove and replace the appliance:
  .. Label the cables and then disconnect the cables and any network transceivers.
 +
@@ -62,7 +52,7 @@ IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step o
 Follow the instructions provided for replacing these components.
  .. Install the replacement appliance into the cabinet or rack.
  .. Replace the cables and any optical transceivers.
- .. Power on the appliance and monitor the appliance LEDs and boot-up codes.
+ .. Power on the appliance and wait for it to rejoin the grid.
 +
 . If the appliance where you replaced the controller used a key management server (KMS) to encrypt data, additional configuration might be required before the node can join the grid. If the node does not automatically join the grid, make sure that these configuration settings have transferred to the new controller and manually configure any settings that do not have the expected configuration:
 ** link:../sg6100/configuring-storagegrid-connections.html[Configure the appliance network settings] 
