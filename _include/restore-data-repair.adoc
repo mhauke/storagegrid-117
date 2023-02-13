@@ -87,7 +87,7 @@ If your grid contains replicated data, use the `start-replicated-volume-repair` 
 
 `repair-data start-replicated-volume-repair --nodes SG-DC-SN3 --volumes 0001,0005,0008`
 
-NOTE: As object data is restored, the *Objects Lost* alert is triggered if the StorageGRID system cannot locate replicated object data. Alerts might be triggered on Storage Nodes throughout the system. You should determine the cause of the loss and if recovery is possible. See the instructions for monitoring and troubleshooting StorageGRID.
+NOTE: As object data is restored, the *Objects Lost* alert is triggered if the StorageGRID system cannot locate replicated object data. Alerts might be triggered on Storage Nodes throughout the system. Note the alert decription and recommended actions to determine the cause of the loss and if recovery is possible.
 
 --
 .Erasure coded (EC) data
