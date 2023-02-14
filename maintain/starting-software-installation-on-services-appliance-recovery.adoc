@@ -17,8 +17,8 @@ To install a Gateway Node or Admin Node on an SG100 or SG1000 services appliance
 * Network links and IP addresses must be configured for the appliance using the StorageGRID Appliance Installer.
 * If you are installing a Gateway Node or non-primary Admin Node, you know the IP address of the primary Admin Node for the StorageGRID grid.
 * All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer must be defined in the Grid Network Subnet List on the primary Admin Node.
-
-For instructions for completing these prerequisite tasks, see the installation and maintenance instructions for an SG100 or SG1000 services appliance.
++
+See link:../installconfig/index.html[Quick start for hardware installation].
 
 * You must be using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must know one of the IP addresses assigned to the appliance. You can use the IP address for the Admin Network, the Grid Network, or the Client Network.
@@ -91,7 +91,7 @@ The StorageGRID Appliance Installer can discover this IP address automatically, 
 |===
 . [[installation_section_step]]In the Installation section, confirm that the current state is Ready to start installation of node name and that the *Start Installation* button is enabled.
 +
-If the *Start Installation* button is not enabled, you might need to change the network configuration or port settings. For instructions, see the installation and maintenance instructions for your appliance.
+If the *Start Installation* button is not enabled, you might need to change the network configuration or port settings. For instructions, see the maintenance instructions for your appliance.
 
 . From the StorageGRID Appliance Installer home page, click *Start Installation*.
 +
@@ -101,4 +101,4 @@ NOTE: If you need to access the Monitor Installation page manually, click *Monit
 
 .Related information
 
-link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
+link:../sg100-1000/index.html[Maintain SG100 and SG1000 appliances]

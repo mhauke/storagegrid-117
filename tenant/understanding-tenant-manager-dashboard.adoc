@@ -64,15 +64,13 @@ NOTE: To change units for the storage values displayed in the Tenant Manager, se
 
 If quota usage alerts have been enabled in the Grid Manager, they will appear in the Tenant Manager when the quota is low or exceeded, as follows:
 
-If 90% or more of a tenant's quota has been used, the *Tenant quota usage high* alert is triggered. For more information, see the alerts reference in the instructions for monitoring and troubleshooting StorageGRID.
+If 90% or more of a tenant's quota has been used, the *Tenant quota usage high* alert is triggered. Perform the recommended actions for the alert. See also link:../monitor/managing-alerts.html[manage rules and notifications for alerts].
 
 image::../media/tenant_dashboard_quota_remaining.png[Tenant Dashboard Quota Remaining]
 
 If you exceed your quota, you cannot upload new objects.
 
 image::../media/tenant_dashboard_quota_used.png[Tenant Dashboard Quota Used]
-
-NOTE: To view additional details and manage rules and notifications for alerts, see the instructions for monitoring and troubleshooting StorageGRID.
 
 == Endpoint errors
 
