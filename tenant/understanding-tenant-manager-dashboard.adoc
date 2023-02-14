@@ -40,11 +40,11 @@ The Storage usage panel contains the following information:
 
 * The amount of object data for the tenant.
 +
-IMPORTANT: This value indicates the total amount of object data uploaded and does not represent the space used to store copies of those objects and their metadata.
+TIP: This value indicates the total amount of object data uploaded and does not represent the space used to store copies of those objects and their metadata.
 
 * If a quota is set, the total amount of space available for object data and the amount and percentage of space remaining. The quota limits the amount of object data that can be ingested.
 +
-IMPORTANT: Quota utilization is based on internal estimates and might be exceeded in some cases. For example, StorageGRID checks the quota when a tenant starts uploading objects and rejects new ingests if the tenant has exceeded the quota. However, StorageGRID does not take into account the size of the current upload when determining if the quota has been exceeded. If objects are deleted, a tenant might be temporarily prevented from uploading new objects until the quota utilization is recalculated. Quota utilization calculations can take 10 minutes or longer.
+CAUTION: Quota utilization is based on internal estimates and might be exceeded in some cases. For example, StorageGRID checks the quota when a tenant starts uploading objects and rejects new ingests if the tenant has exceeded the quota. However, StorageGRID does not take into account the size of the current upload when determining if the quota has been exceeded. If objects are deleted, a tenant might be temporarily prevented from uploading new objects until the quota utilization is recalculated. Quota utilization calculations can take 10 minutes or longer.
 
 * A bar chart that represents the relative sizes of the largest buckets or containers.
 +
@@ -64,7 +64,7 @@ NOTE: To change units for the storage values displayed in the Tenant Manager, se
 
 If quota usage alerts have been enabled in the Grid Manager, they will appear in the Tenant Manager when the quota is low or exceeded, as follows:
 
-If 90% or more of a tenant's quota has been used, the *Tenant quota usage high* alert is triggered. Perform the recommended actions for the alert. See also link:../monitor/managing-alerts.html[manage rules and notifications for alerts].
+If 90% or more of a tenant's quota has been used, the *Tenant quota usage high* alert is triggered. Perform the recommended actions for the alert. 
 
 image::../media/tenant_dashboard_quota_remaining.png[Tenant Dashboard Quota Remaining]
 
@@ -78,10 +78,4 @@ If you have used the Grid Manager to configure one or more endpoints for use wit
 
 image::../media/tenant_dashboard_endpoint_error.png[Dashboard showing endpoint message]
 
-To see details about an endpoint error, select Endpoints to display the Endpoints page.
-
-.Related information
-
-link:troubleshooting-platform-services-endpoint-errors.html[Troubleshoot platform services endpoint errors]
-
-link:../monitor/index.html[Monitor and troubleshoot]
+To see details about link:troubleshooting-platform-services-endpoint-errors.html[platform services endpoint errors], select *Endpoints* to display the Endpoints page.

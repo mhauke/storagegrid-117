@@ -25,8 +25,6 @@ NOTE: If more than one Storage Node at a site has failed, a site recovery proced
 
 CAUTION: If ILM rules are configured to store only one replicated copy and the copy exists on a storage volume that has failed, you will not be able to recover the object.
 
-NOTE: If you encounter a Services: Status - Cassandra (SVST) alarm during recovery, see the link:../troubleshooting/index.html[troubleshooting instructions] to recover from the alarm by rebuilding Cassandra. After Cassandra is rebuilt, alarms should clear. If alarms do not clear, contact technical support.
-
 NOTE: If you encounter a Services: Status - Cassandra (SVST) alarm during recovery, see link:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html[Recover failed storage volumes and rebuild Cassandra database]. After Cassandra is rebuilt, alarms should clear. If alarms do not clear, contact technical support.
 
 [NOTE]
@@ -37,3 +35,4 @@ For hardware maintenance procedures, such as instructions for replacing a contro
 * link:../sg5700/index.html[SG5700 storage appliances]
 * link:../sg5600/index.html[SG5600 storage appliances]
 ====
+

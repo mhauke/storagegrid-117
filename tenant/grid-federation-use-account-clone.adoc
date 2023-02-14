@@ -17,7 +17,7 @@ Account clone is the replication of tenant accounts, tenant groups, tenant users
 
 To enable account clone, a grid admin follows the standard tenant-creation steps but adds the *Use grid federation connection* permission for a specific grid federation connection. When a new tenant with that permission is saved, StorageGRID automatically creates a replica of that tenant on the other grid. For details, see link:../admin/grid-federation-manage-tenants.html[Manage permitted tenants].  
 
-The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated to is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
+The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid does not initially have a root user password.
 
 After tenants have been created and replicated, new groups and users are automatically cloned from the tenant's source grid to the tenant's destination grid.
 
