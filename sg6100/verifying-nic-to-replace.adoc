@@ -1,0 +1,43 @@
+---
+permalink: sg6100/verifying-fibre-channel-hba-to-replace.html
+sidebar: sidebar
+keywords: storagegrid, sg6100, storage node, storage appliance, NIC, network interface card, locate, identify, find, replace, replacing, replacement 
+summary: 'If you are unsure which network interface card \(NIC\) to replace, complete this procedure to identify it.'
+---
+= Verify NIC to replace
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are unsure which network interface card (NIC) to replace, complete this procedure to identify it.
+
+.What you'll need
+
+* You have the serial number of the storage appliance where the NIC needs to be replaced.
++
+
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.adoc[supported web browser].
+
+.Steps
+
+. From the Grid Manager, select *NODES*.
+. From the table on the Nodes page, select an appliance Storage Node.
+. Select the *Hardware* tab.
++
+Check the *Storage appliance chassis serial number* in the StorageGRID Appliance section. See if the serial number matches the serial number of the storage appliance where you are replacing the NIC. If the serial number matches, you have found the correct appliance.
+//update image
++
+image::../media/nodes_page_hardware_tab_for_appliance_verify_HBA.png[Appliance section for Fibre Channel HCA]
+
+ ** If the StorageGRID Appliance section in Grid Manager does not display, the node selected is not a StorageGRID appliance. Select a different node from the tree view.
+ ** If the serial numbers do not match, select a different node from the tree view.
+
+. After you locate the node where the NIC needs to be replaced, write down the Compute controller BMC IP address listed the StorageGRID Appliance section.
++
+You can use this IP address to turn on the compute controller identify LED, to help you locate the appliance in the data center.
++
+link:turning-sgf6112-identify-led-on-and-off.adoc[Turn the controller identify LED on and off]
+
+.Related information
+
+link:removing-nic-in-sgf6112.adoc[Remove NIC in SGF6112]
