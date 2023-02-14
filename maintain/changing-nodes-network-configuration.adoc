@@ -21,7 +21,7 @@ You must have the `Passwords.txt` file.
 
 See the StorageGRID installation instructions for your Linux operating system.
 
-*Appliances:* On StorageGRID appliances, if the Client or Admin Network was not configured in the StorageGRID Appliance Installer during the initial installation, the network cannot be added by using only the Change IP tool. First, you must link:../commonhardware/placing-appliance-into-maintenance-mode.html[place the appliance in maintenance mode], configure the links, return the appliance to normal operating mode, and then use the Change IP tool to modify the network configuration. See the procedure for configuring network links in the installation and maintenance instructions for your appliance.
+*Appliances:* On StorageGRID appliances, if the Client or Admin Network was not configured in the StorageGRID Appliance Installer during the initial installation, the network cannot be added by using only the Change IP tool. First, you must link:../commonhardware/placing-appliance-into-maintenance-mode.html[place the appliance in maintenance mode], configure the links, return the appliance to normal operating mode, and then use the Change IP tool to modify the network configuration. See the link:../installconfig/configuring-network-links.html[procedure for configuring network links].
 
 You can change the IP address, subnet mask, gateway, or MTU value for one or more nodes on any network.
 
