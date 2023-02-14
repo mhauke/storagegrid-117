@@ -115,13 +115,15 @@ You can permanently stop cross-grid replication if you no longer want to copy ob
 
 Before disabling cross-grid replication, note the following:
 
-* You cannot reenable replication unless both buckets are empty.
-
 * Disabling cross-grid replication does not remove any objects that have already been copied between grids. For example, objects in `my-bucket` on Grid 1 that have been copied to `my-bucket` on Grid 2 are not removed if you disable cross-grid replication for that bucket. If you want to delete these objects, you must remove them manually.
 
 * If cross-grid replication was enabled for each of the buckets (that is, if replication occurs in both directions), you can disable cross-grid replication for either or both buckets. For example, you might want to disable replicating objects from `my-bucket` on Grid 1 to `my-bucket` on Grid 2, while continuing to replicate objects from `my-bucket` on Grid 2 to `my-bucket` on Grid 1.
 
 * You must disable cross-grid replication before you can remove a tenant's permission to use the grid federation connection. See link:../admin/grid-federation-manage-tenants.html[Manage permitted tenants].
+
+* If you disable cross-grid replication for a bucket that contains objects, you will not be able to reenable cross-grid replication unless you delete all objects from both the source and destination buckets.
++
+CAUTION: You cannot reenable replication unless both buckets are empty.
 
 .What you'll need
 
