@@ -27,7 +27,7 @@ To prevent service interruptions, shut down the services appliance during a sche
 +
 CAUTION: You must perform a controlled shut down of the appliance by entering the commands specified below. Shutting down the appliance using the power switch will result in data loss.
 
- .. Log in to the grid node using PuTTY or another ssh client:
+ .. If you have not already logged into the grid node, log in using PuTTY or another ssh client:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
   ... Enter the password listed in the `Passwords.txt` file.
   ... Enter the following command to switch to root: `su -`
