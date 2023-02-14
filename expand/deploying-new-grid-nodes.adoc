@@ -74,7 +74,7 @@ Setting up appliance hardware includes the required steps for configuring Storag
 
 * All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer have been defined in the Grid Network Subnet List on the primary Admin Node.
 
-* The StorageGRID Appliance Installer firmware on the replacement appliance is compatible with the StorageGRID software version currently running on your grid. For example, version 3.6 of the StorageGRID Appliance Installer is compatible with version 11.6 of StorageGRID. (If the versions are not compatible, you must upgrade the StorageGRID Appliance Installer firmware.)
+* The StorageGRID Appliance Installer firmware on the replacement appliance is compatible with the StorageGRID software version currently running on your grid. If the versions are not compatible, you must upgrade the StorageGRID Appliance Installer firmware.
 
 * You have a service laptop with a link:../admin/web-browser-requirements.html[supported web browser].
 * You know one of the IP addresses assigned to the appliance's compute controller. You can use the IP address for any attached StorageGRID network.
