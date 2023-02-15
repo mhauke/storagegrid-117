@@ -1,15 +1,15 @@
 ---
 permalink: tenant/creating-your-own-s3-access-keys.html
 sidebar: sidebar
-keywords: how to create access key
-summary: 'If you are using an S3 tenant and you have the appropriate permission, you can create, view, and delete your own S3 access keys. You must have an access key to access your buckets and objects in th'
+keywords: how to create your own S3 access key
+summary: 'If you are using an S3 tenant and you have the appropriate permission, you can create your own S3 access keys. You must have an access key to access your buckets and objects.'
 ---
 = Create your own S3 access keys
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are using an S3 tenant and you have the appropriate permission, you can create, view, and delete your own S3 access keys. You must have an access key to access your buckets and objects in the S3 tenant account.
+If you are using an S3 tenant and you have the appropriate permission, you can create your own S3 access keys. You must have an access key to access your buckets and objects.
 
 .What you'll need
 
@@ -27,7 +27,7 @@ Each key can have a specific expiration time or no expiration. Follow these guid
 
 CAUTION: The S3 buckets and objects belonging to your account can be accessed using the access key ID and secret access key displayed for your account in the Tenant Manager. For this reason, protect access keys as you would a password. Rotate access keys on a regular basis, remove any unused keys from your account, and never share them with other users.
 
-== Create access keys
+.Steps
 
 . Select *STORAGE (S3)* > *My access keys*.
 +
@@ -41,9 +41,6 @@ The My access keys page appears and lists any existing access keys.
 +
 NOTE: The expiration date can be a maximum of five years from the current date. The expiration time can be a minimum of one minute from the current time.
 
-+
-image::../media/tenant_s3_access_key_create_save.png[screenshot of Create Access key dialog box]
-
 . Select *Create access key*.
 +
 The Download access key dialog box appears, listing your access key ID and secret access key.
@@ -51,50 +48,9 @@ The Download access key dialog box appears, listing your access key ID and secre
 . Copy the access key ID and the secret access key to a safe location, or select *Download .csv* to save a spreadsheet file containing the access key ID and secret access key.
 +
 CAUTION: Do not close this dialog box until you have copied or downloaded this information. You cannot copy or download keys after the dialog box has been closed.
-+
-image::../media/tenant_s3_access_key_save_keys.png[screenshot of Save Keys dialog box]
 
 . Select *Finish*.
 +
 The new key is listed on the My access keys page.
 
 . If your tenant account has the *Use grid federation connection* permission, optionally use the Tenant Management API to manually clone S3 access keys from the tenant on the source grid to the tenant on the destination grid. See link:grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
-
-== View access keys
-
-If you are using an S3 tenant and you have the appropriate permission, you can view a list of your S3 access keys. You can sort the list by expiration time, so you can determine which keys will expire soon.
-
-. Select *STORAGE (S3)* > *My access keys*.
-+
-The My access keys page appears and lists any existing access keys.
-+
-image::../media/access_keys_view_list.png[List of Access Keys]
-
-. Sort the keys by *Expiration time* or *Access key ID*.
-
-. As needed, create new keys and manually delete keys that you are no longer using.
-+
-If you create new keys before the existing keys expire, you can begin using the new keys without temporarily losing access to the objects in the account.
-+
-Expired keys are removed automatically.
-
-== Delete access keys
-
-If you are using an S3 tenant and you have the appropriate permission, you can delete your own S3 access keys. After an access key is deleted, it can no longer be used to access the objects and buckets in the tenant account.
-
-. Select *STORAGE (S3)* > *My access keys*.
-+
-The My access keys page appears and lists any existing access keys.
-
-. Select the check box for each access key you want to remove.
-
-. Select *Delete key*.
-+
-A confirmation dialog box appears.
-+
-image::../media/access_key_confirm_delete.png[Access Key - Confirm Delete]
-
-. Select *Delete key*.
-+
-A confirmation message appears in the upper right corner of the page.
-

@@ -20,18 +20,13 @@ CAUTION: The S3 buckets and objects belonging to a user can be accessed using th
 
 .Steps
 . Select *ACCESS MANAGEMENT* > *Users*.
-+
-The Users page appears and lists the existing users.
 
-. Select the user whose S3 access keys you want to view.
-+
-The User details page appears.
+. From the Users page, select the user whose S3 access keys you want to view.
 
-. Select *Access keys*.
-+
-image::../media/access_key_view_list_for_other_user.png[Access Keys List for Other User]
+. From the User details page, select *Access keys*.
 
 . Sort the keys by *Expiration time* or *Access key ID*.
+
 . As needed, create new keys and manually delete keys that the are no longer in use.
 +
 If you create new keys before the existing keys expire, the user can begin using the new keys without temporarily losing access to the objects in the account.
