@@ -41,9 +41,6 @@ The My access keys page appears and lists any existing access keys.
 +
 NOTE: The expiration date can be a maximum of five years from the current date. The expiration time can be a minimum of one minute from the current time.
 
-+
-image::../media/tenant_s3_access_key_create_save.png[screenshot of Create Access key dialog box]
-
 . Select *Create access key*.
 +
 The Download access key dialog box appears, listing your access key ID and secret access key.
@@ -51,8 +48,6 @@ The Download access key dialog box appears, listing your access key ID and secre
 . Copy the access key ID and the secret access key to a safe location, or select *Download .csv* to save a spreadsheet file containing the access key ID and secret access key.
 +
 CAUTION: Do not close this dialog box until you have copied or downloaded this information. You cannot copy or download keys after the dialog box has been closed.
-+
-image::../media/tenant_s3_access_key_save_keys.png[screenshot of Save Keys dialog box]
 
 . Select *Finish*.
 +
@@ -83,18 +78,12 @@ Expired keys are removed automatically.
 If you are using an S3 tenant and you have the appropriate permission, you can delete your own S3 access keys. After an access key is deleted, it can no longer be used to access the objects and buckets in the tenant account.
 
 . Select *STORAGE (S3)* > *My access keys*.
-+
-The My access keys page appears and lists any existing access keys.
 
-. Select the check box for each access key you want to remove.
+. From the My access keys page, select the check box for each access key you want to remove.
 
 . Select *Delete key*.
-+
-A confirmation dialog box appears.
-+
-image::../media/access_key_confirm_delete.png[Access Key - Confirm Delete]
 
-. Select *Delete key*.
+. From the confirmation dialog, select *Delete key*.
 +
 A confirmation message appears in the upper right corner of the page.
 

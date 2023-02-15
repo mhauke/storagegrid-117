@@ -62,9 +62,9 @@ TIP: If a local user needs to access Tenant Manager on the destination grid, the
 
 == Manage S3 access keys
 
-You can link:creating-your-own-s3-access-keys.html[create your own access keys] or to link:creating-another-users-s3-access-keys.html[create another user's access keys] on either the source or destination grid to access buckets on that grid. 
+You can link:creating-your-own-s3-access-keys.html[create your own access keys] or to link:creating-another-users-s3-access-keys.html[create another user's access keys] on either the source grid or the destination grid to access buckets on that grid. 
 
-StorageGRID does not automatically clone S3 access keys from the source grid to the destination grid because security is improved by having different keys on each grid. If the same user needs to access their buckets from both grids, use the Tenant Manager API to manually clone the keys from the source grid to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
+StorageGRID does not automatically clone S3 access keys because security is improved by having different keys on each grid. If the same user needs to access their buckets on both grids, create the access keys on the source grid and then use the Tenant Manager API to manually clone them to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
 
 == Edit or delete tenant groups and users
 
