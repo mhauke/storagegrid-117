@@ -33,7 +33,6 @@ Before starting the procedure, note the following:
 +
 NOTE: S3 and Swift API operations to upload objects (or object parts) might fail during the EC rebalancing procedure if they require more than 24 hours to complete. Long-duration PUT operations will fail if the applicable ILM rule uses Balanced or Strict placement on ingest. The following error will be reported: `500 Internal Server Error`.
 
-
 .Steps
 
 . [[review_object_storage]]Review the current object storage details for the site you plan to rebalance.
@@ -49,7 +48,8 @@ NOTE: S3 and Swift API operations to upload objects (or object parts) might fail
  .. Enter the password listed in the `Passwords.txt` file.
 +
 When you are logged in as root, the prompt changes from `$` to `#`.
-. Enter the following command:
+
+. Start the procedure:
 +
 `rebalance-data start --site "_site-name_"`
 +
@@ -58,7 +58,9 @@ For `"_site-name_"`, specify the first site where you added new Storage Node or 
 The EC rebalance procedure starts, and a job ID is returned.
 
 . Copy the job ID.
+
 . Monitor the status of the EC rebalance procedure.
+
  ** To view the status of a single EC rebalance procedure:
 +
 `rebalance-data status --job-id _job-id_`
@@ -76,17 +78,29 @@ To get help on the rebalance-data command:
 
 `rebalance-data --help`
 ====
-+
-** To view the estimated time to completion and the completion percentage for the current job, select *SUPPORT* > *Tools* > *Metrics*. Then, select *EC Overview* in the Grafana section. Look at the *Grid EC Job Estimated Time to Completion* and *Grid EC Job Percentage Completed* dashboards.
 
 . Perform additional steps, based on the status returned:
 
 ** If the status is `In progress`, the EC rebalance operation is still running. You should periodically monitor the procedure until it completes.
++
+To view the estimated time to completion and the completion percentage for the current job:
+
+.. Select *SUPPORT* > *Tools* > *Metrics*. 
+.. Select *EC Overview* in the Grafana section.
+.. Look at the *Grid EC Job Estimated Time to Completion* and *Grid EC Job Percentage Completed* dashboards.
+
+
 ** If the status is `Success`, optionally <<review_object_storage,review object storage>> to see the updated details for the site.
 +
 Erasure-coded data should now be more balanced among the Storage Nodes at the site.
 +
-IMPORTANT: If your Storage Nodes contain a very large number of erasure-coded fragments, you might need to run the EC rebalance procedure more than once to completely rebalance erasure-coded data.
+[TIP]
+====
+If the following message appears, run the EC rebalance procedure again until all erasure-coded data has been rebalanced:
+
+`The moves in this rebalance job have been limited. To rebalance additional data, start EC rebalance again for the same site.`
+
+====
 
 ** If the status is `Failure`:
 
