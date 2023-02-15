@@ -25,7 +25,7 @@ The EC rebalance procedure:
 * Does not consider the replicated data usage on each Storage Node when determining where to move erasure-coded data.
 * Redistributes erasure-coded data evenly between Storage Nodes without considering the maximum capacity of each node.
 * Might decrease the performance of ILM operations and S3 and Swift client operations when it runs&#8212;additional resources are required to redistribute the erasure-coding fragments. 
-* Might need to be run more than once for systems with very large numbers of erasure-coded objects. To limit resource usage, the maximum number of moves per job is capped.
+* Might need to be run more than once for systems with very large numbers of erasure-coded objects. To limit resource usage, the maximum number of moves is capped for each job.
 
 When the EC rebalance procedure is complete:
 
