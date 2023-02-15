@@ -28,9 +28,7 @@ NOTE: Each of the two power supply units also contain a fan. The power supply fa
 image::../media/sgf6112_fan_fru.png[Fan SGF6112 FRU]
 
 .Steps
-. xref:../commonhardware/placing-appliance-into-maintenance-mode.adoc[Place the appliance into maintenance mode].
-//update link
-. xref:shut-down-sgf6112.adoc[Shut down the appliance].
+. link:shut-down-sgf6112.html[Shut down the appliance].
 . Pull the appliance out of the rack. 
 . Lift the latch on the top cover and remove the cover from the appliance.
 . Locate the fan that failed.
@@ -51,7 +49,7 @@ Be sure to align the connector on the fan with the socket in the circuit board.
 image::../media/sgf6112_fan_socket_check.png[Fan Connector Check]
 
 . Put the top cover back on the appliance, and press the latch down to secure the cover in place.
-. Power on the appliance and monitor the controller LEDs and boot-up codes.
+. Power on the appliance and monitor the appliance LEDs and boot-up codes.
 +
 Use the BMC interface to monitor boot-up status.
 

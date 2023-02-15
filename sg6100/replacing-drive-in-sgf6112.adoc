@@ -13,9 +13,10 @@ The SGF6112 storage appliance contains 12 SSD drives. The drives are mirrored us
 
 .What you'll need
 
-* You have xref:locating-sgf6112-in-data-center.adoc[physically located the appliance].
+* You have link:locating-sgf6112-in-data-center.html[physically located the appliance].
 
-* You have verified which drive has failed by noting that its left LED is blinking amber.
+* You have verified which drive has failed by noting that the drive's left LED is blinking amber.
+
 +
 IMPORTANT: See the information about viewing status indicators to verify the failure.
 
@@ -26,7 +27,10 @@ IMPORTANT: See the information about viewing status indicators to verify the fai
 
 . Verify that the drive's left LED is blinking amber.
 +
-You can also use the Grid Manager to monitor the status of the SSDs. Select *NODES*. Then select `*Storage Node*` > *Hardware*. If a drive has failed, the Storage RAID Mode field contains a message about which drive has failed.
+You can also use the Grid Manager to monitor the status of the SSD drives. Select *NODES*. Then select `*Storage Node*` > *Hardware*. If a drive has failed, the Storage RAID Mode field contains a message about which drive has failed.
+
+//The picture shows the drives and labels: 
+
 
 . Wrap the strap end of the ESD wristband around your wrist, and secure the clip end to a metal ground to prevent static discharge.
 . Unpack the replacement drive, and set it on a static-free, level surface near the appliance.
@@ -52,7 +56,9 @@ IMPORTANT: Do not use excessive force while closing the handle.
 +
 When the drive is fully inserted, you hear a click.
 +
-The drive is automatically rebuilt with mirrored data from the working drives. You can check the status of the rebuild by using the Grid Manager. Select *NODES*. Then select `*Storage Node*` > *Hardware*. The Storage RAID Mode field contains a "`rebuilding`" message until the drive is completely rebuilt.
+The drive is automatically rebuilt with mirrored data from the working drives. You can check the status of the rebuild by using the Grid Manager.
+
+. Select *NODES*. Then select `*Storage Node*` > *Hardware*. The Storage RAID Mode field contains a "`rebuilding`" message until the drive is completely rebuilt.
 
 . In the Grid Manager, go to *NODES* > `*appliance Storage Node*` > *Hardware*. In the StorageGRID Appliance section of the page, verify that the Storage RAID mode is healthy.
 
