@@ -28,5 +28,5 @@ NOTE: When you create a Cloud Storage Pool, StorageGRID writes a marker file to 
 You cannot remove a Cloud Storage Pool if it is being used in an ILM rule or in an erasure coding profile. As required, select *_cloud storage pool name_* > *ILM usage* to determine where the storage pool is used.
 
 . If the Cloud Storage Pool you want to remove is not being used, select the check box.
-. Select *Remove*.
+. Select *Actions* > *Remove*.
 . Select *OK*.

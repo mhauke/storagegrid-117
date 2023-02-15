@@ -21,7 +21,7 @@ You can view the details of a storage pool to determine where the storage pool i
 The Storage pools table includes the following information for each storage pool that includes Storage Nodes:
 +
 * *Name*: The unique display name of the storage pool.
-* *Node count*: The number of Storage Nodes in the storage pool.
+* *Node count*: The number of nodes in the storage pool.
 * *Storage usage*: The percentage of the total usable space that has been used for object data on this node. This value does not include object metadata.
 * *Total capacity*: The size of the storage pool, which equals the total amount of usable space for object data for all nodes in the storage pool.
 * *ILM usage*: How the storage pool is currently being used. A storage pool might be unused or it might be used in one or more ILM rules, erasure coding profiles, or both.
@@ -39,7 +39,7 @@ The table includes the following information for each node:
 * Node name
 * Site name
 * Storage grade
-* Storage usage (%): The percentage of the total usable space for object data that has been used for the Storage Node.
+* Storage usage (%): The percentage of the total usable space for object data that has been used for the Storage Node. Not visible for Archive Node pools.
 +
 NOTE: The same Storage usage (%) value is also shown in the Storage Used - Object Data chart for each Storage Node (select *NODES* > *_Storage Node_* > *Storage*).
 
