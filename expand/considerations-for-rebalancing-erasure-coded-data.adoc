@@ -23,18 +23,15 @@ The EC rebalance procedure:
 * Redistributes the data within a site. It does not move data between sites.
 * Redistributes data among all Storage Nodes at a site. It does not redistribute data within storage volumes.
 * Does not consider the replicated data usage on each Storage Node when determining where to move erasure-coded data.
-
 * Redistributes erasure-coded data evenly between Storage Nodes without considering the maximum capacity of each node.
-
-* Will decrease the performance of ILM operations and S3 and Swift client operations when it runs&#8212;additional resources are required to redistribute the erasure-coding fragments. 
+* Might decrease the performance of ILM operations and S3 and Swift client operations when it runs&#8212;additional resources are required to redistribute the erasure-coding fragments. 
+* Might need to be run more than once to completely rebalance erasure-coded data between nodes. The need to run the job more than once is especially true for systems that have a very large number of erasure-coded fragments. 
 
 
 When the EC rebalance procedure is complete:
 
 * Erasure-coded data will have moved from Storage Nodes with less available space to Storage Nodes with more available space.
-
 * The data protection of erasure-coded objects will be unchanged.
-
 * Used (%) values might be different between Storage Nodes for two reasons:
 
 ** Replicated object copies will continue to consume space on the existing nodes&#8212;the EC rebalance procedure does not move replicated data.
@@ -138,6 +135,6 @@ You must terminate the EC rebalance procedure before running other maintenance p
 
 == How EC rebalance procedure interacts with ILM
 
-While the EC rebalance procedure is running, avoid making ILM changes that might change the location of existing erasure-coded objects. For example, do not start using an ILM rule that has a different erasure coding profile. If you need to make such ILM changes, you should abort the EC rebalance procedure.
+While the EC rebalance procedure is running, avoid making ILM changes that might change the location of existing erasure-coded objects. For example, do not start using an ILM rule that has a different erasure coding profile. If you need to make such ILM changes, you should terminate the EC rebalance procedure.
 
 

@@ -29,7 +29,7 @@ Before starting the procedure, note the following:
 
 * If a volume goes offline or experiences an error while an EC rebalance is in process, the rebalance process terminates partially completed with no loss of data. The EC rebalance procedure can be resumed at the point where it terminated when all volumes are online without error.
 
-* When the EC rebalance procedure is running, the performance of ILM operations and S3 and Swift client operations are likely to be impacted. 
+* When the EC rebalance procedure is running, the performance of ILM operations and S3 and Swift client operations might be impacted. 
 +
 NOTE: S3 and Swift API operations to upload objects (or object parts) might fail during the EC rebalancing procedure if they require more than 24 hours to complete. Long-duration PUT operations will fail if the applicable ILM rule uses Balanced or Strict placement on ingest. The following error will be reported: `500 Internal Server Error`.
 
@@ -85,6 +85,8 @@ To get help on the rebalance-data command:
 ** If the status is `Success`, optionally <<review_object_storage,review object storage>> to see the updated details for the site.
 +
 Erasure-coded data should now be more balanced among the Storage Nodes at the site.
++
+IMPORTANT: If your Storage Nodes contain a very large number of erasure-coded fragments, you might need to run the EC rebalance procedure more than once to completely rebalance erasure-coded data.
 
 ** If the status is `Failure`:
 
