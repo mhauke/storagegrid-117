@@ -11,7 +11,7 @@ summary: 'The TLS and SSH policy determines which protocols and ciphers are used
 [.lead]
 The TLS and SSH policy determines which protocols and ciphers are used to establish secure TLS connections with client applications and secure SSH connections to internal StorageGRID services.
 
-The security policy controls how TLS and SSH encrypt data in motion. In general, use the default Modern policy, unless your system needs to be Common Criteria-compliant or you need to use other ciphers.
+The security policy controls how TLS and SSH encrypt data in motion. In general, use the Modern compatibility (default) policy, unless your system needs to be Common Criteria-compliant or you need to use other ciphers.
 
 .What you'll need
 

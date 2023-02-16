@@ -33,15 +33,17 @@ Link costs are arbitrary relative numbers with no specific unit of measure. For 
 
 [cols="1a,1a,2a" options="header"]
 |===
-| Link| Link cost| Notes
+| Link
+| Link cost
+| Notes
 
-|Between physical data center sites
-|25 (default)
-|Data centers connected by a WAN link.
+| Between physical data center sites
+| 25 (default)
+| Data centers connected by a WAN link.
 
-|Between logical data center sites at the same physical location
-|0
-|Logical data centers in the same physical building or campus connected by a LAN.
+| Between logical data center sites at the same physical location
+| 0
+| Logical data centers in the same physical building or campus connected by a LAN.
 |===
 
 == Update link costs

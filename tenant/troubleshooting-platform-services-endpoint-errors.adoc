@@ -57,16 +57,12 @@ If you need to edit the endpoint to resolve an error, selecting *Test and save c
 
 When StorageGRID validates a platform services endpoint, it confirms that the endpoint's credentials can be used to contact the destination resource and it does a basic permissions check. However, StorageGRID does not validate all of the permissions required for certain platform services operations. For this reason, if you receive an error when attempting to use a platform service (such as "`403 Forbidden`"), check the permissions associated with the endpoint's credentials.
 
-== Additional platform services troubleshooting
-
-For additional information about troubleshooting platform services, see the instructions for administering StorageGRID.
-
-link:../admin/index.html[Administer StorageGRID]
-
 .Related information
 
-link:creating-platform-services-endpoint.html[Create platform services endpoint]
+* link:../admin/troubleshooting-platform-services.html[Administer StorageGRID > Troubleshoot platform services]
 
-link:testing-connection-for-platform-services-endpoint.html[Test connection for platform services endpoint]
+* link:creating-platform-services-endpoint.html[Create platform services endpoint]
 
-link:editing-platform-services-endpoint.html[Edit platform services endpoint]
+* link:testing-connection-for-platform-services-endpoint.html[Test connection for platform services endpoint]
+
+* link:editing-platform-services-endpoint.html[Edit platform services endpoint]
