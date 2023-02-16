@@ -71,7 +71,7 @@ In practice, most ILM policies are simple, even though the StorageGRID system al
 A typical ILM policy for a multi-site grid might include ILM rules such as the following:
 
 * At ingest, store all objects belonging to the S3 bucket named `finance-records` in a storage pool that contains three sites. Use 6+3 erasure coding.
-* If an object does not match the first ILM rule, use the policy's default ILM rule, Two Copies Two Sites, to store one copy of that object in Site 1, and one copy in Site 2.
+* If an object does not match the first ILM rule, use the policy's default ILM rule, Two Copies Two Data Centers, to store one copy of that object in Site 1, and one copy in Site 2.
 +
 image::../media/policy_1_configured_policy.png[ILM policy for example 1]
 

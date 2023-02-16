@@ -44,11 +44,11 @@ image::../media/ilm_create_ilm_rule_wizard_2.png[Create ILM Rule Wizard Step 2]
 |"`Noncurrent time`" is automatically selected if you selected *Yes* for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`" in link:create-ilm-rule-enter-details.html[Step 1 of the Create an ILM rule wizard].
 |===
 +
-NOTE: If you want to create a compliant rule, you must select *Ingest time*.
+NOTE: If you want to create a compliant rule, you must select *Ingest time*. See link:managing-objects-with-s3-object-lock.html[Manage objects with S3 Object Lock].
 +
 . In the *Time period and placements* section, enter a starting time and a duration for the first time period.
 +
-For example, you might want to specify where to store objects for the first year ("`day 0 for 365 days`"). At least one instruction must start at day 0.
+For example, you might want to specify where to store objects for the first year (_From day 0 store for 365 days_). At least one instruction must start at day 0.
 
 . If you want to create replicated copies:
 .. From the *Store objects by* drop-down list, select *replicating*.
@@ -59,8 +59,8 @@ A warning appears if you change the number of copies to 1. An ILM rule that crea
 To avoid the risk, do one or more of the following:
 
 * Increase the number of copies for the time period.
-* Select more than one storage pool or Cloud Storage Pool.
-* Select *erasure coded* instead of *replicating*.
+* Add copies to other storage pools or to a Cloud Storage Pool.
+* Select *erasure coding* instead of *replicating*.
 +
 You can safely ignore this warning if this rule already creates multiple copies for all time periods.
 
@@ -75,20 +75,18 @@ NOTE: The *ILM placement unachievable* alert is triggered to indicate that the I
   *** The number of copies cannot be greater than the number of storage pools.
   *** If the number of copies equals the number of storage pools, one copy of the object is stored in each storage pool.
   *** If the number of copies is less than the number of storage pools, one copy is stored at the ingest site, and then the system distributes the remaining copies to keep disk usage among the pools balanced, while ensuring that no site gets more than one copy of an object.
-  *** If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. For this reason, do not specify the All Storage Nodes storage pool (StorageGRID 11.6 or earlier) and another storage pool.
+  *** If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. For this reason, do not specify the All Storage Nodes storage pool (StorageGRID 11.6 and earlier) and another storage pool.
 
 . If you want to create an erasure-coded copy:
  .. From the *Store objects by* drop-down list, select *erasure coding*.
 +
-A warning appears if the rule does not have an advanced filter to ignore objects that are 200 KB or smaller.
-+
 IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 +
-.. If the object size warning appeared, select *Previous* to return to Step 1. Then, select *Add an advanced filter* and set an *Object size* filter to any value greater than 0.2 MB.
+.. If you didn't add an Object size filter for a value greater than 0.2 MB, select *Previous* to return to Step 1. Then, select *Add an advanced filter* and set an *Object size* filter to any value greater than 0.2 MB.
 
 .. Select the storage pool you want to add and the erasure-coding scheme you want to use.
 +
-The storage location for an erasure-coded copy includes the name of the storage pool, followed by the name of the erasure coding profile.
+The storage location for an erasure-coded copy includes the name of the erasure coding scheme, followed by the name of the storage pool.
 
 . Optionally:
 .. Select *Add other type or location* to create additional copies at different locations.
@@ -108,7 +106,7 @@ When using Cloud Storage Pools, keep these rules in mind:
 
   *** You cannot store more than one object copy in any Cloud Storage Pool at the same time. An error message appears if multiple placements that use a Cloud Storage Pool have overlapping dates or if multiple lines in the same placement use a Cloud Storage Pool.
 
-  *** You can store an object in a Cloud Storage Pool at the same time that object is being stored as replicated or erasure coded copies in StorageGRID. However, as this example shows, you must include more than one line in the placement instruction for the time period, so you can specify the number and types of copies for each location.
+  *** You can store an object in a Cloud Storage Pool at the same time that object is being stored as replicated or erasure coded copies in StorageGRID. However, you must include more than one line in the placement instruction for the time period, so you can specify the number and types of copies for each location.
 
 . In the Retention diagram, confirm your placement instructions.
 +

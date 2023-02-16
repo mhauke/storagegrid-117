@@ -70,7 +70,7 @@ image::../media/ec_profile_used_in_ilm_rule.png[EC Profile Used in ILM Rule]
 
 . If the profile is used in an ILM rule, follow these steps:
 .. Select *ILM* > *Rules*.
-.. For each rule listed, select the radio button and review the retention diagram to determine if the rule uses the erasure coding profile you want to deactivate.
+.. Select each rule and review the retention diagram to determine if the rule uses the erasure coding profile you want to deactivate.
 .. If the ILM rule uses the erasure coding profile you want to deactivate, determine if the rule is used in either the active ILM policy or a proposed policy.
 .. Complete the additional steps in the table, based on where the erasure coding profile is used.
 +

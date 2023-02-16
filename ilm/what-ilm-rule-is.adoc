@@ -38,10 +38,10 @@ Basic filters give you a simple way to apply different rules to large numbers of
 ** Ingest time
 ** Last access time
 ** All or part of the object name (Key)
-** S3 bucket region (Location Constraint)
+** Location constraint (S3 only)
 ** Object size
 ** User metadata
-** S3 object tags
+** Object tag (S3 only)
 
 You can filter objects on very specific criteria. For example, objects stored by a hospital's imaging department might be used frequently when they are less than 30 days old and infrequently afterwards, while objects that contain patient visit information might need to be copied to the billing department at the health network's headquarters. You can create filters that identify each type of object based on object name, size, S3 object tags, or any other relevant criteria, and then create separate rules to store each set of objects appropriately.
 
@@ -83,10 +83,10 @@ As each time period in the rule expires, the content placement instructions for 
 
 Ingest behavior controls whether object copies are immediately placed according to the instructions in the rule, or if interim copies are made and the placement instructions are applied later. The following ingest behaviors are available for ILM rules:
 
-* *Dual commit*: StorageGRID immediately makes interim copies of the object and returns success to the client. Copies specified in the ILM rule are made when possible.
-* *Strict*: All copies specified in the ILM rule must be made before success is returned to the client.
 * *Balanced*: StorageGRID attempts to make all copies specified in the ILM rule at ingest; if this is not possible, interim copies are made and success is returned to the client. The copies specified in the ILM rule are made when possible.
-    
+* *Strict*: All copies specified in the ILM rule must be made before success is returned to the client.
+* *Dual commit*: StorageGRID immediately makes interim copies of the object and returns success to the client. Copies specified in the ILM rule are made when possible.
+
 .Related information
 
 * link:data-protection-options-for-ingest.html[Ingest options]
