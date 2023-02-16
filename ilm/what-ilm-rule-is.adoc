@@ -13,7 +13,7 @@ To manage objects, you create a set of information lifecycle management (ILM) ru
 
 Every object ingested into the system is evaluated against the active policy. When a rule in the policy matches an object’s metadata, the instructions in the rule determine what actions StorageGRID takes to copy and store that object.
 
-NOTE: Object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss. The copies are evenly distributed across all Storage Nodes.
+NOTE: Object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss.
 
 == Elements of an ILM rule
 

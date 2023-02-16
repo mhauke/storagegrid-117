@@ -23,7 +23,7 @@ ILM rules define:
 * The changes over time to an object's storage location and type of copies.
 * How object data is protected as objects are ingested into the grid (synchronous placement or dual commit).
 
-Note that object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss. The copies are evenly distributed across all Storage Nodes.
+Note that object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss.
 
 == Example ILM rule
 

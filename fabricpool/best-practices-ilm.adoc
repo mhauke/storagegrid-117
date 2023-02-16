@@ -35,7 +35,7 @@ ILM rules define:
 * The changes over time to an object's storage location and type of copies. 
 * How object data is protected as objects are ingested into the grid. A rule's ingest behavior controls whether object copies are immediately placed according to the instructions in the rule, or if interim copies are made and the placement instructions are applied later.
 
-Note that object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss. The copies are evenly distributed across all Storage Nodes.
+Note that object metadata is not managed by ILM rules. Instead, object metadata is stored in a Cassandra database in what is known as a metadata store. Three copies of object metadata are automatically maintained at each site to protect the data from loss.
 
 == Guidelines for using ILM with FabricPool
 When you use the FabricPool setup wizard, the wizard automatically creates a new ILM rule for each S3 bucket you create, adds that rule to a proposed policy, and prompts you to activate the new policy as part of completing the wizard. The automatically created rule follows the recommended best practices: it uses 2+1 erasure coding at a single site.
