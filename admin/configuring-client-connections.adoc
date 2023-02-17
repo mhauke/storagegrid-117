@@ -31,9 +31,39 @@ Before you can attach StorageGRID to an S3 or Swift client application, you must
 
 === What values do I need?
 
-The following figure shows the values you must configure in StorageGRID and where those values are used by the S3 or Swift application and the DNS server. 
+The following table shows the values you must configure in StorageGRID and where those values are used by the S3 or Swift application and the DNS server. 
 
-image::../media/s3_swift_storagegrid_values.png[Drawing showing how StorageGRID values are used by S3 and Swift and the DNS server]
+[cols="1a,1a,1a" options="header"]
+|===
+| Value| Where value is configured | Where value is used
+
+| Virtual IP (VIP) addresses
+| StorageGRID > HA group
+| DNS entry
+
+| Port
+| StorageGRID > Load balancer endpoint
+| Client application
+
+| SSL certificate
+| StorageGRID > Load balancer endpoint
+| Client application
+
+| Server name (FQDN)
+| StorageGRID > Load balancer endpoint
+| * Client application
+* DNS entry
+
+| S3 access key ID and secret access key
+| StorageGRID > Tenant and bucket
+| Client application
+
+| Bucket/Container name
+| StorageGRID > Tenant and bucket
+| Client application
+
+|===
+
 
 === How do I get these values?
 Depending on your requirements, you can do either of the following to obtain the information you need:
