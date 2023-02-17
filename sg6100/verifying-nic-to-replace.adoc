@@ -2,23 +2,49 @@
 permalink: sg6100/verifying-nic-to-replace.html
 sidebar: sidebar
 keywords: storagegrid, sg6100, storage node, storage appliance, NIC, network interface card, locate, identify, find, replace, replacing, replacement 
-summary: 'If you are unsure which network interface card \(NIC\) to replace, complete this procedure to identify it.'
+summary: 'If you are unsure which network interface card /(NIC/) to replace, complete this procedure to identify the specific NIC in the appliance and the appliance's location in the data center.'
 ---
 = Verify NIC to replace
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are unsure which network interface card (NIC) to replace, complete this procedure to identify it.
+If you are unsure which network interface card (NIC) to replace, complete this procedure to identify the specific NIC in the appliance and the appliance's location in the data center.
 
 .What you'll need
 
 * You have the serial number of the storage appliance where the NIC needs to be replaced.
 +
 
-* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.adoc[supported web browser].
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
 .Steps
+
+go to nodes tab then overview tab and in the alerts section see the alert, the ID will be there. 
+
+Go to the Hardware Tab then in the StorageGrid appliance section of the page find the BMC ID 
+
+. Record the node ID and the NIC ID from the alert message in Grid Manager. 
+.. From the Grid Manager, select xxxxxxx *NODES*.
+.. From the table on the Nodes page, select an appliance Storage Node.
+.. Select the *Hardware* tab.
++
+Check the xxxxxxxx *Storage appliance chassis serial number* in the StorageGRID Appliance section. See if the serial number matches the serial number of the storage appliance where you are replacing the NIC. If the serial number matches, you have found the correct appliance.
+//update image
++
+image::../media/nodes_page_hardware_tab_for_appliance_verify_HBA.png[Appliance section for Fibre Channel HCA]
+
+The three NICs in the SGF6112 are in riser assemblies in the following positions in the chassis (Rear of SGF6112 with top cover removed): 
+
+1 hic1/hic2  xxxxx
+2 mtc1/mtc2xxxxxx
+3 hic3/hic4  xxxxxx
+4 Two-slot riser assembly
+5 One-slot riser assembly
+
+image::../media/sgf6112-hic-locations.png[HIC locations]
+
+
 
 . From the Grid Manager, select *NODES*.
 . From the table on the Nodes page, select an appliance Storage Node.
@@ -37,6 +63,8 @@ image::../media/nodes_page_hardware_tab_for_appliance_verify_HBA.png[Appliance s
 You can use this IP address to turn on the appliance identify LED, to help you locate the appliance in the data center.
 +
 link:turning-sgf6112-identify-led-on-and-off.html[Turn the appliance identify LED on and off]
+
+
 
 .Related information
 

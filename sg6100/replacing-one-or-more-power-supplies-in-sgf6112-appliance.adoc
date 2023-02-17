@@ -2,14 +2,14 @@
 permalink: sg6100/replacing-one-or-more-power-supplies-in-sgf6112-appliance.html
 sidebar: sidebar
 keywords: storagegrid, sg6100, sgf6112, Replacing, replace, power supply, remove, removing, removal, install, installing, installation 
-summary: 'SG6100 series appliances have two power supplies for redundancy. If one of the power supplies fails, you must replace it as soon as possible to ensure that the appliance has redundant power. Both power supplies operating in the controller must be of the same model and wattage.'
+summary: 'SG6100 series appliances have two power supplies for redundancy. If one of the power supplies fails, you must replace it as soon as possible to ensure that the appliance has redundant power. Both power supplies operating in the appliance must be of the same model and wattage.'
 ---
 = Replace one or both power supplies in the SGF6112 appliance
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-The SGF6112 appliance has two power supplies for redundancy. If one of the power supplies fails, you must replace it as soon as possible to ensure that the appliance has redundant power. Both power supplies operating in the controller must be of the same model and wattage.
+The SGF6112 appliance has two power supplies for redundancy. If one of the power supplies fails, you must replace it as soon as possible to ensure that the appliance has redundant power. Both power supplies operating in the appliance must be of the same model and wattage.
 
 .What you'll need
 
@@ -38,9 +38,6 @@ image::../media/sgf6112_power_supplies.png[Back of SGF6112 with two power suppli
 //. Verify the power supply to be replaced. 
 
 . If you are replacing only one power supply, you don't need to shut down the appliance. Go to the <<Unplug_the_power_cord,Unplug the power cord>> step. If you are replacing both power supplies at the same time, do the following before unplugging the power cords:
-
-.. link:../commonhardware/placing-appliance-into-maintenance-mode.html[Place the appliance into maintenance mode].
-//update link
 
 .. link:shut-down-sgf6112.html[Shut down the appliance].
 
@@ -75,6 +72,5 @@ image::../media/sg6000_cn_insert_power_supply.gif[Sliding power supply in]
 . If you are replacing both power supplies, repeat steps 2 though 6 to replace the second power supply. 
 //update link
 . link:../installconfig/connecting-power-cords-and-applying-power-sgf6112.html[Connect the power cords to the replaced units and apply power].
-. If you  placed the appliance in maintenance mode, exit maintenance mode. From the StorageGRID Appliance Installer, select *Advanced* > *Reboot Controller*, and then select *Reboot into StorageGRID*.
 
 include::../_include/fru-statement.adoc[] 
