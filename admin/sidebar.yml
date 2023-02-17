@@ -105,7 +105,8 @@ entries:
       url: "/admin/reviewing-storagegrid-encryption-methods.html"     
     - title: Manage certificates
       entries:
-      - title: About security certificates
+      - title: Overview
+        pdf-filename: Manage certificates
         url: "/admin/using-storagegrid-security-certificates.html"
       - title: Configure server certificates
         entries:
@@ -132,7 +133,7 @@ entries:
     - title: Configure key management servers
       entries:
       - title: Overview
-        pdf-filename: Overview of configuring key management servers
+        pdf-filename: Configure key management servers
         url: "/admin/kms-configuring.html"
       - title: Overview of KMS and appliance configuration
         url: "/admin/kms-overview-of-kms-and-appliance-configuration.html"
@@ -170,7 +171,7 @@ entries:
     entries:
     - title: Overview
       url: "/admin/managing-tenants.html"
-      pdf-filename: Manage tenants - Overview
+      pdf-filename: Manage tenants
     - title: Create tenant account
       url: "/admin/creating-tenant-account.html"  
     - title: Edit tenant account
@@ -181,7 +182,8 @@ entries:
       url: "/admin/deleting-tenant-account.html"
     - title: Manage platform services
       entries:
-      - title: Manage platform services for S3 tenant accounts
+      - title: Overview
+        pdf-filename: Manage platform services for S3 tenant accounts
         url: "/admin/manage-platform-services-for-tenants.html"
       - title: Network and ports for platform services
         url: "/admin/networking-and-ports-for-platform-services.html"
@@ -265,12 +267,12 @@ entries:
       url: "/admin/sending-eseries-autosupport-messages-through-storagegrid.html"
   - title: Manage Storage Nodes
     entries:
-    - title: About managing Storage Nodes
+    - title: Overview
+      pdf-filename: Manage Storage Nodes
       url: "/admin/managing-storage-nodes.html"
     - title: What is a Storage Node
       url: "/admin/what-storage-node-is.html"
-    - title: Manage Storage options
-      url: "/admin/managing-storage-options.html"
+    - title: Use Storage options
       entries:
       - title: What is object segmentation
         url: "/admin/what-object-segmentation-is.html"
@@ -364,12 +366,3 @@ entries:
             url: "/admin/creating-and-activating-domain-policy.html"
   - title: Migrate data into StorageGRID
     url: "/admin/migrating-data-into-storagegrid.html"
-    entries:
-    - title: Confirm capacity of the StorageGRID system
-      url: "/admin/confirming-capacity-of-storagegrid-system.html"
-    - title: Determine the ILM policy for migrated data
-      url: "/admin/determining-ilm-policy-for-migrated-data.html"
-    - title: Impact of migration on operations
-      url: "/admin/impact-of-migration-on-operations.html"
-    - title: Schedule and monitor data migration
-      url: "/admin/scheduling-data-migration.html"

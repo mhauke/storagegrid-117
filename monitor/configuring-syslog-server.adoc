@@ -53,7 +53,7 @@ The Configure external syslog server wizard appears.
 
 . Select the protocol used to send audit information to the external syslog server.  
 +
-Using *TLS* or *RELP/TLS* is recommended. You must upload a server certificate to use either of these options. Using certificates helps secure the connections between your grid and the external syslog server. For more information, see link:../admin/using-storagegrid-security-certificates.html[Use StorageGRID security certificates].
+Using *TLS* or *RELP/TLS* is recommended. You must upload a server certificate to use either of these options. Using certificates helps secure the connections between your grid and the external syslog server. For more information, see link:../admin/using-storagegrid-security-certificates.html[Manage security certificates].
 +
 All protocol options require support by, and configuration of, the external syslog server. You must choose an option that is compatible with the external syslog server.
 +

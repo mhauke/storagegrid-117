@@ -22,7 +22,7 @@ Specifically, you should use custom server certificates instead of these default
 * *Management interface certificate*: Used to secure access to the Grid Manager, the Tenant Manager, the Grid Management API, and the Tenant Management API.
 * *S3 and Swift API certificate*: Used to secure access to Storage Nodes and Gateway Nodes, which S3 and Swift client applications use to upload and download object data.
 
-See link:../admin/using-storagegrid-security-certificates.html[About security certificates] for details and instructions.
+See link:../admin/using-storagegrid-security-certificates.html[Manage security certificates] for details and instructions.
 
 NOTE: StorageGRID manages the certificates used for load balancer endpoints separately. To configure load balancer certificates, see link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints].
 
