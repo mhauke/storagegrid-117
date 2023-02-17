@@ -30,6 +30,8 @@ For more information see the https://docs.aws.amazon.com/AmazonS3/latest/API/API
 * Your SQL expression has a maximum length of 256 KB.
 * Any record in the input or results has a maximum length of 1 MiB.
 
+NOTE: Use of ScanRange is not supported.
+
 == CSV request syntax example
 
 [source,asciidoc]

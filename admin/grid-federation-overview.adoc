@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, cross-grid replication, account clone, cgr, disaster recovery
 summary: 'You can use grid federation to clone tenants and replicate their objects between two StorageGRID systems for disaster recovery.'
 ---
-= What is grid federation?
+= Use grid federation: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -25,7 +25,7 @@ image:../media/grid-federation-workflow.png[Grid federation connection workflow]
 
 * Both grids used for grid federation must be running StorageGRID 11.7.
 
-* A grid can have one or more grid federation connections to other grids. Each grid federation connection is independent of any other connections. For example, if grid 1 has one connection with grid 2 and a second connection with grid 3, there is no implied connection between grid 2 and grid 3.
+* A grid can have one or more grid federation connections to other grids. Each grid federation connection is independent of any other connections. For example, if Grid 1 has one connection with Grid 2 and a second connection with Grid 3, there is no implied connection between Grid 2 and Grid 3.
 
 * Grid federation connections are bidirectional. After the connection is established, you can monitor and manage the connection from either grid. 
 

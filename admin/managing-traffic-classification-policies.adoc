@@ -25,14 +25,14 @@ StorageGRID monitors traffic that matches any rule within the policy according t
 
 == Traffic limiting
 
-Optionally, you can set limits for a traffic classification policy based on the following parameters:
+Optionally, you can add the following limit types to a policy:
 
 * Aggregate bandwidth
 * Per-request bandwidth
 * Concurrent requests
 * Request rate
 
-These parameters are applied to all load balancers and the limit values are calculated on a per load balancer basis. If traffic is distributed simultaneously across multiple load balancers, the total maximum rates are a multiple of the rate limits you specify.
+Limit values are enforced on a per load balancer basis. If traffic is distributed simultaneously across multiple load balancers, the total maximum rates are a multiple of the rate limits you specify.
 
 NOTE: You can create policies to limit aggregate bandwidth or to limit per-request bandwidth. However, StorageGRID cannot limit both types of bandwidth at the same time. Aggregate bandwidth limits might impose an additional minor performance impact on non-limited traffic.
 
@@ -43,7 +43,6 @@ In the Grid Manager, you can view traffic charts and verify that the polices are
 == Use traffic classification policies with SLAs
 
 You can use traffic classification policies in conjunction with capacity limits and data protection to enforce service-level agreements (SLAs) that provide specifics for capacity, data protection, and performance.
-
 
 The following example shows three tiers of an SLA. You can create traffic classification policies to achieve the performance objectives of each SLA tier. 
 
