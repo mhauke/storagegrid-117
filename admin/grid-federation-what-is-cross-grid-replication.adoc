@@ -61,9 +61,9 @@ The S3 client can verify an object's replication status by issuing a GET Object 
 | Grid| Replication status 
 
 | Source
-| * *SUCCESS*: The replication was successful.
-* *PENDING*: The object hasn't been replicated yet.
-* *FAILURE*: The replication failed with a permanent failure. A user must resolve the error.
+| * *SUCCESS*: The replication was successful for all grid connections.
+* *PENDING*: The object hasn't been replicated in at least one grid connection.
+* *FAILURE*: When the replication is not pending for any grid connection and at least one failed with a permanent failure. A user must resolve the error.
 
 | Destination
 | *REPLICA*: The object was replicated from the source grid.

@@ -64,9 +64,7 @@ When you edit a grid federation connection, StorageGRID attempts to save a “ca
 === Can't sign in to a cloned tenant account
 
 .Issue
-You can't sign in to a cloned tenant account. The error message is "`Your credentials for this account were invalid. Please try again.`"
-
-image::../media/grid-federation-tenant-account-credentials-invalid.png[screenshot showing an error message when signing into tenant]
+You can't sign in to a cloned tenant account. The error message on the Tenant Manager sign-in page is "`Your credentials for this account were invalid. Please try again.`"
 
 .Details
 For security reasons, when a tenant account is cloned from the tenant's source grid to the tenant's destination grid, the password you set for the tenant's local root user is not cloned. Similarly, when a tenant creates local users on its source grid, the local user passwords are not cloned to the destination grid.

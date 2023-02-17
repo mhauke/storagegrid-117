@@ -59,21 +59,13 @@ CloudMirror replication creates an independent copy of an object in an independe
 | Cross-grid replication creates versioned objects, and it replicates the version ID from the source bucket to the destination bucket. This allows the version order to be maintained across both grids.
 | CloudMirror replication doesn't require versioning-enabled buckets, so CloudMirror can only maintain ordering for a key within a site. There are no guarantees that ordering will be maintained for requests to an object at different site.
 
-
 | How are objects retrieved?
-| Applications can retrieve an object by making a request to the bucket on either grid. 
-| Applications can retrieve an object by making a request either to StorageGRID or to the S3 destination. For example, suppose you use CloudMirror replication to mirror objects to a partner organization. The partner can use its own applications to read or update objects directly from the S3 destination. Using StorageGRID is not required.
-
+| Applications can retrieve or read objects by making a request to the bucket on either grid. 
+| Applications can retrieve or read objects by making a request either to StorageGRID or to the S3 destination. For example, suppose you use CloudMirror replication to mirror objects to a partner organization. The partner can use its own applications to read or update objects directly from the S3 destination. Using StorageGRID is not required.
 
 | Is the object's system metadata replicated?
 | Yes, when an object is replicated to the other grid, its system metadata is also replicated. The metadata will be identical on both grids.
 | No, when an object is replicated to the external bucket, its system metadata is updated. The metadata will differ between locations, depending on time of ingest and the behavior of the independent S3 infrastructure. 
-
-
-| Can you read from the destination directly?
-| Yes
-| Yes, because the mirrored copy is an independent copy.
-
 
 | What happens if an object is deleted?
 | * Delete requests that include a version ID are never replicated to the destination grid.
@@ -87,6 +79,10 @@ CloudMirror replication creates an independent copy of an object in an independe
 * If neither bucket is versioned, a delete request will delete the object from the source but not from the destination.
 
 Similarly, objects in the destination bucket can be deleted without affecting the source.
+
+| What if an object can't be replicated?
+| The object is queued for replication, subject to metadata storage limits.
+| The object is queued for replication, subject to platform services limits (see link:manage-platform-services-for-tenants.html[Recommendations for using platform services].
 
 
 |===

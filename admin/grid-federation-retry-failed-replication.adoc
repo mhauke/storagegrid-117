@@ -46,10 +46,8 @@ The results of the command will look like this example, which has entries for si
 ----
 CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate object" bucket:bucket123 object:"audit-0" version:QjRBNDIzODAtNjQ3My0xMUVELTg2QjEtODJBMjAwQkI3NEM4 error:general error
 CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate object" bucket:bucket123 object:"audit-3" version:QjRDOTRCOUMtNjQ3My0xMUVELTkzM0YtOTg1MTAwQkI3NEM4 error:general error
-CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate object" bucket:bucket123 object:"audit-1" version:QjRCMjJEQzItNjQ3My0xMUVELTkxQzctMzk2NzAwQkI3NEM4 error:general error
 CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-1" version:NUQ0OEYxMDAtNjQ3NC0xMUVELTg2NjMtOTY5NzAwQkI3NEM4 error:general error
 CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-5" version:NUQ1ODUwQkUtNjQ3NC0xMUVELTg1NTItRDkwNzAwQkI3NEM4 error:general error
-CGRR Cross-Grid Replication Request tenant:50736445269627437748 connection:447896B6-6F9C-4FB2-95EA-AEBF93A774E9 operation:"replicate delete marker" bucket:bucket123 object:"audit-9" version:NUQ2Mzg2QTAtNjQ3NC0xMUVELTkwNzAtQTk2MzAwQkI3NEM4 error:general error
 ----
 
 Each entry contains the following information:
@@ -59,39 +57,39 @@ Each entry contains the following information:
 
 | Field | Description
 
-| CGRR Cross-Grid Replication Request
+m| CGRR Cross-Grid Replication Request
 | The name of the request
 
-| tenant
+m| tenant
 | The tenant's account ID
 
-| connection
+m| connection
 | The ID of the grid federation connection
 
-| operation
+m| operation
 | The type of replication operation that was being attempted:
 
 * replicate object
 * replicate delete marker
 * replicate multipart object
 
-| bucket
+m| bucket
 | The bucket name
 
-| object
+m| object
 | The object name
 
-| version
+m| version
 | The version ID for the object
 
-| error
+m| error
 | The type of error. If cross-grid replication failed, the error is always  "General error".
 
 |===
 
 == Retry failed replications
 
-After generating a list of objects and delete markers that were not replicated to the destination bucket, you can retry replication in either of two ways:
+After generating a list of objects and delete markers that were not replicated to the destination bucket and resolving the underlying issues, you can retry replication in either of two ways:
 
 * Reingest each object into the source bucket.
 
@@ -125,7 +123,7 @@ NOTE: Pending means the cross-grid replication request has been added to the int
 
 You should monitor the replication retry operations to make sure they complete.
 
-TIP: It might take 2 hours or more for an object or delete marker to be replicated to the other grid.
+TIP: It might take several hours or longer for an object or delete marker to be replicated to the other grid.
 
 You can monitor retry operations in either of two ways:
 
