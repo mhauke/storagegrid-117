@@ -187,23 +187,32 @@ image:../media/grid-federation-remove-connection.png[steps to remove grid federa
 
 Before removing a connection, note the following:
 
-* You can start the process to remove a connection from either grid.
-
 * Removing a connection does not delete any items that have already been copied between grids. For example, tenant users, groups, and objects that exist on both grids are not deleted from either grid when the tenant’s permission is removed. If you want to delete these items, you must manually delete them from both grids.
 
 * When you remove a connection, any objects that are pending replication (ingested but not yet replicated to the other grid) will have their replication permanently failed.
 
+=== Disable replication for all tenant buckets
 
-=== Remove permission for each tenant
-
-. Sign in to the Grid Manager from the primary Admin Node.
+. Starting from either grid, sign in to the Grid Manager from the primary Admin Node.
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 . Select the connection name to display its details.
 . On the *Permitted tenants* tab, determine if the connection is being used by any tenants.
-. If any tenants are listed, follow the instructions in link:grid-federation-manage-tenants.html[Manage permitted tenants] to remove the *Use grid federation connection* permission from each tenant on each grid.
+. If any tenants are listed, instruct all tenants to link:../tenant/grid-federation-manage-cross-grid-replication.html[disable cross-grid replication] for all of their buckets on both grids in the connection. 
 +
-TIP: You can't remove the *Use grid federation connection* permission if any of the tenant's buckets have cross-grid replication enabled. The tenant account must stop cross-grid replication for all of their buckets first. 
+TIP: You can't remove the *Use grid federation connection* permission if any tenant buckets have cross-grid replication enabled. Each tenant account must disable cross-grid replication for their buckets on both grids.
 
+=== Remove permission for each tenant
+
+After cross-grid replication has been disabled for all tenant buckets, remove the *Use grid federation permission* from all tenants on both grids.
+
+. Select *CONFIGURATION* > *System* > *Grid federation*.
+
+. Select the connection name to display its details.
+
+. For each tenant on the *Permitted tenants* tab, remove the *Use grid federation connection* permission from each tenant. See link:grid-federation-manage-tenants.html[Manage permitted tenants]. 
+
+. Repeat these steps for the permitted tenants on the other grid.
+ 
 === Remove connection
 
 . When no tenants on either grid are using the connection, select *Remove*.
