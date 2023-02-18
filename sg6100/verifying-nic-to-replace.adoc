@@ -13,47 +13,34 @@ If you are unsure which network interface card (NIC) to replace, complete this p
 
 .What you'll need
 
-* You have the serial number of the storage appliance where the NIC needs to be replaced.
+* You have the serial number of the storage appliance where the NIC needs to be replaced and the ID of the NIC.
 +
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
 .Steps
 
-go to nodes tab then overview tab and in the alerts section see the alert, the ID will be there. 
+. Identify the node name with the NIC that needs to be replaced. 
+.. In Grid Manager, Select *ALERTS* > *Current*.
++
+The Alerts page appears.
 
-Go to the Hardware Tab then in the StorageGrid appliance section of the page find the BMC ID 
+.. Select the alert to see the alert details.
++
+NOTE: Select the alert, not the heading for a group of alerts.
 
-. Record the node ID and the NIC ID from the alert message in Grid Manager. 
-.. From the Grid Manager, select xxxxxxx *NODES*.
-.. From the table on the Nodes page, select an appliance Storage Node.
+.. Record the device name of the NIC that has failed.
++
+image::../media/nic-alert-sgf6112.png[Alert with NIC ID]
+
+. Identify the chassis with the NIC that needs to be replaced.
+.. From the Grid Manager, select *NODES*.
+.. From the table on the Nodes page, select the appliance Storage Node name with the failed NIC.
 .. Select the *Hardware* tab.
 +
-Check the xxxxxxxx *Storage appliance chassis serial number* in the StorageGRID Appliance section. See if the serial number matches the serial number of the storage appliance where you are replacing the NIC. If the serial number matches, you have found the correct appliance.
-//update image
+Check the *Compute controller serial number* in the StorageGRID Appliance section. See if the serial number matches the serial number of the storage appliance where you are replacing the NIC. If the serial number matches, you have found the correct appliance.
 +
-image::../media/nodes_page_hardware_tab_for_appliance_verify_HBA.png[Appliance section for Fibre Channel HCA]
-
-The three NICs in the SGF6112 are in riser assemblies in the following positions in the chassis (Rear of SGF6112 with top cover removed): 
-
-1 hic1/hic2  xxxxx
-2 mtc1/mtc2xxxxxx
-3 hic3/hic4  xxxxxx
-4 Two-slot riser assembly
-5 One-slot riser assembly
-
-image::../media/sgf6112-hic-locations.png[HIC locations]
-
-
-
-. From the Grid Manager, select *NODES*.
-. From the table on the Nodes page, select an appliance Storage Node.
-. Select the *Hardware* tab.
-+
-Check the *Storage appliance chassis serial number* in the StorageGRID Appliance section. See if the serial number matches the serial number of the storage appliance where you are replacing the NIC. If the serial number matches, you have found the correct appliance.
-//update image
-+
-image::../media/nodes_page_hardware_tab_for_appliance_verify_HBA.png[Appliance section for Fibre Channel HCA]
+image::../media/nodes_page_hardware_tab_for_appliance_verify_NIC.png[Appliance section for NIC]
 
  ** If the StorageGRID Appliance section in Grid Manager does not display, the node selected is not a StorageGRID appliance. Select a different node from the tree view.
  ** If the serial numbers do not match, select a different node from the tree view.

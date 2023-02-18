@@ -24,7 +24,7 @@ link:locating-sgf6112-in-data-center.html[Locate appliance in data center]
 +
 NOTE: A link:shut-down-sgf6112.html[controlled shutdown of the appliance] is required before removing the appliance from the rack.
 
-* You have removed the appliance cover.
+* You have disconnected all cables and removed the appliance cover.
 +
 link:removing-sgf6112-cover.html[Remove SGF6112 cover]
 
@@ -37,18 +37,58 @@ See information about link:../ilm/why-you-should-not-use-single-copy-replication
 .Steps
 
 . Wrap the strap end of the ESD wristband around your wrist, and secure the clip end to a metal ground to prevent static discharge.
-. Locate the riser assembly at the rear of the appliance that contains the NIC.
+. Locate the riser assemblies at the rear of the appliance that contains the NIC.
 +
-image::../media/sg6060_riser_assembly_location.jpg[SG6060 riser assembly location]
+
+The three NICs in the SGF6112 are in riser assemblies in the following positions in the chassis (Rear of SGF6112 with top cover removed shown): 
+
+image::../media/sgf6112-hic-locations.png[HIC locations]
+[options="header"]
+|===
+|  | Device or Part name| Description
+a|
+1
+a|
+hic1/hic2
+a|
+10/25-GbE Ethernet network ports
+a|
+2
+a|
+mtc1/mtc2
+a|
+1/10GBase-T management ports
+a|
+3
+a|
+hic3/hic4
+a|
+10/25-GbE Ethernet network ports
+a|
+4
+a|
+Two-slot riser assembly
+a|
+Support for one of the 10/25-GbE NICs and the 1/10GBase-T NIC
+a|
+5
+a|
+One-slot riser assembly
+a|
+Support for one of the 10/25-GbE NICs
+|===
 
 . Grasp the riser assembly through the blue-marked holes and carefully lift it upwards. Move the riser assembly toward the front of the chassis as you lift it to allow the external connectors in its installed adapters to clear the chassis.
 . Place the riser card on a flat anti-static surface with the metal frame side down to access the adapters.
 +
-image::../media/sg6060_fc_hba_location.jpg[SG6060 NIC in riser assembly]
+* Two-slot riser assembly
 +
-xxxxThere are two NICs in the butterfly riser assembly: a NIC and an Ethernet network adapter. There is one NIC in the small riser assembly: xxxxxxx. The NICs locations are indicated in the illustration.
+image::../media/sg6060_fc_hba_location.jpg[SG6060 NIC in riser assembly]
+* One-slot riser assembly
+xxxxxxxxxxxxxxxxxxxxxx
++
 
-. Open the blue adapter latch (circled) and carefully remove the NIC from the riser assembly. Rock the adapter slightly to help remove the adapter from its connector. Do not use excessive force.
+. Open the blue latch (circled) on the NIC to be replaced and carefully remove the NIC from the riser assembly. Rock the NIC slightly to help remove the NIC from its connector. Do not use excessive force.
 . Place the NIC on a flat anti-static surface.
 
 .After you finish
