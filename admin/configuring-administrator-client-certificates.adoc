@@ -13,7 +13,7 @@ Client certificates allow authorized external clients to access the StorageGRID 
 
 If you need to access StorageGRID using an external monitoring tool, you must upload or generate a client certificate using the Grid Manager and copy the certificate information to the external tool.
 
-See the information about link:using-storagegrid-security-certificates.html[general security certificate use] and link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[configuring custom server certificates]. 
+See link:using-storagegrid-security-certificates.html[Manage security certificates] and link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[Configure custom server certificates]. 
 
 NOTE: To ensure that operations are not disrupted by a failed server certificate, the *Expiration of client certificates configured on the Certificates page* alert is triggered when this server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the client certificate on the Client tab.
 

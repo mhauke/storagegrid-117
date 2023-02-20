@@ -114,7 +114,6 @@ As required, you can optionally disable the check for software updates. For exam
 
 When you enable AutoSupport, heath and status messages are sent to NetApp support. You can specify one additional destinations for all AutoSupport messages.
 
-
 To verify or change the protocol used to send AutoSupport messages, see the instructions to <<Specify the protocol for AutoSupport messages>>.
 
 NOTE: You cannot use the SMTP protocol to send AutoSupport messages to an additional destination.
@@ -124,29 +123,44 @@ NOTE: You cannot use the SMTP protocol to send AutoSupport messages to an additi
 
 . Select *SUPPORT* > *Tools* > *AutoSupport*.
 
-. Select *Enable additional AutoSupport destination*.
-+
-The Additional AutoSupport Destination fields appear.
-+
-image::../media/autosupport_additional_destinations.png[AutoSupport adding additional destinations]
+. Select *Enable Additional AutoSupport Destination*.
 
-. Enter the server hostname or IP address of an additional AutoSupport destination server.
+. Specify the following: 
 +
-NOTE: You can enter only one additional destination.
+[cols="1a,2a" options="header"]
+|===
+| Field
+| Description
 
-. Enter the port used to connect to an additional AutoSupport destination server (default is port 80 for HTTP or port 443 for HTTPS).
-. To send your AutoSupport messages with certificate validation, select *Use custom CA bundle* in the *Certificate Validation* drop-down. Then, do one of the following:
- ** Use an editing tool to copy and paste all the contents of each of the PEM-encoded CA certificate files into the *CA bundle* field, concatenated in certificate chain order. You must include `----BEGIN CERTIFICATE----` and `----END CERTIFICATE----` in your selection.
-+
-image::../media/autosupport_certificate.png[AutoSupport certificate]
+| Hostname
+| The server hostname or IP address of an additional AutoSupport destination server.
 
- ** Select *Browse*, navigate to the file containing the certificates, and then select *Open* to upload the file.
-Certificate validation ensures that the transmission of AutoSupport messages is secure.
-. To send your AutoSupport messages without certificate validation, select *Do not verify certificate* in the *Certificate Validation* drop-down.
+*Note*: You can enter only one additional destination.
+
+| Port
+| The port used to connect to an additional AutoSupport destination server. The default is port 80 for HTTP or port 443 for HTTPS.
+
+| Certification Validation
+| Whether a TLS certificate is used to secure the connection to the additional destination.
+
+* Select *Do not verify certificate* to send your AutoSupport messages without certificate validation.
 +
 Select this choice only when you have a good reason not to use certificate validation, such as when there is a temporary problem with a certificate.
+
+* Select *Use custom CA bundle* to use certificate validation.
+
+|===
+
+
+. If you selected *Use custom CA bundle*, do one of the following:
+
+** Select *Browse*, navigate to the file containing the certificates, and then select *Open* to upload the file.
+
+** Use an editing tool to copy and paste all the contents of each of the PEM-encoded CA certificate files into the *CA Bundle* field, concatenated in certificate chain order.
++ 
+You must include `----BEGIN CERTIFICATE----` and `----END CERTIFICATE----` in your selection.
 +
-A caution a message appears: "You are not using a TLS certificate to secure the connection to the additional AutoSupport destination."
+image::../media/autosupport_certificate.png[AutoSupport certificate]
 
 . Select *Save*.
 +
