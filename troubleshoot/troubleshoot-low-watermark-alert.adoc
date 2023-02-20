@@ -13,7 +13,7 @@ If you use custom values for storage volume watermarks, you might need to resolv
 
 In previous releases, the three link:../admin/what-storage-volume-watermarks-are.html[storage volume watermarks] were global settings &#8212; the same values applied to every storage volume on every Storage Node. Starting in StorageGRID 11.6, the software can optimize these watermarks for each storage volume, based on the size of the Storage Node and the relative capacity of the volume.
 
-When you upgrade to StorageGRID 11.6, optimized read-only and read-write watermarks are automatically applied to all storage volumes, unless either of the following is true:
+When you upgrade to StorageGRID 11.6 or higher, optimized read-only and read-write watermarks are automatically applied to all storage volumes, unless either of the following is true:
 
 * Your system is close to capacity and would not be able to accept new data if optimized watermarks were applied. StorageGRID will not change watermark settings in this case.
 
@@ -27,20 +27,20 @@ Each instance of the alert indicates that the custom value of the *Storage Volum
 
 For example, suppose you previously set the *Storage Volume Soft Read-Only Watermark* to 5 GB. Now suppose that StorageGRID has calculated the following optimized values for the four storage volumes in Storage Node A:
 
-[cols="1a,1a"]
+[cols="2a,1a"]
 |===
 
-|Volume 0
-|12 GB
+| Volume 0
+| 12 GB
 
-|Volume 1
-|12 GB
+| Volume 1
+| 12 GB
 
-|Volume 2
-|11 GB
+| Volume 2
+| 11 GB
 
-|Volume 3
-|15 GB
+| Volume 3
+| 15 GB
 
 |===
 
@@ -52,7 +52,7 @@ Follow these steps if one or more *Low read-only watermark override* alerts have
 
 .What you'll need
 
-* You have completed the upgrade to StorageGRID 11.6.
+* You have completed the upgrade to StorageGRID 11.6 or higher.
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 

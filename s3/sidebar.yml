@@ -1,11 +1,11 @@
 section: s3
 title: Use S3 REST API
 entries:
-  - title: Overview
+  - title: Supported versions and updates
     pdf-filename: Use S3 with StorageGRID
     url: "/s3/index.html"
-  - title: Changes to S3 REST API support
-    url: "/s3/changes-to-s3-rest-api-support.html"
+  - title: 'Quick reference'
+    url: "/s3/support-for-aws-apis.html"         
   - title: Configure tenant accounts and connections
     url: "/s3/configuring-tenant-accounts-and-connections.html"
   - title: How StorageGRID implements S3 REST API
@@ -24,10 +24,10 @@ entries:
       url: "/s3/create-s3-lifecycle-configuration.html"          
     - title: Recommendations for implementing S3 REST API
       url: "/s3/recommendations-for-implementing-s3-rest-api.html"
-  - title: S3 REST API supported operations and limitations
+  - title: Support for Amazon S3 REST API
     entries:
-    - title: S3 REST API operations
-      url: "/s3/s3-rest-api-supported-operations-and-limitations.html"
+    - title: Implementation details
+      url: "/s3/s3-rest-api-supported-operations-and-limitations.html"  
     - title: Authenticate requests
       url: "/s3/authenticating-requests.html"
     - title: Operations on the service
@@ -71,7 +71,7 @@ entries:
         url: "/s3/complete-multipart-upload.html"
     - title: Error responses
       url: "/s3/error-responses.html"
-  - title: StorageGRID S3 REST API operations
+  - title: StorageGRID S3 requests
     entries:
       - title: GET Bucket consistency request
         url: "/s3/get-bucket-consistency-request.html"

@@ -1,7 +1,7 @@
 ---
-permalink: admin/using-tls-ssh-policy.html
+permalink: admin/manage-tls-ssh-policy.html
 sidebar: sidebar
-keywords: TLS and SSH policy, secure connection
+keywords: TLS and SSH policy, secure connection, FIPS, Common Criteria
 summary: 'The TLS and SSH policy determines which protocols and ciphers are used to establish secure TLS connections with client applications and secure SSH connections to internal StorageGRID services.'
 ---
 = Manage the TLS and SSH policy
@@ -23,41 +23,40 @@ The security policy controls how TLS and SSH encrypt data in motion. In general,
 
 .Steps
 . Select *CONFIGURATION* > *Security settings* > *TLS and SSH policies*.
++ 
+The TLS and SSH policies tab shows the available policies. The currently active policy is noted by a green checkmark on the policy tile.
 +
-
-image::../media/securitysettings_tls_ssh_policies_homepg.png[TLS and SSH policies]
+image::../media/securitysettings_tls_ssh_policies_current.png[TLS and SSH policies]
 +
-
-. Select *View details* to review each policy.
+NOTE: Some StorageGRID services have not been updated to use the ciphers in these policies.
 +
-
-. Select *Use policy* to apply one of the provided policies.
-A green checkmark next to *Current policy* can be seen on the policy that is applied.
-+
-
-NOTE: Modern compatibility is the selected default policy. Some StorageGRID services have not been updated to use the ciphers in these policies.
-+
-
 [cols="1a,2a" options="header"]
 |===
-|Policy
-|Description
+| Policy
+| Description
 
-|Modern compatibility
-|Use this policy if you need strong encryption. This policy is compatible with most TLS and SSH clients. You can use this default policy unless you have special requirements.
+| Modern compatibility (default)
+| Use the default policy if you need strong encryption. This policy is compatible with most TLS and SSH clients. You can use this policy unless you have special requirements.
 
-|Legacy compatibility
-|Use this policy if you need additional compatibility options to support older clients. The additional options in Legacy policy can be less secure than the Modern compatibility policy.
+| Legacy compatibility
+| Use this policy if you need additional compatibility options to support older clients. The additional options in Legacy policy can be less secure than the Modern compatibility policy.
 
-|Common Criteria
-|Matches the test configuration used for Common Criteria certification.
+| Common Criteria
+| Matches the test configuration used for Common Criteria certification.
 
-|FIPS strict
-|The same as the Common Criteria policy, but removes the transitional ciphers and enables FIPS mode in OpenSSL. Using this policy might reduce performance.
+| FIPS strict
+| The same as the Common Criteria policy, but removes the transitional ciphers and enables use of the NetApp Cryptographic Security Module 3.0.0 for external client connections to load balancer endpoints, Tenant Manager, and Grid Manager. Using this policy might reduce performance. 
 
-|Custom
-|You can create a custom policy to apply your own ciphers. You can edit or modify the existing policy ciphers to create your own custom policy. You must use caution and validate the policy you provide.
+| Custom
+| You can create a custom policy to apply your own ciphers. You can edit or modify the existing policy ciphers to create your own custom policy. You must use caution and validate the policy you provide.
+
 |===
+
+. To review a policy, select *View details*. 
+
+. To change the current policy, select *Use policy*.
++
+A green checkmark appears next to *Current policy* on the policy tile.
 
 == Create a custom security policy
 
@@ -69,7 +68,7 @@ To create a custom policy to apply your ciphers:
 . Paste the JSON you copied and make required changes to create a custom policy.
 . Select *Use policy*.
 +
-A green checkmark appears next to *Current policy* in the Custom policy tile.
+A green checkmark appears next to *Current policy* on the Custom policy tile.
 . Optionally, select *Edit configuration* to make more changes to the new custom policy.
 
 [[temporarily-revert-to-default-security-policy]]

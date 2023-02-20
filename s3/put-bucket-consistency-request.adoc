@@ -9,10 +9,11 @@ summary: 'The PUT Bucket consistency request allows you to specify the consisten
 :imagesdir: ../media/
 
 [.lead]
-
 The PUT Bucket consistency request allows you to specify the consistency level to apply to operations performed on a bucket.
 
 The default consistency controls are set to guarantee read-after-write for newly created objects.
+
+.What you'll need
 
 You have the s3:PutBucketConsistency permission, or be account root, to complete this operation.
 
@@ -34,12 +35,10 @@ The `x-ntap-sg-consistency` parameter must contain one of the following values:
 |Guarantees read-after-write consistency for all client requests within a site.
 
 |read-after-new-write
-|(Default) Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees.
+|(Default) Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
 
-*Note:* If your application uses HEAD requests on objects that do not exist, you might receive a high number of 500 Internal Server errors if two or more Storage Nodes at the same site are unavailable. To prevent these errors, set the consistency control to "`available`" unless you require consistency guarantees similar to Amazon S3.
-
-|available (eventual consistency for HEAD operations)
-|Behaves the same as the "`read-after-new-write`" consistency level, but only provides eventual consistency for HEAD operations. Offers higher availability for HEAD operations than "`read-after-new-write`" if Storage Nodes are unavailable. Differs from Amazon S3 consistency guarantees for HEAD operations only.
+|available
+|Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that do not exist). Not supported for S3 FabricPool buckets.
 |===
 
 *Note:* In general, you should use the "`read-after-new-write`" consistency control value. If requests are not working correctly, change the application client behavior if possible. Or, configure the client to specify the consistency control for each API request. Set the consistency control at the bucket level only as a last resort.

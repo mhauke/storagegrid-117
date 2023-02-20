@@ -38,7 +38,7 @@ Cross-grid replication can be configured to occur in one direction or in both di
 
 === Replication in one direction
 
-If you enable cross-grid replication for a bucket on only one grid, objects added to the source bucket are replicated to the destination bucket, but objects added to the destination bucket are not replicated back to the source. In the figure, cross-grid replication is enabled for `my-bucket` from Grid 1 to Grid 2, but it is not enabled in the other direction. 
+If you enable cross-grid replication for a bucket on only one grid, objects added to that bucket (the source bucket) are replicated to the destination bucket on the other grid. However, objects added to the destination bucket will not be replicated back to the source. In the figure, cross-grid replication is enabled for `my-bucket` from Grid 1 to Grid 2, but it is not enabled in the other direction. 
 
 image:../media/grid-federation-cross-grid-replication-one-direction.png[image showing grid federation connection in one direction]
 
@@ -51,8 +51,9 @@ image:../media/grid-federation-cross-grid-replication.png[image showing replicat
 
 When an S3 client adds an object to a bucket that has cross-grid replication enabled, the following happens:
 
-. StorageGRID automatically replicates the object from the source bucket to the destination bucket. The time to perform this background replication operation depends on a number of factors, including the size of the replication queue.
+. StorageGRID automatically replicates the object from the source bucket to the destination bucket. The time to perform this background replication operation depends on a number of factors, including the number of other replication operations that are pending.
 +
+The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
 The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
 +
 [cols="1a,2a" options="header"]
@@ -71,7 +72,8 @@ The S3 client can verify an object's replication status by issuing a GET Object 
 +
 NOTE: StorageGRID does not support the `x-amz-replication-status` header.
 
-. StorageGRID places and stores the object according to the matching ILM rule in each grid's active ILM policy. For example, Object A on Grid 1 might be stored as two replicated copies and retained forever, while the copy of Object A that was replicated to Grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
+. StorageGRID manages the objects in each grid like any other objects, including following the active ILM policy.
+For example, Object A on Grid 1 might be stored as two replicated copies and retained forever, while the copy of Object A that was replicated to Grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
 
 === What happens when objects are deleted?
 
@@ -82,7 +84,16 @@ As described in link:../primer/delete-data-flow.html[Delete data flow], StorageG
 * The bucket has a lifecycle configuration, which expires.
 * The last time period in the ILM rule for the object ends, and there are no further placements specified.
 
-When StorageGRID deletes an object because of a Delete objects in bucket operation, bucket lifecycle expiration, or ILM placement expiration, the replicated object is never deleted from the other grid in a grid federation connection. However, S3 client deletes can optionally be replicated between grids.
+When StorageGRID deletes an object because of a Delete objects in bucket operation, bucket lifecycle expiration, or ILM placement expiration, the replicated object is never deleted from the other grid in a grid federation connection. However, delete markers from S3 client deletes can optionally be replicated between grids.
+
+As described in link:../primer/delete-data-flow.html[Delete data flow], StorageGRID can delete an object for any of these reasons: 
+
+* The S3 client issues a delete request.
+* The bucket has a lifecycle configuration, which expires.
+* The last time period in the ILM rule for the object ends, and there are no further placements specified.
+* The tenant user chooses to link:../tenant/deleting-s3-bucket-objects.html[delete objects in the bucket]. 
+
+When StorageGRID deletes an object because of bucket lifecycle expiration, ILM placement expiration, or a delete objects operation, the replicated object is never deleted from the other grid in a grid federation connection. However, S3 client deletes can optionally be replicated between the grids in the connection as described below.
 
 To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, review how S3 clients delete objects from buckets that have versioning enabled, as follows:
 
@@ -103,7 +114,7 @@ When an S3 client deletes an object from a bucket that has cross-grid replicatio
 
 **  If you choose not to replicate delete markers, a delete marker is added to the source bucket but is not replicated to the destination bucket. In effect, objects that are deleted on the source grid are not deleted on the destination grid.
 
-In the figure, *Replicate client deletes* was set to *Yes* when link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication was enabled]. Delete requests for the source bucket that include a version ID will not delete objects from the destination bucket. Delete requests for the source bucket that do not include a version ID will appear to delete objects in the destination bucket.
+In the figure, *Replicate delete markers* was set to *Yes* when link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication was enabled]. Delete requests for the source bucket that include a version ID will not delete objects from the destination bucket. Delete requests for the source bucket that do not include a version ID will appear to delete objects in the destination bucket.
 
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
 
@@ -142,7 +153,7 @@ If an S3 client issues a PUT Object tagging or DELETE Object tagging request, `5
 
 === How segmented objects are replicated
 
-The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*Configuration* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
+The source grid's maximum segment size applies to objects replicated to the destination grid. When objects are replicated to another grid, the *Maximum Segment Size* setting (*CONFIGURATION* > *System* > *Storage options*) of the source grid will be used on both grids. For example, suppose the maximum segment size for the source grid is 1 GB, while the maximum segment size of the destination grid is 50 MB. If you ingest a 2-GB object on the source grid, that object is saved as two 1-GB segments. It will also be replicated to the destination grid as two 1-GB segments, even though that grid's maximum segment size is 50 MB. 
 
 
 

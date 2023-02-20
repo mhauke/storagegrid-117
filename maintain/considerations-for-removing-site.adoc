@@ -63,7 +63,7 @@ As part of removing a site, you must update your ILM configuration. The Decommis
 * No proposed ILM policy exists. If you have a proposed policy, you must delete it.
 * No ILM rules refer to the site, even if those rules are not used in the active or proposed policy. You must delete or edit all rules that refer to the site.
 
-When StorageGRID decommissions the site, it will automatically deactivate any unused erasure coding profiles that refer to the site, and it will automatically delete any unused storage pools that refer to the site. The system-default All Storage Nodes storage pool is removed because it uses all sites.
+When StorageGRID decommissions the site, it will automatically deactivate any unused erasure coding profiles that refer to the site, and it will automatically delete any unused storage pools that refer to the site. If the All Storage Nodes storage pool exists (StorageGRID 11.6 or earlier), it is removed because it uses all sites.
 
 IMPORTANT: Before you can remove a site, you might be required to create new ILM rules and activate a new ILM policy. These instructions assume that you have a good understanding of how ILM works and that you are familiar with creating storage pools, erasure coding profiles, ILM rules, and simulating and activating an ILM policy. See the instructions for managing objects with information lifecycle management.
 
@@ -123,7 +123,7 @@ NOTE: If your ILM rules and policy were designed to protect against the loss of 
 
 == Considerations for consistency controls when you remove a site
 
-The consistency level for an S3 bucket or Swift container determines whether StorageGRID fully replicates object metadata to all nodes and sites before telling a client that object ingest was successful. The consistency level makes a trade-off between the availability of the objects and the consistency of those objects across different Storage Nodes and sites.
+The consistency level for an S3 bucket or Swift container determines whether StorageGRID fully replicates object metadata to all nodes and sites before telling a client that object ingest was successful. Consistency controls provide a balance between the availability of the objects and the consistency of those objects across different Storage Nodes and sites.
 
 When StorageGRID removes a site, it needs to ensure that no data is written to the site being removed. As a result, it temporarily overrides the consistency level for each bucket or container. After you start the site decommission process, StorageGRID temporarily uses strong-site consistency to prevent object metadata from being written to the site being removed.
 

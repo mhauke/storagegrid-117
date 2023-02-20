@@ -47,7 +47,7 @@ image::../media/decommission_site_step_5_disconnected_nodes.png[Decommission Sit
 
 . If any nodes are disconnected, bring them back online.
 +
-See the instructions for monitoring and troubleshooting StorageGRID and the grid node procedures. Contact technical support if you need assistance.
+See the link:../maintain/grid-node-procedures.html[Grid node procedures]. Contact technical support if you need assistance.
 
 . When all disconnected nodes have been brought back online, review the HA groups section of Step 5 (Resolve Node Conflicts).
 +
@@ -63,6 +63,7 @@ See the instructions for administering StorageGRID.
 
 +
 If all nodes are connected and no nodes in the selected site are used in an HA group, the *Provisioning Passphrase* field is enabled.
+
 . Enter the provisioning passphrase.
 +
 The *Start Decommission* button becomes enabled.
@@ -85,10 +86,5 @@ When the new grid configuration has been generated, Step 6 (Monitor Decommission
 +
 NOTE: The *Previous* button remains disabled until the decommission is complete.
 
-.Related information
 
-link:../monitor/index.html[Monitor and troubleshoot]
 
-link:grid-node-procedures.html[Grid node procedures]
-
-link:../admin/index.html[Administer StorageGRID]

@@ -21,13 +21,15 @@ CAUTION: If more than one Storage Node has failed (or is offline), contact techn
 
 CAUTION: If this is the second Storage Node failure in less than 15 days after a Storage Node failure or recovery, contact technical support. Rebuilding Cassandra on two or more Storage Nodes within 15 days can result in data loss.
 
-NOTE: If more than one Storage Node at a site has failed, a site recovery procedure might be required. Contact technical support.
+NOTE: If more than one Storage Node at a site has failed, a site recovery procedure might be required. See link:how-site-recovery-is-performed-by-technical-support.html[How site recovery is performed by technical support].
 
-link:how-site-recovery-is-performed-by-technical-support.html[How site recovery is performed by technical support]
+CAUTION: If ILM rules are configured to store only one replicated copy and the copy exists on a storage volume that has failed, you will not be able to recover the object.
 
-IMPORTANT: If ILM rules are configured to store only one replicated copy and the copy exists on a storage volume that has failed, you will not be able to recover the object.
+NOTE: If you encounter a Services: Status - Cassandra (SVST) alarm during recovery, see link:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html[Recover failed storage volumes and rebuild Cassandra database]. After Cassandra is rebuilt, alarms should clear. If alarms do not clear, contact technical support.
 
-NOTE: If you encounter a Services: Status - Cassandra (SVST) alarm during recovery, see the monitoring and troubleshooting instructions to recover from the alarm by rebuilding Cassandra. After Cassandra is rebuilt, alarms should clear. If alarms do not clear, contact technical support.
+[NOTE]
+====
+For hardware maintenance procedures, such as instructions for replacing a controller or reinstalling SANtricity OS, see the maintenance instructions for your storage appliance.
 
 NOTE: For hardware maintenance procedures, such as instructions for replacing a controller or reinstalling SANtricity OS, see the installation and maintenance instructions for your storage appliance.
 
@@ -41,4 +43,3 @@ link:../sg6000/index.html[SG6000 storage appliances]
 
 link:../sg5700/index.html[SG5700 storage appliances]
 
-link:../sg5600/index.html[SG5600 storage appliances]

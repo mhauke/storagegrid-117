@@ -14,12 +14,13 @@ The List Multipart Uploads operation lists in-progress multipart uploads for a b
 The following request parameters are supported:
 
 * `encoding-type`
-* `max-uploads`
 * `key-marker`
+* `max-uploads`
 * `prefix`
 * `upload-id-marker`
-
-The `delimiter` request parameter is not supported.
+* `Host`
+* `Date`
+* `Authorization`
 
 == Versioning
 

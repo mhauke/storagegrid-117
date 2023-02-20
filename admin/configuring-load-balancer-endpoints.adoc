@@ -178,12 +178,35 @@ The load balancer endpoint is created. The custom certificate is used for all su
 --
 
 .. Select *Generate certificate*.
+
 .. Specify the certificate information:
- ** *Domain name*: One or more fully qualified domain names to include in the certificate. Use an * as a wildcard to represent multiple domain names.
- ** *IP*: One or more IP addresses to include in the certificate.
- ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner. + 
- If no value is entered in this field, the generated certificate uses the first domain name or IP address as the subject common name (CN).
- ** *Days valid*: Number of days after creation that the certificate expires.
++
+[cols="1a,3a" options="header"]
+|===
+|Field| Description
+
+| Domain name
+| One or more fully qualified domain names to include in the certificate. Use an * as a wildcard to represent multiple domain names.
+
+| IP
+| One or more IP addresses to include in the certificate.
+
+|Subject (optional)
+| X.509 subject or distinguished name (DN) of the certificate owner.
+
+If no value is entered in this field, the generated certificate uses the first domain name or IP address as the subject common name (CN).
+
+| Days valid
+| Number of days after creation that the certificate expires.
+
+| Add key usage extensions
+| If selected (default and recommended), key usage and extended key usage extensions are added to the generated certificate. 
+
+These extensions define the purpose of the key contained in the certificate.
+
+*Note*: Leave this checkbox selected unless you experience connection problems with older clients when certificates include these extensions.
+
+|===
 
 .. Select *Generate*.
 
@@ -241,7 +264,7 @@ image::../media/load_balancer_endpoint_details.png[Load balancer endpoint detail
 
 * To edit an endpoint, use the *Actions* menu on the Load balancer endpoints page or the details page for a specific endpoint.
 +
-IMPORTANT: After editing an endpoint, you might need to wait up to 15 minutes for your changes to be applied to all nodes.
+TIP: After editing an endpoint, you might need to wait up to 15 minutes for your changes to be applied to all nodes.
 +
 [cols="1a, 2a,2a" options="header"]
 |===
@@ -307,7 +330,7 @@ IMPORTANT: After editing an endpoint, you might need to wait up to 15 minutes fo
 
 You can remove one or more endpoints using the *Actions* menu, or you can remove a single endpoint from the details page.
 
-IMPORTANT: To prevent client disruptions, update any affected S3 or Swift client applications before you remove a load balancer endpoint. Update each client to connect using a port assigned to another load balancer endpoint. Be sure to update any required certificate information as well.
+CAUTION: To prevent client disruptions, update any affected S3 or Swift client applications before you remove a load balancer endpoint. Update each client to connect using a port assigned to another load balancer endpoint. Be sure to update any required certificate information as well.
 
 * To remove one or more endpoints:
 

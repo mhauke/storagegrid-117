@@ -11,30 +11,51 @@ summary: 'Some features were removed or deprecated in this release. Review these
 [.lead]
 Some features were removed or deprecated in this release. Review these items to understand whether you need to update client applications or modify your configuration before you upgrade.
 
+== Connection Load Balancer (CLB) service removed
+The Connection Load Balancer (CLB) service on Gateway Nodes was deprecated in StorageGRID 11.4 and has now been completely removed from the software. To distribute incoming network connections from client applications to Storage Nodes, you can configure load balancer endpoints for the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or you can integrate a third-party load balancer. See link:../admin/managing-load-balancing.html[Considerations for load balancing].
+
+If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be automatically converted to load balancer endpoints during the upgrade to StorageGRID 11.7.
+
+== Swift support deprecated
+As of the StorageGRID 11.7 release, support for Swift client applications has been deprecated. The user interface and APIs that support Swift client applications will be removed in a future release.
+
+== Archive Node support deprecated
+Support of Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. 
+
+The Cloud Tiering - Simple Storage Service (S3) option is also deprecated. If you are currently using an Archive Node with this option, link:../admin/migrating-objects-from-cloud-tiering-s3-to-cloud-storage-pool.html[migrate objects to a Cloud Storage Pool] instead.
+
+In addition, you should remove Archive Nodes from the active ILM policy in StorageGRID 11.7 or earlier. Removing object data stored on Archive Nodes will simplify future upgrades. See link:../ilm/working-with-ilm-rules-and-ilm-policies.html[Working with ILM rules and ILM policies].
+
 == Audit export through CIFS/Samba removed
 Audit export through CIFS/Samba was deprecated in StorageGRID Webscale 11.1 and has now been removed. As required, you can link:../monitor/considerations-for-external-syslog-server.html[use an external syslog server] or link:../admin/configuring-audit-client-access.html[configure audit client access for NFS].
 
 == Option to specify a storage pool as a temporary location removed
 Previously, when you created an ILM rule with an object placement that includes a single storage pool, you were prompted to specify a second storage pool to use as a temporary location. Starting with StorageGRID 11.7, this option has been removed.
 
-== SHA-1 and SHA-256 options removed
-The SHA-1 and SHA-256 stored object hashing options have been removed. They are no longer used for internal background verification because they require additional CPU resources over MD5 and packet CRC32 check.
+== Grid Manager options moved or removed 
 
-== Connection Load Balancer (CLB) service removed
-The Connection Load Balancer (CLB) service on Gateway Nodes was deprecated in StorageGRID 11.4 and has now been completely removed from the software. To distribute incoming network connections from client applications to Storage Nodes, you can configure load balancer endpoints for the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or you can integrate a third-party load balancer. See link:../admin/managing-load-balancing.html[Considerations for load balancing].
+Several Grid Manager options were moved or removed.
 
-If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be automatically converted to load balancer endpoints during the upgrade to StorageGRID 11.7.
+* The link:../admin/configuring-stored-object-compression.html[Compress stored objects] option was moved to *CONFIGURATION* > *System* > *Object compression*.
 
-== Option to change the network transfer encryption algorithm removed 
-The *Network Transfer Encryption* internal connection setting on the Grid options page (*CONFIGURATION* > *System* > *Grid options*) was obsoleted by the new cipher configuration system and the setting has been removed. The AES256-SHA option was the default in StorageGRID 11.6 and is the only setting available in StorageGRID 11.7. The AES128-SHA value is ignored in the Grid Management API. During the StorageGRID 11.7 upgrade, the network transfer encryption algorithm is set to AES256-SHA.
+* The *Network Transfer Encryption* internal connection setting was removed and replaced by the link:../admin/manage-tls-ssh-policy.html[TLS and SSH policies] tab on the new *CONFIGURATION* > *Security settings* page. 
++
+NOTE: The AES256-SHA option was the default in StorageGRID 11.6 and is the only setting available in StorageGRID 11.7. The AES128-SHA value is ignored in the Grid Management API. During the StorageGRID 11.7 upgrade, the network transfer encryption algorithm is set to AES256-SHA.
 
-== Swift support deprecated
-As of the StorageGRID 11.7 release, support for Swift client applications has been deprecated. The user interface and APIs that support Swift client applications will be removed in a future release.
+* The *Stored object encryption*, *Prevent client modification*, and *Enable HTTP for Storage Node connections* options were moved to the link:../admin/changing-network-options-object-encryption.html[Network and objects tab] on the new *CONFIGURATION* > *Security settings* page. 
+
+* The link:../admin/changing-browser-session-timeout-interface.html[Browser inactivity timeout] option was moved to the new *CONFIGURATION* > *Security settings* page. 
+
+* The link:../admin/manage-link-costs.html[Link cost] option was moved to *SUPPORT* > *Other* > *Link cost*.
+
+* The list of NMS entities was moved to *SUPPORT* > *Other* > *NMS entities*.
+
+* The *Stored Object Hashing* option was removed. The *SHA-1* and *SHA-256* settings are no longer used for internal background verification because they require additional CPU resources over MD5 and packet CRC32 check.
+
+* The *Preferred sender* option was removed. If your StorageGRID deployment includes multiple Admin Nodes, the primary Admin Node is the preferred sender for alert notifications, AutoSupport messages, SNMP traps and informs, and legacy alarm notifications. If the primary Admin Node becomes unavailable, notifications are temporarily sent by other Admin Nodes. See link:../admin/what-admin-node-is.html[What an Admin Node is].
 
 == S3 endpoint domain name format restrictions 
 The use of IP addresses as endpoint domain names is unsupported. Future releases will prevent the configuration. If you need to use IP addresses for endpoint domain names, contact technical support. See link:../admin/configuring-s3-api-endpoint-domain-names.html[S3 endpoint domain names].
 
-== Archive Node support is deprecated
-Support of Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. The Cloud Tiering - Simple Storage Service (S3) option is now deprecated. If you are currently using an Archive Node with the Cloud Tiering - Simple Storage Service (S3) option, migrate your objects to a Cloud Storage Pool. See link:../ilm/index.html[Manage objects with ILM].
-
-You should remove Archive Nodes from active ILM policies in StorageGRID 11.7 or earlier. Removing object data stored on Archive Nodes will simplify future upgrades. See link:../ilm/working-with-ilm-rules-and-ilm-policies.html[Working with ILM rules and ILM policies].
+== User initiated Volume Lost command removed
+The `proc/CMSI/Volume_Lost` has been removed. Use the `repair-data start-replicated-volume-repair` command to restore replicated data for a volume.

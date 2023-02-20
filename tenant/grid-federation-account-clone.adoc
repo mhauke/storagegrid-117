@@ -11,16 +11,16 @@ summary: 'If your tenant account was assigned the Use grid federation connection
 [.lead]
 If your tenant account was assigned the *Use grid federation connection* permission when it was created, tenant accounts, groups, users, and, optionally, S3 access keys are cloned from the tenant's source grid to the tenant's destination grid. 
 
-Account cloning is required for cross-grid replication. It ensures that the same tenant users and groups can access the corresponding buckets and objects on either grid.
+Account cloning is required for cross-grid replication to ensure that the same tenant users and groups can access the corresponding buckets and objects on either grid.
 
-The grid where the tenant is originally created is the tenant's _source grid_. The grid where the tenant is replicated to is the tenant's _destination grid_. Both tenant accounts have the same account ID, name, description, storage quota, and assigned permissions, but the tenant replicated to the destination grid has fewer capabilities and does not initially have a root user password.
+The grid where the tenant is originally created is the tenant's _source grid_. The grid where the tenant is replicated is the tenant's _destination grid_. Both tenant accounts have the same account ID, name, description, storage quota, and assigned permissions, but the tenant replicated to the destination grid does not initially have a root user password.
 
 For more details and requirements, go to:
 
 * link:../admin/grid-federation-overview.html[What is grid federation]
 * link:../admin/grid-federation-what-is-account-clone.html[What is account clone]
 * link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication]
-* link:grid-federation-manage-cross-grid-replication.html[Manage cross-grid replication]
+
 
 == Tenant workflow for account clone
 
@@ -58,17 +58,21 @@ NOTE: Any users you add when creating a group on the source grid are not include
 
 * For security reasons, local user passwords are not cloned to the destination grid.
 +
-IMPORTANT: If a local user needs to access Tenant Manager on the destination grid, the root user for the tenant account must add a password for that user on the destination grid. For instructions, see link:managing-local-users.html[Manage local users].
+TIP: If a local user needs to access Tenant Manager on the destination grid, the root user for the tenant account must add a password for that user on the destination grid. For instructions, see link:managing-local-users.html[Manage local users].
 
 == Manage S3 access keys
 
-To create S3 access keys, always start from the tenant's source grid. See the instructions to link:creating-your-own-s3-access-keys.html[create your own access keys] or to link:creating-another-users-s3-access-keys.html[create another user's access keys]. 
+You can link:creating-your-own-s3-access-keys.html[create your own access keys] or to link:creating-another-users-s3-access-keys.html[create another user's access keys] on either the source grid or the destination grid to access buckets on that grid. 
 
-For security reasons, StorageGRID does not automatically clone S3 access keys to the tenant's destination grid. If a tenant user needs to access their buckets from both grids, use the Tenant Manager API to manually clone the keys from the source grid to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
+StorageGRID does not automatically clone S3 access keys because security is improved by having different keys on each grid. If the same user needs to access their buckets on both grids, create the access keys on the source grid and then use the Tenant Manager API to manually clone them to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
 
-== Edit or delete tenant groups, users, or keys
+== Edit or delete tenant groups and users
 
-Account cloning occurs only for new information. If you edit or delete the tenant or its users, groups, or access keys on either grid, your changes are not cloned to the other grid. However, if you delete a tenant from the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
+Account cloning only occurs when you create tenant groups and users on the source grid. 
+
+CAUTION: If you edit or delete a tenant or its users and groups on either grid, your changes will not be cloned to the other grid. 
+
+CAUTION: If you delete a tenant on the destination grid, clone errors will occur if you attempt to create new groups or users on the tenant's source grid.
 
 == Create groups, users, and keys on destination grid
 

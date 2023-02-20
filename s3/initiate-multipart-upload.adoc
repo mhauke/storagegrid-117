@@ -9,7 +9,7 @@ summary: 'The Initiate Multipart Upload operation initiates a multipart upload f
 :imagesdir: ../media/
 
 [.lead]
-The Initiate Multipart Upload operation initiates a multipart upload for an object, and returns an upload ID.
+The Initiate Multipart Upload (CreateMultipartUpload) operation initiates a multipart upload for an object, and returns an upload ID.
 
 The `x-amz-storage-class` request header is supported. The value submitted for `x-amz-storage-class` affects how StorageGRID protects object data during ingest and not how many persistent copies of the object are stored in the StorageGRID system (which is determined by ILM).
 

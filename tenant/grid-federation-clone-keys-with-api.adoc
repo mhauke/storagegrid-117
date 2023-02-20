@@ -17,17 +17,19 @@ If your tenant account has the *Use grid federation connection* permission, you 
 * The grid federation connection has a *Connection status* of *Connected*.
 * You are signed in to the Tenant Manager on the tenant's source grid using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Manage your own S3 credentials or Root access permission].
-* You will be cloning your own access key, or you have already created each user whose access key you will be cloning.
+* The user account that you will be cloning access keys for (yourself or another user) already exists on both grids.
 
 == Clone your own access key
 
-. Using the Tenant Manager, link:creating-your-own-s3-access-keys.html[create your own access keys] and download the `.csv` file.
+. Using the Tenant Manager on the source grid, link:creating-your-own-s3-access-keys.html[create your own access keys] and download the `.csv` file.
 
 . From the top of the Tenant Manager, select the help icon and select *API documentation*.
 
 . In the *s3* section, select the following endpoint:
 +
 `POST /org/users/current-user/replicate-s3-access-key`
++
+image::../media/grid-federation-post-current-user-replicate.png[POST endpoint for replicating own access key]
 
 . Select *Try it out*.
 
@@ -41,11 +43,11 @@ image::../media/grid-federation-clone-access-key.png[Tenant Manager API entering
 
 . Select *Execute*.
 
-. Confirm that the server response code is *204*, indicating that the key was successfully cloned to the other grid. 
+. Confirm that the server response code is *204*, indicating that the key was successfully cloned to the destination grid. 
 
 == Clone another user's access keys
 
-. Using the Tenant Manager, link:creating-another-users-s3-access-keys.html[create the other user's S3 access keys] and download the `.csv` file.
+. Using the Tenant Manager on the source grid, link:creating-another-users-s3-access-keys.html[create the other user's S3 access keys] and download the `.csv` file.
 
 . From the top of the Tenant Manager, select the help icon and select *API documentation*.
 
@@ -66,6 +68,8 @@ image::../media/grid-federation-clone-access-key.png[Tenant Manager API entering
 . In the *s3* section, select the following endpoint:
 +
 `POST /org/users/{userId}/replicate-s3-access-key`
++
+image::../media/grid-federation-post-other-user.png[POST endpoint for replicating another user's access key]
 
 . Select *Try it out*.
 
@@ -79,4 +83,4 @@ Be sure to retain the double quotes around the string.
 
 . Select *Execute*.
 
-. Confirm that the server response code is *204*, indicating that the key was successfully cloned to the other grid. 
+. Confirm that the server response code is *204*, indicating that the key was successfully cloned to the destination grid. 

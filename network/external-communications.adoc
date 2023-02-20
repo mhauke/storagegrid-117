@@ -305,6 +305,19 @@ Used by NFS-based audit export (nfs).
 *Note:* This port is required only if NFS-based audit export is enabled.
 
 |
+5353
+|
+UDP
+|
+mDNS
+|
+All nodes
+|
+All nodes
+|
+Provides the multicast DNS (mDNS) service that is used for full-grid IP changes and for primary Admin Node discovery during installation, expansion, and recovery.
+
+|
 5696
 |
 TCP
@@ -354,80 +367,58 @@ Service laptop
 Appliances
 |
 Grants access to StorageGRID appliances in pre-configuration mode for support and troubleshooting. This port is not required to be accessible between grid nodes or during normal operations.
-|
-9091
-|
-TCP
-|
-HTTPS
-|
-External Grafana service
-|
-Admin Nodes
-|
-Used by external Grafana services for secure access to the StorageGRID Prometheus service.
+
+| 9091
+| TCP
+| HTTPS
+| External Grafana service
+| Admin Nodes
+| Used by external Grafana services for secure access to the StorageGRID Prometheus service.
 
 *Note:* This port is required only if certificate-based Prometheus access is enabled.
 
-|
-9443
-|
-TCP
-|
-HTTPS
-|
-Browser
-|
-Admin Nodes
-|
-Optional. Used by web browsers and management API clients for accessing the Tenant Manager. Can be used to separate Grid Manager and Tenant Manager communications.
-|
-18082
-|
-TCP
-|
-HTTPS
-|
-S3 clients
-|
-Storage Nodes
-|
-S3 client traffic directly to Storage Nodes (HTTPS).
-|
-18083
-|
-TCP
-|
-HTTPS
-|
-Swift clients
-|
-Storage Nodes
-|
-Swift client traffic directly to Storage Nodes (HTTPS).
-|
-18084
-|
-TCP
-|
-HTTP
-|
-S3 clients
-|
-Storage Nodes
-|
-S3 client traffic directly to Storage Nodes (HTTP).
-|
-18085
-|
-TCP
-|
-HTTP
-|
-Swift clients
-|
-Storage Nodes
-|
-Swift client traffic directly to Storage Nodes (HTTP).
+| 9443
+| TCP
+| HTTPS
+| Browser
+| Admin Nodes
+| Optional. Used by web browsers and management API clients for accessing the Tenant Manager. Can be used to separate Grid Manager and Tenant Manager communications.
+
+
+| 18082
+| TCP
+| HTTPS
+| S3 clients
+| Storage Nodes
+| S3 client traffic directly to Storage Nodes (HTTPS).
+
+| 18083
+| TCP
+| HTTPS
+| Swift clients
+| Storage Nodes
+| Swift client traffic directly to Storage Nodes (HTTPS).
+
+| 18084
+| TCP
+| HTTP
+| S3 clients
+| Storage Nodes
+| S3 client traffic directly to Storage Nodes (HTTP).
+
+| 18085
+| TCP
+| HTTP
+| Swift clients
+| Storage Nodes
+| Swift client traffic directly to Storage Nodes (HTTP).
+
+| 23000-23999
+| TCP
+| HTTPS
+| All nodes on the source grid for cross-grid replication
+| Admin Nodes and Gateway Nodes on the destination grid for cross-grid replication
+| This range of ports is reserved for grid federation connections. Both grids in a given connection use the same port.
+
 |===
 

@@ -1,7 +1,7 @@
 section: installconfig
 title: Install appliance hardware
 entries:
-  - title: Overview
+  - title: Quick start
     pdf-filename: Install StorageGRID appliance hardware
     url: "/installconfig/index.html"
   - title: Appliance hardware descriptions
@@ -40,18 +40,6 @@ entries:
         url: "/installconfig/port-bond-modes-for-e5600sg-controller-ports.html"
       - title: Port bond modes for SG100 and SG1000 appliances
         url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
-    - title: 'Automate appliance installation and configuration'
-      entries:
-      - title: Overview
-        url: "/installconfig/automating-appliance-installation-and-configuration.html"
-      - title: Automate appliance configuration using StorageGRID Appliance Installer
-        url: "/installconfig/automating-appliance-configuration-using-storagegrid-appliance-installer.html"
-      - title: Automate installation and configuration of appliance nodes using configure-sga.py script
-        url: "/installconfig/automating-installation-configuration-appliance-nodes-configure-sga-py-script.html"
-      - title: Automate configuration of StorageGRID
-        url: "/installconfig/automating-configuration-of-storagegrid.html"
-      - title: Overview of installation REST APIs
-        url: "/installconfig/overview-of-installation-rest-apis.html"
     - title: Gather installation information
       entries:
       - title: Overview
@@ -66,10 +54,14 @@ entries:
         url: "/installconfig/gathering-installation-information-sg5600.html"
       - title: SG100 and SG1000
         url: "/installconfig/gathering-installation-information-sg100-and-sg1000.html"
+  - title: 'Automate appliance installation and configuration'
+    url: "/installconfig/automating-appliance-installation-and-configuration.html"
+  - title: Automate StorageGRID configuration
+    url: "/installconfig/automating-configuration-of-storagegrid.html"
+  - title: Overview of installation REST APIs
+    url: "/installconfig/overview-of-installation-rest-apis.html"
   - title: Install hardware
     entries:
-    - title: Overview
-      url: "/installconfig/install-appliance-hardware.html"
     - title: Register hardware
       url: "/installconfig/registering-hardware.html"
     - title: Install hardware

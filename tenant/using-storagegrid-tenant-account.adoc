@@ -44,7 +44,7 @@ After an S3 tenant account is created, you can access the Tenant Manager to perf
 * Using platform services (if enabled)
 * Monitoring storage usage
 
-IMPORTANT: While you can create and manage S3 buckets with the Tenant Manager, you must have S3 access keys and use the S3 REST API to ingest and manage objects.
+TIP: While you can create and manage S3 buckets with the Tenant Manager, you must have S3 access keys and use the S3 REST API to ingest and manage objects.
 
 == Configure Swift tenants
 
@@ -53,7 +53,7 @@ After a Swift tenant account is created, users with the Root access permission c
 * Setting up identity federation (unless the identity source is shared with the grid), and creating local groups and users
 * Monitoring storage usage
 
-IMPORTANT: Swift users must have the Root access permission to access the Tenant Manager. However, the Root access permission does not allow users to authenticate into the Swift REST API to create containers and ingest objects. Users must have the Swift Administrator permission to authenticate into the Swift REST API.
+TIP: Swift users must have the Root access permission to access the Tenant Manager. However, the Root access permission does not allow users to authenticate into the Swift REST API to create containers and ingest objects. Users must have the Swift Administrator permission to authenticate into the Swift REST API.
 
 .Related information
 

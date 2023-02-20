@@ -21,13 +21,24 @@ If your tenant account has the *Use grid federation connection* permission, you 
 
 . Select *STORAGE (S3)* > *Grid federation connections*.
 +
-The Grid federation connection page appears, and includes a table that summarizes the following information:
+The Grid federation connection page appears and includes a table that summarizes the following information:
++
+[cols="1a,2a" options="header"]
+|===
+| Column
+| Description
 
-* The *Connection name* column shows the grid federation connections this tenant has permission to use. 
+| Connection name
+| The grid federation connections this tenant has permission to use. 
 
-* For each grid federation connection, the *Buckets with cross-grid replication* column lists all tenant buckets that have cross-grid replication enabled. Objects added to these buckets will be replicated to the other grid in the connection.
+| Buckets with cross-grid replication 
+| For each grid federation connection, the tenant buckets that have cross-grid replication enabled. Objects added to these buckets will be replicated to the other grid in the connection.
 
-* For each grid federation connection, the *Last error* column shows the most recent error to occur, if any, when data was being replicated to the other grid. See <<clear-last-error,Clear the last error>>.
+| Last error
+| For each grid federation connection, the most recent error to occur, if any, when data was being replicated to the other grid. See <<clear-last-error,Clear the last error>>.
+
+|===
+
 
 . Optionally, select a bucket name to link:viewing-s3-bucket-details.html[view bucket details].
 
@@ -60,8 +71,6 @@ image:../media/grid-federation-cgr-object-example-last-error.png[grid-federation
 . Wait 5-6 minutes and then ingest a new object into the bucket. Confirm that the error message does not reappear.
 +
 NOTE: To ensure the error message is cleared, wait at least 5 minutes after the timestamp in the message before ingesting a new object.
-+
-IMPORTANT: After you clear the error, a new *Last error* might appear if objects are ingested in a different bucket that also has an error. 
 
 . To determine if any objects failed to be replicated because of the bucket error, see link:../admin/grid-federation-retry-failed-replication.html[Identify and retry failed replication operations]. 
 

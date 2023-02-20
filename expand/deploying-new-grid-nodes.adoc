@@ -43,7 +43,7 @@ You can deploy grid nodes on new Linux hosts or on existing Linux hosts. If you 
 * If you plan to deploy new grid nodes on existing hosts, you have confirmed the existing hosts have enough CPU, RAM, and storage capacity for the additional nodes.
 * You have a plan to minimize failure domains. For example, you should not deploy all Gateway Nodes on a single physical host.
 +
-IMPORTANT: In a production deployment, do not run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
+CAUTION: In a production deployment, do not run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
 
 * If the StorageGRID node uses storage assigned from a NetApp ONTAP system, confirm that the volume does not have a FabricPool tiering policy enabled. Disabling FabricPool tiering for volumes used with StorageGRID nodes simplifies troubleshooting and storage operations.
 
@@ -74,7 +74,7 @@ Setting up appliance hardware includes the required steps for configuring Storag
 
 * All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer have been defined in the Grid Network Subnet List on the primary Admin Node.
 
-* The StorageGRID Appliance Installer firmware on the replacement appliance is compatible with the StorageGRID software version currently running on your grid. For example, version 3.6 of the StorageGRID Appliance Installer is compatible with version 11.6 of StorageGRID. (If the versions are not compatible, you must upgrade the StorageGRID Appliance Installer firmware.)
+* The StorageGRID Appliance Installer firmware on the replacement appliance is compatible with the StorageGRID software version currently running on your grid. If the versions are not compatible, you must upgrade the StorageGRID Appliance Installer firmware.
 
 * You have a service laptop with a link:../admin/web-browser-requirements.html[supported web browser].
 * You know one of the IP addresses assigned to the appliance's compute controller. You can use the IP address for any attached StorageGRID network.
@@ -136,7 +136,7 @@ The node name is assigned to this appliance node in the StorageGRID system. It i
 
 . In the *Installation* section, confirm that the current state is "`Ready to start installation of _node name_ into grid with primary Admin Node _admin_ip_`" and that the *Start Installation* button is enabled.
 +
-If the *Start Installation* button is not enabled, you might need to change the network configuration or port settings. For instructions, see the installation and maintenance instructions for your appliance.
+If the *Start Installation* button is not enabled, you might need to change the network configuration or port settings. For instructions, see the maintenance instructions for your appliance.
 
 . From the StorageGRID Appliance Installer home page, select *Start Installation*.
 +

@@ -13,6 +13,8 @@ You can enable CloudMirror replication for an S3 bucket if you want StorageGRID 
 
 CloudMirror replication operates independently of the grid's active ILM policy. The CloudMirror service replicates objects as they are stored to the source bucket and delivers them to the destination bucket as soon as possible. Delivery of replicated objects is triggered when object ingest succeeds.
 
+NOTE: CloudMirror replication has important similarities and differences with the cross-grid replication feature. To learn more, see link:../admin/grid-federation-compare-cgr-to-cloudmirror.html[Compare cross-grid replication and CloudMirror replication].
+
 If you enable CloudMirror replication for an existing bucket, only the new objects added to that bucket are replicated. Any existing objects in the bucket are not replicated. To force the replication of existing objects, you can update the existing object's metadata by performing an object copy.
 
 NOTE: If you are using CloudMirror replication to copy objects to an AWS S3 destination, be aware that Amazon S3 limits the size of user-defined metadata within each PUT request header to 2 KB. If an object has user-defined metadata greater than 2 KB, that object will not be replicated.

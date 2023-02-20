@@ -75,7 +75,7 @@ NOTE: The *ILM placement unachievable* alert is triggered to indicate that the I
   *** The number of copies cannot be greater than the number of storage pools.
   *** If the number of copies equals the number of storage pools, one copy of the object is stored in each storage pool.
   *** If the number of copies is less than the number of storage pools, one copy is stored at the ingest site, and then the system distributes the remaining copies to keep disk usage among the pools balanced, while ensuring that no site gets more than one copy of an object.
-  *** If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. For this reason, do not specify the default All Storage Nodes storage pool and another storage pool.
+  *** If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. For this reason, do not specify the All Storage Nodes storage pool (StorageGRID 11.6 or earlier) and another storage pool.
 
 . If you want to create an erasure-coded copy:
  .. From the *Store objects by* drop-down list, select *erasure coding*.

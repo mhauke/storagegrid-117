@@ -15,9 +15,7 @@ Shut down the services appliance to perform hardware maintenance.
 
 * You have physically located the services appliance requiring maintenance in the data center.
 +
-link:locating-controller-in-data-center.html[Locating the controller in a data center]
-
-* The appliance has been link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed into maintenance mode].
+link:locating-controller-in-data-center.html[Locating the controller in a data center].
 
 .About this task
 
@@ -25,11 +23,11 @@ To prevent service interruptions, shut down the services appliance during a sche
 
 .Steps
 
-. When the appliance has been placed in maintenance mode, shut down the appliance:
+. Shut down the appliance:
 +
 CAUTION: You must perform a controlled shut down of the appliance by entering the commands specified below. Shutting down the appliance using the power switch will result in data loss.
 
- .. Log in to the grid node using PuTTY or another ssh client:
+ .. If you have not already logged into the grid node, log in using PuTTY or another ssh client:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
   ... Enter the password listed in the `Passwords.txt` file.
   ... Enter the following command to switch to root: `su -`

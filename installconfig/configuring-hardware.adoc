@@ -2,7 +2,7 @@
 permalink: installconfig/configuring-hardware.html
 sidebar: sidebar
 keywords: storage node, storage appliance, hardware, configure, configuration, set up, setup, network, networking
-summary: 'After applying power to the appliance, you must configure the network connections that will be used by StorageGRID.'
+summary: 'After applying power to the appliance, perform the necessary configuration steps. These steps vary depending on the type of appliance you are installing.'
 ---
 = Set up hardware: Overview
 :icons: font
@@ -35,4 +35,9 @@ The following appliances have a BMC interface that must be configured:
 
 == Optional configuration
 
-As needed, you can also enable node encryption, change the RAID mode, and remap network ports.
+* Storage appliances
+** Configure SANtricity System Manager (SG6000 and SG5700) or SANtricity Storage Manager (SG5600), the software you will use to monitor the hardware
+** Change the RAID mode
+
+* Services appliances
+** Access the BMC interface for the SG100 and SG1000 and the SG6000-CN controller
