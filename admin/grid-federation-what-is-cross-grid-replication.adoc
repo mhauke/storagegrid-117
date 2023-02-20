@@ -108,7 +108,7 @@ In the figure, *Replicate delete markers* was set to *Yes* when link:../tenant/g
 
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
 
-NOTE: If you want to keep object deletions in sync between grids, create an link:../s3/create-s3-lifecycle-configuration.html[S3 lifecycle configuration] for the buckets on both grids. 
+NOTE: If you want to keep object deletions in sync between grids, create corresponding link:../s3/create-s3-lifecycle-configuration.html[S3 lifecycle configurations] for the buckets on both grids. 
 
 === How encrypted objects are replicated
 When you use cross-grid replication to replicate objects between grids, you can encrypt individual objects, use default bucket encryption, or configure grid-wide encryption. You can add, modify, or remove default bucket or grid-wide encryption settings before or after you enable cross-grid replication for a bucket.
