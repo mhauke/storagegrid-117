@@ -46,7 +46,8 @@ image:../media/grid-federation-workflow.png[Grid federation connection workflow]
 ** *Grid 1 DNS*: The FQDN for Grid 2 mapped to one or more IP addresses or virtual IP (VIP) addresses for Grid 1. 
 ** *Grid 2 DNS*: The FQDN for Grid 1 mapped to one or more IP addresses or VIP addresses for Grid 2. 
 
-* If the DNS entries for a FQDN map to the IP addresses of multiple Admin Node or Gateway Node or to the VIP addresses of multiple HA groups, the requests to use the connection will be load balanced between the active nodes in the HA groups.
+* If the DNS entries for a FQDN map to the IP addresses of multiple Admin Nodes or Gateway Nodes, the requests to use the connection will be load balanced between the active nodes. If the DNS entries map to the VIP addresses of multiple HA groups, requests will be load balanced between the active nodes in the HA groups.
+
 
 === Port requirements
 
