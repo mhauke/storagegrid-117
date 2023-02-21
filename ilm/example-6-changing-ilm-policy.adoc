@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: change ILM policy, example ILM policy, information lifecycle policy example
 summary: 'If your data protection needs to be changed or you add new sites, you can create and activate a new ILM policy.'
 ---
-= Example 6: Changing an ILM policy
+= Example 6: Change an ILM policy
 :icons: font
 :imagesdir: ../media/
 
@@ -21,7 +21,9 @@ CAUTION: The following ILM rules and policy are only examples. There are many wa
 
 When you activate a new ILM policy, the performance of your StorageGRID system might be temporarily affected, especially if the placement instructions in the new policy require many existing objects to be moved to new locations.
 
-CAUTION: When you activate a new ILM policy, StorageGRID uses it to manage all objects, including existing objects and newly ingested objects. Before activating a new ILM policy, review any changes to the placement of existing replicated and erasure-coded objects. Changing an existing object's location might result in temporary resource issues when the new placements are evaluated and implemented.
+When you activate a new ILM policy, StorageGRID uses it to manage all objects, including existing objects and newly ingested objects. Before activating a new ILM policy, review any changes to the placement of existing replicated and erasure-coded objects. Changing an existing object's location might result in temporary resource issues when the new placements are evaluated and implemented.
+
+To ensure a new ILM policy does not affect the placement of existing replicated and erasure-coded objects, you can link:create-ilm-rule-enter-details.html#use-advanced-filters-in-ilm-rules[create an ILM rule with an ingest time filter]. For example, *Ingest time* _is on or after_ _date and time_, so that the new rule applies only to objects ingested on or after the date and time specified.
 
 The types of ILM policy changes that can temporarily affect StorageGRID performance include the following:
 

@@ -16,21 +16,23 @@ If you plan to use a Cloud Storage Pool to move objects out of the StorageGRID s
 * In general, cloud archival storage, such as Amazon S3 Glacier or Azure Blob storage, is an inexpensive place to store object data. However, the costs to retrieve data from cloud archival storage are relatively high. To achieve the lowest overall cost, you must consider when and how often you will access the objects in the Cloud Storage Pool. Using a Cloud Storage Pool is recommended only for content that you expect to access infrequently.
 * Do not use Cloud Storage Pools for objects that have been ingested by Swift clients. Swift does not support POST Object restore requests, so StorageGRID will not be able to retrieve any Swift objects that have been transitioned to S3 Glacier storage or the Azure Blob storage Archive tier. Issuing a Swift GET object request to retrieve these objects will fail (403 Forbidden).
 * Using Cloud Storage Pools with FabricPool is not supported because of the added latency to retrieve an object from the Cloud Storage Pool target.
+* Objects with S3 Object Lock enabled can't be placed in Cloud Storage Pools.
 
-== Information required to create a Cloud Storage Pool
-
-Before you can create a Cloud Storage Pool, you must create the external S3 bucket or the external Azure Blob storage container that you will use for the Cloud Storage Pool. Then, when you create the Cloud Storage Pool in StorageGRID, you must specify the following information:
-
-* The provider type: Amazon S3 or Azure Blob storage.
-* If you select Amazon S3, whether the Cloud Storage Pool is for use with the AWS Secret Region (*CAP (C2S Access Portal)*).
-* The exact name of the bucket or container.
-* The service endpoint needed to access the bucket or container.
-* The authentication needed to access the bucket or container:
- ** *S3*: Optionally, an access key ID and secret access key.
- ** *C2S*: The complete URL for obtaining temporary credentials from the CAP server; a server CA certificate, a client certificate, a private key for the client certificate, and, if the private key is encrypted, the passphrase for decrypting it.
- ** *Azure Blob storage*: An account name and account key. These credentials must have full permission for the container.
-* Optionally, a custom CA certificate to verify TLS connections to the bucket or container.
-
+// commenting out bcs all of this is listed in creating-cloud-storage-pool. Keeping it here just in case.
+//== Information required to create a Cloud Storage Pool
+//Before you can create a Cloud Storage Pool, you must create the external S3 bucket or the external Azure Blob storage container that you will use for the Cloud Storage Pool. Then, when you create the Cloud Storage Pool in StorageGRID, you must specify the following information:
+//* The provider type: Amazon S3/GCP or Azure Blob storage.
+//+
+//Select Amazon S3 if you are using Google Cloud Platform.
+//* If you select Amazon S3, whether the Cloud Storage Pool is for use with the AWS Secret Region (*CAP (C2S Access Portal)*).
+//* The exact name of the bucket or container.
+//* The service endpoint needed to access the bucket or container.
+//* The authentication needed to access the bucket or container:
+//** *S3*: Optionally, an access key ID and secret access key.
+//** *C2S*: The complete URL for obtaining temporary credentials from the CAP server; a server CA certificate, a client certificate, a private key for the client certificate, and, if the private key is encrypted, the passphrase for decrypting it.
+//** *Azure Blob storage*: An account name and account key. These credentials must have full permission for the container.
+//* Optionally, a custom CA certificate to verify TLS connections to the bucket or container.
+//
 == Considerations for the ports used for Cloud Storage Pools
 
 To ensure that the ILM rules can move objects to and from the specified Cloud Storage Pool, you must configure the network or networks that contain your system's Storage Nodes. You must ensure that the following ports can communicate with the Cloud Storage Pool.

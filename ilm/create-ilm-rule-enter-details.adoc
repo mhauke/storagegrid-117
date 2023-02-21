@@ -20,8 +20,6 @@ When evaluating an object against an link:what-ilm-rule-is.html[ILM rule], Stora
 .Steps
 
 . Enter a unique name for the rule in the *Name* field.
-+
-You must enter at least 1 and no more than 64 characters.
 
 . Optionally, enter a short description for the rule in the *Description* field.
 +
@@ -59,14 +57,15 @@ The table shows the types of metadata you can specify in advanced filters, the o
 |===
 | Metadata type| Supported operators| Metadata value
 
-|Ingest time (microseconds)
+|Ingest time
 |
-* equals
-* does not equal
-* less than
-* less than or equal to
-* greater than
-* greater than or equal to
+* is
+* is not
+* is before
+* is on or before
+* is after
+* is on or after
+
 
 |Time and date the object was ingested.
 
@@ -87,21 +86,19 @@ The table shows the types of metadata you can specify in advanced filters, the o
 
 For example, you might want to match objects that end with `.txt` or start with `test-object/`.
 
-|Last access time (microseconds)
+|Last access time
 |
-* equals
-* does not equal
-* less than
-* less than or equal to
-* greater than
-* greater than or equal to
-* exists
-* does not exist
+* is
+* is not
+* is before
+* is on or before
+* is after
+* is on or after
 |Time and date the object was last retrieved (read or viewed).
 
 *Note:* If you plan to link:using-last-access-time-in-ilm-rules.html[use last access time] as an advanced filter, Last access time updates must be enabled for the S3 bucket or Swift container.
 
-|Location Constraint (S3 only)
+|Location constraint (S3 only)
 |
 * equals
 * does not equal
@@ -109,7 +106,7 @@ For example, you might want to match objects that end with `.txt` or start with 
 
 *Note:* A value of us-east-1 will match objects in buckets created in the us-east-1 region as well as objects in buckets that have no region specified. See link:configuring-regions-optional-and-s3-only.html[Configure regions (optional and S3 only)].
 
-|Object Size
+|Object size
 |
 * equals
 * does not equal
@@ -123,7 +120,7 @@ Erasure coding is best suited for objects greater than 1 MB. Do not use erasure 
 
 *Note:* To filter on object sizes smaller than 1 MB, type in a decimal value.  Your browser type and locale settings control whether you need to use a period or a comma as the decimal separator.
 
-|User Metadata
+|User metadata
 |
 * contains
 * ends with
@@ -135,13 +132,13 @@ Erasure coding is best suited for objects greater than 1 MB. Do not use erasure 
 * does not exist
 * does not start with
 * starts with
-|Key-value pair, where *User Metadata Name* is the key and *User Metadata Value* is the value.
+|Key-value pair, where *User metadata name* is the key and *Metadata value* is the value.
 
-For example, to filter on objects that have user metadata of `color=blue`, specify `color` for *User Metadata Name*, `equals` for the operator, and `blue` for *User Metadata Value*.
+For example, to filter on objects that have user metadata of `color=blue`, specify `color` for *User metadata name*, `equals` for the operator, and `blue` for *Metadata value*.
 
 *Note:* User-metadata names are not case sensitive; user-metadata values are case sensitive.
 
-|Object Tag (S3 only)
+|Object tag (S3 only)
 |
 * contains
 * ends with
@@ -153,9 +150,9 @@ For example, to filter on objects that have user metadata of `color=blue`, speci
 * does not exist
 * does not start with
 * starts with
-|Key-value pair, where *Object Tag Name* is the key and *Object Tag Value* is the value.
+|Key-value pair, where *Object tag name* is the key and *Object tag value* is the value.
 
-For example, to filter on objects that have an object tag of `Image=True`, specify `Image` for *Object Tag Name*, `equals` for the operator, and `True` for *Object Tag Value*.
+For example, to filter on objects that have an object tag of `Image=True`, specify `Image` for *Object tag name*, `equals` for the operator, and `True` for *Object tag value*.
 
 *Note:* Object tag names and object tag values are case sensitive. You must enter these items exactly as they were defined for the object.
 
@@ -163,7 +160,7 @@ For example, to filter on objects that have an object tag of `Image=True`, speci
 
 == Specify multiple metadata types and values
 
-When you define advanced filtering, you can specify multiple types of metadata and multiple metadata values. For example, if you want a rule to match objects between 10 MB and 100 MB in size, you would select the *Object Size* metadata type and specify two metadata values.
+When you define advanced filtering, you can specify multiple types of metadata and multiple metadata values. For example, if you want a rule to match objects between 10 MB and 100 MB in size, you would select the *Object size* metadata type and specify two metadata values.
 
 * The first metadata value specifies objects greater than or equal to 10 MB.
 * The second metadata value specifies objects less than or equal to 100 MB.

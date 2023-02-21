@@ -18,7 +18,7 @@ Before creating an ILM policy, you must create a default rule to place any objec
 .About this task
 The default rule is the last rule to be evaluated in an ILM policy, so it cannot use any filters. The placement instructions for the default rule are applied to any objects that are not matched by another rule in the policy.
 
-In this example policy, the first rule applies only to objects belonging to test-tenant1. The default rule, which is last, applies to objects belonging to all other tenant accounts.
+In this example policy, the first rule applies only to objects belonging to test-tenant-1. The default rule, which is last, applies to objects belonging to all other tenant accounts.
 
 image::../media/ilm_policies_page_default_rule.png[ILM Policies Page Default Rule]
 
@@ -37,20 +37,18 @@ IMPORTANT: Do not use a rule that creates erasure-coded copies as the default ru
 .Steps
 
 . Select *ILM* > *Rules*.
-+
-The ILM rules page appears.
 
 . Select *Create*.
 +
-Step 1 (Define Basics) of the Create ILM Rule wizard appears.
+Step 1 (Enter details) of the Create ILM rule wizard appears.
 
-. Enter a unique name for the rule in the *Name* field.
+. Enter a unique name for the rule in the *Rule name* field.
 . Optionally, enter a short description for the rule in the *Description* field.
 . Leave the *Tenant accounts* field blank.
 +
 The default rule must apply to all tenant accounts.
 
-. Leave the *Bucket name* field blank.
+. Leave the Bucket name drop-down selection as *matches all*.
 +
 The default rule must apply to all S3 buckets and Swift containers.
 
@@ -62,7 +60,7 @@ The default rule cannot specify any filters.
 
 . Select *Next*.
 +
-Step 2 (Define Placements) appears.
+Step 2 (Define placements) appears.
 
 . For Reference time, select any option.
 +
@@ -82,8 +80,8 @@ IMPORTANT: Do not use a rule that creates erasure-coded copies as the default ru
   ** At least one line of the placement instructions must start at day 0, using Ingest time as the reference time.
   ** At least one line of the placement instructions must be "`forever.`"
 . Look at the Retention diagram to confirm your placement instructions.
-. Select *Next*.
+. Select *Continue*.
 +
 Step 3 (Select ingest behavior) appears.
 
-. Select the ingest option to use, and select *Save*.
+. Select the ingest option to use, and select *Create*.

@@ -51,7 +51,7 @@ When an S3 or Swift client makes a delete request and *all* of the following con
 |===
 When S3 or Swift clients make delete requests, StorageGRID begins by adding a number of objects to the delete queue. It then switches to performing synchronous deletion. Making sure that the background deletion queue has objects to process allows StorageGRID to process deletes more efficiently, especially for low concurrency clients, while helping to prevent client delete backlogs.
 
-== How long does it take to delete objects
+== Time required to delete objects
 
 The way that StorageGRID deletes objects can affect how the system appears to perform:
 
@@ -60,7 +60,7 @@ The way that StorageGRID deletes objects can affect how the system appears to pe
 
 If you are deleting large numbers of objects and your priority is to free space quickly, consider using a client request to delete objects rather than deleting them using ILM or other methods. In general, space is freed more quickly when deletion is performed by clients because StorageGRID can use synchronous deletion.
 
-You should be aware that the amount of time required to free space after an object is deleted depends on a number of factors:
+The amount of time required to free space after an object is deleted depends on a number of factors:
 
 * Whether object copies are synchronously removed or are queued for removal later (for client delete requests).
 * Other factors such as the number of objects in the grid or the availability of grid resources when object copies are queued for removal (for both client deletes and other methods).
