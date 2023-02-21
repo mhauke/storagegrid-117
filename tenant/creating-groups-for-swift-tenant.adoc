@@ -21,11 +21,15 @@ You can manage access permissions for a Swift tenant account by importing federa
 
 == Access the Create group wizard
 
+.Steps
+
 . Select *ACCESS MANAGEMENT* > *Groups*.
 
 . Select *Create group*.
 
 == Choose a group type
+
+.Steps
 
 . Select the *Local group* tab to create a local group, or select the *Federated group* tab to import a group from the previously configured identity source.
 +
@@ -40,6 +44,8 @@ If single sign-on (SSO) is enabled for your StorageGRID system, users belonging 
 . Select *Continue*.
 
 == Manage group permissions
+
+.Steps
 
 . For *Access mode*, select one of the following:
 ** *Read-write* (default): Users can sign in to Tenant Manager and manage the tenant configuration.
@@ -58,6 +64,8 @@ Swift users must have the Root access permission to access the Tenant Manager. H
 . If you are creating a local group, select *Continue*. If you are creating a federated group, select *Create group* and *Finish*.
 
 == Add users (local groups only)
+
+.Steps
 
 . Optionally, select one or more local users for this group.
 +

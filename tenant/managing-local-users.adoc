@@ -31,6 +31,8 @@ Swift users who do not belong to any groups do not have management permissions o
 
 === Access the Create user wizard
 
+.Steps
+
 . Select *ACCESS MANAGEMENT* > *Users*.
 +
 If your tenant account has the *Use grid federation connection* permission, a blue banner indicates that this is the tenant's source grid. Any local users you create on this grid will be cloned to the other grid in the connection.
@@ -40,6 +42,8 @@ image::../media/grid-federation-tenant-user-banner.png[image of blue banner on U
 . Select *Create user*.
 
 === Enter credentials
+
+.Steps
 
 . For the *Enter user credentials* step, complete the following fields.
 +
@@ -69,6 +73,8 @@ For example, select *Yes* to temporarily suspend a user's ability to sign in.
 
 === Assign to groups
 
+.Steps
+
 . Assign the user to one or more local groups to determine which tasks they can perform. 
 +
 Assigning a user to groups is optional. If you'd prefer, you can select users when you create or edit groups. 
@@ -82,6 +88,8 @@ If your tenant account has the *Use grid federation connection* permission and y
 . Select *Finish* to return to the Users page.
 
 == View or edit local user
+
+.Steps
 
 . Select *ACCESS MANAGEMENT* > *Users*.
 
@@ -139,6 +147,8 @@ You can duplicate a local user to create a new user more quickly.
 
 NOTE: If your tenant account has the *Use grid federation connection* permission and you duplicate a group from the tenant's source grid, the duplicated group will be cloned to the tenant's destination grid.
 
+.Steps
+
 . Select *ACCESS MANAGEMENT* > *Users*.
 
 . Select the check box for the user you want to duplicate.
@@ -156,6 +166,8 @@ You can permanently delete one or more local users who no longer need to access 
 NOTE: If your tenant account has the *Use grid federation connection* permission and you delete a local user, StorageGRID will not delete the corresponding user on the other grid. If you need to keep this information in sync, you must delete the same user from both grids.
 
 NOTE: You must use the federated identity source to delete federated users.
+
+.Steps
 
 . Select *ACCESS MANAGEMENT* > *Users*.
 

@@ -31,6 +31,8 @@ Before you can use cross-grid replication, you must sign in to the corresponding
 
 === Create two identical buckets
 
+.Steps
+
 . Starting from either grid in the grid federation connection, create a new bucket:
 
 .. Sign in to the tenant account using the credentials of a tenant user who exists on both grids.
@@ -48,6 +50,8 @@ NOTE: If you are unable to sign in to the tenant's destination grid as a local u
 === Enable cross-grid replication
 
 You must perform these steps before adding any objects to either bucket.
+
+.Steps
 
 . Starting from a grid whose objects you want to replicate, enable link:../admin/grid-federation-what-is-cross-grid-replication.html[cross-grid replication in one direction]:
 
