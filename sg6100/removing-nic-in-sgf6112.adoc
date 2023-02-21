@@ -42,7 +42,7 @@ See information about link:../ilm/why-you-should-not-use-single-copy-replication
 
 The three NICs in the SGF6112 are in riser assemblies in the following positions in the chassis (Rear of SGF6112 with top cover removed shown): 
 
-image::../media/sgf6112-hic-locations.png[HIC locations]
+image::../media/sgf6112-nic-locations.png[NIC locations]
 [options="header"]
 |===
 | | Device or Part name| Description
@@ -81,12 +81,12 @@ Support for one of the 10/25-GbE NICs
 . Grasp the riser assembly through the blue-marked holes and carefully lift it upwards. Move the riser assembly toward the front of the chassis as you lift it to allow the external connectors in its installed adapters to clear the chassis.
 . Place the riser card on a flat anti-static surface with the metal frame side down to access the adapters.
 +
-* Two-slot riser assembly
+* Two-slot riser assembly with two NICs
 +
-image::../media/sg6060_fc_hba_location.jpg[SG6060 NIC in riser assembly]
-* One-slot riser assembly
-xxxxxxxxxxxxxxxxxxxxxx
+image::../media/two-slot-assembly-sgf6112.png[SGF6112 two NICs in two-slot riser assembly]
+* One-slot riser assembly with one NIC
 +
+image::../media/one-slot-assembly-sgf6112.png[SGF6112 NIC in one-slot riser assembly]
 
 . Open the blue latch (circled) on the NIC to be replaced and carefully remove the NIC from the riser assembly. Rock the NIC slightly to help remove the NIC from its connector. Do not use excessive force.
 . Place the NIC on a flat anti-static surface.
