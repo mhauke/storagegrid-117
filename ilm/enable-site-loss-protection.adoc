@@ -13,7 +13,7 @@ If your StorageGRID deployment includes more than one site, you can use replicat
 
 Replication and erasure coding require different storage pool configurations:
 
-* To use replication for site-loss protection, link:guidelines-for-creating-storage-pools.html#guidelines-for-storage-pools-used-for-replicated-copies[create storage pools that consist of only one site each]. Then create ILM rules with link:create-ilm-rule-define-placements.html[placement instructions] that specify multiple storage pools so that one copy of each object will be placed at each site.
+* To use replication for site-loss protection, use the site-specific storage pools that are automatically created during StorageGRID installation. Then create ILM rules with link:create-ilm-rule-define-placements.html[placement instructions] that specify multiple storage pools so that one copy of each object will be placed at each site.
 
 * To use erasure coding for site-loss protection, link:guidelines-for-creating-storage-pools.html#guidelines-for-storage-pools-used-for-erasure-coded-copies[create storage pools that consist of multiple sites]. Then create ILM rules that use one storage pool consisting of multiple sites and any available erasure-coding schema.
 
@@ -58,10 +58,10 @@ In this example:
 
 NOTE: Erasure coding is allowed in storage pools containing any number of sites _except_ two sites.
 
-*ILM rule using 4+2 erasure-coding scheme:*
+ILM rule using 4+2 erasure-coding scheme:
 
 image::../media/ec_three_sites_4_plus_2_site_loss_example_template.png[Store objects by erasure coding using a 4+2 EC scheme across 3 sites]
 
-*If one site is lost, data can still be recovered*:
+If one site is lost, data can still be recovered:
 
 image::../media/ec_three_sites_4_plus_2_site_loss_example.png[Erasure coding 4+2 EC scheme 1 site lost]

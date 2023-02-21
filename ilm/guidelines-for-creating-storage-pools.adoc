@@ -22,7 +22,9 @@ See link:enable-site-loss-protection.html[Examples of enabling site-loss protect
 
 == Guidelines for storage pools used for replicated copies
 
-* For site-loss protection using link:what-replication-is.html[replication], specify one or more site-specific storage pools in the link:create-ilm-rule-define-placements.html[placement instructions for each ILM rule]. One storage pool is automatically created for each site during StorageGRID installation.
+* For site-loss protection using link:what-replication-is.html[replication], specify one or more site-specific storage pools in the link:create-ilm-rule-define-placements.html[placement instructions for each ILM rule].
++
+One storage pool is automatically created for each site during StorageGRID installation.
 +
 Using a storage pool for each site ensures that replicated object copies are placed exactly where you expect (for example, one copy of every object at each site for site-loss protection).
 * If you add a site in an expansion, create a new storage pool that contains only the new site. Then, link:working-with-ilm-rules-and-ilm-policies.html#edit-an-ilm-rule[update ILM rules] to control which objects are stored on the new site.
@@ -39,7 +41,7 @@ Using a storage pool for each site ensures that replicated object copies are pla
 +
 The decrease in throughput affects the maximum achievable rates of object ingest and retrieval (when Balanced or Strict are selected as the ingest behavior) or could lead to ILM queue backlogs (when Dual commit is selected as the ingest behavior). See link:what-ilm-rule-is.html#ilm-rule-ingest-behavior[ILM rule ingest behavior].
 +
-NOTE: If your grid includes only one site, you are prevented from using the All Storage Nodes storage pool (StorageGRID 11.6 and earlier) or the All Sites default site in an erasure coding profile. This behavior prevents the erasure coding profile from becoming invalid if a second site is added.
+NOTE: If your grid includes only one site, you are prevented from using the All Storage Nodes storage pool (StorageGRID 11.6 and earlier) or the All Sites default site in an erasure coding profile. This behavior prevents the profile from becoming invalid if a second site is added.
 * You cannot use Archive Nodes for erasure-coded data.
 
 == Guidelines for storage pools used for archived copies
