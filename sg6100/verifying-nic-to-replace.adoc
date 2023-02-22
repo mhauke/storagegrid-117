@@ -1,15 +1,15 @@
 ---
 permalink: sg6100/verifying-nic-to-replace.html
 sidebar: sidebar
-keywords: storagegrid, sg6100, storage node, storage appliance, NIC, fan, psu, network interface card, locate, identify, find, replace, replacing, replacement 
-summary: 'If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the specific component and the appliance's location in the data center.'
+keywords: storagegrid, sgf6112, storage node, storage appliance, network interface card, fan, psu, network interface card, locate, identify, find
+summary: 'If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the component and the appliance's location in the data center.'
 ---
 = Verify component to replace in the SGF6112
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the specific component and the appliance's location in the data center.
+If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the component and the appliance's location in the data center.
 
 .What you'll need
 
@@ -25,7 +25,6 @@ Use this procedure to identify the appliance with failed hardware and which of t
 * Fans
 * Hard drives
 * Network Interface Cards (NICs)
-//DIMMS
 
 .Steps
 
@@ -71,5 +70,3 @@ link:replacing-drive-in-sgf6112.html[Remove hard drive]
 link:removing-nic-in-sgf6112.html[Remove NIC]
 
 link:removing-sgf6112-from-cabinet-or-rack.html [Remove SGF6112 from cabinet or rack]
-
-//removing DiMM

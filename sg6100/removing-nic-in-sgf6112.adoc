@@ -2,14 +2,14 @@
 permalink: sg6100/removing-nic-in-sgf6112.html
 sidebar: sidebar
 keywords: storagegrid, sg6100, storage node, storage appliance, sgf6112, nic, network interface card, remove, removing, removal
-summary: 'You might need to replace one of the Network Interface Cards (NICs) in the SGF6112 if it is not functioning optimally or if it has failed.'
+summary: 'You might need to replace one of the Network Interface Cards in the SGF6112 if it is not functioning optimally or if it has failed.'
 ---
 = Remove NIC in SGF6112
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You might need to replace one of the Network Interface Cards (NICs) in the SGF6112 if it is not functioning optimally or if it has failed.
+You might need to replace one of the Network Interface Cards in the SGF6112 if it is not functioning optimally or if it has failed.
 
 .What you'll need
 
@@ -29,7 +29,7 @@ NOTE: A link:shut-down-sgf6112.html[controlled shutdown of the appliance] is req
 link:removing-sgf6112-cover.html[Remove SGF6112 cover]
 
 .About this task
-To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the NIC replacement or replace the NIC during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:../monitor/monitoring-node-connection-states.html[monitoring node connection states].
+To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Network Interface Card (NIC) replacement or replace the NIC during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:../monitor/monitoring-node-connection-states.html[monitoring node connection states].
 
 IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the NIC during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. +
 See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
@@ -41,7 +41,7 @@ See information about link:../ilm/why-you-should-not-use-single-copy-replication
 +
 
 The three NICs in the SGF6112 are in riser assemblies in the following positions in the chassis (Rear of SGF6112 with top cover removed shown): 
-
++
 image::../media/sgf6112-nic-positions.png[NIC locations]
 
 [options="header"]
