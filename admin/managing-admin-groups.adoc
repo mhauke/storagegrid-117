@@ -25,6 +25,8 @@ Admin groups allow you to determine which users can access which features and op
 
 === Access the wizard
 
+.Steps
+
 . Select *CONFIGURATION* > *Access control* > *Admin groups*.
 
 . Select *Create group*.
@@ -44,6 +46,8 @@ You can create a local group or import a federated group.
 .Local group
 --
 
+
+.Steps
 . Select *Local group*.
 . Enter a display name for the group, which you can update later as required. For example, "`Maintenance Users`" or "`ILM Administrators.`"
 . Enter a unique name for the group, which you cannot update later. 
@@ -55,6 +59,7 @@ You can create a local group or import a federated group.
 .Federated group
 --
 
+.Steps
 . Select *Federated group*.
 . Enter the name of the group you want to import, exactly as it appears in the configured identity source. 
 
@@ -72,6 +77,8 @@ You can create a local group or import a federated group.
 
 === Manage group permissions
 
+.Steps
+
 . For *Access mode*, select whether users in the group can change settings and perform operations in the Grid Manager and the Grid Management API or whether they can only view settings and features.
  ** *Read-write* (default): Users can change settings and perform the operations allowed by their management permissions.
  ** *Read-only*: Users can only view settings and features. They cannot make any changes or perform any operations in the Grid Manager or Grid Management API. Local read-only users can change their own passwords.
@@ -85,6 +92,7 @@ You must assign at least one permission to each group; otherwise, users belongin
 . If you are creating a local group, select *Continue*. If you are creating a federated group, select *Create group* and *Finish*.
 
 === Add users (local groups only)
+.Steps
 
 . Optionally, select one or more local users for this group.
 +
@@ -144,6 +152,8 @@ You can view details for existing groups, modify a group, or duplicate a group.
 
 == Duplicate a group
 
+.Steps
+
 . Select the check box for the group. 
 . Select *Actions* > *Duplicate group*.
 . Complete the Duplicate group wizard.
@@ -152,6 +162,9 @@ You can view details for existing groups, modify a group, or duplicate a group.
 == Delete a group
 
 You can delete an admin group when you want to remove the group from the system, and remove all permissions associated with the group. Deleting an admin group removes any users from the group, but does not delete the users.
+
+
+.Steps
 
 . From the Groups page, select the check box for each group you want to remove. 
 . Select *Actions* > *Delete group*.
