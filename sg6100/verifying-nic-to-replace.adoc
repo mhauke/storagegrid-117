@@ -1,7 +1,7 @@
 ---
 permalink: sg6100/verifying-nic-to-replace.html
 sidebar: sidebar
-keywords: storagegrid, sgf6112, storage node, storage appliance, network interface card, fan, psu, network interface card, locate, identify, find
+keywords: storagegrid, sgf6112
 summary: 'If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the component and the appliance's location in the data center.'
 ---
 = Verify component to replace in the SGF6112
@@ -48,7 +48,7 @@ image::../media/nic-alert-sgf6112.png[Alert with component ID]
 +
 Check the *Compute controller serial number* in the StorageGRID Appliance section. See if the serial number matches the serial number of the storage appliance where you are replacing the component. If the serial number matches, you have found the correct appliance.
 +
-image::../media/nodes_page_hardware_tab_for_appliance_verify_NIC.png[Appliance section for hardware components]
+image::../media/nodes_page_hardware_tab_for_appliance_verify_nic.png[Appliance section for hardware components]
 
  ** If the StorageGRID Appliance section in Grid Manager does not display, the node selected is not a StorageGRID appliance. Select a different node from the tree view.
  ** If the serial numbers do not match, select a different node from the tree view.
