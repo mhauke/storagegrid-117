@@ -2,14 +2,14 @@
 permalink: fabricpool/configure-ontap.html
 sidebar: sidebar
 keywords: fabricPool, system manager, ONTAP CLI, add cloud tier 
-summary: 'After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, attach the cloud tier to a local tier to create a FabricPool, and set volume tiering policies.'
+summary: 'After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier.'
 ---
 = Configure ONTAP System Manager
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier, attach the cloud tier to a local tier to create a FabricPool, and set volume tiering policies.
+After you have obtained the required StorageGRID information, you can go to ONTAP to add StorageGRID as a cloud tier.
 
 NOTE: These instructions describe how to use ONTAP System Manager to add StorageGRID as a cloud tier. You can complete the same configuration using the ONTAP CLI. For instructions, go to https://docs.netapp.com/us-en/ontap/fabricpool/index.html[ONTAP 9: FabricPool tier management with the CLI^].
 
@@ -19,6 +19,8 @@ NOTE: These instructions describe how to use ONTAP System Manager to add Storage
 
 == Access ONTAP System Manager
 
+.Steps
+
 . Access System Manager for the ONTAP cluster you want to tier to StorageGRID.
 . Sign in as an administrator for the cluster.
 . Navigate to *STORAGE* > *Tiers* > *Add Cloud Tier*.
@@ -27,8 +29,12 @@ NOTE: These instructions describe how to use ONTAP System Manager to add Storage
 
 == Enter StorageGRID values
 
-Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file or the values you obtained manually.
+See https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html[ONTAP 9: FabricPool tier management overview with System Manager^] for more information.
 
+.Steps
+
+. Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file or the values you obtained manually.
++
 [cols="1a,2a" options="header"]
 |===
 | Field| Description
@@ -80,14 +86,11 @@ Note the following:
 
 |===
 
-== After you finish
+. Complete the final FabricPool configuration in ONTAP.
 
-After you have added StorageGRID as a cloud tier, you can complete the final FabricPool configuration in ONTAP, as follows:
+.. Attach one or more aggregates to the cloud tier.
+.. Optionally, create a volume tiering policy.
 
-. Attach one or more aggregates to the cloud tier.
-. Optionally, create a volume tiering policy.
-
-See https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html[ONTAP 9: FabricPool tier management overview with System Manager^] for more information.
 
 
 
