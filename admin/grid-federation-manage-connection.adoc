@@ -25,6 +25,8 @@ NOTE: While the connection is being edited, account clone or cross-grid replicat
 
 === Start editing the connection
 
+.Steps
+
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 
 . Select *NODES* and confirm that all other Admin Nodes in your system are online.
@@ -81,7 +83,10 @@ NOTE: If the connection status was something other than *Connected* when you sta
 
 === Finish editing the connection
 
+
 Finish editing the connection by uploading the verification file on the other grid.
+
+.Steps
 
 . Sign in to the Grid Manager from the primary Admin Node.
 
@@ -107,6 +112,8 @@ If the connection can be established using the edited values, a success message 
 
 
 == [[test_grid_fed_connection]]Test a grid federation connection
+
+.Steps
 
 . Sign in to the Grid Manager from the primary Admin Node.
 
@@ -165,6 +172,7 @@ Each grid federation connection uses four automatically-generated SSL certificat
 [CAUTION]
 If the certificates on either end of the connection expire, the connection will stop working and replications will be pending until the certificates are updated.
 
+.Steps
 
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 . Select *CONFIGURATION* > *System* > *Grid federation*.
@@ -193,6 +201,8 @@ Before removing a connection, note the following:
 
 === Disable replication for all tenant buckets
 
+.Steps
+
 . Starting from either grid, sign in to the Grid Manager from the primary Admin Node.
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 . Select the connection name to display its details.
@@ -205,6 +215,8 @@ TIP: You can't remove the *Use grid federation connection* permission if any ten
 
 After cross-grid replication has been disabled for all tenant buckets, remove the *Use grid federation permission* from all tenants on both grids.
 
+.Steps
+
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 
 . Select the connection name to display its details.
@@ -214,6 +226,8 @@ After cross-grid replication has been disabled for all tenant buckets, remove th
 . Repeat these steps for the permitted tenants on the other grid.
  
 === Remove connection
+
+.Steps
 
 . When no tenants on either grid are using the connection, select *Remove*.
 . Review the confirmation message, and select *Remove*.
@@ -230,6 +244,8 @@ After cross-grid replication has been disabled for all tenant buckets, remove th
 If necessary, you can force the removal of a connection that does not have *Connected* status.
 
 Force removal only deletes the connection from the local grid. To completely remove the connection, perform the same steps on both grids.
+
+.Steps
 
 . From the confirmation dialog box, select *Force remove*.
 +

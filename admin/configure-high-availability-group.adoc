@@ -32,11 +32,15 @@ An interface must be for a Gateway Node or an Admin Node to be included in an HA
 
 === Access the wizard
 
+.Steps
+
 . Select *CONFIGURATION* > *Network* > *High availability groups*.
 
 . Select *Create*.
 
 === Enter details for the HA group
+
+.Steps
 
 . Provide a unique name for the HA group.
 +
@@ -47,6 +51,8 @@ image::../media/ha-group-create-wizard.png[HA Groups create wizard]
 . Select *Continue*.
 
 === Add interfaces to the HA group
+
+.Steps
 
 . Select one or more interfaces to add to this HA group.
 + 
@@ -81,9 +87,9 @@ image::../media/vlan_parent_interface_tooltip.png[VLAN Interface tool tip]
 
 === Determine the priority order
 
-. Determine the Primary interface and any Backup (failover) interfaces for this HA group.
-+
-Drag and drop rows to change the values in the *Priority order* column.
+.Steps
+
+. To determine the Primary interface and any Backup (failover) interfaces for this HA group, drag and drop rows in the *Priority order* column.
 +
 image::../media/ha_group_determine_failover.png[HA Groups determine priority order]
 +
@@ -97,6 +103,7 @@ If the HA group includes more than one interface and the Primary interface fails
 
 === Enter IP addresses
 
+.Steps
 . In the *Subnet CIDR* field, specify the VIP subnet in CIDR notation--an IPv4 address followed by a slash and the subnet length (0-32).
 +
 The network address must not have any host bits set. For example, `192.16.0.0/22`.

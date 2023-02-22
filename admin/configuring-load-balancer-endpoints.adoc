@@ -47,11 +47,15 @@ Each load balancer endpoint specifies a port, a client type (S3 or Swift), and a
 
 === Access the wizard
 
+.Steps
+
 . Select *CONFIGURATION* > *Network* > *Load balancer endpoints*.
 
 . Select *Create*.
 
 === Enter endpoint details
+
+.Steps
 
 . Enter details for the endpoint.
 +
@@ -66,8 +70,6 @@ Each load balancer endpoint specifies a port, a client type (S3 or Swift), and a
 |The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port between 1 and 65535. 
 
 If you enter *80* or *443*, the endpoint is configured only on Gateway Nodes. These ports are reserved on Admin Nodes.
-
-
 
 |Client type
 |The type of client application that will use this endpoint, either *S3* or *Swift*.
@@ -84,10 +86,11 @@ If you enter *80* or *443*, the endpoint is configured only on Gateway Nodes. Th
 
 === Select a binding mode
 
+.Steps
+
 . Select a binding mode for the endpoint to control how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
 include::../_include/load-balancer-endpoint-binding-mode.adoc[]
-
 
 +
 [NOTE]
@@ -101,6 +104,8 @@ If more than one endpoint uses the same port, StorageGRID uses this priority ord
 
 
 === Control tenant access
+
+.Steps
 
 . For the *Tenant access* step, select one of the following:
 +
@@ -121,12 +126,13 @@ You must select this option if you have not yet created any tenant accounts. Aft
 
 |===
 
-+
 
 . If you are creating an *HTTP* endpoint, you do not need to attach a certificate. Select *Create* to add the new load balancer endpoint. Then, go to <<after-you-finish,After you finish>>. Otherwise, select *Continue* to attach the certificate.
 
 
 === Attach certificate
+
+.Steps
 
 . If you are creating an *HTTPS* endpoint, select the type of security certificate you want to attach to the endpoint.
 +
@@ -229,6 +235,8 @@ The load balancer endpoint is created. The custom certificate is used for all su
 //end tabbed blocks
 
 === After you finish
+
+.Steps
 
 . If you use a domain name system (DNS), ensure that the DNS includes a record to associate the StorageGRID fully qualified domain name (FQDN) to each IP address that clients will use to make connections.
 +
