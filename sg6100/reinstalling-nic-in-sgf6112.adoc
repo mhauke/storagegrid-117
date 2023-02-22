@@ -22,31 +22,46 @@ link:removing-nic-in-sgf6112.html[Remove NIC in the SGF6112]
 
 . Wrap the strap end of the ESD wristband around your wrist, and secure the clip end to a metal ground to prevent static discharge.
 . Remove the replacement NIC from its packaging.
-. With the blue latch in the open position, align the NIC with its connector on the riser assembly; then, carefully press the NIC into the connector until it is fully seated.
+
+. If you are replacing one of the NICs in the two-slot riser assembly, do the following:
+.. Ensure the blue latch is in the open position.
+.. Align the NIC with its connector on the riser assembly. Carefully press the NIC into the connector until it is fully seated as shown in the photograph and close the blue latch.
 +
-image::..xxxxx/media/sg6060_fc_hba_location.jpg[SGF6112 NIC in riser assembly]
+image::../media/two-slot-assembly-sgf6112.png[SGF6112 two NICs in two-slot riser assembly]
+
+.. Locate the alignment hole on the two-slot riser assembly (circled) that aligns with a guide pin on the system board to ensure correct riser assembly positioning.
 +
-There are two NICs in the two-slot riser assembly: a xxxxx NIC and an Ethernet network adapter. There is only one NIC in the one-slot riser assembly: a xxxxx. The NICs are shown in the picture.
-
-. Depending upon which NIC you are replacing, do one of the following: 
-
-.. If you are replacing a NIC on the large riser assembly, locate the alignment hole on the riser assembly (circled) that aligns with a guide pin on the system board to ensure correct riser assembly positioning.
+image::../media/sgf6112_two-slot-riser_alignment_hole.png[Alignment hole on SGF6112 large riser assembly]
 +
-image::..xxxx/media/sg6060_riser_alignment_hole.jpg[Alignment hole on SGF6112 large riser assembly]
-
-.. xxxxxIf you are replacing the NIC in the small riser assembly, 
-
-. .Position the riser assembly in the chassis, making sure that it aligns with the connector on the system board and guide pin. 
+.. Locate the alignment pin on the system board 
 +
-NOTE: the one-slot assembly does not have a guide pin. 
+image::../media/sgf6112_two-slot-riser_system-pin.png[System pin on SGF6112 for two-slot riser assembly]
 
-. Insert the riser assembly.
+.. Position the riser assembly in the chassis, making sure that it aligns with the connector on the system board and guide pin. 
 
-. Carefully press the riser assembly in place along its center line, next to the blue-marked holes, until it is fully seated.
+.. Carefully press the riser assembly in place along its center line, next to the blue-marked holes, until it is fully seated.
+
+. If you are replacing the NIC in the one-slot riser assembly, do the following: 
+.. Ensure the blue latch is in the open position.
+.. Align the NIC with its connector on the riser assembly. Carefully press the NIC into the connector until it is fully seated as shown in the photograph and close the blue latch.
++
+image::../media/one-slot-assembly-sgf6112.png[SGF6112 on NIC in one-slot riser assembly]
+
+.. Locate the alignment hole on the two-slot riser assembly (circled) that aligns with a guide pin on the system board to ensure correct riser assembly positioning.
++
+image::../media/sgf6112_one-slot-riser_alignment_hole.png[Alignment hole on SGF6112 large riser assembly]
++
+.. Locate the alignment pin on the system board 
++
+image::../media/sgf6112_one-slot-riser_system-pin.png[System pin on SGF6112 for one-slot riser assembly]
+
+.. Position the riser assembly in the chassis, making sure that it aligns with the connector on the system board and guide pin. 
+
+.. Carefully press the riser assembly in place along its center line, next to the blue-marked holes, until it is fully seated.
+
 . Remove the protective caps from the NIC ports where you will be reinstalling cables.
 
 .After you finish
-//add procedures
 
 If you have no other maintenance procedures to perform in the appliance, reinstall the appliance cover, return the appliance to the rack, attach cables, and apply power.
 
