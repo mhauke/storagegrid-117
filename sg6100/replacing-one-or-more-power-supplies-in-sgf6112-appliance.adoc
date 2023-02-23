@@ -27,35 +27,47 @@ The SGF6112 appliance has two power supplies for redundancy. If one of the power
 
 .About this task
 
-The figure shows the two power supply units for the SGF6112, which are accessible from the back of the appliance.
-//update drawings
+The figure shows the two power supply units for the SGF6112, which are accessible from the back of the appliance. 
+
 
 image::../media/sgf6112_power_supplies.png[Back of SGF6112 with two power supplies]
 
+.What you'll need
+
+* You have the correct replacement power supply of the same wattage as the power supply you are replacing.
+* You have determined the location of the power supply to replace.
++
+link:verify-component-to-replace.html[Verify component to replace]
+
+* You have physically located the SGF6112 appliance where you are replacing the power supply in the data center.
++
+link:locating-sgf6112-in-data-center.html[Locate appliance in data center]
 
 .Steps
-
-//. Verify the power supply to be replaced. 
 
 . If you are replacing only one power supply, you don't need to shut down the appliance. Go to the <<Unplug_the_power_cord,Unplug the power cord>> step. If you are replacing both power supplies at the same time, do the following before unplugging the power cords:
 
 .. link:shut-down-sgf6112.html[Shut down the appliance].
++
+IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the fan during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
 
 . [[Unplug_the_power_cord, start=2]]Unplug the power cord from each power supply to be replaced.
++
+When viewed from the rear of the appliance, power supply PSU1 is on the left and PSU0 is on the right. 
 . Lift the handle on the first supply to be replaced.
 +
-//update drawing
+
 image::../media/sg6000_cn_lift_cam_handle_psu.gif[Lifting the handle to remove PSU]
 
 . Press the blue latch and pull the power supply out.
 +
-//update drawings
+
 image::../media/sg6000_cn_remove_power_supply.gif[Removing a power supply]
 
 . With the blue latch on the right, slide the replacement power supply into the chassis.
 
 +
-IMPORTANT: Both power supplies must be the same model and wattage.
+IMPORTANT: Both installed power supplies must be the same model and wattage.
 
 +
 Ensure that the blue latch is on the right side when you slide the replacement unit in.

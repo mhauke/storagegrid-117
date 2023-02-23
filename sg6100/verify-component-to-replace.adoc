@@ -46,7 +46,7 @@ image::../media/nic-alert-sgf6112.jpg[Alert with component ID]
 .. From the table on the Nodes page, select the appliance Storage Node name with the failed component.
 .. Select the *Hardware* tab.
 +
-Check the *Compute controller serial number* in the StorageGRID Appliance section. See if the serial number matches the serial number of the storage appliance where you are replacing the component. If the serial number matches, you have found the correct appliance.
+Check the *Compute controller serial number* in the StorageGRID Appliance section. Check if the serial number matches the serial number of the storage appliance where you are replacing the component. If the serial number matches, you have found the correct appliance.
 +
 image::../media/nodes_page_hardware_tab_appliance_verify_nic.png[Appliance section for hardware components]
 
@@ -69,6 +69,5 @@ link:replacing-drive-in-sgf6112.html[Remove hard drive]
 
 link:removing-nic-in-sgf6112.html[Remove NIC]
 
-link:removing-nic-in-sgf6112.html[Remove NIC]
 
 link:removing-sgf6112-from-cabinet-or-rack.html[Remove SGF6112 from cabinet or rack]
