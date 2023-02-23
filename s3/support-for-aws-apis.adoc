@@ -15,17 +15,17 @@ This page includes only the S3 operations that are supported by StorageGRID.
 
 NOTE: To see the AWS documentation for each command, select the link in the heading.
 
-== Common URI query parameters
+[[common-params]]
+== Common URI query parameters and request headers
 
 Unless noted, the following common URI query parameters are supported:
 
 * `versionId`
 
-== Common request headers
-
 Unless noted, the following common request headers are supported:
 
 * `Authorization`
+* `Connection`
 * `Date`
 * `Content-Length`
 * `Content-MD5`
@@ -38,7 +38,7 @@ Unless noted, the following common request headers are supported:
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
 
 .URI query parameters and request headers
-StorageGRID supports all common parameters for this request, plus this additional URI query parameter:
+StorageGRID supports all <<common-params, common parameters>> for this request, plus this additional URI query parameter:
 
 * `uploadId`	
 
