@@ -33,7 +33,10 @@ Unless noted, the following common request headers are supported:
 * `Host`
 * `x-amz-date`
 
-See https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html[Amazon Simple Storage Service API Reference: Common Request Headers^].
+.Related information
+* link:../s3/s3-rest-api-supported-operations-and-limitations.html[S3 REST API implementation details]
+* https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html[Amazon Simple Storage Service API Reference: Common Request Headers^]
+
 
 //AbortMultipartUpload
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]
@@ -224,9 +227,7 @@ link:operations-on-buckets.html[Operations on buckets]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html[DeleteObject^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus this additional header:
-
-* `Authorization`
+StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body
 None
@@ -719,7 +720,16 @@ link:operations-on-buckets.html[Operations on buckets > PUT Bucket notification]
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body
-StorageGRID supports all request body parameters defined by the Amazon S3 REST API at the time of implementation.	
+StorageGRID supports the following request body JSON fields:
+
+* `Version`
+* `Statement`
+* `Sid`
+* `Effect`
+* `Principal`
+* `Action`
+* `Resource`
+* `Condition`
 
 .StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
@@ -820,15 +830,8 @@ link:use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object L
 .URI query parameters and request headers
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
-.Request body parameters
-
-* `ObjectLockConfiguration`			
-* `ObjectLockEnabled`			
-* `Rule`		
-* `DefaultRetention`	
-* `Days`
-* `Mode`
-* `Years`
+.Request body
+StorageGRID supports all request body parameters defined by the Amazon S3 REST API at the time of implementation.
 
 .StorageGRID documentation
 link:use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock]
