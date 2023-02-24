@@ -99,7 +99,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `x-amz-tagging-directive`
 
 .Request body
-None.
+None
 
 .StorageGRID documentation
 link:put-object-copy.html[PUT Object-Copy]
@@ -249,7 +249,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 StorageGRID supports all request body parameters defined by the Amazon S3 REST API at the time of implementation.
 
 .StorageGRID documentation
-link:operations-on-objects.html[Operations on objects > DELETE Multiple Objects]
+link:operations-on-objects.html[Operations on objects] (DELETE Multiple Objects)
 
 
 //DeleteObjectTagging
@@ -314,7 +314,7 @@ None
 
 .StorageGRID documentation
 
-* link:operations-on-buckets.html[Operations on buckets > GET Bucket lifecycle]  
+* link:operations-on-buckets.html[Operations on buckets] (GET Bucket lifecycle)
 * link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration]
 
 
@@ -341,7 +341,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 None
 
 .StorageGRID documentation
-link:operations-on-buckets.html[Operations on buckets > GET Bucket notification] 
+link:operations-on-buckets.html[Operations on buckets] (GET Bucket notification)
 
 
 //GetBucketPolicy
@@ -518,7 +518,7 @@ link:head-object.html[HEAD Object]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^] 
 
 .URI query parameters and request headers
-None.
+None
 
 .Request body
 None
@@ -563,7 +563,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 None
 
 .StorageGRID documentation
-link:operations-on-buckets.html[Operations on buckets > GET Bucket]
+link:operations-on-buckets.html[Operations on buckets] (GET Bucket)
 
 
 // ListObjectsV2
@@ -584,7 +584,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 None
 
 .StorageGRID documentation
-link:operations-on-buckets.html[Operations on buckets > GET Bucket]
+link:operations-on-buckets.html[Operations on buckets] (GET Bucket)
 
 
 // ListObjectVersions
@@ -604,7 +604,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 None
 
 .StorageGRID documentation
-link:operations-on-buckets.html[Operations on buckets > GET Bucket Object versions]
+link:operations-on-buckets.html[Operations on buckets] (GET Bucket Object versions)
 
 
 // ListParts
@@ -681,7 +681,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `Status`	
 
 .StorageGRID documentation
-* link:operations-on-buckets.html[Operations on buckets > PUT Bucket lifecycle]
+* link:operations-on-buckets.html[Operations on buckets] (PUT Bucket lifecycle)
 * link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration]
 
 
@@ -710,7 +710,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `Topic`		
 
 .StorageGRID documentation
-link:operations-on-buckets.html[Operations on buckets > PUT Bucket notification]
+link:operations-on-buckets.html[Operations on buckets] (PUT Bucket notification)
 
 
 //PutBucketPolicy
