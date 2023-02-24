@@ -30,6 +30,7 @@ Unless noted, the following common request headers are supported:
 * `Content-MD5`
 * `Content-Type`
 * `Date`
+* `Expect`
 * `Host`
 * `x-amz-date`
 
@@ -61,8 +62,11 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 
 * `uploadId`	
 
-.Request body
-StorageGRID supports all request body parameters defined by the Amazon S3 REST API at the time of implementation.
+.Request body XML tags
+* `CompleteMultipartUpload`
+* `Part`
+* `ETag`
+* `PartNumber`
 
 .StorageGRID documentation
 link:complete-multipart-upload.html[Complete Multipart Upload]
@@ -97,6 +101,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `x-amz-storage-class`
 * `x-amz-tagging`
 * `x-amz-tagging-directive`
+* `x-amz-meta-<metadata-name>`
 
 .Request body
 None
@@ -129,6 +134,8 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `Cache-Control`
 * `Content-Disposition`
 * `Content-Encoding`
+* `Content-Language`
+* `Expires`
 * `x-amz-server-side-encryption`
 * `x-amz-storage-class`
 * `x-amz-server-side-encryption-customer-algorithm`
@@ -138,6 +145,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `x-amz-object-lock-mode`
 * `x-amz-object-lock-retain-until-date`
 * `x-amz-object-lock-legal-hold`
+* `x-amz-meta-<metadata-name>`
 
 .Request body
 None
@@ -209,6 +217,19 @@ None
 .StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets] 
 
+//DeleteBucketReplication
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html[DeleteBucketReplication^]
+
+.URI query parameters and request headers
+StorageGRID supports all <<common-params, common parameters and headers>> for this request.
+
+.Request body
+None
+
+.StorageGRID documentation
+link:operations-on-buckets.html[Operations on buckets] 
+
+
 
 //DeleteBucketTagging
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html[DeleteBucketTagging^]
@@ -240,10 +261,7 @@ link:operations-on-objects.html[Operations on objects]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html[DeleteObjects^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
-
-* `Accept`
-* `Connection`
+StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body
 StorageGRID supports all request body parameters defined by the Amazon S3 REST API at the time of implementation.
@@ -400,7 +418,17 @@ link:operations-on-buckets.html[Operations on buckets]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html[GetObject^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional URI query parameters:
+
+* `partNumber`
+* `response-cache-control `
+* `response-content-disposition `
+* `response-content-encoding`
+* `response-content-language`
+* `response-content-type` 
+* `response-expires`
+
+And these additional request headers:
 
 * `response-cache-control`	
 * `response-content-disposition`	
@@ -411,6 +439,12 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `x-amz-server-side-encryption-customer-key`
 * `x-amz-server-side-encryption-customer-key-MD5`
 * `Accept`
+* `If-Match`
+* `If-Modified-Since`
+* `If-None-Match`
+* `If-Unmodified-Since`
+
+
 
 .Request body
 None
@@ -506,6 +540,11 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `x-amz-server-side-encryption-customer-algorithm`
 * `x-amz-server-side-encryption-customer-key`
 * `x-amz-server-side-encryption-customer-key-MD5`
+* `If-Match`
+* `If-Modified-Since`
+* `If-None-Match`
+* `If-Unmodified-Since`
+* `Range`
 
 .Request body
 None
@@ -518,7 +557,7 @@ link:head-object.html[HEAD Object]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html[ListBuckets^] 
 
 .URI query parameters and request headers
-None
+StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body
 None
@@ -531,7 +570,7 @@ link:operations-on-the-service.html[Operations on the service > GET Service]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html[ListMultipartUploads^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional parameters and headers:
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional parameters:
 
 * `delimiter`
 * `encoding-type`	
@@ -551,7 +590,7 @@ link:list-multipart-uploads.html[List Multipart Uploads]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html[ListObjects^] 
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional parameters:
 
 * `delimiter`
 * `encoding-type`
@@ -570,7 +609,7 @@ link:operations-on-buckets.html[Operations on buckets] (GET Bucket)
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html[ListObjectsV2^] 
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional parameters:
 
 * `continuation-token` 
 * `delimiter`
@@ -591,7 +630,7 @@ link:operations-on-buckets.html[Operations on buckets] (GET Bucket)
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html[ListObjectVersions^] 
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional parameters:
 
 * `delimiter`
 * `encoding-type`	
@@ -611,7 +650,7 @@ link:operations-on-buckets.html[Operations on buckets] (GET Bucket Object versio
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html[ListParts^] 
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional parameters:
 
 * `max-parts`	
 * `part-number-marker`	
@@ -689,11 +728,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html[PutBucketNotificationConfiguration^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
-
-* `User-Agent`
-* `Accept`
-* `Proxy-Connection`
+StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body XML tags
 * `Prefix`
@@ -720,16 +755,7 @@ link:operations-on-buckets.html[Operations on buckets] (PUT Bucket notification)
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body
-StorageGRID supports the following request body JSON fields:
-
-* `Version`
-* `Statement`
-* `Sid`
-* `Effect`
-* `Principal`
-* `Action`
-* `Resource`
-* `Condition`
+For details about the supported JSON body fields, see link:bucket-and-group-access-policies.html[Use bucket and group access policies].
 
 .StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
@@ -748,6 +774,7 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `Destination`
 * `Bucket`
 * `StorageClass`
+*  `Rule`
 
 .StorageGRID documentation
 link:operations-on-buckets.html[Operations on buckets]
@@ -801,8 +828,6 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `x-amz-object-lock-retain-until-date`
 * `x-amz-object-lock-legal-hold`
 * `x-amz-meta-<metadata-name>`
-* `Expect`
-* `Accept`
 
 .Request body parameter
 * `Body`
@@ -904,10 +929,13 @@ link:select-object-content.html[Select Object Content]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html[UploadPart^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional URI query parameters:
 
-* `PartNumber`	
+* `partNumber`	
 * `uploadId`	
+
+And these additional request headers:
+
 * `x-amz-server-side-encryption-customer-algorithm`
 * `x-amz-server-side-encryption-customer-key`
 * `x-amz-server-side-encryption-customer-key-MD5`		
@@ -923,10 +951,13 @@ link:upload-part.html[Upload Part]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html[UploadPartCopy^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional headers:
-	
-* `PartNumber`	
-* `UploadId`	
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional URI query parameters:
+
+* `partNumber`	
+* `uploadId`	
+
+And these additional request headers:
+
 * `x-amz-copy-source`
 * `x-amz-copy-source-if-match`
 * `x-amz-copy-source-if-modified-since`
