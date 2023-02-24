@@ -755,10 +755,8 @@ link:operations-on-buckets.html[Operations on buckets] (PUT Bucket notification)
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body
-For details about the supported JSON body fields, see link:bucket-and-group-access-policies.html[Use bucket and group access policies].
-
-.StorageGRID documentation
-link:operations-on-buckets.html[Operations on buckets]
+For details about the supported JSON body fields, see 
+link:bucket-and-group-access-policies.html[Use bucket and group access policies].
 
 
 //PutBucketReplication
@@ -896,33 +894,11 @@ link:operations-on-objects.html[Operations on objects]
 .URI query parameters and request headers
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
-.Request body parameters
+.Request body
+For details about the supported body fields, see the following:
 
-* `SelectObjectContentRequest`							
-* `Expression`
-* `ExpressionType`			
-* `RequestProgress`		
-* `Enabled` (tag in RequestProgress)
-* `InputSerialization`			
-* `CompressionType`		
-* `CSV`
-* `AllowQuotedRecord Delimiter`			
-* `Comments`
-* `FieldDelimiter`
-* `FileHeaderInfo`
-* `QuoteCharacter`
-* `QuoteEscapeCharacter`
-* `RecordDelimiter`					
-* `OutputSerialization`
-* `CSV`
-* `FieldDelimiter`
-* `QuoteCharacter`
-* `QuoteEscape Character`
-* `QuoteFields`
-* `RecordDelimiter`
-
-.StorageGRID documentation
-link:select-object-content.html[Select Object Content]
+* link:use-s3-select.html[Use S3 Select]
+* link:select-object-content.html[Select Object Content]
 
 
 // UploadPart
