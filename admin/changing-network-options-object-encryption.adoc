@@ -46,21 +46,13 @@ See link:summary-ip-addresses-and-ports-for-client-connections.html[Summary: IP 
 
 . Select *CONFIGURATION* > *Security settings* > *Network and objects*.
 . For Stored object encryption, use the *None* (default) setting if you do not want stored objects to be encrypted, or select *AES-128* or *AES-256* to encrypt stored objects.
-+
 
 . Optionally select *Prevent client modification* if you want to prevent S3 and Swift clients from making specific requests.
 +
-
-[NOTE]
-====
-If you change this setting, it will take about one minute for the new setting to be applied. The configured value is cached for performance and scaling.
-====
-+
+NOTE: If you change this setting, it will take about one minute for the new setting to be applied. The configured value is cached for performance and scaling.
 
 . Optionally select *Enable HTTP for Storage Node connections* if clients connect directly to Storage Nodes and you want to use HTTP connections. 
 +
-
-NOTE: Be cautious when enabling HTTP for a production grid because requests will be sent unencrypted.
-+
+NOTE: Be careful when enabling HTTP for a production grid because requests will be sent unencrypted.
 
 . Select *Save*.

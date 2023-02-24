@@ -18,6 +18,8 @@ You can view a group; edit a group’s name, permissions, policies, and users; d
 
 == View or edit group
 
+.Steps
+
 . Select *ACCESS MANAGEMENT* > *Groups*.
 
 . Review the information on the Groups page, which lists basic information for all local and federated groups for this tenant account.
@@ -76,6 +78,8 @@ You can duplicate an existing group to create new groups more quickly.
 
 NOTE: If your tenant account has the *Use grid federation connection* permission and you duplicate a group from the tenant's source grid, the duplicated group will be cloned to the tenant's destination grid.
 
+.Steps
+
 . Select *ACCESS MANAGEMENT* > *Groups*.
 
 . Select the check box for the group you want to duplicate.
@@ -91,6 +95,8 @@ NOTE: If your tenant account has the *Use grid federation connection* permission
 You can delete one or more groups. Any users who belong only to a group that is deleted will no longer be able to sign in to the Tenant Manager or use the tenant account.
 
 NOTE: If your tenant account has the *Use grid federation connection* permission and you delete a group, StorageGRID will not delete the corresponding group on the other grid. If you need to keep this information in sync, you must delete the same group from both grids.
+
+.Steps
 
 . Select *ACCESS MANAGEMENT* > *Groups*.
 

@@ -44,6 +44,8 @@ NOTE: If you do not add S3 endpoint domain names and the list is empty, support 
 
 == Add an S3 endpoint domain name
 
+.Steps
+
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
 
 . Enter the domain name in the *Domain name 1* field. Select *Add another domain name* to add more domain names.
@@ -61,7 +63,9 @@ Now, when clients use the endpoint `_bucket.s3.company.com_`, the DNS server res
 
 == Rename an S3 endpoint domain name
 
-NOTE: If you change or remove a name used by S3 applications, virtual-hosted-style requests will fail.
+If you change a name used by S3 applications, virtual-hosted-style requests will fail.
+
+.Steps
 
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
 . Select the domain name field you want to edit and make the necessary changes.
@@ -69,6 +73,10 @@ NOTE: If you change or remove a name used by S3 applications, virtual-hosted-sty
 . Select *Yes* to confirm your change.
 
 == Delete an S3 endpoint domain name
+
+If you remove a name used by S3 applications, virtual-hosted-style requests will fail.
+
+.Steps
 
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
 . Select the delete icon image:../media/icon-x-to-remove.png[delete icon] next to the domain name.

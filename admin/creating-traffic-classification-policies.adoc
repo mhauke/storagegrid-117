@@ -23,21 +23,17 @@ You can create traffic classification policies if you want to monitor, and optio
 . Select *CONFIGURATION* > *Network* > *Traffic classification*.
 +
 The Traffic classification policies page appears.
-+
 
 . Select *Create*.
 +
 The Create a traffic classification policy wizard appears.
-+
 
 . Enter a descriptive name that can be recognized and a description (optional) for the policy and select *Continue*.
 +
 For example, describe what this traffic classification policy applies to and what it will limit.
-+
 
 . Select *Add rule* and specify the following details to create one or more matching rules for the policy. Any policy that you create should have at least one matching rule. Select *Continue*.
 +
-
 [cols="1a,2a" options="header"]
 |===
 // header row
@@ -64,18 +60,16 @@ For example, if you want this policy to apply to all but one of the load balance
 
 For a policy containing multiple matchers where at least one is an inverse matcher, be careful not to create a policy that matches all requests.
 
-// table end
+
 |===
-+
 
 . Optionally, select *Add a limit* and select the following details to add one or more limits to control the network traffic matched by a rule.
 +
 NOTE: Even if you do not create limits, StorageGRID collects metrics so that you can monitor network traffic that matches the policy.
 +
-
 [cols="1a,2a" options="header"]
 |===
-// header row
+
 |Field |Description
 
 |Type
@@ -104,12 +98,9 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 |Unit
 |The unit that describes the value you entered.
 
-// table end
 |===
 +
-
 For example, if you want to create a 40 Gbps bandwidth limit for an SLA tier, create two Aggregate bandwidth limits: GET/HEAD at 40 Gbps and PUT/POST/DELETE at 40 Gbps.
-+
 
 . Select *Continue*.
 

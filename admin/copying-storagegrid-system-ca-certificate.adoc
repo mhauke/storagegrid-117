@@ -23,7 +23,7 @@ If a custom server certificate has been configured, client applications should v
 .Steps
 
 . Select *CONFIGURATION* > *Security* > *Certificates* and then select the *Grid CA* tab.
-. In the *Certificate PEM* section download or copy the certificate.
+. In the *Certificate PEM* section, download or copy the certificate.
 +
 [role="tabbed-block"]
 ====
@@ -33,8 +33,8 @@ If a custom server certificate has been configured, client applications should v
 
 Download the certificate `.pem` file.
 
-. Select *Download certificate*.
-. Specify the certificate file name and download location. Save the file with the extension `.pem`.
+.. Select *Download certificate*.
+.. Specify the certificate file name and download location. Save the file with the extension `.pem`.
 +
 For example: `storagegrid_certificate.pem`
 
@@ -45,9 +45,9 @@ For example: `storagegrid_certificate.pem`
 
 Copy the certificate text to paste elsewhere.
 
-. Select *Copy certificate PEM*.
-. Paste the copied certificate into a text editor.
-. Save the text file with the extension `.pem`.
+.. Select *Copy certificate PEM*.
+.. Paste the copied certificate into a text editor.
+.. Save the text file with the extension `.pem`.
 +
 For example: `storagegrid_certificate.pem`
 --
