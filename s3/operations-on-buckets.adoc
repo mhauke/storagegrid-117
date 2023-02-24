@@ -183,19 +183,20 @@ The endpoint must exist for notification configuration to succeed. If the endpoi
  ** `s3:ReducedRedundancyLostObject`
  ** `s3:ObjectRestore:Completed`
 * Event notifications sent from StorageGRID use the standard JSON format except that they do not include some keys and use specific values for others, as shown in the following listing:
-* *eventSource*
+
+** *eventSource*
 +
 `sgws:s3`
 
-* *awsRegion*
+** *awsRegion*
 +
 not included
 
-* *x-amz-id-2*
+** *x-amz-id-2*
 +
 not included
 
-* *arn*
+** *arn*
 +
 `urn:sgws:s3:::bucket_name`
 

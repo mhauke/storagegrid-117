@@ -26,12 +26,14 @@ Unless noted, the following common request headers are supported:
 
 * `Authorization`
 * `Connection`
-* `Date`
 * `Content-Length`
 * `Content-MD5`
 * `Content-Type`
+* `Date`
 * `Host`
 * `x-amz-date`
+
+See https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html[Amazon Simple Storage Service API Reference: Common Request Headers^].
 
 //AbortMultipartUpload
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html[AbortMultipartUpload^]

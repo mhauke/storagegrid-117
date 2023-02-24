@@ -37,7 +37,7 @@ IMPORTANT: S3 tenant users can create and manage S3 buckets with the Tenant Mana
 
 link:../admin/index.html[Administer StorageGRID]
 
-link:../tenant/index.html[Use tenant account]
+link:../tenant/index.html[Use a tenant account]
 
 == How client connections can be configured
 
@@ -135,7 +135,7 @@ To connect an S3 client to the Load Balancer endpoint of an HA group of Gateway 
 
 For example, if the virtual IP address of the HA group is 192.0.2.5 and the port number of an S3 Load Balancer endpoint is 10443, then an S3 client could use the following URL to connect to StorageGRID:
 
-* `https://192.0.2.5:10443`
+* `\https://192.0.2.5:10443`
 
 It is possible to configure a DNS name for the IP address that clients use to connect to StorageGRID. Contact your local network administrator.
 
@@ -149,7 +149,7 @@ When client connections are made using a Load Balancer endpoint, connections mus
 
 By default, when client applications connect to Storage Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting *CONFIGURATION* > *Security settings* > *Network and objects* > *Enable HTTP for Storage Node connections* in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
 
-IMPORTANT: Be careful when enabling HTTP for a production grid since requests will be sent unencrypted.
+IMPORTANT: Be careful when enabling HTTP for a production grid since requests and responses will be sent unencrypted.
 
 If the *Enable HTTP for Storage Node connections* check box is selected, clients must use different ports for HTTP than they use for HTTPS. See the link:../admin/index.html[instructions for administering StorageGRID].
 
@@ -169,7 +169,7 @@ To enable you to use S3 virtual hosted style-requests, a grid administrator must
 * Use the Grid Manager to add the S3 endpoint domain names to the StorageGRID system.
 * Ensure that the certificate the client uses for HTTPS connections to StorageGRID is signed for all domain names that the client requires.
 +
-For example, if the endpoint is `s3.company.com`, the grid administrator must ensure that the certificate used for HTTPS connections includes the `s3.company.com` endpoint and the endpoint's wildcard Subject Alternative Name (SAN): `*.s3.company.com`.
+For example, if the S3 API service endpoint domain endpoint is `s3.company.com`, the grid administrator must ensure that the certificate used for HTTPS connections has `s3.company.com` as the Subject Common Name and in the Subject Alternative Names, and `*.s3.company.com` in the Subject Alternative Names
 
 * Configure the DNS server used by the client to include DNS records that match the S3 endpoint domain names, including any required wildcard records.
 
@@ -181,7 +181,7 @@ If the client connects to Storage Nodes, the certificate that the grid administr
 
 See the instructions for administering StorageGRID for more information.
 
-After these steps have been completed, you can use virtual hosted-style requests (for example, `bucket.s3.company.com`).
+After these steps have been completed, you can use virtual hosted-style requests.
 
 .Related information
 
@@ -196,15 +196,18 @@ You can use the Amazon Web Services Command Line Interface (AWS CLI) to test you
 .What you'll need
 * You have downloaded and installed the AWS CLI from https://aws.amazon.com/cli[aws.amazon.com/cli^].
 * You have created an S3 tenant account in the StorageGRID system.
+* You have created an access key in the tenant account.
 
 .Steps
-. Configure the Amazon Web Services settings to use the account you created in the StorageGRID system:
+. Configure the AWS CLI settings to use the account you created in the StorageGRID system:
  .. Enter configuration mode: `aws configure`
- .. Enter the AWS Access Key ID for the account you created.
- .. Enter the AWS Secret Access key for the account you created.
+ .. Enter the access key ID for the account you created.
+ .. Enter the secret access key for the account you created.
  .. Enter the default region to use, for example, us-east-1.
  .. Enter the default output format to use, or press *Enter* to select JSON.
 . Create a bucket.
++
+This example assumes you configured your load balancer endpoint to use IP address 10.96.101.17 and port 10443.
 +
 ----
 aws s3api --endpoint-url https://10.96.101.17:10443
@@ -212,6 +215,7 @@ aws s3api --endpoint-url https://10.96.101.17:10443
 ----
 +
 If the bucket is created successfully, the location of the bucket is returned, as seen in the following example:
++
 ----
 "Location": "/testbucket"
 ----
