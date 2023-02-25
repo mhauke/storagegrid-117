@@ -37,10 +37,10 @@ See information about link:../ilm/why-you-should-not-use-single-copy-replication
 .Steps
 
 . Wrap the strap end of the ESD wristband around your wrist, and secure the clip end to a metal ground to prevent static discharge.
-. Locate the riser assemblies at the rear of the appliance that contains the NIC.
+. Locate the riser assembly that contains the NIC at the rear of the appliance.
 +
 
-The three NICs in the SGF6112 are in riser assemblies in the following positions in the chassis (Rear of SGF6112 with top cover removed shown): 
+The three NICs in the SGF6112 are in two riser assemblies in the positions in the chassis shown in the photograph (Rear of SGF6112 with top cover removed shown): 
 +
 image::../media/sgf6112-nic-positions.jpg[NIC locations]
 
@@ -52,19 +52,19 @@ a|
 a|
 hic1/hic2
 a|
-10/25-GbE Ethernet network ports
+10/25-GbE Ethernet network ports in the two-port riser assembly
 a|
 2
 a|
 mtc1/mtc2
 a|
-1/10GBase-T management ports
+1/10GBase-T management ports in the two-port riser assembly
 a|
 3
 a|
 hic3/hic4
 a|
-10/25-GbE Ethernet network ports
+10/25-GbE Ethernet network ports in the one-port riser assembly
 a|
 4
 a|
@@ -80,20 +80,16 @@ Support for one of the 10/25-GbE NICs
 |===
 
 . Grasp the riser assembly through the blue-marked holes and carefully lift it upwards. Move the riser assembly toward the front of the chassis as you lift it to allow the external connectors in its installed adapters to clear the chassis.
-. Place the riser card on a flat anti-static surface with the metal frame side down to access the adapters.
+. Place the riser card on a flat anti-static surface with the metal frame side down to access the NICs.
 +
-* Two-slot riser assembly with two NICs
+* *Two-slot riser assembly with two NICs*
 +
 image::../media/two-slot-assembly-sgf6112.png[SGF6112 two NICs in two-slot riser assembly]
-* One-slot riser assembly with one NIC
+* *One-slot riser assembly with one NIC*
 +
 image::../media/one-slot-assembly-sgf6112.png[SGF6112 NIC in one-slot riser assembly]
 
 . Open the blue latch (circled) on the NIC to be replaced and carefully remove the NIC from the riser assembly. Rock the NIC slightly to help remove the NIC from its connector. Do not use excessive force.
 . Place the NIC on a flat anti-static surface.
-
-.After you finish
-
-link:reinstalling-nic-in-sgf6112.html[Install the replacement NIC].
 
 include::../_include/fru-statement.adoc[] 

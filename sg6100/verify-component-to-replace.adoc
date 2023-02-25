@@ -2,14 +2,14 @@
 permalink: sg6100/verify-component-to-replace.html
 sidebar: sidebar
 keywords: sgf6112
-summary: 'If you are unsure which hardware component to replace in your appliance, complete this procedure.'
+summary: 'If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the component and the location of the appliance in the data center.'
 ---
 = Verify component to replace in the SGF6112
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the component and the appliance's location in the data center.
+If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the component and the location of the appliance in the data center.
 
 .What you'll need
 
@@ -19,7 +19,7 @@ If you are unsure which hardware component to replace in your appliance, complet
 
 .About this task
 
-Use this procedure to identify the appliance with failed hardware and which of the following hardware components is not operating properly: 
+Use this procedure to identify the appliance with failed hardware and which of the following replacable hardware components is not operating properly: 
 
 * Power supplies
 * Fans
@@ -55,7 +55,7 @@ image::../media/nodes_page_hardware_tab_appliance_verify_nic.png[Appliance secti
 
 . After you locate the node where the component needs to be replaced, write down the appliance BMC IP address listed the StorageGRID Appliance section.
 +
-You can use this IP address to turn on the appliance identify LED, to help you locate the appliance in the data center.
+To help you locate the appliance in the data center, you can use the BMC IP address to turn on the appliance identify LED.
 +
 link:turning-sgf6112-identify-led-on-and-off.html[Turn the appliance identify LED on and off]
 

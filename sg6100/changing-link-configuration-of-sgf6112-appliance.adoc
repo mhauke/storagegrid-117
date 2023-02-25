@@ -2,14 +2,14 @@
 permalink: sg6100/changing-link-configuration-of-sgf6112-appliance.html
 sidebar: sidebar
 keywords: storagegrid, sgf6112, link configuration, link, configure, configuring, ethernet, port bond mode, port bond, network bond mode, network bond, link speed, vlan tagging, vlan tag 
-summary: 'You can change the Ethernet link configuration of the appliance. You can change the port bond mode, the network bond mode, and the link speed.'
+summary: 'You can change the Ethernet link configuration of the appliance including the port bond mode, the network bond mode, and the link speed.'
 ---
 = Change link configuration of appliance
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can change the Ethernet link configuration of the appliance. You can change the port bond mode, the network bond mode, and the link speed.
+You can change the Ethernet link configuration of the appliance including the port bond mode, the network bond mode, and the link speed.
 
 .What you'll need
 
@@ -51,8 +51,8 @@ If you made changes to the VLAN settings, the subnet for the appliance might hav
 In addition to any other tests you choose to perform, confirm that you can ping the Grid Network IP address of the primary Admin Node, and the Grid Network IP address of at least one other node. If necessary, return to the instructions for configuring network links, and correct any issues.
 
 . Once you are satisfied that your link configuration changes are working, reboot the node. From the StorageGRID Appliance Installer, select *Advanced* > *Reboot Controller*, and then select one of these options:
- ** Select *Reboot into StorageGRID* to reboot the controller with the node rejoining the grid. Select this option if you are done working in maintenance mode and are ready to return the node to normal operation.
- ** Select *Reboot into Maintenance Mode* to reboot the controller with the node remaining in maintenance mode. (This option is available only when the controller is in maintenance mode.) Select this option if there are additional maintenance operations you need to perform on the node before rejoining the grid.
+ ** Select *Reboot into StorageGRID* to reboot the compute controller with the node rejoining the grid. Select this option if you are done working in maintenance mode and are ready to return the node to normal operation.
+ ** Select *Reboot into Maintenance Mode* to reboot the compute controller with the node remaining in maintenance mode. (This option is available only when the controller is in maintenance mode.) Select this option if there are additional maintenance operations you need to perform on the node before it rejoins the grid.
 +
 image::../media/reboot_controller_from_maintenance_mode.png[Reboot controller in maintenance mode]
 +

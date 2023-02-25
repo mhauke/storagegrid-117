@@ -31,7 +31,7 @@ link:removing-sgf6112-cover.html[Remove SGF6112 cover]
 * You have confirmed that the other fans are installed and running.
 
 .About this task
-To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the fan replacement or replace the fan during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:.. /monitor/monitoring-system-health.html#monitor-node-connection-states[monitoring node connection states].
+To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the fan replacement or replace the fan during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:../monitor/monitoring-system-health.html#monitor-node-connection-states[monitoring node connection states].
 
 IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the fan during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
 
@@ -47,9 +47,8 @@ image::../media/sgf6112_fan_fru.png[Fan SGF6112 FRU]
 . Wrap the strap end of the ESD wristband around your wrist, and secure the clip end to a metal ground to prevent static discharge.
 . Locate the fan that you need to replace.
 +
-
 The eight fans are in the following positions in the chassis (front half of SGF6112 with top cover removed shown): 
-
++
 image::../media/SGF6112-fan-locations.png[Fan locations]
 [options="header"]
 |===
@@ -87,7 +86,7 @@ a|
 a|
 Fan_SYS7
 |===
-
+[start=3]
 . Using the blue tabs on the fan, lift the failed fan out of the chassis.
 +
 image::../media/fan_removal.png[Fan Removal]
@@ -96,7 +95,6 @@ image::../media/fan_removal.png[Fan Removal]
 +
 Be sure to align the connector on the fan with the socket in the circuit board.
 +
-
 . Press the fan's connector firmly into the circuit board (socket highlighted).
 +
 image::../media/sgf6112_fan_socket_check.png[Fan Connector Check]
