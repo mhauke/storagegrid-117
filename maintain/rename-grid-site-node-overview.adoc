@@ -22,17 +22,17 @@ Use the rename procedure to correct typos, to implement a different naming conve
 == Where do system and display names appear?
 The following table summarizes where system names and display names are shown in the StorageGRID user interface and in StorageGRID files.
 
-[cols="1a,1a,1a" options="header"]
+[cols="2a,2a,3a" options="header"]
 |===
 // header row
-|Location
-|System name
-|Display name
+| Location
+| System name
+| Display name
 
-|Grid Manager pages
-|Shown unless the item is renamed 
+| Grid Manager pages
+| Shown unless the item is renamed 
 
-|If an item is renamed, shown instead of the system name in these locations:
+| If an item is renamed, shown instead of the system name in these locations:
 
 * Dashboard
 * Nodes page
@@ -44,27 +44,21 @@ The following table summarizes where system names and display names are shown in
 * Support pages (logs and diagnostics)
 * Single sign-on page, next to the Admin Node hostname in the table for Admin Node details
 
+| *NODES* > *Overview* tab for a node
+| Always shown 
+| Shown only if the item is renamed
 
+| Legacy pages in the Grid Manager (for example, *SUPPORT* > *Grid Topology*)
+| Shown 
+| Not shown
 
-|*NODES* > *Overview* tab for a node
-|Always shown 
-|Shown only if the item is renamed
+| *node-health* API
+| Always returned
+| Returned only if the item is renamed
 
+| Prompt when using SSH to access a node
 
-|Legacy pages in the Grid Manager (for example, *SUPPORT* > *Grid Topology*)
-|Shown 
-|Not shown
-
-|*node-health* API
-|Always returned
-|Returned only if the item is renamed
-
-
-
-|Prompt when using SSH to access a node
-
-|
-Shown as the primary name unless the item has been renamed:
+| Shown as the primary name unless the item has been renamed:
 
 `admin@SYSTEM-NAME: ~ $`
 
@@ -73,29 +67,26 @@ Included in parentheses when the item is renamed:
 `admin@DISPLAY-NAME(SYSTEM-NAME):~ $`
 
 
-|Shown as the primary name when the item is renamed:
+| Shown as the primary name when the item is renamed:
 
 `admin@DISPLAY-NAME(SYSTEM-NAME):~ $`
 
+| `Passwords.txt` file in the Recovery Package
+| Shown as `Server Name`
+| Shown as `Display Name`
 
-
-|`Passwords.txt` file in the Recovery Package
-|Shown as `Server Name`
-|Shown as `Display Name`
-
-|`/etc/hosts` file on all nodes
+| `/etc/hosts` file on all nodes
 
 For example:
 
 `10.96.99.128 SYSTEM-NAME 28989c59-a2c3-4d30-bb09-6879adf2437f DISPLAY-NAME localhost-grid # storagegrid-gen-host`
 
-|Always shown in the second column
-|When the item is renamed, shown in the fourth column
+| Always shown in the second column
+| When the item is renamed, shown in the fourth column
 
-|`topology-display-names.json`, included with AutoSupport data
-|Not included
-|Empty unless items have been renamed; otherwise, maps grid, site, and node IDs to their display names. 
-
+| `topology-display-names.json`, included with AutoSupport data
+| Not included
+| Empty unless items have been renamed; otherwise, maps grid, site, and node IDs to their display names. 
 
 // table end
 |===
@@ -114,6 +105,9 @@ Display names for nodes must follow these rules:
 * Can start or end with a letter or number, but cannot start or end with a hyphen.
 * Cannot be all numbers.
 * Are case-insensitive. For example, `DC1-ADM` and `dc1-adm` are considered to be duplicates.
+
+You can rename a node with a display name that was previously used by a different node, as long as the rename doesn't result in a duplicate display name or system name.
+
 
 === Display names for grid and sites
 
