@@ -2,7 +2,7 @@
 permalink: sg6100/replacing-drive-in-sgf6112.html
 sidebar: sidebar
 keywords: storagegrid, sg6112, Replacing, replace, drive, remove, removing, removal, install, installing, installation
-summary: 'The SG6100 series storage appliances contain SSD drives. The drives are mirrored using RAID for redundancy. If one of the drives fails, you must replace it as soon as possible to ensure redundancy.'
+summary: 'The SGF6112 storage appliance contains 12 SSD drives. The drives are mirrored using RAID for redundancy. If one of the drives fails, you must replace it as soon as possible to ensure redundancy.'
 ---
 = Replace drives in the SGF6112 appliance
 :icons: font
@@ -15,7 +15,7 @@ The SGF6112 storage appliance contains 12 SSD drives. The drives are mirrored us
 
 * You have link:locating-sgf6112-in-data-center.html[physically located the appliance].
 
-* You have verified which drive has failed by noting that the drive's left LED is blinking amber or using the Grid Manager to link:verify-component-to-replace.html[view the alert caused by the failed drive].
+* You have verified which drive has failed by noting that the drive's left LED is blinking blue or using the Grid Manager to link:verify-component-to-replace.html[view the alert caused by the failed drive].
 
 +
 IMPORTANT: See the information about viewing status indicators to verify the failure.
@@ -25,7 +25,7 @@ IMPORTANT: See the information about viewing status indicators to verify the fai
 
 .Steps
 
-. Verify that the drive's left LED is blinking amber or use the drive slot ID from the alert to locate the drive.
+. Verify that the drive's left LED is blinking blue or use the drive slot ID from the alert to locate the drive.
 +
 The twelve drives are in the following positions in the chassis (front of chassis with bezel removed shown): 
 
@@ -94,7 +94,7 @@ IMPORTANT: Do not use excessive force while closing the handle.
 +
 When the drive is fully inserted, you hear a click.
 +
-The drive is automatically rebuilt with mirrored data from the working drives. The drive LED should blink initially, but then stop blinking as soon as the system determines that the drive has enough capacity and is functional.
+The replaced drive is automatically rebuilt with mirrored data from the working drives. The drive LED should blink initially, but then stop blinking as soon as the system determines that the drive has enough capacity and is functional.
 
 You can check the status of the rebuild by using the Grid Manager.
 
