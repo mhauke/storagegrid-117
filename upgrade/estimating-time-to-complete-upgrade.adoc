@@ -16,61 +16,60 @@ The time required to complete a StorageGRID upgrade depends on a variety of fact
 
 The table summarizes the main upgrade tasks and lists the approximate time required for each task. The steps after the table provide instructions you can use to estimate the upgrade time for your system.
 
-[cols="1a,1a,1a,a" options="header"]
+[cols="1a,2a,2a,4a" options="header"]
 |===
 | Upgrade task| Description| Approximate time required| During this task
 
 
-|Run prechecks and upgrade primary Admin Node
-|The upgrade prechecks are run, and the primary Admin Node is stopped, upgraded, and restarted. 
-|30 minutes to 1 hour, with SG100 and SG1000 appliance nodes requiring the most time. 
+| Run prechecks and upgrade primary Admin Node
+| The upgrade prechecks are run, and the primary Admin Node is stopped, upgraded, and restarted. 
+| 30 minutes to 1 hour, with SG100 and SG1000 appliance nodes requiring the most time. 
 
 Unresolved precheck errors will increase this time. 
 
-|You cannot access the primary Admin Node. Connection errors might be reported, which you can ignore.
+| You cannot access the primary Admin Node. Connection errors might be reported, which you can ignore.
 
 Running the upgrade prechecks before starting the upgrade lets you resolve any errors before the scheduled upgrade maintenance window.
 
-|Start upgrade service
-|The software file is distributed, and the upgrade service is started.
-|3 minutes per grid node
-|
+| Start upgrade service
+| The software file is distributed, and the upgrade service is started.
+| 3 minutes per grid node
+| 
 
+| Upgrade other grid nodes
+| The software on all other grid nodes is upgraded, in the order in which you approve the nodes. Every node in your system will be brought down one at a time.
+| 15 minutes to 1 hour per node, with appliance nodes requiring the most time
 
-|Upgrade other grid nodes
-|The software on all other grid nodes is upgraded, in the order in which you approve the nodes. Every node in your system will be brought down one at a time for several minutes each.
-|15 minutes to 1 hour per node, with appliance nodes requiring the most time
+*Note*: For appliance nodes, the StorageGRID Appliance Installer is automatically updated to the latest release.
 
-*Note:* For appliance nodes, the StorageGRID Appliance Installer is automatically updated to the latest release.
-
-|
+| 
 * Do not change the grid configuration.
 * Do not change the audit level configuration.
 * Do not update the ILM configuration.
 * You are prevented from performing other maintenance procedures, such as hotfix, decommission, or expansion.
-+
-*Note:* If you need to perform a recovery, contact technical support.
 
-|Enable features
-|The new features for the new version are enabled.
-|Less than 5 minutes
-|
+*Note*: If you need to perform a recovery, contact technical support.
+
+| Enable features
+| The new features for the new version are enabled.
+| Less than 5 minutes
+| 
 * Do not change the grid configuration.
 * Do not change the audit level configuration.
 * Do not update the ILM configuration.
 * You cannot perform another maintenance procedure.
 
-|Upgrade database
-|The upgrade process checks each node to verify that the Cassandra database does not need to be updated.
-|10 seconds per node or a few minutes for the entire grid
-|The upgrade from StorageGRID 11.6 to 11.7 does not require a Cassandra database upgrade; however, the Cassandra service will be stopped and restarted on each Storage Node. 
+| Upgrade database
+| The upgrade process checks each node to verify that the Cassandra database does not need to be updated.
+| 10 seconds per node or a few minutes for the entire grid
+| The upgrade from StorageGRID 11.6 to 11.7 does not require a Cassandra database upgrade; however, the Cassandra service will be stopped and restarted on each Storage Node. 
 
 For future StorageGRID feature releases, the Cassandra database update step might take several days to complete.
 
-|Final upgrade steps
-|Temporary files are removed and the upgrade to the new release completes.
-|5 minutes
-|When the *Final upgrade steps* task completes, you can perform all maintenance procedures.
+| Final upgrade steps
+| Temporary files are removed and the upgrade to the new release completes.
+| 5 minutes
+| When the *Final upgrade steps* task completes, you can perform all maintenance procedures.
 
 |===
 
