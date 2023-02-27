@@ -11,7 +11,7 @@ summary: 'This page summarizes StorageGRID support for Amazon Simple Storage Ser
 [.lead]
 This page summarizes StorageGRID's support for Amazon Simple Storage Service (S3) APIs.
 
-This page includes only the S3 operations that are supported by StorageGRID.
+This page includes only the S3 operations that are supported by StorageGRID. 
 
 NOTE: To see the AWS documentation for each operation, select the link in the heading.
 
@@ -63,6 +63,8 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `uploadId`	
 
 .Request body XML tags
+StorageGRID supports these request body XML tags:
+
 * `CompleteMultipartUpload`
 * `Part`
 * `ETag`
@@ -680,6 +682,8 @@ link:operations-on-buckets.html[Operations on buckets]
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body XML tags
+StorageGRID supports these request body XML tags:
+
 * `ServerSideEncryptionConfiguration` 			
 * `Rule`		
 * `ApplyServerSideEncryptionByDefault`	
@@ -696,6 +700,8 @@ link:operations-on-buckets.html[Operations on buckets]
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body XML tags
+StorageGRID supports these request body XML tags:
+
 * `NewerNoncurrentVersions`
 * `LifecycleConfiguration`						
 * `Rule`							
@@ -729,6 +735,8 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body XML tags
+StorageGRID supports these request body XML tags:
+
 * `Prefix`
 * `Suffix`
 * `NotificationConfiguration`					
@@ -796,6 +804,7 @@ link:operations-on-buckets.html[Operations on buckets]
 StorageGRID supports all <<common-params, common parameters and headers>> for this request.
 
 .Request body parameters
+StorageGRID supports these request body parameters:
 
 * `VersioningConfiguration`	
 * `Status`
