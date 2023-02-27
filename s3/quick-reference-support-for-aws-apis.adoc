@@ -248,7 +248,9 @@ link:operations-on-buckets.html[Operations on buckets]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html[DeleteObject^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request.
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus this additional request header:
+
+* `x-amz-bypass-governance-retention`
 
 .Request body
 None
@@ -261,7 +263,9 @@ link:operations-on-objects.html[Operations on objects]
 == https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html[DeleteObjects^]
 
 .URI query parameters and request headers
-StorageGRID supports all <<common-params, common parameters and headers>> for this request.
+StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus this additional request header:
+
+* `x-amz-bypass-governance-retention`
 
 .Request body
 StorageGRID supports all request body parameters defined by the Amazon S3 REST API at the time of implementation.
@@ -421,29 +425,23 @@ link:operations-on-buckets.html[Operations on buckets]
 StorageGRID supports all <<common-params, common parameters and headers>> for this request, plus these additional URI query parameters:
 
 * `partNumber`
-* `response-cache-control `
-* `response-content-disposition `
+* `response-cache-control`
+* `response-content-disposition`
 * `response-content-encoding`
 * `response-content-language`
 * `response-content-type` 
 * `response-expires`
 
 And these additional request headers:
-
-* `response-cache-control`	
-* `response-content-disposition`	
-* `response-content-encoding`
-* `response-content-type`	
+	
 * `Range`
 * `x-amz-server-side-encryption-customer-algorithm`
 * `x-amz-server-side-encryption-customer-key`
 * `x-amz-server-side-encryption-customer-key-MD5`
-* `Accept`
 * `If-Match`
 * `If-Modified-Since`
 * `If-None-Match`
 * `If-Unmodified-Since`
-
 
 
 .Request body
@@ -827,8 +825,8 @@ StorageGRID supports all <<common-params, common parameters and headers>> for th
 * `x-amz-object-lock-legal-hold`
 * `x-amz-meta-<metadata-name>`
 
-.Request body parameter
-* `Body`
+.Request body
+* Binary data of the object
 
 .StorageGRID documentation
 link:put-object.html[PUT Object]
@@ -916,8 +914,8 @@ And these additional request headers:
 * `x-amz-server-side-encryption-customer-key`
 * `x-amz-server-side-encryption-customer-key-MD5`		
 
-.Request body parameter
-* `Body`
+.Request body
+* Binary data of the part
 
 .StorageGRID documentation
 link:upload-part.html[Upload Part]
