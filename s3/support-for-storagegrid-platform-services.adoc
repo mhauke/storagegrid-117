@@ -45,13 +45,13 @@ A grid administrator must enable the use of platform services for a tenant accou
 Before using platform services, you must be aware of the following recommendations:
 
 * NetApp recommends that you allow no more than 100 active tenants with S3 requests requiring CloudMirror replication, notifications, and search integration. Having more than 100 active tenants can result in slower S3 client performance.
-* If an S3 bucket in theStorageGRID system has both versioning and CloudMirror replication enabled, NetApp recommends that the destination endpoint also have S3 bucket versioning enabled. This allows CloudMirror replication to generate similar object versions on the endpoint.
+* If an S3 bucket in the StorageGRID system has both versioning and CloudMirror replication enabled, NetApp recommends that the destination endpoint also have S3 bucket versioning enabled. This allows CloudMirror replication to generate similar object versions on the endpoint.
 * CloudMirror replication is not supported if the source bucket has S3 Object Lock enabled.
 * CloudMirror replication will fail with an AccessDenied error if the destination bucket has legacy Compliance enabled.
 
 .Related information
 
-link:../tenant/index.html[Use tenant account]
+link:../tenant/index.html[Use a tenant account]
 
 link:../admin/index.html[Administer StorageGRID]
 
