@@ -43,10 +43,7 @@ For details about this task, see link:../admin/managing-high-availability-groups
 . If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, create a new HA group or use an existing HA group.
-
-
-// start tabbed area
-
++
 [role="tabbed-block"]
 ====
 
@@ -308,7 +305,9 @@ The existing tenant account must have at least one bucket that does not have ver
 . Select the existing tenant from the *Tenant name* drop-down list. 
 . Select the existing bucket from the *Bucket name* drop-down list.
 +
-FabricPool does not support object versioning, so buckets that have versioning enabled are not shown. 
+FabricPool does not support object versioning, so buckets that have versioning enabled are not shown.
++
+NOTE: Do not select a bucket that has S3 Object Lock enabled for use with FabricPool.
 
 . Select *Continue* to go to the download data step. 
 --
