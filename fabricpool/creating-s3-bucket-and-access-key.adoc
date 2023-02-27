@@ -31,28 +31,19 @@ You must create a unique bucket for each ONTAP cluster you plan to use.
 
  .. Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
  .. Select *Create bucket*.
- .. Enter the name of the StorageGRID bucket you will use with FabricPool. For example, `fabricpool-bucket`.
+ .. Enter the name of the StorageGRID bucket you want to use with FabricPool. For example, `fabricpool-bucket`.
 +
 TIP: You cannot change the bucket name after creating the bucket.
-+
-Bucket names must comply with these rules:
-
-  *** Must be unique across each StorageGRID system (not just unique within the tenant account).
-  *** Must be DNS compliant.
-  *** Must contain at least 3 and no more than 63 characters.
-  *** Can be a series of one or more labels, with adjacent labels separated by a period. Each label must start and end with a lowercase letter or a number and can only use lowercase letters, numbers, and hyphens.
-  *** Must not look like a text-formatted IP address.
-  *** Should not use periods in virtual hosted style requests. Periods will cause problems with server wildcard certificate verification.
-
+  
 .. Select the region for this bucket.
 +
 By default, all buckets are created in the `us-east-1` region.
 
+.. Select *Continue*.
+
 .. Select *Create bucket*.
-
 +
-NOTE: For FabricPool buckets, the recommended bucket consistency level is *Read-after-new-write*, which is the default setting for a new bucket. Do not edit FabricPool buckets to use *Available* or any other consistency level.
-
+NOTE: Do not select *Enable object versioning* for the FabricPool bucket. Similarly, do not edit a FabricPool bucket to use *Available* or a non-default consistency level. The recommended bucket consistency level for FabricPool buckets is *Read-after-new-write*, which is the default setting for a new bucket. 
 
 . Create an access key and a secret access key.
  .. Select *STORAGE (S3)* > *My access keys*.
@@ -62,4 +53,4 @@ NOTE: For FabricPool buckets, the recommended bucket consistency level is *Read-
 +
 You will enter these values in ONTAP when you configure StorageGRID as a FabricPool cloud tier.
 +
-CAUTION: If you create a new access key and secret access key in the future, you must update the corresponding values in ONTAP immediately to ensure that ONTAP can store and retrieve data in StorageGRID without interruption.
+CAUTION: If you generate a new access key and secret access key in StorageGRID in the future, enter the new keys into ONTAP before deleting the old values from StorageGRID. Otherwise, ONTAP might temporarily lose its access to StorageGRID.

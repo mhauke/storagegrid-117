@@ -67,7 +67,7 @@ To enable you to use S3 virtual hosted style-requests, a grid administrator must
 * Use the Grid Manager to add the S3 endpoint domain names to the StorageGRID system.
 * Ensure that the certificate the client uses for HTTPS connections to StorageGRID is signed for all domain names that the client requires.
 +
-For example, if the S3 API service endpoint domain endpoint is `s3.company.com`, the grid administrator must ensure that the certificate used for HTTPS connections has `s3.company.com` as the Subject Common Name and in the Subject Alternative Names, and `*.s3.company.com` in the Subject Alternative Names
+For example, if the S3 API service endpoint domain endpoint is `s3.company.com`, the grid administrator must ensure that the certificate used for HTTPS connections has `s3.company.com` as the Subject Common Name and in the Subject Alternative Names, and `*.s3.company.com` in the Subject Alternative Names.
 
 * Configure the DNS server used by the client to include DNS records that match the S3 endpoint domain names, including any required wildcard records.
 

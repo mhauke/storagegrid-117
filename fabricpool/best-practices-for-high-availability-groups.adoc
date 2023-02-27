@@ -22,7 +22,7 @@ To create an HA group, you perform these general steps:
 
 . Select network interfaces for one or more Admin Nodes or Gateway Nodes. You can select the Grid Network interface (eth0), Client Network interface (eth2), or a VLAN interface.
 +
-TIP: If you plan to use a VLAN interface to segregate FabricPool traffic, a network administrator must first configure a trunk interface and the corresponding VLAN. Each VLAN is identified by a numeric ID or tag. For example, your network might use VLAN 100 for FabricPool traffic.
+TIP: If you plan to use a VLAN interface to segregate FabricPool traffic, a network administrator must first configure a trunk interface and the corresponding VLAN on the appropriate switches, and ensure the trunk ports are connected to the appropriate Gateway or Admin Nodes. Each VLAN is identified by a numeric ID or tag. For example, your network might use VLAN 100 for FabricPool traffic.
 
 . Assign at least one but no more than 16 virtual IP (VIP) addresses to the group. ONTAP establishes connections with all IP addresses. The IP addresses are picked up in a round-robin method when connections are established.
 
@@ -34,7 +34,7 @@ When the failure is resolved and a higher priority interface becomes available a
 
 == Using HA groups
 
-The best practices for creating a StorageGRID HA group for FabricPool depend on the workload, as follows:
+The best practices for creating a StorageGRID HA group for FabricPool depend on the workload:
 
 * If you plan to use FabricPool with primary workload data, you must create a HA group that includes at least two load-balancing nodes to prevent data retrieval interruption.
 * If you plan to use the FabricPool snapshot-only volume tiering policy or non-primary local performance tiers (for example, disaster recovery locations or NetApp SnapMirror® destinations), you can configure an HA group with only one node.

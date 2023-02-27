@@ -1,6 +1,3 @@
-//Shared table for configuring the binding mode for a load balancer endpoint//
-
-+
 [cols="1a,3a" options="header"]
 |===
 | Option | Description
@@ -16,7 +13,7 @@ Use the *Global* setting (default) unless you need to restrict the accessibility
 Endpoints with this binding mode can all use the same port number, as long as the HA groups you select for the endpoints do not overlap.
 
 |Node interfaces
-|Clients must use the IP address (or corresponding FQDN) of a selected node and network interface to access this endpoint.
+|Clients must use the IP addresses (or corresponding FQDNs) of selected nodes and network interfaces to access this endpoint.
 
 |Node type
 |Based on the type of node you select, clients must use either the IP address (or corresponding FQDN) of any Admin Node or the IP address (or corresponding FQDN) of any Gateway Node to access this endpoint.
