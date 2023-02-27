@@ -1,0 +1,18 @@
+---
+permalink: maintain/monitor-repairs.html
+sidebar: sidebar
+keywords: restore replicated data, restore erasure coded data, recover appliance storage node, recover storage volume
+summary: 'You can monitor the status of repair jobs you initiated from the command line using the `repair-data` script.'
+---
+= Monitor repairs (repair-data script)
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can monitor the status of repair jobs you initiated from the command line using the `repair-data` script.
+
+NOTE: If you are running volume restoration jobs, link:../maintain/restoring-volume.html[monitor the progress and view a history of those jobs in the Grid Manager] instead.
+
+Monitor the status of `repair-data` jobs based on whether you use *replicated data*, *erasure-coded (EC) data*, or both.
+
+include::../_include/restore-data-monitor.adoc[]
