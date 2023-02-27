@@ -63,8 +63,8 @@ The StorageGRID Appliance Installer can discover this IP address automatically, 
 +
 |===
 
-. In the *Node Name* field, enter the same name that was used for the node you are recovering, and click *Save*.
-. In the Installation section, confirm that the current state is "`Ready to start installation of node name into grid with Primary Admin Node admin_ip`" and that the *Start Installation* button is enabled.
+. In the *Node Name* field, enter the same hostname (system name) that was used for the node you are recovering, and click *Save*.
+. In the Installation section, confirm that the current state is "`Ready to start installation of `_<node name>_` into grid with Primary Admin Node `_admin_ip_``" and that the *Start Installation* button is enabled.
 +
 If the *Start Installation* button is not enabled, you might need to change the network configuration or port settings. For instructions, see the maintenance instructions for your appliance.
 

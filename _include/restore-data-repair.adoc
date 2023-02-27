@@ -73,7 +73,7 @@ All the volumes must be on the same Storage Node. If you need to restore volumes
 .Replicated data
 --
 
-If your grid contains replicated data, use the `start-replicated-volume-repair` command with the `--nodes` option to identify the node. Then add either the `--volumes` or `--volume-range` option, as shown in the following examples.
+If your grid contains replicated data, use the `start-replicated-volume-repair` command with the `--nodes` option to identify the node (where `--nodes` is the hostname of the node). Then add either the `--volumes` or `--volume-range` option, as shown in the following examples.
 
 *Single volume*: This command restores replicated data to volume `0002` on a Storage Node named SG-DC-SN3:
 
@@ -93,7 +93,7 @@ NOTE: As object data is restored, the *Objects Lost* alert is triggered if the S
 .Erasure coded (EC) data
 --
 
-If your grid contains erasure-coded data, use the `start-ec-volume-repair` command with the `--nodes` option to identify the node. Then add either the `--volumes` or `--volume-range` option, as shown in the following examples.
+If your grid contains erasure-coded data, use the `start-ec-volume-repair` command with the `--nodes` option to identify the node (where `--nodes` is the hostname of the node). Then add either the `--volumes` or `--volume-range` option, as shown in the following examples.
 
 *Single volume*: This command restores erasure-coded data to volume `0007` on a Storage Node named SG-DC-SN3:
 
