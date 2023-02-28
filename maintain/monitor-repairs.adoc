@@ -2,14 +2,16 @@
 permalink: maintain/monitor-repairs.html
 sidebar: sidebar
 keywords: restore replicated data, restore erasure coded data, recover appliance storage node, recover storage volume
-summary: 'You can monitor the status of repair jobs you initiated using the `repair-data` script from the command line.'
+summary: 'You can monitor the status of repair jobs by using the `repair-data` script from the command line.'
 ---
 = Monitor repair-data jobs
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can monitor the status of repair jobs you initiated using the `repair-data` script from the command line.
+You can monitor the status of repair jobs by using the `repair-data` script from the command line.
+
+These include jobs that you initiated manually, or jobs that StorageGRID initiated automatically as part of a decommission procedure.
 
 NOTE: If you are running volume restoration jobs, link:../maintain/restoring-volume.html[monitor the progress and view a history of those jobs in the Grid Manager] instead.
 

@@ -28,7 +28,7 @@ IMPORTANT: You cannot run `repair-data` operations for more than one node at the
 .Replicated data
 --
 
-If your grid includes replicated data, use the `repair-data start-replicated-node-repair` command with the `--nodes` option, where '--nodes' is the hostname (system name), to repair the entire Storage Node.
+If your grid includes replicated data, use the `repair-data start-replicated-node-repair` command with the `--nodes` option, where `--nodes` is the hostname (system name), to repair the entire Storage Node.
 
 This command repairs the replicated data on a Storage Node named SG-DC-SN3:
 
@@ -40,7 +40,7 @@ NOTE: As object data is restored, the *Objects Lost* alert is triggered if the S
 .Erasure coded (EC) data
 --
 
-If your grid contains erasure-coded data, use the `repair-data start-ec-node-repair` command with the `--nodes` option, where '--nodes' is the hostname (system name), to repair the entire Storage Node.
+If your grid contains erasure-coded data, use the `repair-data start-ec-node-repair` command with the `--nodes` option, where `--nodes` is the hostname (system name), to repair the entire Storage Node.
 
 This command repairs the erasure-coded data on a Storage Node named SG-DC-SN3:
 
