@@ -95,7 +95,7 @@ The network address must not have any host bits set. For example, `192.16.0.0/22
 | Optional. If the ONTAP IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
 
 | Virtual IP address
-| Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet.
+| Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet and all will be active at the same time on the active interface. 
 
 At least one address must be IPv4. Optionally, you can specify additional IPv4 and IPv6 addresses.
 
