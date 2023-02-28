@@ -71,7 +71,7 @@ Note the following:
 | Access key and secret key
 | Enter the access key ID and secret access key for the root user of the StorageGRID tenant account.
 
-*Caution*: If you generate a new access key and secret access key in StorageGRID in the future, enter the new keys into ONTAP before deleting the old values from StorageGRID. Otherwise, ONTAP might temporarily lose its access to StorageGRID.
+*Tip*: If you generate a new access key and secret access key in StorageGRID in the future, enter the new keys into ONTAP before deleting the old values from StorageGRID. Otherwise, ONTAP might temporarily lose its access to StorageGRID.
 
 | Container name
 | Enter the name of the StorageGRID bucket you created for use with this ONTAP tier.

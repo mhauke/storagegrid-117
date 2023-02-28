@@ -53,4 +53,4 @@ NOTE: Do not select *Enable object versioning* for the FabricPool bucket. Simila
 +
 You will enter these values in ONTAP when you configure StorageGRID as a FabricPool cloud tier.
 +
-CAUTION: If you generate a new access key and secret access key in StorageGRID in the future, enter the new keys into ONTAP before deleting the old values from StorageGRID. Otherwise, ONTAP might temporarily lose its access to StorageGRID.
+TIP: If you generate a new access key and secret access key in StorageGRID in the future, enter the new keys into ONTAP before deleting the old values from StorageGRID. Otherwise, ONTAP might temporarily lose its access to StorageGRID.
