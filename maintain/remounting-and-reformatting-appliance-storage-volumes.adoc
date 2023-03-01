@@ -180,19 +180,18 @@ image::../media/recovering_cassandra.png[screenshot showing recovery progress in
 +
 The Monitor Install page shows the installation progress while the script is running.
 
-. After the sn-recovery-postinstall.sh script has started services on the node, you can restore object data to any storage volumes that were formatted by the script. 
-
-* If the replacement node has a different number of storage volumes than the original node (for example, you replaced a node with 8 volumes with a node that has 16 volumes), you must perform the manual steps to restore object data. Enter `y` at the prompt to link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[restore object data manually].
+. After the `sn-recovery-postinstall.sh` script has started services on the node, you can restore object data to any storage volumes that were formatted by the script. 
 +
-NOTE: You will only see this prompt if the replacement node has a different number of storage volumes than the original node. 
+The script asks if you want to restore object data manually.
++
+In rare cases, such as when instructed by technical support, or when you know that the replacement node has fewer volumes available for object storage than the original node, you must link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[restore object data manually]. If one of these cases applies, answer `y`.
++
+In most cases, you should link:../maintain/restoring-volume.html[restore object data using Grid Manager]. Answer `n` to take this path.
 +
 If manual restoration is initiated:
 +
 ** You will not be able to restore object data using Grid Manager. 
 ** You can monitor the progress of manual restoration jobs using Grid Manager.
-
-* If no prompt displays, link:../maintain/restoring-volume.html[restore object data using Grid Manager].
-
 
 .Related information
 
