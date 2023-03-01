@@ -28,7 +28,7 @@ To enable CloudMirror replication for a bucket, you must create and apply valid 
 
 NOTE: Replication is not supported for source or destination buckets with S3 Object Lock enabled.
 
-For general information on bucket replication and how to configure it, see the Amazon Simple Storage Service (S3) documentation on cross-region replication (CRR). For information on how StorageGRID implements the S3 bucket replication configuration API, see the link:../s3/index.html[instructions for implementing S3 client applications].
+For general information on bucket replication and how to configure it, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html[Amazon Simple Storage Service (S3) documentation: Replicating objects]. For information on how StorageGRID implements GetBucketReplication, DeleteBucketReplication, and PutBucketReplication, see the link:../s3/operations-on-buckets.html[Operations on buckets].
 
 If you enable CloudMirror replication on a bucket that contains objects, new objects added to the bucket are replicated, but the existing objects in the bucket are not. You must update existing objects to trigger replication.
 
@@ -47,7 +47,6 @@ Use a text editor to create the replication configuration XML required to enable
   *** `STANDARD_IA`: (Standard - infrequent access.) Use this storage class for data that is accessed less frequently, but that still requires rapid access when needed.
   *** `REDUCED_REDUNDANCY`: Use this storage class for noncritical, reproducible data that can be stored with less redundancy than the `STANDARD` storage class.
  ** If you specify a `Role` in the configuration XML it will be ignored. This value is not used by StorageGRID.
-
 +
 ----
 <ReplicationConfiguration>
@@ -86,7 +85,5 @@ In the example shown earlier, objects that match the prefix "`2020`" are replica
 For small objects, replication happens quickly.
 
 .Related information
-
-link:../s3/index.html[Use S3 REST API]
 
 link:creating-platform-services-endpoint.html[Create platform services endpoint]

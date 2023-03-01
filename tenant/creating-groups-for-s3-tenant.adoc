@@ -90,7 +90,7 @@ For detailed information about group policies, including language syntax and exa
 == Add users (local groups only)
 You can save the group without adding users, or you can optionally add any local users that already exist.
 
-NOTE: If your tenant account has the *Use grid federation connection* permission, users that are added to a group on the source grid are not included when the group is cloned to the destination grid. 
+NOTE: If your tenant account has the *Use grid federation connection* permission, users that are added to a group on the source grid are not cloned when the group is cloned to the destination grid. 
 
 .Steps
 
