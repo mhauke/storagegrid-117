@@ -26,8 +26,6 @@ You can use the S3 setup wizard to configure StorageGRID for use with an S3 appl
 +
 image::../media/help_menu.png[help menu]
 . In the S3 application section of the FabricPool and S3 setup wizard page, select *Configure now*.
-+
-//*Step 1 of 6: Configure HA group* appears.
 
 == Step 1 of 6: Configure HA group
 A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
@@ -41,10 +39,7 @@ For details about this task, see link:managing-high-availability-groups.html[Man
 . If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 6: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, you can create a new HA group or use an existing HA group.
-
-
-// start tabbed area
-
++
 [role="tabbed-block"]
 ====
 
