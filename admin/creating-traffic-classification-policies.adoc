@@ -86,7 +86,7 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 | Whether this limit applies to client read requests (GET or HEAD) or write requests (PUT, POST, or DELETE).
 
 | Value
-| The value that network traffic will be limited to, based on the Unit you select. For example, enter 10 and select MiBs to prevent the network traffic matched by this rule from exceeding 10 MiBs.
+| The value that network traffic will be limited to, based on the Unit you select. For example, enter 10 and select MiB/s to prevent the network traffic matched by this rule from exceeding 10 MiB/s.
 
 *Note*: Depending on the units setting, the available units will be either binary (for example, GiB) or decimal (for example, GB). To change the units setting, select the user drop-down in the upper right of the Grid Manager, then select *User Preferences*.
 
@@ -95,7 +95,7 @@ For bandwidth limits, StorageGRID applies the policy that best matches the type 
 
 |===
 +
-For example, if you want to create a 40 Gbps bandwidth limit for an SLA tier, create two Aggregate bandwidth limits: GET/HEAD at 40 Gbps and PUT/POST/DELETE at 40 Gbps.
+For example, if you want to create a 40 GB/s bandwidth limit for an SLA tier, create two Aggregate bandwidth limits: GET/HEAD at 40 GB/s and PUT/POST/DELETE at 40 GB/s.
 
 . Select *Continue*.
 
