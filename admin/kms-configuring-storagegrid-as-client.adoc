@@ -23,7 +23,7 @@ Each KMS manages a single encryption key for the StorageGRID appliances nodes at
 
 . From the KMS software, create an AES encryption key for each KMS or KMS cluster.
 +
-The encryption key needs to be exportable.
+The encryption key must be 2,048 bits or more, and it must be exportable.
 
 . Record the following information for each KMS or KMS cluster.
 +

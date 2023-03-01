@@ -28,7 +28,7 @@ image::../media/help_menu.png[help menu]
 . In the S3 application section of the FabricPool and S3 setup wizard page, select *Configure now*.
 
 == Step 1 of 6: Configure HA group
-A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
+An HA group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
 
 You can use an HA group to help keep the S3 data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to S3 operations.
 

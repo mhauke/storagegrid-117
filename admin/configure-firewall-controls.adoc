@@ -71,7 +71,7 @@ TIP: This option removes some protections for internal services. Leave it disabl
 
 When a port is closed in the Manage external access tab, the port can't be accessed by any non-grid IP address unless you add the IP address to the privileged address list. You can only close ports that are open by default, and you can only open ports that you have closed.
 
-NOTE: Settings on the Manage external access tab cannot override settings on the Untrusted Client Network tab. For example, if a node is untrusted, port SSH/22 is blocked on the Client Network even if it is open on the Manage external access tab. Settings on the Untrusted Client Network tab override blocked ports (such as 443, 8443, 9443) on the Client Network.
+NOTE: Settings on the Manage external access tab cannot override settings on the Untrusted Client Network tab. For example, if a node is untrusted, port SSH/22 is blocked on the Client Network even if it is open on the Manage external access tab. Settings on the Untrusted Client Network tab override closed ports (such as 443, 8443, 9443) on the Client Network.
 
 .Steps
 
@@ -83,7 +83,7 @@ The tab displays a table with all of the external ports (ports that are accessib
 * Select *Open all displayed ports* to open all ports listed in the table. 
 * Select *Close all displayed ports* to close all ports listed in the table.
 +
-CAUTION: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. 
+CAUTION: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged address list. 
 +
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available ports. Use the search field to find the settings for any external port by entering a port number. You can enter a partial port number. For example, if you enter a *2*, all ports that have the string "2" as part of their name are displayed.
 

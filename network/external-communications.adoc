@@ -215,7 +215,7 @@ Used for connecting to an Active Directory or LDAP server for Identity Federatio
 |Admin Nodes
 |Used by web browsers and management API clients for accessing the Grid Manager and Tenant Manager.
 
-Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged IP addresses.
+Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged address list. See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged addresses.
 
 |443
 |TCP
@@ -352,7 +352,7 @@ Admin Nodes
 |
 Optional. Used by web browsers and management API clients for accessing the Grid Manager. Can be used to separate Grid Manager and Tenant Manager communications.
 
-Note: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged IP address list. See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged IP addresses.See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged IP addresses.
+*Note*: If you close Grid Manager ports 443 or 8443, any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged address list. See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged IP addresses.See link:../admin/configure-firewall-controls.html[Configure firewall controls] to configure privileged IP addresses.
 |
 9022
 |
