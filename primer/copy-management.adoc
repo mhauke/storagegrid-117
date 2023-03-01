@@ -62,18 +62,3 @@ image::../media/cloud_storage_pool_data_flow.png[Cloud Storage Pool Data Flow]
 . The Data Mover service sends the object data to the Cloud Storage Pool.
 . The Data Mover service notifies the ILM engine that the object data has been stored.
 . The ILM engine updates the metadata store with object location metadata.
-
-== Content protection: archive
-
-An archive operation consists of a defined data flow between the StorageGRID system and the client.
-
-If the ILM policy requires that a copy of object data be archived, the ILM engine, which is a component of the LDR service, sends a request to the Archive Node, which in turn sends a copy of the object data to the targeted archival storage system.
-
-image::../media/archiving_data_flow.png[diagram showing the process described in surrounding text]
-
-. The ILM engine sends a request to the ARC service to store a copy on archive media.
-. The ARC service queries the ADC service for the best source location and sends a request to the source LDR service.
-. The ARC service retrieves object data from the LDR service.
-. The ARC service sends the object data to the archive media destination.
-. The archive media notifies the ARC service that the object data has been stored.
-. The ARC service notifies the ILM engine that the object data has been stored.
