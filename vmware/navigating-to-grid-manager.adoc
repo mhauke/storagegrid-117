@@ -21,15 +21,15 @@ The primary Admin Node must be deployed and have completed the initial startup s
 +
 `https://_primary_admin_node_ip_`
 +
-`_client_network_ip_`
+`https://_client_network_ip_`
 +
 Alternatively, you can access the Grid Manager on port 8443:
 +
 `https://_primary_admin_node_ip_:8443`
 +
-NOTE: You can use the IP address for the primary Admin Node IP on the Grid Network or on the Admin Network, as appropriate for your network configuration.
+NOTE: You can use the IP address for the primary Admin Node IP on the Grid Network or on the Admin Network, as appropriate for your network configuration. You might need to use the security/advanced option in your browser to navigate to an untrusted certificate.
 
-. Click *Install a StorageGRID system*.
+. Select *Install a StorageGRID system*.
 +
 The page used to configure a StorageGRID grid appears.
 +
