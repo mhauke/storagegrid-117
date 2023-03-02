@@ -9,7 +9,7 @@ summary: 'When an S3 client issues a PUT transaction, a request is made to creat
 :imagesdir: ../media/
 
 [.lead]
-When an S3 client issues a PUT transaction, a request is made to create a new object or bucket. This message is issued by the server if the transaction is successful.
+When an S3 client issues a PUT transaction, a request is made to create a new object or bucket, or to remove an bucket/object subresource. This message is issued by the server if the transaction is successful.
 
 [cols="1a,1a,4a" options="header"]
 |===
