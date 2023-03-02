@@ -27,9 +27,9 @@ For an object in StorageGRID, object metadata includes the following types of in
 
 == How is object metadata stored?
 
-StorageGRID maintains object metadata in a Cassandra database, which is stored independently of object data. To provide redundancy and to protect object metadata from loss, StorageGRID stores three copies of the metadata for all objects in the system at each site. The three copies of object metadata are evenly distributed across all Storage Nodes at each site.
+StorageGRID maintains object metadata in a Cassandra database, which is stored independently of object data. To provide redundancy and to protect object metadata from loss, StorageGRID stores three copies of the metadata for all objects in the system at each site. 
 
-This figure represents the Storage Nodes at two sites. Each site has the same amount of object metadata, which is equally distributed across the Storage Nodes at that site.
+This figure represents the Storage Nodes at two sites. Each site has the same amount of object metadata, while each Storage Node has approximately the same portion of the metadata at its site.
 
 image::../media/metadata_space_across_sites.png[Metadata Space Across Sites]
 
