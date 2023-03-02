@@ -16,7 +16,7 @@ StorageGRID maintains a list of the network subnets used to communicate between 
 .What you'll need
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
-* You have the Maintenance or Root access permission.
+* You have the xref:../admin/admin-group-permissions.adoc[Maintenance or Root Access permission].
 * You have the provisioning passphrase.
 * You have the network addresses, in CIDR notation, of the subnets you want to configure.
 
@@ -27,13 +27,17 @@ If any of the new nodes has a Grid Network IP address on a subnet not previously
 .Steps
 
 . Select *MAINTENANCE* > *Network* > *Grid Network*.
-+
-image::../media/maintenance_grid_networks_page.gif[This image is explained by the surrounding text.]
 
-. In the Subnets list, select the plus sign to add a new subnet in CIDR notation.
+. Select *Add another subnet* to add a new subnet in CIDR notation.
 +
-For example, enter 10.96.104.0/22.
+For example, enter `10.96.104.0/22`.
 
 . Enter the provisioning passphrase, and select *Save*.
+
+. Wait until the changes are applied, then download a new Recovery Package.
+.. Select *MAINTENANCE* > *System* > *Recovery package*.
+.. Enter the *Provisioning Passphrase*.
 +
+CAUTION: The Recovery Package file must be secured because it contains encryption keys and passwords that can be used to obtain data from the StorageGRID system. It is also used to recover the primary Admin Node.
+
 The subnets you have specified are configured automatically for your StorageGRID system.
