@@ -63,7 +63,7 @@ Suppose you want to lock down sensitive ports and the service on that port (for 
 . Use the Privileged address list tab to grant access only to the hosts that need access to the service.
 . Use the Manage external access tab to block all ports. 
 
-CAUTION: You must be sure to add the privileged IP address before you block ports 443 and 8443. Any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged address list. 
+CAUTION: Add the privileged IP address before you block ports 443 and 8443. Any users currently connected on a blocked port, including you, will lose access to Grid Manager unless their IP address has been added to the Privileged address list. 
 
 After you save your configuration, port 22 and SSH service will be available to hosts on the privileged address list. All other hosts will be denied access to the service no matter what interface the request comes from.
 
