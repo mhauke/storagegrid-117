@@ -21,9 +21,7 @@ To use fully qualified domain names (FQDNs) instead of IP addresses when specify
 
 .About this task
 
-To ensure proper operation, specify no more than three DNS servers. If you specify more than three, it is possible that only three will be used because of known OS limitations on some platforms. If necessary based on routing restrictions in your environment, you can link:modifying-dns-configuration-for-single-grid-node.html[customize the DNS server list] for individual nodes (typically all nodes at a site) to use a different set of up to three DNS servers.
-
-If possible, use DNS servers that each site can access locally to ensure that an islanded site can resolve the FQDNs for external destinations.
+include::../_include/dns-server-restrictions.adoc[]
 
 == Add a DNS server
 .Steps
