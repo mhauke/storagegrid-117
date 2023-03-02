@@ -49,7 +49,7 @@ link:locating-sgf6112-in-data-center.html[Locate appliance in data center]
 
 .. link:shut-down-sgf6112.html[Shut down the appliance].
 +
-IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the fan during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
+IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object and you are replacing both power supplies at the same time, you must replace the power supplies during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
 
 . [[Unplug_the_power_cord, start=2]]Unplug the power cord from each power supply to be replaced.
 +

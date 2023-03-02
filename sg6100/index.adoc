@@ -20,29 +20,15 @@ The procedures in this section assume that the appliance has already been deploy
 * Shut down the appliance
 * Change link configuration of the appliance
 
-*Hardware maintenance procedures* require the physical manipulation of specific SGF6112 components. These procedures include: 
-
-* Replace one or both power supplies
-* Replace fans
-* Replace drives
-* Replace NICs
-* Replace entire appliance
+*Hardware maintenance procedures* require the physical manipulation of specific SGF6112 components. 
 
 == Drive firmware upgrade
 
-The firmware on the drives in the SGF6112 is automatically checked every time the appliance is rebooted. The firmware is automatically upgraded to the version expected by the current StorageGRID release when necessary. Usually this firmware upgrade will happen during the reboot that occurs during a StorageGRID software upgrade. In the event that it is necessary to release a drive firmware upgrade for an existing StorageGRID version, the new firmware will be included in a hotfix. Follow the instructions provided with the hotfix to ensure that all drives that could benefit from a firmware update do, in fact, get updated.
+The firmware on the drives in the SGF6112 is automatically checked every time the appliance is rebooted. When necessary, the firmware is automatically upgraded to the version expected by the current StorageGRID release. Usually, firmware upgrades occur during StorageGRID software upgrades. Any necessary drive firmware upgrades for existing StorageGRID versions will be included in hotfixes. Follow the instructions provided with each hotfix to ensure that the upgrade is applied to all drives that could benefit from it.
 
 == General Maintenance procedures
 
-See link:../commonhardware/index.html[Common maintenance procedures] for maintenance procedures that are the same for all appliances. These procedures include: 
-
-* Apply a software hotfix
-* Recover grid nodes
-* Recover a failed site
-* Decommission grid nodes or an entire site
-* Perform network maintenance 
-* Perform host-level and middleware maintenance procedures
-* Perform grid node procedures
+See link:../commonhardware/index.html[Common maintenance procedures] for procedures that are the same for all appliances, such as applying a hotfix, recovering a node or site, and performing network maintenance.
 
 See xref:../installconfig/configuring-hardware.adoc[Set up appliance hardware] for appliance maintenance procedures that are also performed during initial appliance installation and configuration.
 
