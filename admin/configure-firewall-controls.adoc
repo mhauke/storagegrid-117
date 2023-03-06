@@ -112,11 +112,11 @@ NOTE: This setting does not affect the existing nodes in your StorageGRID system
 
 . Use the following options to select the nodes that should allow client connections only on explicitly configured load balancer endpoints or additional selected ports:
 
-* Select *Untrust Client Network on displayed nodes* to add all nodes displayed in the table to the Untrusted Client Network list.  
-* Select *Trust Client Network on displayed nodes* to remove all nodes displayed in the table from the Untrusted Client Network list.
+* Select *Untrust on displayed nodes* to add all nodes displayed in the table to the Untrusted Client Network list.  
+* Select *Trust on displayed nodes* to remove all nodes displayed in the table from the Untrusted Client Network list.
 * Use the toggle beside each port to set the Client Network as Trusted or Untrusted for the selected node.  
 +
-For example, you could select *Untrust Client Network on displayed nodes* to add all nodes to the Untrusted Client Network list and then use the toggle besides an individual node to add that single node to the Trusted Client Network list.
+For example, you could select *Untrust on displayed nodes* to add all nodes to the Untrusted Client Network list and then use the toggle besides an individual node to add that single node to the Trusted Client Network list.
 +
 NOTE: Use the scroll bar on the right side of the table to be sure you have viewed all available nodes. Use the search field to find the settings for any node by entering the node name. You can enter a partial name. For example, if you enter a *GW*, all nodes that have the string "GW" as part of their name are displayed. 
 
