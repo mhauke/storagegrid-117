@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, sg6100, storage node, storage appliance, Replacing, replace, NIC, network interface card
 summary: 'You might need to replace a Network Interface Card \(NIC\) in the SGF6112 if it is not functioning optimally or if it has failed.'
 ---
-= Replace NIC in the SGF6112
+= Remove and replace NIC in the SGF6112
 :icons: font
 :imagesdir: ../media/
 
@@ -15,6 +15,8 @@ Use these procedures to:
 
 * Remove the NIC
 * Reinstall the NIC
+
+== Remove the NIC
 
 .What you'll need
 
@@ -33,10 +35,8 @@ NOTE: A link:shut-down-sgf6112.html[controlled shutdown of the appliance] is req
 +
 link:reinstalling-sgf6112-cover.html[Remove SGF6112 cover]
 
-== Remove the NIC
-
 .About this task
-To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Network Interface Card (NIC) replacement or replace the NIC during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:..monitor/monitoring-system-health.html#monitor-node-connection-states[monitoring node connection states].
+To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Network Interface Card (NIC) replacement or replace the NIC during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:../monitor/monitoring-system-health.html#monitor-node-connection-states[monitoring node connection states].
 
 IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the NIC during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. +
 See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
@@ -98,7 +98,6 @@ image::../media/one-slot-assembly-sgf6112.png[SGF6112 NIC in one-slot riser asse
 
 . Open the blue latch (circled) on the NIC to be replaced and carefully remove the NIC from the riser assembly. Rock the NIC slightly to help remove the NIC from its connector. Do not use excessive force.
 . Place the NIC on a flat anti-static surface.
-
 
 == Reinstall the NIC
 Install the replacement NIC into the same location as the one that was removed.
