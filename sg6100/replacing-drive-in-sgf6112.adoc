@@ -96,9 +96,10 @@ When the drive is fully inserted, you hear a click.
 +
 The replaced drive is automatically rebuilt with mirrored data from the working drives. The drive LED should blink initially, but then stop blinking as soon as the system determines that the drive has enough capacity and is functional.
 
++ 
 You can check the status of the rebuild by using the Grid Manager.
 
-. Select *NODES*. Then select `*Storage Node*` > *Hardware*. The Storage RAID Mode field contains a "`rebuilding`" message until the drive is completely rebuilt.
+. If more than one drive failed and has been replaced, you might have alerts indicating that some volumes need to have data restored to them. If you receive an alert, before attempting volume recovery, select *NODES* > `*appliance Storage Node*` > *Hardware*. In the StorageGRID Appliance section of the page, verify that the Storage RAID mode is healthy or rebuilding. If the status lists one or more failed drives, correct this condition before attempting volume restoration. 
 
 . In the Grid Manager, go to *NODES* > `*appliance Storage Node*` > *Hardware*. In the StorageGRID Appliance section of the page, verify that the Storage RAID mode is healthy.
 
