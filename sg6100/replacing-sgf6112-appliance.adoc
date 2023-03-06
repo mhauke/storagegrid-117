@@ -45,9 +45,53 @@ link:shut-down-sgf6112.html[Shut down SGF6112]
 IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step on the cables.
 
  .. Remove the failed appliance from the cabinet or rack.
- .. Transfer the two power supplies, eight cooling fans, three NICs, and twelve SSDs from the failed appliance to the replacement appliance.
+ .. Note the position of the removable components (two power supplies, eight cooling fans, three NICs, and twelve SSDs) in the failed appliance.
 +
-Follow the instructions provided for replacing these components.
+The twelve drives are in the following positions in the chassis (front of chassis with bezel removed shown): 
++
+image::../media/sgf6112_ssds_locations.png[Fan locations]
++
+[options="header"]
+|===
+|| Drive  
+a|
+1
+a|
+HDD00
+a|
+2
+a|
+HDD01
+a|
+3
+a|
+HDD02
+a|
+4
+a|
+HDD03
+a|
+5
+a|
+HDD04
+a|
+6
+a|
+HDD05
+a|
+7
+a|
+HDD06
+a|
+8
+a|
+HDD07
+|=== 
+ .. Transfer the removable components to the replacement appliance. 
++
+Follow the maintenance instructions provided for replacing the removable components.
++
+IMPORTANT: If you wish to retain the data on the drives, be sure to insert the SSD drives into the same locations they occupied in the failed appliance. Otherwise, you might receive a warning message. 
  .. Install the replacement appliance into the cabinet or rack.
  .. Replace the cables and any optical transceivers.
  .. Power on the appliance and wait for it to rejoin the grid.
