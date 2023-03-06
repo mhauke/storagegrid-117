@@ -97,6 +97,6 @@ To ensure even space usage for replicated copies, object data for a given object
 
 Object metadata is information related to or a description of an object; for example, object modification time, or storage location. StorageGRID stores object metadata in a Cassandra database, which interfaces with the LDR service.
 
-To ensure redundancy and thus protection against loss, three copies of object metadata are maintained at each site. The copies are evenly distributed across all Storage Nodes at each site. This replication is non-configurable and performed automatically.
+To ensure redundancy and thus protection against loss, three copies of object metadata are maintained at each site. This replication is non-configurable and performed automatically.
 
 link:managing-object-metadata-storage.html[Manage object metadata storage]

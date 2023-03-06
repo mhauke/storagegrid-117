@@ -99,7 +99,7 @@ TIP: If this admin group doesn't exist on both grids before you create the tenan
 
 == [[account-clone-identity-federation]]Considerations and requirements for identity federation
 
-Identity federation can be configured for the entire grid, or each tenant can be granted permission to configure its own identity source. 
+If neither grid uses SSO, you can optionally configure identity federation for the entire grid or grant each tenant permission to configure its own identity source. 
 
 === Considerations for grid-level identity federation
 

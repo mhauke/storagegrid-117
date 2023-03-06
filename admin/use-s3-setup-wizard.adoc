@@ -24,7 +24,7 @@ Before using the wizard, confirm you have completed these prerequisites.
 
 === Obtain IP addresses and set up VLAN interfaces
 
-If you will configure an HA group, you know which nodes the S3 application will connect to and which StorageGRID network will be used. You also know which values to enter for the subnet CIDR, gateway IP address, and virtual IP (VIP) addresses.
+If you will configure a high availability (HA) group, you know which nodes the S3 application will connect to and which StorageGRID network will be used. You also know which values to enter for the subnet CIDR, gateway IP address, and virtual IP (VIP) addresses.
 
 If you plan to use a virtual LAN to segregate the traffic from the S3 application, you have already configured the VLAN interface. See link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces].
 

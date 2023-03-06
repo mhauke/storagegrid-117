@@ -115,6 +115,12 @@ Use this procedure to add an administrator client certificate if a management in
 
 ** *Days valid*: The number of days the generated certificate is valid, starting at the time it is generated.
 
+** *Add key usage extensions*: If selected (default and recommended), key usage and extended key usage extensions are added to the generated certificate.
++
+These extensions define the purpose of the key contained in the certificate.
++
+NOTE: Leave this check box selected unless you experience connection problems with older clients when certificates include these extensions.
+
 . Select *Generate*. 
 
 . [[client_cert_details]] Select *Client certificate details* to display the certificate metadata and certificate PEM.
@@ -154,10 +160,6 @@ The new certificate appears on the Client tab.
 .Steps
 
 . Configure the following settings on your external monitoring tool, such as Grafana.
-+
-// A Grafana example is shown in the following screenshot:
-// +
-// image::../media/grafana_add_url_and_auth.png[Grafana - Add URL and Auth]
 
  .. *Name*: Enter a name for the connection.
 +
@@ -255,6 +257,12 @@ Generate the certificate text to paste elsewhere.
 ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
 
 ** *Days valid*: The number of days the generated certificate is valid, starting at the time it is generated.
+
+** *Add key usage extensions*: If selected (default and recommended), key usage and extended key usage extensions are added to the generated certificate.
++
+These extensions define the purpose of the key contained in the certificate.
++
+NOTE: Leave this check box selected unless you experience connection problems with older clients when certificates include these extensions.
 
 .. Select *Generate*. 
 
