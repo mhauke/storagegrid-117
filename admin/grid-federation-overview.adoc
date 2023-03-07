@@ -35,7 +35,7 @@ image:../media/grid-federation-workflow.png[Grid federation connection workflow]
 
 * A grid federation connection connects Admin Nodes or Gateway Nodes in one grid to Admin Nodes or Gateway Nodes in another grid. 
 
-* Grid federation connections can occur on the Grid Network, Admin Network, or Client Network. The best practice is to use the Client Network to route the WAN traffic related to cross-grid replication and account clone. Using the Client Network helps to ensure that the Grid Network on each StorageGRID system remains isolated.
+* Grid federation connections can occur on the Grid Network, Admin Network, or Client Network. 
 
 * The best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid. Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface. For details, see link:managing-high-availability-groups.html[Manage high availability (HA) groups].
 
@@ -54,7 +54,7 @@ image:../media/grid-federation-workflow.png[Grid federation connection workflow]
 
 When creating a grid federation connection, you can specify any unused port number from 23000 to 23999. Both grids in this connection will use the same port. 
 
-You must ensure that no node in either grid uses this port for other connections. For example, if you are using the Client Network on each grid for the grid federation connection, you can use the link:configure-firewall-controls.html#untrusted-client-network[Untrusted Client Network] feature to prevent the port used in the grid federation connection from being reached on nodes that don't expect grid federation traffic.
+You must ensure that no node in either grid uses this port for other connections. 
 
 === Certificate requirements
 
