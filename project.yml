@@ -1,9 +1,9 @@
 settings:
   name: "StorageGRID 11.7"
   internal:
-    pdf_enabled: false
+    pdf_enabled: true
   prod:
-    pdf_enabled: false
+    pdf_enabled: true
   # versions:
     # Version selector
     # Current repo stanza comes first
@@ -67,7 +67,7 @@ sidebar:
       - section: expand
       - section: maintain
       - section: commonhardware
-      - section: sg6100
+      - section: sgf6112
       - section: sg6000
       - section: sg5700
       - section: sg5600
