@@ -4,12 +4,12 @@ sidebar: sidebar
 keywords: storage node, storage appliance, remapping, remap, map, mapping, network, ports 
 summary: 'You might need to remap the internal ports on the appliance Storage Node to different external ports. For example, you might need to remap ports because of a firewall issue.'
 ---
-= Optional: Remap network ports for appliance (SG6000 and SG1000)
+= Optional: Remap network ports for appliances
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You might need to remap the internal ports on the appliance Storage Node to different external ports. For example, you might need to remap ports because of a firewall issue.
+You might need to remap the internal ports on the appliance to different external ports. For example, you might need to remap ports because of a firewall issue.
 
 .What you'll need
 
@@ -32,6 +32,6 @@ The Remap Port page appears.
 +
 The new port mapping is added to the table, and the remapping takes effect immediately.
 +
-image::../media/remap_ports.gif[Screenshot showing Remap Ports option in StorageGRID Webscale Appliance Installer]
+image::../media/remap_ports.gif[Screenshot showing Remap Ports option in StorageGRID Appliance Installer]
 
 . To remove a port mapping, select the radio button for the rule you want to remove, and click *Remove Selected Rule*.
