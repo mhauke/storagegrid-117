@@ -197,7 +197,7 @@ In some cases, network issues can be resolved by using MAC address cloning. If y
 
 IMPORTANT: Create separate virtual network interfaces for use by the Linux host OS. Using the same network interfaces for the Linux host OS and the StorageGRID container might cause the host OS to become unreachable if promiscuous mode has not been enabled on the hypervisor.
 
-For more information on enabling MAC cloning, see the instructions for link:../rhel/configuring-host-network.html[Red Hat Enterprise Linux or CentOS] or link:../ubuntu/configuring-host-network.html[Ubuntu or Debian].
+For more information about enabling MAC cloning, see the instructions for link:../rhel/configuring-host-network.html[Red Hat Enterprise Linux or CentOS] or link:../ubuntu/configuring-host-network.html[Ubuntu or Debian].
 
 === Promiscuous mode
 
