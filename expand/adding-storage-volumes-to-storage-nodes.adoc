@@ -20,7 +20,7 @@ NOTE: These instructions apply to software-based Storage Nodes only. See link:..
 
 .About this task
 
-The underlying storage of a Storage Node is divided into a number of storage volumes. Storage volumes are block-based storage devices that are formatted by the StorageGRID system and mounted to store objects. Each Storage Node can support up to 16 storage volumes, which are called _object stores_ in the Grid Manager.
+The underlying storage of a Storage Node is divided into storage volumes. Storage volumes are block-based storage devices that are formatted by the StorageGRID system and mounted to store objects. Each Storage Node can support up to 16 storage volumes, which are called _object stores_ in the Grid Manager.
 
 NOTE: Object metadata is always stored in object store 0.
 
