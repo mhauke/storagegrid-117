@@ -164,7 +164,7 @@ If you omit the primary Admin Node IP address, the IP address will be automatica
   *** If you select STATIC, enter the *Admin network external subnet list*. You must also configure a gateway.
   *** If you select DHCP, the *Admin network IP*, *Admin network mask*, and *Admin network gateway* are automatically assigned.
  .. In the *Client Network (eth2)* section, select STATIC, DHCP, or DISABLED for the *Client network IP configuration*.
-  *** If you do not want to use the Client Network, select DISABLED and enter *0.0.0.0* for the Client network IP. You can leave the other fields blank.
+  *** If you do not want to use the Client Network, select DISABLED and enter *0.0.0.0* for the Client Network IP. You can leave the other fields blank.
   *** If you select STATIC, enter the *Client network IP*, *Client network mask*, *Client network gateway*, and *Client network MTU*.
   *** If you select DHCP, the *Client network IP*, *Client network mask*, and *Client network gateway* are automatically assigned.
 . Review the virtual machine configuration and make any changes necessary.

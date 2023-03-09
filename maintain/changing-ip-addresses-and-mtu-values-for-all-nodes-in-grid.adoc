@@ -15,7 +15,7 @@ If you need to change the Grid Network IP address for all nodes in the grid, you
 
 * You must have the `Passwords.txt` file.
 
-To ensure that the grid starts up successfully, you must make all the changes at once.
+To ensure that the grid starts up successfully, you must make all the changes at the same time.
 
 NOTE: This procedure applies to the Grid Network only. You cannot use this procedure to change IP addresses on the Admin or Client Networks.
 
@@ -90,7 +90,7 @@ IMPORTANT: You must select *stage*. Do not perform a rolling restart, either man
 . After your changes are complete, select *0* to exit the Change IP tool.
 . Shut down all nodes simultaneously.
 +
-IMPORTANT: The entire grid must be shut down at once, so that all nodes are down at the same time.
+IMPORTANT: The entire grid must be shut down at the same time, so that all nodes are down at the same time.
 
 . Make the physical or virtual networking changes that are required.
 . Verify that all grid nodes are down.

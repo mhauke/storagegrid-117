@@ -76,7 +76,7 @@ You can select one or more nodes, but you can select only one interface for each
 
 .. For the *Prioritize interfaces* step, determine the Primary interface and any backup interfaces for this HA group.
 +
-Drag and drop rows to change the values in the *Priority order* column.
+Drag rows to change the values in the *Priority order* column.
 +
 The first interface in the list is the Primary interface. The Primary interface is the active interface unless a failure occurs.
 +
@@ -476,8 +476,7 @@ For details about this step, see link:creating-traffic-classification-policy-for
 
 . If you want to create this traffic classification policy, select *Create and continue*. 
 +
-As soon as FabricPool begins tiering data to StorageGRID, you can go to Traffic Classification Policies page to view network traffic metrics for this policy. Later, you can also add rules to limit other workloads and ensure that the FabricPool workload has the majority of bandwidth. 
-
+As soon as FabricPool begins tiering data to StorageGRID, you can go to the Traffic Classification Policies page to view network traffic metrics for this policy. Later, you can also add rules to limit other workloads and ensure that the FabricPool workload has the majority of bandwidth. 
 
 . Otherwise, select *Skip this step*.
 
@@ -496,5 +495,5 @@ After completing the FabricPool wizard, perform these additional steps.
 .Steps
 
 . Go to link:configure-ontap.html[Configure ONTAP System Manager] to enter the saved values and to complete the ONTAP side of the connection. You must add StorageGRID as a cloud tier, attach the cloud tier to a local tier to create a FabricPool, and set volume tiering policies.
-. Go to link:configure-dns-server.html[Configure the DNS server] and ensure that the domain name system (DNS) includes a record to associate the StorageGRID server name (fully qualified domain name) to each StorageGRID IP address you will use. 
+. Go to link:configure-dns-server.html[Configure the DNS server] and ensure that the DNS includes a record to associate the StorageGRID server name (fully qualified domain name) to each StorageGRID IP address you will use. 
 . Go to link:other-best-practices-for-storagegrid-and-fabricpool.html[Other best practices for StorageGRID and FabricPool] to learn the best practices for StorageGRID audit logs and other global configuration options.

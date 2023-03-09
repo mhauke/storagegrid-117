@@ -113,7 +113,7 @@ The configuration is applied to the selected node.
 
 If you are an advanced user, you can use the `configure-sga.py` script to automate many of the installation and configuration tasks for StorageGRID appliance nodes, including installing and configuring a primary Admin Node. This script can be useful if you have a large number of appliances to configure.
 
-You can also use the script to generate a JSON file that contains appliance configuration information. You can upload the JSON file to the StorageGRID Appliance Installer to configure all appliance nodes at once. You can also edit the JSON file, then upload it to apply a new configuration to one or more appliances.
+You can also use the script to generate a JSON file that contains appliance configuration information. You can upload the JSON file to the StorageGRID Appliance Installer to configure all appliance nodes at the same time. You can also edit the JSON file, then upload it to apply a new configuration to one or more appliances.
 
 NOTE: This procedure is for advanced users with experience using command-line interfaces. Alternatively, you can <<automate-with-appliance-installer,use the StorageGRID Appliance Installer to automate the configuration>>.
 

@@ -166,7 +166,7 @@ If S3 Object Lock is enabled and you also selected a non-compliant "`default`" r
 +
 NOTE: A warning appears if any rule does not retain objects forever. When you activate this policy, you must confirm that you want StorageGRID to delete objects when the placement instructions for the default rule elapse (unless a bucket lifecycle keeps the objects for a longer time period).
 
-. Drag and drop the rows for the non-default rules to determine the order in which these rules will be evaluated.
+. Drag the rows for the non-default rules to determine the order in which these rules will be evaluated.
 +
 You cannot move the default rule. If S3 Object Lock is enabled, you also cannot move the non-compliant "`default`" rule if one was selected.
 +
