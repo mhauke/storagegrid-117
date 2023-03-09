@@ -38,13 +38,13 @@ Several Grid Manager options were moved or removed.
 
 * The link:../admin/configuring-stored-object-compression.html[Compress stored objects] option was moved to *CONFIGURATION* > *System* > *Object compression*.
 
-* The *Network Transfer Encryption* internal connection setting was removed and replaced by the link:../admin/manage-tls-ssh-policy.html[TLS and SSH policies] tab on the new *CONFIGURATION* > *Security settings* page. 
+* The *Network Transfer Encryption* internal connection setting was removed and replaced by the link:../admin/manage-tls-ssh-policy.html[TLS and SSH policies] tab on the new *CONFIGURATION* > *Security* > *Security settings* page. 
 +
 NOTE: The AES256-SHA option was the default in StorageGRID 11.6 and is the only setting available in StorageGRID 11.7. The AES128-SHA value is ignored in the Grid Management API. During the StorageGRID 11.7 upgrade, the network transfer encryption algorithm is set to AES256-SHA.
 
-* The *Stored object encryption*, *Prevent client modification*, and *Enable HTTP for Storage Node connections* options were moved to the link:../admin/changing-network-options-object-encryption.html[Network and objects tab] on the new *CONFIGURATION* > *Security settings* page. 
+* The *Stored object encryption*, *Prevent client modification*, and *Enable HTTP for Storage Node connections* options were moved to the link:../admin/changing-network-options-object-encryption.html[Network and objects tab] on the new *CONFIGURATION* > *Security* > *Security settings* page. 
 
-* The link:../admin/changing-browser-session-timeout-interface.html[Browser inactivity timeout] option was moved to the new *CONFIGURATION* > *Security settings* page. 
+* The link:../admin/changing-browser-session-timeout-interface.html[Browser inactivity timeout] option was moved to the new *CONFIGURATION* > *Security* > *Security settings* page. 
 
 * The link:../admin/manage-link-costs.html[Link cost] option was moved to *SUPPORT* > *Other* > *Link cost*.
 

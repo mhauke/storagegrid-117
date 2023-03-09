@@ -67,7 +67,7 @@ When you edit a grid federation connection, StorageGRID attempts to save a “ca
 You can't sign in to a cloned tenant account. The error message on the Tenant Manager sign-in page is "`Your credentials for this account were invalid. Please try again.`"
 
 .Details
-For security reasons, when a tenant account is cloned from the tenant's source grid to the tenant's destination grid, the password you set for the tenant's local root user is not cloned. Similarly, when a tenant creates local users on its source grid, the local user passwords are not cloned to the destination grid.
+For security reasons, when a tenant account is cloned from the tenant's source grid to the tenant's destination grid, the password you set for the tenant's local root user is not cloned. Similarly, when a tenant creates local users on its source grid, the local user passwords aren't cloned to the destination grid.
 
 .Recommended actions
 Before the root user can sign in to the tenant's destination grid, a grid administrator must first link:changing-password-for-tenant-local-root-user.html[change the password for the local root user] on the destination grid.
@@ -164,7 +164,7 @@ This alert indicates that tenant objects can't be replicated between the buckets
 . For each bucket that has cross-grid replication enabled, confirm the following:
 
 * There is a corresponding bucket for the same tenant on the other grid (must use the exact name). 
-* Both buckets have object versioning enabled (versioning cannot be suspended on either grid).
+* Both buckets have object versioning enabled (versioning can't be suspended on either grid).
 * Both buckets have S3 Object Lock disabled. 
 * Neither bucket is in the *Deleting objects: read-only* state.
 
@@ -199,9 +199,9 @@ This alert indicates that cross-grid replication requests are pending because a 
 
 . To learn more about the failure, see the instructions in link:../monitor/grid-federation-monitor-connections.html[Monitor grid federation connections] to review the cross-grid replication metrics. 
 
-. If you cannot resolve the alert, contact technical support.
+. If you can't resolve the alert, contact technical support.
 
-Cross-grid replication will proceed as normal once the issue is resolved.
+Cross-grid replication will proceed as normal after the issue is resolved.
 
 
 
