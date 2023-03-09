@@ -24,7 +24,7 @@ You must configure the hypervisor to restart the virtual machines when the serve
 +
 NOTE: When you install StorageGRID, the default ILM policy, Baseline 2 copies policy, is active. This policy includes the Make 2 Copies ILM rule, and it applies if no other policy has been activated.
 
-* If your installation includes appliance Storage Nodes, use SANtricity software to complete the following tasks:
+* If your installation includes appliance Storage Nodes, use SANtricity OS to complete the following tasks:
  ** Connect to each StorageGRID appliance.
  ** Verify receipt of AutoSupport data.
 * If your StorageGRID system includes any Archive Nodes, configure the Archive Node's connection to the target external archival storage system.
