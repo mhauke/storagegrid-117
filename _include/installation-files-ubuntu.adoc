@@ -27,7 +27,7 @@ m|./debs/configure-sga.py
 |A Python script used to automate the configuration of StorageGRID appliances.
 
 m|./debs/storagegrid-ssoauth.py
-|An example Python script that you can use to sign in to the Grid Management API when single sign-on is enabled.
+|An example Python script that you can use to sign in to the Grid Management API when single sign-on is enabled. You can also use this script for Ping Federate.
 
 m|./debs/configure-storagegrid.sample.json
 |An example configuration file for use with the `configure-storagegrid.py` script.
@@ -37,6 +37,12 @@ m|./debs/configure-storagegrid.blank.json
 
 m|./debs/extras/ansible
 |Example Ansible role and playbook for configuring Ubuntu or Debian hosts for StorageGRID container deployment. You can customize the role or playbook as necessary.
+
+m|./debs/storagegrid-ssoauth-azure.py
+|An example Python script that you can use to sign in to the Grid Management API when single sign-on (SSO) is enabled using Active Directory or Ping Federate.
+
+m|./debs/storagegrid-ssoauth-azure.js
+|A helper script called by the companion `storagegrid-ssoauth-azure.py` Python script to perform SSO interactions with Azure.  
 
 m|./debs/extras/api-schemas
 |API schemas for StorageGRID.

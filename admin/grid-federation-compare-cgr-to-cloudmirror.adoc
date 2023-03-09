@@ -52,7 +52,7 @@ CloudMirror replication creates an independent copy of an object in an independe
 | What causes objects to be moved to the destination?
 | Objects are automatically replicated when they are added to a bucket that has cross-grid replication enabled.
 
-| Objects are automatically replicated when they are added to a bucket that has been configured with a CloudMirror endpoint. Objects that existed in the source bucket before the bucket was configured with the CloudMirror endpoint are not replicated, unless they are modified.
+| Objects are automatically replicated when they are added to a bucket that has been configured with a CloudMirror endpoint. Objects that existed in the source bucket before the bucket was configured with the CloudMirror endpoint aren't replicated, unless they are modified.
 
 | How are objects replicated?
 | Cross-grid replication creates versioned objects, and it replicates the version ID from the source bucket to the destination bucket. This allows the version order to be maintained across both grids.
@@ -72,10 +72,10 @@ CloudMirror replication creates an independent copy of an object in an independe
 
 | What happens if an object is deleted?
 | * Delete requests that include a version ID are never replicated to the destination grid.
-* Delete requests that do not include a version ID add a delete marker to the source bucket, which can optionally be replicated to the destination grid.
+* Delete requests that don't include a version ID add a delete marker to the source bucket, which can optionally be replicated to the destination grid.
 * If cross-grid replication is configured for only one direction, objects in the destination bucket can be deleted without affecting the source.
 
-| The results will vary based on the versioning state of the source and destination buckets (which do not need to be the same):
+| The results will vary based on the versioning state of the source and destination buckets (which don't need to be the same):
 
 * If both buckets are versioned, a delete request will add a delete marker in both locations.
 * If only the source bucket is versioned, a delete request will add a delete marker to the source but not to the destination.

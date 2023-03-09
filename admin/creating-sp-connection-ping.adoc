@@ -55,6 +55,8 @@ If you haven't already, create a password credential validator.
 === Create IdP adapter instance[[adapter-instance]]
 If you haven't already, create an IdP adapter instance.
 
+.Steps
+
 . Go to *Authentication* > *Integration* > *IdP Adapters*.
 . Select *Create New Instance*.
 . On the Type tab, select *HTML Form IdP Adapter*.
@@ -65,6 +67,8 @@ If you haven't already, create an IdP adapter instance.
 
 === Create or import signing certificate[[signing-certificate]]
 If you haven't already, create or import the signing certificate.
+
+.Steps
 
 . Go to *Security* > *Signing & Decryption Keys & Certificates*. 
 . Create or import the signing certificate.
@@ -77,12 +81,16 @@ TIP: You must create an SP connection for each Admin Node in your StorageGRID sy
 
 === Choose SP connection type
 
+.Steps
+
 . Go to *Applications* > *Integration* > *SP Connections*.
 . Select *Create Connection*.
 . Select *Do not use a template for this connection*.
 . Select *Browser SSO Profiles* and *SAML 2.0* as the protocol. 
 
 === Import SP metadata
+
+.Steps
 
 . On the Import Metadata tab, select *File*. 
 . Choose the SAML metadata file you downloaded from the StorageGRID Single sign-on page for the Admin Node. 
@@ -92,6 +100,8 @@ The Partner's Entity ID and the Connection Name are set to the StorageGRID SP co
 . Select *Next*.
 
 === Configure IdP Browser SSO
+
+.Steps
 
 . From the Browser SSO tab, select *Configure Browser SSO*.
 
@@ -109,6 +119,8 @@ The Partner's Entity ID and the Connection Name are set to the StorageGRID SP co
 . For Extend the Contract, select *Delete* to remove the `urn:oid`, which is not used.
 
 === Map adapter instance
+
+.Steps
 
 . On the Authentication Source Mapping tab, select *Map New Adapter Instance*.
 . On the Adapter instance tab, select the <<adapter-instance, adapter instance>> you created.
@@ -136,6 +148,8 @@ The Partner's Entity ID and the Connection Name are set to the StorageGRID SP co
 
 === Configure protocol settings
 
+.Steps
+
 . On the *SP Connection* > *Browser SSO* > *Protocol Settings* tab, select *Configure Protocol Settings*.
 
 . On the Assertion Consumer Service URL tab, accept the default values, which were imported from the StorageGRID SAML metadata (*POST* for Binding and `/api/saml-response` for Endpoint URL).
@@ -155,6 +169,8 @@ The Partner's Entity ID and the Connection Name are set to the StorageGRID SP co
 
 === Configure credentials
 
+.Steps
+
 . From the SP Connection tab, select *Credentials*. 
 . From the Credentials tab, select *Configure Credentials*.
 
@@ -172,6 +188,8 @@ The Partner's Entity ID and the Connection Name are set to the StorageGRID SP co
 You can copy the first SP connection to create the SP connections you need for each Admin Node in your grid. You upload new metadata for each copy.
 
 NOTE: The SP connections for different Admin Nodes use identical settings, with the exception of the Partner's Entity ID, Base URL, Connection ID, Connection Name, Signature Verification, and SLO Response URL.
+
+.Steps
 
 . Select *Action* > *Copy* to create a copy of the initial SP connection for each additional Admin Node. 
 

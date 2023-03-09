@@ -983,7 +983,7 @@ You can create write-once-read-many (WORM) buckets to protect data, user-defined
 
 To ensure that overwrites are always denied, you can:
 
-* From the Grid Manager, go to *CONFIGURATION* > *Security settings* > *Network and objects*, and select the *Prevent client modification* check box.
+* From the Grid Manager, go to *CONFIGURATION* > *Security* > *Security settings* > *Network and objects*, and select the *Prevent client modification* check box.
 * Apply the following rules and S3 policies:
  ** Add a PutOverwriteObject DENY operation to the S3 policy.
  ** Add a DeleteObject DENY operation to the S3 policy.

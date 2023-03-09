@@ -442,7 +442,7 @@ If you add a trunk interface, you must configure a VLAN interface in StorageGRID
 |O
 |The maximum amount of RAM that this node is allowed to consume. If this key is omitted, the node has no memory restrictions. When setting this field for a production-level node, specify a value that is at least 24 GB and 16 to 32 GB less than the total system RAM.
 
-*Note*: The RAM value affects a node's actual metadata reserved space. See the link:../admin/managing-object-metadata-storage.html[description of what Metadata Reserved Space is] and link:../upgrade/increasing-metadata-reserved-space-setting.html[how to increase Metadata Reserved Space].
+*Note*: The RAM value affects a node's actual metadata reserved space. See the link:../admin/managing-object-metadata-storage.html[description of what Metadata Reserved Space is].
 
 The format for this field is `<number><unit>`, where `<unit>` can be `b`, `k`, `m`, or `g`.
 

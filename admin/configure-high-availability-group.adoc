@@ -32,11 +32,15 @@ An interface must be for a Gateway Node or an Admin Node to be included in an HA
 
 === Access the wizard
 
+.Steps
+
 . Select *CONFIGURATION* > *Network* > *High availability groups*.
 
 . Select *Create*.
 
 === Enter details for the HA group
+
+.Steps
 
 . Provide a unique name for the HA group.
 +
@@ -47,6 +51,8 @@ image::../media/ha-group-create-wizard.png[HA Groups create wizard]
 . Select *Continue*.
 
 === Add interfaces to the HA group
+
+.Steps
 
 . Select one or more interfaces to add to this HA group.
 + 
@@ -81,22 +87,24 @@ image::../media/vlan_parent_interface_tooltip.png[VLAN Interface tool tip]
 
 === Determine the priority order
 
-. Determine the Primary interface and any Backup (failover) interfaces for this HA group.
+If the HA group includes more than one interface, you can determine which is the Primary interface and which are the Backup (failover) interfaces.  If the Primary interface fails, the VIP addresses move to the highest priority interface that is available. If that interface fails, the VIP addresses move to the next highest priority interface that is available, and so on.
+
+.Steps
+
+. Drag and drop rows in the *Priority order* column to determine the Primary interface and any Backup interfaces.
 +
-Drag and drop rows to change the values in the *Priority order* column.
+
+The first interface in the list is the Primary interface. The Primary interface is the active interface unless a failure occurs.
 +
 image::../media/ha_group_determine_failover.png[HA Groups determine priority order]
 +
 TIP: If the HA group provides access to the Grid Manager, you must select an interface on the primary Admin Node to be the Primary interface. Some maintenance procedures can only be performed from the primary Admin Node.
-+
-The first interface in the list is the Primary interface. The Primary interface is the active interface unless a failure occurs.
-+
-If the HA group includes more than one interface and the Primary interface fails, the VIP addresses move to the highest priority interface that is available. If that interface fails, the VIP addresses move to the next highest priority interface that is available, and so on.
 
 . Select *Continue*.
 
 === Enter IP addresses
 
+.Steps
 . In the *Subnet CIDR* field, specify the VIP subnet in CIDR notation--an IPv4 address followed by a slash and the subnet length (0-32).
 +
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
@@ -109,7 +117,7 @@ image::../media/ha_group_select_virtual_ips.png[HA Groups enter VIPs]
 +
 Client and admin users will use this gateway to access the virtual IP addresses.
 
-. Enter one or more *virtual IP addresses* for the HA group. You can add up to 10 IP addresses. All VIPs must be within the VIP subnet.
+. Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet and all will be active at the same time on the active interface. 
 +
 You must provide at least one IPv4 address. Optionally, you can specify additional IPv4 and IPv6 addresses.
 

@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: configure rest api security
 summary: 'You should review the security measures implemented for the REST API and understand how to secure your system.'
 ---
-= Configure security for REST API
+= Configure security for the REST API
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
 You should review the security measures implemented for the REST API and understand how to secure your system.
 
-== How StorageGRID provides security for REST API
+== How StorageGRID provides security for the REST API
 
 You should understand how the StorageGRID system implements security, authentication, and authorization for the REST API.
 
@@ -23,8 +23,7 @@ When you link:../admin/configuring-load-balancer-endpoints.html[configure a load
 
 * By default, StorageGRID uses HTTPS for client communications with Storage Nodes.
 +
-Optionally, link:../admin/enabling-http-for-client-communications.html[enable HTTP for these connections]. For example, you might want to use HTTP for testing or other non-production purposes.
-+
+Optionally, link:../admin/changing-network-options-object-encryption.html[enable HTTP for these connections]. For example, you might want to use HTTP for testing or other non-production purposes.
 
 * Communications between StorageGRID and the client are encrypted using TLS.
 * Communications between the Load Balancer service and Storage Nodes within the grid are encrypted whether the load balancer endpoint is configured to accept HTTP or HTTPS connections.

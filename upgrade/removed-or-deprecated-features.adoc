@@ -38,13 +38,13 @@ Several Grid Manager options were moved or removed.
 
 * The link:../admin/configuring-stored-object-compression.html[Compress stored objects] option was moved to *CONFIGURATION* > *System* > *Object compression*.
 
-* The *Network Transfer Encryption* internal connection setting was removed and replaced by the link:../admin/manage-tls-ssh-policy.html[TLS and SSH policies] tab on the new *CONFIGURATION* > *Security settings* page. 
+* The *Network Transfer Encryption* internal connection setting was removed and replaced by the link:../admin/manage-tls-ssh-policy.html[TLS and SSH policies] tab on the new *CONFIGURATION* > *Security* > *Security settings* page. 
 +
 NOTE: The AES256-SHA option was the default in StorageGRID 11.6 and is the only setting available in StorageGRID 11.7. The AES128-SHA value is ignored in the Grid Management API. During the StorageGRID 11.7 upgrade, the network transfer encryption algorithm is set to AES256-SHA.
 
-* The *Stored object encryption*, *Prevent client modification*, and *Enable HTTP for Storage Node connections* options were moved to the link:../admin/changing-network-options-object-encryption.html[Network and objects tab] on the new *CONFIGURATION* > *Security settings* page. 
+* The *Stored object encryption*, *Prevent client modification*, and *Enable HTTP for Storage Node connections* options were moved to the link:../admin/changing-network-options-object-encryption.html[Network and objects tab] on the new *CONFIGURATION* > *Security* > *Security settings* page. 
 
-* The link:../admin/changing-browser-session-timeout-interface.html[Browser inactivity timeout] option was moved to the new *CONFIGURATION* > *Security settings* page. 
+* The link:../admin/changing-browser-session-timeout-interface.html[Browser inactivity timeout] option was moved to the new *CONFIGURATION* > *Security* > *Security settings* page. 
 
 * The link:../admin/manage-link-costs.html[Link cost] option was moved to *SUPPORT* > *Other* > *Link cost*.
 
@@ -53,6 +53,8 @@ NOTE: The AES256-SHA option was the default in StorageGRID 11.6 and is the only 
 * The *Stored Object Hashing* option was removed. The *SHA-1* and *SHA-256* settings are no longer used for internal background verification because they require additional CPU resources over MD5 and packet CRC32 check.
 
 * The *Preferred sender* option was removed. If your StorageGRID deployment includes multiple Admin Nodes, the primary Admin Node is the preferred sender for alert notifications, AutoSupport messages, SNMP traps and informs, and legacy alarm notifications. If the primary Admin Node becomes unavailable, notifications are temporarily sent by other Admin Nodes. See link:../admin/what-admin-node-is.html[What an Admin Node is].
+
+* The link:../admin/configure-firewall-controls.html#untrusted-client-network[Untrusted Client Network settings] were moved to *CONFIGURATION* > *Firewall control*.
 
 == S3 endpoint domain name format restrictions 
 The use of IP addresses as endpoint domain names is unsupported. Future releases will prevent the configuration. If you need to use IP addresses for endpoint domain names, contact technical support. See link:../admin/configuring-s3-api-endpoint-domain-names.html[S3 endpoint domain names].

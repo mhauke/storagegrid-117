@@ -60,6 +60,7 @@ All protocol options require support by, and configuration of, the external sysl
 NOTE: Reliable Event Logging Protocol (RELP) extends the functionality of the syslog protocol to provide reliable delivery of event messages. Using RELP can help prevent the loss of audit information if your external syslog server has to restart. 
 
 . Select *Continue*.
+
 . [[attach-certificate]]If you selected *TLS* or *RELP/TLS*, upload the following certificates:
 
 * *Server CA certificates*: One or more trusted CA certificates for verifying the  external syslog server (in PEM encoding). If omitted, the default Grid CA certificate will be used. The file you upload here might be a CA bundle. 
@@ -98,7 +99,7 @@ A green check appears next to the certificate or key file name, notifying you th
 +
 If you select *Passthrough* for severity and facility, the information sent to the remote syslog server will receive the same severity and facility as it did when logged locally onto the node. Setting facility and severity can help you aggregate the logs in customizable ways for easier analysis. 
 +
-NOTE: For more information on StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html#[StorageGRID software logs].
+NOTE: For more information about StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html[StorageGRID software logs].
 
 .. For *Severity*, select *Passthrough* if you want each message sent to the external syslog to have the same severity value as it does in the local syslog.
 +
@@ -114,7 +115,9 @@ The selected value will be applied to all messages of this type. Information abo
 +
 [cols="1a,3a" options="header"]
 |===
-| Severity| Description
+| Severity
+| Description
+
 | 0
 | Emergency: System is unusable
 
@@ -150,7 +153,8 @@ For application logs, if you select *Passthrough*, the application logs sent to 
 +
 [cols="1a,2a" options="header"]
 |===
-| Application log| Passthrough value
+| Application log
+| Passthrough value
 
 | bycast.log
 | user or daemon
@@ -273,7 +277,7 @@ Test results continuously appear on the page until you stop the test. While the 
 
 . If you receive any errors, correct them and select *Send test messages* again.
 +
-See link:../monitor/troubleshooting-syslog-server.html[Troubleshooting the external syslog server] to help you resolve any errors.
+See link:../troubleshoot/troubleshooting-syslog-server.html[Troubleshooting the external syslog server] to help you resolve any errors.
 
 . Wait until you see a green banner indicating all nodes have passed testing. 
 
@@ -291,7 +295,7 @@ NOTE: Your StorageGRID audit information is not sent to the external syslog serv
 == Select audit information destinations
 You can specify where security event logs, application logs, and audit message logs are sent. 
 
-NOTE: For more information on StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html#[StorageGRID software logs].
+NOTE: For more information about StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html[StorageGRID software logs].
 
 . On the Audit and syslog server page, select the destination for audit information from the listed options: 
 +

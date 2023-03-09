@@ -26,6 +26,8 @@ image:../media/grid-federation-create-connection.png[graphic overview of steps t
 
 Perform these steps on either of the two StorageGRID systems.
 
+.Steps
+
 . Sign in to the Grid Manager from the primary Admin Node on either grid.
 
 . Select *CONFIGURATION* > *System* > *Grid federation*.
@@ -74,7 +76,7 @@ StorageGRID automatically generates client and server certificates for each grid
 
 . For the Download verification file step, select *Download verification file*.
 +
-After the connection is successfully completed on the other grid, you can no longer download the verification file from either grid.
+After the connection is completed on the other grid, you can no longer download the verification file from either grid.
 
 . Locate the downloaded file (`_connection-name_.grid-federation`), and save it to a safe location.
 +
@@ -89,6 +91,8 @@ CAUTION: This file contains secrets (masked as `***`) and other sensitive detail
 == Complete connection
 
 Perform these steps on the StorageGRID system you are connecting to (the other grid).
+
+.Steps
 
 . Sign in to the Grid Manager from the primary Admin Node.
 
@@ -118,7 +122,7 @@ If an error message appears, address any issues. See link:grid-federation-troubl
 
 . After the connection has been established, securely delete all copies of the verification file.
 +
-If you edit this connection, a new verification file will be created. The original file cannot be reused.
+If you edit this connection, a new verification file will be created. The original file can't be reused.
 
 .After you finish
 

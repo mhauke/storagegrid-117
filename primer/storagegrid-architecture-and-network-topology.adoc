@@ -47,8 +47,7 @@ S3 and Swift clients store and retrieve objects in StorageGRID. Other clients ar
 
 S3 and Swift clients can connect to a Gateway Node or an Admin Node to use the load-balancing interface to Storage Nodes. Alternatively, S3 and Swift clients can connect directly to Storage Nodes using HTTPS.
 
-Objects can be stored within StorageGRID on software or hardware-based Storage Nodes, on external archival media such as tape, or in Cloud Storage Pools, which consist of external S3 buckets or Azure Blob storage containers.
-
+Objects can be stored within StorageGRID on software or hardware-based Storage Nodes, or in Cloud Storage Pools, which consist of external S3 buckets or Azure Blob storage containers.
 
 == Grid nodes and services
 
@@ -116,7 +115,6 @@ See the following for more information:
 
 * link:../installconfig/hardware-description-sg5600.html[SG5600 storage appliances]
 
-
 === Primary services for Admin Nodes
 
 include::../_include/services-admin-node.adoc[]
@@ -130,50 +128,39 @@ NOTE: Some services, such as the ADC service and the RSM service, typically exis
 [cols="1a,2a" options="header"]
 |===
 | Service| Key function
-a|
-Account (acct)
-a|
-Manages tenant accounts.
-a|
-Administrative Domain Controller (ADC)
-a|
-Maintains topology and grid-wide configuration.
-a|
-Cassandra
-a|
-Stores and protects object metadata.
-a|
-Cassandra Reaper
-a|
-Performs automatic repairs of object metadata.
-a|
-Chunk
-a|
-Manages erasure-coded data and parity fragments.
-a|
-Data Mover (dmv)
-a|
-Moves data to Cloud Storage Pools.
-a|
-Distributed Data Store (DDS)
-a|
-Monitors object metadata storage.
-a|
-Identity (idnt)
-a|
-Federates user identities from LDAP and Active Directory.
-a|
-Local Distribution Router (LDR)
-a|
-Processes object storage protocol requests and manages object data on disk.
-a|
-Replicated State Machine (RSM)
-a|
-Ensures that S3 platform services requests are sent to their respective endpoints.
-a|
-Server Status Monitor (SSM)
-a|
-Monitors the operating system and underlying hardware.
+
+| Account (acct)
+| Manages tenant accounts.
+
+| Administrative Domain Controller (ADC)
+| Maintains topology and grid-wide configuration.
+
+| Cassandra
+| Stores and protects object metadata.
+
+| Cassandra Reaper
+| Performs automatic repairs of object metadata.
+
+| Chunk
+| Manages erasure-coded data and parity fragments.
+
+| Data Mover (dmv)
+| Moves data to Cloud Storage Pools.
+
+| Distributed Data Store (DDS)
+| Monitors object metadata storage.
+
+| Identity (idnt)
+| Federates user identities from LDAP and Active Directory.
+
+| Local Distribution Router (LDR)
+| Processes object storage protocol requests and manages object data on disk.
+
+| Replicated State Machine (RSM)
+| Ensures that S3 platform services requests are sent to their respective endpoints.
+
+| Server Status Monitor (SSM)
+| Monitors the operating system and underlying hardware.
 |===
 
 === Primary services for Gateway Nodes
@@ -184,24 +171,18 @@ The following table shows the primary services for Gateway Nodes; however, this 
 |===
 | Service| Key function
 
-a|
-High Availability
-a|
-Manages high availability virtual IP addresses for groups of Admin Nodes and Gateway Nodes.
+| High Availability
+| Manages high availability virtual IP addresses for groups of Admin Nodes and Gateway Nodes.
 
 *Note:* This service is also found on Admin Nodes.
 
-a|
-Load Balancer
-a|
-Provides Layer 7 load balancing of S3 and Swift traffic from clients to Storage Nodes. This is the recommended load balancing mechanism.
+| Load Balancer
+| Provides Layer 7 load balancing of S3 and Swift traffic from clients to Storage Nodes. This is the recommended load balancing mechanism.
 
 *Note:* This service is also found on Admin Nodes.
 
-a|
-Server Status Monitor (SSM)
-a|
-Monitors the operating system and underlying hardware.
+| Server Status Monitor (SSM)
+| Monitors the operating system and underlying hardware.
 |===
 
 === Primary services for Archive Nodes
@@ -213,14 +194,12 @@ NOTE: Support for Archive Nodes is deprecated and will be removed in a future re
 [cols="1a,2a" options="header"]
 |===
 | Service| Key function
-a|
-Archive (ARC)
-a|
-Communicates with a Tivoli Storage Manager (TSM) external tape storage system.
-a|
-Server Status Monitor (SSM)
-a|
-Monitors the operating system and underlying hardware.
+
+| Archive (ARC)
+| Communicates with a Tivoli Storage Manager (TSM) external tape storage system.
+
+| Server Status Monitor (SSM)
+| Monitors the operating system and underlying hardware.
 |===
 
 === StorageGRID services
@@ -326,5 +305,3 @@ Monitors hardware conditions and reports to the NMS service. An instance of the 
 * *Trace collector service*
 +
 Performs trace collection to gather information for use by technical support. The trace collector service uses open source Jaeger software and is present on Admin Nodes.
-
-

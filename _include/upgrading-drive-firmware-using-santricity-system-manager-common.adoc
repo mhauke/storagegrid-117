@@ -4,11 +4,10 @@
 * The storage appliance has an Optimal status.
 * All drives have an Optimal status.
 * You have the latest version of SANtricity System Manager installed that is compatible with your StorageGRID version.
-* If you are performing an offline upgrade, you have link:../maintain/placing-appliance-into-maintenance-mode.html[placed the StorageGRID appliance in maintenance mode].
+* If you are performing an offline upgrade, you have link:../maintain/placing-appliance-into-maintenance-mode.html[placed the StorageGRID appliance into maintenance mode].
 +
 NOTE: While in maintenance mode I/O activity to the storage controller is stopped to make disruptive storage operations safe.
 
-+
 IMPORTANT: Do not upgrade the drive firmware on more than one StorageGRID appliance at a time. Doing so might cause data unavailability, depending on your deployment model and ILM policy.
 
 .About this task
@@ -22,9 +21,9 @@ NOTE: Drives belonging to volumes that do not have redundancy must be updated us
 *Offline*: 
 The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy, or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped on the drives to be upgraded. You must stop all I/O on any drives you intend to upgrade by placing the node into maintenance mode.
 
-The offline method is faster than the online method and is recommended.
+The offline method is faster than the online method and will be significantly faster when many drives in a single appliance need upgrades. However, it requires that nodes be taken out of service, which might require scheduling a maintenance window and monitoring progress. Choose the method that is the best fit for your operational procedures and the number of drives that need to be upgraded.
 
-IMPORTANT: There are two types of drives in the SG6060: SSD and HDD. You must use the offline method to upgrade the drive firmware on the SSD drives. You may use the online method to upgrade the drive firmware on the HDD drives. 
+IMPORTANT: There are two types of drives in the SG6060: SSD and HDD. You must use the offline method to upgrade the firmware on the SSDs. You can use either the online or offline method to upgrade the firmware on the HDDs.
 
 .Steps
 

@@ -117,7 +117,6 @@ The client certificate metadata appears.
 
 . Browse to the location of the private key for the client certificate.
 . Upload the private key file.
-
 +
 image::../media/kms_overhaul_step_3_client_certificate_metadata.png[KMS step 3 client certificate metadata]
 
@@ -133,12 +132,8 @@ For example, you might receive a 422: Unprocessable Entity error if a connection
 
 . If you need to save the current configuration without testing the external connection, select *Force save*.
 +
-// image::../media/kms_force_save.png[KMS Force Save]
-+
-IMPORTANT: Selecting *Force save* saves the KMS configuration, but it does not test the external connection from each appliance to that KMS. If there is an issue with the configuration, you might not be able to reboot appliance nodes that have node encryption enabled at the affected site. You might lose access to your data until the issues are resolved.
+WARNING: Selecting *Force save* saves the KMS configuration, but it does not test the external connection from each appliance to that KMS. If there is an issue with the configuration, you might not be able to reboot appliance nodes that have node encryption enabled at the affected site. You might lose access to your data until the issues are resolved.
 
 . Review the confirmation warning, and select *OK* if you are sure you want to force save the configuration.
-+
-// image::../media/kms_force_save_warning.png[KMS Force Save Warning]
 +
 The KMS configuration is saved but the connection to the KMS is not tested.

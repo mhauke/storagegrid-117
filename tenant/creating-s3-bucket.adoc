@@ -21,11 +21,16 @@ NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objec
 * If you plan to enable S3 Object Lock for a bucket, a grid admin has enabled the global S3 Object Lock setting for the StorageGRID system, and you have reviewed the requirements for S3 Object Lock buckets and objects. See link:using-s3-object-lock.html[Use S3 Object Lock to retain objects].
 
 == Access the wizard
+
+.Steps
+
 . Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
 
 . Select *Create bucket*.
 
 == Enter details
+
+.Steps
 
 . Enter details for the bucket.
 +
@@ -60,6 +65,8 @@ Your StorageGRID administrator manages the available regions. A bucket's region 
 . Select *Continue*.
 
 == Manage object settings
+
+.Steps
 
 . Optionally, enable object versioning for the bucket.
 +

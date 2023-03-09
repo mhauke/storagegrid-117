@@ -13,6 +13,8 @@ The TLS and SSH policy determines which protocols and ciphers are used to establ
 
 The security policy controls how TLS and SSH encrypt data in motion. In general, use the Modern compatibility (default) policy, unless your system needs to be Common Criteria-compliant or you need to use other ciphers.
 
+NOTE: Some StorageGRID services have not been updated to use the ciphers in these policies.
+
 .What you'll need
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
@@ -22,13 +24,13 @@ The security policy controls how TLS and SSH encrypt data in motion. In general,
 == Select a security policy
 
 .Steps
-. Select *CONFIGURATION* > *Security settings* > *TLS and SSH policies*.
+. Select *CONFIGURATION* > *Security* > *Security settings*.
 + 
-The TLS and SSH policies tab shows the available policies. The currently active policy is noted by a green checkmark on the policy tile.
+The *TLS and SSH policies* tab shows the available policies. The currently active policy is noted by a green checkmark on the policy tile.
 +
 image::../media/securitysettings_tls_ssh_policies_current.png[TLS and SSH policies]
-+
-NOTE: Some StorageGRID services have not been updated to use the ciphers in these policies.
+
+. Review the tiles to learn about the available policies.
 +
 [cols="1a,2a" options="header"]
 |===
@@ -36,23 +38,23 @@ NOTE: Some StorageGRID services have not been updated to use the ciphers in thes
 | Description
 
 | Modern compatibility (default)
-| Use the default policy if you need strong encryption. This policy is compatible with most TLS and SSH clients. You can use this policy unless you have special requirements.
+| Use the default policy if you need strong encryption and unless you have special requirements. This policy is compatible with most TLS and SSH clients. 
 
 | Legacy compatibility
-| Use this policy if you need additional compatibility options to support older clients. The additional options in Legacy policy can be less secure than the Modern compatibility policy.
+| Use this policy if you need additional compatibility options for older clients. The additional options in this policy might make it less secure than the Modern compatibility policy.
 
 | Common Criteria
-| Matches the test configuration used for Common Criteria certification.
+| Use this policy if you require Common Criteria certification.
 
 | FIPS strict
-| The same as the Common Criteria policy, but removes the transitional ciphers and enables use of the NetApp Cryptographic Security Module 3.0.0 for external client connections to load balancer endpoints, Tenant Manager, and Grid Manager. Using this policy might reduce performance. 
+| Use this policy if you require Common Criteria certification and need to use the NetApp Cryptographic Security Module 3.0.0 for external client connections to load balancer endpoints, Tenant Manager, and Grid Manager. Using this policy might reduce performance. 
 
 | Custom
-| You can create a custom policy to apply your own ciphers. You can edit or modify the existing policy ciphers to create your own custom policy. You must use caution and validate the policy you provide.
+| Create a custom policy if you need to apply your own ciphers.
 
 |===
 
-. To review a policy, select *View details*. 
+. To see details about each policy's ciphers, protocols, and algorithms, select *View details*. 
 
 . To change the current policy, select *Use policy*.
 +
@@ -60,12 +62,20 @@ A green checkmark appears next to *Current policy* on the policy tile.
 
 == Create a custom security policy
 
-To create a custom policy to apply your ciphers:
+You can create a custom policy if you need to apply your own ciphers.
 
-. Select *View details* for one of the provided policies.
-. Select *Copy to clipboard* and *Cancel*.
-. Select *Configure and use* from the *Custom policy*. 
-. Paste the JSON you copied and make required changes to create a custom policy.
+.Steps
+
+. From the tile of the policy that is the most similar to the custom policy you want to create, select *View details*.
+
+. Select *Copy to clipboard*, and then select *Cancel*.
++
+image::../media/securitysettings-custom-security-policy-copy.png[copying an existing policy to create a custom policy]
+
+. From the *Custom policy* tile, select *Configure and use*.
+
+. Paste the JSON you copied and make any changes required.
+
 . Select *Use policy*.
 +
 A green checkmark appears next to *Current policy* on the Custom policy tile.
@@ -76,7 +86,7 @@ A green checkmark appears next to *Current policy* on the Custom policy tile.
 
 If you configured a custom security policy, you might not be able to sign in to the Grid Manager if the configured TLS policy is incompatible with the link:global-certificate-types.html[configured server certificate].
 
-You can temporarily revert to the default security policy as follows:
+You can temporarily revert to the default security policy.
 
 .Steps
 

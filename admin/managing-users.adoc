@@ -30,15 +30,20 @@ NOTE: If single sign-on (SSO) is enabled, local users cannot sign in to StorageG
 
 === Access the wizard
 
+.Steps
+
 . Select *CONFIGURATION* > *Access control* > *Admin users*.
 . Select *Create user*.
 
 === Enter user credentials
+.Steps
 . Enter the user's full name, a unique username, and a password.
 . Optionally, select *Yes* if this user should not have access to the Grid Manager or Grid Management API.
 . Select *Continue*.
 
 === Assign to groups
+
+.Steps
 
 . Optionally, assign the user to one or more groups to determine the user's permissions.
 +
@@ -134,6 +139,8 @@ NOTE: Local users can change their own passwords using the *Change password* opt
 == Duplicate a user
 You can duplicate an existing user to create a new user with the same permissions.
 
+.Steps
+
 . Select the check box for the user. 
 . Select *Actions* > *Duplicate user*.
 . Complete the Duplicate user wizard.
@@ -143,6 +150,8 @@ You can duplicate an existing user to create a new user with the same permission
 You can delete a local user to permanently remove that user from the system.
 
 NOTE: You cannot delete the root user.
+
+.Steps
 
 . From the Users page, select the check box for each user you want to remove. 
 . Select *Actions* > *Delete user*.

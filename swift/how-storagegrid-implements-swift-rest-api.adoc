@@ -15,7 +15,7 @@ A client application can use Swift REST API calls to connect to Storage Nodes an
 
 After Swift objects have been ingested in the StorageGRID system, they are managed by the information lifecycle management (ILM) rules in the system's active ILM policy. The link:../ilm/what-ilm-rule-is.html[ILM rules] and link:../ilm/creating-ilm-policy.html[ILM policy] determine how StorageGRID creates and distributes copies of object data and how it manages those copies over time. For example, an ILM rule might apply to objects in specific Swift containers and might specify that multiple object copies be saved to several data centers for a certain number of years.
 
-Contact your StorageGRID administrator if you need to understand how the grid's ILM rules and policies will affect the objects in your Swift tenant account.
+Contact your NetApp professional services consultant or StorageGRID administrator if you need to understand how the grid's ILM rules and policies will affect the objects in your Swift tenant account.
 
 == Conflicting client requests
 

@@ -35,7 +35,7 @@ Before adding Storage Nodes to increase metadata capacity, review the following 
 * StorageGRID keeps three copies of all object metadata at every site. For this reason, the metadata capacity for your system is limited by the metadata capacity of your smallest site.
 * When adding metadata capacity, you should add the same number of Storage Nodes to each site.
 
-See the link:../admin/managing-object-metadata-storage.html[description of what Metadata Reserved Space is] and link:../upgrade/increasing-metadata-reserved-space-setting.html[how to increase Metadata Reserved Space].
+See the link:../admin/managing-object-metadata-storage.html[description of what Metadata Reserved Space is].
 
 == How metadata is redistributed when you add Storage Nodes
 
