@@ -1,15 +1,15 @@
 ---
 permalink: installconfig/optional-remapping-network-ports-for-appliance.html
 sidebar: sidebar
-keywords: storage node, storage appliance, remapping, remap, map, mapping, network, ports 
-summary: 'You might need to remap the internal ports on the appliance Storage Node to different external ports. For example, you might need to remap ports because of a firewall issue.'
+keywords: remap appliance ports, network, internal to external port mapping 
+summary: 'You might need to remap the internal ports on the appliance node to different external ports. For example, you might need to remap ports because of a firewall issue.'
 ---
-= Optional: Remap network ports for appliance (SG6000 and SG1000)
+= Optional: Remap network ports for appliance
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You might need to remap the internal ports on the appliance Storage Node to different external ports. For example, you might need to remap ports because of a firewall issue.
+You can optionally remap the internal ports on an appliance node to different external ports. For example, you might need to remap ports because of a firewall issue.
 
 .What you'll need
 
@@ -19,7 +19,7 @@ NOTE: If you remap any ports, you cannot use the same ports to configure load ba
 
 .Steps
 
-. From the StorageGRID Appliance Installer, click *Configure Networking* > *Remap Ports*.
+. From the StorageGRID Appliance Installer, select *Configure Networking* > *Remap Ports*.
 +
 The Remap Port page appears.
 
@@ -28,10 +28,10 @@ The Remap Port page appears.
 . From the *Remap Direction* drop-down box, select which traffic direction you want to remap for this port: Inbound, Outbound, or Bi-directional.
 . For *Original Port*, enter the number of the port you want to remap.
 . For *Mapped-To Port*, enter the number of the port you want to use instead.
-. Click *Add Rule*.
+. Select *Add Rule*.
 +
 The new port mapping is added to the table, and the remapping takes effect immediately.
 +
-image::../media/remap_ports.gif[Screenshot showing Remap Ports option in StorageGRID Webscale Appliance Installer]
+image::../media/remap_ports.gif[Screenshot showing Remap Ports option in StorageGRID Appliance Installer]
 
-. To remove a port mapping, select the radio button for the rule you want to remove, and click *Remove Selected Rule*.
+. To remove a port mapping, select the radio button for the rule you want to remove, and select *Remove Selected Rule*.
