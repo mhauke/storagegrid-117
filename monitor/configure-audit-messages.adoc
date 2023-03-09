@@ -11,7 +11,7 @@ summary: 'All StorageGRID nodes generate audit messages to track system activity
 [.lead]
 Audit messages and logs record system activities and security events, and are essential tools for monitoring and troubleshooting. You can adjust audit levels to increase or decrease the type and number of audit messages recorded. Optionally, you can define any HTTP request headers you want to include in client read and write audit messages. You can also configure an external syslog server and change the destination of audit information.
 
-For more information on audit messages, see link:../audit/index.html[Review audit logs].
+For more information about audit messages, see link:../audit/index.html[Review audit logs].
 
 .What you'll need
 
@@ -112,7 +112,7 @@ You can specify where audit logs, security event logs, and application logs are 
 
 NOTE: Some destination are available only if you are using an external syslog server. See link:../monitor/configuring-syslog-server.html[Configure an external syslog server] to configure an external syslog server. 
 
-NOTE: For more information on StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html#[StorageGRID software logs].
+NOTE: For more information about StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html#[StorageGRID software logs].
 
 . On the Audit and syslog server page, select the destination for audit information from the listed options: 
 +

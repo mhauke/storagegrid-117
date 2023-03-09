@@ -174,7 +174,7 @@ Application Log Average Size = (P x (240 + (0.4 x K))) + ((1 - P) x (185 + (0.9 
 
 So, for example, if your grid is sized for 1,000 S3 operations per second, your workload is 50% PUTs, and your S3 account names, bucket names, and object names average 90 bytes, your external syslog server should be sized to support 2,250 application logs per second and should be able to receive and will be receive (and typically store) application data at a rate of 0.6 MB per second.
 
-For more information on configuring audit message levels and an external syslog server, see the following:
+For more information about configuring audit message levels and an external syslog server, see the following:
 
 * link:../monitor/configuring-syslog-server.html[Configure an external syslog server]
 * link:../monitor/configure-audit-messages.html[Configure audit messages and log destinations]

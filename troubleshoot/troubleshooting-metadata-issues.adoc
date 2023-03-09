@@ -152,7 +152,7 @@ If an out-of-memory error occurs for the Cassandra database, a heap dump is crea
 . To view the event, select *SUPPORT* > *Tools* > *Grid topology* > *Configuration*.
 . Verify that the Cassandra Heap Out Of Memory Errors count is 1 or greater.
 +
-You can link:../monitor/running-diagnostics.html[run diagnostics] to obtain additional information on the current state of your grid.
+You can link:../monitor/running-diagnostics.html[run diagnostics] to obtain additional information about the current state of your grid.
 
 . Go to `/var/local/core/`, compress the `Cassandra.hprof` file, and send it to technical support.
 . Make a backup of the `Cassandra.hprof` file, and delete it from the `/var/local/core/ directory`.
