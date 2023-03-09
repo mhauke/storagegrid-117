@@ -35,7 +35,7 @@ Nodes in an active-backup HA group might take the Backup role from time to time.
 
  .. Review the chart of Load Balancer Incoming Request Rate for the last week to review the object throughput of the node.
  .. Repeat these steps for each Admin Node or Gateway Node in the StorageGRID system.
- .. Optionally, use traffic classification policies to view a more detailed breakdown of traffic being served by the Load Balancer service.
+ .. Optionally, use traffic classification policies to view a more detailed analysis of traffic being served by the Load Balancer service.
 
 . Verify that these requests are being evenly distributed to Storage Nodes.
  .. Select *_Storage Node_* > *LDR* > *HTTP*.
