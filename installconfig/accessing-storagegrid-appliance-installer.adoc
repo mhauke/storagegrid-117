@@ -61,23 +61,6 @@ In the sequence:
 NOTE: If an IP address could not be assigned using DHCP, 0.0.0.0 is displayed.
 --
 
-.E5600SG
---
-You can do either of the following:
-
- ** Provide the MAC address for management port 1 to your network administrator, so they can look up the DHCP address for this port on the Admin Network. The MAC address is printed on a label on the E5600SG controller, next to the port.
- ** Look at the seven-segment display on the E5600SG controller. If management port 1 and 10-GbE ports 2 and 4 on the E5600SG controller are connected to networks with DHCP servers, the controller attempts to obtain dynamically assigned IP addresses when you power on the enclosure. After the controller has completed the power-on process, its seven-segment display shows *HO*, followed by a repeating sequence of two numbers.
-+
-----
-HO -- IP address for Admin Network -- IP address for Grid Network HO
-----
-+
-In the sequence:
-
-  *** The first set of numbers is the DHCP address for the appliance Storage Node on the Admin Network, if it is connected. This IP address is assigned to management port 1 on the E5600SG controller.
-  *** The second set of numbers is the DHCP address for the appliance Storage Node on the Grid Network. This IP address is assigned to 10-GbE ports 2 and 4 when you first apply power to the appliance.
-+
-NOTE: If an IP address could not be assigned using DHCP, 0.0.0.0 is displayed.
 --
 ====
 
@@ -132,13 +115,6 @@ image::../media/sg6000_cn_link_local_port.gif[Location of Management Port for SG
 Connect the service laptop to management port 2 on the E5700SG controller, using an Ethernet cable.
 
 image::../media/e5700sg_mgmt_port_2.gif[Location of Management Port 2 on the E5700SG controller]
---
-
-.E5600SG
---
-Connect the service laptop to management port 2 on the E5600SG controller, using an Ethernet cable.
-
-image::../media/e5600sg_mgmt_port_2.gif[Location of Management Port 2 on the E5600SG controller]
 --
 ====
 
