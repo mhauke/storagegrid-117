@@ -2,14 +2,14 @@
 permalink: maintain/configuring-ntp-servers.html
 sidebar: sidebar
 keywords: storagegrid, ntp, ntp server, configure ntp, configuring ntp
-summary: 'You can add, update, or remove network time protocol \(NTP\) servers to ensure that data is synchronized accurately between grid nodes in your StorageGRID system.'
+summary: 'You can add, update, or remove Network Time Protocol \(NTP\) servers to ensure that data is synchronized accurately between grid nodes in your StorageGRID system.'
 ---
 = Manage NTP servers
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can add, update, or remove network time protocol (NTP) servers to ensure that data is synchronized accurately between grid nodes in your StorageGRID system.
+You can add, update, or remove Network Time Protocol (NTP) servers to ensure that data is synchronized accurately between grid nodes in your StorageGRID system.
 
 .What you'll need
 
@@ -20,7 +20,7 @@ You can add, update, or remove network time protocol (NTP) servers to ensure tha
 
 == How StorageGRID uses NTP
 
-The StorageGRID system uses the network time protocol (NTP) to synchronize time between all grid nodes in the grid.
+The StorageGRID system uses the Network Time Protocol (NTP) to synchronize time between all grid nodes in the grid.
 
 At each site, at least two nodes in the StorageGRID system are assigned the primary NTP role. They synchronize to a suggested minimum of four, and a maximum of six, external time sources and with each other. Every node in the StorageGRID system that is not a primary NTP node acts as an NTP client and synchronizes with these primary NTP nodes.
 
