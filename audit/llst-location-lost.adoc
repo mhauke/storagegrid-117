@@ -21,18 +21,6 @@ CBID
 a|
 The affected CBID.
 a|
-NOID
-a|
-Source Node ID
-a|
-The node ID on which the locations were lost.
-a|
-UUID
-a|
-Universally Unique ID
-a|
-The identifier of the affected object in the StorageGRID system.
-a|
 ECPR
 a|
 Erasure Coding Profile
@@ -48,7 +36,12 @@ CLDI (Online): For replicated object data
 CLEC (Online): For erasure-coded object data
 
 CLNL (Nearline): For archived replicated object data
-
+a|
+NOID
+a|
+Source Node ID
+a|
+The node ID on which the locations were lost.
 a|
 PCLD
 a|
@@ -72,5 +65,10 @@ a|
 USER: User triggered
 
 SYST: System triggered
-
+a|
+UUID
+a|
+Universally Unique ID
+a|
+The identifier of the affected object in the StorageGRID system.
 |===
