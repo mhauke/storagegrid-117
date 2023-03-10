@@ -29,41 +29,39 @@ To automate appliance installation and configuration, use one or more of the fol
 
 * Generate a JSON file that contains configuration details. Work with your NetApp Professional Services consultant to use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to complete these steps:
 +
-[cols="1a,5a,3a" options=header] 
+[options="header"]
 |===
-| Step| Consult NetApp Professional Services| Use ConfigBuilder
-
-| 1
-| Get sales order number
-|
-
-| 2
-| 
-| Get workbook
-
-| 3
-| Complete workbook
-|
-
-| 4
-| 
-| Upload workbook
-
-| 5
-| 
-| Generate JSON file
-
-| 6
-| Upload JSON file to appliance
-|
-
-3+| Appliance ready for configuration. See <<automate-with-appliance-installer,Automate using Appliance Installer>>.
-|
-| 
+| Task| Resource
+a|
+Get sales order number
+a|
+Consult NetApp Professional Services
+a|
+Get workbook
+a|
+Use ConfigBuilder
+a|
+Complete workbook
+a|
+Consult NetApp Professional Services
+a|
+Upload workbook
+a|
+Use ConfigBuilder
+a|
+Generate JSON file
+a|
+Use ConfigBuilder
+a|
+Upload JSON file to appliance
+a|
+Consult NetApp Professional
 |===
-+
+
+When the appliance is ready for configuration, see <<automate-with-appliance-installer,Automate using Appliance Installer>>.
+
 NOTE: You can use the same JSON file to configure more than one appliance.
-+
+
 Configuring your appliance using an uploaded JSON file is often more efficient than performing the configuration manually, especially if you have to configure many nodes. Performing the configuration manually requires using multiple pages in the StorageGRID Appliance Installer and applying the configuration file for each node one at a time.
 
 * If you are an advanced user, you can use the following StorageGRID Python scripts to install and configure your system:

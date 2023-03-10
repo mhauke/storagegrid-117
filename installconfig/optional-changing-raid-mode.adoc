@@ -71,27 +71,6 @@ Where `_E5700SG_Controller_IP_` is any of the IP addresses for the E5700SG contr
 . On the *Configure RAID Mode* page, select the desired RAID mode from the Mode drop-down list.
 . Click *Save*.
 --
-
-.SG5660
---
-.What you'll need
-
-* You have an SG5660 with 60 drives. The SG5660 with 60 drives supports two volume configuration options: DDP and RAID 6.
-+
-IMPORTANT: Using RAID 6 is not recommended for most StorageGRID environments. Although RAID 6 can increase storage efficiency to 88% (compared to 80% for DDP), DDP mode provides more efficient recovery from drive failures.
-* The SG5612 does not support RAID 6. If you have an SG5612, you must use Dynamic Disk Pools (DDP) mode.
-
-.Steps
-
-. Using the service laptop, open a web browser and access the StorageGRID Appliance Installer: +
-`*https://_E5600SG_Controller_IP_:8443*`
-+
-Where `_E5600SG_Controller_IP_` is any of the IP addresses for the E5600SG controller.
-
-. From the menu bar, select *Advanced* > *RAID Mode*.
-. On the *Configure RAID Mode* page, select *RAID6* from the Mode drop-down list.
-. Click *Save*.
---
 ====
 
 .Related information
