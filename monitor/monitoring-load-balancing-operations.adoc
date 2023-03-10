@@ -24,9 +24,9 @@ See the section on configuring client connections in the instructions for admini
 . If S3 or Swift clients connect using the Load Balancer service, check that Admin Nodes or Gateway Nodes are actively distributing traffic as you expect:
  .. Select *NODES*.
  .. Select a Gateway Node or Admin Node.
- .. On the *Overview* tab, check if a node interface is in an HA group and if the node interface has the role of Master.
+ .. On the *Overview* tab, check if a node interface is in an HA group and if the node interface has the role of Primary.
 +
-Nodes with the role of Master and nodes that are not in an HA group should be actively distributing requests to clients.
+Nodes with the role of Primary and nodes that are not in an HA group should be actively distributing requests to clients.
 
  .. For each node that should be actively distributing client requests, select the *Load Balancer* tab.
  .. Review the chart of Load Balancer Request Traffic for the last week to ensure that the node has been actively distributing requests.
