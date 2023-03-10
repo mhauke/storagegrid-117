@@ -136,7 +136,7 @@ In the example output, one storage volume was remounted successfully and three s
 
   *** `/dev/sdb` passed the XFS file system consistency check and had a valid volume structure, so it was remounted successfully. Data on devices that are remounted by the script is preserved.
   *** `/dev/sdc` failed the XFS file system consistency check because the storage volume was new or corrupt.
-  *** `/dev/sdd` could not be mounted because the disk was uninitialized or the disk's superblock was corrupted. When the script cannot mount a storage volume, it asks if you want to run the file system consistency check.
+  *** `/dev/sdd` could not be mounted because the disk was not initialized or the disk's superblock was corrupted. When the script cannot mount a storage volume, it asks if you want to run the file system consistency check.
    **** If the storage volume is attached to a new disk, answer *N* to the prompt. You do not need check the file system on a new disk.
    **** If the storage volume is attached to an existing disk, answer *Y* to the prompt. You can use the results of the file system check to determine the source of the corruption. The results are saved in the `/var/local/log/sn-remount-volumes.log` log file.
   *** `/dev/sde` passed the XFS file system consistency check and had a valid volume structure; however, the LDR node ID in the volID file did not match the ID for this Storage Node (the `configured LDR noid` displayed at the top). This message indicates that this volume belongs to another Storage Node.
