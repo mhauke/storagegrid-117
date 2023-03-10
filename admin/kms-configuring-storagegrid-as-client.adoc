@@ -13,7 +13,7 @@ You must configure StorageGRID as a client for each external key management serv
 
 .About this task
 
-These instructions apply to Thales CipherTrust Manager. For a list of supported versions, use the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool^].
+These instructions apply to Thales CipherTrust Manager. For a list of supported versions, use the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool (IMT)^].
 
 .Steps
 
@@ -23,7 +23,7 @@ Each KMS manages a single encryption key for the StorageGRID appliances nodes at
 
 . From the KMS software, create an AES encryption key for each KMS or KMS cluster.
 +
-The encryption key needs to be exportable.
+The encryption key must be 2,048 bits or more, and it must be exportable.
 
 . Record the following information for each KMS or KMS cluster.
 +

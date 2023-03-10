@@ -26,11 +26,9 @@ You can use the S3 setup wizard to configure StorageGRID for use with an S3 appl
 +
 image::../media/help_menu.png[help menu]
 . In the S3 application section of the FabricPool and S3 setup wizard page, select *Configure now*.
-+
-//*Step 1 of 6: Configure HA group* appears.
 
 == Step 1 of 6: Configure HA group
-A high availability (HA) group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
+An HA group is a collection of nodes that each contain the StorageGRID Load Balancer service. An HA group can contain Gateway Nodes, Admin Nodes, or both.
 
 You can use an HA group to help keep the S3 data connections available. If the active interface in the HA group fails, a backup interface can manage the workload with little impact to S3 operations.
 
@@ -41,10 +39,7 @@ For details about this task, see link:managing-high-availability-groups.html[Man
 . If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 6: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, you can create a new HA group or use an existing HA group.
-
-
-// start tabbed area
-
++
 [role="tabbed-block"]
 ====
 
@@ -161,20 +156,7 @@ link:../network/network-port-reference.html[Network port reference].
 
 . For the *Select binding mode* step, specify the binding mode. The binding mode controls how the endpoint is accessed&#8212;using any IP address or using specific IP addresses and network interfaces.
 +
-[cols="1a,2a" options="header"]
-|===
-|Option| Description
-
-| Global
-| Clients can access the endpoint using the IP address of any Gateway Node or Admin Node, or the virtual IP (VIP) address of any HA group. This is the default and recommended setting.
-
-| Node interfaces
-| Clients can only access the endpoint using the IP address of a selected node and network interface.
-
-| HA groups VIPs
-| Clients can only access the endpoint using a VIP address of an HA group. Use this selection only if you require much higher levels of isolation of workloads.
-
-|===
+include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 
 . For the Tenant access step, select one of the following:
 +
@@ -299,25 +281,7 @@ link:../tenant/creating-s3-bucket.html[Create S3 bucket].
 [NOTE]
 Some of these permissions have additional requirements. For details, select the help icon for each permission.
 +
-[cols="1a,3a" options="header"]
-|===
-| Permission | If selected...
-
-| Allow platform services
-| The tenant can use platform services such as CloudMirror. See link:manage-platform-services-for-tenants.html[Manage platform services for S3 tenant accounts].
-
-| Use own identity source 
-| The tenant can configure and manage its own identity source for federated groups and users. This option is disabled if you have link:configuring-sso.html[configured SSO] for your StorageGRID system.
-
-| Allow S3 Select
-| The tenant can issue S3 SelectObjectContent API requests to filter and retrieve object data. See link:manage-s3-select-for-tenant-accounts.html[Manage S3 Select for tenant accounts].
-
-*Important*: SelectObjectContent requests can decrease load-balancer performance for all S3 clients and all tenants. Enable this feature only when required and only for trusted tenants.
-
-| Use grid federation connection
-| The tenant can use a grid federation connection and enable account clone and cross-grid replication from the Tenant Manager. See link:grid-federation-manage-tenants.html[Manage the permitted tenants for grid federation].
-
-|===
+include::../_include/tenant-account-permissions.adoc[]
 
 . If you selected *Use grid federation connection*, select one of the available grid federation connections.
 

@@ -23,8 +23,7 @@ When you link:../admin/configuring-load-balancer-endpoints.html[configure a load
 
 * By default, StorageGRID uses HTTPS for client communications with Storage Nodes.
 +
-Optionally, link:../admin/enabling-http-for-client-communications.html[enable HTTP for these connections]. For example, you might want to use HTTP for testing or other non-production purposes.
-+
+Optionally, link:../admin/changing-network-options-object-encryption.html[enable HTTP for these connections]. For example, you might want to use HTTP for testing or other non-production purposes.
 
 * Communications between StorageGRID and the client are encrypted using TLS.
 * Communications between the Load Balancer service and Storage Nodes within the grid are encrypted whether the load balancer endpoint is configured to accept HTTP or HTTPS connections.

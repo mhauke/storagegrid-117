@@ -27,7 +27,7 @@ The Grid Management API supports the Bearer Token Authentication Scheme. To sign
 +
 NOTE: If single sign-on is enabled for the StorageGRID system, you must perform different steps to authenticate. See "`Authenticating in to the API if single sign-on is enabled.`"
 +
-See "`Protecting against Cross-Site Request Forgery`" for information on improving authentication security.
+See "`Protecting against Cross-Site Request Forgery`" for information about improving authentication security.
 
 * *client-certificates*: Operations to configure client certificates so that StorageGRID can be accessed securely using external monitoring tools.
 * *config*: Operations related to the product release and versions of the Grid Management API. You can list the product release version and the major versions of the Grid Management API supported by that release, and you can disable deprecated versions of the API.

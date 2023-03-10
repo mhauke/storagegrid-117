@@ -10,6 +10,10 @@
 .Replicated data
 --
 
+* To get an estimated percent completion for the replicated repair, add the `show-replicated-repair-status` option to the repair-data command.
++
+`repair-data show-replicated-repair-status`
+
 * To determine if repairs are complete:
 . Select *NODES* > *_Storage Node being repaired_* > *ILM*.
 . Review the attributes in the Evaluation section. When repairs are complete, the *Awaiting - All* attribute indicates 0 objects.
@@ -26,11 +30,7 @@ NOTE: Cassandra inconsistencies might be present, and failed repairs are not tra
 NOTE: High-risk objects are objects that are at risk of being completely lost. This does not include objects that do not satisfy their ILM configuration.
 
   ** *Scan Period -- Estimated (XSCM)*: Use this attribute to estimate when a policy change will be applied to previously ingested objects. If the *Repairs Attempted* attribute does not increase for a period longer than the current scan period, it is probable that replicated repairs are done. Note that the scan period can change. The *Scan Period -- Estimated (XSCM)* attribute applies to the entire grid and is the maximum of all node scan periods. You can query the *Scan Period -- Estimated* attribute history for the grid to determine an appropriate time frame.
-  
-* Optionally, to get an estimated percent completion for the replicated repair, add the `show-replicated-repair-status` option to the repair-data command.
-+
-`repair-data show-replicated-repair-status`
-
+ 
 --
 .Erasure coded (EC) data
 --
