@@ -15,7 +15,7 @@ Node recovery is complete if you did not need to take any corrective actions whi
 
 == Corrective actions and next steps
 
-During node replacement, you may have needed to take one of these corrective actions:
+During node replacement, you might have needed to take one of these corrective actions:
 
 * You had to use the `--force` flag to import the node.
 * For any `<PURPOSE>`, the value of the `BLOCK_DEVICE_<PURPOSE>` configuration file variable refers to a block device that does not contain the same data it did before the host failure.

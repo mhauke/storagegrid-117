@@ -27,7 +27,7 @@ You can automate the configuration of the following:
 
 To automate appliance installation and configuration, use one or more of the following options:
 
-* Generate a JSON file that contains configuration details. Work with your NetApp professional services consultant to use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to complete these steps:
+* Generate a JSON file that contains configuration details. Work with your NetApp Professional Services consultant to use the link:https://configbuilder.netapp.com/index.aspx[NetApp ConfigBuilder tool^] to complete these steps:
 +
 [cols="1a,5a,3a" options=header] 
 |===
@@ -80,7 +80,7 @@ After you have generated a JSON file, you can automate the configuration of one 
 .What you'll need
 
 *	The appliance has been installed in a rack, connected to your networks, and powered on.
-* You have <<automation-options,generated the JSON file>> with the guidance of your NetApp professional services consultant.
+* You have <<automation-options,generated the JSON file>> with the guidance of your NetApp Professional Services consultant.
 * Your appliance contains the latest firmware compatible with StorageGRID 11.5 or higher.
 * You are connected to the StorageGRID Appliance Installer on the appliance you are configuring using a link:../admin/web-browser-requirements.html[supported web browser].
 
@@ -120,7 +120,7 @@ NOTE: This procedure is for advanced users with experience using command-line in
 .What you'll need
 
 * The appliance has been installed in a rack, connected to your networks, and powered on.
-* You have <<automation-options,generated the JSON file>> with the guidance of your NetApp professional services consultant.
+* You have <<automation-options,generated the JSON file>> with the guidance of your NetApp Professional Services consultant.
 * Your appliance contains the latest firmware compatible with StorageGRID 11.5 or higher.
 * You have configured the IP address of the Admin Network for the appliance.
 * You have downloaded the `configure-sga.py` file. The file is included in the installation archive, or you can access it by clicking *Help* > *Appliance Installation Script* in the StorageGRID Appliance Installer.

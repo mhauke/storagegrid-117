@@ -57,7 +57,7 @@ NOTE: When requests are complete, this chart only shows bandwidth usage. For slo
 . Select *Grafana dashboard* right below the Metrics title to view all the graphs for a policy. In addition to the four graphs from the *Metrics* tab, you can view two more graphs: 
 +
 
-* Write request rate by object size: The rate for PUT/POST/DELETE requests matching this policy. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and may report 0 when there are non-zero requests in the bucket.
+* Write request rate by object size: The rate for PUT/POST/DELETE requests matching this policy. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and might report 0 when there are non-zero requests in the bucket.
 * Read request rate by object size: The rate for GET/HEAD requests matching this policy. Hovering on an individual cell shows per second rates. Rates shown in the hover view are truncated to integer counts and might report 0 when there are non-zero requests in the bucket. 
 
 . Alternatively, access the graphs from the *SUPPORT* menu.

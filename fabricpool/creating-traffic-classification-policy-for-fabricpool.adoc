@@ -20,7 +20,7 @@ For details about this task, see link:../admin/managing-traffic-classification-p
 .About this task
 The best practices for creating a traffic classification policy for FabricPool depend on the workload, as follows:
 
-* If you plan to tier FabricPool primary workload data to StorageGRID, you should ensure that the FabricPool workload has the majority of bandwidth. You can create a traffic classification policy to limit all other workloads.
+* If you plan to tier FabricPool primary workload data to StorageGRID, you should ensure that the FabricPool workload has most of the bandwidth. You can create a traffic classification policy to limit all other workloads.
 +
 NOTE: In general, FabricPool read operations are more important to prioritize than write operations.
 +
