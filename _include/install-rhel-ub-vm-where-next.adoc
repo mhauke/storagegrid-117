@@ -5,7 +5,7 @@
 * link:../admin/controlling-storagegrid-access.html[Control system access] by configuring groups and user accounts. Optionally, you can link:../admin/using-identity-federation.html[configure a federated identity source] (such as Active Directory or OpenLDAP), so you can import administration groups and users. Or, you can link:../admin/managing-users.html#create-a-local-user[create local groups and users].
 * Integrate and test the link:../s3/configuring-tenant-accounts-and-connections.html[S3 API] or link:../swift/configuring-tenant-accounts-and-connections.html[Swift API] client applications you will use to upload objects to your StorageGRID system.
 * link:../ilm/index.html[Configure the information lifecycle management (ILM) rules and ILM policy] you want to use to protect object data.
-* If your installation includes appliance Storage Nodes, use SANtricity software to complete the following tasks:
+* If your installation includes appliance Storage Nodes, use SANtricity OS to complete the following tasks:
  ** Connect to each StorageGRID appliance.
  ** Verify receipt of AutoSupport data.
 +

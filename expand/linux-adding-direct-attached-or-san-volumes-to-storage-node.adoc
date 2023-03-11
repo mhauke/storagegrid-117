@@ -38,7 +38,7 @@ For more information, see the documentation provided by your hardware vendor.
  ** Use the same persistent naming scheme you used for the storage volumes on the existing Storage Node.
  ** If you use the StorageGRID node migration feature, make the new volumes visible to other Linux hosts that are migration targets for this Storage Node.
 For more information, see the instructions for installing StorageGRID for your Linux platform.
-. Log into the Linux host supporting the Storage Node as root or with an account that has sudo permission.
+. Log in to the Linux host supporting the Storage Node as root or with an account that has sudo permission.
 . Confirm that the new storage volumes are visible on the Linux host.
 +
 You might have to rescan for devices.
@@ -125,7 +125,7 @@ Verify that you entered the correct `<path-name>`.
 
 . Log in to the Storage Node as admin using the password listed in the `Passwords.txt` file.
 . Check that the services start correctly:
- .. View a listing of the status of all services on the server:
+ .. View a list of the status of all services on the server:
  +
 `sudo storagegrid-status`
 +

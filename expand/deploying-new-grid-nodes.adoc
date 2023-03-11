@@ -164,7 +164,7 @@ NOTE: The installer ensures that tasks completed in a previous install are not r
 +
 During this stage, one of the following processes occurs:
 +
-  * For a storage appliance, the installer connects to the storage controller, clears any existing configuration, communicates with SANtricity software to configure volumes, and configures host settings.
+  * For a storage appliance, the installer connects to the storage controller, clears any existing configuration, communicates with SANtricity OS to configure volumes, and configures host settings.
   * For a services appliance, the installer clears any existing configuration from the drives in the compute controller, and configures host settings.
 +
 *2. Install OS*

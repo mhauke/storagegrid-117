@@ -1,7 +1,7 @@
 ---
 permalink: fabricpool/creating-traffic-classification-policy-for-fabricpool.html
 sidebar: sidebar
-keywords: fabricPool, traffic classification, traffic policy, QOS, quality of service
+keywords: fabricPool, traffic classification, traffic policy, QoS, quality of service
 summary: 'You can optionally design a StorageGRID traffic classification policy to optimize quality of service for the FabricPool workload.'
 ---
 = Create a traffic classification policy for FabricPool
@@ -20,13 +20,13 @@ For details about this task, see link:../admin/managing-traffic-classification-p
 .About this task
 The best practices for creating a traffic classification policy for FabricPool depend on the workload, as follows:
 
-* If you plan to tier FabricPool primary workload data to StorageGRID, you should ensure that the FabricPool workload has the majority of bandwidth. You can create a traffic classification policy to limit all other workloads.
+* If you plan to tier FabricPool primary workload data to StorageGRID, you should ensure that the FabricPool workload has most of the bandwidth. You can create a traffic classification policy to limit all other workloads.
 +
 NOTE: In general, FabricPool read operations are more important to prioritize than write operations.
 +
 For example, if other S3 clients use this StorageGRID system, you should create a traffic classification policy. You can limit network traffic for the other buckets, tenants, IP subnets, or load balancer endpoints.
 
-* As a general rule, you should not impose quality of service limits on any FabricPool workload; you should only limit the other workloads.
+*Generally, you should not impose quality of service limits on any FabricPool workload; you should only limit the other workloads.
 
 * The limits placed on other workloads should account for the behavior of those workloads. The limits imposed will also vary based on the sizing and capabilities of your grid and what the expected amount of utilization is.
 

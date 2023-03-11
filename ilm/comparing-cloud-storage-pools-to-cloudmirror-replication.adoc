@@ -15,7 +15,7 @@ As you begin using Cloud Storage Pools, it might be helpful to understand the si
 |===
 |  | Cloud Storage Pool| CloudMirror replication service
 | What is the primary purpose?
-| Acts as an archive target. The object copy in the Cloud Storage Pool can be the only copy of the object, or it can be an additional copy. That is, instead of keeping two copies on-premise, you can keep one copy within StorageGRID and send a copy to the Cloud Storage Pool.
+| Acts as an archive target. The object copy in the Cloud Storage Pool can be the only copy of the object, or it can be an additional copy. That is, instead of keeping two copies onsite, you can keep one copy within StorageGRID and send a copy to the Cloud Storage Pool.
 | Enables a tenant to automatically replicate objects from a bucket in StorageGRID (source) to an external S3 bucket (destination). Creates an independent copy of an object in an independent S3 infrastructure.
 
 | How is it set up?

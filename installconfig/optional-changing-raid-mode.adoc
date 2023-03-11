@@ -1,7 +1,7 @@
 ---
 permalink: installconfig/optional-changing-raid-mode.html
 sidebar: sidebar
-keywords: storage node, storage appliance, raid, raid mode, change, changing, modify, DDP, ddp16, raid6
+keywords: storage node, storage appliance, raid, raid mode, change, changing, modify, DDP, ddp16, RAID 6
 summary: 'You can change to a different RAID mode on the appliance to accommodate your storage and recovery requirements. You can only change the mode before deploying the appliance Storage Node.'
 ---
 = Optional: Change RAID mode
@@ -17,14 +17,14 @@ If you are using ConfigBuilder to generate a JSON file, you can change the RAID 
 
 If supported by your appliance, you can choose one of the following volume configuration options:
 
-* *Dynamic Disk Pools (DDP)*: This mode uses two parity drives for every eight data drives. This is the default and recommended mode for all appliances. When compared to RAID6, DDP delivers better system performance, reduced rebuild times after drive failures, and ease of management. DDP also provides drawer loss protection in SG5760 appliances.
+* *Dynamic Disk Pools (DDP)*: This mode uses two parity drives for every eight data drives. This is the default and recommended mode for all appliances. When compared to RAID 6, DDP delivers better system performance, reduced rebuild times after drive failures, and ease of management. DDP also provides drawer loss protection in SG5760 appliances.
 +
 NOTE: DDP does not provide drawer loss protection in SG6060 appliances because of the two SSDs. Drawer loss protection is effective in any expansion shelves that are added to an SG6060. 
 
 
-* *DDP16*: This mode uses two parity drives for every 16 data drives, which results in higher storage efficiency compared to DDP. When compared to RAID6, DDP16 delivers better system performance, reduced rebuild times after drive failures, ease of management, and comparable storage efficiency. To use DDP16 mode, your configuration must contain at least 20 drives. DDP16 does not provide drawer loss protection.
+* *DDP16*: This mode uses two parity drives for every 16 data drives, which results in higher storage efficiency compared to DDP. When compared to RAID 6, DDP16 delivers better system performance, reduced rebuild times after drive failures, ease of management, and comparable storage efficiency. To use DDP16 mode, your configuration must contain at least 20 drives. DDP16 does not provide drawer loss protection.
 
-* *RAID6*: This mode uses two parity drives for every 16 or more data drives. It is a hardware protection scheme that uses parity stripes on each disk, and allows for two disk failures within the RAID set before any data is lost. To use RAID6 mode, your configuration must contain at least 20 drives. Although RAID6 can increase storage efficiency of the appliance when compared to DDP, it is not recommended for most StorageGRID environments.
+* *RAID6*: This mode uses two parity drives for every 16 or more data drives. It is a hardware protection scheme that uses parity stripes on each disk, and allows for two disk failures within the RAID set before any data is lost. To use RAID 6 mode, your configuration must contain at least 20 drives. Although RAID 6 can increase storage efficiency of the appliance when compared to DDP, it is not recommended for most StorageGRID environments.
 
 IMPORTANT: If any volumes have already been configured or if StorageGRID was previously installed, changing the RAID mode causes the volumes to be removed and replaced. Any data on those volumes will be lost.
 

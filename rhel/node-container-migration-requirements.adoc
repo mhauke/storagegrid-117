@@ -18,7 +18,7 @@ If you want to use the StorageGRID node migration feature, your deployment must 
 * Consistent network interface names across hosts in a single physical data center
 * Shared storage for StorageGRID metadata and object repository volumes that is accessible by all hosts in a single physical data center. For example, you might use NetApp E-Series storage arrays.
 
-If you are using virtual hosts and the underlying hypervisor layer supports VM migration, you might want to use this capability instead of StorageGRID's node migration feature. In this case, you can ignore these additional requirements.
+If you are using virtual hosts and the underlying hypervisor layer supports VM migration, you might want to use this capability instead of the node migration feature in StorageGRID. In this case, you can ignore these additional requirements.
 
 Before performing migration or hypervisor maintenance, shut down the nodes gracefully. See the instructions for link:../maintain/shutting-down-grid-node.html[shutting down a grid node].
 

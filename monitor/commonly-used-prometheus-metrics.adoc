@@ -20,7 +20,7 @@ For details on the syntax of Prometheus queries, see https://prometheus.io/docs/
 The Prometheus service on Admin Nodes collects time series metrics from the services on all nodes. Metrics are stored on each Admin Node until the space reserved for Prometheus data is full. When the `/var/local/mysql_ibdata/` volume reaches capacity, the oldest metrics are deleted first.
 
 == Where are Prometheus metrics used?
-The metrics collected by Prometheus are used in a number of places in the Grid Manager:
+The metrics collected by Prometheus are used in several places in the Grid Manager:
 
 * *Nodes page*: The graphs and charts on the tabs available from the Nodes page use the Grafana visualization tool to display the time-series metrics collected by Prometheus. Grafana displays time-series data in graph and chart formats, while Prometheus serves as the backend data source.
 +
@@ -31,7 +31,7 @@ image::../media/nodes_page_network_traffic_graph.png[Prometheus graph]
 +
 NOTE: Metrics that include _private_ in their names are intended for internal use only and are subject to change between StorageGRID releases without notice.
 
-* The *SUPPORT* > *Tools* > *Diagnostics* page and the *SUPPORT* > *Tools* > *Metrics* page: These pages, which are primarily intended for use by technical support, provide a number of tools and charts that use the values of Prometheus metrics.
+* The *SUPPORT* > *Tools* > *Diagnostics* page and the *SUPPORT* > *Tools* > *Metrics* page: These pages, which are primarily intended for use by technical support, provide several tools and charts that use the values of Prometheus metrics.
 +
 NOTE: Some features and menu items within the Metrics page are intentionally non-functional and are subject to change.
 
@@ -49,7 +49,7 @@ NOTE: Metrics that include _private_ in their names are for internal use only an
 |The total number of failed alert notifications.
 
 |node_filesystem_avail_bytes
-|The amount of filesystem space available to non-root users in bytes.
+|The amount of file system space available to non-root users in bytes.
 
 |node_memory_MemAvailable_bytes
 |Memory information field MemAvailable_bytes.
@@ -137,7 +137,7 @@ link:../troubleshoot/troubleshooting-lost-and-missing-object-data.html[Troublesh
 |Systematic offset of time provided by a chosen time source. Offset is introduced when the delay to reach a time source is not equal to the time required for the time source to reach the NTP client.
 
 |storagegrid_ntp_locked
-|The node is not locked to a network time protocol (NTP) server.
+|The node is not locked to a Network Time Protocol (NTP) server.
 
 |storagegrid_s3_data_transfers_bytes_ingested
 |The total amount of data ingested from S3 clients to this Storage Node since the attribute was last reset.
@@ -206,9 +206,6 @@ link:../troubleshoot/troubleshooting-lost-and-missing-object-data.html[Troublesh
 
 |storagegrid_storage_utilization_metadata_bytes
 |The amount of object metadata on storage volume 0, in bytes.
-
-// a|storagegrid_storage_utilization_metadata_reserved_bytes
-// a|The total space on volume 0 of each Storage Node that is actually reserved for object metadata. For any given Storage Node, the actual reserved space for metadata depends on the size of volume 0 for the node and the system-wide Metadata Reserved Space setting.
 
 |storagegrid_storage_utilization_total_space_bytes
 |The total amount of storage space allocated to all object stores.
