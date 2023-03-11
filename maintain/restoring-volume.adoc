@@ -4,7 +4,6 @@ sidebar: sidebar
 keywords: storagegrid, restore, volume
 summary: 'You can restore object data for a failed storage volume or storage node using Grid Manager. You can also use Grid Manager to monitor restoration processes in progress and display a restoration history.'
 ---
-
 = Restore object data using Grid Manager
 :icons: font
 :imagesdir: ../media/
@@ -38,10 +37,6 @@ Use Grid Manager to restore storage volumes and nodes:
 Use the `repair-data` script to restore storage volumes and nodes if all storage volumes in a node have failed and are being replaced with fewer storage volumes than before.
 
 You can also use Grid Manager to <<view-restoration-progress,monitor the volume restoration process>> and <<view-restoration-history,view restoration history>>. If necessary, you can link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[use the repair-data script to restore volumes and nodes].
-
-// Remove commented lines following review approval. Per Dheeraj, use of UI for node recovery was a late change:
-// * If you are _restoring_ a storage node, use <<restore_lost_volume_or_node,Grid Manager to restore volumes>>.
-// * If you are _recovering_ a storage node, use link:../maintain/recovering-storagegrid-appliance-storage-node.html[manual steps to restore volumes]. 
 
 Two types of data objects can be restored:
 

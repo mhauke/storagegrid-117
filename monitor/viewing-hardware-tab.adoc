@@ -17,7 +17,7 @@ image::../media/nodes_page_hardware_tab_graphs.png[Nodes page Hardware tab]
 
 To display a different time interval, select one of the controls above the chart or graph. You can display the information available for intervals of 1 hour, 1 day, 1 week, or 1 month. You can also set a custom interval, which allows you to specify date and time ranges.
 
-To see details for CPU utilization and memory usage, hover your cursor over each graph.
+To see details for CPU utilization and memory usage, position your cursor over each graph.
 
 image::../media/nodes_page_memory_usage_details.png[Nodes Page > Hardware >Memory Usage Details]
 
@@ -58,21 +58,21 @@ image::../media/nodes_page_hardware_tab_for_appliance.png[Nodes Page Hardware Ta
 |===
 | Field in the Appliance table| Description
 |Appliance model
-|The model number for this StorageGRID appliance shown in SANtricity software.
+|The model number for this StorageGRID appliance shown in SANtricity OS.
 
 |Storage controller name
-|The name for this StorageGRID appliance shown in SANtricity software.
+|The name for this StorageGRID appliance shown in SANtricity OS.
 
 |Storage controller A management IP
-|IP address for management port 1 on storage controller A. You use this IP to access SANtricity software to troubleshoot storage issues.
+|IP address for management port 1 on storage controller A. You use this IP to access SANtricity OS to troubleshoot storage issues.
 
 |Storage controller B management IP
-|IP address for management port 1 on storage controller B. You use this IP to access SANtricity software to troubleshoot storage issues.
+|IP address for management port 1 on storage controller B. You use this IP to access SANtricity OS to troubleshoot storage issues.
 
 Some appliance models do not have a storage controller B.
 
 |Storage controller WWID
-|The worldwide identifier of the storage controller shown in SANtricity software.
+|The worldwide identifier of the storage controller shown in SANtricity OS.
 
 |Storage appliance chassis serial number
 |The chassis serial number of the appliance.
@@ -83,7 +83,7 @@ Some appliance models do not have a storage controller B.
 |Storage hardware
 |The overall status of the storage controller hardware. If SANtricity System Manager reports a status of Needs Attention for the storage hardware, the StorageGRID system also reports this value.
 
-If the status is "`needs attention,`" first check the storage controller using SANtricity software. Then, ensure that no other alarms exist that apply to the compute controller.
+If the status is "`needs attention,`" first check the storage controller using SANtricity OS. Then, ensure that no other alarms exist that apply to the compute controller.
 
 |Storage controller failed drive count
 |The number of drives that are not optimal.
@@ -256,7 +256,7 @@ image::../media/storage_used_object_metadata.png[Storage Used - Object Metadata]
 
  .. Scroll down to view the amounts of available storage for each volume and object store.
 +
-The Worldwide Name for each disk matches the volume world-wide identifier (WWID) that appears when you view standard volume properties in SANtricity software (the management software connected to the appliance's storage controller).
+The Worldwide Name for each disk matches the volume world-wide identifier (WWID) that appears when you view standard volume properties in SANtricity OS (the management software connected to the appliance's storage controller).
 +
 To help you interpret disk read and write statistics related to volume mount points, the first portion of the name shown in the *Name* column of the Disk Devices table (that is, _sdc_, _sdd_, _sde_, and so on) matches the value shown in the *Device* column of the Volumes table.
 +

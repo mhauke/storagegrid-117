@@ -141,9 +141,8 @@ image::../media/appliance_installer_reboot_complete.png[Reboot Complete]
 . Verify the status of the appliance Storage Node and the new expansion shelves.
  .. In the Grid Manager, select *NODES* and verify that the appliance Storage Node has a green checkmark icon.
 +
-The green checkmark icon means that no alerts are active and the node is connected to the grid. For a description of node icons, see link:../monitor/monitoring-node-connection-states.html[Monitor node connection states].
+The green checkmark icon means that no alerts are active and the node is connected to the grid. For a description of node icons, see link:../monitor/monitoring-system-health.html#monitor-node-connection-states[Monitor node connection states].
 
  .. Select the *Storage* tab and confirm that 16 new object stores are shown in the Object Storage table for each expansion shelf you added.
  .. Verify that each new expansion shelf has a shelf status of Nominal and a configuration status of Configured.
- +
-// COMMENTED OUT FOR 11.6: image::../media/storage_shelves_after_expansion.png[Storage Shelves After Expansion]
+

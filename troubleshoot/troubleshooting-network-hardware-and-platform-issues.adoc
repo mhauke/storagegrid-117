@@ -13,7 +13,7 @@ There are several tasks you can perform to help determine the source of issues r
 
 == Troubleshoot "`422: Unprocessable Entity`" errors
 
-The error 422: Unprocessable Entity can occur in a number of circumstances. Check the error message to determine what caused your issue.
+The error 422: Unprocessable Entity can occur for different reasons. Check the error message to determine what caused your issue.
 
 If you see one of the listed error messages, take the recommended action.
 
@@ -143,7 +143,6 @@ NRER alarms can be caused by the following issues with networking hardware that 
   +
   * link:../sg6000/changing-link-configuration-of-sg6000-cn-controller.html[SG6000]
   * link:../sg5700/changing-link-configuration-of-e5700sg-controller.html[SG5700]
-  * link:../sg5600/changing-link-configuration-of-e5600sg-controller.html[SG5600]
   * link:../sg100-1000/changing-link-configuration-of-services-appliance.html[Sg100 and SG1000]
   ... Then, change the FEC settings on the switch ports. The StorageGRID appliance ports will adjust their FEC settings to match, if possible.
 +

@@ -1,7 +1,7 @@
 ---
 permalink: admin/what-is-autosupport.html
 sidebar: sidebar
-keywords: autosupport, technical support, storagegrid health, system status, active iq
+keywords: autosupport, technical support, storagegrid health, system status, Active IQ
 summary: 'The AutoSupport feature enables your StorageGRID system to send health and status messages to technical support.'
 ---
 = Use AutoSupport: Overview
@@ -51,7 +51,6 @@ AutoSupport for appliances reports StorageGRID hardware issues, while StorageGRI
 You must enable AutoSupport in SANtricity for each storage appliance. You can configure SANtricity AutoSupport during initial appliance setup or after an appliance has been installed:
 
 * For SG6000 and SG5700 appliances, link:../installconfig/accessing-and-configuring-santricity-system-manager.html[configure AutoSupport in SANtricity System Manager]
-* For SG5600 appliances, link:../installconfig/configuring-santricity-storage-manager.html#configure-autosupport[configure AutoSupport in SANtricity Storage Manager]
 
 AutoSupport messages from E-Series appliances can be included in StorageGRID AutoSupport if you configure AutoSupport delivery by proxy in link:../admin/sending-eseries-autosupport-messages-through-storagegrid.html[SANtricity System Manager].
 

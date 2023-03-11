@@ -238,7 +238,7 @@ The load balancer endpoint is created. The custom certificate is used for all su
 
 .Steps
 
-. If you use a domain name system (DNS), ensure that the DNS includes a record to associate the StorageGRID fully qualified domain name (FQDN) to each IP address that clients will use to make connections.
+. If you use a DNS, ensure that the DNS includes a record to associate the StorageGRID fully qualified domain name (FQDN) to each IP address that clients will use to make connections.
 +
 The IP address you enter in the DNS record depends on whether you are using an HA group of load-balancing nodes:
 

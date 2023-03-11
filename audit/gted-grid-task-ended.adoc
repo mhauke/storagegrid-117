@@ -31,8 +31,8 @@ a|
 The final status result of the grid task:
 
 * SUCS: The grid task completed successfully.
-* ABRT: The grid task was aborted without a rollback error.
-* ROLF: The grid task was aborted and was unable to complete the rollback process.
+* ABRT: The grid task was terminated without a rollback error.
+* ROLF: The grid task was terminated and was unable to complete the rollback process.
 * CANC: The grid task was canceled by the user before it was started.
 * EXPR: The grid task expired before it was started.
 * IVLD: The grid task was invalid.

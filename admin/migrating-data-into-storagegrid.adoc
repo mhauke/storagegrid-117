@@ -17,7 +17,7 @@ Use this guide as you plan a migration of large amounts of data into the Storage
 
 Before migrating large amounts of data into the StorageGRID system, confirm that the StorageGRID system has the disk capacity to handle the anticipated volume.
 
-If the StorageGRID system includes an Archive Node and a copy of migrated objects has been saved to nearline storage (such as tape), ensure that the Archive Node's storage has sufficient capacity for the anticipated volume of migrated data.
+If the StorageGRID system includes an Archive Node and a copy of migrated objects has been saved to near-line storage (such as tape), ensure that the Archive Node's storage has sufficient capacity for the anticipated volume of migrated data.
 
 As part of the capacity assessment, look at the data profile of the objects you plan to migrate and calculate the amount of disk capacity required. For details about monitoring the disk capacity of your StorageGRID system, see link:managing-storage-nodes.html[Manage Storage Nodes] and the instructions for link:../monitor/index.html[monitoring StorageGRID].
 
