@@ -52,7 +52,7 @@ Follow these guidelines to secure the Admin Nodes in your StorageGRID system:
 * StorageGRID Groups control access to Grid Manager and Tenant Manager features. Grant each Group of users the minimum required permissions for their role, and use the read-only access mode to prevent users from changing configuration.
 * When using StorageGRID load balancer endpoints, use Gateway Nodes instead of Admin Nodes for untrusted client traffic.
 * If you have untrusted tenants, do not allow them to have direct access to the Tenant Manager or the Tenant Management API. Instead, have any untrusted tenants use a tenant portal or an external tenant management system, which interacts with the Tenant Management API.
-* Optionally, use an Admin proxy for more control over AutoSupport communication from Admin Nodes to NetApp support. See the steps for link:../admin/configuring-admin-proxy-settings.html[creating an Admin proxy].
+* Optionally, use an Admin proxy for more control over AutoSupport communication from Admin Nodes to NetApp Support. See the steps for link:../admin/configuring-admin-proxy-settings.html[creating an Admin proxy].
 * Optionally, use the restricted 8443 and 9443 ports to separate Grid Manager and Tenant Manager communications. Block the shared port 443 and limit tenant requests to port 9443 for additional protection.
 * Optionally, use separate Admin Nodes for grid administrators and tenant users.
 
@@ -99,5 +99,3 @@ See the maintenance instructions for your StorageGRID hardware appliance:
 * link:../sg6000/index.html[Maintain SG6000 appliance]
 
 * link:../sg5700/index.html[Maintain SG5700 appliance]
-
-* link:../sg5600/index.html[Maintain SG5600 appliance]

@@ -88,8 +88,6 @@ In this example, the ILM policy is being replaced with a new policy for a three-
 
 After performing an expansion to add the new site, the grid administrator created two new storage pools: a storage pool for Site 3 and a storage pool containing all three sites (not the same as the All Storage Nodes default storage pool). Then, the administrator created two new ILM rules and a new proposed ILM policy, which is designed to protect data at all three sites.
 
-//image::../media/policy_6_proposed_policy.png[Example ILM Policy 6 Proposed Policy]
-
 When this new ILM policy is activated, objects belonging to Tenant A will be protected by 2+1 erasure coding at three sites, while objects belonging to other tenants (and smaller objects belonging to Tenant A) will be protected across three sites using 3-copy replication.
 
 === Rule 1: Three-site erasure coding for Tenant A

@@ -87,7 +87,6 @@ This rule applies to objects that belong to any tenant and any region.
 | Balanced. Objects that match this rule are placed according to the rule's placement instructions if possible. Otherwise, interim copies are made at any available location.
 |===
 
-//image::../media/ilm_rule_2_example_5_two_copies_2_data_centers.png[ILM Rule 2 for Example 5 - 2 Copies 2 Data Centers]
 
 == ILM policy for example 5: Combining ingest behaviors
 
@@ -97,8 +96,6 @@ An ILM policy that uses two different ingest behaviors might include ILM rules s
 
 * Store objects that belong to the Paris tenant and that have the S3 bucket region set to eu-west-3 (Paris) only in the Paris data center. Fail ingest if the Paris data center is not available.
 * Store all other objects (including those that belong to the Paris tenant but that have a different bucket region) in both the US data center and the Paris data center. Make interim copies in any available location if the placement instruction cannot be satisfied.
-
-//image::../media/policy_5_ingest_options.png[Example ILM Policy 5 Ingest Options]
 
 When you simulate the example policy, you expect test objects to be evaluated as follows:
 

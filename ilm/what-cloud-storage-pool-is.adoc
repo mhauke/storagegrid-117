@@ -47,7 +47,7 @@ If the Cloud Storage Pool is an Amazon S3 bucket:
 
 If the Cloud Storage Pool is an Azure Blob storage container, StorageGRID transitions the object to the Archive tier.
 
-*Note:* In general, do not configure Azure Blob Storage lifecycle management for the container used for a Cloud Storage Pool. POST Object restore operations on objects in the Cloud Storage Pool can be affected by the configured lifecycle.
+*Note:* In general, do not configure Azure Blob storage lifecycle management for the container used for a Cloud Storage Pool. POST Object restore operations on objects in the Cloud Storage Pool can be affected by the configured lifecycle.
 
 | What controls object placement?
 | An ILM rule in the active ILM policy.

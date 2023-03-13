@@ -47,7 +47,6 @@ This rule applies to all objects, whether or not they are versioned.
 | On Day 0, keep three replicated copies for 10 years (3,652 days), one in Site 1, one in Site 2, and one in Site 3. At the end of 10 years, delete all copies of the object.
 |===
 
-//image::../media/ilm_rule_1_example_4.png[ILM rule 1 for example 4: Save three copies for 5 years]
 
 == ILM rule 2 for example 4: Save two copies of noncurrent versions for 2 years
 
@@ -91,8 +90,6 @@ An ILM policy for S3 versioned objects might include ILM rules such as the follo
 NOTE: The "`Noncurrent time`" rules must appear in the policy before the rules that apply to the current object version. Otherwise, the noncurrent object versions will never be matched by the "`Noncurrent time`" rule.
 
 * At ingest, create three replicated copies and store one copy at each of three sites. Keep copies of the current object version for 10 years.
-
-//image::../media/ilm_policy_example_4.png[ILM policy for example 4]
 
 When you simulate the example policy, you would expect test objects to be evaluated as follows:
 

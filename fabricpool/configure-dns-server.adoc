@@ -2,14 +2,14 @@
 permalink: fabricpool/configure-dns-server.html
 sidebar: sidebar
 keywords: dns, vip, virtual ip, fqdn, server name 
-summary: 'After configuring high availability groups, load balancer endpoints, and S3 domain names, you must ensure that the domain name system (DNS) includes the necessary entries for StorageGRID.'
+summary: 'After configuring high availability groups, load balancer endpoints, and S3 domain names, you must ensure that the DNS includes the necessary entries for StorageGRID.'
 ---
 = Configure the DNS server
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-After configuring high availability groups, load balancer endpoints, and S3 endpoint domain names, you must ensure that the domain name system (DNS) includes the necessary entries for StorageGRID. You must include a DNS entry for each name in the security certificate and for each IP address you might use.
+After configuring high availability groups, load balancer endpoints, and S3 endpoint domain names, you must ensure that the DNS includes the necessary entries for StorageGRID. You must include a DNS entry for each name in the security certificate and for each IP address you might use.
 
 See link:../admin/managing-load-balancing.html[Considerations for load balancing].
 

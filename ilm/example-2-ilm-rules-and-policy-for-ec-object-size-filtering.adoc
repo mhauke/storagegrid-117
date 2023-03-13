@@ -65,5 +65,3 @@ This example ILM policy includes two ILM rules:
 
 * The first rule erasure codes all objects that are greater than 1 MB.
 * The second (default) ILM rule creates two replicated copies. Because objects greater than 1 MB have been filtered out by rule 1, rule 2 only applies to objects that are 1 MB or smaller.
-+
-//image::../media/policy_2_configured_policy.png[ILM policy for example 2: Use EC for objects greater than 1 MB]

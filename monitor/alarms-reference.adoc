@@ -513,7 +513,7 @@ Corrupt Fragments Detected
 a|
 LDR
 a|
-An alarm is triggered when the background verification process detects a corrupt erasure coded fragment. If a corrupt fragment is detected, an attempt is made to rebuild the fragment. Reset the Corrupt Fragments Detected and Copies Lost attributes to zero and monitor them to see if counts go up again. If counts do go up, there may be a problem with the Storage Node's underlying storage. A copy of erasure coded object data is not considered missing until such time that the number of lost or corrupt fragments breaches the erasure code's fault tolerance; therefore, it is possible to have corrupt fragment and to still be able to retrieve the object.
+An alarm is triggered when the background verification process detects a corrupt erasure coded fragment. If a corrupt fragment is detected, an attempt is made to rebuild the fragment. Reset the Corrupt Fragments Detected and Copies Lost attributes to zero and monitor them to see if counts go up again. If counts do go up, there might be a problem with the Storage Node's underlying storage. A copy of erasure coded object data is not considered missing until such time that the number of lost or corrupt fragments breaches the erasure code's fault tolerance; therefore, it is possible to have corrupt fragment and to still be able to retrieve the object.
 
 If the problem persists, contact technical support.
 
@@ -1123,9 +1123,9 @@ Storage Operating System Status
 a|
 SSM
 a|
-An alarm is triggered if SANtricity software indicates that there is a "`Needs attention`" issue with a component in a StorageGRID appliance.
+An alarm is triggered if SANtricity OS indicates that there is a "`Needs attention`" issue with a component in a StorageGRID appliance.
 
-Select *NODES*. Then select *appliance Storage Node* > *Hardware*. Scroll down to view the status of each component. In SANtricity software, check other appliance components to isolate the issue.
+Select *NODES*. Then select *appliance Storage Node* > *Hardware*. Scroll down to view the status of each component. In SANtricity OS, check other appliance components to isolate the issue.
 
 a|
 SSMA

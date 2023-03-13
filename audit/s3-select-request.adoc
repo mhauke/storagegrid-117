@@ -51,7 +51,7 @@ JOFI
 a|
 Job Finished
 a|
-Indicates if the S3 Select job finished processing or not.
+Indicates if the S3 Select job finished processing or not. If this is false, then the job failed to finish and the error fields will likely have data in them. The client might have received partial results, or no results at all.
 
 a|
 REID

@@ -91,7 +91,7 @@ If the HA group includes more than one interface, you can determine which is the
 
 .Steps
 
-. Drag and drop rows in the *Priority order* column to determine the Primary interface and any Backup interfaces.
+. Drag rows in the *Priority order* column to determine the Primary interface and any Backup interfaces.
 +
 
 The first interface in the list is the Primary interface. The Primary interface is the active interface unless a failure occurs.
@@ -162,7 +162,7 @@ The High availability groups page shows all existing HA groups.
 +
 NOTE: If the HA group provides access to the Grid Manager, you must select an interface on the primary Admin Node to be the Primary interface. Some maintenance procedures can only be performed from the primary Admin Node
 
-.. Optionally, drag and drop rows to change the priority order of the Primary interface and any Backup interfaces for this HA group.
+.. Optionally, drag rows to change the priority order of the Primary interface and any Backup interfaces for this HA group.
 .. Optionally, update the virtual IP addresses.
 
 .. Select *Save* and then select *Finish*.

@@ -182,7 +182,7 @@ The endpoint must exist for notification configuration to succeed. If the endpoi
 * You cannot configure a notification for the following event types. These event types are *not* supported.
  ** `s3:ReducedRedundancyLostObject`
  ** `s3:ObjectRestore:Completed`
-* Event notifications sent from StorageGRID use the standard JSON format except that they do not include some keys and use specific values for others, as shown in the following listing:
+* Event notifications sent from StorageGRID use the standard JSON format except that they do not include some keys and use specific values for others, as shown in the following list:
 
 ** *eventSource*
 +

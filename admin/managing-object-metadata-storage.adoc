@@ -41,7 +41,7 @@ image::../media/metadata_space_storage_node.png[Metadata Space Storage Node]
 
 As shown in the figure, StorageGRID reserves space for object metadata on storage volume 0 of each Storage Node. It uses the reserved space to store object metadata and to perform essential database operations. Any remaining space on storage volume 0 and all other storage volumes in the Storage Node are used exclusively for object data (replicated copies and erasure-coded fragments).
 
-The amount of space that is reserved for object metadata on a particular Storage Node depends on a number of factors, which are described below.
+The amount of space that is reserved for object metadata on a particular Storage Node depends on several factors, which are described below.
 
 == Metadata Reserved Space setting
 

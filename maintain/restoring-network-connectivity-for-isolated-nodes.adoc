@@ -30,7 +30,7 @@ For example:
 +
 ----
 [2018-01-09T19:11:00.545] UpdateQueue - WARNING -- Possible isolation, no contact with other nodes.
-If this warning persists, manual action may be required.
+If this warning persists, manual action might be required.
 ----
 +
 If you are using the VMware console, it will contain a message that the node might be isolated.
@@ -54,7 +54,7 @@ Local node found on remote node. Update complete.
 
 . Verify the following for each node that was previously isolated:
  ** The node's services have started.
- ** The status of the Dynamic IP Service is "`Running`" after you run the `storagegrid-status` command.
+ ** The status of the Dynamic IP service is "`Running`" after you run the `storagegrid-status` command.
  ** In the Grid Topology tree, the node no longer appears disconnected from the rest of the grid.
 
 IMPORTANT: If running the `add_node_ip.py` command does not solve the problem, there could be other networking issues that need to be resolved.
