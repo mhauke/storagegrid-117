@@ -36,7 +36,7 @@ See https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html[ONTAP 9: Fab
 
 . Complete the Add Cloud Tier form, using the `ONTAP_FabricPool_settings___bucketname__.txt` file or the values you obtained manually.
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Field| Description
 
@@ -82,20 +82,3 @@ Note the following:
 
 .. Attach one or more aggregates to the cloud tier.
 .. Optionally, create a volume tiering policy.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
