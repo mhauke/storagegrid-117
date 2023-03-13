@@ -24,7 +24,7 @@ For more details and requirements, go to:
 
 == Tenant workflow for account clone
 
-The workflow diagram shows the steps that the users of a permitted tenant account will perform to clone account information. These steps are described in more detail below.
+The workflow diagram shows the steps that the users of a cloned tenant account will perform to clone groups, users, and S3 access keys. These steps are described in more detail below.
 
 image:../media/grid-federation-account-clone-workflow-tm.png[workflow for cross-grid replication]
 
@@ -68,7 +68,7 @@ StorageGRID does not automatically clone S3 access keys because security is impr
 
 == Edit or delete tenant groups and users
 
-Account cloning only occurs when you create tenant groups and users on the source grid. 
+Cloning only occurs when you create tenant groups and users on the source grid. 
 
 CAUTION: If you edit or delete a tenant or its users and groups on either grid, your changes will not be cloned to the other grid. 
 
@@ -76,5 +76,5 @@ CAUTION: If you delete a tenant on the destination grid, clone errors will occur
 
 == Create groups, users, and keys on destination grid
 
-Account cloning occurs only from the tenant's source grid to the tenant's destination grid. Although you can create groups, users, and S3 access keys on the tenant's destination grid, StorageGRID will not clone these items back the tenant's source grid. 
+Cloning occurs only from the tenant's source grid to the tenant's destination grid. Although you can create groups, users, and S3 access keys on the tenant's destination grid, StorageGRID will not clone these items back the tenant's source grid. 
 
