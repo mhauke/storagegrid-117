@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, sg6100, storage node, storage appliance, Replacing, replace, NIC, network interface card
 summary: 'You might need to replace a Network Interface Card \(NIC\) in the SGF6112 if it is not functioning optimally or if it has failed.'
 ---
-= Remove and replace NIC in the SGF6112
+= Replace NIC in the SGF6112
 :icons: font
 :imagesdir: ../media/
 
@@ -38,8 +38,7 @@ link:reinstalling-sgf6112-cover.html[Remove SGF6112 cover]
 .About this task
 To prevent service interruptions, confirm that all other Storage Nodes are connected to the grid before starting the Network Interface Card (NIC) replacement or replace the NIC during a scheduled maintenance window when periods of service disruption are normally expected. See the information about link:../monitor/monitoring-system-health.html#monitor-node-connection-states[monitoring node connection states].
 
-IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the NIC during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. +
-See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
+IMPORTANT: If you have ever used an ILM rule that creates only one copy of an object, you must replace the NIC during a scheduled maintenance window. Otherwise, you might temporarily lose access to those objects during this procedure. See information about link:../ilm/why-you-should-not-use-single-copy-replication.html[why you should not use single-copy replication].
 
 .Steps
 
@@ -86,8 +85,8 @@ a|
 Support for one of the 10/25-GbE NICs
 |===
 
-. Grasp the riser assembly through the blue-marked holes and carefully lift it upwards. Move the riser assembly toward the front of the chassis as you lift it to allow the external connectors in its installed adapters to clear the chassis.
-. Place the riser card on a flat anti-static surface with the metal frame side down to access the NICs.
+. Grasp the riser assembly with the failed NIC through the blue-marked holes and carefully lift it upwards. Move the riser assembly toward the front of the chassis as you lift it to allow the external connectors in its installed NICs to clear the chassis.
+. Place the riser on a flat anti-static surface with the metal frame side down to access the NICs.
 +
 * *Two-slot riser assembly with two NICs*
 +
@@ -122,7 +121,7 @@ image::../media/two-slot-assembly-sgf6112.png[SGF6112 two NICs in two-slot riser
 +
 image::../media/sgf6112_two-slot-riser_alignment_hole.png[Alignment hole on SGF6112 large riser assembly]
 +
-.. Locate the alignment pin on the system board 
+.. Locate the guide pin on the system board 
 +
 image::../media/sgf6112_two-slot-riser_system-pin.png[System pin on SGF6112 for two-slot riser assembly]
 
@@ -140,9 +139,9 @@ image::../media/one-slot-assembly-sgf6112.png[SGF6112 on NIC in one-slot riser a
 +
 image::../media/sgf6112_one-slot-riser_alignment_hole.png[Alignment hole on SGF6112 one-slot riser assembly]
 +
-.. Locate the alignment pin on the system board 
+.. Locate the guide pin on the system board 
 +
-image::../media/sgf6112_one-slot-riser_system-pin.png[System pin on SGF6112 for one-slot riser assembly]
+image::../media/sgf6112_one-slot-riser_system-pin.png[Guide pin on SGF6112 for one-slot riser assembly]
 
 .. Position the one-slot riser assembly in the chassis, making sure that it aligns with the connector on the system board and guide pin. 
 
