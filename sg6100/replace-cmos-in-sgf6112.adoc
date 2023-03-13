@@ -45,7 +45,7 @@ IMPORTANT: If you have ever used an ILM rule that creates only one copy of an ob
 
 //The three NICs in the SGF6112 are in two riser assemblies in the positions in the chassis shown in the photograph (Rear of SGF6112 with top cover removed shown): 
 +
-image::../media/sgf6112-two-slot-riser-position.png[Two-slot riser location]
+image::../media/SGF6112-two-slot-riser-position.png[Two-slot riser location]
 
 . Grasp the riser assembly through the blue-marked holes and carefully lift it upwards. Move the riser assembly toward the front of the chassis as you lift it to allow the external connectors in its installed NICs to clear the chassis.
 . Place the riser on a flat anti-static surface with the metal frame side down.
@@ -80,7 +80,7 @@ image::../media/sgf6112_two-slot-riser_alignment_hole.png[Alignment hole on SGF6
 +
 . Locate the guide pin on the system board 
 +
-image::../media/sgf6112_two-slot-riser_system-pin.png[Guide pin on SGF6112 system board for two-slot riser assembly]
+image::../media/SGF6112_two-slot-riser_system-pin.png[Guide pin on SGF6112 system board for two-slot riser assembly]
 
 . Position the riser assembly in the chassis, making sure that it aligns with the connector on the system board and guide pin. 
 
@@ -92,12 +92,12 @@ image::../media/sgf6112_two-slot-riser_system-pin.png[Guide pin on SGF6112 syste
 ** link:../installconfig/configuring-storagegrid-connections.html[Configure the appliance network settings] 
 ** link:../admin/kms-overview-of-kms-and-appliance-configuration.html#set-up-the-appliance[Configure node encryption for the appliance]
 
-. Log in to the replaced appliance:
+. Log in to the appliance:
   .. Enter the following command: `ssh admin@_grid_node_IP_`
   .. Enter the password listed in the `Passwords.txt` file.
   .. Enter the following command to switch to root: `su -`
   .. Enter the password listed in the `Passwords.txt` file.
-. Restore BMC network connectivity for the replaced appliance. There are two options: 
+. Restore BMC network connectivity for the appliance. There are two options: 
 * Use static IP, netmask, and gateway 
 * Use DHCP to obtain an IP, netmask, and gateway
 
