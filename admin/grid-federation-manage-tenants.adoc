@@ -37,9 +37,9 @@ TIP: Before a local root user can sign in to the replicated tenant on the destin
 
 * After the new tenant is available on both grids, tenant users can perform these operations:
 
-** From the tenant's source grid, create group and users, which are automatically cloned to the tenant's destination grid. See link:../tenant/grid-federation-account-clone.html[Clone account information].
+** From the tenant's source grid, create group and users, which are automatically cloned to the tenant's destination grid. See link:../tenant/grid-federation-account-clone.html[Clone tenant groups and users].
 
-** From the tenant's source grid, create new S3 access keys, which can be optionally cloned to the tenant's destination grid. See link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
+** Create new S3 access keys, which can be optionally cloned to the tenant's destination grid. See link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
 
 ** Create identical buckets on both grids in the connection and enable cross-grid replication in one direction or in both directions. See link:../tenant/grid-federation-manage-cross-grid-replication.html[Manage cross-grid replication].
 
@@ -96,6 +96,7 @@ Before removing a tenant's permission to use a grid federation connection, note 
 * You can't remove the *Use grid federation connection* permission if any of the tenant's buckets have cross-grid replication enabled. The tenant account must stop cross-grid replication for all of their buckets first. 
 
 * Removing the *Use grid federation connection* permission does not delete any items that have already been replicated between grids. For example, any tenant users, groups, and objects that exist on both grids are not deleted from either grid when the tenant's permission is removed. If you want to delete these items, you must manually delete them from both grids.
+
 
 
 .What you'll need
