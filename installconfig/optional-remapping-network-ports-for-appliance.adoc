@@ -15,7 +15,9 @@ You can optionally remap the internal ports on an appliance node to different ex
 
 * You have previously accessed the StorageGRID Appliance Installer.
 
-NOTE: If you remap any ports, you cannot use the same ports to configure load balancer endpoints. If you want to configure load balancer endpoints and have already remapped ports, follow the steps in link:../maintain/removing-port-remaps.html[Remove port remaps].
+.About this task
+
+You can't use remapped ports for load balancer endpoints. If you need to remove a remapped port, follow the steps in link:../maintain/removing-port-remaps.html[Remove port remaps].
 
 .Steps
 
@@ -31,7 +33,5 @@ The Remap Port page appears.
 . Select *Add Rule*.
 +
 The new port mapping is added to the table, and the remapping takes effect immediately.
-+
-image::../media/remap_ports.gif[Screenshot showing Remap Ports option in StorageGRID Appliance Installer]
 
 . To remove a port mapping, select the radio button for the rule you want to remove, and select *Remove Selected Rule*.
