@@ -55,9 +55,9 @@ An error might appear in the *Last error* column for one of these reasons:
 
 NOTE: This column only shows the last cross-grid replication error to occur; previous errors that might have occurred will not be shown.
 
-If a message appears in the *Last error* column:
+.Steps
 
-. Review the message text.
+. If a message appears in the *Last error* column, view the message text.
 +
 For example, this error indicates that the destination bucket for cross-grid replication was in an invalid state, possibly because versioning was suspended or S3 Object Lock was enabled.
 +
