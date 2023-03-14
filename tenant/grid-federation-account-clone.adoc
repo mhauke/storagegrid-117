@@ -52,7 +52,7 @@ You can link:creating-your-own-s3-access-keys.html[create your own access keys] 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Optionally, clone S3 access keys
 
 [role="quick-margin-para"]
-If the same user needs to access their buckets on both grids, create the access keys on the source grid and then use the Tenant Manager API to manually clone them to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
+If you need to access buckets with the same access keys on both grids, create the access keys on the source grid and then use the Tenant Manager API to manually clone them to the destination grid. For instructions, see link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
 
 == How are groups, users, and S3 access keys cloned?
 
@@ -68,7 +68,7 @@ image:../media/grid-federation-account-clone.png[image showing that local groups
 
 NOTE: Any users you select when you create a local group on the source grid are not included when the group is cloned to the destination grid. For this reason, do not select users when you create the group. Instead, select the group when you create the users.
 
-=== Local groups created on source grid are cloned
+=== Local users created on source grid are cloned
 
 When you create a new local user on the source grid, StorageGRID automatically clones that user to the destination grid. Both the original user and its clone have the same full name, username, and *Deny access* setting. Both users also belong to the same groups. For instructions, see link:managing-local-users.html[Manage local users].
 
@@ -106,11 +106,11 @@ Cloning occurs only from the tenant's source grid to the tenant's destination gr
 
 image:../media/grid-federation-account-not-cloned.png[image showing that details on destination grid are not cloned to source grid]
 
-=== Edited or deleted groups and users are not cloned
+=== Edited or deleted groups, users, and access keys are not cloned
 
 Cloning occurs only when you create new groups and users.
 
-If you edit or delete groups or users on either grid, your changes will not be cloned to the other grid. 
+If you edit or delete groups, users, or access keys on either grid, your changes will not be cloned to the other grid. 
 
 image:../media/grid-federation-account-clone-edit-delete.png[image showing that edited or deleted details are not cloned]
 
