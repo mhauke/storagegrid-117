@@ -11,7 +11,7 @@ summary: 'The StorageGRID SGF6112 appliance operates as a Storage Node in a Stor
 [.lead]
 The StorageGRID SGF6112 appliance operates as a Storage Node in a StorageGRID system. The appliance can be used in a hybrid grid environment that combines appliance Storage Nodes and virtual (software-based) Storage Nodes.
 
-The SGF6112 appliance provide the following features:
+The SGF6112 appliance provides the following features:
 
 * 12 NVMe (nonvolatile memory express) SSD drives with integrated compute and storage controllers. 
 * Integrates the storage and computing elements for a StorageGRID Storage Node.
@@ -20,14 +20,14 @@ The SGF6112 appliance provide the following features:
 * Supports up to four 10-GbE or 25-GbE connections to the StorageGRID Grid Network and Client Network.
 
 == SGF6112 hardware description
-The StorageGRID SGF6112 is an all-flash appliance that features a compact design with compute controller and storage controller integrated into a 1 RU chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 15.3TB per drive.
+The StorageGRID SGF6112 is an all-flash appliance that features a compact design with compute controller and storage controller integrated into a 1U chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 15.3TB per drive.
 
 === Resilient object storage
 The SGF6112 is designed with SSDs in a RAID that provides the following data protection features: 
 
 * Ability to function after the failure of a single SSD with no impact on object availability.
-* Ability to continue to function after multiple SSD failures with a minimum necessary reduction in object availability (based on the design of the underlying RAID scheme).
-* Fully recoverable, while in service, from any number of SSD failures that do not result in extreme damage to the RAID housing the node's root volume (the StorageGRID operating system).
+* Ability to function after multiple SSD failures with a minimum necessary reduction in object availability (based on the design of the underlying RAID scheme).
+* Fully recoverable, while in service, from SSD failures that do not result in extreme damage to the RAID housing the node's root volume (the StorageGRID operating system).
 
 === SGF6112 hardware components
 The SGF6112 appliance includes the following components:
@@ -40,11 +40,11 @@ Compute and storage platform
 a|
 A one-rack unit (1U) server that includes:
 
-* Two 2.1/2.6GHz 165W processors providing 48 cores
+* Two 2.1/2.6 GHz 165 W processors providing 48 cores
 * 256 GB RAM
-* 2 × 1/10GBase-T ports
-* 4 × 10/25GbE Ethernet ports
-* 1 × 256GB Internal Boot drive (includes StorageGRID software) 
+* 2 × 1/10 GBase-T ports
+* 4 × 10/25 GbE Ethernet ports
+* 1 × 256 GB Internal Boot drive (includes StorageGRID software) 
 * Baseboard management controller (BMC) that simplifies hardware management
 * TPM (Trusted Platform Module) that can be used to safely store certificates and keys
 * Redundant power supplies and fans
