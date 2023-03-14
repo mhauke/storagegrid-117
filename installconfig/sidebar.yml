@@ -12,8 +12,6 @@ entries:
       url: "/installconfig/hardware-description-sg6000.html"
     - title: SG5700 hardware
       url: "/installconfig/hardware-description-sg5700.html"
-    - title: SG5600 hardware
-      url: "/installconfig/hardware-description-sg5600.html"
     - title: SG100 and SG1000 hardware
       url: "/installconfig/hardware-description-sg100-and-1000.html"
   - title: Prepare for installation
@@ -36,8 +34,6 @@ entries:
         url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
       - title: Port bond modes for E5700SG controller
         url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
-      - title: Port bond modes for E5600SG controller
-        url: "/installconfig/port-bond-modes-for-e5600sg-controller-ports.html"
       - title: Port bond modes for SG100 and SG1000 appliances
         url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
     - title: Gather installation information
@@ -50,8 +46,6 @@ entries:
         url: "/installconfig/gathering-installation-information-sg6000.html"
       - title: SG5700
         url: "/installconfig/gathering-installation-information-sg5700.html"
-      - title: SG5600
-        url: "/installconfig/gathering-installation-information-sg5600.html"
       - title: SG100 and SG1000
         url: "/installconfig/gathering-installation-information-sg100-and-sg1000.html"
   - title: 'Automate appliance installation and configuration'
@@ -81,8 +75,6 @@ entries:
           url: "/installconfig/sg6000-cn-installing-into-cabinet-or-rack.html"
       - title: SG5700
         url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg5700.html"
-      - title: SG5600
-        url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg5600.html"
       - title: SG100 and SG1000
         url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html"
     - title: Cable appliance
@@ -93,8 +85,6 @@ entries:
         url: "/installconfig/cabling-appliance-sg6000.html"
       - title: SG5700
         url: "/installconfig/cabling-appliance-sg5700.html"
-      - title: SG5600
-        url: "/installconfig/cabling-appliance-sg5600.html"
       - title: SG100 and SG1000
         url: "/installconfig/cabling-appliance-sg100-and-sg1000.html"
     - title: Connect power cords and apply power
@@ -105,8 +95,6 @@ entries:
         url: "/installconfig/connecting-power-cords-and-applying-power-sg6000.html"
       - title: SG5700
         url: "/installconfig/connecting-power-cords-and-applying-power-sg5700.html"
-      - title: SG5600
-        url: "/installconfig/connecting-ac-power-cords-sg5600.html"
       - title: SG100 and SG1000
         url: "/installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.html"
     - title: View status indicators and codes
@@ -131,11 +119,9 @@ entries:
         url: "/installconfig/verifying-network-connections.html"
       - title: Verify port-level network connections
         url: "/installconfig/verifying-port-level-network-connections.html"
-    - title: Set up SANtricity for SG6000, SG5700, and SG5600 storage appliances
+    - title: Set up SANtricity for SG6000, and SG5700 storage appliances
       entries:
-      - title: 'SANtricity Storage Manager (SG5600)'
-        url: "/installconfig/configuring-santricity-storage-manager.html"
-      - title: 'SANtricity System Manager (SG6000 and SG5700)'
+      - title: 'SANtricity System Manager (SG5700)'
         url: "/installconfig/accessing-and-configuring-santricity-system-manager.html"
     - title: Optional - Enable node encryption
       url: "/installconfig/optional-enabling-node-encryption.html"
@@ -188,7 +174,7 @@ entries:
     - title: 'Troubleshoot SG6000 series appliances installation'
       url: "/installconfig/troubleshooting-hardware-installation-sg6000-cn-controller.html"
       entries:       
-      - title: 'HE error: Error synchronizing with SANtricity OS Software (SG5600 and SG5700)'
+      - title: 'HE error: Error synchronizing with SANtricity OS Software (SG5700)'
         url: "/installconfig/he-error-error-synchronizing-with-santricity-os-software.html"
       - title: SG6000 boot-up and error codes
         entries:

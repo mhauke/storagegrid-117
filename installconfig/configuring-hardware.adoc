@@ -21,9 +21,9 @@ For all appliances, you must perform several tasks to configure required network
 == Additional configuration that might be required
 Depending upon which appliance types you are configuring, additional hardware configuration might be required.
 
-=== SANtricity System Manager and Storage Manager
+=== SANtricity System Manager
 
-For SG6000 and SG5700, you must configure SANtricity System Manager. For the SG5600, you must configure SANtricity Storage Manager. The SANtricity software is used to monitor the hardware for these appliances. 
+For SG6000 and SG5700, you must configure SANtricity System Manager. The SANtricity software is used to monitor the hardware for these appliances. 
 
 === BMC interface 
 The following appliances have a BMC interface that must be configured: 
@@ -36,7 +36,7 @@ The following appliances have a BMC interface that must be configured:
 == Optional configuration
 
 * Storage appliances
-** Configure SANtricity System Manager (SG6000 and SG5700) or SANtricity Storage Manager (SG5600), the software you will use to monitor the hardware
+** Configure SANtricity System Manager (SG6000 and SG5700) the software you will use to monitor the hardware
 ** Change the RAID mode
 
 * Services appliances
