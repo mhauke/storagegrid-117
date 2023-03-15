@@ -21,11 +21,11 @@ image:../media/grid-federation-account-clone-workflow.png[workflow for account c
 
 == Grid admin workflow
 
-The steps that grid admins perform depend on whether the StorageGRID systems in the link:grid-federation-overview.html[grid federation connection] use single sign-in (SSO) or identity federation.
+The steps that grid admins perform depend on whether the StorageGRID systems in the link:grid-federation-overview.html[grid federation connection] use single sign-on (SSO) or identity federation.
 
 === [[account-clone-sso]]Configure SSO for account clone (optional)
 
-If either StorageGRID system in the grid federation connection uses single sign-on (SSO), both grids must use SSO. Before creating the tenant accounts for grid federation, the grid admins for the tenant's source and destination grids must perform these steps.
+If either StorageGRID system in the grid federation connection uses SSO, both grids must use SSO. Before creating the tenant accounts for grid federation, the grid admins for the tenant's source and destination grids must perform these steps.
 
 .Steps
 
@@ -55,7 +55,7 @@ NOTE: If you assign Root access permission to a federated group that doesn't exi
 
 === Create permitted S3 tenant account
 
-If neither StorageGRID system uses SSO or identity federation, a grid admin for one of the grids performs these steps to determine which tenants can replicate bucket objects to other StorageGRID systems.
+After optionally configuring SSO or identity federation, a grid admin performs these steps to determine which tenants can replicate bucket objects to other StorageGRID systems.
 
 .Steps
 . Determine which grid you want to be the tenant's source grid for account clone operations.
@@ -70,6 +70,7 @@ The grid where the tenant is originally created is known as the tenant's _source
 If this permission is assigned, both the source and destination tenant accounts must configure the same identity source before creating federated groups. Federated groups added to the source tenant can't be cloned to the destination tenant unless both grids use the same identity source.
 
 . Select a specific grid federation connection.
+
 . Save the tenant.
 +
 When a new tenant with the *Use grid federation connection* permission is saved, StorageGRID automatically creates a replica of that tenant on the other grid. 
