@@ -14,7 +14,7 @@ This release of StorageGRID introduces the following features and functional cha
 == New features
 
 === Grid federation, account sync, and cross-grid replication
-You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery. See link:../admin/grid-federation-overview.html[Use grid federation], link:../admin/grid-federation-what-is-account-clone.html[What is account clone], and link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
+You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery. See link:../admin/grid-federation-overview.html[What is grid federation?], link:../admin/grid-federation-what-is-account-clone.html[What is account clone], and link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
 
 === Rename grid, sites, and nodes
 A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes: Overview].
