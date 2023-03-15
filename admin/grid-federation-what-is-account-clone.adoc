@@ -19,24 +19,15 @@ The workflow diagram shows the steps that grid administrators and permitted tena
 
 image:../media/grid-federation-account-clone-workflow.png[workflow for account clone]
 
-== How is a tenant account cloned?
+== Grid admin workflow
 
-After creating a link:grid-federation-overview.html[grid federation connection], a grid admin can create new S3 tenant accounts on either grid. Tenants that are created with the *Use grid federation connection* permission are allowed to use a specific grid federation connection to replicate bucket objects.
+The steps that grid admins perform depend on whether the StorageGRID systems in the link:grid-federation-overview.html[grid federation connection] use single sign-in (SSO) or identity federation.
 
-When the grid admin saves a new tenant with the *Use grid federation connection* permission, StorageGRID automatically creates a replica of that tenant on the other grid. The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid does not initially have a root user password.
+=== [[account-clone-sso]]Configure SSO for account clone (optional)
 
-For details about creating and managing replicated tenant accounts, see
-link:grid-federation-manage-tenants.html[Manage permitted tenants for grid federation].
+If either StorageGRID system in the grid federation connection uses single sign-on (SSO), both grids must use SSO. Before creating the tenant accounts for grid federation, the grid admins for the tenant's source and destination grids must perform these steps.
 
-== How are tenant groups, users, and keys cloned?
-
-After a tenant with the *Use grid federation connection* permission is replicated to the destination grid, tenant users can add new tenant groups and users to the source grid. StorageGRID automatically clones new tenant groups and users to the destination tenant, but no cloning occurs from the destination grid back to the source. S3 access keys can be created on either grid, or these keys can optionally be cloned from the source grid to the destination grid if users need to use the same keys on both grids. 
-
-For details about cloning tenant groups, users, and keys, see link:../tenant/grid-federation-account-clone.html[Clone tenant groups and users] and link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
-
-== [[account-clone-sso]]Requirements for account clone and SSO 
-
-If either StorageGRID system in the grid federation connection uses single sign-on (SSO), both grids must use SSO. The grid admins for the tenant's source and destination grids must perform these steps before creating permitted tenant accounts:
+.Steps
 
 . Configure the same identity source for both grids. See link:using-identity-federation.html[Use identity federation].
 
@@ -48,25 +39,63 @@ When you create the tenant, you will select this group to have the initial Root 
 +
 NOTE: If this admin group doesn't exist on both grids before you create the tenant, the tenant won't be replicated to the destination.
 
-== [[account-clone-identity-federation]]Requirements for account clone and identity federation
+=== [[account-clone-identity-federation]]Configure grid-level identity federation for account clone (optional)
 
-If neither grid uses SSO, you can optionally configure identity federation for the entire grid or grant each tenant permission to configure its own identity source. 
+If either StorageGRID system uses identity federation without SSO, both grids must use identity federation. Before creating the tenant accounts for grid federation, the grid admins for the tenant's source and destination grids must perform these steps.
 
-=== Requirements for grid-level identity federation
-
-If either grid in the connection has identity federation configured, both grids must use identity federation. The grid admins for the tenant's source and destination grids must perform these steps before creating tenant accounts:
+.Steps
 
 . Configure the same identity source for both grids. See link:using-identity-federation.html[Use identity federation].
 
-. If you want a federated group to have initial Root access permission for both the source and destination tenant accounts, link:managing-admin-groups.html[create the same admin group] on both grids by importing the same federated group.
+. Optionally, if a federated group will have initial Root access permission for both the source and destination tenant accounts, link:managing-admin-groups.html[create the same admin group] on both grids by importing the same federated group.
 +
-NOTE: If this admin group doesn't exist on both grids before you create the tenant, the tenant won't be replicated to the destination.
+NOTE: If you assign Root access permission to a federated group that doesn't exist on both grids, the tenant won't be replicated to the destination grid.
 
 . If you don't want a federated group to have initial Root access permission for both accounts, specify a password for the local root user.
 
-=== Requirements for tenant-level identity federation
+=== Create permitted S3 tenant account
 
-If you create a tenant and assign both the *Use grid federation connection* permission and the *Use own identity source* permission, both the source tenant and its replica must link:../tenant/using-identity-federation.html[configure the same identity source] before the source tenant imports any federated groups. Federated groups added to the source grid can't be cloned to the destination unless both grids use the same identity source.
+If neither StorageGRID system uses SSO or identity federation, a grid admin for one of the grids performs these steps to determine which tenants can replicate bucket objects to other StorageGRID systems.
+
+.Steps
+. Determine which grid you want to be the tenant's source grid for account clone operations.
++
+The grid where the tenant is originally created is known as the tenant's _source grid_. The grid where the tenant is replicated is known as the tenant's _destination grid_. Both tenant accounts have the same account ID, name, storage quota, and assigned permissions, but the tenant replicated to the destination grid does not initially have a root user password.
+
+. Create a new S3 tenant account on that grid.
+
+. Assign the *Use grid federation connection* permission.
+. If the tenant account will manage its own federated users, assign the *Use own identity source* permission.
++
+If this permission is assigned, both the source and destination tenant accounts must configure the same identity source before creating federated groups. Federated groups added to the source tenant can't be cloned to the destination tenant unless both grids use the same identity source.
+
+. Select a specific grid federation connection.
+. Save the tenant.
++
+When a new tenant with the *Use grid federation connection* permission is saved, StorageGRID automatically creates a replica of that tenant on the other grid. 
+
+For details, see
+link:grid-federation-manage-tenants.html[Manage permitted tenants for grid federation].
+
+== Permitted tenant account workflow
+
+After a tenant with the *Use grid federation connection* permission is replicated to the destination grid, permitted tenant accounts can perform these steps to clone tenant groups, users, and S3 access keys.
+
+.Steps
+
+. Sign in to the tenant account on the tenant's source grid.
+
+. If permitted, configure identify federation on both the source and destination tenant accounts.
+
+. Create groups and users on the source tenant.
++
+When new groups or users are created on the source tenant, StorageGRID automatically clones them to the destination tenant, but no cloning occurs from the destination back to the source. 
+
+. Create S3 access keys.
+
+. Optionally, clone S3 access keys from the source tenant to the destination tenant. 
+
+For details about the permitted tenant account workflow and to learn how groups, users, and S3 access keys are cloned, see link:../tenant/grid-federation-account-clone.html[Clone tenant groups and users] and link:../tenant/grid-federation-clone-keys-with-api.html[Clone S3 access keys using the API].
 
 
 
