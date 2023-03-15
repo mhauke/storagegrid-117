@@ -25,6 +25,7 @@ Each HA group provides access to the shared services on the selected nodes.
  HA groups are recommended when using S3 Select, but not required.
 
 == How do you create an HA group?
+
 . You select a network interface for one or more Admin Nodes or Gateway Nodes. You can use a Grid Network (eth0) interface, Client Network (eth2) interface, VLAN interface, or an access interface you have added to the node. 
 +
 NOTE: You cannot add an interface to an HA group if it has a DHCP-assigned IP address.
@@ -61,7 +62,6 @@ In this example, the primary Admin Node has been added to two HA groups. This no
 
 image::../media/ha_group_primary_interface.png[HA Group Primary Interface]
 
-
 == What happens when the active interface fails?
 
 The interface that currently hosts the VIP addresses is the active interface. If the HA group includes more than one interface and the active interface fails, the VIP addresses move to the first available backup interface in the priority order. If that interface fails, the VIP addresses move to the next available backup interface, and so on.
@@ -79,5 +79,3 @@ NOTE: Failover might not be triggered by network failures external to the node t
 The failover process generally takes only a few seconds and is fast enough that client applications should experience little impact and can rely on normal retry behaviors to continue operation.
 
 When failure is resolved and a higher priority interface becomes available again, the VIP addresses are automatically moved to the highest priority interface that is available.
-
-
