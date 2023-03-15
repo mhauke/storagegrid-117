@@ -23,11 +23,15 @@ You can manage access permissions for a Swift tenant account by importing federa
 
 .Steps
 
+As your first step, access the Create group wizard.
+
 . Select *ACCESS MANAGEMENT* > *Groups*.
 
 . Select *Create group*.
 
 == Choose a group type
+
+You can create a local group or import a federated group.
 
 .Steps
 
@@ -45,6 +49,8 @@ If single sign-on (SSO) is enabled for your StorageGRID system, users belonging 
 
 == Manage group permissions
 
+Group permissions control which tasks users can perform in the Tenant Manager and Tenant Management API.
+
 .Steps
 
 . For *Access mode*, select one of the following:
@@ -57,19 +63,23 @@ NOTE: If a user belongs to multiple groups and any group is set to Read-only, th
 
 . Select *Continue*.
 
+== Set Swift group policy
+Swift users need administrator permission to authenticate into the Swift REST API to create containers and ingest objects.
+
 . Select the *Swift administrator* check box if group users need to use the Swift REST API to manage containers and objects.
-+
-Swift users must have the Root access permission to access the Tenant Manager. However, the Root access permission does not allow them to authenticate into the Swift REST API to create containers and ingest objects.
+
 
 . If you are creating a local group, select *Continue*. If you are creating a federated group, select *Create group* and *Finish*.
 
 == Add users (local groups only)
 
+You can save the group without adding users, or you can optionally add any local users that already exist.
+
 .Steps
 
 . Optionally, select one or more local users for this group.
 +
-If you have not yet created local users, you can save the group without adding users. You can add this group to the user on the Users page. See link:../tenant/managing-local-users.html[Manage local users].
+If you have not yet created local users, you can add this group to the user on the Users page. See link:../tenant/managing-local-users.html[Manage local users].
 
 . Select *Create group* and *Finish*.
 +

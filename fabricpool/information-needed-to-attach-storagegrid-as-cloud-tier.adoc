@@ -45,8 +45,7 @@ The following table shows the values you must configure in StorageGRID and how t
 
 |===
 
-
-=== How do I get these values?
+== How do I get these values?
 Depending on your requirements, you can do either of the following to obtain the information you need:
 
 * Use the link:use-fabricpool-setup-wizard.html[FabricPool setup wizard]. The FabricPool setup wizard helps you to quickly configure the required values in StorageGRID and outputs a file that you can use to configure ONTAP System Manager. The wizard guides you through the required steps and helps to make sure your settings conform to StorageGRID and FabricPool best practices.
@@ -59,7 +58,3 @@ Depending on your requirements, you can do either of the following to obtain the
 . Sign in to the tenant account, and link:creating-s3-bucket-and-access-key.html[create the bucket and access keys for the root user].
 . Create an ILM rule for FabricPool data and add it to your active ILM policy. See link:using-storagegrid-ilm-with-fabricpool-data.html[Configure ILM for FabricPool data].
 . Optionally, link:creating-traffic-classification-policy-for-fabricpool.html[create a traffic classification policy for FabricPool].
-
-
-
-

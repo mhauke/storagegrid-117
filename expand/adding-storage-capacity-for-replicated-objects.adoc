@@ -11,7 +11,7 @@ summary: 'If the information lifecycle management \(ILM\) policy for your deploy
 [.lead]
 If the information lifecycle management (ILM) policy for your deployment includes a rule that creates replicated copies of objects, you must consider how much storage to add and where to add the new storage volumes or Storage Nodes. 
 
-For guidance on where to add additional storage, examine the ILM rules that create replicated copies. If ILM rules create two or more object copies, plan to add storage in each location where object copies are made. As a simple example, if you have a two-site grid and an ILM rule that creates one object copy at each site, you must link:../expand/adding-storage-volumes-to-storage-nodes.html[add storage] to each site to increase the overall object capacity of the grid. For information about object replication, see link:../ilm/what-replication-is.html[What replication is].
+For guidance on where to add additional storage, examine the ILM rules that create replicated copies. If ILM rules create two or more object copies, plan to add storage in each location where object copies are made. As a simple example, if you have a two-site grid and an ILM rule that creates one object copy at each site, you must link:../expand/adding-storage-volumes-to-storage-nodes.html[add storage] to each site to increase the overall object capacity of the grid. For information about object replication, see link:../ilm/what-replication-is.html[What is replication?].
 
 For performance reasons, you should attempt to keep storage capacity and compute power balanced across sites. So, for this example, you should add the same number of Storage Nodes to each site or additional storage volumes at each site.
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replication, object copies
 summary: 'Replication is one of two methods StorageGRID uses to store object data. When objects match an ILM rule that uses replication, the system creates exact copies of object data and stores the copies on Storage Nodes or Archive Nodes.'
 ---
-= What replication is
+= What is replication?
 :icons: font
 :imagesdir: ../media/
 
@@ -23,8 +23,8 @@ NOTE: StorageGRID can store only one replicated copy of an object on any given S
 
 .Related information
 
-* link:what-erasure-coding-is.html[What erasure coding is]
+* link:what-erasure-coding-is.html[What is erasure coding?]
 
-* link:what-storage-pool-is.html[What a storage pool is]
+* link:what-storage-pool-is.html[What is a storage pool?]
 
 * link:enable-site-loss-protection.html[Enable site-loss protection using replication and erasure coding]
