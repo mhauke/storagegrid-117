@@ -7,8 +7,10 @@ entries:
   - title: View and manage dashboard
     url: "/monitor/viewing-dashboard.html"
   - title: View the Nodes page
-    url: "/monitor/viewing-nodes-page.html"
     entries:
+    - title: Overview
+      pdf-filename: View the Nodes page
+      url: "/monitor/viewing-nodes-page.html"
     - title: View the Overview tab
       url: "/monitor/viewing-overview-tab.html"
     - title: View the Hardware tab
@@ -95,8 +97,10 @@ entries:
       - title: Alarms that generate SNMP notifications (legacy system)
         url: "/monitor/alarms-that-generate-snmp-notifications.html"
   - title: Log files reference
-    url: "/monitor/logs-files-reference.html"
     entries:
+    - title: Overview
+      pdf-filename: Log files reference
+      url: "/monitor/logs-files-reference.html"
     - title: StorageGRID software logs
       url: "/monitor/storagegrid-software-logs.html"
     - title: Deployment and maintenance logs
@@ -114,8 +118,10 @@ entries:
     - title: Configure an external syslog server
       url: "/monitor/configuring-syslog-server.html"  
   - title: Use SNMP monitoring
-    url: "/monitor/using-snmp-monitoring.html"
     entries:
+    - title: Overview
+      pdf-filename: Use SNMP monitoring
+      url: "/monitor/using-snmp-monitoring.html"
     - title: Configure the SNMP agent
       url: "/monitor/configuring-snmp-agent.html"
     - title: Update the SNMP agent
