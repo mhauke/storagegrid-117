@@ -186,19 +186,17 @@ This field is not displayed for appliance models that do not contain a BMC.
 |The configuration status of the storage shelf.
 |===
 
-[start=3]
- .. Confirm that all statuses are "`Nominal.`"
+.. Confirm that all statuses are "`Nominal.`"
 +
 If a status is not "`Nominal,`" review any current alerts. You can also use SANtricity System Manager to learn more about some of these hardware values. See the instructions for installing and maintaining your appliance.
 
-[start=4]
 . Select *Network* to view information for each network.
-
++
 The Network Traffic graph provides a summary of overall network traffic.
-
++
 image::../media/nodes_page_network_traffic_graph.png[Nodes Page Network Traffic Graph]
 
- .. Review the Network Interfaces section.
+.. Review the Network Interfaces section.
 +
 image::../media/nodes_page_network_interfaces.png[Nodes Page Network Interfaces]
 +
@@ -241,13 +239,12 @@ NOTE: The values shown in the table assume all four links are used.
 |===
 See link:../installconfig/configuring-network-links.html[Configure network links] for more information about configuring the 10/25-GbE ports.
 
- .. Review the Network Communication section.
+.. Review the Network Communication section.
 +
 The Receive and Transmit tables show how many bytes and packets have been received and sent across each network as well as other receive and transmit metrics.
 +
 image::../media/nodes_page_network_communication.png[Nodes Page Network Comm]
 
-[start=5]
 . Select *Storage* to view graphs that show the percentages of storage used over time for object data and object metadata, as well as information about disk devices, volumes, and object stores.
 +
 image::../media/nodes_page_storage_used_object_data.png[Storage Used - Object Data]
@@ -340,7 +337,7 @@ The Network Traffic graph provides a summary of overall network traffic.
 +
 image::../media/nodes_page_network_traffic_graph.png[Nodes Page Network Traffic Graph]
 
- .. Review the Network Interfaces section.
+.. Review the Network Interfaces section.
 +
 image::../media/nodes_page_hardware_tab_network_services_appliance.png[Nodes Page Hardware Tab Network Services Appliance]
 +
