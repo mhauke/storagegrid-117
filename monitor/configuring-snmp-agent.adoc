@@ -54,7 +54,7 @@ As required, you can provide a different ("`custom`") community string when you 
 +
 *Default Trap Community* can be a maximum of 32 characters and cannot contain whitespace characters.
 
- .. For *Read-Only Community*, enter one or more community strings to allow read-only MIB access on IPv4 and IPv6 agent addresses. Click the plus sign image:../media/icon_plus_sign_black_on_white_old.png[Plus Sign] to add multiple strings.
+ .. For *Read-Only Community*, enter one or more community strings to allow read-only MIB access on IPv4 and IPv6 agent addresses. Select the plus sign image:../media/icon_plus_sign_black_on_white_old.png[Plus Sign] to add multiple strings.
 +
 When the management system queries the StorageGRID MIB, it sends a community string. If the community string matches one of the values specified here, the SNMP agent sends a response to the management system.
 +
@@ -68,7 +68,7 @@ Use this tab to specify one or more "`listening addresses.`" These are the Stora
 +
 If you do not configure an agent address, the default listening address is UDP port 161 on all StorageGRID networks.
 
- .. Click *Create*.
+ .. Select *Create*.
 +
 The Create Agent Address dialog box appears.
 +
@@ -95,7 +95,7 @@ The default UDP port for an SNMP agent is 161, but you can enter any unused port
 +
 NOTE: When you save the SNMP agent, StorageGRID automatically opens the agent address ports on the internal firewall. You must ensure that any external firewalls allow access to these ports.
 
- .. Click *Create*.
+ .. Select *Create*.
 +
 The agent address is created and added to the table.
 +
@@ -107,7 +107,7 @@ Use this tab to define the USM users who are authorized to query the MIB or to r
 +
 NOTE: This step does not apply if you are only using SNMPv1 or SNMPv2c.
 
- .. Click *Create*.
+ .. Select *Create*.
 +
 The Create USM User dialog box appears.
 +
@@ -140,7 +140,7 @@ NOTE: The only authentication protocol supported is SHA (HMAC-SHA-96).
 +
 NOTE: The only privacy protocol supported is AES.
 
- .. Click *Create*.
+ .. Select *Create*.
 +
 The USM user is created and added to the table.
 +
@@ -148,9 +148,9 @@ image::../media/snmp_other_config_usm_users_table.png[SNMP Other Config USM User
 
 . [[select_trap_destination, start=10]]In the Other Configurations section, select the Trap Destinations tab.
 +
-The Trap Destinations tab allows you to define one or more destinations for StorageGRID trap or inform notifications. When you enable the SNMP agent and click *Save*, StorageGRID starts sending notifications to each defined destination. Notifications are sent when alerts and alarms are triggered. Standard notifications are also sent for the supported MIB-II entities (for example, ifDown and coldStart).
+The Trap Destinations tab allows you to define one or more destinations for StorageGRID trap or inform notifications. When you enable the SNMP agent and select *Save*, StorageGRID starts sending notifications to each defined destination. Notifications are sent when alerts and alarms are triggered. Standard notifications are also sent for the supported MIB-II entities (for example, ifDown and coldStart).
 
- .. Click *Create*.
+ .. Select *Create*.
 +
 The Create Trap Destination dialog box appears.
 +
@@ -159,55 +159,48 @@ image::../media/snmp_create_trap_destination.png[SNMP Create Trap Destination]
  .. In the *Version* field, select which SNMP version will be used for this notification.
  .. Complete the form, based on which version you selected
 +
-[cols="1a,1a" options="header"]
+[cols="1a,2a" options="header"]
 |===
-| Version| Specify this information
-a|
-SNMPv1
-a|
-*Note:* For SNMPv1, the SNMP agent can only send traps. Informs are not supported.
+| Version
+| Specify this information
 
-  ... In the *Host* field, enter an IPv4 or IPv6 address (or FQDN) to receive the trap.
-  ... For *Port*, use the default (162), unless you must use another value. (162 is the standard port for SNMP traps.)
-  ... For *Protocol*, use the default (UDP). TCP is also supported. (UDP is the standard SNMP trap protocol.)
-  ... Use the default trap community, if one was specified on the SNMP Agent page, or enter a custom community string for this trap destination.
+| SNMPv1 
+
+(For SNMPv1, the SNMP agent can only send traps. Informs are not supported.)
+
+| . In the *Host* field, enter an IPv4 or IPv6 address (or FQDN) to receive the trap.
+. For *Port*, use the default (162), unless you must use another value. (162 is the standard port for SNMP traps.)
+. For *Protocol*, use the default (UDP). TCP is also supported. (UDP is the standard SNMP trap protocol.)
+. Use the default trap community, if one was specified on the SNMP Agent page, or enter a custom community string for this trap destination.
 +
 The custom community string can be a maximum of 32 characters and cannot contain whitespace.
 
-a|
-SNMPv2c
-a|
-
-  ... Select whether the destination will be used for traps or informs.
-  ... In the *Host* field, enter an IPv4 or IPv6 address (or FQDN) to receive the trap.
-  ... For *Port*, use the default (162), unless you must use another value. (162 is the standard port for SNMP traps.)
-  ... For *Protocol*, use the default (UDP). TCP is also supported. (UDP is the standard SNMP trap protocol.)
-  ... Use the default trap community, if one was specified on the SNMP Agent page, or enter a custom community string for this trap destination.
+| SNMPv2c
+| . Select whether the destination will be used for traps or informs.
+  . In the *Host* field, enter an IPv4 or IPv6 address (or FQDN) to receive the trap.
+  . For *Port*, use the default (162), unless you must use another value. (162 is the standard port for SNMP traps.)
+  . For *Protocol*, use the default (UDP). TCP is also supported. (UDP is the standard SNMP trap protocol.)
+  . Use the default trap community, if one was specified on the SNMP Agent page, or enter a custom community string for this trap destination.
 +
 The custom community string can be a maximum of 32 characters and cannot contain whitespace.
 
-a|
-SNMPv3
-a|
-
-  ... Select whether the destination will be used for traps or informs.
-  ... In the *Host* field, enter an IPv4 or IPv6 address (or FQDN) to receive the trap.
-  ... For *Port*, use the default (162), unless you must use another value. (162 is the standard port for SNMP traps.)
-  ... For *Protocol*, use the default (UDP). TCP is also supported. (UDP is the standard SNMP trap protocol.)
-  ... Select the USM user that will be used for authentication.
-   **** If you selected *Trap*, only USM users without authoritative engine IDs are shown.
-   **** If you selected *Inform*, only USM users with authoritative engine IDs are shown.
+| SNMPv3
+| . Select whether the destination will be used for traps or informs.
+. In the *Host* field, enter an IPv4 or IPv6 address (or FQDN) to receive the trap.
+. For *Port*, use the default (162), unless you must use another value. (162 is the standard port for SNMP traps.)
+. For *Protocol*, use the default (UDP). TCP is also supported. (UDP is the standard SNMP trap protocol.)
+. Select the USM user that will be used for authentication.
+* If you selected *Trap*, only USM users without authoritative engine IDs are shown.
+* If you selected *Inform*, only USM users with authoritative engine IDs are shown.
 
 +
 |===
 
- .. Click *Create*.
+.. Select *Create*.
 +
 The trap destination is created and added to the table.
-+
-image::../media/snmp_other_config_trap_dest_table.png[SNMP Other Configurations Trap Dest Table]
 
-. When you have completed the SNMP agent configuration, click *Save*
+. When you have completed the SNMP agent configuration, select *Save*.
 +
 The new SNMP agent configuration becomes active.
 
