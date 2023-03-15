@@ -1,25 +1,28 @@
 ---
 permalink: installconfig/obtaining-additional-equipment-and-tools.html
 sidebar: sidebar
-keywords: additional, equipment, tools
-summary: 'Before installing the StorageGRID appliance, confirm you have all of the additional equipment and tools that you need.'
+keywords: equipment to install appliance, tools for installation
+summary: 'Before installing a StorageGRID appliance, confirm you have all of the additional equipment and tools that you need.'
 ---
 = Obtain additional equipment and tools
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Before installing the StorageGRID appliance, confirm you have all of the additional equipment and tools that you need.
+Before installing a StorageGRID appliance, confirm you have all of the additional equipment and tools that you need.
 
-You need the following additional equipment to install and configure all appliances:
+== All appliances
+
+You need the following equipment to install and configure all appliances.
+
 
 * *Screwdrivers*
 +
 image::../media/screwdrivers.gif[Two screwdrivers]
-+
-Phillips No. 2 screwdriver
-+
-Medium flat-blade screwdriver
+
+** Phillips No. 2 screwdriver
+
+** Medium flat-blade screwdriver
 
 * *ESD wrist strap*
 +
@@ -28,22 +31,22 @@ image::../media/appliance_wriststrap.gif[ESD wrist strap]
 * *Service laptop*
 +
 image::../media/sam_management_client.gif[Service laptop]
-+
-link:web-browser-requirements.html[Supported web browser]
-+
-SSH client, such as PuTTY
-+
-1-GbE (RJ-45) port
+
+** link:web-browser-requirements.html[Supported web browser]
+
+** SSH client, such as PuTTY
+
+** 1-GbE (RJ-45) port
 +
 NOTE: Some ports might not support 10/100 Ethernet speeds.
 
 * *Optional tools*
 +
 image::../media/optional_tools.gif[Power drill and flashlight]
-+
-Power drill with Phillips head bit
-+
-Flashlight
+
+** Power drill with Phillips head bit
+
+** Flashlight
 
 == SG6000
 
@@ -95,13 +98,11 @@ You need the following additional equipment to install and configure the SG100 a
 +
 image::../media/fc_cable_and_sfp.gif[Optical cable and QSFP+ transceiver]
 
- ** Cable
-  *** TwinAx/Copper (1 to 4)
-+
-or
+ ** One to four of either of these cable types:
+  *** TwinAx/Copper 
+  *** Fibre/Optical 
 
-  *** Fibre/Optical (1 to 4)
- ** 1 to 4 of each of these transceivers/adapters based on link speed (mixed speeds are not supported)
+ ** One to four of each of these transceivers/adapters based on link speed (mixed speeds are not supported)
   *** SG100:
 +
 [options="header"]
