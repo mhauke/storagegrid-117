@@ -24,10 +24,4 @@ For easy access to audit logs, you can link:../admin/configuring-audit-client-ac
 
 Optionally, you can change the destination of audit logs and send audit information to an external syslog server. Local logs of audit records continue to be generated and stored when an external syslog server is configured. See link:../monitor/configure-audit-messages.html[Configure audit messages and log destinations].
 
-For details on the audit log file, the format of audit messages, the types of audit messages, and the tools available to analyze audit messages, see the instructions for audit messages. To learn how to configure audit client access, see the instructions for administering StorageGRID.
-
-.Related information
-
-link:../audit/index.html[Review audit logs]
-
-link:../admin/index.html[Administer StorageGRID]
+For details on the audit log file, the format of audit messages, the types of audit messages, and the tools available to analyze audit messages, see link:../audit/index.html[Review audit logs].

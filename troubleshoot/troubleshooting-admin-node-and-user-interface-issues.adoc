@@ -11,7 +11,7 @@ summary: 'There are several tasks you can perform to help determine the source o
 [.lead]
 There are several tasks you can perform to help determine the source of issues related to Admin Nodes and the StorageGRID user interface.
 
-== Troubleshoot sign-on errors
+== Sign-on errors
 
 If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the link:../admin/using-identity-federation.html[identity federation configuration], a link:../troubleshooting-network-hardware-and-platform-issues.html[networking] or link:../installconfig/troubleshooting-hardware-installation.html[hardware] problem, an issue with link:../admin/what-admin-node-is.html[Admin Node services], or an link:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html[issue with the Cassandra database] on connected Storage Nodes.
 
@@ -139,26 +139,22 @@ Make sure the idnt, acct, nginx, and cassandra services are all running.
 +
 Provide the logs you collected to technical support. See also link:../monitor/logs-files-reference.html[Log files reference].
 
-== Troubleshoot user interface issues
+== User interface issues
 
-You might see issues with the Grid Manager or the Tenant Manager after upgrading to a new version of StorageGRID software.
+The user interface for the Grid Manager or the Tenant Manager might not respond as expected after StorageGRID software is upgraded.
 
-=== Web interface does not respond as expected
+.Steps
 
-The Grid Manager or the Tenant Manager might not respond as expected after StorageGRID software is upgraded.
-
-If you experience issues with the web interface:
-
-* Make sure you are using a link:../admin/web-browser-requirements.html[supported web browser].
+. Make sure you are using a link:../admin/web-browser-requirements.html[supported web browser].
 +
-NOTE: Browser support has changed for StorageGRID 11.5. Confirm you are using a supported version.
+NOTE: Browser support can change with each StorageGRID release. Confirm you are using browser that is supported by your StorageGRID version.
 
-* Clear your web browser cache.
+. Clear your web browser cache.
 +
 Clearing the cache removes outdated resources used by the previous version of StorageGRID software, and permits the user interface to operate correctly again. For instructions, see the documentation for your web browser.
 
 
-== Check the status of an unavailable Admin Node
+== Unavailable Admin Node
 
 If the StorageGRID system includes multiple Admin Nodes, you can use another Admin Node to check the status of an unavailable Admin Node.
 

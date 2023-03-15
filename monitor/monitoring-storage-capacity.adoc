@@ -40,7 +40,7 @@ image::../media/dashboard_storage_over_time.png[Storage over time chart]
 +
 image::../media/nodes_deployment_storage_tab.png[Nodes Deployment Storage tab]
 
- .. Hover your cursor over the *Storage used - object data* and the *Storage used - object metadata* charts to see how much object storage and object metadata storage is available for the entire grid, and how much has been used over time.
+ .. Position your cursor over the *Storage used - object data* and the *Storage used - object metadata* charts to see how much object storage and object metadata storage is available for the entire grid, and how much has been used over time.
 +
 NOTE: The total values for a site or the grid do not include nodes that have not reported metrics for at least five minutes, such as offline nodes.
 . Plan to perform an expansion to add Storage Nodes or storage volumes before the grid's usable storage capacity is consumed.
@@ -65,7 +65,7 @@ image::../media/calculating_watermarks.gif[Conceptual drawing for Total usable s
 +
 The graphs and tables for the node appear.
 
-. Hover your cursor over the Storage used - object data graph.
+. Position your cursor over the Storage used - object data graph.
 +
 The following values are shown:
 
@@ -94,7 +94,7 @@ NOTE: If your ILM policy uses erasure coding, you might prefer to expand when ex
 +
 For more information about planning a storage expansion, see the link:../expand/index.html[instructions for expanding StorageGRID].
 +
-The link:../troubleshoot/troubleshooting-low-object-data-storage-alert.html[*Low object data storage*] alert is triggered when insufficient space remains for storing object data on a Storage Node.
+The link:../troubleshoot/troubleshooting-low-object-data-storage-alert.html[Low object data storage] alert is triggered when insufficient space remains for storing object data on a Storage Node.
 
 [[monitor-object-metadata-capacity-for-each-storage-node]]
 == Monitor object metadata capacity for each Storage Node
@@ -110,7 +110,8 @@ Some of the factors that can increase metadata usage include the size and quanti
 
 .Steps
 . Select *NODES* > *_Storage Node_* > *Storage*.
-. Hover your cursor over the Storage used - object metadata graph to see the values for a specific time.
+
+. Position your cursor over the Storage used - object metadata graph to see the values for a specific time.
 +
 image::../media/storage_used_object_metadata.png[Storage Used - Object Metadata]
 +
@@ -134,10 +135,9 @@ image::../media/storage_used_object_metadata.png[Storage Used - Object Metadata]
 |The actual space reserved for metadata on this Storage Node. Includes the allowed space and the required space for essential metadata operations. To learn how this value is calculated for each Storage Node, see the link:../admin/managing-object-metadata-storage.html#actual-reserved-space-for-metadata[full description of Actual reserved space for metadata].
 
 |===
-
++
 NOTE: The total values for a site or the grid do not include nodes that have not reported metrics for at least five minutes, such as offline nodes.
 
-[start=3]
 . If the *Used (%)* value is 70% or higher, expand your StorageGRID system by adding Storage Nodes to each site.
 +
 IMPORTANT: The *Low metadata storage* alert is triggered when the *Used (%)* value reaches certain thresholds. Undesirable results can occur if object metadata uses more than 100% of the allowed space.
