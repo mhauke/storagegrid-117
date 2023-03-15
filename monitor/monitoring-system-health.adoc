@@ -165,7 +165,7 @@ See link:silencing-alert-notifications.html[Silence alert notifications].
 
 . (Optional) For a specific alert, select silence this alert to silence the alert rule that caused this alert to be triggered.
 +
-You must have the Manage Alerts or Root access permission to silence an alert rule.
+You must have the Manage alerts or Root access permission to silence an alert rule.
 +
 IMPORTANT: Be careful when deciding to silence an alert rule. If an alert rule is silenced, you might not detect an underlying problem until it prevents a critical operation from completing.
 
@@ -177,7 +177,7 @@ A pop-up appears, listing the Prometheus expression for each defined severity.
 
 . Optionally, select *Edit rule* to edit the alert rule that caused this alert to be triggered.
 +
-You must have the Manage Alerts or Root access permission to edit an alert rule.
+You must have the Manage alerts or Root access permission to edit an alert rule.
 +
 IMPORTANT: Be careful when deciding to edit an alert rule. If you change trigger values, you might not detect an underlying problem until it prevents a critical operation from completing.
 
