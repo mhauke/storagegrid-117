@@ -58,22 +58,20 @@ If you are configuring and deploying more than one appliance, use the NetApp Con
 [role="quick-margin-list"]
 
 . Configure StorageGRID connections
-** link:accessing-storagegrid-appliance-installer.html[Access StorageGRID Appliance Installer and verify you are running most recent version]
+** link:accessing-storagegrid-appliance-installer.html[Access StorageGRID Appliance Installer] and verify you are running most recent version
 ** link:configuring-network-links.html[Configure network links]
 ** link:setting-ip-configuration.html[Configure StorageGRID IP addresses]
 ** link:verifying-network-connections.html[Verify network connections]
 ** link:verifying-port-level-network-connections.html[Verify port-level network connections]
 
-. Access and configure SANtricity management tools (Storage Nodes only).
+. link:accessing-and-configuring-santricity-system-manager.html[Access and configure SANtricity System Manager] (SG6000 and SG5700)
 
-link:accessing-and-configuring-santricity-system-manager.html[SANtricity System Manager (SG6000 and SG5700)]
-
-. link:configuring-bmc-interface.html[Configure the BMC interface (SG6000, SG100, and SG1000)] 
+. link:configuring-bmc-interface.html[Configure the BMC interface] (SG6000, SG100, and SG1000)
 
 . Perform optional setup steps
-** link:optional-enabling-node-encryption.html[Optional - Enable node encryption]
-** link:optional-changing-raid-mode.html[Optional - Change RAID mode (Storage Nodes only)]
-** link:optional-remapping-network-ports-for-appliance.html[Optional - Remap network ports for appliance]
+** link:optional-enabling-node-encryption.html[Enable node encryption]
+** link:optional-changing-raid-mode.html[Change RAID mode] (Storage Nodes only)
+** link:optional-remapping-network-ports-for-appliance.html[Remap network ports]
 
 
 
