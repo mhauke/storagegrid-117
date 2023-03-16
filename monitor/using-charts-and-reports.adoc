@@ -15,17 +15,17 @@ You can use charts and reports to monitor the state of the StorageGRID system an
 
 Charts and graphs summarize the values of specific StorageGRID metrics and attributes.
 
-The Grid Manager Dashboard includes cards that summarize available storage for the grid and each site.
+The Grid Manager dashboard includes cards that summarize available storage for the grid and each site.
 
 image::../media/dashboard_data_and_metadata_space_usage_breakdown.png[Dashboard data and metadata space usage breakdown]
 
-The Storage usage panel on the Tenant Manager Dashboard displays the following:
+The Storage usage panel on the Tenant Manager dashboard displays the following:
 
 * A list of the largest buckets (S3) or containers (Swift) for the tenant
 * A bar chart that represents the relative sizes of the largest buckets or containers
 * The total amount of space used and, if a quota is set, the amount and percentage of space remaining
 
-image::../media/tenant_dashboard_with_buckets.png[Tenant Dashboard]
+image::../media/tenant_dashboard_with_buckets.png[Tenant dashboard]
 
 In addition, graphs that show how StorageGRID metrics and attributes change over time are available from the Nodes page and from the *SUPPORT* > *Tools* > *Grid topology* page.
 
@@ -102,7 +102,7 @@ Some tabs include one or more Grafana charts, which are used to plot the values 
 +
 image::../media/nodes_page_hardware_tab_graphs.png[Nodes Page Hardware Tab Graphs]
 
-. Optionally, hover your cursor over the chart to see more detailed values for a particular point in time.
+. Optionally, position your cursor over the chart to see more detailed values for a particular point in time.
 +
 image::../media/nodes_page_memory_usage_details.png[Nodes Page Memory Usage Details]
 

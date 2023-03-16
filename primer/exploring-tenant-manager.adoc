@@ -13,15 +13,15 @@ The Tenant Manager is the browser-based graphical interface that tenant users ac
 
 When tenant users sign in to the Tenant Manager, they are connecting to an Admin Node.
 
-== Tenant Manager Dashboard
+== Tenant Manager dashboard
 
 After a grid administrator creates a tenant account using the Grid Manager or the Grid Management API, tenant users can sign in to the Tenant Manager.
 
-The Tenant Manager Dashboard allows tenant users to monitor storage usage at a glance. The Storage usage panel contains a list of the largest buckets (S3) or containers (Swift) for the tenant. The Space used value is the total amount of object data in the bucket or container. The bar chart represents the relative sizes of these buckets or containers.
+The Tenant Manager dashboard allows tenant users to monitor storage usage at a glance. The Storage usage panel contains a list of the largest buckets (S3) or containers (Swift) for the tenant. The Space used value is the total amount of object data in the bucket or container. The bar chart represents the relative sizes of these buckets or containers.
 
 The value shown above the bar chart is a sum of the space used for all of the tenant's buckets or containers. If the maximum number of gigabytes, terabytes, or petabytes available for the tenant was specified when the account was created, the amount of quota used and remaining are also shown.
 
-image::../media/tenant_dashboard_with_buckets.png[Tenant Manager Dashboard]
+image::../media/tenant_dashboard_with_buckets.png[Tenant Manager dashboard]
 
 == Storage menu (S3)
 
@@ -55,7 +55,7 @@ S3 tenant users with the appropriate permissions can perform the following tasks
 
 If a grid administrator has enabled the use of platform services for the tenant account, an S3 tenant user with the appropriate permissions can also perform these tasks:
 
-* Configure S3 event notifications, which can be sent to a destination service that supports the AWS Simple Notification Service™ (SNS).
+* Configure S3 event notifications, which can be sent to a destination service that supports the Amazon Simple Notification Service™ (Amazon SNS).
 * Configure CloudMirror replication, which enables the tenant to automatically replicate objects to an external S3 bucket.
 * Configure search integration, which sends object metadata to a destination search index whenever an object is created, deleted, or its metadata or tags are updated.
 

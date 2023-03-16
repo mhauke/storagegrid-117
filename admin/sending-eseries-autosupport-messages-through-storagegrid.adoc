@@ -15,8 +15,9 @@ See https://docs.netapp.com/us-en/e-series-santricity/sm-support/autosupport-fea
 
 .What you'll need
 * You are signed into the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
-* You have the Storage Appliance Administrator permission or Root access permission.
-* You have configured SANtricity AutoSupport for SG6000 and SG5700 appliances. See link:../installconfig/accessing-and-configuring-santricity-system-manager.html[configure AutoSupport  in SANtricity System Manager].
+* You have the Storage appliance administrator permission or Root access permission.
+* You have configured SANtricity AutoSupport:
+** For SG6000 and SG5700 appliances, link:../installconfig/accessing-and-configuring-santricity-system-manager.html[configure AutoSupport in SANtricity System Manager]
 
 NOTE: You must have SANtricity firmware 8.70 or higher to access SANtricity System Manager using the Grid Manager.
 
@@ -66,7 +67,7 @@ NOTE: The certificate that enables HTTPS is pre-installed.
 +
 If correct, a message in a green banner appears: "`Your AutoSupport configuration has been verified.`"
 +
-If the test fails, an error message appears in a red banner. Check your StorageGRID DNS settings and networking, ensure the link:../admin/what-admin-node-is.html[preferred sender Admin Node] can connect to the NetApp support site, and try the test again.
+If the test fails, an error message appears in a red banner. Check your StorageGRID DNS settings and networking, ensure the link:../admin/what-admin-node-is.html[preferred sender Admin Node] can connect to the NetApp Support Site, and try the test again.
 
 . Select *Save*.
 +

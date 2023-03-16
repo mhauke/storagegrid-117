@@ -137,7 +137,7 @@ The Client Network is optional. When configured, it is used to provide access to
 
 You can choose which grid nodes should have the Client Network enabled on them. All nodes do not have to be on the same Client Network, and nodes will never communicate with each other over the Client Network. The Client Network does not become operational until grid installation is complete.
 
-For added security, you can specify that a node's Client Network interface be untrusted so that the Client Network will be more restrictive of which connections are allowed. If a node's Client Network interface is untrusted, the interface accepts outbound connections such as those used by CloudMirror replication, but only accepts inbound connections on ports that have been explicitly configured as load balancer endpoints. See link:../admin/manage-firewall-controls.html[Manage firwall controls] and link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints].
+For added security, you can specify that a node's Client Network interface be untrusted so that the Client Network will be more restrictive of which connections are allowed. If a node's Client Network interface is untrusted, the interface accepts outbound connections such as those used by CloudMirror replication, but only accepts inbound connections on ports that have been explicitly configured as load balancer endpoints. See link:../admin/manage-firewall-controls.html[Manage firewall controls] and link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints].
 
 When you use a Client Network, client traffic does not need to travel across the Grid Network. Grid Network traffic can be separated onto a secure, non-routable network. The following node types are often configured with a Client Network:
 
@@ -154,7 +154,7 @@ Note the following for the Client Network gateway:
 
 As required, you can optionally use virtual LAN (VLAN) networks for client traffic and for some types of admin traffic. Grid traffic, however, cannot use a VLAN interface. The internal StorageGRID traffic between nodes must always use the Grid Network on eth0.
 
-To support the use VLANs, you must configure one or more interfaces on a node as trunk interfaces at the switch. You can configure the Grid Network interface (eth0) or the Client Network interface (eth2) to be a trunk, or you can additional trunk interfaces to the node.
+To support the use VLANs, you must configure one or more interfaces on a node as trunk interfaces at the switch. You can configure the Grid Network interface (eth0) or the Client Network interface (eth2) to be a trunk, or you can add trunk interfaces to the node.
 
 If eth0 is configured as a trunk, Grid Network traffic flows over the trunk native interface, as configured on the switch. Similarly, if eth2 is configured as a trunk, and the Client Network is also configured on the same node, the Client Network uses the trunk port's native VLAN as configured on the switch.
 
@@ -165,10 +165,3 @@ NOTE: VLAN interfaces can be added to Admin Nodes and Gateway Nodes only. You ca
 See link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces] for instructions and guidelines.
 
 VLAN interfaces are only used in HA groups and are assigned VIP addresses on the active node. See link:../admin/managing-high-availability-groups.html[Manage high availability groups] for instructions and guidelines.
-
-.Related information
-
-* link:networking-requirements-and-guidelines.html[Networking requirements]
-
-
-

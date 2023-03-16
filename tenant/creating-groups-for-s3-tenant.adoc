@@ -18,9 +18,13 @@ You can manage permissions for S3 user groups by importing federated groups or c
 
 * If you plan to import a federated group, you have link:using-identity-federation.html[configured identity federation], and the federated group already exists in the configured identity source.
 
-* If your tenant account has the *Use grid federation connection* permission, you have reviewed the workflow and considerations for link:grid-federation-account-clone.html[cloning account information], and you are signed in to the tenant's source grid.
+* If your tenant account has the *Use grid federation connection* permission, you have reviewed the workflow and considerations for link:grid-federation-account-clone.html[cloning tenant groups and users], and you are signed in to the tenant's source grid.
 
 == Access the Create group wizard
+
+As your first step, access the Create group wizard.
+
+.Steps
 
 . Select *ACCESS MANAGEMENT* > *Groups*.
 
@@ -31,6 +35,11 @@ image::../media/grid-federation-tenant-group-banner.png[image of blue banner on 
 . Select *Create group*.
 
 == Choose a group type
+
+You can create a local group or import a federated group.
+
+.Steps
+
 . Select the *Local group* tab to create a local group, or select the *Federated group* tab to import a group from the previously configured identity source.
 +
 If single sign-on (SSO) is enabled for your StorageGRID system, users belonging to local groups will not be able to sign in to the Tenant Manager, although they can use client applications to manage the tenant's resources, based on group permissions.
@@ -46,6 +55,11 @@ NOTE: If your tenant account has the *Use grid federation connection* permission
 . Select *Continue*.
 
 == Manage group permissions
+
+Group permissions control which tasks users can perform in the Tenant Manager and Tenant Management API.
+
+.Steps
+
 . For *Access mode*, select one of the following:
 ** *Read-write* (default): Users can sign in to Tenant Manager and manage the tenant configuration.
 ** *Read-only*: Users can only view settings and features. They cannot make any changes or perform any operations in the Tenant Manager or Tenant Management API. Local read-only users can change their own passwords.
@@ -59,16 +73,37 @@ See link:../tenant/tenant-management-permissions.html[Tenant management permissi
 . Select *Continue*.
 
 == Set S3 group policy
-. Select a group policy to determine which S3 access permissions the members of this group will have.
-** *No S3 Access*: Default. Users in this group do not have access to S3 resources, unless access is granted with a bucket policy. If you select this option, only the root user will have access to S3 resources by default.
-** *Read Only Access*: Users in this group have read-only access to S3 resources. For example, users in this group can list objects and read object data, metadata, and tags. When you select this option, the JSON string for a read-only group policy appears in the text box. You cannot edit this string.
-** *Full Access*: Users in this group have full access to S3 resources, including buckets. When you select this option, the JSON string for a full-access group policy appears in the text box. You cannot edit this string.
 
-** *Ransomware Mitigation*: This sample policy applies to all buckets for this tenant. Users in this group can perform common actions, but cannot permanently delete objects from buckets that have object versioning enabled.
+The group policy determines which S3 access permissions users will have.
+
+.Steps
+
+. Select the policy you want to use for this group.
 +
-Tenant Manager users who have the Manage all buckets permission can override this group policy. Limit the Manage all buckets permission to trusted users, and use Multi-Factor Authentication (MFA) where available.
+[cols="1a,2a" options="header"]
+|===
+| Group policy
+| Description
 
-** *Custom*: Users in the group are granted the permissions you specify in the text box.
+| No S3 Access
+| Default. Users in this group do not have access to S3 resources, unless access is granted with a bucket policy. If you select this option, only the root user will have access to S3 resources by default.
+
+| Read Only Access
+| Users in this group have read-only access to S3 resources. For example, users in this group can list objects and read object data, metadata, and tags. When you select this option, the JSON string for a read-only group policy appears in the text box. You cannot edit this string.
+
+| Full Access
+| Users in this group have full access to S3 resources, including buckets. When you select this option, the JSON string for a full-access group policy appears in the text box. You cannot edit this string.
+
+| Ransomware Mitigation
+| This sample policy applies to all buckets for this tenant. Users in this group can perform common actions, but cannot permanently delete objects from buckets that have object versioning enabled.
+
+Tenant Manager users who have the *Manage all buckets* permission can override this group policy. Limit the Manage all buckets permission to trusted users, and use Multi-Factor Authentication (MFA) where available.
+
+| Custom
+| Users in the group are granted the permissions you specify in the text box.
+
+|===
+
 
 . If you selected *Custom*, enter the group policy. Each group policy has a size limit of 5,120 bytes. You must enter a valid JSON formatted string.
 +
@@ -79,7 +114,9 @@ For detailed information about group policies, including language syntax and exa
 == Add users (local groups only)
 You can save the group without adding users, or you can optionally add any local users that already exist.
 
-NOTE: If your tenant account has the *Use grid federation connection* permission, users that are added to a group on the source grid are not included when the group is cloned to the destination grid. 
+NOTE: If your tenant account has the *Use grid federation connection* permission, any users you select when you create a local group on the source grid are not included when the group is cloned to the destination grid. For this reason, do not select users when you create the group. Instead, select the group when you create the users.
+
+.Steps
 
 . Optionally, select one or more local users for this group.
 

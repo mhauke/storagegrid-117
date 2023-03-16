@@ -46,11 +46,11 @@ NOTE: If the link:enabling-s3-object-lock-globally.html[global S3 Object Lock se
 ====
 //end tabbed block
 
-* Optionally, you have watched https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c929e94e-353a-4375-b112-acc5013c81c7[Video: StorageGRID ILM Policies^]
+* Optionally, you have watched the video: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0009ebe1-3665-4cdc-a101-afbd009a0466[Video: Information lifecycle management policies in StorageGRID 11.7^]
 +
-image::../media/video-screenshot-ilm-policies.png[link="https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c929e94e-353a-4375-b112-acc5013c81c7" alt="Video: StorageGRID ILM Policies", window=_blank]
+image::../media/video-screenshot-ilm-policies-117.png[link="https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0009ebe1-3665-4cdc-a101-afbd009a0466" alt="Video: Information lifecycle management policies in StorageGRID 11.7", window=_blank]
 
-See also link:creating-ilm-policy.html[Create an ILM policy:Overview].
+See also link:creating-ilm-policy.html[Create an ILM policy: Overview].
 
 .About this task
 
@@ -61,7 +61,7 @@ Typical reasons for creating a proposed ILM policy include:
 * You added a new tenant that has special data protection requirements.
 * You started to use a Cloud Storage Pool.
 
-IMPORTANT: Only use the system-provided policy, Baseline 2 copies policy, in test systems. The Make 2 Copies rule in this policy uses the All Storage Nodes storage pool (StorageGRID 11.6 and earlier), which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
+IMPORTANT: Only use the system-provided policy, Baseline 2 copies policy, in test systems. For StorageGRID 11.6 and earlier, the default rule in this policy uses the All Storage Nodes storage pool, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
 
 .Steps
 . Select *ILM* > *Policies*.
@@ -106,9 +106,9 @@ You cannot clone the active policy if a proposed policy already exists.
 //end tabbed blocks
 
 [start=3]
-. In the *Proposed policy name* field, enter a unique name for the proposed policy. Enter at least 1 and no more than 64 characters.
+. In the *Proposed policy name* field, enter a unique name for the proposed policy.
 
-. In the *Reason for change* field, enter the reason you are creating a new proposed policy. Enter at least 1 and no more than 128 characters.
+. In the *Reason for change* field, enter the reason you are creating a new proposed policy.
 
 . To add rules to the policy, select *Select rules*. Select a rule name to view the settings for that rule.
 +
@@ -166,7 +166,7 @@ If S3 Object Lock is enabled and you also selected a non-compliant "`default`" r
 +
 NOTE: A warning appears if any rule does not retain objects forever. When you activate this policy, you must confirm that you want StorageGRID to delete objects when the placement instructions for the default rule elapse (unless a bucket lifecycle keeps the objects for a longer time period).
 
-. Drag and drop the rows for the non-default rules to determine the order in which these rules will be evaluated.
+. Drag the rows for the non-default rules to determine the order in which these rules will be evaluated.
 +
 You cannot move the default rule. If S3 Object Lock is enabled, you also cannot move the non-compliant "`default`" rule if one was selected.
 +

@@ -2,24 +2,28 @@
 permalink: maintain/rename-grid-site-node.html
 sidebar: sidebar
 keywords: rename grid, rename sites, rename node, change display name, bulk rename tool
-summary: 'You can use this procedure to add or update the display names used for your grid, sites, and nodes. You can rename a single item, multiple names, or even all items at once. Defining or updating a display name does not affect StorageGRID operations in any way.'
+summary: 'You can use this procedure to add or update the display names used for your grid, sites, and nodes. You can rename a single item, multiple names, or even all items at the same time. Defining or updating a display name does not affect StorageGRID operations in any way.'
 ---
 = Add or update display names
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can use this procedure to add or update the display names used for your grid, sites, and nodes. You can rename a single item, multiple items, or even all items at once. Defining or updating a display name does not affect StorageGRID operations in any way. 
+You can use this procedure to add or update the display names used for your grid, sites, and nodes. You can rename a single item, multiple items, or even all items at the same time. Defining or updating a display name does not affect StorageGRID operations in any way. 
 
 .What you'll need
 
-* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* From the *primary Admin Node*, you are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
++
+NOTE: You can add or update display names from a non-primary Admin Node, but you must be signed in to the primary Admin Node to download a Recovery Package. 
 * You have the Maintenance or Root access permission.
 * You have the provisioning passphrase.
 * You understand the requirements and best practices for display names. See link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes: Overview].
 
 == How to rename grid, sites, or nodes
 Follow these steps to rename your grid, one or more sites, or one or more nodes.
+
+You can rename a node with a display name that was previously used by a different node, as long as the rename doesn't result in a duplicate display name or system name.
 
 === Select items to rename
 
@@ -29,25 +33,25 @@ Follow these steps to rename your grid, one or more sites, or one or more nodes.
 [cols="1a,2a" options="header"]
 |===
 
-|Item to change
-|Instruction
+| Item to change
+| Instruction
 
-|Names of everything (or almost everything) in your system
-|. Select *Select all*. 
+| Names of everything (or almost everything) in your system
+| . Select *Select all*. 
 . Optionally unselect any items you do not want to rename.
 
-|Name of the grid
-|Select the check box for the grid. 
+| Name of the grid
+| Select the check box for the grid. 
 
-|Name of a site and some or all of its nodes
-|. Select the check box in the table header for the site. 
+| Name of a site and some or all of its nodes
+| . Select the check box in the table header for the site. 
 . Optionally, unselect any nodes you do not want to rename.
 
-|Name of a site
-|Select the check box for the site.
+| Name of a site
+| Select the check box for the site.
 
-|Name of a node
-|Select the check box for the node.
+| Name of a node
+| Select the check box for the node.
 
 |===
 
@@ -79,11 +83,9 @@ See link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and
 +
 If you will not be proposing a new name for an item, you must remove it from the table.
 
-
 . When you have proposed new names for all items in the table, select *Rename*.
 +
 A success message appears. The new display names are now used throughout Grid Manager.
-
 
 --
 .Rename items in bulk
@@ -123,10 +125,9 @@ A success message is shown. The new display names are now used throughout Grid M
 
 // end tabbed area
 
+=== [[download-recovery-package]]Download the recovery package
 
-=== Download the recovery package
-
-When you are done renaming items, download and save a new Recovery Package. The new display names for the items you renamed are included in the `Passwords.txt` file. 
+When you are done renaming items, download and save a new Recovery Package. The new display names for the items you renamed are included in the `Passwords.txt` file.
 
 . Enter the provisioning passphrase.
 . Select *Download Recovery Package*.
@@ -165,7 +166,6 @@ To revert a display name, the system name must appear in the *Display name* fiel
 +
 A success message appears. The display names for these items are no longer used.
 
-
 --
 .Revert to system names in bulk
 --
@@ -191,5 +191,6 @@ A success message is shown. The display names for these items are no longer used
 // end tabbed area
 
 [start=5]
-.  Download and save a new Recovery Package. Display names for the items you reverted are no longer included in the `Passwords.txt` file. 
-
+. <<download-recovery-package,Download and save a new Recovery Package>>.
++
+Display names for the items you reverted are no longer included in the `Passwords.txt` file.

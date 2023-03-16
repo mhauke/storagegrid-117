@@ -26,7 +26,7 @@ To install StorageGRID on an appliance Storage Node, you use the StorageGRID App
 
 To install StorageGRID on an appliance Storage Node:
 
-* You specify or confirm the IP address of the primary Admin Node and the name of the node.
+* You specify or confirm the IP address of the primary Admin Node and the hostname (system name) of the node.
 * You start the installation and wait as volumes are configured and the software is installed.
 * Partway through the process, the installation pauses. To resume the installation, you must sign into the Grid Manager and configure the pending Storage Node as a replacement for the failed node.
 * After you have configured the node, the appliance installation process completes, and the appliance is rebooted.
@@ -63,8 +63,8 @@ The StorageGRID Appliance Installer can discover this IP address automatically, 
 +
 |===
 
-. In the *Node Name* field, enter the same name that was used for the node you are recovering, and click *Save*.
-. In the Installation section, confirm that the current state is "`Ready to start installation of node name into grid with Primary Admin Node admin_ip`" and that the *Start Installation* button is enabled.
+. In the *Node Name* field, enter the same hostname (system name) that was used for the node you are recovering, and click *Save*.
+. In the Installation section, confirm that the current state is "`Ready to start installation of `_node name_` into grid with Primary Admin Node `_admin_ip_``" and that the *Start Installation* button is enabled.
 +
 If the *Start Installation* button is not enabled, you might need to change the network configuration or port settings. For instructions, see the maintenance instructions for your appliance.
 
@@ -86,5 +86,3 @@ NOTE: If you need to access the Monitor Installation page manually, click *Monit
 * link:../sg6000/index.html[SG6000 storage appliances]
 
 * link:../sg5700/index.html[Maintain SG5700 appliance]
-
-====

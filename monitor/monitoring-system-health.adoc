@@ -37,7 +37,7 @@ When issues exist, links appear that allow you to view additional details:
 |There is an issue with the software license for this StorageGRID system. You can link:../admin/updating-storagegrid-license-information.html[update license information as needed].
 |===
 
-[#monitor-node-connection-states]
+[monitor-node-connection-states]
 == Monitor node connection states
 
 If one or more nodes are disconnected from the grid, critical StorageGRID operations might be affected. Monitor node connection states and address any issues promptly.
@@ -85,9 +85,9 @@ The node is connected to the grid.
 
 *Resolved alerts*: You can search and view a history of alerts that have been resolved.
 
-Watch this https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2680a74f-070c-41c2-bcd3-acc5013c9cdd[video for an overview of alerts^].
+Optionally, you have watched the video: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18df5a3d-bf19-4a9e-8922-afbd009b141b[Video: Alerts overview for StorageGRID 11.7^]
 
-image::../media/video-screenshot-alert-overview.png[link="https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2680a74f-070c-41c2-bcd3-acc5013c9cdd" alt="Video: Overview of Alerts", window=_blank]
+image::../media/video-screenshot-alert-overview-117.png[link="https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18df5a3d-bf19-4a9e-8922-afbd009b141b" alt="Video: Alerts overview for StorageGRID 11.7", window=_blank]
 
 The following table describes the information shown in the Grid Manager for current and resolved alerts.
 
@@ -165,7 +165,7 @@ See link:silencing-alert-notifications.html[Silence alert notifications].
 
 . (Optional) For a specific alert, select silence this alert to silence the alert rule that caused this alert to be triggered.
 +
-You must have the Manage Alerts or Root access permission to silence an alert rule.
+You must have the Manage alerts or Root access permission to silence an alert rule.
 +
 IMPORTANT: Be careful when deciding to silence an alert rule. If an alert rule is silenced, you might not detect an underlying problem until it prevents a critical operation from completing.
 
@@ -177,7 +177,7 @@ A pop-up appears, listing the Prometheus expression for each defined severity.
 
 . Optionally, select *Edit rule* to edit the alert rule that caused this alert to be triggered.
 +
-You must have the Manage Alerts or Root access permission to edit an alert rule.
+You must have the Manage alerts or Root access permission to edit an alert rule.
 +
 IMPORTANT: Be careful when deciding to edit an alert rule. If you change trigger values, you might not detect an underlying problem until it prevents a critical operation from completing.
 

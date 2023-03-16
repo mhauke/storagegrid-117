@@ -13,7 +13,7 @@ Client certificates allow authorized external clients to access the StorageGRID 
 
 If you need to access StorageGRID using an external monitoring tool, you must upload or generate a client certificate using the Grid Manager and copy the certificate information to the external tool.
 
-See the information about link:using-storagegrid-security-certificates.html[general security certificate use] and link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[configuring custom server certificates]. 
+See link:using-storagegrid-security-certificates.html[Manage security certificates] and link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[Configure custom server certificates]. 
 
 NOTE: To ensure that operations are not disrupted by a failed server certificate, the *Expiration of client certificates configured on the Certificates page* alert is triggered when this server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the client certificate on the Client tab.
 
@@ -49,7 +49,7 @@ Use this procedure to add a client certificate if a management interface certifi
 
 . In the Grid Manager, select *CONFIGURATION* > *Security* > *Certificates* and then select the *Client* tab.
 . Select *Add*.
-. Enter a certificate name that contains at least 1 and no more than 32 characters.
+. Enter a certificate name.
 . To access Prometheus metrics using your external monitoring tool, select *Allow prometheus*.
 . Select *Continue*.
 
@@ -77,7 +77,7 @@ Use this procedure to add an administrator client certificate if a management in
 . Perform the steps to link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[configure a management interface certificate].
 . In the Grid Manager, select *CONFIGURATION* > *Security* > *Certificates* and then select the *Client* tab.
 . Select *Add*.
-. Enter a certificate name that contains at least 1 and no more than 32 characters.
+. Enter a certificate name.
 . To access Prometheus metrics using your external monitoring tool, select *Allow prometheus*.
 . Select *Continue*.
 
@@ -103,7 +103,7 @@ Use this procedure to add an administrator client certificate if a management in
 
 . In the Grid Manager, select *CONFIGURATION* > *Security* > *Certificates* and then select the *Client* tab.
 . Select *Add*.
-. Enter a certificate name that contains at least 1 and no more than 32 characters.
+. Enter a certificate name.
 . To access Prometheus metrics using your external monitoring tool, select *Allow prometheus*.
 . Select *Continue*.
 
@@ -114,6 +114,12 @@ Use this procedure to add an administrator client certificate if a management in
 ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
 
 ** *Days valid*: The number of days the generated certificate is valid, starting at the time it is generated.
+
+** *Add key usage extensions*: If selected (default and recommended), key usage and extended key usage extensions are added to the generated certificate.
++
+These extensions define the purpose of the key contained in the certificate.
++
+NOTE: Leave this check box selected unless you experience connection problems with older clients when certificates include these extensions.
 
 . Select *Generate*. 
 
@@ -154,10 +160,6 @@ The new certificate appears on the Client tab.
 .Steps
 
 . Configure the following settings on your external monitoring tool, such as Grafana.
-+
-// A Grafana example is shown in the following screenshot:
-// +
-// image::../media/grafana_add_url_and_auth.png[Grafana - Add URL and Auth]
 
  .. *Name*: Enter a name for the connection.
 +
@@ -196,7 +198,7 @@ Certificate expiration dates and Prometheus access permissions are listed in the
 
 . Select the certificate you want to edit.
 . Select *Edit* and then select *Edit name and permission*
-. Enter a certificate name that contains at least 1 and no more than 32 characters.
+. Enter a certificate name.
 . To access Prometheus metrics using your external monitoring tool, select *Allow prometheus*.
 . Select *Continue* to save the certificate in the Grid Manager.
 +
@@ -255,6 +257,12 @@ Generate the certificate text to paste elsewhere.
 ** *Subject* (optional): X.509 subject or distinguished name (DN) of the certificate owner.
 
 ** *Days valid*: The number of days the generated certificate is valid, starting at the time it is generated.
+
+** *Add key usage extensions*: If selected (default and recommended), key usage and extended key usage extensions are added to the generated certificate.
++
+These extensions define the purpose of the key contained in the certificate.
++
+NOTE: Leave this check box selected unless you experience connection problems with older clients when certificates include these extensions.
 
 .. Select *Generate*. 
 

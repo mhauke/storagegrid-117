@@ -38,20 +38,20 @@ Cross-grid replication can be configured to occur in one direction or in both di
 
 === Replication in one direction
 
-If you enable cross-grid replication for a bucket on only one grid, objects added to that bucket (the source bucket) are replicated to the destination bucket on the other grid. However, objects added to the destination bucket will not be replicated back to the source. In the figure, cross-grid replication is enabled for `my-bucket` from Grid 1 to Grid 2, but it is not enabled in the other direction. 
+If you enable cross-grid replication for a bucket on only one grid, objects added to that bucket (the source bucket) are replicated to the corresponding bucket on the other grid (the destination bucket). However, objects added to the destination bucket aren't replicated back to the source. In the figure, cross-grid replication is enabled for `my-bucket` from Grid 1 to Grid 2, but it is not enabled in the other direction. 
 
 image:../media/grid-federation-cross-grid-replication-one-direction.png[image showing grid federation connection in one direction]
 
 === Replication in both directions
 If you enable cross-grid replication for the same bucket on both grids, objects added to either bucket are replicated to the other grid. In the figure, cross-grid replication is enabled for `my-bucket` in both directions. 
 
-image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction vs replication in both directions]
+image:../media/grid-federation-cross-grid-replication.png[image showing replication in one direction compared to replication in both directions]
 
 === What happens when objects are ingested?
 
 When an S3 client adds an object to a bucket that has cross-grid replication enabled, the following happens:
 
-. StorageGRID automatically replicates the object from the source bucket to the destination bucket. The time to perform this background replication operation depends on a number of factors, including the number of other replication operations that are pending.
+. StorageGRID automatically replicates the object from the source bucket to the destination bucket. The time to perform this background replication operation depends on several factors, including the number of other replication operations that are pending.
 +
 The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
 The S3 client can verify an object's replication status by issuing a GET Object or HEAD Object request. The response includes a StorageGRID-specific `x-ntap-sg-cgr-replication-status` response header, which will have one of the following values:
@@ -61,9 +61,9 @@ The S3 client can verify an object's replication status by issuing a GET Object 
 | Grid| Replication status 
 
 | Source
-| * *SUCCESS*: The replication was successful.
-* *PENDING*: The object hasn't been replicated yet.
-* *FAILURE*: The replication failed with a permanent failure. A user must resolve the error.
+| * *SUCCESS*: The replication was successful for all grid connections.
+* *PENDING*: The object hasn't been replicated to at least one grid connection.
+* *FAILURE*: Replication is not pending for any grid connection and at least one failed with a permanent failure. A user must resolve the error.
 
 | Destination
 | *REPLICA*: The object was replicated from the source grid.
@@ -72,8 +72,7 @@ The S3 client can verify an object's replication status by issuing a GET Object 
 +
 NOTE: StorageGRID does not support the `x-amz-replication-status` header.
 
-. StorageGRID manages the objects in each grid like any other objects, including following the active ILM policy.
-For example, Object A on Grid 1 might be stored as two replicated copies and retained forever, while the copy of Object A that was replicated to Grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
+. StorageGRID uses each grid's active ILM policy to manage the objects, just as it would any other object. For example, Object A on Grid 1 might be stored as two replicated copies and retained forever, while the copy of Object A that was replicated to Grid 2 might be stored using 2+1 erasure coding and deleted after three years. 
 
 === What happens when objects are deleted?
 
@@ -84,16 +83,7 @@ As described in link:../primer/delete-data-flow.html[Delete data flow], StorageG
 * The bucket has a lifecycle configuration, which expires.
 * The last time period in the ILM rule for the object ends, and there are no further placements specified.
 
-When StorageGRID deletes an object because of a Delete objects in bucket operation, bucket lifecycle expiration, or ILM placement expiration, the replicated object is never deleted from the other grid in a grid federation connection. However, delete markers from S3 client deletes can optionally be replicated between grids.
-
-As described in link:../primer/delete-data-flow.html[Delete data flow], StorageGRID can delete an object for any of these reasons: 
-
-* The S3 client issues a delete request.
-* The bucket has a lifecycle configuration, which expires.
-* The last time period in the ILM rule for the object ends, and there are no further placements specified.
-* The tenant user chooses to link:../tenant/deleting-s3-bucket-objects.html[delete objects in the bucket]. 
-
-When StorageGRID deletes an object because of bucket lifecycle expiration, ILM placement expiration, or a delete objects operation, the replicated object is never deleted from the other grid in a grid federation connection. However, S3 client deletes can optionally be replicated between the grids in the connection as described below.
+When StorageGRID deletes an object because of a Delete objects in bucket operation, bucket lifecycle expiration, or ILM placement expiration, the replicated object is never deleted from the other grid in a grid federation connection. However, delete markers added to the source bucket by S3 client deletes can optionally be replicated to the destination bucket.
 
 To understand what happens when an S3 client deletes objects from a bucket that has cross-grid replication enabled, review how S3 clients delete objects from buckets that have versioning enabled, as follows:
 
@@ -110,13 +100,15 @@ When an S3 client deletes an object from a bucket that has cross-grid replicatio
 
 * If the delete request does not include a version ID, StorageGRID can optionally replicate the delete marker, based on how cross-grid replication is configured for the bucket:
 
-** If you choose to replicate delete markers, a delete marker is added to the source bucket and replicated to the destination bucket. In effect, the object appears to be deleted on both grids.
+** If you choose to replicate delete markers (default), a delete marker is added to the source bucket and replicated to the destination bucket. In effect, the object appears to be deleted on both grids.
 
-**  If you choose not to replicate delete markers, a delete marker is added to the source bucket but is not replicated to the destination bucket. In effect, objects that are deleted on the source grid are not deleted on the destination grid.
+**  If you choose not to replicate delete markers, a delete marker is added to the source bucket but is not replicated to the destination bucket. In effect, objects that are deleted on the source grid aren't deleted on the destination grid.
 
-In the figure, *Replicate delete markers* was set to *Yes* when link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication was enabled]. Delete requests for the source bucket that include a version ID will not delete objects from the destination bucket. Delete requests for the source bucket that do not include a version ID will appear to delete objects in the destination bucket.
+In the figure, *Replicate delete markers* was set to *Yes* when link:../tenant/grid-federation-manage-cross-grid-replication.html[cross-grid replication was enabled]. Delete requests for the source bucket that include a version ID will not delete objects from the destination bucket. Delete requests for the source bucket that don't include a version ID will appear to delete objects in the destination bucket.
 
 image:../media/grid-federation-cross-grid-replication-delete.png[image showing replicate client delete on both grids]
+
+NOTE: If you want to keep object deletions synchronized between grids, create corresponding link:../s3/create-s3-lifecycle-configuration.html[S3 lifecycle configurations] for the buckets on both grids. 
 
 === How encrypted objects are replicated
 When you use cross-grid replication to replicate objects between grids, you can encrypt individual objects, use default bucket encryption, or configure grid-wide encryption. You can add, modify, or remove default bucket or grid-wide encryption settings before or after you enable cross-grid replication for a bucket.
@@ -127,7 +119,7 @@ NOTE: Using SSE-C (server-side encryption with customer-provided keys) is not su
 
 To use default encryption for a bucket, use a PUT bucket encryption request and set the `SSEAlgorithm` parameter to `AES256`. Bucket-level encryption applies to any objects ingested without the `x-amz-server-side-encryption` request header. See link:../s3/operations-on-buckets.html[Operations on buckets]. 
 
-To use grid-level encryption, set the *Stored object encryption* option to *AES-256*. Grid-level encryption applies to any objects that are not encrypted at the bucket level or that are ingested without the `x-amz-server-side-encryption` request header. See link:../admin/changing-network-options-object-encryption.html[Configure network and object options].
+To use grid-level encryption, set the *Stored object encryption* option to *AES-256*. Grid-level encryption applies to any objects that aren't encrypted at the bucket level or that are ingested without the `x-amz-server-side-encryption` request header. See link:../admin/changing-network-options-object-encryption.html[Configure network and object options].
 
 NOTE: SSE does not support AES-128. If the *Stored object encryption* option is enabled for the source grid using the *AES-128* option, the use of the AES-128 algorithm will not be propagated to the replicated object. Instead, the replicated object will use the destination's default bucket or grid-level encryption setting, if available. 
 
@@ -136,18 +128,18 @@ When determining how to encrypt source objects, StorageGRID applies these rules:
 . Use the `x-amz-server-side-encryption` ingest header, if present.
 . If an ingest header is not present, use the bucket default encryption setting, if configured.
 . If a bucket setting is not configured, use the grid-wide encryption setting, if configured.
-. If a grid-wide setting is not present, do not encrypt the source object.
+. If a grid-wide setting is not present, don't encrypt the source object.
 
 When determining how to encrypt replicated objects, StorageGRID applies these rules in this order:
 
 . Use the same encryption as the source object, unless that object uses AES-128 encryption.
 . If the source object is not encrypted or it uses AES-128, use the destination bucket's default encryption setting, if configured.
 . If the destination bucket does not have an encryption setting, use the destination's grid-wide encryption setting, if configured.
-. If a grid-wide setting is not present, do not encrypt the destination object.
+. If a grid-wide setting is not present, don't encrypt the destination object.
 
-=== PUT Object tagging and DELETE Object tagging are not supported
+=== PUT Object tagging and DELETE Object tagging aren't supported
 
-PUT Object tagging and DELETE Object tagging requests are not supported for objects in buckets that have cross-grid replication enabled.
+PUT Object tagging and DELETE Object tagging requests aren't supported for objects in buckets that have cross-grid replication enabled.
 
 If an S3 client issues a PUT Object tagging or DELETE Object tagging request, `501 Not Implemented` is returned. The message is `Put(Delete) ObjectTagging is not available for buckets that have cross-grid replication configured`.
 

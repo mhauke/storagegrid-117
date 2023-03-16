@@ -154,9 +154,17 @@ Only certain Admin and Gateway Nodes contain this log. See the link:../admin/man
 |Contains logs for the nginx service, which acts as an authentication and secure communication mechanism for various grid services (such as Prometheus and Dynip) to be able to talk to services on other nodes over HTTPS APIs.
 |All nodes
 
-|`/var/local/log/nginx-gw/*.log`
-|Contains logs for the restricted admin ports on Admin Nodes and for the Load Balancer service, which provides load balancing of S3 and Swift traffic from clients to Storage Nodes.
-|Admin Nodes and Gateway Nodes
+| `/var/local/log/nginx-gw/*.log`
+| Contains general logs related to the nginx-gw service, including error logs, and logs for the restricted admin ports on Admin Nodes.
+| Admin Nodes and Gateway Nodes
+
+| `/var/local/log/nginx-gw/cgr-access.log.gz`
+| Contains access logs related to cross-grid replication traffic.
+| Admin Nodes, Gateway Nodes, or both, based on the grid federation configuration.  Only found on the destination grid for cross-grid replication.
+
+| `/var/local/log/nginx-gw/endpoint-access.log.gz`
+| Contains access logs for the Load Balancer service, which provides load balancing of S3 and Swift traffic from clients to Storage Nodes.
+| Admin Nodes and Gateway Nodes
 
 |`/var/local/log/persistence*`
 |Contains logs for the Persistence service, which manages files on the root disk that need to persist across a reboot.

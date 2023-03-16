@@ -84,7 +84,7 @@ However, `Havok.png` was meant to test the *X-men* rule.
 
 . To resolve the issue, reorder the rules.
  .. Select *Finish* to close the Simulate ILM Policy window.
- .. Select *Edit* to edit the policy.
+ .. Select *Actions* > *Edit* to edit the policy.
  .. Drag the *X-men* rule to the top of the list.
  .. Select *Save*.
 . Select *Simulate*.
@@ -138,21 +138,14 @@ As an example, suppose the metadata for the X-men rule was entered as "`x-men01`
 .. Select *ILM* > *Rules*.
 .. Select the rule you want to edit and select *Edit*. Or select the check box for the rule and select *Actions* > *Edit*.
 .. Change the incorrect information for each part of the wizard, then select *Update*.
-.. Select *ILM* > *Policies* > *Proposed policy*, then select *Edit*.
-.. Select the delete icon image:../media/icon-x-to-remove.png[Remove icon] to remove the incorrect rule, and select *Save*.
-.. Select *ILM* > *Rules*.
-.. Select the incorrect rule, and select *Edit*.
-.. Change the incorrect information, and select *Save*.
 .. Select *ILM* > *Policies* > *Proposed policy*.
 .. Select *Actions* > *Edit*.
 .. Select *Select rules*, then select *Continue* to accept the same default rule.
 .. In the Select other rules dialog box, select the check box for the corrected rule, select *Select*, then select *Save*.
-.. Drag and drop the rows for the non-default rules to determine the order in which these rules will be evaluated.
+.. Drag the rows for the non-default rules to determine the order in which these rules will be evaluated.
 |===
 
 . Perform the simulation again.
-+
-NOTE: Because you navigated away from the ILM policies page to edit the rule, the objects you previously entered for simulation are no longer displayed. You must re-enter the names of the objects.
 +
 In this example, the corrected X-men rule now matches the `Beast.jpg` object based on the `series=x-men` user metadata, as expected.
 +

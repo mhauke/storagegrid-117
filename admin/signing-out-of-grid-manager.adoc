@@ -19,21 +19,19 @@ image::../media/sign_out.png[Sign out link]
 .  Select *Sign out*. 
 +
 
-[cols="1a,1a" options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Option| Description
-a|
-SSO not in use
-a|
-You are signed out of the Admin Node.
+
+| SSO not in use
+| You are signed out of the Admin Node.
 
 The Grid Manager sign in page is displayed.
 
 *Note:* If you signed into more than one Admin Node, you must sign out of each node.
-a|
-SSO enabled
-a|
-You are signed out of all Admin Nodes you were accessing.     The StorageGRID sign in page is displayed. *Grid Manager* is listed as the default in the *Recent Accounts* drop-down, and the *Account ID* field shows 0.
+
+| SSO enabled
+| You are signed out of all Admin Nodes you were accessing.     The StorageGRID sign in page is displayed. *Grid Manager* is listed as the default in the *Recent Accounts* drop-down, and the *Account ID* field shows 0.
 
 *Note:* If SSO is enabled and you are also signed in to the Tenant Manager, you must also link:../tenant/signing-out-of-tenant-manager.html[sign out of the tenant account] to link:configuring-sso.html[sign out of SSO].
 |===

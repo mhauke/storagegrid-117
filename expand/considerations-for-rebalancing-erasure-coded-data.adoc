@@ -15,7 +15,7 @@ After reviewing these considerations, perform the expansion, and then go to link
 
 == What is EC rebalancing?
 
-EC rebalancing is a StorageGRID procedure that might be required after a Storage Node expansion. The procedure is run as a command-line script from the primary Admin Node. When you run the EC rebalance procedure, StorageGRID redistributes erasure-coded fragments among the existing and the newly expanded Storage Nodes at a site.
+EC rebalancing is a StorageGRID procedure that might be required after a Storage Node expansion. The procedure is run as a command-line script from the primary Admin Node. When you run the EC rebalance procedure, StorageGRID redistributes erasure-coded fragments among the existing and the newly added Storage Nodes at a site.
 
 The EC rebalance procedure:
 
@@ -23,7 +23,8 @@ The EC rebalance procedure:
 * Redistributes the data within a site. It does not move data between sites.
 * Redistributes data among all Storage Nodes at a site. It does not redistribute data within storage volumes.
 * Does not consider the replicated data usage on each Storage Node when determining where to move erasure-coded data.
-* Redistributes erasure-coded data evenly between Storage Nodes without considering the maximum capacity of each node.
+* Redistributes erasure-coded data evenly between Storage Nodes without considering the relative capacities of each node.
+* Will not distribute erasure-coded data to Storage Nodes that are more than 70% full.
 * Might decrease the performance of ILM operations and S3 and Swift client operations when it runs&#8212;additional resources are required to redistribute the erasure-coding fragments. 
 * Might need to be run more than once for systems with very large numbers of erasure-coded objects. To limit resource usage, the maximum number of moves is capped for each job.
 
@@ -108,17 +109,17 @@ EC data repair job
 | Expansion procedure
 | No.
 
-If you need to add new Storage Nodes in an expansion, you should wait to run the EC rebalance procedure until after you have added all new nodes. If an EC rebalance procedure is in progress when you add new Storage Nodes, data will not be moved to those nodes.
+If you need to add new Storage Nodes in an expansion, run the EC rebalance procedure after adding all new nodes.
 
 | Upgrade procedure
 | No.
 
-If you need to upgrade StorageGRID software, you should perform the upgrade procedure before or after running the EC rebalance procedure. As required, you can terminate the EC rebalance procedure to perform a software upgrade.
+If you need to upgrade StorageGRID software, perform the upgrade procedure before or after running the EC rebalance procedure. As required, you can terminate the EC rebalance procedure to perform a software upgrade.
 
 | Appliance node clone procedure
 | No.
 
-If you need to clone an appliance Storage Node, you should wait to run the EC rebalance procedure until after you have added the new node. If an EC rebalance procedure is in progress when you add new Storage Nodes, data will not be moved to those nodes.
+If you need to clone an appliance Storage Node, run the EC rebalance procedure after adding the new node.
 
 | Hotfix procedure
 | Yes.

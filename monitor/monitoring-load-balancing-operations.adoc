@@ -18,24 +18,24 @@ After configuring load balancing, you should confirm that object ingest and retr
 
 If you configured a high availability (HA) group of Gateway Nodes or Admin Nodes in active-backup mode, only one node in the group actively distributes client requests.
 
-See the section on configuring client connections in the instructions for administering StorageGRID.
+For more information, see link:../admin/configuring-client-connections.html[Configure S3 and Swift client connections].
 
 .Steps
 . If S3 or Swift clients connect using the Load Balancer service, check that Admin Nodes or Gateway Nodes are actively distributing traffic as you expect:
  .. Select *NODES*.
  .. Select a Gateway Node or Admin Node.
- .. On the *Overview* tab, check if a node interface is in an HA group and if the node interface has the role of Master.
+ .. On the *Overview* tab, check if a node interface is in an HA group and if the node interface has the role of Primary.
 +
-Nodes with the role of Master and nodes that are not in an HA group should be actively distributing requests to clients.
+Nodes with the role of Primary and nodes that are not in an HA group should be actively distributing requests to clients.
 
- .. For each node that should be actively distributing client requests, select the *Load Balancer* tab.
+ .. For each node that should be actively distributing client requests, select the link:viewing-load-balancer-tab.html[Load Balancer tab].
  .. Review the chart of Load Balancer Request Traffic for the last week to ensure that the node has been actively distributing requests.
 +
 Nodes in an active-backup HA group might take the Backup role from time to time. During that time the nodes do not distribute client requests.
 
  .. Review the chart of Load Balancer Incoming Request Rate for the last week to review the object throughput of the node.
  .. Repeat these steps for each Admin Node or Gateway Node in the StorageGRID system.
- .. Optionally, use traffic classification policies to view a more detailed breakdown of traffic being served by the Load Balancer service.
+ .. Optionally, use traffic classification policies to view a more detailed analysis of traffic being served by the Load Balancer service.
 
 . Verify that these requests are being evenly distributed to Storage Nodes.
  .. Select *_Storage Node_* > *LDR* > *HTTP*.
@@ -44,8 +44,4 @@ Nodes in an active-backup HA group might take the Backup role from time to time.
 +
 The number of sessions should be roughly equal across all Storage Nodes.
 
-.Related information
 
-link:../admin/index.html[Administer StorageGRID]
-
-link:viewing-load-balancer-tab.html[View the Load Balancer tab]

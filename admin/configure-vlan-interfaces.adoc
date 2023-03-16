@@ -49,17 +49,20 @@ You can use the Grid Manager to create VLAN interfaces that allow clients to acc
 
 === Access the wizard
 
+.Steps
+
 . Select *CONFIGURATION* > *Network* > *VLAN interfaces*.
 
 . Select *Create*.
 
 === Enter details for the VLAN interfaces
 
+.Steps
+
 . Specify the ID of the VLAN in your network. You can enter any value between 1 and 4094.
 +
 VLAN IDs do not need to be unique. For example, you might use VLAN ID 200 for admin traffic at one site and the same VLAN ID for client traffic at another site. You can create separate VLAN interfaces with different sets of parent interfaces at each site. However, two VLAN interfaces with the same ID cannot share the same interface on a node.
-+
-If you specify an ID that has already been used, a message appears. You can continue creating another VLAN interface for the same VLAN ID, or you can select *Cancel* and then edit the existing ID.
+If you specify an ID that has already been used, a message appears. 
 
 . Optionally, enter a short description for the VLAN interface.
 +
@@ -70,6 +73,8 @@ image::../media/vlan-details.png[VLAN interface create wizard VLAN details]
 === Choose parent interfaces
 The table lists the available interfaces for all Admin Nodes and Gateway Nodes at each site in your grid. Admin Network (eth1) interfaces cannot be used as parent interfaces and are not shown.
 
+.Steps
+
 . Select one or more parent interfaces to attach this VLAN to.
 +
 For example, you might want to attach a VLAN to the Client Network (eth2) interface for a Gateway Node and an Admin Node.  
@@ -79,6 +84,8 @@ image::../media/vlan-create-parent-interfaces.png[VLAN create wizard parent inte
 . Select *Continue*.
 
 === Confirm the settings
+
+.Steps
 
 . Review the configuration and make any changes.
 

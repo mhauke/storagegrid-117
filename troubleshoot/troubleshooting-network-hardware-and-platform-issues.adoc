@@ -11,9 +11,9 @@ summary: 'There are several tasks you can perform to help determine the source o
 [.lead]
 There are several tasks you can perform to help determine the source of issues related to StorageGRID network, hardware, and platform issues.
 
-== Troubleshoot "`422: Unprocessable Entity`" errors
+== "`422: Unprocessable Entity`" errors
 
-The error 422: Unprocessable Entity can occur in a number of circumstances. Check the error message to determine what caused your issue.
+The error 422: Unprocessable Entity can occur for different reasons. Check the error message to determine what caused your issue.
 
 If you see one of the listed error messages, take the recommended action.
 
@@ -69,7 +69,7 @@ Check the ciphers that are offered by the external system. The system must use o
 |===
 
 
-== [[troubleshoot_MTU_alert]]Troubleshoot the Grid Network MTU mismatch alert
+== [[troubleshoot_MTU_alert]]Grid Network MTU mismatch alert
 
 The *Grid Network MTU mismatch* alert is triggered when the maximum transmission unit (MTU) setting for the Grid Network interface (eth0) differs significantly across nodes in the grid.
 
@@ -119,7 +119,7 @@ Use the following arguments for modifying the MTU on Linux- or VMware-based node
 |===
 
 
-== Troubleshoot the Network Receive Error (NRER) alarm
+== Network Receive Error (NRER) alarm
 
 Network Receive Error (NRER) alarms can be caused by connectivity issues between StorageGRID and your network hardware. In some cases, NRER errors can clear without manual intervention. If the errors do not clear, take the recommended actions.
 
@@ -178,7 +178,7 @@ The ring buffer can be overrun when the StorageGRID system is overloaded and una
 link:../monitor/alarms-reference.html[Alarms reference (legacy system)]
 
 
-== Troubleshoot time synchronization errors
+== Time synchronization errors
 
 You might see issues with time synchronization in your grid.
 
@@ -196,7 +196,7 @@ In some cases, network issues can be resolved by using MAC address cloning. If y
 
 IMPORTANT: Create separate virtual network interfaces for use by the Linux host OS. Using the same network interfaces for the Linux host OS and the StorageGRID container might cause the host OS to become unreachable if promiscuous mode has not been enabled on the hypervisor.
 
-For more information on enabling MAC cloning, see the instructions for link:../rhel/configuring-host-network.html[Red Hat Enterprise Linux or CentOS] or link:../ubuntu/configuring-host-network.html[Ubuntu or Debian].
+For more information about enabling MAC cloning, see the instructions for link:../rhel/configuring-host-network.html[Red Hat Enterprise Linux or CentOS] or link:../ubuntu/configuring-host-network.html[Ubuntu or Debian].
 
 === Promiscuous mode
 

@@ -79,7 +79,7 @@ NLOC: The object data can no longer be found in the StorageGRID system. This sta
 |The identifier of the object within the StorageGRID system.
 |===
 
-The ORLM audit message can be issued a number of times for a single object. For instance, it is issued whenever one of the following events take place:
+The ORLM audit message can be issued more than once for a single object. For instance, it is issued whenever one of the following events occur:
 
 * ILM rules for the object are satisfied forever.
 * ILM rules for the object are satisfied for this epoch.

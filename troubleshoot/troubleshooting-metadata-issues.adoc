@@ -12,7 +12,7 @@ summary: 'You can perform several tasks to help determine the source of metadata
 [.lead]
 You can perform several tasks to help determine the source of metadata problems.
 
-== Troubleshoot the Low metadata storage alert
+== Low metadata storage alert
 
 If the *Low metadata storage* alert is triggered, you must add new Storage Nodes.
 
@@ -59,7 +59,7 @@ NOTE: Because StorageGRID keeps complete copies of all object metadata at each s
 +
 After you perform the expansion, StorageGRID redistributes the existing object metadata to the new nodes, which increases the overall metadata capacity of the grid. No user action is required. The *Low metadata storage* alert is cleared.
 
-== Troubleshoot the Services: Status - Cassandra (SVST) alarm
+== Services: Status - Cassandra (SVST) alarm
 
 The Services: Status - Cassandra (SVST) alarm indicates that you might need to rebuild the Cassandra database for a Storage Node. Cassandra is used as the metadata store for StorageGRID.
 
@@ -141,7 +141,7 @@ There can be more than one entry for Cassandra; you must locate the most recent 
 For instructions, see link:../maintain/recovering-storage-node-that-has-been-down-more-than-15-days.html[Recover Storage Node down more than 15 days].
  .. Contact technical support if alarms do not clear after Cassandra is rebuilt.
 
-== Troubleshoot Cassandra Out of Memory errors (SMTT alarm)
+== Cassandra Out of Memory errors (SMTT alarm)
 
 A Total Events (SMTT) alarm is triggered when the Cassandra database has an out-of-memory error. If this error occurs, contact technical support to work through the issue.
 
@@ -152,7 +152,7 @@ If an out-of-memory error occurs for the Cassandra database, a heap dump is crea
 . To view the event, select *SUPPORT* > *Tools* > *Grid topology* > *Configuration*.
 . Verify that the Cassandra Heap Out Of Memory Errors count is 1 or greater.
 +
-You can link:../monitor/running-diagnostics.html[run diagnostics] to obtain additional information on the current state of your grid.
+You can link:../monitor/running-diagnostics.html[run diagnostics] to obtain additional information about the current state of your grid.
 
 . Go to `/var/local/core/`, compress the `Cassandra.hprof` file, and send it to technical support.
 . Make a backup of the `Cassandra.hprof` file, and delete it from the `/var/local/core/ directory`.
@@ -161,4 +161,4 @@ This file can be as large as 24 GB, so you should remove it to free up space.
 
 . After the issue is resolved, select the *Reset* check box for the Cassandra Heap Out Of Memory Errors count. Then select *Apply Changes*.
 +
-NOTE: To reset event counts, you must have the Grid Topology Page Configuration permission.
+NOTE: To reset event counts, you must have the Grid topology page configuration permission.

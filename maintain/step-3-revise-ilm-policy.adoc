@@ -54,7 +54,7 @@ NOTE: For details, see the instructions for managing objects with information li
 +
 You must select storage pools that do not refer to the site.
 +
-NOTE: Do not use the *All Storage Nodes* storage pool (StorageGRID 11.6 or earlier) in the erasure coding profiles.
+NOTE: Do not use the *All Storage Nodes* storage pool (StorageGRID 11.6 and earlier) in the erasure coding profiles.
 
 . Select *ILM* > *Rules* and clone each of the rules listed in the table for Step 3 (Revise ILM Policy).
 +
@@ -83,7 +83,7 @@ NOTE: Do not select the *Make 2 Copies* rule because that rule uses the *All Sto
 +
 image::../media/decommission_site_step_3_cloned_policy.png[Decommission Site Step 3 Cloned Policy]
  .. Select *Apply*.
- .. Drag and drop the rows to reorder the rules in the policy.
+ .. Drag the rows to reorder the rules in the policy.
 +
 You cannot move the default rule.
 +

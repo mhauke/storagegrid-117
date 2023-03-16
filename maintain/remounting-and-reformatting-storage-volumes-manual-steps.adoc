@@ -136,7 +136,7 @@ In the example output, one storage volume was remounted successfully and three s
 
   *** `/dev/sdb` passed the XFS file system consistency check and had a valid volume structure, so it was remounted successfully. Data on devices that are remounted by the script is preserved.
   *** `/dev/sdc` failed the XFS file system consistency check because the storage volume was new or corrupt.
-  *** `/dev/sdd` could not be mounted because the disk was uninitialized or the disk's superblock was corrupted. When the script cannot mount a storage volume, it asks if you want to run the file system consistency check.
+  *** `/dev/sdd` could not be mounted because the disk was not initialized or the disk's superblock was corrupted. When the script cannot mount a storage volume, it asks if you want to run the file system consistency check.
    **** If the storage volume is attached to a new disk, answer *N* to the prompt. You do not need check the file system on a new disk.
    **** If the storage volume is attached to an existing disk, answer *Y* to the prompt. You can use the results of the file system check to determine the source of the corruption. The results are saved in the `/var/local/log/sn-remount-volumes.log` log file.
   *** `/dev/sde` passed the XFS file system consistency check and had a valid volume structure; however, the LDR node ID in the volID file did not match the ID for this Storage Node (the `configured LDR noid` displayed at the top). This message indicates that this volume belongs to another Storage Node.
@@ -194,19 +194,19 @@ NOTE: Some StorageGRID recovery procedures use Reaper to handle Cassandra repair
 The Progress bar and the Stage column on the Recovery page provide a high-level status of the `sn-recovery-postinstall.sh` script.
 +
 image::../media/recovering_cassandra.png[screenshot showing recovery progress in Grid Management Interface]
-
-. After the sn-recovery-postinstall.sh script has started services on the node, you can restore object data to any storage volumes that were formatted by the script. 
 +
-* Enter `y` at the `If the replacement node has a different number of storage volumes than the original node (for example, you replaced a node with 8 volumes with a node that has 16 volumes), you must perform the manual steps to restore object data. Enter "y" at the prompt` to link:../maintain/restoring-object-data-to-storage-volume-if-required.html[restore object data manually].
+. After the `sn-recovery-postinstall.sh` script has started services on the node, you can restore object data to any storage volumes that were formatted by the script. 
 +
-NOTE: You will only see this prompt if the replacement node has a different number of storage volumes than the original node. 
+The script asks if you want to restore object data manually.
++
+In rare cases, such as when instructed by technical support, or when you know that the replacement node has fewer volumes available for object storage than the original node, you must link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html[restore object data manually]. If one of these cases applies, answer `y`.
++
+In most cases, you should link:../maintain/restoring-volume.html[restore object data using Grid Manager]. Answer `n` to take this path.
 +
 If manual restoration is initiated:
 +
 ** You will not be able to restore object data using Grid Manager. 
 ** You can monitor the progress of manual restoration jobs using Grid Manager.
-
-* Otherwise, if no prompt displays, link:../maintain/restoring-volume.html[restore object data using Grid Manager].
 
 .Related information
 

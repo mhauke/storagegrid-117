@@ -30,7 +30,9 @@ NOTE: You must create an enterprise application for each Admin Node in your Stor
 
 == Access Azure AD
 
-. Login to the https://portal.azure.com[Azure Portal^].
+.Steps
+
+. Log in to the https://portal.azure.com[Azure Portal^].
 
 . Navigate to https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade[Azure Active Directory^].
 
@@ -39,6 +41,8 @@ NOTE: You must create an enterprise application for each Admin Node in your Stor
 == Create enterprise applications and save StorageGRID SSO configuration
 
 In order to save the SSO configuration for Azure in StorageGRID, you must use Azure to create an enterprise application for each Admin Node. You will copy the federation metadata URLs from Azure and paste them into the corresponding *Federation metadata URL* fields on the StorageGRID Single Sign-on page. 
+
+.Steps
 
 . Repeat the following steps for each Admin Node.
 
@@ -65,16 +69,22 @@ In order to save the SSO configuration for Azure in StorageGRID, you must use Az
 == Download SAML metadata for every Admin Node
 After the SSO configuration is saved, you can download a SAML metadata file for each Admin Node in your StorageGRID system. 
 
-Repeat these steps for each Admin Node:
+
+
+.Steps
+
+. Repeat these steps for each Admin Node.
  
-. Sign in to StorageGRID from the Admin Node.
-. Select *CONFIGURATION* > *Access control* > *Single sign-on*.
-. Select the button to download the SAML metadata for that Admin Node. 
-. Save the file, which you will upload into Azure AD.
+.. Sign in to StorageGRID from the Admin Node.
+.. Select *CONFIGURATION* > *Access control* > *Single sign-on*.
+.. Select the button to download the SAML metadata for that Admin Node. 
+.. Save the file, which you will upload into Azure AD.
 
 == Upload SAML metadata to each enterprise application
 
 After downloading a SAML metadata file for each StorageGRID Admin Node, perform the following steps in Azure AD:
+
+.Steps
 
 . Return to the Azure Portal.
 . Repeat these steps for each enterprise application:

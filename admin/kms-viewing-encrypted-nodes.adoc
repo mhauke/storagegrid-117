@@ -20,9 +20,8 @@ The Key Management Server page appears. The Configuration Details tab shows any 
 
 . From the top of the page, select the *Encrypted nodes* tab.
 +
-
 The Encrypted nodes tab lists the appliance nodes in your StorageGRID system that have the *Node Encryption* setting enabled.
-+
+
 
 . Review the information in the table for each appliance node.
 +
@@ -52,7 +51,7 @@ link:kms-adding.html[Add a key management server (KMS)]
 a|
 Key UID
 a|
-The unique ID of the encryption key used to encrypt and decrypt data on the appliance node. To view an entire key UID, hover your cursor over the cell.
+The unique ID of the encryption key used to encrypt and decrypt data on the appliance node. To view an entire key UID, position your cursor over the cell.
 
 A dash (--) indicates the key UID is unknown, possibly because of a connection issue between the appliance node and the KMS.
 a|

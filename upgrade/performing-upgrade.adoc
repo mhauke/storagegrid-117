@@ -86,7 +86,7 @@ A warning appears to remind you will temporarily lose access to the Grid Manager
 +
 NOTE: If any precheck errors are reported, resolve them and select *Start upgrade* again.
 +
-As soon as the primary Admin Node is upgraded, you can approve the other grid nodes. 
+If the grid has another Admin Node that is online and ready, you can use it to monitor the status of the primary Admin Node. As soon as the primary Admin Node is upgraded, you can approve the other grid nodes. 
 
 . As required, select *Continue* to access the *Upgrade other nodes* step.
 
@@ -164,6 +164,9 @@ NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *
 NOTE: When an appliance node reaches this stage, the StorageGRID Appliance Installer software on the appliance is updated. This automated process ensures that the StorageGRID Appliance Installer version remains in sync with the StorageGRID software version.
 
 * Rebooting
++
+IMPORTANT: Some appliance models might reboot multiple times to upgrade the firmware and BIOS.
+
 * Performing steps after reboot
 * Starting services
 * Done

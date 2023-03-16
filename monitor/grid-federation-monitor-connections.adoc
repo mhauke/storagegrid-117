@@ -18,6 +18,10 @@ You can monitor basic information about all link:../admin/grid-federation-overvi
 
 == View all connections
 
+The Grid federation page shows basic information about all grid federation connections and about all tenant accounts that are permitted to use grid federation connections.
+
+.Steps
+
 . Select *CONFIGURATION* > *System* > *Grid federation*.
 +
 The Grid federation page appears. 
@@ -44,8 +48,11 @@ From this tab, you can:
 image:../media/grid-federation-permitted-tenants-tab.png[Grid federation Permitted tenants tab]
 
 == [[view-specific-connection]]View a specific connection
+You can view details for a specific grid federation connection.
 
-. To see details for a specific connection, select either tab from the Grid federation page and then select the connection name from the table.
+.Steps
+
+. Select either tab from the Grid federation page and then select the connection name from the table.
 +
 From the details page for the connection, you can:
 
@@ -78,6 +85,8 @@ image:../media/grid-federation-certificates-tab.png[grid-federation-certificates
 == Review cross-grid replication metrics
 
 You can use the Cross-Grid Replication dashboard in Grafana to view Prometheus metrics about cross-grid replication operations on your grid.
+
+.Steps
 
 . From the Grid Manager, select *SUPPORT* > *Tools* > *Metrics*.
 +

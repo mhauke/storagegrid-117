@@ -13,11 +13,11 @@ If you want to configure an endpoint for the Load Balancer service, and you want
 
 .About this task
 
-CAUTION: This procedure removes all port remaps. If you need to keep some of the remaps, contact technical support.
+This procedure removes all port remaps. If you need to keep some of the remaps, contact technical support.
 
-For information about configuring load balancer endpoints, see the instructions for administering StorageGRID.
+For information about configuring load balancer endpoints, see link:../admin/configuring-load-balancer-endpoints.html[Configuring load balancer endpoints].
 
-IMPORTANT: If the port remap provides client access, the client should be reconfigured to use a different port configured as an load balancer endpoint if possible, to avoid loss of service, Otherwise, removing the port mapping will result in loss of client access and should be scheduled appropriately.
+IMPORTANT: If the port remap provides client access, reconfigure the client to use a different port as an load balancer endpoint to avoid loss of service. Otherwise, removing the port mapping will result in loss of client access and should be scheduled appropriately.
 
 IMPORTANT: This procedure does not work for a StorageGRID system deployed as a container on bare metal hosts. See the instructions for link:removing-port-remaps-on-bare-metal-hosts.html[removing port remaps on bare metal hosts].
 
@@ -40,6 +40,3 @@ Follow the instructions for link:rebooting-grid-node.html[rebooting a grid node]
 
 . Repeat these steps on each Admin Node and Gateway Node that has conflicting remapped ports.
 
-.Related information
-
-link:../admin/index.html[Administer StorageGRID]

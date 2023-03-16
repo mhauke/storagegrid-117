@@ -19,9 +19,13 @@ All S3 and Swift client activity is associated with StorageGRID tenant accounts.
 
 == View all tenants 
 
+The Tenants page shows basic information for all current tenant accounts.
+
+.Steps
+
 . Select *TENANTS*.
 
-. Review the information on the Tenants page, which shows basic information for all current tenant accounts.
+. Review the information on the Tenant pages.
 +
 The Logical space used, Quota utilization, Quota, and Object count are listed for each tenant. If a quota is not set for a tenant, the Quota utilization and Quota fields contain a dash (&#8212;).
 +
@@ -49,7 +53,11 @@ You can't remove a tenant account if the account includes any buckets or contain
 
 == View a specific tenant
 
-. To view details for a specific tenant, select the tenant name from the Tenants page.
+You can view details for a specific tenant.
+
+.Steps
+
+. Select the tenant name from the Tenants page.
 +
 The tenant details page appears.
 +
@@ -91,11 +99,13 @@ You can open the `.csv` file in a spreadsheet application or use it in automatio
 
 . If the tenant has the *Use grid federation connection* permission, optionally select the *Grid federation* tab to learn more about the connection.
 +
-See link:../admin/grid-federation-overview.html[What is grid federation] and link:../admin/grid-federation-manage-tenants.html[Manage the permitted tenants for grid federation].
+See link:../admin/grid-federation-overview.html[What is grid federation?] and link:../admin/grid-federation-manage-tenants.html[Manage the permitted tenants for grid federation].
 
 == View network traffic
 
 If traffic classification policies are in place for a tenant, review the network traffic for that tenant.
+
+.Steps
 
 . Select *CONFIGURATION* > *Network* > *Traffic classification*.
 +

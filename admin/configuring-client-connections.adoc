@@ -31,9 +31,39 @@ Before you can attach StorageGRID to an S3 or Swift client application, you must
 
 === What values do I need?
 
-The following figure shows the values you must configure in StorageGRID and where those values are used by the S3 or Swift application and the DNS server. 
+The following table shows the values you must configure in StorageGRID and where those values are used by the S3 or Swift application and the DNS server. 
 
-image::../media/s3_swift_storagegrid_values.png[Drawing showing how StorageGRID values are used by S3 and Swift and the DNS server]
+[cols="1a,1a,1a" options="header"]
+|===
+| Value| Where value is configured | Where value is used
+
+| Virtual IP (VIP) addresses
+| StorageGRID > HA group
+| DNS entry
+
+| Port
+| StorageGRID > Load balancer endpoint
+| Client application
+
+| SSL certificate
+| StorageGRID > Load balancer endpoint
+| Client application
+
+| Server name (FQDN)
+| StorageGRID > Load balancer endpoint
+| * Client application
+* DNS entry
+
+| S3 access key ID and secret access key
+| StorageGRID > Tenant and bucket
+| Client application
+
+| Bucket/Container name
+| StorageGRID > Tenant and bucket
+| Client application
+
+|===
+
 
 === How do I get these values?
 Depending on your requirements, you can do either of the following to obtain the information you need:
@@ -54,8 +84,3 @@ NOTE: If you plan to use StorageGRID as the object storage system for a FabricPo
 . For an S3 tenant, sign in to the tenant account, and generate an access key ID and secret access key for each user that will access the application. See link:../tenant/creating-your-own-s3-access-keys.html[Create your own access keys].
 . Create one or more S3 buckets or Swift containers within the tenant account. For S3, see link:../tenant/creating-s3-bucket.html[Create S3 bucket]. For Swift, use the link:../swift/container-operations.html[PUT container request].
 . To add specific placement instructions for the objects belonging to the new tenant or bucket/container, create a new ILM rule and activate a new ILM policy to use that rule. See link:../ilm/access-create-ilm-rule-wizard.html[Create ILM rule] and link:../ilm/creating-ilm-policy.html[Create ILM policy].
-
-
-
-
-

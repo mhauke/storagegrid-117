@@ -133,7 +133,7 @@ image::../media/decommission_site_step_6_repair_cassandra.png[Decommission Site 
   *** Any erasure coding profiles that referred to the site are deactivated.
   *** Any Storage Pools that referred to the site are deleted.
 +
-IMPORTANT: The All Storage Nodes storage pool (StorageGRID 11.6 or earlier) is also removed because it uses the All Sites site.
+IMPORTANT: The All Storage Nodes storage pool (StorageGRID 11.6 and earlier) is also removed because it uses the All Sites site.
  ** Finally, during the *Remove Configuration* step, any remaining references to the site and its nodes are removed from the rest of the grid.
 +
 image::../media/decommission_site_step_6_remove_configuration.png[Decommission Site Step 6 Remove Configuration]

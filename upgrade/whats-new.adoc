@@ -14,7 +14,7 @@ This release of StorageGRID introduces the following features and functional cha
 == New features
 
 === Grid federation, account sync, and cross-grid replication
-You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery. See link:../admin/grid-federation-overview.html[What is grid federation], link:../admin/grid-federation-what-is-account-clone.html[What is account clone], and link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
+You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery. See link:../admin/grid-federation-overview.html[What is grid federation?], link:../admin/grid-federation-what-is-account-clone.html[What is account clone], and link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
 
 === Rename grid, sites, and nodes
 A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes: Overview].
@@ -49,7 +49,7 @@ Storage volume restoration lets you restore object data if a storage volume fail
 === New upgrade and hotfix process
 * You can now use the Grid Manager to upgrade to a future release and apply a hotfix for that release at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
 * The *Check for software updates* check box on the AutoSupport page (*SUPPORT* > *Tools* >
-*AutoSupport*) lets you control this functionality. You can disable the check for available software updates if your system does not have WAN access. See link:../admin/configure-autosupport-grid-manager.html[Configure AutoSupport].
+*AutoSupport*) lets you control this functionality. You can disable the check for available software updates if your system does not have internet access. See link:../admin/configure-autosupport-grid-manager.html[Configure AutoSupport].
 
 === ILM 
 The ILM wizard in the Grid Manager has been improved.
@@ -74,9 +74,6 @@ You can now select base 10 or base 2 units for the storage values displayed in t
 
 === Access MIB from Grid Manager
 You can now access SNMP-compliant MIB files from the Grid Manager using the SNMP agent page (*CONFIGURATION* > *Monitoring* > *SNMP agent*).
-
-=== Upgrade drive firmware using the Grid Manager
-You can now update the firmware on the drives in your storage appliances by using the Grid Manager. Using the Grid Manager enables you to update the firmware without needing to put the appliance into maintenance mode.
 
 == Tenant Manager updates
 
@@ -107,6 +104,11 @@ The certificate subject field is now optional. If this field is left blank, the 
 === New alerts
 The following new alerts were added for StorageGRID 11.7:
 
+* Appliance DAS drive fault detected
+* Appliance DAS drive rebuilding
+* Appliance fan fault detected
+* Appliance NIC fault detected
+* Appliance SSD critical warning
 * AutoSupport message failed to send
 * Cassandra oversize write error
 * Cross-grid replication permanent request failure
@@ -114,8 +116,12 @@ The following new alerts were added for StorageGRID 11.7:
 * Debug performance impact
 * Expiration of grid federation certificate
 * FabricPool bucket has unsupported bucket consistency setting
+* Firewall configuration failure
 * Grid federation connection failure
+* Storage appliance fan fault detected
 * Storage Node not in desired storage state
+* Storage volume needs attention
+* Storage volume needs to be restored
 * Storage volume offline
 * Trace configuration enabled
 * Volume Restoration failed to start replicated data repair
@@ -128,9 +134,9 @@ When you perform an expansion to add a new site or new Storage Nodes, you can no
 
 === StorageGRID documentation changes
 
-* A quick reference was added to summarize StorageGRID’s support for Amazon Simple Storage Service (S3) APIs.
+* A quick reference was added to summarize how StorageGRID supports Amazon Simple Storage Service (S3) APIs.
 +
-link:../s3/support-for-aws-apis.html[Quick reference: Supported S3 API requests]
+link:../s3/quick-reference-support-for-aws-apis.html[Quick reference: Supported S3 API requests]
 
 * The appliance hardware installation sections were combined and consolidated for ease of use. A quick start was added as a high-level guide to hardware installation.
 +

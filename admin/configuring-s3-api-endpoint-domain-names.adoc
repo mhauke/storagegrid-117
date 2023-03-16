@@ -25,9 +25,8 @@ CAUTION: Do not make any changes to the domain name configuration when a grid up
 
 To enable clients to use S3 endpoint domain names, you must do all of the following:
 
-
 * Use the Grid Manager to add the S3 endpoint domain names to the StorageGRID system.
-* Ensure that the link:../admin/admin/configuring-administrator-client-certificates.html[certificate the client uses for HTTPS connections to StorageGRID] is signed for all domain names that the client requires.
+* Ensure that the link:../admin/configuring-administrator-client-certificates.html[certificate the client uses for HTTPS connections to StorageGRID] is signed for all domain names that the client requires.
 +
 For example, if the endpoint is `s3.company.com`, you must ensure that the certificate used for HTTPS connections includes the `s3.company.com` endpoint and the endpoint's wildcard Subject Alternative Name (SAN): `*.s3.company.com`.
 
@@ -44,6 +43,7 @@ Clients that use HTTPS connections (recommended) to the grid can use either of t
 NOTE: If you do not add S3 endpoint domain names and the list is empty, support for S3 virtual-hosted-style requests is disabled.
 
 == Add an S3 endpoint domain name
+
 .Steps
 
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
@@ -63,28 +63,24 @@ Now, when clients use the endpoint `_bucket.s3.company.com_`, the DNS server res
 
 == Rename an S3 endpoint domain name
 
-NOTE: If you change or remove a name used by S3 applications, virtual-hosted-style requests will fail.
+If you change a name used by S3 applications, virtual-hosted-style requests will fail.
 
 .Steps
-
-To rename an S3 endpoint domain name:
 
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
 . Select the domain name field you want to edit and make the necessary changes.
 . Select *Save*.
-. To save your changes to the domain name, select *Yes* in the confirmation dialog box.
-
-+
-S3 endpoint domain name is modified.
+. Select *Yes* to confirm your change.
 
 == Delete an S3 endpoint domain name
-.Steps
 
-To delete an S3 endpoint domain name:
+If you remove a name used by S3 applications, virtual-hosted-style requests will fail.
+
+.Steps
 
 . Select *CONFIGURATION* > *Network* > *S3 endpoint domain names*.
 . Select the delete icon image:../media/icon-x-to-remove.png[delete icon] next to the domain name.
-. Select *Yes* in the confirmation dialog box to confirm your deletion.
+. Select *Yes* to confirm the deletion.
 
 .Related information
 

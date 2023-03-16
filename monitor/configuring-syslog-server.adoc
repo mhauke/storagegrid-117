@@ -35,8 +35,12 @@ NOTE: To maximize the options for full data recovery in the event of a failure o
 +
 NOTE: If the configuration options available in this procedure are not flexible enough to meet your requirements, additional configuration options can be applied using the private API `audit-destinations` endpoints. For example, it is possible to use different syslog servers for different groups of nodes.
 
+== Configure the external server
+
 [[Access-the-syslog-server-configuration-wizard]]
-== Access the syslog server configuration wizard
+=== Access the wizard
+
+To start, access the Configure external syslog server wizard.
 
 .Steps
 . Select *CONFIGURATION* > *Monitoring* > *Audit and syslog server*.
@@ -46,6 +50,9 @@ NOTE: If the configuration options available in this procedure are not flexible 
 The Configure external syslog server wizard appears. 
 
 === Enter syslog info
+You must provide the information StorageGRID needs to access the external syslog server.
+
+.Steps
 
 . For the *Enter syslog info* step of the wizard, enter a valid fully qualified domain name or an IPv4 or IPv6 address for the external syslog server in the *Host* field.
 
@@ -53,13 +60,14 @@ The Configure external syslog server wizard appears.
 
 . Select the protocol used to send audit information to the external syslog server.  
 +
-Using *TLS* or *RELP/TLS* is recommended. You must upload a server certificate to use either of these options. Using certificates helps secure the connections between your grid and the external syslog server. For more information, see link:../admin/using-storagegrid-security-certificates.html[Use StorageGRID security certificates].
+Using *TLS* or *RELP/TLS* is recommended. You must upload a server certificate to use either of these options. Using certificates helps secure the connections between your grid and the external syslog server. For more information, see link:../admin/using-storagegrid-security-certificates.html[Manage security certificates].
 +
 All protocol options require support by, and configuration of, the external syslog server. You must choose an option that is compatible with the external syslog server.
 +
 NOTE: Reliable Event Logging Protocol (RELP) extends the functionality of the syslog protocol to provide reliable delivery of event messages. Using RELP can help prevent the loss of audit information if your external syslog server has to restart. 
 
 . Select *Continue*.
+
 . [[attach-certificate]]If you selected *TLS* or *RELP/TLS*, upload the following certificates:
 
 * *Server CA certificates*: One or more trusted CA certificates for verifying the  external syslog server (in PEM encoding). If omitted, the default Grid CA certificate will be used. The file you upload here might be a CA bundle. 
@@ -77,6 +85,9 @@ A green check appears next to the certificate or key file name, notifying you th
 . Select *Continue*.
 
 === Manage syslog content
+You can select which information to send to the external syslog server.
+
+.Steps
 
 . For the *Manage syslog content* step of the wizard, select each type of audit information you want to send to the external syslog server.
 
@@ -98,7 +109,7 @@ A green check appears next to the certificate or key file name, notifying you th
 +
 If you select *Passthrough* for severity and facility, the information sent to the remote syslog server will receive the same severity and facility as it did when logged locally onto the node. Setting facility and severity can help you aggregate the logs in customizable ways for easier analysis. 
 +
-NOTE: For more information on StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html#[StorageGRID software logs].
+NOTE: For more information about StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html[StorageGRID software logs].
 
 .. For *Severity*, select *Passthrough* if you want each message sent to the external syslog to have the same severity value as it does in the local syslog.
 +
@@ -114,7 +125,9 @@ The selected value will be applied to all messages of this type. Information abo
 +
 [cols="1a,3a" options="header"]
 |===
-| Severity| Description
+| Severity
+| Description
+
 | 0
 | Emergency: System is unusable
 
@@ -150,7 +163,8 @@ For application logs, if you select *Passthrough*, the application logs sent to 
 +
 [cols="1a,2a" options="header"]
 |===
-| Application log| Passthrough value
+| Application log
+| Passthrough value
 
 | bycast.log
 | user or daemon
@@ -263,6 +277,8 @@ Before starting to use an external syslog server, you should request that all no
 
 CAUTION: Do not use the external syslog server configuration until you confirm that the external syslog server received a test message from each node in your grid and that the message was processed as expected.
 
+.Steps
+
 . If you do not want to send test messages because you are certain your external syslog server is configured properly and can receive audit information from all the nodes in your grid, select *Skip and finish*. 
 +
 A green banner appears indicating your configuration has been saved successfully. 
@@ -273,7 +289,7 @@ Test results continuously appear on the page until you stop the test. While the 
 
 . If you receive any errors, correct them and select *Send test messages* again.
 +
-See link:../monitor/troubleshooting-syslog-server.html[Troubleshooting the external syslog server] to help you resolve any errors.
+See link:../troubleshoot/troubleshooting-syslog-server.html[Troubleshooting the external syslog server] to help you resolve any errors.
 
 . Wait until you see a green banner indicating all nodes have passed testing. 
 
@@ -291,7 +307,9 @@ NOTE: Your StorageGRID audit information is not sent to the external syslog serv
 == Select audit information destinations
 You can specify where security event logs, application logs, and audit message logs are sent. 
 
-NOTE: For more information on StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html#[StorageGRID software logs].
+NOTE: For more information about StorageGRID software logs, see link:../monitor/storagegrid-software-logs.html[StorageGRID software logs].
+
+.Steps
 
 . On the Audit and syslog server page, select the destination for audit information from the listed options: 
 +

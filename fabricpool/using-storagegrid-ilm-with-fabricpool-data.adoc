@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: FabricPool, requirements, ILM, information lifecycle management, ILM rule, ILM rules, ILM policy, erasure-coding, replication, cloud storage pool, glacier
 summary: 'You can use this simple example policy as a starting point for your own ILM rules and policy.'
 ---
-= Create ILM policy for FabricPool data
+= Configure ILM for FabricPool data
 :icons: font
 :imagesdir: ../media/
 
@@ -29,62 +29,60 @@ NOTE: This prerequisite does not apply to new StorageGRID 11.7 installations. Wh
 
 . Create an ILM rule that applies only to the data in `fabricpool-bucket`. This example rule creates erasure-coded copies.
 +
-
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
 
-|Rule name
-|2 + 1 erasure coding for FabricPool data
+| Rule name
+| 2 + 1 erasure coding for FabricPool data
 
-|Bucket name
-|`fabricpool-bucket`
+| Bucket name
+| `fabricpool-bucket`
 
 You could also filter on the FabricPool tenant account.
 
-|Advanced filters
-|Object size greater than 0.2 MB.
+| Advanced filters
+| Object size greater than 0.2 MB.
 
 *Note:* FabricPool only writes 4 MB objects, but you must add an Object size filter because this rule uses erasure coding.
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Time period and placements
-|From Day 0 store forever
+| Time period and placements
+| From Day 0 store forever
 
 Store objects by erasure coding using 2+1 EC scheme at Denver.
 
-|Ingest behavior
-|Balanced
+| Ingest behavior
+| Balanced
 |===
 
-. Create an ILM rule that will create two replicated copies of any objects not matched by the first rule. Do not select a basic filter (tenant account or bucket name) or any advanced filters.
+. Create a default ILM rule that will create two replicated copies of any objects not matched by the first rule. Do not select a basic filter (tenant account or bucket name) or any advanced filters.
 +
-
 [cols="1a,2a" options="header"]
 |===
 | Rule definition| Example value
 
-|Rule name
-|Two replicated copies
+| Rule name
+| Two replicated copies
 
-|Bucket name
-|_none_
+| Bucket name
+| _none_
 
-|Advanced filters
-|_none_
+| Advanced filters
+| _none_
 
-|Reference time
-|Ingest time
+| Reference time
+| Ingest time
 
-|Time period and placements
-|From Day 0 store forever
+| Time period and placements
+| From Day 0 store forever
 
 Store objects by replicating 2 copies at Denver.
 
-|Ingest behavior
-|Balanced
+| Ingest behavior
+| Balanced
 
 |===
 

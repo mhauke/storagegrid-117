@@ -1,7 +1,7 @@
 ---
 permalink: fabricpool/creating-traffic-classification-policy-for-fabricpool.html
 sidebar: sidebar
-keywords: fabricPool, traffic classification, traffic policy, QOS, quality of service
+keywords: fabricPool, traffic classification, traffic policy, QoS, quality of service
 summary: 'You can optionally design a StorageGRID traffic classification policy to optimize quality of service for the FabricPool workload.'
 ---
 = Create a traffic classification policy for FabricPool
@@ -20,37 +20,41 @@ For details about this task, see link:../admin/managing-traffic-classification-p
 .About this task
 The best practices for creating a traffic classification policy for FabricPool depend on the workload, as follows:
 
-* If you plan to tier FabricPool primary workload data to StorageGRID, you should ensure that the FabricPool workload has the majority of bandwidth. You can create a traffic classification policy to limit all other workloads.
+* If you plan to tier FabricPool primary workload data to StorageGRID, you should ensure that the FabricPool workload has most of the bandwidth. You can create a traffic classification policy to limit all other workloads.
 +
 NOTE: In general, FabricPool read operations are more important to prioritize than write operations.
 +
 For example, if other S3 clients use this StorageGRID system, you should create a traffic classification policy. You can limit network traffic for the other buckets, tenants, IP subnets, or load balancer endpoints.
 
-* As a general rule, you should not impose quality of service limits on any FabricPool workload; you should only limit the other workloads.
+*Generally, you should not impose quality of service limits on any FabricPool workload; you should only limit the other workloads.
 
 * The limits placed on other workloads should account for the behavior of those workloads. The limits imposed will also vary based on the sizing and capabilities of your grid and what the expected amount of utilization is.
 
 .Steps
 . Select *CONFIGURATION* > *Network* > *Traffic classification*.
 . Select *Create*.
-. Enter a policy name and a description.
+. Enter a name and a description (optional) for the policy and select *Continue*.
 
-. In the Matching rules section, add at least one rule.
- .. Select *Create*.
+. For the Add matching rules step, add at least one rule.
+ .. Select *Add rule* 
  .. For Type, select *Load balancer endpoint*, and select the load balancer endpoint you created for FabricPool.
 +
 You can also select the FabricPool tenant account or bucket.
 
  .. If you want this traffic policy to limit traffic for the other endpoints, select *Inverse match*.
 
-. Optionally, set one or more limits.
+. Optionally, add one or more limits to control the network traffic matched by the rule.
 +
-NOTE: Even if no limits are set for a traffic classification policy, metrics are collected so you can understand traffic trends.
+NOTE: StorageGRID collects metrics even if you do not add any limits, so you can understand traffic trends.
 
  .. Select *Add a limit*.
  .. Select the type of traffic you want to limit and the limit to apply.
 
-. Select *Save and continue*. 
+. Select *Continue*.
 
-. After creating the traffic classification policy, select the policy name and then select *Metrics* to determine if the policy is limiting traffic as expected.
+. Read and review the Traffic classification policy. Use the *Previous* button to go back and make changes as required. When you are satisfied with the policy, select *Save and continue*.
+
+.After your finish
+
+link:../admin/viewing-network-traffic-metrics.html[View network traffic metrics] to verify that the polices are enforcing the traffic limits you expect.
 

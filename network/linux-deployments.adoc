@@ -49,11 +49,11 @@ The following table provides the minimum LAN bandwidth recommendations for each 
 | Type of node 3+|Type of network
 
 | |Grid |Admin |Client
-| 3+|Minimum LAN bandwidth
-|Admin |10 Gbps |1 Gbps |1 Gbps
-|Gateway |10 Gbps |1 Gbps |10 Gbps
-|Storage |10 Gbps |1 Gbps |10 Gbps
-|Archive |10 Gbps |1 Gbps |10 Gbps
+| 3+|*Minimum LAN bandwidth*
+| Admin |10 Gbps |1 Gbps |1 Gbps
+| Gateway |10 Gbps |1 Gbps |10 Gbps
+| Storage |10 Gbps |1 Gbps |10 Gbps
+| Archive |10 Gbps |1 Gbps |10 Gbps
 |===
 
 NOTE: This table does not include SAN bandwidth, which is required for access to shared storage. If you are using shared storage accessed over Ethernet (iSCSI or FCoE), you should provision separate physical interfaces on each host to provide sufficient SAN bandwidth. To avoid introducing a bottleneck, SAN bandwidth for a given host should roughly match the aggregate Storage Node network bandwidth for all Storage Nodes running on that host.

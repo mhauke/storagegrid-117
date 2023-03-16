@@ -1,10 +1,10 @@
 ---
 permalink: admin/managing-traffic-classification-policies.html
 sidebar: sidebar
-keywords: qos, quality of service, traffic classification, best practices, limit traffic, monitor traffic
+keywords: QoS, quality of service, traffic classification, best practices, limit traffic, monitor traffic
 summary: 'To enhance your quality-of-service \(QoS\) offerings, you can create traffic classification policies to identify and monitor different types of network traffic. These policies can assist with traffic limiting and monitoring.'
 ---
-= Manage traffic classification policies
+= Manage traffic classification policies: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -24,12 +24,15 @@ Each traffic classification policy contains one or more matching rules to identi
 StorageGRID monitors traffic that matches any rule within the policy according to the objectives of the rule. Any traffic that matches any rule for a policy is handled by that policy. Conversely, you can set rules to match all traffic except a specified entity.
 
 == Traffic limiting
-When you use a traffic classification policy, you can optionally limit traffic. You can set limits for a policy based on the following parameters:
+
+Optionally, you can add the following limit types to a policy:
 
 * Aggregate bandwidth
 * Per-request bandwidth
 * Concurrent requests
 * Request rate
+
+Limit values are enforced on a per load balancer basis. If traffic is distributed simultaneously across multiple load balancers, the total maximum rates are a multiple of the rate limits you specify.
 
 NOTE: You can create policies to limit aggregate bandwidth or to limit per-request bandwidth. However, StorageGRID cannot limit both types of bandwidth at the same time. Aggregate bandwidth limits might impose an additional minor performance impact on non-limited traffic.
 
@@ -40,8 +43,6 @@ In the Grid Manager, you can view traffic charts and verify that the polices are
 == Use traffic classification policies with SLAs
 
 You can use traffic classification policies in conjunction with capacity limits and data protection to enforce service-level agreements (SLAs) that provide specifics for capacity, data protection, and performance.
-
-Traffic classification limits are implemented per load balancer. If traffic is distributed simultaneously across multiple load balancers, the total maximum rates are a multiple of the rate limits you specify.
 
 The following example shows three tiers of an SLA. You can create traffic classification policies to achieve the performance objectives of each SLA tier. 
 

@@ -117,7 +117,7 @@ audit-sum audit.log
 audit-sum 2019-08-12.txt.gz
 ----
 
-The `audit-sum` tool can also process multiple files at once. For example:
+The `audit-sum` tool can also process multiple files simultaneously. For example:
 
 ----
 audit-sum audit.log 2019-08-12.txt.gz 2019-08-13.txt.gz

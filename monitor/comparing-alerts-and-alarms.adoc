@@ -2,14 +2,14 @@
 permalink: monitor/comparing-alerts-and-alarms.html
 sidebar: sidebar
 keywords: how to compare alerts and alarms
-summary: 'There are a number of similarities between the alert system and the legacy alarm system, but the alert system offers significant benefits and is easier to use.'
+summary: 'There are several similarities between the alert system and the legacy alarm system, but the alert system offers significant benefits and is easier to use.'
 ---
 = Compare alerts and alarms
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-There are a number of similarities between the alert system and the legacy alarm system, but the alert system offers significant benefits and is easier to use.
+There are several similarities between the alert system and the legacy alarm system, but the alert system offers significant benefits and is easier to use.
 
 Refer to the following table to learn how to perform similar operations.
 
@@ -68,14 +68,14 @@ link:managing-alarms.html[Manage alarms (legacy system)]
 |What user group permissions do I need?
 |
 * Anyone who can sign in to the Grid Manager can view current and resolved alerts.
-* You must have the Manage Alerts permission to manage silences, alert notifications, and alert rules.
+* You must have the Manage alerts permission to manage silences, alert notifications, and alert rules.
 
 link:../admin/index.html[Administer StorageGRID]
 
 |
 * Anyone who can sign in to the Grid Manager can view legacy alarms.
-* You must have the Acknowledge Alarms permission to acknowledge alarms.
-* You must have both the Grid Topology Page Configuration and Other Grid Configuration permissions to manage global alarms and email notifications.
+* You must have the Acknowledge alarms permission to acknowledge alarms.
+* You must have both the Grid topology page configuration and Other grid configuration permissions to manage global alarms and email notifications.
 
 link:../admin/index.html[Administer StorageGRID]
 
@@ -84,7 +84,7 @@ link:../admin/index.html[Administer StorageGRID]
 
 *Note:* Because alarms and alerts are independent systems, the email setup used for alarm and AutoSupport notifications is not used for alert notifications. However, you can use the same mail server for all notifications.
 
-link:../installconfig/set-up-email-alert-notifications.html[Set up email notifications for alerts]
+link:email-alert-notifications.html[Set up email notifications for alerts]
 
 |Select *SUPPORT* > *Alarms (legacy)* > *Legacy email setup*. 
 
@@ -108,7 +108,7 @@ link:alarms-that-generate-snmp-notifications.html[Alarms that generate SNMP noti
 . Select *ALERTS* > *Email setup*.
 . In the *Recipients* section, enter an email address for each email list or person who should receive an email when an alert occurs.
 
-link:../installconfig/set-up-email-alert-notifications.html[Set up email notifications for alerts]
+link:email-alert-notifications.html[Set up email notifications for alerts]
 
 |
 . Select *SUPPORT* > *Alarms (legacy)* > *Legacy email setup*.
@@ -120,13 +120,13 @@ link:managing-alarms.html[Manage alarms (legacy system)]
 
 |Which Admin Nodes send notifications?
 
-|A single Admin Node (the link:../admin/what-admin-node-is.html[preferred sender]).
+|A single Admin Node (the preferred sender).
 
-link:../admin/index.html[Administer StorageGRID]
+link:../admin/what-admin-node-is.html[What an Admin Node is]
 
 |A single Admin Node (the preferred sender).
 
-link:../admin/index.html[Administer StorageGRID]
+link:../admin/what-admin-node-is.html[What an Admin Node is]
 
 |How do I suppress some notifications?
 |
