@@ -23,7 +23,7 @@ The `audit-explain` tool, available on the primary Admin Node, provides simplifi
 
 IMPORTANT: The `audit-explain` tool is primarily intended for use by technical support during troubleshooting operations. Processing `audit-explain` queries can consume a large amount of CPU power, which might impact StorageGRID operations.
 
-This example shows typical output from the `audit-explain` tool. These four SPUT audit messages were generated when the S3 tenant with account ID 92484777680322627870 used S3 PUT requests to create a bucket named "bucket1" and add three objects to that bucket.
+This example shows typical output from the `audit-explain` tool. These four link:sput-s3-put.html[SPUT] audit messages were generated when the S3 tenant with account ID 92484777680322627870 used S3 PUT requests to create a bucket named "bucket1" and add three objects to that bucket.
 
 ----
 SPUT S3 PUT bucket bucket1 account:92484777680322627870 usec:124673
@@ -32,29 +32,35 @@ SPUT S3 PUT object bucket1/part2.txt tenant:92484777680322627870  cbid:3CFBB07AB
 SPUT S3 PUT object bucket1/part3.txt tenant:92484777680322627870  cbid:5373D73831ECC743 usec:93874
 ----
 
-The `audit-explain` tool can process plain or compressed audit logs. For example:
+The `audit-explain` tool can do the following:
 
+* Process plain or compressed audit logs. For example:
++
 `audit-explain audit.log`
-
++
 `audit-explain 2019-08-12.txt.gz`
 
-The `audit-explain` tool can also process multiple files simultaneously. For example:
-
+* Process multiple files simultaneously. For example:
++
 `audit-explain audit.log 2019-08-12.txt.gz 2019-08-13.txt.gz`
-
++
 `audit-explain /var/local/audit/export/*`
 
-Finally, the `audit-explain` tool can accept input from a pipe, which allows you to filter and preprocess the input using the `grep` command or other means. For example:
-
+* Accept input from a pipe, which allows you to filter and preprocess the input using the `grep` command or other means. For example:
++
 `grep SPUT audit.log | audit-explain`
-
++
 `grep bucket-name audit.log | audit-explain`
 
-Since audit logs can be very large and slow to parse, you can save time by filtering parts that you want to look at and running `audit-explain` on the parts, instead of the entire file.
+Because audit logs can be very large and slow to parse, you can save time by filtering parts that you want to look at and running `audit-explain` on the parts, instead of the entire file.
 
-NOTE: The `audit-explain` tool does not accept compressed files as piped input. To process compressed files, provide their file names as command-line arguments, or use the `zcat` tool to decompress the files first. For example:
+
+[NOTE]
+====
+The `audit-explain` tool does not accept compressed files as piped input. To process compressed files, provide their file names as command-line arguments, or use the `zcat` tool to decompress the files first. For example:
 
 `zcat audit.log.gz | audit-explain`
+====
 
 Use the `help (-h)` option to see the available options. For example:
 
@@ -78,6 +84,3 @@ The `audit-explain` tool prints human-readable interpretations of all messages i
 +
 NOTE: To reduce line lengths and to aid readability, timestamps are not shown by default. If you want to see the timestamps, use the timestamp (`-t`) option.
 
-.Related information
-
-link:sput-s3-put.html[SPUT: S3 PUT]
