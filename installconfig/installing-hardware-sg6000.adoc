@@ -1,12 +1,18 @@
 ---
 permalink: installconfig/installing-hardware-sg6000.html
 sidebar: sidebar
-keywords: storagegrid, sg6000, storage node, storage appliance, hardware, install, installing
-summary: 'Hardware installation entails installing the SG6000-CN controller and the storage controller shelf into a cabinet or rack, connecting the cables, and applying power.'
+keywords: install, sg6000, sg6060, sgf6024, expansion shelf, cabinet, rack
+summary: 'Installing the hardware for an SG6000 storage appliance includes installing both the controller shelf and the SG600-CN controller into a cabinet or rack.'
 ---
-= Install hardware (SG6000)
+= Install SG6000 hardware
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Hardware installation entails installing the SG6000-CN controller and the storage controller shelf into a cabinet or rack, connecting the cables, and applying power.
+Installing the hardware for an SG6000 storage appliance includes installing both the controller shelf and the SG600-CN controller into a cabinet or rack.
+
+. *SG6060*: Install the 60-drive controller shelf into a cabinet or rack and then install any 60-drive expansion shelves. See link:sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html[SG6060: Install 60-drive shelves].
+ 
+. *SG6060*: Install 60 drives into each shelf. See link:sg6060-installing-drives.html[SG6060: Install drives].
+. *SGF6024*: Install the 24-drive controller shelf into a cabinet or rack. See link:sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html[SGF6024: Install 24-drive shelves into cabinet or rack].
+. *SG6060 and SGF602*: Install the SG6000-CN compute controller into the cabinet or rack.
