@@ -76,7 +76,6 @@ Where `_E5700SG_Controller_IP_` is any of the IP addresses for the E5700SG contr
 * You have an SG5660 with 60 drives. The SG5660 with 60 drives supports two volume configuration options: DDP and RAID6.
 +
 IMPORTANT: Using RAID6 is not recommended for most StorageGRID environments. Although RAID6 can increase storage efficiency to 88% (compared to 80% for DDP), DDP mode provides more efficient recovery from drive failures.
-* The SG5612 does not support RAID6. If you have an SG5612, you must use Dynamic Disk Pools (DDP) mode.
 
 .Steps
 
