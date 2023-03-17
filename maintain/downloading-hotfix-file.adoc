@@ -13,9 +13,7 @@ You must download the hotfix file before you can apply the hotfix.
 
 .Steps
 
-. Go to the NetApp Downloads page for StorageGRID.
-+
-https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^]
+. Go to https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^].
 
 . Select the down arrow under *Available Software* to see a list of hotfixes that are available to download.
 +
@@ -23,7 +21,7 @@ NOTE: Hotfix file versions have the form: 11.4__.x.y__.
 
 . Review the changes that are included in the update.
 +
-NOTE: If you have just recovered the primary Admin Node and you need to apply a hotfix, select the same hotfix version that is installed on the other grid nodes.
+NOTE: If you have just link:configuring-replacement-primary-admin-node.html[recovered the primary Admin Node] and you need to apply a hotfix, select the same hotfix version that is installed on the other grid nodes.
 
  .. Select the hotfix version you want to download, and select *Go*.
  .. Sign in using the username and password for your NetApp account.
@@ -41,6 +39,4 @@ NOTE: If you are using a macOS device, the hotfix file might be automatically sa
 
 . Select a location for the download, and select *Save*.
 
-.Related information
 
-link:configuring-replacement-primary-admin-node.html[Configure replacement primary Admin Node]

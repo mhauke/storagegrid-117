@@ -27,6 +27,10 @@ You can rename a node with a display name that was previously used by a differen
 
 === Select items to rename
 
+To start, select the items you want to rename.
+
+.Steps
+
 . Select *MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*.
 . For the *Select names* step, select the items you want to rename.
 +
@@ -65,7 +69,7 @@ You can rename a node with a display name that was previously used by a differen
 
 === Propose new names
 
-For the *Propose new names* step, you can enter a display name for each item individually, or you can rename items in bulk. Use the bulk rename tool if item names share a common string that you want to replace with a different string. 
+For the *Propose new names* step, you can enter a display name for each item individually, or you can rename items in bulk. 
 
 // start tabbed area
 
@@ -75,6 +79,9 @@ For the *Propose new names* step, you can enter a display name for each item ind
 .Rename items individually
 --
 
+Follow these steps to enter the display name for each item you want to rename.
+
+.Steps
 . In the *Display name* field, enter a proposed display name for each item in the list.
 +
 See link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes: Overview] to learn the naming requirements.
@@ -90,6 +97,10 @@ A success message appears. The new display names are now used throughout Grid Ma
 --
 .Rename items in bulk
 --
+
+Use the bulk rename tool if item names share a common string that you want to replace with a different string. 
+
+.Steps
 . For the *Propose new names* step, select *Use bulk rename tool*.
 +
 The *Rename preview* includes all items that were shown for the *Propose new names* step. You can use the preview to see how display names will look after you replace a shared string.
@@ -129,6 +140,8 @@ A success message is shown. The new display names are now used throughout Grid M
 
 When you are done renaming items, download and save a new Recovery Package. The new display names for the items you renamed are included in the `Passwords.txt` file.
 
+.Steps
+
 . Enter the provisioning passphrase.
 . Select *Download Recovery Package*.
 +
@@ -144,6 +157,8 @@ IMPORTANT:	The Recovery Package file must be secured because it contains encrypt
 
 == Revert display names back to system names
 You can revert a renamed grid, site, or node back to its original system name. When you revert an item back to its system name, Grid Manager pages and other StorageGRID locations no longer show a *Display name* for that item. Only the item's system name is shown.
+
+.Steps
 
 . Select *MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*.
 . For the *Select names* step, select any items you want to revert back to system names.
@@ -188,9 +203,6 @@ A success message is shown. The display names for these items are no longer used
 --
 ====
 
-// end tabbed area
-
-[start=5]
 . <<download-recovery-package,Download and save a new Recovery Package>>.
 +
 Display names for the items you reverted are no longer included in the `Passwords.txt` file.

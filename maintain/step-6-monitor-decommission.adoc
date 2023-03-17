@@ -123,7 +123,7 @@ If you are monitoring the progress of a disconnected site decommission, refer to
 |Complete
 |Minutes
 |===
-[start=4]
+
 . After all nodes have reached the Complete stage, wait for the remaining site decommission operations to complete.
  ** During the *Repair Cassandra* step, StorageGRID makes any necessary repairs to the Cassandra clusters that remain in your grid. These repairs might take several days or more, depending on how many Storage Nodes remain in your grid.
 +
