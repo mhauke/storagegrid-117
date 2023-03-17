@@ -2,16 +2,21 @@
 permalink: maintain/restoring-object-data-to-storage-volume.html
 sidebar: sidebar 
 keywords: restore replicated data, restore erasure coded data, recover storage node, recover storage volume
-summary: 'If the sn-recovery-postinstall.sh script is needed to reformat one or more failed storage volumes, you must restore object data to the reformatted storage volume from other Storage Nodes and Archive Nodes. These steps are  required if one or more storage volumes were reformatted.'
+summary: 'If the sn-recovery-postinstall.sh script is needed to reformat one or more failed storage volumes, you must restore object data to the reformatted storage volume from other Storage Nodes and Archive Nodes.'
 ---
 = Restore object data to storage volume
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If the `sn-recovery-postinstall.sh` script is needed to reformat one or more failed storage volumes, you must restore object data to the reformatted storage volume from other Storage Nodes and Archive Nodes. These steps are required if one or more storage volumes were reformatted.
+If the `sn-recovery-postinstall.sh` script is needed to reformat one or more failed storage volumes, you must restore object data to the reformatted storage volume from other Storage Nodes and Archive Nodes.
 
-NOTE: When possible, link:../maintain/restoring-volume.html[restore object data using Grid Manager].
+These steps are required if one or both of these are true:
+
+* One or more storage volumes were reformatted.
+* The recovered Storage Node contains fewer volumes than the node it is replacing.
+
+Otherwise, you should restore object data link:../maintain/restoring-volume.html[using the default method in the Grid Manager].
 
 include::../_include/restore-data-intro.adoc[]
 include::../_include/restore-data-repair.adoc[]
