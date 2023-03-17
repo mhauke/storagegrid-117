@@ -10,18 +10,20 @@ entries:
     url: "/audit/accessing-audit-log-file.html"
   - title: Audit log file rotation
     url: "/audit/audit-log-file-rotation.html"
-  - title: Audit log file and message formats
+  - title: Audit log file format
     entries:
-    - title: Audit log file format
-      url: "/audit/audit-log-file-format.html"
-      entries:
+      - title: Overview
+        pdf-filename: Audit log file format
+        url: "/audit/audit-log-file-format.html"
       - title: Use audit-explain tool
         url: "/audit/using-audit-explain-tool.html"
       - title: Use audit-sum tool
         url: "/audit/using-audit-sum-tool.html"
-    - title: Audit message format
-      url: "/audit/audit-message-format.html"
-      entries:
+  - title: Audit message format
+    entries:
+      - title: Overview
+        pdf-filename: Audit message format
+        url: "/audit/audit-message-format.html"
       - title: Data types
         url: "/audit/data-types.html"
       - title: Event-specific data
@@ -36,29 +38,17 @@ entries:
       url: "/audit/audit-messages-and-object-lifecycle.html"
     - title: Object ingest transactions
       url: "/audit/object-ingest-transactions.html"
-      entries:
-      - title: 'Example: S3 object ingest'
-        url: "/audit/example-s3-object-ingest.html"
     - title: Object delete transactions
       url: "/audit/object-delete-transactions.html"
-      entries:
-      - title: 'Example: S3 object deletion'
-        url: "/audit/example-s3-object-deletion.html"
     - title: Object retrieve transactions
       url: "/audit/object-retrieve-transactions.html"
-      entries:
-      - title: 'Example: S3 object retrieval'
-        url: "/audit/example-s3-object-retrieval.html"
-      - title: 'Example: S3 Select on an object'
-        url: "/audit/example-s3-select-on-object.html"
     - title: Metadata update messages
       url: "/audit/metadata-update-messages.html"
-      entries:
-      - title: 'Example: S3 metadata update'
-        url: "/audit/example-s3-metadata-update.html"
   - title: Audit messages
-    url: "/audit/audit-messages-main.html"
     entries:
+    - title: Overview
+      pdf-filename: Audit messages
+      url: "/audit/audit-messages-main.html"
     - title: Audit message categories
       entries:
       - title: System audit messages

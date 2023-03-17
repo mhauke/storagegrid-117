@@ -20,14 +20,14 @@ You can configure a grid federation connection between two StorageGRID systems t
 A new maintenance procedure (*MAINTENANCE* > *Tasks* > *Rename grid, sites, and nodes*) lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes: Overview].
 
 === FabricPool and S3 setup wizard and dashboard reminder
-The new FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with ONTAP FabricPool or other S3 client application and produces a file you can use when entering required values in the other application. Use the wizard to create an HA group, load balancer endpoint, tenant, bucket, and access keys more quickly and to make sure your settings conform to StorageGRID best practices.
+The new FabricPool and S3 setup wizard guides you through each step of configuring StorageGRID for use with ONTAP FabricPool or other S3 client application and produces a file you can use when entering required values in the other application. 
 
 As part of this change, a new banner is displayed on the dashboard to remind new users to configure endpoint domain names for S3 virtual-hosted-style requests and to set up email notifications for alerts.
 
 See link:../admin/use-s3-setup-wizard.html[Use S3 setup wizard]  and link:../fabricpool/use-fabricpool-setup-wizard.html[Use FabricPool setup wizard].
 
 === New firewall controls and changes to untrusted Client Networks
-You can now better manage access to your grid using the new Firewall control page (*CONFIGURATION* > *Security* > *Firewall control*). This page enables you to manage the external access of ports on nodes in your grid, and to define host addresses and IP subnets that are allowed access to closed ports. The untrusted Client Network settings have been moved to the Firewall control page and have also been enhanced with the ability to select additional ports you want open when untrusted Client Network is configured. These ports can provide access to the Grid Manager, the Tenant Manager, or both.
+The Firewall control page (*CONFIGURATION* > *Security* > *Firewall control*) enables you to manage the external access of ports on nodes in your grid, and to define host addresses and IP subnets that are allowed access to closed ports. The new page includes the untrusted Client Network settings, which now allow you to select additional ports you want open when untrusted Client Network is configured. See link:../admin/configure-firewall-controls.html[Configure internal firewall].
 
 ===  Enhanced security policies
 You can now determine which protocols and ciphers are used to establish secure TLS connections with client applications and secure SSH connections to internal StorageGRID services. See link:../admin/manage-tls-ssh-policy.html[Manage the TLS and SSH policy].
@@ -46,10 +46,8 @@ You can now configure custom dashboards for the Grid Manager. See link:../monito
 === Volume restoration
 Storage volume restoration lets you restore object data if a storage volume fails. For StorageGRID 11.7, volume restoration can be started in Grid Manager in addition to the existing method of entering commands manually. See link:../maintain/restoring-volume.html[Restore object data using Grid Manager]. Using Grid Manager is now the preferred method for restoring object data: entering commands manually to restore object data should only be used when replacing a node where the replacement node has fewer volumes than the original.
 
-=== New upgrade and hotfix process
-* You can now use the Grid Manager to upgrade to a future release and apply a hotfix for that release at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
-* The *Check for software updates* check box on the AutoSupport page (*SUPPORT* > *Tools* >
-*AutoSupport*) lets you control this functionality. You can disable the check for available software updates if your system does not have internet access. See link:../admin/configure-autosupport-grid-manager.html[Configure AutoSupport].
+=== Can upgrade and apply hotfix from Upgrade page
+When you upgrade to StorageGRID 11.7, you can apply the latest 11.7 hotfix at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages.
 
 === ILM 
 The ILM wizard in the Grid Manager has been improved.
@@ -78,14 +76,14 @@ You can now access SNMP-compliant MIB files from the Grid Manager using the SNMP
 == Tenant Manager updates
 
 === Delete all objects from bucket
-Tenant users can now delete all objects in a bucket, so the bucket can be deleted. See link:../tenant/deleting-s3-bucket-objects.html[Delete objects in bucket].
+Tenant Manager users can now delete all objects in a bucket, so the bucket can be deleted. See link:../tenant/deleting-s3-bucket-objects.html[Delete objects in bucket].
 
 == S3 updates
 
 === S3 Object Lock supports governance mode
-When specifying the S3 Object Lock settings for an object or the default retention settings for a bucket, you can now use governance mode. This retention mode allows users with special permission to bypass certain retention settings. These users can delete an object version before its retention period has elapsed, or they can increase, decrease, or remove an object's retention period. See link:../tenant/using-s3-object-lock.html[Use S3 Object Lock to retain objects] and link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
+When specifying the S3 Object Lock settings for an object or the default retention settings for a bucket, you can now use governance mode. This retention mode allows users with special permission to bypass certain retention settings. See link:../tenant/using-s3-object-lock.html[Use S3 Object Lock to retain objects] and link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
 
-Related to this change, Tenant Manager users can now enable default retention while they are creating a bucket, and they can specify a default retention mode and retention period. See link:../tenant/creating-s3-bucket.html[Create an S3 bucket].
+Related to this change, you can now enable and configure default retention when creating a bucket in Tenant Manager. See link:../tenant/creating-s3-bucket.html[Create an S3 bucket].
 
 === New S3 group policy for ransomware mitigation
 When added as the group policy for an S3 tenant account, the sample policy helps mitigate ransomware attacks. It prevents older object versions from being permanently deleted. See link:../tenant/creating-groups-for-s3-tenant.html[Create groups for an S3 tenant].
@@ -93,8 +91,8 @@ When added as the group policy for an S3 tenant account, the sample policy helps
 === NewerNoncurrentVersions threshold for S3 buckets 
 The `NewerNoncurrentVersions` action in the bucket lifecycle configuration specifies the number of noncurrent versions retained in a versioned S3 bucket. This threshold overrides lifecycle rules provided by ILM. See link:../ilm/how-objects-are-deleted.html[How objects are deleted].
 
-=== S3 Select supported on bare metal endpoints
-You can now use S3 Select with Admin and Gateway load balancer endpoints that are bare metal nodes running a kernel with cgroup v2 enabled.
+=== S3 Select updates
+S3 SelectObjectContent now offers support for Parquet objects. In addition, you can now use S3 Select with Admin and Gateway load balancer endpoints that are bare metal nodes running a kernel with cgroup v2 enabled.
 
 == Other enhancements
 
