@@ -20,7 +20,8 @@ a|
 Bytes Scanned
 a|
 Number of bytes scanned (received) from Storage Nodes.
-*Note*: BYSC and BYPR are likely to be different if the object is compressed. If the object is compressed BYSC would have the compressed byte count and BYPR would be the bytes after decompression.
+
+BYSC and BYPR are likely to be different if the object is compressed. If the object is compressed BYSC would have the compressed byte count and BYPR would be the bytes after decompression.
 a|
 BYPR
 a|
