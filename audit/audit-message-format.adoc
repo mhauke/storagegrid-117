@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: storagegrid, audit, message formats, message format 
 summary: 'Audit messages exchanged within the StorageGRID system include standard information common to all messages and specific content describing the event or activity being reported.'
 ---
-= Audit message format
+= Audit message format: Overview
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
 Audit messages exchanged within the StorageGRID system include standard information common to all messages and specific content describing the event or activity being reported.
 
-If the summary information provided by the `audit-explain` and `audit-sum` tools is insufficient, refer to this section to understand the general format of all audit messages.
+If the summary information provided by the link:using-audit-explain-tool.html[audit-explain] and link:using-audit-sum-tool.html[audit-sum] tools is insufficient, refer to this section to understand the general format of all audit messages.
 
 The following is an example audit message as it might appear in the audit log file:
 
@@ -42,16 +42,3 @@ The following list describes the attribute elements:
 * `type` is a four-character identifier of the programming data type of the value, such as UI64, FC32, and so on. The type is enclosed in parentheses `( )`.
 * `value` is the content of the attribute, typically a numeric or text value. Values always follow a colon (`:`). Values of data type CSTR are surrounded by double quotes `" "`.
 
-.Related information
-
-link:using-audit-explain-tool.html[Use audit-explain tool]
-
-link:using-audit-sum-tool.html[Use audit-sum tool]
-
-link:audit-messages-main.html[Audit messages]
-
-link:common-elements-in-audit-messages.html[Common elements in audit messages]
-
-link:data-types.html[Data types]
-
-link:audit-message-examples.html[Audit message examples]

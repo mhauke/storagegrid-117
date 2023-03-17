@@ -35,7 +35,7 @@ image:../media/grid-federation-workflow.png[Grid federation connection workflow]
 
 * Grid federation connections can occur on the Grid Network, Admin Network, or Client Network. 
 
-* A grid federation connection connects Admin Nodes or Gateway Nodes in one grid to Admin Nodes or Gateway Nodes in another grid. 
+* A grid federation connection connects one grid to another grid. The configuration for each grid specifies a grid federation endpoint on the other grid that consists of Admin Nodes, Gateway Nodes, or both.
 
 * The best practice is to connect link:managing-high-availability-groups.html[high availability (HA) groups] of Gateway and Admin Nodes on each grid. Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface.
 
