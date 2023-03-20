@@ -40,8 +40,10 @@ entries:
       - title: Recover Storage Node down more than 15 days
         url: "/maintain/recovering-storage-node-that-has-been-down-more-than-15-days.html"
       - title: Recover appliance Storage Node
-        url: "/maintain/recovering-storagegrid-appliance-storage-node.html"
         entries:
+        - title: Workflow
+          pdf-filename: Recover appliance Storage Node
+          url: "/maintain/recovering-storagegrid-appliance-storage-node.html"
         - title: Prepare appliance Storage Node for reinstallation
           url: "/maintain/preparing-appliance-storage-node-for-reinstallation.html"
         - title: Start StorageGRID appliance installation
@@ -57,8 +59,10 @@ entries:
         - title: Check storage state after recovering appliance Storage Node
           url: "/maintain/checking-storage-state-after-recovering-sga.html"
       - title: Recover from storage volume failure where system drive is intact
-        url: "/maintain/recovering-from-storage-volume-failure-where-system-drive-is-intact.html"
         entries:
+        - title: Workflow
+          pdf-filename: Recover from storage volume failure where system drive is intact
+          url: "/maintain/recovering-from-storage-volume-failure-where-system-drive-is-intact.html"
         - title: Review warnings about storage volume recovery
           url: "/maintain/reviewing-warnings-about-storage-volume-recovery.html"
         - title: Identify and unmount failed storage volumes
