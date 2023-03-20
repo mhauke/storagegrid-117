@@ -32,7 +32,7 @@ NOTE: The installer ensures that tasks completed in a previous install are not r
 +
 *1. Configure storage*
 +
-During this stage, the installer connects to the storage controller, clears any existing configuration, communicates with SANtricity OS to configure volumes, and configures host settings.
+During this stage, the installer connects to the storage controller, clears any existing configuration, creates RAIDs according to the configured RAID Mode, allocates volumes for StorageGRID software and object data storage, and configures host settings.
 +
 *2. Install OS*
 +
