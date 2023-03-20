@@ -294,7 +294,7 @@ Additional Recipients
 a|
 A supplementary list of email addresses to be notified when the alarm is triggered. This is in addition to the mailing list configured on the *Alarms* > *Email Setup* page. Lists are comma delineated.
 
-*Note:* Mailing lists require SMTP server setup in order to operate. Before adding mailing lists, confirm that SMTP is configured.
+*Note:* Mailing lists require SMTP server setup to operate. Before adding mailing lists, confirm that SMTP is configured.
 Notifications for Custom alarms can override notifications from Global Custom or Default alarms.
 a|
 Actions
@@ -580,7 +580,7 @@ A new mailing list is created.
 
 === Configure email notifications for alarms (legacy system)
 
-In order to receive email notifications for the legacy alarm system, recipients must be a member of a mailing list and that list must be added to the Notifications page. Notifications are configured to send email to recipients only when an alarm with a specified severity level is triggered or when a service state changes. Thus, recipients only receive the notifications they need to receive.
+To receive email notifications for the legacy alarm system, recipients must be a member of a mailing list and that list must be added to the Notifications page. Notifications are configured to send email to recipients only when an alarm with a specified severity level is triggered or when a service state changes. Thus, recipients only receive the notifications they need to receive.
 
 .What you'll need
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
