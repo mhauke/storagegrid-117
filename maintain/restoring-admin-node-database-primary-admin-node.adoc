@@ -11,11 +11,14 @@ summary: 'If you want to retain the historical information about attributes, ala
 [.lead]
 If you want to retain the historical information about attributes, alarms, and alerts on a primary Admin Node that has failed, you can restore the Admin Node database. You can only restore this database if your StorageGRID system includes another Admin Node.
 
-* The recovered Admin Node must be installed and running.
-* The StorageGRID system must include at least two Admin Nodes.
-* You must have the `Passwords.txt` file.
-* You must have the provisioning passphrase.
+.What you'll need
 
+* The recovered Admin Node is installed and running.
+* The StorageGRID system includes at least two Admin Nodes.
+* You have the `Passwords.txt` file.
+* You have the provisioning passphrase.
+
+.About this task
 If an Admin Node fails, the historical information stored in its Admin Node database is lost. This database includes the following information:
 
 * Alert history
@@ -27,6 +30,8 @@ When you recover an Admin Node, the software installation process creates an emp
 If you restored a primary Admin Node and your StorageGRID system has another Admin Node, you can restore the historical information by copying the Admin Node database from a non-primary Admin Node (the _source Admin Node_) to the recovered primary Admin Node. If your system has only a primary Admin Node, you cannot restore the Admin Node database.
 
 NOTE: Copying the Admin Node database might take several hours. Some Grid Manager features will be unavailable while services are stopped on the source Admin Node.
+
+.Steps
 
 . Log in to the source Admin Node:
  .. Enter the following command: `ssh admin@_grid_node_IP_`

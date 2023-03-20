@@ -74,8 +74,10 @@ entries:
         - title: Check storage state after recovering storage volumes
           url: "/maintain/checking-storage-state-after-recovering-storage-volumes.html"
       - title: Recover from system drive failure
-        url: "/maintain/recovering-from-system-drive-failure.html"
         entries:
+        - title: Workflow
+          pdf-filename: Recover from system drive failure
+          url: "/maintain/recovering-from-system-drive-failure.html"
         - title: Review warnings for Storage Node system drive recovery
           url: "/maintain/reviewing-warnings-for-system-drive-recovery.html"
         - title: Replace the Storage Node
@@ -93,11 +95,15 @@ entries:
       - title: Monitor repair-data jobs
         url: "/maintain/monitor-repairs.html"
     - title: Recover from Admin Node failures
-      url: "/maintain/recovering-from-admin-node-failures.html"
       entries:
+      - title: Workflow
+        pdf-filename: Recover from Admin Node failures    
+        url: "/maintain/recovering-from-admin-node-failures.html"
       - title: Recover from primary Admin Node failures
-        url: "/maintain/recovering-from-primary-admin-node-failures.html"
         entries:
+        - title: Overview
+          pdf-filename: Recover from primary Admin Node failures
+          url: "/maintain/recovering-from-primary-admin-node-failures.html"
         - title: Copy audit logs from failed primary Admin Node
           url: "/maintain/copying-audit-logs-from-failed-primary-admin-node.html"
         - title: Replace primary Admin Node
@@ -111,8 +117,10 @@ entries:
         - title: Restore Prometheus metrics when recovering primary Admin Node
           url: "/maintain/restoring-prometheus-metrics-primary-admin-node.html"
       - title: Recover from non-primary Admin Node failures
-        url: "/maintain/recovering-from-non-primary-admin-node-failures.html"
         entries:
+        - title: Overview
+          pdf-filename: Recover from non-primary Admin Node failures
+          url: "/maintain/recovering-from-non-primary-admin-node-failures.html"
         - title: Copy audit logs from failed non-primary Admin Node
           url: "/maintain/copying-audit-logs-from-failed-non-primary-admin-node.html"
         - title: Replace non-primary Admin Node

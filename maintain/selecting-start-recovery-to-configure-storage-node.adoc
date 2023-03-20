@@ -13,12 +13,12 @@ After replacing a Storage Node, you must select Start Recovery in the Grid Manag
 
 .What you'll need
 
-* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
-* You must have the Maintenance or Root access permission.
-* You must have the provisioning passphrase.
-* You must have deployed and configured the replacement node.
-* You must know the start date of any repair jobs for erasure-coded data.
-* You must have verified that the Storage Node has not been rebuilt within the last 15 days.
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You have the Maintenance or Root access permission.
+* You have the provisioning passphrase.
+* You have deployed and configured the replacement node.
+* You have the start date of any repair jobs for erasure-coded data.
+* You have verified that the Storage Node has not been rebuilt within the last 15 days.
 
 .About this task
 
@@ -50,10 +50,8 @@ If you want to retry the recovery after resetting the procedure, you must restor
  ** *VMware*: Delete the deployed virtual grid node. Then, when you are ready to restart the recovery, redeploy the node.
  ** *Linux*: Restart the node by running this command on the Linux host: `storagegrid node force-recovery _node-name_`
 
-. When the Storage Node reaches the stage "`Waiting for Manual Steps`" stage, go to the next task in the recovery procedure to remount and reformat storage volumes.
+. When the Storage Node reaches the "`Waiting for Manual Steps`" stage, go to link:remounting-and-reformatting-storage-volumes-manual-steps.html[Remount and reformat storage volumes (manual steps)].
 +
 image::../media/recovery_reset_button.gif[screenshot showing the stage "waiting for manual steps"]
 
-.Related information
 
-link:preparing-appliance-for-reinstallation-platform-replacement-only.html[Prepare appliance for reinstallation (platform replacement only)]

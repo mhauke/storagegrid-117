@@ -11,10 +11,14 @@ summary: 'If you want to retain the historical information about attributes, ala
 [.lead]
 If you want to retain the historical information about attributes, alarms, and alerts on a non-primary Admin Node that has failed, you can restore the Admin Node database from the primary Admin Node.
 
-* The recovered Admin Node must be installed and running.
-* The StorageGRID system must include at least two Admin Nodes.
-* You must have the `Passwords.txt` file.
-* You must have the provisioning passphrase.
+.What you'll need
+
+* The recovered Admin Node is installed and running.
+* The StorageGRID system includes at least two Admin Nodes.
+* You have the `Passwords.txt` file.
+* You have the provisioning passphrase.
+
+.About this task
 
 If an Admin Node fails, the historical information stored in its Admin Node database is lost. This database includes the following information:
 
@@ -28,14 +32,20 @@ If you restored a non-primary Admin Node, you can restore the historical informa
 
 NOTE: Copying the Admin Node database might take several hours. Some Grid Manager features will be unavailable while services are stopped on the source node.
 
+.Steps
+
 . Log in to the source Admin Node:
  .. Enter the following command: `ssh admin@_grid_node_IP_`
  .. Enter the password listed in the `Passwords.txt` file.
  .. Enter the following command to switch to root: `su -`
  .. Enter the password listed in the `Passwords.txt` file.
+
 . Run the following command from the source Admin Node. Then, enter the provisioning passphrase if prompted. `recover-access-points`
+
 . From the source Admin Node, stop the MI service: `service mi stop`
+
 . From the source Admin Node, stop the Management Application Program Interface (mgmt-api) service: `service mgmt-api stop`
+
 . Complete the following steps on the recovered Admin Node:
  .. Log in to the recovered Admin Node:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
@@ -52,4 +62,5 @@ NOTE: Copying the Admin Node database might take several hours. Some Grid Manage
 The database and its historical data are copied to the recovered Admin Node. When the copy operation is done, the script starts the recovered Admin Node.
 
  .. When you no longer require passwordless access to other servers, remove the private key from the SSH agent. Enter:``ssh-add -D``
+ 
 . Restart the services on the source Admin Node: `service servermanager start`

@@ -13,7 +13,7 @@ You can use the Change IP tool to add or change subnets on the Grid Network.
 
 .What you'll need
 
-* You must have the `Passwords.txt` file.
+* You have the `Passwords.txt` file.
 
 You can add, delete, or change subnets in the Grid Network Subnet List. Changes will affect routing on all nodes in the grid.
 
@@ -93,7 +93,7 @@ If the new network configuration will function simultaneously with the old netwo
 +
 If you need to make physical or virtual networking configuration changes for the new network configuration to function, you must use the *stage* option, shut down the affected nodes, make the necessary physical networking changes, and restart the affected nodes.
 +
-IMPORTANT: If you use the *stage* option, you must restart the node as soon as possible after staging to minimize disruptions.
+IMPORTANT: If you use the *stage* option, restart the node as soon as possible after staging to minimize disruptions.
 
  ** *cancel*: Do not make any network changes at this time.
 +

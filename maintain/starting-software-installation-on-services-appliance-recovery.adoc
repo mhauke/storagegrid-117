@@ -13,15 +13,15 @@ To install a Gateway Node or Admin Node on an SG100 or SG1000 services appliance
 
 .What you'll need
 
-* The appliance must be installed in a rack, connected to your networks, and powered on.
-* Network links and IP addresses must be configured for the appliance using the StorageGRID Appliance Installer.
+* The appliance is installed in a rack, connected to your networks, and powered on.
+* Network links and IP addresses are configured for the appliance using the StorageGRID Appliance Installer.
 * If you are installing a Gateway Node or non-primary Admin Node, you know the IP address of the primary Admin Node for the StorageGRID grid.
-* All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer must be defined in the Grid Network Subnet List on the primary Admin Node.
+* All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer are defined in the Grid Network Subnet List on the primary Admin Node.
 +
 See link:../installconfig/index.html[Quick start for hardware installation].
 
-* You must be using a link:../admin/web-browser-requirements.html[supported web browser].
-* You must know one of the IP addresses assigned to the appliance. You can use the IP address for the Admin Network, the Grid Network, or the Client Network.
+* You are using a link:../admin/web-browser-requirements.html[supported web browser].
+* You have one of the IP addresses assigned to the appliance. You can use the IP address for the Admin Network, the Grid Network, or the Client Network.
 * If you are installing a primary Admin Node, you have the Ubuntu or Debian install files for this version of StorageGRID available.
 +
 NOTE: A recent version of StorageGRID software is preloaded onto the services appliance during manufacturing. If the preloaded version of software matches the version being used in your StorageGRID deployment, you do not need the installation files.
