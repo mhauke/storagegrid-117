@@ -11,6 +11,8 @@ summary: 'When recovering an appliance Storage Node, you must first prepare the 
 [.lead]
 When recovering an appliance Storage Node, you must first prepare the appliance for reinstallation of StorageGRID software.
 
+.Steps
+
 . Log in to the failed Storage Node:
  .. Enter the following command: `ssh admin@_grid_node_IP_`
  .. Enter the password listed in the `Passwords.txt` file.
