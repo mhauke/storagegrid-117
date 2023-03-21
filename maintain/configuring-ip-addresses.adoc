@@ -13,11 +13,11 @@ You can perform network configuration by configuring IP addresses for grid nodes
 
 You must use the Change IP tool to make most changes to the networking configuration that was initially set during grid deployment. Manual changes using standard Linux networking commands and files might not propagate to all StorageGRID services, and might not persist across upgrades, reboots, or node recovery procedures.
 
-NOTE: If you want to change the Grid Network IP address for all nodes in the grid, use the link:changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html[special procedure for grid-wide changes].
+IMPORTANT: The IP change procedure can be a disruptive procedure. Parts of the grid might be unavailable until the new configuration is applied.
 
 NOTE: If you are making changes to the Grid Network Subnet List only, use the Grid Manager to add or change the network configuration. Otherwise, use the Change IP tool if the Grid Manager is inaccessible due to a network configuration issue, or you are performing both a Grid Network routing change and other network changes at the same time.
 
-IMPORTANT: The IP change procedure can be a disruptive procedure. Parts of the grid might be unavailable until the new configuration is applied.
+TIP: If you want to change the Grid Network IP address for all nodes in the grid, use the link:changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html[special procedure for grid-wide changes].
 
 *Ethernet interfaces*
 

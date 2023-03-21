@@ -11,7 +11,12 @@ summary: 'With a few exceptions, you prepare the new hosts as you did during the
 [.lead]
 With a few exceptions, you prepare the new hosts as you did during the initial installation process.
 
-To deploy new or reinstalled physical or virtual Linux hosts, follow the procedure for preparing the hosts in the StorageGRID installation instructions for your Linux operating system.
+To deploy new or reinstalled physical or virtual Linux hosts, follow the procedure for preparing the hosts in the StorageGRID installation instructions for your Linux operating system:
+
+* link:../rhel/installing-linux.html[Install Linux (Red Hat Enterprise Linux or CentOS)]
+
+* link:../ubuntu/installing-linux.html[Install Linux (Ubuntu or Debian)]
+
 
 This procedure includes steps to accomplish the following tasks:
 
@@ -31,8 +36,3 @@ As you perform these steps, note the following important guidelines:
 +
 IMPORTANT: Never use FabricPool to tier any data related to StorageGRID back to StorageGRID itself. Tiering StorageGRID data back to StorageGRID increases troubleshooting and operational complexity.
 
-.Related information
-
-link:../rhel/index.html[Install Red Hat Enterprise Linux or CentOS]
-
-link:../ubuntu/index.html[Install Ubuntu or Debian]

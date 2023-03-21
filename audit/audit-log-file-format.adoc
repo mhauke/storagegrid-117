@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, log file formats, log formats, log file format, log format
 summary: 'The audit log files are found on every Admin Node and contain a collection of individual audit messages.'
 ---
-= Audit log file format
+= Audit log file format: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -43,10 +43,8 @@ The following example shows three audit messages in an audit log file (line brea
 [ATIM(UI64):1565203410784558][ATYP(FC32):SPUT][ANID(UI32):12454421][AMID(FC32):S3RQ][ATID(UI64):13489590586043706682]]
 ----
 
-In their default format, the audit messages in the audit log files are not easy to read or interpret. You can use the `audit-explain` tool to obtain simplified summaries of the audit messages in the audit log. You can use the `audit-sum` tool to summarize how many write, read, and delete operations were logged and how long these operations took.
+In their default format, the audit messages in the audit log files are not easy to read or interpret. You can use the link:using-audit-explain-tool.html[audit-explain tool] to obtain simplified summaries of the audit messages in the audit log. You can use the link:using-audit-sum-tool.html[audit-sum tool] to summarize how many write, read, and delete operations were logged and how long these operations took.
 
-.Related information
 
-link:using-audit-explain-tool.html[Use audit-explain tool]
 
-link:using-audit-sum-tool.html[Use audit-sum tool]
+

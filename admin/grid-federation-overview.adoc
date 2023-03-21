@@ -31,24 +31,29 @@ image:../media/grid-federation-workflow.png[Grid federation connection workflow]
 
 * At least one grid federation connection must exist before you can use link:grid-federation-what-is-account-clone.html[account clone] or link:grid-federation-what-is-cross-grid-replication.html[cross-grid replication].
 
-=== Networking, IP address, and DNS requirements
-
-* A grid federation connection connects Admin Nodes or Gateway Nodes in one grid to Admin Nodes or Gateway Nodes in another grid. 
+=== Networking and IP address requirements
 
 * Grid federation connections can occur on the Grid Network, Admin Network, or Client Network. 
 
-* The best practice is to connect high availability (HA) groups of Gateway and Admin Nodes on each grid. Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface. For details, see link:managing-high-availability-groups.html[Manage high availability (HA) groups].
+* A grid federation connection connects one grid to another grid. The configuration for each grid specifies a grid federation endpoint on the other grid that consists of Admin Nodes, Gateway Nodes, or both.
+
+* The best practice is to connect link:managing-high-availability-groups.html[high availability (HA) groups] of Gateway and Admin Nodes on each grid. Using HA groups helps ensure that grid federation connections will remain online if nodes become unavailable. If the active interface in either HA group fails, the connection can use a backup interface.
 
 * Creating a grid federation connection that uses the IP address of a single Admin Node or Gateway Node is not recommended. If the node becomes unavailable, the grid federation connection will also become unavailable.
 
-* Cross-grid replication requires that the Storage Nodes on each grid be able to access the configured Admin and Gateway Nodes on the other grid. For each grid, confirm that all Storage Nodes are on the same StorageGRID network as the Admin Nodes or Gateway Nodes used for the connection.
+* link:grid-federation-what-is-cross-grid-replication.html[Cross-grid replication] of objects requires that the Storage Nodes on each grid be able to access the configured Admin and Gateway Nodes on the other grid. For each grid, confirm that all Storage Nodes have a high bandwidth route to as the Admin Nodes or Gateway Nodes used for the connection.
 
-* If you plan to use fully qualified domain names (FQDNs) to identify each grid in the connection (recommended), you must create the appropriate DNS entries, as follows:
+=== Use FQDNs to load balance the connection
 
-** *Grid 1 DNS*: The FQDN for Grid 2 mapped to one or more IP addresses or virtual IP (VIP) addresses for Grid 1. 
-** *Grid 2 DNS*: The FQDN for Grid 1 mapped to one or more IP addresses or VIP addresses for Grid 2. 
+For a production environment, use fully qualified domain names (FQDNs) to identify each grid in the connection. Then, create the appropriate DNS entries, as follows:
 
-* If the DNS entries for a FQDN map to the IP addresses of multiple Admin Nodes or Gateway Nodes, the requests to use the connection will be load balanced between the active nodes. If the DNS entries map to the VIP addresses of multiple HA groups, requests will be load balanced between the active nodes in the HA groups.
+* The FQDN for Grid 1 mapped to one or more virtual IP (VIP) addresses for Grid 1 or to the IP address of one or more Admin or Gateway Nodes in Grid 1.
+* The FQDN for Grid 2 mapped to one or more VIP addresses for Grid 2 or to the IP address of one or more Admin or Gateway Nodes in Grid 2.
+
+When you use multiple DNS entries, requests to use the connection are load balanced, as follows:
+
+* DNS entries that map to the VIP addresses of multiple HA groups are load balanced between the active nodes in the HA groups.
+* DNS entries that map to the IP addresses of multiple Admin Nodes or Gateway Nodes are load balanced between the mapped nodes. 
 
 === Port requirements
 

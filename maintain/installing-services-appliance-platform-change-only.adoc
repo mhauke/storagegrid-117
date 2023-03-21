@@ -11,7 +11,7 @@ summary: 'When you are recovering a failed grid node that was hosted on VMware o
 [.lead]
 When you are recovering a failed grid node that was hosted on VMware or a Linux host and you are using a services appliance for the replacement node, you must first install the new appliance hardware using the same node name (system name) as the failed node.
 
-You must have the following information about the failed node:
+You have the following information about the failed node:
 
 * *Node name*: You must install the services appliance using the same node name as the failed node. The node name is the hostname (system name).
 * *IP addresses*: You can assign the services appliance the same IP addresses as the failed node, which is the preferred option, or you can select a new unused IP address on each network.

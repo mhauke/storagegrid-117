@@ -11,11 +11,15 @@ summary: 'If you are able to copy audit logs from the failed primary Admin Node,
 [.lead]
 If you are able to copy audit logs from the failed primary Admin Node, you should preserve them to maintain the grid's record of system activity and usage. You can restore the preserved audit logs to the recovered primary Admin Node after it is up and running.
 
+.About this task
+
 This procedure copies the audit log files from the failed Admin Node to a temporary location on a separate grid node. These preserved audit logs can then be copied to the replacement Admin Node. Audit logs are not automatically copied to the new Admin Node.
 
 Depending on the type of failure, you might not be able to copy audit logs from a failed Admin Node. If the deployment has only one Admin Node, the recovered Admin Node starts recording events to the audit log in a new empty file and previously recorded data is lost. If the deployment includes more than one Admin Node, you can recover the audit logs from another Admin Node.
 
 NOTE: If the audit logs are not accessible on the failed Admin Node now, you might be able to access them later, for example, after host recovery.
+
+.Steps
 
 . Log in to the failed Admin Node if possible. Otherwise, log in to the primary Admin Node or another Admin Node, if available.
  .. Enter the following command: `ssh admin@_grid_node_IP_`
