@@ -222,8 +222,10 @@ entries:
       - title: Troubleshoot node decommissioning
         url: "/maintain/troubleshooting-node-decommissioning.html"
     - title: Site decommission
-      url: "/maintain/site-decommissioning.html"
       entries:
+      - title: Overview
+        pdf-filename: Site decommission
+        url: "/maintain/site-decommissioning.html" 
       - title: Considerations for removing a site
         url: "/maintain/considerations-for-removing-site.html"
       - title: Gather required materials
@@ -280,7 +282,6 @@ entries:
     - title: Restore network connectivity for isolated nodes
       url: "/maintain/restoring-network-connectivity-for-isolated-nodes.html"
   - title: Host-level and middleware procedures
-    url: "/maintain/host-level-and-middleware-procedures.html"
     entries:
     - title: 'Linux: Migrate grid node to new host'
       url: "/maintain/linux-migrating-grid-node-to-new-host.html"

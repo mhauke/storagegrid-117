@@ -152,8 +152,8 @@ Run the following command only for new block storage devices. Do not run this co
 To start your StorageGRID nodes, and ensure they restart after a host reboot, you must enable and start the StorageGRID host service.
 
 include::../_include/starting-storagegrid-host-service.adoc[]
-[[recover-nodes-fail-start]]
 
+[[recover-nodes-fail-start]]
 == Recover nodes that fail to start normally
 
 If a StorageGRID node doesn't rejoin the grid normally and doesn't show up as recoverable, it might be corrupted. You can force the node into recovery mode.
