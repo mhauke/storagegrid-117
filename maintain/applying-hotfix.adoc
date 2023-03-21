@@ -13,13 +13,13 @@ The hotfix is first applied automatically to the primary Admin Node. Then, you m
 
 .What you'll need
 
-* You have reviewed the considerations and completed the steps in link:hotfix-planning-and-preparation.html[Plan and prepare for a hotfix].
+* You have reviewed the link:storagegrid-hotfix-procedure.html[considerations for applying a hotfix].
 * You have the provisioning passphrase.
 * You have Root access or the Maintenance permission.
 
 .About this task
 * You can delay applying a hotfix to a node, but the hotfix process is not complete until you apply the hotfix to all nodes.
-* You cannot perform a StorageGRID software upgrade or a SANtricity OS upgrade until you have completed the hotfix process.
+* You cannot perform a StorageGRID software upgrade or a SANtricity OS update until you have completed the hotfix process.
 
 .Steps
 
@@ -55,8 +55,6 @@ The *Start* button becomes enabled.
 . Select *Start*.
 +
 A warning appears stating that your browser's connection might be lost temporarily as services on the primary Admin Node are restarted.
-+
-image::../media/apply_hotfix_warning.gif[screenshot showing Connection will be temporarily lost dialog box]
 
 . Select *OK* to start applying the hotfix to the primary Admin Node.
 +

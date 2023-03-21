@@ -16,13 +16,13 @@ You must select the node replacement procedure for your platform. The steps to r
 [cols="1a,2a" options="header"]
 |===
 | Platform| Procedure
-|VMware
+| VMware
 | link:all-node-types-replacing-vmware-node.html[Replace a VMware node]
 
-|Linux
+| Linux
 | link:all-node-types-replacing-linux-node.html[Replace a Linux node]
 
-|OpenStack
-|NetApp-provided virtual machine disk files and scripts for OpenStack are no longer supported for recovery operations. If you need to recover a node running in an OpenStack deployment, download the files for your Linux operating system. Then, follow the procedure for replacing a Linux node.
+| OpenStack
+| NetApp-provided virtual machine disk files and scripts for OpenStack are no longer supported for recovery operations. If you need to recover a node running in an OpenStack deployment, download the files for your Linux operating system. Then, follow the procedure for link:all-node-types-replacing-linux-node.html[replacing a Linux node].
 
 |===
