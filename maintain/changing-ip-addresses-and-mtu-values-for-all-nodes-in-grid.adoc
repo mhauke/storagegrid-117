@@ -13,7 +13,7 @@ If you need to change the Grid Network IP address for all nodes in the grid, you
 
 .What you'll need
 
-* You must have the `Passwords.txt` file.
+* You have the `Passwords.txt` file.
 
 To ensure that the grid starts up successfully, you must make all the changes at the same time.
 
@@ -69,7 +69,6 @@ image::../media/change_ip_tool_edit_ip_mask_sample_output.png[screenshot describ
 +
 NOTE: Certain command line interfaces might show additions and deletions using strikethrough formatting. Proper display depends on your terminal client supporting the necessary VT100 escape sequences.
 
-[start=7]
 . Select option *7* to validate all changes.
 +
 This validation ensures that the rules for the Grid Network, such as not using overlapping subnets, are not violated.
@@ -104,8 +103,8 @@ IMPORTANT: The entire grid must be shut down at once, so that all nodes are down
 
 .Related information
 
-link:../admin/index.html[Administer StorageGRID]
+* link:../admin/index.html[Administer StorageGRID]
 
-link:adding-to-or-changing-subnet-lists-on-grid-network.html[Add to or change subnet lists on Grid Network]
+* link:adding-to-or-changing-subnet-lists-on-grid-network.html[Add to or change subnet lists on Grid Network]
 
-link:shutting-down-grid-node.html[Shut down grid node]
+* link:shutting-down-grid-node.html[Shut down grid node]

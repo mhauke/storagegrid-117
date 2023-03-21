@@ -30,7 +30,7 @@ Cold migration is supported. In cold migration, you shut down the StorageGRID no
 
 == Consistent network interface names
 
-In order to move a node from one host to another, the StorageGRID host service needs to have some confidence that the external network connectivity the node has at its current location can be duplicated at the new location. It gets this confidence through the use of consistent network interface names in the hosts.
+To move a node from one host to another, the StorageGRID host service needs to have some confidence that the external network connectivity the node has at its current location can be duplicated at the new location. It gets this confidence through the use of consistent network interface names in the hosts.
 
 Suppose, for example, that StorageGRID NodeA running on Host1 has been configured with the following interface mappings:
 
@@ -44,7 +44,7 @@ There are many ways to achieve consistent network interface naming across multip
 
 == Shared storage
 
-In order to achieve rapid, low-overhead node migrations, the StorageGRID node migration feature does not physically move node data. Instead, node migration is performed as a pair of export and import operations, as follows:
+To achieve rapid, low-overhead node migrations, the StorageGRID node migration feature does not physically move node data. Instead, node migration is performed as a pair of export and import operations, as follows:
 
 .Steps
 

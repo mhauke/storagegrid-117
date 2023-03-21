@@ -93,8 +93,7 @@ If you enter *80* or *443*, the endpoint is configured only on Gateway Nodes. Th
 include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 
 +
-[NOTE]
-If more than one endpoint uses the same port, StorageGRID uses this priority order to decide which endpoint to use: *Virtual IPs of HA groups* > *Node interfaces* > *Node type* > *Global*. 
+NOTE: If more than one endpoint uses the same port, StorageGRID uses this priority order to decide which endpoint to use: *Virtual IPs of HA groups* > *Node interfaces* > *Node type* > *Global*. 
 
 . If you selected *Virtual IPs of HA groups*, select one or more HA groups.
 

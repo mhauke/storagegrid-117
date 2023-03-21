@@ -30,7 +30,7 @@ For example, describe what this traffic classification policy applies to and wha
 
 . Select *Add rule* and specify the following details to create one or more matching rules for the policy. Any policy that you create should have at least one matching rule. Select *Continue*.
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 
 |Field |Description
@@ -62,7 +62,7 @@ For a policy containing multiple matchers where at least one is an inverse match
 +
 NOTE: StorageGRID collects metrics even if you do not add any limits, so you can understand traffic trends.
 +
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 
 |Field |Description
