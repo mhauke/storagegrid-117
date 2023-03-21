@@ -67,7 +67,7 @@ All four ports are grouped in a single LACP bond, allowing all ports to be used 
 |===
 The table summarizes the options for configuring the four network ports. The default settings are shown in bold. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
 
-NOTE: The LACP transmit hash policy defaults to layer2+3 mode. If necessary, you can use the Grid Management API to change it to layer3+4 mode.
+NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
@@ -189,7 +189,7 @@ NOTE: You might lose your connection if you made changes to the network or link 
 --
 
 
-.SG5700
+.SG6000
 --
 .What you'll need
 
@@ -233,6 +233,8 @@ image::../media/sg6000_cn_aggregate_port.gif[Image showing how the network ports
 |===
 
 The tables summarize the options for configuring the four network ports. The default settings are shown in bold. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
+
+NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
@@ -389,6 +391,8 @@ All four ports are grouped in a single LACP bond, allowing all ports to be used 
 |===
 
 The table summarizes the options for configuring the four 10/25-GbE ports. The default settings are shown in bold. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
+
+NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
@@ -561,7 +565,7 @@ All four ports are grouped in a single LACP bond, allowing all ports to be used 
 |===
 The table summarizes the options for configuring the four network ports. The default settings are shown in bold. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
 
-NOTE: The LACP transmit hash policy defaults to layer2+3 mode. If necessary, you can use the Grid Management API to change it to layer3+4 mode.
+NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +

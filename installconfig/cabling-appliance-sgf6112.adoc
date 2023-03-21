@@ -45,14 +45,14 @@ image::../media/sgf6112_connections.png[SGF6112 rear connectors]
 |Admin Network port on the appliance (labelled P1 in the figure)
 |1-GbE (RJ-45)
 
-*Important:* This port operates only at 1000 baseT/full and does not support 10- or 100-megabit speeds.
+*Important:* This port operates only at 1/10-GbE (RJ-45) and does not support 100-megabit speeds.
 |Connects the appliance to the Admin Network for StorageGRID.
 
 |
 |Rightmost RJ-45 port on the appliance
 |1-GbE (RJ-45)
 
-*Important:* This port operates only at 1000 baseT/full and does not support 10- or 100-megabit speeds.
+*Important:* This port operates only at 1/10-GbE (RJ-45) and does not support 100-megabit speeds.
 |
 * Can be bonded with management port 1 if you want a redundant connection to the Admin Network.
 * Can be left disconnected and available for temporary local access (IP 169.254.0.1).
