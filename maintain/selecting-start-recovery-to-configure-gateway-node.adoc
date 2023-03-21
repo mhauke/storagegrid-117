@@ -32,7 +32,7 @@ image::../media/4b_select_recovery_node.png[screenshot showing the Maintenance >
 
 . Monitor the progress of the recovery in the Recovering Grid Node table.
 +
-NOTE: While the recovery procedure is running, you can click *Reset* to start a new recovery. An Info dialog box appears, indicating that the node will be left in an indeterminate state if you reset the procedure.
+NOTE: While the recovery procedure is running, you can click *Reset* to start a new recovery. A dialog box appears, indicating that the node will be left in an indeterminate state if you reset the procedure.
 +
 image::../media/recovery_reset_warning.gif[screenshot showing the reset recovery warning dialog box]
 +
@@ -40,8 +40,4 @@ If you want to retry the recovery after resetting the procedure, you must restor
 
  ** *VMware*: Delete the deployed virtual grid node. Then, when you are ready to restart the recovery, redeploy the node.
  ** *Linux*: Restart the node by running this command on the Linux host: `storagegrid node force-recovery _node-name_`
- ** *Appliance*: If you want to retry the recovery after resetting the procedure, you must restore the appliance node to a pre-installed state by running `sgareinstall` on the node.
-
-.Related information
-
-link:preparing-appliance-for-reinstallation-platform-replacement-only.html[Prepare appliance for reinstallation (platform replacement only)]
+ ** *Appliance*: If you want to retry the recovery after resetting the procedure, you must restore the appliance node to a pre-installed state by running `sgareinstall` on the node. See link:preparing-appliance-for-reinstallation-platform-replacement-only.html[Prepare appliance for reinstallation (platform replacement only)].
