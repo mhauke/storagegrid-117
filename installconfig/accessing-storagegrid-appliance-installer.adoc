@@ -25,7 +25,7 @@ To initially access the StorageGRID Appliance Installer, you can use the DHCP-as
 
 .Steps
 
-. If possible, use the DHCP address for the Admin Network port on the services appliance or storage appliance controller to access the StorageGRID Appliance Installer. (Use the IP address on the Grid Network if the Admin Network is not connected.)
+. If possible, use the DHCP address for the Admin Network port on the services appliance or storage appliance controller. The Admin Network port is highlighted in the following figure. (Use the IP address on the Grid Network if the Admin Network is not connected.)
 +
 [role="tabbed-block"]
 ====
@@ -68,8 +68,7 @@ NOTE: If an IP address could not be assigned using DHCP, 0.0.0.0 is displayed.
 --
 ====
 
-
- .. Locate the MAC address label on the front of the services appliance  or storage appliance controller, and determine the MAC address for the Admin Network port.
+ .. Locate the MAC address label on the front of the services appliance or storage appliance, and determine the MAC address for the Admin Network port.
 +
 The MAC address label lists the MAC address for the BMC management port.
 +
