@@ -2,24 +2,35 @@
 permalink: maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html
 sidebar: sidebar
 keywords: restore replicated data, restore erasure coded data, recover storage node, recover storage volume
-summary: 'After recovering a storage volume on a Storage Node where the system drive is intact, you can restore the object data that was lost when the storage volume failed.'
+summary: 'After recovering a storage volume on a Storage Node where the system drive is intact, you can restore the replicated or erasure-coded object data that was lost when the storage volume failed.'
 ---
-= Restore object data to storage volume where system drive is intact (repair-data script)
+= Restore object data to storage volume where system drive is intact
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-After recovering a storage volume on a Storage Node where the system drive is intact, you can restore the object data that was lost when the storage volume failed.
+After recovering a storage volume on a Storage Node where the system drive is intact, you can restore the replicated or erasure-coded object data that was lost when the storage volume failed.
 
-NOTE: When possible, link:../maintain/restoring-volume.html[restore object data using Grid Manager].
+== Which procedure should I use?
+
+Whenever possible, restore object data using the *Volume restoration* task in the Grid Manager.
+
+* If the volumes are listed at *MAINTENANCE* > *Volume restoration* > *Nodes to restore*, restore object data using the link:../maintain/restoring-volume.html[Volume restoration task in the Grid Manager].
+
+* If the volumes are not listed at *MAINTENANCE* > *Volume restoration* > *Nodes to restore*, follow the steps below for using the `repair-data` script to restore object data.
++
+If the recovered Storage Node contains fewer volumes than the node it is replacing, you must use the `repair-data` script.
+
+== Use the `repair-data` script to restore object data
 
 include::../_include/restore-data-intro.adoc[]
 include::../_include/restore-data-repair.adoc[]
 
 == Monitor repairs
+
 Monitor the status of the repair jobs, based on whether you use *replicated data*, *erasure-coded (EC) data*, or both.
 
-You can also monitor the status of restoration jobs in process and view a history of restoration jobs completed in 
+You can also monitor the status of volume restoration jobs in process and view a history of restoration jobs completed in 
 link:../maintain/restoring-volume.html[Grid Manager].
 
 include::../_include/restore-data-monitor.adoc[]
