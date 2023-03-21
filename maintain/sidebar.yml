@@ -164,18 +164,6 @@ entries:
         url: "/maintain/deploying-new-linux-hosts.html"
       - title: Restore grid nodes to the host
         url: "/maintain/restoring-existing-nodes.html"
-        entries:
-        - title: Restore and validate grid nodes
-          url: "/maintain/restoring-and-validating-grid-nodes.html"
-          entries:
-          - title: Fix missing network interface errors
-            url: "/maintain/fixing-mssing-network-interface-errors.html"
-          - title: Fix missing block device errors
-            url: "/maintain/fixing-missing-block-device-errors.html"
-        - title: Start StorageGRID host service
-          url: "/maintain/starting-storagegrid-host-service.html"
-        - title: Recover nodes that fail to start normally
-          url: "/maintain/recovering-nodes-that-fail-to-start-normally.html"
       - title: 'What&#8217;s next: Perform additional recovery steps, if required'
         url: "/maintain/whats-next-performing-additional-recovery-steps-if-required.html"
     - title: Replace failed node with services appliance
@@ -191,12 +179,16 @@ entries:
         url: "/maintain/monitoring-services-appliance-installation.html"
   - title: How site recovery is performed by technical support
     url: "/maintain/how-site-recovery-is-performed-by-technical-support.html"
-  - title: Decommission procedure
-    url: "/maintain/decommission-procedure.html"
+  - title: Decommission procedure    
     entries:
+    - title: Overview
+      pdf-filename: Decommission procedure
+      url: "/maintain/decommission-procedure.html"
     - title: Grid node decommission
-      url: "/maintain/grid-node-decommissioning.html"
       entries:
+      - title: Overview
+        pdf-filename: Grid node decommission
+        url: "/maintain/grid-node-decommissioning.html"   
       - title: Considerations for grid node decommission
         url: "/maintain/considerations-for-decommissioning-grid-nodes.html"
         entries:
@@ -250,7 +242,7 @@ entries:
         url: "/maintain/step-6-monitor-decommission.html"
   - title: Rename grid, sites, and nodes
     entries:
-    - title: 'Overview'
+    - title: Overview
       pdf-filename: Rename grid, sites, and nodes - Overview
       url: "/maintain/rename-grid-site-node-overview.html"
     - title: 'Add or update display names'  
