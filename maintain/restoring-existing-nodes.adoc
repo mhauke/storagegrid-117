@@ -93,9 +93,9 @@ If the host network is not configured correctly or a name is misspelled, an erro
 You might see an error or warning matching this pattern:
 
 ----
-Checking configuration file `/etc/storagegrid/nodes/<node-name>.conf for node <node-name>...
+Checking configuration file /etc/storagegrid/nodes/<node-name>.conf for node <node-name>...
 ERROR: <node-name>: GRID_NETWORK_TARGET = <host-interface-name>
-       <node-name>: Interface '<host-interface-name>' does not exist
+       <node-name>: Interface <host-interface-name>' does not exist
 ----       
 
 The error could be reported for the Grid Network, the Admin Network, or the Client Network. This error means that the `/etc/storagegrid/nodes/_node-name_.conf` file maps the indicated StorageGRID network to the host interface named `_host-interface-name_`, but there is no interface with that name on the current host.
