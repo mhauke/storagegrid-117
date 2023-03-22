@@ -19,7 +19,11 @@ You have the `Passwords.txt` file.
 
 *Linux:* If you are adding a grid node to the Admin Network or Client Network for the first time, and you did not previously configure ADMIN_NETWORK_TARGET or CLIENT_NETWORK_TARGET in the node configuration file, you must do so now.
 
-See the StorageGRID installation instructions for your Linux operating system.
+See the StorageGRID installation instructions for your Linux operating system:
+
+* link:../rhel/index.html[Install Red Hat Enterprise Linux or CentOS]
+
+* link:../ubuntu/index.html[Install Ubuntu or Debian]
 
 *Appliances:* On StorageGRID appliances, if the Client or Admin Network was not configured in the StorageGRID Appliance Installer during the initial installation, the network cannot be added by using only the Change IP tool. First, you must link:../commonhardware/placing-appliance-into-maintenance-mode.html[place the appliance in maintenance mode], configure the links, return the appliance to normal operating mode, and then use the Change IP tool to modify the network configuration. See the link:../installconfig/configuring-network-links.html[procedure for configuring network links].
 
@@ -34,7 +38,7 @@ Nodes cannot be removed from the Grid Network.
 
 IMPORTANT: IP address swaps are not allowed. If you must exchange IP addresses between grid nodes, you must use a temporary intermediate IP address.
 
-IMPORTANT: If single sign-on (SSO) is enabled for your StorageGRID system and you are changing the IP address of an Admin Node, be aware that any relying party trust that was configured using the Admin Node's IP address (instead of its fully qualified domain name, as recommended) will become invalid. You will no longer be able to sign in to the node. Immediately after changing the IP address, you must update or reconfigure the node's relying party trust in Active Directory Federation Services (AD FS) with the new IP address. See the instructions for administering StorageGRID.
+IMPORTANT: If single sign-on (SSO) is enabled for your StorageGRID system and you are changing the IP address of an Admin Node, be aware that any relying party trust that was configured using the Admin Node's IP address (instead of its fully qualified domain name, as recommended) will become invalid. You will no longer be able to sign in to the node. Immediately after changing the IP address, you must update or reconfigure the node's relying party trust in Active Directory Federation Services (AD FS) with the new IP address. See the instructions for link:../admin/configuring-sso.html[configuring SSO].
 
 NOTE: Any changes you make to the network using the Change IP tool are propagated to the installer firmware for the StorageGRID appliances. That way, if StorageGRID software is reinstalled on an appliance, or if an appliance is placed into maintenance mode, the networking configuration will be correct.
 
@@ -151,7 +155,7 @@ After applying or staging changes, a new Recovery Package is generated as a resu
 +
 *Physical networking changes*: Make the necessary physical networking changes, safely shutting down the node if necessary.
 +
-*Linux*: If you are adding the node to an Admin Network or Client Network for the first time, ensure that you have added the interface as described in "`Adding interfaces to an existing node.`"
+*Linux*: If you are adding the node to an Admin Network or Client Network for the first time, ensure that you have added the interface as described in link:linux-adding-interfaces-to-existing-node.html[Linux: Add interfaces to existing node].
 
  .. Restart the affected nodes.
 . Select *0* to exit the Change IP tool after your changes are complete.
@@ -161,18 +165,8 @@ After applying or staging changes, a new Recovery Package is generated as a resu
 
 .Related information
 
-link:linux-adding-interfaces-to-existing-node.html[Linux: Add interfaces to existing node]
-
-link:../rhel/index.html[Install Red Hat Enterprise Linux or CentOS]
-
-link:../ubuntu/index.html[Install Ubuntu or Debian]
-
 link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
 
 link:../sg6000/index.html[SG6000 storage appliances]
 
 link:../sg5700/index.html[SG5700 storage appliances]
-
-link:../admin/index.html[Administer StorageGRID]
-
-link:configuring-ip-addresses.html[Configure IP addresses]

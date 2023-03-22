@@ -96,7 +96,7 @@ image::../media/decommission_nodes_procedure_complete.png[screenshot showing tha
 Complete these steps after you complete the node decommission procedure:
 
 * Ensure that the drives of the decommissioned grid node are wiped clean. Use a commercially available data wiping tool or service to permanently and securely remove data from the drives.
-* If you decommissioned an appliance node and the data on the appliance was protected using node encryption, use the StorageGRID Appliance Installer to clear the key management server configuration (Clear KMS). You must link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html[clear the KMS configuration] if you want to use the appliance in another grid.
+* If you decommissioned an appliance node and the data on the appliance was protected using node encryption, use the StorageGRID Appliance Installer to clear the key management server configuration (Clear KMS).You must clear the KMS configuration if you want to add the appliance to another grid. For instructions, see link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html[Monitor node encryption in maintenance mode].
 
 .Related information
 
