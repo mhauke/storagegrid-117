@@ -190,13 +190,16 @@ entries:
         pdf-filename: Grid node decommission
         url: "/maintain/grid-node-decommissioning.html"   
       - title: Considerations for grid node decommission
-        url: "/maintain/considerations-for-decommissioning-grid-nodes.html"
         entries:
-        - title: Considerations Admin Node or Gateway Node decommission
+        - title: General considerations
+          url: "/maintain/considerations-for-decommissioning-grid-nodes.html"
+        - title: Admin and Gateway Nodes
           url: "/maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html"
-        - title: Considerations for Storage Node decommission
-          url: "/maintain/considerations-for-decommissioning-storage-nodes.html"
+        - title: Storage Nodes
           entries:
+          - title: General considerations
+            pdf-filename: General considerations for Storage Nodes
+            url: "/maintain/considerations-for-decommissioning-storage-nodes.html"
           - title: Understand the ADC quorum
             url: "/maintain/understanding-adc-service-quorum.html"
           - title: Review ILM policy and storage configuration
@@ -245,7 +248,7 @@ entries:
   - title: Rename grid, sites, and nodes
     entries:
     - title: Overview
-      pdf-filename: Rename grid, sites, and nodes - Overview
+      pdf-filename: Rename grid, sites, and nodes
       url: "/maintain/rename-grid-site-node-overview.html"
     - title: 'Add or update display names'  
       url: "/maintain/rename-grid-site-node.html"
@@ -254,8 +257,10 @@ entries:
     - title: Update subnets for Grid Network
       url: "/maintain/updating-subnets-for-grid-network.html"
     - title: Configure IP addresses
-      url: "/maintain/configuring-ip-addresses.html"
       entries:
+      - title: Overview
+        pdf-filename: Configure IP addresses
+        url: "/maintain/configuring-ip-addresses.html"
       - title: Change node network configuration
         url: "/maintain/changing-nodes-network-configuration.html"
       - title: Add to or change subnet lists on Admin Network
@@ -274,9 +279,8 @@ entries:
         url: "/maintain/vmware-adding-trunk-or-access-interfaces-to-node.html"  
     - title: Configure DNS servers
       url: "/maintain/configuring-dns-servers.html"
-      entries:
-      - title: Modify DNS configuration for single grid node
-        url: "/maintain/modifying-dns-configuration-for-single-grid-node.html"
+    - title: Modify DNS configuration for single grid node
+      url: "/maintain/modifying-dns-configuration-for-single-grid-node.html"
     - title: Manage NTP servers
       url: "/maintain/configuring-ntp-servers.html"
     - title: Restore network connectivity for isolated nodes
@@ -285,20 +289,15 @@ entries:
     entries:
     - title: 'Linux: Migrate grid node to new host'
       url: "/maintain/linux-migrating-grid-node-to-new-host.html"
-      entries:
-      - title: 'Linux: Export node from source host'
-        url: "/maintain/linux-exporting-node-from-source-host.html"
-      - title: 'Linux: Import node on target host'
-        url: "/maintain/linux-importing-node-on-target-host.html"
-      - title: 'Linux: Start migrated node'
-        url: "/maintain/linux-starting-migrated-node.html"
     - title: Archive Node maintenance for TSM middleware
       url: "/maintain/archive-node-maintenance-for-tsm-middleware.html"
     - title: 'VMware: Configure virtual machine for automatic restart'
       url: "/maintain/vmware-configuring-virtual-machine-for-automatic-restart.html"
   - title: Grid node procedures
-    url: "/maintain/grid-node-procedures.html"
     entries:
+    - title: Overview
+      pdf-filename: Grid node procedures
+      url: "/maintain/grid-node-procedures.html"
     - title: View Server Manager status and version
       url: "/maintain/viewing-server-manager-status-and-version.html"
     - title: View current status of all services
@@ -324,8 +323,10 @@ entries:
     - title: Remove port remaps on bare metal hosts
       url: "/maintain/removing-port-remaps-on-bare-metal-hosts.html"
     - title: Reboot grid node
-      url: "/maintain/rebooting-grid-node.html"
       entries:
+      - title: Overview
+        pdf-filename: Reboot grid node
+        url: "/maintain/rebooting-grid-node.html"
       - title: Reboot grid node from Grid Manager
         url: "/maintain/rebooting-grid-node-from-grid-manager.html"
       - title: Reboot grid node from command shell
@@ -336,22 +337,8 @@ entries:
       url: "/maintain/powering-down-host.html"
     - title: Power off and on all nodes in grid
       url: "/maintain/powering-off-and-on-all-nodes-in-grid.html"
-      entries:
-      - title: Stop services and shut down grid nodes
-        url: "/maintain/stopping-services-and-shutting-down-grid-nodes.html"
-      - title: Start up grid nodes
-        url: "/maintain/powering-on-grid-nodes.html"
     - title: Use a DoNotStart file
       url: "/maintain/using-donotstart-file.html"
-      entries:
-      - title: Add DoNotStart file for service
-        url: "/maintain/adding-donotstart-file-for-service.html"
-      - title: Remove DoNotStart file for service
-        url: "/maintain/removing-donotstart-file-for-service.html"
     - title: Troubleshoot Server Manager
-      entries:
-      - title: Access Server Manager log file
-        url: "/maintain/accessing-server-manager-log-file.html"
-      - title: Service with an error state
-        url: "/maintain/service-with-error-state.html"
+      url: "/maintain/accessing-server-manager-log-file.html"
   

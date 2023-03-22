@@ -47,7 +47,7 @@ image:../media/grid-federation-workflow.png[Grid federation connection workflow]
 
 For a production environment, use fully qualified domain names (FQDNs) to identify each grid in the connection. Then, create the appropriate DNS entries, as follows:
 
-* The FQDN for Grid 1 mapped to one or more virtual IP (VIP) addresses for Grid 1 or to the IP address of one or more Admin or Gateway Nodes in Grid 1.
+* The FQDN for Grid 1 mapped to one or more virtual IP (VIP) addresses for HA groups in Grid 1 or to the IP address of one or more Admin or Gateway Nodes in Grid 1.
 * The FQDN for Grid 2 mapped to one or more VIP addresses for Grid 2 or to the IP address of one or more Admin or Gateway Nodes in Grid 2.
 
 When you use multiple DNS entries, requests to use the connection are load balanced, as follows:
