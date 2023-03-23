@@ -38,6 +38,9 @@ When you link:../admin/configuring-load-balancer-endpoints.html[configure load b
 * Allow all tenants to access the endpoint (default), or specify a list of allowed or blocked tenants to provide better security isolation between tenants and their endpoints. 
 * Use the *Node Type* binding mode to require clients to use the IP address (or corresponding FQDN) of any Admin Node or the IP address of any Gateway Node, based on the type of node you select.
 
+== StorageGRID SGF6112 all-flash appliance
+This new storage appliance features a compact design with compute controller and storage controller integrated into a 1U chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 15.3TB per drive. The SSD drives are in a RAID that provides resilient object storage. 
+
 == Grid Manager updates
 
 === New Grid Manager dashboard
