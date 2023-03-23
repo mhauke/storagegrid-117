@@ -19,7 +19,7 @@ Before decommissioning a site, you must review how much object data exists at th
 * Perform any required Storage Node expansions before starting the decommission procedure if possible.
 * If you are performing a disconnected site decommission, you must understand how much object data will become permanently inaccessible when you remove the site.
 
-IMPORTANT: If you are performing a disconnected site decommission, ILM cannot move or delete object data. Any data that remains at the site will be lost. However, if your ILM policy was designed to protect against the loss of a single site, copies of your object data still exist on the remaining sites.
+IMPORTANT: If you are performing a disconnected site decommission, ILM cannot move or delete object data. Any data that remains at the site will be lost. However, if your ILM policy was designed to protect against the loss of a single site, copies of your object data still exist on the remaining sites. See link:../ilm/using-multiple-storage-pools-for-cross-site-replication.html[Enable site-loss protection].
 
 .Steps
 
@@ -48,9 +48,7 @@ The following information is included for the selected site:
   *** image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown] (Unknown)
  ** Details about each node:
   *** For each Storage Node, the amount of space that has been used for object data.
-  *** For Admin Nodes and Gateway Nodes, whether the node is currently used in a high availability (HA) group. You cannot decommission an Admin Node or a Gateway Node that is used in a HA group. Before you start the decommission, you must edit HA groups to remove all nodes at the site. Or, you can remove the HA group if it only includes nodes from this site.
-+
-link:../admin/index.html[Administer StorageGRID]
+  *** For Admin Nodes and Gateway Nodes, whether the node is currently used in a high availability (HA) group. You cannot decommission an Admin Node or a Gateway Node that is used in a HA group. Before you start the decommission, edit HA groups to remove all nodes at the site or remove the HA group if it only includes nodes from this site. For instructions, see link:../admin/managing-high-availability-groups.html[Manage high availability (HA) groups].
 
 . In the Details for Other Sites section of the page, assess how much space is available at the other sites in your grid.
 +
@@ -63,7 +61,3 @@ NOTE: A warning appears if the *Used Space* for the site you want to remove is g
 . Select *Next*.
 +
 Step 3 (Revise ILM Policy) appears.
-
-.Related information
-
-link:../ilm/index.html[Manage objects with ILM]

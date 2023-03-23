@@ -7,12 +7,10 @@ entries:
   - title: Download Recovery Package
     url: "/maintain/downloading-recovery-package.html"
   - title: StorageGRID hotfix procedure
-    url: "/maintain/storagegrid-hotfix-procedure.html"
     entries:
-    - title: Considerations for applying a hotfix
-      url: "/maintain/considerations-for-applying-hotfix.html"
-    - title: Plan and prepare for a hotfix
-      url: "/maintain/hotfix-planning-and-preparation.html"
+    - title: Overview
+      pdf-filename: StorageGRID hotfix procedure
+      url: "/maintain/storagegrid-hotfix-procedure.html"
     - title: How your system is affected when you apply a hotfix
       url: "/maintain/how-your-system-is-affected-when-you-apply-hotfix.html"
     - title: Obtain required materials for hotfix
@@ -24,8 +22,10 @@ entries:
     - title: Apply hotfix
       url: "/maintain/applying-hotfix.html"
   - title: Grid node recovery procedures
-    url: "/maintain/grid-node-recovery-procedures.html"
     entries:
+    - title: Overview
+      pdf-filename: Grid node recovery procedures
+      url: "/maintain/grid-node-recovery-procedures.html"
     - title: Warnings and considerations for grid node recovery
       url: "/maintain/warnings-and-considerations-for-grid-node-recovery.html"
     - title: Gather required materials for grid node recovery
@@ -33,13 +33,17 @@ entries:
     - title: Select node recovery procedure
       url: "/maintain/selecting-node-recovery-procedure.html"
     - title: Recover from Storage Node failures
-      url: "/maintain/recovering-from-storage-node-failures.html"
       entries:
+      - title: Overview
+        pdf-filename: Recover from Storage Node failures
+        url: "/maintain/recovering-from-storage-node-failures.html"
       - title: Recover Storage Node down more than 15 days
         url: "/maintain/recovering-storage-node-that-has-been-down-more-than-15-days.html"
       - title: Recover appliance Storage Node
-        url: "/maintain/recovering-storagegrid-appliance-storage-node.html"
         entries:
+        - title: Workflow
+          pdf-filename: Recover appliance Storage Node
+          url: "/maintain/recovering-storagegrid-appliance-storage-node.html"
         - title: Prepare appliance Storage Node for reinstallation
           url: "/maintain/preparing-appliance-storage-node-for-reinstallation.html"
         - title: Start StorageGRID appliance installation
@@ -55,8 +59,10 @@ entries:
         - title: Check storage state after recovering appliance Storage Node
           url: "/maintain/checking-storage-state-after-recovering-sga.html"
       - title: Recover from storage volume failure where system drive is intact
-        url: "/maintain/recovering-from-storage-volume-failure-where-system-drive-is-intact.html"
         entries:
+        - title: Workflow
+          pdf-filename: Recover from storage volume failure where system drive is intact
+          url: "/maintain/recovering-from-storage-volume-failure-where-system-drive-is-intact.html"
         - title: Review warnings about storage volume recovery
           url: "/maintain/reviewing-warnings-about-storage-volume-recovery.html"
         - title: Identify and unmount failed storage volumes
@@ -68,8 +74,10 @@ entries:
         - title: Check storage state after recovering storage volumes
           url: "/maintain/checking-storage-state-after-recovering-storage-volumes.html"
       - title: Recover from system drive failure
-        url: "/maintain/recovering-from-system-drive-failure.html"
         entries:
+        - title: Workflow
+          pdf-filename: Recover from system drive failure
+          url: "/maintain/recovering-from-system-drive-failure.html"
         - title: Review warnings for Storage Node system drive recovery
           url: "/maintain/reviewing-warnings-for-system-drive-recovery.html"
         - title: Replace the Storage Node
@@ -87,11 +95,15 @@ entries:
       - title: Monitor repair-data jobs
         url: "/maintain/monitor-repairs.html"
     - title: Recover from Admin Node failures
-      url: "/maintain/recovering-from-admin-node-failures.html"
       entries:
+      - title: Workflow
+        pdf-filename: Recover from Admin Node failures    
+        url: "/maintain/recovering-from-admin-node-failures.html"
       - title: Recover from primary Admin Node failures
-        url: "/maintain/recovering-from-primary-admin-node-failures.html"
         entries:
+        - title: Overview
+          pdf-filename: Recover from primary Admin Node failures
+          url: "/maintain/recovering-from-primary-admin-node-failures.html"
         - title: Copy audit logs from failed primary Admin Node
           url: "/maintain/copying-audit-logs-from-failed-primary-admin-node.html"
         - title: Replace primary Admin Node
@@ -105,8 +117,10 @@ entries:
         - title: Restore Prometheus metrics when recovering primary Admin Node
           url: "/maintain/restoring-prometheus-metrics-primary-admin-node.html"
       - title: Recover from non-primary Admin Node failures
-        url: "/maintain/recovering-from-non-primary-admin-node-failures.html"
         entries:
+        - title: Overview
+          pdf-filename: Recover from non-primary Admin Node failures
+          url: "/maintain/recovering-from-non-primary-admin-node-failures.html"
         - title: Copy audit logs from failed non-primary Admin Node
           url: "/maintain/copying-audit-logs-from-failed-non-primary-admin-node.html"
         - title: Replace non-primary Admin Node
@@ -120,15 +134,19 @@ entries:
         - title: Restore Prometheus metrics when recovering non-primary Admin Node
           url: "/maintain/restoring-prometheus-metrics-non-primary-admin-node.html"
     - title: Recover from Gateway Node failures
-      url: "/maintain/recovering-from-gateway-node-failures.html"
       entries:
+      - title: Workflow
+        pdf-filename: Recover from Gateway Node failures
+        url: "/maintain/recovering-from-gateway-node-failures.html"
       - title: Replace Gateway Node
         url: "/maintain/replacing-gateway-node.html"
       - title: Select Start Recovery to configure Gateway Node
         url: "/maintain/selecting-start-recovery-to-configure-gateway-node.html"
     - title: Recover from Archive Node failures
-      url: "/maintain/recovering-from-archive-node-failures.html"
       entries:
+      - title: Workflow
+        pdf-filename: Recover from Archive Node failures
+        url: "/maintain/recovering-from-archive-node-failures.html"    
       - title: Replace Archive Node
         url: "/maintain/replacing-archive-node.html"
       - title: Select Start Recovery to configure Archive Node
@@ -138,29 +156,21 @@ entries:
     - title: 'All grid node types: Replace VMware node'
       url: "/maintain/all-node-types-replacing-vmware-node.html"
     - title: 'All grid node types: Replace Linux node'
-      url: "/maintain/all-node-types-replacing-linux-node.html"
       entries:
+      - title: Overview
+        pdf-filename: 'All grid node types: Replace Linux node'
+        url: "/maintain/all-node-types-replacing-linux-node.html"
       - title: Deploy new Linux hosts
         url: "/maintain/deploying-new-linux-hosts.html"
       - title: Restore grid nodes to the host
         url: "/maintain/restoring-existing-nodes.html"
-        entries:
-        - title: Restore and validate grid nodes
-          url: "/maintain/restoring-and-validating-grid-nodes.html"
-          entries:
-          - title: Fix missing network interface errors
-            url: "/maintain/fixing-mssing-network-interface-errors.html"
-          - title: Fix missing block device errors
-            url: "/maintain/fixing-missing-block-device-errors.html"
-        - title: Start StorageGRID host service
-          url: "/maintain/starting-storagegrid-host-service.html"
-        - title: Recover nodes that fail to start normally
-          url: "/maintain/recovering-nodes-that-fail-to-start-normally.html"
       - title: 'What&#8217;s next: Perform additional recovery steps, if required'
         url: "/maintain/whats-next-performing-additional-recovery-steps-if-required.html"
     - title: Replace failed node with services appliance
-      url: "/maintain/replacing-failed-node-with-services-appliance.html"
       entries:
+      - title: Overview
+        pdf-filename: Replace failed node with services appliance
+        url: "/maintain/replacing-failed-node-with-services-appliance.html"
       - title: Install services appliance (platform change only)
         url: "/maintain/installing-services-appliance-platform-change-only.html"
       - title: Prepare appliance for reinstallation (platform replacement only)
@@ -171,20 +181,27 @@ entries:
         url: "/maintain/monitoring-services-appliance-installation.html"
   - title: How site recovery is performed by technical support
     url: "/maintain/how-site-recovery-is-performed-by-technical-support.html"
-  - title: Decommission procedure
-    url: "/maintain/decommission-procedure.html"
+  - title: Decommission procedure    
     entries:
+    - title: Overview
+      pdf-filename: Decommission procedure
+      url: "/maintain/decommission-procedure.html"
     - title: Grid node decommission
-      url: "/maintain/grid-node-decommissioning.html"
       entries:
+      - title: Overview
+        pdf-filename: Grid node decommission
+        url: "/maintain/grid-node-decommissioning.html"   
       - title: Considerations for grid node decommission
-        url: "/maintain/considerations-for-decommissioning-grid-nodes.html"
         entries:
-        - title: Considerations Admin Node or Gateway Node decommission
+        - title: General considerations
+          url: "/maintain/considerations-for-decommissioning-grid-nodes.html"
+        - title: Admin and Gateway Nodes
           url: "/maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html"
-        - title: Considerations for Storage Node decommission
-          url: "/maintain/considerations-for-decommissioning-storage-nodes.html"
+        - title: Storage Nodes
           entries:
+          - title: General considerations
+            pdf-filename: General considerations for Storage Nodes
+            url: "/maintain/considerations-for-decommissioning-storage-nodes.html"
           - title: Understand the ADC quorum
             url: "/maintain/understanding-adc-service-quorum.html"
           - title: Review ILM policy and storage configuration
@@ -210,8 +227,10 @@ entries:
       - title: Troubleshoot node decommissioning
         url: "/maintain/troubleshooting-node-decommissioning.html"
     - title: Site decommission
-      url: "/maintain/site-decommissioning.html"
       entries:
+      - title: Workflow
+        pdf-filename: Site decommission
+        url: "/maintain/site-decommissioning.html" 
       - title: Considerations for removing a site
         url: "/maintain/considerations-for-removing-site.html"
       - title: Gather required materials
@@ -230,8 +249,8 @@ entries:
         url: "/maintain/step-6-monitor-decommission.html"
   - title: Rename grid, sites, and nodes
     entries:
-    - title: 'Overview'
-      pdf-filename: Rename grid, sites, and nodes - Overview
+    - title: Overview
+      pdf-filename: Rename grid, sites, and nodes
       url: "/maintain/rename-grid-site-node-overview.html"
     - title: 'Add or update display names'  
       url: "/maintain/rename-grid-site-node.html"
@@ -240,8 +259,10 @@ entries:
     - title: Update subnets for Grid Network
       url: "/maintain/updating-subnets-for-grid-network.html"
     - title: Configure IP addresses
-      url: "/maintain/configuring-ip-addresses.html"
       entries:
+      - title: Overview
+        pdf-filename: Configure IP addresses
+        url: "/maintain/configuring-ip-addresses.html"
       - title: Change node network configuration
         url: "/maintain/changing-nodes-network-configuration.html"
       - title: Add to or change subnet lists on Admin Network
@@ -260,32 +281,25 @@ entries:
         url: "/maintain/vmware-adding-trunk-or-access-interfaces-to-node.html"  
     - title: Configure DNS servers
       url: "/maintain/configuring-dns-servers.html"
-      entries:
-      - title: Modify DNS configuration for single grid node
-        url: "/maintain/modifying-dns-configuration-for-single-grid-node.html"
+    - title: Modify DNS configuration for single grid node
+      url: "/maintain/modifying-dns-configuration-for-single-grid-node.html"
     - title: Manage NTP servers
       url: "/maintain/configuring-ntp-servers.html"
     - title: Restore network connectivity for isolated nodes
       url: "/maintain/restoring-network-connectivity-for-isolated-nodes.html"
   - title: Host-level and middleware procedures
-    url: "/maintain/host-level-and-middleware-procedures.html"
     entries:
     - title: 'Linux: Migrate grid node to new host'
       url: "/maintain/linux-migrating-grid-node-to-new-host.html"
-      entries:
-      - title: 'Linux: Export node from source host'
-        url: "/maintain/linux-exporting-node-from-source-host.html"
-      - title: 'Linux: Import node on target host'
-        url: "/maintain/linux-importing-node-on-target-host.html"
-      - title: 'Linux: Start migrated node'
-        url: "/maintain/linux-starting-migrated-node.html"
     - title: Archive Node maintenance for TSM middleware
       url: "/maintain/archive-node-maintenance-for-tsm-middleware.html"
     - title: 'VMware: Configure virtual machine for automatic restart'
       url: "/maintain/vmware-configuring-virtual-machine-for-automatic-restart.html"
   - title: Grid node procedures
-    url: "/maintain/grid-node-procedures.html"
     entries:
+    - title: Overview
+      pdf-filename: Grid node procedures
+      url: "/maintain/grid-node-procedures.html"
     - title: View Server Manager status and version
       url: "/maintain/viewing-server-manager-status-and-version.html"
     - title: View current status of all services
@@ -311,8 +325,10 @@ entries:
     - title: Remove port remaps on bare metal hosts
       url: "/maintain/removing-port-remaps-on-bare-metal-hosts.html"
     - title: Reboot grid node
-      url: "/maintain/rebooting-grid-node.html"
       entries:
+      - title: Overview
+        pdf-filename: Reboot grid node
+        url: "/maintain/rebooting-grid-node.html"
       - title: Reboot grid node from Grid Manager
         url: "/maintain/rebooting-grid-node-from-grid-manager.html"
       - title: Reboot grid node from command shell
@@ -323,22 +339,7 @@ entries:
       url: "/maintain/powering-down-host.html"
     - title: Power off and on all nodes in grid
       url: "/maintain/powering-off-and-on-all-nodes-in-grid.html"
-      entries:
-      - title: Stop services and shut down grid nodes
-        url: "/maintain/stopping-services-and-shutting-down-grid-nodes.html"
-      - title: Start up grid nodes
-        url: "/maintain/powering-on-grid-nodes.html"
     - title: Use a DoNotStart file
       url: "/maintain/using-donotstart-file.html"
-      entries:
-      - title: Add DoNotStart file for service
-        url: "/maintain/adding-donotstart-file-for-service.html"
-      - title: Remove DoNotStart file for service
-        url: "/maintain/removing-donotstart-file-for-service.html"
     - title: Troubleshoot Server Manager
-      entries:
-      - title: Access Server Manager log file
-        url: "/maintain/accessing-server-manager-log-file.html"
-      - title: Service with an error state
-        url: "/maintain/service-with-error-state.html"
-  
+      url: "/maintain/accessing-server-manager-log-file.html"

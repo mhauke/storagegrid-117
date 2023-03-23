@@ -13,6 +13,8 @@ Rather than configure the domain name system (DNS) globally for the entire deplo
 
 In general, you should use the *MAINTENANCE* > *Network* > *DNS servers* option on the Grid Manager to configure DNS servers. Only use the following script if you need to use different DNS servers for different grid nodes.
 
+.Steps
+
 . Log in to the primary Admin Node:
  .. Enter the following command: `ssh admin@_primary_Admin_Node_IP_`
  .. Enter the password listed in the `Passwords.txt` file.

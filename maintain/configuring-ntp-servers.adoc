@@ -13,10 +13,10 @@ You can add, update, or remove Network Time Protocol (NTP) servers to ensure tha
 
 .What you'll need
 
-* You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
-* You must have the link:../admin/admin-group-permissions.html[Maintenance or Root access permission].
-* You must have the provisioning passphrase.
-* You must have the IPv4 addresses of the NTP servers to configure.
+* You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You have the link:../admin/admin-group-permissions.html[Maintenance or Root access permission].
+* You have the provisioning passphrase.
+* You have the IPv4 addresses of the NTP servers to configure.
 
 == How StorageGRID uses NTP
 
@@ -36,16 +36,18 @@ Follow these guidelines to protect against timing issues:
 
 * The specified external NTP servers must use the NTP protocol. You must specify NTP server references of Stratum 3 or better to prevent issues with time drift.
 
-NOTE: When specifying the external NTP source for a production-level StorageGRID installation, do not use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in high-accuracy environments, including StorageGRID.
-
-https://support.microsoft.com/en-us/help/939322/support-boundary-to-configure-the-windows-time-service-for-high-accura[Support boundary to configure the Windows Time service for high-accuracy environments^]
+NOTE: When specifying the external NTP source for a production-level StorageGRID installation, do not use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in high-accuracy environments, including StorageGRID. For details, see https://support.microsoft.com/en-us/help/939322/support-boundary-to-configure-the-windows-time-service-for-high-accura[Support boundary to configure the Windows Time service for high-accuracy environments^].
 
 == Configure NTP servers
+Follow these steps to add, update, or remove NTP servers.
+
+.Steps
 
 . Select *MAINTENANCE* > *Network* > *NTP servers*.
-. In the Servers section, add update, or remove NTP server entries, as necessary.
+
+. In the Servers section, add, update, or remove NTP server entries, as necessary.
 +
-You should include at least 4 NTP servers, and you can specify up to 6 servers.
+You should include at least four NTP servers, and you can specify up to six servers.
 
 . Enter the provisioning passphrase for your StorageGRID system, then select *Save*.
 +

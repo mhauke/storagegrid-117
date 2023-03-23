@@ -11,16 +11,21 @@ summary: 'Optionally, you can retain the historical metrics maintained by Promet
 [.lead]
 Optionally, you can retain the historical metrics maintained by Prometheus on a non-primary Admin Node that has failed.
 
-* The recovered Admin Node must be installed and running.
-* The StorageGRID system must include at least two Admin Nodes.
-* You must have the `Passwords.txt` file.
-* You must have the provisioning passphrase.
+.What you'll need
 
+* The recovered Admin Node is installed and running.
+* The StorageGRID system includes at least two Admin Nodes.
+* You have the `Passwords.txt` file.
+* You have the provisioning passphrase.
+
+.About this task
 If an Admin Node fails, the metrics maintained in the Prometheus database on the Admin Node are lost. When you recover the Admin Node, the software installation process creates a new Prometheus database. After the recovered Admin Node is started, it records metrics as if you had performed a new installation of the StorageGRID system.
 
 If you restored a non-primary Admin Node, you can restore the historical metrics by copying the Prometheus database from the primary Admin Node (the _source Admin Node_) to the recovered Admin Node.
 
 NOTE: Copying the Prometheus database might take an hour or more. Some Grid Manager features will be unavailable while services are stopped on the source Admin Node.
+
+.Steps
 
 . Log in to the source Admin Node:
  .. Enter the following command: `ssh admin@_grid_node_IP_`

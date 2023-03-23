@@ -13,7 +13,7 @@ If you need to change the Grid Network IP address for all nodes in the grid, you
 
 .What you'll need
 
-* You must have the `Passwords.txt` file.
+* You have the `Passwords.txt` file.
 
 To ensure that the grid starts up successfully, you must make all the changes at the same time.
 
@@ -29,7 +29,7 @@ IMPORTANT: If the existing NTP servers will not be accessible to the grid on the
 +
 IMPORTANT: If the existing DNS servers will not be accessible to the grid on the new IP addresses, add the new DNS servers before you perform the change-ip procedure.
 +
-IMPORTANT: If SSO is enabled for your StorageGRID system and any relying party trusts were configured using Admin Node IP addresses (instead of fully qualified domain names, as recommended), be prepared to update or reconfigure these relying party trusts in Active Directory Federation Services (AD FS) immediately after you change IP addresses. See the instructions for administering StorageGRID.
+IMPORTANT: If SSO is enabled for your StorageGRID system and any relying party trusts were configured using Admin Node IP addresses (instead of fully qualified domain names, as recommended), be prepared to update or reconfigure these relying party trusts in Active Directory Federation Services (AD FS) immediately after you change IP addresses. See link:../admin/configuring-sso.html[Configure single sign-on].
 +
 IMPORTANT: If necessary, add the new subnet for the new IP addresses.
 
@@ -69,7 +69,6 @@ image::../media/change_ip_tool_edit_ip_mask_sample_output.png[screenshot describ
 +
 NOTE: Certain command line interfaces might show additions and deletions using strikethrough formatting. Proper display depends on your terminal client supporting the necessary VT100 escape sequences.
 
-[start=7]
 . Select option *7* to validate all changes.
 +
 This validation ensures that the rules for the Grid Network, such as not using overlapping subnets, are not violated.
@@ -104,8 +103,6 @@ IMPORTANT: The entire grid must be shut down at once, so that all nodes are down
 
 .Related information
 
-link:../admin/index.html[Administer StorageGRID]
+* link:adding-to-or-changing-subnet-lists-on-grid-network.html[Add to or change subnet lists on Grid Network]
 
-link:adding-to-or-changing-subnet-lists-on-grid-network.html[Add to or change subnet lists on Grid Network]
-
-link:shutting-down-grid-node.html[Shut down grid node]
+* link:shutting-down-grid-node.html[Shut down grid node]
