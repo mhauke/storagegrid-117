@@ -1,7 +1,7 @@
 ---
 permalink: maintain/configuring-ip-addresses.html
 sidebar: sidebar
-keywords: storagegrid, ip address, configure ip address, configuring ip address, network configuration, network configure, network configuring
+keywords: configure ip address, change IP tool, ethernet, dhcp, ha group
 summary: 'You can perform network configuration by configuring IP addresses for grid nodes using the Change IP tool.'
 ---
 = Configure IP addresses
@@ -19,17 +19,17 @@ NOTE: If you are making changes to the Grid Network Subnet List only, use the Gr
 
 TIP: If you want to change the Grid Network IP address for all nodes in the grid, use the link:changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html[special procedure for grid-wide changes].
 
-*Ethernet interfaces*
+== Ethernet interfaces
 
 The IP address assigned to eth0 is always the grid node's Grid Network IP address. The IP address assigned to eth1 is always the grid node's Admin Network IP address. The IP address assigned to eth2 is always the grid node's Client Network IP address.
 
 Note that on some platforms, such as StorageGRID appliances, eth0, eth1, and eth2 might be aggregate interfaces composed of subordinate bridges or bonds of physical or VLAN interfaces. On these platforms, the *SSM* > *Resources* tab might show the Grid, Admin, and Client Network IP address assigned to other interfaces in addition to eth0, eth1, or eth2.
 
-*DHCP*
+== DHCP
 
 You can only set up DHCP during the deployment phase. You cannot set up DHCP during configuration. You must use the IP address change procedures if you want to change IP addresses, subnet masks, and default gateways for a grid node. Using the Change IP tool will cause DHCP addresses to become static.
 
-*High availability (HA) groups*
+== High availability (HA) groups
 
 * If a Client Network interface is contained in an HA group, you cannot change the Client Network IP address for that interface to an address that is outside of the subnet configured for the HA group.
 * You cannot change the Client Network IP address to the value of an existing virtual IP address assigned to an HA group configured on the Client Network interface.

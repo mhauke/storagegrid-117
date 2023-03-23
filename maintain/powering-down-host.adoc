@@ -38,22 +38,40 @@ NOTE: After you issue the `shutdown -h now` command on an appliance node, you mu
 +
 For the appliance, this command shuts down the controller, but the appliance is still powered on. You must complete the next step.
 
-. If you are powering down an appliance node:
- ** For the SG100 or SG1000 services appliance
-  ... Turn off the power to the appliance.
-  ... Wait for the blue power LED to turn off.
- ** For the SG6000 appliance
-  ... Wait for the green Cache Active LED on the back of the storage controllers to turn off.
+. If you are powering down an appliance node, follow the steps for your appliance.
++
+[role="tabbed-block"]
+====
+
+.SG100 or SG1000
+--
+
+.. Turn off the power to the appliance.
+.. Wait for the blue power LED to turn off.
+
+--
+.SG6000
+--
+
+.. Wait for the green Cache Active LED on the back of the storage controllers to turn off.
 +
 This LED is on when cached data needs to be written to the drives. You must wait for this LED to turn off before you turn off power.
 
-  ... Turn off the power to the appliance, and wait for the blue power LED to turn off.
- ** For the SG5700 appliance
-  ... Wait for the green Cache Active LED on the back of the storage controller to turn off.
+.. Turn off the power to the appliance, and wait for the blue power LED to turn off.
+
+--
+.SG5700
+--
+
+.. Wait for the green Cache Active LED on the back of the storage controller to turn off.
 +
 This LED is on when cached data needs to be written to the drives. You must wait for this LED to turn off before you turn off power.
 
-  ... Turn off the power to the appliance, and wait for all LED and seven-segment display activity to stop.
+.. Turn off the power to the appliance, and wait for all LED and seven-segment display activity to stop.
+
+--
+====
+
 . Log out of the command shell: `exit`
 
 .Related information

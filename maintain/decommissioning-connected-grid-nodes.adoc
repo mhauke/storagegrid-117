@@ -11,51 +11,51 @@ summary: 'You can decommission and permanently remove nodes that are connected t
 [.lead]
 You can decommission and permanently remove nodes that are connected to the grid.
 
-* You must understand the requirements and link:considerations-for-decommissioning-grid-nodes.html[considerations for decommissioning grid nodes].
+.What you'll need
+
+* You understand the requirements and link:considerations-for-decommissioning-grid-nodes.html[considerations for decommissioning grid nodes].
 * You have gathered all required materials.
 * You have ensured that no data repair jobs are active.
-* You have confirmed that Storage Node recovery is not in progress anywhere in the grid. If it is, you must wait until any Cassandra rebuild performed as part of the recovery is complete. You can then proceed with decommissioning.
+* You have confirmed that Storage Node recovery is not in progress anywhere in the grid. If it is, wait until any Cassandra rebuild performed as part of the recovery is complete. You can then proceed with decommissioning.
 * You have ensured that other maintenance procedures will not be run while the node decommission procedure is running, unless the node decommission procedure is paused.
 * You have the provisioning passphrase.
 * Grid nodes are connected.
-* The *Decommission Possible* column for the node or nodes you want to decommission must include a green checkmark.
+* The *Decommission Possible* column for the node or nodes you want to decommission includes a green checkmark.
 +
 NOTE: The decommission will not start if one or more volumes are offline (unmounted) or if they are online (mounted) but in an error state.
 +
 NOTE: If one or more volumes go offline while a decommission is in progress, the decommission process completes after these volumes have come back online.
-* All grid nodes must have Normal (green) health image:../media/icon_alert_green_checkmark.png[green checkmark icon]. If you see one of these icons in the *Health* column, you must try to resolve the issue:
+
+* All grid nodes have Normal (green) health image:../media/icon_alert_green_checkmark.png[green checkmark icon]. If you see one of these icons in the *Health* column, you must try to resolve the issue:
 +
+[cols="1a,1a,3a" options=header] 
 |===
-| Icon| Color| Severity
-a|
-image:../media/icon_alarm_yellow_notice.gif[yellow square icon]
-a|
-Yellow
-a|
-Notice
-a|
-image:../media/icon_alert_yellow_minor.png[light orange diamond icon]
-a|
-Light orange
-a|
-Minor
-a|
-image:../media/icon_alert_orange_major.png[dark orange diamond icon]
-a|
-Dark orange
-a|
-Major
-a|
-image:../media/icon_alert_red_critical.png[red x icon]
-a|
-Red
-a|
-Critical
+| Icon
+| Color
+| Severity
+
+| image:../media/icon_alarm_yellow_notice.gif[yellow square icon]
+| Yellow
+| Notice
+
+| image:../media/icon_alert_yellow_minor.png[light orange diamond icon]
+| Light orange
+| Minor
+
+| image:../media/icon_alert_orange_major.png[dark orange diamond icon]
+| Dark orange
+| Major
+
+| image:../media/icon_alert_red_critical.png[red x icon]
+| Red
+| Critical
 |===
 
 * If you previously decommissioned a disconnected Storage Node, the data repair jobs have all completed successfully. See link:checking-data-repair-jobs.html[Check data repair jobs].
 
 IMPORTANT: Do not remove a grid node's virtual machine or other resources until instructed to do so in this procedure.
+
+.Steps
 
 . From the Decommission Nodes page, select the check box for each grid node you want to decommission.
 . Enter the provisioning passphrase.
@@ -63,12 +63,8 @@ IMPORTANT: Do not remove a grid node's virtual machine or other resources until 
 The *Start Decommission* button is enabled.
 
 . Click *Start Decommission*.
-+
-A confirmation dialog box appears.
-+
-image::../media/decommission_confirmation.gif[screenshot of decommission confirmation dialog box]
 
-. Review the list of selected nodes, and click *OK*.
+. Review the list of nodes in the confirmation dialog, and click *OK*.
 +
 The node decommission procedure starts, and the progress is displayed for each node. During the procedure, a new Recovery Package is generated to show the grid configuration change.
 +
@@ -96,7 +92,7 @@ image::../media/decommission_nodes_procedure_complete.png[screenshot showing tha
 Complete these steps after you complete the node decommission procedure:
 
 * Ensure that the drives of the decommissioned grid node are wiped clean. Use a commercially available data wiping tool or service to permanently and securely remove data from the drives.
-* If you decommissioned an appliance node and the data on the appliance was protected using node encryption, use the StorageGRID Appliance Installer to clear the key management server configuration (Clear KMS). You must link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html[clear the KMS configuration] if you want to use the appliance in another grid.
+* If you decommissioned an appliance node and the data on the appliance was protected using node encryption, use the StorageGRID Appliance Installer to clear the key management server configuration (Clear KMS).You must clear the KMS configuration if you want to add the appliance to another grid. For instructions, see link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html[Monitor node encryption in maintenance mode].
 
 .Related information
 
