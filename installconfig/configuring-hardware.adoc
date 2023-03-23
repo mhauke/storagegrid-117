@@ -9,16 +9,34 @@ summary: 'After applying power to the appliance, perform the necessary configura
 :imagesdir: ../media/
 
 [.lead]
-After applying power to the appliance, perform the necessary configuration steps. These steps vary depending on the type of appliance you are installing.
+After applying power to the appliance, you must configure the network connections that will be used by StorageGRID. 
 
-If you are using the ConfigBuilder, these steps will be completed automatically. See link:automating-appliance-installation-and-configuration.html[Automate appliance installation and configuration].
+== Configure required network connections
+For all appliances, you must perform several tasks to configure required network connections such as:
 
-* All appliances
-** Configure network connections
-** As needed, enable node encryption and remap network ports
+* Access the Appliance Installer
+* Configure network links
+* Verify port-level network connections
+
+== Additional configuration that might be required
+Depending upon which appliance types you are configuring, additional hardware configuration might be required.
+
+=== SANtricity System Manager
+
+For SG6000 and SG5700, you must configure SANtricity System Manager. The SANtricity software is used to monitor the hardware for these appliances. 
+
+=== BMC interface 
+The following appliances have a BMC interface that must be configured: 
+
+* SGF6112
+* SG6000
+* SG1000
+* SG100
+
+== Optional configuration
 
 * Storage appliances
-** Configure SANtricity System Manager (SG6000 and SG5700), the software you will use to monitor the hardware
+** Configure SANtricity System Manager (SG6000 and SG5700) the software you will use to monitor the hardware
 ** Change the RAID mode
 
 * Services appliances

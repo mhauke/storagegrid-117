@@ -13,6 +13,8 @@ When recovering a grid node that was hosted on a services appliance, you must fi
 
 Perform this procedure only if you are replacing a failed node that was hosted on a services appliance. Do not follow these steps if the failed node was originally hosted on VMware or a Linux host.
 
+.Steps
+
 . Log in to the failed grid node:
  .. Enter the following command: `ssh admin@_grid_node_IP_`
  .. Enter the password listed in the `Passwords.txt` file.

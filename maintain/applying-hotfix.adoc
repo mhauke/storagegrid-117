@@ -64,18 +64,14 @@ When the hotfix starts:
 +
 NOTE: If any errors are reported, resolve them, re-upload the hotfix file, and select *Start* again.
 
- .. The hotfix installation progress table appears. This table shows all nodes in your grid and the current stage of the hotfix installation for each node. The nodes in the table are grouped by type:
-  *** Admin Nodes
-  *** Gateway Nodes
-  *** Storage Nodes
-  *** Archive Nodes
-
+.. The hotfix installation progress table appears.
 +
-NOTE: The progress bar reaches completion, and then the primary Admin Node is shown first with stage "`Complete.`"
+This table shows all nodes in your grid and the current stage of the hotfix installation for each node. The nodes in the table are grouped by type (Admin Nodes, Gateway Nodes, Storage Nodes, and Archive Nodes).
 
+.. The progress bar reaches completion, and then the primary Admin Node is shown as "`Complete.`"
 +
 image::../media/hotfix_progress_table.png[Hotfix Progress Table]
-+
+
 . Optionally, sort the lists of nodes in each grouping in ascending or descending order by *Site*, *Name*, *Progress*, *Stage*, or *Details*. Or, enter a term in the *Search* box to search for specific nodes.
 
 . Approve the grid nodes that are ready to be updated. Approved nodes of the same type are upgraded one at a time.

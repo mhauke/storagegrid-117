@@ -9,21 +9,24 @@ summary: 'You can restore object data for a failed storage volume or storage nod
 :imagesdir: ../media/
 
 [.lead]
-You can restore object data for a failed storage volume or storage node using Grid Manager. You can also use Grid Manager to monitor restoration processes in progress and display a restoration history.
+You can restore object data for a failed storage volume or Storage Node using Grid Manager. You can also use Grid Manager to monitor restoration processes in progress and display a restoration history.
 
 .What you'll need
 
-* You have link:../maintain/remounting-and-reformatting-appliance-storage-volumes.html[formatted failed volumes] before beginning the restoration.
+* You have completed either of these procedures to format failed volumes:
+
+** link:../maintain/remounting-and-reformatting-appliance-storage-volumes.html[Remount and reformat appliance storage volumes (manual steps)] 
+** link:../maintain/emounting-and-reformatting-storage-volumes-manual-steps.html[Remount and reformat storage volumes (manual steps)]
 
 * You have confirmed that the Storage Node where you are restoring objects has a Connection State of *Connected* image:../media/icon_alert_green_checkmark.png[icon alert green checkmark] on the *NODES* > *Overview* tab in the Grid Manager.
 
-*	You have confirmed that none of the following are true:
-** Grid expansion to add a Storage Node is in process
-** Storage Node decommission in process or failed
-** Recovery of a failed storage volume is in process
-** Recovery of a Storage Node with a failed system drive is in process
-** EC rebalance is in process
-** Appliance node cloning is in process
+* You have confirmed the following:
+** A grid expansion to add a Storage Node is not in process.
+** A Storage Node decommission is not in process or failed.
+** A recovery of a failed storage volume is not in process.
+** A recovery of a Storage Node with a failed system drive is not in process.
+** An EC rebalance job is not in process.
+** Appliance node cloning is not in process.
 
 .About this task
 
