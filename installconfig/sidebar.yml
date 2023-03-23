@@ -58,13 +58,15 @@ entries:
     entries:
     - title: Register hardware
       url: "/installconfig/registering-hardware.html"
-    - title: Install hardware
+    - title: Install into cabinet or rack
       entries:
       - title: SGF6112
         url: "/installconfig/installing-appliance-in-cabinet-or-rack-sgf6112.html"      
       - title: SG6000
-        url: "/installconfig/installing-hardware-sg6000.html"
         entries:
+        - title: Overview
+          pdf-filename: Install SG6000 into cabinet or rack
+          url: "/installconfig/installing-hardware-sg6000.html"
         - title: 'SG6060: Install 60-drive shelves'
           url: "/installconfig/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html"
         - title: 'SG6060: Install drives'
