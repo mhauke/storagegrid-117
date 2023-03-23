@@ -6,6 +6,8 @@ entries:
     url: "/installconfig/index.html"
   - title: Appliance hardware descriptions
     entries:
+    - title: SGF6112 hardware
+      url: "/installconfig/hardware-description-sg6100.html"    
     - title: SG6000 hardware
       url: "/installconfig/hardware-description-sg6000.html"
     - title: SG5700 hardware
@@ -26,7 +28,9 @@ entries:
       entries:
       - title: Overview
         url: "/installconfig/reviewing-appliance-network-connections.html"
-      - title: Port bond modes for SG6000-CN controller
+      - title: Port bond modes for SGF6112 appliances
+        url: "/installconfig/port-bond-modes-for-sgf6112.html"
+      - title: Port bond modes for SG6000
         url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
       - title: Port bond modes for E5700SG controller
         url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
@@ -36,6 +40,8 @@ entries:
       entries:
       - title: Overview
         url: "/installconfig/gathering-installation-information-overview.html"
+      - title: SGF6112
+        url: "/installconfig/gathering-installation-information-sg6100.html"
       - title: SG6000
         url: "/installconfig/gathering-installation-information-sg6000.html"
       - title: SG5700
@@ -54,6 +60,8 @@ entries:
       url: "/installconfig/registering-hardware.html"
     - title: Install hardware
       entries:
+      - title: SGF6112
+        url: "/installconfig/installing-appliance-in-cabinet-or-rack-sgf6112.html"      
       - title: SG6000
         url: "/installconfig/installing-hardware-sg6000.html"
         entries:
@@ -71,6 +79,8 @@ entries:
         url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html"
     - title: Cable appliance
       entries:
+      - title: SGF6112
+        url: "/installconfig/cabling-appliance-sgf6112.html"      
       - title: SG6000
         url: "/installconfig/cabling-appliance-sg6000.html"
       - title: SG5700
@@ -79,6 +89,8 @@ entries:
         url: "/installconfig/cabling-appliance-sg100-and-sg1000.html"
     - title: Connect power cords and apply power
       entries:
+      - title: SGF6112
+        url: "/installconfig/connecting-power-cords-and-applying-power-sgf6112.html"
       - title: SG6000
         url: "/installconfig/connecting-power-cords-and-applying-power-sg6000.html"
       - title: SG5700
@@ -107,7 +119,7 @@ entries:
         url: "/installconfig/verifying-network-connections.html"
       - title: Verify port-level network connections
         url: "/installconfig/verifying-port-level-network-connections.html"
-    - title: Set up SANtricity for storage appliances
+    - title: Set up SANtricity for SG6000, and SG5700 storage appliances
       entries:
       - title: 'SANtricity System Manager (SG6000 and SG5700)'
         url: "/installconfig/accessing-and-configuring-santricity-system-manager.html"
@@ -117,7 +129,7 @@ entries:
       url: "/installconfig/optional-changing-raid-mode.html"
     - title: 'Optional - Remap network ports'
       url: "/installconfig/optional-remapping-network-ports-for-appliance.html"
-    - title: 'Configure BMC interface (SG6000, SG100, and SG1000)'
+    - title: 'Configure BMC interface (SGF6112, SG6000, SG100, and SG1000)'
       entries:
       - title: Overview
         url: "/installconfig/configuring-bmc-interface.html"
@@ -127,7 +139,7 @@ entries:
         url: "/installconfig/setting-ip-address-for-bmc-management-port.html"
       - title: Access BMC interface
         url: "/installconfig/accessing-bmc-interface.html"
-      - title: Configure SNMP settings for SG6000-CN controller or services appliance
+      - title: Configure SNMP settings for SGF6112, SG6000, or services appliances
         url: "/installconfig/configuring-snmp-settings-for-bmc.html"
       - title: Set up email notifications for alerts
         url: "/installconfig/setting-up-email-notifications-for-alerts.html"
@@ -148,6 +160,20 @@ entries:
         url: "/installconfig/hardware-setup-appears-to-hang.html"
       - title: Connection issues
         url: "/installconfig/troubleshooting-connection-issues.html"
+    - title: 'Troubleshoot SGF6112 appliance installation'
+      url: "/installconfig/troubleshooting-hardware-installation-sg6100.html"
+      entries:
+      - title: View boot-up codes for SGF6112 appliance
+        url: "/installconfig/viewing-boot-up-codes-for-sgf6112.html"
+      - title: View error codes for SGF6112 appliance
+        url: "/installconfig/viewing-error-codes-for-sgf6112.html"
+      - title: 'Hardware setup appears to hang (SGF6112)'
+        url: "/installconfig/hardware-setup-appears-to-hang-sgf6112.html"
+      - title: 'Troubleshoot connection issues (SGF6112)'
+        url: "/installconfig/troubleshooting-connection-issues-sgf6112.html"
+    - title: 'Troubleshoot SG6000 series appliances installation'
+      url: "/installconfig/troubleshooting-hardware-installation-sg6000-cn-controller.html"
+      entries:       
       - title: 'HE error: Error synchronizing with SANtricity OS Software (SG5700)'
         url: "/installconfig/he-error-error-synchronizing-with-santricity-os-software.html"
       - title: SG6000 boot-up and error codes

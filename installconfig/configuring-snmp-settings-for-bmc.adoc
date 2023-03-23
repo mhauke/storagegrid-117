@@ -2,21 +2,21 @@
 permalink: installconfig/configuring-snmp-settings-for-bmc.html
 sidebar: sidebar
 keywords: SNMP, configure, setup, set up 
-summary: 'If you are familiar with configuring SNMP for hardware, you can use the BMC interface to configure the SNMP settings for the SG6000-CN controller or services appliance. You can provide secure community strings, enable SNMP Trap, and specify up to five SNMP destinations.'
+summary: 'If you are familiar with configuring SNMP for hardware, you can use the BMC interface to configure the SNMP settings for the SGF6112, SG6000, and services appliances. You can provide secure community strings, enable SNMP Trap, and specify up to five SNMP destinations.'
 ---
-= Configure SNMP settings for SG6000-CN controller or services appliance
+= Configure SNMP settings appliances
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are familiar with configuring SNMP for hardware, you can use the BMC interface to configure the SNMP settings for the SG6000-CN controller or services appliance. You can provide secure community strings, enable SNMP Trap, and specify up to five SNMP destinations.
+If you are familiar with configuring SNMP for hardware, you can use the BMC interface to configure the SNMP settings for the SGF6112, SG6000, and services appliances. You can provide secure community strings, enable SNMP Trap, and specify up to five SNMP destinations.
 
 .What you'll need
 
 * You know how to access the BMC dashboard.
 * You have experience in configuring SNMP settings for SNMPv1-v2c equipment.
 
-NOTE: BMC settings made by this procedure might not be preserved if the SG6000-CN or services appliance fails and has to be replaced.  Make sure you have a record of all settings you have applied, so they can be easily reapplied after a hardware replacement if necessary.
+NOTE: BMC settings made by this procedure might not be preserved if the appliance fails and has to be replaced.  Make sure you have a record of all settings you have applied, so they can be easily reapplied after a hardware replacement if necessary.
 
 .Steps
 
@@ -29,7 +29,7 @@ The Read-Only Community String is like a user ID or password. You should change 
 +
 IMPORTANT: Enter the Destination IP for each SNMP trap using an IP address. Fully qualified domain names are not supported.
 +
-Enable traps if you want the SG6000-CN controller or services appliance to send immediate notifications to an SNMP console when it is in an unusual state. Depending on the device, traps might indicate hardware failures of various components, link up/down conditions, temperature thresholds being exceeded, or high traffic.
+Enable traps if you want the appliance to send immediate notifications to an SNMP console when it is in an unusual state. Depending on the device, traps might indicate hardware failures of various components, link up/down conditions, temperature thresholds being exceeded, or high traffic.
 
 . Optionally, click *Send Test Trap* to test your settings.
 . If the settings are correct, click *Save*.

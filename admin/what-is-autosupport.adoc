@@ -46,7 +46,7 @@ You can use any combination of the following options to send AutoSupport message
 
 == [[hardware_autosupport]] AutoSupport for appliances
 
-AutoSupport for appliances reports StorageGRID hardware issues, while StorageGRID AutoSupport reports StorageGRID software issues. You must configure AutoSupport for appliance hardware on each appliance. It is implemented differently for services and storage appliances.
+AutoSupport for appliances reports StorageGRID hardware issues, while StorageGRID AutoSupport reports StorageGRID software issues (except for SGF6112 where StorageGRID AutoSupport reports both hardware and software issues). You must configure AutoSupport on each appliance, except for the SGF6112 which does not require additional configuration. AutoSupport is implemented differently for services and storage appliances.
 
 You must enable AutoSupport in SANtricity for each storage appliance. You can configure SANtricity AutoSupport during initial appliance setup or after an appliance has been installed:
 
