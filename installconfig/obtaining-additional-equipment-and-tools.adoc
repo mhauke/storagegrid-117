@@ -45,6 +45,39 @@ Power drill with Phillips head bit
 +
 Flashlight
 
+== SGF6112
+
+You need the following additional equipment to install and configure the SGF6112 hardware:
+
+* *Optical cables and transceivers*
++
+image::../media/fc_cable_and_sfp.gif[Optical cable and QSFP+ transceiver]
+
+ ** Cable
+  *** TwinAx/Copper (1 to 4)
++
+or
+
+  *** Fibre/Optical (1 to 4)
+ ** 1 to 4 of each of these transceivers/adapters based on link speed (mixed speeds are not supported)
+  
+[options="header"]
+|===
+| Link speed (GbE)| Required equipment
+a|
+10
+a|
+SFP+ transceiver
+a|
+25
+a|
+SFP28 transceiver
+|===
+
+  * *RJ-45 (Cat5/Cat5e/Cat6/Cat6a) Ethernet cables*
++
+image::../media/ethernet_cables.png[Ethernet cable]
+
 == SG6000
 
 You need the following additional equipment to install and configure the SG6000 hardware:

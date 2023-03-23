@@ -55,9 +55,6 @@ When you apply power to the appliance, the BMC logs a series of boot-up codes. Y
 . If you are using SOL, perform these steps:
  .. Connect to the IPMI SOL using the BMC IP address and login credentials.
 +
-NOTE: If you haven't changed the BMC root account password, the factory-default value might be "calvin".
-
-+
 `ipmitool -I lanplus -H _BMC_Port_IP_ -U root -P _Password_ sol activate`
 [start=2]
  .. View the codes on the virtual serial terminal.

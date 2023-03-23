@@ -34,14 +34,15 @@ Sign in with the username and password for your NetApp account.
 
 . Download the appropriate version of the *Support file for StorageGRID Appliances* and the corresponding checksum file.
 +
-The Support file for StorageGRID Appliances file is a `.zip` archive that contains the current and previous firmware versions for all StorageGRID appliance models.
+The Support file for StorageGRID appliances is a `.zip` archive that contains the current and previous firmware versions for all StorageGRID appliance models.
 +
-After downloading the Support file for StorageGRID Appliances file, extract the `.zip` archive and see the README file for important information about installing the StorageGRID Appliance Installer.
+After downloading the Support file for StorageGRID appliances, extract the `.zip` archive and see the README file for important information about installing the StorageGRID Appliance Installer.
 
 . Follow the instructions on the Upgrade Firmware page of your StorageGRID Appliance Installer to perform these steps:
- .. Upload the appropriate support file (firmware image) for your controller type and the checksum file.
+ .. Upload the appropriate support file (firmware image) for your controller type. Some firmware versions also require uploading a checksum file. If you are prompted for a checksum file, it can also be found in the Support file for StorageGRID Appliances.
  .. Upgrade the inactive partition.
  .. Reboot and swap partitions.
+ .. Upload the appropriate support file (firmware image) again for your controller type. Some firmware versions also require uploading a checksum file. If you are prompted for a checksum file, it can also be found in the Support file for StorageGRID Appliances.
  .. Upgrade the second (inactive) partition.
  
 .Related information

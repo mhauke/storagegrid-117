@@ -90,8 +90,9 @@ Use the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix To
 
 StorageGRID hardware appliances are specially designed for use in a StorageGRID system. Some appliances can be used as Storage Nodes. Other appliances can be used as Admin Nodes or Gateway Nodes. You can combine appliance nodes with software-based nodes or deploy fully engineered, all-appliance grids that have no dependencies on external hypervisors, storage, or compute hardware.
 
-Four types of StorageGRID appliances are available:
+The following types of StorageGRID appliances are available:
 
+* The *SGF6112 storage appliance* is an all-flash 1-rack-unit (1U) server that features 12 NVMe (nonvolatile memory express) SSD drives with integrated compute and storage controllers.
 * The *SG100 and SG1000 services appliances* are 1-rack-unit (1U) servers that can each operate as the primary Admin Node, a non-primary Admin Node, or a Gateway Node. Both appliances can operate as Gateway Nodes and Admin Nodes (primary and non-primary) at the same time.
 * The *SG6000 storage appliance* operates as a Storage Node and combines the 1U SG6000-CN compute controller with a 2U or 4U storage controller shelf. The SG6000 is available in two models:
  ** *SGF6024*: Combines the SG6000-CN compute controller with a 2U storage controller shelf that includes 24 solid state drives (SSDs) and redundant storage controllers.
@@ -104,12 +105,13 @@ See the following for more information:
 
 * https://hwu.netapp.com[NetApp Hardware Universe^] 
 
+* link:../hardware-description-sg6100.html[SGF6112 appliance]
+
 * link:../installconfig/hardware-description-sg100-and-1000.html[SG100 and SG1000 services appliances]
 
 * link:../installconfig/hardware-description-sg6000.html[SG6000 storage appliances]
 
 * link:../installconfig/hardware-description-sg5700.html[SG5700 storage appliances]
-
 
 === Primary services for Admin Nodes
 
