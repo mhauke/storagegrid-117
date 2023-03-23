@@ -11,6 +11,8 @@ summary: 'Under certain circumstances, such as site- or grid-wide IP address cha
 [.lead]
 Under certain circumstances, such as site- or grid-wide IP address changes, one or more groups of nodes might not be able to contact the rest of the grid.
 
+.About this task
+
 In the Grid Manager (*SUPPORT* > *Tools* > *Grid topology*), if a node is gray, or if a node is blue with many of its services showing a status other than Running, you should check for node isolation.
 
 image::../media/dynamic_ip_service_not_running.gif[screenshot]
@@ -23,6 +25,8 @@ Some of the consequences of having isolated nodes include the following:
 To resolve the isolation issue, you run a command line utility on each isolated node or on one node in a group (all nodes in a subnet that does not contain the primary Admin Node) that is isolated from the grid. The utility provides the nodes with the IP address of a non-isolated node in the grid, which allows the isolated node or group of nodes to contact the entire grid again.
 
 NOTE: If the multicast domain name system (mDNS) is disabled in the networks, the command line utility might have to be run on each isolated node.
+
+.Steps
 
 . Access the node and check `/var/local/log/dynip.log` for isolation messages.
 +
