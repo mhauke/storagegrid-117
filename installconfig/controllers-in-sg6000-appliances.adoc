@@ -11,7 +11,7 @@ summary: 'Each model of the StorageGRID SG6000 appliance includes an SG6000-CN c
 [.lead]
 Each model of the StorageGRID SG6000 appliance includes an SG6000-CN compute controller in a 1U enclosure and duplex E-Series storage controllers in a 2U or 4U enclosure, depending on the model. Review the diagrams to learn more about each type of controller.
 
-== All appliances: SG6000-CN compute controller
+== SG6000-CN compute controller
 
 * Provides compute resources for the appliance.
 * Includes the StorageGRID Appliance Installer.
@@ -25,9 +25,9 @@ This figure shows the connectors on the back of the SG6000-CN.
 
 image::../media/sg6000_cn_rear_connectors.gif[SG6000-CN Rear Connectors]
 
-[options="header"]
+[cols="1a,2a,2a,2a" options="header"]
 |===
-|  | Port| Type| Use
+| Callout | Port| Type| Use
 a|
 1
 a|
@@ -97,7 +97,7 @@ Options:
 
 The SG6060 and SG6060X use E2800 series storage controllers. 
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 |Appliance|Controller
 a|
@@ -116,13 +116,13 @@ CAUTION: Do not use an E2800A and an E2800B in the same appliance.
 
 The following figures show the connectors on the back of each of the E2800 series controllers. 
 
-*E2800A storage controller*
+=== E2800A storage controller
 
 image::../media/e2800_controller_with_callouts.gif[Connectors on E2800A controller]
 
-[options="header"]
+[cols="1a,2a,2a,2a" options="header"]
 |===
-|  | Port| Type| Use
+| Callout | Port| Type| Use
 a|
 1
 a|
@@ -172,13 +172,13 @@ a|
 Connect the ports to the drive expansion ports on the IOMs in the expansion shelf.
 |===
 
-*E2800B storage controller*
+=== E2800B storage controller
 
 image::../media/e2800B_controller_with_callouts.gif[Connectors on E2800B controller]
 
-[options="header"]
+[cols="1a,2a,2a,3a" options="header"]
 |===
-|  | Port| Type| Use
+|Callout | Port| Type| Use
 a|
 1
 a|
@@ -241,9 +241,9 @@ This figure shows the connectors on the back of each of the EF570 controllers.
 
 image::../media/ef570_rear_connectors.gif[EF570 Rear Connectors]
 
-[options="header"]
+[cols="1a,2a,2a,3a" options="header"]
 |===
-|  | Port| Type| Use
+|Callout | Port| Type| Use
 a|
 1
 a|
@@ -292,9 +292,9 @@ The expansion shelf contains two input/output modules (IOMs) that connect to the
 
 image::../media/iom_connectors.gif[IOM Rear]
 
-[options="header"]
+[cols="1a,2a,2a,3a" options="header"]
 |===
-|  | Port| Type| Use
+|Callout | Port| Type| Use
 a|
 1
 a|

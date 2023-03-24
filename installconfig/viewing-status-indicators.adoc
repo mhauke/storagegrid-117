@@ -32,7 +32,7 @@ image::../media/sgf6112_front_indicators.png[Front Indicators - SGF6112]
 
 [cols="1a,2a,3a" options="header"]
 |===
-|  | Display| State
+| Callout | Display| State
 a|
 1
 a|
@@ -96,7 +96,7 @@ To view the boot-up and error codes, you must link:accessing-bmc-interface.html[
 
 image::../media/ssd_indicators.png[SSD Indicators]
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | LED| Display| State
 a|
@@ -141,7 +141,7 @@ image::../media/sg6000_cn_front_indicators.gif[Front Indicators - SG6000-CN]
 
 [cols="1a,2a,3a" options="header"]
 |===
-|  | Display| Description
+| Callout  | Display| Description
 |1
 |Power button
 |
@@ -231,7 +231,7 @@ The E2800 controller and the E5700SG controller display different statuses and e
 
 To understand what these codes mean, see the following resources:
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Controller| Reference
 a|
@@ -257,7 +257,7 @@ a|
 +
 image::../media/seven_segment_display_codes.gif[Seven-segment displays after controllers have booted up.]
 +
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Controller| Seven-segment display
 a|
@@ -290,9 +290,9 @@ After the StorageGRID Appliance Installer has started, you should periodically r
 
 image::../media/e5700sg_leds.gif[Status indicators on E5700SG controller]
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
-|  | Display| Description
+| Callout | Display| Description
 a|
 1
 a|
@@ -356,7 +356,7 @@ During boot-up or after a hard reset of the appliance, the following occurs:
 
 During a normal boot-up of the appliance, the seven-segment display on the E5700SG controller shows the following codes in the order listed:
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Code| Indicates
 a|
@@ -405,7 +405,7 @@ StorageGRID is running.
 
 These codes represent error conditions that might be shown on the E5700SG controller as the appliance boots up. Additional two-digit hexadecimal codes are displayed if specific low-level hardware errors occur. If any of these codes persists for more than a second or two, or if you are unable to resolve the error by following one of the prescribed troubleshooting procedures, contact technical support.
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Code| Indicates
 a|
@@ -495,9 +495,9 @@ Use this information to help link:troubleshooting-hardware-installation-sg100-an
 
 image::../media/sg6000_cn_front_indicators.gif[Front Indicators - SG1000]
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
-|  | Display| State
+| Callout | Display| State
 a|
 1
 a|
@@ -554,7 +554,7 @@ To view the boot-up and error codes, you must link:accessing-bmc-interface.html[
 
 image::../media/ssd_indicators.png[SSD Indicators]
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | LED| Display| State
 a|

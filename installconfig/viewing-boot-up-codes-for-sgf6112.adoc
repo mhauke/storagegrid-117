@@ -54,14 +54,14 @@ When you apply power to the appliance, the BMC logs a series of boot-up codes. Y
  .. View the codes printed over the serial terminal.
 . If you are using SOL, perform these steps:
  .. Connect to the IPMI SOL using the BMC IP address and login credentials.
-
 +
 `ipmitool -I lanplus -H _BMC_Port_IP_ -U root -P _Password_ sol activate`
-[start=2]
- .. View the codes on the virtual serial terminal.
+
+.. View the codes on the virtual serial terminal.
+
 . Use the table to look up the codes for your appliance.
 +
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Code| Indicates
 a|

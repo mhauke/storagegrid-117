@@ -35,11 +35,11 @@ NOTE: The SG6060 has E2800A controllers and the SG6060X has E2800B controllers. 
 
 CAUTION: Do not use an E2800A and E2800B controller in the same appliance. 
 
-*SG6060 to E2800A Connections*
+*SG6060 to E2800A connections*
 
 image::../media/sg6000_e2800_connections.png[SG6060 to E2800A Connections]
 
-*SG6060X to E2800B Connections*
+*SG6060X to E2800B connections*
 
 image::../media/sg6000x_e2800B_connections.png[SG6060 to E2800B Connections]
 
@@ -50,7 +50,7 @@ image::../media/sg6000_ef570_connections.png[SG6000 to SGF570 Connections]
 
 [cols="1a,2a,2a,3a" options="header"]
 |===
-|  | Port| Type of port| Function
+| Callout | Port| Type of port| Function
 |1
 |BMC management port on the SG6000-CN controller
 |1-GbE (RJ-45)
@@ -110,7 +110,7 @@ NOTE: The four network ports must use the same link speed. Install SFP+ transcei
 
  ** If you plan to use Fixed port bond mode (default), connect the ports to the StorageGRID Grid and Client Networks, as shown in the table.
 +
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Port| Connects to...
 a|

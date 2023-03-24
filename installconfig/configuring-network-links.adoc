@@ -39,9 +39,9 @@ The figures show how the four network ports are bonded in fixed port bond mode (
 image::../media/sgf6112_fixed_port.png[SGF6112 Fixed Port Bond Mode]
 
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
-| Label| Which ports are bonded
+| Callout| Which ports are bonded
 a|
 C
 a|
@@ -57,7 +57,7 @@ This figure shows how the four network ports are bonded in aggregate port bond m
 
 image::../media/sgf6112_aggregate_ports.png[Aggregate Port Bond Mode SG100]
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -71,7 +71,7 @@ NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -106,7 +106,7 @@ a|
 
 * *Aggregate port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -363,7 +363,7 @@ This figure shows how the four 10/25-GbE ports are bonded in Fixed port bond mod
 
 image::../media/e5700sg_fixed_port.gif[Image showing how the 10/25-GbE ports on the E5700SG controller are bonded in fixed mode]
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -381,7 +381,7 @@ This figure shows how the four 10/25-GbE ports are bonded in Aggregate port bond
 image::../media/e5700sg_aggregate_port.gif[Image showing how the 10/25-GbE ports on the E5700SG controller are bonded in aggregate mode]
 
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -396,7 +396,7 @@ NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -430,7 +430,7 @@ a|
 
 * *Aggregate port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -533,7 +533,7 @@ image::../media/sg100_fixed_port_draft.png[SG100 Fixed Port Bond Mode]
 
 image::../media/sg1000_fixed_port.png[SG1000 Fixed Port Bond Mode]
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -555,7 +555,7 @@ image::../media/sg100_aggregate_ports.png[Aggregate Port Bond Mode SG100]
 
 image::../media/sg1000_aggregate_ports.png[Aggregate Port Bond Mode SG1000]
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -569,7 +569,7 @@ NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -604,7 +604,7 @@ a|
 
 * *Aggregate port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|

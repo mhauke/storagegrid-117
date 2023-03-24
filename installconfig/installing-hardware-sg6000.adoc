@@ -1,18 +1,34 @@
 ---
 permalink: installconfig/installing-hardware-sg6000.html
 sidebar: sidebar
-keywords: install, sg6000, sg6060, sgf6024, expansion shelf, cabinet, rack
-summary: 'Installing the hardware for an SG6000 storage appliance includes installing both the controller shelf and the SG600-CN controller into a cabinet or rack.'
+keywords: install, sg6000, sg6060, sgf6024, expansion shelf, cabinet, rack, drives
+summary: 'For the SG6060 and SGF6024, you install rails in your cabinet or rack and slide the controller shelf, any expansion shelves, and the compute controller onto the rails. For the SG6060, do not install the drives in each shelf until the shelves are installed.'
 ---
-= Install SG6000 hardware
+= Install SG6000 into a cabinet or rack
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Installing the hardware for an SG6000 storage appliance includes installing both the controller shelf and the SG600-CN controller into a cabinet or rack.
+For the SG6060 and SGF6024, you install rails in your cabinet or rack and slide the controller shelf, any expansion shelves, and the compute controller onto the rails. For the SG6060, do not install the drives in each shelf until the shelves are installed.
 
-. *SG6060*: Install the 60-drive controller shelf into a cabinet or rack and then install any 60-drive expansion shelves. See link:sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html[SG6060: Install 60-drive shelves].
+[cols="1a,2a,2a" options="header"]
+|===
+| Model| Install| For information
+
+| SG6060
+| 60-drive controller shelf and any 60-drive expansion shelves
+| link:sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html[Install 60-drive shelves]
  
-. *SG6060*: Install 60 drives into each shelf. See link:sg6060-installing-drives.html[SG6060: Install drives].
-. *SGF6024*: Install the 24-drive controller shelf into a cabinet or rack. See link:sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html[SGF6024: Install 24-drive shelves into cabinet or rack].
-. *SG6060 and SGF602*: Install the SG6000-CN compute controller into the cabinet or rack.
+| SG6060
+| 60 drives into each shelf
+| link:sg6060-installing-drives.html[Install drives]
+
+| SGF6024
+| 24-drive controller shelf
+| link:sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html[Install 24-drive shelves]
+
+| SG6060 and SGF6024
+| SG6000-CN compute controller
+| link:installconfig/sg6000-cn-installing-into-cabinet-or-rack.html[Install SG6000-CN]
+
+|===

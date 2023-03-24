@@ -24,7 +24,7 @@ You must connect both of the storage controllers in the appliance (either the E2
 * SG6060 and SG6060X: Controller A is on the top, and controller B is on the bottom.
 * SGF6024: Controller A is on the left, and controller B is on the right.
 
-[options="header"]
+[cols="2a,1a,1a" options="header"]
 |===
 | Information needed| Your value for controller A| Your value for controller B
 a|
@@ -105,7 +105,6 @@ Must be:
 
 * Autonegotiate (default)
 
-[options="header"]
 |===
 
 == Information needed to connect SG6000-CN controller to Admin Network
@@ -114,7 +113,7 @@ The Admin Network for StorageGRID is an optional network, used for system admini
 
 image::../media/rj_45_ports_circled.png[RJ-45 ports]
 
-[options="header"]
+[cols="2a,1a" options="header"]
 |===
 | Information needed| Your value
 a|
@@ -177,7 +176,7 @@ a|
 
 The four 10/25-GbE ports on the SG6000-CN controller connect to the StorageGRID Grid Network and the optional Client Network.
 
-[options="header"]
+[cols="2a,1a" options="header"]
 |===
 | Information needed| Your value
 a|
@@ -225,7 +224,7 @@ a|
 
 The Grid Network for StorageGRID is a required network, used for all internal StorageGRID traffic. The appliance connects to the Grid Network using the 10/25-GbE ports on the SG6000-CN controller.
 
-[options="header"]
+[cols="2a,1a" options="header"]
 |===
 | Information needed| Your value
 a|
@@ -276,7 +275,7 @@ a|
 
 The Client Network for StorageGRID is an optional network, typically used to provide client protocol access to the grid. The appliance connects to the Client Network using the 10/25-GbE ports on the SG6000-CN controller.
 
-[options="header"]
+[cols="2a,1a" options="header"]
 |===
 | Information needed| Your value
 a|
@@ -336,7 +335,7 @@ image::../media/bmc_management_port.gif[BMC management port]
 
 include::../_include/enable-disable-ipmi.adoc[]
 
-[options="header"]
+[cols="2a,1a" options="header"]
 |===
 | Information needed| Your value
 a|
