@@ -1,7 +1,7 @@
 ---
 permalink: s3/support-for-storagegrid-platform-services.html
 sidebar: sidebar
-keywords: platform service support
+keywords: platform services, cloudmirror replication, notifications, search integration
 summary: 'StorageGRID platform services enable StorageGRID tenant accounts to leverage external services such as a remote S3 bucket, a Simple Notification Service \(SNS\) endpoint, or an Elasticsearch cluster to extend the services provided by a grid.'
 ---
 = Support for StorageGRID platform services
@@ -9,36 +9,32 @@ summary: 'StorageGRID platform services enable StorageGRID tenant accounts to le
 :imagesdir: ../media/
 
 [.lead]
+
 StorageGRID platform services enable StorageGRID tenant accounts to leverage external services such as a remote S3 bucket, a Simple Notification Service (SNS) endpoint, or an Elasticsearch cluster to extend the services provided by a grid.
 
 The following table summarizes the available platform services and the S3 APIs used to configure them.
 
-[options="header"]
+[cols="1a,2a,1a" options="header"]
 |===
 | Platform service| Purpose| S3 API used to configure the service
-a|
-CloudMirror replication
-a|
-Replicates objects from a source StorageGRID bucket to the configured remote S3 bucket.
-a|
-PUT Bucket replication
-a|
-Notifications
-a|
-Sends notifications about events in a source StorageGRID bucket to a configured Simple Notification Service (SNS) endpoint.
-a|
-PUT Bucket notification
-a|
-Search integration
-a|
-Sends object metadata for objects stored in a StorageGRID bucket to a configured Elasticsearch index.
-a|
-PUT Bucket metadata notification
+
+| CloudMirror replication
+| Replicates objects from a source StorageGRID bucket to the configured remote S3 bucket.
+| PUT Bucket replication (see link:operations-on-buckets.html[Operations on buckets])
+
+| Notifications
+| Sends notifications about events in a source StorageGRID bucket to a configured Simple Notification Service (SNS) endpoint.
+| PUT Bucket notification (see link:operations-on-buckets.html[Operations on buckets])
+
+| Search integration
+| Sends object metadata for objects stored in a StorageGRID bucket to a configured Elasticsearch index.
+| link:put-bucket-metadata-notification-configuration-request.html[PUT Bucket metadata notification configuration]
 
 *Note:* This is a StorageGRID custom S3 API.
 
 |===
-A grid administrator must enable the use of platform services for a tenant account before they can be used. Then, a tenant administrator must create an endpoint that represents the remote service in the tenant account. This step is required before a service can be configured.
+
+A grid administrator must enable the use of platform services for a tenant account before they can be used. See link:../admin/index.html[Administer StorageGRID]. Then, a tenant administrator must create an endpoint that represents the remote service in the tenant account. This step is required before a service can be configured. See link:../tenant/index.html[Use a tenant account].
 
 == Recommendations for using platform services
 
@@ -48,13 +44,3 @@ Before using platform services, you must be aware of the following recommendatio
 * If an S3 bucket in the StorageGRID system has both versioning and CloudMirror replication enabled, NetApp recommends that the destination endpoint also have S3 bucket versioning enabled. This allows CloudMirror replication to generate similar object versions on the endpoint.
 * CloudMirror replication is not supported if the source bucket has S3 Object Lock enabled.
 * CloudMirror replication will fail with an AccessDenied error if the destination bucket has legacy Compliance enabled.
-
-.Related information
-
-link:../tenant/index.html[Use a tenant account]
-
-link:../admin/index.html[Administer StorageGRID]
-
-link:operations-on-buckets.html[Operations on buckets]
-
-link:put-bucket-metadata-notification-configuration-request.html[PUT Bucket metadata notification configuration request]
