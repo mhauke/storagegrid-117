@@ -32,14 +32,14 @@ You can restore object data for a failed storage volume or Storage Node using Gr
 
 After you have replaced the drives and performed the manual steps to format the volumes, Grid Manager displays the volumes as candidates for restoration on the *MAINTENANCE* > *Volume restoration* > *Nodes to restore* tab.
 
-Whenever possible, restore object data using the *Volume restoration* task in the Grid Manager. Follow these guidelines:
+Whenever possible, restore object data using the *Volume restoration* page in the Grid Manager. Follow these guidelines:
 
 * If the volumes are listed at *MAINTENANCE* > *Volume restoration* > *Nodes to restore*, restore object data as described in the steps below. The volumes will be listed if:
 ** Some, but not all, storage volumes in a node have failed
 ** All storage volumes in a node have failed and are being replaced with the same number of volumes or more volumes
 
 +
-The Volume restoration task in the Grid Manager also allows you to <<view-restoration-progress,monitor the volume restoration process>> and <<view-restoration-history,view restoration history>>.
+The Volume restoration page in the Grid Manager also allows you to <<view-restoration-progress,monitor the volume restoration process>> and <<view-restoration-history,view restoration history>>.
 
 * If the volumes are not listed in the Grid Manager as candidates for restoration, follow the appropriate steps for using the `repair-data` script to restore object data:
 ** link:restoring-object-data-to-storage-volume.html[Restoring object data to storage volume (system drive failure)]

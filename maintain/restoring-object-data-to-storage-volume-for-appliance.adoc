@@ -1,4 +1,4 @@
----
+---html
 permalink: maintain/restoring-object-data-to-storage-volume-for-appliance.html
 sidebar: sidebar
 keywords: restore replicated data, restore erasure coded data, recover appliance storage node, recover storage volume
@@ -13,9 +13,9 @@ After recovering storage volumes for the appliance Storage Node, you can restore
 
 == Which procedure should I use?
 
-Whenever possible, restore object data using the *Volume restoration* task in the Grid Manager.
+Whenever possible, restore object data using the *Volume restoration* page in the Grid Manager.
 
-* If the volumes are listed at *MAINTENANCE* > *Volume restoration* > *Nodes to restore*, restore object data using the link:../maintain/restoring-volume.html[Volume restoration task in the Grid Manager].
+* If the volumes are listed at *MAINTENANCE* > *Volume restoration* > *Nodes to restore*, restore object data using the link:../maintain/restoring-volume.html[Volume restoration page in the Grid Manager].
 
 * If the volumes are not listed at *MAINTENANCE* > *Volume restoration* > *Nodes to restore*, follow the steps below for using the `repair-data` script to restore object data.
 +
