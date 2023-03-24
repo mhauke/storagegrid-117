@@ -21,43 +21,43 @@ GET Bucket consistency
 a|
 Returns the consistency level being applied to a particular bucket.
 a|
-link:get-bucket-consistency-request.html[GET Bucket consistency request]
+link:get-bucket-consistency-request.html[GET Bucket consistency]
 a|
 PUT Bucket consistency
 a|
 Sets the consistency level applied to a particular bucket.
 a|
-link:put-bucket-consistency-request.html[PUT Bucket consistency request]
+link:put-bucket-consistency-request.html[PUT Bucket consistency]
 a|
 GET Bucket last access time
 a|
 Returns whether last access time updates are enabled or disabled for a particular bucket.
 a|
-link:get-bucket-last-access-time-request.html[GET Bucket last access time request]
+link:get-bucket-last-access-time-request.html[GET Bucket last access time]
 a|
 PUT Bucket last access time
 a|
 Allows you to enable or disable last access time updates for a particular bucket.
 a|
-link:put-bucket-last-access-time-request.html[PUT Bucket last access time request]
+link:put-bucket-last-access-time-request.html[PUT Bucket last access time]
 a|
 DELETE Bucket metadata notification configuration
 a|
 Deletes the metadata notification configuration XML associated with a particular bucket.
 a|
-link:delete-bucket-metadata-notification-configuration-request.html[DELETE Bucket metadata notification configuration request]
+link:delete-bucket-metadata-notification-configuration-request.html[DELETE Bucket metadata notification configuration]
 a|
 GET Bucket metadata notification configuration
 a|
 Returns the metadata notification configuration XML associated with a particular bucket.
 a|
-link:get-bucket-metadata-notification-configuration-request.html[GET Bucket metadata notification configuration request]
+link:get-bucket-metadata-notification-configuration-request.html[GET Bucket metadata notification configuration]
 a|
 PUT Bucket metadata notification configuration
 a|
 Configures the metadata notification service for a bucket.
 a|
-link:put-bucket-metadata-notification-configuration-request.html[PUT Bucket metadata notification configuration request]
+link:put-bucket-metadata-notification-configuration-request.html[PUT Bucket metadata notification configuration]
 a|
 PUT Bucket with compliance settings
 a|
@@ -69,13 +69,13 @@ GET Bucket compliance
 a|
 Deprecated but supported: Returns the compliance settings currently in effect for an existing legacy Compliant bucket.
 a|
-link:deprecated-get-bucket-compliance-request.html[Deprecated: GET Bucket compliance request]
+link:deprecated-get-bucket-compliance-request.html[Deprecated: GET Bucket compliance]
 a|
 PUT Bucket compliance
 a|
 Deprecated but supported: Allows you to modify the compliance settings for an existing legacy Compliant bucket.
 a|
-link:deprecated-put-bucket-compliance-request.html[Deprecated: PUT Bucket compliance request]
+link:deprecated-put-bucket-compliance-request.html[Deprecated: PUT Bucket compliance]
 |===
 .Related information
 

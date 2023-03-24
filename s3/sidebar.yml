@@ -8,6 +8,8 @@ entries:
     url: "/s3/quick-reference-support-for-aws-apis.html"         
   - title: Configure tenant accounts and connections
     url: "/s3/configuring-tenant-accounts-and-connections.html"
+  - title: Support for platform services 
+    url:  "/s3/support-for-storagegrid-platform-services.html"
   - title: How StorageGRID implements S3 REST API
     entries:
     - title: Conflicting client requests
@@ -73,21 +75,21 @@ entries:
       url: "/s3/error-responses.html"
   - title: StorageGRID S3 requests
     entries:
-      - title: GET Bucket consistency request
+      - title: GET Bucket consistency
         url: "/s3/get-bucket-consistency-request.html"
-      - title: PUT Bucket consistency request
+      - title: PUT Bucket consistency
         url: "/s3/put-bucket-consistency-request.html"
-      - title: GET Bucket last access time request
+      - title: GET Bucket last access time
         url: "/s3/get-bucket-last-access-time-request.html"
-      - title: PUT Bucket last access time request
+      - title: PUT Bucket last access time
         url: "/s3/put-bucket-last-access-time-request.html"
-      - title: DELETE Bucket metadata notification configuration request
+      - title: DELETE Bucket metadata notification configuration
         url: "/s3/delete-bucket-metadata-notification-configuration-request.html"
-      - title: GET Bucket metadata notification configuration request
+      - title: GET Bucket metadata notification configuration
         url: "/s3/get-bucket-metadata-notification-configuration-request.html"
-      - title: PUT Bucket metadata notification configuration request
+      - title: PUT Bucket metadata notification configuration
         url: "/s3/put-bucket-metadata-notification-configuration-request.html"
-      - title: GET Storage Usage request
+      - title: GET Storage Usage
         url: "/s3/get-storage-usage-request.html"
       - title: Deprecated bucket requests for legacy Compliance
         url: "/s3/deprecated-bucket-requests-for-legacy-compliance.html"
