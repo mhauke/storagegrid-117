@@ -20,7 +20,7 @@ S3 tenant accounts are created by a StorageGRID grid administrator using the Gri
 TIP: While S3 tenant users can create and manage S3 access key and buckets with the Tenant Manager, they must use an S3 client application to ingest and manage objects. See link:../s3/index.html[Use S3 REST API] for details.
 
 
-== How client connections can be configured
+== How to configure client connections
 
 A grid administrator makes configuration choices that affect how S3 clients connect to StorageGRID to store and retrieve data. There are four basic steps for connecting StorageGRID to any S3 application:
 
@@ -35,7 +35,7 @@ A grid administrator makes configuration choices that affect how S3 clients conn
 For details on these steps, see link:../admin/configuring-client-connections.html[Configure client connections].
 
 
-=== Information required to make client connections
+=== Information required for client connections
 
 To store or retrieve objects, S3 client applications connect to the Load Balancer service, which is included on all Admin Nodes and Gateway Nodes, or to the Local Distribution Router (LDR) service, which is included on all Storage Nodes.
 
