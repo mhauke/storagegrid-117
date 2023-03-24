@@ -30,11 +30,13 @@ You cannot remove a Cloud Storage Pool if it is being used in an ILM rule or in 
 
 . If the Cloud Storage Pool is being used, select *_cloud storage pool name_* > *ILM usage*.
 
-. link:creating-cloud-storage-pool.html[Create a new Cloud Storage Pool] or determine which storage pool or pools you want to use for the existing objects.
-
 . link:working-with-ilm-rules-and-ilm-policies.html[Clone each ILM rule] that currently places objects in the Cloud Storage Pool you want to remove.
 
-. Edit each of the rules you cloned to use the new Cloud Storage Pool or a storage pool instead.
+. Determine where you want to move the existing objects managed by each rule you cloned.
++
+You can use one or more storage pools or a different Cloud Storage Pool.
+
+. Edit each of the rules you cloned.
 +
 For Step 2 of the Create ILM rule wizard, select the new location from the *copies at* field.
 
@@ -42,7 +44,7 @@ For Step 2 of the Create ILM rule wizard, select the new location from the *copi
 
 . Activate the new policy.
 
-. Wait for ILM to remove objects from the original Cloud Storage Pool and place them in the new location. 
+. Wait for ILM to remove objects from the Cloud Storage Pool and place them in the new location. 
 
 
 == Delete Cloud Storage Pool
