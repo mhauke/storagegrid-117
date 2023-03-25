@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: email, notifications, alerts, set up, setup, configure, configuration, bmc 
 summary: 'If you want email notifications to be sent when alerts occur, you must use the BMC interface to configure SMTP settings, users, LAN destinations, alert policies, and event filters.'
 ---
-= Set up email notifications for alerts
+= Set up email notifications for BMC alerts
 :icons: font
 :imagesdir: ../media/
 
@@ -25,7 +25,7 @@ image::../media/bmc_settings_menu.png[BMC Settings menu]
 
 .Steps
 
-. Configure the SMTP settings.
+. link:configuring-snmp-settings-for-bmc.html[Configure SNMP settings for BMC].
  .. Select *Settings* > *SMTP Settings*.
  .. For Sender Email ID, enter a valid email address.
 +
