@@ -21,7 +21,7 @@ The container and segments are not necessarily stored on the same Storage Node. 
 
 Each segment is treated by the StorageGRID system independently and contributes to the count of attributes such as Managed Objects and Stored Objects. For example, if an object stored to the StorageGRID system is split into two segments, the value of Managed Objects increases by three after the ingest is complete, as follows:
 
-segment container + segment 1 + segment 2 = three stored objects
+`segment container + segment 1 + segment 2 = three stored objects`
 
 You can improve performance when handling large objects by ensuring that:
 
