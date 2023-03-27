@@ -28,8 +28,6 @@ NOTE: To use encryption key management, you must enable the *Node Encryption* se
 
 If you are using S3 platform services or Cloud Storage Pools, you can configure a link:configuring-storage-proxy-settings.html[Storage proxy server] between Storage Nodes and the external S3 endpoints. If you send AutoSupport messages using HTTPS or HTTP, you can configure an link:configuring-admin-proxy-settings.html[Admin proxy server] between Admin Nodes and technical support.
 
-NOTE: As of the StorageGRID 11.7 release, NetApp's AutoSupport servers will reject messages sent using HTTP. You must configure a proxy server to forward AutoSupport messages as HTTPS.
-
 == Control firewalls
 
 To enhance the security of your system, you can control access to StorageGRID Admin Nodes by opening or closing specific ports at the link:controlling-access-through-firewalls.html[external firewall]. You can also control network access to each node by configuring its link:manage-firewall-controls.html[internal firewall]. You can prevent access on all ports except those needed for your deployment.
