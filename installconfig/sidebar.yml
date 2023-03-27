@@ -157,13 +157,6 @@ entries:
       url: "/installconfig/monitoring-appliance-installation.html"
     - title: Reboot appliance while StorageGRID Appliance Installer is running
       url: "/installconfig/rebooting-appliance-while-sg-appliance-installer-is-running.html"
-    - title: 'Troubleshoot installation (SG6000 or SG5700)'
-      url: "/installconfig/troubleshooting-hardware-installation.html"
-      entries:
-      - title: Hardware setup appears to hang (SG6000 or SG5700)
-        url: "/installconfig/hardware-setup-appears-to-hang.html"
-      - title: Connection issues (SG6000 or SG5700)
-        url: "/installconfig/troubleshooting-connection-issues.html"
     - title: 'Troubleshoot installation (SGF6112)'
       url: "/installconfig/troubleshooting-hardware-installation-sg6100.html"
       entries:
@@ -174,16 +167,20 @@ entries:
       - title: 'Hardware setup appears to hang (SGF6112)'
         url: "/installconfig/hardware-setup-appears-to-hang-sgf6112.html"
       - title: 'Troubleshoot connection issues (SGF6112)'
-        url: "/installconfig/troubleshooting-connection-issues-sgf6112.html"
-    - title: 'Troubleshoot installation (SG5700 and SG6000)'
-      url: "/installconfig/troubleshooting-hardware-installation-sg6000-cn-controller.html"
-      entries:       
-      - title: 'HE error: Error synchronizing with SANtricity OS Software (SG5700)'
-        url: "/installconfig/he-error-error-synchronizing-with-santricity-os-software.html"
+        url: "/installconfig/troubleshooting-connection-issues-sgf6112.html"      
+    - title: 'Troubleshoot installation (SG6000 or SG5700)'
+      url: "/installconfig/troubleshooting-hardware-installation.html"
+      entries:
+      - title: Hardware setup appears to hang (SG6000 or SG5700)
+        url: "/installconfig/hardware-setup-appears-to-hang.html"
+      - title: Connection issues (SG6000 or SG5700)
+        url: "/installconfig/troubleshooting-connection-issues.html"    
       - title: 'Boot-up codes (SG6000-CN controller)'
         url: "/installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.html"
       - title: 'Error codes (SG6000-CN controller)'
         url: "/installconfig/viewing-error-codes-for-sg6000-cn-controller.html"
+      - title: 'HE error: Error synchronizing with SANtricity OS Software (SG5700)'
+        url: "/installconfig/he-error-error-synchronizing-with-santricity-os-software.html"        
     - title: 'Troubleshoot installation (SG100 and SG1000)'
       url: "/installconfig/troubleshooting-hardware-installation-sg100-and-sg1000.html"
       entries:
