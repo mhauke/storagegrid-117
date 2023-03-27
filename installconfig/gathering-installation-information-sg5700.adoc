@@ -11,11 +11,7 @@ summary: 'Using the tables, record the required information for each network you
 [.lead]
 Using the tables, record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.
 
-Instead of using the tables below, you can use the workbook provided with ConfigBuilder. Using the ConfigBuilder workbook allows you to upload your system information and generate a JSON file to automatically complete some configuration steps in the StorageGRID Appliance Installer. See link:automating-appliance-installation-and-configuration.html[Automate appliance installation and configuration].
-
-.About this task
-
-You can use the following tables to record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.
+TIP: Instead of using the tables, use the workbook provided with ConfigBuilder. Using the ConfigBuilder workbook allows you to upload your system information and generate a JSON file to automatically complete some configuration steps in the StorageGRID Appliance Installer. See link:automating-appliance-installation-and-configuration.html[Automate appliance installation and configuration].
 
 == Information needed to connect to SANtricity System Manager on E2800 controller
 
@@ -133,7 +129,7 @@ a|
 
 The four 10/25-GbE ports on the E5700SG controller connect to the StorageGRID Grid Network and Client Network.
 
-NOTE: See "10/25-GbE port connections for the E5700SG controller" for more information about the options for these ports.
+NOTE: See link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG controller)].
 
 [cols="2a,1a" options="header"]
 |===
@@ -184,8 +180,7 @@ a|
 
 The Grid Network for StorageGRID is a required network, used for all internal StorageGRID traffic. The appliance connects to the Grid Network using the 10/25-GbE ports on the E5700SG controller.
 
-NOTE: See "10/25-GbE port connections for the E5700SG controller" for more information about the options for
-these ports.
+NOTE: See link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG controller)].
 
 [cols="2a,1a" options="header"]
 |===
@@ -244,8 +239,7 @@ a|
 
 The Client Network for StorageGRID is an optional network, typically used to provide client protocol access to the grid. The appliance connects to the Client Network using the 10/25-GbE ports on the E5700SG controller.
 
-NOTE: See "10/25-GbE port connections for the E5700SG controller" for more information about the options for
-these ports.
+NOTE: See link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG controller)].
 
 [cols="2a,1a" options="header"]
 |===
@@ -301,8 +295,8 @@ a|
 |===
 .Related information
 
-link:sg5700-appliance-connections.html.html[Network connections (SG5700)]
+* link:sg5700-appliance-connections.html.html[Network connections (SG5700)]
 
-link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG controller)]
+* link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG controller)]
 
-link:configuring-hardware.html[Configure hardware (SG5700)]
+* link:configuring-hardware.html[Configure hardware (SG5700)]

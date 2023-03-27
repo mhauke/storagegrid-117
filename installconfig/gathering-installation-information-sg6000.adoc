@@ -11,11 +11,7 @@ summary: 'Using the tables, record the required information for each network you
 [.lead]
 Using the tables, record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.
 
-Instead of using the tables below, you can use the workbook provided with ConfigBuilder. Using the ConfigBuilder workbook allows you to upload your system information and generate a JSON file to automatically complete some configuration steps in the StorageGRID Appliance Installer. See link:automating-appliance-installation-and-configuration.html[Automate appliance installation and configuration].
-
-.About this task
-
-You can use the following tables to record the required information for each network you connect to the appliance. These values are required to install and configure the hardware.
+TIP: Instead of using the tables, use the workbook provided with ConfigBuilder. Using the ConfigBuilder workbook allows you to upload your system information and generate a JSON file to automatically complete some configuration steps in the StorageGRID Appliance Installer. See link:automating-appliance-installation-and-configuration.html[Automate appliance installation and configuration].
 
 == Information needed to connect to SANtricity System Manager on storage controllers
 
@@ -360,11 +356,11 @@ a|
 
 .Related information
 
-* link:../installconfig/controllers-in-sg6000-appliances.html[SG600 controllers]
+* link:../installconfig/controllers-in-sg6000-appliances.html[SG6000 controllers]
 
 * link:../installconfig/reviewing-appliance-network-connections.html[Review appliance network connections]
 
-* link:../installconfig/port-bond-modes-for-sg6000-cn-controller.html[Port bond modes (SG6000)]
+* link:../installconfig/port-bond-modes-for-sg6000-cn-controller.html[Port bond modes (SG6000-CN controller)]
 
 * link:cabling-appliance-sg6000.html[Cable appliance (SG6000)]
 

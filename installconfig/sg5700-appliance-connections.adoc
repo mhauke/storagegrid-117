@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network connections, appliance, grid, admin, client, bmc, management
 summary: 'When you install a SG5700 StorageGRID appliance, you must connect the two controllers to each other and to the required networks.'
 ---
-= SG5700 network connections
+= Network connections (SG5700)
 :icons: font
 :imagesdir: ../media/
 
@@ -56,5 +56,5 @@ image::../media/sg5760_connections.gif[Connections on SG5760 appliance]
 
 *Note:* The SFP+ transceivers included with the appliance support 10-GbE link speeds. If you want to use 25-GbE link speeds for the four network ports, you must provide SFP28 transceivers.
 
-| Connect to the Grid Network and the Client Network for StorageGRID. See "`10/25-GbE port connections for the E5700SG controller.`"
+| Connect to the Grid Network and the Client Network for StorageGRID. See link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG controller)].
 |===
