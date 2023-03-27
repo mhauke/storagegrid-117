@@ -16,7 +16,7 @@ Both the 12-drive SG5712 and SG5712X and the 60-drive SG5760 and SG5760X models 
 
 The E2800A and E2800B controllers are identical in specification and function except for the location of the interconnect ports. 
 
-== E5700SG controller
+== E5700SG compute controller
 
 * Operates as the compute server for the appliance.
 * Includes the StorageGRID Appliance Installer.
@@ -26,7 +26,7 @@ NOTE: StorageGRID software is not preinstalled on the appliance. This software i
 * Can connect to all three StorageGRID networks, including the Grid Network, the Admin Network, and the Client Network.
 * Connects to the E2800 controller and operates as the initiator.
 
-=== Connectors on  the E5700SG
+=== E5700SG connectors
 
 image::../media/e5700sg_controller_with_callouts.gif[Connectors on E5700SG controller]
 
@@ -88,11 +88,11 @@ The E2800 series storage controller has the following specifications:
 * Connects to the E5700SG controller and operates as the target.
 
 
-=== Connectors on the E2800A
+=== E2800A connectors
 
 image::../media/e2800_controller_with_callouts.gif[Connectors on E2800A controller]
 
-=== Connectors on the E2800B
+=== E2800B connectors
 
 image::../media/e2800B_controller_with_callouts.gif[Connectors on E2800B controller]
 

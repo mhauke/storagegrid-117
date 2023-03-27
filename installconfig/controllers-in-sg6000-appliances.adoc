@@ -11,7 +11,7 @@ summary: 'Each model of the StorageGRID SG6000 appliance includes an SG6000-CN c
 [.lead]
 Each model of the StorageGRID SG6000 appliance includes an SG6000-CN compute controller in a 1U enclosure and duplex E-Series storage controllers in a 2U or 4U enclosure, depending on the model. Review the diagrams to learn more about each type of controller.
 
-== SG6000-CN compute controller
+== SG6060 and SGF6024: SG6000-CN compute controller
 
 * Provides compute resources for the appliance.
 * Includes the StorageGRID Appliance Installer.
@@ -21,7 +21,7 @@ NOTE: StorageGRID software is not preinstalled on the appliance. This software i
 * Can connect to all three StorageGRID networks, including the Grid Network, the Admin Network, and the Client Network.
 * Connects to the E-Series storage controllers and operates as the initiator.
 
-=== Connectors on the SG6000-CN
+=== SG6000-CN connectors
 
 image::../media/sg6000_cn_rear_connectors.gif[SG6000-CN Rear Connectors]
 
@@ -69,6 +69,54 @@ image::../media/sg6000_cn_rear_connectors.gif[SG6000-CN Rear Connectors]
 
 |===
 
+
+== SGF6024: EF570 storage controllers
+
+* Two controllers for failover support.
+* Manage the storage of data on the drives.
+* Function as standard E-Series controllers in a duplex configuration.
+* Include SANtricity OS Software (controller firmware).
+* Include SANtricity System Manager for monitoring storage hardware and for managing alerts, the AutoSupport feature, and the Drive Security feature.
+* Connect to the SG6000-CN controller and provide access to the flash storage.
+
+=== EF570 connectors
+
+image::../media/ef570_rear_connectors.gif[EF570 Rear Connectors]
+
+[cols="1a,2a,2a,3a" options="header"]
+|===
+|Callout | Port| Type| Use
+
+| 1
+| Interconnect ports 1 and 2
+| 16-Gb/s FC optical SFP
+| Connect each of the EF570 controllers to the SG6000-CN controller.
+
+There are four connections to the SG6000-CN controller (two from each EF570).
+
+| 2
+| Diagnostic and support ports
+| 
+* RJ-45 serial port
+* Micro USB serial port
+* USB port
+
+| Reserved for technical support use.
+
+| 3
+| Drive expansion ports
+| 12Gb/s SAS
+| Not used. The SGF6024 appliance does not support expansion drive shelves.
+
+| 4
+| Management ports 1 and 2
+| 1-Gb (RJ-45) Ethernet
+| 
+* Port 1 connects to the network where you access SANtricity System Manager on a browser.
+* Port 2 is reserved for technical support use.
+
+|===
+
 == SG6060 and SG6060X: E2800 storage controllers
 * Two controllers for failover support.
 * Manage the storage of data on the drives.
@@ -99,7 +147,7 @@ The E2800A and the E2800B storage controllers are identical in specifications an
 
 CAUTION: Do not use an E2800A and an E2800B in the same appliance.
 
-=== Connectors on the E2800A
+=== E2800A connectors
 
 image::../media/e2800_controller_with_callouts.gif[Connectors on E2800A controller]
 
@@ -143,7 +191,7 @@ There are four connections to the SG6000-CN controller (two from each E2800A).
 | Connect the ports to the drive expansion ports on the IOMs in the expansion shelf.
 |===
 
-=== Connectors on the E2800B
+=== E2800B connectors
 
 image::../media/e2800B_controller_with_callouts.gif[Connectors on E2800B controller]
 
@@ -187,58 +235,12 @@ There are four connections to the SG6000-CN controller (two from each E2800B).
 | Connect the ports to the drive expansion ports on the IOMs in the expansion shelf.
 |===
 
-== SGF6024: EF570 storage controllers
 
-* Two controllers for failover support.
-* Manage the storage of data on the drives.
-* Function as standard E-Series controllers in a duplex configuration.
-* Include SANtricity OS Software (controller firmware).
-* Include SANtricity System Manager for monitoring storage hardware and for managing alerts, the AutoSupport feature, and the Drive Security feature.
-* Connect to the SG6000-CN controller and provide access to the flash storage.
-
-=== Connectors on the EF570
-
-image::../media/ef570_rear_connectors.gif[EF570 Rear Connectors]
-
-[cols="1a,2a,2a,3a" options="header"]
-|===
-|Callout | Port| Type| Use
-
-| 1
-| Interconnect ports 1 and 2
-| 16-Gb/s FC optical SFP
-| Connect each of the EF570 controllers to the SG6000-CN controller.
-
-There are four connections to the SG6000-CN controller (two from each EF570).
-
-| 2
-| Diagnostic and support ports
-| 
-* RJ-45 serial port
-* Micro USB serial port
-* USB port
-
-| Reserved for technical support use.
-
-| 3
-| Drive expansion ports
-| 12Gb/s SAS
-| Not used. The SGF6024 appliance does not support expansion drive shelves.
-
-| 4
-| Management ports 1 and 2
-| 1-Gb (RJ-45) Ethernet
-| 
-* Port 1 connects to the network where you access SANtricity System Manager on a browser.
-* Port 2 is reserved for technical support use.
-
-|===
-
-== SG6060 and SG6060X: Input/output modules for optional expansion shelves
+== SG6060 and SG6060X: IOMs for optional expansion shelves
 
 The expansion shelf contains two input/output modules (IOMs) that connect to the storage controllers or to other expansion shelves.
 
-=== Connectors on IOM
+=== IOM connectors
 
 image::../media/iom_connectors.gif[IOM Rear]
 
