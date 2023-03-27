@@ -39,50 +39,6 @@ https://datatracker.ietf.org/doc/html/rfc2616[IETF RFC 2616: Hypertext Transfer 
 
 http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html[Amazon Web Services (AWS) Documentation: Amazon Simple Storage Service API Reference^]
 
-== Support for StorageGRID platform services
-
-StorageGRID platform services enable StorageGRID tenant accounts to leverage external services such as a remote S3 bucket, a Simple Notification Service (SNS) endpoint, or an Elasticsearch cluster to extend the services provided by a grid.
-
-The following table summarizes the available platform services and the S3 APIs used to configure them.
-
-[cols="1a,4a,2a" options="header"]
-|===
-| Platform service| Purpose| S3 API used to configure the service
-
-|CloudMirror replication
-|Replicates objects from a source StorageGRID bucket to the configured remote S3 bucket.
-|PUT Bucket replication
-
-|Notifications
-|Sends notifications about events in a source StorageGRID bucket to a configured Simple Notification Service (SNS) endpoint.
-|PUT Bucket notification
-
-|Search integration
-|Sends object metadata for objects stored in a StorageGRID bucket to a configured Elasticsearch index.
-|PUT Bucket metadata notification
-
-*Note:* This is a StorageGRID custom S3 API.
-
-|===
-
-A grid administrator must enable the use of platform services for a tenant account before they can be used. Then, a tenant administrator must create an endpoint that represents the remote service in the tenant account. This step is required before a service can be configured.
-
-Before using platform services, note the following recommendations:
-
-* NetApp recommends that you allow no more than 100 active tenants with S3 requests requiring CloudMirror replication, notifications, and search integration. Having more than 100 active tenants can result in slower S3 client performance.
-* If an S3 bucket in the StorageGRID system has both versioning and CloudMirror replication enabled, NetApp recommends that the destination endpoint also have S3 bucket versioning enabled. This allows CloudMirror replication to generate similar object versions on the endpoint.
-* CloudMirror replication is not supported if the source bucket has S3 Object Lock enabled.
-* CloudMirror replication will fail with an AccessDenied error if the destination bucket has legacy Compliance enabled.
-
-.Related information
-
-link:../tenant/index.html[Use a tenant account]
-
-link:../admin/index.html[Administer StorageGRID]
-
-link:operations-on-buckets.html[Operations on buckets]
-
-link:put-bucket-metadata-notification-configuration-request.html[PUT Bucket metadata notification configuration request]
 
 == Updates to S3 REST API support
 
