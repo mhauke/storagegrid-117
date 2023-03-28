@@ -32,9 +32,13 @@ If you plan to use Aggregate port bond mode, LACP network bond mode, or VLAN tag
 
 .About this task
 
-The figures show how the four network ports are bonded in fixed port bond mode (default configuration).
+
+The figures show how the four network ports are bonded in fixed port bond mode (default configuration) and in aggregate port bond mode.
 
 *SGF6112 fixed port bond mode* 
+
+
+
 
 image::../media/sgf6112_fixed_port.png[SGF6112 Fixed Port Bond Mode]
 
@@ -42,16 +46,14 @@ image::../media/sgf6112_fixed_port.png[SGF6112 Fixed Port Bond Mode]
 [cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
-a|
-C
-a|
-Ports 1 and 3 are bonded together for the Client Network, if this network is used.
-a|
-G
-a|
-Ports 2 and 4 are bonded together for the Grid Network.
+
+| C
+| Ports 1 and 3 are bonded together for the Client Network, if this network is used.
+
+| G
+| Ports 2 and 4 are bonded together for the Grid Network.
 |===
-This figure shows how the four network ports are bonded in aggregate port bond mode.
+
 
 *SGF6112 aggregate port bond mode*
 
@@ -60,12 +62,12 @@ image::../media/sgf6112_aggregate_ports.png[Aggregate Port Bond Mode SG100]
 [cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
-a|
-1
-a|
-All four ports are grouped in a single LACP bond, allowing all ports to be used for Grid Network and Client Network traffic.
+
+| 1
+| All four ports are grouped in a single LACP bond, allowing all ports to be used for Grid Network and Client Network traffic.
 |===
-The table summarizes the options for configuring the four network ports. The default settings are shown in bold. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
+
+The tables summarize the options for configuring the four network ports. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
 
 NOTE: The LACP transmit hash policy is layer2+3.
 
@@ -74,30 +76,24 @@ NOTE: The LACP transmit hash policy is layer2+3.
 [cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
-a|
-Active-Backup (default)
-a|
-
+|Active-Backup (default)
+|
  ** Ports 2 and 4 use an active-backup bond for the Grid Network.
  ** Ports 1 and 3 are not used.
  ** A VLAN tag is optional.
 
-a|
-
+|
  ** Ports 2 and 4 use an active-backup bond for the Grid Network.
  ** Ports 1 and 3 use an active-backup bond for the Client Network.
  ** VLAN tags can be specified for both networks for the convenience of the network administrator.
 
-a|
-LACP (802.3ad)
-a|
-
+|LACP (802.3ad)
+|
  ** Ports 2 and 4 use an LACP bond for the Grid Network.
  ** Ports 1 and 3 are not used.
  ** A VLAN tag is optional.
 
-a|
-
+|
  ** Ports 2 and 4 use an LACP bond for the Grid Network.
  ** Ports 1 and 3 use an LACP bond for the Client Network.
  ** VLAN tags can be specified for both networks for the convenience of the network administrator.
@@ -109,25 +105,24 @@ a|
 [cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
-a|
-LACP (802.3ad) only
-a|
+|LACP (802.3ad) only
+|
+** Ports 1-4 use a single LACP bond for the Grid Network.
+** A single VLAN tag identifies Grid Network packets.
 
- ** Ports 1-4 use a single LACP bond for the Grid Network.
- ** A single VLAN tag identifies Grid Network packets.
+|
 
-a|
-
- ** Ports 1-4 use a single LACP bond for the Grid Network and the Client Network.
- ** Two VLAN tags allow Grid Network packets to be segregated from Client Network packets.
+** Ports 1-4 use a single LACP bond for the Grid Network and the Client Network.
+** Two VLAN tags allow Grid Network packets to be segregated from Client Network packets.
 
 |===
 
 
 This figure shows how the two 1-GbE management ports on the SGF6112 are bonded in Active-Backup network bond mode for the Admin Network.
 
-
 *SGF6112 Admin Network ports bonded*
+
+
 
 image::../media/sgf6112_bonded_management_ports.png[Admin Network Ports Bonded SGF6112]
 
@@ -232,7 +227,7 @@ image::../media/sg6000_cn_aggregate_port.gif[Image showing how the network ports
 |All four ports are grouped in a single LACP bond, allowing all ports to be used for Grid Network and Client Network traffic.
 |===
 
-The tables summarize the options for configuring the four network ports. The default settings are shown in bold. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
+The tables summarize the options for configuring the four network ports. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
 
 NOTE: The LACP transmit hash policy is layer2+3.
 
@@ -390,7 +385,7 @@ a|
 All four ports are grouped in a single LACP bond, allowing all ports to be used for Grid Network and Client Network traffic.
 |===
 
-The table summarizes the options for configuring the four 10/25-GbE ports. The default settings are shown in bold. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
+The table summarizes the options for configuring the four 10/25-GbE ports. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
 
 NOTE: The LACP transmit hash policy is layer2+3.
 
@@ -545,7 +540,7 @@ G
 a|
 Ports 2 and 4 are bonded together for the Grid Network.
 |===
-This figure shows how the four network ports are bonded in aggregate port bond mode.
+These figures show how the four network ports are bonded in aggregate port bond mode.
 
 *SG100 aggregate port bond mode*
 
@@ -563,7 +558,7 @@ a|
 a|
 All four ports are grouped in a single LACP bond, allowing all ports to be used for Grid Network and Client Network traffic.
 |===
-The table summarizes the options for configuring the four network ports. The default settings are shown in bold. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
+The tables summarize the options for configuring the four network ports. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
 
 NOTE: The LACP transmit hash policy is layer2+3.
 
@@ -623,9 +618,8 @@ a|
 
 For additional details, see the article about GbE port connections for the services appliance.
 
-This figure shows how the two 1-GbE management ports on the SG100 are bonded in Active-Backup network bond mode for the Admin Network.
 
-These figures shows how the two 1-GbE management ports on the appliance are bonded in Active-Backup network bond mode for the Admin Network.
+These figures shows how the two 1-GbE management ports on the appliances are bonded in Active-Backup network bond mode for the Admin Network.
 
 *SG100 Admin Network ports bonded*
 

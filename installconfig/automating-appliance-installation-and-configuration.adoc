@@ -45,7 +45,7 @@ To automate appliance installation and configuration, use one or more of the fol
 | Complete workbook
 | 
 
-|4
+| 4
 | 
 | Upload workbook
 
@@ -57,11 +57,12 @@ To automate appliance installation and configuration, use one or more of the fol
 | Upload JSON file to appliance
 | 
 
-3+| Appliance ready for configuration. See <<automate-with-appliance-installer,Automate using Appliance Installer>>.
+| 7
+2+| Appliance ready for configuration. See <<automate-with-appliance-installer,Automate using Appliance Installer>>.
 |===
-
++
 NOTE: You can use the same JSON file to configure more than one appliance.
-
++
 Configuring your appliance using an uploaded JSON file is often more efficient than performing the configuration manually, especially if you have to configure many nodes. Performing the configuration manually requires using multiple pages in the StorageGRID Appliance Installer and applying the configuration file for each node one at a time.
 
 * If you are an advanced user, you can use the following StorageGRID Python scripts to install and configure your system:
