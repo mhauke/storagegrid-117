@@ -30,15 +30,13 @@ Before installing an SG100 or SG1000 services appliance, confirm your StorageGRI
 
 The Admin Network for StorageGRID is an optional network, used for system administration and maintenance. The appliance connects to the Admin Network using the following 1-GbE management ports on the appliance.
 
-=== SG100 RJ-45 ports
+*SG100 RJ-45 ports*
 
 image::../media/sg100_rj_45_ports_circled.png[SG100 RJ-45 ports]
 
-=== SG1000 RJ-45 ports
+*SG1000 RJ-45 ports*
 
 image::../media/sg1000_rj_45_ports_circled.png[SG1000 RJ-45 ports]
-
-Use the table to gather information for administration and maintenance connections.
 
 [cols="2a,1a" options="header"]
 |===
@@ -104,8 +102,6 @@ a|
 
 The four networking ports on the appliance connect to the StorageGRID Grid Network and the optional Client Network.
 
-Use the table to gather information for networking connections.
-
 [cols="2a,1a" options="header"]
 |===
 | Information needed| Your value
@@ -164,8 +160,6 @@ a|
 
 The Grid Network for StorageGRID is a required network, used for all internal StorageGRID traffic. The appliance connects to the Grid Network using the four network ports.
 
-Use the table to gather information for Grid Network connections.
-
 [cols="2a,1a" options="header"]
 |===
 | Information needed| Your value
@@ -221,8 +215,6 @@ a|
 == Client Network ports
 
 The Client Network for StorageGRID is an optional network, typically used to provide client protocol access to the grid. The appliance connects to the Client Network using the four network ports.
-
-Use the table to gather information for Client Network connections.
 
 [cols="2a,1a" options="header"]
 |===
@@ -282,38 +274,34 @@ You can access the BMC interface on the services appliance using the 1-GbE manag
 
 include::../_include/enable-disable-ipmi.adoc[]
 
-=== SG100 BMC management port
+*SG100 BMC management port*
 
 image::../media/sg100_bmc_management_port.png[SG100 management port]
 
-=== SG1000 BMC management port
+*SG1000 BMC management port*
 
 image::../media/sg1000_bmc_management_port.png[SG1000 BMC management port]
 
-Use the table to gather information for BMC management network connections.
 
 [cols="2a,1a" options="header"]
 |===
 | Information needed| Your value
-a|
-Ethernet switch port you will connect to the BMC management port (circled in the diagram)
-a|
 
-a|
-DHCP-assigned IP address for the BMC management network, if available after power on
-a|
+| Ethernet switch port you will connect to the BMC management port (circled in the diagram)
+|
 
+| DHCP-assigned IP address for the BMC management network, if available after power on
+|
 * IPv4 address (CIDR):
 * Gateway:
 
-a|
-Static IP address you plan to use for the BMC management port
-a|
-
+| Static IP address you plan to use for the BMC management port
+| 
 * IPv4 address (CIDR):
 * Gateway:
 
 |===
+
 .Related information
 
 * link:cabling-appliance-sg100-and-sg1000.html[Cable appliance (SG100 and SG1000)]
