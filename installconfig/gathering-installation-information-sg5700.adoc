@@ -15,7 +15,7 @@ TIP: Instead of using the tables, use the workbook provided with ConfigBuilder. 
 
 == Information needed to connect to SANtricity System Manager on E2800 controller
 
-You must connect the E2800 series controller to the management network you will use for SANtricity System Manager.
+You connect the E2800 series controller to the management network you will use for SANtricity System Manager.
 
 [cols="2a,1a" options="header"]"]
 |===
@@ -137,7 +137,7 @@ NOTE: See link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes
 a|
 Link speed
 
-*Note:* If you select 25 GbE, you must install SPF28 transceivers. Autonegotiation is not supported, so you must also configure the ports and the connected switches for 25GbE.
+*Note:* If you select 25 GbE, install SPF28 transceivers. Autonegotiation is not supported, so you must also configure the ports and the connected switches for 25GbE.
 
 a|
 Choose one:

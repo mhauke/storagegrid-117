@@ -61,7 +61,7 @@ If you plan to use aggregate port bond mode:
 * You must use LACP network bond mode.
 * You must specify a unique VLAN tag for each network. This VLAN tag will be added to each network packet to ensure that network traffic is routed to the correct network.
 * The ports must be connected to switches that can support VLAN and LACP. If multiple switches are participating in the LACP bond, the switches must support multi-chassis link aggregation groups (MLAG), or equivalent.
-* You must understand how to configure the switches to use VLAN, LACP, and MLAG, or equivalent.
+* You understand how to configure the switches to use VLAN, LACP, and MLAG, or equivalent.
 
 If you do not want to use all four 10/25-GbE ports, you can use one, two, or three ports. Using more than one port maximizes the chance that some network connectivity will remain available if one of the 10/25-GbE ports fails.
 
