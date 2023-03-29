@@ -238,6 +238,29 @@ m| /var/local/log/nms.requestlog
 | Admin Nodes
 |===
 
+== Cipher-related logs
+
+[cols="3a,3a,1a" options="header"]
+|===
+| File name| Notes| Found on
+
+m| /var/local/log/ssh-config-generation.log
+| Contains logs related to generating SSH configurations and reloading SSH services.
+| All nodes
+
+m| /var/local/log/nginx/config-generation.log
+| Contains logs related to generating nginx configurations and reloading nginx services.
+| All nodes
+
+m| /var/local/log/nginx-gw/config-generation.log
+| Contains logs related to generating nginx-gw configurations (and reloading nginx-gw services)
+| Admin and Gateway Nodes
+
+m| /var/local/log/update-cipher-configurations.log
+| Contains logs related to configuring TLS and SSH policies
+| All nodes
+|===
+
 .Related information
 
 link:about-bycast-log.html[About the bycast.log]
