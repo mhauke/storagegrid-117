@@ -24,7 +24,7 @@ To prevent service interruptions, shut down the appliance during a scheduled mai
 
 . Shut down the appliance:
 +
-CAUTION: You must perform a controlled shut down of the appliance by entering the commands specified below. Shutting down the appliance using the power switch will result in data loss.
+CAUTION: You must perform a controlled shut down of the appliance by entering the commands specified below. It is a best practice to perform a controlled shutdown when possible to avoid unnecessary alerts, ensure full logs are available, and avoid service disruptions.
 
  .. If you have not already logged into the grid node, log in using PuTTY or another ssh client:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
