@@ -16,6 +16,11 @@ The Connection Load Balancer (CLB) service on Gateway Nodes was deprecated in St
 
 If custom certificates were set up for the S3 or Swift API in the existing StorageGRID version, the CLB ports 8082, 8083, 8084, and 8085 will be automatically converted to load balancer endpoints during the upgrade to StorageGRID 11.7.
 
+== SG5600 appliance is End of Support
+The SG5600 appliance has reached End Of Support. Contact your NetApp Sales Representative for hardware refresh options.
+
+If you need to perform maintenance procedures on SG5600 hardware, use the https://docs.netapp.com/us-en/storagegrid-116/sg5600/maintaining-sg5600-appliance.html[StorageGRID 11.6 instructions^].
+
 == Swift support deprecated
 As of the StorageGRID 11.7 release, support for Swift client applications has been deprecated. The user interface and APIs that support Swift client applications will be removed in a future release.
 

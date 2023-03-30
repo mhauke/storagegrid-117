@@ -70,11 +70,11 @@ The audit messages belonging to the object storage audit category are used for e
 
 | EBDL
 | Empty Bucket Delete: The ILM scanner deleted an object in a bucket that is deleting all objects (performing an empty bucket operation).
-| link:empty-bucket-delete.html[EBDL: Empty Bucket Delete]
+| link:ebdl-empty-bucket-delete.html[EBDL: Empty Bucket Delete]
 
 | EBKR
 | Empty Bucket Request: A user sent a request to turn empty bucket on or off (that is, to delete bucket objects or to stop deleting objects).
-| link:empty-bucket-request.html[EBKR: Empty Bucket Request]
+| link:ebkr-empty-bucket-request.html[EBKR: Empty Bucket Request]
 
 | SCMT
 | Object Store Commit: A content block was completely stored and verified, and can now be requested.
