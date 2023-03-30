@@ -34,6 +34,66 @@ m| /var/local/core/
 | All nodes
 |===
 
+== Cipher-related logs
+
+[cols="3a,3a,1a" options="header"]
+|===
+| File name| Notes| Found on
+
+m| /var/local/log/ssh-config-generation.log
+| Contains logs related to generating SSH configurations and reloading SSH services.
+| All nodes
+
+m| /var/local/log/nginx/config-generation.log
+| Contains logs related to generating nginx configurations and reloading nginx services.
+| All nodes
+
+m| /var/local/log/nginx-gw/config-generation.log
+| Contains logs related to generating nginx-gw configurations (and reloading nginx-gw services)
+| Admin and Gateway Nodes
+
+m| /var/local/log/update-cipher-configurations.log
+| Contains logs related to configuring TLS and SSH policies
+| All nodes
+|===
+
+== Grid federation logs
+
+[cols="3a,3a,1a" options="header"]
+|===
+| File name| Notes| Found on
+
+m| /var/local/log/update_grid_federation_config.log
+| Contains logs related to generating nginx and nginx-gw configurations for Grid Federation connection.
+| All nodes
+|===
+
+== NMS logs
+
+[cols="3a,3a,1a" options="header"]
+|===
+| File name| Notes| Found on
+
+m| /var/local/log/nms.log
+| 
+* Captures notifications from the Grid Manager and the Tenant Manager.
+* Captures events related to the operation of the NMS service, for example, alarm processing, email notifications, and configuration changes.
+* Contains XML bundle updates resulting from configuration changes made in the system.
+* Contains error messages related to the attribute downsampling done once a day.
+* Contains Java web server error messages, for example, page generation errors and HTTP Status 500 errors.
+| Admin Nodes
+
+m| /var/local/log/nms.errlog
+| Contains error messages related to MySQL database upgrades.
+
+Contains the Standard Error (stderr) stream of the corresponding services. There is one log file per service. These files are generally empty unless there are problems with the service.
+| Admin Nodes
+
+m| /var/local/log/nms.requestlog
+| Contains information about outgoing connections from the Management API to internal StorageGRID services.
+| Admin Nodes
+|===
+
 == Server Manager logs
 
 [cols="3a,3a,1a" options="header"]
@@ -53,7 +113,7 @@ m| /var/local/log/gridstat.errlog
 | All nodes
 |===
 
-== Logs for StorageGRID services
+== StorageGRID services logs
 
 [cols="3a,3a,2a" options="header"]
 |===
@@ -209,55 +269,6 @@ m| /var/local/log/update-traffic-classes.log
 
 m| /var/local/log/update-utcn.log
 | Contains logs related to Untrusted Client Network mode on this node.
-| All nodes
-|===
-
-== NMS logs
-
-[cols="3a,3a,1a" options="header"]
-|===
-| File name| Notes| Found on
-
-m| /var/local/log/nms.log
-| 
-* Captures notifications from the Grid Manager and the Tenant Manager.
-* Captures events related to the operation of the NMS service, for example, alarm processing, email notifications, and configuration changes.
-* Contains XML bundle updates resulting from configuration changes made in the system.
-* Contains error messages related to the attribute downsampling done once a day.
-* Contains Java web server error messages, for example, page generation errors and HTTP Status 500 errors.
-| Admin Nodes
-
-m| /var/local/log/nms.errlog
-| Contains error messages related to MySQL database upgrades.
-
-Contains the Standard Error (stderr) stream of the corresponding services. There is one log file per service. These files are generally empty unless there are problems with the service.
-| Admin Nodes
-
-m| /var/local/log/nms.requestlog
-| Contains information about outgoing connections from the Management API to internal StorageGRID services.
-| Admin Nodes
-|===
-
-== Cipher-related logs
-
-[cols="3a,3a,1a" options="header"]
-|===
-| File name| Notes| Found on
-
-m| /var/local/log/ssh-config-generation.log
-| Contains logs related to generating SSH configurations and reloading SSH services.
-| All nodes
-
-m| /var/local/log/nginx/config-generation.log
-| Contains logs related to generating nginx configurations and reloading nginx services.
-| All nodes
-
-m| /var/local/log/nginx-gw/config-generation.log
-| Contains logs related to generating nginx-gw configurations (and reloading nginx-gw services)
-| Admin and Gateway Nodes
-
-m| /var/local/log/update-cipher-configurations.log
-| Contains logs related to configuring TLS and SSH policies
 | All nodes
 |===
 
