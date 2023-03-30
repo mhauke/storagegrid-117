@@ -15,7 +15,7 @@ NOTE: If you want to send your logs to an external syslog server or change the d
 
 == General StorageGRID logs
 
-[cols="3a,3a,1a" options="header"]
+[cols="3a,3a,2a" options="header"]
 |===
 | File name| Notes| Found on
 
@@ -36,7 +36,7 @@ m| /var/local/core/
 
 == Cipher-related logs
 
-[cols="3a,3a,1a" options="header"]
+[cols="3a,3a,2a" options="header"]
 |===
 | File name| Notes| Found on
 
@@ -49,17 +49,17 @@ m| /var/local/log/nginx/config-generation.log
 | All nodes
 
 m| /var/local/log/nginx-gw/config-generation.log
-| Contains logs related to generating nginx-gw configurations (and reloading nginx-gw services)
+| Contains logs related to generating nginx-gw configurations (and reloading nginx-gw services).
 | Admin and Gateway Nodes
 
 m| /var/local/log/update-cipher-configurations.log
-| Contains logs related to configuring TLS and SSH policies
+| Contains logs related to configuring TLS and SSH policies.
 | All nodes
 |===
 
 == Grid federation logs
 
-[cols="3a,3a,1a" options="header"]
+[cols="3a,3a,2a" options="header"]
 |===
 | File name| Notes| Found on
 
@@ -70,7 +70,7 @@ m| /var/local/log/update_grid_federation_config.log
 
 == NMS logs
 
-[cols="3a,3a,1a" options="header"]
+[cols="3a,3a,2a" options="header"]
 |===
 | File name| Notes| Found on
 
@@ -96,7 +96,7 @@ m| /var/local/log/nms.requestlog
 
 == Server Manager logs
 
-[cols="3a,3a,1a" options="header"]
+[cols="3a,3a,2a" options="header"]
 |===
 | File name| Notes| Found on
 
