@@ -23,7 +23,10 @@ link:locating-sgf6112-in-data-center.html[Locate SGF6112 appliance in data cente
 
 .Steps
 
-. Power on the appliance and monitor the controller LEDs and boot-up codes using one of the following methods:
+. Power on the appliance.
++
+You might have to remove the bezel to access the power switch; if so, remember to reinstall it afterwards.
+. Monitor the controller LEDs and boot-up codes using one of the following methods:
  ** Press the power switch on the front of the controller.
  ** Use the controller BMC interface:
   ... Access the controller BMC interface.
@@ -31,7 +34,7 @@ link:locating-sgf6112-in-data-center.html[Locate SGF6112 appliance in data cente
 link:../installconfig/accessing-bmc-interface.html[Access BMC interface]
 
   ... Select *Power Control*.
-  ... Select *Power On Server* and then select *Perform Action*.
+  ... Select *Power On* and then select *Perform Action*.
 +
 image::../media/sg6060_power_on_from_bmc.png[Power on appliance from BMC]
 +
@@ -39,19 +42,16 @@ Use the BMC interface to monitor start-up status.
 . Confirm that the appliance controller displays in the Grid Manager and with no alerts.
 +
 It might take up to 20 minutes for the controller to display in the Grid Manager.
-
-. Confirm that the new appliance is fully operational:
- .. Log in to the grid node using PuTTY or another ssh client:
-  ... Enter the following command: `ssh admin@_grid_node_IP_`
-  ... Enter the password listed in the `Passwords.txt` file.
-  ... Enter the following command to switch to root: `su -`
-  ... Enter the password listed in the `Passwords.txt` file.
-+
-When you are logged in as root, the prompt changes from `$` to `#`.
- .. From the Nodes page in Grid Manager, make sure that the appliance node is connected to the grid and does not have any alerts.
 +
 CAUTION: Do not take another appliance node offline unless this appliance has a green icon.
-. Optional: Install the front bezel, if one was removed.
+
+. Confirm that the new appliance is fully operational by logging in to the grid node using PuTTY or another ssh client:
+  .. Enter the following command: `ssh _Appliance_IP_`
+  .. Enter the password listed in the `Passwords.txt` file.
+  .. Enter the following command to switch to root: `su -`
+  .. Enter the password listed in the `Passwords.txt` file.
++
+When you are logged in as root, the prompt changes from `$` to `#`.
 
 .Related information
 
