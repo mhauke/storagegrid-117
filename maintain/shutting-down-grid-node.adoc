@@ -55,13 +55,6 @@ For the appliance, this command shuts down the controller, but the appliance is 
 [role="tabbed-block"]
 ====
 
-.SG100 or SG1000
---
-
-.. Turn off the power to the appliance.
-.. Wait for the blue power LED to turn off.
-
---
 .SGF6112
 --
 
@@ -86,6 +79,14 @@ This LED is on when cached data needs to be written to the drives. You must wait
 This LED is on when cached data needs to be written to the drives. You must wait for this LED to turn off before you turn off power.
 
 .. Turn off the power to the appliance, and wait for all LED and seven-segment display activity to stop.
+
+--
+
+.SG100 or SG1000
+--
+
+.. Turn off the power to the appliance.
+.. Wait for the blue power LED to turn off.
 
 --
 ====

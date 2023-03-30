@@ -32,72 +32,63 @@ If you plan to use Aggregate port bond mode, LACP network bond mode, or VLAN tag
 
 .About this task
 
-The figures show how the four network ports are bonded in fixed port bond mode (default configuration).
+
+The figures show how the four network ports are bonded in fixed port bond mode (default configuration) and in aggregate port bond mode.
 
 *SGF6112 fixed port bond mode* 
 
 image::../media/sgf6112_fixed_port.png[SGF6112 Fixed Port Bond Mode]
 
+[cols="1a,3a" options="header"]
+|===
+| Callout| Which ports are bonded
 
-[options="header"]
+| C
+| Ports 1 and 3 are bonded together for the Client Network, if this network is used.
+
+| G
+| Ports 2 and 4 are bonded together for the Grid Network.
 |===
-| Label| Which ports are bonded
-a|
-C
-a|
-Ports 1 and 3 are bonded together for the Client Network, if this network is used.
-a|
-G
-a|
-Ports 2 and 4 are bonded together for the Grid Network.
-|===
-This figure shows how the four network ports are bonded in aggregate port bond mode.
 
 *SGF6112 aggregate port bond mode*
 
 image::../media/sgf6112_aggregate_ports.png[Aggregate Port Bond Mode SG100]
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
-a|
-1
-a|
-All four ports are grouped in a single LACP bond, allowing all ports to be used for Grid Network and Client Network traffic.
+
+| 1
+| All four ports are grouped in a single LACP bond, allowing all ports to be used for Grid Network and Client Network traffic.
 |===
-The table summarizes the options for configuring the four network ports. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
+
+The tables summarize the options for configuring the four network ports. You only need to configure the settings on the Link Configuration page if you want to use a non-default setting.
 
 NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
-a|
-Active-Backup (default)
-a|
-
+|Active-Backup (default)
+|
  ** Ports 2 and 4 use an active-backup bond for the Grid Network.
  ** Ports 1 and 3 are not used.
  ** A VLAN tag is optional.
 
-a|
-
+|
  ** Ports 2 and 4 use an active-backup bond for the Grid Network.
  ** Ports 1 and 3 use an active-backup bond for the Client Network.
  ** VLAN tags can be specified for both networks for the convenience of the network administrator.
 
-a|
-LACP (802.3ad)
-a|
-
+|LACP (802.3ad)
+|
  ** Ports 2 and 4 use an LACP bond for the Grid Network.
  ** Ports 1 and 3 are not used.
  ** A VLAN tag is optional.
 
-a|
-
+|
  ** Ports 2 and 4 use an LACP bond for the Grid Network.
  ** Ports 1 and 3 use an LACP bond for the Client Network.
  ** VLAN tags can be specified for both networks for the convenience of the network administrator.
@@ -106,32 +97,29 @@ a|
 
 * *Aggregate port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
-a|
-LACP (802.3ad) only
-a|
+|LACP (802.3ad) only
+|
+** Ports 1-4 use a single LACP bond for the Grid Network.
+** A single VLAN tag identifies Grid Network packets.
 
- ** Ports 1-4 use a single LACP bond for the Grid Network.
- ** A single VLAN tag identifies Grid Network packets.
+|
 
-a|
-
- ** Ports 1-4 use a single LACP bond for the Grid Network and the Client Network.
- ** Two VLAN tags allow Grid Network packets to be segregated from Client Network packets.
+** Ports 1-4 use a single LACP bond for the Grid Network and the Client Network.
+** Two VLAN tags allow Grid Network packets to be segregated from Client Network packets.
 
 |===
 
 
 This figure shows how the two 1-GbE management ports on the SGF6112 are bonded in Active-Backup network bond mode for the Admin Network.
 
-
 *SGF6112 Admin Network ports bonded*
 
 image::../media/sgf6112_bonded_management_ports.png[Admin Network Ports Bonded SGF6112]
 
-See link:port-bond-modes-for-sgf6112.html[Port bond modes for SGF6112 appliances] for more information about port bond and network bond modes.
+See link:port-bond-modes-for-sgf6112.html[Port bond modes (SGF6112)] for more information about port bond and network bond modes.
 
 .Steps
 
@@ -210,6 +198,8 @@ If you plan to use Aggregate port bond mode, LACP network bond mode, or VLAN tag
 
 This figure shows how the four network ports are bonded in fixed port bond mode (default configuration).
 
+*SG6000-CN fixed port bond mode* 
+
 image::../media/sg6000_cn_fixed_port.gif[Image showing how the network ports on the SG6000-CN controller are bonded in fixed mode]
 
 [cols="1a,3a" options="header"]
@@ -221,7 +211,10 @@ image::../media/sg6000_cn_fixed_port.gif[Image showing how the network ports on 
 |G
 |Ports 2 and 4 are bonded together for the Grid Network.
 |===
+
 This figure shows how the four network ports are bonded in aggregate port bond mode.
+
+*SG6000-CN aggregate port bond mode* 
 
 image::../media/sg6000_cn_aggregate_port.gif[Image showing how the network ports on the SG6000-CN controller are bonded in aggregate mode]
 
@@ -280,9 +273,11 @@ NOTE: The LACP transmit hash policy is layer2+3.
  ** Two VLAN tags allow Grid Network packets to be segregated from Client Network packets.
 |===
 
-See link:port-bond-modes-for-sg6000-cn-controller.html[Port bond modes for SG6000-CN controller] for more information about port bond and network bond modes.
+See link:port-bond-modes-for-sg6000-cn-controller.html[Port bond modes (SG6000-CN)] for more information about port bond and network bond modes.
 
 This figure shows how the two 1-GbE management ports on the SG6000-CN controller are bonded in Active-Backup network bond mode for the Admin Network.
+
+*SG6000-CN Admin Network ports bonded* 
 
 image::../media/sg6000_cn_bonded_managemente_ports.gif[Admin Network Ports Bonded]
 
@@ -361,9 +356,11 @@ If you plan to use Aggregate port bond mode, LACP network bond mode, or VLAN tag
 
 This figure shows how the four 10/25-GbE ports are bonded in Fixed port bond mode (default configuration).
 
+*E5700SG fixed port bond mode* 
+
 image::../media/e5700sg_fixed_port.gif[Image showing how the 10/25-GbE ports on the E5700SG controller are bonded in fixed mode]
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -378,10 +375,12 @@ Ports 2 and 4 are bonded together for the Grid Network.
 
 This figure shows how the four 10/25-GbE ports are bonded in Aggregate port bond mode.
 
+*E5700SG aggregate port bond mode* 
+
 image::../media/e5700sg_aggregate_port.gif[Image showing how the 10/25-GbE ports on the E5700SG controller are bonded in aggregate mode]
 
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -396,7 +395,7 @@ NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -430,7 +429,7 @@ a|
 
 * *Aggregate port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -447,11 +446,13 @@ a|
 
 |===
 
-See the information about 10/25-GbE port connections for the E5700SG controller for more information about port bond and network bond modes.
+See link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG)].
 
 This figure shows how the two 1-GbE management ports on the E5700SG controller are bonded in Active-Backup network bond mode for the Admin Network.
 
-image::../media/e5700sg_bonded_management_ports.gif[SG6000 Bonded Mgmt Ports]
+*E5700SG Admin Network ports bonded*
+
+image::../media/e5700sg_bonded_management_ports.gif[E5700SG Bonded management Ports]
 
 .Steps
 
@@ -533,7 +534,7 @@ image::../media/sg100_fixed_port_draft.png[SG100 Fixed Port Bond Mode]
 
 image::../media/sg1000_fixed_port.png[SG1000 Fixed Port Bond Mode]
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -545,7 +546,7 @@ G
 a|
 Ports 2 and 4 are bonded together for the Grid Network.
 |===
-This figure shows how the four network ports are bonded in aggregate port bond mode.
+These figures show how the four network ports are bonded in aggregate port bond mode.
 
 *SG100 aggregate port bond mode*
 
@@ -555,7 +556,7 @@ image::../media/sg100_aggregate_ports.png[Aggregate Port Bond Mode SG100]
 
 image::../media/sg1000_aggregate_ports.png[Aggregate Port Bond Mode SG1000]
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Which ports are bonded
 a|
@@ -569,7 +570,7 @@ NOTE: The LACP transmit hash policy is layer2+3.
 
 * *Fixed (default) port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -604,7 +605,7 @@ a|
 
 * *Aggregate port bond mode*
 +
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | Network bond mode| Client Network disabled (default)| Client Network enabled
 a|
@@ -623,9 +624,8 @@ a|
 
 For additional details, see the article about GbE port connections for the services appliance.
 
-This figure shows how the two 1-GbE management ports on the SG100 are bonded in Active-Backup network bond mode for the Admin Network.
 
-These figures shows how the two 1-GbE management ports on the appliance are bonded in Active-Backup network bond mode for the Admin Network.
+These figures shows how the two 1-GbE management ports on the appliances are bonded in Active-Backup network bond mode for the Admin Network.
 
 *SG100 Admin Network ports bonded*
 
@@ -698,11 +698,11 @@ NOTE: You might lose your connection if you made changes to the network or link 
 
 .Related information
 
-link:obtaining-additional-equipment-and-tools.html[Obtain additional equipment and tools]
+* link:obtaining-additional-equipment-and-tools.html[Obtain additional equipment and tools]
 
-link:port-bond-modes-for-sgf6112.html[Port bond modes for SGF6112 appliances]
+* link:port-bond-modes-for-sgf6112.html[Port bond modes (SGF6112)]
 
-link:port-bond-modes-for-sg6000-cn-controller.html[Port bond modes for SG6000-CN controller]
+* link:port-bond-modes-for-sg6000-cn-controller.html[Port bond modes (SG6000-CN)]
 
-link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes for E5700SG controller ports]
+* link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG)]
 

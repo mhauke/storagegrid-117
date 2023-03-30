@@ -201,7 +201,7 @@ The script asks if you want to restore object data manually.
 
 * In most cases, you should link:../maintain/restoring-volume.html[restore object data using Grid Manager]. Answer `n` to use the Grid Manager.
 
-* In rare cases, such as when instructed by technical support, or when you know that the replacement node has fewer volumes available for object storage than the original node, you must link:restoring-object-data-to-storage-volume-if-required.html[restore object data manually] using the `repair-data` script. If one of these cases applies, answer `y`.
+* In rare cases, such as when instructed by technical support, or when you know that the replacement node has fewer volumes available for object storage than the original node, you must link:restoring-object-data-to-storage-volume.html[restore object data manually] using the `repair-data` script. If one of these cases applies, answer `y`.
 +
 [NOTE]
 ====

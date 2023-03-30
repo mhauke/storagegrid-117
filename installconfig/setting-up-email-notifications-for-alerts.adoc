@@ -2,14 +2,14 @@
 permalink: installconfig/setting-up-email-notifications-for-alerts.html
 sidebar: sidebar
 keywords: email, notifications, alerts, set up, setup, configure, configuration, bmc 
-summary: 'If you want email notifications to be sent when alerts occur, you must use the BMC interface to configure SMTP settings, users, LAN destinations, alert policies, and event filters.'
+summary: 'If you want email notifications to be sent when alerts occur, use the BMC interface to configure SMTP settings, users, LAN destinations, alert policies, and event filters.'
 ---
-= Set up email notifications for alerts
+= Set up email notifications for BMC alerts
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you want email notifications to be sent when alerts occur, you must use the BMC interface to configure SMTP settings, users, LAN destinations, alert policies, and event filters.
+If you want email notifications to be sent when alerts occur, use the BMC interface to configure SMTP settings, users, LAN destinations, alert policies, and event filters.
 
 NOTE: BMC settings made by this procedure might not be preserved if the SG6000-CN controller or services appliance fails and has to be replaced. Make sure you have a record of all settings you have applied, so they can be easily reapplied after a hardware replacement if necessary.
 
@@ -25,7 +25,7 @@ image::../media/bmc_settings_menu.png[BMC Settings menu]
 
 .Steps
 
-. Configure the SMTP settings.
+. link:configuring-snmp-settings-for-bmc.html[Configure SNMP settings for BMC].
  .. Select *Settings* > *SMTP Settings*.
  .. For Sender Email ID, enter a valid email address.
 +
@@ -40,7 +40,7 @@ The email address you configure for a user is the address the BMC sends alert no
  .. Configure at least one LAN destination.
   *** Select *Email* as the Destination Type.
   *** For BMC Username, select a user name that you added earlier.
-  *** If you added multiple users and want all of them to receive notification emails, you must add a LAN Destination for each user.
+  *** If you added multiple users and want all of them to receive notification emails, add a LAN Destination for each user.
  .. Send a test alert.
 . Configure alert policies so you can define when and where the BMC sends alerts.
  .. Select *Settings* > *Platform Event Filters* > *Alert Policies*.

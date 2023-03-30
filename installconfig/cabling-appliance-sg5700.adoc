@@ -2,14 +2,14 @@
 permalink: installconfig/cabling-appliance-sg5700.html
 sidebar: sidebar
 keywords: storagegrid, sg5700, storage node, storage appliance, cabling, wiring, connecting, cable, wire, connect
-summary: 'You must connect the two controllers to each other, connect the management ports on each controller, and connect the 10/25-GbE ports on the E5700SG controller to the Grid Network and optional Client Network for StorageGRID.'
+summary: 'You connect the two controllers to each other, connect the management ports on each controller, and connect the 10/25-GbE ports on the E5700SG controller to the Grid Network and optional Client Network for StorageGRID.'
 ---
-= Cable appliance (SG5700 series)
+= Cable appliance (SG5700)
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You must connect the two controllers to each other, connect the management ports on each controller, and connect the 10/25-GbE ports on the E5700SG controller to the Grid Network and optional Client Network for StorageGRID.
+You connect the two controllers to each other, connect the management ports on each controller, and connect the 10/25-GbE ports on the E5700SG controller to the Grid Network and optional Client Network for StorageGRID.
 
 .What you'll need
 
@@ -36,9 +36,9 @@ image::../media/sg5760_connections.gif[Connections on the SG5760 appliance]
 
 image::../media/sg5760X_connections.png[Connections on the SG5760X appliance]
 
-[options="header"]
+[cols="1a,2a,2a,2a" options="header"]
 |===
-|  | Port| Type of port| Function
+|Callout | Port| Type of port| Use
 a|
 1
 a|
@@ -94,14 +94,14 @@ a|
 *Note:* The SFP+ transceivers included with the appliance support 10-GbE link speeds. If you want to use 25-GbE link speeds for the four network ports, you must provide SFP28 transceivers.
 
 a|
-Connect to the Grid Network and the Client Network for StorageGRID. See "`10/25-GbE port connections for the E5700SG controller.`"
+Connect to the Grid Network and the Client Network for StorageGRID. See link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes (E5700SG controller)].
 |===
 
 .Steps
 
 . Connect the E2800 controller to the E5700SG controller, using two optical cables and four of the eight SFP+ transceivers.
 +
-[options="header"]
+[cols="1a,1a" options="header"]
 |===
 | Connect this port...| To this port...
 a|
@@ -128,7 +128,7 @@ NOTE: All ports must use the same link speed. Install SFP+ transceivers if you p
 
  ** If you plan to use Fixed port bond mode (default), connect the ports to the StorageGRID Grid and Client Networks, as shown in the table.
 +
-[options="header"]
+[cols="1a,1a" options="header"]
 |===
 | Port| Connects to...
 a|
@@ -155,4 +155,3 @@ Grid Network
 
 link:accessing-storagegrid-appliance-installer.html[Access StorageGRID Appliance Installer]
 
-link:port-bond-modes-for-e5700sg-controller-ports.html[Port bond modes for E5700SG controller ports]

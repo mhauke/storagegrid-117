@@ -1,25 +1,47 @@
 ---
 permalink: installconfig/installing-appliance-in-cabinet-or-rack-sg5700.html
 sidebar: sidebar
-keywords: storagegrid, sg5700, storage node, storage appliance, install, installing, installation, cabinet, rack, rail, rails 
-summary: 'You must install rails in your cabinet or rack and then slide the appliance onto the rails. If you have an SG5760, you must also install the drives after installing the appliance.'
+keywords: storagegrid, sg5700, sg5712, sg5760, install, cabinet, rack, rails, drives
+summary: 'You install a set of rails in your cabinet or rack and then slide the appliance onto the rails. If you have an SG5760, install the drives after installing the appliance.'
 ---
-= Install appliance in cabinet or rack (SG5700)
+= Install into cabinet or rack (SG5700)
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You must install rails in your cabinet or rack and then slide the appliance onto the rails. If you have an SG5760, you must also install the drives after installing the appliance.
+You install a set of rails in your cabinet or rack and then slide the appliance onto the rails. If you have an SG5760, install the drives after installing the appliance.
 
 .What you'll need
 
 * You have reviewed the Safety Notices document included in the box, and understand the precautions for moving and installing hardware.
 * You have the instructions packaged with the rail kit.
-* You have the _Installation and Setup Instructions_ for the appliance.
+
+
+== Install SG5712
+
+Follow these steps to install an SG5712 appliance into a rack or cabinet.
+
+CAUTION: The SG5712 weighs approximately 64 lb (29 kg) when fully loaded with drives. Two people or a mechanized lift are required to safely move the SG5712.
 
 CAUTION: Install hardware from the bottom of the rack or cabinet or rack up to prevent the equipment from tipping over.
 
-CAUTION: The SG5712 weighs approximately 64 lb (29 kg) when fully loaded with drives. Two people or a mechanized lift are required to safely move the SG5712.
+.Steps
+
+. Follow the instructions for the rail kit to install the rails. 
+
+. Place the back of the appliance (the end with the connectors) on the rails. 
+
+. Carefully slide the appliance all the way back into the cabinet or rack. 
+
+. Secure the appliance to the cabinet or rack as directed in the rail kit instructions.
+
+. Attach the bezel to the front.
+
+== Install SG5760
+
+Follow these steps to install an SG5760 appliance and any expansion shelves into a rack or cabinet.
+
+CAUTION: Install hardware from the bottom of the rack or cabinet or rack up to prevent the equipment from tipping over.
 
 CAUTION: The SG5760 weighs approximately 132 lb (60 kg) with no drives installed. Four people or a mechanized lift are required to safely move an empty SG5760.
 
@@ -27,18 +49,28 @@ CAUTION: To avoid damaging the hardware, never move an SG5760 if drives are inst
 
 .Steps
 
-. Carefully follow the instructions for the rail kit to install the rails in your cabinet or rack.
-. If you have an SG5760, follow these steps to prepare for moving the appliance.
- .. Remove the outer packing box. Then, fold down the flaps on the inner box.
+. Follow the instructions for the rail kit to install the rails in your cabinet or rack.
+
+. Prepare to move the appliance:
+ .. Remove the outer packing box. 
+ .. Fold down the flaps on the inner box.
  .. If you are lifting the SG5760 by hand, attach the four handles to the sides of the chassis.
 +
 You remove these handles as you slide the appliance onto the rails.
-. See the _Installation and Setup Instructions_, and slide the appliance in the cabinet or rack.
-. See the _Installation and Setup Instructions_, and secure the appliance to the cabinet or rack.
-+
-If you have an SG5760, use the back brackets to secure the appliance to the rear of the rack or cabinet. Use the cage nuts if your rack or cabinet has square holes.
 
-. If you have an SG5760, install 12 drives in each of the 5 drive drawers.
+. If your cabinet has square hole, install the cage nuts so that you can secure the front and rear of the shelf with screws.
+
+. Place the back of the appliance (the end with the connectors) on the rails.
+
+. Supporting the appliance from the bottom, slide it into the rack or cabinet.
++
+Use the thumb latches to detach the handles as you slide the appliance in.
+
+. Secure the appliance to the front of the rack by inserting two screws in the first and third holes (counting down from the top) on each side.
+
+. Secure the appliance to the rear of the rack or cabinet with the brackets.
+
+. Install 12 drives in each of the five drive drawers.
 +
 You must install all 60 drives to ensure correct operation.
 
@@ -53,3 +85,4 @@ image::../media/appliance_drive_insertion.gif[Install drive in 60-drive applianc
  .. Repeat these steps for the other four drawers.
 
 . Attach the front bezel.
+

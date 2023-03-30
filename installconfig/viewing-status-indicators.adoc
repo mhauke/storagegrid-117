@@ -23,7 +23,7 @@ The appliance includes indicators that help you determine the status of the appl
 * <<general_boot_codes_SG6100,General boot-up codes>>
 * <<ssd_indicators_SG6100,SSD indicators>>
 
-Use this information to help link:troubleshooting-hardware-installation-sg6100.html[troubleshoot the SGF6112 hardware installation].
+Use this information to help link:troubleshooting-hardware-installation-sg6100.html[troubleshoot SGF6112 hardware installation].
 
 [[appliance_indicators_SG6100]]
 *Appliance indicators and buttons*
@@ -32,51 +32,35 @@ image::../media/sgf6112_front_indicators.png[Front Indicators - SGF6112]
 
 [cols="1a,2a,3a" options="header"]
 |===
-|  | Display| State
-a|
-1
-a|
-Power button
-a|
-
-* Blue: the appliance is powered on.
+| Callout | Display| State
+| 1
+| Power button
+| * Blue: the appliance is powered on.
 * Off: the appliance is powered off.
 
-a|
-2
-a|
-Reset button
-a|
-Use this button to perform a hard reset of the controller.
-a|
-3
-a|
-Identify button
-a|
-Using the BMC, this button can be set to blink, On (Solid), or Off.
+| 2
+| Reset button
+| Use this button to perform a hard reset of the controller.
+
+| 3
+| Identify button
+| Using the BMC, this button can be set to blink, On (Solid), or Off.
 
 * Blue, blinking: Identifies the appliance in the cabinet or rack.
 * Blue, solid: Identifies the appliance in the cabinet or rack.
 * Off: The appliance is not visually identifiable in the cabinet or rack.
 
-a|
-4
-a|
-Status LED
-a|
-
-* Amber, solid: An error has occurred.
+| 4
+| Status LED
+| * Amber, solid: An error has occurred.
 +
-*Note:* To view the boot-up and error codes, you must access the BMC interface.
+*Note:* To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 
 * Off: No errors are present.
-a|
-5
-a|
-PFR
-a|
 
-This light is not used by the SGF6112 appliance and remains off. 
+| 5
+| PFR
+| This light is not used by the SGF6112 appliance and remains off. 
 
 |===
 
@@ -89,34 +73,28 @@ During boot-up or after a hard reset of the appliance, the following occurs:
 . The power button lights up.
 . If any errors occur during boot-up, the alarm LED lights up.
 +
-To view the boot-up and error codes, you must link:accessing-bmc-interface.html[access the BMC interface].
+To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 
 [[ssd_indicators_SG6100]]
 *SSD indicators*
 
 image::../media/ssd_indicators.png[SSD Indicators]
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | LED| Display| State
-a|
-1
-a|
-Drive status/fault
-a|
 
-* Blue (solid): drive is online
+| 1
+| Drive status/fault
+| * Blue (solid): drive is online
 * Amber (solid): drive failure
 * Off: slot is empty
 
 *Note:* If a new working SSD is inserted into a working SGF6112 StorageGRID node, the LEDs on the SSD should blink initially, but stop blinking as soon as the system determines that the drive has enough capacity and is functional.
 
-a|
-2
-a|
-Drive active
-a|
-Blue (blinking): drive is being accessed
+| 2
+| Drive active
+| Blue (blinking): drive is being accessed
 |===
 --
 
@@ -130,7 +108,7 @@ The SG6000 appliance controllers include indicators that help you determine the 
 * <<general_boot_codes_sg6000,General boot-up codes>>
 * <<boot_codes_sg6000_storage_controller,Boot-up status codes for SG6000 storage controllers>>
 
-Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot the storage appliance hardware installation].
+Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot SG6000 installation].
 
 [[status_indicators_sg6000cn]]
 *Status indicators and buttons on SG6000-CN controller*
@@ -141,32 +119,32 @@ image::../media/sg6000_cn_front_indicators.gif[Front Indicators - SG6000-CN]
 
 [cols="1a,2a,3a" options="header"]
 |===
-|  | Display| Description
-|1
-|Power button
-|
-* Blue: The controller is powered on.
+| Callout  | Display| Description
+
+| 1
+| Power button
+| * Blue: The controller is powered on.
 * Off: The controller is powered off.
 
-|2
-|Reset button
-|_No indicator_
+| 2
+| Reset button
+| _No indicator_
 
 Use this button to perform a hard reset of the controller.
 
-|3
-|Identify button
-|
+| 3
+| Identify button
+| 
 * Blinking or solid blue: Identifies the controller in the cabinet or rack.
 * Off: The controller is not visually identifiable in the cabinet or rack.
 
 This button can be set to Blink, On (Solid), or Off.
 
-|4
-|Alarm LED
-|* Amber: An error has occurred.
+| 4
+| Alarm LED
+| * Amber: An error has occurred.
 +
-*Note:* To view the boot-up and error codes, you must access the BMC interface.
+*Note:* To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 * Off: No errors are present.
 |===
 
@@ -179,7 +157,7 @@ During boot-up or after a hard reset of the SG6000-CN controller, the following 
 . The power button lights up.
 . If any errors occur during boot-up, the alarm LED lights up.
 +
-To view the boot-up and error codes, you must link:accessing-bmc-interface.html[access the BMC interface].
+To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 
 [[boot_codes_sg6000_storage_controller]]
 *Boot-up status codes for SG6000 storage controllers*
@@ -200,13 +178,13 @@ Make sure this value is displayed on both storage controllers, as shown in this 
 +
 image::../media/seven_segment_display_codes_for_e2800.gif[Seven-Segment Display Codes for E2800]
 
-. If one or both controllers show other values, see link:troubleshooting-hardware-installation.html[Troubleshoot hardware installation (SG6000)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
+. If one or both controllers show other values, see link:troubleshooting-hardware-installation.html[Troubleshoot hardware installation (SG6000 or SG5700)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
 
 .Related information
 
-https://mysupport.netapp.com/site/global/dashboard[NetApp Support^]
+* https://mysupport.netapp.com/site/global/dashboard[NetApp Support^]
 
-link:../sg6000/powering-on-sg6000-cn-controller-and-verifying-operation.html[Power on SG6000-CN controller and verify operation]
+* link:../sg6000/powering-on-sg6000-cn-controller-and-verifying-operation.html[Power on SG6000-CN controller and verify operation]
 --
 
 .SG5700
@@ -220,7 +198,7 @@ The appliance controllers include indicators that help you determine the status 
 * <<boot_codes_e5700sg_controller,E5700SG controller boot-up codes>>
 * <<error_codes_e5700sg_controller,E5700SG controller error codes>>
 
-Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot the storage appliance hardware installation].
+Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot SG5700 hardware installation].
 
 [[boot_codes_sg5700]]
 *SG5700 boot-up status codes*
@@ -231,20 +209,17 @@ The E2800 controller and the E5700SG controller display different statuses and e
 
 To understand what these codes mean, see the following resources:
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Controller| Reference
-a|
-E2800 controller
-a|
-_E5700 and E2800 System Monitoring Guide_
+
+| E2800 controller
+| _E5700 and E2800 System Monitoring Guide_
 
 *Note:* The codes listed for the E-Series E5700 controller do not apply to the E5700SG controller in the appliance.
 
-a|
-E5700SG controller
-a|
-"`Status indicators on the E5700SG controller`"
+| E5700SG controller
+| "`Status indicators on the E5700SG controller`"
 
 |===
 
@@ -257,17 +232,15 @@ a|
 +
 image::../media/seven_segment_display_codes.gif[Seven-segment displays after controllers have booted up.]
 +
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Controller| Seven-segment display
-a|
-E2800 controller
-a|
-Shows 99, which is the default ID for an E-Series controller shelf.
-a|
-E5700SG controller
-a|
-Shows *HO*, followed by a repeating sequence of two numbers.
+
+| E2800 controller
+| Shows 99, which is the default ID for an E-Series controller shelf.
+
+| E5700SG controller
+| Shows *HO*, followed by a repeating sequence of two numbers.
 
 ----
 HO -- IP address for Admin Network -- IP address for Grid Network HO
@@ -279,7 +252,7 @@ In the sequence, the first set of numbers is the DHCP-assigned IP address for th
 
 |===
 
-. If the seven-segment displays show other values, see link:troubleshooting-hardware-installation.html[Troubleshoot hardware installation (SG5700)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
+. If the seven-segment displays show other values, see link:troubleshooting-hardware-installation.html[Troubleshoot hardware installation (SG6000 or SG5700)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
 
 [[status_indicators_e5700sg_controller]]
 *Status indicators on E5700SG controller*
@@ -290,53 +263,41 @@ After the StorageGRID Appliance Installer has started, you should periodically r
 
 image::../media/e5700sg_leds.gif[Status indicators on E5700SG controller]
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
-|  | Display| Description
-a|
-1
-a|
-Attention LED
-a|
-Amber: The controller is faulty and requires operator attention, or the installation script was not found.
+| Callout | Display| Description
+
+| 1
+| Attention LED
+| Amber: The controller is faulty and requires operator attention, or the installation script was not found.
 
 Off: The controller is operating normally.
-a|
-2
-a|
-Seven-segment display
-a|
-Shows a diagnostic code
+
+| 2
+| Seven-segment display
+| Shows a diagnostic code
 
 Seven-segment display sequences enable you to understand errors and the operational state of the appliance.
-a|
-3
-a|
-Expansion Port Attention LEDs
-a|
-Amber: These LEDs are always amber (no link established) because the appliance does not use the expansion ports.
-a|
-4
-a|
-Host Port Link Status LEDs
-a|
-Green: The link is up.
+
+| 3
+| Expansion Port Attention LEDs
+| Amber: These LEDs are always amber (no link established) because the appliance does not use the expansion ports.
+
+| 4
+| Host Port Link Status LEDs
+| Green: The link is up.
 
 Off: The link is down.
-a|
-5
-a|
-Ethernet Link State LEDs
-a|
-Green: A link is established.
+
+| 5
+| Ethernet Link State LEDs
+| Green: A link is established.
 
 Off: No link is established.
-a|
-6
-a|
-Ethernet Activity LEDs
-a|
-Green: The link between the management port and the device to which it is connected (such as an Ethernet switch) is up.
+
+| 6
+| Ethernet Activity LEDs
+| Green: The link between the management port and the device to which it is connected (such as an Ethernet switch) is up.
 
 Off: There is no link between the controller and the connected device.
 
@@ -356,48 +317,31 @@ During boot-up or after a hard reset of the appliance, the following occurs:
 
 During a normal boot-up of the appliance, the seven-segment display on the E5700SG controller shows the following codes in the order listed:
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Code| Indicates
-a|
-HI
-a|
-The master boot script has started.
-a|
-PP
-a|
-The system is checking to see if the FPGA needs to be updated.
-a|
-HP
-a|
-The system is checking to see if the 10/25-GbE controller firmware needs to be updated.
-a|
-RB
-a|
-The system is rebooting after applying firmware updates.
-a|
-FP
-a|
-The hardware subsystem firmware update checks have been completed. Inter-controller communication services are starting.
-a|
-HE
-a|
-The system is awaiting connectivity with the E2800 controller and synchronizing with the SANtricity operating system.
+
+| HI
+| The master boot script has started.
+| PP
+| The system is checking to see if the FPGA needs to be updated.
+| HP
+| The system is checking to see if the 10/25-GbE controller firmware needs to be updated.
+| RB
+| The system is rebooting after applying firmware updates.
+| FP
+| The hardware subsystem firmware update checks have been completed. Inter-controller communication services are starting.
+| HE
+| The system is awaiting connectivity with the E2800 controller and synchronizing with the SANtricity operating system.
 
 *Note:* If this boot procedure does not progress past this stage, check the connections between the two controllers.
 
-a|
-HC
-a|
-The system is checking for existing StorageGRID installation data.
-a|
-HO
-a|
-The StorageGRID Appliance Installer is running.
-a|
-HA
-a|
-StorageGRID is running.
+| HC
+| The system is checking for existing StorageGRID installation data.
+| HO
+| The StorageGRID Appliance Installer is running.
+| HA
+| StorageGRID is running.
 |===
 
 [[error_codes_e5700sg_controller]]
@@ -405,77 +349,77 @@ StorageGRID is running.
 
 These codes represent error conditions that might be shown on the E5700SG controller as the appliance boots up. Additional two-digit hexadecimal codes are displayed if specific low-level hardware errors occur. If any of these codes persists for more than a second or two, or if you are unable to resolve the error by following one of the prescribed troubleshooting procedures, contact technical support.
 
-[options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Code| Indicates
-a|
+|
 22
-a|
+|
 No master boot record found on any boot device.
-a|
+|
 23
-a|
+|
 The internal flash disk is not connected.
-a|
+|
 2A, 2B
-a|
+|
 Stuck bus, unable to read DIMM SPD data.
-a|
+|
 40
-a|
+|
 Invalid DIMMs.
-a|
+|
 41
-a|
+|
 Invalid DIMMs.
-a|
+|
 42
-a|
+|
 Memory test failed.
-a|
+|
 51
-a|
+|
 SPD reading failure.
-a|
+|
 92 to 96
-a|
+|
 PCI bus initialization.
-a|
+|
 A0 to A3
-a|
+|
 SATA drive initialization.
-a|
+|
 AB
-a|
+|
 Alternate boot code.
-a|
+|
 AE
-a|
+|
 Booting OS.
-a|
+|
 EA
-a|
+|
 DDR4 training failed.
-a|
+|
 E8
-a|
+|
 No memory installed.
-a|
+|
 EU
-a|
+|
 The installation script was not found.
-a|
+|
 EP
-a|
+|
 Installation or communication with the E2800 controller has failed.
+
+|===
 
 .Related information
 
-https://mysupport.netapp.com/site/global/dashboard[NetApp Support^]
+* https://mysupport.netapp.com/site/global/dashboard[NetApp Support^]
 
-https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html[E5700 and E2800 System Monitoring Guide^]
-
-|===
+* https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html[E5700 and E2800 System Monitoring Guide^]
 
 --
 
@@ -488,51 +432,41 @@ The appliance includes indicators that help you determine the status of the appl
 * <<general_boot_codes_SG100_1000,General boot-up codes>>
 * <<ssd_indicators_SG100_1000,SSD indicators>>
 
-Use this information to help link:troubleshooting-hardware-installation-sg100-and-sg1000.html[troubleshoot the SG100 and SG1000 hardware installation].
+Use this information to help link:troubleshooting-hardware-installation-sg100-and-sg1000.html[troubleshoot SG100 and SG1000 hardware installation].
 
 [[appliance_indicators_SG100_1000]]
 *Appliance indicators and buttons*
 
 image::../media/sg6000_cn_front_indicators.gif[Front Indicators - SG1000]
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
-|  | Display| State
-a|
-1
-a|
-Power button
-a|
+| Callout | Display| State
 
+|1
+|Power button
+|
 * Blue: the appliance is powered on.
 * Off: the appliance is powered off.
 
-a|
-2
-a|
-Reset button
-a|
-Use this button to perform a hard reset of the controller.
-a|
-3
-a|
-Identify button
-a|
-This button can be set to Blink, On (Solid), or Off.
+|2
+|Reset button
+|Use this button to perform a hard reset of the controller.
+
+|3
+|Identify button
+|This button can be set to Blink, On (Solid), or Off.
 
 * Blue, blinking: Identifies the appliance in the cabinet or rack.
 * Blue, solid: Identifies the appliance in the cabinet or rack.
 * Off: The appliance is not visually identifiable in the cabinet or rack.
 
-a|
-4
-a|
-Alarm LED
-a|
-
+|4
+|Alarm LED
+|
 * Amber, solid: An error has occurred.
 +
-*Note:* To view the boot-up and error codes, you must access the BMC interface.
+*Note:* To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 
 * Off: No errors are present.
 
@@ -547,32 +481,27 @@ During boot-up or after a hard reset of the appliance, the following occurs:
 . The power button lights up.
 . If any errors occur during boot-up, the alarm LED lights up.
 +
-To view the boot-up and error codes, you must link:accessing-bmc-interface.html[access the BMC interface].
+To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 
 [[ssd_indicators_SG100_1000]]
 *SSD indicators*
 
 image::../media/ssd_indicators.png[SSD Indicators]
 
-[options="header"]
+[cols="1a,2a,2a" options="header"]
 |===
 | LED| Display| State
-a|
-1
-a|
-Drive status/fault
-a|
 
+|1
+|Drive status/fault
+|
 * Blue (solid): drive is online
 * Amber (blinking): drive failure
 * Off: slot is empty
 
-a|
-2
-a|
-Drive active
-a|
-Blue (blinking): drive is being accessed
+|2
+|Drive active
+|Blue (blinking): drive is being accessed
 |===
 --
 ====

@@ -13,7 +13,7 @@ There are several tasks you can perform to help determine the source of issues r
 
 == Sign-on errors
 
-If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the link:../admin/using-identity-federation.html[identity federation configuration], a link:../troubleshoot/troubleshooting-network-hardware-and-platform-issues.html[networking] or link:../installconfig/troubleshooting-hardware-installation.html[hardware] problem, an issue with link:../admin/what-admin-node-is.html[Admin Node services], or an link:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html[issue with the Cassandra database] on connected Storage Nodes.
+If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the link:../admin/using-identity-federation.html[identity federation configuration], a link:../troubleshoot/troubleshooting-network-hardware-and-platform-issues.html[networking] or link:../installconfig/troubleshooting-hardware-installation-sg100-and-sg1000.html[hardware] problem, an issue with link:../admin/what-admin-node-is.html[Admin Node services], or an link:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html[issue with the Cassandra database] on connected Storage Nodes.
 
 .What you'll need
 * You have the `Passwords.txt` file.
@@ -36,7 +36,7 @@ If the error is not resolved automatically, go to the next step.
  ** If you are able to sign in, you can use the *Dashboard*, *NODES*, *Alerts*, and *SUPPORT* options to help determine the cause of the error.
  ** If you have only one Admin Node or you still cannot sign in, go to the next step.
 . Determine if the node's hardware is offline.
-. If single sign-on (SSO) is enabled for your StorageGRID system, refer to the steps for link:../admin/configuring-sso[configuring single sign-on].
+. If single sign-on (SSO) is enabled for your StorageGRID system, refer to the steps for link:../admin/configuring-sso.html[configuring single sign-on].
 +
 You might need to temporarily disable and re-enable SSO for a single Admin Node to resolve any issues.
 +

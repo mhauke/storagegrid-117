@@ -2,14 +2,14 @@
 permalink: installconfig/cabling-appliance-sg6000.html
 sidebar: sidebar
 keywords: storagegrid, sg6000, storage node, storage appliance, cabling, wiring, connecting, cable, wire, connect
-summary: 'You must connect the storage controllers to the SG6000-CN controller, connect the management ports on all three controllers, and connect the network ports on the SG6000-CN controller to the Grid Network and optional Client Network for StorageGRID.'
+summary: 'You connect the storage controllers to the SG6000-CN controller, connect the management ports on all three controllers, and connect the network ports on the SG6000-CN controller to the Grid Network and optional Client Network for StorageGRID.'
 ---
 = Cable appliance (SG6000)
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You must connect the storage controllers to the SG6000-CN controller, connect the management ports on all three controllers, and connect the network ports on the SG6000-CN controller to the Grid Network and optional Client Network for StorageGRID.
+You connect the storage controllers to the SG6000-CN controller, connect the management ports on all three controllers, and connect the network ports on the SG6000-CN controller to the Grid Network and optional Client Network for StorageGRID.
 
 .What you'll need
 
@@ -23,34 +23,29 @@ CAUTION: *Risk of exposure to laser radiation* -- Do not disassemble or remove a
 
 .About this task
 
-This section provides instructions for cabling the following appliances: 
+The following figures show the three controllers in the SG6060 and SG6060X appliances, with the SG6000-CN compute controller on the top and the two E2800 storage controllers on the bottom. The SG6060 uses E2800A controllers, and the SG6060X uses E2800B controllers. 
 
-* SG6060 and SG6060X
-* SGF6024
-
-== Cable the SG6060 or SG6060X
-The following figures shows the three controllers in the SG6060 and SG6060X appliances, with the SG6000-CN compute controller on the top and the two E2800 storage controllers on the bottom.
-
-NOTE: The SG6060 has E2800A controllers and the SG6060X has E2800B controllers. Both versions of the E2800 controller have identical specifications and function except for the location of the interconnect ports.
+NOTE: Both versions of the E2800 controller have identical specifications and function except for the location of the interconnect ports.
 
 CAUTION: Do not use an E2800A and E2800B controller in the same appliance. 
 
-*SG6060 to E2800A Connections*
+*SG6060 connections*
 
 image::../media/sg6000_e2800_connections.png[SG6060 to E2800A Connections]
 
-*SG6060X to E2800B Connections*
+*SG6060X connections*
 
 image::../media/sg6000x_e2800B_connections.png[SG6060 to E2800B Connections]
 
-== Cable the SGF6024
 The following figure shows the three controllers in the SGF6024 appliance, with the SG6000-CN compute controller on the top and the two EF570 storage controllers side by side below the compute controller.
+
+*SGF6024 connections*
 
 image::../media/sg6000_ef570_connections.png[SG6000 to SGF570 Connections]
 
 [cols="1a,2a,2a,3a" options="header"]
 |===
-|  | Port| Type of port| Function
+| Callout | Port| Type of port| Use
 |1
 |BMC management port on the SG6000-CN controller
 |1-GbE (RJ-45)
@@ -110,7 +105,7 @@ NOTE: The four network ports must use the same link speed. Install SFP+ transcei
 
  ** If you plan to use Fixed port bond mode (default), connect the ports to the StorageGRID Grid and Client Networks, as shown in the table.
 +
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Port| Connects to...
 a|
@@ -142,4 +137,4 @@ Do not use management port 2 (P2) on the storage controllers (the RJ-45 port on 
 
 .Related information
 
-link:../installconfig/port-bond-modes-for-sg6000-cn-controller.html[Port bond modes for SG6000-CN controller]
+link:../installconfig/port-bond-modes-for-sg6000-cn-controller.html[Port bond modes (SG6000-CN controller)]

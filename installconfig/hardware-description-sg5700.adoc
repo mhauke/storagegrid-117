@@ -1,10 +1,10 @@
 ---
 permalink: installconfig/hardware-description-sg5700.html
 sidebar: sidebar
-keywords: storagegrid, sg5700, storage node, storage appliance, overview, models, features
+keywords: sg5700, sg5712, sg5712x, sg5760, sg5760x, storage appliance 
 summary: 'The SG5700 StorageGRID appliance is an integrated storage and computing platform that operates as a Storage Node in a StorageGRID grid. The appliance can be used in a hybrid grid environment that combines appliance Storage Nodes and virtual \(software-based\) Storage Nodes.'
 ---
-= StorageGRID SG5700 appliance overview
+= SG5700 appliance: Overview
 :icons: font
 :imagesdir: ../media/
 
@@ -21,8 +21,10 @@ StorageGRID SG5700 series appliance provides the following features:
 
 The SG5700 appliance is available in four models: the SG5712 and SG5712X, and the SG5760 and SG5760X. There are no specification or functional differences between the SG5712 and SG5712X except for the location of the interconnect ports on the storage controller. Similarly, there are no specification or functional differences between the SG5760 and SG5760X except for the location of the interconnect ports on the storage controller.  
 
-The models include the following components:
-[cols="1a,2a,3a,4a,5a" options="header"]
+== SG5700 components
+
+The SG5700 models include the following components:
+[cols="1a,1a,1a,1a,1a" options="header"]
 |===
 |Component |SG5712 |SG5712X |SG5760 |SG5760X
 a|
@@ -78,22 +80,21 @@ Two power canisters and two fan canisters
 |===
 The maximum raw storage available in the StorageGRID appliance is fixed, based on the number of drives in each enclosure. You cannot expand the available storage by adding a shelf with additional drives.
 
-== Model SG5712 and 5712X
+== SG5700 diagrams
 
-The figures show the front and back of the SG5712 and SG5712X model, a 2U enclosure that holds 12 drives.
+=== SG5712 front and rear views
 
-*SG5712 front and rear view*
+The figures show the front and back of the SG5712, a 2U enclosure that holds 12 drives.
 
 image::../media/sg5712_front_and_back_views.gif[The front and back of the SG5712 appliance]
 
+=== SG5712 components
+
 The SG5712 includes two controllers and two power-fan canisters.
-
-
-*SG5712 components*
 
 image::../media/sg5712_with_callouts.gif[Controllers and power-fan canisters in the SG5712 appliance]
 
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Description
 a|
@@ -110,18 +111,20 @@ a|
 Power-fan canisters
 |===
 
-*SG5712X front and rear view*
+=== SG5712X front and rear views
+The figures show the front and back of the SG5712X, a 2U enclosure that holds 12 drives.
 
 image::../media/sg5712x_front_and_back_views.gif[The front and back of the SG5712X appliance]
 
-The SG5712X includes two controllers and two power-fan canisters.
 
-*SG5712X components*
+=== SG5712X components
+
+The SG5712X includes two controllers and two power-fan canisters.
 
 image::../media/sg5712x_with_callouts.gif[Controllers and power-fan canisters in the SG5712X appliance]
 
 
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Description
 a|
@@ -138,17 +141,14 @@ a|
 Power-fan canisters
 |===
 
-== Model SG5760 and SG5760X
-
-The figures show the front and back of the SG5760 and SG5760X models, a 4U enclosure that holds 60 drives in 5 drive drawers.
-
-*SG5760 front and rear view*
+=== SG5760 front and rear views
+The figures show the front and back of the SG5760 model, a 4U enclosure that holds 60 drives in 5 drive drawers.
 
 image::../media/sg5760_front_and_back_views.gif[Front and back of the SG5760 appliance]
 
-The SG5760 includes two controllers, two fan canisters, and two power canisters.
+=== SG5760 components
 
-*SG5760 components*
+The SG5760 includes two controllers, two fan canisters, and two power canisters.
 
 image::../media/sg5760_with_callouts.gif[Controllers, fan canisters, and power canisters in SG5760 appliance]
 
@@ -173,17 +173,19 @@ a|
 Power canister (1 of 2)
 |===
 
-*SG5760X front and rear view*
+=== SG5760X front and rear views
+
+The figures show the front and back of the SG5760X model, a 4U enclosure that holds 60 drives in 5 drive drawers.
 
 image::../media/sg5760x_front_and_back_views.gif[Front and back of the SG5760X appliance]
 
-The SG5760S includes two controllers, two fan canisters, and two power canisters.
+=== SG5760X components
 
-*SG5760X components*
+The SG5760X includes two controllers, two fan canisters, and two power canisters.
 
 image::../media/sg5760x_with_callouts.gif[Controllers, fan canisters, and power canisters in SG5760X appliance]
 
-[cols="1a,2a" options="header"]
+[cols="1a,3a" options="header"]
 |===
 | Callout| Description
 a|

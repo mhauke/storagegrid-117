@@ -2,14 +2,14 @@
 permalink: installconfig/cabling-appliance-sgf6112.html
 sidebar: sidebar
 keywords: storagegrid, sg6100, cabling, wiring, connecting, cable, wire, connect, SGF6112
-summary: 'You must connect the management port on the appliance to the service laptop and connect the network ports on the appliance to the Grid Network and optional Client Network for StorageGRID.'
+summary: 'You connect the management port on the appliance to the service laptop and connect the network ports on the appliance to the Grid Network and optional Client Network for StorageGRID.'
 ---
-= Cable appliance: SGF6112
+= Cable appliance (SGF6112)
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You must connect the management port on the appliance to the service laptop and connect the network ports on the appliance to the Grid Network and optional Client Network for StorageGRID.
+You connect the management port on the appliance to the service laptop and connect the network ports on the appliance to the Grid Network and optional Client Network for StorageGRID.
 
 .What you'll need
 
@@ -22,15 +22,15 @@ CAUTION: *Risk of exposure to laser radiation* -- Do not disassemble or remove a
 
 .About this task
 
-The following figures show the ports on the back of the appliance.
+The following figures show the ports on the back of the SGF6112.
 
-*SGF6112 port connections* 
 
 image::../media/sgf6112_connections.png[SGF6112 rear connectors]
 
 [cols="1a,2a,2a,3a" options="header"]
 |===
-|  | Port| Type of port| Function
+| Callout | Port| Type of port| Use
+
 |1
 |BMC management port on the appliance
 |1-GbE (RJ-45)
@@ -67,8 +67,10 @@ Although this connection is optional, it is recommended to facilitate support.
 
 . Connect the network ports on the appliance to the appropriate network switches, using TwinAx cables or optical cables and transceivers.
 +
-NOTE: The four network ports must use the same link speed. See the following tables for the equipment required based on your hardware and link speed.
-+
+[NOTE]
+====
+All four network ports must use the same link speed.
+
 [cols="2a,2a" options="header"]
 |===
 | SGF6112 link speed (GbE)| Required equipment
@@ -78,8 +80,9 @@ NOTE: The four network ports must use the same link speed. See the following tab
 |25
 |SFP28 transceiver
 
-
 |===
+
+====
 
  ** If you plan to use Fixed port bond mode (default), connect the ports to the StorageGRID Grid and Client Networks, as shown in the table.
 +
