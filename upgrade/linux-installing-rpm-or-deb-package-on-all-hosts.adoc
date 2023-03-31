@@ -14,6 +14,8 @@ If any StorageGRID nodes are deployed on Linux hosts, you must download and inst
 == Download upgrade, Linux, and hotfix files
 When you perform a StorageGRID upgrade from the Grid Manager, you are prompted to download the upgrade archive and any required hotfix as the first step. However, if you need to download files to upgrade Linux hosts, you can save time by downloading all required files in advance.
 
+.Steps
+
 . Go to https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^].
 
 . Select the button for downloading the latest release, or select another version from the drop-down menu and select *Go*.
@@ -41,7 +43,6 @@ The downloads page for the version you selected appears. The page contains three
 `StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip` +
 `StorageGRID-Webscale-_version_-DEB-_uniqueID_.tgz`
 
-
 . If you needed to agree to a Caution/MustRead notice because of a required hotfix, download the hotfix:
 
 .. Go back to https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab[NetApp Downloads: StorageGRID^].
@@ -56,6 +57,8 @@ You will be prompted to upload the hotfix file on the StorageGRID Upgrade page w
 
 == Install archive on all Linux hosts
 Perform these steps before upgrading StorageGRID software.
+
+.Steps
  
 . Extract the RPM or DEB packages from the installation file.
 . Install the RPM or DEB packages on all Linux hosts.
