@@ -33,8 +33,6 @@ You should clone only one appliance node at a time to maintain StorageGRID netwo
 
 . From the StorageGRID Appliance Installer on the source node, in the Installation section of the Home page, select *Enable Cloning*.
 +
-image::../media/enable_node_cloning.png[Enable cloning on source node]
-+
 The Primary Admin Node connection section is replaced with the Clone target node connection section.
 +
 image::../media/clone_peer_node_connection_section.png[Clone target node connection section]
@@ -46,8 +44,6 @@ Typically, you enter the IP address for the Grid Network, but if you need to use
 NOTE: Using the 1-GbE Admin Network for clone data transfer results in slower cloning.
 +
 After the target appliance is configured and validated, in the Installation section, *Start Cloning* is enabled on the source node.
-+
-image::../media/start_cloning.png[Start cloning]
 +
 If issues exist that prevent cloning, *Start Cloning* is not enabled and issues that you must resolve are listed as the *Connection state*. These issues are listed on the StorageGRID Appliance Installer Home page of both the source node and the target appliance. Only one issue displays at a time and the state automatically updates as conditions change. Resolve all cloning issues to enable *Start Cloning*.
 +
