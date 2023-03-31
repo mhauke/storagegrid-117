@@ -50,39 +50,29 @@ The three NICs in the SGF6112 are in two riser assemblies in the positions in th
 +
 image::../media/sgf6112-nic-positions.jpg[NIC locations]
 
-[options="header"]
+[cols="1a,2a,4a" options="header"]
 |===
 | | Device or Part name| Description
-a|
-1
-a|
-hic1/hic2
-a|
-10/25-GbE Ethernet network ports in the two-port riser assembly
-a|
-2
-a|
-mtc1/mtc2
-a|
-1/10GBase-T management ports in the two-port riser assembly
-a|
-3
-a|
-hic3/hic4
-a|
-10/25-GbE Ethernet network ports in the one-port riser assembly
-a|
-4
-a|
-Two-slot riser assembly
-a|
-Support for one of the 10/25-GbE NICs and the 1/10GBase-T NIC
-a|
-5
-a|
-One-slot riser assembly
-a|
-Support for one of the 10/25-GbE NICs
+
+| 1
+| hic1/hic2
+| 10/25-GbE Ethernet network ports in the two-port riser assembly
+
+| 2
+| mtc1/mtc2
+| 1/10GBase-T management ports in the two-port riser assembly
+
+| 3
+| hic3/hic4
+| 10/25-GbE Ethernet network ports in the one-port riser assembly
+
+| 4
+| Two-slot riser assembly
+| Support for one of the 10/25-GbE NICs and the 1/10GBase-T NIC
+
+| 5
+| One-slot riser assembly
+| Support for one of the 10/25-GbE NICs
 |===
 
 . Grasp the riser assembly with the failed NIC through the blue-marked holes and carefully lift it upwards. Move the riser assembly toward the front of the chassis as you lift it to allow the external connectors in its installed NICs to clear the chassis.
