@@ -30,17 +30,11 @@ NOTE: The admin account password and SSH host keys for a StorageGRID appliance i
 +
 image::../media/maintenance_mode.png[Maintenance Mode button for appliance]
 
-. Select *Maintenance mode*.
-+
-A confirmation dialog box appears.
-+
-image::../media/maintenance_mode_confirmation.png[Maintenance Mode confirmation dialog box]
+. Select *Maintenance mode*. A confirmation dialog box appears.
 
 . Enter the provisioning passphrase, and select *OK*.
 +
 A progress bar and a series of messages, including "Request Sent," "Stopping StorageGRID," and "Rebooting," indicate that the appliance is completing the steps for entering maintenance mode.
-+
-image::../media/maintenance_mode_progress_bar.png[Maintenance Mode Progress Bar]
 +
 When the appliance is in maintenance mode, a confirmation message lists the URLs you can use to access the StorageGRID Appliance Installer.
 +
