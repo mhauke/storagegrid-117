@@ -37,50 +37,50 @@ When link:../admin/configuring-load-balancer-endpoints.html[configuring load bal
 * Allow all tenants to access the endpoint (default), or specify a list of allowed or blocked tenants to provide better security isolation between tenants and their endpoints. 
 * Use the *Node Type* binding mode to require clients to use the IP address (or corresponding FQDN) of any Admin Node or the IP address of any Gateway Node, based on the type of node you select.
 
-== StorageGRID SGF6112 all-flash appliance
-This new storage appliance features a compact design with compute controller and storage controller integrated into a 1U chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 15.3 TB per drive. The SSD drives are in a RAID that provides resilient object storage. See link:../installconfig/hardware-description-sg6100.html[SGF6112 appliance: Overview].
+== SGF6112 all-flash appliance
+The new StorageGRID SGF6112 storage appliance features a compact design with compute controller and storage controller integrated into a 1U chassis. The appliance supports 12 SSD NVMe drives with a storage capacity of up to 15.3 TB per drive. The SSD drives are in a RAID that provides resilient object storage. See link:../installconfig/hardware-description-sg6100.html[SGF6112 appliance: Overview].
 
-== Other Grid Manager features and enhancements
+== Other Grid Manager enhancements
 
 === ILM enhancements
 The improved ILM wizard makes it easier to specify filters, enter time periods and placements, and view retention diagrams. Erasure-coding profiles are  created automatically when you select a storage pool and an EC scheme for a placement. For new StorageGRID 11.7 installations (not upgrades), a storage pool is automatically created for each site and the new *1 Copy Per Site* default rule ensures that new multi-site installations will have site-loss protection by default. See link:../ilm/index.htm[Manage objects with ILM].
 
-=== Customizable Grid Manager dashboard
+=== Customizable dashboard
 You can now configure custom dashboards for the Grid Manager. See link:../monitor/viewing-dashboard.html[View and manage the dashboard].
 
 === Volume restoration UI
 Storage volume restoration lets you restore object data if a storage volume fails. For StorageGRID 11.7, you can start volume restoration from Grid Manager in addition to the existing method of entering commands manually. Using Grid Manager is now the preferred method for restoring object data. See link:../maintain/restoring-volume.html[Restore object data using Grid Manager].
 
-=== Can upgrade and apply hotfix at the same time
+=== Upgrade and hotfix UI
 When you upgrade to StorageGRID 11.7, you can apply the latest 11.7 hotfix at the same time. The StorageGRID upgrade page shows the recommended upgrade path and links directly to the correct download pages. See link:performing-upgrade.html[Perform upgrade].
 
-=== New units setting for storage values
+=== Units for storage values
 You can now select base 10 or base 2 units for the storage values displayed in the Grid Manager and Tenant Manager. Select the user drop-down in the upper right of the Grid Manager or Tenant Manager, then select *User preferences*.
 
 === Access MIB from Grid Manager
 You can now access SNMP-compliant MIB files from the Grid Manager using the SNMP agent page. See link:../monitor/access-snmp-mib.html[Access MIB files].
 
-=== Can assign custom storage grades to new Storage Nodes
+=== Custom storage grades for new nodes
 When you perform an expansion to add a new site or new Storage Nodes, you can now assign a custom storage grade to each new node. See link:../expand/performing-expansion.html[Perform expansion].
 
 == Tenant Manager updates
 
-=== Account clone and cross-grid replication
+=== Cross-grid replication
 Tenant accounts that have permission to use a <<grid-federation,grid federation connection>> can clone tenant groups, users, and S3 keys from one grid to another and use cross-grid replication to replicate bucket objects between two grids. See link:../tenant/grid-federation-account-clone.html[Clone tenant groups and users] and link:../tenant/grid-federation-manage-cross-grid-replication.html[Manage cross-grid replication].
 
 [[delete-all-objects]]
 === Delete all objects from bucket
 Tenant Manager users can now delete all objects in a bucket, so the bucket can be deleted. See link:../tenant/deleting-s3-bucket-objects.html[Delete objects in bucket].
 
-=== Enable and configure default retention
+=== S3 Object Lock default retention
 Tenant Manager users can now enable and configure default retention when creating S3 Object Lock buckets. See link:../tenant/creating-s3-bucket.html[Create an S3 bucket].
 
 == S3 updates
 
-=== S3 Object Lock supports governance mode
+=== S3 Object Lock governance mode
 When specifying the S3 Object Lock settings for an object or the default retention settings for a bucket, you can now use governance mode. This retention mode allows users with special permission to bypass certain retention settings. See link:../tenant/using-s3-object-lock.html[Use S3 Object Lock to retain objects] and link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock].
 
-=== New S3 group policy for ransomware mitigation
+=== S3 group policy for ransomware mitigation
 When added as the group policy for an S3 tenant account, the sample policy helps mitigate ransomware attacks. It prevents older object versions from being permanently deleted. See link:../tenant/creating-groups-for-s3-tenant.html[Create groups for an S3 tenant].
 
 === NewerNoncurrentVersions threshold for S3 buckets 
@@ -94,7 +94,7 @@ S3 SelectObjectContent now offers support for Parquet objects. In addition, you 
 === Certificate subject optional
 The certificate subject field is now optional. If this field is left blank, the generated certificate uses the first domain name or IP address as the subject common name (CN). See link:../using-storagegrid-security-certificates.html[Manage security certificates].
 
-=== New audit message category and new messages
+=== ILM audit message category and new messages
 An audit message category was added for ILM operations and includes the IDEL, LKCU, and ORLM messages. This new category is set to *Normal*. See link:../audit/ilm-audit-messages.html[ILM operations audit messages].
 
 In addition, new audit messages were added to support new 11.7 functionality:
@@ -131,7 +131,7 @@ The following new alerts were added for StorageGRID 11.7:
 * Volume Restoration failed to start replicated data repair
 
 
-=== StorageGRID documentation changes
+=== Documentation changes
 
 * A new quick reference summarizes how StorageGRID supports Amazon Simple Storage Service (S3) APIs. See link:../s3/quick-reference-support-for-aws-apis.html[Quick reference: Supported S3 API requests].
 
