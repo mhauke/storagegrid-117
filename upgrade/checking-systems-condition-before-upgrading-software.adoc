@@ -34,17 +34,17 @@ The following link:../network/internal-grid-node-communications.html#storagegrid
 | Port| Description
 
 |
-*1055*
+1055
 
-*8011*
+8011
 
-*10342*
+10342
 
 | Used for firewall controls knocking protocol.
 
 Before upgrading, confirm this port is open between all grid nodes on the Grid Network.
 
-| *18086*
+| 18086
 | TCP port used for new LDR service.
 
 Before upgrading, confirm this port is open from all grid nodes to all Storage Nodes.
