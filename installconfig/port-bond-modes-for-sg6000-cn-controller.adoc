@@ -19,7 +19,7 @@ The 10/25-GbE networking ports on the SG6000-CN controller support Fixed port bo
 
 Fixed mode is the default configuration for the 10/25-GbE networking ports.
 
-image::../media/sg6000_cn_fixed_port.gif[Fixed Port Bond Mode]
+image::../media/sg6000_cn_fixed_port.png[Fixed Port Bond Mode]
 
 [cols="1a,3a" options=header] 
 |===
@@ -78,7 +78,7 @@ In Active-Backup mode, both management ports are connected to the Admin Network.
 
 NOTE: If you need to make a temporary local connection to the SG6000-CN controller when the 1-GbE management ports are configured for Active-Backup mode, remove the cables from both management ports, plug your temporary cable into the management port on the right, and access the appliance using IP address 169.254.0.1.
 
-image::../media/sg6000_cn_bonded_managemente_ports.gif[1-GbE ports]
+image::../media/sg6000_cn_bonded_managemente_ports.png[1-GbE ports]
 
 [cols="1a,3a" options=header] 
 |===
