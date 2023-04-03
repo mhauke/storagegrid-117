@@ -17,9 +17,7 @@ If enterprise networking policies restrict access to any of the ports, you can u
 
 == Port remapping
 
-To use systems and protocols such as SMTP, DNS, SSH, or DHCP, you must remap ports when deploying nodes. However, you should not remap load balancer endpoints. For information about port remapping, see the installation instructions for your platform:
-
-.Software-based nodes
+To use systems and protocols such as SMTP, DNS, SSH, or DHCP, you must remap ports when deploying nodes. However, you should not remap load balancer endpoints. For information about port remapping, see the installation instructions:
 
 * link:../rhel/index.html[Install Red Hat Enterprise Linux or CentOS]
 
@@ -27,15 +25,7 @@ To use systems and protocols such as SMTP, DNS, SSH, or DHCP, you must remap por
 
 * link:../vmware/index.html[Install VMware]
 
-.Appliance nodes
-
-* link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
-
-* link:../sg6100/index.html[SGF6112 storage appliances]
-
-* link:../sg6000/index.html[SG6000 storage appliances]
-
-* link:../sg5700/index.html[SG5700 storage appliances]
+* link:../installconfig/optional-remapping-network-ports-for-appliance.html[Optional: Remap network ports for appliance]
 
 
 == Ports used for external communications

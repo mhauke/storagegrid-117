@@ -49,7 +49,7 @@ The response body includes the metadata notification configuration for the bucke
 
 Each metadata notification configuration includes one or more rules. Each rule specifies the objects that it applies to and the destination where StorageGRID should send object metadata. Destinations must be specified using the URN of a StorageGRID endpoint.
 
-[options="header"]
+[cols="1a,2a,1a" options="header"]
 |===
 | Name| Description| Required
 a|

@@ -30,15 +30,18 @@ To encrypt an object with a unique key managed by StorageGRID, you use the follo
 
 The SSE request header is supported by the following object operations:
 
-* PUT Object
-* PUT Object - Copy
-* Initiate Multipart Upload
+* link:put-object.html[PUT Object]
+
+* link:put-object-copy.html[PUT Object - Copy]
+
+* link:initiate-multipart-upload.html[Initiate Multipart Upload]
+
 
 == Use SSE-C
 
 To encrypt an object with a unique key that you manage, you use three request headers:
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Request header| Description
 a|
@@ -56,13 +59,20 @@ Specify the MD5 digest of the encryption key according to RFC 1321, which is use
 |===
 The SSE-C request headers are supported by the following object operations:
 
-* GET Object
-* HEAD Object
-* PUT Object
-* PUT Object - Copy
-* Initiate Multipart Upload
-* Upload Part
-* Upload Part - Copy
+
+* link:get-object.html[GET Object]
+
+* link:head-object.html[HEAD Object]
+
+* link:put-object.html[PUT Object]
+
+* link:put-object-copy.html[PUT Object - Copy]
+
+* link:initiate-multipart-upload.html[Initiate Multipart Upload]
+
+* link:upload-part.html[Upload Part]
+
+* link:upload-part-copy.html[Upload Part - Copy]
 
 == Considerations for using server-side encryption with customer-provided keys (SSE-C)
 
@@ -83,18 +93,5 @@ IMPORTANT: The encryption keys you provide are never stored. If you lose an encr
 
 .Related information
 
-link:get-object.html[GET Object]
-
-link:head-object.html[HEAD Object]
-
-link:put-object.html[PUT Object]
-
-link:put-object-copy.html[PUT Object - Copy]
-
-link:initiate-multipart-upload.html[Initiate Multipart Upload]
-
-link:upload-part.html[Upload Part]
-
-link:upload-part-copy.html[Upload Part - Copy]
 
 https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html[Amazon S3 Developer Guide: Protecting Data Using Server-Side Encryption with Customer-Provided Encryption Keys (SSE-C)^]

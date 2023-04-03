@@ -34,13 +34,13 @@ The following table describes how StorageGRID implements S3 REST API object oper
 
 When processing a DELETE Object request, StorageGRID attempts to immediately remove all copies of the object from all stored locations. If successful, StorageGRID returns a response to the client immediately. If all copies cannot be removed within 30 seconds (for example, because a location is temporarily unavailable), StorageGRID queues the copies for removal and then indicates success to the client.
 
-*Versioning*
+Versioning::
 
 To remove a specific version, the requestor must be the bucket owner and use the `versionId` subresource. Using this subresource permanently deletes the version. If the `versionId` corresponds to a delete marker, the response header `x-amz-delete-marker` is returned set to `true`.
 
 * If an object is deleted without the `versionId` subresource on a version enabled bucket, it results in the generation of a delete marker. The `versionId` for the delete marker is returned using the `x-amz-version-id` response header, and the `x-amz-delete-marker` response header is returned set to `true`.
 * If an object is deleted without the `versionId` subresource on a version suspended bucket, it results in a permanent deletion of an already existing 'null' version or a 'null' delete marker, and the generation of a new 'null' delete marker. The `x-amz-delete-marker` response header is returned set to `true`.
-
++
 *Note*: In certain cases, multiple delete markers might exist for an object.
 
 See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S3 Object Lock] to learn how to delete object versions in GOVERNANCE mode.
@@ -58,7 +58,7 @@ See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S
 | DELETE Object tagging
 | Uses the `tagging` subresource to remove all tags from an object.
 
-*Versioning*
+Versioning::
 
 If the `versionId` query parameter is not specified in the request, the operation deletes all tags from the most recent version of the object in a versioned bucket. If the current version of the object is a delete marker, a "`MethodNotAllowed`" status is returned with the `x-amz-delete-marker` response header set to `true`.
 
@@ -77,7 +77,7 @@ If the `versionId` query parameter is not specified in the request, the operatio
 | GET Object tagging
 | Uses the `tagging` subresource to return all tags for an object.
 
-*Versioning*
+Versioning::
 
 If the `versionId` query parameter is not specified in the request, the operation returns all tags from the most recent version of the object in a versioned bucket. If the current version of the object is a delete marker, a "`MethodNotAllowed`" status is returned with the `x-amz-delete-marker` response header set to `true`.
 
@@ -102,21 +102,21 @@ If the `versionId` query parameter is not specified in the request, the operatio
 | PUT Object tagging
 | Uses the `tagging` subresource to add a set of tags to an existing object.
 
-*Object tag limits*
+Object tag limits::
 
 You can add tags to new objects when you upload them, or you can add them to existing objects. Both StorageGRID and Amazon S3 support up to 10 tags for each object. Tags associated with an object must have unique tag keys. A tag key can be up to 128 Unicode characters in length and tag values can be up to 256 Unicode characters in length. Key and values are case sensitive.
 
-*Tag updates and ingest behavior*
+Tag updates and ingest behavior::
 
 When you use PUT Object tagging to update an object's tags, StorageGRID does not re-ingest the object. This means that the option for Ingest Behavior specified in the matching ILM rule is not used. Any changes to object placement that are triggered by the update are made when ILM is re-evaluated by normal background ILM processes.
-
++
 This means that if the ILM rule uses the Strict option for ingest behavior, no action is taken if the required object placements cannot be made (for example, because a newly required location is unavailable). The updated object retains its current placement until the required placement is possible.
 
-*Resolving conflicts*
+Resolving conflicts::
 
 Conflicting client requests, such as two clients writing to the same key, are resolved on a "`latest-wins`" basis. The timing for the "`latest-wins`" evaluation is based on when the StorageGRID system completes a given request, and not on when S3 clients begin an operation.
 
-*Versioning*
+Versioning::
 
 If the `versionId` query parameter is not specified in the request, the operation add tags to the most recent version of the object in a versioned bucket. If the current version of the object is a delete marker, a "`MethodNotAllowed`" status is returned with the `x-amz-delete-marker` response header set to `true`.
 
