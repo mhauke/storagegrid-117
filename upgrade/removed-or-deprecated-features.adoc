@@ -57,7 +57,7 @@ NOTE: The AES256-SHA option was the default in StorageGRID 11.6 and is the only 
 
 * The *Stored Object Hashing* option was removed. The *SHA-1* and *SHA-256* settings are no longer used for internal background verification because they require additional CPU resources over MD5 and packet CRC32 check.
 
-* The *Preferred sender* option was removed. If your StorageGRID deployment includes multiple Admin Nodes, the primary Admin Node is the preferred sender for alert notifications, AutoSupport messages, SNMP traps and informs, and legacy alarm notifications. If the primary Admin Node becomes unavailable, notifications are temporarily sent by other Admin Nodes. See link:../admin/what-admin-node-is.html[What an Admin Node is].
+* The *Preferred sender* option was removed. If your StorageGRID deployment includes multiple Admin Nodes, the primary Admin Node is the preferred sender for alert notifications, AutoSupport messages, SNMP traps and informs, and legacy alarm notifications. If the primary Admin Node becomes unavailable, notifications are temporarily sent by other Admin Nodes. See link:../admin/what-admin-node-is.html[What is an Admin Node?].
 
 * The link:../admin/configure-firewall-controls.html#untrusted-client-network[Untrusted Client Network settings] were moved to *CONFIGURATION* > *Firewall control*.
 
