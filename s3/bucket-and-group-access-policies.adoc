@@ -225,7 +225,7 @@ NOTE: A DELETE is performed when a PUT is used to overwrite an existing value.
 
 === Permissions that apply to buckets
 
-[options="header",cols="35,35,30"]
+[cols="2a,2a,1a" options="header"]
 |===
 | Permissions| S3 REST API operations| Custom for StorageGRID
 a|
@@ -481,7 +481,7 @@ a|
 
 === Permissions that apply to objects
 
-[options="header",cols="35,35,30"]
+[cols="2a,2a,1a" options="header"]
 |===
 | Permissions| S3 REST API operations| Custom for StorageGRID
 a|
@@ -693,7 +693,7 @@ Condition operators are categorized as follows:
 * IP address
 * Null check
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Condition operators| Description
 a|
@@ -764,7 +764,7 @@ Checks if a condition key is present in the current request context.
 
 === Supported condition keys
 
-[options="header"]
+[cols="1a,1a,2a" options="header"]
 |===
 | Category| Applicable condition keys| Description
 a|
@@ -855,7 +855,7 @@ In this example, the variable `${aws:username}` is part of the condition value i
 		...
 ----
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Variable| Description
 a|
@@ -892,7 +892,7 @@ Special character. Uses the character as a literal $ character.
 
 Sometimes a policy can grant permissions that are dangerous for security or dangerous for continued operations, such as locking out the root user of the account. The StorageGRID S3 REST API implementation is less restrictive during policy validation than Amazon, but equally strict during policy evaluation.
 
-[options="header"]
+[cols="2a,1a,2a,2a" options="header"]
 |===
 | Policy description| Policy type| Amazon behavior| StorageGRID behavior
 a|

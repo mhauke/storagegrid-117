@@ -47,7 +47,7 @@ If an object has been stored in a link:../ilm/what-cloud-storage-pool-is.html[Cl
 
 NOTE: If an object is stored in a Cloud Storage Pool and one or more copies of the object also exist on the grid, GET Object requests will attempt to retrieve data from the grid, before retrieving it from the Cloud Storage Pool.
 
-[options="header"]
+[cols="1a,1a" options="header"]
 |===
 | State of object| Behavior of GET Object
 

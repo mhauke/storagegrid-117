@@ -23,7 +23,7 @@ The StorageGRID system only supports valid HTTP date formats for any headers tha
 
 The StorageGRID system supports the common request headers defined by https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html[Amazon Simple Storage Service API Reference: Common Request Headers^], with one exception.
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Request header| Implementation
 a|
@@ -45,7 +45,7 @@ Not implemented. Returns `XNotImplemented`.
 
 The StorageGRID system supports all of the common response headers defined by the _Simple Storage Service API Reference_, with one exception.
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | Response header| Implementation
 a|

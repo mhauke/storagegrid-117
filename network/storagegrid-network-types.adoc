@@ -16,23 +16,23 @@ The grid nodes in a StorageGRID system process _grid traffic_, _admin traffic_, 
 [cols="1a,4a,2a" options="header"]
 |===
 | Traffic type| Description| Network type
-a|
+|
 Grid traffic
-a|
+|
 The internal StorageGRID traffic that travels between all nodes in the grid. All grid nodes must be able to communicate with all other grid nodes over this network.
-a|
+|
 Grid Network (required)
-a|
+|
 Admin traffic
-a|
+|
 The traffic used for system administration and maintenance.
-a|
+|
 Admin Network (optional), <<Optional VLAN networks,VLAN network (optional)>>
-a|
+|
 Client traffic
-a|
+|
 The traffic that travels between external client applications and the grid, including all object storage requests from S3 and Swift clients.
-a|
+|
 Client Network (optional), <<Optional VLAN networks,VLAN network (optional)>>
 |===
 You can configure networking in the following ways:
@@ -50,22 +50,20 @@ Internal ports are only accessible over the Grid Network. External ports are acc
 
 StorageGRID nodes are connected to each network using the following specific interfaces:
 
-[options="header"]
+[cols="1a,1a" options="header"]
 |===
 | Network| Interface name
-a|
-Grid Network (required)
-a|
-eth0
-a|
-Admin Network (optional)
-a|
-eth1
-a|
-Client Network (optional)
-a|
-eth2
+
+| Grid Network (required)
+| eth0
+
+| Admin Network (optional)
+| eth1
+
+| Client Network (optional)
+| eth2
 |===
+
 For details about mapping virtual or physical ports to node network interfaces, see the installation instructions:
 
 .Software-based nodes
@@ -75,10 +73,10 @@ For details about mapping virtual or physical ports to node network interfaces, 
 
 .Appliance nodes
 
-* link:../sg100-1000/index.html[SG100 and SG1000 services appliances]
-* link:../sg6100/index.html[SGF6112 storage appliances]
-* link:../sg6000/index.html[SG6000 storage appliances]
-* link:../sg5700/index.html[SG5700 storage appliances]
+* link:../installconfig/hardware-description-sg6100.html[SGF6112 storage appliance]
+* link:../installconfig/hardware-description-sg6000.html[SG6000 storage appliance]
+* link:../installconfig/hardware-description-sg5700.html[SG5700 storage appliance]
+* link:../installconfig/hardware-description-sg100-and-1000.html[SG100 and SG1000 services appliances]
 
 === Network information for each node
 You must configure the following for each network you enable on a node:

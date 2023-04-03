@@ -43,7 +43,7 @@ Destinations must be specified using the URN of a StorageGRID endpoint. The endp
 
 The table describes the elements in the metadata notification configuration XML.
 
-[options="header"]
+[cols="1a,2a,1a" options="header"]
 |===
 | Name| Description| Required
 a|
@@ -207,7 +207,7 @@ The table lists all the fields that are included in the JSON document that is se
 
 The document name includes the bucket name, object name, and version ID if present.
 
-[options="header"]
+[cols="1a,1a,1a" options="header"]
 |===
 | Type| Item name| Description
 a|
@@ -261,7 +261,8 @@ tags
 a|
 All object tags defined for the object, as key-value pairs
 |===
-*Note:* For tags and user metadata, StorageGRID passes dates and numbers to Elasticsearch as strings or as S3 event notifications. To configure Elasticsearch to interpret these strings as dates or numbers, follow the Elasticsearch instructions for dynamic field mapping and for mapping date formats. You must enable the dynamic field mappings on the index before you configure the search integration service. After a document is indexed, you cannot edit the document's field types in the index.
+
+NOTE: For tags and user metadata, StorageGRID passes dates and numbers to Elasticsearch as strings or as S3 event notifications. To configure Elasticsearch to interpret these strings as dates or numbers, follow the Elasticsearch instructions for dynamic field mapping and for mapping date formats. You must enable the dynamic field mappings on the index before you configure the search integration service. After a document is indexed, you cannot edit the document's field types in the index.
 
 .Related information
 
