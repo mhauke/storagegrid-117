@@ -64,6 +64,8 @@ You can resolve the *Low read-only watermark override* alert by updating custom 
 
 === Assess object data usage for entire grid
 
+.Steps
+
 . Select *NODES*.
 
 . For each site in the grid, expand the list of nodes.
@@ -81,6 +83,8 @@ NOTE: There are some exceptions to this general rule. For example, if ILM rules 
 === View optimized storage watermarks
 
 StorageGRID uses two Prometheus metrics to show the optimized values it has calculated for the *Storage Volume Soft Read-Only Watermark*. You can view the minimum and maximum optimized values for each Storage Node in your grid.
+
+.Steps
 
 . Select *SUPPORT* > *Tools* > *Metrics*.
 
@@ -102,6 +106,8 @@ The last column shows the maximum optimized value of the Soft Read-Only Watermar
 
 === Determine if you can use optimized watermarks
 
+.Steps
+
 . Select *NODES*.
 
 . Repeat these steps for each online Storage Node:
@@ -118,6 +124,8 @@ Otherwise, expand your grid as soon as possible. Either link:../expand/adding-st
 NOTE: The same custom watermark values are applied to every storage volume on every Storage Node. Using smaller-than-recommended values for storage volume watermarks might cause some storage volumes to become inaccessible (automatically unmounted) when the node reaches capacity. 
 
 === Use optimized watermarks
+
+.Steps
 
 . Go to *CONFIGURATION* > *System* > *Storage options*.
 . Select *Configuration* from the Storage Options menu.
