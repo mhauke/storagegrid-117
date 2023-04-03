@@ -25,42 +25,33 @@ If an object has been stored in a Cloud Storage Pool (see the instructions for m
 
 NOTE: If an object is stored in a Cloud Storage Pool and one or more copies of the object also exist on the grid, there is no need to restore the object by issuing a POST Object restore request. Instead, the local copy can be retrieved directly, using a GET Object request.
 
-[options="header"]
+[cols="1a,2a" options="header"]
 |===
 | State of object| Behavior of POST Object restore
-a|
-Object ingested into StorageGRID but not yet evaluated by ILM, or object is not in a Cloud Storage Pool
 
-a|
-`403 Forbidden`, `InvalidObjectState`
-a|
-Object in Cloud Storage Pool but not yet transitioned to a non-retrievable state
+| Object ingested into StorageGRID but not yet evaluated by ILM, or object is not in a Cloud Storage Pool
 
-a|
-`200 OK` No changes are made.
+| `403 Forbidden`, `InvalidObjectState`
+| Object in Cloud Storage Pool but not yet transitioned to a non-retrievable state
+
+|`200 OK` No changes are made.
 
 *Note*: Before an object has been transitioned to a non-retrievable state, you cannot change its `expiry-date`.
 
-a|
-Object transitioned to a non-retrievable state
+| Object transitioned to a non-retrievable state
 
-a|
-`202 Accepted` Restores a retrievable copy of the object to the Cloud Storage Pool for the number of days specified in the request body. At the end of this period, the object is returned to a non-retrievable state.
+| `202 Accepted` Restores a retrievable copy of the object to the Cloud Storage Pool for the number of days specified in the request body. At the end of this period, the object is returned to a non-retrievable state.
 
 Optionally, use the `Tier` request element to determine how long the restore job will take to finish (`Expedited`, `Standard`, or `Bulk`). If you do not specify `Tier`, the `Standard` tier is used.
 
-*Attention*: If an object has been transitioned to S3 Glacier Deep Archive or the Cloud Storage Pool uses Azure Blob storage, you cannot restore it using the `Expedited` tier. The following error is returned `403 Forbidden`, `InvalidTier`: `Retrieval option is not supported by this storage class`.
+*Important*: If an object has been transitioned to S3 Glacier Deep Archive or the Cloud Storage Pool uses Azure Blob storage, you cannot restore it using the `Expedited` tier. The following error is returned `403 Forbidden`, `InvalidTier`: `Retrieval option is not supported by this storage class`.
 
-a|
-Object in process of being restored from a non-retrievable state
+| Object in process of being restored from a non-retrievable state
 
-a|
-`409 Conflict`, `RestoreAlreadyInProgress`
-a|
-Object fully restored to the Cloud Storage Pool
+| `409 Conflict`, `RestoreAlreadyInProgress`
+| Object fully restored to the Cloud Storage Pool
 
-a|
-`200 OK`
+| `200 OK`
 
 *Note:* If an object has been restored to a retrievable state, you can change its `expiry-date` by reissuing the POST Object restore request with a new value for `Days`. The restoration date is updated relative to the time of the request.
 
