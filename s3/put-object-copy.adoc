@@ -116,13 +116,14 @@ If you use server-side encryption, the request headers you provide depend on whe
  ** `x-amz-server-side-encryption-customer-algorithm`: Specify `AES256`.
  ** `x-amz-server-side-encryption-customer-key`: Specify a new encryption key for the target object.
  ** `x-amz-server-side-encryption-customer-key-MD5`: Specify the MD5 digest of the new encryption key.
-
-*Attention:* The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for link:using-server-side-encryption.html[using server-side encryption].
+ 
++
+IMPORTANT: The encryption keys you provide are never stored. If you lose an encryption key, you lose the corresponding object. Before using customer-provided keys to secure object data, review the considerations for link:using-server-side-encryption.html[using server-side encryption].
 
 * If you want to encrypt the target object (the copy) with a unique key managed by StorageGRID (SSE), include this header in the PUT Object - Copy request:
  ** `x-amz-server-side-encryption`
-
-*Note:* The `server-side-encryption` value of the object cannot be updated. Instead, make a copy with a new `server-side-encryption` value using `x-amz-metadata-directive`: `REPLACE`.
++
+NOTE: The `server-side-encryption` value of the object cannot be updated. Instead, make a copy with a new `server-side-encryption` value using `x-amz-metadata-directive`: `REPLACE`.
 
 == Versioning
 

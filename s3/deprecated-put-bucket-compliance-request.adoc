@@ -50,7 +50,7 @@ RetentionPeriodMinutes
 a|
 The length of the retention period for objects added to this bucket, in minutes. The retention period starts when the object is ingested into the grid.
 
-*Attention:* When specifying a new value for RetentionPeriodMinutes, you must specify a value that is equal to or greater than the bucket's current retention period. After the bucket's retention period is set, you cannot decrease that value; you can only increase it.
+*Important* When specifying a new value for RetentionPeriodMinutes, you must specify a value that is equal to or greater than the bucket's current retention period. After the bucket's retention period is set, you cannot decrease that value; you can only increase it.
 
 a|
 LegalHold

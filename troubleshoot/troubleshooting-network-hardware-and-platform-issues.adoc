@@ -133,45 +133,67 @@ NRER alarms can be caused by the following issues with networking hardware that 
 
 .Steps
 . Follow the troubleshooting steps for all potential causes of the NRER alarm given your network configuration.
- ** If the error is caused by FEC mismatch, perform the following steps:
-+
-*Note*: These steps are applicable only for NRER errors caused by FEC mismatch on StorageGRID appliances.
 
-  ... Check the FEC status of the port in the switch attached to your StorageGRID appliance.
-  ... Check the physical integrity of the cables from the appliance to the switch.
-  ... If you want to change FEC settings to try to resolve the NRER alarm, first ensure that the appliance is configured for *Auto* mode on the Link Configuration page of the StorageGRID Appliance Installer (see the instructions for your appliance:
-  +
-  * link:../sg6000/changing-link-configuration-of-sg6000-cn-controller.html[SG6000]
-  * link:../sg5700/changing-link-configuration-of-e5700sg-controller.html[SG5700]
-  * link:../sg100-1000/changing-link-configuration-of-services-appliance.html[Sg100 and SG1000]
-  ... Then, change the FEC settings on the switch ports. The StorageGRID appliance ports will adjust their FEC settings to match, if possible.
+. Perform the following steps depending on the cause of the error:
 +
-(You cannot configure FEC settings on StorageGRID appliances. Instead, the appliances attempt to discover and mirror the FEC settings on the switch ports they are connected to. If the links are forced to 25-GbE or 100-GbE network speeds, the switch and NIC might fail to negotiate a common FEC setting. Without a common FEC setting, the network will fall back to "`no-FEC`" mode. When FEC is not enabled, the connections are more susceptible to errors caused by electrical noise.)
+[role="tabbed-block"]
+====
 
-+
-*Note*: StorageGRID appliances support Firecode (FC) and Reed Solomon (RS) FEC, as well as no FEC.
+.FEC mismatch
+--
 
- ** If the error is caused by a switch port and NIC MTU mismatch, check that the MTU size configured on the node is the same as the MTU setting for the switch port.
+NOTE: These steps are applicable only for NRER errors caused by FEC mismatch on StorageGRID appliances.
+
+.. Check the FEC status of the port in the switch attached to your StorageGRID appliance.
+.. Check the physical integrity of the cables from the appliance to the switch.
+.. If you want to change FEC settings to try to resolve the NRER alarm, first ensure that the appliance is configured for *Auto* mode on the Link Configuration page of the StorageGRID Appliance Installer (see the instructions for your appliance:
 +
+* link:../sg6000/changing-link-configuration-of-sg6000-cn-controller.html[SG6000]
+* link:../sg5700/changing-link-configuration-of-e5700sg-controller.html[SG5700]
+* link:../sg100-1000/changing-link-configuration-of-services-appliance.html[SG100 and SG1000]
+
+.. Change the FEC settings on the switch ports. The StorageGRID appliance ports will adjust their FEC settings to match, if possible.
++
+You cannot configure FEC settings on StorageGRID appliances. Instead, the appliances attempt to discover and mirror the FEC settings on the switch ports they are connected to. If the links are forced to 25-GbE or 100-GbE network speeds, the switch and NIC might fail to negotiate a common FEC setting. Without a common FEC setting, the network will fall back to "`no-FEC`" mode. When FEC is not enabled, the connections are more susceptible to errors caused by electrical noise.
++
+NOTE: StorageGRID appliances support Firecode (FC) and Reed Solomon (RS) FEC, as well as no FEC.
+--
+.Switch port and NIC MTU mismatch
+--
+
+If the error is caused by a switch port and NIC MTU mismatch, check that the MTU size configured on the node is the same as the MTU setting for the switch port.
+
 The MTU size configured on the node might be smaller than the setting on the switch port the node is connected to. If a StorageGRID node receives an Ethernet frame larger than its MTU, which is possible with this configuration, the NRER alarm might be reported. If you believe this is what is happening, either change the MTU of the switch port to match the StorageGRID network interface MTU, or change the MTU of the StorageGRID network interface to match the switch port, depending on your end-to-end MTU goals or requirements.
-+
+
 IMPORTANT: For the best network performance, all nodes should be configured with similar MTU values on their Grid Network interfaces. The *Grid Network MTU mismatch* alert is triggered if there is a significant difference in MTU settings for the Grid Network on individual nodes. The MTU values do not have to be the same for all network types. See <<troubleshoot_MTU_alert,Troubleshoot the Grid Network MTU mismatch alert>> for more information.
-+
+
 NOTE: Also see link:../commonhardware/changing-mtu-setting.html[Change MTU setting].
 
- ** If the error is caused by high link error rates, perform the following steps:
-  ... Enable FEC, if not already enabled.
-  ... Verify that your network cabling is of good quality and is not damaged or improperly connected.
-  ... If the cables do not appear to be the problem, contact technical support.
+--
+.High link error rates
+--
+
+.. Enable FEC, if not already enabled.
+.. Verify that your network cabling is of good quality and is not damaged or improperly connected.
+.. If the cables do not appear to be the problem, contact technical support.
 +
 NOTE: You might notice high error rates in an environment with high electrical noise.
- ** If the error is a NIC ring buffer overrun, contact technical support.
-+
+
+--
+.NIC ring buffer overrun
+--
+If the error is a NIC ring buffer overrun, contact technical support.
+
 The ring buffer can be overrun when the StorageGRID system is overloaded and unable to process network events in a timely manner.
+--
+====
+
 . After you resolve the underlying problem, reset the error counter.
  .. Select *SUPPORT* > *Tools* > *Grid topology*.
  .. Select *_site_* > *_grid node_* > *SSM* > *Resources* > *Configuration* > *Main*.
  .. Select *Reset Receive Error Count* and click *Apply Changes*.
+
+
 
 .Related information
 
