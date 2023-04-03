@@ -23,21 +23,21 @@ When you apply power to the appliance, the BMC logs a series of boot-up codes. Y
 [cols="1a,2a" options="header"]
 |===
 | Method| Required equipment
-|VGA console
-|
+| VGA console
+| 
 * VGA-capable monitor
 * VGA cable
 
-|KVM
-|* RJ-45 cable
+| KVM
+| * RJ-45 cable
 
-|Serial port
-|
+| Serial port
+| 
 * DB-9 serial cable
 * Virtual serial terminal
 
-|SOL
-|* Virtual serial terminal
+| SOL
+| * Virtual serial terminal
 |===
 
 . If you are using a VGA console, perform these steps:
@@ -64,36 +64,29 @@ When you apply power to the appliance, the BMC logs a series of boot-up codes. Y
 [cols="1a,3a" options="header"]
 |===
 | Code| Indicates
-a|
-HI
-a|
-The master boot script has started.
-a|
-HP
-a|
-The system is checking to see if the network interface card (NIC) firmware needs to be updated.
-a|
-RB
-a|
-The system is rebooting after applying firmware updates.
-a|
-FP
-a|
-The hardware subsystem firmware update checks have been completed. Inter-controller communication services are starting.
-a|
-HC
-a|
-The system is checking for existing StorageGRID installation data.
-a|
-HO
-a|
-The StorageGRID appliance is running.
-a|
-HA
-a|
-StorageGRID is running.
+
+| HI
+| The master boot script has started.
+
+| HP
+| The system is checking to see if the network interface card (NIC) firmware needs to be updated.
+
+| RB
+| The system is rebooting after applying firmware updates.
+
+| FP
+| The hardware subsystem firmware update checks have been completed. Inter-controller communication services are starting.
+
+| HC
+| The system is checking for existing StorageGRID installation data.
+
+| HO
+| The StorageGRID appliance is running.
+
+| HA
+| StorageGRID is running.
 |===
 
 .Related information
 
-xref:../installconfig/accessing-bmc-interface.adoc[Access BMC interface]
+link:accessing-bmc-interface.html[Access BMC interface]

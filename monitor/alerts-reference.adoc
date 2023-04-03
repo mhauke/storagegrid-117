@@ -138,7 +138,10 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 | A temperature sensor has been removed.
 
 | Disk I/O is very slow
-| Very slow disk I/O might be impacting grid performance.
+| Very slow disk I/O may be impacting grid performance.
+
+| Storage appliance fan fault detected
+| A problem with a fan unit in the storage controller for an appliance was detected.
 
 | Storage appliance storage connectivity degraded
 | There is a problem with one or more connections between the compute controller and storage controller.
@@ -265,11 +268,14 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 | When trace configuration is enabled, system performance might be negatively impacted.
 |===
 
-== Email notification alerts
+== Email and AutoSupport alerts
 
 [cols="1a,2a" options="header"]
 |===
 | Alert name| Description
+
+| AutoSupport message failed to send
+| The most recent AutoSupport message failed to send.
 
 | Email notification failure
 | The email notification for an alert could not be sent.
@@ -474,6 +480,9 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 |===
 | Alert name| Description
 
+| Firewall configuration failure
+| Failed to apply firewall configuration.
+
 | Node network connectivity error
 | Errors have occurred while transferring data between nodes.
 
@@ -584,6 +593,9 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 
 | Storage volume needs to be restored
 | A storage volume has been recovered and needs to be restored.
+
+| Storage volume offline
+| A storage volume has been offline for more than 5 minutes, possibly because the node rebooted during the volume formatting step.
 
 | Volume Restoration failed to start replicated data repair
 | Replicated data repair for a repaired volume couldn't be started automatically.
