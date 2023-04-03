@@ -89,17 +89,5 @@ Follow these guidelines to secure any hardware appliance nodes in your StorageGR
 +
 include::../_include/enable-disable-ipmi.adoc[]
 
-* If the storage controller in the appliance includes FDE or FIPS drives and the Drive Security feature is enabled, use SANtricity to configure Drive Security keys.
-* For appliances without FDE or FIPS drives, enable node encryption using a Key Management Server (KMS).
-
-See the installation and maintenance instructions for your StorageGRID hardware appliance:
-
-* link:../sg6100/index.html[SGF6112 storage appliances]
-
-* link:../sg6000/index.html[SG6000 storage appliances]
-
-* link:../sg100-1000/index.html[Maintain SG100 and SG1000 appliances]
-
-* link:../sg6000/index.html[Maintain SG6000 appliance]
-
-* link:../sg5700/index.html[Maintain SG5700 appliance]
+* If the storage controller in the appliance includes FDE or FIPS drives and the Drive Security feature is enabled, use SANtricity to configure Drive Security keys. See link:../installconfig/accessing-and-configuring-santricity-system-manager.html[Configure SANtricity System Manager (SG6000 and SG5700)].
+* For appliances without FDE or FIPS drives, enable node encryption using a Key Management Server (KMS). See link:../installconfig/optional-enabling-node-encryption.html[Optional: Enable node encryption].
