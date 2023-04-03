@@ -40,8 +40,6 @@ image::../media/maintenance_mode_confirmation.gif[Maintenance Mode confirmation 
 +
 A progress bar and a series of messages, including "Request Sent","Stopping StorageGRID", and "Rebooting", indicate that the appliance is completing the steps for entering maintenance mode.
 +
-image::../media/maintenance_mode_progress_bar.png[Maintenance Mode Progress Bar]
-+
 When the appliance is in maintenance mode, a confirmation message lists the URLs you can use to access the StorageGRID Appliance Installer.
 +
 image::../media/maintenance_mode_urls.png[Maintenance Mode URLs]
@@ -61,6 +59,6 @@ image::../media/maintenance_mode_notification_bar.png[maintenance mode message]
 +
 image::../media/reboot_controller_from_maintenance_mode.png[Reboot controller in maintenance mode]
 +
-It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *Nodes* page should display a normal status (no icons to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
+It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *Nodes* page should display a normal status (green checkmark icon image:../media/icon_alert_green_checkmark.png[green checkmark] to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
 +
-image::../media/node_rejoin_grid_confirmation.png[Appliance node rejoined grid]
+image::../media/nodes_menu.png[Appliance node rejoined grid]
