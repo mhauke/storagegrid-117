@@ -41,7 +41,7 @@ IMPORTANT: Clearing the KMS configuration deletes data from the appliance, rende
 +
 image::../media/reboot_controller_from_maintenance_mode.png[Reboot controller in maintenance mode]
 +
-It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *NODES* page should display a normal status (no icon) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
+It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *NODES* page should display a normal status (green checkmark icon image:../media/icon_alert_green_checkmark.png[green checkmark] to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
 +
 image::../media/nodes_menu.png[Appliance node rejoined grid]
 
@@ -85,16 +85,10 @@ The StorageGRID Appliance Installer Home page appears.
 
 . Select *Configure Hardware* > *Node Encryption*.
 +
-image::../media/clear_kms.png[KMS clear configuration]
-+
 IMPORTANT: If the KMS configuration is cleared, data on the appliance will be permanently deleted. This data is not recoverable.
 
 . At the bottom of the window, select *Clear KMS Key and Delete Data*.
-. If you are sure that you want to clear the KMS configuration, type +
-`*clear*` +
-and select *Clear KMS Key and Delete Data*.
-+
-image::../media/fde_disable_confirmation.png[KMS clear confirmation]
+. If you are sure that you want to clear the KMS configuration, type `*clear*` in the warning dialog box and select *Clear KMS Key and Delete Data*.
 +
 The KMS encryption key and all data are deleted from the node, and the appliance reboots. This can take up to 20 minutes.
 

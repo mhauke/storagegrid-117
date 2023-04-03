@@ -30,17 +30,11 @@ NOTE: The admin account password and SSH host keys for a StorageGRID appliance i
 +
 image::../media/maintenance_mode.png[Maintenance Mode button for appliance]
 
-. Select *Maintenance mode*.
-+
-A confirmation dialog box appears.
-+
-image::../media/maintenance_mode_confirmation.png[Maintenance Mode confirmation dialog box]
+. Select *Maintenance mode*. A confirmation dialog box appears.
 
 . Enter the provisioning passphrase, and select *OK*.
 +
 A progress bar and a series of messages, including "Request Sent," "Stopping StorageGRID," and "Rebooting," indicate that the appliance is completing the steps for entering maintenance mode.
-+
-image::../media/maintenance_mode_progress_bar.png[Maintenance Mode Progress Bar]
 +
 When the appliance is in maintenance mode, a confirmation message lists the URLs you can use to access the StorageGRID Appliance Installer.
 +
@@ -61,6 +55,6 @@ image::../media/maintenance_mode_notification_bar.png[maintenance mode message]
 +
 image::../media/reboot_controller_from_maintenance_mode.png[Reboot controller in maintenance mode]
 +
-It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *NODES* page should display a normal status (no icon) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
+It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *NODES* page should display a normal status (green checkmark icon image:../media/icon_alert_green_checkmark.png[green checkmark] to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
 +
 image::../media/nodes_menu.png[Nodes page normal status]
