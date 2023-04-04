@@ -17,16 +17,15 @@ The networking ports on the services appliance support Fixed port bond mode or A
 
 === Fixed port bond mode
 
-Fixed port bond mode is the default configuration for the networking ports.
+Fixed port bond mode is the default configuration for the networking ports. The figures show how the network ports on the SG1000 or SG100 are bonded in fixed port bond mode.
 
-*SG100 fixed port bond mode* 
+SG100: 
 
 image::../media/sg100_fixed_port.png[SG100 Fixed Port Bond Mode]
 
-*SG1000 fixed port bond mode*
+SG1000:
 
 image::../media/sg1000_fixed_port.png[SG1000 Fixed Port Bond Mode]
-
 
 [cols="1a,3a" options=header] 
 |===
@@ -49,13 +48,13 @@ NOTE: If you do not need redundant connections, you can use only one port for ea
 
 === Aggregate port bond mode
 
-Aggregate port bond mode significantly increases the throughput for each StorageGRID network and provides additional failover paths.
+Aggregate port bond mode significantly increases the throughput for each StorageGRID network and provides additional failover paths. These figures show how the network ports are bonded in aggregate port bond mode.
 
-*SG100 aggregate port bond mode*
+SG100:
 
 image::../media/sg100_aggregate_ports.png[SG100 aggregate port bond mode]
 
-*SG1000 aggregate port bond mode*
+SG1000:
 
 image::../media/sg1000_aggregate_ports.png[SG1000 Aggregate Port Bond Mode]
 
@@ -81,21 +80,15 @@ NOTE: If you choose to use fewer than four network ports, be aware that a *Servi
 
 == Network bond modes for management ports
 
-For the two 1-GbE management ports on the services appliance, you can choose Independent network bond mode or Active-Backup network bond mode to connect to the optional Admin Network.
+For the two 1-GbE management ports on the services appliance, you can choose Independent network bond mode or Active-Backup network bond mode to connect to the optional Admin Network. These figures show how the management ports on the appliances are bonded in network bond mode for the Admin Network.
 
-*SG100 network management ports*
+SG100:
 
 image::../media/sg100_bonded_management_ports.png[SG100 Bonded Network Management Ports]
 
-*SG1000 network management ports*
+SG1000:
 
 image::../media/sg1000_bonded_management_ports.png[SG1000 Bonded Network Management Ports]
-
-In Independent mode, only the management port on the left is connected to the Admin Network. This mode does not provide a redundant path. The management port on the right is unconnected and available for temporary local connections (uses IP address 169.254.0.1)
-
-In Active-Backup mode, both management ports are connected to the Admin Network. Only one port is active at a time. If the active port fails, its backup port automatically provides a failover connection. Bonding these two physical ports into one logical management port provides a redundant path to the Admin Network.
-
-NOTE: If you need to make a temporary local connection to the services appliance when the 1-GbE management ports are configured for Active-Backup mode, remove the cables from both management ports, plug your temporary cable into the management port on the right, and access the appliance using IP address 169.254.0.1.
 
 [cols="1a,3a" options="header"]
 |===
@@ -108,3 +101,9 @@ NOTE: If you need to make a temporary local connection to the services appliance
 | I
 | Independent mode. The port on the left is connected to the Admin Network. The port on the right is available for temporary local connections (IP address 169.254.0.1).
 |===
+
+In Independent mode, only the management port on the left is connected to the Admin Network. This mode does not provide a redundant path. The management port on the right is unconnected and available for temporary local connections (uses IP address 169.254.0.1)
+
+In Active-Backup mode, both management ports are connected to the Admin Network. Only one port is active at a time. If the active port fails, its backup port automatically provides a failover connection. Bonding these two physical ports into one logical management port provides a redundant path to the Admin Network.
+
+NOTE: If you need to make a temporary local connection to the services appliance when the 1-GbE management ports are configured for Active-Backup mode, remove the cables from both management ports, plug your temporary cable into the management port on the right, and access the appliance using IP address 169.254.0.1.

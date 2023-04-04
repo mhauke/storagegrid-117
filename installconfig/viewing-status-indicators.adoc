@@ -26,10 +26,12 @@ The appliance includes indicators that help you determine the status of the appl
 Use this information to help link:troubleshooting-hardware-installation-sg6100.html[troubleshoot SGF6112 hardware installation].
 
 [[appliance_indicators_SG6100]]
-*Appliance indicators and buttons*
-
+Appliance indicators and buttons::
++
+The following figure shows indicators and buttons on the SG6112 appliance.
++
 image::../media/sgf6112_front_indicators.png[Front Indicators - SGF6112]
-
++
 [cols="1a,2a,3a" options="header"]
 |===
 | Callout | Display| State
@@ -65,10 +67,10 @@ image::../media/sgf6112_front_indicators.png[Front Indicators - SGF6112]
 |===
 
 [[general_boot_codes_SG6100]]
-*General boot-up codes*
-
+General boot-up codes::
++
 During boot-up or after a hard reset of the appliance, the following occurs:
-
++
 . The baseboard management controller (BMC) logs codes for the boot-up sequence, including any errors that occur.
 . The power button lights up.
 . If any errors occur during boot-up, the alarm LED lights up.
@@ -76,10 +78,12 @@ During boot-up or after a hard reset of the appliance, the following occurs:
 To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 
 [[ssd_indicators_SG6100]]
-*SSD indicators*
-
+SSD indicators::
++
+The following figure shows SSD indicators on the SG6112 appliance.
++
 image::../media/ssd_indicators.png[SSD Indicators]
-
++
 [cols="1a,2a,2a" options="header"]
 |===
 | LED| Display| State
@@ -111,12 +115,14 @@ The SG6000 appliance controllers include indicators that help you determine the 
 Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot SG6000 installation].
 
 [[status_indicators_sg6000cn]]
-*Status indicators and buttons on SG6000-CN controller*
-
+Status indicators and buttons on SG6000-CN controller::
++
 The SG6000-CN controller includes indicators that help you determine the status of the controller, including the following indicators and buttons.
-
++
+The following figure shows status indicators and buttons on the SG6000-CN controller.
++
 image::../media/sg6000_cn_front_indicators.gif[Front Indicators - SG6000-CN]
-
++
 [cols="1a,2a,3a" options="header"]
 |===
 | Callout  | Display| Description
@@ -149,10 +155,10 @@ This button can be set to Blink, On (Solid), or Off.
 |===
 
 [[general_boot_codes_sg6000]]
-*General boot-up codes*
-
+General boot-up codes::
++
 During boot-up or after a hard reset of the SG6000-CN controller, the following occurs:
-
++
 . The baseboard management controller (BMC) logs codes for the boot-up sequence, including any errors that occur.
 . The power button lights up.
 . If any errors occur during boot-up, the alarm LED lights up.
@@ -160,10 +166,10 @@ During boot-up or after a hard reset of the SG6000-CN controller, the following 
 To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 
 [[boot_codes_sg6000_storage_controller]]
-*Boot-up status codes for SG6000 storage controllers*
-
+Boot-up status codes for SG6000 storage controllers::
++
 Each storage controller has a seven-segment display that provides status codes as the controller powers up. The status codes are the same for both the E2800 controller and the EF570 controller.
-
++
 For descriptions of these codes, see the E-Series system monitoring information for you storage controller type.
 
 .Steps
@@ -201,14 +207,14 @@ The appliance controllers include indicators that help you determine the status 
 Use this information to help link:troubleshooting-hardware-installation.html[troubleshoot SG5700 hardware installation].
 
 [[boot_codes_sg5700]]
-*SG5700 boot-up status codes*
-
+SG5700 boot-up status codes::
++
 The seven-segment displays on each controller show status and error codes as the appliance powers up.
-
++
 The E2800 controller and the E5700SG controller display different statuses and error codes.
-
++
 To understand what these codes mean, see the following resources:
-
++
 [cols="1a,2a" options="header"]
 |===
 | Controller| Reference
@@ -255,14 +261,16 @@ In the sequence, the first set of numbers is the DHCP-assigned IP address for th
 . If the seven-segment displays show other values, see link:troubleshooting-hardware-installation.html[Troubleshoot hardware installation (SG6000 or SG5700)] and confirm you completed the installation steps correctly. If you are unable to resolve the problem, contact technical support.
 
 [[status_indicators_e5700sg_controller]]
-*Status indicators on E5700SG controller*
-
+Status indicators on E5700SG controller::
++
 The seven-segment display and the LEDs on the E5700SG controller show status and error codes while the appliance powers up and while the hardware is initializing. You can use these displays to determine status and troubleshoot errors.
-
++
 After the StorageGRID Appliance Installer has started, you should periodically review the status indicators on the E5700SG controller.
-
++
+The following figure shows status indicators on the E5700SG controller.
++
 image::../media/e5700sg_leds.gif[Status indicators on E5700SG controller]
-
++
 [cols="1a,2a,2a" options="header"]
 |===
 | Callout | Display| Description
@@ -305,18 +313,18 @@ Blinking Green: There is Ethernet activity.
 |===
 
 [[general_boot_codes_sg5700]]
-*General boot-up codes*
-
+General boot-up codes::
++
 During boot-up or after a hard reset of the appliance, the following occurs:
-
++
 . The seven-segment display on the E5700SG controller shows a general sequence of codes that is not specific to the controller. The general sequence ends with the codes AA and FF.
 . Boot-up codes that are specific to the E5700SG controller appear.
 
 [[boot_codes_e5700sg_controller]]
-*E5700SG controller boot-up codes*
-
+E5700SG controller boot-up codes::
++
 During a normal boot-up of the appliance, the seven-segment display on the E5700SG controller shows the following codes in the order listed:
-
++
 [cols="1a,3a" options="header"]
 |===
 | Code| Indicates
@@ -345,10 +353,10 @@ During a normal boot-up of the appliance, the seven-segment display on the E5700
 |===
 
 [[error_codes_e5700sg_controller]]
-*E5700SG controller error codes*
-
+E5700SG controller error codes::
++
 These codes represent error conditions that might be shown on the E5700SG controller as the appliance boots up. Additional two-digit hexadecimal codes are displayed if specific low-level hardware errors occur. If any of these codes persists for more than a second or two, or if you are unable to resolve the error by following one of the prescribed troubleshooting procedures, contact technical support.
-
++
 [cols="1a,3a" options="header"]
 |===
 | Code| Indicates
@@ -435,10 +443,12 @@ The appliance includes indicators that help you determine the status of the appl
 Use this information to help link:troubleshooting-hardware-installation-sg100-and-sg1000.html[troubleshoot SG100 and SG1000 hardware installation].
 
 [[appliance_indicators_SG100_1000]]
-*Appliance indicators and buttons*
-
+Appliance indicators and buttons::
++
+The following figure shows status indicators and buttons on the SG100 and SG1000.
++
 image::../media/sg6000_cn_front_indicators.gif[Front Indicators - SG1000]
-
++
 [cols="1a,2a,2a" options="header"]
 |===
 | Callout | Display| State
@@ -473,10 +483,10 @@ image::../media/sg6000_cn_front_indicators.gif[Front Indicators - SG1000]
 |===
 
 [[general_boot_codes_SG100_1000]]
-*General boot-up codes*
-
+General boot-up codes::
++
 During boot-up or after a hard reset of the appliance, the following occurs:
-
++
 . The baseboard management controller (BMC) logs codes for the boot-up sequence, including any errors that occur.
 . The power button lights up.
 . If any errors occur during boot-up, the alarm LED lights up.
@@ -484,10 +494,12 @@ During boot-up or after a hard reset of the appliance, the following occurs:
 To view the boot-up and error codes, link:accessing-bmc-interface.html[access the BMC interface].
 
 [[ssd_indicators_SG100_1000]]
-*SSD indicators*
-
+SSD indicators::
++
+The following figure shows SSD indicators on the SG100 and SG1000.
++
 image::../media/ssd_indicators.png[SSD Indicators]
-
++
 [cols="1a,2a,2a" options="header"]
 |===
 | LED| Display| State
@@ -505,14 +517,3 @@ image::../media/ssd_indicators.png[SSD Indicators]
 |===
 --
 ====
-
-
-
-
-
-
-
-
-
-
-
