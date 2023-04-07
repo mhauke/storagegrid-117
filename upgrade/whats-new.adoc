@@ -92,7 +92,7 @@ S3 SelectObjectContent now offers support for Parquet objects. In addition, you 
 == Other enhancements
 
 === Certificate subject optional
-The certificate subject field is now optional. If this field is left blank, the generated certificate uses the first domain name or IP address as the subject common name (CN). See link:../using-storagegrid-security-certificates.html[Manage security certificates].
+The certificate subject field is now optional. If this field is left blank, the generated certificate uses the first domain name or IP address as the subject common name (CN). See link:../admin/using-storagegrid-security-certificates.html[Manage security certificates].
 
 === ILM audit message category and new messages
 An audit message category was added for ILM operations and includes the IDEL, LKCU, and ORLM messages. This new category is set to *Normal*. See link:../audit/ilm-audit-messages.html[ILM operations audit messages].
