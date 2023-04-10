@@ -71,7 +71,7 @@ The Services: Status - Cassandra (SVST) alarm indicates that you might need to r
 .About this task
 If Cassandra is stopped for more than 15 days (for example, the Storage Node is powered off), Cassandra will not start when the node is brought back online. You must rebuild the Cassandra database for the affected DDS service.
 
-You can link:../monitor/running-diagnostics.html[run diagnostics] to obtain additional information on the current state of your grid.
+You can link:../monitor/running-diagnostics.html[run diagnostics] to obtain additional information about the current state of your grid.
 
 IMPORTANT: If two or more of the Cassandra database services are down for more than 15 days, contact technical support, and do not proceed with the steps below.
 

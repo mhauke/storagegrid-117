@@ -34,7 +34,7 @@ The Storage Node is unavailable for a brief time when you add storage volumes. Y
 For more information, see the documentation provided by your hardware vendor.
 
 . Create new block storage volumes of the desired sizes.
- ** Attach the new disk drives and update the RAID controller configuration as needed, or allocate the new SAN LUNs on the shared storage arrays and allow the Linux host to access them.
+ ** Attach the new drives and update the RAID controller configuration as needed, or allocate the new SAN LUNs on the shared storage arrays and allow the Linux host to access them.
  ** Use the same persistent naming scheme you used for the storage volumes on the existing Storage Node.
  ** If you use the StorageGRID node migration feature, make the new volumes visible to other Linux hosts that are migration targets for this Storage Node.
 For more information, see the instructions for installing StorageGRID for your Linux platform.
