@@ -70,8 +70,8 @@ If enterprise networking policies restrict access to any of these ports, you can
 | 1055
 | TCP
 | Node being added in an expansion or recovery operation
-| Primary Admin Node
-| Internal traffic for expansion and recovery procedures.
+| All nodes
+| Internal traffic for installation, expansion, and recovery procedures.
 
 | 1139
 | TCP
@@ -143,13 +143,13 @@ If enterprise networking policies restrict access to any of these ports, you can
 | TCP
 | All nodes
 | Admin Nodes
-| Internal traffic for maintenance procedures and error reporting.
+| Internal traffic for installation, maintenance procedures, and error reporting.
 
 | 8011
 | TCP
 | Node being added in an expansion or recovery operation
-| Primary Admin Node
-| Internal traffic for expansion and recovery procedures.
+| All nodes
+| Internal traffic for installation, expansion, and recovery procedures.
 
 | 8443
 | TCP
@@ -178,8 +178,8 @@ If enterprise networking policies restrict access to any of these ports, you can
 | 10342
 | TCP
 | Node being added in an expansion or recovery operation
-| Primary Admin Node
-| Internal traffic for expansion and recovery procedures.
+| All nodes
+| Internal traffic for installation, expansion, and recovery procedures.
 
 | 11139
 | TCP
