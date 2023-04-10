@@ -37,11 +37,7 @@ If enterprise networking policies restrict access to any of these ports, you can
 
 [cols="1a,1a,1a,1a,4a" options=header] 
 |===
-| Port
-| TCP or UDP
-| From
-| To
-| Details
+| Port| TCP or UDP| From| To| Details
 
 | 22
 | TCP
@@ -71,7 +67,7 @@ If enterprise networking policies restrict access to any of these ports, you can
 | TCP
 | All nodes
 | Primary Admin Node
-| Internal traffic for installation, expansion, and recovery procedures.
+| Internal traffic for installation, expansion, recovery, and other maintenance procedures.
 
 | 1139
 | TCP
@@ -142,14 +138,14 @@ If enterprise networking policies restrict access to any of these ports, you can
 | 7443
 | TCP
 | All nodes
-| Admin Nodes
-| Internal traffic for installation, maintenance procedures, and error reporting.
+| Primary Admin Node
+| Internal traffic for installation, expansion, recovery, other maintenance procedures, and error reporting.
 
 | 8011
 | TCP
 | All nodes
 | Primary Admin Node
-| Internal traffic for installation, expansion, and recovery procedures.
+| Internal traffic for installation, expansion, recovery, and other maintenance procedures.
 
 | 8443
 | TCP
@@ -179,7 +175,7 @@ If enterprise networking policies restrict access to any of these ports, you can
 | TCP
 | All nodes
 | Primary Admin Node
-| Internal traffic for installation, expansion, and recovery procedures.
+| Internal traffic for installation, expansion, recovery, and other maintenance procedures.
 
 | 11139
 | TCP
