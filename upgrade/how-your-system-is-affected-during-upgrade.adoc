@@ -47,31 +47,33 @@ Be aware that a large number of SNMP notifications might be generated when grid 
 
 == Configuration changes are restricted
 
-NOTE: This list applies specifically to upgrades from StorageGRID 11.6 to StorageGRID 11.7. If you are upgrading to another StorageGRID release, refer to the list of restricted changes in the upgrade instructions for that release.
+NOTE: This list applies specifically to upgrades from StorageGRID 11.6 to StorageGRID 11.7. If you're upgrading to another StorageGRID release, refer to the list of restricted changes in the upgrade instructions for that release.
 
 Until the *Enable New Feature* task completes:
 
-* Do not make any grid configuration changes.
-* Do not enable or disable any new features. For example, do not attempt to create a grid federation connection until both StorageGRID systems have been updated to StorageGRID 11.7.
-* Do not update the ILM configuration. Otherwise, you might experience inconsistent and unexpected ILM behavior.
-* Do not apply a hotfix or recover a grid node.
+* Don't make any grid configuration changes.
+* Don't enable or disable any new features. For example, don't attempt to create a grid federation connection until both StorageGRID systems have been updated to StorageGRID 11.7.
+* Don't update the ILM configuration. Otherwise, you might experience inconsistent and unexpected ILM behavior.
+* Don't apply a hotfix or recover a grid node.
 +
 NOTE: Contact technical support if you need to recover a node during upgrade.
 
-* You cannot manage HA groups, VLAN interfaces, or load balancer endpoints while you are upgrading to StorageGRID 11.7.
+* You shouldn't manage HA groups, VLAN interfaces, or load balancer endpoints while you're upgrading to StorageGRID 11.7.
+
+* Don't delete any HA groups until the upgrade to StorageGRID 11.7 is complete. Virtual IP addresses in other HA groups might become inaccessible.
 
 Until the *Final Upgrade Steps* task completes:
 
-* Do not perform an expansion procedure.
-* Do not perform a decommission procedure.
+* Don't perform an expansion procedure.
+* Don't perform a decommission procedure.
 
-== You cannot view bucket details or manage buckets from the Tenant Manager
+== You can't view bucket details or manage buckets from the Tenant Manager
 
-During the upgrade to StorageGRID 11.7 (that is, while the system is operating as a mixed-version environment), you cannot view bucket details or manage buckets using the Tenant Manager. One of the following errors appears on the Buckets page in Tenant Manager:
+During the upgrade to StorageGRID 11.7 (that is, while the system is operating as a mixed-version environment), you can't view bucket details or manage buckets using the Tenant Manager. One of the following errors appears on the Buckets page in Tenant Manager:
 
-* You cannot use this API while you are upgrading to 11.7.
+* You can't use this API while you're upgrading to 11.7.
 
-* You cannot view bucket versioning details in the Tenant Manager while you are upgrading to 11.7.
+* You can't view bucket versioning details in the Tenant Manager while you're upgrading to 11.7.
 
 This error will resolve after the upgrade to 11.7 is complete. 
 
