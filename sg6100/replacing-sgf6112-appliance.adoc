@@ -110,7 +110,7 @@ Follow the maintenance instructions provided for reinstalling the replaceable co
 IMPORTANT: If you wish to retain the data on the drives, be sure to insert the SSD drives into the same drive slots they occupied in the failed appliance. If you do not, the Appliance Installer will display a warning message and you will have to put the drives into the correct slots and reboot the appliance before the appliance can rejoin the grid.  
  .. Install the replacement appliance into the cabinet or rack.
  .. Replace the cables and any optical transceivers.
- .. Power on the appliance and wait for it to rejoin the grid (normal), or the StorageGRID Appliance Installer displays information on the home page to help you address any issue that is preventing the appliance from rejoining the grid.
+ .. Power on the appliance and wait for it to rejoin the grid (normal), or the StorageGRID Appliance Installer displays information about the home page to help you address any issue that is preventing the appliance from rejoining the grid.
 +
 . If the appliance where you replaced the appliance used a key management server (KMS) to encrypt data, additional configuration might be required before the node can join the grid. If the node does not automatically join the grid, make sure that these configuration settings have transferred to the new appliance and manually configure any settings that do not have the expected configuration:
 ** link:../installconfig/accessing-storagegrid-appliance-installer.html[Configure StorageGRID connections]  
