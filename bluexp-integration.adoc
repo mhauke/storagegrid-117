@@ -22,30 +22,55 @@ When you access Grid Manager on a StorageGRID system running StorageGRID 11.7 or
 
 BlueXP enables you to create and administer object storage, use NetApp's data services (for example, Cloud Backup), and control many on-premise appliances and other storage devices.
 
+=== What's supported
+With the current implementation, almost all Grid Manager features and operations are supported from BlueXP. The following Grid Manager operations are not supported, so the corresponding links are hidden when you access Grid Manager from BlueXP. If you need to perform these operations, sign directly in to the Grid Manager.
+
+[cols="1a,2a" options=header] 
+|===
+| Grid Manager menu
+| Pages and tabs not available from BlueXP
+
+| User menu
+| * *Sign out*
+* *API documentation*
+
+| ALERTS
+| Fully supported
+
+| NODES
+| Some Graphana-based charts and metrics are not available.
+
+| TENANTS
+| Fully supported, but you can't sign in to a tenant account from BlueXP
+
+| ILM
+| Fully supported
+
+| CONFIGURATION
+| * *Traffic classification* > *Metrics* tab
+* *Security settings* > *Browser inactivity timeout* tab
+* *Single sign-on* page
+
+| MAINTENANCE
+| * *Recovery package* page
+* *Software update* page
+
+| SUPPORT
+| * *Diagnostics* page
+ * *Grid topology* page
+* *Metrics* page
+* All pages related to *Alarms (legacy)*
+* *Link cost* page
+* *NMS entities* page
+
+|===
+
+IMPORTANT: BlueXP doesn't currently support the Tenant Manager. Although you can create new tenant accounts from BlueXP, tenant users can't sign into their accounts from BlueXP.
+
 == Manage your StorageGRID system from BlueXP
 
 When you're ready to manage your StorageGRID system from BlueXP, you can follow the link that appears when you try to access Grid Manager, or you can go directly to BlueXP. Going directly to BlueXP provides an advantage, if you'd like to use BlueXP's data services to back up data, scan and categorize your data, and more.
 
-=== What's not supported
-With the current implementation, the following Grid Manager features and operations aren't supported from BlueXP:
-
-* Grafana charts don't work in the current implementation.
-
-* The metrics available from the Nodes page and the Traffic Classifications pages don't work. 
-
-* Certain legacy pages, such as the Alarms and Grid Topology pages, don't work.
-
-* The following operations aren't supported from BlueXP, so the following Grid Manager pages are hidden from BlueXP. If you need to perform these operations, sign directly in to the Grid Manager.
-
-** StorageGRID software upgrade page. You can't upgrade StorageGRID software or apply a hotfix from BlueXP.
-** Single sign-on (SSO) page.
-** Settings page to set the auto-logout timer
-** Link to the Swagger documentation for the Grid Management API
-** Log page
-** Recovery Package page
-** Sign out option
-
-* The Tenant Manager user interface is not supported. While you can create new tenant accounts from BlueXP, tenant users can't sign into their accounts from BlueXP.
 
 === Use the link from Grid Manager
 
@@ -93,4 +118,3 @@ Go to the https://docs.netapp.com/us-en/cloud-manager-family/index.html[BlueXP d
 
 * https://docs.netapp.com/us-en/cloud-manager-family/concept-overview.html[BlueXP overview^]
 
-* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/index.html[Manage your NetApp AFF and FAS systems through BlueXP^]
