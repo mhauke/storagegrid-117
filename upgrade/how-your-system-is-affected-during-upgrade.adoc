@@ -60,6 +60,8 @@ NOTE: Contact technical support if you need to recover a node during upgrade.
 
 * You cannot manage HA groups, VLAN interfaces, or load balancer endpoints while you are upgrading to StorageGRID 11.7.
 
+* Do not delete any HA groups until the upgrade to StorageGRID 11.7 is complete. Virtual IP addresses in other HA groups might become inaccessible.
+
 Until the *Final Upgrade Steps* task completes:
 
 * Do not perform an expansion procedure.
