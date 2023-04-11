@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: bluexp-integration.html
 keywords: netapp, storagegrid, grid manager, bluexp, hybrid, cloud, dashboard, multicloud
-summary: Beginning with StorageGRID 11.7, Grid Manager is integrated with BlueXP. With BlueXP, you can manage your hybrid multicloud infrastructure from a single control plane while retaining the familiar Grid Manager dashboard.
+summary: Beginning with StorageGRID 11.7, Grid Manager is integrated with BlueXP. Adding your StorageGRID system to BlueXP allow you to use the familiar Grid Manager dashboard, while providing a complete view of the data across your hybrid multicloud. 
 ---
 = Grid Manager integration with BlueXP
 :toc: macro
@@ -14,7 +14,7 @@ summary: Beginning with StorageGRID 11.7, Grid Manager is integrated with BlueXP
 :imagesdir: ./media/
 
 [.lead]
-Beginning with StorageGRID 11.7, Grid Manager is integrated with BlueXP. With BlueXP, you can manage your hybrid multicloud infrastructure from a single control plane while retaining the familiar Grid Manager dashboard.
+Beginning with StorageGRID 11.7, Grid Manager is integrated with BlueXP. Adding your StorageGRID system to BlueXP allow you to use the familiar Grid Manager dashboard, while providing a complete view of the data across your hybrid multicloud. 
 
 == Integration overview
 
@@ -31,14 +31,14 @@ With the current implementation, almost all Grid Manager features and operations
 | Pages and tabs not available from BlueXP
 
 | User menu
-| * *Sign out*
-* *API documentation*
+| * Sign out
+* API documentation
 
 | ALERTS
 | Fully supported
 
 | NODES
-| Some Graphana-based charts and metrics are not available.
+| Some Grafana-based charts and metrics are not available.
 
 | TENANTS
 | Fully supported, but you can't sign in to a tenant account from BlueXP
@@ -47,21 +47,21 @@ With the current implementation, almost all Grid Manager features and operations
 | Fully supported
 
 | CONFIGURATION
-| * *Traffic classification* > *Metrics* tab
-* *Security settings* > *Browser inactivity timeout* tab
-* *Single sign-on* page
+| * Traffic classification > Metrics
+* Security settings > Browser inactivity timeout
+* Single sign-on 
 
 | MAINTENANCE
-| * *Recovery package* page
-* *Software update* page
+| * Recovery package
+* Software update
 
 | SUPPORT
-| * *Diagnostics* page
- * *Grid topology* page
-* *Metrics* page
-* All pages related to *Alarms (legacy)*
-* *Link cost* page
-* *NMS entities* page
+| * Diagnostics
+ * Grid topology
+* Metrics
+* All pages related to legacy alarms
+* Link cost
+* NMS entities
 
 |===
 
@@ -71,6 +71,13 @@ IMPORTANT: BlueXP doesn't currently support the Tenant Manager. Although you can
 
 When you're ready to manage your StorageGRID system from BlueXP, you can follow the link that appears when you try to access Grid Manager, or you can go directly to BlueXP. Going directly to BlueXP provides an advantage, if you'd like to use BlueXP's data services to back up data, scan and categorize your data, and more.
 
+=== Discover your StorageGRID system
+
+A NetApp Connector is required before BlueXP can discover the StorageGRID systems in your on-premises environment.
+
+* If you need to create a Connector, see https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors].
+
+* If you already have a Connector, use these instructions to discover your grid: https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html[Discover StorageGRID systems^].
 
 === Use the link from Grid Manager
 
