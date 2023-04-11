@@ -67,17 +67,17 @@ With the current implementation, almost all Grid Manager features and operations
 
 IMPORTANT: BlueXP doesn't currently support the Tenant Manager. Although you can create new tenant accounts from BlueXP, tenant users can't sign into their accounts from BlueXP.
 
-== Manage your StorageGRID system from BlueXP
-
-When you're ready to manage your StorageGRID system from BlueXP, you can follow the link that appears when you try to access Grid Manager, or you can go directly to BlueXP. Going directly to BlueXP provides an advantage, if you'd like to use BlueXP's data services to back up data, scan and categorize your data, and more.
-
-=== Discover your StorageGRID system
+== Create a Connector and discover your grid
 
 A NetApp Connector is required before BlueXP can discover the StorageGRID systems in your on-premises environment.
 
-* If you need to create a Connector, see https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors].
+* If you need to create a Connector, see https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^].
 
 * If you already have a Connector, use these instructions to discover your grid: https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html[Discover StorageGRID systems^].
+
+== Manage your StorageGRID system from BlueXP
+
+When you're ready to manage your StorageGRID system from BlueXP, you can follow the link that appears when you try to access Grid Manager, or you can go directly to BlueXP. Going directly to BlueXP provides an advantage, if you'd like to use BlueXP's data services to back up data, scan and categorize your data, and more.
 
 === Use the link from Grid Manager
 
