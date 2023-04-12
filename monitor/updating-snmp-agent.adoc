@@ -35,7 +35,7 @@ When this check box is unselected, the SNMP agent supports read-only MIB access,
 . Optionally, unselect the *Enable Authentication Traps* check box if you no longer want the StorageGRID SNMP agent to send an authentication trap when it receives an improperly authenticated protocol message.
 . If you use SNMPv1 or SNMPv2c, optionally update the Community Strings section.
 +
-The fields in this section are used for community-based authentication in SNMPv1 or SNMPv2c. These fields do not apply to SNMPv3.
+The fields in this section are used for community-based authentication in SNMPv1 or SNMPv2c. These fields don't apply to SNMPv3.
 +
 NOTE: If you want to remove the default community string, you must first ensure that all trap destinations use a custom community string.
 

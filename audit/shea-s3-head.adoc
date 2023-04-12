@@ -19,7 +19,7 @@ CBID
 a|
 Content Block Identifier
 a|
-The unique identifier of the content block requested. If the CBID is unknown, this field is set to 0. Operations on buckets do not include this field.
+The unique identifier of the content block requested. If the CBID is unknown, this field is set to 0. Operations on buckets don't include this field.
 a|
 CNID
 a|
@@ -31,7 +31,7 @@ CSIZ
 a|
 Content Size
 a|
-The size of the checked object in bytes. Operations on buckets do not include this field.
+The size of the checked object in bytes. Operations on buckets don't include this field.
 a|
 HTRH
 a|
@@ -73,7 +73,7 @@ S3KY
 a|
 S3 Key
 a|
-The S3 key name, not including the bucket name. Operations on buckets do not include this field.
+The S3 key name, not including the bucket name. Operations on buckets don't include this field.
 a|
 SACC
 a|
@@ -130,5 +130,5 @@ VSID
 a|
 Version ID
 a|
-The version ID of the specific version of an object that was requested. Operations on buckets and objects in unversioned buckets do not include this field.
+The version ID of the specific version of an object that was requested. Operations on buckets and objects in unversioned buckets don't include this field.
 |===

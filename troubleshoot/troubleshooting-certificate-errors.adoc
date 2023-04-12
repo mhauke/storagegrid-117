@@ -33,7 +33,7 @@ If you received an alert notification about an expired certificate, access the c
 . Select *CONFIGURATION* > *Security* > *Certificates* and then link:../admin/using-storagegrid-security-certificates.html#access-security-certificates[select the appropriate certificate tab].
 
 . Check the validity period of the certificate. +
-Some web browsers and S3 or Swift clients do not accept certificates with a validity period greater than 398 days.
+Some web browsers and S3 or Swift clients don't accept certificates with a validity period greater than 398 days.
 
 . If the certificate has expired or will expire soon, upload or generate a new certificate.
  ** For a server certificate, see the steps for link:../admin/configuring-custom-server-certificate-for-grid-manager-tenant-manager.html#add-a-custom-management-interface-certificate[configuring a custom server certificate for the Grid Manager and the Tenant Manager].

@@ -51,7 +51,7 @@ Follow these guidelines to secure the Admin Nodes in your StorageGRID system:
 * Secure all Admin Nodes from untrusted clients, such as those on the open internet. Ensure that no untrusted client can access any Admin Node on the Grid Network, the Admin Network, or the Client Network.
 * StorageGRID Groups control access to Grid Manager and Tenant Manager features. Grant each Group of users the minimum required permissions for their role, and use the read-only access mode to prevent users from changing configuration.
 * When using StorageGRID load balancer endpoints, use Gateway Nodes instead of Admin Nodes for untrusted client traffic.
-* If you have untrusted tenants, do not allow them to have direct access to the Tenant Manager or the Tenant Management API. Instead, have any untrusted tenants use a tenant portal or an external tenant management system, which interacts with the Tenant Management API.
+* If you have untrusted tenants, don't allow them to have direct access to the Tenant Manager or the Tenant Management API. Instead, have any untrusted tenants use a tenant portal or an external tenant management system, which interacts with the Tenant Management API.
 * Optionally, use an Admin proxy for more control over AutoSupport communication from Admin Nodes to NetApp Support. See the steps for link:../admin/configuring-admin-proxy-settings.html[creating an Admin proxy].
 * Optionally, use the restricted 8443 and 9443 ports to separate Grid Manager and Tenant Manager communications. Block the shared port 443 and limit tenant requests to port 9443 for additional protection.
 * Optionally, use separate Admin Nodes for grid administrators and tenant users.
@@ -63,7 +63,7 @@ For more information, see the instructions for link:../admin/index.html[administ
 Storage Nodes manage and store object data and metadata. Follow these guidelines to secure the Storage Nodes in your StorageGRID system.
 
 * Don't allow untrusted clients to connect directly to Storage Nodes. Use a load balancer endpoint served by a Gateway Node or a third party load balancer.
-* Don't enable outbound services for untrusted tenants. For example, when creating the account for an untrusted tenant, do not allow the tenant to use its own identity source and do not allow the use of platform services. See the steps for link:../admin/creating-tenant-account.html[creating a tenant account].
+* Don't enable outbound services for untrusted tenants. For example, when creating the account for an untrusted tenant, don't allow the tenant to use its own identity source and don't allow the use of platform services. See the steps for link:../admin/creating-tenant-account.html[creating a tenant account].
 * Use a third-party load balancer for untrusted client traffic. Third-party load balancing offers more control and additional layers of protection against attack.
 * Optionally, use a Storage proxy for more control over Cloud Storage Pools and platform services communication from Storage Nodes to external services. See the steps for link:../admin/configuring-storage-proxy-settings.html[creating a Storage proxy].
 * Optionally, connect to external services using the Client Network. Then, select *CONFIGURATION* > *Security* > *Firewall control* > *Untrusted Client Networks* and indicate that the Client Network on the Storage Node is untrusted. The Storage Node no longer accepts any incoming traffic on the Client Network, but it continues to allow outbound requests for Platform Services.

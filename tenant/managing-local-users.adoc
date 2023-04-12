@@ -25,9 +25,9 @@ NOTE: If single sign-on (SSO) is enabled for your StorageGRID system, local user
 
 You can create a local user and assign them to one or more local groups to control their access permissions.
 
-S3 users who do not belong to any groups do not have management permissions or S3 group policies applied to them. These users might have S3 bucket access granted through a bucket policy.
+S3 users who don't belong to any groups don't have management permissions or S3 group policies applied to them. These users might have S3 bucket access granted through a bucket policy.
 
-Swift users who do not belong to any groups do not have management permissions or Swift container access.
+Swift users who don't belong to any groups don't have management permissions or Swift container access.
 
 === Access the Create user wizard
 
@@ -79,7 +79,7 @@ For example, select *Yes* to temporarily suspend a user's ability to sign in.
 +
 Assigning a user to groups is optional. If you'd prefer, you can select users when you create or edit groups. 
 +
-Users who do not belong to any groups will have no management permissions. Permissions are cumulative. Users will have all permissions for all groups they belong to. See link:tenant-management-permissions.html[Tenant management permissions].
+Users who don't belong to any groups will have no management permissions. Permissions are cumulative. Users will have all permissions for all groups they belong to. See link:tenant-management-permissions.html[Tenant management permissions].
 
 . Select *Create user*.
 +

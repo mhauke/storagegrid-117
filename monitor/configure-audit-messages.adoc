@@ -82,7 +82,7 @@ NOTE: During upgrades, audit level configurations will not be effective immediat
 +
 The messages included for any particular level include those that would be logged at the higher levels. For example, the Normal level includes all of the Error messages.
 +
-NOTE: If you do not require a detailed record of client read operations for your S3 applications, optionally change the *Client Reads* setting to *Error* to decrease the number of audit messages recorded in the audit log.
+NOTE: If you don't require a detailed record of client read operations for your S3 applications, optionally change the *Client Reads* setting to *Error* to decrease the number of audit messages recorded in the audit log.
 
 . Optionally, under *Audit protocol headers*, define any HTTP request headers you want to include in client read and write audit messages. Use an asterisk (\*) as a wildcard to match zero or more characters. Use the escape sequence (\*) to match a literal asterisk. 
 +

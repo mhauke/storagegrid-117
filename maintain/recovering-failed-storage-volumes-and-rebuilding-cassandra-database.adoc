@@ -49,7 +49,7 @@ NOTE: Commenting out a failed volume in the `/etc/fstab` file is insufficient. T
 The script will exit without rebuilding Cassandra. Contact technical support.
  ** For each rangedb drive on the Storage Node, when you are asked: `Reformat the rangedb drive _<name>_ (device _<major number>:<minor number>_)? [y/n]?`, enter one of the following responses:
   *** *y* to reformat a drive that had errors. This reformats the storage volume and adds the reformatted storage volume to the `/etc/fstab` file.
-  *** *n* if the drive contains no errors, and you do not want to reformat it.
+  *** *n* if the drive contains no errors, and you don't want to reformat it.
 +
 NOTE: Selecting *n* exits the script. Either mount the drive (if you think the data on the drive should be retained and the drive was unmounted in error) or remove the drive. Then, run the `reformat_storage_block_devices.rb` command again.
 +

@@ -35,7 +35,7 @@ IMPORTANT: Never use FabricPool to tier any data related to StorageGRID back to 
 
 Each StorageGRID site requires a minimum of three Storage Nodes.
 
-IMPORTANT: In a production deployment, do not run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
+IMPORTANT: In a production deployment, don't run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
 
 Other types of nodes, such as Admin Nodes or Gateway Nodes, can be deployed on the same hosts, or they can be deployed on their own dedicated hosts as required.
 

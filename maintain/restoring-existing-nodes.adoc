@@ -67,7 +67,7 @@ The `storagegrid node import` command succeeds only if the target node was shut 
 +
 NOTE: Any nodes imported with the `--force` flag will require additional recovery steps before they can rejoin the grid, as described in link:whats-next-performing-additional-recovery-steps-if-required.html[What's next: Perform additional recovery steps, if required].
 
-. For grid nodes that do not have a `/var/local` volume, re-create the node's configuration file to restore it to the host. For instructions, see:
+. For grid nodes that don't have a `/var/local` volume, re-create the node's configuration file to restore it to the host. For instructions, see:
 +
 * link:../rhel/creating-node-configuration-files.html[Create node configuration files for Red Hat Enterprise Linux or CentOS]
 * link:../ubuntu/creating-node-configuration-files.html[Create node configuration files for Ubuntu or Debian]

@@ -70,7 +70,7 @@ In this example, the *Demo* policy is being simulated. This policy, which is int
 
 * The first rule, *PNGs*, filters for key names that end in `.png`.
 * The second rule, *X-men*, applies only to objects for Tenant A and filters for `series=x-men` user metadata.
-* The last rule, *Two copies two data centers*, is the default rule, which matches any objects that do not match the first two rules.
+* The last rule, *Two copies two data centers*, is the default rule, which matches any objects that don't match the first two rules.
 
 .Steps
 . After adding the rules and saving the policy, select *Simulate*.

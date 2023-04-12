@@ -51,7 +51,7 @@ image::../media/endpoint_create.png[Create Endpoint]
 
 . Enter a display name to briefly describe the endpoint and its purpose.
 +
-The type of platform service that the endpoint supports is shown beside the endpoint name when it is listed on the Endpoints page, so you do not need to include that information in the name.
+The type of platform service that the endpoint supports is shown beside the endpoint name when it is listed on the Endpoints page, so you don't need to include that information in the name.
 
 . In the *URI* field, specify the Unique Resource Identifier (URI) of the endpoint.
 +
@@ -62,7 +62,7 @@ https://host:port
 http://host:port
 ----
 +
-If you do not specify a port, port 443 is used for HTTPS URIs and port 80 is used for HTTP URIs.
+If you don't specify a port, port 443 is used for HTTPS URIs and port 80 is used for HTTP URIs.
 +
 For example, the URI for a bucket hosted on StorageGRID might be:
 +
@@ -82,7 +82,7 @@ https://s3-aws-region.amazonaws.com
 ----
 
 +
-NOTE: If the endpoint is used for the CloudMirror replication service, do not include the bucket name in the URI. You include the bucket name in the *URN* field.
+NOTE: If the endpoint is used for the CloudMirror replication service, don't include the bucket name in the URI. You include the bucket name in the *URN* field.
 
 . Enter the Unique Resource Name (URN) for the endpoint.
 +

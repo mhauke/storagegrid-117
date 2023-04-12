@@ -17,7 +17,7 @@ The steps for creating a tenant account vary based on whether link:using-identit
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access or Tenant accounts permission.
-* If the tenant account will use the identity source that was configured for the Grid Manager, and you want to grant Root access permission for the tenant account to a federated group, you have imported that federated group into the Grid Manager. You do not need to assign any Grid Manager permissions to this admin group. See  link:managing-admin-groups.html[Manage admin groups].
+* If the tenant account will use the identity source that was configured for the Grid Manager, and you want to grant Root access permission for the tenant account to a federated group, you have imported that federated group into the Grid Manager. You don't need to assign any Grid Manager permissions to this admin group. See  link:managing-admin-groups.html[Manage admin groups].
 * If you want to allow an S3 tenant to clone account data and replicate bucket objects to another grid using a grid federation connection:
 
 ** You have link:grid-federation-create-connection.html[configured the grid federation connection].
@@ -49,7 +49,7 @@ TIP: If this admin group doesn't exist on both grids before you create the tenan
 | Field | Description
 
 | Name
-| A name for the tenant account. Tenant names do not need to be unique. When the tenant account is created, it receives a unique, 20-digit account ID.
+| A name for the tenant account. Tenant names don't need to be unique. When the tenant account is created, it receives a unique, 20-digit account ID.
 
 | Description (optional)
 | A description to help identify the tenant.

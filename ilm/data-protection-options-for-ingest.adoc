@@ -27,7 +27,7 @@ When you select the Dual commit option, StorageGRID immediately makes interim ob
 
 Use the Dual commit option in either of these cases:
 
-* You are using multi-site ILM rules and client ingest latency is your primary consideration. When using Dual commit, you must ensure your grid can perform the additional work of creating and removing the dual-commit copies if they do not satisfy ILM. Specifically:
+* You are using multi-site ILM rules and client ingest latency is your primary consideration. When using Dual commit, you must ensure your grid can perform the additional work of creating and removing the dual-commit copies if they don't satisfy ILM. Specifically:
  ** The load on the grid must be low enough to prevent an ILM backlog.
  ** The grid must have excess hardware resources (IOPS, CPU, memory, network bandwidth, and so on).
 * You are using multi-site ILM rules and the WAN connection between the sites usually has high latency or limited bandwidth. In this scenario, using the Dual commit option can help prevent client timeouts. Before choosing the Dual commit option, you should test the client application with realistic workloads.

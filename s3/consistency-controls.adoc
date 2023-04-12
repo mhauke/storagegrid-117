@@ -25,7 +25,7 @@ You can set the consistency control for a bucket or an API operation to one of t
 * *strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
 * *strong-site*: Guarantees read-after-write consistency for all client requests within a site.
 * *read-after-new-write*: (Default) Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
-* *available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that do not exist). Not supported for S3 FabricPool buckets.
+* *available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that don't exist). Not supported for S3 FabricPool buckets.
 
 == Use "`read-after-new-write`" and "`available`" consistency controls
 

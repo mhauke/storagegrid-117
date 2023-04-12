@@ -10,7 +10,7 @@ Use the *Global* setting (default) unless you need to restrict the accessibility
 | Virtual IPs of HA groups
 | Clients must use a virtual IP address (or corresponding FQDN) of an HA group to access this endpoint.
 
-Endpoints with this binding mode can all use the same port number, as long as the HA groups you select for the endpoints do not overlap.
+Endpoints with this binding mode can all use the same port number, as long as the HA groups you select for the endpoints don't overlap.
 
 | Node interfaces
 | Clients must use the IP addresses (or corresponding FQDNs) of selected node interfaces to access this endpoint.

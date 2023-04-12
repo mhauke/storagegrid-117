@@ -35,7 +35,7 @@ For more information about external firewalls and network security, see link:../
 == Privileged address list and Manage external access tabs
 The Privileged address list tab enables you to register one or more IP addresses that are granted access to grid ports that are closed. The Manage external access tab enables you to close external access to selected external ports or all open external ports (external ports are ports that are accessible by non-grid nodes by default). These two tabs often can be used together to customize the exact network access you need to allow for your grid.
 
-NOTE: Privileged IP addresses do not have internal grid port access by default. 
+NOTE: Privileged IP addresses don't have internal grid port access by default. 
 
 === Example 1: Use a jump host for maintenance tasks
 
@@ -68,7 +68,7 @@ CAUTION: Add the privileged IP address before you block ports 443 and 8443. Any 
 After you save your configuration, port 22 and SSH service will be available to hosts on the privileged address list. All other hosts will be denied access to the service no matter what interface the request comes from.
 
 === Example 4: Disable access to unused services
-At a network level, you could disable some services that you do not intend to use. For example if you will not provide Swift access, you would perform the following general steps: 
+At a network level, you could disable some services that you don't intend to use. For example if you will not provide Swift access, you would perform the following general steps: 
 
 . Use the toggle on the Manage external access tab to block port 18083. 
 . Use the toggle on the Manage external access tab to block port 18085.

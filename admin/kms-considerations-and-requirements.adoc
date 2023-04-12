@@ -30,7 +30,7 @@ The network firewall settings must allow each appliance node to communicate thro
 
 You can use a key management server (KMS) to manage encryption keys for any StorageGRID appliance in your grid that has the *Node Encryption* setting enabled. This setting can only be enabled during the hardware configuration stage of appliance installation using the StorageGRID Appliance Installer.
 
-NOTE: You cannot enable node encryption after an appliance is added to the grid, and you cannot use external key management for appliances that do not have node encryption enabled.
+NOTE: You cannot enable node encryption after an appliance is added to the grid, and you cannot use external key management for appliances that don't have node encryption enabled.
 
 You can use the configured KMS for StorageGRID appliances and appliance nodes.
 

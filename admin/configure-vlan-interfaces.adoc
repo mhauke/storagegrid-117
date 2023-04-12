@@ -61,7 +61,7 @@ You can use the Grid Manager to create VLAN interfaces that allow clients to acc
 
 . Specify the ID of the VLAN in your network. You can enter any value between 1 and 4094.
 +
-VLAN IDs do not need to be unique. For example, you might use VLAN ID 200 for admin traffic at one site and the same VLAN ID for client traffic at another site. You can create separate VLAN interfaces with different sets of parent interfaces at each site. However, two VLAN interfaces with the same ID cannot share the same interface on a node.
+VLAN IDs don't need to be unique. For example, you might use VLAN ID 200 for admin traffic at one site and the same VLAN ID for client traffic at another site. You can create separate VLAN interfaces with different sets of parent interfaces at each site. However, two VLAN interfaces with the same ID cannot share the same interface on a node.
 If you specify an ID that has already been used, a message appears. 
 
 . Optionally, enter a short description for the VLAN interface.

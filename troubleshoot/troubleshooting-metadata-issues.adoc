@@ -73,7 +73,7 @@ If Cassandra is stopped for more than 15 days (for example, the Storage Node is 
 
 You can link:../monitor/running-diagnostics.html[run diagnostics] to obtain additional information about the current state of your grid.
 
-IMPORTANT: If two or more of the Cassandra database services are down for more than 15 days, contact technical support, and do not proceed with the steps below.
+IMPORTANT: If two or more of the Cassandra database services are down for more than 15 days, contact technical support, and don't proceed with the steps below.
 
 .Steps
 . Select *SUPPORT* > *Tools* > *Grid topology*.
@@ -98,7 +98,7 @@ When you are logged in as root, the prompt changes from `$` to `#`.
  .. If Cassandra is not running, restart it: `/etc/init.d/cassandra restart`
 . If Cassandra does not restart, determine how long Cassandra has been down. If Cassandra has been down for longer than 15 days, you must rebuild the Cassandra database.
 +
-IMPORTANT: If two or more of the Cassandra database services are down, contact technical support, and do not proceed with the steps below.
+IMPORTANT: If two or more of the Cassandra database services are down, contact technical support, and don't proceed with the steps below.
 +
 You can determine how long Cassandra has been down by charting it or by reviewing the servermanager.log file.
 
@@ -139,7 +139,7 @@ There can be more than one entry for Cassandra; you must locate the most recent 
  .. If Cassandra has been down for longer than 15 days, you must rebuild the Cassandra database.
 +
 For instructions, see link:../maintain/recovering-storage-node-that-has-been-down-more-than-15-days.html[Recover Storage Node down more than 15 days].
- .. Contact technical support if alarms do not clear after Cassandra is rebuilt.
+ .. Contact technical support if alarms don't clear after Cassandra is rebuilt.
 
 == Cassandra Out of Memory errors (SMTT alarm)
 

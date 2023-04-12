@@ -11,7 +11,7 @@ summary: 'After you recover an Archive Node that targets the cloud through the S
 [.lead]
 After you recover an Archive Node that targets the cloud through the S3 API, you need to modify configuration settings to reset connections. An Outbound Replication Status (ORSU) alarm is triggered if the Archive Node is unable to retrieve object data.
 
-NOTE: If your Archive Node connects to external storage through TSM middleware, then the node resets itself automatically and you do not need to reconfigure.
+NOTE: If your Archive Node connects to external storage through TSM middleware, then the node resets itself automatically and you don't need to reconfigure.
 
 .What you'll need
 

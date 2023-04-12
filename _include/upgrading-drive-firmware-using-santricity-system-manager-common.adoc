@@ -16,7 +16,7 @@ You can upgrade your appliance drive firmware using two methods:
 
 *Online*: The drives are upgraded one at a time while the appliance is performing I/O (input/output operations). This method does not require you to place the appliance in maintenance mode. However, system performance might be impacted and it might take several hours longer than the offline method. 
 
-NOTE: Drives belonging to volumes that do not have redundancy must be updated using the offline method. The offline method should be used for any drive associated with flash read cache (for example, SSD drives in the SG6060), or any pool or volume group that is currently degraded. 
+NOTE: Drives belonging to volumes that don't have redundancy must be updated using the offline method. The offline method should be used for any drive associated with flash read cache (for example, SSD drives in the SG6060), or any pool or volume group that is currently degraded. 
 
 *Offline*: 
 The drives are upgraded in parallel while the appliance is in maintenance mode. If the pool or volume group does not support redundancy, or is degraded, you must use the offline method to upgrade the drive firmware. The offline method upgrades firmware only while all I/O activity is stopped on the drives to be upgraded. You must stop all I/O on any drives you intend to upgrade by placing the node into maintenance mode.
@@ -87,7 +87,7 @@ Only drives that are compatible appear.
 The selected firmware for the drive appears in the *Proposed Firmware* column. If you must change this firmware, select *Back*.
 
  .. Select the type of upgrade you want to perform: 
- * *Upgrade all drives online* — Upgrades the drives that can support a firmware download while the storage array is processing I/O. You do not have to stop I/O to the associated volumes using these drives when you select this upgrade method.  
+ * *Upgrade all drives online* — Upgrades the drives that can support a firmware download while the storage array is processing I/O. You don't have to stop I/O to the associated volumes using these drives when you select this upgrade method.  
 
 +
 NOTE: An online upgrade can take several hours longer than an offline upgrade.
@@ -96,7 +96,7 @@ NOTE: An online upgrade can take several hours longer than an offline upgrade.
 
 IMPORTANT: You must place the appliance into maintenance mode before using this method. You should use the *Offline* method to upgrade the drive firmware. 
 
-CAUTION: If you want to use the Offline (parallel) upgrade, do not proceed unless you are certain that the appliance is in maintenance mode. Failure to place the appliance into maintenance mode before initiating an offline drive firmware update might cause data loss. 
+CAUTION: If you want to use the Offline (parallel) upgrade, don't proceed unless you are certain that the appliance is in maintenance mode. Failure to place the appliance into maintenance mode before initiating an offline drive firmware update might cause data loss. 
 
 [start=5]
  .. In the first column of the table, select the drive or drives you want to upgrade.

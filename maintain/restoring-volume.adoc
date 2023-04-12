@@ -97,7 +97,7 @@ The *Restoration progress* tab shows the status of the volume restoration proces
 
 image::../media/vol-restore-restore-progress.png[Volume restoration - Restoration progress tab]
 
-Data repair rates for replicated and erasure-coded objects in all volumes are estimates summarizing all restorations in process, including those restorations initiated using the `repair-data` script. The percentage of objects in those volumes that are intact and do not require restoration is also indicated.
+Data repair rates for replicated and erasure-coded objects in all volumes are estimates summarizing all restorations in process, including those restorations initiated using the `repair-data` script. The percentage of objects in those volumes that are intact and don't require restoration is also indicated.
 
 NOTE: Replicated data restoration is dependent on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
 

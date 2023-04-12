@@ -61,7 +61,7 @@ a|
 The StorageGRID site that will be associated with this KMS. If possible, you should configure any site-specific key management servers before configuring a default KMS that applies to all sites not managed by another KMS.
 
  ** Select a site if this KMS will manage encryption keys for the appliance nodes at a specific site.
- ** Select *Sites not managed by another KMS (default KMS)* to configure a default KMS that will apply to any sites that do not have a dedicated KMS and to any sites you add in subsequent expansions.
+ ** Select *Sites not managed by another KMS (default KMS)* to configure a default KMS that will apply to any sites that don't have a dedicated KMS and to any sites you add in subsequent expansions.
 +
 *Note:* A validation error will occur when you save the KMS configuration if you select a site that was previously encrypted by the default KMS but you did not provide the current version of original encryption key to the new KMS.
 

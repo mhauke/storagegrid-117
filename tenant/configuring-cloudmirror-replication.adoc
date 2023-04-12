@@ -43,7 +43,7 @@ Use a text editor to create the replication configuration XML required to enable
  ** Note that StorageGRID only supports V1 of the replication configuration. This means that StorageGRID does not support the use of the `Filter` element for rules, and follows V1 conventions for deletion of object versions. See the Amazon documentation on replication configuration for details.
  ** Use the URN of an S3 bucket endpoint as the destination.
  ** Optionally add the `<StorageClass>` element, and specify one of the following:
-  *** `STANDARD`: The default storage class. If you do not specify a storage class when you upload an object, the `STANDARD` storage class is used.
+  *** `STANDARD`: The default storage class. If you don't specify a storage class when you upload an object, the `STANDARD` storage class is used.
   *** `STANDARD_IA`: (Standard - infrequent access.) Use this storage class for data that is accessed less frequently, but that still requires rapid access when needed.
   *** `REDUCED_REDUNDANCY`: Use this storage class for noncritical, reproducible data that can be stored with less redundancy than the `STANDARD` storage class.
  ** If you specify a `Role` in the configuration XML it will be ignored. This value is not used by StorageGRID.

@@ -33,7 +33,7 @@ Prevent client modification is a system wide setting. When the *Prevent client m
 == Enable HTTP for Storage Node connections
 By default, client applications use the HTTPS network protocol for any direct connections to Storage Nodes. You can optionally enable HTTP for these connections, for example, when testing a non-production grid.
 
-Use HTTP for Storage Node connections only if S3 and Swift clients need to make HTTP connections directly to Storage Nodes. You do not need to use this option for clients that only use HTTPS connections or for clients that connect to the Load Balancer service (because you can link:../admin/configuring-load-balancer-endpoints.html[configure each load balancer endpoint] to use either HTTP or HTTPS).
+Use HTTP for Storage Node connections only if S3 and Swift clients need to make HTTP connections directly to Storage Nodes. You don't need to use this option for clients that only use HTTPS connections or for clients that connect to the Load Balancer service (because you can link:../admin/configuring-load-balancer-endpoints.html[configure each load balancer endpoint] to use either HTTP or HTTPS).
 
 See link:summary-ip-addresses-and-ports-for-client-connections.html[Summary: IP addresses and ports for client connections] to learn which ports S3 and Swift clients use when connecting to Storage Nodes using HTTP or HTTPS.
 
@@ -48,7 +48,7 @@ See link:summary-ip-addresses-and-ports-for-client-connections.html[Summary: IP 
 
 . Select the *Network and objects* tab.
 
-. For Stored object encryption, use the *None* (default) setting if you do not want stored objects to be encrypted, or select *AES-128* or *AES-256* to encrypt stored objects.
+. For Stored object encryption, use the *None* (default) setting if you don't want stored objects to be encrypted, or select *AES-128* or *AES-256* to encrypt stored objects.
 
 . Optionally select *Prevent client modification* if you want to prevent S3 and Swift clients from making specific requests.
 +

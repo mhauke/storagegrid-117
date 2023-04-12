@@ -29,7 +29,7 @@ AutoSupport supports HTTPS, HTTP, and SMTP for transport protocols. Because of t
 
 == Cross-origin resource sharing (CORS)
 
-You can configure cross-origin resource sharing (CORS) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains. In general, do not enable CORS unless it is required. If CORS is required, restrict it to trusted origins.
+You can configure cross-origin resource sharing (CORS) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains. In general, don't enable CORS unless it is required. If CORS is required, restrict it to trusted origins.
 
 See the steps for link:../tenant/configuring-cross-origin-resource-sharing-cors.html[configuring cross-origin resource sharing (CORS)].
 

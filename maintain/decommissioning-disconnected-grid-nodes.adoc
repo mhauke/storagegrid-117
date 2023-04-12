@@ -39,7 +39,7 @@ Before decommissioning a disconnected *Storage Node*, note the following
 
 * You should never decommission a disconnected Storage Node unless you are sure it cannot be brought online or recovered.
 +
-IMPORTANT: If you believe that object data can still be recovered from the node, do not perform this procedure. Instead, contact technical support to determine if node recovery is possible.
+IMPORTANT: If you believe that object data can still be recovered from the node, don't perform this procedure. Instead, contact technical support to determine if node recovery is possible.
 
 * If you decommission more than one disconnected Storage Node, data loss might occur. The system might not be able to reconstruct data if not enough object copies, erasure-coded fragments, or object metadata remain available.
 +

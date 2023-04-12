@@ -46,7 +46,7 @@ If this check box is unselected, the SNMP agent supports read-only MIB access, b
 . Select the *Enable Authentication Traps* check box if you want the StorageGRID SNMP agent to send an authentication trap if it receives an improperly authenticated protocol message.
 . If you use SNMPv1 or SNMPv2c, complete the Community Strings section.
 +
-The fields in this section are used for community-based authentication in SNMPv1 or SNMPv2c. These fields do not apply to SNMPv3.
+The fields in this section are used for community-based authentication in SNMPv1 or SNMPv2c. These fields don't apply to SNMPv3.
 
  .. In the *Default Trap Community* field, optionally enter the default community string you want to use for trap destinations.
 +
@@ -60,13 +60,13 @@ When the management system queries the StorageGRID MIB, it sends a community str
 +
 Each community string can be a maximum of 32 characters and cannot contain whitespace characters. Up to five strings are allowed.
 +
-NOTE: To ensure the security of your StorageGRID system, do not use "`public`" as the community string. If you do not enter a community string, the SNMP agent uses the grid ID of your StorageGRID system as the community string.
+NOTE: To ensure the security of your StorageGRID system, don't use "`public`" as the community string. If you don't enter a community string, the SNMP agent uses the grid ID of your StorageGRID system as the community string.
 
 . Optionally, select the Agent Addresses tab in the Other Configurations section.
 +
 Use this tab to specify one or more "`listening addresses.`" These are the StorageGRID addresses on which the SNMP agent can receive queries. Each agent address includes an internet protocol, a transport protocol, a StorageGRID network, and optionally a port.
 +
-If you do not configure an agent address, the default listening address is UDP port 161 on all StorageGRID networks.
+If you don't configure an agent address, the default listening address is UDP port 161 on all StorageGRID networks.
 
  .. Select *Create*.
 +

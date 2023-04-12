@@ -86,7 +86,7 @@ The group policy determines which S3 access permissions users will have.
 | Description
 
 | No S3 Access
-| Default. Users in this group do not have access to S3 resources, unless access is granted with a bucket policy. If you select this option, only the root user will have access to S3 resources by default.
+| Default. Users in this group don't have access to S3 resources, unless access is granted with a bucket policy. If you select this option, only the root user will have access to S3 resources by default.
 
 | Read Only Access
 | Users in this group have read-only access to S3 resources. For example, users in this group can list objects and read object data, metadata, and tags. When you select this option, the JSON string for a read-only group policy appears in the text box. You cannot edit this string.
@@ -114,7 +114,7 @@ For detailed information about group policies, including language syntax and exa
 == Add users (local groups only)
 You can save the group without adding users, or you can optionally add any local users that already exist.
 
-NOTE: If your tenant account has the *Use grid federation connection* permission, any users you select when you create a local group on the source grid are not included when the group is cloned to the destination grid. For this reason, do not select users when you create the group. Instead, select the group when you create the users.
+NOTE: If your tenant account has the *Use grid federation connection* permission, any users you select when you create a local group on the source grid are not included when the group is cloned to the destination grid. For this reason, don't select users when you create the group. Instead, select the group when you create the users.
 
 .Steps
 

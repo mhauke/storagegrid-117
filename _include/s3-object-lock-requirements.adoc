@@ -8,7 +8,7 @@
 * If you plan to use S3 Object Lock, you must enable S3 Object Lock when you create the bucket. You cannot enable S3 Object Lock for an existing bucket.
 * When S3 Object Lock is enabled for a bucket, StorageGRID automatically enables versioning for that bucket. You cannot disable S3 Object Lock or suspend versioning for the bucket.
 
-* Optionally, you can specify a default retention mode and retention period for each bucket using the Tenant Manager, the Tenant Management API, or the S3 REST API. The bucket's default retention settings apply only to new objects added to the bucket that do not have their own retention settings. You can override these default settings by specifying a retention mode and retain-until-date for each object version when it is uploaded.
+* Optionally, you can specify a default retention mode and retention period for each bucket using the Tenant Manager, the Tenant Management API, or the S3 REST API. The bucket's default retention settings apply only to new objects added to the bucket that don't have their own retention settings. You can override these default settings by specifying a retention mode and retain-until-date for each object version when it is uploaded.
 
 * Bucket lifecycle configuration is supported for buckets with S3 Object Lock enabled.
 

@@ -58,7 +58,7 @@ If you know more about your workload, more accurate estimations are possible. Fo
 
 | S3KY
 | S3 Key
-| The S3 key name, not including the bucket name. Operations on buckets do not include this field.
+| The S3 key name, not including the bucket name. Operations on buckets don't include this field.
 |===
 
 Let's use P to represent the percentage of S3 operations that are PUTs, where 0 ≤ P ≤ 1 (so for a 100% PUT workload, P = 1, and for a 100% GET workload, P = 0).
@@ -121,7 +121,7 @@ If you know more about your workload, more accurate estimations are possible. Fo
 
 | S3KY
 | S3 Key
-| The S3 key name, not including the bucket name. Operations on buckets do not include this field.
+| The S3 key name, not including the bucket name. Operations on buckets don't include this field.
 |===
 
 == Example sizing estimations

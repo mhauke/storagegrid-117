@@ -44,7 +44,7 @@ Setting up an appliance node for KMS use includes the following high-level steps
 
 . During the hardware configuration stage of appliance installation, use the StorageGRID Appliance Installer to enable the *Node Encryption* setting for the appliance.
 +
-NOTE: You cannot enable the *Node Encryption* setting after an appliance is added to the grid, and you cannot use external key management for appliances that do not have node encryption enabled.
+NOTE: You cannot enable the *Node Encryption* setting after an appliance is added to the grid, and you cannot use external key management for appliances that don't have node encryption enabled.
 
 . Run the StorageGRID Appliance Installer. During installation, a random data encryption key (DEK) is assigned to each appliance volume, as follows:
  ** The DEKs are used to encrypt the data on each volume. These keys are generated using Linux Unified Key Setup (LUKS) disk encryption in the appliance OS and cannot be changed.

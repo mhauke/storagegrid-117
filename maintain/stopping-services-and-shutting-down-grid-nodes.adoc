@@ -17,7 +17,7 @@ Stop services on Admin Nodes and API Gateway Nodes first, and then stop services
 
 This approach allows you to use the primary Admin Node to monitor the status of the other grid nodes for as long as possible.
 
-NOTE: If a single host includes more than one grid node, do not shut down the host until you have stopped all of the nodes on that host. If the host includes the primary Admin Node, shut down that host last.
+NOTE: If a single host includes more than one grid node, don't shut down the host until you have stopped all of the nodes on that host. If the host includes the primary Admin Node, shut down that host last.
 
 NOTE: If required, you can link:linux-migrating-grid-node-to-new-host.html[migrate nodes from one Linux host to another] to perform host maintenance without impacting the functionality or availability of your grid.
 

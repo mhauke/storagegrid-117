@@ -30,7 +30,7 @@ Storage pools determine where object data is stored. The number of storage pools
 +
 IMPORTANT: Don't include the All Sites site in a storage pool that will be used in an erasure coding profile. Instead, add a separate entry to the storage pool for each site that will store erasure coded data. See <<entries,this step>> for an example.
 
-* If you have more than one storage grade, do not create a storage pool that includes different storage grades at a single site. See the link:guidelines-for-creating-storage-pools.html[Guidelines for creating storage pools].
+* If you have more than one storage grade, don't create a storage pool that includes different storage grades at a single site. See the link:guidelines-for-creating-storage-pools.html[Guidelines for creating storage pools].
 
 .Steps
 
@@ -48,7 +48,7 @@ IMPORTANT: For new installations of StorageGRID 11.6 or earlier, the All Storage
 +
 When you select a site, the number of Storage Nodes and Archive Nodes in the table are automatically updated.
 +
-In general, do not use the All Sites site in any storage pool. ILM rules that use an All Sites storage pool place objects at any available site, giving you less control of object placement. Also, an All Sites storage pool uses the Storage Nodes at a new site immediately, which might not be the behavior you expect. 
+In general, don't use the All Sites site in any storage pool. ILM rules that use an All Sites storage pool place objects at any available site, giving you less control of object placement. Also, an All Sites storage pool uses the Storage Nodes at a new site immediately, which might not be the behavior you expect. 
 
 . From the *Storage grade* drop-down list, select the type of storage that will be used if an ILM rule uses this storage pool.
 +

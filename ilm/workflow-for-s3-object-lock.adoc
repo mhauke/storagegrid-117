@@ -27,7 +27,7 @@ As the workflow diagram shows, a grid administrator must perform two high-level 
 After the global S3 Object Lock setting has been enabled, tenants can perform these tasks:
 
 . Create buckets that have S3 Object Lock enabled.
-. Optionally, specify default retention settings for the bucket. Any default bucket settings are applied only to new objects that do not have their own retention settings.
+. Optionally, specify default retention settings for the bucket. Any default bucket settings are applied only to new objects that don't have their own retention settings.
 . Add objects to those buckets and optionally specify object-level retention periods and legal hold settings.
 . As required, update default retention for the bucket or update the retention period or the legal hold setting for an individual object.
 

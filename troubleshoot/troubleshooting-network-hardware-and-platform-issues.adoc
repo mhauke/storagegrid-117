@@ -121,7 +121,7 @@ Use the following arguments for modifying the MTU on Linux- or VMware-based node
 
 == Network Receive Error (NRER) alarm
 
-Network Receive Error (NRER) alarms can be caused by connectivity issues between StorageGRID and your network hardware. In some cases, NRER errors can clear without manual intervention. If the errors do not clear, take the recommended actions.
+Network Receive Error (NRER) alarms can be caused by connectivity issues between StorageGRID and your network hardware. In some cases, NRER errors can clear without manual intervention. If the errors don't clear, take the recommended actions.
 
 .About this task
 NRER alarms can be caused by the following issues with networking hardware that connects to StorageGRID:
@@ -165,7 +165,7 @@ If the error is caused by a switch port and NIC MTU mismatch, check that the MTU
 
 The MTU size configured on the node might be smaller than the setting on the switch port the node is connected to. If a StorageGRID node receives an Ethernet frame larger than its MTU, which is possible with this configuration, the NRER alarm might be reported. If you believe this is what is happening, either change the MTU of the switch port to match the StorageGRID network interface MTU, or change the MTU of the StorageGRID network interface to match the switch port, depending on your end-to-end MTU goals or requirements.
 
-IMPORTANT: For the best network performance, all nodes should be configured with similar MTU values on their Grid Network interfaces. The *Grid Network MTU mismatch* alert is triggered if there is a significant difference in MTU settings for the Grid Network on individual nodes. The MTU values do not have to be the same for all network types. See <<troubleshoot_MTU_alert,Troubleshoot the Grid Network MTU mismatch alert>> for more information.
+IMPORTANT: For the best network performance, all nodes should be configured with similar MTU values on their Grid Network interfaces. The *Grid Network MTU mismatch* alert is triggered if there is a significant difference in MTU settings for the Grid Network on individual nodes. The MTU values don't have to be the same for all network types. See <<troubleshoot_MTU_alert,Troubleshoot the Grid Network MTU mismatch alert>> for more information.
 
 NOTE: Also see link:../commonhardware/changing-mtu-setting.html[Change MTU setting].
 
@@ -175,7 +175,7 @@ NOTE: Also see link:../commonhardware/changing-mtu-setting.html[Change MTU setti
 
 .. Enable FEC, if not already enabled.
 .. Verify that your network cabling is of good quality and is not damaged or improperly connected.
-.. If the cables do not appear to be the problem, contact technical support.
+.. If the cables don't appear to be the problem, contact technical support.
 +
 NOTE: You might notice high error rates in an environment with high electrical noise.
 
@@ -206,7 +206,7 @@ You might see issues with time synchronization in your grid.
 
 If you encounter time synchronization problems, verify that you have specified at least four external NTP sources, each providing a Stratum 3 or better reference, and that all external NTP sources are operating normally and are accessible by your StorageGRID nodes.
 
-NOTE: When link:../maintain/configuring-ntp-servers.html[specifying the external NTP source] for a production-level StorageGRID installation, do not use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in high-accuracy environments, such as StorageGRID.
+NOTE: When link:../maintain/configuring-ntp-servers.html[specifying the external NTP source] for a production-level StorageGRID installation, don't use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in high-accuracy environments, such as StorageGRID.
 
 == Linux: Network connectivity issues
 
@@ -222,7 +222,7 @@ For more information about enabling MAC cloning, see the instructions for link:.
 
 === Promiscuous mode
 
-If you do not want to use MAC address cloning and would rather allow all interfaces to receive and transmit data for MAC addresses other than the ones assigned by the hypervisor, ensure that the security properties at the virtual switch and port group levels are set to *Accept* for Promiscuous Mode, MAC Address Changes, and Forged Transmits. The values set on the virtual switch can be overridden by the values at the port group level, so ensure that settings are the same in both places.
+If you don't want to use MAC address cloning and would rather allow all interfaces to receive and transmit data for MAC addresses other than the ones assigned by the hypervisor, ensure that the security properties at the virtual switch and port group levels are set to *Accept* for Promiscuous Mode, MAC Address Changes, and Forged Transmits. The values set on the virtual switch can be overridden by the values at the port group level, so ensure that settings are the same in both places.
 
 For more information about using Promiscuous Mode, see the instructions for link:../rhel/configuring-host-network.html[Red Hat Enterprise Linux or CentOS] or link:../ubuntu/configuring-host-network.html[Ubuntu or Debian].
 

@@ -130,7 +130,7 @@ If you are cloning a policy:
 
 .. Select one default rule for the proposed policy. To create a new default rule, select *ILM rules page* image:../media/icon_nms_more_details.gif[more details icon].
 +
-The default rule applies to any objects that do not match another rule in the policy. The default rule cannot use any filters and is always evaluated last.
+The default rule applies to any objects that don't match another rule in the policy. The default rule cannot use any filters and is always evaluated last.
 +
 IMPORTANT: Don't use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
 
@@ -139,13 +139,13 @@ IMPORTANT: Don't use the Make 2 Copies rule as the default rule for a policy. Th
 --
 .. Select one default rule for the proposed policy. To create a new default rule, select *ILM rules page* image:../media/icon_nms_more_details.gif[more details icon].
 +
-The list of rules contains only the rules that are compliant and do not use any filters.
+The list of rules contains only the rules that are compliant and don't use any filters.
 +
 IMPORTANT: Don't use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If you use this rule, multiple copies of an object might be placed on the same site.
 
 .. If you need a different "`default`" rule for objects in non-compliant S3 buckets, select *Include a rule without filters for non-compliant S3 buckets*, and select one non-compliant rule that does not use a filter.
 +
-For example, you might want to use a Cloud Storage Pool to store objects in buckets that do not have S3 Object Lock enabled.
+For example, you might want to use a Cloud Storage Pool to store objects in buckets that don't have S3 Object Lock enabled.
 +
 NOTE: You can only select one non-compliant rule that does not use a filter.
 

@@ -16,7 +16,7 @@ Node names must follow these rules:
 * Can contain one or more hyphens (-)
 * Must be no more than 32 characters, not including the `.conf` extension
 
-Any files in `/etc/storagegrid/nodes` that do not follow these naming conventions will not be parsed by the host service.
+Any files in `/etc/storagegrid/nodes` that don't follow these naming conventions will not be parsed by the host service.
 
 If you have a multi-site topology planned for your grid, a typical node naming scheme might be:
 
@@ -78,7 +78,7 @@ Examples:
 
 |ADMIN_NETWORK_IP
 |O
-|IPv4 address of this node on the Admin Network. This key is only required when ADMIN_NETWORK_CONFIG = STATIC; do not specify it for other values.
+|IPv4 address of this node on the Admin Network. This key is only required when ADMIN_NETWORK_CONFIG = STATIC; don't specify it for other values.
 
 Examples:
 
@@ -98,7 +98,7 @@ Example: `b2:9c:02:c2:27:10`
 
 |ADMIN_NETWORK_MASK
 |O
-|IPv4 netmask for this node, on the Admin Network. This key is only required when ADMIN_NETWORK_CONFIG = STATIC; do not specify it for other values.
+|IPv4 netmask for this node, on the Admin Network. This key is only required when ADMIN_NETWORK_CONFIG = STATIC; don't specify it for other values.
 
 Examples:
 
@@ -158,11 +158,11 @@ link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-
 |*R*
 |Primary or Non-Primary
 
-This key is only required when NODE_TYPE = VM_Admin_Node; do not specify it for other node types.
+This key is only required when NODE_TYPE = VM_Admin_Node; don't specify it for other node types.
 
 |BLOCK_DEVICE_AUDIT_LOGS
 |*R*
-|Path and name of the block device special file this node will use for persistent storage of audit logs. This key is only required for nodes with NODE_TYPE = VM_Admin_Node; do not specify it for other node types.
+|Path and name of the block device special file this node will use for persistent storage of audit logs. This key is only required for nodes with NODE_TYPE = VM_Admin_Node; don't specify it for other node types.
 
 Examples:
 
@@ -205,7 +205,7 @@ BLOCK_DEVICE_RANGEDB_014
 
 BLOCK_DEVICE_RANGEDB_015
 |*R*
-|Path and name of the block device special file this node will use for persistent object storage. This key is only required for nodes with NODE_TYPE = VM_Storage_Node; do not specify it for other node types.
+|Path and name of the block device special file this node will use for persistent object storage. This key is only required for nodes with NODE_TYPE = VM_Storage_Node; don't specify it for other node types.
 
 Only BLOCK_DEVICE_RANGEDB_000 is required; the rest are optional. The block device specified for BLOCK_DEVICE_RANGEDB_000 must be at least 4 TB; the others can be smaller.
 
@@ -223,7 +223,7 @@ Examples:
 
 |BLOCK_DEVICE_TABLES
 |*R*
-|Path and name of the block device special file this node will use for persistent storage of database tables. This key is only required for nodes with NODE_TYPE = VM_Admin_Node; do not specify it for other node types.
+|Path and name of the block device special file this node will use for persistent storage of database tables. This key is only required for nodes with NODE_TYPE = VM_Admin_Node; don't specify it for other node types.
 
 Examples:
 
@@ -261,7 +261,7 @@ Examples:
 
 |CLIENT_NETWORK_IP
 |O
-|IPv4 address of this node on the Client Network. This key is only required when CLIENT_NETWORK_CONFIG = STATIC; do not specify it for other values.
+|IPv4 address of this node on the Client Network. This key is only required when CLIENT_NETWORK_CONFIG = STATIC; don't specify it for other values.
 
 Examples:
 
@@ -281,7 +281,7 @@ Example: `b2:9c:02:c2:27:20`
 
 |CLIENT_NETWORK_MASK
 |O
-|IPv4 netmask for this node on the Client Network. This key is only required when CLIENT_NETWORK_CONFIG = STATIC; do not specify it for other values.
+|IPv4 netmask for this node on the Client Network. This key is only required when CLIENT_NETWORK_CONFIG = STATIC; don't specify it for other values.
 
 Examples:
 
@@ -351,7 +351,7 @@ If the Grid Network is a single subnet with no gateway, use either the standard 
 
 |GRID_NETWORK_IP
 |*R*
-|IPv4 address of this node on the Grid Network. This key is only required when GRID_NETWORK_CONFIG = STATIC; do not specify it for other values.
+|IPv4 address of this node on the Grid Network. This key is only required when GRID_NETWORK_CONFIG = STATIC; don't specify it for other values.
 
 Examples:
 
@@ -371,7 +371,7 @@ Example: `b2:9c:02:c2:27:30`
 
 |GRID_NETWORK_MASK
 |O
-|IPv4 netmask for this node on the Grid Network. This key is only required when GRID_NETWORK_CONFIG = STATIC; do not specify it for other values.
+|IPv4 netmask for this node on the Grid Network. This key is only required when GRID_NETWORK_CONFIG = STATIC; don't specify it for other values.
 
 Examples:
 
@@ -387,7 +387,7 @@ If you want to use jumbo frames, set the MTU to a value suitable for jumbo frame
 
 *IMPORTANT*: The MTU value of the network must match the value configured on the switch port the node is connected to. Otherwise, network performance issues or packet loss might occur.
 
-*IMPORTANT*: For the best network performance, all nodes should be configured with similar MTU values on their Grid Network interfaces. The *Grid Network MTU mismatch* alert is triggered if there is a significant difference in MTU settings for the Grid Network on individual nodes. The MTU values do not have to be the same for all network types.
+*IMPORTANT*: For the best network performance, all nodes should be configured with similar MTU values on their Grid Network interfaces. The *Grid Network MTU mismatch* alert is triggered if there is a significant difference in MTU settings for the Grid Network on individual nodes. The MTU values don't have to be the same for all network types.
 
 Examples:
 
@@ -436,7 +436,7 @@ For the value, specify the name of the physical interface on the bare-metal host
 
 For example: `INTERFACES_TARGET_01=ens256, Trunk`
 
-If you add a trunk interface, you must configure a VLAN interface in StorageGRID. If you add an access interface, you can add the interface directly to an HA group; you do not need to configure a VLAN interface. 
+If you add a trunk interface, you must configure a VLAN interface in StorageGRID. If you add an access interface, you can add the interface directly to an HA group; you don't need to configure a VLAN interface. 
 
 |MAXIMUM_RAM
 |O
@@ -479,7 +479,7 @@ For example:
 
 |PORT_REMAP_INBOUND
 |O
-|Remaps inbound communications to the specified port. If you specify PORT_REMAP_INBOUND but do not specify a value for PORT_REMAP, outbound communications for the port are unchanged.
+|Remaps inbound communications to the specified port. If you specify PORT_REMAP_INBOUND but don't specify a value for PORT_REMAP, outbound communications for the port are unchanged.
 
 *IMPORTANT*: Don't remap the ports you are planning to use to configure load balancer endpoints.
 
