@@ -88,7 +88,7 @@ ls '/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%#3tN6'
 +
 NOTE: Always enclose the object file path in single quotes in commands to escape any special characters.
 
-*** If the object path is not found, the object is lost and cannot be restored using this procedure. Contact technical support.
+*** If the object path is not found, the object is lost and can't be restored using this procedure. Contact technical support.
 *** If the object path is found, continue with the next step. You can attempt to restore the found object back to StorageGRID.
 
 . If the object path was found, attempt to restore the object to StorageGRID:
@@ -107,7 +107,7 @@ Issuing the `Object\_Found` command notifies the grid of the object's location. 
 +
 NOTE: If the Storage Node where you found the object is offline, you can copy the object to any Storage Node that is online. Place the object in any /var/local/rangedb directory of the online Storage Node. Then, issue the `Object\_Found` command using that file path to the object.
 
-** If the object cannot be restored, the `Object\_Found` command fails. Contact technical support.
+** If the object can't be restored, the `Object\_Found` command fails. Contact technical support.
 ** If the object was successfully restored to StorageGRID, a success message appears. For example:
 +
 ----

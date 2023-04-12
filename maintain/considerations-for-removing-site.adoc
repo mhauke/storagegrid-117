@@ -38,21 +38,21 @@ IMPORTANT: Before performing a disconnected site decommission procedure, you mus
 
 Before removing a connected or disconnected site, you must be aware of the following requirements:
 
-* You cannot decommission a site that includes the primary Admin Node.
-* You cannot decommission a site that includes an Archive Node.
-* You cannot decommission a site if any of the nodes have an interface that belongs to a high availability (HA) group. You must either edit the HA group to remove the node's interface or remove the entire HA group.
-* You cannot decommission a site if it contains a mixture of connected (image:../media/icon_alert_green_checkmark.png[Icon Alert Green Checkmark]) and disconnected (image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown] or image:../media/icon_alarm_gray_administratively_down.png[Icon Alarm Gray Administratively Down]) nodes.
-* You cannot decommission a site if any node at any other site is disconnected (image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown] or image:../media/icon_alarm_gray_administratively_down.png[Icon Alarm Gray Administratively Down]).
-* You cannot start the site decommission procedure if an ec-node-repair operation is in progress. See link:checking-data-repair-jobs.html[Check data repair jobs] to track repairs of erasure-coded data.
+* You can't decommission a site that includes the primary Admin Node.
+* You can't decommission a site that includes an Archive Node.
+* You can't decommission a site if any of the nodes have an interface that belongs to a high availability (HA) group. You must either edit the HA group to remove the node's interface or remove the entire HA group.
+* You can't decommission a site if it contains a mixture of connected (image:../media/icon_alert_green_checkmark.png[Icon Alert Green Checkmark]) and disconnected (image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown] or image:../media/icon_alarm_gray_administratively_down.png[Icon Alarm Gray Administratively Down]) nodes.
+* You can't decommission a site if any node at any other site is disconnected (image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown] or image:../media/icon_alarm_gray_administratively_down.png[Icon Alarm Gray Administratively Down]).
+* You can't start the site decommission procedure if an ec-node-repair operation is in progress. See link:checking-data-repair-jobs.html[Check data repair jobs] to track repairs of erasure-coded data.
 
 * While the site decommission procedure is running:
- ** You cannot create ILM rules that refer to the site being decommissioned. You also cannot edit an existing ILM rule to refer to the site.
- ** You cannot perform other maintenance procedures, such as expansion or upgrade.
+ ** You can't create ILM rules that refer to the site being decommissioned. You also can't edit an existing ILM rule to refer to the site.
+ ** You can't perform other maintenance procedures, such as expansion or upgrade.
 +
 NOTE: If you need to perform another maintenance procedure during a connected site decommission, you can link:pausing-and-resuming-decommission-process-for-storage-nodes.html[pause the procedure while the Storage Nodes are being removed]. The *Pause* button is enabled only when the ILM evaluation or erasure-coded data decommissioning stages are reached; however, ILM evaluation (data migration) will continue to run in the background. After the second maintenance procedure is complete, you can resume decommissioning.
 
  ** If you need to recover any node after starting the site decommission procedure, you must contact support.
-* You cannot decommission more than one site at a time.
+* You can't decommission more than one site at a time.
 * If the site includes one or more Admin Nodes and single sign-on (SSO) is enabled for your StorageGRID system, you must remove all relying party trusts for the site from Active Directory Federation Services (AD FS).
 
 == Requirements for information lifecycle management (ILM)
@@ -89,11 +89,11 @@ Before StorageGRID can remove a connected site, you must ensure the following:
 
 * All nodes in your StorageGRID system must have a Connection State of *Connected* (image:../media/icon_alert_green_checkmark.png[Icon Alert Green Checkmark]); however, the nodes can have active alerts.
 +
-NOTE: You can complete Steps 1-4 of the Decommission Site wizard if one or more nodes are disconnected. However, you cannot complete Step 5 of the wizard, which starts the decommission process, unless all nodes are connected.
+NOTE: You can complete Steps 1-4 of the Decommission Site wizard if one or more nodes are disconnected. However, you can't complete Step 5 of the wizard, which starts the decommission process, unless all nodes are connected.
 
 * If the site you plan to remove contains a Gateway Node or an Admin Node that is used for load balancing, you might need to 
 link:../expand/index.html[expand your grid] to add an equivalent new node at another site. Be sure clients can connect to the replacement node before starting the site decommission procedure.
-* If the site you plan to remove contains any Gateway Node or Admin Nodes that are in an high availability (HA) group, you can complete Steps 1-4 of the Decommission Site wizard. However, you cannot complete Step 5 of the wizard, which starts the decommission process, until you remove these nodes from all HA groups. If existing clients connect to an HA group that includes nodes from the site, you must ensure they can continue to connect to StorageGRID after the site is removed.
+* If the site you plan to remove contains any Gateway Node or Admin Nodes that are in an high availability (HA) group, you can complete Steps 1-4 of the Decommission Site wizard. However, you can't complete Step 5 of the wizard, which starts the decommission process, until you remove these nodes from all HA groups. If existing clients connect to an HA group that includes nodes from the site, you must ensure they can continue to connect to StorageGRID after the site is removed.
 * If clients connect directly to Storage Nodes at the site you are planning to remove, you must ensure that they can connect to Storage Nodes at other sites before starting the site decommission procedure.
 * You must provide sufficient space on the remaining sites to accommodate any object data that will be moved because of changes to the active ILM policy. In some cases, you might need to link:../expand/index.html[expand your grid] by adding Storage Nodes, storage volumes, or new sites before you can complete a connected site decommission.
 * You must allow adequate time for the decommission procedure to complete. StorageGRID ILM processes might take days, weeks, or even months to move or delete object data from the site before the site can be decommissioned.
@@ -119,7 +119,7 @@ link:how-site-recovery-is-performed-by-technical-support.html[How site recovery 
 +
 NOTE: If your ILM rules and policy were designed to protect against the loss of a single site, copies of your objects still exist on the remaining sites.
 
-* You must understand that if the site contained the only copy of an object, the object is lost and cannot be retrieved.
+* You must understand that if the site contained the only copy of an object, the object is lost and can't be retrieved.
 
 == Considerations for consistency controls when you remove a site
 

@@ -150,7 +150,7 @@ Note the following for the Client Network gateway:
 
 == Optional VLAN networks
 
-As required, you can optionally use virtual LAN (VLAN) networks for client traffic and for some types of admin traffic. Grid traffic, however, cannot use a VLAN interface. The internal StorageGRID traffic between nodes must always use the Grid Network on eth0.
+As required, you can optionally use virtual LAN (VLAN) networks for client traffic and for some types of admin traffic. Grid traffic, however, can't use a VLAN interface. The internal StorageGRID traffic between nodes must always use the Grid Network on eth0.
 
 To support the use VLANs, you must configure one or more interfaces on a node as trunk interfaces at the switch. You can configure the Grid Network interface (eth0) or the Client Network interface (eth2) to be a trunk, or you can add trunk interfaces to the node.
 
@@ -158,7 +158,7 @@ If eth0 is configured as a trunk, Grid Network traffic flows over the trunk nati
 
 Only inbound admin traffic, such as used for SSH, Grid Manager, or Tenant Manager traffic, is supported over VLAN networks. Outbound traffic, such as used for NTP, DNS, LDAP, KMS, and Cloud Storage Pools, is not supported over VLAN networks.
 
-NOTE: VLAN interfaces can be added to Admin Nodes and Gateway Nodes only. You cannot use a VLAN interface for client or admin access to Storage Nodes or Archive Nodes.
+NOTE: VLAN interfaces can be added to Admin Nodes and Gateway Nodes only. You can't use a VLAN interface for client or admin access to Storage Nodes or Archive Nodes.
 
 See link:../admin/configure-vlan-interfaces.html[Configure VLAN interfaces] for instructions and guidelines.
 

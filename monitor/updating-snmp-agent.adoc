@@ -59,7 +59,7 @@ Use this tab to define the USM users who are authorized to query the MIB or to r
  .. To add a USM user, select *Create*. Then, refer to the step for USM users in the instructions for configuring the SNMP agent.
  .. To edit a USM user, select the radio button for the user, and select *Edit*. Then, refer to the step for USM users in the instructions for configuring the SNMP agent.
 +
-The username for an existing USM user cannot be changed. If you need to change a username, you must remove the user and create a new one.
+The username for an existing USM user can't be changed. If you need to change a username, you must remove the user and create a new one.
 +
 NOTE: If you add or remove a user's authoritative engine ID and that user is currently selected for a destination, you must edit or remove the destination, as described in step <<SNMP_TRAP_DESTINATION,SNMP trap destination>>. Otherwise, a validation error occurs when you save the SNMP agent configuration.
 

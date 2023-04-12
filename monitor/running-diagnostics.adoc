@@ -45,7 +45,7 @@ Details about the diagnostic and its current results appear. The following detai
  ** *Prometheus query*: If used for the diagnostic, the Prometheus expression that was used to generate the status values. (A Prometheus expression is not used for all diagnostics.)
  ** *Thresholds*: If available for the diagnostic, the system-defined thresholds for each abnormal diagnostic status. (Threshold values are not used for all diagnostics.)
 +
-NOTE: You cannot change these thresholds.
+NOTE: You can't change these thresholds.
 
  ** *Status values*: A table showing the status and the value of the diagnostic throughout the StorageGRID system.
 In this example, the current CPU utilization for every node in a StorageGRID system is shown. All node values are below the Attention and Caution thresholds, so the overall status of the diagnostic is Normal.

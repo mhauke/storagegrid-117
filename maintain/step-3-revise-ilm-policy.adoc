@@ -17,7 +17,7 @@ You have a good understanding of how ILM works and you are familiar with creatin
 
 .About this task
 
-StorageGRID cannot decommission a site if that site is referred to by any ILM rule in the active ILM policy.
+StorageGRID can't decommission a site if that site is referred to by any ILM rule in the active ILM policy.
 
 If your current ILM policy refers to the site you want to remove, you must activate a new ILM policy that meets certain requirements. Specifically, the new ILM policy:
 
@@ -81,7 +81,7 @@ image::../media/decommission_site_step_3_cloned_policy.png[Decommission Site Ste
  .. Select *Apply*.
  .. Drag the rows to reorder the rules in the policy.
 +
-You cannot move the default rule.
+You can't move the default rule.
 +
 IMPORTANT: You must confirm that the ILM rules are in the correct order. When the policy is activated, new and existing objects are evaluated by the rules in the order listed, starting at the top.
 

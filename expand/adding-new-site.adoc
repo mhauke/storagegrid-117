@@ -16,7 +16,7 @@ You can expand your StorageGRID system by adding a new site.
 Before adding a site, review the following requirements and limitations:
 
 * You can only add one site per expansion operation.
-* You cannot add grid nodes to an existing site as part of the same expansion.
+* You can't add grid nodes to an existing site as part of the same expansion.
 * All sites must include at least three Storage Nodes.
 * Adding a new site does not automatically increase the number of objects you can store. The total object capacity of a grid depends on the amount of available storage, the ILM policy, and the metadata capacity at each site.
 * When sizing a new site, you must ensure that it includes enough metadata capacity.

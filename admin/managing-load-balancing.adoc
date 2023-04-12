@@ -102,7 +102,7 @@ To avoid certificate expiration issues, follow these best practices:
 
 === Considerations for the binding mode
 
-The binding mode lets you control which IP addresses can be used to access a load balancer endpoint. If an endpoint uses a binding mode, client applications can only access the endpoint if they use an allowed IP address or its corresponding fully qualified domain name (FQDN). Client applications using any other IP address or FQDN cannot access the endpoint. 
+The binding mode lets you control which IP addresses can be used to access a load balancer endpoint. If an endpoint uses a binding mode, client applications can only access the endpoint if they use an allowed IP address or its corresponding fully qualified domain name (FQDN). Client applications using any other IP address or FQDN can't access the endpoint. 
 
 You can specify any of the following binding modes:
 

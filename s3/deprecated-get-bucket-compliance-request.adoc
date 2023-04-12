@@ -65,7 +65,7 @@ a|
 LegalHold
 a|
 
-* True: This bucket is currently under a legal hold. Objects in this bucket cannot be deleted until the legal hold is lifted, even if their retention period has expired.
+* True: This bucket is currently under a legal hold. Objects in this bucket can't be deleted until the legal hold is lifted, even if their retention period has expired.
 * False: This bucket is not currently under a legal hold. Objects in this bucket can be deleted when their retention period expires.
 
 a|

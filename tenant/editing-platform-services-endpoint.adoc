@@ -2,14 +2,14 @@
 permalink: tenant/editing-platform-services-endpoint.html
 sidebar: sidebar
 keywords: how to edit platform services endpoint
-summary: 'You can edit the configuration for a platform services endpoint to change its name, URI, or other details. For example, you might need to update expired credentials or change the URI to point to a backup Elasticsearch index for failover. You cannot change the URN for a platform services endpoint.'
+summary: 'You can edit the configuration for a platform services endpoint to change its name, URI, or other details. For example, you might need to update expired credentials or change the URI to point to a backup Elasticsearch index for failover. You can't change the URN for a platform services endpoint.'
 ---
 = Edit platform services endpoint
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can edit the configuration for a platform services endpoint to change its name, URI, or other details. For example, you might need to update expired credentials or change the URI to point to a backup Elasticsearch index for failover. You cannot change the URN for a platform services endpoint.
+You can edit the configuration for a platform services endpoint to change its name, URI, or other details. For example, you might need to update expired credentials or change the URI to point to a backup Elasticsearch index for failover. You can't change the URN for a platform services endpoint.
 
 .What you'll need
 
@@ -34,7 +34,7 @@ image::../media/endpoint_edit_configuration.png[Edit Endpoint Configuration]
 
 . As needed, change the configuration of the endpoint.
 +
-NOTE: You cannot change an endpoint's URN after the endpoint has been created.
+NOTE: You can't change an endpoint's URN after the endpoint has been created.
 
  .. To change the display name for the endpoint, select the edit icon image:../media/icon_edit_tm.png[Edit Icon].
  .. As needed, change the URI.

@@ -121,7 +121,7 @@ You must select this option if you have not yet created any tenant accounts. Aft
 |Only the selected tenant accounts can use this endpoint to access their buckets.
 
 |Block selected tenants
-|The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+|The selected tenant accounts can't use this endpoint to access their buckets. All other tenants can use this endpoint.
 
 |===
 
@@ -143,7 +143,7 @@ The certificate secures the connections between S3 and Swift clients and the Loa
 
 * *Use StorageGRID S3 and Swift certificate*. Select this option if you want to use the global S3 and Swift API certificate, which can also be used for connections directly to Storage Nodes. 
 +
-You cannot select this option unless you have replaced the default S3 and Swift API certificate, which is signed by the grid CA, with a custom certificate signed by an external certificate authority. See
+You can't select this option unless you have replaced the default S3 and Swift API certificate, which is signed by the grid CA, with a custom certificate signed by an external certificate authority. See
 link:../admin/configuring-custom-server-certificate-for-storage-node.html[Configure S3 and Swift API certificates].
 
 . If you are not using the StorageGRID S3 and Swift certificate, upload or generate the certificate.
@@ -258,7 +258,7 @@ You must also ensure that the DNS record references all required endpoint domain
 
 You can view details for existing load balancer endpoints, including the certificate metadata for a secured endpoint. You can also change an endpoint's name or binding mode and update any associated certificates.
 
-You cannot change the service type (S3 or Swift), the port, or the protocol (HTTP or HTTPS).
+You can't change the service type (S3 or Swift), the port, or the protocol (HTTP or HTTPS).
 
 
 * To view basic information for all load balancer endpoints, review the table on the Load balancer endpoints page. 

@@ -33,11 +33,11 @@ When *any* of the following conditions are true:
  ** The last time period specified in an ILM rule elapses.
 
 +
-*Note:* Objects in a bucket that has S3 Object Lock enabled cannot be deleted if they are under a legal hold or if a retain-until-date has been specified but not yet met.
+*Note:* Objects in a bucket that has S3 Object Lock enabled can't be deleted if they are under a legal hold or if a retain-until-date has been specified but not yet met.
 
 * An S3 or Swift client requests deletion and one or more of these conditions is true:
 
- ** Copies cannot be deleted within 30 seconds because, for example, an object location is temporarily unavailable.
+ ** Copies can't be deleted within 30 seconds because, for example, an object location is temporarily unavailable.
  ** Background deletion queues are idle.
 
 a|
@@ -77,7 +77,7 @@ To free space when deleting versioned objects, use one of the following:
 
 * *S3 client request*: Specify the object version ID in the S3 DELETE Object request (`DELETE /object?versionId=ID`). Keep in mind that this request only removes object copies for the specified version (the other versions are still taking up space).
 
-* *Bucket lifecycle*: Use the `NoncurrentVersionExpiration` action in the bucket lifecycle configuration. When the number of NoncurrentDays specified is met, StorageGRID permanently removes all copies of noncurrent object versions. These object versions cannot be recovered.
+* *Bucket lifecycle*: Use the `NoncurrentVersionExpiration` action in the bucket lifecycle configuration. When the number of NoncurrentDays specified is met, StorageGRID permanently removes all copies of noncurrent object versions. These object versions can't be recovered.
 +
 The `NewerNoncurrentVersions` action in the bucket lifecycle configuration specifies the number of noncurrent versions retained in a versioned S3 bucket. If there are more noncurrent versions than `NewerNoncurrentVersions` specifies, StorageGRID removes the older versions once the NoncurrentDays value has elapsed. The `NewerNoncurrentVersions` threshold overrides lifecycle rules provided by ILM, meaning that a noncurrent object with a version within the `NewerNoncurrentVersions` threshold is retained if ILM requests its deletion.
 

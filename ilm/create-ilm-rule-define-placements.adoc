@@ -72,7 +72,7 @@ NOTE: The *ILM placement unachievable* alert is triggered to indicate that the I
 +
 *If you specify more than one storage pool*, keep these rules in mind:
 
-  *** The number of copies cannot be greater than the number of storage pools.
+  *** The number of copies can't be greater than the number of storage pools.
   *** If the number of copies equals the number of storage pools, one copy of the object is stored in each storage pool.
   *** If the number of copies is less than the number of storage pools, one copy is stored at the ingest site, and then the system distributes the remaining copies to keep disk usage among the pools balanced, while ensuring that no site gets more than one copy of an object.
   *** If the storage pools overlap (contain the same Storage Nodes), all copies of the object might be saved at only one site. For this reason, don't specify the All Storage Nodes storage pool (StorageGRID 11.6 and earlier) and another storage pool.
@@ -100,11 +100,11 @@ NOTE: Objects are automatically deleted at the end of the final time period unle
 +
 When using Cloud Storage Pools, keep these rules in mind:
 
-  *** You cannot select more than one Cloud Storage Pool in a single placement instruction. Similarly, you cannot select a Cloud Storage Pool and a storage pool in the same placement instruction.
+  *** You can't select more than one Cloud Storage Pool in a single placement instruction. Similarly, you can't select a Cloud Storage Pool and a storage pool in the same placement instruction.
 
   *** You can store only one copy of an object in any given Cloud Storage Pool. An error message appears if you set *Copies* to 2 or more.
 
-  *** You cannot store more than one object copy in any Cloud Storage Pool at the same time. An error message appears if multiple placements that use a Cloud Storage Pool have overlapping dates or if multiple lines in the same placement use a Cloud Storage Pool.
+  *** You can't store more than one object copy in any Cloud Storage Pool at the same time. An error message appears if multiple placements that use a Cloud Storage Pool have overlapping dates or if multiple lines in the same placement use a Cloud Storage Pool.
 
   *** You can store an object in a Cloud Storage Pool at the same time that object is being stored as replicated or erasure coded copies in StorageGRID. However, you must include more than one line in the placement instruction for the time period, so you can specify the number and types of copies for each location.
 

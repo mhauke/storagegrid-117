@@ -15,7 +15,7 @@ As required, you can change the display names that are shown throughout the Grid
 
 When you install StorageGRID initially, you specify a name for the grid, each site, and each node. These initial names are known as _system names_, and they are the names initially shown throughout StorageGRID.
 
-System names are required for internal StorageGRID operations and cannot be changed. However, you can use the rename procedure to define new _display names_ for the grid, each site, and each node. These display names appear in various StorageGRID locations instead of (or in some cases, in addition to) the underlying system names. 
+System names are required for internal StorageGRID operations and can't be changed. However, you can use the rename procedure to define new _display names_ for the grid, each site, and each node. These display names appear in various StorageGRID locations instead of (or in some cases, in addition to) the underlying system names. 
 
 Use the rename procedure to correct typos, to implement a different naming convention, or to indicate that a site and all of its nodes have been relocated. Unlike system names, display names can be updated whenever required and without impacting StorageGRID operations. 
 
@@ -102,7 +102,7 @@ Display names for nodes must follow these rules:
 * Cannot be the same as the system name for any other item in your StorageGRID system.
 * Must contain at least 1 and no more than 32 characters.
 * Can contain numbers, hyphens (-), and uppercase and lowercase letters.
-* Can start or end with a letter or number, but cannot start or end with a hyphen.
+* Can start or end with a letter or number, but can't start or end with a hyphen.
 * Cannot be all numbers.
 * Are case-insensitive. For example, `DC1-ADM` and `dc1-adm` are considered to be duplicates.
 

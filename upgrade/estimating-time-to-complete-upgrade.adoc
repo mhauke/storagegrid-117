@@ -2,14 +2,14 @@
 permalink: upgrade/estimating-time-to-complete-upgrade.html
 sidebar: sidebar
 keywords: upgrade, time estimate, duration, cassandra upgrade
-summary: 'When planning an upgrade to StorageGRID 11.7, you must consider when to upgrade, based on how long the upgrade might take. You must also be aware of which operations you can and cannot perform during each stage of the upgrade.'
+summary: 'When planning an upgrade to StorageGRID 11.7, you must consider when to upgrade, based on how long the upgrade might take. You must also be aware of which operations you can and can't perform during each stage of the upgrade.'
 ---
 = Estimate the time to complete an upgrade
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-When planning an upgrade to StorageGRID 11.7, you must consider when to upgrade, based on how long the upgrade might take. You must also be aware of which operations you can and cannot perform during each stage of the upgrade.
+When planning an upgrade to StorageGRID 11.7, you must consider when to upgrade, based on how long the upgrade might take. You must also be aware of which operations you can and can't perform during each stage of the upgrade.
 
 .About this task
 The time required to complete a StorageGRID upgrade depends on a variety of factors such as client load and hardware performance.
@@ -27,7 +27,7 @@ The table summarizes the main upgrade tasks and lists the approximate time requi
 
 Unresolved precheck errors will increase this time. 
 
-| You cannot access the primary Admin Node. Connection errors might be reported, which you can ignore.
+| You can't access the primary Admin Node. Connection errors might be reported, which you can ignore.
 
 Running the upgrade prechecks before starting the upgrade lets you resolve any errors before the scheduled upgrade maintenance window.
 
@@ -57,7 +57,7 @@ Running the upgrade prechecks before starting the upgrade lets you resolve any e
 * Don't change the grid configuration.
 * Don't change the audit level configuration.
 * Don't update the ILM configuration.
-* You cannot perform another maintenance procedure.
+* You can't perform another maintenance procedure.
 
 | Upgrade database
 | The upgrade process checks each node to verify that the Cassandra database does not need to be updated.

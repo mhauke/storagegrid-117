@@ -35,7 +35,7 @@ There are three ways to access SANtricity System Manager, depending upon what st
 NOTE: Once the node is deployed, you can no longer use the StorageGRID Appliance Installer to access SANtricity System Manager.
 
 * If the appliance has been deployed as a node in your StorageGRID system, use the SANtricity System Manager tab on the Nodes page in Grid Manager.
-* If you cannot use the StorageGRID Appliance Installer or Grid Manager, you can access SANtricity System Manager directly using a web browser connected to the management port.
+* If you can't use the StorageGRID Appliance Installer or Grid Manager, you can access SANtricity System Manager directly using a web browser connected to the management port.
 
 This procedure includes steps for your initial access to SANtricity System Manager. If you have already set up SANtricity System Manager, go to the  <<config_hardware_alerts_sg6000,configure hardware alerts step>>.
 
@@ -141,7 +141,7 @@ If the status of any component is Needs Attention, follow the steps in the Recov
 
 == Set IP addresses for storage controllers using StorageGRID Appliance Installer
 
-Management port 1 on each storage controller connects the appliance to the management network for SANtricity System Manager. If you cannot access SANtricity System Manager from the StorageGRID Appliance Installer, set a static IP address for each storage controller to ensure that you don't lose your management connection to the hardware and the controller firmware in the controller shelf.
+Management port 1 on each storage controller connects the appliance to the management network for SANtricity System Manager. If you can't access SANtricity System Manager from the StorageGRID Appliance Installer, set a static IP address for each storage controller to ensure that you don't lose your management connection to the hardware and the controller firmware in the controller shelf.
 
 .What you'll need
 

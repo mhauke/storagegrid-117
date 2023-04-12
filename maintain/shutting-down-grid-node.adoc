@@ -27,7 +27,7 @@ Before performing this procedure, review these considerations:
  ** Shutting down a StorageGRID appliance node shuts down the compute controller.
 * If you plan to shut down more than one Storage Node at a site, stop ingesting objects at that site for approximately one hour before shutting down the nodes.
 +
-If any ILM rule uses the *Dual commit* ingest option (or if a rule uses the *Balanced* option and all required copies cannot be created immediately), StorageGRID immediately commits any newly ingested objects to two Storage Nodes on the same site and evaluates ILM later. If more than one Storage Node at a site is shut down, you might not be able to access newly ingested objects for the duration of the shutdown. Write operations might also fail if too few Storage Nodes remain available at the site. See link:../ilm/index.html[Manage objects with ILM].
+If any ILM rule uses the *Dual commit* ingest option (or if a rule uses the *Balanced* option and all required copies can't be created immediately), StorageGRID immediately commits any newly ingested objects to two Storage Nodes on the same site and evaluates ILM later. If more than one Storage Node at a site is shut down, you might not be able to access newly ingested objects for the duration of the shutdown. Write operations might also fail if too few Storage Nodes remain available at the site. See link:../ilm/index.html[Manage objects with ILM].
 
 .Steps
 

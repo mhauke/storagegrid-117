@@ -30,7 +30,7 @@ If you are using physical hosts to support grid nodes:
 * Make sure all hosts use the same host interface for each node interface. This strategy simplifies host configuration and enables future node migration.
 * Obtain an IP address for the physical host itself.
 +
-NOTE: A physical interface on the host can be used by the host itself and one or more nodes running on the host. Any IP addresses assigned to the host or nodes using this interface must be unique. The host and the node cannot share IP addresses.
+NOTE: A physical interface on the host can be used by the host itself and one or more nodes running on the host. Any IP addresses assigned to the host or nodes using this interface must be unique. The host and the node can't share IP addresses.
 
 * Open the required ports to the host.
 

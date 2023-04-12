@@ -86,7 +86,7 @@ AutoSupport on Demand can assist in solving issues that technical support is act
 
 By default, AutoSupport on Demand is disabled. Enabling this feature allows technical support to request that your StorageGRID system send AutoSupport messages automatically. Technical support can also set the polling time interval for AutoSupport on Demand queries.
 
-Technical support cannot enable or disable AutoSupport on Demand.
+Technical support can't enable or disable AutoSupport on Demand.
 
 .Steps
 
@@ -116,7 +116,7 @@ When you enable AutoSupport, heath and status messages are sent to NetApp Suppor
 
 To verify or change the protocol used to send AutoSupport messages, see the instructions to <<Specify the protocol for AutoSupport messages>>.
 
-NOTE: You cannot use the SMTP protocol to send AutoSupport messages to an additional destination.
+NOTE: You can't use the SMTP protocol to send AutoSupport messages to an additional destination.
 
 
 .Steps

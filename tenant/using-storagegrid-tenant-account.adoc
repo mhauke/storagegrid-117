@@ -25,7 +25,7 @@ NOTE: If you use the S3 client protocol, you can also use S3 buckets and bucket 
 
 Tenant accounts are created by a StorageGRID grid administrator using the Grid Manager. When creating a tenant account, the grid administrator specifies the following information:
 
-* Display name for the tenant (the tenant's account ID is assigned automatically and cannot be changed).
+* Display name for the tenant (the tenant's account ID is assigned automatically and can't be changed).
 * Whether the tenant account will use the S3 or Swift.
 * For S3 tenant accounts: Whether the tenant account is allowed to use platform services. If the use of platform services is allowed, the grid must be configured to support their use.
 * Optionally, a storage quota for the tenant account--the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).

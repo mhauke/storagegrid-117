@@ -26,7 +26,7 @@ Additionally, you should remove Archive Nodes from the active ILM policy in Stor
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have specific access permissions.
 * You have created a bucket on the target archival storage system:
- ** The bucket is dedicated to a single Archive Node. It cannot be used by other Archive Nodes or other applications.
+ ** The bucket is dedicated to a single Archive Node. It can't be used by other Archive Nodes or other applications.
  ** The bucket has the appropriate region selected for your location.
  ** The bucket should be configured with versioning suspended.
 * Object Segmentation is enabled and the Maximum Segment Size is less than or equal to 4.5 GiB (4,831,838,208 bytes). S3 API requests that exceed this value will fail if S3 is used as the external archival storage system.
@@ -61,6 +61,6 @@ For a non-AWS target, enter the URL of the system hosting the bucket, including 
 
 . Select *Apply Changes*.
 +
-The specified configuration settings are validated and applied to your StorageGRID system. Once configured, the target cannot be changed.
+The specified configuration settings are validated and applied to your StorageGRID system. Once configured, the target can't be changed.
 
 

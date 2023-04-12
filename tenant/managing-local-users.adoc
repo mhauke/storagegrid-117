@@ -2,14 +2,14 @@
 permalink: tenant/managing-local-users.html
 sidebar: sidebar
 keywords: how to create local tenant users, manage users
-summary: 'You can create local users and assign them to local groups to determine which features these users can access. The Tenant Manager includes one predefined local user, named "`root.`" Although you can add and remove local users, you cannot remove the root user.'
+summary: 'You can create local users and assign them to local groups to determine which features these users can access. The Tenant Manager includes one predefined local user, named "`root.`" Although you can add and remove local users, you can't remove the root user.'
 ---
 = Manage local users
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can create local users and assign them to local groups to determine which features these users can access. The Tenant Manager includes one predefined local user, named "`root.`" Although you can add and remove local users, you cannot remove the root user.
+You can create local users and assign them to local groups to determine which features these users can access. The Tenant Manager includes one predefined local user, named "`root.`" Although you can add and remove local users, you can't remove the root user.
 
 NOTE: If single sign-on (SSO) is enabled for your StorageGRID system, local users will not be able to sign in to the Tenant Manager or the Tenant Management API, although they can use client applications to access the tenant's resources, based on group permissions.
 
@@ -55,7 +55,7 @@ image::../media/grid-federation-tenant-user-banner.png[image of blue banner on U
 | The full name for this user, for example, the first name and last name of a person or the name of an application. 
 
 | Username
-| The name this user will use to sign in. Usernames must be unique and cannot be changed.
+| The name this user will use to sign in. Usernames must be unique and can't be changed.
 
 *Note*: If your tenant account has the *Use grid federation connection* permission, a cloning error will occur if the same *Username* already exists for the tenant on the destination grid.
 
@@ -128,7 +128,7 @@ If the tenant account has the *Use grid federation connection* permission and yo
 
 .. In the Overview section, change the full name by selecting the name or the edit icon image:../media/icon_edit_tm.png[Edit icon].
 +
-You cannot change the username.
+You can't change the username.
 
 .. On the *Password* tab, change the user's password, and select *Save changes*.
 

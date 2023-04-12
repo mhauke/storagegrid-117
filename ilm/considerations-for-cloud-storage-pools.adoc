@@ -85,7 +85,7 @@ This rule would transition all bucket objects to Amazon S3 Glacier on the day th
 
 IMPORTANT: When configuring the external bucket's lifecycle, never use *Expiration* actions to define when objects expire. Expiration actions cause the external storage system to delete expired objects. If you later attempt to access an expired object from StorageGRID, the deleted object will not be found.
 
-If you want to transition objects in the Cloud Storage Pool to S3 Glacier Deep Archive (instead of to Amazon S3 Glacier), specify `<StorageClass>DEEP_ARCHIVE</StorageClass>` in the bucket lifecycle. However, be aware that you cannot use the `Expedited` tier to restore objects from S3 Glacier Deep Archive.
+If you want to transition objects in the Cloud Storage Pool to S3 Glacier Deep Archive (instead of to Amazon S3 Glacier), specify `<StorageClass>DEEP_ARCHIVE</StorageClass>` in the bucket lifecycle. However, be aware that you can't use the `Expedited` tier to restore objects from S3 Glacier Deep Archive.
 
 == Azure: Considerations for Access tier
 

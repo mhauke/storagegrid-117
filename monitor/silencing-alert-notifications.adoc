@@ -22,7 +22,7 @@ If you have enabled the SNMP agent, silences also suppress SNMP traps and inform
 
 IMPORTANT: Be careful when deciding to silence an alert rule. If you silence an alert, you might not detect an underlying problem until it prevents a critical operation from completing.
 
-NOTE: Because alarms and alerts are independent systems, you cannot use this functionality to suppress alarm notifications.
+NOTE: Because alarms and alerts are independent systems, you can't use this functionality to suppress alarm notifications.
 
 .Steps
 . Select *ALERTS* > *Silences*.
@@ -67,7 +67,7 @@ Nodes
 a|
 Which node or nodes you want this silence to apply to. You can suppress an alert rule or all rules on the entire grid, a single site, or a single node. If you select the entire grid, the silence applies to all sites and all nodes. If you select a site, the silence applies only to the nodes at that site.
 
-*Note:* You cannot select more than one node or more than one site for each silence. You must create additional silences if you want to suppress the same alert rule on more than one node or more than one site at one time.
+*Note:* You can't select more than one node or more than one site for each silence. You must create additional silences if you want to suppress the same alert rule on more than one node or more than one site at one time.
 |===
 
 . Select *Save*.

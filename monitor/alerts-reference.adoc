@@ -147,7 +147,7 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 | There is a problem with one or more connections between the compute controller and storage controller.
 
 | Storage device inaccessible
-| A storage device cannot be accessed.
+| A storage device can't be accessed.
 |===
 
 == Audit and syslog alerts
@@ -157,16 +157,16 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 | Alert name| Description
 
 | Audit logs are being added to the in-memory queue
-| Node cannot send logs to the local syslog server and the in-memory queue is filling up.
+| Node can't send logs to the local syslog server and the in-memory queue is filling up.
 
 | External syslog server forwarding error
-| Node cannot forward logs to the external syslog server.
+| Node can't forward logs to the external syslog server.
 
 | Large audit queue
 | The disk queue for audit messages is full. If this condition is not addressed, S3 or Swift operations might fail.
 
 | Logs are being added to the on-disk queue
-| Node cannot forward logs to the external syslog server and the on-disk queue is filling up.
+| Node can't forward logs to the external syslog server and the on-disk queue is filling up.
 |===
 
 == Bucket alerts
@@ -381,7 +381,7 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 | Alert name| Description
 
 | ILM placement unachievable
-| A placement instruction in an ILM rule cannot be achieved for certain objects.
+| A placement instruction in an ILM rule can't be achieved for certain objects.
 
 | ILM scan period too long
 | The time required to scan, evaluate, and apply ILM to objects is too long.
@@ -541,10 +541,10 @@ Some of the default alerts use link:commonly-used-prometheus-metrics.html[Promet
 | Network port 4 on the appliance is down or disconnected.
 
 | Storage Node not in desired storage state
-| The LDR service on a Storage Node cannot transition to the desired state because of an internal error or volume related issue
+| The LDR service on a Storage Node can't transition to the desired state because of an internal error or volume related issue
 
 | Unable to communicate with node
-| One or more services are unresponsive, or the node cannot be reached.
+| One or more services are unresponsive, or the node can't be reached.
 
 | Unexpected node reboot
 | A node rebooted unexpectedly within the last 24 hours.

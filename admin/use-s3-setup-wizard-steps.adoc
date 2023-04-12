@@ -172,7 +172,7 @@ include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 | Only the selected tenant accounts can use this endpoint to access their buckets.
 
 | Block selected tenants
-| The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+| The selected tenant accounts can't use this endpoint to access their buckets. All other tenants can use this endpoint.
 
 |===
 
@@ -318,7 +318,7 @@ TIP: If S3 Object Lock is enabled for the grid, the bucket created in this step 
 
 .. Enter the name of the bucket that the S3 application will use. For example, `S3-bucket`.
 +
-TIP: You cannot change the bucket name after creating the bucket.
+TIP: You can't change the bucket name after creating the bucket.
 
 .. Select the *Region* for this bucket.
 +

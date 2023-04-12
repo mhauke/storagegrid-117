@@ -26,7 +26,7 @@ If the Cloud Storage Pool you want to remove contains object data, you must use 
 
 . Look at the ILM usage column in the table to determine whether you can remove the Cloud Storage Pool.
 +
-You cannot remove a Cloud Storage Pool if it is being used in an ILM rule or in an erasure coding profile. 
+You can't remove a Cloud Storage Pool if it is being used in an ILM rule or in an erasure coding profile. 
 
 . If the Cloud Storage Pool is being used, select *_cloud storage pool name_* > *ILM usage*.
 

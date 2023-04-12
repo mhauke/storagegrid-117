@@ -19,7 +19,7 @@ Swift tenant accounts are created by a StorageGRID grid administrator using the 
 
 When link:../swift/configuring-tenant-accounts-and-connections.html[creating a Swift tenant account], the grid administrator specifies the following information:
 
-* link:../admin/editing-tenant-account.html[Display name for the tenant] (the tenant's account ID is assigned automatically and cannot be changed)
+* link:../admin/editing-tenant-account.html[Display name for the tenant] (the tenant's account ID is assigned automatically and can't be changed)
 * Optionally, a link:../admin/editing-tenant-account.html[storage quota for the tenant account] -- the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).
 * If link:../admin/configuring-sso.html[single sign-on (SSO)] is not in use for the StorageGRID system, whether the tenant account will use its own identity source or share the grid's identity source, and the initial password for the tenant's local root user.
 * If SSO is enabled, which federated group has Root access permission to configure the tenant account.

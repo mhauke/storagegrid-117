@@ -33,17 +33,17 @@ Before decommissioning any disconnected node, note the following:
 +
 IMPORTANT: Be careful when decommissioning more than one disconnected grid node at a time, especially if you are selecting multiple disconnected Storage Nodes.
 
-* If a disconnected node cannot be removed (for example, a Storage Node that is required for the ADC quorum), no other disconnected node can be removed.
+* If a disconnected node can't be removed (for example, a Storage Node that is required for the ADC quorum), no other disconnected node can be removed.
 
 Before decommissioning a disconnected *Storage Node*, note the following
 
-* You should never decommission a disconnected Storage Node unless you are sure it cannot be brought online or recovered.
+* You should never decommission a disconnected Storage Node unless you are sure it can't be brought online or recovered.
 +
 IMPORTANT: If you believe that object data can still be recovered from the node, don't perform this procedure. Instead, contact technical support to determine if node recovery is possible.
 
 * If you decommission more than one disconnected Storage Node, data loss might occur. The system might not be able to reconstruct data if not enough object copies, erasure-coded fragments, or object metadata remain available.
 +
-IMPORTANT: If you have more than one disconnected Storage Node that you cannot recover, contact technical support to determine the best course of action.
+IMPORTANT: If you have more than one disconnected Storage Node that you can't recover, contact technical support to determine the best course of action.
 
 * When you decommission a disconnected Storage Node, StorageGRID starts data repair jobs at the end of the decommissioning process. These jobs attempt to reconstruct the object data and metadata that was stored on the disconnected node.
 * When you decommission a disconnected Storage Node, the decommission procedure completes relatively quickly. However, the data repair jobs can take days or weeks to run and are not monitored by the decommission procedure. You must manually monitor these jobs and restart them as needed. See link:checking-data-repair-jobs.html[Check data repair jobs].
@@ -65,7 +65,7 @@ See the recovery procedures for instructions.
 +
 NOTE: If your grid contains multiple disconnected nodes, the software requires you to decommission them all at the same time, which increases the potential for unexpected results.
 +
-IMPORTANT: Be careful when choosing to decommission more than one disconnected grid node at a time, especially if you are selecting multiple disconnected Storage Nodes. If you have more than one disconnected Storage Node that you cannot recover, contact technical support to determine the best course of action.
+IMPORTANT: Be careful when choosing to decommission more than one disconnected grid node at a time, especially if you are selecting multiple disconnected Storage Nodes. If you have more than one disconnected Storage Node that you can't recover, contact technical support to determine the best course of action.
 
 . Enter the provisioning passphrase.
 +

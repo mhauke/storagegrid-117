@@ -93,7 +93,7 @@ image:../media/grid-federation-remove-permission.png[steps to remove grid federa
 
 Before removing a tenant's permission to use a grid federation connection, note the following:
 
-* Removing the *Use grid federation connection* permission from a tenant is a permanent action. You cannot re-enable the permission for this tenant.
+* Removing the *Use grid federation connection* permission from a tenant is a permanent action. You can't re-enable the permission for this tenant.
 
 * You can't remove the *Use grid federation connection* permission if any of the tenant's buckets have cross-grid replication enabled. The tenant account must disable cross-grid replication for all of their buckets first. 
 

@@ -17,9 +17,9 @@ The StorageGRID S3 Object Lock feature supports two retention modes to apply dif
 
 * In compliance mode:
 
-** The object cannot be deleted until its retain-until-date is reached. 
-** The object's retain-until-date can be increased, but it cannot be decreased.
-** The object's retain-until-date cannot be removed until that date is reached.  
+** The object can't be deleted until its retain-until-date is reached. 
+** The object's retain-until-date can be increased, but it can't be decreased.
+** The object's retain-until-date can't be removed until that date is reached.  
 
 * In governance mode:
 
@@ -34,7 +34,7 @@ If a bucket is created with S3 Object Lock enabled, users can use the S3 client 
 
 * *Retention mode*: Either compliance or governance.
 
-* *Retain-until-date*: If an object version's retain-until-date is in the future, the object can be retrieved, but it cannot be deleted.
+* *Retain-until-date*: If an object version's retain-until-date is in the future, the object can be retrieved, but it can't be deleted.
 
 * *Legal hold*: Applying a legal hold to an object version immediately locks that object. For example, you might need to put a legal hold on an object that is related to an investigation or legal dispute. A legal hold has no expiration date, but remains in place until it is explicitly removed. Legal holds are independent of the retain-until-date.
 +

@@ -56,7 +56,7 @@ After endpoints have been created, platform service request errors can occur for
 
 * The user's credentials have been deleted or have expired.
 * The destination bucket does not exist.
-* The notification cannot be delivered.
+* The notification can't be delivered.
 
 If StorageGRID encounters a recoverable error, the platform service request will be retried until it succeeds.
 
@@ -77,11 +77,11 @@ Event messages are also listed in `/var/local/log/bycast-err.log`.
 +
 The tenant can resubmit the existing values to avoid making unwanted changes.
 
-== Platform services messages cannot be delivered
+== Platform services messages can't be delivered
 
 If the destination encounters an issue that prevents it from accepting platform services messages, the client operation on the bucket succeeds, but the platform services message is not delivered. For example, this error might happen if credentials are updated on the destination such that StorageGRID can no longer authenticate to the destination service.
 
-If platform services messages cannot be delivered because of an unrecoverable error, the Total Events (SMTT) legacy alarm is triggered in the Grid Manager.
+If platform services messages can't be delivered because of an unrecoverable error, the Total Events (SMTT) legacy alarm is triggered in the Grid Manager.
 
 == Slower performance for platform service requests
 

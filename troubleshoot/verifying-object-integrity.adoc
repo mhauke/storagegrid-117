@@ -23,17 +23,17 @@ Background verification checks the integrity of replicated objects and erasure-c
 
 NOTE: Corrupt object data is quarantined rather than deleted from the system, so that it can still be accessed. For more information about accessing quarantined object data, contact technical support.
 
-* *Erasure-coded objects*: If the background verification process detects that a fragment of an erasure-coded object is corrupt, StorageGRID automatically attempts to rebuild the missing fragment in place on the same Storage Node, using the remaining data and parity fragments. If the corrupted fragment cannot be rebuilt, an attempt is made to retrieve another copy of the object. If retrieval is successful, an ILM evaluation is performed to create a replacement copy of the erasure-coded object.
+* *Erasure-coded objects*: If the background verification process detects that a fragment of an erasure-coded object is corrupt, StorageGRID automatically attempts to rebuild the missing fragment in place on the same Storage Node, using the remaining data and parity fragments. If the corrupted fragment can't be rebuilt, an attempt is made to retrieve another copy of the object. If retrieval is successful, an ILM evaluation is performed to create a replacement copy of the erasure-coded object.
 +
 The background verification process checks objects on Storage Nodes only. It does not check objects on Archive Nodes or in a Cloud Storage Pool. Objects must be older than four days to qualify for background verification.
 
-Background verification runs at a continuous rate that is designed not to interfere with ordinary system activities. Background verification cannot be stopped. However you can increase the background verification rate to more quickly verify the contents of a Storage Node if you suspect a problem.
+Background verification runs at a continuous rate that is designed not to interfere with ordinary system activities. Background verification can't be stopped. However you can increase the background verification rate to more quickly verify the contents of a Storage Node if you suspect a problem.
 
 === Alerts and alarms (legacy) related to background verification
 
-If the system detects a corrupt object that it cannot correct automatically (because the corruption prevents the object from being identified), the *Unidentified corrupt object detected* alert is triggered.
+If the system detects a corrupt object that it can't correct automatically (because the corruption prevents the object from being identified), the *Unidentified corrupt object detected* alert is triggered.
 
-If background verification cannot replace a corrupted object because it cannot locate another copy, the *Objects lost* alert is triggered.
+If background verification can't replace a corrupted object because it can't locate another copy, the *Objects lost* alert is triggered.
 
 === Change the background verification rate
 
@@ -72,7 +72,7 @@ NOTE: Setting the Verification Rate to High triggers the VPRI (Verification Rate
 If background verification finds corrupt replicated object data, the *Corrupt Objects* metric is incremented, and StorageGRID attempts to extract the object identifier from the data, as follows:
 
   *** If the object identifier can be extracted, StorageGRID automatically creates a new copy of the object data. The new copy can be made anywhere in the StorageGRID system that satisfies the active ILM policy.
-  *** If the object identifier cannot be extracted (because it has been corrupted), the *Corrupt Objects Unidentified* metric is incremented, and the *Unidentified corrupt object detected* alert is triggered.
+  *** If the object identifier can't be extracted (because it has been corrupted), the *Corrupt Objects Unidentified* metric is incremented, and the *Unidentified corrupt object detected* alert is triggered.
 
  .. If corrupt replicated object data is found, contact technical support to determine the root cause of the corruption.
 . Monitor the results of background verification for erasure-coded objects.
@@ -106,7 +106,7 @@ Unlike background verification, which occurs automatically, you must manually st
 Object existence check reads the metadata for every object stored in StorageGRID and verifies the existence of both replicated object copies and erasure-coded object fragments. Any missing data is handled as follows:
 
 * *Replicated copies*: If a copy of replicated object data is missing, StorageGRID automatically attempts to replace the copy from a copy stored elsewhere in the system. The Storage Node runs an existing copy through an ILM evaluation, which will determine that the current ILM policy is no longer being met for this object because another copy is missing. A new copy is generated and placed to satisfy the system’s active ILM policy. This new copy might not be placed in the same location where the missing copy was stored.
-* *Erasure-coded fragments*: If a fragment of an erasure-coded object is missing, StorageGRID automatically attempts to rebuild the missing fragment in place on the same Storage Node using the remaining fragments. If the missing fragment cannot be rebuilt (because too many fragments have been lost), ILM attempts to find another copy of the object, which it can use to generate a new erasure-coded fragment.
+* *Erasure-coded fragments*: If a fragment of an erasure-coded object is missing, StorageGRID automatically attempts to rebuild the missing fragment in place on the same Storage Node using the remaining fragments. If the missing fragment can't be rebuilt (because too many fragments have been lost), ILM attempts to find another copy of the object, which it can use to generate a new erasure-coded fragment.
 
 === Run object existence check
 
@@ -140,7 +140,7 @@ An object existence check job can take days or weeks to complete, depending on t
 +
 You can search by node name or site.
 +
-You cannot select nodes that are not connected to the grid.
+You can't select nodes that are not connected to the grid.
 .	Select *Continue*.
 . Select one or more volumes for each node in the list. You can search for volumes using the storage volume number or node name.
 +
@@ -162,7 +162,7 @@ For more information about consistency control, see the descriptions in the wiza
 An Object existence check job is generated and runs until one of the following occurs:
 +
 * The job completes.
-* You pause or cancel the job. You can resume a job that you have paused, but you cannot resume a job that you have canceled.
+* You pause or cancel the job. You can resume a job that you have paused, but you can't resume a job that you have canceled.
 * The job stalls. The *Object existence check has stalled* alert is triggered. Follow the corrective actions specified for the alert.
 * The job fails. The *Object existence check has failed* alert is triggered. Follow the corrective actions specified for the alert.
 * A "`Service unavailable`" or an "`Internal server error`" message appears. After one minute, refresh the page to continue monitoring the job.

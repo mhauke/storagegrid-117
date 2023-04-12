@@ -182,7 +182,7 @@ You must select this option if you are using the FabricPool setup wizard for a n
 | Only the selected tenant accounts can use this endpoint to access their buckets.
 
 | Block selected tenants
-| The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+| The selected tenant accounts can't use this endpoint to access their buckets. All other tenants can use this endpoint.
 
 |===
 
@@ -290,7 +290,7 @@ Create a new tenant and bucket or select an existing tenant.
 
 . For *Bucket name*, enter the name of the bucket FabricPool will use to store ONTAP data. For example, `fabricpool-bucket`.
 +
-TIP: You cannot change the bucket name after creating the bucket.
+TIP: You can't change the bucket name after creating the bucket.
 
 . Select the *Region* for this bucket.
 +
@@ -302,7 +302,7 @@ Use the default region (us-east-1) unless you expect to use ILM in the future to
 .Select tenant and bucket
 --
 
-The existing tenant account must have at least one bucket that does not have versioning enabled. You cannot select an existing tenant account if no bucket exists for that tenant. 
+The existing tenant account must have at least one bucket that does not have versioning enabled. You can't select an existing tenant account if no bucket exists for that tenant. 
 
 . Select the existing tenant from the *Tenant name* drop-down list. 
 . Select the existing bucket from the *Bucket name* drop-down list.
@@ -376,10 +376,10 @@ For details about this step, see link:../ilm/access-create-ilm-rule-wizard.html[
 | Description
 
 | Rule name 
-| Automatically generated and cannot be changed
+| Automatically generated and can't be changed
 
 | Description
-| Automatically generated and cannot be changed
+| Automatically generated and can't be changed
 
 | Filter
 | The bucket name

@@ -57,7 +57,7 @@ image::../media/ilm_rule_1_example_5_strict_ingest.png[ILM Rule 1 Example 5 Stri
 
 == ILM rule 2 for example 5: Balanced ingest for other objects
 
-This example ILM rule uses the Balanced ingest behavior to provide optimum ILM efficiency for any objects not matched by the first rule. Two copies of all objects matched by this rule will be stored--one at the US data center and one at the Paris data center. If the rule cannot be satisfied immediately, interim copies are stored at any available location.
+This example ILM rule uses the Balanced ingest behavior to provide optimum ILM efficiency for any objects not matched by the first rule. Two copies of all objects matched by this rule will be stored--one at the US data center and one at the Paris data center. If the rule can't be satisfied immediately, interim copies are stored at any available location.
 
 This rule applies to objects that belong to any tenant and any region.
 
@@ -95,7 +95,7 @@ The example ILM policy includes two rules that have different ingest behaviors.
 An ILM policy that uses two different ingest behaviors might include ILM rules such as the following:
 
 * Store objects that belong to the Paris tenant and that have the S3 bucket region set to eu-west-3 (Paris) only in the Paris data center. Fail ingest if the Paris data center is not available.
-* Store all other objects (including those that belong to the Paris tenant but that have a different bucket region) in both the US data center and the Paris data center. Make interim copies in any available location if the placement instruction cannot be satisfied.
+* Store all other objects (including those that belong to the Paris tenant but that have a different bucket region) in both the US data center and the Paris data center. Make interim copies in any available location if the placement instruction can't be satisfied.
 
 When you simulate the example policy, you expect test objects to be evaluated as follows:
 
