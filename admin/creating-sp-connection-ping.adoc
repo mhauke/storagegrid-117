@@ -156,7 +156,7 @@ The Partner's Entity ID and the Connection Name are set to the StorageGRID SP co
 
 . On the SLO Service URLs tab, accept the default values, which were imported from the StorageGRID SAML metadata (*REDIRECT* for Binding and `/api/saml-logout` for Endpoint URL.
 
-. On the Allowable SAML Bindings tab, unselect *ARTIFACT* and *SOAP*. Only *POST* and *REDIRECT* are required.
+. On the Allowable SAML Bindings tab, clear *ARTIFACT* and *SOAP*. Only *POST* and *REDIRECT* are required.
 
 . On the Signature Policy tab, leave the *Require Authn Requests to be Signed* and *Always Sign Assertion* check boxes selected.
 

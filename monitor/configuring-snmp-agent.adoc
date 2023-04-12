@@ -41,7 +41,7 @@ The System Location can be any information that is useful for identifying where 
 
 . Keep the *Enable SNMP Agent Notifications* check box selected if you want the StorageGRID SNMP agent to send trap and inform notifications.
 +
-If this check box is unselected, the SNMP agent supports read-only MIB access, but it does not send any SNMP notifications.
+If this check box is cleared, the SNMP agent supports read-only MIB access, but it does not send any SNMP notifications.
 
 . Select the *Enable Authentication Traps* check box if you want the StorageGRID SNMP agent to send an authentication trap if it receives an improperly authenticated protocol message.
 . If you use SNMPv1 or SNMPv2c, complete the Community Strings section.

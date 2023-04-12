@@ -64,7 +64,7 @@ In the example shown earlier, all objects added to the bucket trigger a metadata
 
 As necessary, you can disable search integration for a bucket using either of the following methods:
 
-* Select *STORAGE (S3)* > *Buckets* and unselect the *Enable search integration* check box.
+* Select *STORAGE (S3)* > *Buckets* and clear the *Enable search integration* check box.
 * If you are using the S3 API directly, use a DELETE Bucket metadata notification request. See the instructions for implementing S3 client applications.
 
 .Related information
