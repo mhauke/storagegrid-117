@@ -59,7 +59,7 @@ m|CSIZ
 audit.log:2023-01-05T18:47:05.525999 [AUDT:[RSLT(FC32):SUCS][CNID(UI64):1672943621106262][TIME(UI64):804317333][SAIP(IPAD):"10.96.99.127"][S3AI(CSTR):"93390849266154004343"][SACC(CSTR):"bhavna"][S3AK(CSTR):"06OX85M40Q90Y280B7YT"][SUSR(CSTR):"urn:sgws:identity::93390849266154004343:root"][SBAI(CSTR):"93390849266154004343"][SBAC(CSTR):"bhavna"][S3BK(CSTR):"test"][S3KY(CSTR):"large-object"][CBID(UI64):0x077EA25F3B36C69A][UUID(CSTR):"A80219A2-CD1E-466F-9094-B9C0FDE2FFA3"][CSIZ(UI64):6040000000][MTME(UI64):1672943621338958][AVER(UI32):10][ATIM(UI64):1672944425525999][ATYP(FC32):SPUT][ANID(UI32):12220829][AMID(FC32):S3RQ][ATID(UI64):4333283179807659119]]
 ----
 
-. If Client Writes are not Normal, use the tenant ID from the alert to identify the tenant:
+. If Client Writes aren't Normal, use the tenant ID from the alert to identify the tenant:
 .. Go to *SUPPORT* > *Tools* > *Logs*. Collect application logs for the Storage Node in the alert. Specify 15 minutes before and after the alert.
 .. Extract the file and go to `bycast.log`:
 +

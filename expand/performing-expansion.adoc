@@ -24,7 +24,7 @@ When you perform the expansion, the new grid nodes are added to your existing St
 
 * If you are adding Storage Nodes and you want to assign a custom storage grade to those nodes, you have already link:../ilm/creating-and-assigning-storage-grades.html[created the custom storage grade]. You also have either the Root access permission or both the Maintenance and ILM permissions.
 
-* If you are adding a new site, you have reviewed and updated ILM rules. You must ensure that object copies are not stored to the new site until after the expansion is complete. For example, if a rule uses the default storage pool (*All Storage Nodes*), you must link:../ilm/creating-storage-pool.html[create a new storage pool] that contains only the existing Storage Nodes and link:../ilm/working-with-ilm-rules-and-ilm-policies.html[update ILM rules] and the ILM policy to use that new storage pool. Otherwise, objects will be copied to the new site as soon as the first node at that site becomes active.
+* If you are adding a new site, you have reviewed and updated ILM rules. You must ensure that object copies aren't stored to the new site until after the expansion is complete. For example, if a rule uses the default storage pool (*All Storage Nodes*), you must link:../ilm/creating-storage-pool.html[create a new storage pool] that contains only the existing Storage Nodes and link:../ilm/working-with-ilm-rules-and-ilm-policies.html[update ILM rules] and the ILM policy to use that new storage pool. Otherwise, objects will be copied to the new site as soon as the first node at that site becomes active.
 
 .About this task
 Performing the expansion includes these main user tasks:

@@ -99,11 +99,11 @@ An email notification is sent when the minor, major, or critical condition for a
 a|
 Major, critical
 a|
-An email notification is sent when the major or critical condition for an alert rule is met. Notifications are not sent for minor alerts.
+An email notification is sent when the major or critical condition for an alert rule is met. Notifications aren't sent for minor alerts.
 a|
 Critical only
 a|
-An email notification is sent only when the critical condition for an alert rule is met. Notifications are not sent for minor or major alerts.
+An email notification is sent only when the critical condition for an alert rule is met. Notifications aren't sent for minor or major alerts.
 |===
 image::../media/alerts_email_filters.png[Alerts Email Filters]
 
@@ -227,7 +227,7 @@ If the *Email notification failure* alert is triggered or you are unable to rece
  .. Verify that the Email (SMTP) Server settings are correct.
  .. Verify that you have specified valid email addresses for the recipients.
 . Check your spam filter, and make sure that the email was not sent to a junk folder.
-. Ask your email administrator to confirm that emails from the sender address are not being blocked.
+. Ask your email administrator to confirm that emails from the sender address aren't being blocked.
 . Collect a log file for the Admin Node, and then contact technical support.
 +
 Technical support can use the information in the logs to help determine what went wrong. For example, the prometheus.log file might show an error when connecting to the server you specified.

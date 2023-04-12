@@ -59,7 +59,7 @@ In the following example output, the drive `/dev/sdf` must be reformatted, and C
 +
 ----
 root@DC1-S1:~ # reformat_storage_block_devices.rb
-Formatting devices that are not in use...
+Formatting devices that aren't in use...
 Skipping in use device /dev/sdc
 Skipping in use device /dev/sdd
 Skipping in use device /dev/sde

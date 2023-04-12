@@ -49,7 +49,7 @@ If a bucket is created with S3 Object Lock enabled, users can optionally specify
 * *Default retention mode*: Either compliance or governance.
 * *Default retention period*: How long new object versions added to this bucket should be retained, starting from the day they are added. 
 
-The default bucket settings apply only to new objects that don't have their own retention settings. Existing bucket objects are not affected when you add or change these default settings. 
+The default bucket settings apply only to new objects that don't have their own retention settings. Existing bucket objects aren't affected when you add or change these default settings. 
 
 See link:../tenant/creating-s3-bucket.html[Create an S3 bucket] and link:../tenant/update-default-retention-settings.html[Update S3 Object Lock default retention].
 

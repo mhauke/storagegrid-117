@@ -25,7 +25,7 @@ Notifications are generated and queued for delivery whenever:
 * An object is deleted, including when objects are deleted as a result of the operation of the grid's ILM policy.
 * Object metadata or tags are added, updated, or deleted. The complete set of metadata and tags is always sent on update -- not just the changed values.
 
-After you add metadata notification configuration XML to a bucket, notifications are sent for any new objects that you create and for any objects that you modify by updating its data, user metadata, or tags. However, notifications are not sent for any objects that were already in the bucket. To ensure that object metadata for all objects in the bucket is sent to the destination, you should do either of the following:
+After you add metadata notification configuration XML to a bucket, notifications are sent for any new objects that you create and for any objects that you modify by updating its data, user metadata, or tags. However, notifications aren't sent for any objects that were already in the bucket. To ensure that object metadata for all objects in the bucket is sent to the destination, you should do either of the following:
 
 * Configure the search integration service immediately after creating the bucket and before adding any objects.
 * Perform an action on all objects already in the bucket that will trigger a metadata notification message to be sent to the destination.

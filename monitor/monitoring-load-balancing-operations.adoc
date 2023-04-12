@@ -26,7 +26,7 @@ For more information, see link:../admin/configuring-client-connections.html[Conf
  .. Select a Gateway Node or Admin Node.
  .. On the *Overview* tab, check if a node interface is in an HA group and if the node interface has the role of Primary.
 +
-Nodes with the role of Primary and nodes that are not in an HA group should be actively distributing requests to clients.
+Nodes with the role of Primary and nodes that aren't in an HA group should be actively distributing requests to clients.
 
  .. For each node that should be actively distributing client requests, select the link:viewing-load-balancer-tab.html[Load Balancer tab].
  .. Review the chart of Load Balancer Request Traffic for the last week to ensure that the node has been actively distributing requests.

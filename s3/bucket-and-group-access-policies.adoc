@@ -64,7 +64,7 @@ s3:*Object
 
 In the Resource element, you can use the wildcard characters (\*) and (?). While the asterisk (*) matches 0 or more characters, the question mark (?) matches any single character.
 
-In the Principal element, wildcard characters are not supported except to set anonymous access, which grants permission to everyone. For example, you set the wildcard (*) as the Principal value.
+In the Principal element, wildcard characters aren't supported except to set anonymous access, which grants permission to everyone. For example, you set the wildcard (*) as the Principal value.
 
 ----
 "Principal":"*"

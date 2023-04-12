@@ -59,7 +59,7 @@ Cassandra not started because it has been offline for more than 15 day grace per
 . Issue this command, and monitor the script output: `check-cassandra-rebuild`
  ** If the Cassandra service depending on volume 0 is running, you will be prompted to stop it. Enter: *y*
 +
-NOTE: If the Cassandra service is already stopped, you are not prompted. The Cassandra service is stopped only for volume 0.
+NOTE: If the Cassandra service is already stopped, you aren't prompted. The Cassandra service is stopped only for volume 0.
  ** Review the warnings in the script. If none of them apply, confirm that you want to rebuild Cassandra. Enter: *y*
 +
 NOTE: Some StorageGRID recovery procedures use Reaper to handle Cassandra repairs. Repairs occur automatically as soon as the related or required services have started. You might notice script output that mentions "`reaper`" or "`Cassandra repair.`" If you see an error message indicating the repair has failed, run the command indicated in the error message.

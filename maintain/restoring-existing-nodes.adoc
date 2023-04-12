@@ -52,7 +52,7 @@ dc1-sn1            /dev/mapper/sgws-sn1-var-local
 dc1-arc1           /dev/mapper/sgws-arc1-var-local
 ----
 +
-If some or all of the grid nodes that should be configured on the host are not listed, you need to restore the missing grid nodes.
+If some or all of the grid nodes that should be configured on the host aren't listed, you need to restore the missing grid nodes.
 
 . To import grid nodes that have a `/var/local` volume:
  .. Run the following command for each node you want to import:``sudo storagegrid node import node-var-local-volume-path``

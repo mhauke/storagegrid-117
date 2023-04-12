@@ -46,7 +46,7 @@ IMPORTANT: If you believe that object data can still be recovered from the node,
 IMPORTANT: If you have more than one disconnected Storage Node that you can't recover, contact technical support to determine the best course of action.
 
 * When you decommission a disconnected Storage Node, StorageGRID starts data repair jobs at the end of the decommissioning process. These jobs attempt to reconstruct the object data and metadata that was stored on the disconnected node.
-* When you decommission a disconnected Storage Node, the decommission procedure completes relatively quickly. However, the data repair jobs can take days or weeks to run and are not monitored by the decommission procedure. You must manually monitor these jobs and restart them as needed. See link:checking-data-repair-jobs.html[Check data repair jobs].
+* When you decommission a disconnected Storage Node, the decommission procedure completes relatively quickly. However, the data repair jobs can take days or weeks to run and aren't monitored by the decommission procedure. You must manually monitor these jobs and restart them as needed. See link:checking-data-repair-jobs.html[Check data repair jobs].
 
 * If you decommission a disconnected Storage Node that contains the only copy of an object, the object will be lost. The data repair jobs can only reconstruct and recover objects if at least one replicated copy or enough erasure-coded fragments exist on Storage Nodes that are currently connected.
 

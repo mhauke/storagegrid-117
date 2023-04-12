@@ -30,7 +30,7 @@ The following table describes how StorageGRID implements S3 REST API object oper
 | Operation| Implementation
 
 | DELETE Object
-| Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` are not supported.
+| Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` aren't supported.
 
 When processing a DELETE Object request, StorageGRID attempts to immediately remove all copies of the object from all stored locations. If successful, StorageGRID returns a response to the client immediately. If all copies can't be removed within 30 seconds (for example, because a location is temporarily unavailable), StorageGRID queues the copies for removal and then indicates success to the client.
 
@@ -49,7 +49,7 @@ See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S
 
 (DeleteObjects)
 
-| Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` are not supported.
+| Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` aren't supported.
 
 Multiple objects can be deleted in the same request message.
 

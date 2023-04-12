@@ -19,7 +19,7 @@ When a tenant creates an endpoint, the StorageGRID system validates that the end
 
 If endpoint validation fails, an error message explains why endpoint validation failed. The tenant user should resolve the issue, then try creating the endpoint again.
 
-NOTE: Endpoint creation will fail if platform services are not enabled for the tenant account.
+NOTE: Endpoint creation will fail if platform services aren't enabled for the tenant account.
 
 == Issues with existing endpoints
 
@@ -35,7 +35,7 @@ NOTE: Some error messages in the *Last error* column might include a logID in pa
 
 == Issues related to proxy servers
 
-If you have configured a link:configuring-storage-proxy-settings.html[Storage proxy] between Storage Nodes and platform service endpoints, errors might occur if your proxy service does not allow messages from StorageGRID. To resolve these issues, check the settings of your proxy server to ensure that platform service-related messages are not blocked.
+If you have configured a link:configuring-storage-proxy-settings.html[Storage proxy] between Storage Nodes and platform service endpoints, errors might occur if your proxy service does not allow messages from StorageGRID. To resolve these issues, check the settings of your proxy server to ensure that platform service-related messages aren't blocked.
 
 == Determine if an error has occurred
 

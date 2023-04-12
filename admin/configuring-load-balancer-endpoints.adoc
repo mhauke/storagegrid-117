@@ -146,7 +146,7 @@ The certificate secures the connections between S3 and Swift clients and the Loa
 You can't select this option unless you have replaced the default S3 and Swift API certificate, which is signed by the grid CA, with a custom certificate signed by an external certificate authority. See
 link:../admin/configuring-custom-server-certificate-for-storage-node.html[Configure S3 and Swift API certificates].
 
-. If you are not using the StorageGRID S3 and Swift certificate, upload or generate the certificate.
+. If you aren't using the StorageGRID S3 and Swift certificate, upload or generate the certificate.
 //tabbed blocks start here
 +
 [role="tabbed-block"]
@@ -243,7 +243,7 @@ The IP address you enter in the DNS record depends on whether you are using an H
 
 ** If you have configured a HA group, clients will connect to the virtual IP addresses of that HA group.
 
-** If you are not using a HA group, clients will connect to the StorageGRID Load Balancer service using the IP address of a Gateway Node or Admin Node.
+** If you aren't using a HA group, clients will connect to the StorageGRID Load Balancer service using the IP address of a Gateway Node or Admin Node.
 +
 You must also ensure that the DNS record references all required endpoint domain names, including any wildcard names.
 

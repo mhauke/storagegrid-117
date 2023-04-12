@@ -36,7 +36,7 @@ You can also add or remove a node from a Client Network or from an Admin Network
 +
 Nodes can't be removed from the Grid Network.
 
-IMPORTANT: IP address swaps are not allowed. If you must exchange IP addresses between grid nodes, you must use a temporary intermediate IP address.
+IMPORTANT: IP address swaps aren't allowed. If you must exchange IP addresses between grid nodes, you must use a temporary intermediate IP address.
 
 IMPORTANT: If single sign-on (SSO) is enabled for your StorageGRID system and you are changing the IP address of an Admin Node, be aware that any relying party trust that was configured using the Admin Node's IP address (instead of its fully qualified domain name, as recommended) will become invalid. You will no longer be able to sign in to the node. Immediately after changing the IP address, you must update or reconfigure the node's relying party trust in Active Directory Federation Services (AD FS) with the new IP address. See the instructions for link:../admin/configuring-sso.html[configuring SSO].
 
@@ -101,7 +101,7 @@ NOTE: Certain command line interfaces might show additions and deletions using s
 
 . Select option *7* to validate all changes.
 +
-This validation ensures that the rules for the Grid, Admin, and Client Networks, such as not using overlapping subnets, are not violated.
+This validation ensures that the rules for the Grid, Admin, and Client Networks, such as not using overlapping subnets, aren't violated.
 +
 In this example, validation returned errors.
 +

@@ -145,7 +145,7 @@ In the example output, one storage volume was remounted successfully and three s
 +
 IMPORTANT: If a storage volume failed the XFS file system consistency check or could not be mounted, carefully review the error messages in the output. You must understand the implications of running the `sn-recovery-postinstall.sh` script on these volumes.
 
- .. Check to make sure that the results include an entry for all of the volumes you expected. If any volumes are not listed, rerun the script.
+ .. Check to make sure that the results include an entry for all of the volumes you expected. If any volumes aren't listed, rerun the script.
  .. Review the messages for all mounted devices. Make sure there are no errors indicating that a storage volume does not belong to this Storage Node.
 +
 In the example, the output for `/dev/sde` includes the following error message:

@@ -86,7 +86,7 @@ The `NewerNoncurrentVersions` action in the bucket lifecycle configuration speci
 ** Second rule: Use *Ingest time* to match the current version. The "`Noncurrent time`" rule must appear in the policy above the *Ingest time* rule.
 
 === How S3 delete markers are deleted
-When a versioned object is deleted, StorageGRID creates a delete marker as the current version of the object. To remove the zero-byte delete marker from the bucket, the S3 client must explicitly delete the object version. Delete markers are not removed by ILM, bucket lifecycle rules, or Delete objects in bucket operations. 
+When a versioned object is deleted, StorageGRID creates a delete marker as the current version of the object. To remove the zero-byte delete marker from the bucket, the S3 client must explicitly delete the object version. Delete markers aren't removed by ILM, bucket lifecycle rules, or Delete objects in bucket operations. 
 
 .Related information
 

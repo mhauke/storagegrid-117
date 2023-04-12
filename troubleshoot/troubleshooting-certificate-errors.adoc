@@ -24,7 +24,7 @@ The following example shows a certificate error when the custom management inter
 
 image::../media/certificate_error.png[Example certificate error]
 
-To ensure that operations are not disrupted by a failed server certificate, the *Expiration of server certificate for Management Interface* alert is triggered when the server certificate is about to expire.
+To ensure that operations aren't disrupted by a failed server certificate, the *Expiration of server certificate for Management Interface* alert is triggered when the server certificate is about to expire.
 
 When you are using client certificates for external Prometheus integration, certificate errors can be caused by the StorageGRID management interface certificate or by client certificates. The *Expiration of client certificates configured on the Certificates page* alert is triggered when a client certificate is about to expire.
 

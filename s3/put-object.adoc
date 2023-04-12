@@ -102,7 +102,7 @@ See <<Request headers for server-side encryption>>
 
 == Unsupported request headers
 
-The following request headers are not supported:
+The following request headers aren't supported:
 
 * The `x-amz-acl` request header is not supported.
 * The `x-amz-website-redirect-location` request header is not supported and returns `XNotImplemented`.

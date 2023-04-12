@@ -28,7 +28,7 @@ You are prevented from starting the site decommission procedure in these cases:
 +
 image::../media/decommission_site_step_4_ilm_rules.png[Decommission Site Step 4 ILM rules]
 +
-Any ILM rules that are listed still refer to the site but are not used in any policy. In the example:
+Any ILM rules that are listed still refer to the site but aren't used in any policy. In the example:
 
  ** The *Make 2 Copies* rule uses the *All Storage Nodes* storage pool (StorageGRID 11.6 and earlier), which uses the *All Sites* site.
  ** The unused *3 copies for S3 tenant* rule refers to the *Raleigh* storage pool.

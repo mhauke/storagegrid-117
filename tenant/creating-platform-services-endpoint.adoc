@@ -147,7 +147,7 @@ a|The certificate used for the TLS connection is not verified. This option is no
 * A success message appears if the endpoint can be reached using the specified credentials. The connection to the endpoint is validated from one node at each site.
 * An error message appears if endpoint validation fails. If you need to modify the endpoint to correct the error, select *Return to endpoint details* and update the information. Then, select *Test and create endpoint*.
 +
-NOTE: Endpoint creation fails if platform services are not enabled for your tenant account. Contact your StorageGRID administrator.
+NOTE: Endpoint creation fails if platform services aren't enabled for your tenant account. Contact your StorageGRID administrator.
 
 After you have configured an endpoint, you can use its URN to configure a platform service.
 

@@ -23,7 +23,7 @@
 . Select *_grid_* > *_Storage Node being repaired_* > *LDR* > *Data Store*.
 . Use a combination of the following attributes to determine, as well as possible, if replicated repairs are complete.
 +
-NOTE: Cassandra inconsistencies might be present, and failed repairs are not tracked.
+NOTE: Cassandra inconsistencies might be present, and failed repairs aren't tracked.
 
   ** *Repairs Attempted (XRPA)*: Use this attribute to track the progress of replicated repairs. This attribute increases each time a Storage Node tries to repair a high-risk object. When this attribute does not increase for a period longer than the current scan period (provided by the *Scan Period -- Estimated* attribute), it means that ILM scanning found no high-risk objects that need to be repaired on any nodes.
 +

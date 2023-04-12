@@ -18,7 +18,7 @@ Because a single custom management interface certificate is used for all Admin N
 
 You need to complete configuration on the server, and depending on the root certificate authority (CA) you are using, users might also need to install the Grid CA certificate in the web browser they will use to access the Grid Manager and the Tenant Manager.
 
-NOTE: To ensure that operations are not disrupted by a failed server certificate, the *Expiration of server certificate for Management Interface* alert is triggered when this server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the management interface certificate on the Global tab.
+NOTE: To ensure that operations aren't disrupted by a failed server certificate, the *Expiration of server certificate for Management Interface* alert is triggered when this server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the management interface certificate on the Global tab.
 
 [NOTE]
 ====

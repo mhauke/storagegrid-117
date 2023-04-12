@@ -61,7 +61,7 @@ As part of removing a site, you must update your ILM configuration. The Decommis
 
 * The site is not referred to by the active ILM policy. If it is, you must create and activate a new ILM policy with new ILM rules.
 * No proposed ILM policy exists. If you have a proposed policy, you must delete it.
-* No ILM rules refer to the site, even if those rules are not used in the active or proposed policy. You must delete or edit all rules that refer to the site.
+* No ILM rules refer to the site, even if those rules aren't used in the active or proposed policy. You must delete or edit all rules that refer to the site.
 
 When StorageGRID decommissions the site, it will automatically deactivate any unused erasure coding profiles that refer to the site, and it will automatically delete any unused storage pools that refer to the site. If the All Storage Nodes storage pool exists (StorageGRID 11.6 and earlier), it is removed because it uses all sites.
 

@@ -24,7 +24,7 @@ Before performing migration or hypervisor maintenance, shut down the nodes grace
 
 == VMware Live Migration not supported
 
-OpenStack Live Migration and VMware live vMotion cause the virtual machine clock time to jump and are not supported for grid nodes of any type. Though rare, incorrect clock times can result in loss of data or configuration updates.
+OpenStack Live Migration and VMware live vMotion cause the virtual machine clock time to jump and aren't supported for grid nodes of any type. Though rare, incorrect clock times can result in loss of data or configuration updates.
 
 Cold migration is supported. In cold migration, you shut down the StorageGRID nodes before migrating them between hosts. See the instructions for link:../maintain/shutting-down-grid-node.html[shutting down a grid node].
 

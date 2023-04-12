@@ -36,7 +36,7 @@ The following table describes how StorageGRID implements S3 REST API bucket oper
 | This operation deletes the CORS configuration for the bucket.
 
 | DELETE Bucket encryption
-| This operation deletes the default encryption from the bucket. Existing encrypted objects remain encrypted, but any new objects added to the bucket are not encrypted.
+| This operation deletes the default encryption from the bucket. Existing encrypted objects remain encrypted, but any new objects added to the bucket aren't encrypted.
 
 | DELETE Bucket lifecycle
 | This operation deletes the lifecycle configuration from the bucket. See link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuration].
@@ -174,7 +174,7 @@ See link:create-s3-lifecycle-configuration.html[Create S3 lifecycle configuratio
 (PutBucketNotificationConfiguration)
 | This operation configures notifications for the bucket using the notification configuration XML included in the request body. You should be aware of the following implementation details:
 
-* StorageGRID supports Simple Notification Service (SNS) topics as destinations. Simple Queue Service (SQS) or Amazon Lambda endpoints are not supported.
+* StorageGRID supports Simple Notification Service (SNS) topics as destinations. Simple Queue Service (SQS) or Amazon Lambda endpoints aren't supported.
 * The destination for notifications must be specified as the URN of an StorageGRID endpoint. Endpoints can be created using the Tenant Manager or the Tenant Management API.
 +
 The endpoint must exist for notification configuration to succeed. If the endpoint does not exist, a `400 Bad Request` error is returned with the code `InvalidArgument`.
@@ -216,7 +216,7 @@ The endpoint must exist for replication configuration to succeed. If the endpoin
 * You don't need to specify a `Role` in the configuration XML. This value is not used by StorageGRID and will be ignored if submitted.
 * If you omit the storage class from the configuration XML, StorageGRID uses the `STANDARD` storage class by default.
 * If you delete an object from the source bucket or you delete the source bucket itself, the cross-region replication behavior is as follows:
- ** If you delete the object or bucket before it has been replicated, the object/bucket is not replicated and you are not notified.
+ ** If you delete the object or bucket before it has been replicated, the object/bucket is not replicated and you aren't notified.
  ** If you delete the object or bucket after it has been replicated, StorageGRID follows standard Amazon S3 delete behavior for V1 of cross-region replication.
 
 | PUT Bucket tagging

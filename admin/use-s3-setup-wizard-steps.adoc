@@ -88,7 +88,7 @@ If the HA group includes more than one interface and the active interface fails,
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
 
 | Gateway IP address (optional)
-| If the S3 IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
+| If the S3 IP addresses used to access StorageGRID aren't on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
 
 | Virtual IP address
 | Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet.
@@ -141,7 +141,7 @@ To use the StorageGRID Load Balancer service, select the *StorageGRID load balan
 | Port
 | The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
 
-*Note:* Ports used by other grid services are not permitted. See the 
+*Note:* Ports used by other grid services aren't permitted. See the 
 link:../network/network-port-reference.html[Network port reference].
 
 | Client type

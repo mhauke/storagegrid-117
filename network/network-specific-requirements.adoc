@@ -45,7 +45,7 @@ NOTE: The Grid Network must be directly routable between each node. Network addr
 
 The Admin Network is optional. If you plan to configure an Admin Network, follow these requirements and guidelines.
 
-Typical uses of the Admin Network include management connections, AutoSupport, KMS, and connections to critical servers such as NTP, DNS, and LDAP if these connections are not provided through the Grid Network or Client Network.
+Typical uses of the Admin Network include management connections, AutoSupport, KMS, and connections to critical servers such as NTP, DNS, and LDAP if these connections aren't provided through the Grid Network or Client Network.
 
 NOTE: The Admin Network and AESL can be unique to each node, as long as the desired network services and clients are reachable.
 

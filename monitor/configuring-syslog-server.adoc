@@ -33,7 +33,7 @@ CAUTION: When logs are sent to an external syslog server, single logs greater th
 +
 NOTE: To maximize the options for full data recovery in the event of a failure of the external syslog server, up to 20GB of local logs of audit records (localaudit.log) are maintained on each node.
 +
-NOTE: If the configuration options available in this procedure are not flexible enough to meet your requirements, additional configuration options can be applied using the private API `audit-destinations` endpoints. For example, it is possible to use different syslog servers for different groups of nodes.
+NOTE: If the configuration options available in this procedure aren't flexible enough to meet your requirements, additional configuration options can be applied using the private API `audit-destinations` endpoints. For example, it is possible to use different syslog servers for different groups of nodes.
 
 == Configure the external server
 

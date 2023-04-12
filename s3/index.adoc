@@ -69,7 +69,7 @@ http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html[Amazon Web Services 
 
 |11.4
 |
-* Added support for DELETE Bucket tagging, GET Bucket tagging, and PUT Bucket tagging. Cost allocation tags are not supported.
+* Added support for DELETE Bucket tagging, GET Bucket tagging, and PUT Bucket tagging. Cost allocation tags aren't supported.
 * For buckets created in StorageGRID 11.4, restricting object key names to meet performance best practices is no longer required.
 * Added support for bucket notifications on the `s3:ObjectRestore:Post` event type.
 * AWS size limits for multipart parts are now enforced. Each part in a multipart upload must be between 5 MiB and 5 GiB. The last part can be smaller than 5 MiB.

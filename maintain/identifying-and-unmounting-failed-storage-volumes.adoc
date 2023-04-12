@@ -64,11 +64,11 @@ The `object_store_ID` is the ID of the failed storage volume. For example, speci
 
 . If prompted, press *y* to stop the Cassandra service depending on storage volume 0.
 +
-NOTE: If the Cassandra service is already stopped, you are not prompted. The Cassandra service is stopped only for volume 0.
+NOTE: If the Cassandra service is already stopped, you aren't prompted. The Cassandra service is stopped only for volume 0.
 +
 ----
 root@Storage-180:~/var/local/tmp/storage~ # sn-unmount-volume 0
-Services depending on storage volume 0 (cassandra) are not down.
+Services depending on storage volume 0 (cassandra) aren't down.
 Services depending on storage volume 0 must be stopped before running this script.
 Stop services that require storage volume 0 [y/N]? y
 Shutting down services that require storage volume 0.

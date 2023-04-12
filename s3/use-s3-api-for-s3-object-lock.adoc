@@ -59,7 +59,7 @@ To set the default retention for a bucket, use either of these methods:
 
 The PUT Object Lock Configuration request allows you to set and  modify the default retention mode and default retention period for a bucket that has S3 Object Lock enabled. You can also remove previously configured default retention settings.
 
-When new object versions are ingested to the bucket, the default retention mode is applied if `x-amz-object-lock-mode` and `x-amz-object-lock-retain-until-date` are not specified. The default retention period is used to calculate the retain-until-date if `x-amz-object-lock-retain-until-date` is not specified.
+When new object versions are ingested to the bucket, the default retention mode is applied if `x-amz-object-lock-mode` and `x-amz-object-lock-retain-until-date` aren't specified. The default retention period is used to calculate the retain-until-date if `x-amz-object-lock-retain-until-date` is not specified.
 
 If the default retention period is modified after ingest of an object version, the retain-until-date of the object version remains the same and is not recalculated using the new default retention period.
 
@@ -177,7 +177,7 @@ NOTE: If you specify `x-amz-object-lock-mode`, you must also specify `x-amz-obje
 
 * `x-amz-object-lock-retain-until-date`
 
-** The retain-until-date value must be in the format `2020-08-10T21:46:00Z`. Fractional seconds are allowed, but only 3 decimal digits are preserved (milliseconds precision). Other ISO 8601 formats are not allowed.
+** The retain-until-date value must be in the format `2020-08-10T21:46:00Z`. Fractional seconds are allowed, but only 3 decimal digits are preserved (milliseconds precision). Other ISO 8601 formats aren't allowed.
 ** The retain-until-date must be in the future.
 
 * `x-amz-object-lock-legal-hold`
@@ -203,7 +203,7 @@ If the new legal-hold value is ON, the object is placed under a legal hold. If t
 
 * `PUT Object retention`
 ** The mode value can be COMPLIANCE or GOVERNANCE (case sensitive).
-** The retain-until-date value must be in the format `2020-08-10T21:46:00Z`. Fractional seconds are allowed, but only 3 decimal digits are preserved (milliseconds precision). Other ISO 8601 formats are not allowed.
+** The retain-until-date value must be in the format `2020-08-10T21:46:00Z`. Fractional seconds are allowed, but only 3 decimal digits are preserved (milliseconds precision). Other ISO 8601 formats aren't allowed.
 ** If an object version has an existing retain-until-date, you can only increase it. The new value must be in the future.
 
 == How to use GOVERNANCE mode

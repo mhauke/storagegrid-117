@@ -31,7 +31,7 @@ For a list of all internal and external ports used by StorageGRID, see link:../n
 
 == Disable unused services
 
-For all StorageGRID nodes, you should disable or block access to unused services. For example, if you are not planning to configure client access to the audit shares for NFS, block or disable access to these services.
+For all StorageGRID nodes, you should disable or block access to unused services. For example, if you aren't planning to configure client access to the audit shares for NFS, block or disable access to these services.
 
 == Virtualization, containers, and shared hardware
 
@@ -40,7 +40,7 @@ For all StorageGRID nodes, avoid running StorageGRID on the same physical hardwa
 
 == Protect nodes during installation
 
-Don't allow untrusted users to access StorageGRID nodes over the network when the nodes are being installed. Nodes are not fully secure until they have joined the grid.
+Don't allow untrusted users to access StorageGRID nodes over the network when the nodes are being installed. Nodes aren't fully secure until they have joined the grid.
 
 == Guidelines for Admin Nodes
 

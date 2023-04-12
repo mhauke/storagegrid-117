@@ -13,11 +13,11 @@ If you are able to copy audit logs from the failed primary Admin Node, you shoul
 
 .About this task
 
-This procedure copies the audit log files from the failed Admin Node to a temporary location on a separate grid node. These preserved audit logs can then be copied to the replacement Admin Node. Audit logs are not automatically copied to the new Admin Node.
+This procedure copies the audit log files from the failed Admin Node to a temporary location on a separate grid node. These preserved audit logs can then be copied to the replacement Admin Node. Audit logs aren't automatically copied to the new Admin Node.
 
 Depending on the type of failure, you might not be able to copy audit logs from a failed Admin Node. If the deployment has only one Admin Node, the recovered Admin Node starts recording events to the audit log in a new empty file and previously recorded data is lost. If the deployment includes more than one Admin Node, you can recover the audit logs from another Admin Node.
 
-NOTE: If the audit logs are not accessible on the failed Admin Node now, you might be able to access them later, for example, after host recovery.
+NOTE: If the audit logs aren't accessible on the failed Admin Node now, you might be able to access them later, for example, after host recovery.
 
 .Steps
 

@@ -13,7 +13,7 @@ Monitor the overall health of your StorageGRID system on a daily basis.
 
 .About this task
 
-The StorageGRID system can continue to operate when parts of the grid are unavailable. Potential issues indicated by alerts or alarms (legacy system) are not necessarily issues with system operations. Investigate issues summarized on the Health status card of the Grid Manager Dashboard.
+The StorageGRID system can continue to operate when parts of the grid are unavailable. Potential issues indicated by alerts or alarms (legacy system) aren't necessarily issues with system operations. Investigate issues summarized on the Health status card of the Grid Manager Dashboard.
 
 To be notified of alerts as soon as they are triggered, you can link:../installconfig/setting-up-email-notifications-for-alerts.html[set up email notifications for alerts] or link:using-snmp-monitoring.html[configure SNMP traps].
 
@@ -124,7 +124,7 @@ image:../media/icon_alert_yellow_minor.png[Icon Alert Yellow Minor] *Minor*: The
 |Current values or _data values_
 |The value of the metric that caused the alert to be triggered. For some alerts, additional values are shown to help you understand and investigate the alert. For example, the values shown for a *Low object data storage* alert include the percentage of disk space used, the total amount of disk space, and the amount of disk space used.
 
-*Note:* If multiple current alerts are grouped, current values are not shown in the title row.
+*Note:* If multiple current alerts are grouped, current values aren't shown in the title row.
 
 |Triggered values (resolved alerts only)
 |The value of the metric that caused the alert to be triggered. For some alerts, additional values are shown to help you understand and investigate the alert. For example, the values shown for a *Low object data storage* alert include the percentage of disk space used, the total amount of disk space, and the amount of disk space used.
@@ -138,7 +138,7 @@ By default, current alerts are shown as follows:
 
 * The most recently triggered alerts are shown first.
 * Multiple alerts of the same type are shown as a group.
-* Alerts that have been silenced are not shown.
+* Alerts that have been silenced aren't shown.
 * For a specific alert on a specific node, if the thresholds are reached for more than one severity, only the most severe alert is shown. That is, if alert thresholds are reached for the minor, major, and critical severities, only the critical alert is shown.
 +
 The Current alerts page is refreshed every two minutes.

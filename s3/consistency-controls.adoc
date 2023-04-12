@@ -61,7 +61,7 @@ When setting the consistency controls for a bucket, be aware of the following:
 
 * Setting the consistency control for a bucket determines which consistency control is used for S3 operations performed on the objects in the bucket or on the bucket configuration. It does not affect operations on the bucket itself.
 * The consistency control for an individual API operation overrides the consistency control for the bucket.
-* In general, buckets should use the default consistency control, "`read-after-new-write.`" If requests are not working correctly, change the application client behavior if possible. Or, configure the client to specify the consistency control for each API request. Set the consistency control at the bucket level only as a last resort.
+* In general, buckets should use the default consistency control, "`read-after-new-write.`" If requests aren't working correctly, change the application client behavior if possible. Or, configure the client to specify the consistency control for each API request. Set the consistency control at the bucket level only as a last resort.
 
 == [[how-consistency-controls-and-ILM-rules-interact]]How consistency controls and ILM rules interact to affect data protection
 
