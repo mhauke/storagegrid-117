@@ -314,7 +314,7 @@ TIP: Select this option if the only user for the tenant will be the root user. I
 
 . For the Create bucket step, optionally create a bucket for the tenant's objects. Otherwise, select *Create tenant without bucket* to go to the <<download-data,download data step>>.
 +
-TIP: If S3 Object Lock is enabled for the grid, the bucket created in this step won't have S3 Object Lock enabled. If you need to use an S3 Object Lock bucket for this S3 application, select *Create tenant without bucket*. Then, use Tenant Manager to link:../tenant/creating-s3-bucket.html[create the bucket] instead.
+TIP: If S3 Object Lock is enabled for the grid, the bucket created in this step doesn't have S3 Object Lock enabled. If you need to use an S3 Object Lock bucket for this S3 application, select *Create tenant without bucket*. Then, use Tenant Manager to link:../tenant/creating-s3-bucket.html[create the bucket] instead.
 
 .. Enter the name of the bucket that the S3 application will use. For example, `S3-bucket`.
 +
