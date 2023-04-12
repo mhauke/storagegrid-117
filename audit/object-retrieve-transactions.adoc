@@ -69,7 +69,7 @@ When an S3 client issues an S3 Select query on an object, audit messages are gen
 
 Note that not all audit messages generated during a transaction are listed in the example below. Only those related to the S3 Select transaction (SelectObjectContent) are listed.
 
-Each query results in two audit messages: one that performs the authorization of the S3 Select request (the S3SR field is set to “select”) and a subsequent standard GET operation that retrieves the data from storage during processing.
+Each query results in two audit messages: one that performs the authorization of the S3 Select request (the S3SR field is set to "select") and a subsequent standard GET operation that retrieves the data from storage during processing.
 
 [subs="specialcharacters,quotes"]
 ----
