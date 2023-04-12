@@ -22,7 +22,7 @@ A bucket policy can be configured using the AWS CLI as per the following command
 
 == Example: Allow everyone read-only access to a bucket
 
-In this example, everyone, including anonymous, is allowed to list objects in the bucket and perform Get Object operations on all objects in the bucket. All other operations will be denied. Note that this policy might not be particularly useful since no one except the account root has permissions to write to the bucket.
+In this example, everyone, including anonymous, is allowed to list objects in the bucket and perform Get Object operations on all objects in the bucket. All other operations will be denied. Note that this policy might not be particularly useful because no one except the account root has permissions to write to the bucket.
 
 ----
 {
