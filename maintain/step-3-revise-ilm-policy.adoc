@@ -21,9 +21,9 @@ StorageGRID can't decommission a site if that site is referred to by any ILM rul
 
 If your current ILM policy refers to the site you want to remove, you must activate a new ILM policy that meets certain requirements. Specifically, the new ILM policy:
 
-* Cannot use a storage pool that refers to the site or uses the All Sites option.
-* Cannot use an erasure coding profile that refers to the site.
-* Cannot use the Make 2 Copies rule from StorageGRID 11.6 or earlier installations.
+* Can't use a storage pool that refers to the site or uses the All Sites option.
+* Can't use an erasure coding profile that refers to the site.
+* Can't use the Make 2 Copies rule from StorageGRID 11.6 or earlier installations.
 * Must be designed to fully protect all object data.
 +
 IMPORTANT: Never create a single-copy ILM rule to accommodate the removal of a site. An ILM rule that creates only one replicated copy for any time period puts data at risk of permanent loss. If only one replicated copy of an object exists, that object is lost if a Storage Node fails or has a significant error. You also temporarily lose access to the object during maintenance procedures such as upgrades.

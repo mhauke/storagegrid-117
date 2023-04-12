@@ -99,11 +99,11 @@ Before using this procedure, review the requirements for display names.
 Display names for nodes must follow these rules:
 
 * Must be unique across your StorageGRID system.
-* Cannot be the same as the system name for any other item in your StorageGRID system.
+* Can't be the same as the system name for any other item in your StorageGRID system.
 * Must contain at least 1 and no more than 32 characters.
 * Can contain numbers, hyphens (-), and uppercase and lowercase letters.
 * Can start or end with a letter or number, but can't start or end with a hyphen.
-* Cannot be all numbers.
+* Can't be all numbers.
 * Are case-insensitive. For example, `DC1-ADM` and `dc1-adm` are considered to be duplicates.
 
 You can rename a node with a display name that was previously used by a different node, as long as the rename doesn't result in a duplicate display name or system name.

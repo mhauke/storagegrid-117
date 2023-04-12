@@ -149,8 +149,8 @@ If you will <<back-up-appliance-config,back up the appliance configuration to a 
 * Each node name is unique if you want to automatically configure all appliance nodes using a JSON file.
 * Must be a valid hostname containing at least 1 and no more than 32 characters.
 * Can use letters, numbers, and hyphens.
-* Cannot start or end with a hyphen.
-* Cannot contain only numbers.
+* Can't start or end with a hyphen.
+* Can't contain only numbers.
 
 . To apply the configuration from the JSON file to the appliance, enter the following, where `_SGA-INSTALL-IP_` is the Admin Network IP address for the appliance, `_json-file-name_` is the name of the JSON file, and `_node-name-inside-json-file_` is the name of the node with the configuration being applied: +
 `configure-sga.py advanced --restore-file _json-file-name_ --restore-node _node-name-inside-json-file_ _SGA-INSTALL-IP_`

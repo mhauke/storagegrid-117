@@ -25,7 +25,7 @@ The table provides a high-level summary of the encryption methods available in S
 
 | Drive security in SANtricity System Manager
 | If the Drive Security feature is enabled for an SG5700 or SG6000 storage appliance, you can use link:../installconfig/accessing-and-configuring-santricity-system-manager.html[SANtricity System Manager] to create and manage the security key. The key is required to access the data on the secured drives.
-| Storage appliances that have Full Disk Encryption (FDE) drives or FIPS drives. All data on the secured drives is protected against physical loss or removal from the data center. Cannot be used with some storage appliances or with any service appliances.
+| Storage appliances that have Full Disk Encryption (FDE) drives or FIPS drives. All data on the secured drives is protected against physical loss or removal from the data center. Can't be used with some storage appliances or with any service appliances.
 
 | Stored object encryption
 | You enable the link:changing-network-options-object-encryption.html[Stored object encryption] option in the Grid Manager. When enabled, any new objects that are not encrypted at the bucket level or at the object level are encrypted during ingest.
