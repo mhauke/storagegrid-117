@@ -55,7 +55,7 @@ Suppose you want to limit access to the Grid Manager and Tenant manager for secu
 . Use the toggle on the Manage external access tab to allow access to port 8443.
 . Use the toggle on the Manage external access tab to allow access to port 9443. 
 
-After you save your configuration, hosts will not be able to access port 443, but they can still access the Grid Manager via port 8443 and the Tenant manger via port 9443.
+After you save your configuration, hosts will not be able to access port 443, but they can still access the Grid Manager through port 8443 and the Tenant Manager through port 9443.
 
 === Example 3: Lock down sensitive ports
 Suppose you want to lock down sensitive ports and the service on that port (for example, SSH on port 22). You could use the following general steps: 
