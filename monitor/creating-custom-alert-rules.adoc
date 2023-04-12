@@ -35,7 +35,7 @@ StorageGRID does not validate custom alerts. If you decide to create custom aler
 +
 For example, to test the expression `node_memory_MemTotal_bytes < 24000000000`, first execute `node_memory_MemTotal_bytes >= 0` and ensure you get the expected results (all nodes return a value). Then, change the operator and the threshold back to the intended values and execute again. No results indicate there are no current alerts for this expression.
 
-* Do not assume a custom alert is working unless you have validated that the alert is triggered when expected.
+* Don't assume a custom alert is working unless you have validated that the alert is triggered when expected.
 
 .Steps
 

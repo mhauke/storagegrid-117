@@ -27,7 +27,7 @@ image::../media/upgrade_workflow.png[Flowchart of the software upgrade steps]
 
 . Approve the grid nodes. You can approve individual grid nodes, groups of grid nodes, or all grid nodes. 
 +
-IMPORTANT: Do not approve the upgrade for a grid node unless you are sure that node is ready to be stopped and rebooted.
+IMPORTANT: Don't approve the upgrade for a grid node unless you are sure that node is ready to be stopped and rebooted.
 
 . Resume operations. When all grid nodes have been upgraded, new features are enabled and you can resume operations. You must wait to perform a decommission or expansion procedure until the background *Upgrade database* task and the *Final upgrade steps* task have completed.
 

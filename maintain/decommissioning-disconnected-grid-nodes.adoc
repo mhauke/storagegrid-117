@@ -99,7 +99,7 @@ image::../media/decommission_nodes_data_repair.png[screenshot showing that repai
 
 . After the nodes have shut down automatically as part of the decommission procedure, remove any remaining virtual machines or other resources that are associated with the decommissioned node.
 +
-IMPORTANT: Do not perform this step until the nodes have shut down automatically.
+IMPORTANT: Don't perform this step until the nodes have shut down automatically.
 
 . If you are decommissioning a Storage Node, monitor the status of the *replicated data* and *erasure-coded (EC) data* repair jobs that are automatically started during the decommissioning process.
 

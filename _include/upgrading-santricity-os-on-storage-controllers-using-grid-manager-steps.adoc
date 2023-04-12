@@ -48,7 +48,7 @@ The SANtricity OS upgrade page appears and lists the details for each appliance 
  .. Select *Open*.
 
 +
-The file is uploaded and validated. When the validation process is done, the file name is shown with a green checkmark next to the *Browse* button. Do not change the file name because it is part of the verification process.
+The file is uploaded and validated. When the validation process is done, the file name is shown with a green checkmark next to the *Browse* button. Don't change the file name because it is part of the verification process.
 
 . Enter the provisioning passphrase and select *Continue*.
 +
@@ -81,7 +81,7 @@ You can also enter a term in the Search box to search for specific nodes.
 
 . Approve the grid nodes you are ready to add to the upgrade queue. Approved nodes are upgraded one at a time. 
 +
-IMPORTANT: Do not approve the SANtricity OS upgrade for an appliance Storage Node unless you are sure the node is ready to be stopped and rebooted. When the SANtricity OS upgrade is approved on a node, the services on that node are stopped and the upgrade process begins. Later, when the node is finished upgrading, the appliance node is rebooted. These operations might cause service interruptions for clients that are communicating with the node.
+IMPORTANT: Don't approve the SANtricity OS upgrade for an appliance Storage Node unless you are sure the node is ready to be stopped and rebooted. When the SANtricity OS upgrade is approved on a node, the services on that node are stopped and the upgrade process begins. Later, when the node is finished upgrading, the appliance node is rebooted. These operations might cause service interruptions for clients that are communicating with the node.
 
 ** Select the *Approve All* button to add all Storage Nodes to the SANtricity OS upgrade queue. 
 +

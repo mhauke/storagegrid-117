@@ -46,7 +46,7 @@ image::../media/hotfix_choose_file.png[Hotfix Choose File]
 +
 The file is uploaded. When the upload is finished, the file name is shown in the Details field.
 +
-NOTE: Do not change the file name since it is part of the verification process.
+NOTE: Don't change the file name since it is part of the verification process.
 
 . Enter the provisioning passphrase in the text box.
 +
@@ -76,7 +76,7 @@ image::../media/hotfix_progress_table.png[Hotfix Progress Table]
 
 . Approve the grid nodes that are ready to be updated. Approved nodes of the same type are upgraded one at a time.
 +
-IMPORTANT: Do not approve the hotfix for a node unless you are sure the node is ready to be updated. When the hotfix is applied to a grid node, some services on that node might be restarted. These operations might cause service interruptions for clients that are communicating with the node.
+IMPORTANT: Don't approve the hotfix for a node unless you are sure the node is ready to be updated. When the hotfix is applied to a grid node, some services on that node might be restarted. These operations might cause service interruptions for clients that are communicating with the node.
 
  ** Select one or more *Approve* buttons to add one or more individual nodes to the hotfix queue.
  ** Select the *Approve All* button within each grouping to add all nodes of the same type to the hotfix queue. If you have entered search criteria in the *Search* box, the *Approve All* button applies to all the nodes selected by the search criteria.

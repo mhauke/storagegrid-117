@@ -59,7 +59,7 @@ When the Cloud Storage Pool is empty and not used in any ILM rules, you can dele
 +
 An error occurs if you attempt to remove a Cloud Storage Pool if it contains objects. See link:troubleshooting-cloud-storage-pools.html[Troubleshoot Cloud Storage Pools].
 +
-NOTE: When you create a Cloud Storage Pool, StorageGRID writes a marker file to the bucket or container to identify it as a Cloud Storage Pool. Do not remove this file, which is named `x-ntap-sgws-cloud-pool-uuid`.
+NOTE: When you create a Cloud Storage Pool, StorageGRID writes a marker file to the bucket or container to identify it as a Cloud Storage Pool. Don't remove this file, which is named `x-ntap-sgws-cloud-pool-uuid`.
 
 .Steps
 

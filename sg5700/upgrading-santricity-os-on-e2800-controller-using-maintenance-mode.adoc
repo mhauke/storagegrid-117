@@ -21,7 +21,7 @@ NOTE: In rare instances, placing a StorageGRID appliance into maintenance mode m
 
 .About this task
 
-Do not upgrade the SANtricity OS or NVSRAM in the E-Series controller on more than one StorageGRID appliance at a time.
+Don't upgrade the SANtricity OS or NVSRAM in the E-Series controller on more than one StorageGRID appliance at a time.
 
 IMPORTANT: Upgrading more than one StorageGRID appliance at a time might cause data unavailability, depending on your deployment model and ILM policies.
 
@@ -32,11 +32,11 @@ IMPORTANT: Upgrading more than one StorageGRID appliance at a time might cause d
 . From a service laptop, access SANtricity System Manager and sign in.
 . Download the new SANtricity OS Software file and NVSRAM file to the management client.
 +
-IMPORTANT: The NVSRAM is specific to the StorageGRID appliance. Do not use the standard NVSRAM download.
+IMPORTANT: The NVSRAM is specific to the StorageGRID appliance. Don't use the standard NVSRAM download.
 
 . Follow the instructions in the _E2800 and E5700 SANtricity Software and Firmware Upgrade Guide_ or the SANtricity System Manager online help to upgrade the E2800 controller's firmware and NVSRAM.
 +
-NOTE: Activate the upgrade files immediately. Do not defer activation.
+NOTE: Activate the upgrade files immediately. Don't defer activation.
 
 . If this procedure completed successfully and you have additional procedures to perform while the node is in maintenance mode, perform them now. When you are done, or if you experienced any failures and want to start over, select *Advanced* > *Reboot Controller*, and then select one of these options:
 

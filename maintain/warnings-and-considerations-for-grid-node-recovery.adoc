@@ -11,7 +11,7 @@ summary: 'If a grid node fails, you must recover it as soon as possible. You mus
 [.lead]
 If a grid node fails, you must recover it as soon as possible. You must review all warnings and considerations for node recovery before you begin.
 
-IMPORTANT: StorageGRID is a distributed system composed of multiple nodes working with each other. Do not use disk snapshots to restore grid nodes. Instead, refer to the recovery and maintenance procedures for each type of node.
+IMPORTANT: StorageGRID is a distributed system composed of multiple nodes working with each other. Don't use disk snapshots to restore grid nodes. Instead, refer to the recovery and maintenance procedures for each type of node.
 
 Some of the reasons for recovering a failed grid node as soon as possible include the following:
 
@@ -37,6 +37,6 @@ If a server that is hosting more than one grid node fails, you can recover the n
 
 == IP addresses for recovered nodes
 
-Do not attempt to recover a node using an IP address that is currently assigned to any other node. When you deploy the new node, use the failed node's current IP address or an unused IP address.
+Don't attempt to recover a node using an IP address that is currently assigned to any other node. When you deploy the new node, use the failed node's current IP address or an unused IP address.
 
 If you use a new IP address to deploy the new node and then recover the node, the new IP address will continue to be used for the recovered node. If you want to revert to the original IP address, use the Change IP tool after the recovery is complete.

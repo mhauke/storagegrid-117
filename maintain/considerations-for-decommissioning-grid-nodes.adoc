@@ -24,4 +24,4 @@ You cannot decommission a node if doing so will leave StorageGRID in an invalid 
 * If a disconnected node cannot be removed (for example, a Storage Node that is required for the ADC quorum), no other disconnected node can be removed.
 * If you want to replace an older appliance with a newer appliance, consider link:../commonhardware/how-appliance-node-cloning-works.html[cloning the appliance node] instead of decommissioning the old node and adding the new node in an expansion.
 
-IMPORTANT: Do not remove a grid node's virtual machine or other resources until instructed to do so in decommission procedures.
+IMPORTANT: Don't remove a grid node's virtual machine or other resources until instructed to do so in decommission procedures.

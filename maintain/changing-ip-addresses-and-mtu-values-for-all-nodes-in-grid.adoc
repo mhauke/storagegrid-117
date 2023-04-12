@@ -84,7 +84,7 @@ image::../media/change_ip_tool_validate_sample_passed_messages.gif[screenshot de
 . Once validation passes, select *10* to apply the new network configuration.
 . Select *stage* to apply the changes the next time the nodes are restarted.
 +
-IMPORTANT: You must select *stage*. Do not perform a rolling restart, either manually or by selecting *apply* instead of *stage*; the grid will not start up successfully.
+IMPORTANT: You must select *stage*. Don't perform a rolling restart, either manually or by selecting *apply* instead of *stage*; the grid will not start up successfully.
 
 . After your changes are complete, select *0* to exit the Change IP tool.
 . Shut down all nodes simultaneously.

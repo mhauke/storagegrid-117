@@ -22,7 +22,7 @@ You can add extra trunk or access interfaces to a Linux node after it has been i
 * You have the `Passwords.txt` file.
 * You have specific access permissions.
 
-IMPORTANT: Do not attempt to add interfaces to a node while a software upgrade, recovery procedure, or expansion procedure is active.
+IMPORTANT: Don't attempt to add interfaces to a node while a software upgrade, recovery procedure, or expansion procedure is active.
 
 .About this task
 
@@ -51,7 +51,7 @@ For example:
 +
 `INTERFACES_TARGET_01=ens256, Trunk`
 +
-IMPORTANT: Do not specify any other network parameters, or a validation error will result.
+IMPORTANT: Don't specify any other network parameters, or a validation error will result.
 
 . Run the following command to validate your changes to the node configuration file:
 +

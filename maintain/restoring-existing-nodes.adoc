@@ -139,7 +139,7 @@ IMPORTANT: If you must provide a new block storage device for any of the configu
 
 [CAUTION]
 ====
-Run the following command only for new block storage devices. Do not run this command if you believe the block storage still contains valid data for the node being recovered, as any data on the device will be lost.
+Run the following command only for new block storage devices. Don't run this command if you believe the block storage still contains valid data for the node being recovered, as any data on the device will be lost.
 
 `sudo dd if=/dev/zero of=/dev/mapper/my-block-device-name bs=1G count=1`
 ====

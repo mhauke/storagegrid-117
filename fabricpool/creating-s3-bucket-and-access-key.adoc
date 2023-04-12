@@ -43,7 +43,7 @@ By default, all buckets are created in the `us-east-1` region.
 
 .. Select *Create bucket*.
 +
-NOTE: Do not select *Enable object versioning* for the FabricPool bucket. Similarly, do not edit a FabricPool bucket to use *Available* or a non-default consistency level. The recommended bucket consistency level for FabricPool buckets is *Read-after-new-write*, which is the default setting for a new bucket. 
+NOTE: Don't select *Enable object versioning* for the FabricPool bucket. Similarly, do not edit a FabricPool bucket to use *Available* or a non-default consistency level. The recommended bucket consistency level for FabricPool buckets is *Read-after-new-write*, which is the default setting for a new bucket. 
 
 . Create an access key and a secret access key.
  .. Select *STORAGE (S3)* > *My access keys*.

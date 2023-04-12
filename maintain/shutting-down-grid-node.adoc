@@ -20,7 +20,7 @@ You can shut down a grid node from the node's command shell.
 Before performing this procedure, review these considerations:
 
 * In general, you should not shut down more than one node at a time to avoid disruptions.
-* Do not shut down a node during a maintenance procedure unless explicitly instructed to do so by the documentation or by technical support.
+* Don't shut down a node during a maintenance procedure unless explicitly instructed to do so by the documentation or by technical support.
 * The shutdown process is based on where the node is installed, as follows:
  ** Shutting down a VMware node shuts down the virtual machine.
  ** Shutting down a Linux node shuts down the container.

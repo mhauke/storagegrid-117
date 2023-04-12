@@ -329,7 +329,7 @@ You can disable one of the legacy Default alarms for the entire system.
 .About this task
 Disabling an alarm for an attribute that currently has an alarm triggered does not clear the current alarm. The alarm will be disabled the next time the attribute crosses the alarm threshold, or you can clear the triggered alarm.
 
-IMPORTANT: Do not disable any of the legacy alarms until you have completely transitioned to the new alert system. Otherwise, you might not detect an underlying problem until it has prevented a critical operation from completing.
+IMPORTANT: Don't disable any of the legacy alarms until you have completely transitioned to the new alert system. Otherwise, you might not detect an underlying problem until it has prevented a critical operation from completing.
 
 .Steps
 . Select *SUPPORT* > *Alarms (legacy)* > *Global alarms*.

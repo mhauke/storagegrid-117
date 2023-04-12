@@ -25,7 +25,7 @@ Follow these recommendations for object key names, based on when the bucket was 
 
 .Buckets created in StorageGRID 11.4 or earlier
 
-* Do not use random values as the first four characters of object keys. This is in contrast to the former AWS recommendation for key prefixes. Instead, use non-random, non-unique prefixes, such as `image`.
+* Don't use random values as the first four characters of object keys. This is in contrast to the former AWS recommendation for key prefixes. Instead, use non-random, non-unique prefixes, such as `image`.
 
 * If you do follow the former AWS recommendation to use random and unique characters in key prefixes, prefix the object keys with a directory name. That is, use this format:
 +

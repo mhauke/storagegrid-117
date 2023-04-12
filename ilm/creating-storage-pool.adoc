@@ -28,7 +28,7 @@ Storage pools determine where object data is stored. The number of storage pools
 * For replication and single-site erasure coding, create a storage pool for each site. For example, if you want to store replicated object copies at three sites, create three storage pools.
 * For erasure coding at three or more sites, create one storage pool that includes an entry for each site. For example, if you want to erasure code objects across three sites, create one storage pool.
 +
-IMPORTANT: Do not include the All Sites site in a storage pool that will be used in an erasure coding profile. Instead, add a separate entry to the storage pool for each site that will store erasure coded data. See <<entries,this step>> for an example.
+IMPORTANT: Don't include the All Sites site in a storage pool that will be used in an erasure coding profile. Instead, add a separate entry to the storage pool for each site that will store erasure coded data. See <<entries,this step>> for an example.
 
 * If you have more than one storage grade, do not create a storage pool that includes different storage grades at a single site. See the link:guidelines-for-creating-storage-pools.html[Guidelines for creating storage pools].
 
@@ -38,7 +38,7 @@ IMPORTANT: Do not include the All Sites site in a storage pool that will be used
 +
 The Storage pools tab lists all defined storage pools.
 +
-IMPORTANT: For new installations of StorageGRID 11.6 or earlier, the All Storage Nodes storage pool is automatically updated whenever you add new data center sites. Do not use this pool in ILM rules.
+IMPORTANT: For new installations of StorageGRID 11.6 or earlier, the All Storage Nodes storage pool is automatically updated whenever you add new data center sites. Don't use this pool in ILM rules.
 
 . To create a new storage pool, select *Create*.
 

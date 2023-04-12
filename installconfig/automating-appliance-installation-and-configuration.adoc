@@ -252,7 +252,7 @@ configure-sga.py configure --admin-ip 172.16.2.99 _SGA-INSTALL-IP_
 +
 The JSON file containing the configuration information is written to the same directory you executed the script from.
 +
-IMPORTANT: Check that the top-level node name in the generated JSON file matches the appliance name. Do not make any changes to this file unless you are an experienced user and have a thorough understanding of StorageGRID APIs.
+IMPORTANT: Check that the top-level node name in the generated JSON file matches the appliance name. Don't make any changes to this file unless you are an experienced user and have a thorough understanding of StorageGRID APIs.
 
 . When you are satisfied with the appliance configuration, use the `install` and `monitor` subcommands to install the appliance: +
 `configure-sga.py install --monitor _SGA-INSTALL-IP_`

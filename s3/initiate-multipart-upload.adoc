@@ -81,7 +81,7 @@ NOTE: For information about how StorageGRID handles UTF-8 characters, see the do
 
 You can use the following request headers to encrypt a multipart object with server-side encryption. The SSE and SSE-C options are mutually exclusive.
 
-* *SSE*: Use the following header in the Initiate Multipart Upload request if you want to encrypt the object with a unique key managed by StorageGRID. Do not specify this header in any of the Upload Part requests.
+* *SSE*: Use the following header in the Initiate Multipart Upload request if you want to encrypt the object with a unique key managed by StorageGRID. Don't specify this header in any of the Upload Part requests.
  ** `x-amz-server-side-encryption`
 * *SSE-C*: Use all three of these headers in the Initiate Multipart Upload request (and in each subsequent Upload Part request) if you want to encrypt the object with a unique key that you provide and manage.
  ** `x-amz-server-side-encryption-customer-algorithm`: Specify `AES256`.

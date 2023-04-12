@@ -17,7 +17,7 @@ CAUTION: The following ILM rules and policy are only examples. There are many wa
 
 This example ILM rule erasure codes objects that are greater than 1 MB.
 
-IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Do not use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
+IMPORTANT: Erasure coding is best suited for objects greater than 1 MB. Don't use erasure coding for objects smaller than 200 KB to avoid the overhead of managing very small erasure-coded fragments.
 
 [cols="2a,2a" options="header"]
 |===

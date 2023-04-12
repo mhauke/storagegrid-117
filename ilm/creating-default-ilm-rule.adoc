@@ -29,7 +29,7 @@ When you create the default rule, keep these requirements in mind:
 * The default rule must apply to all object versions.
 * The default rule should create replicated copies.
 +
-IMPORTANT: Do not use a rule that creates erasure-coded copies as the default rule for a policy. Erasure-coding rules should use an advanced filter to prevent smaller objects from being erasure coded.
+IMPORTANT: Don't use a rule that creates erasure-coded copies as the default rule for a policy. Erasure-coding rules should use an advanced filter to prevent smaller objects from being erasure coded.
 
 * In general, the default rule should retain objects forever.
 * If you are using (or you plan to enable) the global S3 Object Lock setting, the default rule for the active or proposed policy must be compliant.
@@ -54,7 +54,7 @@ The default rule must apply to all S3 buckets and Swift containers.
 
 . Keep the default answer, *No*, for the question, "`Apply this rule to older object versions only (in S3 buckets with versioning enabled)?`"
 
-. Do not add advanced filters.
+. Don't add advanced filters.
 +
 The default rule cannot specify any filters.
 
@@ -70,7 +70,7 @@ If you kept the default answer, *No*, for the question, "`Apply this rule to old
  * The default rule should retain objects forever. A warning appears when you activate a new policy if the default rule does not retain objects forever. You must confirm this is the behavior you expect.
  * The default rule should create replicated copies.
 +
-IMPORTANT: Do not use a rule that creates erasure-coded copies as the default rule for a policy. Erasure-coding rules should include the *Object size (MB) greater than 0.2* advanced filter to prevent smaller objects from being erasure coded.
+IMPORTANT: Don't use a rule that creates erasure-coded copies as the default rule for a policy. Erasure-coding rules should include the *Object size (MB) greater than 0.2* advanced filter to prevent smaller objects from being erasure coded.
 
  * If you are using (or you plan to enable) the global S3 Object Lock setting, the default rule must be compliant:
   ** It must create at least two replicated object copies or one erasure-coded copy.
