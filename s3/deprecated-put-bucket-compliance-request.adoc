@@ -50,13 +50,13 @@ RetentionPeriodMinutes
 a|
 The length of the retention period for objects added to this bucket, in minutes. The retention period starts when the object is ingested into the grid.
 
-*Important* When specifying a new value for RetentionPeriodMinutes, you must specify a value that is equal to or greater than the bucket's current retention period. After the bucket's retention period is set, you cannot decrease that value; you can only increase it.
+*Important* When specifying a new value for RetentionPeriodMinutes, you must specify a value that is equal to or greater than the bucket's current retention period. After the bucket's retention period is set, you can't decrease that value; you can only increase it.
 
 a|
 LegalHold
 a|
 
-* True: This bucket is currently under a legal hold. Objects in this bucket cannot be deleted until the legal hold is lifted, even if their retention period has expired.
+* True: This bucket is currently under a legal hold. Objects in this bucket can't be deleted until the legal hold is lifted, even if their retention period has expired.
 * False: This bucket is not currently under a legal hold. Objects in this bucket can be deleted when their retention period expires.
 
 a|
@@ -72,7 +72,7 @@ a|
 
 When you update the compliance settings for an S3 bucket with a PUT Bucket compliance request, StorageGRID attempts to update the bucket's metadata across the grid. By default, StorageGRID uses the *strong-global* consistency level to guarantee that all data center sites and all Storage Nodes that contain bucket metadata have read-after-write consistency for the changed compliance settings.
 
-If StorageGRID cannot achieve the *strong-global* consistency level because a data center site or multiple Storage Nodes at a site are unavailable, the HTTP status code for the response is `503 Service Unavailable.`
+If StorageGRID can't achieve the *strong-global* consistency level because a data center site or multiple Storage Nodes at a site are unavailable, the HTTP status code for the response is `503 Service Unavailable.`
 
 If you receive this response, you must contact the grid administrator to ensure that the required storage services are made available as soon as possible. If the grid administrator is unable to make enough of the Storage Nodes at each site available, technical support might direct you to retry the failed request by forcing the *strong-site* consistency level.
 

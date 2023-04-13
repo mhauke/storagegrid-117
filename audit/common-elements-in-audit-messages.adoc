@@ -21,7 +21,7 @@ All audit messages contain the common elements.
 
 | ANID
 | UI32
-| Node ID: The grid node ID assigned to the service that generated the message. Each service is allocated a unique identifier at the time the StorageGRID system is configured and installed. This ID cannot be changed.
+| Node ID: The grid node ID assigned to the service that generated the message. Each service is allocated a unique identifier at the time the StorageGRID system is configured and installed. This ID can't be changed.
 
 | ASES
 | UI64

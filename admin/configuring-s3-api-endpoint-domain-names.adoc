@@ -19,7 +19,7 @@ CAUTION: Using an IP address for an endpoint domain name is unsupported. Future 
 * You have link:../admin/admin-group-permissions.html[specific access permissions].
 * You have confirmed that a grid upgrade is not in progress.
 +
-CAUTION: Do not make any changes to the domain name configuration when a grid upgrade is in progress.
+CAUTION: Don't make any changes to the domain name configuration when a grid upgrade is in progress.
 
 .About this task
 
@@ -40,7 +40,7 @@ Clients that use HTTPS connections (recommended) to the grid can use either of t
  
 * Clients that connect to a load balancer endpoint or directly to a Storage Node can customize the global S3 and Swift API certificate to include all required S3 endpoint domain names.
 
-NOTE: If you do not add S3 endpoint domain names and the list is empty, support for S3 virtual-hosted-style requests is disabled.
+NOTE: If you don't add S3 endpoint domain names and the list is empty, support for S3 virtual-hosted-style requests is disabled.
 
 == Add an S3 endpoint domain name
 

@@ -24,7 +24,7 @@ Consider the following:
 * How will the decommissioning process affect the final distribution of content? As described in link:consolidating-storage-nodes.html[Consolidate Storage Nodes], you should add new Storage Nodes before decommissioning old ones. If you add a larger replacement Storage Node after decommissioning a smaller Storage Node, the old Storage Nodes could be close to capacity and the new Storage Node could have almost no content. Most write operations for new object data would then be directed at the new Storage Node, reducing the overall efficiency of system operations.
 * Will the system, at all times, include enough Storage Nodes to satisfy the active ILM policy?
 +
-NOTE: An ILM policy that cannot be satisfied will lead to backlogs and alarms, and can halt operation of the StorageGRID system.
+NOTE: An ILM policy that can't be satisfied will lead to backlogs and alarms, and can halt operation of the StorageGRID system.
 
 Verify that the proposed topology that will result from the decommissioning process satisfies the ILM policy by assessing the factors listed in the table.
 

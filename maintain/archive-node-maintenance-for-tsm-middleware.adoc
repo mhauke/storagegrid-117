@@ -2,14 +2,14 @@
 permalink: maintain/archive-node-maintenance-for-tsm-middleware.html
 sidebar: sidebar
 keywords: storagegrid, archive node, tsm, tsm middleware, middleware
-summary: 'Archive Nodes might be configured to target either tape through a TSM middleware server or the cloud through the S3 API. Once configured, an Archive Node target cannot be changed.'
+summary: 'Archive Nodes might be configured to target either tape through a TSM middleware server or the cloud through the S3 API. Once configured, an Archive Node target can't be changed.'
 ---
 = Archive Node maintenance for TSM middleware
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Archive Nodes might be configured to target either tape through a TSM middleware server or the cloud through the S3 API. Once configured, an Archive Node's target cannot be changed.
+Archive Nodes might be configured to target either tape through a TSM middleware server or the cloud through the S3 API. Once configured, an Archive Node's target can't be changed.
 
 If the server hosting the Archive Node fails, replace the server and follow the appropriate recovery procedure.
 
@@ -50,7 +50,7 @@ If the object is permanently unavailable, you must identify the object and then 
 
 A retrieval can also fail if the object is temporarily unavailable. In this case, subsequent retrieval requests should eventually succeed.
 
-If the StorageGRID system is configured to use an ILM rule that creates a single object copy and that copy cannot be retrieved, the object is lost and cannot be recovered. However, you must still follow the procedure to determine if the object is permanently unavailable to "`clean up`" the StorageGRID system, to cancel the Archive Node's request, and to purge metadata for the lost object.
+If the StorageGRID system is configured to use an ILM rule that creates a single object copy and that copy can't be retrieved, the object is lost and can't be recovered. However, you must still follow the procedure to determine if the object is permanently unavailable to "`clean up`" the StorageGRID system, to cancel the Archive Node's request, and to purge metadata for the lost object.
 
 [[determining_objects_permanently_unavailable]]
 === Determining if objects are permanently unavailable
@@ -65,7 +65,7 @@ You can determine if objects are permanently unavailable by making a request usi
 
 .About this task
 
-This example is provided for your information. This procedure cannot help you identify all failure conditions that might result in unavailable objects or tape volumes. For information about TSM administration, see TSM Server documentation.
+This example is provided for your information. This procedure can't help you identify all failure conditions that might result in unavailable objects or tape volumes. For information about TSM administration, see TSM Server documentation.
 
 .Steps
 
@@ -79,7 +79,7 @@ The active audit log file is named audit.log. Once a day, the active `audit.log`
 
  .. Search the relevant audit log file for messages indicating that an archived object could not be retrieved. For example, enter: `grep ARCE audit.log | less -n`
 +
-When an object cannot be retrieved from an Archive Node, the ARCE audit message (Archive Object Retrieve End) displays ARUN (archive middleware unavailable) or GERR (general error) in the result field. The following example line from the audit log shows that the ARCE message terminated with the result ARUN for CBID 498D8A1F681F05B3.
+When an object can't be retrieved from an Archive Node, the ARCE audit message (Archive Object Retrieve End) displays ARUN (archive middleware unavailable) or GERR (general error) in the result field. The following example line from the audit log shows that the ARCE message terminated with the result ARUN for CBID 498D8A1F681F05B3.
 +
 ----
 [AUDT:[CBID(UI64):0x498D8A1F681F05B3][VLID(UI64):20091127][RSLT(FC32):ARUN][AVER(UI32):7]
@@ -140,7 +140,7 @@ You will need the CBID of each object stored on the volume and the node ID of th
 +
 IMPORTANT: Use the ADE Console with caution. If the console is used improperly, it is possible to interrupt system operations and corrupt data. Enter commands carefully, and only use the commands documented in this procedure.
 
- .. If you are not already logged in to the Archive Node, log in as follows:
+ .. If you aren't already logged in to the Archive Node, log in as follows:
   ... Enter the following command: `ssh admin@_grid_node_IP_`
   ... Enter the password listed in the `Passwords.txt` file.
   ... Enter the following command to switch to root: `su -`
@@ -148,19 +148,19 @@ IMPORTANT: Use the ADE Console with caution. If the console is used improperly, 
  .. Access the ADE console of the ARC service: `telnet localhost 1409`
  .. Cancel the request for the object: `/proc/BRTR/cancel -c CBID`
 +
-where `CBID` is the identifier of the object that cannot be retrieved from the TSM.
+where `CBID` is the identifier of the object that can't be retrieved from the TSM.
 +
 If the only copies of the object are on tape, the "`bulk retrieval`" request is canceled with a message, "`1 requests canceled`". If copies of the object exist elsewhere in the system, the object retrieval is processed by a different module so the response to the message is "`0 requests canceled`".
 
  .. Issue a command to notify the StorageGRID system that an object copy has been lost and that an additional copy must be made: `/proc/CMSI/Object_Lost CBID node_ID`
 +
-where `CBID` is the identifier of the object that cannot be retrieved from the TSM server, and `node_ID` is the node ID of the Archive Node where the retrieval failed.
+where `CBID` is the identifier of the object that can't be retrieved from the TSM server, and `node_ID` is the node ID of the Archive Node where the retrieval failed.
 +
 You must enter a separate command for each lost object copy: entering a range of CBIDs is not supported.
 +
 In most cases, the StorageGRID system immediately begins to make additional copies of object data to ensure that the system's ILM policy is followed.
 +
-However, if the ILM rule for the object specified that only one copy be made and that copy has now been lost, the object cannot be recovered. In this case running the `Object_Lost` command purges the lost object's metadata from the StorageGRID system.
+However, if the ILM rule for the object specified that only one copy be made and that copy has now been lost, the object can't be recovered. In this case running the `Object_Lost` command purges the lost object's metadata from the StorageGRID system.
 +
 When the `Object_Lost` command completes successfully, the following message is returned:
 +

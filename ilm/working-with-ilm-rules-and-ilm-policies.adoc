@@ -62,7 +62,7 @@ Additionally, you can use the details page to clone, edit, or remove a rule.
 
 == Clone an ILM rule
 
-You cannot edit a rule if it is being used in the proposed ILM policy or the active ILM policy. Instead, you can clone a rule and make any required changes to the cloned copy. Then, if required, you can remove the original rule from the proposed policy and replace it with the modified version. You cannot clone an ILM rule if it was created using StorageGRID version 10.2 or earlier.
+You can't edit a rule if it is being used in the proposed ILM policy or the active ILM policy. Instead, you can clone a rule and make any required changes to the cloned copy. Then, if required, you can remove the original rule from the proposed policy and replace it with the modified version. You can't clone an ILM rule if it was created using StorageGRID version 10.2 or earlier.
 
 Before adding a cloned rule to the active ILM policy, be aware that a change to an object's placement instructions might cause an increased load on the system.
 
@@ -78,7 +78,7 @@ When cloning an ILM rule, you must enter a new name.
 
 You might need to edit an ILM rule to change a filter or placement instruction.
 
-You cannot edit a rule if it is being used in the active ILM policy or the proposed ILM policy. Instead, you can clone these rules and make any required changes to the cloned copy. You also cannot edit the system-provided rule, Make 2 Copies.
+You can't edit a rule if it is being used in the active ILM policy or the proposed ILM policy. Instead, you can clone these rules and make any required changes to the cloned copy. You also can't edit the system-provided rule, Make 2 Copies.
 
 NOTE: Before adding an edited rule to the active ILM policy, be aware that a change to an object's placement instructions might cause an increased load on the system.
 
@@ -88,13 +88,13 @@ NOTE: Before adding an edited rule to the active ILM policy, be aware that a cha
 . If the rule you want to edit is not in use, select the check box for the rule and select *Actions* > *Edit*. Alternatively, select the name of the rule, then select *Edit* on the rule details page. 
 . Complete the pages of the Edit ILM rule wizard. As necessary, follow the steps for link:create-ilm-rule-enter-details.html[creating an ILM rule] and link:create-ilm-rule-enter-details.html#use-advanced-filters-in-ilm-rules[using advanced filters in ILM rules].
 +
-When editing an ILM rule, you cannot change its name.
+When editing an ILM rule, you can't change its name.
 +
 NOTE: If you edit a rule that is used in a historical policy, the image:../media/icon_ilm_rule_historical.png[Icon ILM Rule Historical] icon appears for the rule when you view the policy, which indicates that the rule has become a historical rule.
 
 == Remove an ILM rule
 
-To keep the list of current ILM rules manageable, remove any ILM rules that you are not likely to use.
+To keep the list of current ILM rules manageable, remove any ILM rules that you aren't likely to use.
 
 .Steps
 
@@ -123,7 +123,7 @@ You can view metrics for ILM, such as the number of objects in the queue and the
 
 . Select *Dashboard* > *ILM*.
 +
-NOTE: Since the dashboard can be customized, the ILM tab might not be available. 
+NOTE: Because the dashboard can be customized, the ILM tab might not be available. 
 
 . Monitor the metrics on the ILM tab.
 +

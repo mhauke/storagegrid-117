@@ -26,7 +26,7 @@ To provide addressing information, you must use the Change IP tool. See link:cha
 . Log in to the Linux server hosting the node.
 . Edit the node configuration file: `/etc/storagegrid/nodes/_node-name_.conf`.
 +
-IMPORTANT: Do not specify any other network parameters, or a validation error will result.
+IMPORTANT: Don't specify any other network parameters, or a validation error will result.
 
 .. Add an entry for the new network target. For example:
 +

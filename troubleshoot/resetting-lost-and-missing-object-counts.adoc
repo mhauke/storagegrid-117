@@ -41,7 +41,7 @@ The Lost Objects attribute is reset to 0 and the *Objects lost* alert and the LO
  .. Click *Apply Changes*.
  .. Select *_Site_* > *_Storage Node_* > *LDR* > *Verification* > *Configuration*.
  .. Select *Reset Missing Objects Count* and *Reset Corrupt Objects Count*.
- .. If you are confident that quarantined objects are not required, you can select *Delete Quarantined Objects*.
+ .. If you are confident that quarantined objects aren't required, you can select *Delete Quarantined Objects*.
 +
 Quarantined objects are created when background verification identifies a corrupt replicated object copy. In most cases StorageGRID automatically replaces the corrupt object, and it is safe to delete the quarantined objects. However, if the *Objects lost* alert or the LOST alarm is triggered, technical support might want to access the quarantined objects.
 

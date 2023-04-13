@@ -19,7 +19,7 @@ The TSM server has no way to notify the Archive Node when either the TSM databas
 
 .About this task
 
-The Archive Node continues to accept object data for transfer to the TSM server after the TSM server stops accepting new content. This content cannot be written to media managed by the TSM server. An alarm is triggered if this happens. 
+The Archive Node continues to accept object data for transfer to the TSM server after the TSM server stops accepting new content. This content can't be written to media managed by the TSM server. An alarm is triggered if this happens. 
 
 == Prevent ARC service from sending content to TSM server
 

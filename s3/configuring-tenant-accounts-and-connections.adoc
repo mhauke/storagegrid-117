@@ -49,7 +49,7 @@ When client connections are made using a Load Balancer endpoint, connections mus
 
 By default, when client applications connect to Storage Nodes, they must use encrypted HTTPS for all connections. Optionally, you can enable less-secure HTTP connections by selecting *CONFIGURATION* > *Security settings* > *Network and objects* > *Enable HTTP for Storage Node connections* in the Grid Manager. For example, a client application might use HTTP when testing the connection to a Storage Node in a non-production environment.
 
-CAUTION: Be careful when enabling HTTP for a production grid since requests and responses will be sent unencrypted.
+CAUTION: Be careful when enabling HTTP for a production grid because requests and responses will be sent unencrypted.
 
 .Related information
 

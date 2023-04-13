@@ -65,7 +65,7 @@ If you need to edit a tenant that has the *Use grid federation connection* permi
 
 * If a tenant has the *Use grid federation connection* permission, you can edit tenant details from either grid in the connection. However, any changes you make will not be copied to the other grid. If you want to keep the tenant details synchronized between grids, you must make the same edits on both grids.
 
-* You can't unselect the *Use grid federation connection* permission when you are editing a tenant.
+* You can't clear the *Use grid federation connection* permission when you are editing a tenant.
 
 * You can't select a different grid federation connection when you are editing a tenant.
 
@@ -93,11 +93,11 @@ image:../media/grid-federation-remove-permission.png[steps to remove grid federa
 
 Before removing a tenant's permission to use a grid federation connection, note the following:
 
-* Removing the *Use grid federation connection* permission from a tenant is a permanent action. You cannot re-enable the permission for this tenant.
+* Removing the *Use grid federation connection* permission from a tenant is a permanent action. You can't re-enable the permission for this tenant.
 
 * You can't remove the *Use grid federation connection* permission if any of the tenant's buckets have cross-grid replication enabled. The tenant account must disable cross-grid replication for all of their buckets first. 
 
-* Removing the *Use grid federation connection* permission does not delete any items that have already been replicated between grids. For example, any tenant users, groups, and objects that exist on both grids are not deleted from either grid when the tenant's permission is removed. If you want to delete these items, you must manually delete them from both grids.
+* Removing the *Use grid federation connection* permission does not delete any items that have already been replicated between grids. For example, any tenant users, groups, and objects that exist on both grids aren't deleted from either grid when the tenant's permission is removed. If you want to delete these items, you must manually delete them from both grids.
 
 
 .What you'll need

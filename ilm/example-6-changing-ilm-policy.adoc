@@ -145,7 +145,7 @@ When the new ILM policy is activated, the following ILM operations occur:
 * New objects ingested by Tenant A are split into two data fragments and one parity fragment is added. Then, each of the three fragments is stored at a different site.
 * The existing objects belonging to Tenant A are re-evaluated during the ongoing ILM scanning process. Because the ILM placement instructions use a new erasure coding profile, entirely new erasure-coded fragments are created and distributed to the three sites.
 +
-NOTE: The existing 2+1 fragments at Site 1 are not reused. StorageGRID considers each erasure coding profile to be unique and does not reuse erasure-coding fragments when a new profile is used.
+NOTE: The existing 2+1 fragments at Site 1 aren't reused. StorageGRID considers each erasure coding profile to be unique and does not reuse erasure-coding fragments when a new profile is used.
 
 === What happens when replication instructions change
 
@@ -162,6 +162,6 @@ When the proposed ILM policy in this example is activated, the overall performan
 
 As a result of the ILM policy change, client read and write requests might temporarily experience higher than normal latencies. Latencies will return to normal levels after the placement instructions are fully implemented across the grid.
 
-To avoid resource issues when activating a new ILM policy, you can use the Ingest time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects are not moved unnecessarily.
+To avoid resource issues when activating a new ILM policy, you can use the Ingest time advanced filter in any rule that might change the location of large numbers of existing objects. Set Ingest time to be greater than or equal to the approximate time when the new policy will go into effect to ensure that existing objects aren't moved unnecessarily.
 
 NOTE: Contact technical support if you need to slow or increase the rate at which objects are processed after an ILM policy change.

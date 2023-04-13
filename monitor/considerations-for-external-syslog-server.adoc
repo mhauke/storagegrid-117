@@ -58,7 +58,7 @@ If you know more about your workload, more accurate estimations are possible. Fo
 
 | S3KY
 | S3 Key
-| The S3 key name, not including the bucket name. Operations on buckets do not include this field.
+| The S3 key name, not including the bucket name. Operations on buckets don't include this field.
 |===
 
 Let's use P to represent the percentage of S3 operations that are PUTs, where 0 ≤ P ≤ 1 (so for a 100% PUT workload, P = 1, and for a 100% GET workload, P = 0).
@@ -75,7 +75,7 @@ Audit Log Average Size = (570 + K) bytes
 For example, if your grid is sized for 1,000 S3 operations per second, your workload is 50% PUTs, and your S3 account names, bucket names, and object names average 90 bytes, your external syslog server should be sized to support 1,500 syslog messages per second and should be able to receive (and typically store) audit log data at a rate of approximately 1 MB per second.
 
 === Estimation formulas for non-default audit levels
-The formulas provided for audit logs assume the use of default audit level settings (all categories set to Normal, except Storage, which is set to Error). Detailed formulas for estimating the rate and average size of audit messages for non-default audit level settings are not available. However, the following table can be used to make a rough estimate of the rate; you can use the average size formula provided for audit logs, but be aware that it is likely to result in an over-estimate because the “extra” audit messages are, on average, smaller than the default audit messages.
+The formulas provided for audit logs assume the use of default audit level settings (all categories set to Normal, except Storage, which is set to Error). Detailed formulas for estimating the rate and average size of audit messages for non-default audit level settings aren't available. However, the following table can be used to make a rough estimate of the rate; you can use the average size formula provided for audit logs, but be aware that it is likely to result in an over-estimate because the "extra" audit messages are, on average, smaller than the default audit messages.
 
 [cols="1a,1a" options="header"]
 |===
@@ -89,7 +89,7 @@ The formulas provided for audit logs assume the use of default audit level setti
 |===
 
 === Estimation formulas for security events
-Security events are not correlated with S3 operations and typically produce a negligible volume of logs and data. For these reasons, no estimation formulas are provided.
+Security events aren't correlated with S3 operations and typically produce a negligible volume of logs and data. For these reasons, no estimation formulas are provided.
 
 === Estimation formulas for application logs
 If you have no information about your S3 workload other than the number of S3 operations per second your grid is expected to support, you can estimate the volume of applications logs your external syslog server will need to handle using the following formulas:
@@ -121,7 +121,7 @@ If you know more about your workload, more accurate estimations are possible. Fo
 
 | S3KY
 | S3 Key
-| The S3 key name, not including the bucket name. Operations on buckets do not include this field.
+| The S3 key name, not including the bucket name. Operations on buckets don't include this field.
 |===
 
 == Example sizing estimations

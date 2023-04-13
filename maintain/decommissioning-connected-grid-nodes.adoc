@@ -53,7 +53,7 @@ NOTE: If one or more volumes go offline while a decommission is in progress, the
 
 * If you previously decommissioned a disconnected Storage Node, the data repair jobs have all completed successfully. See link:checking-data-repair-jobs.html[Check data repair jobs].
 
-IMPORTANT: Do not remove a grid node's virtual machine or other resources until instructed to do so in this procedure.
+IMPORTANT: Don't remove a grid node's virtual machine or other resources until instructed to do so in this procedure.
 
 .Steps
 
@@ -70,7 +70,7 @@ The node decommission procedure starts, and the progress is displayed for each n
 +
 image::../media/decommission_nodes_procedure_in_progress.png[screenshot of node decommissioning in progress]
 +
-IMPORTANT: Do not take a Storage Node offline after the decommission procedure has started. Changing the state might result in some content not being copied to other locations.
+IMPORTANT: Don't take a Storage Node offline after the decommission procedure has started. Changing the state might result in some content not being copied to other locations.
 
 . As soon as the new Recovery Package is available, click the link or select *MAINTENANCE* > *System* > *Recovery package* to access the Recovery Package page. Then, download the `.zip` file.
 +

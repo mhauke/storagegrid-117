@@ -15,7 +15,7 @@ StorageGRID hotfixes contain software changes that are made available outside of
 
 == Considerations for applying a hotfix
 
-You cannot apply a StorageGRID hotfix when another maintenance procedure is running. For example, you cannot apply a hotfix while a decommission, expansion, or recovery procedure is running.
+You can't apply a StorageGRID hotfix when another maintenance procedure is running. For example, you can't apply a hotfix while a decommission, expansion, or recovery procedure is running.
 
 NOTE: If a node or site decommission procedure is paused, you can safely apply a hotfix. In addition, you might be able to apply a hotfix during the final stages of a StorageGRID upgrade procedure. See the instructions for upgrading StorageGRID software for details.
 
@@ -37,7 +37,7 @@ The following example illustrates how to apply a hotfix when recovering the prim
 . The primary Admin Node fails.
 . You redeploy the primary Admin Node using StorageGRID 11._A.B_, and perform the recovery procedure.
 +
-NOTE: As required to match the grid version, you can use a minor release when deploying the node; you do not need to deploy the major release first.
+NOTE: As required to match the grid version, you can use a minor release when deploying the node; you don't need to deploy the major release first.
 
 . You then apply hotfix 11._A.B.y_ to the primary Admin Node.
 

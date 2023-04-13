@@ -51,7 +51,7 @@ NOTE: Permissions to set or modify S3 Object Lock properties of buckets or objec
 
 For more information, see the https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html[Amazon Web Services (AWS) documentation on bucket naming rules^].
 
-*Note*: You cannot change the bucket name after creating the bucket.
+*Note*: You can't change the bucket name after creating the bucket.
 
 | Region 
 
@@ -59,7 +59,7 @@ For more information, see the https://docs.aws.amazon.com/AmazonS3/latest/usergu
 
 Your StorageGRID administrator manages the available regions. A bucket's region can affect the data-protection policy applied to objects. By default, all buckets are created in the `us-east-1` region.
 
-*Note*: You cannot change the region after creating the bucket.
+*Note*: You can't change the region after creating the bucket.
 
 |===
 . Select *Continue*.
@@ -76,7 +76,7 @@ Enable object versioning if you want to store every version of each object in th
 +
 Enable S3 Object Lock for a bucket only if you need to keep objects for fixed amount of time, for example, to meet certain regulatory requirements. S3 Object Lock is a permanent setting that helps you prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely. 
 +
-IMPORTANT: After the S3 Object Lock setting is enabled for a bucket, it cannot be disabled. Anyone with the correct permissions can add objects to this bucket that cannot be changed. You might not be able to delete these objects or the bucket itself.
+IMPORTANT: After the S3 Object Lock setting is enabled for a bucket, it can't be disabled. Anyone with the correct permissions can add objects to this bucket that can't be changed. You might not be able to delete these objects or the bucket itself.
 +
 If you enable S3 Object Lock for a bucket, bucket versioning is enabled automatically. 
 
@@ -91,11 +91,11 @@ When *Default retention* is enabled, new objects added to the bucket will be aut
 | Default retention mode| Description
 
 | Compliance
-| * The object cannot be deleted until its retain-until-date is reached.
+| * The object can't be deleted until its retain-until-date is reached.
 
-* The object's retain-until-date can be increased, but it cannot be decreased.
+* The object's retain-until-date can be increased, but it can't be decreased.
 
-* The object's retain-until-date cannot be removed until that date is reached.
+* The object's retain-until-date can't be removed until that date is reached.
 
 | Governance
 

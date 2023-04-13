@@ -221,7 +221,7 @@ Consider the following example:
 
 |===
 
-Because object metadata is evenly distributed across the Storage Nodes at a site, each node in this example can only hold 1.32 TB of metadata. The additional 0.66 TB of allowed metadata space for SN2 and SN3 cannot be used.
+Because object metadata is evenly distributed across the Storage Nodes at a site, each node in this example can only hold 1.32 TB of metadata. The additional 0.66 TB of allowed metadata space for SN2 and SN3 can't be used.
 
 image::../media/metadata_space_three_storage_nodes.png[Metadata Space Three Storage Nodes]
 

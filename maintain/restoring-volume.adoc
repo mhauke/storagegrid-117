@@ -41,7 +41,7 @@ Whenever possible, restore object data using the *Volume restoration* page in th
 +
 The Volume restoration page in the Grid Manager also allows you to <<view-restoration-progress,monitor the volume restoration process>> and <<view-restoration-history,view restoration history>>.
 
-* If the volumes are not listed in the Grid Manager as candidates for restoration, follow the appropriate steps for using the `repair-data` script to restore object data:
+* If the volumes aren't listed in the Grid Manager as candidates for restoration, follow the appropriate steps for using the `repair-data` script to restore object data:
 ** link:restoring-object-data-to-storage-volume.html[Restoring object data to storage volume (system drive failure)]
 ** link:restoring-object-data-to-storage-volume-where-system-drive-is-intact.html[Restore object data to storage volume where system drive is intact]
 ** link:restoring-object-data-to-storage-volume-for-appliance.html[Restore object data to storage volume for appliance]
@@ -97,7 +97,7 @@ The *Restoration progress* tab shows the status of the volume restoration proces
 
 image::../media/vol-restore-restore-progress.png[Volume restoration - Restoration progress tab]
 
-Data repair rates for replicated and erasure-coded objects in all volumes are estimates summarizing all restorations in process, including those restorations initiated using the `repair-data` script. The percentage of objects in those volumes that are intact and do not require restoration is also indicated.
+Data repair rates for replicated and erasure-coded objects in all volumes are estimates summarizing all restorations in process, including those restorations initiated using the `repair-data` script. The percentage of objects in those volumes that are intact and don't require restoration is also indicated.
 
 NOTE: Replicated data restoration is dependent on the availability of resources where the replicated copies are stored. Progress of replicated data restoration is nonlinear and might take days or weeks to complete.
 
@@ -122,6 +122,6 @@ If multiple restoration jobs have failed, selecting *Retry* starts the most rece
 
 The *Restoration history* tab shows information about all volume restorations that have successfully completed.
 
-NOTE: Sizes are not applicable for replicated objects and display only for restorations that contain erasure coded (EC) data objects.
+NOTE: Sizes aren't applicable for replicated objects and display only for restorations that contain erasure coded (EC) data objects.
 
 image::../media/vol-restore-restore-history.png[Volume restoration - Restoration history tab]

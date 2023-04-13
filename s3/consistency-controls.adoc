@@ -25,7 +25,7 @@ You can set the consistency control for a bucket or an API operation to one of t
 * *strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
 * *strong-site*: Guarantees read-after-write consistency for all client requests within a site.
 * *read-after-new-write*: (Default) Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
-* *available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that do not exist). Not supported for S3 FabricPool buckets.
+* *available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that don't exist). Not supported for S3 FabricPool buckets.
 
 == Use "`read-after-new-write`" and "`available`" consistency controls
 
@@ -61,7 +61,7 @@ When setting the consistency controls for a bucket, be aware of the following:
 
 * Setting the consistency control for a bucket determines which consistency control is used for S3 operations performed on the objects in the bucket or on the bucket configuration. It does not affect operations on the bucket itself.
 * The consistency control for an individual API operation overrides the consistency control for the bucket.
-* In general, buckets should use the default consistency control, "`read-after-new-write.`" If requests are not working correctly, change the application client behavior if possible. Or, configure the client to specify the consistency control for each API request. Set the consistency control at the bucket level only as a last resort.
+* In general, buckets should use the default consistency control, "`read-after-new-write.`" If requests aren't working correctly, change the application client behavior if possible. Or, configure the client to specify the consistency control for each API request. Set the consistency control at the bucket level only as a last resort.
 
 == [[how-consistency-controls-and-ILM-rules-interact]]How consistency controls and ILM rules interact to affect data protection
 
@@ -88,7 +88,7 @@ When a client stores an object to the grid, StorageGRID makes both object copies
 
 The object is fully protected against loss at the time of the ingest successful message. For example, if the local site is lost shortly after ingest, copies of both the object data and the object metadata still exist at the remote site. The object is fully retrievable.
 
-If you instead used the same ILM rule and the "`strong-site`" consistency level, the client might receive a success message after object data is replicated to the remote site but before object metadata is distributed there. In this case, the level of protection of object metadata does not match the level of protection for object data. If the local site is lost shortly after ingest, object metadata is lost. The object cannot be retrieved.
+If you instead used the same ILM rule and the "`strong-site`" consistency level, the client might receive a success message after object data is replicated to the remote site but before object metadata is distributed there. In this case, the level of protection of object metadata does not match the level of protection for object data. If the local site is lost shortly after ingest, object metadata is lost. The object can't be retrieved.
 
 The inter-relationship between consistency levels and ILM rules can be complex. Contact NetApp if you require assistance.
 

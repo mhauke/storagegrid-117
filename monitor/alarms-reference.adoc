@@ -23,7 +23,7 @@ Available Attribute Relays
 a|
 BADC, BAMS, BARC, BCLB, BCMN, BLDR, BNMS, BSSM, BDDS
 a|
-Restore connectivity to a service (an ADC service) running an Attribute Relay Service as soon as possible. If there are no connected attribute relays, the grid node cannot report attribute values to the NMS service. Thus, the NMS service can no longer monitor the status of the service, or update attributes for the service.
+Restore connectivity to a service (an ADC service) running an Attribute Relay Service as soon as possible. If there are no connected attribute relays, the grid node can't report attribute values to the NMS service. Thus, the NMS service can no longer monitor the status of the service, or update attributes for the service.
 
 If the problem persists, contact technical support.
 
@@ -34,7 +34,7 @@ Available Metadata Services
 a|
 BARC, BLDR, BCMN
 a|
-An alarm is triggered when an LDR or ARC service loses connection to a DDS service. If this occurs, ingest or retrieve transactions cannot be processed. If the unavailability of DDS services is only a brief transient issue, transactions can be delayed.
+An alarm is triggered when an LDR or ARC service loses connection to a DDS service. If this occurs, ingest or retrieve transactions can't be processed. If the unavailability of DDS services is only a brief transient issue, transactions can be delayed.
 
 Check and restore connections to a DDS service to clear this alarm and return the service to full functionality.
 
@@ -141,7 +141,7 @@ Audit Messages Queued
 a|
 BADC, BAMS, BARC, BCLB, BCMN, BLDR, BNMS, BDDS
 a|
-If audit messages cannot be immediately forwarded to an audit relay or repository, the messages are stored in a disk queue. If the disk queue becomes full, outages can occur.
+If audit messages can't be immediately forwarded to an audit relay or repository, the messages are stored in a disk queue. If the disk queue becomes full, outages can occur.
 
 To allow you to respond in time to prevent an outage, AMQS alarms are triggered when the number of messages in the disk queue reaches the following thresholds:
 
@@ -192,7 +192,7 @@ If the multipath state alarm appears as "`Degraded`" (select *SUPPORT* > *Tools*
 . Plug in or replace the cable that does not display any indicator lights.
 . Wait one to five minutes.
 +
-Do not unplug the other cable until at least five minutes after you plug in the first one. Unplugging too early can cause the root volume to become read-only, which requires that the hardware be restarted.
+Don't unplug the other cable until at least five minutes after you plug in the first one. Unplugging too early can cause the root volume to become read-only, which requires that the hardware be restarted.
 
 . Return to the *SSM* > *Resources* page, and verify that the "`Degraded`" Multipath status has changed to "`Nominal`" in the Storage Hardware section.
 
@@ -328,7 +328,7 @@ Identifier Block Allocation Status
 a|
 CMN
 a|
-By default, an alarm is triggered when object identifiers cannot be allocated because ADC quorum cannot be reached.
+By default, an alarm is triggered when object identifiers can't be allocated because ADC quorum can't be reached.
 
 Identifier block allocation on the CMN service requires a quorum (50% + 1) of the ADC services to be online and connected. If quorum is unavailable, the CMN service is unable to allocate new identifier blocks until ADC quorum is reestablished. If ADC quorum is lost, there is generally no immediate impact on the StorageGRID system (clients can still ingest and retrieve content), as approximately one month's supply of identifiers are cached elsewhere in the grid; however, if the condition continues, the StorageGRID system will lose the ability to ingest new content.
 
@@ -729,7 +729,7 @@ Available Audit Relays
 a|
 BADC, BARC, BCLB, BCMN, BLDR, BNMS, BDDS
 a|
-If audit relays are not connected to ADC services, audit events cannot be reported. They are queued and unavailable to users until the connection is restored.
+If audit relays aren't connected to ADC services, audit events can't be reported. They are queued and unavailable to users until the connection is restored.
 
 Restore connectivity to an ADC service as soon as possible.
 
@@ -784,7 +784,7 @@ Transmit Errors
 a|
 SSM
 a|
-These errors can clear without being manually reset. If they do not clear, check network hardware. Check that the adapter hardware and driver are correctly installed and configured to work with your network routers and switches.
+These errors can clear without being manually reset. If they don't clear, check network hardware. Check that the adapter hardware and driver are correctly installed and configured to work with your network routers and switches.
 
 When the underlying problem is resolved, reset the counter. Select *SUPPORT* > *Tools* > *Grid topology*. Then select *_site_* > *_grid node_* > *SSM* > *Resources* > *Configuration* > *Main*, select *Reset Transmit Error Count*, and click *Apply Changes*.
 
@@ -871,7 +871,7 @@ Outbound Replication Status
 a|
 BLDR, BARC
 a|
-An alarm indicates that outbound replication is not possible: storage is in a state where objects cannot be retrieved. An alarm is triggered if outbound replication is disabled manually. Select *SUPPORT* > *Tools* > *Grid topology*. Then select *_site_* > *_grid node_* > *LDR* > *Replication* > *Configuration*.
+An alarm indicates that outbound replication is not possible: storage is in a state where objects can't be retrieved. An alarm is triggered if outbound replication is disabled manually. Select *SUPPORT* > *Tools* > *Grid topology*. Then select *_site_* > *_grid node_* > *LDR* > *Replication* > *Configuration*.
 
 An alarm is triggered if the LDR service is unavailable for replication. Select *SUPPORT* > *Tools* > *Grid topology*. Then select *_site_* > *_grid node_* > *LDR* > *Storage*.
 
@@ -947,7 +947,7 @@ If the value of Tivoli Storage Manager Status is Configuration Error and the Arc
 
 If the value of Tivoli Storage Manager Status is Connection Failure, or Connection Failure, Retrying, check the network configuration on the TSM middleware server, and the network connection between the TSM middleware server and the StorageGRID system.
 
-If the value of Tivoli Storage Manager Status is Authentication Failure, or Authentication Failure, Reconnecting, the StorageGRID system can connect to the TSM middleware server, but cannot authenticate the connection. Check that the TSM middleware server is configured with the correct user, password, and permissions, and restart the service.
+If the value of Tivoli Storage Manager Status is Authentication Failure, or Authentication Failure, Reconnecting, the StorageGRID system can connect to the TSM middleware server, but can't authenticate the connection. Check that the TSM middleware server is configured with the correct user, password, and permissions, and restart the service.
 
 If the value of Tivoli Storage Manager Status is Session Failure, an established session has been lost unexpectedly. Check the network connection between the TSM middleware server and the StorageGRID system. Check the middleware server for errors.
 
@@ -1054,7 +1054,7 @@ An alarm is triggered if there is an issue with storage controller B in a Storag
 
 If necessary, replace the component.
 
-Some appliance models do not have a storage controller B.
+Some appliance models don't have a storage controller B.
 
 a|
 SHLH
@@ -1244,7 +1244,7 @@ Status
 a|
 SSM
 a|
-An alarm is triggered if the value of Status for the mounted volume is Unknown. A value of Unknown or Offline can indicate that the volume cannot be mounted or accessed due to a problem with the underlying storage device.
+An alarm is triggered if the value of Status for the mounted volume is Unknown. A value of Unknown or Offline can indicate that the volume can't be mounted or accessed due to a problem with the underlying storage device.
 
 a|
 VPRI

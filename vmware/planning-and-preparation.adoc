@@ -22,7 +22,7 @@ Before starting the node deployment and grid configuration procedure, you must:
 +
 IMPORTANT: If your StorageGRID installation will not use StorageGRID appliance (hardware) Storage Nodes, you must use hardware RAID storage with battery-backed write cache (BBWC). StorageGRID does not support the use of virtual storage area networks (vSANs), software RAID, or no RAID protection.
 +
-NOTE: Hardware-specific installation and integration instructions are not included in the StorageGRID installation procedure. To learn how to install StorageGRID appliances, see link:../installconfig/index.html[Install appliance hardware].
+NOTE: Hardware-specific installation and integration instructions aren't included in the StorageGRID installation procedure. To learn how to install StorageGRID appliances, see link:../installconfig/index.html[Install appliance hardware].
 
 * Understand the link:../network/index.html[available network options and how each network option should be implemented on grid nodes].
 * Gather all networking information in advance. Unless you are using DHCP, gather the IP addresses to assign to each grid node, and the IP addresses of the DNS and NTP servers that will be used.

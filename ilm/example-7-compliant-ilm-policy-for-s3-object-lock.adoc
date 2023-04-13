@@ -53,7 +53,7 @@ Each object version has its own `retain-until-date` setting. This setting can be
 | `legal hold`
 | `"OFF"` (Not in effect)
 
-A legal hold can be placed or lifted on any object version at any time during the retention period. If an object is under a legal hold, the object cannot be deleted even if the `retain-until-date` has been reached.
+A legal hold can be placed or lifted on any object version at any time during the retention period. If an object is under a legal hold, the object can't be deleted even if the `retain-until-date` has been reached.
 |===
 
 == ILM rule 1 for S3 Object Lock example: Erasure coding profile with bucket matching
@@ -112,7 +112,7 @@ This example ILM rule initially stores two replicated object copies on Storage N
 | Not specified
 
 | Bucket name
-| Not specified, but will only apply to buckets that do not have S3 Object Lock (or the legacy Compliance feature) enabled.
+| Not specified, but will only apply to buckets that don't have S3 Object Lock (or the legacy Compliance feature) enabled.
 
 | Advanced filter
 | Not specified

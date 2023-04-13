@@ -35,7 +35,7 @@ NOTE: The `ETag` value returned is not an MD5 sum of the data, but follows the A
 
 == Versioning
 
-This operation completes a multipart upload. If versioning is enabled for a bucket, the object version is created upon completion of the multipart upload.
+This operation completes a multipart upload. If versioning is enabled for a bucket, the object version is created after completion of the multipart upload.
 
 If versioning is enabled for a bucket, a unique `versionId` is automatically generated for the version of the object being stored. This `versionId` is also returned in the response using the `x-amz-version-id` response header.
 

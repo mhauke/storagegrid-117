@@ -51,7 +51,7 @@ image::../media/endpoint_create.png[Create Endpoint]
 
 . Enter a display name to briefly describe the endpoint and its purpose.
 +
-The type of platform service that the endpoint supports is shown beside the endpoint name when it is listed on the Endpoints page, so you do not need to include that information in the name.
+The type of platform service that the endpoint supports is shown beside the endpoint name when it is listed on the Endpoints page, so you don't need to include that information in the name.
 
 . In the *URI* field, specify the Unique Resource Identifier (URI) of the endpoint.
 +
@@ -62,7 +62,7 @@ https://host:port
 http://host:port
 ----
 +
-If you do not specify a port, port 443 is used for HTTPS URIs and port 80 is used for HTTP URIs.
+If you don't specify a port, port 443 is used for HTTPS URIs and port 80 is used for HTTP URIs.
 +
 For example, the URI for a bucket hosted on StorageGRID might be:
 +
@@ -72,7 +72,7 @@ https://s3.example.com:10443
 +
 In this example, `s3.example.com` represents the DNS entry for the virtual IP (VIP) of the StorageGRID high availability (HA) group, and `10443` represents the port defined in the load balancer endpoint.
 +
-NOTE: Whenever possible, you should connect to a HA group of load-balancing nodes to avoid a single point of failure.
+NOTE: Whenever possible, you should connect to an HA group of load-balancing nodes to avoid a single point of failure.
 
 +
 Similarly, the URI for a bucket hosted on AWS might be:
@@ -82,11 +82,11 @@ https://s3-aws-region.amazonaws.com
 ----
 
 +
-NOTE: If the endpoint is used for the CloudMirror replication service, do not include the bucket name in the URI. You include the bucket name in the *URN* field.
+NOTE: If the endpoint is used for the CloudMirror replication service, don't include the bucket name in the URI. You include the bucket name in the *URN* field.
 
 . Enter the Unique Resource Name (URN) for the endpoint.
 +
-NOTE: You cannot change an endpoint's URN after the endpoint has been created.
+NOTE: You can't change an endpoint's URN after the endpoint has been created.
 
 . Select *Continue*.
 . Select a value for *Authentication type*, and then enter or upload the required credentials.
@@ -147,7 +147,7 @@ a|The certificate used for the TLS connection is not verified. This option is no
 * A success message appears if the endpoint can be reached using the specified credentials. The connection to the endpoint is validated from one node at each site.
 * An error message appears if endpoint validation fails. If you need to modify the endpoint to correct the error, select *Return to endpoint details* and update the information. Then, select *Test and create endpoint*.
 +
-NOTE: Endpoint creation fails if platform services are not enabled for your tenant account. Contact your StorageGRID administrator.
+NOTE: Endpoint creation fails if platform services aren't enabled for your tenant account. Contact your StorageGRID administrator.
 
 After you have configured an endpoint, you can use its URN to configure a platform service.
 

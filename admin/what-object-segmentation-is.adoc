@@ -17,7 +17,7 @@ image::../media/object_segmentation_diagram.gif[Object segmentation workflow]
 
 On retrieval of a segment container, the LDR service assembles the original object from its segments and returns the object to the client.
 
-The container and segments are not necessarily stored on the same Storage Node. Container and segments can be stored on any Storage Node within the storage pool specified in the ILM rule. 
+The container and segments aren't necessarily stored on the same Storage Node. Container and segments can be stored on any Storage Node within the storage pool specified in the ILM rule. 
 
 Each segment is treated by the StorageGRID system independently and contributes to the count of attributes such as Managed Objects and Stored Objects. For example, if an object stored to the StorageGRID system is split into two segments, the value of Managed Objects increases by three after the ingest is complete, as follows:
 

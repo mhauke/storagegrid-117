@@ -37,7 +37,7 @@ If either StorageGRID system in the grid federation connection uses SSO, both gr
 +
 When you create the tenant, you will select this group to have the initial Root access permission for both the source and destination tenant accounts. 
 +
-NOTE: If this admin group doesn't exist on both grids before you create the tenant, the tenant won't be replicated to the destination.
+NOTE: If this admin group doesn't exist on both grids before you create the tenant, the tenant isn't replicated to the destination.
 
 === [[account-clone-identity-federation]]Configure grid-level identity federation for account clone (optional)
 
@@ -49,7 +49,7 @@ If either StorageGRID system uses identity federation without SSO, both grids mu
 
 . Optionally, if a federated group will have initial Root access permission for both the source and destination tenant accounts, link:managing-admin-groups.html[create the same admin group] on both grids by importing the same federated group.
 +
-NOTE: If you assign Root access permission to a federated group that doesn't exist on both grids, the tenant won't be replicated to the destination grid.
+NOTE: If you assign Root access permission to a federated group that doesn't exist on both grids, the tenant isn't replicated to the destination grid.
 
 . If you don't want a federated group to have initial Root access permission for both accounts, specify a password for the local root user.
 

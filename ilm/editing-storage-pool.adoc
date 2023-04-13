@@ -25,13 +25,13 @@ If you are adding a new site or storage grade to a storage pool that is used in 
 
 . Select the check box for the storage pool you want to edit.
 +
-You cannot edit the All Storage Nodes storage pool (StorageGRID 11.6 and earlier).
+You can't edit the All Storage Nodes storage pool (StorageGRID 11.6 and earlier).
 
 . Select *Edit*.
 . As required, change the storage pool name.
 . As required, select other sites and storage grades.
 +
-NOTE: You are prevented from changing the site or storage grade if the storage pool is used in an erasure coding profile and the change would cause the erasure-coding scheme to become invalid. For example, if a storage pool used in a erasure coding profile currently includes a storage grade with only one site, you are prevented from using a storage grade with two sites since the change would make the erasure-coding scheme invalid.
+NOTE: You are prevented from changing the site or storage grade if the storage pool is used in an erasure coding profile and the change would cause the erasure-coding scheme to become invalid. For example, if a storage pool used in a erasure coding profile currently includes a storage grade with only one site, you are prevented from using a storage grade with two sites because the change would make the erasure-coding scheme invalid.
 
 . Select *Save*.
 

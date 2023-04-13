@@ -2,14 +2,14 @@
 permalink: maintain/changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html
 sidebar: sidebar
 keywords: storagegrid, node ip address, change node ip, change node ip address, changing node ip, changing node ip address
-summary: 'If you need to change the Grid Network IP address for all nodes in the grid, you must follow this special procedure. You cannot do a grid-wide Grid Network IP change using the procedure to change individual nodes.'
+summary: 'If you need to change the Grid Network IP address for all nodes in the grid, you must follow this special procedure. You can't do a grid-wide Grid Network IP change using the procedure to change individual nodes.'
 ---
 = Change IP addresses for all nodes in grid
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you need to change the Grid Network IP address for all nodes in the grid, you must follow this special procedure. You cannot do a grid-wide Grid Network IP change using the procedure to change individual nodes.
+If you need to change the Grid Network IP address for all nodes in the grid, you must follow this special procedure. You can't do a grid-wide Grid Network IP change using the procedure to change individual nodes.
 
 .What you'll need
 
@@ -17,7 +17,7 @@ If you need to change the Grid Network IP address for all nodes in the grid, you
 
 To ensure that the grid starts up successfully, you must make all the changes at the same time.
 
-NOTE: This procedure applies to the Grid Network only. You cannot use this procedure to change IP addresses on the Admin or Client Networks.
+NOTE: This procedure applies to the Grid Network only. You can't use this procedure to change IP addresses on the Admin or Client Networks.
 
 If you want to change the IP addresses and MTU for the nodes at one site only, follow the link:changing-nodes-network-configuration.html[Change node network configuration] instructions.
 
@@ -54,7 +54,7 @@ After you make your selection, the prompt shows the node names, Grid Network nam
 +
 Editing the IP address, prefix length, gateway, or MTU of a DHCP-configured interface will change the interface to static. A warning is displayed before each interface configured by DHCP.
 +
-Interfaces configured as `fixed` cannot be edited.
+Interfaces configured as `fixed` can't be edited.
 
  .. To set a new value, enter it in the format shown for the current value.
  .. After editing all nodes you want to change, enter *q* to return to the main menu.
@@ -71,7 +71,7 @@ NOTE: Certain command line interfaces might show additions and deletions using s
 
 . Select option *7* to validate all changes.
 +
-This validation ensures that the rules for the Grid Network, such as not using overlapping subnets, are not violated.
+This validation ensures that the rules for the Grid Network, such as not using overlapping subnets, aren't violated.
 +
 In this example, validation returned errors.
 +
@@ -84,7 +84,7 @@ image::../media/change_ip_tool_validate_sample_passed_messages.gif[screenshot de
 . Once validation passes, select *10* to apply the new network configuration.
 . Select *stage* to apply the changes the next time the nodes are restarted.
 +
-IMPORTANT: You must select *stage*. Do not perform a rolling restart, either manually or by selecting *apply* instead of *stage*; the grid will not start up successfully.
+IMPORTANT: You must select *stage*. Don't perform a rolling restart, either manually or by selecting *apply* instead of *stage*; the grid will not start up successfully.
 
 . After your changes are complete, select *0* to exit the Change IP tool.
 . Shut down all nodes simultaneously.

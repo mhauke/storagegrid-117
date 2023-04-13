@@ -46,7 +46,7 @@ a|
 ILM-driven object deletions
 
 a|
-To match the deletion behavior of the AWS CRR and SNS services, CloudMirror and event notification requests are not sent when an object in the source bucket is deleted because of StorageGRID ILM rules. For example, no CloudMirror or event notifications requests are sent if an ILM rule deletes an object after 14 days.
+To match the deletion behavior of the AWS CRR and SNS services, CloudMirror and event notification requests aren't sent when an object in the source bucket is deleted because of StorageGRID ILM rules. For example, no CloudMirror or event notifications requests are sent if an ILM rule deletes an object after 14 days.
 
 In contrast, search integration requests are sent when objects are deleted because of ILM.
 
@@ -80,15 +80,15 @@ If the source S3 bucket in StorageGRID has versioning enabled, you should also e
 
 When using versioning, note that the ordering of object versions in the destination bucket is best effort and not guaranteed by the CloudMirror service, due to limitations in the S3 protocol.
 
-*Note*: Version IDs for the source bucket in StorageGRID are not related to the version IDs for the destination bucket.
+*Note*: Version IDs for the source bucket in StorageGRID aren't related to the version IDs for the destination bucket.
 
 a|
 Tagging for object versions
 
 a|
-The CloudMirror service does not replicate any PUT Object tagging or DELETE Object tagging requests that supply a version ID, due to limitations in the S3 protocol. Because version IDs for the source and destination are not related, there is no way to ensure that a tag update to a specific version ID will be replicated.
+The CloudMirror service does not replicate any PUT Object tagging or DELETE Object tagging requests that supply a version ID, due to limitations in the S3 protocol. Because version IDs for the source and destination aren't related, there is no way to ensure that a tag update to a specific version ID will be replicated.
 
-In contrast, the CloudMirror service does replicate PUT Object tagging requests or DELETE Object tagging requests that do not specify a version ID. These requests update the tags for the latest key (or the latest version if the bucket is versioned). Normal ingests with tags (not tagging updates) are also replicated.
+In contrast, the CloudMirror service does replicate PUT Object tagging requests or DELETE Object tagging requests that don't specify a version ID. These requests update the tags for the latest key (or the latest version if the bucket is versioned). Normal ingests with tags (not tagging updates) are also replicated.
 
 a|
 Multipart uploads and `ETag` values

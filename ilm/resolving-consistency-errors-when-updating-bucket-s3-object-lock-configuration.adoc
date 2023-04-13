@@ -16,7 +16,7 @@ Tenant users who have buckets with S3 Object Lock (or legacy Compliance) enabled
 When a tenant user updates the settings for an S3 bucket or an object version, StorageGRID attempts to immediately update the bucket or object metadata across the grid. If the system is unable to update the metadata because a data center site or multiple Storage Nodes are unavailable, it returns an error:
 ----
 503: Service Unavailable
-Unable to update compliance settings because the settings cannot be consistently applied on enough storage services. Contact your grid administrator for assistance.
+Unable to update compliance settings because the settings can't be consistently applied on enough storage services. Contact your grid administrator for assistance.
 ----
 
 To resolve this error, follow these steps:

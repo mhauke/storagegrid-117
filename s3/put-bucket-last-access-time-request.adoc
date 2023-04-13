@@ -17,9 +17,9 @@ NOTE: Starting with StorageGRID version 10.3, updates to last access time are di
 
 If last access time updates are disabled for a bucket, the following behavior is applied to operations on the bucket:
 
-* GET Object, GET Object ACL, GET Object Tagging, and HEAD Object requests do not update last access time. The object is not added to queues for information lifecycle management (ILM) evaluation.
+* GET Object, GET Object ACL, GET Object Tagging, and HEAD Object requests don't update last access time. The object is not added to queues for information lifecycle management (ILM) evaluation.
 * PUT Object - Copy and PUT Object Tagging requests that update only the metadata also update last access time. The object is added to queues for ILM evaluation.
-* If updates to last access time are disabled for the source bucket, PUT Object - Copy requests do not update last access time for the source bucket. The object that was copied is not added to queues for ILM evaluation for the source bucket. However, for the destination, PUT Object - Copy requests always update last access time. The copy of the object is added to queues for ILM evaluation.
+* If updates to last access time are disabled for the source bucket, PUT Object - Copy requests don't update last access time for the source bucket. The object that was copied is not added to queues for ILM evaluation for the source bucket. However, for the destination, PUT Object - Copy requests always update last access time. The copy of the object is added to queues for ILM evaluation.
 * Complete Multipart Upload requests update last access time. The completed object is added to queues for ILM evaluation.
 
 == Request examples

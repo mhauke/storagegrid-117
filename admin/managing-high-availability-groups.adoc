@@ -28,7 +28,7 @@ Each HA group provides access to the shared services on the selected nodes.
 
 . You select a network interface for one or more Admin Nodes or Gateway Nodes. You can use a Grid Network (eth0) interface, Client Network (eth2) interface, VLAN interface, or an access interface you have added to the node. 
 +
-NOTE: You cannot add an interface to an HA group if it has a DHCP-assigned IP address.
+NOTE: You can't add an interface to an HA group if it has a DHCP-assigned IP address.
 
 . You specify one interface to be the Primary interface. The Primary interface is the active interface unless a failure occurs.
 
@@ -42,7 +42,7 @@ For instructions, see link:configure-high-availability-group.html[Configure high
 
 During normal operation, all of the VIP addresses for the HA group are added to the Primary interface, which is the first interface in the priority order. As long as the Primary interface remains available, it is used when clients connect to any VIP address for the group. That is, during normal operation, the Primary interface is the "`active`" interface for the group.
 
-Similarly, during normal operation, any lower priority interfaces for the HA group act as "`backup`" interfaces. These backup interfaces are not used unless the Primary (currently active) interface becomes unavailable.
+Similarly, during normal operation, any lower priority interfaces for the HA group act as "`backup`" interfaces. These backup interfaces aren't used unless the Primary (currently active) interface becomes unavailable.
 
 == View the current HA group status of a node
 
@@ -52,8 +52,8 @@ If the *Overview* tab includes an entry for *HA groups*, the node is assigned to
 
 * *Active*: The HA group is currently being hosted on this node.
 * *Backup*: The HA group is not currently using this node; this is a backup interface. 
-* *Stopped*: The HA group cannot be hosted on this node because the High Availability (keepalived) service has been stopped manually.
-* *Fault*: The HA group cannot be hosted on this node because of one or more of the following:
+* *Stopped*: The HA group can't be hosted on this node because the High Availability (keepalived) service has been stopped manually.
+* *Fault*: The HA group can't be hosted on this node because of one or more of the following:
 ** The Load Balancer (nginx-gw) service is not running on the node.
 ** The node's eth0 or VIP interface is down.
 ** The node is down.

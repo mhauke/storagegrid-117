@@ -21,7 +21,7 @@ You might need to replace the appliance if it is not functioning optimally or if
 
 The StorageGRID node will not be accessible while you replace the appliance. If the appliance is functioning sufficiently, you can perform a controlled shutdown at the start of this procedure.
 
-NOTE: If you are replacing the appliance before installing StorageGRID software, you might not be able to access the StorageGRID Appliance Installer immediately after completing this procedure. While you can access the StorageGRID Appliance Installer from other hosts on the same subnet as the appliance, you cannot access it from hosts on other subnets. This condition should resolve itself within 15 minutes (when any ARP cache entries for the original appliance time out), or you can clear the condition immediately by purging any old ARP cache entries manually from the local router or gateway.
+NOTE: If you are replacing the appliance before installing StorageGRID software, you might not be able to access the StorageGRID Appliance Installer immediately after completing this procedure. While you can access the StorageGRID Appliance Installer from other hosts on the same subnet as the appliance, you can't access it from hosts on other subnets. This condition should resolve itself within 15 minutes (when any ARP cache entries for the original appliance time out), or you can clear the condition immediately by purging any old ARP cache entries manually from the local router or gateway.
 
 .Steps
 . Display the current configurations of the appliance and record them.
@@ -42,7 +42,7 @@ link:shut-down-sgf6112.html[Shut down SGF6112]
 . Remove and replace the appliance:
  .. Label the cables and then disconnect the cables and any network transceivers.
 +
-IMPORTANT: To prevent degraded performance, do not twist, fold, pinch, or step on the cables.
+IMPORTANT: To prevent degraded performance, don't twist, fold, pinch, or step on the cables.
 
  .. Remove the failed appliance from the cabinet or rack.
  .. Note the position of the replaceable components (two power supplies, eight cooling fans, three NICs, and twelve SSDs) in the failed appliance.
@@ -107,12 +107,12 @@ HDD11
 +
 Follow the maintenance instructions provided for reinstalling the replaceable components.
 +
-IMPORTANT: If you wish to retain the data on the drives, be sure to insert the SSD drives into the same drive slots they occupied in the failed appliance. If you do not, the Appliance Installer will display a warning message and you will have to put the drives into the correct slots and reboot the appliance before the appliance can rejoin the grid.  
+IMPORTANT: If you wish to retain the data on the drives, be sure to insert the SSD drives into the same drive slots they occupied in the failed appliance. If you don't, the Appliance Installer will display a warning message and you will have to put the drives into the correct slots and reboot the appliance before the appliance can rejoin the grid.  
  .. Install the replacement appliance into the cabinet or rack.
  .. Replace the cables and any optical transceivers.
  .. Power on the appliance and wait for it to rejoin the grid. If the appliance does not rejoin the grid, follow the guidance on the StorageGRID Appliance Installer home page to address any issues.
 +
-. If the appliance where you replaced the appliance used a key management server (KMS) to encrypt data, additional configuration might be required before the node can join the grid. If the node does not automatically join the grid, make sure that these configuration settings have transferred to the new appliance and manually configure any settings that do not have the expected configuration:
+. If the appliance where you replaced the appliance used a key management server (KMS) to encrypt data, additional configuration might be required before the node can join the grid. If the node does not automatically join the grid, make sure that these configuration settings have transferred to the new appliance and manually configure any settings that don't have the expected configuration:
 ** link:../installconfig/accessing-storagegrid-appliance-installer.html[Configure StorageGRID connections]  
 ** link:../admin/kms-overview-of-kms-and-appliance-configuration.html#set-up-the-appliance[Configure node encryption for the appliance]
 

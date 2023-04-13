@@ -21,4 +21,4 @@ The Archive Node can be integrated with a new or an existing TSM server; it does
 
 It is possible to configure more than one Archive Node to write to the same TSM server; however, this configuration is only recommended if the Archive Nodes write different sets of data to the TSM server. Configuring more than one Archive Node to write to the same TSM server is not recommended when each Archive Node writes copies of the same object data to the archive. In the latter scenario, both copies are subject to a single point of failure (the TSM server) for what are supposed to be independent, redundant copies of object data.
 
-Archive Nodes do not make use of the Hierarchical Storage Management (HSM) component of TSM.
+Archive Nodes don't make use of the Hierarchical Storage Management (HSM) component of TSM.

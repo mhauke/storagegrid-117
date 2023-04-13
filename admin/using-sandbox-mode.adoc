@@ -41,7 +41,7 @@ When SSO is enabled and a user attempts to sign in to an Admin Node, StorageGRID
 
 To allow StorageGRID (the service provider) and the SSO identity provider to communicate securely about user authentication requests, you must configure certain settings in StorageGRID. Next, you must use the SSO identity provider's software to create a relying party trust (AD FS), Enterprise Application (Azure) or Service Provider (PingFederate) for each Admin Node. Finally, you must return to StorageGRID to enable SSO.
 
-Sandbox mode makes it easy to perform this back-and-forth configuration and to test all of your settings before you enable SSO. When you are using sandbox mode, users cannot sign in using SSO.
+Sandbox mode makes it easy to perform this back-and-forth configuration and to test all of your settings before you enable SSO. When you are using sandbox mode, users can't sign in using SSO.
 
 == Access sandbox mode
 
@@ -53,7 +53,7 @@ The Single Sign-on page appears, with the *Disabled* option selected.
 +
 image::../media/sso_status_disabled.png[Single Sign-on page with SSO Status disabled]
 +
-NOTE: If the SSO Status options do not appear, confirm you have configured the identity provider as the federated identity source. See link:requirements-for-sso.html[Requirements and considerations for single sign-on].
+NOTE: If the SSO Status options don't appear, confirm you have configured the identity provider as the federated identity source. See link:requirements-for-sso.html[Requirements and considerations for single sign-on].
 
 . Select *Sandbox Mode*.
 +
@@ -90,7 +90,7 @@ If you select this setting, copy the text of the custom certificate and and past
 
 .. In the Relying Party section, specify the *Relying party identifier* for StorageGRID. This value controls the name you use for each relying party trust in AD FS.
 
-* For example, if your grid has only one Admin Node and you do not anticipate adding more Admin Nodes in the future, enter `SG` or `StorageGRID`.
+* For example, if your grid has only one Admin Node and you don't anticipate adding more Admin Nodes in the future, enter `SG` or `StorageGRID`.
 
 * If your grid includes more than one Admin Node, include the string `[HOSTNAME]` in the identifier. For example, `SG-[HOSTNAME]`. This generates a table that shows the relying party identifier for each Admin Node in your system, based on the node's hostname.
 +
@@ -119,7 +119,7 @@ If you select this setting, copy the text of the custom certificate and and past
 
 .. In the Enterprise Application section, specify the *Enterprise application name* for StorageGRID. This value controls the name you use for each enterprise application in Azure AD.
 
-* For example, if your grid has only one Admin Node and you do not anticipate adding more Admin Nodes in the future, enter `SG` or `StorageGRID`.
+* For example, if your grid has only one Admin Node and you don't anticipate adding more Admin Nodes in the future, enter `SG` or `StorageGRID`.
 
 * If your grid includes more than one Admin Node, include the string `[HOSTNAME]` in the identifier. For example, `SG-[HOSTNAME]`. This generates a table that shows an enterprise application name for each Admin Node in your system, based on the node's hostname.
 +
@@ -153,7 +153,7 @@ If you select this setting, copy the text of the custom certificate and and past
 
 .. In the Service Provider (SP) section, specify the *SP connection ID* for StorageGRID. This value controls the name you use for each SP connection in PingFederate.
 
-* For example, if your grid has only one Admin Node and you do not anticipate adding more Admin Nodes in the future, enter `SG` or `StorageGRID`.
+* For example, if your grid has only one Admin Node and you don't anticipate adding more Admin Nodes in the future, enter `SG` or `StorageGRID`.
 
 * If your grid includes more than one Admin Node, include the string `[HOSTNAME]` in the identifier. For example, `SG-[HOSTNAME]`. This generates a table that shows the SP connection ID for each Admin Node in your system, based on the node's hostname.
 +

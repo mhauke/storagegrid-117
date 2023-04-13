@@ -64,7 +64,7 @@ s3:*Object
 
 In the Resource element, you can use the wildcard characters (\*) and (?). While the asterisk (*) matches 0 or more characters, the question mark (?) matches any single character.
 
-In the Principal element, wildcard characters are not supported except to set anonymous access, which grants permission to everyone. For example, you set the wildcard (*) as the Principal value.
+In the Principal element, wildcard characters aren't supported except to set anonymous access, which grants permission to everyone. For example, you set the wildcard (*) as the Principal value.
 
 ----
 "Principal":"*"
@@ -163,7 +163,7 @@ In policy statements, you can use the Resource element to specify the bucket or 
 
 Use the Principal element to identity the user, group, or tenant account that is allowed/denied access to the resource by the policy statement.
 
-* Each policy statement in a bucket policy must include a Principal element. Policy statements in a group policy do not need the Principal element because the group is understood to be the principal.
+* Each policy statement in a bucket policy must include a Principal element. Policy statements in a group policy don't need the Principal element because the group is understood to be the principal.
 * In a policy, principals are denoted by the element "`Principal,`" or alternatively "`NotPrincipal`" for exclusion.
 * Account-based identities must be specified using an ID or an ARN:
 +
@@ -649,15 +649,15 @@ The s3:PutOverwriteObject permission is a custom StorageGRID permission that app
 Possible settings for this permission include:
 
 * *Allow*: The client can overwrite an object. This is the default setting.
-* *Deny*: The client cannot overwrite an object. When set to Deny, the PutOverwriteObject permission works as follows:
+* *Deny*: The client can't overwrite an object. When set to Deny, the PutOverwriteObject permission works as follows:
  ** If an existing object is found at the same path:
-  *** The object's data, user-defined metadata, or S3 object tagging cannot be overwritten.
+  *** The object's data, user-defined metadata, or S3 object tagging can't be overwritten.
   *** Any ingest operations in progress are cancelled, and an error is returned.
   *** If S3 versioning is enabled, the Deny setting prevents PUT Object tagging or DELETE Object tagging operations from modifying the TagSet for an object and its noncurrent versions.
  ** If an existing object is not found, this permission has no effect.
 * When this permission is not present, the effect is the same as if Allow were set.
 
-IMPORTANT: If the current S3 policy allows overwrite, and the PutOverwriteObject permission is set to Deny, the client cannot overwrite an object's data, user-defined metadata, or object tagging. In addition, if the *Prevent client modification* check box is selected (*CONFIGURATION* > *Security settings* > *Network and objects*), that setting overrides the setting of the PutOverwriteObject permission.
+IMPORTANT: If the current S3 policy allows overwrite, and the PutOverwriteObject permission is set to Deny, the client can't overwrite an object's data, user-defined metadata, or object tagging. In addition, if the *Prevent client modification* check box is selected (*CONFIGURATION* > *Security settings* > *Network and objects*), that setting overrides the setting of the PutOverwriteObject permission.
 
 == Specify conditions in a policy
 
@@ -776,7 +776,7 @@ Will compare to the IP address from which the request was sent. Can be used for 
 
 *Note:* If the S3 request was sent through the Load Balancer service on Admin Nodes and Gateways Nodes, this will compare to the IP address upstream of the Load Balancer service.
 
-*Note*: If a third-party, non-transparent load balancer is used, this will compare to the IP address of that load balancer. Any `X-Forwarded-For` header will be ignored since its validity cannot be ascertained.
+*Note*: If a third-party, non-transparent load balancer is used, this will compare to the IP address of that load balancer. Any `X-Forwarded-For` header will be ignored because its validity can't be ascertained.
 
 a|
 Resource/Identity
@@ -991,7 +991,7 @@ To ensure that overwrites are always denied, you can:
 
 IMPORTANT: Setting DeleteObject to DENY in an S3 policy does not prevent ILM from deleting objects when a rule such as "`zero copies after 30 days`" exists.
 
-IMPORTANT: Even when all of these rules and policies are applied, they do not guard against concurrent writes (see Situation A). They do guard against sequential completed overwrites (see Situation B).
+IMPORTANT: Even when all of these rules and policies are applied, they don't guard against concurrent writes (see Situation A). They do guard against sequential completed overwrites (see Situation B).
 
 *Situation A*: Concurrent writes (not guarded against)
 

@@ -42,7 +42,7 @@ If you want a user to monitor grid topology and acknowledge alarms only, you sho
 
 == Change tenant root password
 
-This permission provides access to the *Change root password* option on the Tenants page, allowing you to control who can change the password for the tenant's local root user. This permission is also used for migrating S3 keys when the S3 key import feature is enabled. Users who do not have this permission cannot see the *Change root password* option.
+This permission provides access to the *Change root password* option on the Tenants page, allowing you to control who can change the password for the tenant's local root user. This permission is also used for migrating S3 keys when the S3 key import feature is enabled. Users who don't have this permission can't see the *Change root password* option.
 
 NOTE: To grant access to the Tenants page, which contains the *Change root password* option, also assign the *Tenant accounts* permission.
 
@@ -86,7 +86,7 @@ Users must have the Maintenance permission to use these options:
 * *SUPPORT* > *Tools*:
  ** Logs
 
-Users who do not have the Maintenance permission can view, but not edit, these pages:
+Users who don't have the Maintenance permission can view, but not edit, these pages:
 
 * *MAINTENANCE* > *Network*:
  ** DNS servers

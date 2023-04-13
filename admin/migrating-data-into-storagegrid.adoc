@@ -45,7 +45,7 @@ Migration of large quantities of data places additional load on the system. When
 
 If the heavy loading persists, queues can develop for various operations that the StorageGRID system must perform to ensure full redundancy of object data and metadata.
 
-Data migration must be carefully managed according to the guidelines in this document to ensure safe and efficient operation of the StorageGRID system during migration. When migrating data, ingest objects in batches or continuously throttle ingest. Then, continuously monitor the StorageGRID system to ensure that various attribute values are not exceeded.
+Data migration must be carefully managed according to the guidelines in this document to ensure safe and efficient operation of the StorageGRID system during migration. When migrating data, ingest objects in batches or continuously throttle ingest. Then, continuously monitor the StorageGRID system to ensure that various attribute values aren't exceeded.
 
 == Schedule and monitor data migration
 
@@ -54,7 +54,7 @@ Data migration must be scheduled and monitored as necessary to ensure data is pl
 === Schedule data migration
 Avoid migrating data during core operational hours. Limit data migration to evenings, weekends, and other times when system usage is low.
 
-If possible, do not schedule data migration during periods of high activity. However, if it is not practical to completely avoid the high activity period, it is safe to proceed as long as you closely monitor the relevant attributes and take action if they exceed acceptable values. 
+If possible, don't schedule data migration during periods of high activity. However, if it is not practical to completely avoid the high activity period, it is safe to proceed as long as you closely monitor the relevant attributes and take action if they exceed acceptable values. 
 
 === Monitor data migration
 

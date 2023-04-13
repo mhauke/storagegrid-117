@@ -28,7 +28,7 @@ The bucket details page appears.
 
 . Optionally, enable or disable *Default retention* for this bucket.
 +
-Changes to this setting do not apply to objects already in the bucket or to any objects that might have their own retention periods.
+Changes to this setting don't apply to objects already in the bucket or to any objects that might have their own retention periods.
 
 . If *Default retention* is enabled, specify a *Default retention mode* for the bucket.
 +
@@ -37,11 +37,11 @@ Changes to this setting do not apply to objects already in the bucket or to any 
 | Default retention mode| Description
 
 | Compliance
-| * The object cannot be deleted until its retain-until-date is reached.
+| * The object can't be deleted until its retain-until-date is reached.
 
-* The object's retain-until-date can be increased, but it cannot be decreased.
+* The object's retain-until-date can be increased, but it can't be decreased.
 
-* The object's retain-until-date cannot be removed until that date is reached.
+* The object's retain-until-date can't be removed until that date is reached.
 
 | Governance
 

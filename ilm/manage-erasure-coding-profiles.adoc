@@ -51,7 +51,7 @@ When you deactivate an erasure coding profile, the profile still appears on the 
 
 image::../media/deactivated_ec_profile.png[Deactivated EC Profile]
 
-You can no longer use an erasure coding profile that has been deactivated. A deactivated profile is not shown when you create the placement instructions for an ILM rule. You cannot reactivate a deactivated profile.
+You can no longer use an erasure coding profile that has been deactivated. A deactivated profile is not shown when you create the placement instructions for an ILM rule. You can't reactivate a deactivated profile.
 
 StorageGRID prevents you from deactivating an erasure coding profile if either of the following is true:
 
@@ -64,7 +64,7 @@ StorageGRID prevents you from deactivating an erasure coding profile if either o
 
 . Review the *Status* column to confirm that the erasure coding profile you want to deactivate is not used in any ILM rules.
 +
-You cannot deactivate an erasure coding profile if it is used in any ILM rule. In the example, the *2+1 Data Center 1* profile is used in at least one ILM rule.
+You can't deactivate an erasure coding profile if it is used in any ILM rule. In the example, the *2+1 Data Center 1* profile is used in at least one ILM rule.
 +
 image::../media/ec_profile_used_in_ilm_rule.png[EC Profile Used in ILM Rule]
 

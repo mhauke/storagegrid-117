@@ -19,7 +19,7 @@ You can create virtual LAN (VLAN) interfaces on Admin Nodes and Gateway Nodes an
 
 * A parent interface can be the Grid Network (eth0), the Client Network (eth2), or an additional trunk interface for the VM or bare-metal host (for example, ens256).
 
-* For each VLAN interface, you can select only one parent interface for a given node. For example, you cannot use both the Grid Network interface and the Client Network interface on the same Gateway Node as the parent interface for the same VLAN.
+* For each VLAN interface, you can select only one parent interface for a given node. For example, you can't use both the Grid Network interface and the Client Network interface on the same Gateway Node as the parent interface for the same VLAN.
 
 * If the VLAN interface is for Admin Node traffic, which includes traffic related to the Grid Manager and the Tenant Manager, select interfaces on Admin Nodes only.
 
@@ -61,7 +61,7 @@ You can use the Grid Manager to create VLAN interfaces that allow clients to acc
 
 . Specify the ID of the VLAN in your network. You can enter any value between 1 and 4094.
 +
-VLAN IDs do not need to be unique. For example, you might use VLAN ID 200 for admin traffic at one site and the same VLAN ID for client traffic at another site. You can create separate VLAN interfaces with different sets of parent interfaces at each site. However, two VLAN interfaces with the same ID cannot share the same interface on a node.
+VLAN IDs don't need to be unique. For example, you might use VLAN ID 200 for admin traffic at one site and the same VLAN ID for client traffic at another site. You can create separate VLAN interfaces with different sets of parent interfaces at each site. However, two VLAN interfaces with the same ID can't share the same interface on a node.
 If you specify an ID that has already been used, a message appears. 
 
 . Optionally, enter a short description for the VLAN interface.
@@ -69,7 +69,7 @@ If you specify an ID that has already been used, a message appears.
 . Select *Continue*.
 
 === Choose parent interfaces
-The table lists the available interfaces for all Admin Nodes and Gateway Nodes at each site in your grid. Admin Network (eth1) interfaces cannot be used as parent interfaces and are not shown.
+The table lists the available interfaces for all Admin Nodes and Gateway Nodes at each site in your grid. Admin Network (eth1) interfaces can't be used as parent interfaces and aren't shown.
 
 .Steps
 
@@ -123,7 +123,7 @@ For example, suppose VLAN 200 is attached to parent interfaces on Nodes A and B.
 +
 You can't update a VLAN ID if the VLAN is used in an HA group.
 
-. Optionally, select or unselect the check boxes to add parent interfaces or to remove unused interfaces. Then, select *Continue*.
+. Optionally, select or clear the check boxes to add parent interfaces or to remove unused interfaces. Then, select *Continue*.
 
 . Review the configuration and make any changes.
 

@@ -15,7 +15,7 @@ If you need to access StorageGRID using an external monitoring tool, you must up
 
 See link:using-storagegrid-security-certificates.html[Manage security certificates] and link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[Configure custom server certificates]. 
 
-NOTE: To ensure that operations are not disrupted by a failed server certificate, the *Expiration of client certificates configured on the Certificates page* alert is triggered when this server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the client certificate on the Client tab.
+NOTE: To ensure that operations aren't disrupted by a failed server certificate, the *Expiration of client certificates configured on the Certificates page* alert is triggered when this server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the client certificate on the Client tab.
 
 NOTE: If you are using a key management server (KMS) to protect the data on specially configured appliance nodes, see the specific information about link:kms-adding.html[uploading a KMS client certificate].
 
@@ -27,7 +27,7 @@ NOTE: If you are using a key management server (KMS) to protect the data on spec
 ** You have the IP address or domain name of the Admin Node.
 ** If you have configured the StorageGRID management interface certificate, you have the CA, client certificate, and private key used to configure the management interface certificate.
 ** To upload your own certificate, the private key for the certificate is available on your local computer.
-** The private key must have been saved or recorded at the time it was created. If you do not have the original private key, you must create a new one.
+** The private key must have been saved or recorded at the time it was created. If you don't have the original private key, you must create a new one.
 * To edit a client certificate:
 ** You have the IP address or domain name of the Admin Node.
 ** To upload your own certificate or a new certificate, the private key, client certificate, and CA (if used) are available on your local computer.

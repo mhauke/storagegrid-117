@@ -43,7 +43,7 @@ NOTE: The *Group unique name* values must be unique within the *Group Base DN* t
 +
 NOTE: The *User unique name* values must be unique within the *User Base DN* they belong to.
 
-** *Bind username format* (optional): The default username pattern StorageGRID should use if the pattern cannot be determined automatically.
+** *Bind username format* (optional): The default username pattern StorageGRID should use if the pattern can't be determined automatically.
 +
 Providing *Bind username format* is recommended because it can allow users to sign in if StorageGRID is unable to bind with the service account.
 +
@@ -85,7 +85,7 @@ After entering all values, you must test the connection before you can save the 
 
 . If you provided a bind username format, enter the username and password of a valid federated user.
 +
-For example, enter your own username and password. Do not include any special characters in the username, such as @ or /.
+For example, enter your own username and password. Don't include any special characters in the username, such as @ or /.
 +
 image::../media/identity_federation_test_connection.png[Identity federation prompt to validate bind username format]
 +

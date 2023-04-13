@@ -34,7 +34,7 @@ Restricted Grid Manager port on Admin Nodes
 a|
 
 * Web browsers and management API clients can access the Grid Manager and the Grid Management API using HTTPS.
-* Web browsers and management API clients cannot access the Tenant Manager or the Tenant Management API.
+* Web browsers and management API clients can't access the Tenant Manager or the Tenant Management API.
 * Requests for internal content will be rejected.
 
 a|
@@ -44,7 +44,7 @@ Restricted Tenant Manager port on Admin Nodes
 a|
 
 * Web browsers and management API clients can access the Tenant Manager and the Tenant Management API using HTTPS.
-* Web browsers and management API clients cannot access the Grid Manager or the Grid Management API.
+* Web browsers and management API clients can't access the Grid Manager or the Grid Management API.
 * Requests for internal content will be rejected.
 
 |===

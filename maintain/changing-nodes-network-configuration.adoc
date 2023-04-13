@@ -25,7 +25,7 @@ See the StorageGRID installation instructions for your Linux operating system:
 
 * link:../ubuntu/index.html[Install Ubuntu or Debian]
 
-*Appliances:* On StorageGRID appliances, if the Client or Admin Network was not configured in the StorageGRID Appliance Installer during the initial installation, the network cannot be added by using only the Change IP tool. First, you must link:../commonhardware/placing-appliance-into-maintenance-mode.html[place the appliance in maintenance mode], configure the links, return the appliance to normal operating mode, and then use the Change IP tool to modify the network configuration. See the link:../installconfig/configuring-network-links.html[procedure for configuring network links].
+*Appliances:* On StorageGRID appliances, if the Client or Admin Network was not configured in the StorageGRID Appliance Installer during the initial installation, the network can't be added by using only the Change IP tool. First, you must link:../commonhardware/placing-appliance-into-maintenance-mode.html[place the appliance in maintenance mode], configure the links, return the appliance to normal operating mode, and then use the Change IP tool to modify the network configuration. See the link:../installconfig/configuring-network-links.html[procedure for configuring network links].
 
 You can change the IP address, subnet mask, gateway, or MTU value for one or more nodes on any network.
 
@@ -34,9 +34,9 @@ You can also add or remove a node from a Client Network or from an Admin Network
 * You can add a node to a Client Network or to an Admin Network by adding an IP address/subnet mask on that network to the node.
 * You can remove a node from a Client Network or from an Admin Network by deleting the IP address/subnet mask for the node on that network.
 +
-Nodes cannot be removed from the Grid Network.
+Nodes can't be removed from the Grid Network.
 
-IMPORTANT: IP address swaps are not allowed. If you must exchange IP addresses between grid nodes, you must use a temporary intermediate IP address.
+IMPORTANT: IP address swaps aren't allowed. If you must exchange IP addresses between grid nodes, you must use a temporary intermediate IP address.
 
 IMPORTANT: If single sign-on (SSO) is enabled for your StorageGRID system and you are changing the IP address of an Admin Node, be aware that any relying party trust that was configured using the Admin Node's IP address (instead of its fully qualified domain name, as recommended) will become invalid. You will no longer be able to sign in to the node. Immediately after changing the IP address, you must update or reconfigure the node's relying party trust in Active Directory Federation Services (AD FS) with the new IP address. See the instructions for link:../admin/configuring-sso.html[configuring SSO].
 
@@ -82,7 +82,7 @@ After you make your selection, the prompt shows the node name, network name (Gri
 Editing the IP address, prefix length, gateway, or MTU of a DHCP-configured interface will change the interface to static. When you select to change an interface configured by DHCP, a warning is displayed to inform you that the interface will change to static.
 
 +
-Interfaces configured as `fixed` cannot be edited.
+Interfaces configured as `fixed` can't be edited.
 
  .. To set a new value, enter it in the format shown for the current value.
  .. To leave the current value unchanged, press *Enter*.
@@ -101,7 +101,7 @@ NOTE: Certain command line interfaces might show additions and deletions using s
 
 . Select option *7* to validate all changes.
 +
-This validation ensures that the rules for the Grid, Admin, and Client Networks, such as not using overlapping subnets, are not violated.
+This validation ensures that the rules for the Grid, Admin, and Client Networks, such as not using overlapping subnets, aren't violated.
 +
 In this example, validation returned errors.
 +
@@ -128,7 +128,7 @@ If you need to make physical or virtual networking configuration changes for the
 +
 IMPORTANT: If you use the *stage* option, you must restart the node as soon as possible after staging to minimize disruptions.
 
- ** *cancel*: Do not make any network changes at this time.
+ ** *cancel*: Don't make any network changes at this time.
 +
 If you were unaware that the proposed changes require nodes to be restarted, you can defer the changes to minimize user impact. Selecting *cancel* returns you to the main menu and preserves your changes so you can apply them later.
 

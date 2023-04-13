@@ -2,14 +2,14 @@
 permalink: ilm/editing-cloud-storage-pool.html
 sidebar: sidebar
 keywords: edit cloud storage pool
-summary: 'You can edit a Cloud Storage Pool to change its name, service endpoint, or other details; however, you cannot change the S3 bucket or Azure container for a Cloud Storage Pool.'
+summary: 'You can edit a Cloud Storage Pool to change its name, service endpoint, or other details; however, you can't change the S3 bucket or Azure container for a Cloud Storage Pool.'
 ---
 = Edit a Cloud Storage Pool
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can edit a Cloud Storage Pool to change its name, service endpoint, or other details; however, you cannot change the S3 bucket or Azure container for a Cloud Storage Pool.
+You can edit a Cloud Storage Pool to change its name, service endpoint, or other details; however, you can't change the S3 bucket or Azure container for a Cloud Storage Pool.
 
 .What you'll need
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
@@ -25,7 +25,7 @@ The Cloud Storage Pools table lists the existing Cloud Storage Pools.
 . Select *Actions* > *Edit*.
 . As required, change the display name, service endpoint, authentication credentials, or certificate validation method.
 +
-IMPORTANT: You cannot change the provider type or the S3 bucket or Azure container for a Cloud Storage Pool.
+IMPORTANT: You can't change the provider type or the S3 bucket or Azure container for a Cloud Storage Pool.
 +
 If you previously uploaded a server or client certificate, you can select *Certificate details* to review the certificate that is currently in use.
 

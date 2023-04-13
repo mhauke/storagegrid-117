@@ -26,7 +26,7 @@ The Storage pools table includes the following information for each storage pool
 * *Total capacity*: The size of the storage pool, which equals the total amount of usable space for object data for all nodes in the storage pool.
 * *ILM usage*: How the storage pool is currently being used. A storage pool might be unused or it might be used in one or more ILM rules, erasure coding profiles, or both.
 +
-NOTE: You cannot remove a storage pool if it is being used.
+NOTE: You can't remove a storage pool if it is being used.
 
 . To view details about a specific storage pool, select its name.
 +

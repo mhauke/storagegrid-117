@@ -42,7 +42,7 @@ Use the search box to search for a tenant by name or tenant ID.
  
 . Select *Continue*.
 
-. Select or unselect the permissions for the tenant account.
+. Select or clear the permissions for the tenant account.
 +
 * If you disable *Platform services* for a tenant who is already using them, the services that they have configured for their S3 buckets will stop working. No error message is sent to the tenant. For example, if the tenant has configured CloudMirror replication for an S3 bucket, they can still store objects in the bucket, but copies of those objects will no longer be made in the external S3 bucket that they have configured as an endpoint. See link:manage-platform-services-for-tenants.html[Manage platform services for S3 tenant accounts].
 +
@@ -53,6 +53,6 @@ If *Uses own identity source* is:
  ** Disabled and selected, the tenant has already enabled its own identity source. A tenant must disable its identity source before it can use the identity source that was configured for the Grid Manager.
  ** Disabled and not selected, SSO is enabled for the StorageGRID system. The tenant must use the identity source that was configured for the Grid Manager.
 +
-* Select or unselect the *Allow S3 Select* permission as needed. See link:manage-s3-select-for-tenant-accounts.html[Manage S3 Select for tenant accounts].
+* Select or clear the *Allow S3 Select* permission as needed. See link:manage-s3-select-for-tenant-accounts.html[Manage S3 Select for tenant accounts].
 
 * To remove the *Use grid federation connection* permission, follow the instructions for link:grid-federation-manage-tenants.html[removing a tenant's permission to use grid federation].

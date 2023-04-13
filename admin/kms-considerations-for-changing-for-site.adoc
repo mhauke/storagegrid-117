@@ -15,7 +15,7 @@ If you change the KMS used for a site, you must ensure that the previously encry
 
 For example:
 
-. You initially configure a default KMS that applies to all sites that do not have a dedicated KMS.
+. You initially configure a default KMS that applies to all sites that don't have a dedicated KMS.
 . When the KMS is saved, all appliance nodes that have the *Node Encryption* setting enabled connect to the KMS and request the encryption key. This key is used to encrypt the appliance nodes at all sites. This same key must also be used to decrypt those appliances.
 +
 image::../media/kms_default_key.png[KMS Default Key]
@@ -38,12 +38,12 @@ The table summarizes the required steps for the most common cases for changing t
 a|
 You have one or more site-specific KMS entries, and you want to use one of them as the default KMS.
 a|
-Edit the site-specific KMS. In the *Manages keys for* field, select *Sites not managed by another KMS (default KMS)*. The site-specific KMS will now be used as the default KMS. It will apply to any sites that do not have a dedicated KMS.
+Edit the site-specific KMS. In the *Manages keys for* field, select *Sites not managed by another KMS (default KMS)*. The site-specific KMS will now be used as the default KMS. It will apply to any sites that don't have a dedicated KMS.
 
 link:kms-editing.html[Edit a key management server (KMS)]
 
 a|
-You have a default KMS and you add a new site in an expansion. You do not want to use the default KMS for the new site.
+You have a default KMS and you add a new site in an expansion. You don't want to use the default KMS for the new site.
 a|
 
 . If the appliance nodes at the new site have already been encrypted by the default KMS, use the KMS software to copy the current version of the encryption key from the default KMS to a new KMS.

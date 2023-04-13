@@ -185,7 +185,7 @@ For `_Admin_Node_FQDN_`, enter the Admin Node's fully qualified domain name. (If
 . On the *Signature* tab, specify the signature certificate for this relying party trust:
 .. Add the custom certificate:
 *** If you have the custom management certificate you uploaded to StorageGRID, select that certificate.
-*** If you do not have the custom certificate, log in to the Admin Node, go the `/var/local/mgmt-api` directory of the Admin Node, and add the `custom-server.crt` certificate file.
+*** If you don't have the custom certificate, log in to the Admin Node, go the `/var/local/mgmt-api` directory of the Admin Node, and add the `custom-server.crt` certificate file.
 +
 *Note:* Using the Admin Node's default certificate (`server.crt`) is not recommended. If the Admin Node fails, the default certificate will be regenerated when you recover the node, and you will need to update the relying party trust.
 .. Select *Apply*, and select *OK*.

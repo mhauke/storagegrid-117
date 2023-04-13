@@ -17,7 +17,7 @@ When an S3 client issues a DELETE transaction, a request is made to remove the s
 
 |CBID
 |Content Block Identifier
-|The unique identifier of the content block requested. If the CBID is unknown, this field is set to 0. Operations on buckets do not include this field.
+|The unique identifier of the content block requested. If the CBID is unknown, this field is set to 0. Operations on buckets don't include this field.
 
 |CNCH
 |Consistency Control Header
@@ -29,11 +29,11 @@ When an S3 client issues a DELETE transaction, a request is made to remove the s
 
 |CSIZ
 |Content Size
-|The size of the deleted object in bytes. Operations on buckets do not include this field.
+|The size of the deleted object in bytes. Operations on buckets don't include this field.
 
 |DMRK
 |Delete Marker Version ID
-|The version ID of the delete marker created when deleting an object from a versioned bucket. Operations on buckets do not include this field.
+|The version ID of the delete marker created when deleting an object from a versioned bucket. Operations on buckets don't include this field.
 
 | GFID
 | Grid Federation Connection ID
@@ -76,7 +76,7 @@ SUCS: Successful
 
 |S3KY
 |S3 Key
-|The S3 key name, not including the bucket name. Operations on buckets do not include this field.
+|The S3 key name, not including the bucket name. Operations on buckets don't include this field.
 
 |S3SR
 |S3 Subresource
@@ -124,5 +124,5 @@ Empty for anonymous requests.
 
 |VSID
 |Version ID
-|The version ID of the specific version of an object that was deleted. Operations on buckets and objects in unversioned buckets do not include this field.
+|The version ID of the specific version of an object that was deleted. Operations on buckets and objects in unversioned buckets don't include this field.
 |===

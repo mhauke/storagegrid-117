@@ -22,7 +22,7 @@ Using custom storage grades allows you to create ILM storage pools that contain 
 
 If storage grade is not a concern (for example, all Storage Nodes are identical), you can skip this procedure and use the *includes all storage grades* selection for the storage grade when you link:creating-storage-pool.html[create storage pools]. Using this selection ensures that the storage pool will include every Storage Node at the site, regardless of its storage grade.
 
-NOTE: Do not create more storage grades than necessary. For example, do not create a storage grade for each Storage Node. Instead, assign each storage grade to two or more nodes. Storage grades assigned to only one node can cause ILM backlogs if that node becomes unavailable.
+NOTE: Don't create more storage grades than necessary. For example, don't create a storage grade for each Storage Node. Instead, assign each storage grade to two or more nodes. Storage grades assigned to only one node can cause ILM backlogs if that node becomes unavailable.
 
 .Steps
 . Select *ILM* > *Storage grades*.
@@ -36,7 +36,7 @@ image::../media/editing_storage_grades.gif[Storage Grades page]
 .. Select *Apply Changes*.
 .. Optionally, if you need to  modify a saved label, select *Edit* image:../media/icon_nms_edit.gif[edit icon] and select *Apply Changes*.
 +
-NOTE: You cannot delete storage grades.
+NOTE: You can't delete storage grades.
 
 . Assign new storage grades to Storage Nodes:
 
@@ -45,6 +45,6 @@ NOTE: You cannot delete storage grades.
 +
 image::../media/assigning_storage_grades_to_storage_nodes.gif[Storage Grades page]
 +
-IMPORTANT: Assign a storage grade to a given Storage Node only once. A Storage Node recovered from failure maintains the previously assigned storage grade. Do not change this assignment after the ILM policy is activated. If the assignment is changed, data is stored based on the new storage grade.
+IMPORTANT: Assign a storage grade to a given Storage Node only once. A Storage Node recovered from failure maintains the previously assigned storage grade. Don't change this assignment after the ILM policy is activated. If the assignment is changed, data is stored based on the new storage grade.
 
  .. Select *Apply Changes*.

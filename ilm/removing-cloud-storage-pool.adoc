@@ -26,7 +26,7 @@ If the Cloud Storage Pool you want to remove contains object data, you must use 
 
 . Look at the ILM usage column in the table to determine whether you can remove the Cloud Storage Pool.
 +
-You cannot remove a Cloud Storage Pool if it is being used in an ILM rule or in an erasure coding profile. 
+You can't remove a Cloud Storage Pool if it is being used in an ILM rule or in an erasure coding profile. 
 
 . If the Cloud Storage Pool is being used, select *_cloud storage pool name_* > *ILM usage*.
 
@@ -59,7 +59,7 @@ When the Cloud Storage Pool is empty and not used in any ILM rules, you can dele
 +
 An error occurs if you attempt to remove a Cloud Storage Pool if it contains objects. See link:troubleshooting-cloud-storage-pools.html[Troubleshoot Cloud Storage Pools].
 +
-NOTE: When you create a Cloud Storage Pool, StorageGRID writes a marker file to the bucket or container to identify it as a Cloud Storage Pool. Do not remove this file, which is named `x-ntap-sgws-cloud-pool-uuid`.
+NOTE: When you create a Cloud Storage Pool, StorageGRID writes a marker file to the bucket or container to identify it as a Cloud Storage Pool. Don't remove this file, which is named `x-ntap-sgws-cloud-pool-uuid`.
 
 .Steps
 

@@ -11,7 +11,7 @@ summary: 'The steps for deploying new grid nodes in an expansion are the same as
 [.lead]
 The steps for deploying new grid nodes in an expansion are the same as the steps used when the grid was first installed. You must deploy all new grid nodes before you can perform the expansion.
 
-When you expand the grid, the nodes you add do not have to match the existing node types. You can add VMware nodes, Linux container-based nodes, or appliance nodes.
+When you expand the grid, the nodes you add don't have to match the existing node types. You can add VMware nodes, Linux container-based nodes, or appliance nodes.
 
 == VMware: Deploy grid nodes
 
@@ -43,7 +43,7 @@ You can deploy grid nodes on new Linux hosts or on existing Linux hosts. If you 
 * If you plan to deploy new grid nodes on existing hosts, you have confirmed the existing hosts have enough CPU, RAM, and storage capacity for the additional nodes.
 * You have a plan to minimize failure domains. For example, you should not deploy all Gateway Nodes on a single physical host.
 +
-CAUTION: In a production deployment, do not run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
+CAUTION: In a production deployment, don't run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
 
 * If the StorageGRID node uses storage assigned from a NetApp ONTAP system, confirm that the volume does not have a FabricPool tiering policy enabled. Disabling FabricPool tiering for volumes used with StorageGRID nodes simplifies troubleshooting and storage operations.
 
@@ -74,7 +74,7 @@ Setting up appliance hardware includes the required steps for configuring Storag
 
 * All Grid Network subnets listed on the IP Configuration page of the StorageGRID Appliance Installer have been defined in the Grid Network Subnet List on the primary Admin Node.
 
-* The StorageGRID Appliance Installer firmware on the replacement appliance is compatible with the StorageGRID software version currently running on your grid. If the versions are not compatible, you must upgrade the StorageGRID Appliance Installer firmware.
+* The StorageGRID Appliance Installer firmware on the replacement appliance is compatible with the StorageGRID software version currently running on your grid. If the versions aren't compatible, you must upgrade the StorageGRID Appliance Installer firmware.
 
 * You have a service laptop with a link:../admin/web-browser-requirements.html[supported web browser].
 * You know one of the IP addresses assigned to the appliance's compute controller. You can use the IP address for any attached StorageGRID network.
@@ -112,7 +112,7 @@ a|
 Manual IP entry
 a|
 
- .. Unselect the *Enable Admin Node discovery* check box.
+ .. Clear the *Enable Admin Node discovery* check box.
  .. Enter the IP address manually.
  .. Click *Save*.
  .. Wait for the connection state for the new IP address to become ready.
@@ -156,7 +156,7 @@ image::../media/monitor_installation_configure_storage.gif[This image is explain
 +
 The blue status bar indicates which task is currently in progress. Green status bars indicate tasks that have completed successfully.
 +
-NOTE: The installer ensures that tasks completed in a previous install are not re-run. If you are re-running an installation, any tasks that do not need to be re-run are shown with a green status bar and a status of "`Skipped.`"
+NOTE: The installer ensures that tasks completed in a previous install aren't re-run. If you are re-running an installation, any tasks that don't need to be re-run are shown with a green status bar and a status of "`Skipped.`"
 
 . Review the progress of first two installation stages.
 +

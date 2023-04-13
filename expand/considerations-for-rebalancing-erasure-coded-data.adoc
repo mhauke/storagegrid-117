@@ -2,14 +2,14 @@
 permalink: expand/considerations-for-rebalancing-erasure-coded-data.html
 sidebar: sidebar
 keywords: erasure coding, rebalance, ec rebalance, site rebalance
-summary: 'If you are performing an expansion to add Storage Nodes and you use ILM rules to erasure code data, you might need to perform the EC rebalance procedure if you cannot add enough Storage Nodes for the erasure-coding scheme you are using.'
+summary: 'If you are performing an expansion to add Storage Nodes and you use ILM rules to erasure code data, you might need to perform the EC rebalance procedure if you can't add enough Storage Nodes for the erasure-coding scheme you are using.'
 ---
 = Considerations for rebalancing erasure-coded data
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-If you are performing an expansion to add Storage Nodes and you use ILM rules to erasure code data, you might need to perform the EC rebalance procedure if you cannot add enough Storage Nodes for the erasure-coding scheme you are using.
+If you are performing an expansion to add Storage Nodes and you use ILM rules to erasure code data, you might need to perform the EC rebalance procedure if you can't add enough Storage Nodes for the erasure-coding scheme you are using.
 
 After reviewing these considerations, perform the expansion, and then go to link:rebalancing-erasure-coded-data-after-adding-storage-nodes.html[Rebalance erasure-coded data after adding Storage Nodes] to run the procedure. 
 
@@ -85,7 +85,7 @@ You can optionally run the EC rebalance procedure if you prefer Storage Nodes to
 
 == How EC rebalance procedure interacts with other maintenance tasks
 
-You cannot perform certain maintenance procedures at the same time you are running the EC rebalance procedure.
+You can't perform certain maintenance procedures at the same time you are running the EC rebalance procedure.
 
 [cols="1a,2a" options="header"]
 
@@ -135,6 +135,6 @@ You must terminate the EC rebalance procedure before running other maintenance p
 
 == How EC rebalance procedure interacts with ILM
 
-While the EC rebalance procedure is running, avoid making ILM changes that might change the location of existing erasure-coded objects. For example, do not start using an ILM rule that has a different erasure coding profile. If you need to make such ILM changes, you should terminate the EC rebalance procedure.
+While the EC rebalance procedure is running, avoid making ILM changes that might change the location of existing erasure-coded objects. For example, don't start using an ILM rule that has a different erasure coding profile. If you need to make such ILM changes, you should terminate the EC rebalance procedure.
 
 
