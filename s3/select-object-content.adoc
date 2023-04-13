@@ -13,7 +13,7 @@ You can use the S3 SelectObjectContent request to filter the contents of an S3 o
 
 For more information see the https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html[AWS documentation for SelectObjectContent^].
 
-.What you'll need
+.Before you begin
 
 * The tenant account has the S3 Select permission.
 * You have `s3:GetObject` permission for the object you want to query.

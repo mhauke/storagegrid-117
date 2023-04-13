@@ -15,7 +15,7 @@ You can use VMware vSphere to automate the deployment of grid nodes. You can als
 
 Use VMware vSphere to automate the deployement of grid nodes.
 
-.What you'll need
+.Before you begin
 
 * You have access to a Linux/Unix system with Bash 3.2 or later.
 * You have VMware OVF Tool 4.1 installed and correctly configured.
@@ -429,7 +429,7 @@ NOTE: For Admin nodes, INSTANCES must always equal 2.
 
 You can use the `deploy-vsphere-ovftool.sh` Bash script and the deploy-vsphere-ovftool.ini configuration file you modified to automate the deployment of StorageGRID grid nodes in VMware vSphere.
 
-.What you'll need
+.Before you begin
 
 * You have created a deploy-vsphere-ovftool.ini configuration file for your environment.
 
@@ -491,7 +491,7 @@ Deployment Summary
 
 After deploying the grid nodes, you can automate the configuration of the StorageGRID system.
 
-.What you'll need
+.Before you begin
 
 * You know the location of the following files from the installation archive.
 

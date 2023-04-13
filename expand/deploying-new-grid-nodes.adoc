@@ -31,7 +31,7 @@ When you deploy the node, you can optionally remap node ports or increase CPU or
 
 You can deploy grid nodes on new Linux hosts or on existing Linux hosts. If you need additional Linux hosts to support the CPU, RAM, and storage requirements of the StorageGRID nodes you want to add to your grid, you prepare them in the same way you prepared the hosts when you first installed them. Then, you deploy the expansion nodes in the same way you deployed grid nodes during installation.
 
-.What you'll need
+.Before you begin
 
 * You have the instructions for installing StorageGRID for your version of Linux, and you have reviewed the hardware and storage requirements.
 
@@ -65,7 +65,7 @@ After deploying all new grid nodes, you can link:performing-expansion.html[perfo
 
 To install the StorageGRID software on an appliance node, you use the StorageGRID Appliance Installer, which is included on the appliance. In an expansion, each storage appliance functions as a single Storage Node, and each services appliance functions as a single Gateway Node or non-primary Admin Node. Any appliance can connect to the Grid Network, the Admin Network, and the Client Network.
 
-.What you'll need
+.Before you begin
 
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
 * You have completed the link:../installconfig/configuring-hardware.html[Set up hardware] steps.

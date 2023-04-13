@@ -11,7 +11,7 @@ summary: 'If a single Storage Node has been offline and not connected to other S
 [.lead]
 If a single Storage Node has been offline and not connected to other Storage Nodes for more than 15 days, you must rebuild Cassandra on the node.
 
-.What you'll need
+.Before you begin
 
 * You have checked that a Storage Node decommissioning is not in progress, or you have paused the node decommission procedure. (In the Grid Manager, select *MAINTENANCE* > *Tasks* > *Decommission*.)
 * You have checked that an expansion is not in progress. (In the Grid Manager, select *MAINTENANCE* > *Tasks* > *Expansion*.)

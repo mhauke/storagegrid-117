@@ -13,7 +13,7 @@ If you enabled node encryption for the appliance during installation, you can mo
 
 See link:../admin/kms-configuring.html[Configure key management servers] for information about implementing KMS for StorageGRID appliances.
 
-.What you'll need
+.Before you begin
 
 * You enabled node encryption for the appliance during installation. You can't enable node encryption after the appliance is installed.
 * You have link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed the appliance into maintenance mode].
@@ -49,7 +49,7 @@ image::../media/nodes_menu.png[Appliance node rejoined grid]
 
 Clearing the key management server (KMS) configuration disables node encryption on your appliance. After clearing the KMS configuration, the data on your appliance is permanently deleted and is no longer accessible. This data is not recoverable.
 
-.What you'll need
+.Before you begin
 
 If you need to preserve data on the appliance, you must either perform a node decommission procedure or clone the node before you clear the KMS configuration. 
 

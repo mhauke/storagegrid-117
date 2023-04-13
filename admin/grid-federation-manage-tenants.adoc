@@ -11,7 +11,7 @@ summary: 'You can allow new S3 tenant accounts to use a grid federation connecti
 [.lead]
 You can allow new S3 tenant accounts to use a grid federation connection between two StorageGRID systems. When tenants are allowed to use a connection, special steps are required to edit tenant details or to permanently remove a tenant's permission to use the connection.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager on either grid using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission for the grid you are signed in to. 
@@ -100,7 +100,7 @@ Before removing a tenant's permission to use a grid federation connection, note 
 * Removing the *Use grid federation connection* permission does not delete any items that have already been replicated between grids. For example, any tenant users, groups, and objects that exist on both grids aren't deleted from either grid when the tenant's permission is removed. If you want to delete these items, you must manually delete them from both grids.
 
 
-.What you'll need
+.Before you begin
 
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission for both grids. 

@@ -134,7 +134,7 @@ image::../media/disabling_alarms.gif[Volumes page showing critical alarms]
 
 Legacy alarms are triggered when system attributes reach alarm threshold values. Optionally, if you want to reduce or clear the list of legacy alarms, you can acknowledge the alarms.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have the Acknowledge alarms permission.
 
@@ -176,7 +176,7 @@ image::../media/current_alarms_page_show_acknowledged.png[Current Alarms Page Sh
 
 You can view the list of all Default legacy alarms.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
@@ -196,7 +196,7 @@ image::../media/global_alarms.gif[Global Alarms page]
 
 When troubleshooting an issue, you can review how often a legacy alarm was triggered in the past.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
@@ -223,7 +223,7 @@ The alarms are listed in reverse chronological order.
 
 You might have used Global Custom alarms for the legacy system to address specific monitoring requirements. Global Custom alarms might have alarm levels that override Default alarms, or they might monitor attributes that don't have a Default alarm.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
@@ -322,7 +322,7 @@ NOTE: While the legacy alarm system continues to be supported, the alert system 
 
 You can disable one of the legacy Default alarms for the entire system.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
@@ -358,7 +358,7 @@ The Default alarm is disabled.
 
 You can disable a legacy Global Custom alarm for the entire system.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
@@ -380,7 +380,7 @@ The Global Custom alarm is disabled.
 
 If a legacy alarm is triggered, you can clear it instead of acknowledging it.
 
-.What you'll need
+.Before you begin
 * You must have the ``Passwords.txt`` file.
 
 Disabling an alarm for an attribute that currently has an alarm triggered against it does not clear the alarm. The alarm will be disabled the next time the attribute changes. You can acknowledge the alarm or, if you want to immediately clear the alarm rather than wait for the attribute value to change (resulting in a change to the alarm state), you can clear the triggered alarm. You might find this helpful if you want to clear an alarm immediately against an attribute whose value does not change often (for example, state attributes).
@@ -432,7 +432,7 @@ A mailing list receives all notifications related to changes in the selected sta
 
 If you want StorageGRID to send email notifications when a legacy alarm is triggered, you must specify the SMTP mail server settings. The StorageGRID system only sends email; it can't receive email.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
@@ -489,7 +489,7 @@ The SMTP mail server settings are saved. If you entered information for a test e
 
 Email templates let you customize the header, footer, and subject line of a legacy alarm email notification. You can use email templates to send unique notifications that contain the same body text to different mailing lists.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
@@ -536,7 +536,7 @@ A new template for notifications is added.
 
 Mailing lists let you notify recipients when a legacy alarm is triggered or when a service state changes. You must create at least one mailing list before any alarm email notifications can be sent. To send a notification to a single recipient, create a mailing list with one email address.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 * If you want to specify an email template for the mailing list (custom header, footer, and subject line), you must have already created the template.
@@ -582,7 +582,7 @@ A new mailing list is created.
 
 To receive email notifications for the legacy alarm system, recipients must be a member of a mailing list and that list must be added to the Notifications page. Notifications are configured to send email to recipients only when an alarm with a specified severity level is triggered or when a service state changes. Thus, recipients only receive the notifications they need to receive.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 * You must have configured an email list.
@@ -606,7 +606,7 @@ Notifications will be sent to the mailing list when alarms with the selected ala
 
 You can suppress alarm notifications for a mailing list when you no longer want the mailing list to receive notifications about alarms. For example, you might want to suppress notifications about legacy alarms after you have transitioned to using alert email notifications.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 

@@ -21,7 +21,7 @@ image:../media/grid-federation-cgr-workflow.png[Cross-grid replication workflow]
 
 Before you can use cross-grid replication, you must sign in to the corresponding tenant accounts on each grid and create identical buckets. Then, you can enable cross-grid replication on either or both buckets.
 
-.What you'll need
+.Before you begin
 
 * You have reviewed the requirements for cross-grid replication. See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
@@ -93,7 +93,7 @@ After a few moments, a success message appears. Objects added to this bucket wil
 
 If cross-grid replication is enabled for a bucket, you might need to verify that the connection and cross-grid replication are working correctly and that the source and destination buckets still meet all requirements (for example, versioning is still enabled). 
 
-.What you'll need
+.Before you begin
 
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Root access permission].
@@ -130,7 +130,7 @@ Before disabling cross-grid replication, note the following:
 +
 CAUTION: You can't reenable replication unless both buckets are empty.
 
-.What you'll need
+.Before you begin
 
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Root access permission].
