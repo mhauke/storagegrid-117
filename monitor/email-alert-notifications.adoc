@@ -27,7 +27,7 @@ The Email Setup page appears.
 +
 image::../media/alerts_email_setup_disabled.png[Alerts Email Setup Disabled]
 
-. Select the *Enable Email Notifications* check box to indicate that you want notification emails to be sent when alerts reach configured thresholds.
+. Select the *Enable Email Notifications* checkbox to indicate that you want notification emails to be sent when alerts reach configured thresholds.
 +
 The Email (SMTP) Server, Transport Layer Security (TLS), Email Addresses, and Filters sections appear.
 
@@ -75,7 +75,7 @@ You can copy and paste the contents into this field, or select *Browse* and sele
 +
 You must provide a single file that contains the certificates from each intermediate issuing certificate authority (CA). The file should contain each of the PEM-encoded CA certificate files, concatenated in certificate chain order.
 
- .. Select the *Send Client Certificate* check box if your SMTP email server requires email senders to provide client certificates for authentication.
+ .. Select the *Send Client Certificate* checkbox if your SMTP email server requires email senders to provide client certificates for authentication.
  .. In the *Client Certificate* field, provide the PEM-encoded client certificate to send to the SMTP server.
 +
 You can copy and paste the contents into this field, or select *Browse* and select the file.

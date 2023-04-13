@@ -40,7 +40,7 @@ When using Fixed port bond mode, the ports can be bonded using active-backup mod
 
 NOTE: If you don't need redundant connections, you can use only one port for each network. However, be aware that an alert will be triggered in the Grid Manager after StorageGRID is installed, indicating that the link is down. Because this port is disconnected on purpose, you can safely disable this alert.
 
-From the Grid Manager, select *Alert* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* check box.
+From the Grid Manager, select *Alert* > *Rules*, select the rule, and click *Edit rule*. Then, uncheck the *Enabled* checkbox.
 
 === Aggregate port bond mode
 

@@ -25,8 +25,8 @@ TIP: When you enable SSO, an identity source configured in the Tenant Manager is
 
  .. Sign in to the Tenant Manager for each tenant account.
  .. Select *ACCESS MANAGEMENT* > *Identity federation*.
- .. Confirm that the *Enable identity federation* check box is not selected.
- .. If it is, confirm that any federated groups that might be in use for this tenant account are no longer required, clear the check box, and select *Save*.
+ .. Confirm that the *Enable identity federation* checkbox is not selected.
+ .. If it is, confirm that any federated groups that might be in use for this tenant account are no longer required, clear the checkbox, and select *Save*.
 
 . Confirm that a federated user can access the Grid Manager:
  .. From Grid Manager, select *CONFIGURATION* > *Access control* > *Admin groups*.
@@ -37,9 +37,9 @@ TIP: When you enable SSO, an identity source configured in the Tenant Manager is
  .. From the Grid Manager, select *TENANTS*.
  .. Select the tenant account, and select *Actions* > *Edit*.
  .. On the Enter details tab, select *Continue*.
- .. If the *Use own identity source* check box is selected, uncheck the box and select *Save*.
+ .. If the *Use own identity source* checkbox is selected, uncheck the box and select *Save*.
 +
-image::../media/sso_uses_own_identity_source_for_tenant.png[Edit Tenant Account > Use own identity source check box not selected]
+image::../media/sso_uses_own_identity_source_for_tenant.png[Edit Tenant Account > Use own identity source checkbox not selected]
 +
 The Tenant page appears.
 

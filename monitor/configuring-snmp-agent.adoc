@@ -25,7 +25,7 @@ The SNMP Agent page appears.
 +
 image::../media/snmp_agent_not_enabled.png[SNMP Agent Not Enabled]
 
-. To enable the SNMP agent on all grid nodes, select the *Enable SNMP* check box.
+. To enable the SNMP agent on all grid nodes, select the *Enable SNMP* checkbox.
 +
 The fields for configuring an SNMP agent appear.
 +
@@ -39,11 +39,11 @@ The System Contact typically is an email address. The value you provide applies 
 +
 The System Location can be any information that is useful for identifying where your StorageGRID system is located. For example, you might use the street address of a facility. The value you provide applies to all nodes in the StorageGRID system. *System Location* can be a maximum of 255 characters.
 
-. Keep the *Enable SNMP Agent Notifications* check box selected if you want the StorageGRID SNMP agent to send trap and inform notifications.
+. Keep the *Enable SNMP Agent Notifications* checkbox selected if you want the StorageGRID SNMP agent to send trap and inform notifications.
 +
-If this check box is cleared, the SNMP agent supports read-only MIB access, but it does not send any SNMP notifications.
+If this checkbox is cleared, the SNMP agent supports read-only MIB access, but it does not send any SNMP notifications.
 
-. Select the *Enable Authentication Traps* check box if you want the StorageGRID SNMP agent to send an authentication trap if it receives an improperly authenticated protocol message.
+. Select the *Enable Authentication Traps* checkbox if you want the StorageGRID SNMP agent to send an authentication trap if it receives an improperly authenticated protocol message.
 . If you use SNMPv1 or SNMPv2c, complete the Community Strings section.
 +
 The fields in this section are used for community-based authentication in SNMPv1 or SNMPv2c. These fields don't apply to SNMPv3.
@@ -117,7 +117,7 @@ image::../media/snmp_create_usm_user.png[SNMP USM User]
 +
 Usernames have a maximum of 32 characters and can't contain whitespace characters. The username can't be changed after the user is created.
 
- .. Select the *Read-Only MIB Access* check box if this user should have read-only access to the MIB.
+ .. Select the *Read-Only MIB Access* checkbox if this user should have read-only access to the MIB.
 +
 If you select *Read-Only MIB Access*, the *Authoritative Engine ID* field is disabled.
 +

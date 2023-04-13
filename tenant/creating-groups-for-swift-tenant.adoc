@@ -61,14 +61,14 @@ Group permissions control which tasks users can perform in the Tenant Manager an
 +
 NOTE: If a user belongs to multiple groups and any group is set to Read-only, the user will have read-only access to all selected settings and features.
 
-. Select the *Root access* check box if group users need to sign in to the Tenant Manager or Tenant Management API.
+. Select the *Root access* checkbox if group users need to sign in to the Tenant Manager or Tenant Management API.
 
 . Select *Continue*.
 
 == Set Swift group policy
 Swift users need administrator permission to authenticate into the Swift REST API to create containers and ingest objects.
 
-. Select the *Swift administrator* check box if group users need to use the Swift REST API to manage containers and objects.
+. Select the *Swift administrator* checkbox if group users need to use the Swift REST API to manage containers and objects.
 
 
 . If you are creating a local group, select *Continue*. If you are creating a federated group, select *Create group* and *Finish*.

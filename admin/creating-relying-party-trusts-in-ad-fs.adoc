@@ -140,7 +140,7 @@ If you choose not to import the data for the relying part trusts, you can enter 
 For consistency, use the Relying Party Identifier for the Admin Node, exactly as it appears on the Single Sign-on page in the Grid Manager. For example, `SG-DC1-ADM1`.
 
  .. Skip the step to configure an optional token encryption certificate.
- .. On the Configure URL page, select the *Enable support for the SAML 2.0 WebSSO protocol* check box.
+ .. On the Configure URL page, select the *Enable support for the SAML 2.0 WebSSO protocol* checkbox.
  .. Type the SAML service endpoint URL for the Admin Node:
 +
 `https://_Admin_Node_FQDN_/api/saml-response`

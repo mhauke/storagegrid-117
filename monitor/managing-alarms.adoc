@@ -158,7 +158,7 @@ The Alarms tab for the selected service appears (*SUPPORT* > *Tools* > *Grid top
 +
 image::../media/alarms_acknowledging.png[Alarms Acknowledging]
 
-. Select the *Acknowledge* check box for the alarm, and click *Apply Changes*.
+. Select the *Acknowledge* checkbox for the alarm, and click *Apply Changes*.
 +
 The alarm no longer appears on the dashboard or the Current Alarms page.
 +
@@ -258,7 +258,7 @@ The Default alarm is copied to the Global Custom alarms table.
 a|
 Enabled
 a|
-Select or clear the check box to enable or disable the alarm.
+Select or clear the checkbox to enable or disable the alarm.
 a|
 Attribute
 a|
@@ -347,9 +347,9 @@ NOTE: Selecting *Disabled Defaults* displays a list of all currently disabled De
 +
 image::../media/disable_default_alarm_global.gif[Global Alarms page]
 +
-The *Enabled* check box for the selected alarm becomes active.
+The *Enabled* checkbox for the selected alarm becomes active.
 
-. Clear the *Enabled* check box.
+. Clear the *Enabled* checkbox.
 . Click *Apply Changes*.
 +
 The Default alarm is disabled.
@@ -368,7 +368,7 @@ Disabling an alarm for an attribute that currently has an alarm triggered does n
 .Steps
 . Select *SUPPORT* > *Alarms (legacy)* > *Global alarms*.
 . In the Global Custom Alarms table, click *Edit* image:../media/icon_nms_edit.gif[edit icon] next to the alarm you want to disable.
-. Clear the *Enabled* check box.
+. Clear the *Enabled* checkbox.
 +
 image::../media/disable_global_custom_alarm.gif[Global Alarms page]
 
@@ -618,7 +618,7 @@ NOTE: While the legacy alarm system continues to be supported, the alert system 
 . Select *SUPPORT* > *Alarms (legacy)* > *Legacy email setup*.
 . From the Email menu, select *Notifications*.
 . Click *Edit* image:../media/icon_nms_edit.gif[Edit icon] next to the mailing list for which you want to suppress notifications.
-. Under Suppress, select the check box next to the mailing list you want to suppress, or select *Suppress* at the top of the column to suppress all mailing lists.
+. Under Suppress, select the checkbox next to the mailing list you want to suppress, or select *Suppress* at the top of the column to suppress all mailing lists.
 . Click *Apply Changes*.
 +
 Legacy alarm notifications are suppressed for the selected mailing lists.
