@@ -48,7 +48,7 @@ The following information is included for the selected site:
   *** image:../media/icon_alarm_blue_unknown.png[Icon Alarm Blue Unknown] (Unknown)
  ** Details about each node:
   *** For each Storage Node, the amount of space that has been used for object data.
-  *** For Admin Nodes and Gateway Nodes, whether the node is currently used in a high availability (HA) group. You can't decommission an Admin Node or a Gateway Node that is used in a HA group. Before you start the decommission, edit HA groups to remove all nodes at the site or remove the HA group if it only includes nodes from this site. For instructions, see link:../admin/managing-high-availability-groups.html[Manage high availability (HA) groups].
+  *** For Admin Nodes and Gateway Nodes, whether the node is currently used in a high availability (HA) group. You can't decommission an Admin Node or a Gateway Node that is used in an HA group. Before you start the decommission, edit HA groups to remove all nodes at the site or remove the HA group if it only includes nodes from this site. For instructions, see link:../admin/managing-high-availability-groups.html[Manage high availability (HA) groups].
 
 . In the Details for Other Sites section of the page, assess how much space is available at the other sites in your grid.
 +
