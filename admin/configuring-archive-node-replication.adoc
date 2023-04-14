@@ -11,7 +11,7 @@ summary: 'You can configure the replication settings for an Archive Node and dis
 [.lead]
 You can configure the replication settings for an Archive Node and disable inbound and outbound replication, or reset the failure counts being tracked for the associated alarms.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have specific access permissions.
@@ -31,7 +31,7 @@ image::../media/archive_node_replication.gif[Configuration page for an Archive N
 +
 When inbound replication is disabled, object data can be retrieved from the ARC service for replication to other locations in the StorageGRID system, but objects can't be replicated to this ARC service from other system locations. The ARC service is read‐only.
 
- ** *Disable Outbound Replication*: Select the check box to disable outbound replication (including content requests for HTTP retrievals) as part of a maintenance or testing procedure. Leave unchecked during normal operation.
+ ** *Disable Outbound Replication*: Select the checkbox to disable outbound replication (including content requests for HTTP retrievals) as part of a maintenance or testing procedure. Leave unchecked during normal operation.
 +
 When outbound replication is disabled, object data can be copied to this ARC service to satisfy ILM rules, but object data can't be retrieved from the ARC service to be copied to other locations in the StorageGRID system. The ARC service is write‐only.
 . Select *Apply Changes*.

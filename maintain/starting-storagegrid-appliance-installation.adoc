@@ -11,7 +11,7 @@ summary: 'To install StorageGRID on an appliance Storage Node, you use the Stora
 [.lead]
 To install StorageGRID on an appliance Storage Node, you use the StorageGRID Appliance Installer, which is included on the appliance.
 
-.What you'll need
+.Before you begin
 
 * The appliance has been installed in a rack, connected to your networks, and powered on.
 * Network links and IP addresses have been configured for the appliance using the StorageGRID Appliance Installer.
@@ -49,13 +49,13 @@ The StorageGRID Appliance Installer can discover this IP address automatically, 
 |===
 | Option| Steps
 |Manual IP entry
-|.. Clear the *Enable Admin Node discovery* check box.
+|.. Clear the *Enable Admin Node discovery* checkbox.
  .. Enter the IP address manually.
  .. Click *Save*.
  .. Wait while the connection state for the new IP address becomes "`ready.`"
 
 |Automatic discovery of all connected primary Admin Nodes
-|.. Select the *Enable Admin Node discovery* check box.
+|.. Select the *Enable Admin Node discovery* checkbox.
  .. From the list of discovered IP addresses, select the primary Admin Node for the grid where this appliance Storage Node will be deployed.
  .. Click *Save*.
  .. Wait while the connection state for the new IP address becomes "`ready.`"

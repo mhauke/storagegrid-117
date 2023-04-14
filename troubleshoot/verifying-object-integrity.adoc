@@ -39,7 +39,7 @@ If background verification can't replace a corrupted object because it can't loc
 
 You can change the rate at which background verification checks replicated object data on a Storage Node if you have concerns about data integrity.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 
@@ -112,7 +112,7 @@ Object existence check reads the metadata for every object stored in StorageGRID
 
 You create and run one object existence check job at a time. When you create a job, you select the  Storage Nodes and volumes you want to verify. You also select the consistency control for the job.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Maintenance or Root access permission.
@@ -136,7 +136,7 @@ An object existence check job can take days or weeks to complete, depending on t
 . Select *MAINTENANCE* > *Tasks* > *Object existence check*.
 
 . Select *Create job*. The Create an object existence check job wizard appears.
-.	Select the nodes containing the volumes you want to verify. To select all online nodes, select the *Node name* check box in the column header.
+.	Select the nodes containing the volumes you want to verify. To select all online nodes, select the *Node name* checkbox in the column header.
 +
 You can search by node name or site.
 +
@@ -144,7 +144,7 @@ You can't select nodes that aren't connected to the grid.
 .	Select *Continue*.
 . Select one or more volumes for each node in the list. You can search for volumes using the storage volume number or node name.
 +
-To select all volumes for each node you selected, select the *Storage volume* check box in the column header.
+To select all volumes for each node you selected, select the *Storage volume* checkbox in the column header.
 .	Select *Continue*.
 .	Select the consistency control for the job.
 +
@@ -196,7 +196,7 @@ When StorageGRID has had time to achieve metadata consistency for the nodes and 
 .. Determine which jobs are ready to be rerun:
 ... Look at the *End time* column to determine which jobs were run more than three weeks ago.
 ... For those jobs, scan the Consistency control column for strong-site or strong-global.
-.. Select the check box for each job you want to rerun, then select *Rerun*.
+.. Select the checkbox for each job you want to rerun, then select *Rerun*.
 +
 image::../media/oec_rerun.png[OEC rerun ]
 +

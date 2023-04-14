@@ -11,11 +11,11 @@ summary: 'From Step 5 \(Resolve Node Conflicts\) of the Decommission Site wizard
 [.lead]
 From Step 5 (Resolve Node Conflicts) of the Decommission Site wizard, you can determine if any nodes in your StorageGRID system are disconnected or if any nodes at the selected site belong to a high availability (HA) group. After any node conflicts are resolved, you start the decommission procedure from this page.
 
-.What you'll need
+.Before you begin
 
 You must ensure that all nodes in your StorageGRID system are in the correct state, as follows:
 
-* All nodes in your StorageGRID system must be connected (image:../media/icon_alert_green_checkmark.png[Icon Alert Green Checkmark]).
+* All nodes in your StorageGRID system must be connected (image:../media/icon_alert_green_checkmark.png[Icon Alert Green check mark]).
 +
 NOTE: If you are performing a disconnected site decommission, all nodes at the site you are removing must be disconnected, and all nodes at all other sites must be connected.
 +

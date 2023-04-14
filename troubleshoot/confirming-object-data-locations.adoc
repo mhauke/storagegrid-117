@@ -11,7 +11,7 @@ summary: 'Depending on the problem, you might want to confirm where object data 
 [.lead]
 Depending on the problem, you might want to link:../audit/object-ingest-transactions.html[confirm where object data is being stored]. For example, you might want to verify that the ILM policy is performing as expected and object data is being stored where intended.
 
-.What you'll need
+.Before you begin
 * You must have an object identifier, which can be one of:
  ** *UUID*: The object's Universally Unique Identifier. Enter the UUID in all uppercase.
  ** *CBID*: The object's unique identifier within StorageGRID . You can obtain an object's CBID from the audit log. Enter the CBID in all uppercase.

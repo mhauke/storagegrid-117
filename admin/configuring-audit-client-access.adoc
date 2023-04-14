@@ -16,7 +16,7 @@ To access audit logs, you can configure client access to audit shares for NFS. O
 The StorageGRID system uses positive acknowledgment to prevent loss of audit messages before they are written to the log file. A message remains queued at a service until the AMS service or an intermediate audit relay service has acknowledged control of it. For more information, see link:../audit/index.html[Review audit logs].
 
 
-.What you'll need
+.Before you begin
 
 * You have the `Passwords.txt` file with the root/admin password.
 * You have the `Configuration.txt` file (available in the Recovery Package).

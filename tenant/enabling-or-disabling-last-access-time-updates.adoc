@@ -13,7 +13,7 @@ When grid administrators create the information lifecycle management (ILM) rules
 
 These instructions only apply to StorageGRID systems that include at least one ILM rule that uses the *Last access time* option as an advanced filter or as a reference time. You can ignore these instructions if your StorageGRID system does not include such a rule. See link:../ilm/using-last-access-time-in-ilm-rules.html[Use Last access time in ILM rules] for details.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies. 

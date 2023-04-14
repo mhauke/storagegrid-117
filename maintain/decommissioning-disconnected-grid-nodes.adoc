@@ -11,14 +11,14 @@ summary: 'You might need to decommission a node that is not currently connected 
 [.lead]
 You might need to decommission a node that is not currently connected to the grid (one whose Health is Unknown or Administratively Down).
 
-.What you'll need
+.Before you begin
 
 * You understand the requirements and link:considerations-for-decommissioning-grid-nodes.html[considerations for decommissioning grid nodes].
 * You have obtained all prerequisite items.
 * You have ensured that no data repair jobs are active. See link:checking-data-repair-jobs.html[Check data repair jobs].
 * You have confirmed that Storage Node recovery is not in progress anywhere in the grid. If it is, you must wait until any Cassandra rebuild performed as part of the recovery is complete. You can then proceed with decommissioning.
 * You have ensured that other maintenance procedures will not be run while the node decommission procedure is running, unless the node decommission procedure is paused.
-* The *Decommission Possible* column for the disconnected node or nodes you want to decommission includes a green checkmark.
+* The *Decommission Possible* column for the disconnected node or nodes you want to decommission includes a green check mark.
 * You have the provisioning passphrase.
 
 .About this task
@@ -61,7 +61,7 @@ Before decommissioning a disconnected *Admin Node* or *Gateway Node*, note the f
 +
 See the recovery procedures for instructions.
 
-. If you are unable to recover a disconnected grid node and you want to decommission it while it is disconnected, select the check box for that node.
+. If you are unable to recover a disconnected grid node and you want to decommission it while it is disconnected, select the checkbox for that node.
 +
 NOTE: If your grid contains multiple disconnected nodes, the software requires you to decommission them all at the same time, which increases the potential for unexpected results.
 +

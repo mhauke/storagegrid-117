@@ -11,7 +11,7 @@ summary: 'You can view local and federated users. You can also create local user
 [.lead]
 You can view local and federated users. You can also create local users and assign them to local admin groups to determine which Grid Manager features these users can access.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
@@ -76,7 +76,7 @@ NOTE: Local users can change their own passwords using the *Change password* opt
 
 |View user details
 
-|.. Select the check box for the user. 
+|.. Select the checkbox for the user. 
 .. Select *Actions* > *View user details*.
 
 |Select the user's name in the table.
@@ -84,7 +84,7 @@ NOTE: Local users can change their own passwords using the *Change password* opt
 
 |Edit full name (local users only)
 
-|.. Select the check box for the user. 
+|.. Select the checkbox for the user. 
 .. Select *Actions* > *Edit full name*.
 .. Enter the new name.
 .. Select *Save changes*.
@@ -96,7 +96,7 @@ NOTE: Local users can change their own passwords using the *Change password* opt
 
 |Deny or allow StorageGRID access
 
-|.. Select the check box for the user. 
+|.. Select the checkbox for the user. 
 .. Select *Actions* > *View user details*.
 .. Select the Access tab.
 .. Select *Yes* to prevent the user from signing in to the Grid Manager or the Grid Management API, or select *No* to allow the user to sign in.
@@ -109,7 +109,7 @@ NOTE: Local users can change their own passwords using the *Change password* opt
 
 |Change password (local users only)
 
-|.. Select the check box for the user. 
+|.. Select the checkbox for the user. 
 .. Select *Actions* > *View user details*.
 .. Select the Password tab.
 .. Enter a new password.
@@ -122,7 +122,7 @@ NOTE: Local users can change their own passwords using the *Change password* opt
 
 |Change groups (local users only)
 
-|.. Select the check box for the user. 
+|.. Select the checkbox for the user. 
 .. Select *Actions* > *View user details*.
 .. Select the Groups tab.
 .. Optionally, select the link after a group name to view the group's details in a new browser tab.
@@ -141,7 +141,7 @@ You can duplicate an existing user to create a new user with the same permission
 
 .Steps
 
-. Select the check box for the user. 
+. Select the checkbox for the user. 
 . Select *Actions* > *Duplicate user*.
 . Complete the Duplicate user wizard.
 
@@ -153,6 +153,6 @@ NOTE: You can't delete the root user.
 
 .Steps
 
-. From the Users page, select the check box for each user you want to remove. 
+. From the Users page, select the checkbox for each user you want to remove. 
 . Select *Actions* > *Delete user*.
 . Select *Delete user*.

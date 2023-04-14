@@ -11,7 +11,7 @@ summary: 'You create traffic classification policies if you want to monitor, and
 [.lead]
 You can create traffic classification policies if you want to monitor, and optionally limit network traffic by bucket, bucket regex, CIDR, load balancer endpoint, or tenant. Optionally, you can set limits for a policy based on bandwidth, the number of concurrent requests, or the request rate.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission.
@@ -50,7 +50,7 @@ The regular expression is unanchored. Use the ^ anchor to match at the beginning
 * Load balancer endpoint: Select an endpoint name. These are the load balancer endpoints you defined on the link:../admin/configuring-load-balancer-endpoints.html[Configure load balancer endpoints].
 * Tenant: Tenant matching uses the access key ID. If the request does not contain an access key ID (for example, anonymous access), then the ownership of the bucket accessed is used to determine the tenant.
 | Inverse match
-| If you want to match all network traffic _except_ traffic consistent with the Type and Match Value just defined, select the *Inverse match* check box. Otherwise, leave the check box cleared.
+| If you want to match all network traffic _except_ traffic consistent with the Type and Match Value just defined, select the *Inverse match* checkbox. Otherwise, leave the checkbox cleared.
 
 For example, if you want this policy to apply to all but one of the load balancer endpoints, specify the load balancer endpoint to be excluded, and select *Inverse match*.
 

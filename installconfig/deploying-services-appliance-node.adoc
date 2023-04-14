@@ -15,7 +15,7 @@ You can deploy a services appliance as a primary Admin Node, a non-primary Admin
 
 When you deploy a services appliance as a primary Admin Node, you use the StorageGRID Appliance Installer included on the appliance to install the StorageGRID software, or you upload the software version you want to install. You must install and configure the primary Admin Node before you install any other appliance node types. A primary Admin Node can connect to the Grid Network, and to the optional Admin Network and Client Network, if one or both are configured.
 
-.What you'll need
+.Before you begin
 
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
 * Network links, IP addresses, and port remapping (if necessary) have been configured for the appliance using the StorageGRID Appliance Installer.
@@ -73,7 +73,7 @@ NOTE: If you need to access the Monitor Installation page manually, click *Monit
 
 When you deploy a services appliance as a Gateway Node or non-primary Admin Node, you use the StorageGRID Appliance Installer included on the appliance.
 
-.What you'll need
+.Before you begin
 
 * The appliance has been installed in a rack or cabinet, connected to your networks, and powered on.
 * Network links, IP addresses, and port remapping (if necessary) have been configured for the appliance using the StorageGRID Appliance Installer.
@@ -118,7 +118,7 @@ a|
 Manual IP entry
 a|
 
- .. Clear the *Enable Admin Node discovery* check box.
+ .. Clear the *Enable Admin Node discovery* checkbox.
  .. Enter the IP address manually.
  .. Click *Save*.
  .. Wait for the connection state for the new IP address to become ready.
@@ -127,7 +127,7 @@ a|
 Automatic discovery of all connected primary Admin Nodes
 a|
 
- .. Select the *Enable Admin Node discovery* check box.
+ .. Select the *Enable Admin Node discovery* checkbox.
  .. Wait for the list of discovered IP addresses to be displayed.
  .. Select the primary Admin Node for the grid where this appliance Storage Node will be deployed.
  .. Click *Save*.

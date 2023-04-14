@@ -1,5 +1,5 @@
 //steps for upgrading the SANtricity OS on storage controllers using the Grid Manager. For the SG5700 and SG6000.
-.What you'll need
+.Before you begin
 
 * You have consulted the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool (IMT)^] to confirm that the SANtricity OS version you are using for the upgrade is compatible with your appliance.
 * You have the link:../admin/admin-group-permissions.html[Maintenance or Root access permission].
@@ -48,7 +48,7 @@ The SANtricity OS upgrade page appears and lists the details for each appliance 
  .. Select *Open*.
 
 +
-The file is uploaded and validated. When the validation process is done, the file name is shown with a green checkmark next to the *Browse* button. Don't change the file name because it is part of the verification process.
+The file is uploaded and validated. When the validation process is done, the file name is shown with a green check mark next to the *Browse* button. Don't change the file name because it is part of the verification process.
 
 . Enter the provisioning passphrase and select *Continue*.
 +

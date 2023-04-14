@@ -11,7 +11,7 @@ summary: 'You can configure high availability \(HA\) groups to provide highly av
 [.lead]
 You can configure high availability (HA) groups to provide highly available access to the services on Admin Nodes or Gateway Nodes.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission.
@@ -72,7 +72,7 @@ NOTE: After creating a VLAN interface, wait up to 5 minutes for the new interfac
 
 * If you select interfaces on different types of nodes, an informational note appears. You are reminded that if a failover occurs, services provided by the previously active node might not be available on the newly active node. For example, a backup Gateway Node can't provide HA protection of Admin Node services. Similarly, a backup Admin Node can't perform all of the maintenance procedures that the primary Admin Node can provide.
 
-* If you can't select an interface, its check box is disabled. The tool tip provides more information. 
+* If you can't select an interface, its checkbox is disabled. The tool tip provides more information. 
 +
 image::../media/vlan_parent_interface_tooltip.png[VLAN Interface tool tip]
 
@@ -141,7 +141,7 @@ For example, you might need to edit an HA group if you want to remove the node a
 +
 The High availability groups page shows all existing HA groups.
 
-. Select the check box for the HA group you want to edit. 
+. Select the checkbox for the HA group you want to edit. 
 
 . Do one of the following, based on what you want to update:
 ** Select *Actions* > *Edit virtual IP address* to add or remove VIP addresses.
@@ -156,7 +156,7 @@ The High availability groups page shows all existing HA groups.
 . If you selected *Edit HA group*:
 
 .. Optionally, update the group's name or description.
-.. Optionally, select or clear the check boxes to add or remove interfaces.
+.. Optionally, select or clear the checkboxes to add or remove interfaces.
 +
 NOTE: If the HA group provides access to the Grid Manager, you must select an interface on the primary Admin Node to be the Primary interface. Some maintenance procedures can only be performed from the primary Admin Node
 
@@ -182,12 +182,12 @@ To prevent client disruptions, update any affected S3 or Swift client applicatio
 .  Review the *Load balancer endpoints* column for each HA group you want to remove. If any load balancer endpoints are listed:
 
 .. Go to *CONFIGURATION* > *Network* > *Load balancer endpoints*.
-.. Select the check box for the endpoint. 
+.. Select the checkbox for the endpoint. 
 .. Select *Actions* > *Edit endpoint binding mode*.
 .. Update the binding mode to remove the HA group.
 .. Select *Save changes*.
 
-. If no load balancer endpoints are listed, select the check box for each HA group you want to remove.
+. If no load balancer endpoints are listed, select the checkbox for each HA group you want to remove.
 
 . Select *Actions* > *Remove HA group*.
 

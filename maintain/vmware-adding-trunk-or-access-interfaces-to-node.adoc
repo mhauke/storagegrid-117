@@ -11,7 +11,7 @@ summary: 'You can add extra trunk or access interfaces to a VM node after it has
 [.lead]
 You can add a trunk or access interface to a VM node after the node has been installed. The interfaces you add are displayed on the VLAN interfaces page and the HA groups page.
 
-.What you'll need
+.Before you begin
 
 * You have access to the instructions for link:../vmware/index.html[installing StorageGRID on your VMware platform].
 * You have Admin Node and Gateway Node VMware virtual machines.
@@ -30,7 +30,7 @@ If you add a trunk interface, you must configure a VLAN interface in StorageGRID
 The node might be unavailable for a brief time when you add interfaces.
 
 .Steps
-. In vCenter, add a new network adapter (type VMXNET3) to an Admin Node and Gateway Node VM.  Select *Connected* and *Connect At Power On* check boxes. 
+. In vCenter, add a new network adapter (type VMXNET3) to an Admin Node and Gateway Node VM.  Select *Connected* and *Connect At Power On* checkboxes. 
 
 +
 image::../media/vcenter.png[vCenter]

@@ -11,7 +11,7 @@ summary: 'The CloudMirror replication service is one of the three StorageGRID pl
 [.lead]
 The link:understanding-cloudmirror-replication-service.html[CloudMirror replication service] is one of the three StorageGRID platform services. You can use CloudMirror replication to automatically replicate objects to an external S3 bucket.
 
-.What you'll need
+.Before you begin
 
 * Platform services were enabled for your tenant account by a StorageGRID administrator.
 * You have already created a bucket to act as the replication source.
@@ -68,7 +68,7 @@ Use a text editor to create the replication configuration XML required to enable
 The bucket details page appears.
 
 . Select *Platform services* > *Replication*.
-. Select the *Enable replication* check box.
+. Select the *Enable replication* checkbox.
 . Paste the replication configuration XML into the text box, and select *Save changes*.
 +
 image::../media/tenant_bucket_replication_configuration.png[screenshot of replication configuration dialog box]

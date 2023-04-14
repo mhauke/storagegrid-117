@@ -15,7 +15,7 @@ You can use SANtricity System Manager to monitor the status of the storage contr
 
 You might need to access SANtricity System Manager on the storage controller to monitor the hardware in the storage controller shelf or to configure E-Series AutoSupport.
 
-.What you'll need
+.Before you begin
 
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * To access SANtricity System Manager through Grid Manager, you have installed StorageGRID, and you have the Storage appliance administrator permission or Root access permission.
@@ -102,7 +102,7 @@ For specific instructions on configuring a StorageGRID proxy for sending E-Serie
 
 You can use SANtricity System Manager to monitor and manage the individual hardware components in the storage controller shelf and to review hardware diagnostic and environmental information, such as component temperatures, as well as issues related to the drives.
 
-.What you'll need
+.Before you begin
 
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * To access SANtricity System Manager through Grid Manager, you have the Storage appliance administrator permission or Root access permission.
@@ -143,7 +143,7 @@ If the status of any component is Needs Attention, follow the steps in the Recov
 
 Management port 1 on each storage controller connects the appliance to the management network for SANtricity System Manager. If you can't access SANtricity System Manager from the StorageGRID Appliance Installer, set a static IP address for each storage controller to ensure that you don't lose your management connection to the hardware and the controller firmware in the controller shelf.
 
-.What you'll need
+.Before you begin
 
 * You are using any management client that can connect to the StorageGRID Admin Network, or you have a service laptop.
 * The client or service laptop has a supported web browser.

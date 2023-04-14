@@ -11,7 +11,7 @@ summary: 'You must manually run two scripts to remount preserved storage volumes
 [.lead]
 You must manually run two scripts to remount preserved storage volumes and to reformat any failed storage volumes. The first script remounts volumes that are properly formatted as StorageGRID storage volumes. The second script reformats any unmounted volumes, rebuilds Cassandra, if needed, and starts services.
 
-.What you'll need
+.Before you begin
 
 * You have already replaced the hardware for any failed storage volumes that you know require replacement.
 +

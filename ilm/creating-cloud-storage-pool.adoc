@@ -15,7 +15,7 @@ When you create a Cloud Storage Pool, you specify the name and location of the e
 
 StorageGRID validates the Cloud Storage Pool as soon as you save it, so you must ensure that the bucket or container specified in the Cloud Storage Pool exists and is reachable.
 
-.What you'll need
+.Before you begin
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the link:../admin/admin-group-permissions.html[required access permissions].
 * You have reviewed the link:considerations-for-cloud-storage-pools.html[considerations for Cloud Storage Pools].
@@ -59,7 +59,7 @@ _For the external container_
 * Name of the storage account and the account key. You can use the Azure portal to find these values.
 ====
 
-//what you'll need - end tabbed blocks
+//Before you begin - end tabbed blocks
 
 .Steps
 . Select *ILM* > *Storage pools* > *Cloud Storage Pools*.

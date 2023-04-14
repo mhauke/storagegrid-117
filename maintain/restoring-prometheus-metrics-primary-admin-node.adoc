@@ -11,7 +11,7 @@ summary: 'Optionally, you can retain the historical metrics maintained by Promet
 [.lead]
 Optionally, you can retain the historical metrics maintained by Prometheus on a primary Admin Node that has failed. The Prometheus metrics can only be restored if your StorageGRID system includes another Admin Node.
 
-.What you'll need
+.Before you begin
 
 * The recovered Admin Node is installed and running.
 * The StorageGRID system includes at least two Admin Nodes.

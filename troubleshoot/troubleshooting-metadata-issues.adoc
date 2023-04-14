@@ -16,7 +16,7 @@ You can perform several tasks to help determine the source of metadata problems.
 
 If the *Low metadata storage* alert is triggered, you must add new Storage Nodes.
 
-.What you'll need
+.Before you begin
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
 .About this task
@@ -63,7 +63,7 @@ After you perform the expansion, StorageGRID redistributes the existing object m
 
 The Services: Status - Cassandra (SVST) alarm indicates that you might need to rebuild the Cassandra database for a Storage Node. Cassandra is used as the metadata store for StorageGRID.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have specific access permissions.
 * You must have the `Passwords.txt` file.
@@ -159,6 +159,6 @@ You can link:../monitor/running-diagnostics.html[run diagnostics] to obtain addi
 +
 This file can be as large as 24 GB, so you should remove it to free up space.
 
-. After the issue is resolved, select the *Reset* check box for the Cassandra Heap Out Of Memory Errors count. Then select *Apply Changes*.
+. After the issue is resolved, select the *Reset* checkbox for the Cassandra Heap Out Of Memory Errors count. Then select *Apply Changes*.
 +
 NOTE: To reset event counts, you must have the Grid topology page configuration permission.

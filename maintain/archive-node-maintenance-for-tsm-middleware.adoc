@@ -21,7 +21,7 @@ If you determine that there is a fault with the archival storage device that the
 
 Before undertaking any maintenance of the TSM middleware server that might result in it becoming unavailable to the Archive Node, take the Target component offline to limit the number of alarms that are triggered if the TSM middleware server becomes unavailable.
 
-.What you'll need
+.Before you begin
 
 You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
@@ -57,7 +57,7 @@ If the StorageGRID system is configured to use an ILM rule that creates a single
 
 You can determine if objects are permanently unavailable by making a request using the TSM administrative console.
 
-.What you'll need
+.Before you begin
 
 * You have specific access permissions.
 * You have the `Passwords.txt` file.

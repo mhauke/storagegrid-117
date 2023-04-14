@@ -19,7 +19,7 @@ NOTE: To ensure that operations aren't disrupted by a failed server certificate,
 
 NOTE: If you are using a key management server (KMS) to protect the data on specially configured appliance nodes, see the specific information about link:kms-adding.html[uploading a KMS client certificate].
 
-.What you'll need
+.Before you begin
 
 * You have Root access permission.
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
@@ -119,7 +119,7 @@ Use this procedure to add an administrator client certificate if a management in
 +
 These extensions define the purpose of the key contained in the certificate.
 +
-NOTE: Leave this check box selected unless you experience connection problems with older clients when certificates include these extensions.
+NOTE: Leave this checkbox selected unless you experience connection problems with older clients when certificates include these extensions.
 
 . Select *Generate*. 
 
@@ -262,7 +262,7 @@ Generate the certificate text to paste elsewhere.
 +
 These extensions define the purpose of the key contained in the certificate.
 +
-NOTE: Leave this check box selected unless you experience connection problems with older clients when certificates include these extensions.
+NOTE: Leave this checkbox selected unless you experience connection problems with older clients when certificates include these extensions.
 
 .. Select *Generate*. 
 

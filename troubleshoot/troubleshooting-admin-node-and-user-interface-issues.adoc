@@ -15,7 +15,7 @@ There are several tasks you can perform to help determine the source of issues r
 
 If you experience an error when you are signing in to a StorageGRID Admin Node, your system might have an issue with the link:../admin/using-identity-federation.html[identity federation configuration], a link:../troubleshoot/troubleshooting-network-hardware-and-platform-issues.html[networking] or link:../installconfig/troubleshooting-hardware-installation-sg100-and-sg1000.html[hardware] problem, an issue with link:../admin/what-admin-node-is.html[Admin Node services], or an link:../maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html[issue with the Cassandra database] on connected Storage Nodes.
 
-.What you'll need
+.Before you begin
 * You have the `Passwords.txt` file.
 * You have link:../admin/admin-group-permissions.html[specific access permissions].
 
@@ -158,7 +158,7 @@ Clearing the cache removes outdated resources used by the previous version of St
 
 If the StorageGRID system includes multiple Admin Nodes, you can use another Admin Node to check the status of an unavailable Admin Node.
 
-.What you'll need
+.Before you begin
 You must have specific access permissions.
 
 .Steps

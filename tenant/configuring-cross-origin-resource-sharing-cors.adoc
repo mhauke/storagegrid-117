@@ -11,7 +11,7 @@ summary: 'You can configure cross-origin resource sharing \(CORS\) for an S3 buc
 [.lead]
 You can configure cross-origin resource sharing (CORS) for an S3 bucket if you want that bucket and objects in that bucket to be accessible to web applications in other domains.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies.
@@ -54,7 +54,7 @@ For more information about the CORS configuration XML, see http://docs.aws.amazo
 The bucket details page appears.
 
 . From the *Bucket access* tab, select the *Cross-Origin Resource Sharing (CORS)* accordion.
-. Select the *Enable CORS* check box.
+. Select the *Enable CORS* checkbox.
 . Paste the CORS configuration XML into the text box.
 . Select *Save changes*.
 
@@ -69,6 +69,6 @@ The bucket details page appears.
 
 .Steps
 
-. Clear the *Enable CORS* check box.
+. Clear the *Enable CORS* checkbox.
 
 . Select *Save changes*.
