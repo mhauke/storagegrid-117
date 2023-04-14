@@ -21,7 +21,7 @@ image:../media/grid-federation-cgr-workflow.png[Cross-grid replication workflow]
 
 Before you can use cross-grid replication, you must sign in to the corresponding tenant accounts on each grid and create identical buckets. Then, you can enable cross-grid replication on either or both buckets.
 
-.What you'll need
+.Before you begin
 
 * You have reviewed the requirements for cross-grid replication. See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
@@ -42,7 +42,7 @@ NOTE: If you are unable to sign in to the tenant's destination grid as a local u
 
 .. Follow the instructions to link:creating-s3-bucket.html[create an S3 bucket].
 .. On the *Manage object settings* tab, select *Enable object versioning*.
-.. If S3 Object Lock is enabled for your StorageGRID system, do not enable S3 Object Lock for the bucket. 
+.. If S3 Object Lock is enabled for your StorageGRID system, don't enable S3 Object Lock for the bucket. 
 .. Select *Create bucket*.
 .. Select *Finish*.
 
@@ -81,7 +81,7 @@ NOTE: If the delete request includes a version ID, that object version is perman
 See link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication] for details.
 
 
-.. Review your selections. You won't be able to change these settings unless both buckets are empty.
+.. Review your selections. You aren't able to change these settings unless both buckets are empty.
 
 .. Select *Enable and test*.
 +
@@ -93,7 +93,7 @@ After a few moments, a success message appears. Objects added to this bucket wil
 
 If cross-grid replication is enabled for a bucket, you might need to verify that the connection and cross-grid replication are working correctly and that the source and destination buckets still meet all requirements (for example, versioning is still enabled). 
 
-.What you'll need
+.Before you begin
 
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Root access permission].
@@ -120,7 +120,7 @@ You can permanently stop cross-grid replication if you no longer want to copy ob
 
 Before disabling cross-grid replication, note the following:
 
-* Disabling cross-grid replication does not remove any objects that have already been copied between grids. For example, objects in `my-bucket` on Grid 1 that have been copied to `my-bucket` on Grid 2 are not removed if you disable cross-grid replication for that bucket. If you want to delete these objects, you must remove them manually.
+* Disabling cross-grid replication does not remove any objects that have already been copied between grids. For example, objects in `my-bucket` on Grid 1 that have been copied to `my-bucket` on Grid 2 aren't removed if you disable cross-grid replication for that bucket. If you want to delete these objects, you must remove them manually.
 
 * If cross-grid replication was enabled for each of the buckets (that is, if replication occurs in both directions), you can disable cross-grid replication for either or both buckets. For example, you might want to disable replicating objects from `my-bucket` on Grid 1 to `my-bucket` on Grid 2, while continuing to replicate objects from `my-bucket` on Grid 2 to `my-bucket` on Grid 1.
 
@@ -128,9 +128,9 @@ Before disabling cross-grid replication, note the following:
 
 * If you disable cross-grid replication for a bucket that contains objects, you will not be able to reenable cross-grid replication unless you delete all objects from both the source and destination buckets.
 +
-CAUTION: You cannot reenable replication unless both buckets are empty.
+CAUTION: You can't reenable replication unless both buckets are empty.
 
-.What you'll need
+.Before you begin
 
 * You are using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Root access permission].

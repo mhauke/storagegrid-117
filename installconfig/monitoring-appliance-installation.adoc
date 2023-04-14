@@ -26,7 +26,7 @@ image::../media/monitor_installation_configure_storage.gif[This image is explain
 +
 The blue status bar indicates which task is currently in progress. Green status bars indicate tasks that have completed successfully.
 +
-NOTE: The installer ensures that tasks completed in a previous install are not re-run. If you are re-running an installation, any tasks that do not need to be re-run are shown with a green status bar and a status of "`Skipped.`"
+NOTE: The installer ensures that tasks completed in a previous install aren't re-run. If you are re-running an installation, any tasks that don't need to be re-run are shown with a green status bar and a status of "`Skipped.`"
 
 . Review the progress of the first two installation stages.
 +
@@ -56,7 +56,7 @@ image::../media/monitor_installation_services_appl.png[Monitor Installation - Se
 +
 The blue status bar indicates which task is currently in progress. Green status bars indicate tasks that have completed successfully.
 +
-NOTE: The installer ensures that tasks completed in a previous install are not re-run. If you are re-running an installation, any tasks that do not need to be re-run are shown with a green status bar and a status of "`Skipped.`"
+NOTE: The installer ensures that tasks completed in a previous install aren't re-run. If you are re-running an installation, any tasks that don't need to be re-run are shown with a green status bar and a status of "`Skipped.`"
 
 . Review the progress of first two installation stages.
  ** *1. Configure storage*
@@ -68,7 +68,7 @@ During this stage, the installer clears any existing configuration from the driv
 During this stage, the installer copies the base operating system image for StorageGRID to the appliance.
 . Continue monitoring the installation progress until one of the following processes occurs:
  ** For all appliance nodes except the primary Admin Node, the Install StorageGRID stage pauses and a message appears on the embedded console, prompting you to approve this node on the Admin Node using the Grid Manager. Go to the next step.
- ** For appliance primary Admin Node installation, you do not need to approve the node. The appliance is rebooted. You can skip the next step.
+ ** For appliance primary Admin Node installation, you don't need to approve the node. The appliance is rebooted. You can skip the next step.
 +
 NOTE: During installation of an appliance primary Admin Node, a fifth phase appears (see the example screen shot showing four phases). If the fifth phase is in progress for more than 10 minutes, refresh the web page manually.
 +

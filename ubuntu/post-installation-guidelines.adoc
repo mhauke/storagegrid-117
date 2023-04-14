@@ -13,7 +13,7 @@ After completing grid node deployment and configuration, follow these guidelines
 
 * If DHCP was used to assign IP addresses, configure a DHCP reservation for each IP address on the networks being used.
 +
-You can only set up DHCP during the deployment phase. You cannot set up DHCP during configuration.
+You can only set up DHCP during the deployment phase. You can't set up DHCP during configuration.
 +
 IMPORTANT: Nodes reboot when their IP addresses change, which can cause outages if a DHCP address change affects multiple nodes at the same time.
 

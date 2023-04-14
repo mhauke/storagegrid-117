@@ -17,7 +17,7 @@ You can use an HA group to help keep FabricPool data connections available. An H
 
 For details about this task, see link:../admin/managing-high-availability-groups.html[Manage high availability groups]. To use the FabricPool setup wizard to complete this task, go to link:use-fabricpool-setup-wizard-steps.html[Access and complete the FabricPool setup wizard].
 
-.What you'll need
+.Before you begin
 * You have reviewed the link:best-practices-for-high-availability-groups.html[best practices for high availability groups].
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission.
@@ -66,7 +66,7 @@ If the HA group includes more than one interface and the active interface fails,
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
 
 |Gateway IP address (optional)
-|Optional. If the ONTAP IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
+|Optional. If the ONTAP IP addresses used to access StorageGRID aren't on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
 
 |Virtual IP address
 |Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet.

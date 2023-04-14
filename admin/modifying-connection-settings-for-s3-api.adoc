@@ -11,7 +11,7 @@ summary: 'After the Archive Node is configured to connect to an external archiva
 [.lead]
 After the Archive Node is configured to connect to an external archival storage system through the S3 API, you can modify some settings should the connection change.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have specific access permissions.
@@ -32,6 +32,6 @@ image::../media/archive_node_s3_middleware.gif[Modify the Configuration page for
 +
 If you change the storage class, new object data is stored with the new storage class. Existing object continue to be stored under the storage class set when ingested.
 +
-NOTE: Bucket Name, Region, and Endpoint, use AWS values and cannot be changed.
+NOTE: Bucket Name, Region, and Endpoint, use AWS values and can't be changed.
 
 . Select *Apply Changes*.

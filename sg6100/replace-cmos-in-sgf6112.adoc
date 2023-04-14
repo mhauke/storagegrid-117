@@ -18,7 +18,7 @@ Use these procedures to:
 
 == Remove the CMOS battery
 
-.What you'll need
+.Before you begin
 
 * You have verified that the CMOS battery in the SGF6112 needs to be replaced. 
 +
@@ -64,7 +64,7 @@ image::../media/SGF6112-battery-cmos.png[CMOS battery clip]
 == Reinstall the CMOS battery
 Install the replacement CMOS battery into the socket on the system board.
 
-.What you'll need
+.Before you begin
 
 * You have the correct replacement CMOS battery (CR2032).
 * You have removed the failed CMOS battery.
@@ -89,7 +89,7 @@ image::../media/sgf6112_two-slot-riser_guide-pin.png[Guide pin on SGF6112 system
 
 . If you have no other maintenance procedures to perform in the appliance, reinstall the appliance cover, return the appliance to the rack, attach cables, and apply power.
 
-. If the appliance where you replaced the appliance used a key management server (KMS) to encrypt data, additional configuration might be required before the node can join the grid. If the node does not automatically join the grid, make sure that these configuration settings have transferred to the new appliance and manually configure any settings that do not have the expected configuration:
+. If the appliance where you replaced the appliance used a key management server (KMS) to encrypt data, additional configuration might be required before the node can join the grid. If the node does not automatically join the grid, make sure that these configuration settings have transferred to the new appliance and manually configure any settings that don't have the expected configuration:
 ** link:../installconfig/accessing-storagegrid-appliance-installer.html[Configure StorageGRID connections]
 ** link:../admin/kms-overview-of-kms-and-appliance-configuration.html#set-up-the-appliance[Configure node encryption for the appliance]
 

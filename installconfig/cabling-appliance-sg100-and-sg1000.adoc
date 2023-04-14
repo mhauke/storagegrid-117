@@ -11,15 +11,15 @@ summary: 'You must connect the management port on the appliance to the service l
 [.lead]
 You must connect the management port on the appliance to the service laptop and connect the network ports on the appliance to the Grid Network and optional Client Network for StorageGRID.
 
-.What you'll need
+.Before you begin
 
 * You have an RJ-45 Ethernet cable for connecting the management port.
-* You have one of the following options for the network ports. These items are not provided with the appliance.
+* You have one of the following options for the network ports. These items aren't provided with the appliance.
  ** One to four TwinAx cables for connecting the four network ports.
  ** For the SG100, one to four SFP+ or SFP28 transceivers if you plan to use optical cables for the ports.
  ** For the SG1000, one to four QSFP+ or QSFP28 transceivers if you plan to use optical cables for the ports.
 
-CAUTION: *Risk of exposure to laser radiation* -- Do not disassemble or remove any part of a SFP or QSFP transceiver. You might be exposed to laser radiation.
+CAUTION: *Risk of exposure to laser radiation* -- Don't disassemble or remove any part of a SFP or QSFP transceiver. You might be exposed to laser radiation.
 
 .About this task
 
@@ -64,7 +64,7 @@ image::../media/sg1000_connections.png[SG1000 port connections]
 |
 * Can be bonded with management port 1 if you want a redundant connection to the Admin Network.
 * Can be left disconnected and available for temporary local access (IP 169.254.0.1).
-* During installation, can be used to connect the appliance to a service laptop if DHCP-assigned IP addresses are not available.
+* During installation, can be used to connect the appliance to a service laptop if DHCP-assigned IP addresses aren't available.
 |===
 
 .Steps

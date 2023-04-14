@@ -19,7 +19,7 @@ A single custom server certificate is used for all Storage Nodes, so you must sp
 
 After completing configuration on the server, you might also need to install the Grid CA certificate in the S3 or Swift API client you will use to access the system, depending on the root certificate authority (CA) you are using.
 
-NOTE: To ensure that operations are not disrupted by a failed server certificate, the *Expiration of global server certificate for S3 and Swift API* alert is triggered when the root server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the S3 and Swift API certificate on the Global tab.
+NOTE: To ensure that operations aren't disrupted by a failed server certificate, the *Expiration of global server certificate for S3 and Swift API* alert is triggered when the root server certificate is about to expire. As required, you can view when the current certificate expires by selecting *CONFIGURATION* > *Security* > *Certificates* and looking at the Expiration date for the S3 and Swift API certificate on the Global tab.
 
 You can upload or generate a custom S3 and Swift API certificate.
 
@@ -96,7 +96,7 @@ If no value is entered in this field, the generated certificate uses the first d
 
 These extensions define the purpose of the key contained in the certificate.
 
-*Note*: Leave this check box selected unless you experience connection problems with older clients when certificates include these extensions.
+*Note*: Leave this checkbox selected unless you experience connection problems with older clients when certificates include these extensions.
 
 |===
 +
@@ -131,7 +131,7 @@ You can download or copy the certificate PEM as required.
 
 == Restore the default S3 and Swift API certificate
 
-You can revert to using the default S3 and Swift API certificate for S3 and Swift client connections to Storage Nodes. However, you cannot use the default S3 and Swift API certificate for a load balancer endpoint.
+You can revert to using the default S3 and Swift API certificate for S3 and Swift client connections to Storage Nodes. However, you can't use the default S3 and Swift API certificate for a load balancer endpoint.
 
 .Steps
 
@@ -139,7 +139,7 @@ You can revert to using the default S3 and Swift API certificate for S3 and Swif
 . On the *Global* tab, select *S3 and Swift API certificate*.
 . Select *Use default certificate*.
 +
-When you restore the default version of the global S3 and Swift API certificate, the custom server certificate files you configured are deleted and cannot be recovered from the system. The default S3 and Swift API certificate will be used for subsequent new S3 and Swift client connections to Storage Nodes. 
+When you restore the default version of the global S3 and Swift API certificate, the custom server certificate files you configured are deleted and can't be recovered from the system. The default S3 and Swift API certificate will be used for subsequent new S3 and Swift client connections to Storage Nodes. 
 
 . Select *OK* to confirm the warning and restore the default S3 and Swift API certificate.
 +

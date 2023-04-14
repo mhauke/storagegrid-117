@@ -12,7 +12,7 @@ summary: 'You can enable the AutoSupport feature and the individual AutoSupport 
 [.lead]
 You can enable the AutoSupport feature and the individual AutoSupport options when you first install StorageGRID, or you can enable them later.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access or Other grid configuration permission.
@@ -64,7 +64,7 @@ You can disable the automatic sending of weekly AutoSupport messages at any time
 .Steps
 
 . Select *SUPPORT* > *Tools* > *AutoSupport*.
-. Unselect the *Enable Weekly AutoSupport* check box.
+. Clear the *Enable Weekly AutoSupport* checkbox.
 . Select *Save*.
 
 == Disable event-triggered AutoSupport messages
@@ -76,7 +76,7 @@ You can disable event-triggered AutoSupport messages at any time.
 .Steps
 
 . Select *SUPPORT* > *Tools* > *AutoSupport*.
-. Unselect the *Enable Event-Triggered AutoSupport* check box.
+. Clear the *Enable Event-Triggered AutoSupport* checkbox.
 . Select *Save*.
 
 
@@ -86,14 +86,14 @@ AutoSupport on Demand can assist in solving issues that technical support is act
 
 By default, AutoSupport on Demand is disabled. Enabling this feature allows technical support to request that your StorageGRID system send AutoSupport messages automatically. Technical support can also set the polling time interval for AutoSupport on Demand queries.
 
-Technical support cannot enable or disable AutoSupport on Demand.
+Technical support can't enable or disable AutoSupport on Demand.
 
 .Steps
 
 . Select *SUPPORT* > *Tools* > *AutoSupport*.
 . Select the *HTTPS* for the protocol.
-. Select the *Enable Weekly AutoSupport* check box.
-. Select the *Enable AutoSupport on Demand* check box.
+. Select the *Enable Weekly AutoSupport* checkbox.
+. Select the *Enable AutoSupport on Demand* checkbox.
 . Select *Save*.
 +
 AutoSupport on Demand is enabled, and technical support can send AutoSupport on Demand requests to StorageGRID.
@@ -107,7 +107,7 @@ As required, you can optionally disable the check for software updates. For exam
 .Steps
 
 . Select *SUPPORT* > *Tools* > *AutoSupport*.
-. Unselect the *Check for software updates* check box.
+. Clear the *Check for software updates* checkbox.
 . Select *Save*.
 
 == Add an additional AutoSupport destination
@@ -116,7 +116,7 @@ When you enable AutoSupport, heath and status messages are sent to NetApp Suppor
 
 To verify or change the protocol used to send AutoSupport messages, see the instructions to <<Specify the protocol for AutoSupport messages>>.
 
-NOTE: You cannot use the SMTP protocol to send AutoSupport messages to an additional destination.
+NOTE: You can't use the SMTP protocol to send AutoSupport messages to an additional destination.
 
 
 .Steps

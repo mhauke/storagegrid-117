@@ -11,7 +11,7 @@ summary: 'You can upgrade to StorageGRID 11.7 and apply the latest hotfix for th
 [.lead]
 You can upgrade to StorageGRID 11.7 and apply the latest hotfix for that release at the same time. The StorageGRID upgrade page provides the recommended upgrade path and links directly to the correct download pages.
 
-.What you'll need
+.Before you begin
 You have reviewed all of the considerations and completed all of the planning and preparation steps.
 
 == Access StorageGRID Upgrade page
@@ -29,7 +29,7 @@ As a first step, access the StorageGRID Upgrade page in the Grid Manager.
 
 The update path on the StorageGRID Upgrade page indicates which major versions (for example, 11.7.0) and hotfixes (for example, 11.7.0.1) you must install to get to the latest StorageGRID release. You should install the recommended versions and hotfixes in the order shown.
 
-TIP: If no update path is shown, your browser might not be able to access the NetApp Support Site, or the *Check for software updates* check box on the AutoSupport page (*SUPPORT* > *Tools* > *AutoSupport*) might be disabled. 
+TIP: If no update path is shown, your browser might not be able to access the NetApp Support Site, or the *Check for software updates* checkbox on the AutoSupport page (*SUPPORT* > *Tools* > *AutoSupport*) might be disabled. 
 
 .Steps
 
@@ -43,7 +43,7 @@ NOTE: If you needed to download and install an RPM or DEB package on all Linux h
 
 . Select *Browse* to upload the version upgrade file to StorageGRID: `NetApp_StorageGRID_11.7.0_Software_uniqueID.upgrade`
 +
-When the upload and validation process is done, a green checkmark appears next to the file name.
+When the upload and validation process is done, a green check mark appears next to the file name.
 
 . If you downloaded a hotfix file, select *Browse* to upload that file. The hotfix will be automatically applied as part of the version upgrade.
 
@@ -70,7 +70,7 @@ IMPORTANT: The Recovery Package file must be secured because it contains encrypt
 
 . Review the details for each reported precheck and resolve any reported errors. See the https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/StorageGRID_software_upgrade_resolution_guide[StorageGRID software upgrade resolution guide^] for the StorageGRID 11.7 release.
 +
-You must resolve all precheck _errors_ before you can upgrade your system. However, you do not need to address precheck _warnings_ before upgrading.
+You must resolve all precheck _errors_ before you can upgrade your system. However, you don't need to address precheck _warnings_ before upgrading.
 +
 IMPORTANT: If you have opened any custom firewall ports, you are notified during the precheck validation. You must contact technical support before proceeding with the upgrade.
 
@@ -105,7 +105,7 @@ You must upgrade all grid nodes, but you can perform multiple upgrade sessions a
 
 If the order in which nodes are upgraded is important, approve nodes or groups of nodes one at a time and wait until the upgrade is complete on each node before approving the next node or group of nodes.
 
-IMPORTANT: When the upgrade starts on a grid node, the services on that node are stopped. Later, the grid node is rebooted. To avoid service interruptions for client applications that are communicating with the node, do not approve the upgrade for a node unless you are sure that node is ready to be stopped and rebooted. As required, schedule a maintenance window or notify customers. 
+IMPORTANT: When the upgrade starts on a grid node, the services on that node are stopped. Later, the grid node is rebooted. To avoid service interruptions for client applications that are communicating with the node, don't approve the upgrade for a node unless you are sure that node is ready to be stopped and rebooted. As required, schedule a maintenance window or notify customers. 
 
 .Steps
 
@@ -166,7 +166,7 @@ If you approve more than one node of the same type, the nodes will be upgraded o
 * Approved and waiting to be upgraded
 * Stopping services
 +
-NOTE: You cannot remove a node when its Stage reaches *Stopping services*. The *Unapprove* button is disabled.
+NOTE: You can't remove a node when its Stage reaches *Stopping services*. The *Unapprove* button is disabled.
 
 * Stopping container
 * Cleaning up Docker images

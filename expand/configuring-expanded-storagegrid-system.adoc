@@ -44,10 +44,10 @@ link:rebalancing-erasure-coded-data-after-adding-storage-nodes.html[Rebalance er
 
 . If you added an Admin Node:
 
-.. If single sign-on (SSO) is enabled for your StorageGRID system, create a relying party trust for the new Admin Node. You cannot sign in to the node until you create this relying party trust. See
+.. If single sign-on (SSO) is enabled for your StorageGRID system, create a relying party trust for the new Admin Node. You can't sign in to the node until you create this relying party trust. See
 link:../admin/configuring-sso.html[Configure single sign-on].
 
-.. If you plan to use the Load Balancer service on Admin Nodes, optionally add the new Admin Node to a HA group. Select *CONFIGURATION* > *Network* > *High availability groups* to review the list of existing HA groups and to add the new node. See link:../admin/configure-high-availability-group.html[Configure high availability groups].
+.. If you plan to use the Load Balancer service on Admin Nodes, optionally add the new Admin Node to an HA group. Select *CONFIGURATION* > *Network* > *High availability groups* to review the list of existing HA groups and to add the new node. See link:../admin/configure-high-availability-group.html[Configure high availability groups].
 
 .. Optionally, copy the Admin Node database from the primary Admin Node to the expansion Admin Node if you want to keep the attribute and audit information consistent on each Admin Node. See link:copying-admin-node-database.html[Copy the Admin Node database].
 
@@ -61,7 +61,7 @@ link:../admin/configuring-sso.html[Configure single sign-on].
 +
 If the Client Network on the expansion node is untrusted, then connections to the node on the Client Network must be made using a load balancer endpoint. See link:../admin/manage-firewall-controls.html[Manage firewall controls].
 
-. Configure the domain name system (DNS).
+. Configure the DNS.
 +
 If you have been specifying DNS settings separately for each grid node, you must add custom per-node DNS settings for the new nodes. See link:../maintain/modifying-dns-configuration-for-single-grid-node.html[Modify DNS configuration for single grid node].
 +

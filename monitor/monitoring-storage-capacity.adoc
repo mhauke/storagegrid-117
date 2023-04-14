@@ -42,7 +42,7 @@ image::../media/nodes_deployment_storage_tab.png[Nodes Deployment Storage tab]
 
  .. Position your cursor over the *Storage used - object data* and the *Storage used - object metadata* charts to see how much object storage and object metadata storage is available for the entire grid, and how much has been used over time.
 +
-NOTE: The total values for a site or the grid do not include nodes that have not reported metrics for at least five minutes, such as offline nodes.
+NOTE: The total values for a site or the grid don't include nodes that have not reported metrics for at least five minutes, such as offline nodes.
 . Plan to perform an expansion to add Storage Nodes or storage volumes before the grid's usable storage capacity is consumed.
 +
 When planning the timing of an expansion, consider how long it will take to procure and install additional storage.
@@ -132,7 +132,7 @@ Actual reserved:: The actual space reserved for metadata on this Storage Node. I
 _Prometheus metric will be added in a future release._
 
 +
-NOTE: The total values for a site or the grid do not include nodes that have not reported metrics for at least five minutes, such as offline nodes.
+NOTE: The total values for a site or the grid don't include nodes that have not reported metrics for at least five minutes, such as offline nodes.
 
 . If the *Used (%)* value is 70% or higher, expand your StorageGRID system by adding Storage Nodes to each site.
 +

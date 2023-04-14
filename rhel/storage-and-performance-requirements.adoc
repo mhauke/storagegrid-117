@@ -17,7 +17,7 @@ StorageGRID nodes require three logical categories of storage:
 * *System data* -- Performance-tier (10K SAS or SSD) storage for per-node persistent storage of system data and transaction logs, which the StorageGRID host services will consume and map into individual nodes.
 * *Object data* -- Performance-tier (10K SAS or SSD) storage and capacity-tier (NL-SAS/SATA) bulk storage for the persistent storage of object data and object metadata.
 
-You must use RAID-backed block devices for all storage categories. Non-redundant disks, SSDs, or JBODs are not supported. You can use shared or local RAID storage for any of the storage categories; however, if you want to use the node migration capability in StorageGRID, you must store both system data and object data on shared storage. For more information, see link:node-container-migration-requirements.html[Node container migration requirements].
+You must use RAID-backed block devices for all storage categories. Non-redundant disks, SSDs, or JBODs aren't supported. You can use shared or local RAID storage for any of the storage categories; however, if you want to use the node migration capability in StorageGRID, you must store both system data and object data on shared storage. For more information, see link:node-container-migration-requirements.html[Node container migration requirements].
 
 == Performance requirements
 
@@ -35,7 +35,7 @@ IMPORTANT: Never use FabricPool to tier any data related to StorageGRID back to 
 
 Each StorageGRID site requires a minimum of three Storage Nodes.
 
-IMPORTANT: In a production deployment, do not run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
+IMPORTANT: In a production deployment, don't run more than one Storage Node on a single physical or virtual host. Using a dedicated host for each Storage Node provides an isolated failure domain.
 
 Other types of nodes, such as Admin Nodes or Gateway Nodes, can be deployed on the same hosts, or they can be deployed on their own dedicated hosts as required.
 
@@ -84,7 +84,7 @@ IMPORTANT: Depending on the audit level configured, the size of user inputs such
 
 The following table shows the minimum storage space required for each type of node. You can use this table to determine the minimum amount of storage you must provide to the host in each storage category, based on which nodes will be deployed on that host.
 
-NOTE: Disk snapshots cannot be used to restore grid nodes. Instead, refer to the link:../maintain/grid-node-recovery-procedures.html[grid node recovery] procedures for each type of node.
+NOTE: Disk snapshots can't be used to restore grid nodes. Instead, refer to the link:../maintain/grid-node-recovery-procedures.html[grid node recovery] procedures for each type of node.
 
 [options="header"]
 |===

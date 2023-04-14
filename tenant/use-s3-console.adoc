@@ -20,14 +20,14 @@ You can also use S3 Console to do the following:
 * View object metadata
 * Download objects
 
-NOTE: The S3 Console is marked as “experimental” because it is not yet complete or approved for use in a production environment. Tenants should only use S3 Console when performing functions for a small number of objects, such as when uploading objects to simulate a new ILM policy, troubleshooting ingest issues, or using proof-of-concept or non-production grids.
+NOTE: The S3 Console is marked as "experimental" because it is not yet complete or approved for use in a production environment. Tenants should only use S3 Console when performing functions for a small number of objects, such as when uploading objects to simulate a new ILM policy, troubleshooting ingest issues, or using proof-of-concept or non-production grids.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the Root access permission or that has both the Manage all buckets and Manage objects with S3 Console link:tenant-management-permissions.html[permissions].
 +
-NOTE: Users who have the Manage objects with S3 Console permission but who do not have the Manage all buckets permission can still navigate directly to the Experimental S3 Console.
+NOTE: Users who have the Manage objects with S3 Console permission but who don't have the Manage all buckets permission can still navigate directly to the Experimental S3 Console.
 
 * You have created a bucket.
 * An S3 Group or Bucket policy has been configured for the user.

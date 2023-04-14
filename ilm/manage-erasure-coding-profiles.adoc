@@ -15,7 +15,7 @@ You can rename an erasure coding profile if needed. You can deactivate an erasur
 
 You might want to rename an erasure coding profile to make it more obvious what the profile does.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the link:../admin/admin-group-permissions.html[required access permissions].
@@ -40,7 +40,7 @@ NOTE: Erasure coding profile names must be unique. A validation error occurs if 
 
 You can deactivate an erasure coding profile if you no longer plan to use it and if the profile is not currently used in any ILM rules.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the link:../admin/admin-group-permissions.html[required access permissions].
@@ -51,7 +51,7 @@ When you deactivate an erasure coding profile, the profile still appears on the 
 
 image::../media/deactivated_ec_profile.png[Deactivated EC Profile]
 
-You can no longer use an erasure coding profile that has been deactivated. A deactivated profile is not shown when you create the placement instructions for an ILM rule. You cannot reactivate a deactivated profile.
+You can no longer use an erasure coding profile that has been deactivated. A deactivated profile is not shown when you create the placement instructions for an ILM rule. You can't reactivate a deactivated profile.
 
 StorageGRID prevents you from deactivating an erasure coding profile if either of the following is true:
 
@@ -64,7 +64,7 @@ StorageGRID prevents you from deactivating an erasure coding profile if either o
 
 . Review the *Status* column to confirm that the erasure coding profile you want to deactivate is not used in any ILM rules.
 +
-You cannot deactivate an erasure coding profile if it is used in any ILM rule. In the example, the *2+1 Data Center 1* profile is used in at least one ILM rule.
+You can't deactivate an erasure coding profile if it is used in any ILM rule. In the example, the *2+1 Data Center 1* profile is used in at least one ILM rule.
 +
 image::../media/ec_profile_used_in_ilm_rule.png[EC Profile Used in ILM Rule]
 

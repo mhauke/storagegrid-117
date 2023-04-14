@@ -17,7 +17,7 @@ Optionally, tenant accounts can be used to segregate stored objects by different
 
 * *Enterprise use case:* If the StorageGRID system is being used within an enterprise, the grid's object storage might be segregated by the different departments in the organization. For example, there might be tenant accounts for the Marketing department, the Customer Support department, the Human Resources department, and so on.
 +
-NOTE: If you use the S3 client protocol, you can also use S3 buckets and bucket policies to segregate objects between the departments in an enterprise. You do not need to create separate tenant accounts. See instructions for implementing link:../s3/bucket-and-group-access-policies.html[S3 buckets and bucket policies] for more information.
+NOTE: If you use the S3 client protocol, you can also use S3 buckets and bucket policies to segregate objects between the departments in an enterprise. You don't need to create separate tenant accounts. See instructions for implementing link:../s3/bucket-and-group-access-policies.html[S3 buckets and bucket policies] for more information.
 
 * *Service provider use case:* If the StorageGRID system is being used by a service provider, the grid's object storage might be segregated by the different entities that lease the storage. For example, there might be tenant accounts for Company A, Company B, Company C, and so on.
 
@@ -25,7 +25,7 @@ NOTE: If you use the S3 client protocol, you can also use S3 buckets and bucket 
 
 Tenant accounts are created by a StorageGRID grid administrator using the Grid Manager. When creating a tenant account, the grid administrator specifies the following information:
 
-* Display name for the tenant (the tenant's account ID is assigned automatically and cannot be changed).
+* Display name for the tenant (the tenant's account ID is assigned automatically and can't be changed).
 * Whether the tenant account will use the S3 or Swift.
 * For S3 tenant accounts: Whether the tenant account is allowed to use platform services. If the use of platform services is allowed, the grid must be configured to support their use.
 * Optionally, a storage quota for the tenant account--the maximum number of gigabytes, terabytes, or petabytes available for the tenant's objects. A tenant's storage quota represents a logical amount (object size), not a physical amount (size on disk).

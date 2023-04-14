@@ -2,18 +2,18 @@
 permalink: tenant/managing-local-users.html
 sidebar: sidebar
 keywords: how to create local tenant users, manage users
-summary: 'You can create local users and assign them to local groups to determine which features these users can access. The Tenant Manager includes one predefined local user, named "`root.`" Although you can add and remove local users, you cannot remove the root user.'
+summary: 'You can create local users and assign them to local groups to determine which features these users can access. The Tenant Manager includes one predefined local user, named "`root.`" Although you can add and remove local users, you can't remove the root user.'
 ---
 = Manage local users
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can create local users and assign them to local groups to determine which features these users can access. The Tenant Manager includes one predefined local user, named "`root.`" Although you can add and remove local users, you cannot remove the root user.
+You can create local users and assign them to local groups to determine which features these users can access. The Tenant Manager includes one predefined local user, named "`root.`" Although you can add and remove local users, you can't remove the root user.
 
 NOTE: If single sign-on (SSO) is enabled for your StorageGRID system, local users will not be able to sign in to the Tenant Manager or the Tenant Management API, although they can use client applications to access the tenant's resources, based on group permissions.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
@@ -25,9 +25,9 @@ NOTE: If single sign-on (SSO) is enabled for your StorageGRID system, local user
 
 You can create a local user and assign them to one or more local groups to control their access permissions.
 
-S3 users who do not belong to any groups do not have management permissions or S3 group policies applied to them. These users might have S3 bucket access granted through a bucket policy.
+S3 users who don't belong to any groups don't have management permissions or S3 group policies applied to them. These users might have S3 bucket access granted through a bucket policy.
 
-Swift users who do not belong to any groups do not have management permissions or Swift container access.
+Swift users who don't belong to any groups don't have management permissions or Swift container access.
 
 === Access the Create user wizard
 
@@ -55,7 +55,7 @@ image::../media/grid-federation-tenant-user-banner.png[image of blue banner on U
 | The full name for this user, for example, the first name and last name of a person or the name of an application. 
 
 | Username
-| The name this user will use to sign in. Usernames must be unique and cannot be changed.
+| The name this user will use to sign in. Usernames must be unique and can't be changed.
 
 *Note*: If your tenant account has the *Use grid federation connection* permission, a cloning error will occur if the same *Username* already exists for the tenant on the destination grid.
 
@@ -79,7 +79,7 @@ For example, select *Yes* to temporarily suspend a user's ability to sign in.
 +
 Assigning a user to groups is optional. If you'd prefer, you can select users when you create or edit groups. 
 +
-Users who do not belong to any groups will have no management permissions. Permissions are cumulative. Users will have all permissions for all groups they belong to. See link:tenant-management-permissions.html[Tenant management permissions].
+Users who don't belong to any groups will have no management permissions. Permissions are cumulative. Users will have all permissions for all groups they belong to. See link:tenant-management-permissions.html[Tenant management permissions].
 
 . Select *Create user*.
 +
@@ -93,13 +93,13 @@ If your tenant account has the *Use grid federation connection* permission and y
 
 . Select *ACCESS MANAGEMENT* > *Users*.
 
-. Review the information on the Users page, which lists basic information for all local and federated users for this tenant account.
+. Review the information provided on the Users page, which lists basic information for all local and federated users for this tenant account.
 +
 If the tenant account has the *Use grid federation connection* permission and you are viewing the user on the tenant's source grid, a blue banner indicates that if you edit or remove the user, your changes will not be synced to the other grid.
 
 . If you want to change the user's full name:
 
-.. Select the check box for the user.
+.. Select the checkbox for the user.
 .. Select  *Actions* > *Edit full name*.
 .. Enter the new name.
 .. Select *Save changes.*
@@ -108,7 +108,7 @@ If the tenant account has the *Use grid federation connection* permission and yo
 
 ** Select the username.
 
-** Select the check box for the user, and select *Actions* > *View user details*.
+** Select the checkbox for the user, and select *Actions* > *View user details*.
 
 . Review the Overview section, which shows the following information for each user:
 
@@ -128,7 +128,7 @@ If the tenant account has the *Use grid federation connection* permission and yo
 
 .. In the Overview section, change the full name by selecting the name or the edit icon image:../media/icon_edit_tm.png[Edit icon].
 +
-You cannot change the username.
+You can't change the username.
 
 .. On the *Password* tab, change the user's password, and select *Save changes*.
 
@@ -151,7 +151,7 @@ NOTE: If your tenant account has the *Use grid federation connection* permission
 
 . Select *ACCESS MANAGEMENT* > *Users*.
 
-. Select the check box for the user you want to duplicate.
+. Select the checkbox for the user you want to duplicate.
 
 . Select  *Actions* > *Duplicate user*.
 
@@ -171,7 +171,7 @@ NOTE: You must use the federated identity source to delete federated users.
 
 . Select *ACCESS MANAGEMENT* > *Users*.
 
-. Select the check box for each user you want to delete.
+. Select the checkbox for each user you want to delete.
 
 . Select *Actions* > *Delete user* or *Actions* > *Delete users*.
 +

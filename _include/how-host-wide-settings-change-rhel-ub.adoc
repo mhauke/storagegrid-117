@@ -21,7 +21,7 @@ vm.min_free_kbytes = 524288
 # to help avoid OOM conditions in the kernel during memory allocation bursts. Bump
 # dirty_ratio to 90 because we explicitly fsync data that needs to be persistent, and
 # so do not require the dirty_ratio safety net. A low dirty_ratio combined with a large
-# working set (nr_active_pages) can cause us to enter synchronous IO mode unnecessarily,
+# working set (nr_active_pages) can cause us to enter synchronous I/O mode unnecessarily,
 # with deleterious effects on performance.
 vm.swappiness = 60
 vm.watermark_scale_factor = 200

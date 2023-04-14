@@ -15,13 +15,13 @@ If you need to deploy any StorageGRID appliance Storage Nodes, see link:../insta
 
 Optionally, you can remap node ports or increase CPU or memory settings for the node before powering it on.
 
-.What you'll need
+.Before you begin
 
 * You have reviewed how to link:planning-and-preparation.html[plan and prepare for installation], and you understand the requirements for software, CPU and RAM, and storage and performance.
 
 * You are familiar with VMware vSphere Hypervisor and have experience deploying virtual machines in this environment.
 +
-NOTE: The `open-vm-tools` package, an open-source implementation similar to VMware Tools, is included with the StorageGRID virtual machine. You do not need to install VMware Tools manually.
+NOTE: The `open-vm-tools` package, an open-source implementation similar to VMware Tools, is included with the StorageGRID virtual machine. You don't need to install VMware Tools manually.
 
 * You have downloaded and extracted the correct version of the StorageGRID installation archive for VMware.
 +
@@ -68,7 +68,7 @@ vsphere-storage.mf
 * The `.vdmk`, `.ovf`, and `.mf` files are all in the same directory.
 * You have a plan to minimize failure domains. For example, you should not deploy all Gateway Nodes on a single virtual machine server.
 +
-IMPORTANT: In a production deployment, do not run more than one Storage Node on a single virtual machine server. Using a dedicated virtual machine host for each Storage Node provides an isolated failure domain.
+IMPORTANT: In a production deployment, don't run more than one Storage Node on a single virtual machine server. Using a dedicated virtual machine host for each Storage Node provides an isolated failure domain.
 
 * If you are deploying a node as part of an expansion or recovery operation, you have the link:../expand/index.html[instructions for expanding a StorageGRID system] or the link:../maintain/index.html[recovery and maintenance instructions].
 
@@ -90,7 +90,7 @@ If you are performing an expansion or recovery operation:
 
 * You must ensure that the new virtual machine can connect to the primary Admin Node over the Grid Network.
 
-If you need to remap any of the node's ports, do not power on the new node until the port remap configuration is complete.
+If you need to remap any of the node's ports, don't power on the new node until the port remap configuration is complete.
 
 .Steps
 
@@ -141,8 +141,8 @@ NOTE: Some StorageGRID installations might use larger, more active storage volum
 Determine which StorageGRID networks the node will use by selecting a destination network for each source network.
 
  ** The Grid Network is required. You must select a destination network in the vSphere environment.
- ** If you use the Admin Network, select a different destination network in the vSphere environment. If you do not use the Admin Network, select the same destination you selected for the Grid Network.
- ** If you use the Client Network, select a different destination network in the vSphere environment. If you do not use the Client Network, select the same destination you selected for the Grid Network.
+ ** If you use the Admin Network, select a different destination network in the vSphere environment. If you don't use the Admin Network, select the same destination you selected for the Grid Network.
+ ** If you use the Client Network, select a different destination network in the vSphere environment. If you don't use the Client Network, select the same destination you selected for the Grid Network.
 
 . Under *Customize Template*, configure the required StorageGRID node properties.
  .. Enter the *Node name*.
@@ -159,12 +159,12 @@ NOTE: This step does not apply if the node you are deploying is the primary Admi
 If you omit the primary Admin Node IP address, the IP address will be automatically discovered if the primary Admin Node, or at least one other grid node with ADMIN_IP configured, is present on the same subnet. However, it is recommended to set the primary Admin Node IP address here.
 
  .. In the *Admin Network (eth1)* section, select STATIC, DHCP, or DISABLED for the *Admin network IP configuration*.
-  *** If you do not want to use the Admin Network, select DISABLED and enter *0.0.0.0* for the Admin Network IP. You can leave the other fields blank.
+  *** If you don't want to use the Admin Network, select DISABLED and enter *0.0.0.0* for the Admin Network IP. You can leave the other fields blank.
   *** If you select STATIC, enter the *Admin network IP*, *Admin network mask*, *Admin network gateway*, and *Admin network MTU*.
   *** If you select STATIC, enter the *Admin network external subnet list*. You must also configure a gateway.
   *** If you select DHCP, the *Admin network IP*, *Admin network mask*, and *Admin network gateway* are automatically assigned.
  .. In the *Client Network (eth2)* section, select STATIC, DHCP, or DISABLED for the *Client network IP configuration*.
-  *** If you do not want to use the Client Network, select DISABLED and enter *0.0.0.0* for the Client Network IP. You can leave the other fields blank.
+  *** If you don't want to use the Client Network, select DISABLED and enter *0.0.0.0* for the Client Network IP. You can leave the other fields blank.
   *** If you select STATIC, enter the *Client network IP*, *Client network mask*, *Client network gateway*, and *Client network MTU*.
   *** If you select DHCP, the *Client network IP*, *Client network mask*, and *Client network gateway* are automatically assigned.
 . Review the virtual machine configuration and make any changes necessary.
@@ -183,7 +183,7 @@ Note the following important guidelines:
 +
 You might need to remap a port if your enterprise networking policies restrict access to one or more ports that are used by StorageGRID. See the link:../network/index.html[networking guidelines] for the ports used by StorageGRID.
 +
-IMPORTANT: Do not remap the ports used in load balancer endpoints.
+IMPORTANT: Don't remap the ports used in load balancer endpoints.
 
  .. Select the new VM.
  .. From the Configure tab, select *Settings* > *vApp Options*. The location of *vApp Options* depends on the version of vCenter.
@@ -210,7 +210,7 @@ For example, to remap ssh traffic from port 22 to port 3022, enter:
 
 .. To specify the port used for inbound communications to the node, select *PORT_REMAP_INBOUND*.
 +
-NOTE: If you specify PORT_REMAP_INBOUND and do not specify a value for PORT_REMAP, outbound communications for the port are unchanged.
+NOTE: If you specify PORT_REMAP_INBOUND and don't specify a value for PORT_REMAP, outbound communications for the port are unchanged.
 
   ... Scroll back to the top of the table, and select *Edit*.
   ... On the Type tab, select *User configurable*, and select *Save*.

@@ -13,7 +13,7 @@ You can migrate one or more StorageGRID nodes from one Linux host (the _source h
 
 For example, you might want to migrate a node to perform OS patching and reboot. 
  
-.What you'll need
+.Before you begin
 
 * You planned your StorageGRID deployment to include migration support.
 ** link:../rhel/node-container-migration-requirements.html[Node container migration requirements for Red Hat Enterprise Linux or Centos]
@@ -27,9 +27,9 @@ For example, you might want to migrate a node to perform OS patching and reboot.
 
 [NOTE]
 ====
-In a production deployment, do not run more than one Storage Node on a single host. Using a dedicated host for each Storage Node provides an isolated failure domain.
+In a production deployment, don't run more than one Storage Node on a single host. Using a dedicated host for each Storage Node provides an isolated failure domain.
 
-Other types of nodes, such as Admin Nodes or Gateway Nodes, can be deployed on the same host. However, if you have multiple nodes of the same type (two Gateway Nodes, for example), do not install all instances on the same host.
+Other types of nodes, such as Admin Nodes or Gateway Nodes, can be deployed on the same host. However, if you have multiple nodes of the same type (two Gateway Nodes, for example), don't install all instances on the same host.
 ====
 
 
@@ -136,7 +136,7 @@ After you validate the migrated node, you start the node by running a command on
 
 . Sign in to the Grid Manager and verify that the status of the node is green with no alert.
 +
-IMPORTANT: Verifying that the status of the node is green ensures that the migrated node has fully restarted and rejoined the grid. If the status is not green, do not migrate any additional nodes so that you will not have more than one node out of service.
+IMPORTANT: Verifying that the status of the node is green ensures that the migrated node has fully restarted and rejoined the grid. If the status is not green, don't migrate any additional nodes so that you will not have more than one node out of service.
 
 . If you are unable to access the Grid Manager, wait for 10 minutes, then run the following command:
 +

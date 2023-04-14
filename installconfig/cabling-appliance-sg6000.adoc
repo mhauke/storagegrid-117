@@ -11,15 +11,15 @@ summary: 'You connect the storage controllers to the SG6000-CN controller, conne
 [.lead]
 You connect the storage controllers to the SG6000-CN controller, connect the management ports on all three controllers, and connect the network ports on the SG6000-CN controller to the Grid Network and optional Client Network for StorageGRID.
 
-.What you'll need
+.Before you begin
 
 * You have the four optical cables provided with the appliance for connecting the two storage controllers to the SG6000-CN controller.
 * You have RJ-45 Ethernet cables (four minimum) for connecting the management ports.
-* You have one of the following options for the network ports. These items are not provided with the appliance.
+* You have one of the following options for the network ports. These items aren't provided with the appliance.
  ** One to four TwinAx cables for connecting the four network ports.
  ** One to four SFP+ or SFP28 transceivers if you plan to use optical cables for the ports.
 +
-CAUTION: *Risk of exposure to laser radiation* -- Do not disassemble or remove any part of an SFP transceiver. You might be exposed to laser radiation.
+CAUTION: *Risk of exposure to laser radiation* -- Don't disassemble or remove any part of an SFP transceiver. You might be exposed to laser radiation.
 
 .About this task
 
@@ -27,7 +27,7 @@ The following figures show the three controllers in the SG6060 and SG6060X appli
 
 NOTE: Both versions of the E2800 controller have identical specifications and function except for the location of the interconnect ports.
 
-CAUTION: Do not use an E2800A and E2800B controller in the same appliance. 
+CAUTION: Don't use an E2800A and E2800B controller in the same appliance. 
 
 SG6060 connections:
 
@@ -79,7 +79,7 @@ image::../media/sg6000_ef570_connections.png[SG6000 to SGF570 Connections]
 |
 * Can be bonded with management port 1 if you want a redundant connection to the Admin Network.
 * Can be left unwired and available for temporary local access (IP 169.254.0.1).
-* During installation, can be used to connect the SG6000-CN controller to a service laptop if DHCP-assigned IP addresses are not available.
+* During installation, can be used to connect the SG6000-CN controller to a service laptop if DHCP-assigned IP addresses aren't available.
 
 |5
 |Management port 1 on each storage controller
@@ -133,7 +133,7 @@ Grid Network
 . If you plan to use the management network for SANtricity System Manager, connect management port 1 (P1) on each storage controller (the RJ-45 port on the left) to the management network for SANtricity System Manager, using an Ethernet cable.
 
 +
-Do not use management port 2 (P2) on the storage controllers (the RJ-45 port on the right). This port is reserved for technical support.
+Don't use management port 2 (P2) on the storage controllers (the RJ-45 port on the right). This port is reserved for technical support.
 
 .Related information
 

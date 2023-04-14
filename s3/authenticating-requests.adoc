@@ -23,4 +23,4 @@ The HTTP `Authorization` header is used by all S3 API operations except Anonymou
 
 == Use query parameters
 
-You can use query parameters to add authentication information to a URL. This is known as presigning the URL, which can be used to grant temporary access to specific resources. Users with the presigned URL do not need to know the secret access key to access the resource, which enables you to provide third-party restricted access to a resource.
+You can use query parameters to add authentication information to a URL. This is known as presigning the URL, which can be used to grant temporary access to specific resources. Users with the presigned URL don't need to know the secret access key to access the resource, which enables you to provide third-party restricted access to a resource.

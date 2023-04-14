@@ -11,7 +11,7 @@ summary: 'If a hardware error occurs when the appliance is booting up, the BMC l
 [.lead]
 If a hardware error occurs when the appliance is booting up, the BMC logs an error code. As required, you can view these error codes using the BMC interface, and then work with technical support to resolve the issue.
 
-.What you'll need
+.Before you begin
 
 * You know how to access the BMC dashboard.
 
@@ -44,7 +44,7 @@ Memory initialization error. SPD reading has failed.
 a|
 0x52
 a|
-Memory initialization error. Invalid memory size or memory modules do not match.
+Memory initialization error. Invalid memory size or memory modules don't match.
 a|
 0x53
 a|
@@ -100,7 +100,7 @@ South bridge initialization error
 a|
 0xD3
 a|
-Some architectural protocols are not available
+Some architectural protocols aren't available
 a|
 0xD4
 a|

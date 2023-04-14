@@ -11,7 +11,7 @@ summary: 'After you have activated an ILM policy, you should ingest representati
 [.lead]
 After you have activated an ILM policy, you should ingest representative test objects into the StorageGRID system. You should then perform an object metadata lookup to confirm that copies are being made as intended and placed in the correct locations.
 
-.What you'll need
+.Before you begin
 
 * You have an object identifier, which can be one of:
  ** *UUID*: The object's Universally Unique Identifier. Enter the UUID in all uppercase.
@@ -46,7 +46,7 @@ image::../media/object_lookup_results.png[Object Lookup Results]
 
 . Confirm that the object is stored in the correct location or locations and that it is the correct type of copy.
 +
-NOTE: If the Audit option is enabled, you can also monitor the audit log for the ORLM Object Rules Met message. The ORLM audit message can provide you with more information about the status of the ILM evaluation process, but it cannot give you information about the correctness of the object data's placement or the completeness of the ILM policy. You must evaluate this yourself. For details, see link:../audit/index.html[Review audit logs].
+NOTE: If the Audit option is enabled, you can also monitor the audit log for the ORLM Object Rules Met message. The ORLM audit message can provide you with more information about the status of the ILM evaluation process, but it can't give you information about the correctness of the object data's placement or the completeness of the ILM policy. You must evaluate this yourself. For details, see link:../audit/index.html[Review audit logs].
 
 .Related information
 

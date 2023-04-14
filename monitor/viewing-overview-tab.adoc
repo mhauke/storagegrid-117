@@ -22,7 +22,7 @@ image::../media/nodes_page_overview_tab.png[Nodes Page Overview Tab]
 The overview information for a node includes the following:
 
 * *Display name* (shown only if the node has been renamed): The current display name for the node. Use the link:../maintain/rename-grid-site-node-overview.html[Rename grid, site, and nodes] procedure to update this value.
-* *System name*: The name you entered for the node during installation. System names are used for internal StorageGRID operations and cannot be changed.
+* *System name*: The name you entered for the node during installation. System names are used for internal StorageGRID operations and can't be changed.
 * *Type*: The type of node -- Admin Node, primary Admin Node, Storage Node, Gateway Node, or Archive Node.
 +
 IMPORTANT: Support for Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. 
@@ -34,7 +34,7 @@ IMPORTANT: Support for Archive Nodes is deprecated and will be removed in a futu
 NOTE: A node might appear as Unknown during managed shutdown operations. You can ignore the Unknown state in these cases.
 
  ** *Administratively down* image:../media/icon_alarm_gray_administratively_down.png[gray questionmark icon]: The node is not connected to the grid for an expected reason. For example, the node, or services on the node, has been gracefully shut down, the node is rebooting, or the software is being upgraded. One or more alerts might also be active.
- ** *Connected* image:../media/icon_alert_green_checkmark.png[icon alert green checkmark]: The node is connected to the grid.
+ ** *Connected* image:../media/icon_alert_green_checkmark.png[icon alert green check mark]: The node is connected to the grid.
 * *Storage used*: For Storage Nodes only.
 
 ** *Object data*: The percentage of the total usable space for object data that has been used on the Storage Node.

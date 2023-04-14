@@ -69,7 +69,7 @@ image::../media/nodes_page_hardware_tab_for_appliance.png[Nodes Page Hardware Ta
 |Storage controller B management IP
 |IP address for management port 1 on storage controller B. You use this IP to access SANtricity OS to troubleshoot storage issues.
 
-Some appliance models do not have a storage controller B.
+Some appliance models don't have a storage controller B.
 
 |Storage controller WWID
 |The worldwide identifier of the storage controller shown in SANtricity OS.
@@ -86,13 +86,13 @@ Some appliance models do not have a storage controller B.
 If the status is "`needs attention,`" first check the storage controller using SANtricity OS. Then, ensure that no other alarms exist that apply to the compute controller.
 
 |Storage controller failed drive count
-|The number of drives that are not optimal.
+|The number of drives that aren't optimal.
 
 |Storage controller A
 |The status of storage controller A.
 
 |Storage controller B
-|The status of storage controller B. Some appliance models do not have a storage controller B.
+|The status of storage controller B. Some appliance models don't have a storage controller B.
 
 |Storage controller power supply A
 |The status of power supply A for the storage controller.
@@ -101,7 +101,7 @@ If the status is "`needs attention,`" first check the storage controller using S
 |The status of power supply B for the storage controller.
 
 |Storage data drive type
-|The type of drives in the appliance, such as HDD (hard disk drive) or SSD (solid state drive).
+|The type of drives in the appliance, such as HDD (hard drive) or SSD (solid state drive).
 
 |Storage data drive size
 |The effective size of one data drive.
@@ -120,13 +120,13 @@ If the status is "`needs attention,`" first check the storage controller using S
 |Compute controller BMC IP
 |The IP address of the baseboard management controller (BMC) port in the compute controller. You use this IP to connect to the BMC interface to monitor and diagnose the appliance hardware.
 
-This field is not displayed for appliance models that do not contain a BMC.
+This field is not displayed for appliance models that don't contain a BMC.
 
 |Compute controller serial number
 |The serial number of the compute controller.
 
 |Compute hardware
-|The status of the compute controller hardware. This field is not displayed for appliance models that do not have separate compute hardware and storage hardware.
+|The status of the compute controller hardware. This field is not displayed for appliance models that don't have separate compute hardware and storage hardware.
 
 |Compute controller CPU temperature
 |The temperature status of the compute controller's CPU.
@@ -296,10 +296,10 @@ image::../media/nodes_page_hardware_tab_services_appliance.png[Nodes page Hardwa
 |The model number for this StorageGRID appliance.
 
 |Storage controller failed drive count
-|The number of drives that are not optimal.
+|The number of drives that aren't optimal.
 
 |Storage data drive type
-|The type of drives in the appliance, such as HDD (hard disk drive) or SSD (solid state drive).
+|The type of drives in the appliance, such as HDD (hard drive) or SSD (solid state drive).
 
 |Storage data drive size
 |The effective size of one data drive.
@@ -313,7 +313,7 @@ image::../media/nodes_page_hardware_tab_services_appliance.png[Nodes page Hardwa
 |Compute controller BMC IP
 |The IP address of the baseboard management controller (BMC) port in the compute controller. You can use this IP to connect to the BMC interface to monitor and diagnose the appliance hardware.
 
-This field is not displayed for appliance models that do not contain a BMC.
+This field is not displayed for appliance models that don't contain a BMC.
 
 |Compute controller serial number
 |The serial number of the compute controller.

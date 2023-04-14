@@ -11,7 +11,7 @@ summary: 'You use PingFederate to create a service provider (SP) connection for 
 [.lead]
 You use PingFederate to create a service provider (SP) connection for each Admin Node in your system. To speed up the process, you will import the SAML metadata from StorageGRID.
 
-.What you'll need
+.Before you begin
 
 * You have configured single sign-on for StorageGRID and you selected *Ping Federate* as the SSO type.
 
@@ -94,7 +94,7 @@ TIP: You must create an SP connection for each Admin Node in your StorageGRID sy
 
 . On the Import Metadata tab, select *File*. 
 . Choose the SAML metadata file you downloaded from the StorageGRID Single sign-on page for the Admin Node. 
-. Review the Metadata Summary and the information on the General Info tab. 
+. Review the Metadata Summary and the information provided on the General Info tab. 
 +
 The Partner's Entity ID and the Connection Name are set to the StorageGRID SP connection ID. (for example, 10.96.105.200-DC1-ADM1-105-200). The Base URL is the IP of the StorageGRID Admin Node.
 . Select *Next*.
@@ -156,9 +156,9 @@ The Partner's Entity ID and the Connection Name are set to the StorageGRID SP co
 
 . On the SLO Service URLs tab, accept the default values, which were imported from the StorageGRID SAML metadata (*REDIRECT* for Binding and `/api/saml-logout` for Endpoint URL.
 
-. On the Allowable SAML Bindings tab, unselect *ARTIFACT* and *SOAP*. Only *POST* and *REDIRECT* are required.
+. On the Allowable SAML Bindings tab, clear *ARTIFACT* and *SOAP*. Only *POST* and *REDIRECT* are required.
 
-. On the Signature Policy tab, leave the *Require Authn Requests to be Signed* and *Always Sign Assertion* check boxes selected.
+. On the Signature Policy tab, leave the *Require Authn Requests to be Signed* and *Always Sign Assertion* checkboxes selected.
 
 . On the Encryption Policy tab, select *None*.
 

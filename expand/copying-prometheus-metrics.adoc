@@ -11,7 +11,7 @@ summary: 'After adding a new Admin Node, you can optionally copy the historical 
 [.lead]
 After adding a new Admin Node, you can optionally copy the historical metrics maintained by Prometheus from the primary Admin Node to the new Admin Node. Copying the metrics ensures that historical metrics are consistent between Admin Nodes.
 
-.What you'll need
+.Before you begin
 
 * The new Admin Node is installed and running.
 * You have the `Passwords.txt` file.

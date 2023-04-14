@@ -11,7 +11,7 @@ summary: 'Managing grid federation connections between StorageGRID systems inclu
 [.lead]
 Managing grid federation connections between StorageGRID systems includes editing connection details, rotating the certificates, removing tenant permissions, and removing unused connections.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager on either grid using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission for the grid you are signed in to. 
@@ -21,7 +21,7 @@ Managing grid federation connections between StorageGRID systems includes editin
 
 You can edit a grid federation connection by signing in to the primary Admin Node on either grid in the connection. After you make changes to the first grid, you must download a new verification file and upload it to the other grid.
 
-NOTE: While the connection is being edited, account clone or cross-grid replication requests will continue to use the existing connection settings. Any edits you make to the first grid are saved locally but are not used until they have been uploaded to the second grid, saved, and tested. 
+NOTE: While the connection is being edited, account clone or cross-grid replication requests will continue to use the existing connection settings. Any edits you make to the first grid are saved locally but aren't used until they have been uploaded to the second grid, saved, and tested. 
 
 === Start editing the connection
 
@@ -195,7 +195,7 @@ image:../media/grid-federation-remove-connection.png[steps to remove grid federa
 
 Before removing a connection, note the following:
 
-* Removing a connection does not delete any items that have already been copied between grids. For example, tenant users, groups, and objects that exist on both grids are not deleted from either grid when the tenant’s permission is removed. If you want to delete these items, you must manually delete them from both grids.
+* Removing a connection does not delete any items that have already been copied between grids. For example, tenant users, groups, and objects that exist on both grids aren't deleted from either grid when the tenant’s permission is removed. If you want to delete these items, you must manually delete them from both grids.
 
 * When you remove a connection, any objects that are pending replication (ingested but not yet replicated to the other grid) will have their replication permanently failed.
 

@@ -11,7 +11,7 @@ summary: 'You might want to disable SNMP notifications, update community strings
 [.lead]
 You might want to disable SNMP notifications, update community strings, or add or remove agent addresses, USM users, and trap destinations.
 
-.What you'll need
+.Before you begin
 * You must be signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You must have the Root access permission.
 
@@ -23,19 +23,19 @@ Whenever you update the link:configuring-snmp-agent.html[SNMP agent configuratio
 +
 The SNMP Agent page appears.
 
-. If you want to disable the SNMP agent on all grid nodes, unselect the *Enable SNMP* check box, and select *Save*.
+. If you want to disable the SNMP agent on all grid nodes, clear the *Enable SNMP* checkbox, and select *Save*.
 +
 The SNMP agent is disabled for all grid nodes. If you later re-enable the agent, any previous SNMP configuration settings are retained.
 
 . Optionally, update the values you entered for *System Contact* and *System Location*.
-. Optionally, unselect the *Enable SNMP Agent Notifications* check box if you no longer want the StorageGRID SNMP agent to send trap and inform notifications.
+. Optionally, clear the *Enable SNMP Agent Notifications* checkbox if you no longer want the StorageGRID SNMP agent to send trap and inform notifications.
 +
-When this check box is unselected, the SNMP agent supports read-only MIB access, but it does not send any SNMP notifications.
+When this checkbox is cleared, the SNMP agent supports read-only MIB access, but it does not send any SNMP notifications.
 
-. Optionally, unselect the *Enable Authentication Traps* check box if you no longer want the StorageGRID SNMP agent to send an authentication trap when it receives an improperly authenticated protocol message.
+. Optionally, clear the *Enable Authentication Traps* checkbox if you no longer want the StorageGRID SNMP agent to send an authentication trap when it receives an improperly authenticated protocol message.
 . If you use SNMPv1 or SNMPv2c, optionally update the Community Strings section.
 +
-The fields in this section are used for community-based authentication in SNMPv1 or SNMPv2c. These fields do not apply to SNMPv3.
+The fields in this section are used for community-based authentication in SNMPv1 or SNMPv2c. These fields don't apply to SNMPv3.
 +
 NOTE: If you want to remove the default community string, you must first ensure that all trap destinations use a custom community string.
 
@@ -59,7 +59,7 @@ Use this tab to define the USM users who are authorized to query the MIB or to r
  .. To add a USM user, select *Create*. Then, refer to the step for USM users in the instructions for configuring the SNMP agent.
  .. To edit a USM user, select the radio button for the user, and select *Edit*. Then, refer to the step for USM users in the instructions for configuring the SNMP agent.
 +
-The username for an existing USM user cannot be changed. If you need to change a username, you must remove the user and create a new one.
+The username for an existing USM user can't be changed. If you need to change a username, you must remove the user and create a new one.
 +
 NOTE: If you add or remove a user's authoritative engine ID and that user is currently selected for a destination, you must edit or remove the destination, as described in step <<SNMP_TRAP_DESTINATION,SNMP trap destination>>. Otherwise, a validation error occurs when you save the SNMP agent configuration.
 

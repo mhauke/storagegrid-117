@@ -11,7 +11,7 @@ summary: 'After installing and configuring the storage appliance, you can deploy
 [.lead]
 After installing and configuring the storage appliance, you can deploy it as a Storage Node in a StorageGRID system. When you deploy an appliance as a Storage Node, you use the StorageGRID Appliance Installer included on the appliance.
 
-.What you'll need
+.Before you begin
 
 * If you are cloning an appliance node, continue following the link:../commonhardware/appliance-node-cloning-procedure.html[appliance node cloning] process.
 
@@ -62,7 +62,7 @@ a|
 Manual IP entry
 a|
 
- .. Unselect the *Enable Admin Node discovery* check box.
+ .. Clear the *Enable Admin Node discovery* checkbox.
  .. Enter the IP address manually.
  .. Click *Save*.
  .. Wait for the connection state for the new IP address to become ready.
@@ -71,7 +71,7 @@ a|
 Automatic discovery of all connected primary Admin Nodes
 a|
 
- .. Select the *Enable Admin Node discovery* check box.
+ .. Select the *Enable Admin Node discovery* checkbox.
  .. Wait for the list of discovered IP addresses to be displayed.
  .. Select the primary Admin Node for the grid where this appliance Storage Node will be deployed.
  .. Click *Save*.
@@ -80,7 +80,7 @@ a|
 
 . In the *Node name* field, provide the system name you want to use for this appliance node, and click *Save*.
 +
-The name that appears here will be the appliance node's system name. System names are required for internal StorageGRID operations and cannot be changed.
+The name that appears here will be the appliance node's system name. System names are required for internal StorageGRID operations and can't be changed.
 
 . In the *Installation* section, confirm that the current state is "Ready to start installation of `_node name_` into grid with primary Admin Node `_admin_ip_` " and that the *Start Installation* button is enabled.
 +

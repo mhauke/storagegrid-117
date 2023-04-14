@@ -11,7 +11,7 @@ summary: 'You must run a script that reformats and remounts storage on failed st
 [.lead]
 You must run a script that reformats and remounts storage on failed storage volumes, and rebuilds the Cassandra database on the Storage Node if the system determines that it is necessary.
 
-.What you'll need
+.Before you begin
 * You have the `Passwords.txt` file.
 * The system drives on the server are intact.
 * The cause of the failure has been identified and, if necessary, replacement storage hardware has already been acquired.
@@ -24,7 +24,7 @@ You must run a script that reformats and remounts storage on failed storage volu
 
 . As needed, replace failed physical or virtual storage associated with the failed storage volumes that you identified and unmounted earlier.
 +
-Do not remount the volumes in this step. The storage is remounted and added to `/etc/fstab` in a later step.
+Don't remount the volumes in this step. The storage is remounted and added to `/etc/fstab` in a later step.
 
 . In the Grid Manager, go to *NODES* > `*appliance Storage Node*` > *Hardware*. In the StorageGRID Appliance section of the page, verify that the Storage RAID mode is healthy.
 
@@ -49,7 +49,7 @@ NOTE: Commenting out a failed volume in the `/etc/fstab` file is insufficient. T
 The script will exit without rebuilding Cassandra. Contact technical support.
  ** For each rangedb drive on the Storage Node, when you are asked: `Reformat the rangedb drive _<name>_ (device _<major number>:<minor number>_)? [y/n]?`, enter one of the following responses:
   *** *y* to reformat a drive that had errors. This reformats the storage volume and adds the reformatted storage volume to the `/etc/fstab` file.
-  *** *n* if the drive contains no errors, and you do not want to reformat it.
+  *** *n* if the drive contains no errors, and you don't want to reformat it.
 +
 NOTE: Selecting *n* exits the script. Either mount the drive (if you think the data on the drive should be retained and the drive was unmounted in error) or remove the drive. Then, run the `reformat_storage_block_devices.rb` command again.
 +

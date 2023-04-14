@@ -11,7 +11,7 @@ summary: 'You can use this procedure to add or update the display names used for
 [.lead]
 You can use this procedure to add or update the display names used for your grid, sites, and nodes. You can rename a single item, multiple items, or even all items at the same time. Defining or updating a display name does not affect StorageGRID operations in any way. 
 
-.What you'll need
+.Before you begin
 
 * From the *primary Admin Node*, you are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 +
@@ -42,20 +42,20 @@ To start, select the items you want to rename.
 
 | Names of everything (or almost everything) in your system
 | . Select *Select all*. 
-. Optionally unselect any items you do not want to rename.
+. Optionally clear any items you don't want to rename.
 
 | Name of the grid
-| Select the check box for the grid. 
+| Select the checkbox for the grid. 
 
 | Name of a site and some or all of its nodes
-| . Select the check box in the table header for the site. 
-. Optionally, unselect any nodes you do not want to rename.
+| . Select the checkbox in the table header for the site. 
+. Optionally, clear any nodes you don't want to rename.
 
 | Name of a site
-| Select the check box for the site.
+| Select the checkbox for the site.
 
 | Name of a node
-| Select the check box for the node.
+| Select the checkbox for the node.
 
 |===
 
@@ -63,7 +63,7 @@ To start, select the items you want to rename.
 . Review the table, which includes the items you selected.
 +
 * The *Display name* column shows the current name for each item. If the item has never been renamed, its display name is the same as its system name.
-* The *System name* column shows the name you entered for each item during installation. System names are used for internal StorageGRID operations and cannot be changed. For example, the system name for a node might be its hostname.
+* The *System name* column shows the name you entered for each item during installation. System names are used for internal StorageGRID operations and can't be changed. For example, the system name for a node might be its hostname.
 * The *Type* column indicates the item's type: Grid, Site, or the specific type of node.
 
 
@@ -109,9 +109,9 @@ The *Rename preview* includes all items that were shown for the *Propose new nam
 +
 As you type, your text is highlighted wherever it is found in the names on the left.
 
-. Select image:../media/icon-x-to-remove.png[X icon] to remove any items that you do not want to rename with this tool. 
+. Select image:../media/icon-x-to-remove.png[X icon] to remove any items that you don't want to rename with this tool. 
 +
-For example, suppose you want to rename all nodes that contain the string `Data-Center-1`, but you do not want to rename the `Data-Center-1` site itself.  Select image:../media/icon-x-to-remove.png[X icon] to remove the site from the rename preview.
+For example, suppose you want to rename all nodes that contain the string `Data-Center-1`, but you don't want to rename the `Data-Center-1` site itself.  Select image:../media/icon-x-to-remove.png[X icon] to remove the site from the rename preview.
 +
 image::../media/rename-bulk-rename-tool.png[Bulk rename tool before]
 
@@ -125,7 +125,7 @@ image::../media/rename-bulk-rename-tool-after.png[Bulk rename tool after]
 
 . When you are satisfied with the names shown in the preview, select *Add names* to add the names to the table for the *Propose new names* step. 
 
-. Make any additional changes required, or select image:../media/icon-x-to-remove.png[X icon] to remove any items that you do not want to rename.
+. Make any additional changes required, or select image:../media/icon-x-to-remove.png[X icon] to remove any items that you don't want to rename.
 
 . When you are ready to rename all items in the table, select *Rename*.
 +

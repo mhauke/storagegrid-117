@@ -11,7 +11,7 @@ summary: 'You can decommission and permanently remove nodes that are connected t
 [.lead]
 You can decommission and permanently remove nodes that are connected to the grid.
 
-.What you'll need
+.Before you begin
 
 * You understand the requirements and link:considerations-for-decommissioning-grid-nodes.html[considerations for decommissioning grid nodes].
 * You have gathered all required materials.
@@ -20,13 +20,13 @@ You can decommission and permanently remove nodes that are connected to the grid
 * You have ensured that other maintenance procedures will not be run while the node decommission procedure is running, unless the node decommission procedure is paused.
 * You have the provisioning passphrase.
 * Grid nodes are connected.
-* The *Decommission Possible* column for the node or nodes you want to decommission includes a green checkmark.
+* The *Decommission Possible* column for the node or nodes you want to decommission includes a green check mark.
 +
 NOTE: The decommission will not start if one or more volumes are offline (unmounted) or if they are online (mounted) but in an error state.
 +
 NOTE: If one or more volumes go offline while a decommission is in progress, the decommission process completes after these volumes have come back online.
 
-* All grid nodes have Normal (green) health image:../media/icon_alert_green_checkmark.png[green checkmark icon]. If you see one of these icons in the *Health* column, you must try to resolve the issue:
+* All grid nodes have Normal (green) health image:../media/icon_alert_green_checkmark.png[green check mark icon]. If you see one of these icons in the *Health* column, you must try to resolve the issue:
 +
 [cols="1a,1a,3a" options=header] 
 |===
@@ -53,11 +53,11 @@ NOTE: If one or more volumes go offline while a decommission is in progress, the
 
 * If you previously decommissioned a disconnected Storage Node, the data repair jobs have all completed successfully. See link:checking-data-repair-jobs.html[Check data repair jobs].
 
-IMPORTANT: Do not remove a grid node's virtual machine or other resources until instructed to do so in this procedure.
+IMPORTANT: Don't remove a grid node's virtual machine or other resources until instructed to do so in this procedure.
 
 .Steps
 
-. From the Decommission Nodes page, select the check box for each grid node you want to decommission.
+. From the Decommission Nodes page, select the checkbox for each grid node you want to decommission.
 . Enter the provisioning passphrase.
 +
 The *Start Decommission* button is enabled.
@@ -70,7 +70,7 @@ The node decommission procedure starts, and the progress is displayed for each n
 +
 image::../media/decommission_nodes_procedure_in_progress.png[screenshot of node decommissioning in progress]
 +
-IMPORTANT: Do not take a Storage Node offline after the decommission procedure has started. Changing the state might result in some content not being copied to other locations.
+IMPORTANT: Don't take a Storage Node offline after the decommission procedure has started. Changing the state might result in some content not being copied to other locations.
 
 . As soon as the new Recovery Package is available, click the link or select *MAINTENANCE* > *System* > *Recovery package* to access the Recovery Package page. Then, download the `.zip` file.
 +

@@ -19,7 +19,7 @@ When a tenant creates an endpoint, the StorageGRID system validates that the end
 
 If endpoint validation fails, an error message explains why endpoint validation failed. The tenant user should resolve the issue, then try creating the endpoint again.
 
-NOTE: Endpoint creation will fail if platform services are not enabled for the tenant account.
+NOTE: Endpoint creation will fail if platform services aren't enabled for the tenant account.
 
 == Issues with existing endpoints
 
@@ -35,7 +35,7 @@ NOTE: Some error messages in the *Last error* column might include a logID in pa
 
 == Issues related to proxy servers
 
-If you have configured a link:configuring-storage-proxy-settings.html[Storage proxy] between Storage Nodes and platform service endpoints, errors might occur if your proxy service does not allow messages from StorageGRID. To resolve these issues, check the settings of your proxy server to ensure that platform service-related messages are not blocked.
+If you have configured a link:configuring-storage-proxy-settings.html[Storage proxy] between Storage Nodes and platform service endpoints, errors might occur if your proxy service does not allow messages from StorageGRID. To resolve these issues, check the settings of your proxy server to ensure that platform service-related messages aren't blocked.
 
 == Determine if an error has occurred
 
@@ -56,7 +56,7 @@ After endpoints have been created, platform service request errors can occur for
 
 * The user's credentials have been deleted or have expired.
 * The destination bucket does not exist.
-* The notification cannot be delivered.
+* The notification can't be delivered.
 
 If StorageGRID encounters a recoverable error, the platform service request will be retried until it succeeds.
 
@@ -77,11 +77,11 @@ Event messages are also listed in `/var/local/log/bycast-err.log`.
 +
 The tenant can resubmit the existing values to avoid making unwanted changes.
 
-== Platform services messages cannot be delivered
+== Platform services messages can't be delivered
 
 If the destination encounters an issue that prevents it from accepting platform services messages, the client operation on the bucket succeeds, but the platform services message is not delivered. For example, this error might happen if credentials are updated on the destination such that StorageGRID can no longer authenticate to the destination service.
 
-If platform services messages cannot be delivered because of an unrecoverable error, the Total Events (SMTT) legacy alarm is triggered in the Grid Manager.
+If platform services messages can't be delivered because of an unrecoverable error, the Total Events (SMTT) legacy alarm is triggered in the Grid Manager.
 
 == Slower performance for platform service requests
 

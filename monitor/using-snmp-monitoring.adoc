@@ -24,7 +24,7 @@ Initially, SNMP is disabled on all nodes. When you configure the SNMP agent, all
 
 The StorageGRID SNMP agent supports all three versions of the SNMP protocol. It provides read-only MIB access for queries, and it can send two types of event-driven notifications to a management system:
 
-* *Traps* are notifications sent by the SNMP agent that do not require acknowledgment by the management system. Traps serve to notify the management system that something has happened within StorageGRID, such as an alert being triggered.
+* *Traps* are notifications sent by the SNMP agent that don't require acknowledgment by the management system. Traps serve to notify the management system that something has happened within StorageGRID, such as an alert being triggered.
 +
 Traps are supported in all three versions of SNMP.
 
@@ -40,7 +40,7 @@ Each alert is mapped to one of three trap types based on the severity level of t
 
 * Certain alarms (legacy system) are triggered at specified severity levels or higher.
 +
-NOTE: SNMP notifications are not sent for every alarm or every alarm severity.
+NOTE: SNMP notifications aren't sent for every alarm or every alarm severity.
 
 == SNMP version support
 

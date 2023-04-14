@@ -15,7 +15,7 @@ You must verify the system is ready to accommodate the hotfix.
 
 . If possible, ensure that the system is running normally and that all grid nodes are connected to the grid.
 +
-Connected nodes have green checkmarks image:../media/icon_alert_green_checkmark.png[icon alert green checkmark] on the Nodes page.
+Connected nodes have green check marks image:../media/icon_alert_green_checkmark.png[icon alert green check mark] on the Nodes page.
 
 . Check for and resolve any current alerts, if possible.
 
@@ -23,7 +23,7 @@ Connected nodes have green checkmarks image:../media/icon_alert_green_checkmark.
 +
 You should wait for any active maintenance procedures to complete before applying a hotfix.
 +
-You cannot apply a StorageGRID hotfix when another maintenance procedure is running. For example, you cannot apply a hotfix while a decommission, expansion, or recovery procedure is running.
+You can't apply a StorageGRID hotfix when another maintenance procedure is running. For example, you can't apply a hotfix while a decommission, expansion, or recovery procedure is running.
 +
 NOTE: If a node or site link:pausing-and-resuming-decommission-process-for-storage-nodes.html[decommission procedure is paused], you can safely apply a hotfix. In addition, you might be able to apply a hotfix during the final stages of a StorageGRID upgrade procedure. See the instructions for link:../upgrade/index.html[upgrading StorageGRID software].
 

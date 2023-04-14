@@ -11,7 +11,7 @@ summary: 'If you were able to preserve the audit log from the failed non-primary
 [.lead]
 If you were able to preserve the audit log from the failed non-primary Admin Node, so that historical audit log information is retained, you can copy it to the non-primary Admin Node you are recovering.
 
-.What you'll need
+.Before you begin
 
 * The recovered Admin Node is installed and running.
 * You have copied the audit logs to another location after the original Admin Node failed.
@@ -20,7 +20,7 @@ If you were able to preserve the audit log from the failed non-primary Admin Nod
 
 If an Admin Node fails, audit logs saved to that Admin Node are potentially lost. It might be possible to preserve data from loss by copying audit logs from the failed Admin Node and then restoring these audit logs to the recovered Admin Node. Depending on the failure, it might not be possible to copy audit logs from the failed Admin Node. In that case, if the deployment has more than one Admin Node, you can recover audit logs from another Admin Node as audit logs are replicated to all Admin Nodes.
 
-If there is only one Admin Node and the audit log cannot be copied from the failed node, the recovered Admin Node starts recording events to the audit log as if the installation is new.
+If there is only one Admin Node and the audit log can't be copied from the failed node, the recovered Admin Node starts recording events to the audit log as if the installation is new.
 
 You must recover an Admin Node as soon as possible to restore logging functionality.
 

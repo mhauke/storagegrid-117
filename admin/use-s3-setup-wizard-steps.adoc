@@ -11,7 +11,7 @@ summary: 'You can use the S3 setup wizard to configure StorageGRID as the object
 [.lead]
 You can use the S3 setup wizard to configure StorageGRID for use with an S3 application. The setup wizard provides the values the application needs to access a StorageGRID bucket and to save objects.
 
-.What you'll need
+.Before you begin
 
 * You have the link:admin-group-permissions.html[Root access permission].
 * You have reviewed the link:use-s3-setup-wizard.html[considerations and requirements] for using the wizard. 
@@ -36,7 +36,7 @@ For details about this task, see link:managing-high-availability-groups.html[Man
 
 .Steps
 
-. If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 6: Configure load balancer endpoint>>.
+. If you plan to use an external load balancer, you don't need to create an HA group. Select *Skip this step* and go to <<Step 2 of 6: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, you can create a new HA group or use an existing HA group.
 +
@@ -88,7 +88,7 @@ If the HA group includes more than one interface and the active interface fails,
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
 
 | Gateway IP address (optional)
-| If the S3 IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
+| If the S3 IP addresses used to access StorageGRID aren't on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
 
 | Virtual IP address
 | Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet.
@@ -139,9 +139,9 @@ To use the StorageGRID Load Balancer service, select the *StorageGRID load balan
 | A descriptive name for the endpoint.
 
 | Port
-| The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
+| The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, because these ports are reserved on Admin Nodes.
 
-*Note:* Ports used by other grid services are not permitted. See the 
+*Note:* Ports used by other grid services aren't permitted. See the 
 link:../network/network-port-reference.html[Network port reference].
 
 | Client type
@@ -172,7 +172,7 @@ include::../_include/load-balancer-endpoint-binding-mode.adoc[]
 | Only the selected tenant accounts can use this endpoint to access their buckets.
 
 | Block selected tenants
-| The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+| The selected tenant accounts can't use this endpoint to access their buckets. All other tenants can use this endpoint.
 
 |===
 
@@ -261,7 +261,7 @@ link:../tenant/creating-s3-bucket.html[Create S3 bucket].
 | Field | Description
 
 | Name
-| A name for the tenant account. Tenant names do not need to be unique. When the tenant account is created, it receives a unique, numeric account ID.
+| A name for the tenant account. Tenant names don't need to be unique. When the tenant account is created, it receives a unique, numeric account ID.
 
 | Description (optional)
 | A description to help identify the tenant.
@@ -314,11 +314,11 @@ TIP: Select this option if the only user for the tenant will be the root user. I
 
 . For the Create bucket step, optionally create a bucket for the tenant's objects. Otherwise, select *Create tenant without bucket* to go to the <<download-data,download data step>>.
 +
-TIP: If S3 Object Lock is enabled for the grid, the bucket created in this step won't have S3 Object Lock enabled. If you need to use an S3 Object Lock bucket for this S3 application, select *Create tenant without bucket*. Then, use Tenant Manager to link:../tenant/creating-s3-bucket.html[create the bucket] instead.
+TIP: If S3 Object Lock is enabled for the grid, the bucket created in this step doesn't have S3 Object Lock enabled. If you need to use an S3 Object Lock bucket for this S3 application, select *Create tenant without bucket*. Then, use Tenant Manager to link:../tenant/creating-s3-bucket.html[create the bucket] instead.
 
 .. Enter the name of the bucket that the S3 application will use. For example, `S3-bucket`.
 +
-TIP: You cannot change the bucket name after creating the bucket.
+TIP: You can't change the bucket name after creating the bucket.
 
 .. Select the *Region* for this bucket.
 +
@@ -344,9 +344,9 @@ In the download data step, you can download one or two files to save the details
 
 . Save this information to a secure location.
 +
-CAUTION: Do not close this page until you have copied both access keys. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
+CAUTION: Don't close this page until you have copied both access keys. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
 
-. If prompted, select the check box to confirm that you have downloaded or copied the keys.
+. If prompted, select the checkbox to confirm that you have downloaded or copied the keys.
 
 . Select *Continue* to go to the ILM rule and policy step.
 
@@ -356,13 +356,13 @@ Information lifecycle management (ILM) rules control the placement, duration, an
 
 .Steps
 
-. Review the information on the page.
+. Review the information provided on the page.
 
 . If you want to add specific instructions for the objects belonging to the new tenant or bucket, create a new rule and a new policy. See link:../ilm/access-create-ilm-rule-wizard.html[Create ILM rule] and link:../ilm/creating-ilm-policy.html[Create ILM policy: Overview].
 
 . Select *I have reviewed these steps and understand what I need to do*.
 
-. Select the check box to indicate that you understand what to do next.
+. Select the checkbox to indicate that you understand what to do next.
 
 . Select *Continue* to go to *Summary*.
 

@@ -11,7 +11,7 @@ summary: 'You must allocate block storage volumes to each host.'
 [.lead]
 You must allocate block storage volumes to each host.
 
-.What you'll need
+.Before you begin
 
 You have reviewed the following topics, which provide information you need to accomplish this task:
 
@@ -29,7 +29,7 @@ When allocating block storage volumes (LUNs) to hosts, use the tables in "`Stora
 
 You will use this information as well as the persistent name assigned by Linux to each physical volume when you deploy StorageGRID nodes on the host.
 
-NOTE: You do not need to partition, format, or mount any of these volumes; you just need to ensure they are visible to the hosts.
+NOTE: You don't need to partition, format, or mount any of these volumes; you just need to ensure they are visible to the hosts.
 
 Avoid using "`raw`" special device files (`/dev/sdb`, for example) as you compose your list of volume names. These files can change across reboots of the host, which will impact proper operation of the system. If you are using iSCSI LUNs and Device Mapper Multipathing, consider using multipath aliases in the `/dev/mapper` directory, especially if your SAN topology includes redundant network paths to the shared storage. Alternatively, you can use the system-created softlinks under `/dev/disk/by-path/` for your persistent device names.
 

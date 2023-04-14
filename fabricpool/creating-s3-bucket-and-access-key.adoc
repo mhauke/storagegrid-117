@@ -13,7 +13,7 @@ Before using StorageGRID with a FabricPool workload, you must create an S3 bucke
 
 For details about this task, see link:../tenant/creating-s3-bucket.html[Create S3 bucket] and link:../tenant/creating-your-own-s3-access-keys.html[Create your own S3 access keys]. To use the FabricPool setup wizard to complete this task, go to link:use-fabricpool-setup-wizard-steps.html[Access and complete the FabricPool setup wizard].
 
-.What you'll need
+.Before you begin
 * You have created a tenant account for FabricPool use.
 * You have Root access to the tenant account.
 
@@ -33,7 +33,7 @@ You must create a unique bucket for each ONTAP cluster you plan to use.
  .. Select *Create bucket*.
  .. Enter the name of the StorageGRID bucket you want to use with FabricPool. For example, `fabricpool-bucket`.
 +
-TIP: You cannot change the bucket name after creating the bucket.
+TIP: You can't change the bucket name after creating the bucket.
   
 .. Select the region for this bucket.
 +
@@ -43,7 +43,7 @@ By default, all buckets are created in the `us-east-1` region.
 
 .. Select *Create bucket*.
 +
-NOTE: Do not select *Enable object versioning* for the FabricPool bucket. Similarly, do not edit a FabricPool bucket to use *Available* or a non-default consistency level. The recommended bucket consistency level for FabricPool buckets is *Read-after-new-write*, which is the default setting for a new bucket. 
+NOTE: Don't select *Enable object versioning* for the FabricPool bucket. Similarly, don't edit a FabricPool bucket to use *Available* or a non-default consistency level. The recommended bucket consistency level for FabricPool buckets is *Read-after-new-write*, which is the default setting for a new bucket. 
 
 . Create an access key and a secret access key.
  .. Select *STORAGE (S3)* > *My access keys*.

@@ -11,20 +11,20 @@ summary: 'If a single Storage Node has been offline and not connected to other S
 [.lead]
 If a single Storage Node has been offline and not connected to other Storage Nodes for more than 15 days, you must rebuild Cassandra on the node.
 
-.What you'll need
+.Before you begin
 
 * You have checked that a Storage Node decommissioning is not in progress, or you have paused the node decommission procedure. (In the Grid Manager, select *MAINTENANCE* > *Tasks* > *Decommission*.)
 * You have checked that an expansion is not in progress. (In the Grid Manager, select *MAINTENANCE* > *Tasks* > *Expansion*.)
 
 .About this task
 
-Storage Nodes have a Cassandra database that includes object metadata. If a Storage Node has not been able to communicate with other Storage Nodes for more than 15 days, StorageGRID assumes that node's Cassandra database is stale. The Storage Node cannot rejoin the grid until Cassandra has been rebuilt using information from other Storage Nodes.
+Storage Nodes have a Cassandra database that includes object metadata. If a Storage Node has not been able to communicate with other Storage Nodes for more than 15 days, StorageGRID assumes that node's Cassandra database is stale. The Storage Node can't rejoin the grid until Cassandra has been rebuilt using information from other Storage Nodes.
 
 Use this procedure to rebuild Cassandra only if a single Storage Node is down. Contact technical support if additional Storage Nodes are offline or if Cassandra has been rebuilt on another Storage Node within the last 15 days; for example, Cassandra might have been rebuilt as part of the procedures to recover failed storage volumes or to recover a failed Storage Node.
 
-CAUTION: If more than one Storage Node has failed (or is offline), contact technical support. Do not perform the following recovery procedure. Data loss could occur.
+CAUTION: If more than one Storage Node has failed (or is offline), contact technical support. Don't perform the following recovery procedure. Data loss could occur.
 
-CAUTION: If this is the second Storage Node failure in less than 15 days after a Storage Node failure or recovery, contact technical support. Do not perform the following recovery procedure. Data loss could occur.
+CAUTION: If this is the second Storage Node failure in less than 15 days after a Storage Node failure or recovery, contact technical support. Don't perform the following recovery procedure. Data loss could occur.
 
 NOTE: If more than one Storage Node at a site has failed, a site recovery procedure might be required. See link:how-site-recovery-is-performed-by-technical-support.html[How site recovery is performed by technical support].
 
@@ -59,7 +59,7 @@ Cassandra not started because it has been offline for more than 15 day grace per
 . Issue this command, and monitor the script output: `check-cassandra-rebuild`
  ** If the Cassandra service depending on volume 0 is running, you will be prompted to stop it. Enter: *y*
 +
-NOTE: If the Cassandra service is already stopped, you are not prompted. The Cassandra service is stopped only for volume 0.
+NOTE: If the Cassandra service is already stopped, you aren't prompted. The Cassandra service is stopped only for volume 0.
  ** Review the warnings in the script. If none of them apply, confirm that you want to rebuild Cassandra. Enter: *y*
 +
 NOTE: Some StorageGRID recovery procedures use Reaper to handle Cassandra repairs. Repairs occur automatically as soon as the related or required services have started. You might notice script output that mentions "`reaper`" or "`Cassandra repair.`" If you see an error message indicating the repair has failed, run the command indicated in the error message.

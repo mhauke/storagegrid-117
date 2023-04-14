@@ -16,10 +16,10 @@ All object copies are removed from the StorageGRID system when a client performs
 StorageGRID provides several methods for controlling when objects are retained or deleted. Objects can be deleted by client request or automatically. StorageGRID always prioritizes any S3 Object Lock settings over client delete requests, which are prioritized over S3 bucket lifecycle and ILM placement instructions.
 
 * *S3 Object Lock*: If the global S3 Object Lock setting is enabled for the grid, S3 clients can create buckets with S3 Object Lock enabled and then use the S3 REST API to specify retain-until-date and legal hold settings for each object version added to that bucket.
- ** An object version that is under a legal hold cannot be deleted by any method.
- ** Before an object version's retain-until-date is reached, that version cannot be deleted by any method.
+ ** An object version that is under a legal hold can't be deleted by any method.
+ ** Before an object version's retain-until-date is reached, that version can't be deleted by any method.
  ** Objects in buckets with S3 Object Lock enabled are retained by ILM "`forever`". However, after its retain-until-date is reached, an object version can be deleted by a client request or the expiration of the bucket lifecycle.
- ** If S3 clients apply a default retain-until-date to the bucket, they do not need to specify a retain-until-date for each object. 
+ ** If S3 clients apply a default retain-until-date to the bucket, they don't need to specify a retain-until-date for each object. 
 * *Client delete request*: An S3 or Swift client can issue a delete object request. When a client deletes an object, all copies of the object are removed from the StorageGRID system.
 * *Delete objects in bucket*: Tenant Manager users can use this option to permanently remove all copies of the objects and object versions in selected buckets from the StorageGRID system. 
 * *S3 bucket lifecycle*: S3 clients can add a lifecycle configuration to their buckets that specifies an Expiration action. If a bucket lifecycle exists, StorageGRID automatically deletes all copies of an object when the date or number of days specified in the Expiration action are met, unless the client deletes the object first.
@@ -28,7 +28,7 @@ StorageGRID provides several methods for controlling when objects are retained o
 NOTE: The Expiration action in an S3 bucket lifecycle always overrides ILM settings. As a result, an object might be retained on the grid even after any ILM instructions for placing the object have lapsed.
 
 === How S3 delete markers are deleted
-When a versioned object is deleted, StorageGRID creates a delete marker as the current version of the object. To remove the zero-byte delete marker from the bucket, the S3 client must explicitly delete the object version. Delete markers are not removed by ILM, bucket lifecycle rules, or Delete objects in bucket operations. 
+When a versioned object is deleted, StorageGRID creates a delete marker as the current version of the object. To remove the zero-byte delete marker from the bucket, the S3 client must explicitly delete the object version. Delete markers aren't removed by ILM, bucket lifecycle rules, or Delete objects in bucket operations. 
 
 == Data flow for client deletes
 

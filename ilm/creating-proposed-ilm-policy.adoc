@@ -15,7 +15,7 @@ Before creating your own policy, verify that the link:creating-ilm-policy.html#d
 
 NOTE: If the link:enabling-s3-object-lock-globally.html[global S3 Object Lock setting has been enabled], you must ensure that the ILM policy is compliant with the requirements of buckets that have S3 Object Lock enabled. In this section, follow the instructions that mention having S3 Object Lock enabled.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the link:../admin/admin-group-permissions.html[required access permissions].
@@ -79,7 +79,7 @@ If the global S3 Object Lock setting is enabled, the ILM policies page indicates
 
 .. If a proposed ILM policy currently exists, select *Proposed policy* > *Actions* > *Remove*.
 +
-You cannot create a new proposed policy if a proposed policy already exists.
+You can't create a new proposed policy if a proposed policy already exists.
 
 .. Select *Create proposed policy* > *Create new policy*.
 
@@ -91,7 +91,7 @@ You cannot create a new proposed policy if a proposed policy already exists.
 
 .. If a proposed ILM policy currently exists, select *Proposed policy* > *Actions* > *Remove*.
 +
-You cannot clone the active policy if a proposed policy already exists.
+You can't clone the active policy if a proposed policy already exists.
 
 .. Select *Create proposed policy* > *Clone active policy*.
 
@@ -130,22 +130,22 @@ If you are cloning a policy:
 
 .. Select one default rule for the proposed policy. To create a new default rule, select *ILM rules page* image:../media/icon_nms_more_details.gif[more details icon].
 +
-The default rule applies to any objects that do not match another rule in the policy. The default rule cannot use any filters and is always evaluated last.
+The default rule applies to any objects that don't match another rule in the policy. The default rule can't use any filters and is always evaluated last.
 +
-IMPORTANT: Do not use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
+IMPORTANT: Don't use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If your StorageGRID system has more than one site, two copies of an object might be placed on the same site.
 
 --
 .S3 Object Lock enabled
 --
 .. Select one default rule for the proposed policy. To create a new default rule, select *ILM rules page* image:../media/icon_nms_more_details.gif[more details icon].
 +
-The list of rules contains only the rules that are compliant and do not use any filters.
+The list of rules contains only the rules that are compliant and don't use any filters.
 +
-IMPORTANT: Do not use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If you use this rule, multiple copies of an object might be placed on the same site.
+IMPORTANT: Don't use the Make 2 Copies rule as the default rule for a policy. The Make 2 Copies rule uses a single storage pool, All Storage Nodes, which contains all sites. If you use this rule, multiple copies of an object might be placed on the same site.
 
 .. If you need a different "`default`" rule for objects in non-compliant S3 buckets, select *Include a rule without filters for non-compliant S3 buckets*, and select one non-compliant rule that does not use a filter.
 +
-For example, you might want to use a Cloud Storage Pool to store objects in buckets that do not have S3 Object Lock enabled.
+For example, you might want to use a Cloud Storage Pool to store objects in buckets that don't have S3 Object Lock enabled.
 +
 NOTE: You can only select one non-compliant rule that does not use a filter.
 
@@ -168,7 +168,7 @@ NOTE: A warning appears if any rule does not retain objects forever. When you ac
 
 . Drag the rows for the non-default rules to determine the order in which these rules will be evaluated.
 +
-You cannot move the default rule. If S3 Object Lock is enabled, you also cannot move the non-compliant "`default`" rule if one was selected.
+You can't move the default rule. If S3 Object Lock is enabled, you also can't move the non-compliant "`default`" rule if one was selected.
 +
 IMPORTANT: You must confirm that the ILM rules are in the correct order. When the policy is activated, new and existing objects are evaluated by the rules in the order listed, starting at the top.
 

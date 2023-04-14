@@ -11,14 +11,14 @@ summary: 'NFS audit clients are granted access to an audit share based on their 
 [.lead]
 NFS audit clients are granted access to an audit share based on their IP address. You can remove an existing audit client by removing its IP address.
 
-.What you'll need
+.Before you begin
 
 * You have the `Passwords.txt` file with the root/admin account password.
 * You have the `Configuration.txt` file (available in the Recovery Package).
 
 .About this task
 
-You cannot remove the last IP address permitted to access the audit share.
+You can't remove the last IP address permitted to access the audit share.
 
 .Steps
 

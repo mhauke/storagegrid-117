@@ -11,7 +11,7 @@ summary: 'If you are unsure which hardware component to replace in your applianc
 [.lead]
 If you are unsure which hardware component to replace in your appliance, complete this procedure to identify the component and the location of the appliance in the data center.
 
-.What you'll need
+.Before you begin
 
 * You have the serial number of the storage appliance where the component needs to be replaced.
 
@@ -52,7 +52,7 @@ Check the *Compute controller serial number* in the StorageGRID Appliance sectio
 image::../media/nodes_page_hardware_tab_appliance_verify_nic.png[Appliance section for hardware components]
 
  ** If the StorageGRID Appliance section in Grid Manager does not display, the node selected is not a StorageGRID appliance. Select a different node from the tree view.
- ** If the serial numbers do not match, select a different node from the tree view.
+ ** If the serial numbers don't match, select a different node from the tree view.
 
 . After you locate the node where the component needs to be replaced, write down the appliance BMC IP address listed the StorageGRID Appliance section.
 +

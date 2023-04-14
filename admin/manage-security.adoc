@@ -20,7 +20,7 @@ You can link:using-storagegrid-security-certificates.html[configure and manage t
 
 == Configure key management servers
 
-Using a link:kms-configuring.html[key management server] lets you protect StorageGRID data even if an appliance is removed from the data center. After the appliance volumes are encrypted, you cannot access any data on the appliance unless the node can communicate with the KMS.
+Using a link:kms-configuring.html[key management server] lets you protect StorageGRID data even if an appliance is removed from the data center. After the appliance volumes are encrypted, you can't access any data on the appliance unless the node can communicate with the KMS.
 
 NOTE: To use encryption key management, you must enable the *Node Encryption* setting for each appliance during installation, before the appliance is added to the grid.
 

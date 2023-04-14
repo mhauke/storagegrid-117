@@ -11,7 +11,7 @@ summary: 'When recovering a Storage Node with failed storage volumes, you must i
 [.lead]
 When recovering a Storage Node with failed storage volumes, you must identify and unmount the failed volumes. You must verify that only the failed storage volumes are reformatted as part of the recovery procedure.
 
-.What you'll need
+.Before you begin
 
 You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
@@ -25,7 +25,7 @@ NOTE: You must finish this procedure before performing manual steps to recover t
 
 NOTE: Repair the hardware and properly attach the disks before running the `reboot` command.
 
-CAUTION: Identify failed storage volumes carefully. You will use this information to verify which volumes must be reformatted. Once a volume has been reformatted, data on the volume cannot be recovered.
+CAUTION: Identify failed storage volumes carefully. You will use this information to verify which volumes must be reformatted. Once a volume has been reformatted, data on the volume can't be recovered.
 
 To correctly recover failed storage volumes, you need to know both the device names of the failed storage volumes and their volume IDs.
 
@@ -64,11 +64,11 @@ The `object_store_ID` is the ID of the failed storage volume. For example, speci
 
 . If prompted, press *y* to stop the Cassandra service depending on storage volume 0.
 +
-NOTE: If the Cassandra service is already stopped, you are not prompted. The Cassandra service is stopped only for volume 0.
+NOTE: If the Cassandra service is already stopped, you aren't prompted. The Cassandra service is stopped only for volume 0.
 +
 ----
 root@Storage-180:~/var/local/tmp/storage~ # sn-unmount-volume 0
-Services depending on storage volume 0 (cassandra) are not down.
+Services depending on storage volume 0 (cassandra) aren't down.
 Services depending on storage volume 0 must be stopped before running this script.
 Stop services that require storage volume 0 [y/N]? y
 Shutting down services that require storage volume 0.

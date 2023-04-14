@@ -11,7 +11,7 @@ summary: 'You must manually run two scripts to remount preserved storage volumes
 [.lead]
 You must manually run two scripts to remount preserved storage volumes and to reformat any failed storage volumes. The first script remounts volumes that are properly formatted as StorageGRID storage volumes. The second script reformats any unmounted volumes, rebuilds Cassandra, if needed, and starts services.
 
-.What you'll need
+.Before you begin
 
 * You have already replaced the hardware for any failed storage volumes that you know require replacement.
 +
@@ -21,7 +21,7 @@ Running the `sn-remount-volumes` script might help you identify additional faile
 * You have checked that an expansion is not in progress. (In the Grid Manager, select *MAINTENANCE* > *Tasks* > *Expansion*.)
 * You have link:reviewing-warnings-for-system-drive-recovery.html[reviewed the warnings for Storage Node system drive recovery].
 +
-CAUTION: Contact technical support if more than one Storage Node is offline or if a Storage Node in this grid has been rebuilt in the last 15 days. Do not run the `sn-recovery-postinstall.sh` script. Rebuilding Cassandra on two or more Storage Nodes within 15 days of each other might result in data loss.
+CAUTION: Contact technical support if more than one Storage Node is offline or if a Storage Node in this grid has been rebuilt in the last 15 days. Don't run the `sn-recovery-postinstall.sh` script. Rebuilding Cassandra on two or more Storage Nodes within 15 days of each other might result in data loss.
 
 .About this task
 
@@ -36,7 +36,7 @@ To complete this procedure, you perform these high-level tasks:
 * Review the script output and resolve any issues.
 * Run the `sn-recovery-postinstall.sh` script. When this script runs, it does the following.
 +
-IMPORTANT: Do not reboot a Storage Node during recovery before running `sn-recovery-postinstall.sh` to reformat the failed storage volumes and restore object metadata. Rebooting the Storage Node before `sn-recovery-postinstall.sh` completes causes errors for services that attempt to start and causes StorageGRID appliance nodes to exit maintenance mode. See the step for <<post-install-script-step,post-install script>>.
+IMPORTANT: Don't reboot a Storage Node during recovery before running `sn-recovery-postinstall.sh` to reformat the failed storage volumes and restore object metadata. Rebooting the Storage Node before `sn-recovery-postinstall.sh` completes causes errors for services that attempt to start and causes StorageGRID appliance nodes to exit maintenance mode. See the step for <<post-install-script-step,post-install script>>.
 
  ** Reformats any storage volumes that the `sn-remount-volumes` script could not mount or that were found to be improperly formatted.
 +
@@ -94,8 +94,8 @@ StorageGRID Webscale will attempt to restore data redundancy by making
 additional replicated copies or EC fragments, according to the rules in
 the active ILM policy.
 
-Do not continue to the next step if you believe that the data remaining on
-this volume cannot be rebuilt from elsewhere in the grid (for example, if
+Don't continue to the next step if you believe that the data remaining on
+this volume can't be rebuilt from elsewhere in the grid (for example, if
 your ILM policy uses a rule that makes only one copy or if volumes have
 failed on multiple nodes). Instead, contact support to determine how to
 recover your data.
@@ -116,8 +116,8 @@ StorageGRID Webscale will attempt to restore data redundancy by making
 additional replicated copies or EC fragments, according to the rules in
 the active ILM policy.
 
-Do not continue to the next step if you believe that the data remaining on
-this volume cannot be rebuilt from elsewhere in the grid (for example, if
+Don't continue to the next step if you believe that the data remaining on
+this volume can't be rebuilt from elsewhere in the grid (for example, if
 your ILM policy uses a rule that makes only one copy or if volumes have
 failed on multiple nodes). Instead, contact support to determine how to
 recover your data.
@@ -136,8 +136,8 @@ In the example output, one storage volume was remounted successfully and three s
 
   *** `/dev/sdb` passed the XFS file system consistency check and had a valid volume structure, so it was remounted successfully. Data on devices that are remounted by the script is preserved.
   *** `/dev/sdc` failed the XFS file system consistency check because the storage volume was new or corrupt.
-  *** `/dev/sdd` could not be mounted because the disk was not initialized or the disk's superblock was corrupted. When the script cannot mount a storage volume, it asks if you want to run the file system consistency check.
-   **** If the storage volume is attached to a new disk, answer *N* to the prompt. You do not need check the file system on a new disk.
+  *** `/dev/sdd` could not be mounted because the disk was not initialized or the disk's superblock was corrupted. When the script can't mount a storage volume, it asks if you want to run the file system consistency check.
+   **** If the storage volume is attached to a new disk, answer *N* to the prompt. You don't need check the file system on a new disk.
    **** If the storage volume is attached to an existing disk, answer *Y* to the prompt. You can use the results of the file system check to determine the source of the corruption. The results are saved in the `/var/local/log/sn-remount-volumes.log` log file.
   *** `/dev/sde` passed the XFS file system consistency check and had a valid volume structure; however, the LDR node ID in the volID file did not match the ID for this Storage Node (the `configured LDR noid` displayed at the top). This message indicates that this volume belongs to another Storage Node.
 
@@ -145,7 +145,7 @@ In the example output, one storage volume was remounted successfully and three s
 +
 IMPORTANT: If a storage volume failed the XFS file system consistency check or could not be mounted, carefully review the error messages in the output. You must understand the implications of running the `sn-recovery-postinstall.sh` script on these volumes.
 
- .. Check to make sure that the results include an entry for all of the volumes you expected. If any volumes are not listed, rerun the script.
+ .. Check to make sure that the results include an entry for all of the volumes you expected. If any volumes aren't listed, rerun the script.
  .. Review the messages for all mounted devices. Make sure there are no errors indicating that a storage volume does not belong to this Storage Node.
 +
 In the example, the output for `/dev/sde` includes the following error message:
@@ -165,10 +165,10 @@ You will use the device name to look up the volume ID, which is required input w
  .. After repairing or replacing all unmountable devices, run the `sn-remount-volumes` script again to confirm that all storage volumes that can be remounted have been remounted.
 
 +
-IMPORTANT: If a storage volume cannot be mounted or is improperly formatted, and you continue to the next step, the volume and any data on the volume will be deleted. If you had two copies of object data, you will have only a single copy until you complete the next procedure (restoring object data).
+IMPORTANT: If a storage volume can't be mounted or is improperly formatted, and you continue to the next step, the volume and any data on the volume will be deleted. If you had two copies of object data, you will have only a single copy until you complete the next procedure (restoring object data).
 
 +
-CAUTION: Do not run the `sn-recovery-postinstall.sh` script if you believe that the data remaining on a failed storage volume cannot be rebuilt from elsewhere in the grid (for example, if your ILM policy uses a rule that makes only one copy or if volumes have failed on multiple nodes). Instead, contact technical support to determine how to recover your data.
+CAUTION: Don't run the `sn-recovery-postinstall.sh` script if you believe that the data remaining on a failed storage volume can't be rebuilt from elsewhere in the grid (for example, if your ILM policy uses a rule that makes only one copy or if volumes have failed on multiple nodes). Instead, contact technical support to determine how to recover your data.
 
 . Run the `sn-recovery-postinstall.sh` script: `sn-recovery-postinstall.sh`
 +
@@ -178,7 +178,7 @@ Be aware of the following:
 +
  ** The script might take hours to run.
  ** In general, you should leave the SSH session alone while the script is running.
- ** Do not press *Ctrl+C* while the SSH session is active.
+ ** Don't press *Ctrl+C* while the SSH session is active.
  ** The script will run in the background if a network disruption occurs and terminates the SSH session, but you can view the progress from the Recovery page.
  ** If the Storage Node uses the RSM service, the script might appear to stall for 5 minutes as node services are restarted. This 5-minute delay is expected whenever the RSM service boots for the first time.
 +
@@ -207,6 +207,6 @@ The script asks if you want to restore object data manually.
 ====
 If you answer `y` to restore object data manually:
 
-* You won't be able to restore object data using Grid Manager. 
+* You aren't able to restore object data using Grid Manager. 
 * You can monitor the progress of manual restoration jobs using Grid Manager.
 ====

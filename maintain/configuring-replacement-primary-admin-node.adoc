@@ -11,7 +11,7 @@ summary: 'The replacement node must be configured as the primary Admin Node for 
 [.lead]
 The replacement node must be configured as the primary Admin Node for your StorageGRID system.
 
-.What you'll need
+.Before you begin
 
 * For primary Admin Nodes hosted on virtual machines, the virtual machine has been deployed, powered on, and initialized.
 * For primary Admin Nodes hosted on a services appliance, you have replaced the appliance and have installed software. See the link:../installconfig/index.html[installation instructions for your appliance].
@@ -45,7 +45,7 @@ NOTE: To configure a relying party trust, see link:../admin/configuring-sso.html
  .. On the Overview tab, note the version displayed in the *Software Version* field.
  .. Select any other grid node.
  .. On the Overview tab, note the version displayed in the *Software Version* field.
-  *** If the versions displayed in the *Software Version* fields are the same, you do not need to apply a hotfix.
+  *** If the versions displayed in the *Software Version* fields are the same, you don't need to apply a hotfix.
   *** If the versions displayed in the *Software Version* fields are different, you must link:storagegrid-hotfix-procedure.html[apply a hotfix] to update the recovered primary Admin Node to the same version.
 
 

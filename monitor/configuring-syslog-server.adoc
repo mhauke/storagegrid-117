@@ -11,7 +11,7 @@ summary: 'If you want to save audit logs, application logs, and security event l
 [.lead]
 If you want to save audit logs, application logs, and security event logs to a location outside of your grid, use this procedure to configure an external syslog server. 
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have Maintenance or Root access permissions.
@@ -33,7 +33,7 @@ CAUTION: When logs are sent to an external syslog server, single logs greater th
 +
 NOTE: To maximize the options for full data recovery in the event of a failure of the external syslog server, up to 20GB of local logs of audit records (localaudit.log) are maintained on each node.
 +
-NOTE: If the configuration options available in this procedure are not flexible enough to meet your requirements, additional configuration options can be applied using the private API `audit-destinations` endpoints. For example, it is possible to use different syslog servers for different groups of nodes.
+NOTE: If the configuration options available in this procedure aren't flexible enough to meet your requirements, additional configuration options can be applied using the private API `audit-destinations` endpoints. For example, it is possible to use different syslog servers for different groups of nodes.
 
 == Configure the external server
 
@@ -119,7 +119,7 @@ For security events, if you select *Passthrough*, the severity values are genera
 +
 For application logs, if you select *Passthrough*, the severities vary between 'info' and 'notice,' depending on what the issue is. For example, adding an NTP server and configuring an HA group gives a value of 'info,' while intentionally stopping the SSM or RSM service gives a value of 'notice.'
 
-.. If you do not want to use the passthrough value, select a severity value between 0 and 7. 
+.. If you don't want to use the passthrough value, select a severity value between 0 and 7. 
 +
 The selected value will be applied to all messages of this type. Information about different severities will be lost when you choose to override severity with a fixed value.
 +
@@ -188,7 +188,7 @@ For application logs, if you select *Passthrough*, the application logs sent to 
 | local6
 |===
 
-.. If you do not want to use the passthrough value, select the facility value between 0 and 23. 
+.. If you don't want to use the passthrough value, select the facility value between 0 and 23. 
 +
 The selected value will be applied to all messages of this type. Information about different facilities will be lost when you choose to override facility with a fixed value.
 +
@@ -275,11 +275,11 @@ The selected value will be applied to all messages of this type. Information abo
 
 Before starting to use an external syslog server, you should request that all nodes in your grid send test messages to the external syslog server. You should use these test messages to help you validate your entire log collection infrastructure before you commit to sending data to the external syslog server.
 
-CAUTION: Do not use the external syslog server configuration until you confirm that the external syslog server received a test message from each node in your grid and that the message was processed as expected.
+CAUTION: Don't use the external syslog server configuration until you confirm that the external syslog server received a test message from each node in your grid and that the message was processed as expected.
 
 .Steps
 
-. If you do not want to send test messages because you are certain your external syslog server is configured properly and can receive audit information from all the nodes in your grid, select *Skip and finish*. 
+. If you don't want to send test messages because you are certain your external syslog server is configured properly and can receive audit information from all the nodes in your grid, select *Skip and finish*. 
 +
 A green banner appears indicating your configuration has been saved successfully. 
 

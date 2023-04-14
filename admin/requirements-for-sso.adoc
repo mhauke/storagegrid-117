@@ -55,7 +55,7 @@ NOTE: Windows Server 2016 should be using the https://support.microsoft.com/en-u
 
 === Considerations for Azure
 
-If you use Azure as the SSO type and users have user principal names that do not use the sAMAccountName as the prefix, login issues can occur if StorageGRID loses its connection with the LDAP server. To allow users to sign in, you must restore the connection to the LDAP server.
+If you use Azure as the SSO type and users have user principal names that don't use the sAMAccountName as the prefix, login issues can occur if StorageGRID loses its connection with the LDAP server. To allow users to sign in, you must restore the connection to the LDAP server.
 
 == Server certificate requirements
 

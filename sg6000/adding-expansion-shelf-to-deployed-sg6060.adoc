@@ -11,7 +11,7 @@ summary: 'To increase storage capacity, you can add one or two expansion shelves
 [.lead]
 To increase storage capacity, you can add one or two expansion shelves to an SG6060 that is already deployed in a StorageGRID system.
 
-.What you'll need
+.Before you begin
 
 * You must have the provisioning passphrase.
 * You must be running StorageGRID 11.4 or later.
@@ -85,7 +85,7 @@ image::../media/expansion_shelves_connections_sg6060.png[SG6060 Expansion Shelf 
  .. Connect a power cord to each of the two power supply units in each expansion shelf.
  .. Connect the two power cords in each expansion shelf to two different PDUs in the cabinet or rack.
  .. Turn on the two power switches for each expansion shelf.
-  *** Do not turn off the power switches during the power-on process.
+  *** Don't turn off the power switches during the power-on process.
   *** The fans in the expansion shelves might be very loud when they first start up. The loud noise during start-up is normal.
 . Monitor the Home page of the StorageGRID Appliance Installer.
 +
@@ -99,9 +99,9 @@ The screenshot shows examples of the messages that could appear on the Home page
  ** The message circled at the bottom of the page indicates an expansion is ready to be started.
   *** The message indicates the number of new expansion shelves StorageGRID detects. "`Attached`" indicates that the shelf is detected. "`Unconfigured`" indicates that the shelf is new and not yet configured using the StorageGRID Appliance Installer.
 +
-NOTE: Expansion shelves that are already deployed are not included in this message. They are included in the count in the banner at the top of the page.
+NOTE: Expansion shelves that are already deployed aren't included in this message. They are included in the count in the banner at the top of the page.
 
-  *** The message will not appear if new expansion shelves are not detected.
+  *** The message will not appear if new expansion shelves aren't detected.
 +
 image::../media/appl_installer_home_expansion_shelf_ready_to_install.png[Expansion Shelf Installation]
 
@@ -129,9 +129,9 @@ When the reboot is complete, the *Tasks* tab looks like the following screenshot
 image::../media/appliance_installer_reboot_complete.png[Reboot Complete]
 
 . Verify the status of the appliance Storage Node and the new expansion shelves.
- .. In the Grid Manager, select *NODES* and verify that the appliance Storage Node has a green checkmark icon.
+ .. In the Grid Manager, select *NODES* and verify that the appliance Storage Node has a green check mark icon.
 +
-The green checkmark icon means that no alerts are active and the node is connected to the grid. For a description of node icons, see link:../monitor/monitoring-system-health.html#monitor-node-connection-states[Monitor node connection states].
+The green check mark icon means that no alerts are active and the node is connected to the grid. For a description of node icons, see link:../monitor/monitoring-system-health.html#monitor-node-connection-states[Monitor node connection states].
 
  .. Select the *Storage* tab and confirm that 16 new object stores are shown in the Object Storage table for each expansion shelf you added.
  .. Verify that each new expansion shelf has a shelf status of Nominal and a configuration status of Configured.

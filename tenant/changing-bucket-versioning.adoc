@@ -11,13 +11,13 @@ summary: 'If you are using an S3 tenant, you can change the versioning state for
 [.lead]
 If you are using an S3 tenant, you can change the versioning state for S3 buckets.
 
-.What you'll need
+.Before you begin
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies. 
 
 .About this task
 
-You can enable or suspend object versioning for a bucket. After you enable versioning for a bucket, it cannot return to an unversioned state. However, you can suspend versioning for the bucket.
+You can enable or suspend object versioning for a bucket. After you enable versioning for a bucket, it can't return to an unversioned state. However, you can suspend versioning for the bucket.
 
 * Disabled: Versioning has never been enabled
 * Enabled: Versioning is enabled

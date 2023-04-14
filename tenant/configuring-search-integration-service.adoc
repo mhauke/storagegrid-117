@@ -11,7 +11,7 @@ summary: 'The search integration service sends object metadata to a destination 
 [.lead]
 The search integration service sends object metadata to a destination search index whenever an object is created, deleted, or its metadata or tags are updated.
 
-.What you'll need
+.Before you begin
 
 * Platform services were enabled for your tenant account by a StorageGRID administrator.
 * You have already created an S3 bucket whose contents you want to index.
@@ -20,7 +20,7 @@ The search integration service sends object metadata to a destination search ind
 
 .About this task
 
-After you configure the search integration service for a source bucket, creating an object or updating an object's metadata or tags triggers object metadata to be sent to the destination endpoint. If you enable the search integration service for a bucket that already contains objects, metadata notifications are not automatically sent for existing objects. You must update these existing objects to ensure that their metadata is added to the destination search index.
+After you configure the search integration service for a source bucket, creating an object or updating an object's metadata or tags triggers object metadata to be sent to the destination endpoint. If you enable the search integration service for a bucket that already contains objects, metadata notifications aren't automatically sent for existing objects. You must update these existing objects to ensure that their metadata is added to the destination search index.
 
 .Steps
 
@@ -46,7 +46,7 @@ After you configure the search integration service for a source bucket, creating
 The bucket details page appears.
 
 . Select *Platform services* > *Search integration*
-. Select the *Enable search integration* check box.
+. Select the *Enable search integration* checkbox.
 . Paste the metadata notification configuration into the text box, and select *Save changes*.
 +
 image::../media/tenant_bucket_search_integration_configuration.png[screenshot of search integration configuration dialog box]
@@ -64,7 +64,7 @@ In the example shown earlier, all objects added to the bucket trigger a metadata
 
 As necessary, you can disable search integration for a bucket using either of the following methods:
 
-* Select *STORAGE (S3)* > *Buckets* and unselect the *Enable search integration* check box.
+* Select *STORAGE (S3)* > *Buckets* and clear the *Enable search integration* checkbox.
 * If you are using the S3 API directly, use a DELETE Bucket metadata notification request. See the instructions for implementing S3 client applications.
 
 .Related information

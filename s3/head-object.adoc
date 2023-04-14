@@ -19,7 +19,7 @@ You can set `partNumber` to 1 for both segmented/multipart objects and  non-segm
 
 == UTF-8 characters in user metadata
 
-StorageGRID does not parse or interpret escaped UTF-8 characters in user-defined metadata. HEAD requests for an object with escaped UTF-8 characters in user-defined metadata do not return the `x-amz-missing-meta` header if the key name or value includes unprintable characters.
+StorageGRID does not parse or interpret escaped UTF-8 characters in user-defined metadata. HEAD requests for an object with escaped UTF-8 characters in user-defined metadata don't return the `x-amz-missing-meta` header if the key name or value includes unprintable characters.
 
 == Unsupported request header
 

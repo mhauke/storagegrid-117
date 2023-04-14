@@ -11,7 +11,7 @@ summary: 'If you are using an S3 tenant, you can change the consistency level fo
 [.lead]
 If you are using an S3 tenant, you can change the consistency level for operations performed on the objects in S3 buckets.
 
-.What you'll need
+.Before you begin
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies.
 
@@ -41,6 +41,6 @@ The bucket details page appears.
 
 * *Read-after-new-write* (default): Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
 
-* *Available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that do not exist). Not supported for S3 FabricPool buckets.
+* *Available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that don't exist). Not supported for S3 FabricPool buckets.
 
 . Select *Save changes*.

@@ -11,7 +11,7 @@ summary: 'You can add, update, or remove Network Time Protocol \(NTP\) servers t
 [.lead]
 You can add, update, or remove Network Time Protocol (NTP) servers to ensure that data is synchronized accurately between grid nodes in your StorageGRID system.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the link:../admin/admin-group-permissions.html[Maintenance or Root access permission].
@@ -36,7 +36,7 @@ Follow these guidelines to protect against timing issues:
 
 * The specified external NTP servers must use the NTP protocol. You must specify NTP server references of Stratum 3 or better to prevent issues with time drift.
 
-NOTE: When specifying the external NTP source for a production-level StorageGRID installation, do not use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in high-accuracy environments, including StorageGRID. For details, see https://support.microsoft.com/en-us/help/939322/support-boundary-to-configure-the-windows-time-service-for-high-accura[Support boundary to configure the Windows Time service for high-accuracy environments^].
+NOTE: When specifying the external NTP source for a production-level StorageGRID installation, don't use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in high-accuracy environments, including StorageGRID. For details, see https://support.microsoft.com/en-us/help/939322/support-boundary-to-configure-the-windows-time-service-for-high-accura[Support boundary to configure the Windows Time service for high-accuracy environments^].
 
 == Configure NTP servers
 Follow these steps to add, update, or remove NTP servers.
@@ -53,7 +53,7 @@ You should include at least four NTP servers, and you can specify up to six serv
 +
 The page is disabled until the configuration updates are complete.
 +
-IMPORTANT: If all of your NTP servers fail the connection test after you save the new NTP servers, do not proceed. Contact technical support.
+IMPORTANT: If all of your NTP servers fail the connection test after you save the new NTP servers, don't proceed. Contact technical support.
 
 == Resolve NTP server issues
 

@@ -13,7 +13,7 @@ The SGF6112 storage appliance contains 12 SSD drives. Data on the drives is prot
 
 The failure of a second drive before an initial drive failure has been corrected might require data be copied from other nodes to restore redundancy. This restoration of redundancy can take longer, and might be impossible, if single-copy ILM rules are in use or were used in the past, or if data redundancy has been impacted by failures on other nodes. Therefore, if one of the SGF6112 drives fails, you must replace it as soon as possible to ensure redundancy.
 
-.What you'll need
+.Before you begin
 
 * You have link:locating-sgf6112-in-data-center.html[physically located the appliance].
 
@@ -111,7 +111,7 @@ image::../media/h600s_driveinstall.gif[Drive Installation]
 
 . Insert the replacement drive in the slot, and then close the drive handle.
 +
-IMPORTANT: Do not use excessive force while closing the handle.
+IMPORTANT: Don't use excessive force while closing the handle.
 +
 When the drive is fully inserted, you hear a click.
 +

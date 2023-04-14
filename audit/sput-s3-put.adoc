@@ -17,7 +17,7 @@ When an S3 client issues a PUT transaction, a request is made to create a new ob
 
 | CBID
 | Content Block Identifier
-| The unique identifier of the content block requested. If the CBID is unknown, this field is set to 0. Operations on buckets do not include this field.
+| The unique identifier of the content block requested. If the CBID is unknown, this field is set to 0. Operations on buckets don't include this field.
 
 | CMPS
 | Compliance Settings
@@ -33,7 +33,7 @@ When an S3 client issues a PUT transaction, a request is made to create a new ob
 
 | CSIZ
 | Content Size
-| The size of the retrieved object in bytes. Operations on buckets do not include this field.
+| The size of the retrieved object in bytes. Operations on buckets don't include this field.
 
 | GFID
 | Grid Federation Connection ID
@@ -92,7 +92,7 @@ SUCS: Successful
 
 | S3KY
 | S3 Key
-| The S3 key name, not including the bucket name. Operations on buckets do not include this field.
+| The S3 key name, not including the bucket name. Operations on buckets don't include this field.
 
 | S3SR
 | S3 Subresource
@@ -142,10 +142,10 @@ Empty for anonymous requests.
 
 | VSID
 | Version ID
-| The version ID of a new object created in a versioned bucket. Operations on buckets and objects in unversioned buckets do not include this field.
+| The version ID of a new object created in a versioned bucket. Operations on buckets and objects in unversioned buckets don't include this field.
 
 | VSST
 | Versioning State
-| The new versioning state of a bucket. Two states are used: "enabled" or "suspended." Operations on objects do not include this field.
+| The new versioning state of a bucket. Two states are used: "enabled" or "suspended." Operations on objects don't include this field.
 
 |===

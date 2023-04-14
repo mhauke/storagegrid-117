@@ -11,7 +11,7 @@ summary: 'You can view the buckets in your tenant account.'
 [.lead]
 You can view the buckets in your tenant account.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
@@ -34,7 +34,7 @@ IMPORTANT: The Object Count and Space Used values displayed are estimates. These
 | Column | Description
 
 | Name 
-| The bucket's unique name, which cannot be changed.
+| The bucket's unique name, which can't be changed.
 
 | Enabled features
 | The list of features that are enabled for the bucket.
@@ -45,7 +45,7 @@ IMPORTANT: The Object Count and Space Used values displayed are estimates. These
 This column appears only if S3 Object Lock is enabled for the grid. This column also shows information for any legacy Compliant buckets.
 
 | Region
-| The bucket's region, which cannot be changed.
+| The bucket's region, which can't be changed.
 
 | Object count
 | The number of objects in this bucket. When objects are added or deleted, this value might not update immediately. If buckets have versioning enabled, non-current object versions are included in this value.

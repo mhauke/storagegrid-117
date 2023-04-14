@@ -48,10 +48,10 @@ See the instructions for rotating connection certificates in link:grid-federatio
 === Error editing a grid federation connection
 
 .Issue
-When editing a grid federation connection, you see the following warning message when you select *Save and test*: “Failed to create a candidate configuration file on one or more nodes.”
+When editing a grid federation connection, you see the following warning message when you select *Save and test*: "Failed to create a candidate configuration file on one or more nodes."
 
 .Details
-When you edit a grid federation connection, StorageGRID attempts to save a “candidate configuration” file on all Admin Nodes on the first grid. A warning message appears if this file can't be saved to all Admin Nodes, for example, because an Admin Node is offline.
+When you edit a grid federation connection, StorageGRID attempts to save a "candidate configuration" file on all Admin Nodes on the first grid. A warning message appears if this file can't be saved to all Admin Nodes, for example, because an Admin Node is offline.
 
 .Recommended actions
 

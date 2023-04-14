@@ -1,5 +1,5 @@
 //steps for upgrading the SANtricity OS on storage controllers using the Grid Manager. For the SG5700 and SG6000.
-.What you'll need
+.Before you begin
 
 * You have consulted the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool (IMT)^] to confirm that the SANtricity OS version you are using for the upgrade is compatible with your appliance.
 * You have the link:../admin/admin-group-permissions.html[Maintenance or Root access permission].
@@ -9,13 +9,13 @@
 
 .About this task
 
-You cannot perform other software updates (StorageGRID software upgrade or a hotfix) until you have completed the SANtricity OS upgrade process. If you attempt to start a hotfix or a StorageGRID software upgrade before the SANtricity OS upgrade process has finished, you are redirected to the SANtricity OS upgrade page.
+You can't perform other software updates (StorageGRID software upgrade or a hotfix) until you have completed the SANtricity OS upgrade process. If you attempt to start a hotfix or a StorageGRID software upgrade before the SANtricity OS upgrade process has finished, you are redirected to the SANtricity OS upgrade page.
 
-The procedure will not be complete until the SANtricity OS upgrade has been successfully applied to all applicable nodes that have been selected for the upgrade. It might take more than 30 minutes to load the SANtricity OS on each node (sequentially) and up to 90 minutes to reboot each StorageGRID storage appliance. Any nodes in your grid that do not use SANtricity OS will not be affected by this procedure. 
+The procedure will not be complete until the SANtricity OS upgrade has been successfully applied to all applicable nodes that have been selected for the upgrade. It might take more than 30 minutes to load the SANtricity OS on each node (sequentially) and up to 90 minutes to reboot each StorageGRID storage appliance. Any nodes in your grid that don't use SANtricity OS will not be affected by this procedure. 
 
-CAUTION: The following steps are only applicable when you are using the Grid Manager to perform the upgrade. The storage controllers in the appliance cannot be upgraded using the Grid Manager when the controllers are using SANtricity OS older than 08.42.20.00 (11.42).
+CAUTION: The following steps are only applicable when you are using the Grid Manager to perform the upgrade. The storage controllers in the appliance can't be upgraded using the Grid Manager when the controllers are using SANtricity OS older than 08.42.20.00 (11.42).
 
-NOTE: This procedure will automatically upgrade the NVSRAM to the most recent version associated with the SANtricity OS upgrade. You do not need to apply a separate NVSRAM upgrade file.
+NOTE: This procedure will automatically upgrade the NVSRAM to the most recent version associated with the SANtricity OS upgrade. You don't need to apply a separate NVSRAM upgrade file.
 
 IMPORTANT: Be sure to apply the latest StorageGRID hotfix before you begin this procedure. See link:../maintain/storagegrid-hotfix-procedure.html[StorageGRID hotfix procedure] for details. 
 
@@ -48,7 +48,7 @@ The SANtricity OS upgrade page appears and lists the details for each appliance 
  .. Select *Open*.
 
 +
-The file is uploaded and validated. When the validation process is done, the file name is shown with a green checkmark next to the *Browse* button. Do not change the file name because it is part of the verification process.
+The file is uploaded and validated. When the validation process is done, the file name is shown with a green check mark next to the *Browse* button. Don't change the file name because it is part of the verification process.
 
 . Enter the provisioning passphrase and select *Continue*.
 +
@@ -64,7 +64,7 @@ NOTE: If any errors are reported, resolve them and select *Start* again.
 
 .. The SANtricity OS Upgrade Progress table appears. This table shows all Storage Nodes in your grid and the current stage of the upgrade for each node.
 +
-NOTE: The table shows all appliance Storage Nodes. Software-based Storage Nodes are not displayed. Select *Approve* for all nodes that require the upgrade.
+NOTE: The table shows all appliance Storage Nodes. Software-based Storage Nodes aren't displayed. Select *Approve* for all nodes that require the upgrade.
 +
 image::../media/santricity_upgrade_progress_table.png[screenshot showing the SANtricity OS Upgrade Progress part of the SANtricity OS Upgrade page]
 
@@ -81,7 +81,7 @@ You can also enter a term in the Search box to search for specific nodes.
 
 . Approve the grid nodes you are ready to add to the upgrade queue. Approved nodes are upgraded one at a time. 
 +
-IMPORTANT: Do not approve the SANtricity OS upgrade for an appliance Storage Node unless you are sure the node is ready to be stopped and rebooted. When the SANtricity OS upgrade is approved on a node, the services on that node are stopped and the upgrade process begins. Later, when the node is finished upgrading, the appliance node is rebooted. These operations might cause service interruptions for clients that are communicating with the node.
+IMPORTANT: Don't approve the SANtricity OS upgrade for an appliance Storage Node unless you are sure the node is ready to be stopped and rebooted. When the SANtricity OS upgrade is approved on a node, the services on that node are stopped and the upgrade process begins. Later, when the node is finished upgrading, the appliance node is rebooted. These operations might cause service interruptions for clients that are communicating with the node.
 
 ** Select the *Approve All* button to add all Storage Nodes to the SANtricity OS upgrade queue. 
 +
@@ -109,7 +109,7 @@ When the stage progresses beyond Queued, the *Remove* button is hidden and you c
 +
 When the SANtricity OS upgrade is complete on all approved nodes, the SANtricity OS Upgrade Progress table closes and a green banner shows the number of nodes upgraded, and the date and time the upgrade completed.
 
-. If a node cannot be upgraded, note the reason shown in the Details column and take the appropriate action.
+. If a node can't be upgraded, note the reason shown in the Details column and take the appropriate action.
 +
 NOTE: The SANtricity OS upgrade process will not be complete until you approve the SANtricity OS upgrade on all the listed Storage Nodes.
 +

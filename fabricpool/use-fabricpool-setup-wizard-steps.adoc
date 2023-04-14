@@ -11,7 +11,7 @@ summary: 'You can use the FabricPool setup wizard to configure StorageGRID as th
 [.lead]
 You can use the FabricPool setup wizard to configure StorageGRID as the object storage system for a FabricPool cloud tier.
 
-.What you'll need
+.Before you begin
 * You have reviewed the link:../fabricpool/use-fabricpool-setup-wizard.html[considerations and requirements] for using the FabricPool setup wizard.
 +
 NOTE: If you want to configure StorageGRID for use with any other S3 client application, go to link:../admin/use-s3-setup-wizard.html[Use S3 setup wizard].
@@ -42,7 +42,7 @@ You can use an HA group to help keep FabricPool data connections available. An H
 For details about this task, see link:../admin/managing-high-availability-groups.html[Manage high availability groups] and link:best-practices-for-high-availability-groups.html[Best practices for high availability groups].
 
 .Steps
-. If you plan to use an external load balancer, you do not need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
+. If you plan to use an external load balancer, you don't need to create an HA group. Select *Skip this step* and go to <<Step 2 of 9: Configure load balancer endpoint>>.
 
 . To use the StorageGRID load balancer, create a new HA group or use an existing HA group.
 +
@@ -94,7 +94,7 @@ If the HA group includes more than one interface and the active interface fails,
 The network address must not have any host bits set. For example, `192.16.0.0/22`.
 
 | Gateway IP address (optional)
-| Optional. If the ONTAP IP addresses used to access StorageGRID are not on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
+| Optional. If the ONTAP IP addresses used to access StorageGRID aren't on the same subnet as the StorageGRID VIP addresses, enter the StorageGRID VIP local gateway IP address. The local gateway IP address must be within the VIP subnet.
 
 | Virtual IP address
 | Enter at least one and no more than ten VIP addresses for the active interface in the HA group. All VIP addresses must be within the VIP subnet and all will be active at the same time on the active interface. 
@@ -146,9 +146,9 @@ For details about this task, see the general link:../admin/managing-load-balanci
 | A descriptive name for the endpoint.
 
 | Port
-| The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, since these ports are reserved on Admin Nodes.
+| The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes, because these ports are reserved on Admin Nodes.
 
-*Note:* Ports used by other grid services are not permitted. See the 
+*Note:* Ports used by other grid services aren't permitted. See the 
 link:../network/network-port-reference.html[Network port reference].
 
 | Client type
@@ -182,7 +182,7 @@ You must select this option if you are using the FabricPool setup wizard for a n
 | Only the selected tenant accounts can use this endpoint to access their buckets.
 
 | Block selected tenants
-| The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+| The selected tenant accounts can't use this endpoint to access their buckets. All other tenants can use this endpoint.
 
 |===
 
@@ -290,7 +290,7 @@ Create a new tenant and bucket or select an existing tenant.
 
 . For *Bucket name*, enter the name of the bucket FabricPool will use to store ONTAP data. For example, `fabricpool-bucket`.
 +
-TIP: You cannot change the bucket name after creating the bucket.
+TIP: You can't change the bucket name after creating the bucket.
 
 . Select the *Region* for this bucket.
 +
@@ -302,14 +302,14 @@ Use the default region (us-east-1) unless you expect to use ILM in the future to
 .Select tenant and bucket
 --
 
-The existing tenant account must have at least one bucket that does not have versioning enabled. You cannot select an existing tenant account if no bucket exists for that tenant. 
+The existing tenant account must have at least one bucket that does not have versioning enabled. You can't select an existing tenant account if no bucket exists for that tenant. 
 
 . Select the existing tenant from the *Tenant name* drop-down list. 
 . Select the existing bucket from the *Bucket name* drop-down list.
 +
-FabricPool does not support object versioning, so buckets that have versioning enabled are not shown.
+FabricPool does not support object versioning, so buckets that have versioning enabled aren't shown.
 +
-NOTE: Do not select a bucket that has S3 Object Lock enabled for use with FabricPool.
+NOTE: Don't select a bucket that has S3 Object Lock enabled for use with FabricPool.
 
 . Select *Continue* to go to the download data step. 
 --
@@ -338,9 +338,9 @@ The `ONTAP_FabricPool_settings___bucketname__.txt` file includes the information
 
 . Save the copied keys and downloaded file to a secure location.
 +
-CAUTION: Do not close this page until you have copied both access keys, downloaded the ONTAP settings, or both. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
+CAUTION: Don't close this page until you have copied both access keys, downloaded the ONTAP settings, or both. The keys will not be available after you close this page. Make sure to save this information in a secure location because it can be used to obtain data from your StorageGRID system.
 
-. Select the check box to confirm you have downloaded or copied the access key ID and secret access key.
+. Select the checkbox to confirm you have downloaded or copied the access key ID and secret access key.
 
 . Select *Continue* to go to the ILM storage pool step.
 
@@ -376,10 +376,10 @@ For details about this step, see link:../ilm/access-create-ilm-rule-wizard.html[
 | Description
 
 | Rule name 
-| Automatically generated and cannot be changed
+| Automatically generated and can't be changed
 
 | Description
-| Automatically generated and cannot be changed
+| Automatically generated and can't be changed
 
 | Filter
 | The bucket name

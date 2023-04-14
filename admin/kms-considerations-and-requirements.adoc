@@ -30,11 +30,11 @@ The network firewall settings must allow each appliance node to communicate thro
 
 You can use a key management server (KMS) to manage encryption keys for any StorageGRID appliance in your grid that has the *Node Encryption* setting enabled. This setting can only be enabled during the hardware configuration stage of appliance installation using the StorageGRID Appliance Installer.
 
-NOTE: You cannot enable node encryption after an appliance is added to the grid, and you cannot use external key management for appliances that do not have node encryption enabled.
+NOTE: You can't enable node encryption after an appliance is added to the grid, and you can't use external key management for appliances that don't have node encryption enabled.
 
 You can use the configured KMS for StorageGRID appliances and appliance nodes.
 
-You cannot use the configured KMS for software-based (non-appliance) nodes, including the following:
+You can't use the configured KMS for software-based (non-appliance) nodes, including the following:
 
 * Nodes deployed as virtual machines (VMs)
 * Nodes deployed within container engines on Linux hosts
@@ -55,7 +55,7 @@ StorageGRID supports the use of KMS clusters. Each KMS cluster contains multiple
 
 For example, suppose your StorageGRID system has three data center sites. You might configure one KMS cluster to provide a key to all appliance nodes at Data Center 1 and a second KMS cluster to provide a key to all appliance nodes at all other sites. When you add the second KMS cluster, you can configure a default KMS for Data Center 2 and Data Center 3.
 
-Note that you cannot use a KMS for non-appliance nodes or for any appliance nodes that did not have the *Node Encryption* setting enabled during installation.
+Note that you can't use a KMS for non-appliance nodes or for any appliance nodes that did not have the *Node Encryption* setting enabled during installation.
 
 image::../media/kms_per_site.png[KMS Per Site]
 
@@ -63,7 +63,7 @@ image::../media/kms_per_site.png[KMS Per Site]
 
 As a security best practice, you should periodically rotate the encryption key used by each configured KMS.
 
-When rotating the encryption key, use the KMS software to rotate from the last used version of the key to a new version of the same key. Do not rotate to an entirely different key.
+When rotating the encryption key, use the KMS software to rotate from the last used version of the key to a new version of the same key. Don't rotate to an entirely different key.
 
 CAUTION: Never attempt to rotate a key by changing the key name (alias) for the KMS in the Grid Manager. Instead, rotate the key by updating the key version in the KMS software. Use the same key alias for new keys as was used for previous keys. If you change the key alias for a configured KMS, StorageGRID might not be able to decrypt your data.
 
@@ -71,7 +71,7 @@ When the new key version is available:
 
 * It is automatically distributed to the encrypted appliance nodes at the site or sites associated with the KMS. The distribution should occur within an hour of when the key is rotated.
 * If the encrypted appliance node is offline when the new key version is distributed, the node will receive the new key as soon as it reboots.
-* If the new key version cannot be used to encrypt appliance volumes for any reason, the *KMS encryption key rotation failed* alert is triggered for the appliance node. You might need to contact technical support for help in resolving this alert.
+* If the new key version can't be used to encrypt appliance volumes for any reason, the *KMS encryption key rotation failed* alert is triggered for the appliance node. You might need to contact technical support for help in resolving this alert.
 
 == Can I reuse an appliance node after it has been encrypted?
 

@@ -36,4 +36,4 @@ A different port can be specified when the endpoint is created or edited. See li
 If you use a non-transparent proxy server, you must also link:../admin/configuring-storage-proxy-settings.html[configure storage proxy settings] to allow messages to be sent to external endpoints, such as an endpoint on the internet. 
 
 == VLANs and platform services and Cloud Storage Pools
-You cannot use VLAN networks for platform services or Cloud Storage Pools. The destination endpoints must be reachable over the Grid, Admin, or Client Network.
+You can't use VLAN networks for platform services or Cloud Storage Pools. The destination endpoints must be reachable over the Grid, Admin, or Client Network.

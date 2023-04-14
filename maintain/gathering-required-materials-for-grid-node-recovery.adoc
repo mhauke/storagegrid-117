@@ -17,7 +17,7 @@ Before performing maintenance procedures, you must ensure you have the necessary
 |StorageGRID installation archive
 |If you need to recover a grid node, you need to <<download-and-extract-install-files-recover,download the StorageGRID installation files>> for your platform.
 
-*Note:* You do not need to download files if you are recovering failed storage volumes on a Storage Node.
+*Note:* You don't need to download files if you are recovering failed storage volumes on a Storage Node.
 
 |Service laptop
 |The service laptop must have the following:
@@ -34,7 +34,7 @@ The contents of the `.zip` file are updated each time the system is modified. Yo
 
 If the primary Admin Node is operating normally, you can download the Recovery Package from the Grid Manager. Select *MAINTENANCE* > *System* > *Recovery package*.
 
-If you cannot access the Grid Manager, you can find encrypted copies of the Recovery Package on some Storage Nodes that contain the ADC service. On each Storage Node, examine this location for the Recovery Package: `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg` Use the Recovery Package with the highest revision number.
+If you can't access the Grid Manager, you can find encrypted copies of the Recovery Package on some Storage Nodes that contain the ADC service. On each Storage Node, examine this location for the Recovery Package: `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg` Use the Recovery Package with the highest revision number.
 
 |`Passwords.txt` file
 |Contains the passwords required to access grid nodes on the command line. Included in the Recovery Package.
@@ -65,7 +65,7 @@ You must use the version of StorageGRID that is currently running on the grid.
 StorageGRID software versions have this format: `11.x.y`.
 
 . Sign in with the username and password for your NetApp account.
-. Read the End User License Agreement, select the check box, and then select *Accept & Continue*.
+. Read the End User License Agreement, select the checkbox, and then select *Accept & Continue*.
 . In the *Install StorageGRID* column of the download page, select the `.tgz` or `.zip` file for your platform.
 +
 The version shown in the installation archive file must match the version of the software that is currently installed.

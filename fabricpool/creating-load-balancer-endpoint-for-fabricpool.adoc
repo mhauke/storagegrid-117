@@ -16,7 +16,7 @@ When configuring StorageGRID for use with FabricPool, you must configure a load 
 To use the FabricPool setup wizard to complete this task, go to link:use-fabricpool-setup-wizard-steps.html[Access and complete the FabricPool setup wizard].
 
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Root access permission.
@@ -39,7 +39,7 @@ To use the FabricPool setup wizard to complete this task, go to link:use-fabricp
 |Port
 |The StorageGRID port you want to use for load balancing. This field defaults to 10433 for the first endpoint you create, but you can enter any unused external port. If you enter 80 or 443, the endpoint is configured only on Gateway Nodes. These ports are reserved on Admin Nodes.
 
-*Note:* Ports used by other grid services are not permitted. See the 
+*Note:* Ports used by other grid services aren't permitted. See the 
 link:../network/network-port-reference.html[Network port reference].
 
 You will provide this number to ONTAP when you attach StorageGRID as a FabricPool cloud tier.
@@ -77,7 +77,7 @@ You must select this option if you have not yet created any tenant accounts.
 |Only the selected tenant accounts can use this endpoint to access their buckets.
 
 |Block selected tenants
-|The selected tenant accounts cannot use this endpoint to access their buckets. All other tenants can use this endpoint.
+|The selected tenant accounts can't use this endpoint to access their buckets. All other tenants can use this endpoint.
 
 |===
 

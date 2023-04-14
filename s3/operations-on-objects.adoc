@@ -21,7 +21,7 @@ The following conditions apply to all object operations:
  ** SELECT Object content
 * Conflicting client requests, such as two clients writing to the same key, are resolved on a "latest-wins" basis. The timing for the "`latest-wins`" evaluation is based on when the StorageGRID system completes a given request, and not on when S3 clients begin an operation.
 * All objects in a StorageGRID bucket are owned by the bucket owner, including objects created by an anonymous user, or by another account.
-* Data objects ingested to the StorageGRID system through Swift cannot be accessed through S3.
+* Data objects ingested to the StorageGRID system through Swift can't be accessed through S3.
 
 The following table describes how StorageGRID implements S3 REST API object operations.
 
@@ -30,9 +30,9 @@ The following table describes how StorageGRID implements S3 REST API object oper
 | Operation| Implementation
 
 | DELETE Object
-| Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` are not supported.
+| Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` aren't supported.
 
-When processing a DELETE Object request, StorageGRID attempts to immediately remove all copies of the object from all stored locations. If successful, StorageGRID returns a response to the client immediately. If all copies cannot be removed within 30 seconds (for example, because a location is temporarily unavailable), StorageGRID queues the copies for removal and then indicates success to the client.
+When processing a DELETE Object request, StorageGRID attempts to immediately remove all copies of the object from all stored locations. If successful, StorageGRID returns a response to the client immediately. If all copies can't be removed within 30 seconds (for example, because a location is temporarily unavailable), StorageGRID queues the copies for removal and then indicates success to the client.
 
 Versioning::
 
@@ -49,7 +49,7 @@ See link:../s3/use-s3-api-for-s3-object-lock.html[Use S3 REST API to configure S
 
 (DeleteObjects)
 
-| Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` are not supported.
+| Multi-Factor Authentication (MFA) and the response header `x-amz-mfa` aren't supported.
 
 Multiple objects can be deleted in the same request message.
 
@@ -110,7 +110,7 @@ Tag updates and ingest behavior::
 
 When you use PUT Object tagging to update an object's tags, StorageGRID does not re-ingest the object. This means that the option for Ingest Behavior specified in the matching ILM rule is not used. Any changes to object placement that are triggered by the update are made when ILM is re-evaluated by normal background ILM processes.
 +
-This means that if the ILM rule uses the Strict option for ingest behavior, no action is taken if the required object placements cannot be made (for example, because a newly required location is unavailable). The updated object retains its current placement until the required placement is possible.
+This means that if the ILM rule uses the Strict option for ingest behavior, no action is taken if the required object placements can't be made (for example, because a newly required location is unavailable). The updated object retains its current placement until the required placement is possible.
 
 Resolving conflicts::
 

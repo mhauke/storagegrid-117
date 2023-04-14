@@ -11,7 +11,7 @@ summary: 'You must access the StorageGRID Appliance Installer to verify the inst
 [.lead]
 You must access the StorageGRID Appliance Installer to verify the installer version and configure the connections between the appliance and the three StorageGRID networks: the Grid Network, the Admin Network (optional), and the Client Network (optional).
 
-.What you'll need
+.Before you begin
 
 * You are using any management client that can connect to the StorageGRID Admin Network, or you have a service laptop.
 * The client or service laptop has a link:../admin/web-browser-requirements.html[supported web browser].
@@ -90,7 +90,7 @@ The StorageGRID Appliance Installer Home page appears. The information and messa
 +
 image::../media/appliance_installer_home_5700_5600.png[Screen shot of the top part of the StorageGRID Webscale Appliance Installer home page]
 
-. If you cannot obtain an IP address using DHCP, you can use a link-local connection.
+. If you can't obtain an IP address using DHCP, you can use a link-local connection.
 +
 [role="tabbed-block"]
 ====
@@ -139,7 +139,7 @@ image::../media/sg1000_link_local_port.png[SG1000 Link-Local Connection]
 +
 The StorageGRID Appliance Installer Home page appears. The information and messages shown when you first access this page depend on how your appliance is currently connected to StorageGRID networks. Error messages might appear that will be resolved in later steps.
 +
-NOTE: If you cannot access the Home page over a link-local connection, configure the service laptop IP address as `169.254.0.2`, and try again.
+NOTE: If you can't access the Home page over a link-local connection, configure the service laptop IP address as `169.254.0.2`, and try again.
 
 .After you finish
 

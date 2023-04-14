@@ -11,7 +11,7 @@ summary: 'If a Storage Node includes fewer than 16 storage volumes, you can incr
 [.lead]
 If a Storage Node includes fewer than 16 storage volumes, you can increase its capacity by adding new block storage devices, making them visible to the Linux hosts, and adding the new block device mappings to the StorageGRID configuration file used for the Storage Node.
 
-.What you'll need
+.Before you begin
 
 * You have access to the instructions for installing StorageGRID for your Linux platform.
 
@@ -21,7 +21,7 @@ If a Storage Node includes fewer than 16 storage volumes, you can increase its c
 * You have the `Passwords.txt` file.
 * You have specific access permissions.
 
-CAUTION: Do not attempt to add storage volumes to a Storage Node while a software upgrade, recovery procedure, or another expansion procedure is active.
+CAUTION: Don't attempt to add storage volumes to a Storage Node while a software upgrade, recovery procedure, or another expansion procedure is active.
 
 .About this task
 
@@ -34,7 +34,7 @@ The Storage Node is unavailable for a brief time when you add storage volumes. Y
 For more information, see the documentation provided by your hardware vendor.
 
 . Create new block storage volumes of the desired sizes.
- ** Attach the new disk drives and update the RAID controller configuration as needed, or allocate the new SAN LUNs on the shared storage arrays and allow the Linux host to access them.
+ ** Attach the new drives and update the RAID controller configuration as needed, or allocate the new SAN LUNs on the shared storage arrays and allow the Linux host to access them.
  ** Use the same persistent naming scheme you used for the storage volumes on the existing Storage Node.
  ** If you use the StorageGRID node migration feature, make the new volumes visible to other Linux hosts that are migration targets for this Storage Node.
 For more information, see the instructions for installing StorageGRID for your Linux platform.
@@ -72,7 +72,7 @@ GRID_NETWORK_GATEWAY = 10.1.0.1
 
 . Add new object storage block device mappings corresponding to the block storage volumes you added for this Storage Node.
 +
-Make sure to start at the next `BLOCK_DEVICE_RANGEDB_nn`. Do not leave a gap.
+Make sure to start at the next `BLOCK_DEVICE_RANGEDB_nn`. Don't leave a gap.
 
  ** Based on the example above, start at `BLOCK_DEVICE_RANGEDB_04`.
  ** In the example below, four new block storage volumes have been added to the node: `BLOCK_DEVICE_RANGEDB_04` to `BLOCK_DEVICE_RANGEDB_07`.

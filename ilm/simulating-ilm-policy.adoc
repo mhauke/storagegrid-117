@@ -11,7 +11,7 @@ summary: 'Simulate a proposed policy on test objects before activating the polic
 [.lead]
 Simulate a proposed policy on test objects before activating the policy and applying it to your production data. The simulation window provides a standalone environment that is safe for testing policies before they are activated and applied to data in the production environment.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the link:../admin/admin-group-permissions.html[required access permissions].
@@ -70,7 +70,7 @@ In this example, the *Demo* policy is being simulated. This policy, which is int
 
 * The first rule, *PNGs*, filters for key names that end in `.png`.
 * The second rule, *X-men*, applies only to objects for Tenant A and filters for `series=x-men` user metadata.
-* The last rule, *Two copies two data centers*, is the default rule, which matches any objects that do not match the first two rules.
+* The last rule, *Two copies two data centers*, is the default rule, which matches any objects that don't match the first two rules.
 
 .Steps
 . After adding the rules and saving the policy, select *Simulate*.
@@ -114,7 +114,7 @@ As an example, suppose the metadata for the X-men rule was entered as "`x-men01`
 
 . To resolve the error, correct the rule as follows:
  ** If the rule is part of the proposed policy, you can either clone the rule or remove the rule from the policy and then edit it.
- ** If the rule is part of the active policy, you must clone the rule. You cannot edit or remove a rule from the active policy.
+ ** If the rule is part of the active policy, you must clone the rule. You can't edit or remove a rule from the active policy.
 +
 [cols="1a,3a" options="header"]
 |===
@@ -128,7 +128,7 @@ As an example, suppose the metadata for the X-men rule was entered as "`x-men01`
 .. Select *ILM* > *Policies* > *Proposed policy*.
 .. Select *Actions* > *Edit*.
 .. Select *Select rules*, then select *Continue* to accept the same default rule.
-.. In the Select other rules step, select the check box for the new rule, unselect the check box for the original rule, and select *Select*.
+.. In the Select other rules step, select the checkbox for the new rule, clear the checkbox for the original rule, and select *Select*.
 .. If necessary, reorder the rules by dragging the new rule to the correct location. 
 .. Select *Save*.
 
@@ -136,12 +136,12 @@ As an example, suppose the metadata for the X-men rule was entered as "`x-men01`
 |
 .. Select *ILM* > *Policies* > *Proposed policy* and remove the rule you want to edit.
 .. Select *ILM* > *Rules*.
-.. Select the rule you want to edit and select *Edit*. Or select the check box for the rule and select *Actions* > *Edit*.
+.. Select the rule you want to edit and select *Edit*. Or select the checkbox for the rule and select *Actions* > *Edit*.
 .. Change the incorrect information for each part of the wizard, then select *Update*.
 .. Select *ILM* > *Policies* > *Proposed policy*.
 .. Select *Actions* > *Edit*.
 .. Select *Select rules*, then select *Continue* to accept the same default rule.
-.. In the Select other rules dialog box, select the check box for the corrected rule, select *Select*, then select *Save*.
+.. In the Select other rules dialog box, select the checkbox for the corrected rule, select *Select*, then select *Save*.
 .. Drag the rows for the non-default rules to determine the order in which these rules will be evaluated.
 |===
 

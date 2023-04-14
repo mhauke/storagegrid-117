@@ -11,7 +11,7 @@ summary: 'You must place the appliance into maintenance mode before performing s
 [.lead]
 You must place the appliance into maintenance mode before performing specific maintenance procedures.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the Maintenance or Root access permission. For details, see the instructions for administering StorageGRID.
@@ -55,6 +55,6 @@ image::../media/maintenance_mode_notification_bar.png[maintenance mode message]
 +
 image::../media/reboot_controller_from_maintenance_mode.png[Reboot controller in maintenance mode]
 +
-It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *NODES* page should display a normal status (green checkmark icon image:../media/icon_alert_green_checkmark.png[green checkmark] to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
+It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *NODES* page should display a normal status (green check mark icon image:../media/icon_alert_green_checkmark.png[green check mark] to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
 +
 image::../media/nodes_menu.png[Nodes page normal status]

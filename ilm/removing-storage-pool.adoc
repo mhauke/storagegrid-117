@@ -11,7 +11,7 @@ summary: 'You can remove a storage pool that is not being used.'
 [.lead]
 You can remove a storage pool that is not being used.
 
-.What you'll need
+.Before you begin
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You have the link:../admin/admin-group-permissions.html[required access permissions].
 
@@ -21,8 +21,8 @@ You can remove a storage pool that is not being used.
 
 . Look at the ILM usage column in the table to determine whether you can remove the storage pool.
 +
-You cannot remove a storage pool if it is being used in an ILM rule or in an erasure coding profile. As required, select *_storage pool name_* > *ILM usage* to determine where the storage pool is used.
+You can't remove a storage pool if it is being used in an ILM rule or in an erasure coding profile. As required, select *_storage pool name_* > *ILM usage* to determine where the storage pool is used.
 
-. If the storage pool you want to remove is not being used, select the check box.
+. If the storage pool you want to remove is not being used, select the checkbox.
 . Select *Remove*.
 . Select *OK*.

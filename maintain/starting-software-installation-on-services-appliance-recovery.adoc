@@ -11,7 +11,7 @@ summary: 'To install a Gateway Node or Admin Node on an SG100 or SG1000 services
 [.lead]
 To install a Gateway Node or Admin Node on an SG100 or SG1000 services appliance, you use the StorageGRID Appliance Installer, which is included on the appliance.
 
-.What you'll need
+.Before you begin
 
 * The appliance is installed in a rack, connected to your networks, and powered on.
 * Network links and IP addresses are configured for the appliance using the StorageGRID Appliance Installer.
@@ -24,7 +24,7 @@ See link:../installconfig/index.html[Quick start for hardware installation].
 * You have one of the IP addresses assigned to the appliance. You can use the IP address for the Admin Network, the Grid Network, or the Client Network.
 * If you are installing a primary Admin Node, you have the Ubuntu or Debian install files for this version of StorageGRID available.
 +
-NOTE: A recent version of StorageGRID software is preloaded onto the services appliance during manufacturing. If the preloaded version of software matches the version being used in your StorageGRID deployment, you do not need the installation files.
+NOTE: A recent version of StorageGRID software is preloaded onto the services appliance during manufacturing. If the preloaded version of software matches the version being used in your StorageGRID deployment, you don't need the installation files.
 
 .About this task
 
@@ -78,13 +78,13 @@ The StorageGRID Appliance Installer can discover this IP address automatically, 
 |===
 | Option| Description
 |Manual IP entry
-|.. Unselect the *Enable Admin Node discovery* check box.
+|.. Clear the *Enable Admin Node discovery* checkbox.
  .. Enter the IP address manually.
  .. Click *Save*.
  .. Wait while the connection state for the new IP address becomes "`ready.`"
 
 |Automatic discovery of all connected primary Admin Nodes
-|.. Select the *Enable Admin Node discovery* check box.
+|.. Select the *Enable Admin Node discovery* checkbox.
  .. From the list of discovered IP addresses, select the primary Admin Node for the grid where this services appliance will be deployed.
  .. Click *Save*.
  .. Wait while the connection state for the new IP address becomes "`ready.`"

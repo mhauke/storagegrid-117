@@ -13,9 +13,9 @@ If you enabled node encryption for the appliance during installation, you can mo
 
 See link:../admin/kms-configuring.html[Configure key management servers] for information about implementing KMS for StorageGRID appliances.
 
-.What you'll need
+.Before you begin
 
-* You enabled node encryption for the appliance during installation. You cannot enable node encryption after the appliance is installed.
+* You enabled node encryption for the appliance during installation. You can't enable node encryption after the appliance is installed.
 * You have link:../commonhardware/placing-appliance-into-maintenance-mode.html[placed the appliance into maintenance mode].
 
 .Steps
@@ -41,7 +41,7 @@ IMPORTANT: Clearing the KMS configuration deletes data from the appliance, rende
 +
 image::../media/reboot_controller_from_maintenance_mode.png[Reboot controller in maintenance mode]
 +
-It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *NODES* page should display a normal status (green checkmark icon image:../media/icon_alert_green_checkmark.png[green checkmark] to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
+It can take up to 20 minutes for the appliance to reboot and rejoin the grid. To confirm that the reboot is complete and that the node has rejoined the grid, go back to the Grid Manager. The *NODES* page should display a normal status (green check mark icon image:../media/icon_alert_green_checkmark.png[green check mark] to the left of the node name) for the appliance node, indicating that no alerts are active and the node is connected to the grid.
 +
 image::../media/nodes_menu.png[Appliance node rejoined grid]
 
@@ -49,7 +49,7 @@ image::../media/nodes_menu.png[Appliance node rejoined grid]
 
 Clearing the key management server (KMS) configuration disables node encryption on your appliance. After clearing the KMS configuration, the data on your appliance is permanently deleted and is no longer accessible. This data is not recoverable.
 
-.What you'll need
+.Before you begin
 
 If you need to preserve data on the appliance, you must either perform a node decommission procedure or clone the node before you clear the KMS configuration. 
 
@@ -59,13 +59,13 @@ link:../maintain/grid-node-decommissioning.html[Decommission the node] to move a
 
 .About this task
 
-Clearing the appliance KMS configuration disables node encryption, removing the association between the appliance node and the KMS configuration for the StorageGRID site. Data on the appliance is then deleted and the appliance is left in a pre-install state. This process cannot be reversed.
+Clearing the appliance KMS configuration disables node encryption, removing the association between the appliance node and the KMS configuration for the StorageGRID site. Data on the appliance is then deleted and the appliance is left in a pre-install state. This process can't be reversed.
 
 You must clear the KMS configuration:
 
 * Before you can install the appliance into another StorageGRID system, that does not use a KMS or that uses a different KMS.
 +
-IMPORTANT: Do not clear the KMS configuration if you plan to reinstall an appliance node in a StorageGRID system that uses the same KMS key.
+IMPORTANT: Don't clear the KMS configuration if you plan to reinstall an appliance node in a StorageGRID system that uses the same KMS key.
 
 * Before you can recover and reinstall a node where the KMS configuration was lost and the KMS key is not recoverable.
 * Before returning any appliance that was previously in use at your site.
@@ -102,7 +102,7 @@ The StorageGRID Appliance Installer Home page appears.
 . Select *Configure Hardware* > *Node Encryption*.
 . Verify that node encryption is disabled and that the key and certificate information in *Key Management Server Details* and the *Clear KMS Key and Delete Data* control are removed from the window.
 +
-Node encryption cannot be reenabled on the appliance until it is reinstalled in a grid.
+Node encryption can't be reenabled on the appliance until it is reinstalled in a grid.
 
 .After you finish
 

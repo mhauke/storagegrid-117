@@ -11,14 +11,14 @@ summary: 'If a Storage Node includes fewer than 16 storage volumes, you can incr
 [.lead]
 If a Storage Node includes fewer than 16 storage volumes, you can increase its capacity by using VMware vSphere to add volumes.
 
-.What you'll need
+.Before you begin
 * You have access to the instructions for installing StorageGRID for VMware deployments.
 ** link:../vmware/index.html[Install VMware]
 
 * You have the `Passwords.txt` file.
 * You have specific access permissions.
 
-CAUTION: Do not attempt to add storage volumes to a Storage Node while a software upgrade, recovery procedure, or another expansion procedure is active.
+CAUTION: Don't attempt to add storage volumes to a Storage Node while a software upgrade, recovery procedure, or another expansion procedure is active.
 
 .About this task
 
@@ -35,7 +35,7 @@ The Storage Node is unavailable for a brief time when you add storage volumes. Y
 The hard disks are typically configured as Virtual Machine Disks (VMDKs). VMDKs are more commonly used and are easier to manage, while RDMs might provide better performance for workloads that use larger object sizes (for example, greater than 100 MB). For more information about adding hard disks to virtual machines, see the VMware vSphere documentation.
 . Restart the virtual machine by using the *Restart Guest OS* option in the VMware vSphere Client, or by entering the following command in an ssh session to the virtual machine:``sudo reboot``
 +
-NOTE: Do not use *Power Off* or *Reset* to restart the virtual machine.
+NOTE: Don't use *Power Off* or *Reset* to restart the virtual machine.
 
 . Configure the new storage for use by the Storage Node:
  .. Log in to the grid node:

@@ -11,7 +11,7 @@ summary: 'If you enabled S3 Object Lock when you created the bucket, you can edi
 [.lead]
 If you enabled S3 Object Lock when you created the bucket, you can edit the bucket to change the default retention settings. You can enable (or disable) default retention and set a default retention mode and retention period.
 
-.What you'll need
+.Before you begin
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 * You belong to a user group that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies.
 
@@ -28,7 +28,7 @@ The bucket details page appears.
 
 . Optionally, enable or disable *Default retention* for this bucket.
 +
-Changes to this setting do not apply to objects already in the bucket or to any objects that might have their own retention periods.
+Changes to this setting don't apply to objects already in the bucket or to any objects that might have their own retention periods.
 
 . If *Default retention* is enabled, specify a *Default retention mode* for the bucket.
 +
@@ -37,11 +37,11 @@ Changes to this setting do not apply to objects already in the bucket or to any 
 | Default retention mode| Description
 
 | Compliance
-| * The object cannot be deleted until its retain-until-date is reached.
+| * The object can't be deleted until its retain-until-date is reached.
 
-* The object's retain-until-date can be increased, but it cannot be decreased.
+* The object's retain-until-date can be increased, but it can't be decreased.
 
-* The object's retain-until-date cannot be removed until that date is reached.
+* The object's retain-until-date can't be removed until that date is reached.
 
 | Governance
 

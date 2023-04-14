@@ -2,16 +2,16 @@
 permalink: admin/configuring-storagegrid-certificates-for-fabricpool.html
 sidebar: sidebar
 keywords: fabricpool, ONTAP certificates
-summary: 'For S3 clients that perform strict hostname validation and do not support disabling strict hostname validation, such as ONTAP clients using FabricPool, you can generate or upload a server certificate when you configure the load balancer endpoint.'
+summary: 'For S3 clients that perform strict hostname validation and don't support disabling strict hostname validation, such as ONTAP clients using FabricPool, you can generate or upload a server certificate when you configure the load balancer endpoint.'
 ---
 = Configure StorageGRID certificates for FabricPool
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-For S3 clients that perform strict hostname validation and do not support disabling strict hostname validation, such as ONTAP clients using FabricPool, you can generate or upload a server certificate when you configure the load balancer endpoint.
+For S3 clients that perform strict hostname validation and don't support disabling strict hostname validation, such as ONTAP clients using FabricPool, you can generate or upload a server certificate when you configure the load balancer endpoint.
 
-.What you'll need
+.Before you begin
 
 * You have specific access permissions.
 * You are signed in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].

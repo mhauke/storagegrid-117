@@ -17,7 +17,7 @@ You must create a domain policy and then activate it to configure the TSM server
 +
 `copy domain standard tsm-domain`
 
-. If you are not using an existing management class, enter one of the following:
+. If you aren't using an existing management class, enter one of the following:
 +
 `define policyset tsm-domain standard`
 +
@@ -31,7 +31,7 @@ You must create a domain policy and then activate it to configure the TSM server
 +
 `_default_` is the default Management Class for the Archive Node. The values of `retinit`, `retmin`, and `retver` have been chosen to reflect the retention behavior currently used by the Archive Node
 +
-NOTE: Do not set `retinit` to `retinit=create`. Setting `retinit=create` blocks the Archive Node from deleting content since retention events are used to remove content from the TSM server.
+NOTE: Don't set `retinit` to `retinit=create`. Setting `retinit=create` blocks the Archive Node from deleting content, because retention events are used to remove content from the TSM server.
 
 . Assign the management class to be the default.
 +

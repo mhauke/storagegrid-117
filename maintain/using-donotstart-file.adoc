@@ -13,15 +13,15 @@ If you are performing various maintenance or configuration procedures under the 
 
 IMPORTANT: You should add or remove a DoNotStart file only if technical support has directed you to do so.
 
-To prevent a service from starting, place a DoNotStart file in the directory of the service you want to prevent from starting. At start-up, Server Manager looks for the DoNotStart file. If the file is present, the service (and any services dependent on it) is prevented from starting. When the DoNotStart file is removed, the previously stopped service will start on the next start or restart of Server Manager. Services are not automatically started when the DoNotStart file is removed.
+To prevent a service from starting, place a DoNotStart file in the directory of the service you want to prevent from starting. At start-up, Server Manager looks for the DoNotStart file. If the file is present, the service (and any services dependent on it) is prevented from starting. When the DoNotStart file is removed, the previously stopped service will start on the next start or restart of Server Manager. Services aren't automatically started when the DoNotStart file is removed.
 
-The most efficient way to prevent all services from restarting is to prevent the NTP service from starting. All services are dependent on the NTP service and cannot run if the NTP service is not running.
+The most efficient way to prevent all services from restarting is to prevent the NTP service from starting. All services are dependent on the NTP service and can't run if the NTP service is not running.
 
 == Add DoNotStart file for service
 
 You can prevent an individual service from starting by adding a DoNotStart file to that service's directory on a grid node.
 
-.What you'll need
+.Before you begin
 
 You have the `Passwords.txt` file.
 
@@ -54,7 +54,7 @@ When Server Manager or the grid node is restarted, Server Manager restarts, but 
 
 When you remove a DoNotStart file that is preventing a service from starting, you must start that service.
 
-.What you'll need
+.Before you begin
 
 You have the `Passwords.txt` file.
 

@@ -23,7 +23,7 @@ Under normal system operations, only the preferred sender sends notifications. H
 
 Multiple notifications might sent in these cases:
 
-* If Admin Nodes become “islanded” from each other, both the preferred sender and the standby senders will attempt to send notifications, and multiple copies of notifications might be received.
+* If Admin Nodes become "islanded" from each other, both the preferred sender and the standby senders will attempt to send notifications, and multiple copies of notifications might be received.
 
 * If standby sender detects problems with the preferred sender and starts sending notifications, the preferred sender might regain its ability to send notifications. If this occurs, duplicate notifications might be sent. The standby sender will stop sending notifications when it no longer detects errors on the preferred sender.
 +

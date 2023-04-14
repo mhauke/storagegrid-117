@@ -39,7 +39,7 @@ TIP: A bucket that uses S3 Object Lock will remain in the *Deleting objects: rea
 
 ** If you select this option for the source bucket, the *Cross-grid replication failure* alert will be triggered if you add objects to the destination bucket on the other grid. If you can't guarantee no one will add objects to the bucket on the other grid, link:../tenant/grid-federation-manage-cross-grid-replication.html[disable cross-grid replication] for that bucket before deleting all bucket objects.
 
-.What you'll need
+.Before you begin
 
 * You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
 
@@ -58,7 +58,7 @@ The Buckets page appears and shows all existing S3 buckets.
 
 .Actions menu
 --
-.. Select the check box for each bucket you want to delete objects from. 
+.. Select the checkbox for each bucket you want to delete objects from. 
 .. Select *Actions* > *Delete objects in bucket*.
 
 --
@@ -88,7 +88,7 @@ image::../media/delete-bucket-objects-in-progress.png[screenshot showing bucket 
 
 . As required while the operation is running, select *Stop deleting objects* to halt the process. Then, optionally, select *Delete objects in bucket* to resume the process.
 +
-When you select *Stop deleting objects*, the bucket is returned to write mode; however, you cannot access or restore any objects that have been deleted.
+When you select *Stop deleting objects*, the bucket is returned to write mode; however, you can't access or restore any objects that have been deleted.
 
 . Wait for the operation to complete.
 + 
