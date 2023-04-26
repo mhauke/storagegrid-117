@@ -107,12 +107,12 @@ HDD11
 +
 Follow the maintenance instructions provided for reinstalling the replaceable components.
 +
-WARNING: To prevent data loss if the Appliance Installer indicates that physical hardware changes are required, such as swapping disk drives to the replacement appliance, power down the appliance before making hardware changes.
-+
 IMPORTANT: If you wish to retain the data on the drives, be sure to insert the SSD drives into the same drive slots they occupied in the failed appliance. If you don't, the Appliance Installer will display a warning message and you will have to put the drives into the correct slots and reboot the appliance before the appliance can rejoin the grid.  
  .. Install the replacement appliance into the cabinet or rack.
  .. Replace the cables and any optical transceivers.
  .. Power on the appliance and wait for it to rejoin the grid. If the appliance does not rejoin the grid, follow the guidance on the StorageGRID Appliance Installer home page to address any issues.
++
+WARNING: To prevent data loss if the Appliance Installer indicates that physical hardware changes are required, such as moving disk drives to different slots, power down the appliance before making hardware changes.
 +
 . If the appliance where you replaced the appliance used a key management server (KMS) to encrypt data, additional configuration might be required before the node can join the grid. If the node does not automatically join the grid, make sure that these configuration settings have transferred to the new appliance and manually configure any settings that don't have the expected configuration:
 ** link:../installconfig/accessing-storagegrid-appliance-installer.html[Configure StorageGRID connections]  
