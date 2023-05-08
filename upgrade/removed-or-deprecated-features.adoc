@@ -25,9 +25,12 @@ If you need to perform maintenance procedures on SG5600 hardware, use the https:
 As of the StorageGRID 11.7 release, support for Swift client applications has been deprecated. The user interface and APIs that support Swift client applications will be removed in a future release.
 
 == Archive Node support deprecated
-Support of Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. 
+Support of Archive Nodes (for both archiving to the cloud using the S3 API and archiving to tape using TSM middleware) is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system has been replaced by ILM Cloud Storage Pools, which offer more functionality.
 
-The Cloud Tiering - Simple Storage Service (S3) option is also deprecated. If you are currently using an Archive Node with this option, link:../admin/migrating-objects-from-cloud-tiering-s3-to-cloud-storage-pool.html[migrate objects to a Cloud Storage Pool] instead.
+See:
+
+* link:../admin/migrating-objects-from-cloud-tiering-s3-to-cloud-storage-pool.html[Migrate objects to a Cloud Storage Pool] 
+* link:../ilm/what-cloud-storage-pool-is.html[Use Cloud Storage Pools]
 
 In addition, you should remove Archive Nodes from the active ILM policy in StorageGRID 11.7 or earlier. Removing object data stored on Archive Nodes will simplify future upgrades. See link:../ilm/working-with-ilm-rules-and-ilm-policies.html[Working with ILM rules and ILM policies].
 
