@@ -25,7 +25,7 @@ If you need to perform maintenance procedures on SG5600 hardware, use the https:
 As of the StorageGRID 11.7 release, support for Swift client applications has been deprecated. The user interface and APIs that support Swift client applications will be removed in a future release.
 
 == Archive Node support deprecated
-Support of Archive Nodes (for both archiving to the cloud using the S3 API and archiving to tape using TSM middleware) is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system has been replaced by ILM Cloud Storage Pools, which offer more functionality.
+Support for Archive Nodes (for both archiving to the cloud using the S3 API and archiving to tape using TSM middleware) is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system has been replaced by ILM Cloud Storage Pools, which offer more functionality.
 
 See:
 
