@@ -1,0 +1,26 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html
+sidebar: sidebar
+keywords: grid management api, api, api version, swagger, rest api
+summary: 'StorageGRID 11.7 uses version 3 of the Grid Management API. Version 3 deprecates version 2; however, version 1 and version 2 are still supported.'
+---
+= Changes to the Grid Management API
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+StorageGRID 11.7 uses version 3 of the Grid Management API. Version 3 deprecates version 2; however, version 1 and version 2 are still supported.
+
+IMPORTANT: You can continue to use version 1 and version 2 of the management API with StorageGRID 11.7; however, support for these versions of the API will be removed in a future release of StorageGRID. After upgrading to StorageGRID 11.7, the deprecated v1 and v2 APIs can be deactivated using the `PUT /grid/config/management` API.
+
+To learn more, go to link:../admin/using-grid-management-api.html[Use the Grid Management API].
+
+== Display names now included in responses to node-health requests
+Related to the new link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes procedure], after you rename a site or node, the item's name (its system name) and its display name are both returned by the *node-health* API. 
+
+== Can create bucket and access keys for new S3 tenant
+
+New `s3Bucket` and `s3AccessKey` options were added to the *accounts* API. When you create an S3 tenant account using the Grid Management API, you can optionally create a bucket for that tenant as well as the access key ID and secret key for the tenant's root user.
+
+== Can change storage state for Storage Node
+You can use the new *node-storage-state* API endpoints to determine and change the state of the storage in a Storage Node (online, offline, read-only).

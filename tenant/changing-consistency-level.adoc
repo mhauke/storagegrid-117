@@ -1,0 +1,46 @@
+---
+permalink: tenant/changing-consistency-level.html
+sidebar: sidebar
+keywords: how to change bucket consistency level, read after new write, read-after-new-write, strong site, strong-site, strong global, strong-global
+summary: 'If you are using an S3 tenant, you can change the consistency level for operations performed on the objects in S3 buckets.'
+---
+= Change a bucket's consistency level
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using an S3 tenant, you can change the consistency level for operations performed on the objects in S3 buckets.
+
+.Before you begin
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You belong to a user group that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. These permissions override the permissions settings in group or bucket policies.
+
+.About this task
+
+Consistency controls provide a balance between the availability of the objects and the consistency of those objects across different Storage Nodes and sites. In general, you should use the *Read-after-new-write* consistency level for your buckets.
+
+If the *Read-after-new-write* consistency level does not meet the client application's requirements, you can change the consistency level by setting the bucket consistency level or by using the `Consistency-Control` header. The `Consistency-Control` header overrides the bucket consistency level.
+
+NOTE: When you change a bucket's consistency level, only those objects that are ingested after the change are guaranteed to meet the revised level.
+
+.Steps
+. Select *View buckets* from the dashboard, or select *STORAGE (S3)* > *Buckets*.
+. Select the bucket name from the table.
++
+The bucket details page appears.
+
+. From the *Bucket options* tab, select the *Consistency level* accordion.
+
+. Select a consistency level for operations performed on the objects in this bucket.
++
+* *All*: Provides the highest level of consistency. All nodes receive the data immediately, or the request will fail.
+
+* *Strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
+
+* *Strong-site*: Guarantees read-after-write consistency for all client requests within a site.
+
+* *Read-after-new-write* (default): Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
+
+* *Available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that don't exist). Not supported for S3 FabricPool buckets.
+
+. Select *Save changes*.

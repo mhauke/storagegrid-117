@@ -1,0 +1,19 @@
+---
+permalink: admin/archiving-to-cloud-through-s3-api.html
+sidebar: sidebar
+keywords: archive node to AWS, Amazon Web Services
+summary: 'You can configure an Archive Node to connect directly to Amazon Web Services \(AWS\) or to any other system that can interface to the StorageGRID system through the S3 API.'
+---
+= Archive to the cloud through the S3 API
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can configure an Archive Node to connect directly to Amazon Web Services (AWS) or to any other system that can interface to the StorageGRID system through the S3 API.
+
+[CAUTION]
+====
+Support for Archive Nodes (for both archiving to the cloud using the S3 API and archiving to tape using TSM middleware) is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system has been replaced by ILM Cloud Storage Pools, which offer more functionality.
+
+See link:../ilm/what-cloud-storage-pool-is.html[Use Cloud Storage Pools].
+====

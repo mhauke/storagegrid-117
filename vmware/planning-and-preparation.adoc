@@ -1,0 +1,29 @@
+---
+permalink: vmware/planning-and-preparation.html
+sidebar: sidebar
+keywords: how to plan before installation
+summary: 'Before deploying grid nodes and configuring the StorageGRID grid, you must be familiar with the steps and requirements for completing the procedure.'
+---
+= Before you install (VMware)
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before deploying grid nodes and configuring the StorageGRID grid, you must be familiar with the steps and requirements for completing the procedure.
+
+The StorageGRID deployment and configuration procedures assume that you are familiar with the architecture and operational functionality of the StorageGRID system.
+
+You can deploy a single site or multiple sites at one time; however, all sites must meet the minimum requirement of having at least three Storage Nodes.
+
+Before starting the node deployment and grid configuration procedure, you must:
+
+* Plan the StorageGRID deployment.
+* Install, connect, and configure all required hardware, including any StorageGRID appliances, to specifications.
++
+IMPORTANT: If your StorageGRID installation will not use StorageGRID appliance (hardware) Storage Nodes, you must use hardware RAID storage with battery-backed write cache (BBWC). StorageGRID does not support the use of virtual storage area networks (vSANs), software RAID, or no RAID protection.
++
+NOTE: Hardware-specific installation and integration instructions aren't included in the StorageGRID installation procedure. To learn how to install StorageGRID appliances, see link:../installconfig/index.html[Install appliance hardware].
+
+* Understand the link:../network/index.html[available network options and how each network option should be implemented on grid nodes].
+* Gather all networking information in advance. Unless you are using DHCP, gather the IP addresses to assign to each grid node, and the IP addresses of the DNS and NTP servers that will be used.
+* Decide which of the available deployment and configuration tools you want to use.

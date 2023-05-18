@@ -1,0 +1,53 @@
+---
+permalink: upgrade/checking-systems-condition-before-upgrading-software.html
+sidebar: sidebar
+keywords: upgrade, grid tasks, firewall, ports
+summary: 'Before upgrading a StorageGRID system, you must verify the system is ready to accommodate the upgrade. You must ensure that the system is running normally and that all grid nodes are operational.'
+---
+= Check the system's condition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before upgrading a StorageGRID system, you must verify the system is ready to accommodate the upgrade. You must ensure that the system is running normally and that all grid nodes are operational.
+
+.Steps
+. Sign in to the Grid Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+. Check for and resolve any active alerts.
+
+. Confirm that no conflicting grid tasks are active or pending.
+ .. Select *SUPPORT* > *Tools* > *Grid topology*.
+ .. Select *_site_* > *_primary Admin Node_* > *CMN* > *Grid Tasks* > *Configuration*.
++
+Information lifecycle management evaluation (ILME) tasks are the only grid tasks that can run concurrently with the software upgrade.
+
+ .. If any other grid tasks are active or pending, wait for them to finish or release their lock.
++
+NOTE: Contact technical support if a task does not finish or release its lock.
+
+. Refer to link:../network/internal-grid-node-communications.html[Internal grid node communications] and link:../network/external-communications.html[External communications] to ensure that all required ports for StorageGRID 11.7 are opened before you upgrade.
++
+The following link:../network/internal-grid-node-communications.html#storagegrid-internal-ports[internal ports] must be open before you upgrade to StorageGRID 11.7:
++
+[cols="1a,2a" options=header] 
+|===
+| Port| Description
+
+|
+1055
+
+8011
+
+10342
+
+| Used for firewall controls knocking protocol.
+
+Before upgrading, confirm this port is open between all grid nodes on the Grid Network.
+
+| 18086
+| TCP port used for new LDR service.
+
+Before upgrading, confirm this port is open from all grid nodes to all Storage Nodes.
+|===
+
+IMPORTANT: If you have opened any custom firewall ports, you are notified during the upgrade precheck. You must contact technical support before proceeding with the upgrade.

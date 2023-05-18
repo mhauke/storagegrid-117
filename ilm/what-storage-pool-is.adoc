@@ -1,0 +1,28 @@
+---
+permalink: ilm/what-storage-pool-is.html
+sidebar: sidebar
+keywords: what is a storage pool
+summary: 'A storage pool is a logical grouping of Storage Nodes or Archive Nodes.'
+---
+= What is a storage pool?
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+A storage pool is a logical grouping of Storage Nodes or Archive Nodes.
+
+When you install StorageGRID, one storage pool per site is automatically created. You can configure additional storage pools as needed for your storage requirements.
+
+[NOTE]
+====
+Support for Archive Nodes (for both archiving to the cloud using the S3 API and archiving to tape using TSM middleware) is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system has been replaced by ILM Cloud Storage Pools, which offer more functionality.
+
+See link:../ilm/what-cloud-storage-pool-is.html[Use Cloud Storage Pools].
+====
+
+Storage pools have two attributes:
+
+* *Storage grade*: For Storage Nodes, the relative performance of backing storage.
+* *Site*: The data center where objects will be stored.
+
+Storage pools are used in ILM rules to determine where object data is stored and the type of storage used. When you configure ILM rules for replication, you select one or more storage pools that include either Storage Nodes or Archive Nodes. When you create erasure coding profiles, you select a storage pool that includes Storage Nodes.

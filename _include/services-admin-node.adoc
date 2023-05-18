@@ -1,0 +1,37 @@
+//This is the shared information about Admin Node services for Admin and Primer topics//
+
+The following table shows the primary services for Admin Nodes; however, this table does not list all node services.
+
+[cols="1a,2a" options="header"]
+|===
+| Service| Key function
+
+| Audit Management System (AMS)
+| Tracks system activity and events.
+
+| Configuration Management Node (CMN)
+| Manages system-wide configuration. Primary Admin Node only.
+
+| Management Application Program Interface (mgmt-api)
+| Processes requests from the Grid Management API and the Tenant Management API. 
+
+| High Availability
+| Manages high availability virtual IP addresses for groups of Admin Nodes and Gateway Nodes.
+
+*Note:* This service is also found on Gateway Nodes.
+
+| Load Balancer
+| Provides load balancing of S3 and Swift traffic from clients to Storage Nodes.
+
+*Note:* This service is also found on Gateway Nodes.
+
+| Network Management System (NMS)
+| Provides functionality for the Grid Manager.
+
+| Prometheus
+| Collects and stores time-series metrics from the services on all nodes.
+
+| Server Status Monitor (SSM)
+| Monitors the operating system and underlying hardware.
+|===
+

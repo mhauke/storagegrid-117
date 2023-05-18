@@ -1,0 +1,82 @@
+---
+permalink: admin/kms-viewing-encrypted-nodes.html
+sidebar: sidebar
+keywords: view encrypted nodes, kms nodes, appliances with kms
+summary: 'You can view information about the appliance nodes in your StorageGRID system that have the Node Encryption setting enabled.'
+---
+= View encrypted nodes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can view information about the appliance nodes in your StorageGRID system that have the *Node Encryption* setting enabled.
+
+.Steps
+
+. Select *CONFIGURATION* > *Security* > *Key management server*.
++
+The Key Management Server page appears. The Configuration Details tab shows any key management servers that have been configured.
+
+
+. From the top of the page, select the *Encrypted nodes* tab.
++
+The Encrypted nodes tab lists the appliance nodes in your StorageGRID system that have the *Node Encryption* setting enabled.
+
+
+. Review the information in the table for each appliance node.
++
+[cols="1a,2a" options="header"]
+|===
+| Column| Description
+a|
+Node name
+a|
+The name of the appliance node.
+a|
+Node type
+a|
+The type of node: Storage, Admin, or Gateway.
+a|
+Site
+a|
+The name of the StorageGRID site where the node is installed.
+a|
+KMS name
+a|
+The descriptive name of the KMS used for the node.
+
+If no KMS is listed, select the Configuration details tab to add a KMS.
+
+link:kms-adding.html[Add a key management server (KMS)]
+a|
+Key UID
+a|
+The unique ID of the encryption key used to encrypt and decrypt data on the appliance node. To view an entire key UID, position your cursor over the cell.
+
+A dash (--) indicates the key UID is unknown, possibly because of a connection issue between the appliance node and the KMS.
+a|
+Status
+a|
+The status of the connection between the KMS and the appliance node. If the node is connected, the timestamp updates every 30 minutes. It can take several minutes for the connection status to update after the KMS configuration changes.
+
+*Note:* You must refresh your web browser to see the new values.
+
+|===
+
+. If the Status column indicates a KMS issue, address the issue immediately.
++
+During normal KMS operations, the status will be *Connected to KMS*. If a node is disconnected from the grid, the node connection state is shown (Administratively Down or Unknown).
++
+Other status messages correspond to StorageGRID alerts with the same names:
++
+* KMS configuration failed to load
+* KMS connectivity error
+* KMS encryption key name not found
+* KMS encryption key rotation failed
+* KMS key failed to decrypt an appliance volume
+* KMS is not configured
+
++
+Perform the recommended actions for these alerts.
+
+CAUTION: You must address any issues immediately to ensure that your data is fully protected.

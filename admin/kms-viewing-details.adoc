@@ -1,0 +1,70 @@
+---
+permalink: admin/kms-viewing-details.html
+sidebar: sidebar
+keywords: view kms, view key management server
+summary: 'You can view information about each key management server \(KMS\) in your StorageGRID system, including the current status of the server and client certificates.'
+---
+= View KMS details
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can view information about each key management server (KMS) in your StorageGRID system, including the current status of the server and client certificates.
+
+.Steps
+
+. Select *CONFIGURATION* > *Security* > *Key management server*.
++
+The Key management server page appears. The Configuration details tab shows any key management servers that are configured.
+
+. Review the information in the table for each KMS.
++
+[cols="1a,2a" options="header"]
+|===
+| Field| Description
+a|
+KMS name
+a|
+The descriptive name of the KMS.
+a|
+Key name
+a|
+The key alias for the StorageGRID client in the KMS.
+a|
+Manages keys for
+a|
+The StorageGRID site associated with the KMS.
+
+This field displays the name of a specific StorageGRID site or *Sites not managed by another KMS (default KMS).*
+a|
+Hostname
+a|
+The fully qualified domain name or IP address of the KMS.
+
+If there is a cluster of two key management servers, the fully qualified domain name or IP address of both servers are listed. If there are more than two key management servers in a cluster, the fully qualified domain name or IP address of the first KMS is listed along with the number of additional key management servers in the cluster.
+
+For example: `10.10.10.10 and 10.10.10.11` or `10.10.10.10 and 2 others`.
+
+To view all hostnames in a cluster, open a KMS and select *Edit* or *Actions* > *Edit*.
+a|
+Certificate expiration
+a|
+Current state of the server certificate, optional CA certificate, and the client certificate: valid, expired, nearing expiration, or unknown.
+
+*Note:* It might take StorageGRID as long as 30 minutes to get updates to the certificate expiration. You must refresh your web browser to see the current values.
+
+|===
+
+. If the Certificate expiration is Unknown, wait up to 30 minutes and then refresh your web browser.
++
+NOTE: Immediately after you add a KMS, the certificate expiration on the Key Management Server page appears as Unknown. It might take StorageGRID as long as 30 minutes to get the actual status of each certificate. You must refresh your web browser to see the actual status.
+
+. If the Certificate expiration column indicates that a certificate has expired or is nearing expiration, address the issue as soon as possible.
++
+When the *KMS CA certificate expiration*, *KMS client certificate expiration*, and *KMS server certificate expiration* alerts are triggered, note the description of each alert and perform the recommended actions.
++
+CAUTION: You must address any certificate issues as soon as possible to maintain data access.
+
+. To view certificate details for this KMS, select the KMS name from the table.
+
+. On the KMS summary page, review the metadata and certificate PEM for both the server certificate and the client certificate. As required, select *Edit certificate* to replace a certificate with a new one.

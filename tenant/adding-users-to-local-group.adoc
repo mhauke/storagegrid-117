@@ -1,0 +1,36 @@
+---
+permalink: tenant/adding-users-to-local-group.html
+sidebar: sidebar
+keywords: how to add tenant user to local group
+summary: 'You can add users to a local group as needed.'
+---
+= Add users to a local group
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can add users to a local group as needed.
+
+.Before you begin
+* You are signed in to the Tenant Manager using a link:../admin/web-browser-requirements.html[supported web browser].
+* You belong to a user group that has the Root access permission.
+
+.Steps
+. Select *ACCESS MANAGEMENT* > *Groups*.
+. Select the name of the local group you want to add users to.
++
+Alternatively, you can select *Actions* > *View group details*.
++
+The group details page appears.
++
+image::../media/tenant_group_details.png[View Group Details]
+
+. Select *Users*, and then select *Add users*.
++
+image::../media/manage_users.png[Manage users]
+
+. Select the users you want to add to the group, and then select *Add users*.
++
+image::../media/add_users_to_group.png[Add users to group]
++
+A confirmation message appears in the upper right corner of the page.

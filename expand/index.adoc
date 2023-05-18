@@ -1,0 +1,32 @@
+---
+permalink: expand/index.html
+sidebar: sidebar
+keywords: expand grid
+summary: 'Use these instructions to expand the capacity or capabilities of your StorageGRID system without interrupting system operations.'
+---
+= Expand your grid: Overview
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Use these instructions to expand the capacity or capabilities of your StorageGRID system without interrupting system operations.
+
+== About these instructions
+
+These instructions describe how to perform a StorageGRID expansion to add storage volumes to Storage Nodes, new grid nodes to an existing site, or an entire new site. 
+
+These instructions are for technical personnel who are responsible for configuring and supporting the StorageGRID system after it has been installed.
+
+== Expansion workflow
+
+The reason you are performing the expansion determines how many new nodes of each type you must add and the location of those new nodes. For example, there are different node requirements if you are performing an expansion to increase storage capacity, add metadata capacity, or add redundancy or new capabilities. 
+
+As shown in the workflow, the steps for performing an expansion depend on whether you are adding storage volumes to a Storage Node, adding new nodes to an existing site, or adding a new site. In all cases, you can perform the expansion without interrupting the operation of your current system.
+
+The steps for adding nodes also depend on whether you are adding StorageGRID appliances or hosts running VMware or Linux.
+
+NOTE: "`Linux`" refers to a Red Hat® Enterprise Linux®, Ubuntu®, CentOS, or Debian® deployment. Use the https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool (IMT)^] to get a list of supported versions.
+
+image::../media/expansion_workflow.png[flowchart showing overview of expansion process]
+
+
