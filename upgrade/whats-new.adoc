@@ -13,6 +13,9 @@ This release of StorageGRID introduces the following features and functional cha
 
 == New features
 
+=== BlueXP integration
+Grid Manager is now integrated with BlueXP. Adding your StorageGRID system to BlueXP allow you to use the familiar Grid Manager dashboard, while providing a complete view of the data across your hybrid multicloud. See link:../bluexp-integration.html[BlueXP integration] and https://docs.netapp.com/us-en/cloud-manager-family/concept-overview.html[BlueXP overview^].
+
 [[grid-federation]]
 === Grid federation
 You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery. See link:../admin/grid-federation-overview.html[What is grid federation?], link:../admin/grid-federation-what-is-account-clone.html[What is account clone], and link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].

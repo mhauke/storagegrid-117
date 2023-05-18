@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: bluexp-integration.html
 keywords: netapp, storagegrid, grid manager, bluexp, hybrid, cloud, dashboard, multicloud
-summary: Beginning with StorageGRID 11.7, Grid Manager is integrated with BlueXP. Adding your StorageGRID system to BlueXP allow you to use the familiar Grid Manager dashboard, while providing a complete view of the data across your hybrid multicloud. 
+summary: Beginning with StorageGRID 11.7, the Grid Manager is integrated with BlueXP. Adding your StorageGRID system to BlueXP allow you to use the familiar Grid Manager interface, while providing a complete view of the data across your hybrid multicloud. 
 ---
 = Grid Manager integration with BlueXP
 :toc: macro
@@ -14,11 +14,11 @@ summary: Beginning with StorageGRID 11.7, Grid Manager is integrated with BlueXP
 :imagesdir: ./media/
 
 [.lead]
-Beginning with StorageGRID 11.7, Grid Manager is integrated with BlueXP. Adding your StorageGRID system to BlueXP allow you to use the familiar Grid Manager dashboard, while providing a complete view of the data across your hybrid multicloud. 
+Beginning with StorageGRID 11.7, the Grid Manager is integrated with BlueXP. Adding your StorageGRID system to BlueXP allow you to use the familiar Grid Manager interface, while providing a complete view of the data across your hybrid multicloud. 
 
 == Integration overview
 
-When you access Grid Manager on a StorageGRID system running StorageGRID 11.7 or later with connectivity to the BlueXP service, you are prompted to manage the grid directly from BlueXP. From BlueXP, you have access to the Grid Manager interface that you're used to, plus access to BlueXP functionality.
+When you access the Grid Manager on a StorageGRID system running StorageGRID 11.7 or later with connectivity to the BlueXP service, you are prompted to manage the grid directly from BlueXP. From BlueXP, you have access to the Grid Manager interface that you're used to, plus access to BlueXP functionality.
 
 BlueXP enables you to create and administer object storage, use NetApp's data services (for example, Cloud Backup), and control many on-premise appliances and other storage devices.
 
@@ -38,27 +38,31 @@ With the current implementation, almost all Grid Manager features and operations
 | Fully supported
 
 | Nodes
-| Fully supported
+| Supported, but you can't access SANtricity System Manager from BlueXP. 
 
 | Tenants
-| Fully supported, but you can't sign in to a tenant account from BlueXP
+| Fully supported, but you can't sign in to a tenant account from BlueXP.
 
 | ILM
-| Fully supported
+| Supported, but you can't manage storage grades from BlueXP.
 
 | Configuration
 | * Traffic classification > Metrics
 * Security settings > Browser inactivity timeout
-* Single sign-on 
+* Single sign-on (SSO)
 
 | Maintenance
-| * Software update
+
+| * Recovery Package
+* Software update
 
 | Support
-| * Diagnostics
+
+| 
+* Diagnostics
  * Grid topology
  * Logs
-* Metrics
+* Metrics, including all links to Prometheus metrics and Grafana dashboards from other places in the UI.
 * All pages related to legacy alarms
 * Link cost
 * NMS entities
@@ -69,11 +73,11 @@ NOTE: BlueXP doesn't currently support the Tenant Manager. Although you can crea
 
 == Manage your StorageGRID system from BlueXP
 
-When you're ready to manage your StorageGRID system from BlueXP, you can follow the link that appears when you try to access Grid Manager, or you can go directly to BlueXP. Going directly to BlueXP provides an advantage, if you'd like to use BlueXP's data services to back up data, scan and categorize your data, and more.
+When you're ready to manage your StorageGRID system from BlueXP, you can follow the link that appears when you try to access the Grid Manager, or you can go directly to BlueXP. Going directly to BlueXP provides an advantage, if you'd like to use BlueXP's data services to back up data, scan and categorize your data, and more.
 
 === Use the link from Grid Manager
 
-When you connect to the Grid Manager interface from your web browser, you are prompted to manage your StorageGRID system with Grid Manager in BlueXP or to use Grid Manager directly. To use Grid Manager in BlueXP, perform the following steps:
+When you connect to the Grid Manager interface from your web browser, you are prompted to manage your StorageGRID system with the Grid Manager in BlueXP or to use the Grid Manager directly. To use the Grid Manager in BlueXP, perform the following steps:
 
 .Steps
 
