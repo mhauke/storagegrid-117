@@ -48,12 +48,11 @@ NOTE: If your grid includes only one site, you are prevented from using the All 
 
 [CAUTION]
 ====
-Support for Archive Nodes is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system through the S3 API has been replaced by ILM Cloud Storage Pools, which offer more functionality. 
+Support for Archive Nodes (for both archiving to the cloud using the S3 API and archiving to tape using TSM middleware) is deprecated and will be removed in a future release. Moving objects from an Archive Node to an external archival storage system has been replaced by ILM Cloud Storage Pools, which offer more functionality.
 
-The Cloud Tiering - Simple Storage Service (S3) option is also deprecated. If you are currently using an Archive Node with this option, link:../admin/migrating-objects-from-cloud-tiering-s3-to-cloud-storage-pool.html[migrate your objects to a Cloud Storage Pool] instead.
+See link:../admin/migrating-objects-from-cloud-tiering-s3-to-cloud-storage-pool.html[Migrate objects to a Cloud Storage Pool].
 
-Additionally, you should remove Archive Nodes from the active ILM policy in StorageGRID 11.7 or earlier. Removing object data stored on Archive Nodes will simplify future upgrades. See link:working-with-ilm-rules-and-ilm-policies.html[Working with ILM rules and ILM policies].
-
+In addition, you should remove Archive Nodes from the active ILM policy in StorageGRID 11.7 or earlier. Removing object data stored on Archive Nodes will simplify future upgrades. See link:../ilm/working-with-ilm-rules-and-ilm-policies.html[Working with ILM rules and ILM policies].
 ====
 
 * You can't create a storage pool that includes both Storage Nodes and Archive Nodes. Archived copies require a storage pool that only includes Archive Nodes.

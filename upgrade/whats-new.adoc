@@ -17,6 +17,9 @@ This release of StorageGRID introduces the following features and functional cha
 === Grid federation
 You can configure a grid federation connection between two StorageGRID systems to clone tenant account information and replicate bucket objects between the grids for disaster recovery. See link:../admin/grid-federation-overview.html[What is grid federation?], link:../admin/grid-federation-what-is-account-clone.html[What is account clone], and link:../admin/grid-federation-what-is-cross-grid-replication.html[What is cross-grid replication].
 
+=== Improved read availability
+The read-after-new-write (default) consistency control was improved to be more available. GET/HEAD requests for non-existent objects will succeed with up to one Storage Node offline at each site. Buckets are no longer required to be set to the Available consistency control for this scenario. For example, applications that check existence of an object before creation will properly function with read-after-new-write even during software upgrade when one Storage Node is offline.
+
 === Rename grid, sites, and nodes
 A new maintenance procedure lets you change the display names that are shown throughout the Grid Manager. You can update display names safely and whenever you need. See link:../maintain/rename-grid-site-node-overview.html[Rename grid, sites, and nodes].
 
