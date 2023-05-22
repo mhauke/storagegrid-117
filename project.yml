@@ -6,7 +6,7 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
-    hide_language_selector: true
+    hide_language_selector: false
   # versions:
     # Version selector 
     # Current repo stanza comes first
@@ -172,3 +172,5 @@ homepage:
         url: https://docs.netapp.com/sgws-114/index.jsp
       - title: StorageGRID 11.3 documentation
         url: https://docs.netapp.com/sgws-113/index.jsp
+      - title: StorageGRID 11.2 documentation
+        url: https://docs.netapp.com/sgws-112/index.jsp
