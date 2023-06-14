@@ -21,8 +21,9 @@ The table provides a high-level summary of the encryption methods available in S
 
 | Key management server (KMS) in Grid Manager
 | You link:kms-configuring.html[configure a key management server] for the StorageGRID site and link:../installconfig/optional-enabling-node-encryption.html[enable node encryption for the appliance]. Then, an appliance node connects to the KMS to request a key encryption key (KEK). This key encrypts and decrypts the data encryption key (DEK) on each volume.
-| Appliance nodes that have *Node Encryption* enabled during installation. All data on the appliance is protected against physical loss or removal from the data center. Can be used with some StorageGRID storage and services appliances.
+a| Appliance nodes that have *Node Encryption* enabled during installation. All data on the appliance is protected against physical loss or removal from the data center.
 
+NOTE: Managing encryption keys with a KMS is only supported for Storage Nodes and service appliances.
 | Drive security in SANtricity System Manager
 | If the Drive Security feature is enabled for an SG5700 or SG6000 storage appliance, you can use link:../installconfig/accessing-and-configuring-santricity-system-manager.html[SANtricity System Manager] to create and manage the security key. The key is required to access the data on the secured drives.
 | Storage appliances that have Full Disk Encryption (FDE) drives or FIPS drives. All data on the secured drives is protected against physical loss or removal from the data center. Can't be used with some storage appliances or with any service appliances.
@@ -96,3 +97,5 @@ Depending on your requirements, you can use more than one encryption method at a
 * You can use a KMS to secure data on appliance nodes and also use the Stored object encryption option to encrypt all objects when they are ingested.
 
 If only a small portion of your objects require encryption, consider controlling encryption at the bucket or individual object level instead. Enabling multiple levels of encryption has an additional performance cost.
+
+// 2023 JUN 13, SGRIDDOC-7
