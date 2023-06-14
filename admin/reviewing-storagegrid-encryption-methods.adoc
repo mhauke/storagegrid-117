@@ -23,7 +23,7 @@ The table provides a high-level summary of the encryption methods available in S
 | You link:kms-configuring.html[configure a key management server] for the StorageGRID site and link:../installconfig/optional-enabling-node-encryption.html[enable node encryption for the appliance]. Then, an appliance node connects to the KMS to request a key encryption key (KEK). This key encrypts and decrypts the data encryption key (DEK) on each volume.
 a| Appliance nodes that have *Node Encryption* enabled during installation. All data on the appliance is protected against physical loss or removal from the data center.
 
-NOTE: Managing encryption keys with a KMS instance is only supported for storage nodes and service appliances.
+NOTE: Managing encryption keys with a KMS is only supported for Storage Nodes and service appliances.
 | Drive security in SANtricity System Manager
 | If the Drive Security feature is enabled for an SG5700 or SG6000 storage appliance, you can use link:../installconfig/accessing-and-configuring-santricity-system-manager.html[SANtricity System Manager] to create and manage the security key. The key is required to access the data on the secured drives.
 | Storage appliances that have Full Disk Encryption (FDE) drives or FIPS drives. All data on the secured drives is protected against physical loss or removal from the data center. Can't be used with some storage appliances or with any service appliances.
