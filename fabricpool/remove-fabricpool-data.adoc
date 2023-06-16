@@ -22,9 +22,10 @@ If you need to remove the FabricPool data that is currently stored in StorageGRI
 * You belong to a StorageGRID user group for the FabricPool tenant account that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. 
 
 .About this task
-You perform this procedure in ONTAP and in StorageGRID Tenant Manager.
 
-These instructions explain how to move data from StorageGRID back to FabricPool. If you also want to remove the StorageGRID endpoint, see the ONTAP documentation. To avoid ONTAP errors, you must move the data from the FabricPool aggregate to a non-FabricPool aggregate before detaching StorageGRID.
+These instructions explain how to move data from StorageGRID back to FabricPool. You perform this procedure using ONTAP and StorageGRID Tenant Manager.
+
+TIP: If you want to remove the StorageGRID endpoint after moving the data, use the https://docs.netapp.com/us-en/ontap/fabricpool/index.html[ONTAP documentation for FabricPool^]. To avoid ONTAP errors, you must move the data from the FabricPool aggregate to a non-FabricPool aggregate before detaching StorageGRID.
 
 .Steps
 
