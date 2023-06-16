@@ -25,7 +25,6 @@ If you need to remove the FabricPool data that is currently stored in StorageGRI
 
 These instructions explain how to move data from StorageGRID back to FabricPool. You perform this procedure using ONTAP and StorageGRID Tenant Manager.
 
-TIP: If you want to remove the StorageGRID endpoint after moving the data, use the https://docs.netapp.com/us-en/ontap/fabricpool/index.html[ONTAP documentation for FabricPool^]. To avoid ONTAP errors, you must move the data from the FabricPool aggregate to a non-FabricPool aggregate before detaching StorageGRID.
 
 .Steps
 
@@ -52,3 +51,15 @@ You can use the `volume object-store` command with the `tiering` option to https
 . Confirm that the FabricPool bucket is now empty. 
 
 . If the bucket is empty, link:../tenant/deleting-s3-bucket.html[delete the bucket].
+
+.After you finish
+When you delete the bucket, tiering from FabricPool to StorageGRID can no longer continue. However, because the local tier is still attached to the StorageGRID cloud tier, ONTAP System Manager will return error messages indicating that the bucket is inaccessible.
+
+To prevent these error messages, do either of the following:
+
+* Use FabricPool Mirror to attach a different cloud tier to the aggregate.
+
+* Move the data from the FabricPool aggregate to a non-FabricPool aggregate and then delete the unused aggregate. 
+
+See the https://docs.netapp.com/us-en/ontap/fabricpool/index.html[ONTAP documentation for FabricPool^] for instructions.
+
