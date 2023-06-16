@@ -412,6 +412,8 @@ For details about this step, see link:../ilm/creating-ilm-policy.html[Create ILM
 
 CAUTION: When you activate a new ILM policy, StorageGRID uses that policy to manage the placement, duration, and data protection of all objects in the grid, including existing objects and newly ingested objects. In some cases, activating a new policy can cause existing objects to be moved to new locations.
 
+CAUTION: To avoid data loss, never use an ILM rule that will expire or delete FabricPool cloud tier data. Set the retention period to “forever” to ensure that FabricPool objects aren't deleted by StorageGRID ILM.
+
 .Steps
 
 . Optionally, update the system-generated *Policy name*. By default, the system appends "`+ FabricPool`" to the name of your active or proposed policy, but you can provide your own name.
@@ -457,7 +459,7 @@ Because the FabricPool rule is the first rule, any objects in the FabricPool buc
 . Review the retention diagram to learn how different objects will be retained.
 
 .. Select *Expand all* to see a retention diagram for each rule in the proposed policy.
-.. Select *Time period* and *Storage pool* to review the retention diagram. 
+.. Select *Time period* and *Storage pool* to review the retention diagram. Confirm that any rules that apply to the FabricPool bucket or tenant retain objects "forever." 
 
 . When you have reviewed the proposed policy, select *Activate and continue* to activate the policy and go to the traffic classification step.
 

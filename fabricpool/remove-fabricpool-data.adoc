@@ -1,0 +1,60 @@
+---
+permalink: fabricpool/remove-fabricpool-data.html
+sidebar: sidebar
+keywords: fabricPool, ontap, remove data from storagegrid
+summary: 'If you need to remove the FabricPool data that is currently stored in StorageGRID, follow these steps.'
+---
+= Remove FabricPool data from StorageGRID
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you need to remove the FabricPool data that is currently stored in StorageGRID, you must use ONTAP to retrieve all data for the FabricPool volume and promote it to the performance tier.
+
+.Before you begin
+
+* You have reviewed the instructions and considerations in https://docs.netapp.com/us-en/ontap/fabricpool/promote-data-performance-tier-task.html[Promote data to the performance tier^].
+
+* You are using ONTAP 9.8 or later.
+
+* You are using a link:../admin/web-browser-requirements.html[supported web browser].
+
+* You belong to a StorageGRID user group for the FabricPool tenant account that has the link:tenant-management-permissions.html[Manage all buckets or Root access permission]. 
+
+.About this task
+You perform this procedure in ONTAP and in StorageGRID Tenant Manager.
+
+.Steps
+
+. From ONTAP, use the `volume modify` command to stop new tiering and return the data from StorageGRID.
++
+----
+volume modify -vserver <vserver-name> -volume <volume-name> -tiering-policy none -cloud-retrieval-policy promote
+----
++
+In this command:
+
+-volume <volume-name>:: The FabricPool volume that is currently tiering data to StorageGRID.
+
+-tiering-policy none:: Prevents new data from being tiered to StorageGRID.
+
+-cloud-retrieval-policy promote:: Returns all data that was previously tiered to StorageGRID back to FabricPool.
+
+. Wait for the operation to complete.
++
+You can use the `volume object-store` command with the `tiering` option to https://docs.netapp.com/us-en/ontap/fabricpool/check-status-performance-tier-promotion-task.html[check the status of the performance tier promotion^]. 
+
+. When the promote operation is complete, sign in to the Tenant Manager for the FabricPool tenant account. 
+
+. Select *View buckets* from the dashboard, or select  *STORAGE (S3)* > *Buckets*.
+
+. Confirm that the FabricPool bucket is now empty. 
+
+. If the bucket is empty, select the bucket name.
+
+. Select *Delete bucket*.
+
+. When the confirmation dialog box appears, select *Yes*.
++
+StorageGRID deletes the empty bucket. This operation might take a few minutes.
+See link:../tenant/deleting-s3-bucket.html[Delete S3 bucket].
