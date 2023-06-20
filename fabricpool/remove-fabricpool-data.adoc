@@ -28,17 +28,11 @@ These instructions explain how to move data from StorageGRID back to FabricPool.
 
 .Steps
 
-. From ONTAP, use the `volume modify` command to stop new tiering and return the data from StorageGRID.
+. From ONTAP, issue the `volume modify` command.
 +
-----
-volume modify -vserver <vserver-name> -volume <volume-name> -tiering-policy none -cloud-retrieval-policy promote
-----
+Set `tiering-policy` to `none` to stop new tiering and set `cloud- retrieval-policy` to `promote` to return all data that was previously tiered to StorageGRID.
 +
--volume <volume-name>:: The FabricPool volume that is currently tiering data to StorageGRID.
-
--tiering-policy none:: Prevents new data from being tiered to StorageGRID.
-
--cloud-retrieval-policy promote:: Returns all data that was previously tiered to StorageGRID back to FabricPool.
+See https://docs.netapp.com/us-en/ontap/fabricpool/promote-all-data-performance-tier-task.html[Promote all data from a FabricPool volume to the performance tier].
 
 . Wait for the operation to complete.
 +

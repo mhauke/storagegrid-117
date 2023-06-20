@@ -28,7 +28,7 @@ CAUTION: An ILM rule that creates only one replicated copy for any time period p
 
 * If you need to link:remove-fabricpool-data.html[remove FabricPool data from StorageGRID], use ONTAP to retrieve all data for the FabricPool volume and promote it to the performance tier. 
 +
-CAUTION: To avoid data loss, never use an ILM rule that will expire or delete FabricPool cloud tier data. Set the retention period in each ILM rule to *forever* to ensure that FabricPool objects aren't deleted by StorageGRID ILM.
+CAUTION: To avoid data loss, do not use an ILM rule that will expire or delete FabricPool cloud tier data. Set the retention period in each ILM rule to *forever* to ensure that FabricPool objects aren't deleted by StorageGRID ILM.
 
 * Don't create rules that will move FabricPool cloud tier data out of the bucket to another location. You can't use a Cloud Storage Pool to move FabricPool data to another object store. Similarly, you can't archive FabricPool data to tape using an Archive Node. 
 +

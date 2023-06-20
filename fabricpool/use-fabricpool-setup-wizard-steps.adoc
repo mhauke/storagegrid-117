@@ -413,7 +413,7 @@ For details about this step, see link:../ilm/creating-ilm-policy.html[Create ILM
 
 CAUTION: When you activate a new ILM policy, StorageGRID uses that policy to manage the placement, duration, and data protection of all objects in the grid, including existing objects and newly ingested objects. In some cases, activating a new policy can cause existing objects to be moved to new locations.
 
-CAUTION: To avoid data loss, never use an ILM rule that will expire or delete FabricPool cloud tier data. Set the retention period to *forever* to ensure that FabricPool objects aren't deleted by StorageGRID ILM.
+CAUTION: To avoid data loss, do not use an ILM rule that will expire or delete FabricPool cloud tier data. Set the retention period to *forever* to ensure that FabricPool objects aren't deleted by StorageGRID ILM.
 
 .Steps
 
