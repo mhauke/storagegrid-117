@@ -32,7 +32,7 @@ These instructions explain how to move data from StorageGRID back to FabricPool.
 +
 Set `tiering-policy` to `none` to stop new tiering and set `cloud- retrieval-policy` to `promote` to return all data that was previously tiered to StorageGRID.
 +
-See https://docs.netapp.com/us-en/ontap/fabricpool/promote-all-data-performance-tier-task.html[Promote all data from a FabricPool volume to the performance tier].
+See https://docs.netapp.com/us-en/ontap/fabricpool/promote-all-data-performance-tier-task.html[Promote all data from a FabricPool volume to the performance tier^].
 
 . Wait for the operation to complete.
 +
