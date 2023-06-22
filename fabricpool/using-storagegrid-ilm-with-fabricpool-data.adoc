@@ -25,7 +25,6 @@ CAUTION: To avoid data loss, do not use an ILM rule that will expire or delete F
 +
 NOTE: This prerequisite does not apply to new StorageGRID 11.7 installations. When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site.
 
-
 .Steps
 
 . Create an ILM rule that applies only to the data in `fabricpool-bucket`. This example rule creates erasure-coded copies.
