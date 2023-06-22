@@ -15,6 +15,7 @@ This example assumes you are designing the ILM rules and an ILM policy for a Sto
 
 CAUTION: The following ILM rules and policy are only examples. There are many ways to configure ILM rules. Before activating a new policy, simulate the proposed policy to confirm it will work as intended to protect content from loss. To learn more, see link:../ilm/index.html[Manage objects with ILM].
 
+CAUTION: To avoid data loss, do not use an ILM rule that will expire or delete FabricPool cloud tier data. Set the retention period to *forever* to ensure that FabricPool objects aren't deleted by StorageGRID ILM.
 
 .Before you begin
 * You have reviewed the link:best-practices-ilm.html[best practices for using ILM with FabricPool data].
@@ -23,7 +24,6 @@ CAUTION: The following ILM rules and policy are only examples. There are many wa
 * If you upgraded to StorageGRID 11.7 from a previous StorageGRID version, you have configured the storage pool you will use. In general, you should create a storage pool for each StorageGRID site. 
 +
 NOTE: This prerequisite does not apply to new StorageGRID 11.7 installations. When you install StorageGRID 11.7 on a new grid, storage pools are automatically created for each site.
-
 
 .Steps
 
@@ -52,7 +52,9 @@ You could also filter on the FabricPool tenant account.
 | Time period and placements
 | From Day 0 store forever
 
-Store objects by erasure coding using 2+1 EC scheme at Denver.
+Store objects by erasure coding using 2+1 EC scheme at Denver and retain those objects in StorageGRID forever.
+
+CAUTION: To avoid data loss, do not use an ILM rule that will expire or delete FabricPool cloud tier data.
 
 | Ingest behavior
 | Balanced
@@ -95,4 +97,4 @@ When this policy is activated, StorageGRID places object data as follows:
 
 * The data tiered from FabricPool in `fabricpool-bucket` will be erasure coded using the 2+1 erasure-coding scheme. Two data fragments and one parity fragment will be placed on three different Storage Nodes.
 * All objects in all other buckets will be replicated. Two copies will be created and placed on two different Storage Nodes.
-* The erasure-coded and replicated copies will be maintained in StorageGRID until they are deleted in ONTAP. StorageGRID ILM will never delete these items.
+* The copies will be maintained in StorageGRID forever. StorageGRID ILM won't delete these objects.
