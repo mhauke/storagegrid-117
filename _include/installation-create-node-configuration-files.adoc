@@ -434,7 +434,7 @@ For _nnnn_, specify a unique number for each INTERFACE_TARGET entry you are addi
 
 For the value, specify the name of the physical interface on the bare-metal host. Then, optionally, add a comma and provide a description of the interface, which is displayed on the VLAN interfaces page and the HA groups page. 
 
-For example: `INTERFACE_TARGET_01=ens256, Trunk`
+For example: `INTERFACE_TARGET_0001=ens256, Trunk`
 
 If you add a trunk interface, you must configure a VLAN interface in StorageGRID. If you add an access interface, you can add the interface directly to an HA group; you don't need to configure a VLAN interface. 
 
