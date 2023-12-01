@@ -41,15 +41,15 @@ The node is unavailable for a brief time when you add interfaces. You should per
 
 . Add an entry to the file to specify the name and, optionally, the description of each extra interface you want to add to the node. Use this format.
 +
-`INTERFACES_TARGET_nnnn=_value_`
+`INTERFACE_TARGET_nnnn=_value_`
 +
-For _nnnn_, specify a unique number for each `INTERFACES_TARGET` entry you are adding.
+For _nnnn_, specify a unique number for each `INTERFACE_TARGET` entry you are adding.
 +
 For _value_, specify the name of the physical interface on the bare-metal host. Then, optionally, add a comma and provide a description of the interface, which is displayed on the VLAN interfaces page and the HA groups page. 
 +
 For example:
 +
-`INTERFACES_TARGET_01=ens256, Trunk`
+`INTERFACE_TARGET_01=ens256, Trunk`
 +
 IMPORTANT: Don't specify any other network parameters, or a validation error will result.
 
