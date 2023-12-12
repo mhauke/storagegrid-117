@@ -18,6 +18,8 @@ You can enable the AutoSupport feature and the individual AutoSupport options wh
 * You have the Root access or Other grid configuration permission.
 * If you will use HTTPS for sending AutoSupport messages, you have provided outbound internet access to the primary Admin Node, either directly or link:configuring-admin-proxy-settings.html[using a proxy server] (inbound connections not required).
 * If HTTP is selected on the StorageGRID AutoSupport page, you have configured a proxy server to forward AutoSupport messages as HTTPS. NetApp's AutoSupport servers will reject messages sent using HTTP.
++
+link:configuring-admin-proxy-settings.html[Learn about configuring admin proxy settings].
 
 * If you will use SMTP as the protocol for AutoSupport messages, you have configured an SMTP mail server. The same mail server configuration is used for alarm email notifications (legacy system).
 
@@ -166,4 +168,4 @@ image::../media/autosupport_certificate.png[AutoSupport certificate]
 +
 All future weekly, event-triggered, and user-triggered AutoSupport messages will be sent to the additional destination.
 
-
+// 2023 NOV 21, SGRIDDOC-29
