@@ -15,6 +15,8 @@ When the AutoSupport message fails to send, "`Failed`" appears on the *Results* 
 
 image::../media/autosupport_results_tab.png[AutoSupport message send failure]
 
+NOTE: If you configured a proxy server to forward AutoSupport messages to NetApp, you should link:configuring-admin-proxy-settings.html[verify that the proxy server configuration settings are correct].
+
 == Weekly AutoSupport message failure
 
 If a weekly AutoSupport message fails to send, the StorageGRID system takes the following actions:
@@ -42,3 +44,4 @@ Learn how to link:../monitor/email-alert-notifications.html[configure email serv
 
 If a failure occurs and SMTP is the selected protocol, verify that the StorageGRID system's email server is correctly configured and that your email server is running. The following error message might appear on the AutoSupport page: `AutoSupport messages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
 
+// 2023 NOV 21, SGRIDDOC-29
