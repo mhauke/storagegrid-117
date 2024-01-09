@@ -69,6 +69,8 @@ Follow the instructions provided for replacing these components.
 
 .. To restore the BMC configuration to use a static IP, netmask, and gateway, enter the following commands:
 +
+`*run-host-command ipmitool lan set 1 ipsrc static*`
++
 `*run-host-command ipmitool lan set 1 ipaddr _Appliance_IP_*`
 +
 `*run-host-command ipmitool lan set 1 netmask _Netmask_IP_*`
@@ -89,3 +91,5 @@ include::../_include/fru-statement.adoc[]
 link:../installconfig/viewing-status-indicators.html[View status indicators]
 
 link:../installconfig/viewing-boot-up-codes-for-appliance-sg100-and-sg1000.html[View boot-up codes for appliance]
+
+// 2024 JAN 4, SGRIDDOC-30
